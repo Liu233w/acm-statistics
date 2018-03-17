@@ -11,8 +11,7 @@ module.exports = function(config, username) {
                 reject(err)
             } else if (!res.ok) {
                 reject(new Error(`Server Response Error: ${res.status}`))
-            }
-             {
+            } else {
                 const $ = cheerio.load(res.text)
                 resolve({
                     solved: new Number($('a[href^="status?result=0&user_id="]').text()),
