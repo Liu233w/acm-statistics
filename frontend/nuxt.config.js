@@ -6,11 +6,11 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: 'acm-statistics-frontend',
+    title: 'OJ 题量查询系统',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'ACM查题网站前端' }
+      { hid: 'description', name: 'description', content: 'OJ 题量查询系统 -- 西北工业大学 ACM 开发组' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
