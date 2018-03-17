@@ -1,0 +1,13 @@
+{
+  "name": "crawler",
+  "description": "存放所有爬虫",
+  "main": "index.js",
+  "scripts": {
+    "test": "ava"
+  },
+  "dependencies": {
+    "ava": "^1.0.0-beta.3",
+    "cheerio": "^1.0.0-rc.2",
+    "superagent": "^3.8.2"
+  }
+}
