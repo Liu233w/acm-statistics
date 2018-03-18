@@ -30,3 +30,29 @@ exports.ensureConfigAndRead = async () => {
  * @property {Number} solved - 用户通过的题量
  * @property {Number} submissions - 用户的总提交量
  */
+
+/**
+ * 为服务端返回的爬虫函数
+ * @typedef serverCrawlerFunctions
+ * @type {Function}
+ * @param {String} username - 要爬取的用户名
+ * @returns {Promise<{crawlerReturns}>}
+ */
+
+/**
+ * 为服务器端返回爬虫函数，会从config.yml读取信息，并返回一个对象
+ *
+ * @returns {Promise<{Object.<string, {serverCrawlerFunctions}>}>}
+ */
+exports.generateServerCrawlerFunctions = async () => {
+  const config = await exports.ensureConfigAndRead()
+
+  const ret = {}
+  for (let item of config.crawlers) {
+    const crawlerFunc = require(`../crawlers/${item.name}.js`)
+    ret[item.name] = username => crawlerFunc(item, username)
+  }
+
+  return ret
+}
+
