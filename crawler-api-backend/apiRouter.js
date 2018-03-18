@@ -1,4 +1,5 @@
 const Router = require('koa-router');
+const _ = require('lodash')
 
 let crawlers
 require('../crawler/lib/configReader').generateServerCrawlerFunctions()
@@ -8,8 +9,6 @@ const router = new Router()
 
 router.get('/api/crawlers/:type/:username', async (ctx, next) => {
 
-  console.log(crawlers)
-
   const ojFunc = crawlers[ctx.params.type]
 
   if (typeof ojFunc !== 'function') {
@@ -18,6 +17,11 @@ router.get('/api/crawlers/:type/:username', async (ctx, next) => {
 
   ctx.rest(await ojFunc(ctx.params.username))
 
+  await next()
+})
+
+router.get('/api/crawlers', async (ctx, next) => {
+  ctx.rest(_.keys(crawlers))
   await next()
 })
 

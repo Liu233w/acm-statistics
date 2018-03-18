@@ -8,6 +8,8 @@ crawler-api-backend
 
 ### GET `/api/crawlers/:type/:username`
 
+查询某个OJ上的用户题量
+
 #### 参数
 - type: OJ类型，只包括在 `/crawler/config.yml` 中定义的类型
 - username: 要查询的用户的用户名
@@ -34,5 +36,21 @@ crawler-api-backend
 {
   "error": true,
   "message": "错误信息"
+}
+```
+
+### GET `/api/crawlers`
+
+返回所有支持查询的 OJ
+
+#### 成功返回
+```json
+{
+  "error": false,
+  "data": [
+    "poj",
+    "vjudge",
+    "...其他OJ"
+  ]
 }
 ```
