@@ -5,13 +5,17 @@ import poj from '../crawlers/poj'
 import vjudge from '../crawlers/vjudge'
 import {ensureConfigAndRead} from '../lib/configReader'
 
+const notExistUsername = 'fmV84ZCQ3hwu'
+// 感谢 @leoloveacm 同学提供帐号
+const username = 'leoloveacm'
+
 test('test poj - 用户不存在时抛出异常', async t => {
-  const err = await t.throws(async () => await poj(null, ''))
+  const err = await t.throws(async () => await poj(null, notExistUsername))
   t.is(err.message, '用户不存在')
 })
 
 test('test poj', async t => {
-  const res = await poj(null, 'leoloveacm')
+  const res = await poj(null, username)
   checkRes(res, t)
 })
 
@@ -24,7 +28,7 @@ test.skip('test vjudge', async t => {
   t.not(vjConfig.crawler_login_user, undefined, '必须要保证配置文件正确才能进行此项测试')
   t.not(vjConfig.crawler_login_user, '用户名', '必须要保证配置文件正确才能进行此项测试')
 
-  const res = await vjudge(vjConfig, 'leoloveacm')
+  const res = await vjudge(vjConfig, username)
   console.log(res)
   checkRes(res, t)
 })
