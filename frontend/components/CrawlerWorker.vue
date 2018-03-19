@@ -11,7 +11,8 @@
             label="Username"
             :disabled="status === WORKER_STATUS.WORKING"
             required
-          ></v-text-field>
+            @keyup.enter="$emit('update:status', WORKER_STATUS.WORKING)"
+          />
         </v-flex>
       </v-layout>
     </v-container>

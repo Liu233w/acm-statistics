@@ -2,14 +2,13 @@
   <v-container grid-list-md>
     <v-layout row>
       <v-flex xs8>
-        <v-form>
-          <v-text-field
-            v-model="username"
-            label="统一设置用户名"
-            :disabled="working"
-            required
-          ></v-text-field>
-        </v-form>
+        <v-text-field
+          v-model="username"
+          label="统一设置用户名"
+          :disabled="working"
+          required
+          @keyup.enter="runWorker"
+        />
       </v-flex>
       <v-flex xs4>
         <v-btn primary @click="runWorker" :disabled="working">
