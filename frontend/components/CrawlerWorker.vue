@@ -77,6 +77,10 @@
       workerName: {
         type: String,
         required: true
+      },
+      func: {
+        type: Function,
+        required: true
       }
     },
     data() {
@@ -86,21 +90,18 @@
       }
     },
     watch: {
-      status: function (val) {
+      status: async function (val) {
         if (val === WORKER_STATUS.WORKING) {
           // 启动爬虫
-          // TODO: 补充启动爬虫的代码
-          const self = this
-          setTimeout(() => {
-            self.$emit('update:status', WORKER_STATUS.DONE)
-            if (Math.random() < 0.5) {
-              // 这里暂时模拟成功和失败
-              self.$emit('update:solved', 100)
-              self.$emit('update:submissions', 200)
-            } else {
-              self.errorMessage = '错误信息： xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
-            }
-          }, 2000)
+          try {
+            const res = await this.func(this.username)
+            this.$emit('update:status', WORKER_STATUS.DONE)
+            this.$emit('update:solved', res.solved)
+            this.$emit('update:submissions', res.submissions)
+          } catch (err) {
+            this.$emit('update:status', WORKER_STATUS.DONE)
+            this.errorMessage = err.message
+          }
         }
       }
     }

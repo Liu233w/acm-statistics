@@ -32,6 +32,7 @@
           :solved.sync="item.solved"
           :submissions.sync="item.submissions"
           :status.sync="item.status"
+          :func="item.func"
         ></crawler-worker>
       </v-flex>
     </v-layout>
@@ -50,44 +51,17 @@
     data() {
       return {
         username: '',
-        workers: {
-          'OJ1': {
-            solved: 0,
-            submissions: 0,
-            status: WORKER_STATUS.WAITING
-          },
-          'OJ2': {
-            solved: 0,
-            submissions: 0,
-            status: WORKER_STATUS.WAITING
-          },
-          'OJ3': {
-            solved: 0,
-            submissions: 0,
-            status: WORKER_STATUS.WAITING
-          },
-          'OJ4': {
-            solved: 0,
-            submissions: 0,
-            status: WORKER_STATUS.WAITING
-          },
-          'OJ5': {
-            solved: 0,
-            submissions: 0,
-            status: WORKER_STATUS.WAITING
-          },
-          'OJ6': {
-            solved: 0,
-            submissions: 0,
-            status: WORKER_STATUS.WAITING
-          },
-          'OJ7': {
-            solved: 0,
-            submissions: 0,
-            status: WORKER_STATUS.WAITING
-          },
-        }
+        workers: []
       }
+    },
+    created() {
+      // 由于 ssr，data是在服务器上运行的，因此必须在created里面初始化workers
+      this.workers = _.mapValues(this.$crawlers, func => ({
+        solved: 0,
+        submissions: 0,
+        status: WORKER_STATUS.WAITING,
+        func: func
+      }))
     },
     computed: {
       allSolved() {
