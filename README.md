@@ -11,6 +11,10 @@ NWPU-ACM 查询工具
 
 每个模块的具体内容请参考模块内的 README
 
+## 运行环境
+在部署时只需要运行 frontend 和 crawler-api-backend，
+至少需要 nodejs 8 以上才能运行
+
 ## 开源协议
 - 如无特殊声明，均为 GPL-3.0 协议
 - crawler 模块中的 `crawlers` 目录中的文件为 BSD 2-Clause 协议
