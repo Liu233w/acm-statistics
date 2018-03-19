@@ -3,7 +3,7 @@ const path = require('path')
 
 module.exports = async function (moduleOptions) {
   this.addPlugin({
-    src: path.resolve(__dirname, './crawler.js.tmpl'),
+    src: path.resolve(__dirname, './crawler.template.js'),
     options: await configReader.generateBrowserCrawlerFunctions(),
     // ssr: false
   })
