@@ -90,7 +90,14 @@ exports.generateBrowserCrawlerFunctions = async () => {
         (username) => {
           return new Promise((resolve, reject) => {
             axios.get('/api/crawlers/${item.name}/'+username)
-              .then(res => resolve(res))
+              .then(response => {
+                // console.log(response)
+                if (response.data.error) {
+                  reject(response.message)
+                } else {
+                  resolve(response.data.data)
+                }
+              })
               .catch(err => {
                 // console.error(err)
                 if (err.response && err.response.data.message) {
