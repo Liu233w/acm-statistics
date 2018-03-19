@@ -7,7 +7,7 @@
       <v-layout row wrap>
         <v-flex xs12>
           <v-text-field
-            v-model="username"
+            v-model="localUsername"
             label="Username"
             :disabled="status === WORKER_STATUS.WORKING"
             required
@@ -85,6 +85,7 @@
     },
     data() {
       return {
+        localUsername: this.username,
         errorMessage: '',
         WORKER_STATUS: WORKER_STATUS
       }
@@ -94,7 +95,7 @@
         if (val === WORKER_STATUS.WORKING) {
           // 启动爬虫
           try {
-            const res = await this.func(this.username)
+            const res = await this.func(this.localUsername)
             this.$emit('update:status', WORKER_STATUS.DONE)
             this.$emit('update:solved', res.solved)
             this.$emit('update:submissions', res.submissions)
@@ -103,6 +104,9 @@
             this.errorMessage = err.message
           }
         }
+      },
+      username: function(val) {
+        this.localUsername = val
       }
     }
   }
