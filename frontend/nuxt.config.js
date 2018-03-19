@@ -75,5 +75,8 @@ module.exports = {
         '_': 'lodash'
       })
     ]
-  }
+  },
+  modules: [
+    '~/modules/crawlerLoader'
+  ]
 }
