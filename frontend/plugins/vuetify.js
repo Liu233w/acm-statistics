@@ -14,6 +14,7 @@ import {
   VTooltip,
   VProgressCircular,
   VForm,
+  VProgressLinear,
 } from 'vuetify'
 
 Vue.use(Vuetify, {
@@ -31,5 +32,6 @@ Vue.use(Vuetify, {
     VTooltip,
     VProgressCircular,
     VForm,
+    VProgressLinear,
   }
 })

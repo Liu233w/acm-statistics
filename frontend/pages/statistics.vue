@@ -22,6 +22,11 @@
         <p class="title text-xs-center"> {{username}} 的总题量： {{allSolved}} / {{allSubmissions}} </p>
       </v-flex>
     </v-layout>
+    <v-layout row v-if="working">
+      <v-flex>
+        <v-progress-linear indeterminate color="primary" />
+      </v-flex>
+    </v-layout>
     <v-layout row wrap>
       <v-flex xs12 sm6 md4 xl3
               v-for="(item, name) in workers"
