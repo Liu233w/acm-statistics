@@ -56,3 +56,44 @@ exports.generateServerCrawlerFunctions = async () => {
   return ret
 }
 
+/**
+ * 为客户端返回的爬虫函数的源代码字符串。
+ * 如果爬虫是server_only的，将会返回一个带 axios 请求的函数，
+ * 函数将会向服务器发起请求，让服务器进行爬取；
+ * 如果爬虫不是server_only的，返回已经注入了设置信息的爬虫源代码。
+ * 请注意：本函数返回的对象中不含有“函数”，只有“函数的源代码”。
+ * 需要使用eval或者将源代码拼接进源码文件中使用。
+ * @typedef clientCrawlerFunction
+ * @type {String}
+ */
+
+/**
+ * 返回给前端使用的爬虫函数，会从 config.yml 读取配置信息，装配配置信息并返回。
+ * 设置了 server_only 的爬虫会返回一个 axios 的请求
+ *
+ * @returns {Promise<{Object.<string, {clientCrawlerFunction}>}>}
+ */
+exports.generateBrowserCrawlerFunctions = async () => {
+  const config = await exports.ensureConfigAndRead()
+
+  const ret = {}
+  for (let item of config.crawlers) {
+    const crawlerFuncStr = await fs.readFile(join(__dirname, `../crawlers/${item.name}.js`), 'utf-8')
+    if (item.server_only) {
+      ret[item.name] = `
+        (username) => {
+          return axios.get('/api/crawlers/${item.name}/'+username)
+        }
+      `
+    } else {
+      ret[item.name] = `
+        (username) => {
+          let module = {exports: {}}
+          ;(function(module, exports) { ${crawlerFuncStr} })(module, module.exports)
+          return module.exports(${JSON.stringify(item)}, username)
+        }
+    `
+    }
+  }
+  return ret
+}
