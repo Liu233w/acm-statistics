@@ -5,7 +5,7 @@ module.exports = async function (moduleOptions) {
   this.addPlugin({
     src: path.resolve(__dirname, './crawler.js.tmpl'),
     options: await configReader.generateBrowserCrawlerFunctions(),
-    ssr: false
+    // ssr: false
   })
   this.addPlugin({
     src: path.resolve(__dirname, './cors.js'),
