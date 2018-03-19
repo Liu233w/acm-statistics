@@ -15,29 +15,27 @@
         </v-flex>
       </v-layout>
     </v-container>
-    <v-slide-y-transition>
-      <v-card-text v-show="status === WORKER_STATUS.DONE">
-        <template v-if="errorMessage">
-          <span class="red--text">{{ errorMessage }}</span>
-        </template>
-        <template v-else>
-          <span class="grey--text">SOLVED: </span> {{ solved }}
-          <br/>
-          <span class="grey--text">SUBMISSIONS: </span> {{ submissions }}
-        </template>
-      </v-card-text>
-      <v-card-text v-show="status === WORKER_STATUS.WORKING">
-        <v-container>
-          <v-layout row>
-            <v-spacer></v-spacer>
-            <v-flex xs2>
-              <v-progress-circular indeterminate color="primary"></v-progress-circular>
-            </v-flex>
-            <v-spacer></v-spacer>
-          </v-layout>
-        </v-container>
-      </v-card-text>
-    </v-slide-y-transition>
+    <v-card-text v-show="status === WORKER_STATUS.DONE" >
+      <template v-if="errorMessage">
+        <span class="red--text">{{ errorMessage }}</span>
+      </template>
+      <template v-else>
+        <span class="grey--text">SOLVED: </span> {{ solved }}
+        <br/>
+        <span class="grey--text">SUBMISSIONS: </span> {{ submissions }}
+      </template>
+    </v-card-text>
+    <v-card-text v-show="status === WORKER_STATUS.WORKING">
+      <v-container>
+        <v-layout row>
+          <v-spacer></v-spacer>
+          <v-flex xs2>
+            <v-progress-circular indeterminate color="primary"></v-progress-circular>
+          </v-flex>
+          <v-spacer></v-spacer>
+        </v-layout>
+      </v-container>
+    </v-card-text>
     <v-card-actions>
       <v-spacer></v-spacer>
       <v-tooltip bottom>
