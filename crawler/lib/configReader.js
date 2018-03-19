@@ -88,7 +88,20 @@ exports.generateBrowserCrawlerFunctions = async () => {
     if (item.server_only) {
       ret[item.name] = `
         (username) => {
-          return axios.get('/api/crawlers/${item.name}/'+username)
+          return new Promise((resolve, reject) => {
+            axios.get('/api/crawlers/${item.name}/'+username)
+              .then(res => resolve(res))
+              .catch(err => {
+                // console.error(err)
+                if (err.response && err.response.data.message) {
+                  // 服务端的爬虫报的错
+                  reject(new Error(err.response.data.message))
+                } else {
+                  //网络错误或其他错误
+                  reject(new Error(err.message))
+                }
+              })
+          })
         }
       `
     } else {
