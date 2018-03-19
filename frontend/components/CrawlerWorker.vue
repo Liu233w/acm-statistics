@@ -42,7 +42,7 @@
         <v-btn icon
                slot="activator"
                :disabled="status === WORKER_STATUS.WORKING"
-               @click="status = WORKER_STATUS.WORKING"
+               @click="$emit('update:status', WORKER_STATUS.WORKING)"
         >
           <v-icon>refresh</v-icon>
         </v-btn>
