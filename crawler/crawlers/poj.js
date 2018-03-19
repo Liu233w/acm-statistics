@@ -3,6 +3,10 @@ const cheerio = require('cheerio')
 
 module.exports = async function (config, username) {
 
+  if (!username) {
+    throw new Error('请输入用户名')
+  }
+
   const res = await request
     .get('http://poj.org/userstatus')
     .query({user_id: username})
