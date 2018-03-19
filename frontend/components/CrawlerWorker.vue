@@ -107,6 +107,11 @@
       },
       username: function(val) {
         this.localUsername = val
+      },
+      localUsername: function(val) {
+        this.$emit('update:status', WORKER_STATUS.WAITING)
+        this.$emit('update:solved', 0)
+        this.$emit('update:submissions', 0)
       }
     }
   }
