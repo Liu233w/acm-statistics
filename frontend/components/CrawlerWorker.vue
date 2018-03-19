@@ -97,6 +97,7 @@
           // 启动爬虫
           try {
             const res = await this.func(this.localUsername)
+            this.errorMessage = ''
             this.$emit('update:status', WORKER_STATUS.DONE)
             this.$emit('update:solved', res.solved)
             this.$emit('update:submissions', res.submissions)
