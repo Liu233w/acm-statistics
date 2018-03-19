@@ -1,4 +1,4 @@
-const koa = require('Koa')
+const koa = require('koa')
 
 const restHelper = require('./utils/restHelper')
 const logUtil = require('./utils/logUtil');
