@@ -15,6 +15,8 @@ import {
   VProgressCircular,
   VForm,
   VProgressLinear,
+  VAvatar,
+  VJumbotron,
 } from 'vuetify'
 
 Vue.use(Vuetify, {
@@ -33,5 +35,7 @@ Vue.use(Vuetify, {
     VProgressCircular,
     VForm,
     VProgressLinear,
+    VAvatar,
+    VJumbotron,
   }
 })

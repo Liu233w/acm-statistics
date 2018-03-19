@@ -2,28 +2,24 @@
   <v-layout column justify-center align-center>
     <v-flex xs12 sm8 md6>
       <div class="text-xs-center">
-        <img src="/v.png" alt="Vuetify.js" class="mb-5" />
+        <img src="/img/logo.png" alt="ACM-ICPC 协会"/>
       </div>
       <v-card>
-        <v-card-title class="headline">Welcome to the Vuetify + Nuxt.js template</v-card-title>
+        <v-card-title class="headline">欢迎使用 ACM-ICPC OJ题量查询工具</v-card-title>
         <v-card-text>
-          <p>Vuetify is a progressive Material Design component framework for Vue.js. It was designed to empower developers to create amazing applications.</p>
-          <p>For more information on Vuetify, check out the <a href="https://vuetifyjs.com" target="_blank">documentation</a>.</p>
-          <p>If you have questions, please join the official <a href="https://chat.vuetifyjs.com/" target="_blank" title="chat">discord</a>.</p>
-          <p>Find a bug? Report it on the github <a href="https://github.com/vuetifyjs/vuetify/issues" target="_blank" title="contribute">issue board</a>.</p>
-          <p>Thank you for developing with Vuetify and I look forward to bringing more exciting features in the future.</p>
-          <div class="text-xs-right">
-            <em><small>&mdash; John Leider</small></em>
-          </div>
+          <p>全新异步API + 浏览器端爬虫，查询速度加倍</p>
+          <p>免费提供题目查询 Rest API</p>
+          <p>完全开源</p>
+          <p>更多OJ支持中...</p>
+          <p>
+            本工具目前还在开发中，欢迎
+            <a href="https://github.com/Liu233w/acm-statistics/issues" target="_blank">向我们提出意见</a>
+          </p>
           <hr class="my-3">
-          <a href="https://nuxtjs.org/" target="_blank">Nuxt Documentation</a>
+          <a href="mailto:support@npuacm.info">联系我们</a>
           <br>
-          <a href="https://github.com/nuxt/nuxt.js" target="_blank">Nuxt GitHub</a>
+          <a href="https://github.com/Liu233w/acm-statistics" target="_blank">源代码</a>
         </v-card-text>
-        <v-card-actions>
-          <v-spacer></v-spacer>
-          <v-btn color="primary" flat nuxt to="/inspire">Continue</v-btn>
-        </v-card-actions>
       </v-card>
     </v-flex>
   </v-layout>
