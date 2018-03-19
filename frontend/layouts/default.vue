@@ -47,8 +47,8 @@
       return {
         drawer: true,
         items: [
-          { icon: 'apps', title: 'Welcome', to: '/' },
-          { icon: 'bubble_chart', title: 'Inspire', to: '/inspire' }
+          { icon: 'home', title: 'Welcome', to: '/' },
+          { icon: 'code', title: '题量统计', to: '/statistics' }
         ],
         title: 'OJ 题量查询系统'
       }
