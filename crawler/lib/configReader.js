@@ -49,6 +49,9 @@ exports.generateServerCrawlerFunctions = async () => {
 
   const ret = {}
   for (let item of config.crawlers) {
+    if (!item.name) {
+      continue
+    }
     const crawlerFunc = require(`../crawlers/${item.name}.js`)
     ret[item.name] = username => crawlerFunc(item, username)
   }
@@ -78,6 +81,9 @@ exports.generateBrowserCrawlerFunctions = async () => {
 
   const ret = {}
   for (let item of config.crawlers) {
+    if (!item.name) {
+      continue
+    }
     const crawlerFuncStr = await fs.readFile(join(__dirname, `../crawlers/${item.name}.js`), 'utf-8')
     if (item.server_only) {
       ret[item.name] = `
