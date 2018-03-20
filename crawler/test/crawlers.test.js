@@ -10,13 +10,17 @@ const notExistUsername = 'fmV84ZCQ3hwu'
 // 感谢 @leoloveacm 同学提供帐号
 const username = 'leoloveacm'
 
-test('test poj - 用户不存在时抛出异常', async () => {
-  await expect(poj(null, notExistUsername)).rejects.toThrow('用户不存在')
-})
+describe('poj', () => {
 
-test('test poj', async () => {
-  const res = await poj(null, username)
-  checkRes(res)
+  test('test poj - 用户不存在时抛出异常', async () => {
+    await expect(poj(null, notExistUsername)).rejects.toThrow('用户不存在')
+  })
+
+  test('test poj', async () => {
+    const res = await poj(null, username)
+    checkRes(res)
+  })
+
 })
 
 test.skip('test vjudge', async () => {
