@@ -2,6 +2,7 @@ const _ = require('lodash')
 
 const poj = require('../crawlers/poj')
 const hdu = require('../crawlers/hdu')
+const zoj = require('../crawlers/zoj')
 const vjudge = require('../crawlers/vjudge')
 const {ensureConfigAndRead} = require('../lib/configReader')
 
@@ -32,6 +33,19 @@ describe('hdu', () => {
 
   test('test hdu', async () => {
     const res = await hdu(null, username)
+    checkRes(res)
+  })
+
+})
+
+describe('zoj', () => {
+
+  test('test zoj - 用户不存在时抛出异常', async () => {
+    await expect(zoj(null, notExistUsername)).rejects.toThrow('用户不存在')
+  })
+
+  test('test zoj', async () => {
+    const res = await zoj(null, '2013300262')
     checkRes(res)
   })
 
