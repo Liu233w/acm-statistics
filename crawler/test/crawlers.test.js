@@ -4,6 +4,7 @@ const poj = require('../crawlers/poj')
 const hdu = require('../crawlers/hdu')
 const zoj = require('../crawlers/zoj')
 const acdream = require('../crawlers/acdream')
+const dashiye = require('../crawlers/dashiye')
 const vjudge = require('../crawlers/vjudge')
 const {ensureConfigAndRead} = require('../lib/configReader')
 
@@ -60,6 +61,19 @@ describe('acdream', () => {
 
   test('test acdream', async () => {
     const res = await acdream(null, username)
+    checkRes(res)
+  })
+
+})
+
+describe('dashiye', () => {
+
+  test('test dashiye - 用户不存在时抛出异常', async () => {
+    await expect(dashiye(null, notExistUsername)).rejects.toThrow('用户不存在')
+  })
+
+  test('test dashiye', async () => {
+    const res = await dashiye(null, '2013300262')
     checkRes(res)
   })
 
