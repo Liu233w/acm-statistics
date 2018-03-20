@@ -3,6 +3,7 @@ const _ = require('lodash')
 const poj = require('../crawlers/poj')
 const hdu = require('../crawlers/hdu')
 const zoj = require('../crawlers/zoj')
+const acdream = require('../crawlers/acdream')
 const vjudge = require('../crawlers/vjudge')
 const {ensureConfigAndRead} = require('../lib/configReader')
 
@@ -46,6 +47,19 @@ describe('zoj', () => {
 
   test('test zoj', async () => {
     const res = await zoj(null, '2013300262')
+    checkRes(res)
+  })
+
+})
+
+describe('acdream', () => {
+
+  test('test acdream - 用户不存在时抛出异常', async () => {
+    await expect(acdream(null, notExistUsername)).rejects.toThrow('用户不存在')
+  })
+
+  test('test acdream', async () => {
+    const res = await acdream(null, username)
     checkRes(res)
   })
 

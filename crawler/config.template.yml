@@ -2,6 +2,7 @@ crawlers:
   - name: poj
   - name: hdu
   - name: zoj
+  - name: acdream
   - name: vjudge
     # 只运行在服务器上，不运行在浏览器上
     server_only: true
