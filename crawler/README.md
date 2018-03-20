@@ -23,7 +23,7 @@
 
 返回值:
 返回一个对象，其中包含两个属性
-- solved: {Number} - 用户在此网站上的 AC 数
+- solved: {Number} - 用户在此网站上解决的题目数量
 - submissions: {Number} - 用户在此网站上的总提交数
 
 ### 配置文件
