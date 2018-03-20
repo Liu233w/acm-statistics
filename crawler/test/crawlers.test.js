@@ -39,6 +39,6 @@ function checkRes(res) {
   expect(typeof res.solved).toBe('number')
   expect(typeof res.submissions).toBe('number')
 
-  expect(res.solved).toBeTruthy()
-  expect(res.submissions).toBeTruthy()
+  expect(res.solved).toBeGreaterThan(0)
+  expect(res.submissions).toBeGreaterThan(0)
 }
