@@ -1,9 +1,7 @@
-import test from 'ava'
+const {ensureConfigAndRead} = require("../lib/configReader")
 
-import {ensureConfigAndRead} from "../lib/configReader"
-
-test('ensureConfigAndRead 能够正确读取配置', async t => {
+test('ensureConfigAndRead 能够正确读取配置', async () => {
   const config = await ensureConfigAndRead()
-  t.not(config.crawlers.length, 0)
-  t.not(config.crawlers[0].name, null)
+  expect(config.crawlers.length).not.toBe(0)
+  expect(config.crawlers[0].name).toBeTruthy()
 })
