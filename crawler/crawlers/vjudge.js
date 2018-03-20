@@ -40,6 +40,8 @@ module.exports = async function (config, username) {
     throw new Error('vjudge 爬虫登录失败')
   }
 
+  console.log('vjudge 登陆成功')
+
   return queryForNumber(agent, username, null)
 }
 
