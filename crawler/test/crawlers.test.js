@@ -1,6 +1,7 @@
 const _ = require('lodash')
 
 const poj = require('../crawlers/poj')
+const hdu = require('../crawlers/hdu')
 const vjudge = require('../crawlers/vjudge')
 const {ensureConfigAndRead} = require('../lib/configReader')
 
@@ -18,6 +19,19 @@ describe('poj', () => {
 
   test('test poj', async () => {
     const res = await poj(null, username)
+    checkRes(res)
+  })
+
+})
+
+describe('hdu', () => {
+
+  test('test hdu - 用户不存在时抛出异常', async () => {
+    await expect(hdu(null, notExistUsername)).rejects.toThrow('用户不存在')
+  })
+
+  test('test hdu', async () => {
+    const res = await hdu(null, username)
     checkRes(res)
   })
 
