@@ -94,10 +94,10 @@
     watch: {
       status: async function (val) {
         if (val === WORKER_STATUS.WORKING) {
+          this.resetRes()
           // 启动爬虫
           try {
             const res = await this.func(this.localUsername)
-            this.errorMessage = ''
             this.$emit('update:status', WORKER_STATUS.DONE)
             this.$emit('update:solved', res.solved)
             this.$emit('update:submissions', res.submissions)
@@ -112,8 +112,17 @@
       },
       localUsername: function(val) {
         this.$emit('update:status', WORKER_STATUS.WAITING)
+        this.resetRes()
+      }
+    },
+    methods: {
+      /**
+       * 重设当前计数器和错误信息，不重设状态信息
+       */
+      resetRes() {
         this.$emit('update:solved', 0)
         this.$emit('update:submissions', 0)
+        this.errorMessage = ''
       }
     }
   }
