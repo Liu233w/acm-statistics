@@ -29,6 +29,11 @@ crawlers:
       title: CodeForces
       description:
       url: http://codeforces.com/
+  - name: uva
+    meta:
+      title: UVA
+      description:
+      url: https://uva.onlinejudge.org/
   - name: vjudge
     meta:
       title: VJudge

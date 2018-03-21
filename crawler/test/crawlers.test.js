@@ -6,6 +6,7 @@ const zoj = require('../crawlers/zoj')
 const acdream = require('../crawlers/acdream')
 const dashiye = require('../crawlers/dashiye')
 const codeforces = require('../crawlers/codeforces')
+const uva = require('../crawlers/uva')
 const vjudge = require('../crawlers/vjudge')
 const {ensureConfigAndRead} = require('../lib/configReader')
 
@@ -89,6 +90,19 @@ describe('codeforces', () => {
 
   test('test codeforces', async () => {
     const res = await codeforces(null, 'leoloveacm') // 没有找到好的测试多页返回的帐号，还是用这个测试单页吧
+    checkRes(res)
+  })
+
+})
+
+describe('uva', () => {
+
+  test('test uva - 用户不存在时抛出异常', async () => {
+    await expect(uva(null, notExistUsername)).rejects.toThrow('用户不存在')
+  })
+
+  test('test uva', async () => {
+    const res = await uva(null, 'leoloveacm')
     checkRes(res)
   })
 
