@@ -2,12 +2,25 @@ const request = require('superagent')
 
 module.exports = async function (config, username) {
 
-  return queryForNumber(username, 1)
+  const acSet = new Set()
+  const submissions = await queryForNumber(username, 1, acSet)
+
+  return {
+    solved: acSet.size,
+    submissions: submissions
+  }
 }
 
 const MAX_PAGE_SIZE = 10000
 
-async function queryForNumber(username, pageCount) {
+/**
+ * 递归查询题数
+ * @param username
+ * @param pageCount
+ * @param acSet {Set<{String}>} - ac的题目列表，会修改此对象
+ * @returns {Promise<Number>}
+ */
+async function queryForNumber(username, pageCount, acSet) {
 
   // 发起请求 /////////////////////////////////////////////////////////////
   const queryObject = {
@@ -42,16 +55,14 @@ async function queryForNumber(username, pageCount) {
   const problemArray = res.body.result
 
   if (problemArray.length === 0) {
-    return {
-      solved: 0,
-      submissions: 0
-    }
+    return 0
   }
 
-  let solved = 0
   problemArray.forEach(function (element) {
     if (element.verdict === 'OK') {
-      ++solved
+      const problem = element.problem
+      const title = problem.contestId + '-' + problem.index
+      acSet.add(title)
     }
   })
 
@@ -60,15 +71,9 @@ async function queryForNumber(username, pageCount) {
   // 递归处理（返回结果或再发起请求） ////////////////////////////////////////////
   if (total < MAX_PAGE_SIZE) {
     // 已经读完
-    return {
-      solved: solved,
-      submissions: total
-    }
+    return total
   } else {
-    const ret = await queryForNumber(username, pageCount + 1)
-    return {
-      solved: ret.solved + solved,
-      submissions: ret.submissions + total
-    }
+    const ret = await queryForNumber(username, pageCount + 1, acSet)
+    return ret + total
   }
 }
