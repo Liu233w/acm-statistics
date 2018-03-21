@@ -25,8 +25,8 @@ module.exports = async function (config, username) {
   try {
     const num = data.split('/')
     return {
-      solved: Number(num[1]),
-      submissions: Number(num[0])
+      solved: Number(num[0]),
+      submissions: Number(num[1])
     }
   } catch (e) {
     throw new Error('无法解析数据')
