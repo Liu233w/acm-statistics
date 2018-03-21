@@ -19,6 +19,8 @@
           <a href="mailto:support@npuacm.info">联系我们</a>
           <br>
           <a href="https://github.com/Liu233w/acm-statistics" target="_blank">源代码</a>
+          <br/>
+          <a href="http://npuacm.info/">返回旧版查询系统</a>
         </v-card-text>
       </v-card>
     </v-flex>
