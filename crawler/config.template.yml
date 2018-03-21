@@ -1,10 +1,34 @@
 crawlers:
   - name: poj
+    meta:
+      title: POJ
+      description:
+      url: http://poj.org/
   - name: hdu
+    meta:
+      title: HDU
+      description:
+      url: http://acm.hdu.edu.cn/
   - name: zoj
+    meta:
+      title: ZOJ
+      description:
+      url: http://acm.zju.edu.cn/onlinejudge/
   - name: acdream
+    meta:
+      title: ACdream
+      description:
+      url: http://acdream.info/
   - name: dashiye
+    meta:
+      title: 大视野在线测评
+      description:
+      url: http://www.lydsy.com/JudgeOnline/
   - name: vjudge
+    meta:
+      title: VJudge
+      description: virtual judge，这个OJ的题量是单独计算的
+      url: https://vjudge.net/
     # 只运行在服务器上，不运行在浏览器上
     server_only: true
     # vjudge 有一个api接口，需要用任意的用户名和密码来接入才能访问
