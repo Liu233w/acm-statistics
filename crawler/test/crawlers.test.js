@@ -5,6 +5,7 @@ const hdu = require('../crawlers/hdu')
 const zoj = require('../crawlers/zoj')
 const acdream = require('../crawlers/acdream')
 const dashiye = require('../crawlers/dashiye')
+const codeforces = require('../crawlers/codeforces')
 const vjudge = require('../crawlers/vjudge')
 const {ensureConfigAndRead} = require('../lib/configReader')
 
@@ -74,6 +75,19 @@ describe('dashiye', () => {
 
   test('test dashiye', async () => {
     const res = await dashiye(null, '2013300262')
+    checkRes(res)
+  })
+
+})
+
+describe('codeforces', () => {
+
+  test('test codeforces - 用户不存在时抛出异常', async () => {
+    await expect(codeforces(null, notExistUsername)).rejects.toThrow('用户不存在')
+  })
+
+  test('test codeforces', async () => {
+    const res = await codeforces(null, username)
     checkRes(res)
   })
 

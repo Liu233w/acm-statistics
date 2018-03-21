@@ -24,6 +24,11 @@ crawlers:
       title: 大视野在线测评
       description:
       url: http://www.lydsy.com/JudgeOnline/
+  - name: codeforces
+    meta:
+      title: CodeForces
+      description:
+      url: http://codeforces.com/
   - name: vjudge
     meta:
       title: VJudge
