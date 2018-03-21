@@ -12,8 +12,9 @@ const {ensureConfigAndRead} = require('../lib/configReader')
 jest.setTimeout(10000) // 最多10秒
 
 const notExistUsername = 'fmV84ZCQ3hwu'
-// 感谢 @leoloveacm 同学提供帐号
-const username = 'leoloveacm'
+const username = 'vjudge5'
+
+// 另外，感谢 @leoloveacm, @2013300262 同学提供测试帐号
 
 describe('poj', () => {
 
@@ -35,7 +36,7 @@ describe('hdu', () => {
   })
 
   test('test hdu', async () => {
-    const res = await hdu(null, username)
+    const res = await hdu(null, 'vjudge4')
     checkRes(res)
   })
 
@@ -48,7 +49,7 @@ describe('zoj', () => {
   })
 
   test('test zoj', async () => {
-    const res = await zoj(null, '2013300262')
+    const res = await zoj(null, username)
     checkRes(res)
   })
 
@@ -74,7 +75,7 @@ describe('dashiye', () => {
   })
 
   test('test dashiye', async () => {
-    const res = await dashiye(null, '2013300262')
+    const res = await dashiye(null, username)
     checkRes(res)
   })
 
@@ -87,7 +88,7 @@ describe('codeforces', () => {
   })
 
   test('test codeforces', async () => {
-    const res = await codeforces(null, username)
+    const res = await codeforces(null, 'leoloveacm') // 没有找到好的测试多页返回的帐号，还是用这个测试单页吧
     checkRes(res)
   })
 
@@ -105,7 +106,7 @@ test.skip('test vjudge', async () => {
 
   console.log(vjConfig)
 
-  const res = await vjudge(vjConfig, username)
+  const res = await vjudge(vjConfig, 'leoloveacm')
   checkRes(res)
 })
 
