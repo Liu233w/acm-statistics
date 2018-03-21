@@ -1,7 +1,10 @@
 <template>
   <v-card>
     <v-card-title primary-title>
-      <div class="headline">{{ workerName }}</div>
+      <div class="headline">
+        {{ crawlerTitle }}
+      </div>
+      <span class="grey--text" v-show="crawlerDescription">{{ crawlerDescription }} </span>
     </v-card-title>
     <v-container>
       <v-layout row wrap>
@@ -16,7 +19,7 @@
         </v-flex>
       </v-layout>
     </v-container>
-    <v-card-text v-show="status === WORKER_STATUS.DONE" >
+    <v-card-text v-show="status === WORKER_STATUS.DONE">
       <template v-if="errorMessage">
         <span class="red--text">{{ errorMessage }}</span>
       </template>
@@ -39,6 +42,17 @@
     </v-card-text>
     <v-card-actions>
       <v-spacer></v-spacer>
+      <v-tooltip bottom v-show="crawlerUrl">
+        <v-btn icon
+               slot="activator"
+               @click="openOj"
+        >
+          <v-icon>link</v-icon>
+        </v-btn>
+        <span>
+          转到此OJ
+        </span>
+      </v-tooltip>
       <v-tooltip bottom>
         <v-btn icon
                slot="activator"
@@ -107,10 +121,10 @@
           }
         }
       },
-      username: function(val) {
+      username: function (val) {
         this.localUsername = val
       },
-      localUsername: function(val) {
+      localUsername: function (val) {
         this.$emit('update:status', WORKER_STATUS.WAITING)
         this.resetRes()
       }
@@ -123,7 +137,21 @@
         this.$emit('update:solved', 0)
         this.$emit('update:submissions', 0)
         this.errorMessage = ''
+      },
+      openOj() {
+        window.open(this.crawlerUrl)
       }
+    },
+    computed: {
+      crawlerTitle() {
+        return this.$crawlerMeta[this.workerName].title
+      },
+      crawlerDescription() {
+        return this.$crawlerMeta[this.workerName].description
+      },
+      crawlerUrl() {
+        return this.$crawlerMeta[this.workerName].url
+      },
     }
   }
 </script>

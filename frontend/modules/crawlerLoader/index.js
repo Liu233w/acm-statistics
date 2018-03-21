@@ -4,7 +4,10 @@ const path = require('path')
 module.exports = async function (moduleOptions) {
   this.addPlugin({
     src: path.resolve(__dirname, './crawler.template.js'),
-    options: await configReader.generateBrowserCrawlerFunctions(),
+    options: {
+      crawlers: await configReader.generateBrowserCrawlerFunctions(),
+      meta: await configReader.readMetaConfigs()
+    },
     // ssr: false
   })
   this.addPlugin({
