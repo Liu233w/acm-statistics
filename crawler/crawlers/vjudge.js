@@ -42,12 +42,26 @@ module.exports = async function (config, username) {
 
   console.log('vjudge 登陆成功')
 
-  return queryForNumber(agent, username, null)
+  const acSet = new Set()
+  const submissions = await queryForNumber(agent, username, null, acSet)
+
+  return {
+    solved: acSet.size,
+    submissions: submissions
+  }
 }
 
 const MAX_PAGE_SIZE = 500
 
-async function queryForNumber(agent, username, maxId) {
+/**
+ * 递归查询题数
+ * @param agent
+ * @param username
+ * @param maxId
+ * @param acSet {Set<{String}>} - ac的题目列表，会修改此对象
+ * @returns {Promise<Number>}
+ */
+async function queryForNumber(agent, username, maxId, acSet) {
 
   // 发起请求 /////////////////////////////////////////////////////////////
   const queryObject = {
@@ -81,16 +95,13 @@ async function queryForNumber(agent, username, maxId) {
   // console.log(probremArray[0][0])
 
   if (problemArray.length === 0) {
-    return {
-      solved: 0,
-      submissions: 0
-    }
+    return 0
   }
 
-  let solved = 0
   problemArray.forEach(function (element) {
     if (element[4] === 'AC') {
-      ++solved
+      const title = element[2] + '-' + element[3]
+      acSet.add(title)
     }
   })
 
@@ -111,15 +122,9 @@ async function queryForNumber(agent, username, maxId) {
   // 递归处理（返回结果或再发起请求） ////////////////////////////////////////////
   if (total < MAX_PAGE_SIZE) {
     // 已经读完
-    return {
-      solved: solved,
-      submissions: total
-    }
+    return total
   } else {
-    const ret = await queryForNumber(agent, username, newMaxId)
-    return {
-      solved: ret.solved + solved,
-      submissions: ret.submissions + total
-    }
+    const ret = await queryForNumber(agent, username, newMaxId, acSet)
+    return ret + total
   }
 }
