@@ -116,4 +116,6 @@ function checkRes(res) {
 
   expect(res.solved).toBeGreaterThan(0)
   expect(res.submissions).toBeGreaterThan(0)
+
+  expect(res.submissions).toBeGreaterThan(res.solved)
 }
