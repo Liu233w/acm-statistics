@@ -16,7 +16,7 @@ const MAX_PAGE_SIZE = 10000
 /**
  * 递归查询题数
  * @param username
- * @param pageCount
+ * @param pageCount {Number} - 这个是页数，数字是几就是第几页
  * @param acSet {Set<{String}>} - ac的题目列表，会修改此对象
  * @returns {Promise<Number>}
  */
@@ -25,7 +25,7 @@ async function queryForNumber(username, pageCount, acSet) {
   // 发起请求 /////////////////////////////////////////////////////////////
   const queryObject = {
     handle: username,
-    from: pageCount, // 这个是页数，数字是几就是第几页
+    from: (pageCount - 1) * MAX_PAGE_SIZE + 1,
     count: MAX_PAGE_SIZE
   }
 
