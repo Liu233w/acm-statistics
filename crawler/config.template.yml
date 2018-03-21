@@ -34,6 +34,11 @@ crawlers:
       title: UVA
       description:
       url: https://uva.onlinejudge.org/
+  - name: fzu
+    meta:
+      title: FZU
+      description:
+      url: http://acm.fzu.edu.cn/index.php
   - name: vjudge
     meta:
       title: VJudge

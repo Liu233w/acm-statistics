@@ -7,6 +7,7 @@ const acdream = require('../crawlers/acdream')
 const dashiye = require('../crawlers/dashiye')
 const codeforces = require('../crawlers/codeforces')
 const uva = require('../crawlers/uva')
+const fzu = require('../crawlers/fzu')
 const vjudge = require('../crawlers/vjudge')
 const {ensureConfigAndRead} = require('../lib/configReader')
 
@@ -103,6 +104,19 @@ describe('uva', () => {
 
   test('test uva', async () => {
     const res = await uva(null, 'leoloveacm')
+    checkRes(res)
+  })
+
+})
+
+describe('fzu', () => {
+
+  test('test fzu - 用户不存在时抛出异常', async () => {
+    await expect(fzu(null, notExistUsername)).rejects.toThrow('用户不存在')
+  })
+
+  test('test fzu', async () => {
+    const res = await fzu(null, username)
     checkRes(res)
   })
 
