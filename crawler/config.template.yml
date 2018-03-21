@@ -39,6 +39,11 @@ crawlers:
       title: FZU
       description:
       url: http://acm.fzu.edu.cn/index.php
+  - name: spoj
+    meta:
+      title: SPOJ
+      description:
+      url: http://www.spoj.com/
   - name: vjudge
     meta:
       title: VJudge

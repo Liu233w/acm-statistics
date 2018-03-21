@@ -8,6 +8,7 @@ const dashiye = require('../crawlers/dashiye')
 const codeforces = require('../crawlers/codeforces')
 const uva = require('../crawlers/uva')
 const fzu = require('../crawlers/fzu')
+const spoj = require('../crawlers/spoj')
 const vjudge = require('../crawlers/vjudge')
 const {ensureConfigAndRead} = require('../lib/configReader')
 
@@ -117,6 +118,19 @@ describe('fzu', () => {
 
   test('test fzu', async () => {
     const res = await fzu(null, username)
+    checkRes(res)
+  })
+
+})
+
+describe('spoj', () => {
+
+  test('test spoj - 用户不存在时抛出异常', async () => {
+    await expect(spoj(null, notExistUsername)).rejects.toThrow('用户不存在')
+  })
+
+  test('test spoj', async () => {
+    const res = await spoj(null, username)
     checkRes(res)
   })
 
