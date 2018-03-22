@@ -77,7 +77,7 @@ module.exports = {
     ]
   },
   proxy: [
-    'http://localhost:12001/api/crawlers/',
+    'http://localhost:12001/api/crawlers',
   ],
   modules: [
     '@nuxtjs/proxy',
