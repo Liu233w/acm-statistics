@@ -1,7 +1,7 @@
 acm-statistics
 ===
 
-[![Working With ZenHub](https://img.shields.io/badge/Working_with-ZenHub-5e60ba.svg)](https://app.zenhub.com/workspace/o/liu233w/acm-statistics/boards?repos=125616473)
+[![Powered by ZenHub](https://img.shields.io/badge/Powered_by-ZenHub-5e60ba.svg)](https://app.zenhub.com/workspace/o/liu233w/acm-statistics/boards?repos=125616473)
 
 NWPU-ACM 查询工具
 
