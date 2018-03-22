@@ -6,6 +6,12 @@ crawler-api-backend
 
 ## API
 
+### GET `/api/crawlers/swagger.json`
+
+返回 swagger 的 json 形式的文档。文档在 [swagger.json](./swagger.json) 中编辑。
+
+如果 `swagger.json` 中的描述与本文档有出入，以 `swagger.json` 中的为准。
+
 ### GET `/api/crawlers/:type/:username`
 
 查询某个OJ上的用户题量

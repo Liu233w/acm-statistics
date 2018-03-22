@@ -1,0 +1,148 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "这是一个爬虫微服务。在这里可以通过 Rest API 调用 `crawler` 文件夹中的所有爬虫。 这些爬虫都是在服务器上运行的，因此您可以在任何地方使用本 API。",
+    "version": "1.0.0",
+    "title": "crawler-api-backend"
+  },
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/api/crawlers/": {
+      "get": {
+        "summary": "返回所有支持查询的 OJ",
+        "description": "",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "success",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "error": {
+                  "type": "boolean",
+                  "description": "false"
+                },
+                "data": {
+                  "type": "object",
+                  "description": "name of the crawler",
+                  "additionalProperties": {
+                    "$ref": "#/definitions/CrawlerMeta"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/crawlers/{type}/{username}": {
+      "get": {
+        "summary": "查询某个OJ上的用户题量",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "type",
+            "required": true,
+            "type": "string",
+            "description": "OJ类型，只包括在 `/crawler/config.yml` 中定义的类型"
+          },
+          {
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful",
+            "schema": {
+              "$ref": "#/definitions/Ok"
+            }
+          },
+          "400": {
+            "description": "all other fails",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "CrawlerMeta": {
+      "type": "object",
+      "description": "爬虫的元信息",
+      "properties": {
+        "title": {
+          "type": "string",
+          "description": "爬虫的标题"
+        },
+        "description": {
+          "type": "string",
+          "description": "爬虫的说明"
+        },
+        "url": {
+          "type": "string",
+          "description": "爬虫要爬的网址"
+        }
+      }
+    },
+    "UserState": {
+      "type": "object",
+      "description": "用户的题量状况",
+      "properties": {
+        "solved": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "submissions": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "Ok": {
+      "type": "object",
+      "properties": {
+        "error": {
+          "type": "boolean",
+          "description": "false"
+        },
+        "data": {
+          "$ref": "#/definitions/UserState"
+        }
+      }
+    },
+    "Error": {
+      "type": "object",
+      "properties": {
+        "error": {
+          "type": "boolean",
+          "description": "true"
+        },
+        "message": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "externalDocs": {
+    "description": "后端文档",
+    "url": "https://github.com/Liu233w/acm-statistics/blob/master/crawler-api-backend/README.md"
+  }
+}

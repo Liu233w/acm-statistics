@@ -9,8 +9,17 @@ let crawlerMeta
 configReader.readMetaConfigs()
   .then(res => crawlerMeta = res)
 
+const swagger = require('./swagger.json')
 
 const router = new Router()
+
+router.get('/api/crawlers/swagger.json', async (ctx, next) => {
+  ctx.response.type = 'application/json'
+  ctx.response.state = 200
+  ctx.response.body = JSON.stringify(swagger)
+
+  await next()
+})
 
 router.get('/api/crawlers/:type/:username', async (ctx, next) => {
 
