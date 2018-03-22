@@ -9,6 +9,7 @@ const codeforces = require('../crawlers/codeforces')
 const uva = require('../crawlers/uva')
 const fzu = require('../crawlers/fzu')
 const spoj = require('../crawlers/spoj')
+const timus = require('../crawlers/timus')
 const vjudge = require('../crawlers/vjudge')
 const {ensureConfigAndRead} = require('../lib/configReader')
 
@@ -132,6 +133,20 @@ describe('spoj', () => {
   test('test spoj', async () => {
     const res = await spoj(null, username)
     checkRes(res)
+  })
+
+})
+
+describe('timus', () => {
+
+  test('test timus - 用户不存在时抛出异常', async () => {
+    await expect(timus(null, notExistUsername)).rejects.toThrow('用户不存在')
+  })
+
+  test('test timus', async () => {
+    const res = await timus(null, 'vjudge11')
+    checkRes(res)
+    expect(res.submissions).toBeGreaterThan(10)
   })
 
 })

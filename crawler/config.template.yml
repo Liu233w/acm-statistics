@@ -44,6 +44,11 @@ crawlers:
       title: SPOJ
       description:
       url: http://www.spoj.com/
+  - name: timus
+    meta:
+      title: Timus
+      description:
+      url: http://acm.timus.ru/
   - name: vjudge
     meta:
       title: VJudge
