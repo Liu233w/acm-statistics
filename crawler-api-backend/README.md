@@ -47,11 +47,15 @@ crawler-api-backend
 ```json
 {
   "error": false,
-  "data": [
-    "poj",
-    "vjudge",
-    "...其他OJ"
-  ]
+  "data": {
+    "poj": {
+      "title": "POJ",
+      "description": "",
+      "url": "http://poj.org/"
+    },
+    "vjudge": {},
+    "...其他OJ": {}
+  }
 }
 ```
 
