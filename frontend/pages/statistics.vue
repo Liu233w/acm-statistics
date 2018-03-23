@@ -55,7 +55,7 @@
     data() {
       return {
         username: '',
-        workers: []
+        workers: {}
       }
     },
     created() {
