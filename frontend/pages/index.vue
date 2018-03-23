@@ -8,7 +8,7 @@
         <v-card-title class="headline">欢迎使用 ACM-ICPC OJ题量查询工具</v-card-title>
         <v-card-text>
           <p>全新异步API + 浏览器端爬虫，查询速度加倍</p>
-          <p>免费提供题目查询 Rest API</p>
+          <p><a href="/swagger">免费提供题目查询 Rest API</a></p>
           <p>完全开源</p>
           <p>更多OJ支持中...</p>
           <p>
