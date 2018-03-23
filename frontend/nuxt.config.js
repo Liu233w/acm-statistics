@@ -20,10 +20,7 @@ module.exports = {
   },
   plugins: [
     '~/plugins/vuetify.js',
-    {
-      src: "~/plugins/debug.js",
-      ssr: false
-    }
+    "~/plugins/debug.js",
   ],
   css: [
     '~/assets/style/app.styl'
