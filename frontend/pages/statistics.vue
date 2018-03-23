@@ -21,9 +21,12 @@
         <p class="title text-xs-center"> {{username}} 的总题量： {{allSolved}} / {{allSubmissions}} </p>
       </v-flex>
     </v-layout>
-    <v-layout row v-if="working">
+    <v-layout row>
       <v-flex>
-        <v-progress-linear indeterminate color="primary" />
+        <v-progress-linear color="primary"
+                           :value="notWorkeringRate"
+                           :active="working"
+        />
       </v-flex>
     </v-layout>
     <v-layout row wrap>
@@ -77,7 +80,15 @@
       working() {
         // 是否还有worker正在工作
         return _.some(this.workers, item => item.status === WORKER_STATUS.WORKING)
-      }
+      },
+      notWorkeringRate() {
+        // 返回一个0-100的数字，表示不在WORKING状态的Worker的数量
+        const cnt = _.size(this.workers)
+        const notWorking = _.chain(this.workers)
+          .filter(item => item.status !== WORKER_STATUS.WORKING)
+          .size()
+        return notWorking / cnt * 100
+      },
     },
     methods: {
       runWorker() {
