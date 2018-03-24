@@ -2,9 +2,9 @@ const log4js = require('log4js')
 const fs = require('fs')
 const _ = require('lodash')
 
-const logConfig = require('../config/log'); // 加载配置文件
+const logConfig = require('../config/log') // 加载配置文件
 
-log4js.configure(logConfig); // 将配置添加到log4js中
+log4js.configure(logConfig) // 将配置添加到log4js中
 
 let logUtil = {}
 
@@ -58,19 +58,19 @@ const formatRes = (ctx, resTime) => {
   var logText = new String()
 
   //响应日志开始
-  logText += "\n" + "*************** response log start ***************" + "\n"
+  logText += '\n' + '*************** response log start ***************' + '\n'
 
   //添加请求日志
   logText += formatReqLog(ctx.request, resTime)
 
   //响应状态码
-  logText += "response status: " + ctx.status + "\n"
+  logText += 'response status: ' + ctx.status + '\n'
 
   //响应内容
-  logText += "response body: " + "\n" + JSON.stringify(ctx.body) + "\n"
+  logText += 'response body: ' + '\n' + JSON.stringify(ctx.body) + '\n'
 
   //响应日志结束
-  logText += "*************** response log end ***************" + "\n"
+  logText += '*************** response log end ***************' + '\n'
 
   return logText
 }
@@ -80,7 +80,7 @@ const formatError = (ctx, err, resTime) => {
   var logText = ''
 
   //错误信息开始
-  logText += `\n*************** error log start ***************\n`
+  logText += '\n*************** error log start ***************\n'
 
   //添加请求日志
   logText += formatReqLog(ctx.request, resTime)
@@ -93,7 +93,7 @@ const formatError = (ctx, err, resTime) => {
   logText += `err stack:${err.stack}\n`
 
   //错误信息结束
-  logText += `*************** error log end ***************\n`
+  logText += '*************** error log end ***************\n'
 
   return logText
 }

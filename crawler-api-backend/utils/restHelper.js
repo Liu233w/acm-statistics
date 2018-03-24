@@ -2,9 +2,6 @@
  * 方便写 rest API 的中间件
  */
 
-function restResponse(ctx, data) {
-}
-
 module.exports = async function (ctx, next) {
 
   ctx.rest = function (data) {
@@ -12,7 +9,7 @@ module.exports = async function (ctx, next) {
     ctx.response.type = 'application/json'
     ctx.response.body = {
       error: false,
-      data: data
+      data: data,
     }
   }
 
@@ -21,7 +18,7 @@ module.exports = async function (ctx, next) {
     ctx.response.type = 'application/json'
     ctx.response.body = {
       error: true,
-      message: message
+      message: message,
     }
   }
 

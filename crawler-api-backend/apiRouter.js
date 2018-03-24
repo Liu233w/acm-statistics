@@ -1,4 +1,4 @@
-const Router = require('koa-router');
+const Router = require('koa-router')
 const _ = require('lodash')
 
 const configReader = require('../crawler/lib/configReader')
@@ -25,7 +25,7 @@ router.get('/api/crawlers/:type/:username', async (ctx, next) => {
 
   const ojFunc = crawlers[ctx.params.type]
 
-  if (typeof ojFunc !== 'function') {
+  if (!_.isFunction(ojFunc)) {
     throw new Error('不存在此OJ的爬虫')
   }
 

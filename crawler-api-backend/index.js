@@ -1,7 +1,7 @@
 const koa = require('koa')
 
 const restHelper = require('./utils/restHelper')
-const logUtil = require('./utils/logUtil');
+const logUtil = require('./utils/logUtil')
 
 const app = new koa()
 const apiRouter = require('./apiRouter')
