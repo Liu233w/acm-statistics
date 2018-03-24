@@ -25,23 +25,23 @@
       </template>
       <template v-else>
         <span class="grey--text">SOLVED: </span> {{ solved }}
-        <br/>
+        <br>
         <span class="grey--text">SUBMISSIONS: </span> {{ submissions }}
       </template>
     </v-card-text>
     <v-card-text v-show="status === WORKER_STATUS.WORKING">
       <v-container>
         <v-layout row>
-          <v-spacer></v-spacer>
+          <v-spacer/>
           <v-flex xs2>
-            <v-progress-circular indeterminate color="primary"></v-progress-circular>
+            <v-progress-circular indeterminate color="primary"/>
           </v-flex>
-          <v-spacer></v-spacer>
+          <v-spacer/>
         </v-layout>
       </v-container>
     </v-card-text>
     <v-card-actions>
-      <v-spacer></v-spacer>
+      <v-spacer/>
       <v-tooltip bottom v-show="crawlerUrl">
         <v-btn icon
                slot="activator"
@@ -71,38 +71,38 @@
   import {WORKER_STATUS} from './consts'
 
   export default {
-    name: "crawler-worker",
+    name: 'CrawlerWorker',
     props: {
       status: {
         type: String,
-        default: WORKER_STATUS.WAITING
+        default: WORKER_STATUS.WAITING,
       },
       username: {
         type: String,
-        required: true
+        required: true,
       },
       solved: {
         type: Number,
-        default: 0
+        default: 0,
       },
       submissions: {
         type: Number,
-        default: 0
+        default: 0,
       },
       workerName: {
         type: String,
-        required: true
+        required: true,
       },
       func: {
         type: Function,
-        required: true
-      }
+        required: true,
+      },
     },
     data() {
       return {
         localUsername: this.username,
         errorMessage: '',
-        WORKER_STATUS: WORKER_STATUS
+        WORKER_STATUS: WORKER_STATUS,
       }
     },
     watch: {
@@ -124,10 +124,10 @@
       username: function (val) {
         this.localUsername = val
       },
-      localUsername: function (val) {
+      localUsername: function () {
         this.$emit('update:status', WORKER_STATUS.WAITING)
         this.resetRes()
-      }
+      },
     },
     methods: {
       /**
@@ -140,7 +140,7 @@
       },
       openOj() {
         window.open(this.crawlerUrl)
-      }
+      },
     },
     computed: {
       crawlerTitle() {
@@ -152,7 +152,7 @@
       crawlerUrl() {
         return this.$crawlerMeta[this.workerName].url
       },
-    }
+    },
   }
 </script>
 

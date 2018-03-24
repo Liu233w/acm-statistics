@@ -1,5 +1,5 @@
 export const WORKER_STATUS = {
   WAITING: 'WAITING',
   WORKING: 'WORKING',
-  DONE: 'DONE'
+  DONE: 'DONE',
 }

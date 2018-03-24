@@ -2,7 +2,7 @@
   <v-layout column justify-center align-center>
     <v-flex xs12 sm8 md6>
       <div class="text-xs-center">
-        <img src="/img/logo.png" alt="ACM-ICPC 协会"/>
+        <img src="/img/logo.png" alt="ACM-ICPC 协会">
       </div>
       <v-card>
         <v-card-title class="headline">欢迎使用 ACM-ICPC OJ题量查询工具</v-card-title>
@@ -19,7 +19,7 @@
           <a href="mailto:support@npuacm.info">联系我们</a>
           <br>
           <a href="https://github.com/Liu233w/acm-statistics" target="_blank">源代码</a>
-          <br/>
+          <br>
           <a href="http://npuacm.info/">返回旧版查询系统</a>
         </v-card-text>
       </v-card>

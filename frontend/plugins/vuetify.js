@@ -37,5 +37,5 @@ Vue.use(Vuetify, {
     VProgressLinear,
     VAvatar,
     VJumbotron,
-  }
+  },
 })

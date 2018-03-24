@@ -10,9 +10,9 @@ const getFunc = superagent.get
 const postFunc = superagent.post
 
 superagent.get = function (url) {
-  return getFunc(corsProxyUrl+url)
+  return getFunc(corsProxyUrl + url)
 }
 
-superagent.post=function (url) {
-  return postFunc(corsProxyUrl+url)
+superagent.post = function (url) {
+  return postFunc(corsProxyUrl + url)
 }
