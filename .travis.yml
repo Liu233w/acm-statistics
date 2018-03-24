@@ -1,0 +1,55 @@
+notifications:
+  email:
+    on_success: never
+    on_failure: always
+
+language: node_js
+node_js:
+  - 8
+
+stages:
+  - name: test
+  - name: deploy
+    if: tag =~ ^v
+
+matrix:
+  include:
+    - env: NAME=Frontend
+      stage: test
+      cache:
+        directories:
+          - frontend/node_modules
+
+      install:
+        - cd frontend
+        - npm install
+
+      script:
+        - npm run lint
+        - npm run build
+
+    - env: NAME=Crawler
+      stage: test
+      cache:
+        directories:
+          - crawler/node_modules
+
+      install:
+        - cd crawler
+        - npm install
+
+      script:
+        - npm run lint
+
+    - env: NAME=Crawler-api-backend
+      stage: test
+      cache:
+        directories:
+          - crawler-api-backend/node_modules
+
+      install:
+        - cd crawler-api-backend
+        - npm install
+
+      script:
+        - npm run lint
