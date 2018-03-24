@@ -3,10 +3,14 @@
   "description": "存放所有爬虫",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "lint": "eslint --ext .js .",
+    "lintfix": "eslint --fix --ext .js ."
   },
   "dependencies": {
     "cheerio": "^1.0.0-rc.2",
+    "eslint": "^4.19.1",
+    "eslint-plugin-lodash": "^2.7.0",
     "fs-extra": "^5.0.0",
     "jest": "^22.4.2",
     "js-yaml": "^3.11.0",
