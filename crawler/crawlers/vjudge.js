@@ -22,14 +22,14 @@ module.exports = async function (config, username) {
 
   const agent = request.agent()
 
-  let loginStatus;
+  let loginStatus
   try {
     loginStatus = await agent
       .post(`https://${hostName}/user/login`)
       .type('form')
       .send({
         'username': config.crawler_login_user,
-        'password': config.crawler_login_password
+        'password': config.crawler_login_password,
       })
   } catch (err) {
     const error = new Error('vjudge 爬虫登录失败')
@@ -47,7 +47,7 @@ module.exports = async function (config, username) {
 
   return {
     solved: acSet.size,
-    submissions: submissions
+    submissions: submissions,
   }
 }
 
@@ -66,7 +66,7 @@ async function queryForNumber(agent, username, maxId, acSet) {
   // 发起请求 /////////////////////////////////////////////////////////////
   const queryObject = {
     username: username,
-    pageSize: MAX_PAGE_SIZE
+    pageSize: MAX_PAGE_SIZE,
   }
 
   if (maxId) {

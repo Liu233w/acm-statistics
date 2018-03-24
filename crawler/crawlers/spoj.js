@@ -28,7 +28,7 @@ module.exports = async function (config, username) {
   try {
     return {
       submissions: Number($('span.fa.fa-send.fa-fw').parent().next().text()),
-      solved: Number($('span.fa.fa-check.fa-fw').parent().next().text())
+      solved: Number($('span.fa.fa-check.fa-fw').parent().next().text()),
     }
   } catch (e) {
     throw new Error('无法解析数据')

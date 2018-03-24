@@ -27,11 +27,9 @@ module.exports = async function (config, username) {
 
     return {
       solved: Number(solvedTd.next().children().text()),
-      submissions: Number(submitTd.next().children().text())
+      submissions: Number(submitTd.next().children().text()),
     }
   } catch (e) {
     throw new Error('无法解析数据')
   }
-
-  return ret
 }

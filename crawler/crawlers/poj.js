@@ -29,7 +29,7 @@ module.exports = async function (config, username) {
   try {
     ret = {
       solved: Number($('a[href^="status?result=0&user_id="]').text()),
-      submissions: Number($('a[href^="status?user_id="]').text())
+      submissions: Number($('a[href^="status?user_id="]').text()),
     }
   } catch (e) {
     throw new Error('无法解析数据')

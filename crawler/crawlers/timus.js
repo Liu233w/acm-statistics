@@ -29,7 +29,7 @@ module.exports = async function (config, username) {
 
   return {
     solved: solved,
-    submissions: submissions
+    submissions: submissions,
   }
 }
 

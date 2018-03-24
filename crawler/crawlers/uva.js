@@ -25,6 +25,6 @@ module.exports = async function (config, username) {
 
   return {
     solved: acSet.size,
-    submissions: problemArray.length
+    submissions: problemArray.length,
   }
 }

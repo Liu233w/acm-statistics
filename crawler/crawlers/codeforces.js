@@ -7,7 +7,7 @@ module.exports = async function (config, username) {
 
   return {
     solved: acSet.size,
-    submissions: submissions
+    submissions: submissions,
   }
 }
 
@@ -26,7 +26,7 @@ async function queryForNumber(username, pageCount, acSet) {
   const queryObject = {
     handle: username,
     from: (pageCount - 1) * MAX_PAGE_SIZE + 1,
-    count: MAX_PAGE_SIZE
+    count: MAX_PAGE_SIZE,
   }
 
   let res = null

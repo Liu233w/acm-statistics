@@ -24,11 +24,9 @@ module.exports = async function (config, username) {
   try {
     return {
       solved: Number($('img[src="/img/yes.png"]').next().text()),
-      submissions: Number($('img[src="/img/submit.png"]').next().text())
+      submissions: Number($('img[src="/img/submit.png"]').next().text()),
     }
   } catch (e) {
     throw new Error('无法解析数据')
   }
-
-  return ret
 }

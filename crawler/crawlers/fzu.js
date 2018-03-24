@@ -24,7 +24,7 @@ module.exports = async function (config, username) {
   try {
     return {
       submissions: Number($('td').filter((i,el)=>$(el).text()==='Total Submitted').next().text()),
-      solved: Number($('td').filter((i,el)=>$(el).text()==='Total Accepted').next().text())
+      solved: Number($('td').filter((i,el)=>$(el).text()==='Total Accepted').next().text()),
     }
   } catch (e) {
     throw new Error('无法解析数据')

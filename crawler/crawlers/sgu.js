@@ -20,11 +20,11 @@ module.exports = async function (config, username) {
   try {
     const text = $('td').filter((i, el) => $(el).text() === 'Statistic').next().text()
     // text同时包含普通空格和宽字符空格，这两个都要分开
-    const splitted = text.split(/ | /) // [':', 'Submitted:', '25325;', 'Accepted:', '406', '[details]']
+    const splitted = text.split(new RegExp(' | ')) // [':', 'Submitted:', '25325;', 'Accepted:', '406', '[details]']
     const submitStr = splitted[2]
     return {
       solved: Number(splitted[4]),
-      submissions: Number(submitStr.substr(0, submitStr.length - 1))
+      submissions: Number(submitStr.substr(0, submitStr.length - 1)),
     }
   } catch (e) {
     throw new Error('无法解析数据')
