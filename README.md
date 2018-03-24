@@ -2,6 +2,7 @@ acm-statistics
 ===
 
 [![Powered by ZenHub](https://img.shields.io/badge/Powered_by-ZenHub-5e60ba.svg)](https://app.zenhub.com/workspace/o/liu233w/acm-statistics/boards?repos=125616473)
+[![Build Status](https://travis-ci.org/Liu233w/acm-statistics.svg?branch=master)](https://travis-ci.org/Liu233w/acm-statistics)
 
 NWPU-ACM 查询工具
 
