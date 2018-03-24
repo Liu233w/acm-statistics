@@ -19,9 +19,12 @@ matrix:
       cache:
         directories:
           - frontend/node_modules
+          - crawler/node_modules
 
       install:
-        - cd frontend
+        - cd crawler
+        - npm install
+        - cd ../frontend
         - npm install
 
       script:
