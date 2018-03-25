@@ -1197,9 +1197,9 @@ exports[`/statistics 1`] = `
   background: #ffc107 !important;
 }
     </style>
-    <style data-vue-ssr-id="29d41169:0">
+    <style>
     </style>
-    <style data-vue-ssr-id="72235820:0">
+    <style>
     </style>
   </head>
   <body data-n-head>
@@ -1291,18 +1291,10 @@ exports[`/statistics 1`] = `
             >
               <div class="content--wrap">
                 <div class="container">
-                  <div class="container grid-list-md"
-                       data-v-e1f9636e
-                  >
-                    <div class="layout row"
-                         data-v-e1f9636e
-                    >
-                      <div class="flex xs8"
-                           data-v-e1f9636e
-                      >
-                        <div class="input-group input-group--required input-group--text-field primary--text"
-                             data-v-e1f9636e
-                        >
+                  <div class="container grid-list-md">
+                    <div class="layout row">
+                      <div class="flex xs8">
+                        <div class="input-group input-group--required input-group--text-field primary--text">
                           <label>
                             &#x7EDF;&#x4E00;&#x8BBE;&#x7F6E;&#x7528;&#x6237;&#x540D;
                           </label>
@@ -1318,13 +1310,10 @@ exports[`/statistics 1`] = `
                           </div>
                         </div>
                       </div>
-                      <div class="flex xs4"
-                           data-v-e1f9636e
-                      >
+                      <div class="flex xs4">
                         <button type="button"
                                 primary
                                 class="btn"
-                                data-v-e1f9636e
                         >
                           <div class="btn__content">
                             &#x5F00;&#x59CB;&#x67E5;&#x8BE2;
@@ -1332,15 +1321,10 @@ exports[`/statistics 1`] = `
                         </button>
                       </div>
                     </div>
-                    <div class="layout row"
-                         data-v-e1f9636e
-                    >
-                      <div class="flex"
-                           data-v-e1f9636e
-                      >
+                    <div class="layout row">
+                      <div class="flex">
                         <div class="progress-linear"
                              style="height:7px;"
-                             data-v-e1f9636e
                         >
                           <div class="progress-linear__background primary"
                                style="height:0;opacity:0.3;width:100%;"
@@ -1357,43 +1341,24 @@ exports[`/statistics 1`] = `
                         </div>
                       </div>
                     </div>
-                    <div class="layout row wrap"
-                         data-v-e1f9636e
-                    >
-                      <div class="flex xs12 sm6 md4 xl3"
-                           data-v-e1f9636e
-                      >
+                    <div class="layout row wrap">
+                      <div class="flex xs12 sm6 md4 xl3">
                         <div class="card"
                              style="height:auto;"
-                             data-v-b8c70e4c
-                             data-v-e1f9636e
                         >
-                          <div class="card__title card__title--primary"
-                               data-v-b8c70e4c
-                          >
-                            <div class="headline"
-                                 data-v-b8c70e4c
-                            >
+                          <div class="card__title card__title--primary">
+                            <div class="headline">
                               POJ
                             </div>
                             <span class="grey--text"
                                   style="display:none;"
-                                  data-v-b8c70e4c
                             >
                             </span>
                           </div>
-                          <div class="container"
-                               data-v-b8c70e4c
-                          >
-                            <div class="layout row wrap"
-                                 data-v-b8c70e4c
-                            >
-                              <div class="flex xs12"
-                                   data-v-b8c70e4c
-                              >
-                                <div class="input-group input-group--required input-group--text-field primary--text"
-                                     data-v-b8c70e4c
-                                >
+                          <div class="container">
+                            <div class="layout row wrap">
+                              <div class="flex xs12">
+                                <div class="input-group input-group--required input-group--text-field primary--text">
                                   <label>
                                     Username
                                   </label>
@@ -1413,42 +1378,27 @@ exports[`/statistics 1`] = `
                           </div>
                           <div class="card__text"
                                style="display:none;"
-                               data-v-b8c70e4c
                           >
-                            <span class="grey--text"
-                                  data-v-b8c70e4c
-                            >
+                            <span class="grey--text">
                               SOLVED:
                             </span>
                             0
-                            <br data-v-b8c70e4c>
-                            <span class="grey--text"
-                                  data-v-b8c70e4c
-                            >
+                            <br>
+                            <span class="grey--text">
                               SUBMISSIONS:
                             </span>
                             0
                           </div>
                           <div class="card__text"
                                style="display:none;"
-                               data-v-b8c70e4c
                           >
-                            <div class="container"
-                                 data-v-b8c70e4c
-                            >
-                              <div class="layout row"
-                                   data-v-b8c70e4c
-                              >
-                                <div class="spacer"
-                                     data-v-b8c70e4c
-                                >
+                            <div class="container">
+                              <div class="layout row">
+                                <div class="spacer">
                                 </div>
-                                <div class="flex xs2"
-                                     data-v-b8c70e4c
-                                >
+                                <div class="flex xs2">
                                   <div class="progress-circular progress-circular--indeterminate primary--text"
                                        style="height:32px;width:32px;"
-                                       data-v-b8c70e4c
                                   >
                                     <svg xmlns="http://www.w3.org/2000/svg"
                                          viewbox="25 25 50 50"
@@ -1469,39 +1419,29 @@ exports[`/statistics 1`] = `
                                     </div>
                                   </div>
                                 </div>
-                                <div class="spacer"
-                                     data-v-b8c70e4c
-                                >
+                                <div class="spacer">
                                 </div>
                               </div>
                             </div>
                           </div>
-                          <div class="card__actions"
-                               data-v-b8c70e4c
-                          >
-                            <div class="spacer"
-                                 data-v-b8c70e4c
-                            >
+                          <div class="card__actions">
+                            <div class="spacer">
                             </div>
-                            <span class="tooltip tooltip--bottom"
-                                  data-v-b8c70e4c
-                            >
+                            <span class="tooltip tooltip--bottom">
                               <div class="tooltip__content"
                                    style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"
                               >
-                                <span data-v-b8c70e4c>
+                                <span>
                                   &#x8F6C;&#x5230;&#x6B64;OJ
                                 </span>
                               </div>
                               <span>
                                 <button type="button"
                                         class="btn btn--icon"
-                                        data-v-b8c70e4c
                                 >
                                   <div class="btn__content">
                                     <i aria-hidden="true"
                                        class="icon material-icons"
-                                       data-v-b8c70e4c
                                     >
                                       link
                                     </i>
@@ -1509,25 +1449,21 @@ exports[`/statistics 1`] = `
                                 </button>
                               </span>
                             </span>
-                            <span class="tooltip tooltip--bottom"
-                                  data-v-b8c70e4c
-                            >
+                            <span class="tooltip tooltip--bottom">
                               <div class="tooltip__content"
                                    style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"
                               >
-                                <span data-v-b8c70e4c>
+                                <span>
                                   &#x91CD;&#x65B0;&#x722C;&#x53D6;&#x6B64;&#x5904;&#x4FE1;&#x606F;
                                 </span>
                               </div>
                               <span>
                                 <button type="button"
                                         class="btn btn--icon"
-                                        data-v-b8c70e4c
                                 >
                                   <div class="btn__content">
                                     <i aria-hidden="true"
                                        class="icon material-icons"
-                                       data-v-b8c70e4c
                                     >
                                       refresh
                                     </i>
@@ -1538,40 +1474,23 @@ exports[`/statistics 1`] = `
                           </div>
                         </div>
                       </div>
-                      <div class="flex xs12 sm6 md4 xl3"
-                           data-v-e1f9636e
-                      >
+                      <div class="flex xs12 sm6 md4 xl3">
                         <div class="card"
                              style="height:auto;"
-                             data-v-b8c70e4c
-                             data-v-e1f9636e
                         >
-                          <div class="card__title card__title--primary"
-                               data-v-b8c70e4c
-                          >
-                            <div class="headline"
-                                 data-v-b8c70e4c
-                            >
+                          <div class="card__title card__title--primary">
+                            <div class="headline">
                               HDU
                             </div>
                             <span class="grey--text"
                                   style="display:none;"
-                                  data-v-b8c70e4c
                             >
                             </span>
                           </div>
-                          <div class="container"
-                               data-v-b8c70e4c
-                          >
-                            <div class="layout row wrap"
-                                 data-v-b8c70e4c
-                            >
-                              <div class="flex xs12"
-                                   data-v-b8c70e4c
-                              >
-                                <div class="input-group input-group--required input-group--text-field primary--text"
-                                     data-v-b8c70e4c
-                                >
+                          <div class="container">
+                            <div class="layout row wrap">
+                              <div class="flex xs12">
+                                <div class="input-group input-group--required input-group--text-field primary--text">
                                   <label>
                                     Username
                                   </label>
@@ -1591,42 +1510,27 @@ exports[`/statistics 1`] = `
                           </div>
                           <div class="card__text"
                                style="display:none;"
-                               data-v-b8c70e4c
                           >
-                            <span class="grey--text"
-                                  data-v-b8c70e4c
-                            >
+                            <span class="grey--text">
                               SOLVED:
                             </span>
                             0
-                            <br data-v-b8c70e4c>
-                            <span class="grey--text"
-                                  data-v-b8c70e4c
-                            >
+                            <br>
+                            <span class="grey--text">
                               SUBMISSIONS:
                             </span>
                             0
                           </div>
                           <div class="card__text"
                                style="display:none;"
-                               data-v-b8c70e4c
                           >
-                            <div class="container"
-                                 data-v-b8c70e4c
-                            >
-                              <div class="layout row"
-                                   data-v-b8c70e4c
-                              >
-                                <div class="spacer"
-                                     data-v-b8c70e4c
-                                >
+                            <div class="container">
+                              <div class="layout row">
+                                <div class="spacer">
                                 </div>
-                                <div class="flex xs2"
-                                     data-v-b8c70e4c
-                                >
+                                <div class="flex xs2">
                                   <div class="progress-circular progress-circular--indeterminate primary--text"
                                        style="height:32px;width:32px;"
-                                       data-v-b8c70e4c
                                   >
                                     <svg xmlns="http://www.w3.org/2000/svg"
                                          viewbox="25 25 50 50"
@@ -1647,39 +1551,29 @@ exports[`/statistics 1`] = `
                                     </div>
                                   </div>
                                 </div>
-                                <div class="spacer"
-                                     data-v-b8c70e4c
-                                >
+                                <div class="spacer">
                                 </div>
                               </div>
                             </div>
                           </div>
-                          <div class="card__actions"
-                               data-v-b8c70e4c
-                          >
-                            <div class="spacer"
-                                 data-v-b8c70e4c
-                            >
+                          <div class="card__actions">
+                            <div class="spacer">
                             </div>
-                            <span class="tooltip tooltip--bottom"
-                                  data-v-b8c70e4c
-                            >
+                            <span class="tooltip tooltip--bottom">
                               <div class="tooltip__content"
                                    style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"
                               >
-                                <span data-v-b8c70e4c>
+                                <span>
                                   &#x8F6C;&#x5230;&#x6B64;OJ
                                 </span>
                               </div>
                               <span>
                                 <button type="button"
                                         class="btn btn--icon"
-                                        data-v-b8c70e4c
                                 >
                                   <div class="btn__content">
                                     <i aria-hidden="true"
                                        class="icon material-icons"
-                                       data-v-b8c70e4c
                                     >
                                       link
                                     </i>
@@ -1687,25 +1581,21 @@ exports[`/statistics 1`] = `
                                 </button>
                               </span>
                             </span>
-                            <span class="tooltip tooltip--bottom"
-                                  data-v-b8c70e4c
-                            >
+                            <span class="tooltip tooltip--bottom">
                               <div class="tooltip__content"
                                    style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"
                               >
-                                <span data-v-b8c70e4c>
+                                <span>
                                   &#x91CD;&#x65B0;&#x722C;&#x53D6;&#x6B64;&#x5904;&#x4FE1;&#x606F;
                                 </span>
                               </div>
                               <span>
                                 <button type="button"
                                         class="btn btn--icon"
-                                        data-v-b8c70e4c
                                 >
                                   <div class="btn__content">
                                     <i aria-hidden="true"
                                        class="icon material-icons"
-                                       data-v-b8c70e4c
                                     >
                                       refresh
                                     </i>
@@ -1716,40 +1606,23 @@ exports[`/statistics 1`] = `
                           </div>
                         </div>
                       </div>
-                      <div class="flex xs12 sm6 md4 xl3"
-                           data-v-e1f9636e
-                      >
+                      <div class="flex xs12 sm6 md4 xl3">
                         <div class="card"
                              style="height:auto;"
-                             data-v-b8c70e4c
-                             data-v-e1f9636e
                         >
-                          <div class="card__title card__title--primary"
-                               data-v-b8c70e4c
-                          >
-                            <div class="headline"
-                                 data-v-b8c70e4c
-                            >
+                          <div class="card__title card__title--primary">
+                            <div class="headline">
                               ZOJ
                             </div>
                             <span class="grey--text"
                                   style="display:none;"
-                                  data-v-b8c70e4c
                             >
                             </span>
                           </div>
-                          <div class="container"
-                               data-v-b8c70e4c
-                          >
-                            <div class="layout row wrap"
-                                 data-v-b8c70e4c
-                            >
-                              <div class="flex xs12"
-                                   data-v-b8c70e4c
-                              >
-                                <div class="input-group input-group--required input-group--text-field primary--text"
-                                     data-v-b8c70e4c
-                                >
+                          <div class="container">
+                            <div class="layout row wrap">
+                              <div class="flex xs12">
+                                <div class="input-group input-group--required input-group--text-field primary--text">
                                   <label>
                                     Username
                                   </label>
@@ -1769,42 +1642,27 @@ exports[`/statistics 1`] = `
                           </div>
                           <div class="card__text"
                                style="display:none;"
-                               data-v-b8c70e4c
                           >
-                            <span class="grey--text"
-                                  data-v-b8c70e4c
-                            >
+                            <span class="grey--text">
                               SOLVED:
                             </span>
                             0
-                            <br data-v-b8c70e4c>
-                            <span class="grey--text"
-                                  data-v-b8c70e4c
-                            >
+                            <br>
+                            <span class="grey--text">
                               SUBMISSIONS:
                             </span>
                             0
                           </div>
                           <div class="card__text"
                                style="display:none;"
-                               data-v-b8c70e4c
                           >
-                            <div class="container"
-                                 data-v-b8c70e4c
-                            >
-                              <div class="layout row"
-                                   data-v-b8c70e4c
-                              >
-                                <div class="spacer"
-                                     data-v-b8c70e4c
-                                >
+                            <div class="container">
+                              <div class="layout row">
+                                <div class="spacer">
                                 </div>
-                                <div class="flex xs2"
-                                     data-v-b8c70e4c
-                                >
+                                <div class="flex xs2">
                                   <div class="progress-circular progress-circular--indeterminate primary--text"
                                        style="height:32px;width:32px;"
-                                       data-v-b8c70e4c
                                   >
                                     <svg xmlns="http://www.w3.org/2000/svg"
                                          viewbox="25 25 50 50"
@@ -1825,39 +1683,29 @@ exports[`/statistics 1`] = `
                                     </div>
                                   </div>
                                 </div>
-                                <div class="spacer"
-                                     data-v-b8c70e4c
-                                >
+                                <div class="spacer">
                                 </div>
                               </div>
                             </div>
                           </div>
-                          <div class="card__actions"
-                               data-v-b8c70e4c
-                          >
-                            <div class="spacer"
-                                 data-v-b8c70e4c
-                            >
+                          <div class="card__actions">
+                            <div class="spacer">
                             </div>
-                            <span class="tooltip tooltip--bottom"
-                                  data-v-b8c70e4c
-                            >
+                            <span class="tooltip tooltip--bottom">
                               <div class="tooltip__content"
                                    style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"
                               >
-                                <span data-v-b8c70e4c>
+                                <span>
                                   &#x8F6C;&#x5230;&#x6B64;OJ
                                 </span>
                               </div>
                               <span>
                                 <button type="button"
                                         class="btn btn--icon"
-                                        data-v-b8c70e4c
                                 >
                                   <div class="btn__content">
                                     <i aria-hidden="true"
                                        class="icon material-icons"
-                                       data-v-b8c70e4c
                                     >
                                       link
                                     </i>
@@ -1865,25 +1713,21 @@ exports[`/statistics 1`] = `
                                 </button>
                               </span>
                             </span>
-                            <span class="tooltip tooltip--bottom"
-                                  data-v-b8c70e4c
-                            >
+                            <span class="tooltip tooltip--bottom">
                               <div class="tooltip__content"
                                    style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"
                               >
-                                <span data-v-b8c70e4c>
+                                <span>
                                   &#x91CD;&#x65B0;&#x722C;&#x53D6;&#x6B64;&#x5904;&#x4FE1;&#x606F;
                                 </span>
                               </div>
                               <span>
                                 <button type="button"
                                         class="btn btn--icon"
-                                        data-v-b8c70e4c
                                 >
                                   <div class="btn__content">
                                     <i aria-hidden="true"
                                        class="icon material-icons"
-                                       data-v-b8c70e4c
                                     >
                                       refresh
                                     </i>
@@ -1894,40 +1738,23 @@ exports[`/statistics 1`] = `
                           </div>
                         </div>
                       </div>
-                      <div class="flex xs12 sm6 md4 xl3"
-                           data-v-e1f9636e
-                      >
+                      <div class="flex xs12 sm6 md4 xl3">
                         <div class="card"
                              style="height:auto;"
-                             data-v-b8c70e4c
-                             data-v-e1f9636e
                         >
-                          <div class="card__title card__title--primary"
-                               data-v-b8c70e4c
-                          >
-                            <div class="headline"
-                                 data-v-b8c70e4c
-                            >
+                          <div class="card__title card__title--primary">
+                            <div class="headline">
                               ACdream
                             </div>
                             <span class="grey--text"
                                   style="display:none;"
-                                  data-v-b8c70e4c
                             >
                             </span>
                           </div>
-                          <div class="container"
-                               data-v-b8c70e4c
-                          >
-                            <div class="layout row wrap"
-                                 data-v-b8c70e4c
-                            >
-                              <div class="flex xs12"
-                                   data-v-b8c70e4c
-                              >
-                                <div class="input-group input-group--required input-group--text-field primary--text"
-                                     data-v-b8c70e4c
-                                >
+                          <div class="container">
+                            <div class="layout row wrap">
+                              <div class="flex xs12">
+                                <div class="input-group input-group--required input-group--text-field primary--text">
                                   <label>
                                     Username
                                   </label>
@@ -1947,42 +1774,27 @@ exports[`/statistics 1`] = `
                           </div>
                           <div class="card__text"
                                style="display:none;"
-                               data-v-b8c70e4c
                           >
-                            <span class="grey--text"
-                                  data-v-b8c70e4c
-                            >
+                            <span class="grey--text">
                               SOLVED:
                             </span>
                             0
-                            <br data-v-b8c70e4c>
-                            <span class="grey--text"
-                                  data-v-b8c70e4c
-                            >
+                            <br>
+                            <span class="grey--text">
                               SUBMISSIONS:
                             </span>
                             0
                           </div>
                           <div class="card__text"
                                style="display:none;"
-                               data-v-b8c70e4c
                           >
-                            <div class="container"
-                                 data-v-b8c70e4c
-                            >
-                              <div class="layout row"
-                                   data-v-b8c70e4c
-                              >
-                                <div class="spacer"
-                                     data-v-b8c70e4c
-                                >
+                            <div class="container">
+                              <div class="layout row">
+                                <div class="spacer">
                                 </div>
-                                <div class="flex xs2"
-                                     data-v-b8c70e4c
-                                >
+                                <div class="flex xs2">
                                   <div class="progress-circular progress-circular--indeterminate primary--text"
                                        style="height:32px;width:32px;"
-                                       data-v-b8c70e4c
                                   >
                                     <svg xmlns="http://www.w3.org/2000/svg"
                                          viewbox="25 25 50 50"
@@ -2003,39 +1815,29 @@ exports[`/statistics 1`] = `
                                     </div>
                                   </div>
                                 </div>
-                                <div class="spacer"
-                                     data-v-b8c70e4c
-                                >
+                                <div class="spacer">
                                 </div>
                               </div>
                             </div>
                           </div>
-                          <div class="card__actions"
-                               data-v-b8c70e4c
-                          >
-                            <div class="spacer"
-                                 data-v-b8c70e4c
-                            >
+                          <div class="card__actions">
+                            <div class="spacer">
                             </div>
-                            <span class="tooltip tooltip--bottom"
-                                  data-v-b8c70e4c
-                            >
+                            <span class="tooltip tooltip--bottom">
                               <div class="tooltip__content"
                                    style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"
                               >
-                                <span data-v-b8c70e4c>
+                                <span>
                                   &#x8F6C;&#x5230;&#x6B64;OJ
                                 </span>
                               </div>
                               <span>
                                 <button type="button"
                                         class="btn btn--icon"
-                                        data-v-b8c70e4c
                                 >
                                   <div class="btn__content">
                                     <i aria-hidden="true"
                                        class="icon material-icons"
-                                       data-v-b8c70e4c
                                     >
                                       link
                                     </i>
@@ -2043,25 +1845,21 @@ exports[`/statistics 1`] = `
                                 </button>
                               </span>
                             </span>
-                            <span class="tooltip tooltip--bottom"
-                                  data-v-b8c70e4c
-                            >
+                            <span class="tooltip tooltip--bottom">
                               <div class="tooltip__content"
                                    style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"
                               >
-                                <span data-v-b8c70e4c>
+                                <span>
                                   &#x91CD;&#x65B0;&#x722C;&#x53D6;&#x6B64;&#x5904;&#x4FE1;&#x606F;
                                 </span>
                               </div>
                               <span>
                                 <button type="button"
                                         class="btn btn--icon"
-                                        data-v-b8c70e4c
                                 >
                                   <div class="btn__content">
                                     <i aria-hidden="true"
                                        class="icon material-icons"
-                                       data-v-b8c70e4c
                                     >
                                       refresh
                                     </i>
@@ -2072,40 +1870,23 @@ exports[`/statistics 1`] = `
                           </div>
                         </div>
                       </div>
-                      <div class="flex xs12 sm6 md4 xl3"
-                           data-v-e1f9636e
-                      >
+                      <div class="flex xs12 sm6 md4 xl3">
                         <div class="card"
                              style="height:auto;"
-                             data-v-b8c70e4c
-                             data-v-e1f9636e
                         >
-                          <div class="card__title card__title--primary"
-                               data-v-b8c70e4c
-                          >
-                            <div class="headline"
-                                 data-v-b8c70e4c
-                            >
+                          <div class="card__title card__title--primary">
+                            <div class="headline">
                               &#x5927;&#x89C6;&#x91CE;&#x5728;&#x7EBF;&#x6D4B;&#x8BC4;
                             </div>
                             <span class="grey--text"
                                   style="display:none;"
-                                  data-v-b8c70e4c
                             >
                             </span>
                           </div>
-                          <div class="container"
-                               data-v-b8c70e4c
-                          >
-                            <div class="layout row wrap"
-                                 data-v-b8c70e4c
-                            >
-                              <div class="flex xs12"
-                                   data-v-b8c70e4c
-                              >
-                                <div class="input-group input-group--required input-group--text-field primary--text"
-                                     data-v-b8c70e4c
-                                >
+                          <div class="container">
+                            <div class="layout row wrap">
+                              <div class="flex xs12">
+                                <div class="input-group input-group--required input-group--text-field primary--text">
                                   <label>
                                     Username
                                   </label>
@@ -2125,42 +1906,27 @@ exports[`/statistics 1`] = `
                           </div>
                           <div class="card__text"
                                style="display:none;"
-                               data-v-b8c70e4c
                           >
-                            <span class="grey--text"
-                                  data-v-b8c70e4c
-                            >
+                            <span class="grey--text">
                               SOLVED:
                             </span>
                             0
-                            <br data-v-b8c70e4c>
-                            <span class="grey--text"
-                                  data-v-b8c70e4c
-                            >
+                            <br>
+                            <span class="grey--text">
                               SUBMISSIONS:
                             </span>
                             0
                           </div>
                           <div class="card__text"
                                style="display:none;"
-                               data-v-b8c70e4c
                           >
-                            <div class="container"
-                                 data-v-b8c70e4c
-                            >
-                              <div class="layout row"
-                                   data-v-b8c70e4c
-                              >
-                                <div class="spacer"
-                                     data-v-b8c70e4c
-                                >
+                            <div class="container">
+                              <div class="layout row">
+                                <div class="spacer">
                                 </div>
-                                <div class="flex xs2"
-                                     data-v-b8c70e4c
-                                >
+                                <div class="flex xs2">
                                   <div class="progress-circular progress-circular--indeterminate primary--text"
                                        style="height:32px;width:32px;"
-                                       data-v-b8c70e4c
                                   >
                                     <svg xmlns="http://www.w3.org/2000/svg"
                                          viewbox="25 25 50 50"
@@ -2181,39 +1947,29 @@ exports[`/statistics 1`] = `
                                     </div>
                                   </div>
                                 </div>
-                                <div class="spacer"
-                                     data-v-b8c70e4c
-                                >
+                                <div class="spacer">
                                 </div>
                               </div>
                             </div>
                           </div>
-                          <div class="card__actions"
-                               data-v-b8c70e4c
-                          >
-                            <div class="spacer"
-                                 data-v-b8c70e4c
-                            >
+                          <div class="card__actions">
+                            <div class="spacer">
                             </div>
-                            <span class="tooltip tooltip--bottom"
-                                  data-v-b8c70e4c
-                            >
+                            <span class="tooltip tooltip--bottom">
                               <div class="tooltip__content"
                                    style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"
                               >
-                                <span data-v-b8c70e4c>
+                                <span>
                                   &#x8F6C;&#x5230;&#x6B64;OJ
                                 </span>
                               </div>
                               <span>
                                 <button type="button"
                                         class="btn btn--icon"
-                                        data-v-b8c70e4c
                                 >
                                   <div class="btn__content">
                                     <i aria-hidden="true"
                                        class="icon material-icons"
-                                       data-v-b8c70e4c
                                     >
                                       link
                                     </i>
@@ -2221,25 +1977,21 @@ exports[`/statistics 1`] = `
                                 </button>
                               </span>
                             </span>
-                            <span class="tooltip tooltip--bottom"
-                                  data-v-b8c70e4c
-                            >
+                            <span class="tooltip tooltip--bottom">
                               <div class="tooltip__content"
                                    style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"
                               >
-                                <span data-v-b8c70e4c>
+                                <span>
                                   &#x91CD;&#x65B0;&#x722C;&#x53D6;&#x6B64;&#x5904;&#x4FE1;&#x606F;
                                 </span>
                               </div>
                               <span>
                                 <button type="button"
                                         class="btn btn--icon"
-                                        data-v-b8c70e4c
                                 >
                                   <div class="btn__content">
                                     <i aria-hidden="true"
                                        class="icon material-icons"
-                                       data-v-b8c70e4c
                                     >
                                       refresh
                                     </i>
@@ -2250,40 +2002,23 @@ exports[`/statistics 1`] = `
                           </div>
                         </div>
                       </div>
-                      <div class="flex xs12 sm6 md4 xl3"
-                           data-v-e1f9636e
-                      >
+                      <div class="flex xs12 sm6 md4 xl3">
                         <div class="card"
                              style="height:auto;"
-                             data-v-b8c70e4c
-                             data-v-e1f9636e
                         >
-                          <div class="card__title card__title--primary"
-                               data-v-b8c70e4c
-                          >
-                            <div class="headline"
-                                 data-v-b8c70e4c
-                            >
+                          <div class="card__title card__title--primary">
+                            <div class="headline">
                               CodeForces
                             </div>
                             <span class="grey--text"
                                   style="display:none;"
-                                  data-v-b8c70e4c
                             >
                             </span>
                           </div>
-                          <div class="container"
-                               data-v-b8c70e4c
-                          >
-                            <div class="layout row wrap"
-                                 data-v-b8c70e4c
-                            >
-                              <div class="flex xs12"
-                                   data-v-b8c70e4c
-                              >
-                                <div class="input-group input-group--required input-group--text-field primary--text"
-                                     data-v-b8c70e4c
-                                >
+                          <div class="container">
+                            <div class="layout row wrap">
+                              <div class="flex xs12">
+                                <div class="input-group input-group--required input-group--text-field primary--text">
                                   <label>
                                     Username
                                   </label>
@@ -2303,42 +2038,27 @@ exports[`/statistics 1`] = `
                           </div>
                           <div class="card__text"
                                style="display:none;"
-                               data-v-b8c70e4c
                           >
-                            <span class="grey--text"
-                                  data-v-b8c70e4c
-                            >
+                            <span class="grey--text">
                               SOLVED:
                             </span>
                             0
-                            <br data-v-b8c70e4c>
-                            <span class="grey--text"
-                                  data-v-b8c70e4c
-                            >
+                            <br>
+                            <span class="grey--text">
                               SUBMISSIONS:
                             </span>
                             0
                           </div>
                           <div class="card__text"
                                style="display:none;"
-                               data-v-b8c70e4c
                           >
-                            <div class="container"
-                                 data-v-b8c70e4c
-                            >
-                              <div class="layout row"
-                                   data-v-b8c70e4c
-                              >
-                                <div class="spacer"
-                                     data-v-b8c70e4c
-                                >
+                            <div class="container">
+                              <div class="layout row">
+                                <div class="spacer">
                                 </div>
-                                <div class="flex xs2"
-                                     data-v-b8c70e4c
-                                >
+                                <div class="flex xs2">
                                   <div class="progress-circular progress-circular--indeterminate primary--text"
                                        style="height:32px;width:32px;"
-                                       data-v-b8c70e4c
                                   >
                                     <svg xmlns="http://www.w3.org/2000/svg"
                                          viewbox="25 25 50 50"
@@ -2359,39 +2079,29 @@ exports[`/statistics 1`] = `
                                     </div>
                                   </div>
                                 </div>
-                                <div class="spacer"
-                                     data-v-b8c70e4c
-                                >
+                                <div class="spacer">
                                 </div>
                               </div>
                             </div>
                           </div>
-                          <div class="card__actions"
-                               data-v-b8c70e4c
-                          >
-                            <div class="spacer"
-                                 data-v-b8c70e4c
-                            >
+                          <div class="card__actions">
+                            <div class="spacer">
                             </div>
-                            <span class="tooltip tooltip--bottom"
-                                  data-v-b8c70e4c
-                            >
+                            <span class="tooltip tooltip--bottom">
                               <div class="tooltip__content"
                                    style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"
                               >
-                                <span data-v-b8c70e4c>
+                                <span>
                                   &#x8F6C;&#x5230;&#x6B64;OJ
                                 </span>
                               </div>
                               <span>
                                 <button type="button"
                                         class="btn btn--icon"
-                                        data-v-b8c70e4c
                                 >
                                   <div class="btn__content">
                                     <i aria-hidden="true"
                                        class="icon material-icons"
-                                       data-v-b8c70e4c
                                     >
                                       link
                                     </i>
@@ -2399,25 +2109,21 @@ exports[`/statistics 1`] = `
                                 </button>
                               </span>
                             </span>
-                            <span class="tooltip tooltip--bottom"
-                                  data-v-b8c70e4c
-                            >
+                            <span class="tooltip tooltip--bottom">
                               <div class="tooltip__content"
                                    style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"
                               >
-                                <span data-v-b8c70e4c>
+                                <span>
                                   &#x91CD;&#x65B0;&#x722C;&#x53D6;&#x6B64;&#x5904;&#x4FE1;&#x606F;
                                 </span>
                               </div>
                               <span>
                                 <button type="button"
                                         class="btn btn--icon"
-                                        data-v-b8c70e4c
                                 >
                                   <div class="btn__content">
                                     <i aria-hidden="true"
                                        class="icon material-icons"
-                                       data-v-b8c70e4c
                                     >
                                       refresh
                                     </i>
@@ -2428,40 +2134,23 @@ exports[`/statistics 1`] = `
                           </div>
                         </div>
                       </div>
-                      <div class="flex xs12 sm6 md4 xl3"
-                           data-v-e1f9636e
-                      >
+                      <div class="flex xs12 sm6 md4 xl3">
                         <div class="card"
                              style="height:auto;"
-                             data-v-b8c70e4c
-                             data-v-e1f9636e
                         >
-                          <div class="card__title card__title--primary"
-                               data-v-b8c70e4c
-                          >
-                            <div class="headline"
-                                 data-v-b8c70e4c
-                            >
+                          <div class="card__title card__title--primary">
+                            <div class="headline">
                               UVA
                             </div>
                             <span class="grey--text"
                                   style="display:none;"
-                                  data-v-b8c70e4c
                             >
                             </span>
                           </div>
-                          <div class="container"
-                               data-v-b8c70e4c
-                          >
-                            <div class="layout row wrap"
-                                 data-v-b8c70e4c
-                            >
-                              <div class="flex xs12"
-                                   data-v-b8c70e4c
-                              >
-                                <div class="input-group input-group--required input-group--text-field primary--text"
-                                     data-v-b8c70e4c
-                                >
+                          <div class="container">
+                            <div class="layout row wrap">
+                              <div class="flex xs12">
+                                <div class="input-group input-group--required input-group--text-field primary--text">
                                   <label>
                                     Username
                                   </label>
@@ -2481,42 +2170,27 @@ exports[`/statistics 1`] = `
                           </div>
                           <div class="card__text"
                                style="display:none;"
-                               data-v-b8c70e4c
                           >
-                            <span class="grey--text"
-                                  data-v-b8c70e4c
-                            >
+                            <span class="grey--text">
                               SOLVED:
                             </span>
                             0
-                            <br data-v-b8c70e4c>
-                            <span class="grey--text"
-                                  data-v-b8c70e4c
-                            >
+                            <br>
+                            <span class="grey--text">
                               SUBMISSIONS:
                             </span>
                             0
                           </div>
                           <div class="card__text"
                                style="display:none;"
-                               data-v-b8c70e4c
                           >
-                            <div class="container"
-                                 data-v-b8c70e4c
-                            >
-                              <div class="layout row"
-                                   data-v-b8c70e4c
-                              >
-                                <div class="spacer"
-                                     data-v-b8c70e4c
-                                >
+                            <div class="container">
+                              <div class="layout row">
+                                <div class="spacer">
                                 </div>
-                                <div class="flex xs2"
-                                     data-v-b8c70e4c
-                                >
+                                <div class="flex xs2">
                                   <div class="progress-circular progress-circular--indeterminate primary--text"
                                        style="height:32px;width:32px;"
-                                       data-v-b8c70e4c
                                   >
                                     <svg xmlns="http://www.w3.org/2000/svg"
                                          viewbox="25 25 50 50"
@@ -2537,39 +2211,29 @@ exports[`/statistics 1`] = `
                                     </div>
                                   </div>
                                 </div>
-                                <div class="spacer"
-                                     data-v-b8c70e4c
-                                >
+                                <div class="spacer">
                                 </div>
                               </div>
                             </div>
                           </div>
-                          <div class="card__actions"
-                               data-v-b8c70e4c
-                          >
-                            <div class="spacer"
-                                 data-v-b8c70e4c
-                            >
+                          <div class="card__actions">
+                            <div class="spacer">
                             </div>
-                            <span class="tooltip tooltip--bottom"
-                                  data-v-b8c70e4c
-                            >
+                            <span class="tooltip tooltip--bottom">
                               <div class="tooltip__content"
                                    style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"
                               >
-                                <span data-v-b8c70e4c>
+                                <span>
                                   &#x8F6C;&#x5230;&#x6B64;OJ
                                 </span>
                               </div>
                               <span>
                                 <button type="button"
                                         class="btn btn--icon"
-                                        data-v-b8c70e4c
                                 >
                                   <div class="btn__content">
                                     <i aria-hidden="true"
                                        class="icon material-icons"
-                                       data-v-b8c70e4c
                                     >
                                       link
                                     </i>
@@ -2577,25 +2241,21 @@ exports[`/statistics 1`] = `
                                 </button>
                               </span>
                             </span>
-                            <span class="tooltip tooltip--bottom"
-                                  data-v-b8c70e4c
-                            >
+                            <span class="tooltip tooltip--bottom">
                               <div class="tooltip__content"
                                    style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"
                               >
-                                <span data-v-b8c70e4c>
+                                <span>
                                   &#x91CD;&#x65B0;&#x722C;&#x53D6;&#x6B64;&#x5904;&#x4FE1;&#x606F;
                                 </span>
                               </div>
                               <span>
                                 <button type="button"
                                         class="btn btn--icon"
-                                        data-v-b8c70e4c
                                 >
                                   <div class="btn__content">
                                     <i aria-hidden="true"
                                        class="icon material-icons"
-                                       data-v-b8c70e4c
                                     >
                                       refresh
                                     </i>
@@ -2606,40 +2266,23 @@ exports[`/statistics 1`] = `
                           </div>
                         </div>
                       </div>
-                      <div class="flex xs12 sm6 md4 xl3"
-                           data-v-e1f9636e
-                      >
+                      <div class="flex xs12 sm6 md4 xl3">
                         <div class="card"
                              style="height:auto;"
-                             data-v-b8c70e4c
-                             data-v-e1f9636e
                         >
-                          <div class="card__title card__title--primary"
-                               data-v-b8c70e4c
-                          >
-                            <div class="headline"
-                                 data-v-b8c70e4c
-                            >
+                          <div class="card__title card__title--primary">
+                            <div class="headline">
                               FZU
                             </div>
                             <span class="grey--text"
                                   style="display:none;"
-                                  data-v-b8c70e4c
                             >
                             </span>
                           </div>
-                          <div class="container"
-                               data-v-b8c70e4c
-                          >
-                            <div class="layout row wrap"
-                                 data-v-b8c70e4c
-                            >
-                              <div class="flex xs12"
-                                   data-v-b8c70e4c
-                              >
-                                <div class="input-group input-group--required input-group--text-field primary--text"
-                                     data-v-b8c70e4c
-                                >
+                          <div class="container">
+                            <div class="layout row wrap">
+                              <div class="flex xs12">
+                                <div class="input-group input-group--required input-group--text-field primary--text">
                                   <label>
                                     Username
                                   </label>
@@ -2659,42 +2302,27 @@ exports[`/statistics 1`] = `
                           </div>
                           <div class="card__text"
                                style="display:none;"
-                               data-v-b8c70e4c
                           >
-                            <span class="grey--text"
-                                  data-v-b8c70e4c
-                            >
+                            <span class="grey--text">
                               SOLVED:
                             </span>
                             0
-                            <br data-v-b8c70e4c>
-                            <span class="grey--text"
-                                  data-v-b8c70e4c
-                            >
+                            <br>
+                            <span class="grey--text">
                               SUBMISSIONS:
                             </span>
                             0
                           </div>
                           <div class="card__text"
                                style="display:none;"
-                               data-v-b8c70e4c
                           >
-                            <div class="container"
-                                 data-v-b8c70e4c
-                            >
-                              <div class="layout row"
-                                   data-v-b8c70e4c
-                              >
-                                <div class="spacer"
-                                     data-v-b8c70e4c
-                                >
+                            <div class="container">
+                              <div class="layout row">
+                                <div class="spacer">
                                 </div>
-                                <div class="flex xs2"
-                                     data-v-b8c70e4c
-                                >
+                                <div class="flex xs2">
                                   <div class="progress-circular progress-circular--indeterminate primary--text"
                                        style="height:32px;width:32px;"
-                                       data-v-b8c70e4c
                                   >
                                     <svg xmlns="http://www.w3.org/2000/svg"
                                          viewbox="25 25 50 50"
@@ -2715,39 +2343,29 @@ exports[`/statistics 1`] = `
                                     </div>
                                   </div>
                                 </div>
-                                <div class="spacer"
-                                     data-v-b8c70e4c
-                                >
+                                <div class="spacer">
                                 </div>
                               </div>
                             </div>
                           </div>
-                          <div class="card__actions"
-                               data-v-b8c70e4c
-                          >
-                            <div class="spacer"
-                                 data-v-b8c70e4c
-                            >
+                          <div class="card__actions">
+                            <div class="spacer">
                             </div>
-                            <span class="tooltip tooltip--bottom"
-                                  data-v-b8c70e4c
-                            >
+                            <span class="tooltip tooltip--bottom">
                               <div class="tooltip__content"
                                    style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"
                               >
-                                <span data-v-b8c70e4c>
+                                <span>
                                   &#x8F6C;&#x5230;&#x6B64;OJ
                                 </span>
                               </div>
                               <span>
                                 <button type="button"
                                         class="btn btn--icon"
-                                        data-v-b8c70e4c
                                 >
                                   <div class="btn__content">
                                     <i aria-hidden="true"
                                        class="icon material-icons"
-                                       data-v-b8c70e4c
                                     >
                                       link
                                     </i>
@@ -2755,25 +2373,21 @@ exports[`/statistics 1`] = `
                                 </button>
                               </span>
                             </span>
-                            <span class="tooltip tooltip--bottom"
-                                  data-v-b8c70e4c
-                            >
+                            <span class="tooltip tooltip--bottom">
                               <div class="tooltip__content"
                                    style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"
                               >
-                                <span data-v-b8c70e4c>
+                                <span>
                                   &#x91CD;&#x65B0;&#x722C;&#x53D6;&#x6B64;&#x5904;&#x4FE1;&#x606F;
                                 </span>
                               </div>
                               <span>
                                 <button type="button"
                                         class="btn btn--icon"
-                                        data-v-b8c70e4c
                                 >
                                   <div class="btn__content">
                                     <i aria-hidden="true"
                                        class="icon material-icons"
-                                       data-v-b8c70e4c
                                     >
                                       refresh
                                     </i>
@@ -2784,40 +2398,23 @@ exports[`/statistics 1`] = `
                           </div>
                         </div>
                       </div>
-                      <div class="flex xs12 sm6 md4 xl3"
-                           data-v-e1f9636e
-                      >
+                      <div class="flex xs12 sm6 md4 xl3">
                         <div class="card"
                              style="height:auto;"
-                             data-v-b8c70e4c
-                             data-v-e1f9636e
                         >
-                          <div class="card__title card__title--primary"
-                               data-v-b8c70e4c
-                          >
-                            <div class="headline"
-                                 data-v-b8c70e4c
-                            >
+                          <div class="card__title card__title--primary">
+                            <div class="headline">
                               SPOJ
                             </div>
                             <span class="grey--text"
                                   style="display:none;"
-                                  data-v-b8c70e4c
                             >
                             </span>
                           </div>
-                          <div class="container"
-                               data-v-b8c70e4c
-                          >
-                            <div class="layout row wrap"
-                                 data-v-b8c70e4c
-                            >
-                              <div class="flex xs12"
-                                   data-v-b8c70e4c
-                              >
-                                <div class="input-group input-group--required input-group--text-field primary--text"
-                                     data-v-b8c70e4c
-                                >
+                          <div class="container">
+                            <div class="layout row wrap">
+                              <div class="flex xs12">
+                                <div class="input-group input-group--required input-group--text-field primary--text">
                                   <label>
                                     Username
                                   </label>
@@ -2837,42 +2434,27 @@ exports[`/statistics 1`] = `
                           </div>
                           <div class="card__text"
                                style="display:none;"
-                               data-v-b8c70e4c
                           >
-                            <span class="grey--text"
-                                  data-v-b8c70e4c
-                            >
+                            <span class="grey--text">
                               SOLVED:
                             </span>
                             0
-                            <br data-v-b8c70e4c>
-                            <span class="grey--text"
-                                  data-v-b8c70e4c
-                            >
+                            <br>
+                            <span class="grey--text">
                               SUBMISSIONS:
                             </span>
                             0
                           </div>
                           <div class="card__text"
                                style="display:none;"
-                               data-v-b8c70e4c
                           >
-                            <div class="container"
-                                 data-v-b8c70e4c
-                            >
-                              <div class="layout row"
-                                   data-v-b8c70e4c
-                              >
-                                <div class="spacer"
-                                     data-v-b8c70e4c
-                                >
+                            <div class="container">
+                              <div class="layout row">
+                                <div class="spacer">
                                 </div>
-                                <div class="flex xs2"
-                                     data-v-b8c70e4c
-                                >
+                                <div class="flex xs2">
                                   <div class="progress-circular progress-circular--indeterminate primary--text"
                                        style="height:32px;width:32px;"
-                                       data-v-b8c70e4c
                                   >
                                     <svg xmlns="http://www.w3.org/2000/svg"
                                          viewbox="25 25 50 50"
@@ -2893,39 +2475,29 @@ exports[`/statistics 1`] = `
                                     </div>
                                   </div>
                                 </div>
-                                <div class="spacer"
-                                     data-v-b8c70e4c
-                                >
+                                <div class="spacer">
                                 </div>
                               </div>
                             </div>
                           </div>
-                          <div class="card__actions"
-                               data-v-b8c70e4c
-                          >
-                            <div class="spacer"
-                                 data-v-b8c70e4c
-                            >
+                          <div class="card__actions">
+                            <div class="spacer">
                             </div>
-                            <span class="tooltip tooltip--bottom"
-                                  data-v-b8c70e4c
-                            >
+                            <span class="tooltip tooltip--bottom">
                               <div class="tooltip__content"
                                    style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"
                               >
-                                <span data-v-b8c70e4c>
+                                <span>
                                   &#x8F6C;&#x5230;&#x6B64;OJ
                                 </span>
                               </div>
                               <span>
                                 <button type="button"
                                         class="btn btn--icon"
-                                        data-v-b8c70e4c
                                 >
                                   <div class="btn__content">
                                     <i aria-hidden="true"
                                        class="icon material-icons"
-                                       data-v-b8c70e4c
                                     >
                                       link
                                     </i>
@@ -2933,25 +2505,21 @@ exports[`/statistics 1`] = `
                                 </button>
                               </span>
                             </span>
-                            <span class="tooltip tooltip--bottom"
-                                  data-v-b8c70e4c
-                            >
+                            <span class="tooltip tooltip--bottom">
                               <div class="tooltip__content"
                                    style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"
                               >
-                                <span data-v-b8c70e4c>
+                                <span>
                                   &#x91CD;&#x65B0;&#x722C;&#x53D6;&#x6B64;&#x5904;&#x4FE1;&#x606F;
                                 </span>
                               </div>
                               <span>
                                 <button type="button"
                                         class="btn btn--icon"
-                                        data-v-b8c70e4c
                                 >
                                   <div class="btn__content">
                                     <i aria-hidden="true"
                                        class="icon material-icons"
-                                       data-v-b8c70e4c
                                     >
                                       refresh
                                     </i>
@@ -2962,40 +2530,23 @@ exports[`/statistics 1`] = `
                           </div>
                         </div>
                       </div>
-                      <div class="flex xs12 sm6 md4 xl3"
-                           data-v-e1f9636e
-                      >
+                      <div class="flex xs12 sm6 md4 xl3">
                         <div class="card"
                              style="height:auto;"
-                             data-v-b8c70e4c
-                             data-v-e1f9636e
                         >
-                          <div class="card__title card__title--primary"
-                               data-v-b8c70e4c
-                          >
-                            <div class="headline"
-                                 data-v-b8c70e4c
-                            >
+                          <div class="card__title card__title--primary">
+                            <div class="headline">
                               Timus
                             </div>
                             <span class="grey--text"
                                   style="display:none;"
-                                  data-v-b8c70e4c
                             >
                             </span>
                           </div>
-                          <div class="container"
-                               data-v-b8c70e4c
-                          >
-                            <div class="layout row wrap"
-                                 data-v-b8c70e4c
-                            >
-                              <div class="flex xs12"
-                                   data-v-b8c70e4c
-                              >
-                                <div class="input-group input-group--required input-group--text-field primary--text"
-                                     data-v-b8c70e4c
-                                >
+                          <div class="container">
+                            <div class="layout row wrap">
+                              <div class="flex xs12">
+                                <div class="input-group input-group--required input-group--text-field primary--text">
                                   <label>
                                     Username
                                   </label>
@@ -3015,42 +2566,27 @@ exports[`/statistics 1`] = `
                           </div>
                           <div class="card__text"
                                style="display:none;"
-                               data-v-b8c70e4c
                           >
-                            <span class="grey--text"
-                                  data-v-b8c70e4c
-                            >
+                            <span class="grey--text">
                               SOLVED:
                             </span>
                             0
-                            <br data-v-b8c70e4c>
-                            <span class="grey--text"
-                                  data-v-b8c70e4c
-                            >
+                            <br>
+                            <span class="grey--text">
                               SUBMISSIONS:
                             </span>
                             0
                           </div>
                           <div class="card__text"
                                style="display:none;"
-                               data-v-b8c70e4c
                           >
-                            <div class="container"
-                                 data-v-b8c70e4c
-                            >
-                              <div class="layout row"
-                                   data-v-b8c70e4c
-                              >
-                                <div class="spacer"
-                                     data-v-b8c70e4c
-                                >
+                            <div class="container">
+                              <div class="layout row">
+                                <div class="spacer">
                                 </div>
-                                <div class="flex xs2"
-                                     data-v-b8c70e4c
-                                >
+                                <div class="flex xs2">
                                   <div class="progress-circular progress-circular--indeterminate primary--text"
                                        style="height:32px;width:32px;"
-                                       data-v-b8c70e4c
                                   >
                                     <svg xmlns="http://www.w3.org/2000/svg"
                                          viewbox="25 25 50 50"
@@ -3071,39 +2607,29 @@ exports[`/statistics 1`] = `
                                     </div>
                                   </div>
                                 </div>
-                                <div class="spacer"
-                                     data-v-b8c70e4c
-                                >
+                                <div class="spacer">
                                 </div>
                               </div>
                             </div>
                           </div>
-                          <div class="card__actions"
-                               data-v-b8c70e4c
-                          >
-                            <div class="spacer"
-                                 data-v-b8c70e4c
-                            >
+                          <div class="card__actions">
+                            <div class="spacer">
                             </div>
-                            <span class="tooltip tooltip--bottom"
-                                  data-v-b8c70e4c
-                            >
+                            <span class="tooltip tooltip--bottom">
                               <div class="tooltip__content"
                                    style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"
                               >
-                                <span data-v-b8c70e4c>
+                                <span>
                                   &#x8F6C;&#x5230;&#x6B64;OJ
                                 </span>
                               </div>
                               <span>
                                 <button type="button"
                                         class="btn btn--icon"
-                                        data-v-b8c70e4c
                                 >
                                   <div class="btn__content">
                                     <i aria-hidden="true"
                                        class="icon material-icons"
-                                       data-v-b8c70e4c
                                     >
                                       link
                                     </i>
@@ -3111,25 +2637,21 @@ exports[`/statistics 1`] = `
                                 </button>
                               </span>
                             </span>
-                            <span class="tooltip tooltip--bottom"
-                                  data-v-b8c70e4c
-                            >
+                            <span class="tooltip tooltip--bottom">
                               <div class="tooltip__content"
                                    style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"
                               >
-                                <span data-v-b8c70e4c>
+                                <span>
                                   &#x91CD;&#x65B0;&#x722C;&#x53D6;&#x6B64;&#x5904;&#x4FE1;&#x606F;
                                 </span>
                               </div>
                               <span>
                                 <button type="button"
                                         class="btn btn--icon"
-                                        data-v-b8c70e4c
                                 >
                                   <div class="btn__content">
                                     <i aria-hidden="true"
                                        class="icon material-icons"
-                                       data-v-b8c70e4c
                                     >
                                       refresh
                                     </i>
@@ -3140,40 +2662,22 @@ exports[`/statistics 1`] = `
                           </div>
                         </div>
                       </div>
-                      <div class="flex xs12 sm6 md4 xl3"
-                           data-v-e1f9636e
-                      >
+                      <div class="flex xs12 sm6 md4 xl3">
                         <div class="card"
                              style="height:auto;"
-                             data-v-b8c70e4c
-                             data-v-e1f9636e
                         >
-                          <div class="card__title card__title--primary"
-                               data-v-b8c70e4c
-                          >
-                            <div class="headline"
-                                 data-v-b8c70e4c
-                            >
+                          <div class="card__title card__title--primary">
+                            <div class="headline">
                               SGU
                             </div>
-                            <span class="grey--text"
-                                  data-v-b8c70e4c
-                            >
+                            <span class="grey--text">
                               SGU&#x5141;&#x8BB8;&#x591A;&#x4E2A;&#x7528;&#x6237;&#x6709;&#x76F8;&#x540C;&#x7684;&#x540D;&#x5B57;&#xFF08;ID&#x4E0D;&#x540C;&#xFF09;&#xFF0C;&#x672C;&#x722C;&#x866B;&#x4F1A;&#x9009;&#x62E9;&#x5728; http://acm.sgu.ru/find.php?find_id= &#x4E2D;&#x51FA;&#x73B0;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;
                             </span>
                           </div>
-                          <div class="container"
-                               data-v-b8c70e4c
-                          >
-                            <div class="layout row wrap"
-                                 data-v-b8c70e4c
-                            >
-                              <div class="flex xs12"
-                                   data-v-b8c70e4c
-                              >
-                                <div class="input-group input-group--required input-group--text-field primary--text"
-                                     data-v-b8c70e4c
-                                >
+                          <div class="container">
+                            <div class="layout row wrap">
+                              <div class="flex xs12">
+                                <div class="input-group input-group--required input-group--text-field primary--text">
                                   <label>
                                     Username
                                   </label>
@@ -3193,42 +2697,27 @@ exports[`/statistics 1`] = `
                           </div>
                           <div class="card__text"
                                style="display:none;"
-                               data-v-b8c70e4c
                           >
-                            <span class="grey--text"
-                                  data-v-b8c70e4c
-                            >
+                            <span class="grey--text">
                               SOLVED:
                             </span>
                             0
-                            <br data-v-b8c70e4c>
-                            <span class="grey--text"
-                                  data-v-b8c70e4c
-                            >
+                            <br>
+                            <span class="grey--text">
                               SUBMISSIONS:
                             </span>
                             0
                           </div>
                           <div class="card__text"
                                style="display:none;"
-                               data-v-b8c70e4c
                           >
-                            <div class="container"
-                                 data-v-b8c70e4c
-                            >
-                              <div class="layout row"
-                                   data-v-b8c70e4c
-                              >
-                                <div class="spacer"
-                                     data-v-b8c70e4c
-                                >
+                            <div class="container">
+                              <div class="layout row">
+                                <div class="spacer">
                                 </div>
-                                <div class="flex xs2"
-                                     data-v-b8c70e4c
-                                >
+                                <div class="flex xs2">
                                   <div class="progress-circular progress-circular--indeterminate primary--text"
                                        style="height:32px;width:32px;"
-                                       data-v-b8c70e4c
                                   >
                                     <svg xmlns="http://www.w3.org/2000/svg"
                                          viewbox="25 25 50 50"
@@ -3249,39 +2738,29 @@ exports[`/statistics 1`] = `
                                     </div>
                                   </div>
                                 </div>
-                                <div class="spacer"
-                                     data-v-b8c70e4c
-                                >
+                                <div class="spacer">
                                 </div>
                               </div>
                             </div>
                           </div>
-                          <div class="card__actions"
-                               data-v-b8c70e4c
-                          >
-                            <div class="spacer"
-                                 data-v-b8c70e4c
-                            >
+                          <div class="card__actions">
+                            <div class="spacer">
                             </div>
-                            <span class="tooltip tooltip--bottom"
-                                  data-v-b8c70e4c
-                            >
+                            <span class="tooltip tooltip--bottom">
                               <div class="tooltip__content"
                                    style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"
                               >
-                                <span data-v-b8c70e4c>
+                                <span>
                                   &#x8F6C;&#x5230;&#x6B64;OJ
                                 </span>
                               </div>
                               <span>
                                 <button type="button"
                                         class="btn btn--icon"
-                                        data-v-b8c70e4c
                                 >
                                   <div class="btn__content">
                                     <i aria-hidden="true"
                                        class="icon material-icons"
-                                       data-v-b8c70e4c
                                     >
                                       link
                                     </i>
@@ -3289,25 +2768,21 @@ exports[`/statistics 1`] = `
                                 </button>
                               </span>
                             </span>
-                            <span class="tooltip tooltip--bottom"
-                                  data-v-b8c70e4c
-                            >
+                            <span class="tooltip tooltip--bottom">
                               <div class="tooltip__content"
                                    style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"
                               >
-                                <span data-v-b8c70e4c>
+                                <span>
                                   &#x91CD;&#x65B0;&#x722C;&#x53D6;&#x6B64;&#x5904;&#x4FE1;&#x606F;
                                 </span>
                               </div>
                               <span>
                                 <button type="button"
                                         class="btn btn--icon"
-                                        data-v-b8c70e4c
                                 >
                                   <div class="btn__content">
                                     <i aria-hidden="true"
                                        class="icon material-icons"
-                                       data-v-b8c70e4c
                                     >
                                       refresh
                                     </i>
@@ -3318,40 +2793,22 @@ exports[`/statistics 1`] = `
                           </div>
                         </div>
                       </div>
-                      <div class="flex xs12 sm6 md4 xl3"
-                           data-v-e1f9636e
-                      >
+                      <div class="flex xs12 sm6 md4 xl3">
                         <div class="card"
                              style="height:auto;"
-                             data-v-b8c70e4c
-                             data-v-e1f9636e
                         >
-                          <div class="card__title card__title--primary"
-                               data-v-b8c70e4c
-                          >
-                            <div class="headline"
-                                 data-v-b8c70e4c
-                            >
+                          <div class="card__title card__title--primary">
+                            <div class="headline">
                               VJudge
                             </div>
-                            <span class="grey--text"
-                                  data-v-b8c70e4c
-                            >
+                            <span class="grey--text">
                               virtual judge&#xFF0C;&#x8FD9;&#x4E2A;OJ&#x7684;&#x9898;&#x91CF;&#x662F;&#x5355;&#x72EC;&#x8BA1;&#x7B97;&#x7684;
                             </span>
                           </div>
-                          <div class="container"
-                               data-v-b8c70e4c
-                          >
-                            <div class="layout row wrap"
-                                 data-v-b8c70e4c
-                            >
-                              <div class="flex xs12"
-                                   data-v-b8c70e4c
-                              >
-                                <div class="input-group input-group--required input-group--text-field primary--text"
-                                     data-v-b8c70e4c
-                                >
+                          <div class="container">
+                            <div class="layout row wrap">
+                              <div class="flex xs12">
+                                <div class="input-group input-group--required input-group--text-field primary--text">
                                   <label>
                                     Username
                                   </label>
@@ -3371,42 +2828,27 @@ exports[`/statistics 1`] = `
                           </div>
                           <div class="card__text"
                                style="display:none;"
-                               data-v-b8c70e4c
                           >
-                            <span class="grey--text"
-                                  data-v-b8c70e4c
-                            >
+                            <span class="grey--text">
                               SOLVED:
                             </span>
                             0
-                            <br data-v-b8c70e4c>
-                            <span class="grey--text"
-                                  data-v-b8c70e4c
-                            >
+                            <br>
+                            <span class="grey--text">
                               SUBMISSIONS:
                             </span>
                             0
                           </div>
                           <div class="card__text"
                                style="display:none;"
-                               data-v-b8c70e4c
                           >
-                            <div class="container"
-                                 data-v-b8c70e4c
-                            >
-                              <div class="layout row"
-                                   data-v-b8c70e4c
-                              >
-                                <div class="spacer"
-                                     data-v-b8c70e4c
-                                >
+                            <div class="container">
+                              <div class="layout row">
+                                <div class="spacer">
                                 </div>
-                                <div class="flex xs2"
-                                     data-v-b8c70e4c
-                                >
+                                <div class="flex xs2">
                                   <div class="progress-circular progress-circular--indeterminate primary--text"
                                        style="height:32px;width:32px;"
-                                       data-v-b8c70e4c
                                   >
                                     <svg xmlns="http://www.w3.org/2000/svg"
                                          viewbox="25 25 50 50"
@@ -3427,39 +2869,29 @@ exports[`/statistics 1`] = `
                                     </div>
                                   </div>
                                 </div>
-                                <div class="spacer"
-                                     data-v-b8c70e4c
-                                >
+                                <div class="spacer">
                                 </div>
                               </div>
                             </div>
                           </div>
-                          <div class="card__actions"
-                               data-v-b8c70e4c
-                          >
-                            <div class="spacer"
-                                 data-v-b8c70e4c
-                            >
+                          <div class="card__actions">
+                            <div class="spacer">
                             </div>
-                            <span class="tooltip tooltip--bottom"
-                                  data-v-b8c70e4c
-                            >
+                            <span class="tooltip tooltip--bottom">
                               <div class="tooltip__content"
                                    style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"
                               >
-                                <span data-v-b8c70e4c>
+                                <span>
                                   &#x8F6C;&#x5230;&#x6B64;OJ
                                 </span>
                               </div>
                               <span>
                                 <button type="button"
                                         class="btn btn--icon"
-                                        data-v-b8c70e4c
                                 >
                                   <div class="btn__content">
                                     <i aria-hidden="true"
                                        class="icon material-icons"
-                                       data-v-b8c70e4c
                                     >
                                       link
                                     </i>
@@ -3467,25 +2899,21 @@ exports[`/statistics 1`] = `
                                 </button>
                               </span>
                             </span>
-                            <span class="tooltip tooltip--bottom"
-                                  data-v-b8c70e4c
-                            >
+                            <span class="tooltip tooltip--bottom">
                               <div class="tooltip__content"
                                    style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"
                               >
-                                <span data-v-b8c70e4c>
+                                <span>
                                   &#x91CD;&#x65B0;&#x722C;&#x53D6;&#x6B64;&#x5904;&#x4FE1;&#x606F;
                                 </span>
                               </div>
                               <span>
                                 <button type="button"
                                         class="btn btn--icon"
-                                        data-v-b8c70e4c
                                 >
                                   <div class="btn__content">
                                     <i aria-hidden="true"
                                        class="icon material-icons"
-                                       data-v-b8c70e4c
                                     >
                                       refresh
                                     </i>
