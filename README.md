@@ -6,6 +6,15 @@ acm-statistics
 
 NWPU-ACM 查询工具
 
+## 项目状态
+[![](https://codescene.io/projects/2599/status.svg)](https://codescene.io/projects/2599/jobs/latest-successful/results)
+
+|模块|状态|
+|----|------|
+|frontend|[![](https://www.versioneye.com/user/projects/5ab717300fb24f0ac49c2bcb/badge.svg)](https://www.versioneye.com/user/projects/5ab717300fb24f0ac49c2bcb)|
+|crawler|[![](https://www.versioneye.com/user/projects/5ab717300fb24f4489395c40/badge.svg)](https://www.versioneye.com/user/projects/5ab717300fb24f4489395c40)|
+|crawler-api-backend|[![](https://www.versioneye.com/user/projects/5ab7172e0fb24f0ac49c2bbd/badge.svg)](https://www.versioneye.com/user/projects/5ab7172e0fb24f0ac49c2bbd)|
+
 ## 目录结构
 
 - frontend: 前端
