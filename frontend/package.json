@@ -11,7 +11,8 @@
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue .",
     "lintfix": "eslint --fix --ext .js,.vue .",
-    "analyze": "nuxt build --analyze"
+    "analyze": "nuxt build --analyze",
+    "test": "jest __test__/"
   },
   "dependencies": {
     "@nuxtjs/proxy": "^1.1.4",
@@ -36,8 +37,16 @@
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-standard": "^3.0.1",
     "eslint-plugin-vue": "^4.4.0",
+    "jest": "^22.4.3",
+    "jest-serializer-html": "^5.0.0",
     "lodash-webpack-plugin": "^0.11.4",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.1"
+  },
+  "jest": {
+    "snapshotSerializers": [
+      "jest-serializer-html"
+    ],
+    "testEnvironment": "node"
   }
 }

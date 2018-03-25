@@ -5,7 +5,9 @@
       <sourceFolder url="file://$MODULE_DIR$/crawler/test" isTestSource="true" />
     </content>
     <content url="file://$MODULE_DIR$/crawler-api-backend" />
-    <content url="file://$MODULE_DIR$/frontend" />
+    <content url="file://$MODULE_DIR$/frontend">
+      <sourceFolder url="file://$MODULE_DIR$/frontend/__test__" isTestSource="true" />
+    </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="@types/jest" level="application" />
