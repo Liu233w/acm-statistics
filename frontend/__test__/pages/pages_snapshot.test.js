@@ -23,6 +23,15 @@ async function testPageByPath(path) {
 
   $('link[href^="/_nuxt/"]').remove()
   $('script[src^="/_nuxt/"]').remove()
+  // 移除 data-v- 开头的属性和 data-vue-ssr-id 属性
+  $('*').each((i, el) => {
+    $(el).removeAttr('data-vue-ssr-id')
+    for (let key in $(el).attr()) {
+      if (key.startsWith('data-v-')) {
+        $(el).removeAttr(key)
+      }
+    }
+  })
 
   expect($.html()).toMatchSnapshot()
 }
