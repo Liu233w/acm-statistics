@@ -28,6 +28,8 @@ async function testPageByPath(path) {
 }
 
 const testPaths = [
+  '/',
+  '/statistics',
 ]
 
 for (let path of testPaths) {
