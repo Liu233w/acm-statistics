@@ -11,11 +11,13 @@
   "author": "Liu233w <wwwlsmcom@outlook.com>",
   "license": "GPL-3.0",
   "dependencies": {
-    "eslint": "^4.19.1",
-    "eslint-plugin-lodash": "^2.7.0",
     "koa": "^2.5.0",
     "koa-router": "^7.4.0",
     "lodash": "^4.17.5",
     "log4js": "^2.5.3"
+  },
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-plugin-lodash": "^2.7.0"
   }
 }
