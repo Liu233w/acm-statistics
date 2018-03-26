@@ -30,6 +30,7 @@ module.exports = {
     // 有 babel-lodash，不需要单独引入也可以 tree-shaking
     "lodash/import-scope": "off",
     // 这个方法的可读性太低了
-    'lodash/matches-prop-shorthand': "off"
+    'lodash/matches-prop-shorthand': "off",
+    'lodash/prefer-reject': 'off',
   }
 }
