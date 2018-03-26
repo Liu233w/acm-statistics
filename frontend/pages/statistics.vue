@@ -111,7 +111,7 @@
       notWorkingRate() {
         // 返回一个0-100的数字，表示不在WORKING状态的Worker的数量
         const cnt = this.workers.length
-        const notWorking = _.filter(item => item.status !== WORKER_STATUS.WORKING, this.workers).length
+        const notWorking = _.filter(this.workers, item => item.status !== WORKER_STATUS.WORKING).length
         return notWorking / cnt * 100
       },
     },
