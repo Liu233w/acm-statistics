@@ -1,12 +1,40 @@
 <template>
   <v-card>
-    <v-card-title primary-title>
-      <div class="headline">
+    <v-toolbar card dense class="blue-grey lighten-5">
+      <v-toolbar-title>
         {{ crawlerTitle }}
-      </div>
-      <span class="grey--text" v-show="crawlerDescription">{{ crawlerDescription }} </span>
-    </v-card-title>
+      </v-toolbar-title>
+      <v-spacer/>
+      <v-toolbar-items>
+        <v-tooltip bottom v-show="crawlerUrl">
+          <v-btn icon
+                 slot="activator"
+                 @click="openOj"
+          >
+            <v-icon>link</v-icon>
+          </v-btn>
+          <span>
+            转到此OJ
+          </span>
+        </v-tooltip>
+        <v-tooltip bottom>
+          <v-btn icon
+                 slot="activator"
+                 :disabled="status === WORKER_STATUS.WORKING"
+                 @click="$emit('update:status', WORKER_STATUS.WORKING)"
+          >
+            <v-icon>refresh</v-icon>
+          </v-btn>
+          <span>重新爬取此处信息</span>
+        </v-tooltip>
+      </v-toolbar-items>
+    </v-toolbar>
     <v-container>
+      <v-layout row>
+        <v-flex xs12>
+          <span class="grey--text" v-show="crawlerDescription">{{ crawlerDescription }} </span>
+        </v-flex>
+      </v-layout>
       <v-layout row wrap>
         <v-flex xs12>
           <v-text-field
@@ -18,52 +46,24 @@
           />
         </v-flex>
       </v-layout>
+      <v-layout row v-show="status === WORKER_STATUS.DONE">
+        <v-flex xs12 v-if="errorMessage">
+          <span class="red--text">{{ errorMessage }}</span>
+        </v-flex>
+        <v-flex xs12 v-else>
+          <span class="grey--text">SOLVED: </span> {{ solved }}
+          <br>
+          <span class="grey--text">SUBMISSIONS: </span> {{ submissions }}
+        </v-flex>
+      </v-layout>
+      <v-layout row v-show="status === WORKER_STATUS.WORKING">
+        <v-spacer/>
+        <v-flex xs2>
+          <v-progress-circular indeterminate color="primary"/>
+        </v-flex>
+        <v-spacer/>
+      </v-layout>
     </v-container>
-    <v-card-text v-show="status === WORKER_STATUS.DONE">
-      <template v-if="errorMessage">
-        <span class="red--text">{{ errorMessage }}</span>
-      </template>
-      <template v-else>
-        <span class="grey--text">SOLVED: </span> {{ solved }}
-        <br>
-        <span class="grey--text">SUBMISSIONS: </span> {{ submissions }}
-      </template>
-    </v-card-text>
-    <v-card-text v-show="status === WORKER_STATUS.WORKING">
-      <v-container>
-        <v-layout row>
-          <v-spacer/>
-          <v-flex xs2>
-            <v-progress-circular indeterminate color="primary"/>
-          </v-flex>
-          <v-spacer/>
-        </v-layout>
-      </v-container>
-    </v-card-text>
-    <v-card-actions>
-      <v-spacer/>
-      <v-tooltip bottom v-show="crawlerUrl">
-        <v-btn icon
-               slot="activator"
-               @click="openOj"
-        >
-          <v-icon>link</v-icon>
-        </v-btn>
-        <span>
-          转到此OJ
-        </span>
-      </v-tooltip>
-      <v-tooltip bottom>
-        <v-btn icon
-               slot="activator"
-               :disabled="status === WORKER_STATUS.WORKING"
-               @click="$emit('update:status', WORKER_STATUS.WORKING)"
-        >
-          <v-icon>refresh</v-icon>
-        </v-btn>
-        <span>重新爬取此处信息</span>
-      </v-tooltip>
-    </v-card-actions>
   </v-card>
 </template>
 
