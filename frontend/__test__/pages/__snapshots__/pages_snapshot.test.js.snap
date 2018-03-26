@@ -1332,7 +1332,7 @@ exports[`/statistics 1`] = `
                                style="height:0;"
                           >
                             <div class="progress-linear__bar__determinate primary"
-                                 style="width:0%;"
+                                 style="width:100%;"
                             >
                             </div>
                           </div>
