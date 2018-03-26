@@ -29,19 +29,24 @@
         />
       </v-flex>
     </v-layout>
-    <v-layout row wrap>
-      <v-flex xs12 sm6 md4 xl3
-              v-for="item in workers"
-              :key="item.name">
-        <crawler-worker
-          :username.sync="item.username"
-          :worker-name="item.name"
-          :solved.sync="item.solved"
-          :submissions.sync="item.submissions"
-          :status.sync="item.status"
-          :func="item.func"
-          :error-message.sync="item.errorMessage"
-        />
+    <v-layout row>
+      <v-flex xs12 sm6 md4 lg3
+              v-for="colIdx in columnCount" :key="colIdx">
+        <v-layout column>
+          <v-flex v-for="(item, idx) in workers"
+                  v-if="idx % columnCount === colIdx - 1"
+                  :key="item.name">
+            <crawler-worker
+              :username.sync="item.username"
+              :worker-name="item.name"
+              :solved.sync="item.solved"
+              :submissions.sync="item.submissions"
+              :status.sync="item.status"
+              :func="item.func"
+              :error-message.sync="item.errorMessage"
+            />
+          </v-flex>
+        </v-layout>
       </v-flex>
     </v-layout>
   </v-container>
@@ -58,6 +63,10 @@
     components: {
       CrawlerWorker,
     },
+    mounted() {
+      this.onResize()
+      window.addEventListener('resize', this.onResize, {passive: true})
+    },
     data() {
       return {
         username: '',
@@ -72,6 +81,8 @@
             username: this.username,
           })
         }, []),
+        // 一共有几列
+        columnCount: 3,
       }
     },
     computed: {
@@ -95,6 +106,18 @@
     methods: {
       runWorker() {
         _.forEach(this.workers, item => item.status = WORKER_STATUS.WORKING)
+      },
+      onResize() {
+        const width = window.innerWidth
+        if (width < 600) {
+          this.columnCount = 1 // xs
+        } else if (width < 960) {
+          this.columnCount = 2 // sm
+        } else if (width < 1264) {
+          this.columnCount = 3 // md
+        } else {
+          this.columnCount = 4 // lg xl
+        }
       },
     },
     watch: {
