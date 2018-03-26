@@ -11,6 +11,7 @@ const fzu = require('../crawlers/fzu')
 const spoj = require('../crawlers/spoj')
 const timus = require('../crawlers/timus')
 const sgu = require('../crawlers/sgu')
+const leetcode_cn = require('../crawlers/leetcode_cn')
 const vjudge = require('../crawlers/vjudge')
 const {ensureConfigAndRead} = require('../lib/configReader')
 
@@ -160,6 +161,19 @@ describe('sgu', () => {
 
   test('test sgu', async () => {
     const res = await sgu(null, username)
+    checkRes(res)
+  })
+
+})
+
+describe('leetcode_cn', () => {
+
+  test('test leetcode_cn - 用户不存在时抛出异常', async () => {
+    await expect(leetcode_cn(null, notExistUsername)).rejects.toThrow('用户不存在')
+  })
+
+  test('test leetcode_cn', async () => {
+    const res = await leetcode_cn(null, 'wwwlsmcom')
     checkRes(res)
   })
 
