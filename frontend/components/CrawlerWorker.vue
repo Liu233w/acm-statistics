@@ -1,74 +1,12 @@
 <template>
-  <v-card>
-    <v-toolbar card dense class="blue-grey lighten-5">
-      <v-toolbar-title>
-        {{ crawlerTitle }}
-      </v-toolbar-title>
-      <v-spacer/>
-      <v-toolbar-items>
-        <v-tooltip bottom v-show="crawlerUrl">
-          <v-btn icon
-                 slot="activator"
-                 @click="openOj"
-          >
-            <v-icon>link</v-icon>
-          </v-btn>
-          <span>
-            转到此OJ
-          </span>
-        </v-tooltip>
-        <v-tooltip bottom>
-          <v-btn icon
-                 slot="activator"
-                 :disabled="status === WORKER_STATUS.WORKING"
-                 @click="$emit('update:status', WORKER_STATUS.WORKING)"
-          >
-            <v-icon>refresh</v-icon>
-          </v-btn>
-          <span>重新爬取此处信息</span>
-        </v-tooltip>
-      </v-toolbar-items>
-    </v-toolbar>
-    <v-container>
-      <v-layout row>
-        <v-flex xs12>
-          <span class="grey--text" v-show="crawlerDescription">{{ crawlerDescription }} </span>
-        </v-flex>
-      </v-layout>
-      <v-layout row wrap>
-        <v-flex xs12>
-          <v-text-field
-            :value="username"
-            @input="updateUsername"
-            label="Username"
-            :disabled="status === WORKER_STATUS.WORKING"
-            required
-            @keyup.enter="$emit('update:status', WORKER_STATUS.WORKING)"
-          />
-        </v-flex>
-      </v-layout>
-      <v-layout row v-show="status === WORKER_STATUS.DONE">
-        <v-flex xs12 v-if="errorMessage">
-          <span class="red--text">{{ errorMessage }}</span>
-        </v-flex>
-        <v-flex xs12 v-else>
-          <span class="grey--text">SOLVED: </span> {{ solved }}
-          <br>
-          <span class="grey--text">SUBMISSIONS: </span> {{ submissions }}
-        </v-flex>
-      </v-layout>
-      <v-layout row v-show="status === WORKER_STATUS.WORKING">
-        <v-spacer/>
-        <v-flex xs2>
-          <v-progress-circular indeterminate color="primary"/>
-        </v-flex>
-        <v-spacer/>
-      </v-layout>
-    </v-container>
-  </v-card>
+  <div/>
 </template>
 
 <script>
+  /*
+   * 专门用来处理爬虫命令的组件，这个组件负责单独更新爬虫状态，
+   */
+
   import {WORKER_STATUS} from './consts'
 
   export default {
@@ -76,7 +14,7 @@
     props: {
       status: {
         type: String,
-        default: WORKER_STATUS.WAITING,
+        required: true,
       },
       username: {
         type: String,
@@ -84,13 +22,13 @@
       },
       solved: {
         type: Number,
-        default: 0,
+        required: true,
       },
       submissions: {
         type: Number,
-        default: 0,
+        required: true,
       },
-      workerName: {
+      errorMessage: {
         type: String,
         required: true,
       },
@@ -98,16 +36,19 @@
         type: Function,
         required: true,
       },
-      errorMessage: {
-        type: String,
-        default: '',
+    },
+
+    methods: {
+      /**
+       * 重设当前计数器和错误信息，不重设状态信息
+       */
+      resetRes() {
+        this.$emit('update:solved', 0)
+        this.$emit('update:submissions', 0)
+        this.$emit('update:errorMessage', '')
       },
     },
-    data() {
-      return {
-        WORKER_STATUS: WORKER_STATUS,
-      }
-    },
+
     watch: {
       status: async function (val) {
         if (val === WORKER_STATUS.WORKING) {
@@ -129,36 +70,5 @@
         this.resetRes()
       },
     },
-    methods: {
-      /**
-       * 重设当前计数器和错误信息，不重设状态信息
-       */
-      resetRes() {
-        this.$emit('update:solved', 0)
-        this.$emit('update:submissions', 0)
-        this.$emit('update:errorMessage', '')
-      },
-      openOj() {
-        window.open(this.crawlerUrl)
-      },
-      updateUsername(val) {
-        this.$emit('update:username', val)
-      },
-    },
-    computed: {
-      crawlerTitle() {
-        return this.$crawlerMeta[this.workerName].title
-      },
-      crawlerDescription() {
-        return this.$crawlerMeta[this.workerName].description
-      },
-      crawlerUrl() {
-        return this.$crawlerMeta[this.workerName].url
-      },
-    },
   }
 </script>
-
-<style scoped>
-
-</style>

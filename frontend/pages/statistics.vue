@@ -36,19 +36,29 @@
           <v-flex v-for="(item, idx) in workers"
                   v-if="idx % columnCount === colIdx - 1"
                   :key="item.name">
-            <crawler-worker
+            <crawler-card
               :username.sync="item.username"
               :worker-name="item.name"
               :solved.sync="item.solved"
               :submissions.sync="item.submissions"
               :status.sync="item.status"
-              :func="item.func"
               :error-message.sync="item.errorMessage"
             />
           </v-flex>
         </v-layout>
       </v-flex>
     </v-layout>
+    <div :v-show="false">
+      <crawler-worker v-for="item in workers"
+                      :key="item.name"
+                      :username="item.username"
+                      :solved.sync="item.solved"
+                      :submissions.sync="item.submissions"
+                      :status.sync="item.status"
+                      :error-message.sync="item.errorMessage"
+                      :func="item.func"
+      />
+    </div>
   </v-container>
 </template>
 
@@ -56,12 +66,14 @@
   import _ from 'lodash'
 
   import CrawlerWorker from '~/components/CrawlerWorker'
+  import CrawlerCard from '~/components/CrawlerCard'
   import {WORKER_STATUS} from '~/components/consts'
 
   export default {
     name: 'Statistics',
     components: {
       CrawlerWorker,
+      CrawlerCard,
     },
     mounted() {
       this.onResize()
@@ -78,7 +90,7 @@
             status: WORKER_STATUS.WAITING,
             func: func,
             errorMessage: '',
-            username: this.username,
+            username: '',
           })
         }, []),
         // 一共有几列
