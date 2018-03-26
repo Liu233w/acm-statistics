@@ -24,22 +24,23 @@
     <v-layout row>
       <v-flex>
         <v-progress-linear color="primary"
-                           :value="notWorkeringRate"
+                           :value="notWorkingRate"
                            :active="working"
         />
       </v-flex>
     </v-layout>
     <v-layout row wrap>
       <v-flex xs12 sm6 md4 xl3
-              v-for="(item, name) in workers"
-              :key="name">
+              v-for="item in workers"
+              :key="item.name">
         <crawler-worker
-          :username="username"
-          :worker-name="name"
+          :username.sync="item.username"
+          :worker-name="item.name"
           :solved.sync="item.solved"
           :submissions.sync="item.submissions"
           :status.sync="item.status"
           :func="item.func"
+          :error-message.sync="item.errorMessage"
         />
       </v-flex>
     </v-layout>
@@ -48,7 +49,6 @@
 
 <script>
   import _ from 'lodash'
-  import {flow, filter, size} from 'lodash/fp'
 
   import CrawlerWorker from '~/components/CrawlerWorker'
   import {WORKER_STATUS} from '~/components/consts'
@@ -61,17 +61,18 @@
     data() {
       return {
         username: '',
-        workers: {},
+        workers: _.transform(this.$crawlers, (result, func, name) => {
+          result.push({
+            name: name,
+            solved: 0,
+            submissions: 0,
+            status: WORKER_STATUS.WAITING,
+            func: func,
+            errorMessage: '',
+            username: this.username,
+          })
+        }, []),
       }
-    },
-    created() {
-      // 由于 ssr，data是在服务器上运行的，因此必须在created里面初始化workers
-      this.workers = _.mapValues(this.$crawlers, func => ({
-        solved: 0,
-        submissions: 0,
-        status: WORKER_STATUS.WAITING,
-        func: func,
-      }))
     },
     computed: {
       allSolved() {
@@ -84,19 +85,21 @@
         // 是否还有worker正在工作
         return _.some(this.workers, item => item.status === WORKER_STATUS.WORKING)
       },
-      notWorkeringRate() {
+      notWorkingRate() {
         // 返回一个0-100的数字，表示不在WORKING状态的Worker的数量
-        const cnt = _.size(this.workers)
-        const notWorking = flow(
-          filter(item => item.status !== WORKER_STATUS.WORKING),
-          size
-        )(this.workers)
+        const cnt = this.workers.length
+        const notWorking = _.filter(item => item.status !== WORKER_STATUS.WORKING, this.workers).length
         return notWorking / cnt * 100
       },
     },
     methods: {
       runWorker() {
         _.forEach(this.workers, item => item.status = WORKER_STATUS.WORKING)
+      },
+    },
+    watch: {
+      username(val) {
+        _.forEach(this.workers, item => item.username = val)
       },
     },
   }

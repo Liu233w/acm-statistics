@@ -38,7 +38,8 @@
       <v-layout row wrap>
         <v-flex xs12>
           <v-text-field
-            v-model="localUsername"
+            :value="username"
+            @input="updateUsername"
             label="Username"
             :disabled="status === WORKER_STATUS.WORKING"
             required
@@ -97,11 +98,13 @@
         type: Function,
         required: true,
       },
+      errorMessage: {
+        type: String,
+        default: '',
+      },
     },
     data() {
       return {
-        localUsername: this.username,
-        errorMessage: '',
         WORKER_STATUS: WORKER_STATUS,
       }
     },
@@ -111,20 +114,17 @@
           this.resetRes()
           // 启动爬虫
           try {
-            const res = await this.func(this.localUsername)
+            const res = await this.func(this.username)
             this.$emit('update:status', WORKER_STATUS.DONE)
             this.$emit('update:solved', res.solved)
             this.$emit('update:submissions', res.submissions)
           } catch (err) {
             this.$emit('update:status', WORKER_STATUS.DONE)
-            this.errorMessage = err.message
+            this.$emit('update:errorMessage', err.message)
           }
         }
       },
-      username: function (val) {
-        this.localUsername = val
-      },
-      localUsername: function () {
+      username: function () {
         this.$emit('update:status', WORKER_STATUS.WAITING)
         this.resetRes()
       },
@@ -136,10 +136,13 @@
       resetRes() {
         this.$emit('update:solved', 0)
         this.$emit('update:submissions', 0)
-        this.errorMessage = ''
+        this.$emit('update:errorMessage', '')
       },
       openOj() {
         window.open(this.crawlerUrl)
+      },
+      updateUsername(val) {
+        this.$emit('update:username', val)
       },
     },
     computed: {
