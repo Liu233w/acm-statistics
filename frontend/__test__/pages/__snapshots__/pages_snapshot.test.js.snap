@@ -2799,6 +2799,138 @@ exports[`/statistics 1`] = `
                         >
                           <div class="card__title card__title--primary">
                             <div class="headline">
+                              LeetCode&#xFF08;&#x4E2D;&#x56FD;&#xFF09;
+                            </div>
+                            <span class="grey--text"
+                                  style="display:none;"
+                            >
+                            </span>
+                          </div>
+                          <div class="container">
+                            <div class="layout row wrap">
+                              <div class="flex xs12">
+                                <div class="input-group input-group--required input-group--text-field primary--text">
+                                  <label>
+                                    Username
+                                  </label>
+                                  <div class="input-group__input">
+                                    <input required="required"
+                                           tabindex="0"
+                                           aria-label="Username"
+                                           type="text"
+                                           value
+                                    >
+                                  </div>
+                                  <div class="input-group__details">
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="card__text"
+                               style="display:none;"
+                          >
+                            <span class="grey--text">
+                              SOLVED:
+                            </span>
+                            0
+                            <br>
+                            <span class="grey--text">
+                              SUBMISSIONS:
+                            </span>
+                            0
+                          </div>
+                          <div class="card__text"
+                               style="display:none;"
+                          >
+                            <div class="container">
+                              <div class="layout row">
+                                <div class="spacer">
+                                </div>
+                                <div class="flex xs2">
+                                  <div class="progress-circular progress-circular--indeterminate primary--text"
+                                       style="height:32px;width:32px;"
+                                  >
+                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                         viewbox="25 25 50 50"
+                                         style="transform:rotate(0deg);"
+                                    >
+                                      <circle fill="transparent"
+                                              cx="50"
+                                              cy="50"
+                                              r="20"
+                                              stroke-width="4"
+                                              stroke-dasharray="125.664"
+                                              stroke-dashoffset="125.66370614359172px"
+                                              class="progress-circular__overlay"
+                                      >
+                                      </circle>
+                                    </svg>
+                                    <div class="progress-circular__info">
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="spacer">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="card__actions">
+                            <div class="spacer">
+                            </div>
+                            <span class="tooltip tooltip--bottom">
+                              <div class="tooltip__content"
+                                   style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"
+                              >
+                                <span>
+                                  &#x8F6C;&#x5230;&#x6B64;OJ
+                                </span>
+                              </div>
+                              <span>
+                                <button type="button"
+                                        class="btn btn--icon"
+                                >
+                                  <div class="btn__content">
+                                    <i aria-hidden="true"
+                                       class="icon material-icons"
+                                    >
+                                      link
+                                    </i>
+                                  </div>
+                                </button>
+                              </span>
+                            </span>
+                            <span class="tooltip tooltip--bottom">
+                              <div class="tooltip__content"
+                                   style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"
+                              >
+                                <span>
+                                  &#x91CD;&#x65B0;&#x722C;&#x53D6;&#x6B64;&#x5904;&#x4FE1;&#x606F;
+                                </span>
+                              </div>
+                              <span>
+                                <button type="button"
+                                        class="btn btn--icon"
+                                >
+                                  <div class="btn__content">
+                                    <i aria-hidden="true"
+                                       class="icon material-icons"
+                                    >
+                                      refresh
+                                    </i>
+                                  </div>
+                                </button>
+                              </span>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="flex xs12 sm6 md4 xl3">
+                        <div class="card"
+                             style="height:auto;"
+                        >
+                          <div class="card__title card__title--primary">
+                            <div class="headline">
                               VJudge
                             </div>
                             <span class="grey--text">
