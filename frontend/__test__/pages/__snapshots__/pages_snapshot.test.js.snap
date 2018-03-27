@@ -29,7 +29,7 @@ exports[`/ 1`] = `
     >
     <link data-n-head="true"
           rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons"
+          href="https://fonts.loli.net/css?family=Roboto:300,400,500,700|Material+Icons"
     >
     <style data-n-head="true"
            type="text/css"
@@ -713,7 +713,7 @@ exports[`/statistics 1`] = `
     >
     <link data-n-head="true"
           rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons"
+          href="https://fonts.loli.net/css?family=Roboto:300,400,500,700|Material+Icons"
     >
     <style data-n-head="true"
            type="text/css"
