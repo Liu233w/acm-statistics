@@ -7,7 +7,7 @@ module.exports = async function (config, username) {
     throw new Error('请输入用户名')
   }
 
-  if (config.context === 'server') {
+  if (config.env === 'server') {
     return await doCrawler(username)
   } else {
 

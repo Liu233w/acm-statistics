@@ -68,7 +68,7 @@ exports.generateServerCrawlerFunctions = async () => {
       continue
     }
     const config = {
-      context: 'server',
+      env: 'server',
     }
     _.assign(config, item)
     const crawlerFunc = require(`../crawlers/${item.name}.js`)
@@ -132,7 +132,7 @@ exports.generateBrowserCrawlerFunctions = async () => {
       `
     } else {
       const config = {
-        context: 'browser',
+        env: 'browser',
       }
       _.assign(config, item)
       ret[item.name] = `
