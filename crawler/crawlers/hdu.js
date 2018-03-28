@@ -7,6 +7,24 @@ module.exports = async function (config, username) {
     throw new Error('请输入用户名')
   }
 
+  if (config.context === 'server') {
+    return await doCrawler(username)
+  } else {
+
+    for (let i = 0; i < 2; ++i) {
+      try {
+        console.log('browser')
+        return await doCrawler(username)
+      } catch (e) {
+        if (e.message !== 'Not Found' || i >= 1) {
+          throw e
+        }
+      }
+    }
+  }
+}
+
+async function doCrawler(username) {
   const res = await request
     .get('http://acm.hdu.edu.cn/userstatus.php')
     .query({user: username})
