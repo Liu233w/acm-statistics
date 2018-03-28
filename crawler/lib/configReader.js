@@ -5,6 +5,7 @@
 const fs = require('fs-extra')
 const yml = require('js-yaml')
 const join = require('path').join
+const _ = require('lodash')
 
 // require 的路径是相对源文件路径的，而 fs 模块的路径是相对于工作路径的，必须使用 __dirname 来转换
 const configPath = join(__dirname, '../config.yml')
@@ -66,8 +67,12 @@ exports.generateServerCrawlerFunctions = async () => {
     if (!item.name) {
       continue
     }
+    const config = {
+      context: 'server',
+    }
+    _.assign(config, item)
     const crawlerFunc = require(`../crawlers/${item.name}.js`)
-    ret[item.name] = username => crawlerFunc(item, username)
+    ret[item.name] = username => crawlerFunc(config, username)
   }
 
   return ret
@@ -126,11 +131,15 @@ exports.generateBrowserCrawlerFunctions = async () => {
         }
       `
     } else {
+      const config = {
+        context: 'browser',
+      }
+      _.assign(config, item)
       ret[item.name] = `
         (username) => {
           let module = {exports: {}}
           ;(function(module, exports) { ${crawlerFuncStr} })(module, module.exports)
-          return module.exports(${JSON.stringify(item)}, username)
+          return module.exports(${JSON.stringify(config)}, username)
         }
     `
     }
