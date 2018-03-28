@@ -41,8 +41,8 @@ async function doCrawler(username) {
 
   try {
     return {
-      submissions: Number($('td').filter((i,el)=>$(el).text()==='Submissions').next().text()),
-      solved: Number($('td').filter((i,el)=>$(el).text()==='Accepted').next().text()),
+      submissions: Number($('td').filter((i, el) => $(el).text() === 'Submissions').next().text()),
+      solved: Number($('td').filter((i, el) => $(el).text() === 'Accepted').next().text()),
     }
   } catch (e) {
     throw new Error('无法解析数据')
