@@ -22,6 +22,7 @@ module.exports = {
   plugins: [
     '~/plugins/vuetify.js',
     '~/plugins/debug.js',
+    '~/plugins/ta.js',
   ],
   css: [
     '~/assets/style/app.styl',
