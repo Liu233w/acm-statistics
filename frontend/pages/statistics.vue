@@ -59,6 +59,7 @@
                       :func="item.func"
       />
     </div>
+    <ta/>
   </v-container>
 </template>
 

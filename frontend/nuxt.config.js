@@ -18,6 +18,9 @@ module.exports = {
       {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'},
       {rel: 'stylesheet', href: 'https://fonts.loli.net/css?family=Roboto:300,400,500,700|Material+Icons'},
     ],
+    script: [
+      {src: 'http://tajs.qq.com/stats?sId=65546290', charset: 'UTF-8', type: 'text/javascript'},
+    ],
   },
   plugins: [
     '~/plugins/vuetify.js',

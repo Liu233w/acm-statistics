@@ -24,5 +24,6 @@
         </v-card-text>
       </v-card>
     </v-flex>
+    <ta/>
   </v-layout>
 </template>
