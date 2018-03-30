@@ -513,6 +513,12 @@ exports[`/ 1`] = `
   background: #ffc107 !important;
 }
     </style>
+    <script data-n-head="true"
+            src="http://tajs.qq.com/stats?sId=65546290"
+            charset="UTF-8"
+            type="text/javascript"
+    >
+    </script>
   </head>
   <body data-n-head>
     <div data-server-rendered="true"
@@ -656,6 +662,11 @@ exports[`/ 1`] = `
                         </div>
                       </div>
                     </div>
+                    <script type="text/javascript"
+                            src="http://tajs.qq.com/stats?sId=65546290"
+                            charset="UTF-8"
+                    >
+                    </script>
                   </div>
                 </div>
               </div>
@@ -1197,6 +1208,12 @@ exports[`/statistics 1`] = `
   background: #ffc107 !important;
 }
     </style>
+    <script data-n-head="true"
+            src="http://tajs.qq.com/stats?sId=65546290"
+            charset="UTF-8"
+            type="text/javascript"
+    >
+    </script>
     <style>
     </style>
   </head>
@@ -3199,6 +3216,11 @@ exports[`/statistics 1`] = `
                       <div>
                       </div>
                     </div>
+                    <script type="text/javascript"
+                            src="http://tajs.qq.com/stats?sId=65546290"
+                            charset="UTF-8"
+                    >
+                    </script>
                   </div>
                 </div>
               </div>
