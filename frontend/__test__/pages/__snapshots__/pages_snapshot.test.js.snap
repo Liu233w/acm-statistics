@@ -1327,13 +1327,30 @@ exports[`/statistics 1`] = `
                       </div>
                       <div class="flex xs4">
                         <button type="button"
-                                primary
-                                class="btn"
+                                class="primary btn"
                         >
                           <div class="btn__content">
                             &#x5F00;&#x59CB;&#x67E5;&#x8BE2;
                           </div>
                         </button>
+                        <span class="tooltip tooltip--bottom">
+                          <div class="tooltip__content"
+                               style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"
+                          >
+                            &#x5C06;&#x7528;&#x6237;&#x540D;&#x4FDD;&#x5B58;&#x5230;&#x672C;&#x5730;&#xFF0C;&#x4E0B;&#x6B21;&#x6253;&#x5F00;&#x9875;&#x9762;&#x7684;&#x65F6;&#x5019;&#x4F1A;&#x81EA;&#x52A8;&#x586B;&#x5199;
+                            <br>
+                            &#xFF08;&#x4F7F;&#x7528;&#x201C;&#x5F00;&#x59CB;&#x67E5;&#x8BE2;&#x201D;&#x6309;&#x94AE;&#x4E5F;&#x4F1A;&#x4FDD;&#x5B58;&#x7528;&#x6237;&#x540D;&#xFF09;
+                          </div>
+                          <span>
+                            <button type="button"
+                                    class="btn"
+                            >
+                              <div class="btn__content">
+                                &#x4FDD;&#x5B58;&#x7528;&#x6237;&#x540D;
+                              </div>
+                            </button>
+                          </span>
+                        </span>
                       </div>
                     </div>
                     <div class="layout row">
