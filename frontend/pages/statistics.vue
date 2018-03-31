@@ -14,6 +14,20 @@
         <v-btn primary @click="runWorker" :disabled="working">
           开始查询
         </v-btn>
+        <v-tooltip bottom>
+          <v-btn @click="saveUsername"
+                 slot="activator"
+                 :loading="savingUsername"
+                 :disable="savingUsername"
+                 :class="{ green: savingUsername }"
+          >
+            保存用户名
+            <span slot="loader">保存成功</span>
+          </v-btn>
+          将用户名保存到本地，下次打开页面的时候会自动填写
+          <br>
+          （使用“开始查询”按钮也会保存用户名）
+        </v-tooltip>
       </v-flex>
     </v-layout>
     <v-layout row v-if="allSubmissions">
@@ -79,6 +93,7 @@
     mounted() {
       this.onResize()
       window.addEventListener('resize', this.onResize, {passive: true})
+      this.loadUsername()
     },
     data() {
       return {
@@ -96,6 +111,8 @@
         }, []),
         // 一共有几列
         columnCount: 3,
+        // 管理保存用户名按钮的动画
+        savingUsername: false,
       }
     },
     computed: {
@@ -118,6 +135,7 @@
     },
     methods: {
       runWorker() {
+        this.saveUsername()
         _.forEach(this.workers, item => item.status = WORKER_STATUS.WORKING)
       },
       onResize() {
@@ -130,6 +148,44 @@
           this.columnCount = 3 // md
         } else {
           this.columnCount = 4 // lg xl
+        }
+      },
+      /**
+       * 将用户名的情况存储进 localStorage 里面
+       */
+      saveUsername() {
+        const username = {
+          main: this.username,
+          subs: {},
+        }
+        for (let item of this.workers) {
+          username.subs[item.name] = item.username
+        }
+
+        window.localStorage.setItem('username', JSON.stringify(username))
+
+        this.savingUsername = true
+
+        // 播放2秒的保存动画
+        setTimeout(() => {
+          this.savingUsername = false
+        }, 2000)
+      },
+      /**
+       * 从 localStorage 读取用户名情况，输入进 worker 中
+       */
+      loadUsername() {
+        const username = JSON.parse(window.localStorage.getItem('username'))
+        if (username) {
+          this.username = username.main
+          // 修改 this.username 会触发 watch 来修改其他用户名，所以这里必须放到下一个 tick 来修改
+          this.$nextTick(() => {
+            for (let item of this.workers) {
+              if (username.subs[item.name]) {
+                item.username = username.subs[item.name]
+              }
+            }
+          })
         }
       },
     },
