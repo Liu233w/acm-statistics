@@ -11,7 +11,7 @@
         />
       </v-flex>
       <v-flex xs4>
-        <v-btn primary @click="runWorker" :disabled="working">
+        <v-btn class="primary" @click="runWorker" :disabled="working">
           开始查询
         </v-btn>
         <v-tooltip bottom>
