@@ -17,10 +17,10 @@ exports[`/ 1`] = `
     <meta data-n-head="true"
           data-hid="description"
           name="description"
-          content="OJ &#x9898;&#x91CF;&#x67E5;&#x8BE2;&#x7CFB;&#x7EDF; -- &#x897F;&#x5317;&#x5DE5;&#x4E1A;&#x5927;&#x5B66; ACM &#x5F00;&#x53D1;&#x7EC4;"
+          content="NWPU-ACM &#x67E5;&#x8BE2;&#x7CFB;&#x7EDF; -- &#x897F;&#x5317;&#x5DE5;&#x4E1A;&#x5927;&#x5B66; ACM &#x5F00;&#x53D1;&#x7EC4;"
     >
     <title data-n-head="true">
-      OJ &#x9898;&#x91CF;&#x67E5;&#x8BE2;&#x7CFB;&#x7EDF;
+      NWPU-ACM &#x67E5;&#x8BE2;&#x7CFB;&#x7EDF;
     </title>
     <link data-n-head="true"
           rel="icon"
@@ -571,7 +571,7 @@ exports[`/ 1`] = `
                     </div>
                     <div class="list__tile__content">
                       <div class="list__tile__title">
-                        &#x9898;&#x91CF;&#x7EDF;&#x8BA1;
+                        OJ&#x9898;&#x91CF;&#x7EDF;&#x8BA1;
                       </div>
                     </div>
                   </a>
@@ -598,7 +598,7 @@ exports[`/ 1`] = `
                   </div>
                 </button>
                 <div class="toolbar__title">
-                  OJ &#x9898;&#x91CF;&#x67E5;&#x8BE2;&#x7CFB;&#x7EDF;
+                  NWPU-ACM &#x67E5;&#x8BE2;&#x7CFB;&#x7EDF;
                 </div>
                 <div class="spacer">
                 </div>
@@ -620,7 +620,7 @@ exports[`/ 1`] = `
                            style="height:auto;"
                       >
                         <div class="card__title headline">
-                          &#x6B22;&#x8FCE;&#x4F7F;&#x7528; ACM-ICPC OJ&#x9898;&#x91CF;&#x67E5;&#x8BE2;&#x5DE5;&#x5177;
+                          &#x6B22;&#x8FCE;&#x4F7F;&#x7528; NWPU-ACM &#x67E5;&#x8BE2;&#x7CFB;&#x7EDF;
                         </div>
                         <div class="card__text">
                           <p>
@@ -644,6 +644,9 @@ exports[`/ 1`] = `
                             >
                               &#x5411;&#x6211;&#x4EEC;&#x63D0;&#x51FA;&#x610F;&#x89C1;
                             </a>
+                          </p>
+                          <p>
+                            &#xFF08;&#x672C;&#x7CFB;&#x7EDF;&#x4E0D;&#x652F;&#x6301;IE&#x6D4F;&#x89C8;&#x5668;&#xFF09;
                           </p>
                           <hr class="my-3">
                           <a href="mailto:support@npuacm.info">
@@ -712,10 +715,10 @@ exports[`/statistics 1`] = `
     <meta data-n-head="true"
           data-hid="description"
           name="description"
-          content="OJ &#x9898;&#x91CF;&#x67E5;&#x8BE2;&#x7CFB;&#x7EDF; -- &#x897F;&#x5317;&#x5DE5;&#x4E1A;&#x5927;&#x5B66; ACM &#x5F00;&#x53D1;&#x7EC4;"
+          content="NWPU-ACM &#x67E5;&#x8BE2;&#x7CFB;&#x7EDF; -- &#x897F;&#x5317;&#x5DE5;&#x4E1A;&#x5927;&#x5B66; ACM &#x5F00;&#x53D1;&#x7EC4;"
     >
     <title data-n-head="true">
-      OJ &#x9898;&#x91CF;&#x67E5;&#x8BE2;&#x7CFB;&#x7EDF;
+      NWPU-ACM &#x67E5;&#x8BE2;&#x7CFB;&#x7EDF;
     </title>
     <link data-n-head="true"
           rel="icon"
@@ -1268,7 +1271,7 @@ exports[`/statistics 1`] = `
                     </div>
                     <div class="list__tile__content">
                       <div class="list__tile__title">
-                        &#x9898;&#x91CF;&#x7EDF;&#x8BA1;
+                        OJ&#x9898;&#x91CF;&#x7EDF;&#x8BA1;
                       </div>
                     </div>
                   </a>
@@ -1295,7 +1298,7 @@ exports[`/statistics 1`] = `
                   </div>
                 </button>
                 <div class="toolbar__title">
-                  OJ &#x9898;&#x91CF;&#x67E5;&#x8BE2;&#x7CFB;&#x7EDF;
+                  NWPU-ACM &#x67E5;&#x8BE2;&#x7CFB;&#x7EDF;
                 </div>
                 <div class="spacer">
                 </div>
