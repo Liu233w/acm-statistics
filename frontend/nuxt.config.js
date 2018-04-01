@@ -8,11 +8,11 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: 'OJ 题量查询系统',
+    title: 'NWPU-ACM 查询系统',
     meta: [
       {charset: 'utf-8'},
       {name: 'viewport', content: 'width=device-width, initial-scale=1'},
-      {hid: 'description', name: 'description', content: 'OJ 题量查询系统 -- 西北工业大学 ACM 开发组'},
+      {hid: 'description', name: 'description', content: 'NWPU-ACM 查询系统 -- 西北工业大学 ACM 开发组'},
     ],
     link: [
       {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'},

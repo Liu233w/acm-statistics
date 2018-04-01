@@ -5,7 +5,7 @@
         <img src="/img/logo.png" alt="ACM-ICPC 协会">
       </div>
       <v-card>
-        <v-card-title class="headline">欢迎使用 ACM-ICPC OJ题量查询工具</v-card-title>
+        <v-card-title class="headline">欢迎使用 NWPU-ACM 查询系统</v-card-title>
         <v-card-text>
           <p>全新异步API + 浏览器端爬虫，查询速度加倍</p>
           <p><a href="/swagger">免费提供题目查询 Rest API</a></p>

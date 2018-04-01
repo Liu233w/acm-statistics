@@ -48,9 +48,9 @@
         drawer: true,
         items: [
           { icon: 'home', title: 'Welcome', to: '/' },
-          { icon: 'code', title: '题量统计', to: '/statistics' },
+          { icon: 'code', title: 'OJ题量统计', to: '/statistics' },
         ],
-        title: 'OJ 题量查询系统',
+        title: 'NWPU-ACM 查询系统',
       }
     },
   }
