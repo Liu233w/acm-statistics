@@ -179,20 +179,31 @@ describe('leetcode_cn', () => {
 
 })
 
-test.skip('test vjudge', async () => {
-  const config = await ensureConfigAndRead()
-  // 需要读取设置，因此没法在 ci 里面测试
-  const vjConfig = _.find(config.crawlers, item => item.name === 'vjudge')
+describe('vjudge', () => {
 
-  // 必须要保证配置文件正确才能进行此项测试
-  expect(vjConfig).toBeTruthy()
-  expect(vjConfig.crawler_login_user).toBeTruthy()
-  expect(vjConfig.crawler_login_user).not.toBe('用户名')
+  let vjConfig
 
-  console.log(vjConfig)
+  beforeAll(async () => {
+    const config = await ensureConfigAndRead()
+    // 需要读取设置，因此没法在 ci 里面测试
+    vjConfig = _.find(config.crawlers, item => item.name === 'vjudge')
 
-  const res = await vjudge(vjConfig, 'leoloveacm')
-  checkRes(res)
+    // 必须要保证配置文件正确才能进行此项测试
+    expect(vjConfig).toBeTruthy()
+    expect(vjConfig.crawler_login_user).toBeTruthy()
+    expect(vjConfig.crawler_login_user).not.toBe('用户名')
+
+    // console.log(vjConfig)
+  })
+
+  test('test vjudge - 用户不存在时抛出异常', async () => {
+    await expect(vjudge(vjConfig, notExistUsername)).rejects.toThrow('用户不存在')
+  })
+
+  test('test vjudge', async () => {
+    const res = await vjudge(vjConfig, 'leoloveacm')
+    checkRes(res)
+  })
 })
 
 function checkRes(res) {
