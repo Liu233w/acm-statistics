@@ -13,52 +13,43 @@ stages:
     if: tag =~ ^v
   - name: sonar
 
+cache:
+  directories:
+    - $HOME/.sonar/cache
+    - $HOME/.m2
+    - $HOME/.npm
+    - frontend/node_modules
+    - crawler/node_modules
+    - crawler-api-backend/node_modules
+
+install:
+  - cd frontend
+  - npm install
+  - cd ../crawler
+  - npm install
+  - cd ../crawler-api-backend
+  - npm install
+  - cd ..
+
 matrix:
   include:
     - env: NAME=Frontend
       stage: test
-      cache:
-        directories:
-          - frontend/node_modules
-          - crawler/node_modules
-          - $HOME/.npm
-
-      install:
-        - cd crawler
-        - npm install
-        - cd ../frontend
-        - npm install
-
       script:
+        - cd frontend
         - npm run lint
         - npm test
 
     - env: NAME=Crawler
       stage: test
-      cache:
-        directories:
-          - crawler/node_modules
-          - $HOME/.npm
-
-      install:
-        - cd crawler
-        - npm install
-
       script:
+        - cd crawler
         - npm run lint
 
     - env: NAME=Crawler-api-backend
       stage: test
-      cache:
-        directories:
-          - crawler-api-backend/node_modules
-          - $HOME/.npm
-
-      install:
-        - cd crawler-api-backend
-        - npm install
-
       script:
+        - cd crawler-api-backend
         - npm run lint
 
     - env: NAME=Sonar-Analysis
@@ -67,21 +58,5 @@ matrix:
         sonarcloud:
           organization: "liu233w-github"
           token: $SONAR_TOKEN
-      cache:
-        directories:
-          - $HOME/.sonar/cache
-          - $HOME/.m2
-          - $HOME/.npm
-          - frontend/node_modules
-          - crawler/node_modules
-          - crawler-api-backend/node_modules
-      install:
-        - cd frontend
-        - npm install
-        - cd ../crawler
-        - npm install
-        - cd ../crawler-api-backend
-        - npm install
-        - cd ..
       script:
         - sonar-scanner -Dsonar.projectKey=acm-statistics -Dsonar.organization=liu233w-github -Dsonar.sources=. -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$SONAR_TOKEN -Dsonar.exclusions=**/node_modules/**/*,backend
