@@ -11,6 +11,7 @@ stages:
   - name: test
   - name: deploy
     if: tag =~ ^v
+  - name: sonar
 
 matrix:
   include:
@@ -56,3 +57,28 @@ matrix:
 
       script:
         - npm run lint
+    - env: NAME=Sonar-Analysis
+      stage: sonar
+      dist: trusty
+      addons:
+        sonarcloud:
+          organization: "liu233w-github"
+          token:
+            secure: b77CaxNwDtayLSPAmUzdsdjeo+kW5DZMB0aUu2uNulLL1C7zYb4iUhZQjTM5AaCUvanIwQgzevSwt1U4jSHqwjeMB2kZJ3QIYTb3EMNRE22GNYmmvvDQ3ZStt2huCOnqQmnJVzfQBaxQMXCR6VKLBh2nh1QyKUFlxEa0zL8P1zqbZEJf5AtQwF0SFzGOwfaFpjFrC7/c1KS4ddslKwWzRYRFmRGaxbBo9zo2ZHDeT182cJaOKh6k7Etd4JhMia+LicycaCaWOGLpQNszEzqeEIGcSSctqL33RvCvYSAOYQnBCSC6+RfnAz2CuodiKyr72kjI0U9WTtVUctSM0GdwWqaCNl0rpAt8dQUuY+JqV8Wz9oDaMBzxTr+5O2ePWMA8KF/Tiu9CneuHoej18ujfCgR+m2Yk2F+B117iqS6qMFXoXchcuCeAamSxCG1RARKDsgE7KgLUE0kYNp7eKoBRmtZpq0yaP9joDSgshXOgkjekvAVMnRWv3oOhs15SLgpj5G3iv9P6u/BibAIhIGXC8KiH0jvCKrKky5egBH87dJjPncrtan4hwcAsKF1WP7l/wyJ3eC4rCOyWPxBT1sKmrioTnjTHOzbRBYPNyFf8iIBJVmtPQ6LMc61mTHQCWccp2akmvlr5Rf9d0TzxG4vxfCDX8MSaXOKYwwPg8rFme4g=
+      cache:
+        directories:
+          - $HOME/.sonar/cache
+          – $HOME/.m2
+          - crawler/node_modules
+          - frontend/node_modules
+          - crawler-api-backend/node_modules
+      install:
+        - cd crawler
+        - npm install
+        - cd ../frontend
+        - npm install
+        - cd ../crawler-api-backend
+        - npm install
+        - cd ../
+      script:
+        - sonar-scanner -Dsonar.projectKey=acm-statistics -Dsonar.organization=liu233w-github -Dsonar.sources=. -Dsonar.host.url=https://sonarcloud.io
