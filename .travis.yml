@@ -11,6 +11,7 @@ stages:
   - name: test
   - name: deploy
     if: tag =~ ^v
+  - name: sonar
 
 matrix:
   include:
@@ -56,3 +57,27 @@ matrix:
 
       script:
         - npm run lint
+
+    - env: NAME=Sonar-Analysis
+      stage: sonar
+      addons:
+        sonarcloud:
+          organization: "liu233w-github"
+          token: $SONAR_TOKEN
+      cache:
+        directories:
+          - $HOME/.sonar/cache
+          - $HOME/.m2
+          - frontend/node_modules
+          - crawler/node_modules
+          - crawler-api-backend/node_modules
+      install:
+        - cd frontend
+        - npm install
+        - cd ../crawler
+        - npm install
+        - cd ../crawler-api-backend
+        - npm install
+        - cd ..
+      script:
+        - sonar-scanner -Dsonar.projectKey=acm-statistics -Dsonar.organization=liu233w-github -Dsonar.sources=. -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$SONAR_TOKEN -Dsonar.exclusions=**/node_modules/**/*,backend
