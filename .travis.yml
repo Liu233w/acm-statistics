@@ -21,6 +21,7 @@ matrix:
         directories:
           - frontend/node_modules
           - crawler/node_modules
+          - $HOME/.npm
 
       install:
         - cd crawler
@@ -37,6 +38,7 @@ matrix:
       cache:
         directories:
           - crawler/node_modules
+          - $HOME/.npm
 
       install:
         - cd crawler
@@ -50,6 +52,7 @@ matrix:
       cache:
         directories:
           - crawler-api-backend/node_modules
+          - $HOME/.npm
 
       install:
         - cd crawler-api-backend
@@ -68,6 +71,7 @@ matrix:
         directories:
           - $HOME/.sonar/cache
           - $HOME/.m2
+          - $HOME/.npm
           - frontend/node_modules
           - crawler/node_modules
           - crawler-api-backend/node_modules
