@@ -2,8 +2,9 @@ const Router = require('koa-router')
 const _ = require('lodash')
 
 const configReader = require('../crawler/lib/configReader')
+const functionGenerator = require('../crawler/lib/functionGenerator')
 let crawlers
-configReader.generateServerCrawlerFunctions()
+functionGenerator.generateServerCrawlerFunctions()
   .then(res => crawlers = res)
 let crawlerMeta
 configReader.readMetaConfigs()
