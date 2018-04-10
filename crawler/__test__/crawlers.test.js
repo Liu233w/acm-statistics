@@ -37,12 +37,16 @@ describe('poj', () => {
 
 describe('hdu', () => {
 
+  const config = {
+    env: 'server',
+  }
+
   test('test hdu - 用户不存在时抛出异常', async () => {
-    await expect(hdu(null, notExistUsername)).rejects.toThrow('用户不存在')
+    await expect(hdu(config, notExistUsername)).rejects.toThrow('用户不存在')
   })
 
   test('test hdu', async () => {
-    const res = await hdu(null, 'vjudge4')
+    const res = await hdu(config, 'vjudge4')
     checkRes(res)
   })
 
