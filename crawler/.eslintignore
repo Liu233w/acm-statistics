@@ -64,4 +64,4 @@ typings/
 /config.yml
 
 # test file
-/test
+/__test__
