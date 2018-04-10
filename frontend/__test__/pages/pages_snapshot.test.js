@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+
 const {Nuxt, Builder} = require('nuxt')
 const {resolve} = require('path')
 const cheerio = require('cheerio')

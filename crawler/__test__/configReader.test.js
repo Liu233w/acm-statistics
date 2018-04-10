@@ -1,4 +1,5 @@
 const {ensureConfigAndRead} = require("../lib/configReader")
+/* eslint-disable no-undef */
 
 test('ensureConfigAndRead 能够正确读取配置', async () => {
   const config = await ensureConfigAndRead()

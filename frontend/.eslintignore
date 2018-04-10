@@ -12,6 +12,3 @@
 
 # 模板文件，不应该被检查
 /modules/crawlerLoader/crawler.template.js
-
-# test file
-/__test__
