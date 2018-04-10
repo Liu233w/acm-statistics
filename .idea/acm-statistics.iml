@@ -2,7 +2,7 @@
 <module type="WEB_MODULE" version="4">
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$/crawler">
-      <sourceFolder url="file://$MODULE_DIR$/crawler/test" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/crawler/__test__" isTestSource="true" />
     </content>
     <content url="file://$MODULE_DIR$/crawler-api-backend" />
     <content url="file://$MODULE_DIR$/frontend">
