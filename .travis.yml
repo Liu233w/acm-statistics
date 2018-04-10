@@ -45,6 +45,7 @@ matrix:
       script:
         - cd crawler
         - npm run lint
+        - npm test
 
     - env: NAME=Crawler-api-backend
       stage: test

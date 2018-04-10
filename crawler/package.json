@@ -20,6 +20,10 @@
     "jest": "^22.4.3"
   },
   "jest": {
-    "testEnvironment": "node"
+    "testEnvironment": "node",
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "<rootDir>/__test__/crawlers.test.js"
+    ]
   }
 }
