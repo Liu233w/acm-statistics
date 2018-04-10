@@ -29,6 +29,7 @@ async function testPageByPath(path) {
   $('*').each((i, el) => {
     $(el).removeAttr('data-vue-ssr-id')
     for (let key in $(el).attr()) {
+      // eslint-disable-next-line lodash/prefer-lodash-method
       if (key.startsWith('data-v-')) {
         $(el).removeAttr(key)
       }
