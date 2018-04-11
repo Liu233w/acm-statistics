@@ -37,12 +37,12 @@ exports.generateServerCrawlerFunctions = async () => {
     if (!item.name) {
       continue
     }
-    const config = {
+    const crawlerConfig = {
       env: 'server',
     }
-    _.assign(config, item)
+    _.assign(crawlerConfig, item)
     const crawlerFunc = require(`../crawlers/${item.name}.js`)
-    ret[item.name] = username => crawlerFunc(config, username)
+    ret[item.name] = username => crawlerFunc(crawlerConfig, username)
   }
 
   return ret
@@ -73,7 +73,6 @@ exports.generateBrowserCrawlerFunctions = async () => {
     if (!item.name) {
       continue
     }
-    const crawlerFuncStr = await fs.readFile(join(__dirname, `../crawlers/${item.name}.js`), 'utf-8')
     if (item.server_only) {
       ret[item.name] = `
         (username) => {
@@ -101,15 +100,16 @@ exports.generateBrowserCrawlerFunctions = async () => {
         }
       `
     } else {
-      const config = {
+      const crawlerFuncStr = await fs.readFile(join(__dirname, `../crawlers/${item.name}.js`), 'utf-8')
+      const crawlerConfig = {
         env: 'browser',
       }
-      _.assign(config, item)
+      _.assign(crawlerConfig, item)
       ret[item.name] = `
         (username) => {
           let module = {exports: {}}
           ;(function(module, exports) { ${crawlerFuncStr} })(module, module.exports)
-          return module.exports(${JSON.stringify(config)}, username)
+          return module.exports(${JSON.stringify(crawlerConfig)}, username)
         }
     `
     }
