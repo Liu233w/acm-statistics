@@ -81,7 +81,7 @@ exports.generateBrowserCrawlerFunctions = async () => {
               .then(response => {
                 // console.log(response)
                 if (response.data.error) {
-                  reject(response.data.message)
+                  reject(new Error(response.data.message))
                 } else {
                   resolve(response.data.data)
                 }
@@ -93,7 +93,7 @@ exports.generateBrowserCrawlerFunctions = async () => {
                   reject(new Error(err.response.data.message))
                 } else {
                   //网络错误或其他错误
-                  reject(new Error(err.message))
+                  reject(err)
                 }
               })
           })
