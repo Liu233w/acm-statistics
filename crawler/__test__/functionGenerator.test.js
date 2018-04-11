@@ -8,9 +8,10 @@ const MockAdapter = require('axios-mock-adapter')
 const axiosMock = new MockAdapter(axios, {delayResponse: 200})
 
 jest.mock('../lib/configReader')
+// fs-extra 引用了 fs，只要 mock fs 模块，fs-extra就不会使用fs对文件系统进行io了
 jest.mock('fs')
 
-const fs = require('fs')
+const fs = require('fs-extra')
 
 describe('generateServerCrawlerFunctions', () => {
 
