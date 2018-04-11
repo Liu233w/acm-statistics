@@ -166,7 +166,7 @@ describe('generateBrowserCrawlerFunctions', () => {
         .rejects.toThrow(crawlerErrorMessage)
     })
 
-    it.skip('生成的函数在网络错误时能够抛出异常，并且含有异常信息', async () => {
+    it('生成的函数在网络错误时能够抛出异常，并且含有异常信息', async () => {
       await expect(functions.crawler_for_server(networkErrorUser))
         .rejects.toThrow(/.+/)
     })

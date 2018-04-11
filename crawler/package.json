@@ -23,7 +23,6 @@
     "memfs": "^2.8.0"
   },
   "jest": {
-    "testEnvironment": "node",
     "testPathIgnorePatterns": [
       "/node_modules/",
       "<rootDir>/__test__/crawlers.test.js"
