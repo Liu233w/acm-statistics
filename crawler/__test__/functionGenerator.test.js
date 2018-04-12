@@ -162,8 +162,19 @@ describe('generateBrowserCrawlerFunctions', () => {
     })
 
     it('生成的函数在服务器端返回错误时能够抛出异常，并包含正确的异常信息', async () => {
-      await expect(functions.crawler_for_server(rejectedUser))
-        .rejects.toThrow(crawlerErrorMessage)
+      const promise = expect(functions.crawler_for_server(rejectedUser))
+      await promise.rejects.toThrow(Error)
+      await promise.rejects.toThrow(crawlerErrorMessage)
+      // 等到下方的测试用例失败时，可以直接使用第二条语句。
+    })
+
+    it('reject a string won\'t pass', async () => {
+      // 按理来说这个用例应该失败的，否则有些情况测不出来。参考：
+      // https://github.com/Liu233w/acm-statistics/issues/29
+      expect(() => {
+        throw 'aaa'
+      }).toThrow('aaa')
+      await expect(Promise.reject('aaa')).rejects.toThrow('aaa')
     })
 
     it('生成的函数在网络错误时能够抛出异常，并且含有异常信息', async () => {
