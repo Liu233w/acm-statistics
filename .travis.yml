@@ -23,6 +23,7 @@ cache:
     - crawler-api-backend/node_modules
 
 install:
+  - npm install -g codecov
   - cd frontend
   - npm install
   - cd ../crawler
@@ -38,21 +39,21 @@ matrix:
       script:
         - cd frontend
         - npm run lint
-        - npm test
+        - npm test && codecov
 
     - env: NAME=Crawler
       stage: test
       script:
         - cd crawler
         - npm run lint
-        - npm test
+        - npm test && codecov
 
     - env: NAME=Crawler-api-backend
       stage: test
       script:
         - cd crawler-api-backend
         - npm run lint
-        - npm test
+        - npm test && codecov
 
     - env: NAME=Sonar-Analysis
       stage: sonar
