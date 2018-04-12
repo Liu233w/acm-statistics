@@ -32,7 +32,7 @@
     "eslint-config-standard": "^10.2.1",
     "eslint-loader": "^1.9.0",
     "eslint-plugin-html": "^3.1.1",
-    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-import": "^2.10.0",
     "eslint-plugin-lodash": "^2.7.0",
     "eslint-plugin-node": "^5.1.1",
     "eslint-plugin-promise": "^3.5.0",
