@@ -2,19 +2,7 @@
 
 // 在 require 的时候程序会直接 require 爬虫，如果在 beforeAll 里面 mock 的话就晚了
 jest.mock('../../crawler/lib/configReader')
-for (let item of ['crawler1', 'crawler2', 'crawler_for_server']) {
-  // 因为 functionGenerator 里面 require 的时候带了 js 后缀，这里必须也加上后缀，否则会提示找不到模块
-  jest.mock(`../../crawler/crawlers/${item}.js`, () => async function (config, username) {
-    if (username === 'reject') {
-      throw new Error('用户不存在')
-    } else {
-      return {
-        solved: 101,
-        submissions: 230,
-      }
-    }
-  }, {virtual: true})
-}
+jest.mock('../../crawler/lib/functionGenerator')
 
 const supertest = require('supertest')
 const app = require('../app')
