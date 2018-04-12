@@ -26,6 +26,8 @@
     "testPathIgnorePatterns": [
       "/node_modules/",
       "<rootDir>/__test__/crawlers.test.js"
-    ]
+    ],
+    "coverageDirectory": "./coverage/",
+    "collectCoverage": true
   }
 }
