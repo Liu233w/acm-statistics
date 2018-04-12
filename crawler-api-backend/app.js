@@ -19,6 +19,7 @@ const errHelper = async (ctx, next) => {
 const notFoundHelper = async (ctx, next) => {
   if (ctx.response.status === 404) {
     ctx.error('404 Not Found')
+    ctx.response.status = 404
   }
   await next()
 }
