@@ -5,7 +5,7 @@
 module.exports = async function (ctx, next) {
 
   ctx.rest = function (data) {
-    ctx.response.state = 200
+    ctx.response.status = 200
     ctx.response.type = 'application/json'
     ctx.response.body = {
       error: false,
@@ -14,7 +14,7 @@ module.exports = async function (ctx, next) {
   }
 
   ctx.error = function (message) {
-    ctx.response.state = 400
+    ctx.response.status = 400
     ctx.response.type = 'application/json'
     ctx.response.body = {
       error: true,
