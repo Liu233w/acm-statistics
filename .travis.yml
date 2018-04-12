@@ -52,6 +52,7 @@ matrix:
       script:
         - cd crawler-api-backend
         - npm run lint
+        - npm test
 
     - env: NAME=Sonar-Analysis
       stage: sonar
