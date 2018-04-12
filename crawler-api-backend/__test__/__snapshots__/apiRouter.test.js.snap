@@ -1,0 +1,152 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`/api/crawlers/swagger.json swagger should match snapshot 1`] = `
+Object {
+  "definitions": Object {
+    "CrawlerMeta": Object {
+      "description": "爬虫的元信息",
+      "properties": Object {
+        "description": Object {
+          "description": "爬虫的说明",
+          "type": "string",
+        },
+        "title": Object {
+          "description": "爬虫的标题",
+          "type": "string",
+        },
+        "url": Object {
+          "description": "爬虫要爬的网址",
+          "type": "string",
+        },
+      },
+      "type": "object",
+    },
+    "Error": Object {
+      "properties": Object {
+        "error": Object {
+          "description": "true",
+          "type": "boolean",
+        },
+        "message": Object {
+          "type": "string",
+        },
+      },
+      "type": "object",
+    },
+    "Ok": Object {
+      "properties": Object {
+        "data": Object {
+          "$ref": "#/definitions/UserState",
+        },
+        "error": Object {
+          "description": "false",
+          "type": "boolean",
+        },
+      },
+      "type": "object",
+    },
+    "UserState": Object {
+      "description": "用户的题量状况",
+      "properties": Object {
+        "solved": Object {
+          "format": "int64",
+          "type": "integer",
+        },
+        "submissions": Object {
+          "format": "int64",
+          "type": "integer",
+        },
+      },
+      "type": "object",
+    },
+  },
+  "externalDocs": Object {
+    "description": "后端文档",
+    "url": "https://github.com/Liu233w/acm-statistics/blob/master/crawler-api-backend/README.md",
+  },
+  "info": Object {
+    "description": "这是一个爬虫微服务。在这里可以通过 Rest API 调用 \`crawler\` 文件夹中的所有爬虫。 这些爬虫都是在服务器上运行的，因此您可以在任何地方使用本 API。",
+    "title": "crawler-api-backend",
+    "version": "1.0.0",
+  },
+  "paths": Object {
+    "/api/crawlers/": Object {
+      "get": Object {
+        "consumes": Array [
+          "application/json",
+        ],
+        "description": "",
+        "produces": Array [
+          "application/json",
+        ],
+        "responses": Object {
+          "200": Object {
+            "description": "success",
+            "schema": Object {
+              "properties": Object {
+                "data": Object {
+                  "additionalProperties": Object {
+                    "$ref": "#/definitions/CrawlerMeta",
+                  },
+                  "description": "name of the crawler",
+                  "type": "object",
+                },
+                "error": Object {
+                  "description": "false",
+                  "type": "boolean",
+                },
+              },
+              "type": "object",
+            },
+          },
+        },
+        "summary": "返回所有支持查询的 OJ",
+      },
+    },
+    "/api/crawlers/{type}/{username}": Object {
+      "get": Object {
+        "consumes": Array [
+          "application/json",
+        ],
+        "parameters": Array [
+          Object {
+            "description": "OJ类型，只包括在 \`/crawler/config.yml\` 中定义的类型",
+            "in": "path",
+            "name": "type",
+            "required": true,
+            "type": "string",
+          },
+          Object {
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string",
+          },
+        ],
+        "produces": Array [
+          "application/json",
+        ],
+        "responses": Object {
+          "200": Object {
+            "description": "successful",
+            "schema": Object {
+              "$ref": "#/definitions/Ok",
+            },
+          },
+          "400": Object {
+            "description": "all other fails",
+            "schema": Object {
+              "$ref": "#/definitions/Error",
+            },
+          },
+        },
+        "summary": "查询某个OJ上的用户题量",
+      },
+    },
+  },
+  "schemes": Array [
+    "http",
+  ],
+  "swagger": "2.0",
+}
+`;

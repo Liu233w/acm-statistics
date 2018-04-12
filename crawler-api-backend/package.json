@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node index.js",
     "lint": "eslint --ext .js --ignore-path .gitignore .",
-    "lintfix": "eslint --fix --ext .js --ignore-path .gitignore ."
+    "lintfix": "eslint --fix --ext .js --ignore-path .gitignore .",
+    "test": "jest"
   },
   "author": "Liu233w <wwwlsmcom@outlook.com>",
   "license": "GPL-3.0",
@@ -18,6 +19,11 @@
   },
   "devDependencies": {
     "eslint": "^4.19.1",
-    "eslint-plugin-lodash": "^2.7.0"
+    "eslint-plugin-lodash": "^2.7.0",
+    "jest": "^22.4.3",
+    "supertest": "^3.0.0"
+  },
+  "jest": {
+    "testEnvironment": "node"
   }
 }
