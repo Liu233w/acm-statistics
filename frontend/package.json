@@ -16,7 +16,7 @@
     "snapshot": "jest __test__/ --watch"
   },
   "dependencies": {
-    "@nuxtjs/proxy": "^1.1.4",
+    "@nuxtjs/proxy": "^1.2.4",
     "axios": "^0.18.0",
     "cheerio": "^1.0.0-rc.2",
     "lodash": "^4.17.5",
