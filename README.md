@@ -1,4 +1,4 @@
-acm-statistics
+新版 NWPU-ACM 查询系统
 ===
 
 [![Powered by ZenHub](https://img.shields.io/badge/Powered_by-ZenHub-5e60ba.svg)](https://app.zenhub.com/workspace/o/liu233w/acm-statistics/boards?repos=125616473)
@@ -6,14 +6,15 @@ acm-statistics
 [![Quality Gate](https://sonarcloud.io/api/project_badges/measure?project=acm-statistics&metric=alert_status)](https://sonarcloud.io/dashboard?id=acm-statistics)
 [![codecov](https://codecov.io/gh/Liu233w/acm-statistics/branch/master/graph/badge.svg)](https://codecov.io/gh/Liu233w/acm-statistics)
 
-NWPU-ACM 查询工具
-
-## 项目状态
-|模块|状态|
-|----|------|
-|frontend|[![](https://www.versioneye.com/user/projects/5ab717300fb24f0ac49c2bcb/badge.svg)](https://www.versioneye.com/user/projects/5ab717300fb24f0ac49c2bcb)|
-|crawler|[![](https://www.versioneye.com/user/projects/5ab717300fb24f4489395c40/badge.svg)](https://www.versioneye.com/user/projects/5ab717300fb24f4489395c40)|
-|crawler-api-backend|[![](https://www.versioneye.com/user/projects/5ab7172e0fb24f0ac49c2bbd/badge.svg)](https://www.versioneye.com/user/projects/5ab7172e0fb24f0ac49c2bbd)|
+#### 功能
+- 题量查询
+#### 开发中
+- 历史记录
+- 题量追踪
+- 邮件提醒
+- 排行榜
+- 查重
+- ……
 
 ## 目录结构
 
