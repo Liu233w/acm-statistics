@@ -17,19 +17,19 @@ const errHelper = async (ctx, next) => {
 }
 
 const notFoundHelper = async (ctx, next) => {
+  await next()
   if (ctx.response.status === 404) {
     ctx.error('404 Not Found')
     ctx.response.status = 404
   }
-  await next()
 }
 
 app
   .use(logUtil)
   .use(restHelper)
+  .use(notFoundHelper)
   .use(errHelper)
   .use(apiRouter.routes())
   .use(apiRouter.allowedMethods())
-  .use(notFoundHelper)
 
 module.exports = app

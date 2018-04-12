@@ -14,15 +14,13 @@ const swagger = require('./swagger.json')
 
 const router = new Router()
 
-router.get('/api/crawlers/swagger.json', async (ctx, next) => {
+router.get('/api/crawlers/swagger.json', async (ctx) => {
   ctx.response.type = 'application/json'
   ctx.response.state = 200
   ctx.response.body = JSON.stringify(swagger)
-
-  await next()
 })
 
-router.get('/api/crawlers/:type/:username', async (ctx, next) => {
+router.get('/api/crawlers/:type/:username', async (ctx) => {
 
   const ojFunc = crawlers[ctx.params.type]
 
@@ -31,13 +29,10 @@ router.get('/api/crawlers/:type/:username', async (ctx, next) => {
   }
 
   ctx.rest(await ojFunc(ctx.params.username))
-
-  await next()
 })
 
-router.get('/api/crawlers', async (ctx, next) => {
+router.get('/api/crawlers', async (ctx) => {
   ctx.rest(_.mapValues(crawlers, (value, key) => crawlerMeta[key]))
-  await next()
 })
 
 module.exports = router
