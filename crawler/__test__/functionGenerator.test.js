@@ -144,7 +144,7 @@ describe('generateBrowserCrawlerFunctions', () => {
           data: resolvedData,
         })
       axiosMock.onGet(crawlerbaseUrl + rejectedUser)
-        .replyOnce(200, {
+        .replyOnce(400, {
           error: true,
           message: crawlerErrorMessage,
         })
