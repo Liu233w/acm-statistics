@@ -22,6 +22,11 @@
           <a href="https://github.com/Liu233w/acm-statistics" target="_blank">源代码</a>
           <br>
           <a href="http://npuacm.info/">返回旧版查询系统</a>
+          <br>
+          <br>
+          <p id="busuanzi_container_site_pv">本站总访问量: <span id="busuanzi_value_site_pv"/></p>
+          <br>
+          <p id="busuanzi_container_site_uv">本站总访客数: <span id="busuanzi_value_site_uv"/></p>
         </v-card-text>
       </v-card>
     </v-flex>

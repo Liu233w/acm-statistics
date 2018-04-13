@@ -20,6 +20,12 @@ module.exports = {
     ],
     script: [
       {src: 'http://tajs.qq.com/stats?sId=65546290', charset: 'UTF-8', type: 'text/javascript'},
+      {
+        src: '//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js',
+        charset: 'UTF-8',
+        type: 'text/javascript',
+        async: true,
+      },
     ],
   },
   plugins: [
