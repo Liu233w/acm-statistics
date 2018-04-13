@@ -669,19 +669,6 @@ exports[`/ 1`] = `
                           <a href="http://npuacm.info/">
                             &#x8FD4;&#x56DE;&#x65E7;&#x7248;&#x67E5;&#x8BE2;&#x7CFB;&#x7EDF;
                           </a>
-                          <br>
-                          <br>
-                          <p id="busuanzi_container_site_pv">
-                            &#x672C;&#x7AD9;&#x603B;&#x8BBF;&#x95EE;&#x91CF;:
-                            <span id="busuanzi_value_site_pv">
-                            </span>
-                          </p>
-                          <br>
-                          <p id="busuanzi_container_site_uv">
-                            &#x672C;&#x7AD9;&#x603B;&#x8BBF;&#x5BA2;&#x6570;:
-                            <span id="busuanzi_value_site_uv">
-                            </span>
-                          </p>
                         </div>
                       </div>
                     </div>
