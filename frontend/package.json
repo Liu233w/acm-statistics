@@ -40,7 +40,7 @@
     "eslint-plugin-vue": "^4.4.0",
     "jest": "^22.4.3",
     "jest-serializer-html": "^5.0.0",
-    "lodash-webpack-plugin": "^0.11.4",
+    "lodash-webpack-plugin": "^0.11.5",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.1"
   },
