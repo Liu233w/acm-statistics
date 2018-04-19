@@ -61,5 +61,7 @@ matrix:
         sonarcloud:
           organization: "liu233w-github"
           token: $SONAR_TOKEN
+      script:
+        - echo 'Nothing Here'
       after_script:
         - sonar-scanner -Dsonar.projectKey=acm-statistics -Dsonar.organization=liu233w-github -Dsonar.sources=. -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$SONAR_TOKEN -Dsonar.exclusions=**/node_modules/**/*,backend
