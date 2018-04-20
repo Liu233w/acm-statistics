@@ -1,3 +1,4 @@
+find . -maxdepth 2 -name 'package-lock.json' -delete
 git pull
 cd ../crawler
 npm i
