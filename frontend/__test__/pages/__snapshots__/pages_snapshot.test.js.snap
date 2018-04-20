@@ -31,6 +31,10 @@ exports[`/ 1`] = `
           rel="stylesheet"
           href="https://fonts.loli.net/css?family=Roboto:300,400,500,700|Material+Icons"
     >
+    <link data-n-head="true"
+          rel="stylesheet"
+          href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    >
     <style data-n-head="true"
            type="text/css"
            id="vuetify-theme-stylesheet"
@@ -609,6 +613,28 @@ exports[`/ 1`] = `
                 </div>
                 <div class="spacer">
                 </div>
+                <span class="tooltip tooltip--left">
+                  <div class="tooltip__content"
+                       style="left:12px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"
+                  >
+                    <span>
+                      Fork me on Github!
+                    </span>
+                  </div>
+                  <span>
+                    <a href="https://github.com/Liu233w/acm-statistics"
+                       target="_blank"
+                       class="btn btn--icon"
+                    >
+                      <div class="btn__content">
+                        <i aria-hidden="true"
+                           class="icon fa fa fa fa-github"
+                        >
+                        </i>
+                      </div>
+                    </a>
+                  </span>
+                </span>
               </div>
             </nav>
             <main class="content"
@@ -646,7 +672,7 @@ exports[`/ 1`] = `
                           </p>
                           <p>
                             &#x672C;&#x5DE5;&#x5177;&#x76EE;&#x524D;&#x8FD8;&#x5728;&#x5F00;&#x53D1;&#x4E2D;&#xFF0C;&#x6B22;&#x8FCE;
-                            <a href="https://github.com/Liu233w/acm-statistics/issues"
+                            <a href="https://github.com/Liu233w/acm-statistics/issues/new"
                                target="_blank"
                             >
                               &#x5411;&#x6211;&#x4EEC;&#x63D0;&#x51FA;&#x610F;&#x89C1;
@@ -735,6 +761,10 @@ exports[`/statistics 1`] = `
     <link data-n-head="true"
           rel="stylesheet"
           href="https://fonts.loli.net/css?family=Roboto:300,400,500,700|Material+Icons"
+    >
+    <link data-n-head="true"
+          rel="stylesheet"
+          href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"
     >
     <style data-n-head="true"
            type="text/css"
@@ -1316,6 +1346,28 @@ exports[`/statistics 1`] = `
                 </div>
                 <div class="spacer">
                 </div>
+                <span class="tooltip tooltip--left">
+                  <div class="tooltip__content"
+                       style="left:12px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"
+                  >
+                    <span>
+                      Fork me on Github!
+                    </span>
+                  </div>
+                  <span>
+                    <a href="https://github.com/Liu233w/acm-statistics"
+                       target="_blank"
+                       class="btn btn--icon"
+                    >
+                      <div class="btn__content">
+                        <i aria-hidden="true"
+                           class="icon fa fa fa fa-github"
+                        >
+                        </i>
+                      </div>
+                    </a>
+                  </span>
+                </span>
               </div>
             </nav>
             <main class="content"
