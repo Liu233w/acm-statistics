@@ -46,7 +46,7 @@ matrix:
       script:
         - cd crawler
         - npm run lint
-        - npm test && codecov
+        - npm test -- '--testPathPattern=__test__/(?!crawlers\.test).*\.js' && codecov
 
     - env: NAME=Crawler-api-backend
       stage: test
