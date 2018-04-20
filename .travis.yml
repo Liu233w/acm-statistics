@@ -39,7 +39,7 @@ matrix:
       script:
         - cd frontend
         - npm run lint
-        - npm test && codecov
+        - npm test -- --ci && codecov
 
     - env: NAME=Crawler
       stage: test
