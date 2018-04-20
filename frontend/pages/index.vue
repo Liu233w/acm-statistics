@@ -13,7 +13,7 @@
           <p>更多OJ支持中...</p>
           <p>
             本工具目前还在开发中，欢迎
-            <a href="https://github.com/Liu233w/acm-statistics/issues" target="_blank">向我们提出意见</a>
+            <a href="https://github.com/Liu233w/acm-statistics/issues/new" target="_blank">向我们提出意见</a>
           </p>
           <p>（本系统不支持IE浏览器）</p>
           <hr class="my-3">
