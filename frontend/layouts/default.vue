@@ -27,6 +27,12 @@
       <v-toolbar-side-icon @click="drawer = !drawer"/>
       <v-toolbar-title v-text="title"/>
       <v-spacer/>
+      <v-tooltip left>
+        <v-btn icon slot="activator" href="https://github.com/Liu233w/acm-statistics" target="_blank">
+          <v-icon>fa fa-github</v-icon>
+        </v-btn>
+        <span>Fork me on Github!</span>
+      </v-tooltip>
     </v-toolbar>
     <v-content>
       <v-container>
