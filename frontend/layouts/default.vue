@@ -36,7 +36,7 @@
     </v-toolbar>
     <v-content>
       <v-container>
-        <nuxt />
+        <nuxt/>
       </v-container>
     </v-content>
     <v-footer fixed app>
@@ -49,12 +49,12 @@
 
 <script>
   export default {
-    data () {
+    data() {
       return {
         drawer: true,
         items: [
-          { icon: 'home', title: 'Welcome', to: '/' },
-          { icon: 'code', title: 'OJ题量统计', to: '/statistics' },
+          {icon: 'home', title: 'Welcome', to: '/'},
+          {icon: 'code', title: 'OJ题量统计', to: '/statistics'},
         ],
         title: 'NWPU-ACM 查询系统',
       }
