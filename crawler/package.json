@@ -24,8 +24,7 @@
   },
   "jest": {
     "testPathIgnorePatterns": [
-      "/node_modules/",
-      "<rootDir>/__test__/crawlers.test.js"
+      "/node_modules/"
     ],
     "coverageDirectory": "./coverage/",
     "collectCoverage": true
