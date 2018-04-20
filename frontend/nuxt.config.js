@@ -17,6 +17,7 @@ module.exports = {
     link: [
       {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'},
       {rel: 'stylesheet', href: 'https://fonts.loli.net/css?family=Roboto:300,400,500,700|Material+Icons'},
+      {rel: 'stylesheet', href: 'https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css'},
     ],
     script: [
       {src: 'http://tajs.qq.com/stats?sId=65546290', charset: 'UTF-8', type: 'text/javascript'},
