@@ -40,7 +40,7 @@
       </v-container>
     </v-content>
     <v-footer fixed app>
-      <span>&copy; 2018 NPUACM 开发组</span>
+      <span>&copy; 2018 NWPU-ACM 技术组</span>
       <v-spacer/>
       <span>陕ICP备17008184号</span>
     </v-footer>

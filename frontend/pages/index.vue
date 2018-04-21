@@ -158,7 +158,7 @@ THE SOFTWARE.
                 </v-card-title>
                 <v-card-text>
                   西北工业大学ACM协会技术组致力于为广大学生提供各类计算机、算法、计算机类竞赛方面的设施及服务。
-                  开发组为其中的一个部门。欢迎各位有识之士加入。
+                  欢迎各位有识之士加入。
                 </v-card-text>
               </v-card>
             </v-flex>
@@ -222,7 +222,7 @@ THE SOFTWARE.
 
       <v-footer class="blue darken-2">
         <span class="white--text ml-3">
-          &copy; 2018 NPUACM 开发组
+          &copy; 2018 NWPU-ACM 技术组
         </span>
         <v-spacer/>
         <span class="white--text ml-3">陕ICP备17008184号</span>
