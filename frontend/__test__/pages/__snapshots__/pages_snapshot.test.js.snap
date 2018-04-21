@@ -606,16 +606,16 @@ exports[`/ 1`] = `
                              height="300"
                         >
                         <h1 class="white--text mb-2 display-1 text-xs-center">
-                          NWPU-ACM &#x67E5;&#x8BE2;&#x7CFB;&#x7EDF;
+                          &#x6B22;&#x8FCE;&#x4F7F;&#x7528; NWPU-ACM &#x67E5;&#x8BE2;&#x7CFB;&#x7EDF;
                         </h1>
                         <div class="subheading mb-3 text-xs-center">
-                          &#x897F;&#x5317;&#x5DE5;&#x4E1A;&#x5927;&#x5B66; ACM &#x5F00;&#x53D1;&#x7EC4;
+                          &#x7531; NWPU-ACM &#x6280;&#x672F;&#x7EC4;&#x5F3A;&#x529B;&#x9A71;&#x52A8;
                         </div>
                         <a href="/statistics"
                            class="blue lighten-2 mt-5 btn btn--large btn--router theme--dark"
                         >
                           <div class="btn__content">
-                            &#x5F00;&#x59CB;&#x67E5;&#x8BE2;
+                            &#x8FDB;&#x5165; OJ &#x9898;&#x91CF;&#x7EDF;&#x8BA1;
                           </div>
                         </a>
                       </div>
@@ -712,9 +712,9 @@ exports[`/ 1`] = `
                                 </div>
                               </div>
                               <div class="card__text">
-                                &#x65E7;&#x7248;&#x67E5;&#x8BE2;&#x7CFB;&#x7EDF;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x529F;&#x80FD;&#x5C06;&#x4F1A;&#x88AB;&#x79FB;&#x690D;&#x5230;&#x65B0;&#x7248;&#x67E5;&#x8BE2;&#x7CFB;&#x7EDF;&#x4E2D;&#xFF0C;&#x5982;&#x679C;&#x60A8;&#x9700;&#x8981;&#x65E7;&#x7248;&#x67E5;&#x8BE2;&#x7CFB;&#x7EDF;&#x4E2D;&#x7684;&#x529F;&#x80FD;&#xFF0C;&#x8BF7;&#x5355;&#x51FB;&#x6B64;&#x5904;
+                                &#x65E7;&#x7248;&#x67E5;&#x8BE2;&#x7CFB;&#x7EDF;&#x4E2D;&#x7684;&#x529F;&#x80FD;&#x6B63;&#x5728;&#x88AB;&#x79FB;&#x690D;&#x5230;&#x65B0;&#x7248;&#x67E5;&#x8BE2;&#x7CFB;&#x7EDF;&#x4E2D;&#xFF0C;&#x5982;&#x679C;&#x60A8;&#x9700;&#x8981;&#x65E7;&#x7248;&#x67E5;&#x8BE2;&#x7CFB;&#x7EDF;&#x4E2D;&#x7684;&#x529F;&#x80FD;&#xFF0C;&#x8BF7;
                                 <a href="//npuacm.info/">
-                                  &#x8FD4;&#x56DE;&#x65E7;&#x7248;&#x67E5;&#x8BE2;&#x7CFB;&#x7EDF;
+                                  &#x5355;&#x51FB;&#x6B64;&#x5904;&#x8FD4;&#x56DE;&#x65E7;&#x7248;&#x67E5;&#x8BE2;&#x7CFB;&#x7EDF;
                                 </a>
                               </div>
                             </div>
@@ -739,9 +739,11 @@ exports[`/ 1`] = `
                         <div class="headline white--text mb-3 text-xs-center">
                           &#x6B22;&#x8FCE;&#x5411;&#x6211;&#x4EEC;&#x63D0;&#x51FA;&#x610F;&#x89C1;&#x4EE5;&#x5E2E;&#x52A9;&#x672C;&#x7F51;&#x7AD9;&#x8FDB;&#x6B65;
                         </div>
-                        <em>
-                          &#xFF08;&#x9700;&#x8981; GitHub &#x5E10;&#x53F7;&#xFF09;
-                        </em>
+                        <a href="mailto:acm-statistics@fire.fundersclub.com?body=%E8%AF%B7%E6%B3%A8%E6%84%8F%EF%BC%8C%E6%82%A8%E7%BB%8F%E6%AD%A4%E9%93%BE%E6%8E%A5%E5%8F%91%E9%80%81%E7%9A%84%E6%89%80%E6%9C%89%E4%BF%A1%E6%81%AF%E9%83%BD%E5%B0%86%E8%A2%AB%E5%8F%91%E9%80%81%E5%88%B0https%3A%2F%2Fgithub.com%2FLiu233w%2Facm-statistics%2Fissues%EF%BC%8C%E4%BB%BB%E4%BD%95%E4%BA%BA%E9%83%BD%E6%9C%89%E6%9D%83%E9%99%90%E6%B5%8F%E8%A7%88%E5%85%B6%E5%86%85%E5%AE%B9%E3%80%82">
+                          <em class="white--text">
+                            &#x6216;&#x8005;&#x5355;&#x51FB;&#x6B64;&#x5904;&#x5411;&#x672C;&#x9879;&#x76EE;&#x53D1;&#x9001;&#x90AE;&#x4EF6;
+                          </em>
+                        </a>
                         <a href="https://github.com/Liu233w/acm-statistics/issues/new"
                            target="_blank"
                            class="blue lighten-2 mt-5 btn btn--large theme--dark"
@@ -768,7 +770,7 @@ exports[`/ 1`] = `
                           </div>
                           <div class="card__text">
                             &#x897F;&#x5317;&#x5DE5;&#x4E1A;&#x5927;&#x5B66;ACM&#x534F;&#x4F1A;&#x6280;&#x672F;&#x7EC4;&#x81F4;&#x529B;&#x4E8E;&#x4E3A;&#x5E7F;&#x5927;&#x5B66;&#x751F;&#x63D0;&#x4F9B;&#x5404;&#x7C7B;&#x8BA1;&#x7B97;&#x673A;&#x3001;&#x7B97;&#x6CD5;&#x3001;&#x8BA1;&#x7B97;&#x673A;&#x7C7B;&#x7ADE;&#x8D5B;&#x65B9;&#x9762;&#x7684;&#x8BBE;&#x65BD;&#x53CA;&#x670D;&#x52A1;&#x3002;
-                  &#x5F00;&#x53D1;&#x7EC4;&#x4E3A;&#x5176;&#x4E2D;&#x7684;&#x4E00;&#x4E2A;&#x90E8;&#x95E8;&#x3002;&#x6B22;&#x8FCE;&#x5404;&#x4F4D;&#x6709;&#x8BC6;&#x4E4B;&#x58EB;&#x52A0;&#x5165;&#x3002;
+                  &#x6B22;&#x8FCE;&#x5404;&#x4F4D;&#x6709;&#x8BC6;&#x4E4B;&#x58EB;&#x52A0;&#x5165;&#x3002;
                           </div>
                         </div>
                       </div>
@@ -780,9 +782,6 @@ exports[`/ 1`] = `
                             <div class="headline">
                               &#x8054;&#x7CFB;&#x6211;&#x4EEC;
                             </div>
-                          </div>
-                          <div class="card__text">
-                            Cras facilisis mi vitae nunc lobortis pharetra. Nulla volutpat tincidunt ornare.
                           </div>
                           <div class="list transparent">
                             <div>
@@ -899,7 +898,7 @@ exports[`/ 1`] = `
                         style="height:32px;"
                 >
                   <span class="white--text ml-3">
-                    &#xA9; 2018 NPUACM &#x5F00;&#x53D1;&#x7EC4;
+                    &#xA9; 2018 NWPU-ACM &#x6280;&#x672F;&#x7EC4;
                   </span>
                   <div class="spacer">
                   </div>
@@ -3514,7 +3513,7 @@ exports[`/statistics 1`] = `
                     style="height:32px;"
             >
               <span>
-                &#xA9; 2018 NPUACM &#x5F00;&#x53D1;&#x7EC4;
+                &#xA9; 2018 NWPU-ACM &#x6280;&#x672F;&#x7EC4;
               </span>
               <div class="spacer">
               </div>
