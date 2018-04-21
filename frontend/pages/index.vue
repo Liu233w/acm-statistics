@@ -47,15 +47,15 @@ THE SOFTWARE.
             class="white--text"
           >
             <img src="/img/logo.png" alt="Vuetify.js" height="300">
-            <h1 class="white--text mb-2 display-1 text-xs-center">NWPU-ACM 查询系统</h1>
-            <div class="subheading mb-3 text-xs-center">西北工业大学 ACM 开发组</div>
+            <h1 class="white--text mb-2 display-1 text-xs-center">欢迎使用 NWPU-ACM 查询系统</h1>
+            <div class="subheading mb-3 text-xs-center">由 NWPU-ACM 技术组强力驱动</div>
             <v-btn
               class="blue lighten-2 mt-5"
               dark
               large
               to="/statistics"
             >
-              开始查询
+              进入 OJ 题量统计
             </v-btn>
           </v-layout>
         </v-parallax>
@@ -117,8 +117,8 @@ THE SOFTWARE.
                       <div class="headline text-xs-center">更多功能支持中</div>
                     </v-card-title>
                     <v-card-text>
-                      旧版查询系统中的所有功能将会被移植到新版查询系统中，如果您需要旧版查询系统中的功能，请单击此处
-                      <a href="//npuacm.info/">返回旧版查询系统</a>
+                      旧版查询系统中的功能正在被移植到新版查询系统中，如果您需要旧版查询系统中的功能，请
+                      <a href="//npuacm.info/">单击此处返回旧版查询系统</a>
                     </v-card-text>
                   </v-card>
                 </v-flex>
@@ -165,9 +165,6 @@ THE SOFTWARE.
                 <v-card-title primary-title class="layout justify-center">
                   <div class="headline">联系我们</div>
                 </v-card-title>
-                <v-card-text>
-                  Cras facilisis mi vitae nunc lobortis pharetra. Nulla volutpat tincidunt ornare.
-                </v-card-text>
                 <v-list class="transparent">
                   <v-list-tile href="https://jq.qq.com/?_wv=1027&k=5qgzfQc" target="_blank">
                     <v-list-tile-action>
