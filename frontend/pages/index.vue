@@ -85,7 +85,7 @@ THE SOFTWARE.
                       <v-icon x-large class="blue--text text--lighten-2">link</v-icon>
                     </v-card-text>
                     <v-card-title primary-title class="layout justify-center">
-                      <div class="headline text-xs-center">免费提供题目查询API</div>
+                      <div class="headline text-xs-center">免费提供题量查询API</div>
                     </v-card-title>
                     <v-card-text>
                       我们提供了一个 RESTful API 来供您使用，您可以在任意的客户端、网站中调用此API来查询某用户在OJ上的提交数/通过数。
