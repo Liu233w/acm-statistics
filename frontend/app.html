@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html {{ HTML_ATTRS }}>
+<head>
+  {{ HEAD }}
+</head>
+<body {{ BODY_ATTRS }}>
+<script>
+  if (!!window.ActiveXObject || "ActiveXObject" in window)
+    alert('本网站不支持IE或IE内核的浏览器，建议您使用火狐浏览器、谷歌浏览器或微软的Edge浏览器（Windows10自带）');
+</script>
+{{ APP }}
+</body>
+</html>
