@@ -25,3 +25,6 @@ $ npm start
 - `npm run snapshot` 交互式更新快照
 
 For detailed explanation on how things work, check out the [Nuxt.js](https://github.com/nuxt/nuxt.js) and [Vuetify.js](https://vuetifyjs.com/) documentation.
+
+## 版权声明
+- 本产品的主页部分使用了 [vuetifyjs/parallax-starter](https://github.com/vuetifyjs/parallax-starter) 模板

@@ -53,7 +53,7 @@
       return {
         drawer: true,
         items: [
-          {icon: 'home', title: 'Welcome', to: '/'},
+          {icon: 'home', title: '返回主页', to: '/'},
           {icon: 'code', title: 'OJ题量统计', to: '/statistics'},
         ],
         title: 'NWPU-ACM 查询系统',

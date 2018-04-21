@@ -17,6 +17,8 @@ import {
   VProgressLinear,
   VAvatar,
   VJumbotron,
+  VParallax,
+  VDialog,
 } from 'vuetify'
 
 Vue.use(Vuetify, {
@@ -37,5 +39,7 @@ Vue.use(Vuetify, {
     VProgressLinear,
     VAvatar,
     VJumbotron,
+    VParallax,
+    VDialog,
   },
 })
