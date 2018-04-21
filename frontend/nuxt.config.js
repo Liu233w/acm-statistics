@@ -48,9 +48,9 @@ module.exports = {
     babel: {
       plugins: [
         ['transform-imports', {
-          'vuetify': {
-            'transform': 'vuetify/es5/components/${member}',
-            'preventFullImport': true,
+          vuetify: {
+            transform: 'vuetify/es5/components/${member}',
+            preventFullImport: true,
           },
         }],
         'lodash',
