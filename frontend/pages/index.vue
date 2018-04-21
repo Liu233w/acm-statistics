@@ -132,7 +132,9 @@ THE SOFTWARE.
         <v-parallax src="/img/frontpage/back4.jpg" height="380">
           <v-layout column align-center justify-center>
             <div class="headline white--text mb-3 text-xs-center">欢迎向我们提出意见以帮助本网站进步</div>
-            <em>（需要 GitHub 帐号）</em>
+            <a :href="mailToGithubLink">
+              <em class="white--text">或者单击此处向本项目发送邮件</em>
+            </a>
             <v-btn
               class="blue lighten-2 mt-5"
               dark
@@ -242,6 +244,13 @@ THE SOFTWARE.
     methods: {
       showAddress() {
         window.alert('陕西省西安市长安区西北工业大学长安校区计算机学院110室')
+      },
+    },
+    computed: {
+      mailToGithubLink() {
+        const body = encodeURIComponent('请注意，您经此链接发送的所有信息都将被发送到' +
+          'https://github.com/Liu233w/acm-statistics/issues，任何人都有权限浏览其内容。')
+        return `mailto:acm-statistics@fire.fundersclub.com?body=${body}`
       },
     },
   }
