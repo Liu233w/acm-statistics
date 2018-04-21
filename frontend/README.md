@@ -27,4 +27,4 @@ $ npm start
 For detailed explanation on how things work, check out the [Nuxt.js](https://github.com/nuxt/nuxt.js) and [Vuetify.js](https://vuetifyjs.com/) documentation.
 
 ## 版权声明
-- 本产品的主页部分使用了 [vuetifyjs/parallax-starter](https://github.com/vuetifyjs/parallax-starter) 模板
+- 本产品的主页部分使用了 [vuetifyjs/parallax-starter](https://github.com/vuetifyjs/parallax-starter) 模板，根据其开源协议，本项目的[主页源代码](./pages/index.vue)中包含了其协议声明。
