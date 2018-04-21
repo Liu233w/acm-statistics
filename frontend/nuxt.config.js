@@ -20,7 +20,7 @@ module.exports = {
       {rel: 'stylesheet', href: 'https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css'},
     ],
     script: [
-      {src: 'http://tajs.qq.com/stats?sId=65546290', charset: 'UTF-8', type: 'text/javascript'},
+      {src: '//tajs.qq.com/stats?sId=65546290', charset: 'UTF-8', type: 'text/javascript'},
       {
         src: '//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js',
         charset: 'UTF-8',
@@ -29,10 +29,14 @@ module.exports = {
       },
     ],
   },
+  router: {
+    middleware: [
+      'analysis',
+    ],
+  },
   plugins: [
     '~/plugins/vuetify.js',
     '~/plugins/debug.js',
-    '~/plugins/ta.js',
   ],
   css: [
     '~/assets/style/app.styl',

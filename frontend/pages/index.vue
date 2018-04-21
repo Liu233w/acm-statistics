@@ -228,8 +228,6 @@ THE SOFTWARE.
         <span class="white--text ml-3">陕ICP备17008184号</span>
       </v-footer>
     </v-content>
-
-    <ta/>
   </v-app>
 </template>
 
