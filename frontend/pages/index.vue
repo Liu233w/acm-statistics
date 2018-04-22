@@ -161,8 +161,12 @@ THE SOFTWARE.
                     西北工业大学ACM协会技术组致力于为广大学生提供各类计算机、算法、计算机类竞赛方面的设施及服务。
                     欢迎各位有识之士加入。
                   </p>
-                  <p id="busuanzi_container_site_pv" style="display: none;">本站总访问量: <span id="busuanzi_value_site_pv"/>次<br></p>
-                  <p id="busuanzi_container_site_uv" style="display: none;">本站总访客数: <span id="busuanzi_value_site_uv"/>次</p>
+                  <p id="busuanzi_container_site_pv" style="display: none;">
+                    本站总访问量: <span id="busuanzi_value_site_pv"/>次<br>
+                  </p>
+                  <p id="busuanzi_container_site_uv" style="display: none;">
+                    本站总访客数: <span id="busuanzi_value_site_uv"/>次
+                  </p>
                 </v-card-text>
               </v-card>
             </v-flex>
