@@ -19,24 +19,11 @@ module.exports = {
       {rel: 'stylesheet', href: 'https://fonts.loli.net/css?family=Roboto:300,400,500,700|Material+Icons'},
       {rel: 'stylesheet', href: 'https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css'},
     ],
-    script: [
-      {src: '//tajs.qq.com/stats?sId=65546290', charset: 'UTF-8', type: 'text/javascript'},
-      {
-        src: '//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js',
-        charset: 'UTF-8',
-        type: 'text/javascript',
-        async: true,
-      },
-    ],
-  },
-  router: {
-    middleware: [
-      'analysis',
-    ],
   },
   plugins: [
     '~/plugins/vuetify.js',
     '~/plugins/debug.js',
+    '~/plugins/analysis.js',
   ],
   css: [
     '~/assets/style/app.styl',
