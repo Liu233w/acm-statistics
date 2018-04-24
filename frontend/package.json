@@ -13,7 +13,8 @@
     "lintfix": "eslint --fix --ext .js,.vue .",
     "analyze": "nuxt build --analyze",
     "test": "jest __test__/",
-    "snapshot": "jest __test__/ --watch"
+    "snapshot": "jest __test__/ --watch",
+    "postinstall": "node -e \"var s='../crawler',d='./node_modules/crawler',fs=require('fs'), r=require('path').resolve;fs.exists(d,function(e){e||fs.symlinkSync(r(s),r(d),'junction')});\""
   },
   "dependencies": {
     "@nuxtjs/proxy": "^1.2.4",
