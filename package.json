@@ -1,0 +1,23 @@
+{
+  "name": "acm-statistics",
+  "description": "新版 NWPU-ACM 查询系统",
+  "dependencies": {},
+  "devDependencies": {
+    "cz-conventional-changelog": "^2.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Liu233w/acm-statistics.git"
+  },
+  "author": "Liu233w",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/Liu233w/acm-statistics/issues"
+  },
+  "homepage": "https://github.com/Liu233w/acm-statistics#readme",
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
