@@ -41,3 +41,5 @@
 - 欢迎任何人贡献代码（尤其是爬虫部分）。
 - git 的提交格式遵循 [Git Commit Angular 规范](https://gist.github.com/stephenparish/9941e89d80e2bc58a153)
     （[中文版](http://www.ruanyifeng.com/blog/2016/01/commit_message_change_log.html)）
+- 您可以使用 [cz-cli](https://github.com/commitizen/cz-cli) 来辅助提交 commit
+
