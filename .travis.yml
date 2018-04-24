@@ -34,6 +34,12 @@ install:
 
 matrix:
   include:
+    - env: NAME=Root
+      stage: test
+      script:
+        - npm install
+        - npm run commitlint-travis
+
     - env: NAME=Frontend
       stage: test
       script:
