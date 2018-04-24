@@ -1,0 +1,32 @@
+{
+  "name": "acm-statistics",
+  "description": "新版 NWPU-ACM 查询系统",
+  "dependencies": {},
+  "devDependencies": {
+    "@commitlint/cli": "^6.1.3",
+    "@commitlint/config-conventional": "^6.1.3",
+    "@commitlint/travis-cli": "^6.1.3",
+    "cz-conventional-changelog": "^2.1.0",
+    "husky": "^0.14.3"
+  },
+  "scripts": {
+    "commitmsg": "commitlint -e $GIT_PARAMS",
+    "test-commit": "commitlint --from master",
+    "commitlint-travis": "commitlint-travis"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Liu233w/acm-statistics.git"
+  },
+  "author": "Liu233w",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/Liu233w/acm-statistics/issues"
+  },
+  "homepage": "https://github.com/Liu233w/acm-statistics#readme",
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
