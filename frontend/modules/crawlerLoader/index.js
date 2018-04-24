@@ -1,13 +1,12 @@
-const configReader = require('../../../crawler/lib/configReader')
-const functionGenerator = require('../../../crawler/lib/functionGenerator')
+const {readMetaConfigs, generateBrowserCrawlerFunctions} = require('crawler')
 const path = require('path')
 
 module.exports = async function () {
   this.addPlugin({
     src: path.resolve(__dirname, './crawler.template.js'),
     options: {
-      crawlers: await functionGenerator.generateBrowserCrawlerFunctions(),
-      meta: await configReader.readMetaConfigs(),
+      crawlers: await generateBrowserCrawlerFunctions(),
+      meta: await readMetaConfigs(),
     },
     // ssr: false
   })

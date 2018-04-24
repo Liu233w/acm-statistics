@@ -1,13 +1,12 @@
 const Router = require('koa-router')
 const _ = require('lodash')
 
-const configReader = require('../crawler/lib/configReader')
-const functionGenerator = require('../crawler/lib/functionGenerator')
+const {readMetaConfigs, generateServerCrawlerFunctions} = require('crawler')
 let crawlers
-functionGenerator.generateServerCrawlerFunctions()
+generateServerCrawlerFunctions()
   .then(res => crawlers = res)
 let crawlerMeta
-configReader.readMetaConfigs()
+readMetaConfigs()
   .then(res => crawlerMeta = res)
 
 const swagger = require('./swagger.json')
