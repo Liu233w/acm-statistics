@@ -4,8 +4,8 @@ git pull
 cd ../crawler
 npm i
 cd ../crawler-api-backend
-npm i
+npm i --unsafe-perm
 cd ../frontend
-npm i
+npm i --unsafe-perm
 npm run build
 systemctl restart crawler-backend-api.acm-statistics.service frontend.acm-statistics.service
