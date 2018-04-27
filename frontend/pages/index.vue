@@ -14,14 +14,14 @@
     </v-toolbar>
     <v-content>
       <section>
-        <v-parallax src="/img/frontpage/back7.jpg" height="600">
+        <v-parallax :src="require('~/assets/img/frontpage/back7.jpg')" height="600">
           <v-layout
             column
             align-center
             justify-center
             class="white--text"
           >
-            <img src="/img/logo.png" alt="Vuetify.js" height="300">
+            <img :src="require('~/assets/img/logo.png')" alt="Vuetify.js" height="300">
             <h1 class="white--text mb-2 display-1 text-xs-center">欢迎使用 NWPU-ACM 查询系统</h1>
             <div class="subheading mb-3 text-xs-center">由 NWPU-ACM 技术组强力驱动</div>
             <v-btn
@@ -104,7 +104,7 @@
       </section>
 
       <section>
-        <v-parallax src="/img/frontpage/back4.jpg" height="380">
+        <v-parallax :src="require('~/assets/img/frontpage/back4.jpg')" height="380">
           <v-layout column align-center justify-center>
             <div class="headline white--text mb-3 text-xs-center">欢迎向我们提出意见以帮助本网站进步</div>
             <a :href="mailToGithubLink">
@@ -193,7 +193,7 @@
                 <span>微信公众号</span>
               </v-card-title>
               <v-card-text>
-                <img src="/img/wechat.jpg" alt="公众号二维码" style="height: 300px">
+                <img :src="require('~/assets/img/wechat.jpg')" alt="公众号二维码" style="height: 300px">
               </v-card-text>
               <v-card-actions>
                 <v-btn color="primary" flat @click.stop="dialog=false">关闭</v-btn>
