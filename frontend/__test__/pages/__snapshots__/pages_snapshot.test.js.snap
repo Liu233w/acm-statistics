@@ -581,14 +581,14 @@ exports[`/ 1`] = `
                        style="height:600px;"
                   >
                     <div class="parallax__image-container">
-                      <img src="/img/frontpage/back7.jpg"
+                      <img src="/_nuxt/img/back7.8539295.jpg"
                            class="parallax__image"
                            style="display:block;opacity:0;transform:translate(-50%, nullpx);"
                       >
                     </div>
                     <div class="parallax__content">
                       <div class="layout white--text column align-center justify-center">
-                        <img src="/img/logo.png"
+                        <img src="/_nuxt/img/logo.ff6479c.png"
                              alt="Vuetify.js"
                              height="300"
                         >
@@ -716,7 +716,7 @@ exports[`/ 1`] = `
                        style="height:380px;"
                   >
                     <div class="parallax__image-container">
-                      <img src="/img/frontpage/back4.jpg"
+                      <img src="/_nuxt/img/back4.5e3f578.jpg"
                            class="parallax__image"
                            style="display:block;opacity:0;transform:translate(-50%, nullpx);"
                       >
@@ -880,7 +880,7 @@ exports[`/ 1`] = `
                               </span>
                             </div>
                             <div class="card__text">
-                              <img src="/img/wechat.jpg"
+                              <img src="/_nuxt/img/wechat.4d1d170.jpg"
                                    alt="&#x516C;&#x4F17;&#x53F7;&#x4E8C;&#x7EF4;&#x7801;"
                                    style="height:300px;"
                               >
