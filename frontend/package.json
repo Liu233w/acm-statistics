@@ -22,7 +22,7 @@
     "cheerio": "^1.0.0-rc.2",
     "lodash": "^4.17.10",
     "nuxt": "^1.0.0",
-    "superagent": "^3.8.2",
+    "superagent": "^3.8.3",
     "vuetify": "^1.0.17"
   },
   "devDependencies": {
