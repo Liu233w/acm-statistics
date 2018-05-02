@@ -60,6 +60,7 @@
 
 <script>
   import {mapGetters} from 'vuex'
+  import _ from 'lodash'
 
   import CrawlerCard from '~/components/CrawlerCard'
   import Store from '~/store/-dynamic/statistics'
@@ -100,9 +101,9 @@
         get() {
           return this.$store.state.statistics.mainUsername
         },
-        set(username) {
+        set: _.debounce(function (username) {
           this.$store.dispatch('statistics/updateMainUsername', {username})
-        },
+        }, 300),
       },
       workerLength() {
         return this.$store.state.statistics.workers.length
