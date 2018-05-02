@@ -20,8 +20,8 @@
         <v-tooltip bottom>
           <v-btn icon
                  slot="activator"
-                 :disabled="status === WORKER_STATUS.WORKING"
-                 @click="$emit('update:status', WORKER_STATUS.WORKING)"
+                 :disabled="worker.status === WORKER_STATUS.WORKING"
+                 @click="startWorker"
           >
             <v-icon>refresh</v-icon>
           </v-btn>
@@ -38,26 +38,25 @@
       <v-layout row wrap>
         <v-flex xs12>
           <v-text-field
-            :value="username"
-            @input="updateUsername"
+            v-model="username"
             label="Username"
-            :disabled="status === WORKER_STATUS.WORKING"
+            :disabled="worker.status === WORKER_STATUS.WORKING"
             required
-            @keyup.enter="$emit('update:status', WORKER_STATUS.WORKING)"
+            @keyup.enter="startWorker"
           />
         </v-flex>
       </v-layout>
-      <v-layout row v-show="status === WORKER_STATUS.DONE">
-        <v-flex xs12 v-if="errorMessage">
-          <span class="red--text">{{ errorMessage }}</span>
+      <v-layout row v-show="worker.status === WORKER_STATUS.DONE">
+        <v-flex xs12 v-if="worker.errorMessage">
+          <span class="red--text">{{ worker.errorMessage }}</span>
         </v-flex>
         <v-flex xs12 v-else>
-          <span class="grey--text">SOLVED: </span> {{ solved }}
+          <span class="grey--text">SOLVED: </span> {{ worker.solved }}
           <br>
-          <span class="grey--text">SUBMISSIONS: </span> {{ submissions }}
+          <span class="grey--text">SUBMISSIONS: </span> {{ worker.submissions }}
         </v-flex>
       </v-layout>
-      <v-layout row v-show="status === WORKER_STATUS.WORKING">
+      <v-layout row v-show="worker.status === WORKER_STATUS.WORKING">
         <v-spacer/>
         <v-flex xs2>
           <v-progress-circular indeterminate color="primary"/>
@@ -69,34 +68,14 @@
 </template>
 
 <script>
-  import {WORKER_STATUS} from './consts'
+  import {WORKER_STATUS} from '~/components/consts'
 
   export default {
     name: 'CrawlerCard',
     props: {
-      status: {
-        type: String,
-        default: WORKER_STATUS.WAITING,
-      },
-      username: {
-        type: String,
-        required: true,
-      },
-      solved: {
+      index: {
         type: Number,
-        default: 0,
-      },
-      submissions: {
-        type: Number,
-        default: 0,
-      },
-      workerName: {
-        type: String,
         required: true,
-      },
-      errorMessage: {
-        type: String,
-        default: '',
       },
     },
     data() {
@@ -108,19 +87,33 @@
       openOj() {
         window.open(this.crawlerUrl)
       },
-      updateUsername(val) {
-        this.$emit('update:username', val)
+      startWorker() {
+        this.$store.dispatch('statistics/startOne', {index: this.index})
       },
     },
     computed: {
+      worker() {
+        return this.$store.state.statistics.workers[this.index]
+      },
       crawlerTitle() {
-        return this.$crawlerMeta[this.workerName].title
+        return this.$root.$crawlerMeta[this.worker.name].title
       },
       crawlerDescription() {
-        return this.$crawlerMeta[this.workerName].description
+        return this.$root.$crawlerMeta[this.worker.name].description
       },
       crawlerUrl() {
-        return this.$crawlerMeta[this.workerName].url
+        return this.$root.$crawlerMeta[this.worker.name].url
+      },
+      username: {
+        get() {
+          return this.worker.username
+        },
+        set(username) {
+          this.$store.dispatch('statistics/updateUsername', {
+            index: this.index,
+            username,
+          })
+        },
       },
     },
   }

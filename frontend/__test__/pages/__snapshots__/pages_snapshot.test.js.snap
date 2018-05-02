@@ -1443,8 +1443,6 @@ exports[`/statistics 1`] = `
   background: #ffc107 !important;
 }
     </style>
-    <style>
-    </style>
   </head>
   <body data-n-head>
     <script>
@@ -3460,34 +3458,6 @@ exports[`/statistics 1`] = `
                         </div>
                       </div>
                     </div>
-                    <div>
-                      <div>
-                      </div>
-                      <div>
-                      </div>
-                      <div>
-                      </div>
-                      <div>
-                      </div>
-                      <div>
-                      </div>
-                      <div>
-                      </div>
-                      <div>
-                      </div>
-                      <div>
-                      </div>
-                      <div>
-                      </div>
-                      <div>
-                      </div>
-                      <div>
-                      </div>
-                      <div>
-                      </div>
-                      <div>
-                      </div>
-                    </div>
                   </div>
                 </div>
               </div>
@@ -3509,7 +3479,7 @@ exports[`/statistics 1`] = `
       </div>
     </div>
     <script type="text/javascript">
-      window.__NUXT__={"layout":"default","data":[{}],"error":null,"state":{"sidebar":false},"serverRendered":true};
+      window.__NUXT__={"layout":"default","data":[{}],"error":null,"state":{"sidebar":false,"statistics":{"workers":[{"name":"poj","solved":0,"submissions":0,"status":"WAITING","errorMessage":"","username":""},{"name":"hdu","solved":0,"submissions":0,"status":"WAITING","errorMessage":"","username":""},{"name":"zoj","solved":0,"submissions":0,"status":"WAITING","errorMessage":"","username":""},{"name":"acdream","solved":0,"submissions":0,"status":"WAITING","errorMessage":"","username":""},{"name":"dashiye","solved":0,"submissions":0,"status":"WAITING","errorMessage":"","username":""},{"name":"codeforces","solved":0,"submissions":0,"status":"WAITING","errorMessage":"","username":""},{"name":"uva","solved":0,"submissions":0,"status":"WAITING","errorMessage":"","username":""},{"name":"fzu","solved":0,"submissions":0,"status":"WAITING","errorMessage":"","username":""},{"name":"spoj","solved":0,"submissions":0,"status":"WAITING","errorMessage":"","username":""},{"name":"timus","solved":0,"submissions":0,"status":"WAITING","errorMessage":"","username":""},{"name":"sgu","solved":0,"submissions":0,"status":"WAITING","errorMessage":"","username":""},{"name":"leetcode_cn","solved":0,"submissions":0,"status":"WAITING","errorMessage":"","username":""},{"name":"vjudge","solved":0,"submissions":0,"status":"WAITING","errorMessage":"","username":""}],"mainUsername":""}},"serverRendered":true};
     </script>
   </body>
 </html>
