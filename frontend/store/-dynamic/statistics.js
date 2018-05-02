@@ -44,7 +44,7 @@ export const mutations = {
 
     worker.solved = 0
     worker.submissions = 0
-    worker.errorMessage = 0
+    worker.errorMessage = ''
   },
   setToWorking(state, {index}) {
     state.workers[index].status = WORKER_STATUS.WORKING
@@ -83,7 +83,7 @@ export const getters = {
     return _.some(state.workers, item => item.status === WORKER_STATUS.WORKING)
   },
   /**
-   * 返回一个0-100的数字，表示不在WORKING状态的Worker的数量
+   * 返回一个0-100的数字，表示不在WORKING状态的Worker的比例
    * @param state
    * @returns {number}
    */
