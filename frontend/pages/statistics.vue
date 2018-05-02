@@ -64,6 +64,7 @@
 
   import CrawlerCard from '~/components/CrawlerCard'
   import Store from '~/store/-dynamic/statistics'
+  import getCrawlerDatas from '~/dynamic/crawlers'
 
   export default {
     name: 'Statistics',
@@ -71,8 +72,10 @@
       CrawlerCard,
     },
     created() {
+      const crawlerDatas = getCrawlerDatas()
+      this.$root.$crawlerMeta = crawlerDatas.metas
       this.$store.registerModule('statistics', Store)
-      this.$store.dispatch('statistics/initWorkers', this.$crawlers)
+      this.$store.dispatch('statistics/initWorkers', crawlerDatas.crawlers)
     },
     destroyed() {
       this.$store.unregisterModule('statistics')
