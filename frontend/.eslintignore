@@ -9,6 +9,3 @@
 
 # 静态文件中可能有已经编译好的js文件
 /static
-
-# 模板文件，不应该被检查
-/modules/crawlerLoader/crawler.template.js

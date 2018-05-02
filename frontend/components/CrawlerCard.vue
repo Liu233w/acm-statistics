@@ -96,13 +96,13 @@
         return this.$store.state.statistics.workers[this.index]
       },
       crawlerTitle() {
-        return this.$crawlerMeta[this.worker.name].title
+        return this.$root.$crawlerMeta[this.worker.name].title
       },
       crawlerDescription() {
-        return this.$crawlerMeta[this.worker.name].description
+        return this.$root.$crawlerMeta[this.worker.name].description
       },
       crawlerUrl() {
-        return this.$crawlerMeta[this.worker.name].url
+        return this.$root.$crawlerMeta[this.worker.name].url
       },
       username: {
         get() {
