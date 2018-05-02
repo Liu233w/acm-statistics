@@ -73,9 +73,9 @@
       this.$store.registerModule('statistics', Store)
       this.$store.dispatch('statistics/initWorkers', this.$crawlers)
     },
-    // destroyed() {
-    //   this.$store.unregisterModule('statistics')
-    // },
+    destroyed() {
+      this.$store.unregisterModule('statistics')
+    },
     mounted() {
       this.onResize()
       window.addEventListener('resize', this.onResize, {passive: true})
