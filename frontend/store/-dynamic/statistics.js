@@ -55,6 +55,15 @@ export const mutations = {
   setToDone(state, {index}) {
     state.workers[index].status = WORKER_STATUS.DONE
   },
+  /**
+   * 用来查询 worker 的状态
+   * @param state
+   * @param index
+   * @param key
+   */
+  setWorkerTokenKey(state, {index, tokenKey}) {
+    state.workers[index].tokenKey = tokenKey
+  },
 }
 
 export const getters = {
@@ -153,11 +162,20 @@ export const actions = {
     commit('resetData', {index})
     commit('setToWorking', {index})
 
+    const tokenKey = Math.random()
+    commit('setWorkerTokenKey', {index, tokenKey})
+
     const worker = state.workers[index]
     try {
       const res = await worker.func(worker.username)
+      if (state.workers[index].tokenKey !== tokenKey) {
+        return
+      }
       commit('setResult', {index, ...res})
     } catch (err) {
+      if (state.workers[index].tokenKey !== tokenKey) {
+        return
+      }
       commit('setError', {index, errorMessage: err.message})
     }
     commit('setToDone', {index})
