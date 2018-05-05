@@ -17,16 +17,26 @@
             转到此OJ
           </span>
         </v-tooltip>
-        <v-tooltip bottom>
-          <v-btn icon
-                 slot="activator"
-                 :disabled="worker.status === WORKER_STATUS.WORKING"
-                 @click="startWorker"
-          >
-            <v-icon>refresh</v-icon>
-          </v-btn>
-          <span>重新爬取此处信息</span>
-        </v-tooltip>
+        <transition name="fade">
+          <v-tooltip bottom v-if="worker.status === WORKER_STATUS.WORKING">
+            <v-btn icon
+                   slot="activator"
+                   @click="stopWorker"
+            >
+              <v-icon>stop</v-icon>
+            </v-btn>
+            <span>停止查询</span>
+          </v-tooltip>
+          <v-tooltip bottom v-else>
+            <v-btn icon
+                   slot="activator"
+                   @click="startWorker"
+            >
+              <v-icon>refresh</v-icon>
+            </v-btn>
+            <span>重新爬取此处信息</span>
+          </v-tooltip>
+        </transition>
       </v-toolbar-items>
     </v-toolbar>
     <v-container>
@@ -90,6 +100,9 @@
       startWorker() {
         this.$store.dispatch('statistics/startOne', {index: this.index})
       },
+      stopWorker() {
+        this.$store.dispatch('statistics/stopOne', {index: this.index})
+      },
     },
     computed: {
       worker() {
@@ -118,3 +131,14 @@
     },
   }
 </script>
+
+<style>
+  .fade-enter-active, .fade-leave-active {
+    transition: opacity .5s;
+  }
+
+  .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */
+  {
+    opacity: 0;
+  }
+</style>

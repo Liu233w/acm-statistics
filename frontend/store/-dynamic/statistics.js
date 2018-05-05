@@ -169,11 +169,13 @@ export const actions = {
     try {
       const res = await worker.func(worker.username)
       if (state.workers[index].tokenKey !== tokenKey) {
+        console.log('done but stopped')
         return
       }
       commit('setResult', {index, ...res})
     } catch (err) {
       if (state.workers[index].tokenKey !== tokenKey) {
+        console.log('done but stopped')
         return
       }
       commit('setError', {index, errorMessage: err.message})
@@ -184,6 +186,11 @@ export const actions = {
     return Promise.all(_.map(
       _.range(state.workers.length),
       index => dispatch('startOne', {index})))
+  },
+  stopOne({commit}, {index}) {
+    commit('setWorkerTokenKey', {index, tokenKey: null})
+    commit('setToWaiting', {index})
+    commit('resetData', {index})
   },
 }
 
