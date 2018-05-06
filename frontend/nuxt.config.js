@@ -79,6 +79,13 @@ module.exports = {
         collections: true,
       }),
     ],
+    uglify: {
+      uglifyOptions: {
+        compress: {
+          drop_console: true,
+        },
+      },
+    },
   },
   proxy: [
     'http://localhost:12001/api/crawlers',
