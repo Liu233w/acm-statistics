@@ -59,7 +59,7 @@
       "<rootDir>/__test__/pages/pages_snapshot.test.js"
     ],
     "moduleNameMapper": {
-      "~(.*)$": "<rootDir>/$1"
+      "~(?!/dynamic)(.*)$": "<rootDir>/$1"
     },
     "testEnvironment": "node",
     "coverageDirectory": "./coverage/",
