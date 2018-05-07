@@ -108,14 +108,17 @@
       worker() {
         return this.$store.state.statistics.workers[this.index]
       },
+      crawler() {
+        return this.$store.state.statistics.crawlers[this.worker.crawlerName]
+      },
       crawlerTitle() {
-        return this.$root.$crawlerMeta[this.worker.name].title
+        return this.crawler.title
       },
       crawlerDescription() {
-        return this.$root.$crawlerMeta[this.worker.name].description
+        return this.crawler.description
       },
       crawlerUrl() {
-        return this.$root.$crawlerMeta[this.worker.name].url
+        return this.crawler.url
       },
       username: {
         get() {

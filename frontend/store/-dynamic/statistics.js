@@ -1,31 +1,38 @@
 import {WORKER_STATUS} from '~/components/consts'
+import getCrawlerData from '~/dynamic/crawlers'
 
 import _ from 'lodash'
 
 export function state() {
+  const data = getCrawlerData()
+
+  const crawlers = {}
+  _.forEach(data.metas, (val, key) => {
+    crawlers[key] = val
+    crawlers[key].name = key
+    crawlers[key].func = data.crawlers[key]
+  })
+
+  const workers = []
+  _.forEach(crawlers, val => {
+
+    const worker = {
+      crawlerName: val.name,
+      username: '',
+      status: WORKER_STATUS.WAITING,
+    }
+    resetWorker(worker)
+    workers.push(worker)
+  })
+
   return {
-    workers: [],
-    crawlers: {},
+    workers,
+    crawlers,
     mainUsername: '',
   }
 }
 
 export const mutations = {
-  addCrawlerWithWorkers(state, {name, func}) {
-    state.crawlers[name] = {
-      name,
-      func,
-    }
-
-    const worker = {
-      crawlerName: name,
-      username: '',
-      status: WORKER_STATUS.WAITING,
-    }
-    resetWorker(worker)
-
-    state.workers.push(worker)
-  },
   updateUsername(state, {index, username}) {
     updateUsername(state.workers[index], username)
   },
@@ -153,19 +160,6 @@ export const getters = {
 }
 
 export const actions = {
-  /**
-   * 初始化worker
-   * @param commit
-   * @param crawlerFuncs {Object.<string, {Function}>}
-   */
-  initWorkers({commit}, crawlerFuncs) {
-    for (let key in crawlerFuncs) {
-      commit('addCrawlerWithWorkers', {
-        name: key,
-        func: crawlerFuncs[key],
-      })
-    }
-  },
   loadUsernames({commit}) {
     const username = JSON.parse(window.localStorage.getItem('username-v2'))
     if (username) {
