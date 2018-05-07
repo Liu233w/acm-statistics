@@ -54,6 +54,10 @@
     "transform": {
       "^.+\\.js$": "<rootDir>/__test__/jest.transform.js"
     },
+    "transformIgnorePatterns": [
+      "/node_modules/",
+      "<rootDir>/__test__/pages/pages_snapshot.test.js"
+    ],
     "moduleNameMapper": {
       "~(.*)$": "<rootDir>/$1"
     },
