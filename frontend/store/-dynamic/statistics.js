@@ -5,64 +5,105 @@ import _ from 'lodash'
 export function state() {
   return {
     workers: [],
+    crawlers: {},
     mainUsername: '',
   }
 }
 
 export const mutations = {
-  addWorker(state, {name, func, username}) {
-    state.workers.push({
-      name: name,
-      solved: 0,
-      submissions: 0,
+  addCrawlerWithWorkers(state, {name, func}) {
+    state.crawlers[name] = {
+      name,
+      func,
+    }
+
+    const worker = {
+      crawlerName: name,
+      username: '',
       status: WORKER_STATUS.WAITING,
-      func: func,
-      errorMessage: '',
-      username: username,
+    }
+    resetWorker(worker)
+
+    state.workers.push(worker)
+  },
+  updateUsername(state, {index, username}) {
+    updateUsername(state.workers[index], username)
+  },
+  updateMainUsername(state, {username}) {
+    state.mainUsername = username
+    _.forEach(state.workers, (worker) => updateUsername(worker, username))
+  },
+  /**
+   * 从 payload 读取用户名，如果某爬虫在 state.crawlers 中存在，而在subs中不存在，
+   * 则创建一个用户名为 mainUsername 的 worker。
+   * @param state
+   * @param main
+   * @param subs
+   */
+  updateUsernamesFromObject(state, {main, subs}) {
+    state.mainUsername = main
+
+    /* subs: {
+     *   crawlerName: [ 'username1', 'username2' ],
+     * }
+     */
+    // 从 crawler 重新生成 worker
+    state.workers = []
+
+    _.forEach(state.crawlers, item => {
+      if (subs[item.name]) {
+        _.forEach(subs[item.name], username => {
+
+          const worker = {
+            crawlerName: item.name,
+            username: username,
+            status: WORKER_STATUS.WAITING,
+          }
+          resetWorker(worker)
+
+          state.workers.push(worker)
+        })
+      } else {
+        const worker = {
+          crawlerName: item.name,
+          username: main,
+          status: WORKER_STATUS.WAITING,
+        }
+        resetWorker(worker)
+
+        state.workers.push(worker)
+      }
     })
   },
-  setUsername(state, {index, username}) {
-    state.workers[index].username = username
-  },
-  setMainUsername(state, {username}) {
-    state.mainUsername = username
-  },
-  setResult(state, {index, solved, submissions}) {
+  setWorkerDone(state, {index, solved, submissions}) {
     const worker = state.workers[index]
 
     worker.solved = solved
     worker.submissions = submissions
+    worker.status = WORKER_STATUS.DONE
   },
-  setError(state, {index, errorMessage}) {
-    state.workers[index].errorMessage = errorMessage
-  },
-  /**
-   * 清空某个worker的数据，清除 solved, submissions 和 errorMessage，不会重设状态
-   */
-  resetData(state, {index}) {
+  setWorkerError(state, {index, errorMessage}) {
     const worker = state.workers[index]
 
-    worker.solved = 0
-    worker.submissions = 0
-    worker.errorMessage = ''
-  },
-  setToWorking(state, {index}) {
-    state.workers[index].status = WORKER_STATUS.WORKING
-  },
-  setToWaiting(state, {index}) {
-    state.workers[index].status = WORKER_STATUS.WAITING
-  },
-  setToDone(state, {index}) {
-    state.workers[index].status = WORKER_STATUS.DONE
+    worker.errorMessage = errorMessage
+    worker.status = WORKER_STATUS.DONE
   },
   /**
-   * 用来查询 worker 的状态
-   * @param state
-   * @param index
-   * @param key
+   * 更新状态，准备启动 worker
    */
-  setWorkerTokenKey(state, {index, tokenKey}) {
-    state.workers[index].tokenKey = tokenKey
+  startWorker(state, {index, tokenKey}) {
+    const worker = state.workers[index]
+
+    resetWorker(worker)
+
+    worker.status = WORKER_STATUS.WORKING
+    worker.tokenKey = tokenKey
+  },
+  stopWorker(state, {index}) {
+    const worker = state.workers[index]
+
+    worker.status = WORKER_STATUS.WAITING
+    worker.tokenKey = null
   },
 }
 
@@ -101,6 +142,14 @@ export const getters = {
     const notWorking = _.filter(state.workers, item => item.status !== WORKER_STATUS.WORKING).length
     return notWorking / cnt * 100
   },
+  /**
+   * 每个 crawler 有多少 worker
+   * @param state
+   * @return {Object.<string, number>}
+   */
+  workerNumberOfCrawler(state) {
+    return _.countBy(state.workers, 'name')
+  },
 }
 
 export const actions = {
@@ -111,76 +160,50 @@ export const actions = {
    */
   initWorkers({commit}, crawlerFuncs) {
     for (let key in crawlerFuncs) {
-      commit('addWorker', {
+      commit('addCrawlerWithWorkers', {
         name: key,
         func: crawlerFuncs[key],
-        username: '',
       })
     }
   },
-  loadUsernames({state, commit, dispatch}) {
-    const username = JSON.parse(window.localStorage.getItem('username'))
+  loadUsernames({commit}) {
+    const username = JSON.parse(window.localStorage.getItem('username-v2'))
     if (username) {
-      commit('setMainUsername', {username: username.main})
-
-      _.forEach(state.workers, (item, index) => {
-        if (username.subs[item.name]) {
-          dispatch('updateUsername', {
-            index,
-            username: username.subs[item.name],
-          })
-        }
-      })
+      commit('updateUsernamesFromObject', username)
     }
   },
   saveUsernames({state}) {
-    const username = {
-      main: state.mainUsername,
-      subs: {},
-    }
-    for (let item of state.workers) {
-      username.subs[item.name] = item.username
-    }
-
-    window.localStorage.setItem('username', JSON.stringify(username))
+    const username = getUsernameObjectFromState(state)
+    window.localStorage.setItem('username-v2', JSON.stringify(username))
   },
   updateUsername({commit}, {index, username}) {
-    commit('setToWaiting', {index})
-    commit('setUsername', {index, username})
-    commit('resetData', {index})
+    commit('updateUsername', {index, username})
   },
-  updateMainUsername({state, commit, dispatch}, {username}) {
-    commit('setMainUsername', {username})
-    for (let index in state.workers) {
-      dispatch('updateUsername', {index, username})
-    }
+  updateMainUsername({commit}, {username}) {
+    commit('updateMainUsername', {username})
   },
   /**
    * 启动一个 worker
    */
   async startOne({state, commit}, {index}) {
-    commit('resetData', {index})
-    commit('setToWorking', {index})
-
     const tokenKey = Math.random()
-    commit('setWorkerTokenKey', {index, tokenKey})
+    commit('startWorker', {index, tokenKey})
 
     const worker = state.workers[index]
     try {
-      const res = await worker.func(worker.username)
+      const res = await state.crawlers[worker.name].func(worker.username)
       if (state.workers[index].tokenKey !== tokenKey) {
         console.log('done but stopped')
         return
       }
-      commit('setResult', {index, ...res})
+      commit('setWorkerDone', {index, ...res})
     } catch (err) {
       if (state.workers[index].tokenKey !== tokenKey) {
         console.log('done but stopped')
         return
       }
-      commit('setError', {index, errorMessage: err.message})
+      commit('setWorkerError', {index, errorMessage: err.message})
     }
-    commit('setToDone', {index})
   },
   startAll({state, dispatch}) {
     return Promise.all(_.map(
@@ -188,9 +211,7 @@ export const actions = {
       index => dispatch('startOne', {index})))
   },
   stopOne({commit}, {index}) {
-    commit('setWorkerTokenKey', {index, tokenKey: null})
-    commit('setToWaiting', {index})
-    commit('resetData', {index})
+    commit('stopWorker', {index})
   },
 }
 
@@ -202,4 +223,37 @@ export default {
   mutations,
   getters,
   actions,
+}
+
+/**
+ * 清空某个worker的数据，清除 solved, submissions, errorMessage 和 tokenKey，不会重设状态
+ */
+function resetWorker(worker) {
+  worker.solved = 0
+  worker.submissions = 0
+  worker.errorMessage = ''
+  worker.tokenKey = null
+}
+
+function updateUsername(worker, username) {
+  resetWorker(worker)
+  worker.username = username
+  worker.status = WORKER_STATUS.WAITING
+}
+
+export function getUsernameObjectFromState(state) {
+  const username = {
+    main: state.mainUsername,
+    subs: {},
+  }
+
+  for (let item of state.workers) {
+    if (username.subs[item.name]) {
+      username.subs[item.name].push(item.username)
+    } else {
+      username.subs[item.name] = [item.username]
+    }
+  }
+
+  return username
 }
