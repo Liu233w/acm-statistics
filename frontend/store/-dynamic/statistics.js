@@ -155,7 +155,7 @@ export const getters = {
    * @return {Object.<string, number>}
    */
   workerNumberOfCrawler(state) {
-    return _.countBy(state.workers, 'name')
+    return _.countBy(state.workers, 'crawlerName')
   },
 }
 
@@ -185,7 +185,7 @@ export const actions = {
 
     const worker = state.workers[index]
     try {
-      const res = await state.crawlers[worker.name].func(worker.username)
+      const res = await state.crawlers[worker.crawlerName].func(worker.username)
       if (state.workers[index].tokenKey !== tokenKey) {
         console.log('done but stopped')
         return
@@ -242,10 +242,10 @@ export function getUsernameObjectFromState(state) {
   }
 
   for (let item of state.workers) {
-    if (username.subs[item.name]) {
-      username.subs[item.name].push(item.username)
+    if (username.subs[item.crawlerName]) {
+      username.subs[item.crawlerName].push(item.username)
     } else {
-      username.subs[item.name] = [item.username]
+      username.subs[item.crawlerName] = [item.username]
     }
   }
 
