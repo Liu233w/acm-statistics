@@ -9,3 +9,6 @@
 
 # 静态文件中可能有已经编译好的js文件
 /static
+
+# coverage
+/coverage
