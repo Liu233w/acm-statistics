@@ -1643,12 +1643,14 @@ exports[`/statistics 1`] = `
                                      style="height:48px;"
                                 >
                                   <div class="toolbar__title">
-                                    POJ
+                                    crawler0
                                   </div>
                                   <div class="spacer">
                                   </div>
                                   <div class="toolbar__items">
-                                    <span class="tooltip tooltip--bottom">
+                                    <span class="tooltip tooltip--bottom"
+                                          style="display:none;"
+                                    >
                                       <div class="tooltip__content"
                                            style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"
                                       >
@@ -1783,12 +1785,14 @@ exports[`/statistics 1`] = `
                                      style="height:48px;"
                                 >
                                   <div class="toolbar__title">
-                                    ACdream
+                                    crawler3
                                   </div>
                                   <div class="spacer">
                                   </div>
                                   <div class="toolbar__items">
-                                    <span class="tooltip tooltip--bottom">
+                                    <span class="tooltip tooltip--bottom"
+                                          style="display:none;"
+                                    >
                                       <div class="tooltip__content"
                                            style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"
                                       >
@@ -1923,7 +1927,7 @@ exports[`/statistics 1`] = `
                                      style="height:48px;"
                                 >
                                   <div class="toolbar__title">
-                                    UVA
+                                    with url
                                   </div>
                                   <div class="spacer">
                                   </div>
@@ -1981,285 +1985,6 @@ exports[`/statistics 1`] = `
                                     <span class="grey--text"
                                           style="display:none;"
                                     >
-                                    </span>
-                                  </div>
-                                </div>
-                                <div class="layout row wrap">
-                                  <div class="flex xs12">
-                                    <div class="input-group input-group--required input-group--text-field primary--text">
-                                      <label>
-                                        Username
-                                      </label>
-                                      <div class="input-group__input">
-                                        <input required="required"
-                                               tabindex="0"
-                                               aria-label="Username"
-                                               type="text"
-                                               value
-                                        >
-                                      </div>
-                                      <div class="input-group__details">
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class="layout row"
-                                     style="display:none;"
-                                >
-                                  <div class="flex xs12">
-                                    <span class="grey--text">
-                                      SOLVED:
-                                    </span>
-                                    0
-                                    <br>
-                                    <span class="grey--text">
-                                      SUBMISSIONS:
-                                    </span>
-                                    0
-                                  </div>
-                                </div>
-                                <div class="layout row"
-                                     style="display:none;"
-                                >
-                                  <div class="spacer">
-                                  </div>
-                                  <div class="flex xs2">
-                                    <div class="progress-circular progress-circular--indeterminate primary--text"
-                                         style="height:32px;width:32px;"
-                                    >
-                                      <svg xmlns="http://www.w3.org/2000/svg"
-                                           viewbox="22.857142857142858 22.857142857142858 45.714285714285715 45.714285714285715"
-                                           style="transform:rotate(0deg);"
-                                      >
-                                        <circle fill="transparent"
-                                                cx="45.714285714285715"
-                                                cy="45.714285714285715"
-                                                r="20"
-                                                stroke-width="5.714285714285714"
-                                                stroke-dasharray="125.664"
-                                                stroke-dashoffset="125.66370614359172px"
-                                                class="progress-circular__overlay"
-                                        >
-                                        </circle>
-                                      </svg>
-                                      <div class="progress-circular__info">
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div class="spacer">
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="flex">
-                            <div class="card"
-                                 style="height:auto;"
-                            >
-                              <nav class="blue-grey lighten-5 toolbar toolbar--card toolbar--dense"
-                                   style="margin-top:0px;padding-right:0px;padding-left:0px;transform:translateY(0px);"
-                              >
-                                <div class="toolbar__content"
-                                     style="height:48px;"
-                                >
-                                  <div class="toolbar__title">
-                                    Timus
-                                  </div>
-                                  <div class="spacer">
-                                  </div>
-                                  <div class="toolbar__items">
-                                    <span class="tooltip tooltip--bottom">
-                                      <div class="tooltip__content"
-                                           style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"
-                                      >
-                                        <span>
-                                          &#x8F6C;&#x5230;&#x6B64;OJ
-                                        </span>
-                                      </div>
-                                      <span>
-                                        <button type="button"
-                                                class="btn btn--icon"
-                                        >
-                                          <div class="btn__content">
-                                            <i aria-hidden="true"
-                                               class="icon material-icons"
-                                            >
-                                              link
-                                            </i>
-                                          </div>
-                                        </button>
-                                      </span>
-                                    </span>
-                                    <span class="tooltip tooltip--bottom">
-                                      <div class="tooltip__content"
-                                           style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"
-                                      >
-                                        <span>
-                                          &#x91CD;&#x65B0;&#x722C;&#x53D6;&#x6B64;&#x5904;&#x4FE1;&#x606F;
-                                        </span>
-                                      </div>
-                                      <span>
-                                        <button type="button"
-                                                class="btn btn--icon"
-                                        >
-                                          <div class="btn__content">
-                                            <i aria-hidden="true"
-                                               class="icon material-icons"
-                                            >
-                                              refresh
-                                            </i>
-                                          </div>
-                                        </button>
-                                      </span>
-                                    </span>
-                                  </div>
-                                </div>
-                              </nav>
-                              <div class="container">
-                                <div class="layout row">
-                                  <div class="flex xs12">
-                                    <span class="grey--text"
-                                          style="display:none;"
-                                    >
-                                    </span>
-                                  </div>
-                                </div>
-                                <div class="layout row wrap">
-                                  <div class="flex xs12">
-                                    <div class="input-group input-group--required input-group--text-field primary--text">
-                                      <label>
-                                        Username
-                                      </label>
-                                      <div class="input-group__input">
-                                        <input required="required"
-                                               tabindex="0"
-                                               aria-label="Username"
-                                               type="text"
-                                               value
-                                        >
-                                      </div>
-                                      <div class="input-group__details">
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class="layout row"
-                                     style="display:none;"
-                                >
-                                  <div class="flex xs12">
-                                    <span class="grey--text">
-                                      SOLVED:
-                                    </span>
-                                    0
-                                    <br>
-                                    <span class="grey--text">
-                                      SUBMISSIONS:
-                                    </span>
-                                    0
-                                  </div>
-                                </div>
-                                <div class="layout row"
-                                     style="display:none;"
-                                >
-                                  <div class="spacer">
-                                  </div>
-                                  <div class="flex xs2">
-                                    <div class="progress-circular progress-circular--indeterminate primary--text"
-                                         style="height:32px;width:32px;"
-                                    >
-                                      <svg xmlns="http://www.w3.org/2000/svg"
-                                           viewbox="22.857142857142858 22.857142857142858 45.714285714285715 45.714285714285715"
-                                           style="transform:rotate(0deg);"
-                                      >
-                                        <circle fill="transparent"
-                                                cx="45.714285714285715"
-                                                cy="45.714285714285715"
-                                                r="20"
-                                                stroke-width="5.714285714285714"
-                                                stroke-dasharray="125.664"
-                                                stroke-dashoffset="125.66370614359172px"
-                                                class="progress-circular__overlay"
-                                        >
-                                        </circle>
-                                      </svg>
-                                      <div class="progress-circular__info">
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div class="spacer">
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="flex">
-                            <div class="card"
-                                 style="height:auto;"
-                            >
-                              <nav class="blue-grey lighten-5 toolbar toolbar--card toolbar--dense"
-                                   style="margin-top:0px;padding-right:0px;padding-left:0px;transform:translateY(0px);"
-                              >
-                                <div class="toolbar__content"
-                                     style="height:48px;"
-                                >
-                                  <div class="toolbar__title">
-                                    VJudge
-                                  </div>
-                                  <div class="spacer">
-                                  </div>
-                                  <div class="toolbar__items">
-                                    <span class="tooltip tooltip--bottom">
-                                      <div class="tooltip__content"
-                                           style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"
-                                      >
-                                        <span>
-                                          &#x8F6C;&#x5230;&#x6B64;OJ
-                                        </span>
-                                      </div>
-                                      <span>
-                                        <button type="button"
-                                                class="btn btn--icon"
-                                        >
-                                          <div class="btn__content">
-                                            <i aria-hidden="true"
-                                               class="icon material-icons"
-                                            >
-                                              link
-                                            </i>
-                                          </div>
-                                        </button>
-                                      </span>
-                                    </span>
-                                    <span class="tooltip tooltip--bottom">
-                                      <div class="tooltip__content"
-                                           style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"
-                                      >
-                                        <span>
-                                          &#x91CD;&#x65B0;&#x722C;&#x53D6;&#x6B64;&#x5904;&#x4FE1;&#x606F;
-                                        </span>
-                                      </div>
-                                      <span>
-                                        <button type="button"
-                                                class="btn btn--icon"
-                                        >
-                                          <div class="btn__content">
-                                            <i aria-hidden="true"
-                                               class="icon material-icons"
-                                            >
-                                              refresh
-                                            </i>
-                                          </div>
-                                        </button>
-                                      </span>
-                                    </span>
-                                  </div>
-                                </div>
-                              </nav>
-                              <div class="container">
-                                <div class="layout row">
-                                  <div class="flex xs12">
-                                    <span class="grey--text">
-                                      virtual judge&#xFF0C;&#x8FD9;&#x4E2A;OJ&#x7684;&#x9898;&#x91CF;&#x662F;&#x5355;&#x72EC;&#x8BA1;&#x7B97;&#x7684;
                                     </span>
                                   </div>
                                 </div>
@@ -2346,12 +2071,14 @@ exports[`/statistics 1`] = `
                                      style="height:48px;"
                                 >
                                   <div class="toolbar__title">
-                                    HDU
+                                    crawler1
                                   </div>
                                   <div class="spacer">
                                   </div>
                                   <div class="toolbar__items">
-                                    <span class="tooltip tooltip--bottom">
+                                    <span class="tooltip tooltip--bottom"
+                                          style="display:none;"
+                                    >
                                       <div class="tooltip__content"
                                            style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"
                                       >
@@ -2486,12 +2213,14 @@ exports[`/statistics 1`] = `
                                      style="height:48px;"
                                 >
                                   <div class="toolbar__title">
-                                    &#x5927;&#x89C6;&#x91CE;&#x5728;&#x7EBF;&#x6D4B;&#x8BC4;
+                                    crawler4
                                   </div>
                                   <div class="spacer">
                                   </div>
                                   <div class="toolbar__items">
-                                    <span class="tooltip tooltip--bottom">
+                                    <span class="tooltip tooltip--bottom"
+                                          style="display:none;"
+                                    >
                                       <div class="tooltip__content"
                                            style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"
                                       >
@@ -2626,147 +2355,7 @@ exports[`/statistics 1`] = `
                                      style="height:48px;"
                                 >
                                   <div class="toolbar__title">
-                                    FZU
-                                  </div>
-                                  <div class="spacer">
-                                  </div>
-                                  <div class="toolbar__items">
-                                    <span class="tooltip tooltip--bottom">
-                                      <div class="tooltip__content"
-                                           style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"
-                                      >
-                                        <span>
-                                          &#x8F6C;&#x5230;&#x6B64;OJ
-                                        </span>
-                                      </div>
-                                      <span>
-                                        <button type="button"
-                                                class="btn btn--icon"
-                                        >
-                                          <div class="btn__content">
-                                            <i aria-hidden="true"
-                                               class="icon material-icons"
-                                            >
-                                              link
-                                            </i>
-                                          </div>
-                                        </button>
-                                      </span>
-                                    </span>
-                                    <span class="tooltip tooltip--bottom">
-                                      <div class="tooltip__content"
-                                           style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"
-                                      >
-                                        <span>
-                                          &#x91CD;&#x65B0;&#x722C;&#x53D6;&#x6B64;&#x5904;&#x4FE1;&#x606F;
-                                        </span>
-                                      </div>
-                                      <span>
-                                        <button type="button"
-                                                class="btn btn--icon"
-                                        >
-                                          <div class="btn__content">
-                                            <i aria-hidden="true"
-                                               class="icon material-icons"
-                                            >
-                                              refresh
-                                            </i>
-                                          </div>
-                                        </button>
-                                      </span>
-                                    </span>
-                                  </div>
-                                </div>
-                              </nav>
-                              <div class="container">
-                                <div class="layout row">
-                                  <div class="flex xs12">
-                                    <span class="grey--text"
-                                          style="display:none;"
-                                    >
-                                    </span>
-                                  </div>
-                                </div>
-                                <div class="layout row wrap">
-                                  <div class="flex xs12">
-                                    <div class="input-group input-group--required input-group--text-field primary--text">
-                                      <label>
-                                        Username
-                                      </label>
-                                      <div class="input-group__input">
-                                        <input required="required"
-                                               tabindex="0"
-                                               aria-label="Username"
-                                               type="text"
-                                               value
-                                        >
-                                      </div>
-                                      <div class="input-group__details">
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class="layout row"
-                                     style="display:none;"
-                                >
-                                  <div class="flex xs12">
-                                    <span class="grey--text">
-                                      SOLVED:
-                                    </span>
-                                    0
-                                    <br>
-                                    <span class="grey--text">
-                                      SUBMISSIONS:
-                                    </span>
-                                    0
-                                  </div>
-                                </div>
-                                <div class="layout row"
-                                     style="display:none;"
-                                >
-                                  <div class="spacer">
-                                  </div>
-                                  <div class="flex xs2">
-                                    <div class="progress-circular progress-circular--indeterminate primary--text"
-                                         style="height:32px;width:32px;"
-                                    >
-                                      <svg xmlns="http://www.w3.org/2000/svg"
-                                           viewbox="22.857142857142858 22.857142857142858 45.714285714285715 45.714285714285715"
-                                           style="transform:rotate(0deg);"
-                                      >
-                                        <circle fill="transparent"
-                                                cx="45.714285714285715"
-                                                cy="45.714285714285715"
-                                                r="20"
-                                                stroke-width="5.714285714285714"
-                                                stroke-dasharray="125.664"
-                                                stroke-dashoffset="125.66370614359172px"
-                                                class="progress-circular__overlay"
-                                        >
-                                        </circle>
-                                      </svg>
-                                      <div class="progress-circular__info">
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div class="spacer">
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="flex">
-                            <div class="card"
-                                 style="height:auto;"
-                            >
-                              <nav class="blue-grey lighten-5 toolbar toolbar--card toolbar--dense"
-                                   style="margin-top:0px;padding-right:0px;padding-left:0px;transform:translateY(0px);"
-                              >
-                                <div class="toolbar__content"
-                                     style="height:48px;"
-                                >
-                                  <div class="toolbar__title">
-                                    SGU
+                                    with all
                                   </div>
                                   <div class="spacer">
                                   </div>
@@ -2822,7 +2411,7 @@ exports[`/statistics 1`] = `
                                 <div class="layout row">
                                   <div class="flex xs12">
                                     <span class="grey--text">
-                                      SGU&#x5141;&#x8BB8;&#x591A;&#x4E2A;&#x7528;&#x6237;&#x6709;&#x76F8;&#x540C;&#x7684;&#x540D;&#x5B57;&#xFF08;ID&#x4E0D;&#x540C;&#xFF09;&#xFF0C;&#x672C;&#x722C;&#x866B;&#x4F1A;&#x9009;&#x62E9;&#x5728; http://acm.sgu.ru/find.php?find_id= &#x4E2D;&#x51FA;&#x73B0;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;
+                                      with all description and url
                                     </span>
                                   </div>
                                 </div>
@@ -2909,12 +2498,14 @@ exports[`/statistics 1`] = `
                                      style="height:48px;"
                                 >
                                   <div class="toolbar__title">
-                                    ZOJ
+                                    crawler2
                                   </div>
                                   <div class="spacer">
                                   </div>
                                   <div class="toolbar__items">
-                                    <span class="tooltip tooltip--bottom">
+                                    <span class="tooltip tooltip--bottom"
+                                          style="display:none;"
+                                    >
                                       <div class="tooltip__content"
                                            style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"
                                       >
@@ -3049,12 +2640,14 @@ exports[`/statistics 1`] = `
                                      style="height:48px;"
                                 >
                                   <div class="toolbar__title">
-                                    CodeForces
+                                    with description
                                   </div>
                                   <div class="spacer">
                                   </div>
                                   <div class="toolbar__items">
-                                    <span class="tooltip tooltip--bottom">
+                                    <span class="tooltip tooltip--bottom"
+                                          style="display:none;"
+                                    >
                                       <div class="tooltip__content"
                                            style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"
                                       >
@@ -3104,289 +2697,8 @@ exports[`/statistics 1`] = `
                               <div class="container">
                                 <div class="layout row">
                                   <div class="flex xs12">
-                                    <span class="grey--text"
-                                          style="display:none;"
-                                    >
-                                    </span>
-                                  </div>
-                                </div>
-                                <div class="layout row wrap">
-                                  <div class="flex xs12">
-                                    <div class="input-group input-group--required input-group--text-field primary--text">
-                                      <label>
-                                        Username
-                                      </label>
-                                      <div class="input-group__input">
-                                        <input required="required"
-                                               tabindex="0"
-                                               aria-label="Username"
-                                               type="text"
-                                               value
-                                        >
-                                      </div>
-                                      <div class="input-group__details">
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class="layout row"
-                                     style="display:none;"
-                                >
-                                  <div class="flex xs12">
                                     <span class="grey--text">
-                                      SOLVED:
-                                    </span>
-                                    0
-                                    <br>
-                                    <span class="grey--text">
-                                      SUBMISSIONS:
-                                    </span>
-                                    0
-                                  </div>
-                                </div>
-                                <div class="layout row"
-                                     style="display:none;"
-                                >
-                                  <div class="spacer">
-                                  </div>
-                                  <div class="flex xs2">
-                                    <div class="progress-circular progress-circular--indeterminate primary--text"
-                                         style="height:32px;width:32px;"
-                                    >
-                                      <svg xmlns="http://www.w3.org/2000/svg"
-                                           viewbox="22.857142857142858 22.857142857142858 45.714285714285715 45.714285714285715"
-                                           style="transform:rotate(0deg);"
-                                      >
-                                        <circle fill="transparent"
-                                                cx="45.714285714285715"
-                                                cy="45.714285714285715"
-                                                r="20"
-                                                stroke-width="5.714285714285714"
-                                                stroke-dasharray="125.664"
-                                                stroke-dashoffset="125.66370614359172px"
-                                                class="progress-circular__overlay"
-                                        >
-                                        </circle>
-                                      </svg>
-                                      <div class="progress-circular__info">
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div class="spacer">
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="flex">
-                            <div class="card"
-                                 style="height:auto;"
-                            >
-                              <nav class="blue-grey lighten-5 toolbar toolbar--card toolbar--dense"
-                                   style="margin-top:0px;padding-right:0px;padding-left:0px;transform:translateY(0px);"
-                              >
-                                <div class="toolbar__content"
-                                     style="height:48px;"
-                                >
-                                  <div class="toolbar__title">
-                                    SPOJ
-                                  </div>
-                                  <div class="spacer">
-                                  </div>
-                                  <div class="toolbar__items">
-                                    <span class="tooltip tooltip--bottom">
-                                      <div class="tooltip__content"
-                                           style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"
-                                      >
-                                        <span>
-                                          &#x8F6C;&#x5230;&#x6B64;OJ
-                                        </span>
-                                      </div>
-                                      <span>
-                                        <button type="button"
-                                                class="btn btn--icon"
-                                        >
-                                          <div class="btn__content">
-                                            <i aria-hidden="true"
-                                               class="icon material-icons"
-                                            >
-                                              link
-                                            </i>
-                                          </div>
-                                        </button>
-                                      </span>
-                                    </span>
-                                    <span class="tooltip tooltip--bottom">
-                                      <div class="tooltip__content"
-                                           style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"
-                                      >
-                                        <span>
-                                          &#x91CD;&#x65B0;&#x722C;&#x53D6;&#x6B64;&#x5904;&#x4FE1;&#x606F;
-                                        </span>
-                                      </div>
-                                      <span>
-                                        <button type="button"
-                                                class="btn btn--icon"
-                                        >
-                                          <div class="btn__content">
-                                            <i aria-hidden="true"
-                                               class="icon material-icons"
-                                            >
-                                              refresh
-                                            </i>
-                                          </div>
-                                        </button>
-                                      </span>
-                                    </span>
-                                  </div>
-                                </div>
-                              </nav>
-                              <div class="container">
-                                <div class="layout row">
-                                  <div class="flex xs12">
-                                    <span class="grey--text"
-                                          style="display:none;"
-                                    >
-                                    </span>
-                                  </div>
-                                </div>
-                                <div class="layout row wrap">
-                                  <div class="flex xs12">
-                                    <div class="input-group input-group--required input-group--text-field primary--text">
-                                      <label>
-                                        Username
-                                      </label>
-                                      <div class="input-group__input">
-                                        <input required="required"
-                                               tabindex="0"
-                                               aria-label="Username"
-                                               type="text"
-                                               value
-                                        >
-                                      </div>
-                                      <div class="input-group__details">
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class="layout row"
-                                     style="display:none;"
-                                >
-                                  <div class="flex xs12">
-                                    <span class="grey--text">
-                                      SOLVED:
-                                    </span>
-                                    0
-                                    <br>
-                                    <span class="grey--text">
-                                      SUBMISSIONS:
-                                    </span>
-                                    0
-                                  </div>
-                                </div>
-                                <div class="layout row"
-                                     style="display:none;"
-                                >
-                                  <div class="spacer">
-                                  </div>
-                                  <div class="flex xs2">
-                                    <div class="progress-circular progress-circular--indeterminate primary--text"
-                                         style="height:32px;width:32px;"
-                                    >
-                                      <svg xmlns="http://www.w3.org/2000/svg"
-                                           viewbox="22.857142857142858 22.857142857142858 45.714285714285715 45.714285714285715"
-                                           style="transform:rotate(0deg);"
-                                      >
-                                        <circle fill="transparent"
-                                                cx="45.714285714285715"
-                                                cy="45.714285714285715"
-                                                r="20"
-                                                stroke-width="5.714285714285714"
-                                                stroke-dasharray="125.664"
-                                                stroke-dashoffset="125.66370614359172px"
-                                                class="progress-circular__overlay"
-                                        >
-                                        </circle>
-                                      </svg>
-                                      <div class="progress-circular__info">
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div class="spacer">
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="flex">
-                            <div class="card"
-                                 style="height:auto;"
-                            >
-                              <nav class="blue-grey lighten-5 toolbar toolbar--card toolbar--dense"
-                                   style="margin-top:0px;padding-right:0px;padding-left:0px;transform:translateY(0px);"
-                              >
-                                <div class="toolbar__content"
-                                     style="height:48px;"
-                                >
-                                  <div class="toolbar__title">
-                                    LeetCode&#xFF08;&#x4E2D;&#x56FD;&#xFF09;
-                                  </div>
-                                  <div class="spacer">
-                                  </div>
-                                  <div class="toolbar__items">
-                                    <span class="tooltip tooltip--bottom">
-                                      <div class="tooltip__content"
-                                           style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"
-                                      >
-                                        <span>
-                                          &#x8F6C;&#x5230;&#x6B64;OJ
-                                        </span>
-                                      </div>
-                                      <span>
-                                        <button type="button"
-                                                class="btn btn--icon"
-                                        >
-                                          <div class="btn__content">
-                                            <i aria-hidden="true"
-                                               class="icon material-icons"
-                                            >
-                                              link
-                                            </i>
-                                          </div>
-                                        </button>
-                                      </span>
-                                    </span>
-                                    <span class="tooltip tooltip--bottom">
-                                      <div class="tooltip__content"
-                                           style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"
-                                      >
-                                        <span>
-                                          &#x91CD;&#x65B0;&#x722C;&#x53D6;&#x6B64;&#x5904;&#x4FE1;&#x606F;
-                                        </span>
-                                      </div>
-                                      <span>
-                                        <button type="button"
-                                                class="btn btn--icon"
-                                        >
-                                          <div class="btn__content">
-                                            <i aria-hidden="true"
-                                               class="icon material-icons"
-                                            >
-                                              refresh
-                                            </i>
-                                          </div>
-                                        </button>
-                                      </span>
-                                    </span>
-                                  </div>
-                                </div>
-                              </nav>
-                              <div class="container">
-                                <div class="layout row">
-                                  <div class="flex xs12">
-                                    <span class="grey--text"
-                                          style="display:none;"
-                                    >
+                                      a description
                                     </span>
                                   </div>
                                 </div>
@@ -3482,7 +2794,7 @@ exports[`/statistics 1`] = `
       </div>
     </div>
     <script type="text/javascript">
-      window.__NUXT__={"layout":"default","data":[{}],"error":null,"state":{"sidebar":false,"statistics":{"workers":[{"name":"poj","solved":0,"submissions":0,"status":"WAITING","errorMessage":"","username":""},{"name":"hdu","solved":0,"submissions":0,"status":"WAITING","errorMessage":"","username":""},{"name":"zoj","solved":0,"submissions":0,"status":"WAITING","errorMessage":"","username":""},{"name":"acdream","solved":0,"submissions":0,"status":"WAITING","errorMessage":"","username":""},{"name":"dashiye","solved":0,"submissions":0,"status":"WAITING","errorMessage":"","username":""},{"name":"codeforces","solved":0,"submissions":0,"status":"WAITING","errorMessage":"","username":""},{"name":"uva","solved":0,"submissions":0,"status":"WAITING","errorMessage":"","username":""},{"name":"fzu","solved":0,"submissions":0,"status":"WAITING","errorMessage":"","username":""},{"name":"spoj","solved":0,"submissions":0,"status":"WAITING","errorMessage":"","username":""},{"name":"timus","solved":0,"submissions":0,"status":"WAITING","errorMessage":"","username":""},{"name":"sgu","solved":0,"submissions":0,"status":"WAITING","errorMessage":"","username":""},{"name":"leetcode_cn","solved":0,"submissions":0,"status":"WAITING","errorMessage":"","username":""},{"name":"vjudge","solved":0,"submissions":0,"status":"WAITING","errorMessage":"","username":""}],"mainUsername":""}},"serverRendered":true};
+      window.__NUXT__={"layout":"default","data":[{}],"error":null,"state":{"sidebar":false,"statistics":{"workers":[{"name":"crawler0","solved":0,"submissions":0,"status":"WAITING","errorMessage":"","username":""},{"name":"crawler1","solved":0,"submissions":0,"status":"WAITING","errorMessage":"","username":""},{"name":"crawler2","solved":0,"submissions":0,"status":"WAITING","errorMessage":"","username":""},{"name":"crawler3","solved":0,"submissions":0,"status":"WAITING","errorMessage":"","username":""},{"name":"crawler4","solved":0,"submissions":0,"status":"WAITING","errorMessage":"","username":""},{"name":"withDescription","solved":0,"submissions":0,"status":"WAITING","errorMessage":"","username":""},{"name":"withUrl","solved":0,"submissions":0,"status":"WAITING","errorMessage":"","username":""},{"name":"withAll","solved":0,"submissions":0,"status":"WAITING","errorMessage":"","username":""}],"mainUsername":""}},"serverRendered":true};
     </script>
   </body>
 </html>
