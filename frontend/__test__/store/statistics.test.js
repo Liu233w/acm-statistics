@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
 
-import ActionTester from '../actionTester'
+import StoreContextSimulator from '../StoreContextSimulator'
 
 jest.mock('~/dynamic/crawlers', () => function () {
   return {
@@ -609,7 +609,7 @@ describe('actions', () => {
           },
         ],
       }
-      const actionTester = new ActionTester(state, store.mutations)
+      const actionTester = new StoreContextSimulator(state, {mutations: store.mutations})
 
       await store.actions.startOne({state, commit: actionTester.getCommiter()}, {index: 0})
 
@@ -658,7 +658,7 @@ describe('actions', () => {
           },
         ],
       }
-      const actionTester = new ActionTester(state, store.mutations)
+      const actionTester = new StoreContextSimulator(state, {mutations: store.mutations})
 
       await store.actions.startOne({state, commit: actionTester.getCommiter()}, {index: 0})
 
@@ -714,7 +714,7 @@ describe('actions', () => {
           },
         ],
       }
-      const actionTester = new ActionTester(state, store.mutations)
+      const actionTester = new StoreContextSimulator(state, {mutations: store.mutations})
 
       // 执行当前帧
       const promise = store.actions.startOne({state, commit: actionTester.getCommiter()}, {index: 0})
@@ -777,7 +777,7 @@ describe('actions', () => {
           },
         ],
       }
-      const actionTester = new ActionTester(state, store.mutations)
+      const actionTester = new StoreContextSimulator(state, {mutations: store.mutations})
 
       // 执行当前帧
       await store.actions.startOne({state, commit: actionTester.getCommiter()}, {index: 0})
