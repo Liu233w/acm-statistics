@@ -1,6 +1,6 @@
 import _ from 'lodash'
 
-export default class ActionTester {
+export default class StoreContextSimulator {
   /**
    * 初始化
    * @param state {Object} mocked state
