@@ -32,11 +32,21 @@ export function state() {
   }
 }
 
+export const MUTATION_TYPES = {
+  updateUsername: 'updateUsername',
+  updateMainUsername: 'updateMainUsername',
+  updateUsernamesFromObject: 'updateUsernamesFromObject',
+  setWorkerDone: 'setWorkerDone',
+  setWorkerError: 'setWorkerError',
+  startWorker: 'startWorker',
+  stopWorker: 'stopWorker',
+}
+
 export const mutations = {
-  updateUsername(state, {index, username}) {
+  [MUTATION_TYPES.updateUsername](state, {index, username}) {
     updateUsername(state.workers[index], username)
   },
-  updateMainUsername(state, {username}) {
+  [MUTATION_TYPES.updateMainUsername](state, {username}) {
     state.mainUsername = username
     _.forEach(state.workers, (worker) => updateUsername(worker, username))
   },
@@ -47,7 +57,7 @@ export const mutations = {
    * @param main
    * @param subs
    */
-  updateUsernamesFromObject(state, {main, subs}) {
+  [MUTATION_TYPES.updateUsernamesFromObject](state, {main, subs}) {
     state.mainUsername = main
 
     /* subs: {
@@ -82,14 +92,14 @@ export const mutations = {
       }
     })
   },
-  setWorkerDone(state, {index, solved, submissions}) {
+  [MUTATION_TYPES.setWorkerDone](state, {index, solved, submissions}) {
     const worker = state.workers[index]
 
     worker.solved = solved
     worker.submissions = submissions
     worker.status = WORKER_STATUS.DONE
   },
-  setWorkerError(state, {index, errorMessage}) {
+  [MUTATION_TYPES.setWorkerError](state, {index, errorMessage}) {
     const worker = state.workers[index]
 
     worker.errorMessage = errorMessage
@@ -98,7 +108,7 @@ export const mutations = {
   /**
    * 更新状态，准备启动 worker
    */
-  startWorker(state, {index, tokenKey}) {
+  [MUTATION_TYPES.startWorker](state, {index, tokenKey}) {
     const worker = state.workers[index]
 
     resetWorker(worker)
@@ -106,7 +116,7 @@ export const mutations = {
     worker.status = WORKER_STATUS.WORKING
     worker.tokenKey = tokenKey
   },
-  stopWorker(state, {index}) {
+  [MUTATION_TYPES.stopWorker](state, {index}) {
     const worker = state.workers[index]
 
     worker.status = WORKER_STATUS.WAITING
@@ -163,7 +173,7 @@ export const actions = {
   loadUsernames({commit}) {
     const username = JSON.parse(window.localStorage.getItem('username-v2'))
     if (username) {
-      commit('updateUsernamesFromObject', username)
+      commit(MUTATION_TYPES.updateUsernamesFromObject, username)
     }
   },
   saveUsernames({state}) {
@@ -171,17 +181,17 @@ export const actions = {
     window.localStorage.setItem('username-v2', JSON.stringify(username))
   },
   updateUsername({commit}, {index, username}) {
-    commit('updateUsername', {index, username})
+    commit(MUTATION_TYPES.updateUsername, {index, username})
   },
   updateMainUsername({commit}, {username}) {
-    commit('updateMainUsername', {username})
+    commit(MUTATION_TYPES.updateMainUsername, {username})
   },
   /**
    * 启动一个 worker
    */
   async startOne({state, commit}, {index}) {
     const tokenKey = Math.random()
-    commit('startWorker', {index, tokenKey})
+    commit(MUTATION_TYPES.startWorker, {index, tokenKey})
 
     const worker = state.workers[index]
     try {
@@ -190,13 +200,13 @@ export const actions = {
         console.log('done but stopped')
         return
       }
-      commit('setWorkerDone', {index, ...res})
+      commit(MUTATION_TYPES.setWorkerDone, {index, ...res})
     } catch (err) {
       if (state.workers[index].tokenKey !== tokenKey) {
         console.log('done but stopped')
         return
       }
-      commit('setWorkerError', {index, errorMessage: err.message})
+      commit(MUTATION_TYPES.setWorkerError, {index, errorMessage: err.message})
     }
   },
   startAll({state, dispatch}) {
@@ -205,7 +215,7 @@ export const actions = {
       index => dispatch('startOne', {index})))
   },
   stopOne({commit}, {index}) {
-    commit('stopWorker', {index})
+    commit(MUTATION_TYPES.stopWorker, {index})
   },
 }
 
