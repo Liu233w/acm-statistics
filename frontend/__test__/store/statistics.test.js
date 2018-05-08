@@ -340,7 +340,7 @@ describe('mutations', () => {
   })
 
   describe('stopWorker', () => {
-    it('应该重设tokenKey和status', ()=>{
+    it('应该重设tokenKey和status', () => {
       const state = {
         crawlers: {
           cr1: {
@@ -752,6 +752,58 @@ describe('actions', () => {
         ],
       })
 
+    })
+
+    it('在用户名为空时不进行查询', async () => {
+
+      const state = {
+        crawlers: {
+          cr1: {
+            name: 'cr1',
+            func: () => {
+              throw new Error('不应运行此查询')
+            },
+          },
+        },
+        workers: [
+          {
+            username: '',
+            status: 'DONE',
+            submissions: 0,
+            solved: 0,
+            errorMessage: '.....',
+            tokenKey: 0.23333,
+            crawlerName: 'cr1',
+          },
+        ],
+      }
+      const actionTester = new ActionTester(state, store.mutations)
+
+      // 执行当前帧
+      await store.actions.startOne({state, commit: actionTester.getCommiter()}, {index: 0})
+
+      const history = actionTester.getCommitHistory()
+      expect(history).toHaveLength(0)
+
+      expect(state).toMatchObject({
+        crawlers: {
+          cr1: {
+            name: 'cr1',
+            func: expect.any(Function),
+          },
+        },
+        workers: [
+          {
+            username: '',
+            status: 'DONE',
+            submissions: 0,
+            solved: 0,
+            errorMessage: '.....',
+            tokenKey: 0.23333,
+            crawlerName: 'cr1',
+          },
+        ],
+      })
     })
   })
 })

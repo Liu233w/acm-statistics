@@ -190,10 +190,15 @@ export const actions = {
    * 启动一个 worker
    */
   async startOne({state, commit}, {index}) {
+
+    const worker = state.workers[index]
+    if (!worker.username) {
+      return
+    }
+
     const tokenKey = Math.random()
     commit(MUTATION_TYPES.startWorker, {index, tokenKey})
 
-    const worker = state.workers[index]
     try {
       const res = await state.crawlers[worker.crawlerName].func(worker.username)
       if (state.workers[index].tokenKey !== tokenKey) {
