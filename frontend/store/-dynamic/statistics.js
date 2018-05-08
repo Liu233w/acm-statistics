@@ -40,6 +40,8 @@ export const MUTATION_TYPES = {
   setWorkerError: 'setWorkerError',
   startWorker: 'startWorker',
   stopWorker: 'stopWorker',
+  addWorkerForCrawler: 'addWorkerForCrawler',
+  removeWorkerAtIndex: 'removeWorkerAtIndex',
 }
 
 export const mutations = {
@@ -121,6 +123,27 @@ export const mutations = {
 
     worker.status = WORKER_STATUS.WAITING
     worker.tokenKey = null
+  },
+  [MUTATION_TYPES.addWorkerForCrawler](state, {crawlerName}) {
+    let insertIdx = _.findLastIndex(state.workers, _.matchesProperty('crawlerName', crawlerName))
+    if (insertIdx === -1) {
+      insertIdx = state.workers.length
+    } else {
+      // 插入到后方
+      ++insertIdx
+    }
+
+    const worker = {
+      crawlerName,
+      username: '',
+      status: WORKER_STATUS.WAITING,
+    }
+    resetWorker(worker)
+
+    state.workers.splice(insertIdx, 0, worker)
+  },
+  [MUTATION_TYPES.removeWorkerAtIndex](state, {index}) {
+    state.workers.splice(index, 1)
   },
 }
 
@@ -221,6 +244,26 @@ export const actions = {
   },
   stopOne({commit}, {index}) {
     commit(MUTATION_TYPES.stopWorker, {index})
+  },
+  addWorkerForCrawler({state, commit}, {crawlerName}) {
+    if (state.crawlers[crawlerName]) {
+      commit(MUTATION_TYPES.addWorkerForCrawler, {crawlerName})
+    } else {
+      throw new Error('爬虫不存在')
+    }
+  },
+  removeWorkerAtIndex({state, commit, getters}, {index}) {
+    if (index < 0 || index >= state.workers.length) {
+      throw new Error('该位置不存在')
+    }
+
+    const crawlerName = state.workers[index].crawlerName
+
+    if (getters.workerNumberOfCrawler[crawlerName] <= 1) {
+      throw new Error('不能移除最后一个 worker，您可以将用户名置为空以跳过查询')
+    }
+
+    commit(MUTATION_TYPES.removeWorkerAtIndex, {index})
   },
 }
 

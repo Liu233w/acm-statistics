@@ -386,6 +386,142 @@ describe('mutations', () => {
     })
   })
 
+  describe('addWorkerForCrawler', () => {
+
+    it('在其他的 worker 不存在时能够将 worker 添加到末尾', () => {
+      const state = {
+        crawlers: {
+          cr1: {
+            name: 'cr1',
+          },
+          cr2: {
+            name: 'cr2',
+          },
+        },
+        workers: [
+          {
+            username: 'user1',
+            status: 'DONE',
+            submissions: 33,
+            solved: 22,
+            errorMessage: '.....',
+            tokenKey: 0.23333,
+            crawlerName: 'cr2',
+          },
+        ],
+      }
+
+      store.mutations.addWorkerForCrawler(state, {crawlerName: 'cr1'})
+
+      expect(state).toMatchObject({
+        crawlers: {
+          cr1: {
+            name: 'cr1',
+          },
+          cr2: {
+            name: 'cr2',
+          },
+        },
+        workers: [
+          {
+            username: 'user1',
+            status: 'DONE',
+            submissions: 33,
+            solved: 22,
+            errorMessage: '.....',
+            tokenKey: 0.23333,
+            crawlerName: 'cr2',
+          },
+          {
+            username: '',
+            status: 'WAITING',
+            submissions: 0,
+            solved: 0,
+            errorMessage: '',
+            tokenKey: null,
+            crawlerName: 'cr1',
+          },
+        ],
+      })
+    })
+
+    it('在其他的 worker 存在时能够将 worker 添加到其后面', () => {
+      const state = {
+        crawlers: {
+          cr1: {
+            name: 'cr1',
+          },
+          cr2: {
+            name: 'cr2',
+          },
+        },
+        workers: [
+          {
+            username: 'user0',
+            status: 'DONE',
+            submissions: 33,
+            solved: 22,
+            errorMessage: '.....',
+            tokenKey: 0.23333,
+            crawlerName: 'cr1',
+          },
+          {
+            username: 'user1',
+            status: 'DONE',
+            submissions: 33,
+            solved: 22,
+            errorMessage: '.....',
+            tokenKey: 0.23333,
+            crawlerName: 'cr2',
+          },
+        ],
+      }
+
+      store.mutations.addWorkerForCrawler(state, {crawlerName: 'cr1'})
+
+      expect(state).toMatchObject({
+        crawlers: {
+          cr1: {
+            name: 'cr1',
+          },
+          cr2: {
+            name: 'cr2',
+          },
+        },
+        workers: [
+          {
+            username: 'user0',
+            status: 'DONE',
+            submissions: 33,
+            solved: 22,
+            errorMessage: '.....',
+            tokenKey: 0.23333,
+            crawlerName: 'cr1',
+          },
+          {
+            username: '',
+            status: 'WAITING',
+            submissions: 0,
+            solved: 0,
+            errorMessage: '',
+            tokenKey: null,
+            crawlerName: 'cr1',
+          },
+          {
+            username: 'user1',
+            status: 'DONE',
+            submissions: 33,
+            solved: 22,
+            errorMessage: '.....',
+            tokenKey: 0.23333,
+            crawlerName: 'cr2',
+          },
+        ],
+      })
+    })
+
+  })
+
 })
 
 describe('getters', () => {
@@ -806,4 +942,83 @@ describe('actions', () => {
       })
     })
   })
+
+  describe('addWorkerForCrawler', () => {
+
+    it('能够正确添加 Worker', () => {
+      const state = {
+        crawlers: {
+          cr1: {
+            name: 'cr1',
+          },
+        },
+      }
+
+      const actionTester = new StoreContextSimulator()
+
+      store.actions.addWorkerForCrawler(
+        {state, commit: actionTester.getCommiter()},
+        {crawlerName: 'cr1'})
+
+      const history = actionTester.getCommitHistory()
+      expect(history).toHaveLength(1)
+
+      expect(history[0]).toMatchObject({
+        type: 'addWorkerForCrawler',
+        payload: {crawlerName: 'cr1'},
+      })
+    })
+
+    it('在 crawler 不存在时能够抛出异常', () => {
+      const state = {
+        crawlers: {},
+      }
+
+      const actionTester = new StoreContextSimulator()
+
+      const action = () => {
+        store.actions.addWorkerForCrawler(
+          {state, commit: actionTester.getCommiter()},
+          {crawlerName: 'cr1'})
+      }
+
+      expect(action).toThrow('爬虫不存在')
+
+      const history = actionTester.getCommitHistory()
+      expect(history).toHaveLength(0)
+    })
+  })
+
+  describe('removeWorkerAtIndex', ()=>{
+    it('能够移除 worker', ()=>{
+      const state = {
+        workers: [
+          {
+            username: 'user1',
+            crawlerName: 'cr1',
+          },
+          {
+            username: 'user2',
+            crawlerName: 'cr1',
+          },
+        ],
+      }
+      const actionTester = new StoreContextSimulator(state, {mutations: store.mutations, getters: store.getters})
+
+      store.actions.removeWorkerAtIndex(
+        {state, commit: actionTester.getCommiter(), getters: actionTester.getGetters()},
+        {index: 0})
+
+      expect(actionTester.getCommitHistory()).toHaveLength(1)
+      expect(state).toMatchObject({
+        workers: [
+          {
+            username: 'user2',
+            crawlerName: 'cr1',
+          },
+        ],
+      })
+    })
+  })
+
 })
