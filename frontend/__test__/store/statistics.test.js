@@ -1,5 +1,7 @@
 /* eslint-disable no-undef */
 
+import ActionTester from '../actionTester'
+
 jest.mock('~/dynamic/crawlers', () => function () {
   return {
     metas: {
@@ -337,6 +339,53 @@ describe('mutations', () => {
     })
   })
 
+  describe('stopWorker', () => {
+    it('应该重设tokenKey和status', ()=>{
+      const state = {
+        crawlers: {
+          cr1: {
+            name: 'cr1',
+            // eslint-disable-next-line no-unused-vars
+            func: (username) => Promise.resolve({submissions: 33, solved: 22}),
+          },
+        },
+        workers: [
+          {
+            username: 'user1',
+            status: 'WORKING',
+            submissions: 0,
+            solved: 0,
+            errorMessage: '.....',
+            tokenKey: 0.23333,
+            crawlerName: 'cr1',
+          },
+        ],
+      }
+
+      store.mutations.stopWorker(state, {index: 0})
+
+      expect(state).toMatchObject({
+        crawlers: {
+          cr1: {
+            name: 'cr1',
+            func: expect.any(Function),
+          },
+        },
+        workers: [
+          {
+            username: 'user1',
+            status: 'WAITING',
+            submissions: 0,
+            solved: 0,
+            errorMessage: '.....',
+            tokenKey: null,
+            crawlerName: 'cr1',
+          },
+        ],
+      })
+    })
+  })
+
 })
 
 describe('getters', () => {
@@ -532,5 +581,177 @@ describe('helper functions', () => {
       })
     })
 
+  })
+})
+
+describe('actions', () => {
+
+  describe('startOne', () => {
+
+    it('能够正常运行', async () => {
+      const state = {
+        crawlers: {
+          cr1: {
+            name: 'cr1',
+            // eslint-disable-next-line no-unused-vars
+            func: (username) => Promise.resolve({submissions: 33, solved: 22}),
+          },
+        },
+        workers: [
+          {
+            username: 'user1',
+            status: 'DONE',
+            submissions: 0,
+            solved: 0,
+            errorMessage: '.....',
+            tokenKey: 0.23333,
+            crawlerName: 'cr1',
+          },
+        ],
+      }
+      const actionTester = new ActionTester(state, store.mutations)
+
+      await store.actions.startOne({state, commit: actionTester.getCommiter()}, {index: 0})
+
+      const history = actionTester.getCommitHistory()
+      expect(history).toHaveLength(2)
+
+      expect(state).toMatchObject({
+        crawlers: {
+          cr1: {
+            name: 'cr1',
+            func: expect.any(Function),
+          },
+        },
+        workers: [
+          {
+            username: 'user1',
+            status: 'DONE',
+            submissions: 33,
+            solved: 22,
+            errorMessage: '',
+            tokenKey: expect.any(Number),
+            crawlerName: 'cr1',
+          },
+        ],
+      })
+    })
+
+    it('在爬虫抛出异常时能正确设置状态', async () => {
+      const state = {
+        crawlers: {
+          cr1: {
+            name: 'cr1',
+            // eslint-disable-next-line no-unused-vars
+            func: (username) => Promise.reject(new Error('用户不存在')),
+          },
+        },
+        workers: [
+          {
+            username: 'user1',
+            status: 'DONE',
+            submissions: 0,
+            solved: 0,
+            errorMessage: '.....',
+            tokenKey: 0.23333,
+            crawlerName: 'cr1',
+          },
+        ],
+      }
+      const actionTester = new ActionTester(state, store.mutations)
+
+      await store.actions.startOne({state, commit: actionTester.getCommiter()}, {index: 0})
+
+      const history = actionTester.getCommitHistory()
+      expect(history).toHaveLength(2)
+
+      expect(state).toMatchObject({
+        crawlers: {
+          cr1: {
+            name: 'cr1',
+            func: expect.any(Function),
+          },
+        },
+        workers: [
+          {
+            username: 'user1',
+            status: 'DONE',
+            submissions: 0,
+            solved: 0,
+            errorMessage: '用户不存在',
+            tokenKey: expect.any(Number),
+            crawlerName: 'cr1',
+          },
+        ],
+      })
+    })
+
+    it('在 tokenKey 改变时不会提交结果', async () => {
+
+      // prepare
+      // eslint-disable-next-line no-unused-vars
+      const func = (username) => {
+        return new Promise(resolve =>
+          setImmediate(() => resolve({submissions: 10, solved: 1})))
+      }
+
+      const state = {
+        crawlers: {
+          cr1: {
+            name: 'cr1',
+            func,
+          },
+        },
+        workers: [
+          {
+            username: 'user1',
+            status: 'DONE',
+            submissions: 0,
+            solved: 0,
+            errorMessage: '.....',
+            tokenKey: 0.23333,
+            crawlerName: 'cr1',
+          },
+        ],
+      }
+      const actionTester = new ActionTester(state, store.mutations)
+
+      // 执行当前帧
+      const promise = store.actions.startOne({state, commit: actionTester.getCommiter()}, {index: 0})
+
+      // 在开始查询之前tokenKey 被设置
+      expect(state.workers[0].tokenKey).toBeTruthy()
+
+      // 重设 tokenKey
+      state.workers[0].tokenKey = null
+
+      // 开始执行查询
+      await promise
+
+      const history = actionTester.getCommitHistory()
+      expect(history).toHaveLength(1)
+
+      expect(state).toMatchObject({
+        crawlers: {
+          cr1: {
+            name: 'cr1',
+            func: expect.any(Function),
+          },
+        },
+        workers: [
+          {
+            username: 'user1',
+            // 禁止执行了，不会更新 state
+            status: 'WORKING',
+            submissions: 0,
+            solved: 0,
+            errorMessage: '',
+            tokenKey: null,
+            crawlerName: 'cr1',
+          },
+        ],
+      })
+
+    })
   })
 })
