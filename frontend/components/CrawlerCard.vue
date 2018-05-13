@@ -6,6 +6,28 @@
       </v-toolbar-title>
       <v-spacer/>
       <v-toolbar-items>
+        <v-tooltip bottom v-show="workerNum >= 2">
+          <v-btn icon
+                 slot="activator"
+                 @click="removeWorker"
+          >
+            <v-icon>remove</v-icon>
+          </v-btn>
+          <span>
+            移除此窗格
+          </span>
+        </v-tooltip>
+        <v-tooltip bottom>
+          <v-btn icon
+                 slot="activator"
+                 @click="addWorker"
+          >
+            <v-icon>add</v-icon>
+          </v-btn>
+          <span>
+            添加一个此 OJ 的窗格
+          </span>
+        </v-tooltip>
         <v-tooltip bottom v-show="crawlerUrl">
           <v-btn icon
                  slot="activator"
@@ -80,6 +102,8 @@
 <script>
   import {WORKER_STATUS} from '~/components/consts'
 
+  import {mapGetters} from 'vuex'
+
   export default {
     name: 'CrawlerCard',
     props: {
@@ -103,13 +127,23 @@
       stopWorker() {
         this.$store.dispatch('statistics/stopOne', {index: this.index})
       },
+      addWorker() {
+        this.$store.dispatch('statistics/addWorkerForCrawler', {crawlerName: this.crawlerName})
+      },
+      removeWorker() {
+        this.$store.dispatch('statistics/removeWorkerAtIndex', {index: this.index})
+      },
     },
     computed: {
+      ...mapGetters('statistics', ['workerNumberOfCrawler']),
       worker() {
         return this.$store.state.statistics.workers[this.index]
       },
+      crawlerName() {
+        return this.worker.crawlerName
+      },
       crawler() {
-        return this.$store.state.statistics.crawlers[this.worker.crawlerName]
+        return this.$store.state.statistics.crawlers[this.crawlerName]
       },
       crawlerTitle() {
         return this.crawler.title
@@ -130,6 +164,11 @@
             username,
           })
         },
+      },
+      /* eslint-disable */
+      workerNum() {
+        //return this.workerNumberOfCrawler[this.crawlerName]
+        return 1
       },
     },
   }
