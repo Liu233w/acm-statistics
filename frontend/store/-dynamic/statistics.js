@@ -190,6 +190,24 @@ export const getters = {
   workerNumberOfCrawler(state) {
     return _.countBy(state.workers, 'crawlerName')
   },
+  /**
+   * 给每个 worker 返回一个数字，表示它是相同 crawler 的第几个 worker，从 1 开始计数。
+   * 相同 crawler 的 worker 必须在一起
+   * @param state
+   */
+  workerIdxOfCrawler(state) {
+    const ret = []
+    let lastCrawlerName = null
+    let num = 0
+    _.forEach(state.workers, item => {
+      if (item.crawlerName !== lastCrawlerName) {
+        lastCrawlerName = item.crawlerName
+        num = 0
+      }
+      ret.push(++num)
+    })
+    return ret
+  },
 }
 
 export const actions = {

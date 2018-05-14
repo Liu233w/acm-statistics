@@ -17,7 +17,7 @@
             移除此窗格
           </span>
         </v-tooltip>
-        <v-tooltip bottom>
+        <v-tooltip bottom v-show="myWorkerIdxOfCrawler == workerNum">
           <v-btn icon
                  slot="activator"
                  @click="addWorker"
@@ -135,7 +135,10 @@
       },
     },
     computed: {
-      ...mapGetters('statistics', ['workerNumberOfCrawler']),
+      ...mapGetters('statistics', [
+        'workerNumberOfCrawler',
+        'workerIdxOfCrawler',
+      ]),
       worker() {
         return this.$store.state.statistics.workers[this.index]
       },
@@ -167,6 +170,9 @@
       },
       workerNum() {
         return this.workerNumberOfCrawler[this.crawlerName]
+      },
+      myWorkerIdxOfCrawler() {
+        return this.workerIdxOfCrawler[this.index]
       },
     },
   }

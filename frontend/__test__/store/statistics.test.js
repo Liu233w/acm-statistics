@@ -598,6 +598,34 @@ describe('getters', () => {
 
     })
   })
+
+  describe('workerIdxOfCrawler', () => {
+    it('能够获取到 worker 的序号', () => {
+      const state = {
+        workers: [
+          {
+            crawlerName: 'cr1',
+          },
+          {
+            crawlerName: 'cr1',
+          },
+          {
+            crawlerName: 'cr2',
+          },
+          {
+            crawlerName: 'cr3',
+          },
+        ],
+      }
+
+      expect(store.getters.workerIdxOfCrawler(state)).toMatchObject([
+        1,
+        2,
+        1,
+        1,
+      ])
+    })
+  })
 })
 
 describe('helper functions', () => {
