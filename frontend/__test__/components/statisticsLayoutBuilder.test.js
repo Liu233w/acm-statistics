@@ -158,4 +158,54 @@ describe('statisticsLayoutBuilder', () => {
       ],
     ])
   })
+
+  it('能够正确获得 worker 信息 3', () => {
+    const result = statisticsLayoutBuilder([
+      {crawlerName: 'c1'},
+      {crawlerName: 'c1'},
+      {crawlerName: 'c2'},
+      {crawlerName: 'c3'},
+      {crawlerName: 'c3'},
+      {crawlerName: 'c3'},
+    ], 3)
+
+    expect(result).toMatchObject([
+      [
+        {
+          index: 0,
+          workerIdxOfCrawler: 1,
+          key: 'c1:1',
+        },
+        {
+          index: 1,
+          workerIdxOfCrawler: 2,
+          key: 'c1:2',
+        },
+      ],
+      [
+        {
+          index: 2,
+          workerIdxOfCrawler: 1,
+          key: 'c2:1',
+        },
+        {
+          index: 3,
+          workerIdxOfCrawler: 1,
+          key: 'c3:1',
+        },
+      ],
+      [
+        {
+          index: 4,
+          workerIdxOfCrawler: 2,
+          key: 'c3:2',
+        },
+        {
+          index: 5,
+          workerIdxOfCrawler: 3,
+          key: 'c3:3',
+        },
+      ],
+    ])
+  })
 })
