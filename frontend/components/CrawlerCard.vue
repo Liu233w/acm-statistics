@@ -11,7 +11,7 @@
                  slot="activator"
                  @click="removeWorker"
           >
-            <v-icon>remove</v-icon>
+            <v-icon>delete</v-icon>
           </v-btn>
           <span>
             移除此窗格
@@ -22,7 +22,7 @@
                  slot="activator"
                  @click="addWorker"
           >
-            <v-icon>add</v-icon>
+            <v-icon>add_circle</v-icon>
           </v-btn>
           <span>
             添加一个此 OJ 的窗格
