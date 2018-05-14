@@ -44,14 +44,22 @@
       </v-flex>
     </v-layout>
     <v-layout row>
-      <v-flex xs12 sm6 md4 lg3
-              v-for="colIdx in columnCount" :key="colIdx">
+      <v-flex xs12 sm12 md6 lg4 xl3
+              v-for="(column, idx) in workerLayout" :key="idx">
         <v-layout column>
-          <v-flex v-for="idx in workerLength"
-                  v-if="(idx-1) % columnCount === colIdx - 1"
-                  :key="idx">
-            <crawler-card :index="idx-1"/>
-          </v-flex>
+          <transition-group
+            name="workers-column"
+          >
+            <v-flex v-for="(item, idx) in column"
+                    :key="item.key"
+                    :style="{'z-index': 1000 - idx}"
+                    :class="{'last-worker': item.index == $store.state.statistics.workers.length - 1}"
+            >
+              <crawler-card
+                :index="item.index"
+              />
+            </v-flex>
+          </transition-group>
         </v-layout>
       </v-flex>
     </v-layout>
@@ -63,8 +71,8 @@
   import _ from 'lodash'
 
   import CrawlerCard from '~/components/CrawlerCard'
+  import statisticsLayoutBuilder from '~/components/statisticsLayoutBuilder'
   import Store from '~/store/-dynamic/statistics'
-  import getCrawlerDatas from '~/dynamic/crawlers'
 
   export default {
     name: 'Statistics',
@@ -72,10 +80,7 @@
       CrawlerCard,
     },
     created() {
-      const crawlerDatas = getCrawlerDatas()
-      this.$root.$crawlerMeta = crawlerDatas.metas
       this.$store.registerModule('statistics', Store)
-      this.$store.dispatch('statistics/initWorkers', crawlerDatas.crawlers)
     },
     destroyed() {
       this.$store.unregisterModule('statistics')
@@ -99,6 +104,7 @@
         'submissionsNum',
         'isWorking',
         'notWorkingRate',
+        'workerIdxOfCrawler',
       ]),
       username: {
         get() {
@@ -108,8 +114,9 @@
           this.$store.dispatch('statistics/updateMainUsername', {username})
         }, 300),
       },
-      workerLength() {
-        return this.$store.state.statistics.workers.length
+      workerLayout() {
+        const workers = this.$store.state.statistics.workers
+        return statisticsLayoutBuilder(workers, this.columnCount)
       },
     },
     methods: {
@@ -123,11 +130,13 @@
         if (width < 600) {
           this.columnCount = 1 // xs
         } else if (width < 960) {
-          this.columnCount = 2 // sm
+          this.columnCount = 1 // sm
         } else if (width < 1264) {
-          this.columnCount = 3 // md
+          this.columnCount = 2 // md
+        } else if (width < 1904) {
+          this.columnCount = 3 // lg
         } else {
-          this.columnCount = 4 // lg xl
+          this.columnCount = 4 // xl
         }
       },
       /**
@@ -151,3 +160,23 @@
     },
   }
 </script>
+
+<style>
+  .workers-column-move {
+    transition: all 0.5s;
+  }
+
+  .workers-column-enter, .workers-column-leave-to {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  .workers-column-leave-active {
+    position: absolute;
+  }
+
+  /* 最后一个 worker 需要单独的动画 */
+  .last-worker {
+    transition: opacity 0.2s ease-in-out;
+  }
+</style>

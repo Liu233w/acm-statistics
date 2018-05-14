@@ -4,6 +4,9 @@ const {Nuxt, Builder} = require('nuxt')
 const {resolve} = require('path')
 const cheerio = require('cheerio')
 
+// mock 爬虫，防止修改 crawler 模块引起快照改变
+jest.mock('../../modules/crawlerLoader')
+
 // We keep a reference to Nuxt so we can close
 // the server at the end of the test
 let nuxt = null

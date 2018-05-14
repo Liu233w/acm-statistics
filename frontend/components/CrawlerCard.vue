@@ -6,6 +6,28 @@
       </v-toolbar-title>
       <v-spacer/>
       <v-toolbar-items>
+        <v-tooltip bottom v-show="workerNum >= 2">
+          <v-btn icon
+                 slot="activator"
+                 @click="removeWorker"
+          >
+            <v-icon>delete</v-icon>
+          </v-btn>
+          <span>
+            移除此窗格
+          </span>
+        </v-tooltip>
+        <v-tooltip bottom v-show="myWorkerIdxOfCrawler == workerNum">
+          <v-btn icon
+                 slot="activator"
+                 @click="addWorker"
+          >
+            <v-icon>add_circle</v-icon>
+          </v-btn>
+          <span>
+            添加一个此 OJ 的窗格
+          </span>
+        </v-tooltip>
         <v-tooltip bottom v-show="crawlerUrl">
           <v-btn icon
                  slot="activator"
@@ -80,6 +102,8 @@
 <script>
   import {WORKER_STATUS} from '~/components/consts'
 
+  import {mapGetters} from 'vuex'
+
   export default {
     name: 'CrawlerCard',
     props: {
@@ -103,19 +127,35 @@
       stopWorker() {
         this.$store.dispatch('statistics/stopOne', {index: this.index})
       },
+      addWorker() {
+        this.$store.dispatch('statistics/addWorkerForCrawler', {crawlerName: this.crawlerName})
+      },
+      removeWorker() {
+        this.$store.dispatch('statistics/removeWorkerAtIndex', {index: this.index})
+      },
     },
     computed: {
+      ...mapGetters('statistics', [
+        'workerNumberOfCrawler',
+        'workerIdxOfCrawler',
+      ]),
       worker() {
         return this.$store.state.statistics.workers[this.index]
       },
+      crawlerName() {
+        return this.worker.crawlerName
+      },
+      crawler() {
+        return this.$store.state.statistics.crawlers[this.crawlerName]
+      },
       crawlerTitle() {
-        return this.$root.$crawlerMeta[this.worker.name].title
+        return this.crawler.title
       },
       crawlerDescription() {
-        return this.$root.$crawlerMeta[this.worker.name].description
+        return this.crawler.description
       },
       crawlerUrl() {
-        return this.$root.$crawlerMeta[this.worker.name].url
+        return this.crawler.url
       },
       username: {
         get() {
@@ -127,6 +167,12 @@
             username,
           })
         },
+      },
+      workerNum() {
+        return this.workerNumberOfCrawler[this.crawlerName]
+      },
+      myWorkerIdxOfCrawler() {
+        return this.workerIdxOfCrawler[this.index]
       },
     },
   }

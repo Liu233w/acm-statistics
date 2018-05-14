@@ -30,6 +30,7 @@
     "babel-eslint": "^8.2.3",
     "babel-plugin-lodash": "^3.3.2",
     "babel-plugin-transform-imports": "^1.4.1",
+    "babel-preset-node8": "^1.2.0",
     "eslint": "^4.19.1",
     "eslint-config-standard": "^11.0.0",
     "eslint-loader": "^2.0.0",
@@ -50,6 +51,16 @@
     "snapshotSerializers": [
       "jest-serializer-html"
     ],
+    "transform": {
+      "^.+\\.js$": "<rootDir>/__test__/jest.transform.js"
+    },
+    "transformIgnorePatterns": [
+      "/node_modules/",
+      "<rootDir>/__test__/pages/pages_snapshot.test.js"
+    ],
+    "moduleNameMapper": {
+      "~(?!/dynamic)(.*)$": "<rootDir>/$1"
+    },
     "testEnvironment": "node",
     "coverageDirectory": "./coverage/",
     "collectCoverage": true
