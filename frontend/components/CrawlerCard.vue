@@ -165,10 +165,8 @@
           })
         },
       },
-      /* eslint-disable */
       workerNum() {
-        //return this.workerNumberOfCrawler[this.crawlerName]
-        return 1
+        return this.workerNumberOfCrawler[this.crawlerName]
       },
     },
   }

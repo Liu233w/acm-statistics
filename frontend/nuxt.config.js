@@ -77,6 +77,7 @@ module.exports = {
         cloning: true,
         currying: true,
         collections: true,
+        shorthands: true,
       }),
     ],
     uglify: {
