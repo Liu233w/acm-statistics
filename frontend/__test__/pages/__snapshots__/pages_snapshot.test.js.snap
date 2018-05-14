@@ -1655,6 +1655,52 @@ exports[`/statistics 1`] = `
                                            style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"
                                       >
                                         <span>
+                                          &#x79FB;&#x9664;&#x6B64;&#x7A97;&#x683C;
+                                        </span>
+                                      </div>
+                                      <span>
+                                        <button type="button"
+                                                class="btn btn--icon"
+                                        >
+                                          <div class="btn__content">
+                                            <i aria-hidden="true"
+                                               class="icon material-icons"
+                                            >
+                                              remove
+                                            </i>
+                                          </div>
+                                        </button>
+                                      </span>
+                                    </span>
+                                    <span class="tooltip tooltip--bottom">
+                                      <div class="tooltip__content"
+                                           style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"
+                                      >
+                                        <span>
+                                          &#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x6B64; OJ &#x7684;&#x7A97;&#x683C;
+                                        </span>
+                                      </div>
+                                      <span>
+                                        <button type="button"
+                                                class="btn btn--icon"
+                                        >
+                                          <div class="btn__content">
+                                            <i aria-hidden="true"
+                                               class="icon material-icons"
+                                            >
+                                              add
+                                            </i>
+                                          </div>
+                                        </button>
+                                      </span>
+                                    </span>
+                                    <span class="tooltip tooltip--bottom"
+                                          style="display:none;"
+                                    >
+                                      <div class="tooltip__content"
+                                           style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"
+                                      >
+                                        <span>
                                           &#x8F6C;&#x5230;&#x6B64;OJ
                                         </span>
                                       </div>
@@ -1797,6 +1843,52 @@ exports[`/statistics 1`] = `
                                            style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"
                                       >
                                         <span>
+                                          &#x79FB;&#x9664;&#x6B64;&#x7A97;&#x683C;
+                                        </span>
+                                      </div>
+                                      <span>
+                                        <button type="button"
+                                                class="btn btn--icon"
+                                        >
+                                          <div class="btn__content">
+                                            <i aria-hidden="true"
+                                               class="icon material-icons"
+                                            >
+                                              remove
+                                            </i>
+                                          </div>
+                                        </button>
+                                      </span>
+                                    </span>
+                                    <span class="tooltip tooltip--bottom">
+                                      <div class="tooltip__content"
+                                           style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"
+                                      >
+                                        <span>
+                                          &#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x6B64; OJ &#x7684;&#x7A97;&#x683C;
+                                        </span>
+                                      </div>
+                                      <span>
+                                        <button type="button"
+                                                class="btn btn--icon"
+                                        >
+                                          <div class="btn__content">
+                                            <i aria-hidden="true"
+                                               class="icon material-icons"
+                                            >
+                                              add
+                                            </i>
+                                          </div>
+                                        </button>
+                                      </span>
+                                    </span>
+                                    <span class="tooltip tooltip--bottom"
+                                          style="display:none;"
+                                    >
+                                      <div class="tooltip__content"
+                                           style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"
+                                      >
+                                        <span>
                                           &#x8F6C;&#x5230;&#x6B64;OJ
                                         </span>
                                       </div>
@@ -1932,6 +2024,52 @@ exports[`/statistics 1`] = `
                                   <div class="spacer">
                                   </div>
                                   <div class="toolbar__items">
+                                    <span class="tooltip tooltip--bottom"
+                                          style="display:none;"
+                                    >
+                                      <div class="tooltip__content"
+                                           style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"
+                                      >
+                                        <span>
+                                          &#x79FB;&#x9664;&#x6B64;&#x7A97;&#x683C;
+                                        </span>
+                                      </div>
+                                      <span>
+                                        <button type="button"
+                                                class="btn btn--icon"
+                                        >
+                                          <div class="btn__content">
+                                            <i aria-hidden="true"
+                                               class="icon material-icons"
+                                            >
+                                              remove
+                                            </i>
+                                          </div>
+                                        </button>
+                                      </span>
+                                    </span>
+                                    <span class="tooltip tooltip--bottom">
+                                      <div class="tooltip__content"
+                                           style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"
+                                      >
+                                        <span>
+                                          &#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x6B64; OJ &#x7684;&#x7A97;&#x683C;
+                                        </span>
+                                      </div>
+                                      <span>
+                                        <button type="button"
+                                                class="btn btn--icon"
+                                        >
+                                          <div class="btn__content">
+                                            <i aria-hidden="true"
+                                               class="icon material-icons"
+                                            >
+                                              add
+                                            </i>
+                                          </div>
+                                        </button>
+                                      </span>
+                                    </span>
                                     <span class="tooltip tooltip--bottom">
                                       <div class="tooltip__content"
                                            style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"
@@ -2083,6 +2221,52 @@ exports[`/statistics 1`] = `
                                            style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"
                                       >
                                         <span>
+                                          &#x79FB;&#x9664;&#x6B64;&#x7A97;&#x683C;
+                                        </span>
+                                      </div>
+                                      <span>
+                                        <button type="button"
+                                                class="btn btn--icon"
+                                        >
+                                          <div class="btn__content">
+                                            <i aria-hidden="true"
+                                               class="icon material-icons"
+                                            >
+                                              remove
+                                            </i>
+                                          </div>
+                                        </button>
+                                      </span>
+                                    </span>
+                                    <span class="tooltip tooltip--bottom">
+                                      <div class="tooltip__content"
+                                           style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"
+                                      >
+                                        <span>
+                                          &#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x6B64; OJ &#x7684;&#x7A97;&#x683C;
+                                        </span>
+                                      </div>
+                                      <span>
+                                        <button type="button"
+                                                class="btn btn--icon"
+                                        >
+                                          <div class="btn__content">
+                                            <i aria-hidden="true"
+                                               class="icon material-icons"
+                                            >
+                                              add
+                                            </i>
+                                          </div>
+                                        </button>
+                                      </span>
+                                    </span>
+                                    <span class="tooltip tooltip--bottom"
+                                          style="display:none;"
+                                    >
+                                      <div class="tooltip__content"
+                                           style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"
+                                      >
+                                        <span>
                                           &#x8F6C;&#x5230;&#x6B64;OJ
                                         </span>
                                       </div>
@@ -2225,6 +2409,52 @@ exports[`/statistics 1`] = `
                                            style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"
                                       >
                                         <span>
+                                          &#x79FB;&#x9664;&#x6B64;&#x7A97;&#x683C;
+                                        </span>
+                                      </div>
+                                      <span>
+                                        <button type="button"
+                                                class="btn btn--icon"
+                                        >
+                                          <div class="btn__content">
+                                            <i aria-hidden="true"
+                                               class="icon material-icons"
+                                            >
+                                              remove
+                                            </i>
+                                          </div>
+                                        </button>
+                                      </span>
+                                    </span>
+                                    <span class="tooltip tooltip--bottom">
+                                      <div class="tooltip__content"
+                                           style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"
+                                      >
+                                        <span>
+                                          &#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x6B64; OJ &#x7684;&#x7A97;&#x683C;
+                                        </span>
+                                      </div>
+                                      <span>
+                                        <button type="button"
+                                                class="btn btn--icon"
+                                        >
+                                          <div class="btn__content">
+                                            <i aria-hidden="true"
+                                               class="icon material-icons"
+                                            >
+                                              add
+                                            </i>
+                                          </div>
+                                        </button>
+                                      </span>
+                                    </span>
+                                    <span class="tooltip tooltip--bottom"
+                                          style="display:none;"
+                                    >
+                                      <div class="tooltip__content"
+                                           style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"
+                                      >
+                                        <span>
                                           &#x8F6C;&#x5230;&#x6B64;OJ
                                         </span>
                                       </div>
@@ -2360,6 +2590,52 @@ exports[`/statistics 1`] = `
                                   <div class="spacer">
                                   </div>
                                   <div class="toolbar__items">
+                                    <span class="tooltip tooltip--bottom"
+                                          style="display:none;"
+                                    >
+                                      <div class="tooltip__content"
+                                           style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"
+                                      >
+                                        <span>
+                                          &#x79FB;&#x9664;&#x6B64;&#x7A97;&#x683C;
+                                        </span>
+                                      </div>
+                                      <span>
+                                        <button type="button"
+                                                class="btn btn--icon"
+                                        >
+                                          <div class="btn__content">
+                                            <i aria-hidden="true"
+                                               class="icon material-icons"
+                                            >
+                                              remove
+                                            </i>
+                                          </div>
+                                        </button>
+                                      </span>
+                                    </span>
+                                    <span class="tooltip tooltip--bottom">
+                                      <div class="tooltip__content"
+                                           style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"
+                                      >
+                                        <span>
+                                          &#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x6B64; OJ &#x7684;&#x7A97;&#x683C;
+                                        </span>
+                                      </div>
+                                      <span>
+                                        <button type="button"
+                                                class="btn btn--icon"
+                                        >
+                                          <div class="btn__content">
+                                            <i aria-hidden="true"
+                                               class="icon material-icons"
+                                            >
+                                              add
+                                            </i>
+                                          </div>
+                                        </button>
+                                      </span>
+                                    </span>
                                     <span class="tooltip tooltip--bottom">
                                       <div class="tooltip__content"
                                            style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"
@@ -2510,6 +2786,52 @@ exports[`/statistics 1`] = `
                                            style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"
                                       >
                                         <span>
+                                          &#x79FB;&#x9664;&#x6B64;&#x7A97;&#x683C;
+                                        </span>
+                                      </div>
+                                      <span>
+                                        <button type="button"
+                                                class="btn btn--icon"
+                                        >
+                                          <div class="btn__content">
+                                            <i aria-hidden="true"
+                                               class="icon material-icons"
+                                            >
+                                              remove
+                                            </i>
+                                          </div>
+                                        </button>
+                                      </span>
+                                    </span>
+                                    <span class="tooltip tooltip--bottom">
+                                      <div class="tooltip__content"
+                                           style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"
+                                      >
+                                        <span>
+                                          &#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x6B64; OJ &#x7684;&#x7A97;&#x683C;
+                                        </span>
+                                      </div>
+                                      <span>
+                                        <button type="button"
+                                                class="btn btn--icon"
+                                        >
+                                          <div class="btn__content">
+                                            <i aria-hidden="true"
+                                               class="icon material-icons"
+                                            >
+                                              add
+                                            </i>
+                                          </div>
+                                        </button>
+                                      </span>
+                                    </span>
+                                    <span class="tooltip tooltip--bottom"
+                                          style="display:none;"
+                                    >
+                                      <div class="tooltip__content"
+                                           style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"
+                                      >
+                                        <span>
                                           &#x8F6C;&#x5230;&#x6B64;OJ
                                         </span>
                                       </div>
@@ -2645,6 +2967,52 @@ exports[`/statistics 1`] = `
                                   <div class="spacer">
                                   </div>
                                   <div class="toolbar__items">
+                                    <span class="tooltip tooltip--bottom"
+                                          style="display:none;"
+                                    >
+                                      <div class="tooltip__content"
+                                           style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"
+                                      >
+                                        <span>
+                                          &#x79FB;&#x9664;&#x6B64;&#x7A97;&#x683C;
+                                        </span>
+                                      </div>
+                                      <span>
+                                        <button type="button"
+                                                class="btn btn--icon"
+                                        >
+                                          <div class="btn__content">
+                                            <i aria-hidden="true"
+                                               class="icon material-icons"
+                                            >
+                                              remove
+                                            </i>
+                                          </div>
+                                        </button>
+                                      </span>
+                                    </span>
+                                    <span class="tooltip tooltip--bottom">
+                                      <div class="tooltip__content"
+                                           style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"
+                                      >
+                                        <span>
+                                          &#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x6B64; OJ &#x7684;&#x7A97;&#x683C;
+                                        </span>
+                                      </div>
+                                      <span>
+                                        <button type="button"
+                                                class="btn btn--icon"
+                                        >
+                                          <div class="btn__content">
+                                            <i aria-hidden="true"
+                                               class="icon material-icons"
+                                            >
+                                              add
+                                            </i>
+                                          </div>
+                                        </button>
+                                      </span>
+                                    </span>
                                     <span class="tooltip tooltip--bottom"
                                           style="display:none;"
                                     >
