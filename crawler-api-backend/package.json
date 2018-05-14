@@ -16,7 +16,7 @@
     "koa": "^2.5.1",
     "koa-router": "^7.4.0",
     "lodash": "^4.17.10",
-    "log4js": "^2.5.3"
+    "log4js": "^2.6.0"
   },
   "devDependencies": {
     "eslint": "^4.19.1",
