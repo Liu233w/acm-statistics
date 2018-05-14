@@ -47,12 +47,17 @@
       <v-flex xs12 sm6 md4 lg3
               v-for="(column, idx) in workerLayout" :key="idx">
         <v-layout column>
-          <transition-group name="workersColumn">
-            <v-flex v-for="item in column"
+          <transition-group
+            name="workers-column"
+          >
+            <v-flex v-for="(item, idx) in column"
                     :key="item.key"
-                    transation="fade-transition"
+                    :style="{'z-index': 1000 - idx}"
+                    :class="{'last-worker': item.index == $store.state.statistics.workers.length - 1}"
             >
-              <crawler-card :index="item.index"/>
+              <crawler-card
+                :index="item.index"
+              />
             </v-flex>
           </transition-group>
         </v-layout>
@@ -155,7 +160,21 @@
 </script>
 
 <style>
-  .workersColumn-move {
-    transition: transform 0.5s;
+  .workers-column-move {
+    transition: all 0.5s;
+  }
+
+  .workers-column-enter, .workers-column-leave-to {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  .workers-column-leave-active {
+    position: absolute;
+  }
+
+  /* 最后一个 worker 需要单独的动画 */
+  .last-worker {
+    transition: opacity 0.2s ease-in-out;
   }
 </style>
