@@ -45,13 +45,16 @@
     </v-layout>
     <v-layout row>
       <v-flex xs12 sm6 md4 lg3
-              v-for="colIdx in columnCount" :key="colIdx">
+              v-for="(column, idx) in workerLayout" :key="idx">
         <v-layout column>
-          <v-flex v-for="idx in workerLength"
-                  v-if="(idx-1) % columnCount === colIdx - 1"
-                  :key="idx">
-            <crawler-card :index="idx-1"/>
-          </v-flex>
+          <transition-group name="workersColumn">
+            <v-flex v-for="item in column"
+                    :key="item.key"
+                    transation="fade-transition"
+            >
+              <crawler-card :index="item.index"/>
+            </v-flex>
+          </transition-group>
         </v-layout>
       </v-flex>
     </v-layout>
@@ -63,6 +66,7 @@
   import _ from 'lodash'
 
   import CrawlerCard from '~/components/CrawlerCard'
+  import statisticsLayoutBuilder from '~/components/statisticsLayoutBuilder'
   import Store from '~/store/-dynamic/statistics'
 
   export default {
@@ -95,6 +99,7 @@
         'submissionsNum',
         'isWorking',
         'notWorkingRate',
+        'workerIdxOfCrawler',
       ]),
       username: {
         get() {
@@ -104,8 +109,9 @@
           this.$store.dispatch('statistics/updateMainUsername', {username})
         }, 300),
       },
-      workerLength() {
-        return this.$store.state.statistics.workers.length
+      workerLayout() {
+        const workers = this.$store.state.statistics.workers
+        return statisticsLayoutBuilder(workers, this.columnCount)
       },
     },
     methods: {
@@ -147,3 +153,9 @@
     },
   }
 </script>
+
+<style>
+  .workersColumn-move {
+    transition: transform 0.5s;
+  }
+</style>
