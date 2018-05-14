@@ -44,7 +44,7 @@
       </v-flex>
     </v-layout>
     <v-layout row>
-      <v-flex xs12 sm6 md4 lg3
+      <v-flex xs12 sm12 md6 lg4 xl3
               v-for="(column, idx) in workerLayout" :key="idx">
         <v-layout column>
           <transition-group
@@ -130,11 +130,13 @@
         if (width < 600) {
           this.columnCount = 1 // xs
         } else if (width < 960) {
-          this.columnCount = 2 // sm
+          this.columnCount = 1 // sm
         } else if (width < 1264) {
-          this.columnCount = 3 // md
+          this.columnCount = 2 // md
+        } else if (width < 1904) {
+          this.columnCount = 3 // lg
         } else {
-          this.columnCount = 4 // lg xl
+          this.columnCount = 4 // xl
         }
       },
       /**
