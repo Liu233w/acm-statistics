@@ -1444,7 +1444,7 @@ exports[`/statistics 1`] = `
 }
     </style>
     <style>
-      .workers-column-move{-webkit-transition:all .5s;transition:all .5s}.workers-column-enter,.workers-column-leave-to{opacity:0;-webkit-transform:translateY(30px);transform:translateY(30px)}.workers-column-leave-active{position:absolute}.last-worker{-webkit-transition:opacity .2s ease-in-out;transition:opacity .2s ease-in-out}
+      .workers-column-move{-webkit-transition:all .5s;transition:all .5s}.workers-column-enter{opacity:0;-webkit-transform:translateY(-30px);transform:translateY(-30px)}.workers-column-leave-to{opacity:0}.workers-column-leave-active{position:absolute}.worker-item{-webkit-transition:all .5s;transition:all .5s}
     </style>
     <style>
       .fade-enter-active,.fade-leave-active{-webkit-transition:opacity .5s;transition:opacity .5s}.fade-enter,.fade-leave-to{opacity:0}
@@ -1636,7 +1636,9 @@ exports[`/statistics 1`] = `
                       <div class="flex xs12 sm12 md6 lg4 xl3">
                         <div class="layout column">
                           <span>
-                            <div class="flex"
+                            <div data-column-idx="0"
+                                 data-column-item-idx="0"
+                                 class="flex worker-item"
                                  style="z-index:1000;"
                             >
                               <div class="card"
@@ -1826,7 +1828,9 @@ exports[`/statistics 1`] = `
                                 </div>
                               </div>
                             </div>
-                            <div class="flex"
+                            <div data-column-idx="0"
+                                 data-column-item-idx="1"
+                                 class="flex worker-item"
                                  style="z-index:999;"
                             >
                               <div class="card"
@@ -2016,7 +2020,9 @@ exports[`/statistics 1`] = `
                                 </div>
                               </div>
                             </div>
-                            <div class="flex"
+                            <div data-column-idx="0"
+                                 data-column-item-idx="2"
+                                 class="flex worker-item"
                                  style="z-index:998;"
                             >
                               <div class="card"
@@ -2212,7 +2218,9 @@ exports[`/statistics 1`] = `
                       <div class="flex xs12 sm12 md6 lg4 xl3">
                         <div class="layout column">
                           <span>
-                            <div class="flex"
+                            <div data-column-idx="1"
+                                 data-column-item-idx="0"
+                                 class="flex worker-item"
                                  style="z-index:1000;"
                             >
                               <div class="card"
@@ -2402,7 +2410,9 @@ exports[`/statistics 1`] = `
                                 </div>
                               </div>
                             </div>
-                            <div class="flex"
+                            <div data-column-idx="1"
+                                 data-column-item-idx="1"
+                                 class="flex worker-item"
                                  style="z-index:999;"
                             >
                               <div class="card"
@@ -2592,7 +2602,9 @@ exports[`/statistics 1`] = `
                                 </div>
                               </div>
                             </div>
-                            <div class="flex"
+                            <div data-column-idx="1"
+                                 data-column-item-idx="2"
+                                 class="flex worker-item"
                                  style="z-index:998;"
                             >
                               <div class="card"
@@ -2787,7 +2799,9 @@ exports[`/statistics 1`] = `
                       <div class="flex xs12 sm12 md6 lg4 xl3">
                         <div class="layout column">
                           <span>
-                            <div class="flex"
+                            <div data-column-idx="2"
+                                 data-column-item-idx="0"
+                                 class="flex worker-item"
                                  style="z-index:1000;"
                             >
                               <div class="card"
@@ -2975,7 +2989,9 @@ exports[`/statistics 1`] = `
                                 </div>
                               </div>
                             </div>
-                            <div class="flex last-worker"
+                            <div data-column-idx="2"
+                                 data-column-item-idx="1"
+                                 class="flex worker-item"
                                  style="z-index:999;"
                             >
                               <div class="card"
