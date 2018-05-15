@@ -303,6 +303,10 @@ function resetWorker(worker) {
   worker.submissions = 0
   worker.errorMessage = ''
   worker.tokenKey = null
+
+  if (!worker.key) {
+    worker.key = Math.random()
+  }
 }
 
 function updateUsername(worker, username) {

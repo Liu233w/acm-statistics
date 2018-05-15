@@ -37,6 +37,7 @@ describe('state', () => {
         submissions: 0,
         errorMessage: '',
         tokenKey: null,
+        key: expect.any(Number),
       }],
     })
   })
@@ -56,6 +57,7 @@ describe('mutations', () => {
             errorMessage: '.....',
             tokenKey: 0.23333,
             crawlerName: 'cr1',
+            key: 0.6666666,
           },
         ],
       }
@@ -72,6 +74,7 @@ describe('mutations', () => {
             errorMessage: '',
             tokenKey: null,
             crawlerName: 'cr1',
+            key: 0.6666666,
           },
         ],
       })
@@ -91,6 +94,7 @@ describe('mutations', () => {
             errorMessage: '.....',
             tokenKey: 0.23333,
             crawlerName: 'cr1',
+            key: 0.6666666,
           },
           {
             username: 'user2',
@@ -100,6 +104,7 @@ describe('mutations', () => {
             errorMessage: '.....',
             tokenKey: 0.23333,
             crawlerName: 'cr2',
+            key: 0.7777777,
           },
         ],
       }
@@ -117,6 +122,7 @@ describe('mutations', () => {
             errorMessage: '',
             tokenKey: null,
             crawlerName: 'cr1',
+            key: 0.6666666,
           },
           {
             username: 'main2',
@@ -126,6 +132,7 @@ describe('mutations', () => {
             errorMessage: '',
             tokenKey: null,
             crawlerName: 'cr2',
+            key: 0.7777777,
           },
         ],
       })
@@ -161,6 +168,7 @@ describe('mutations', () => {
             errorMessage: '.....',
             tokenKey: 0.23333,
             crawlerName: 'cr1',
+            key: 0.6666666,
           },
           {
             username: 'user2',
@@ -170,6 +178,7 @@ describe('mutations', () => {
             errorMessage: '.....',
             tokenKey: 0.23333,
             crawlerName: 'cr1',
+            key: 0.6666666,
           },
           {
             username: 'user2',
@@ -179,6 +188,7 @@ describe('mutations', () => {
             errorMessage: '.....',
             tokenKey: 0.23333,
             crawlerName: 'cr2',
+            key: 0.6666666,
           },
         ],
       }
@@ -204,6 +214,7 @@ describe('mutations', () => {
             errorMessage: '',
             tokenKey: null,
             crawlerName: 'cr1',
+            key: expect.any(Number),
           },
           {
             username: 'nu2',
@@ -213,6 +224,7 @@ describe('mutations', () => {
             errorMessage: '',
             tokenKey: null,
             crawlerName: 'cr1',
+            key: expect.any(Number),
           },
           {
             username: 'nu3',
@@ -222,6 +234,7 @@ describe('mutations', () => {
             errorMessage: '',
             tokenKey: null,
             crawlerName: 'cr2',
+            key: expect.any(Number),
           },
         ],
       })
@@ -246,6 +259,7 @@ describe('mutations', () => {
             errorMessage: '',
             tokenKey: null,
             crawlerName: 'cr1',
+            key: expect.any(Number),
           },
           {
             username: 'nu3',
@@ -255,6 +269,7 @@ describe('mutations', () => {
             errorMessage: '',
             tokenKey: null,
             crawlerName: 'cr2',
+            key: expect.any(Number),
           },
         ],
       })
@@ -281,6 +296,7 @@ describe('mutations', () => {
             errorMessage: '',
             tokenKey: null,
             crawlerName: 'cr1',
+            key: expect.any(Number),
           },
           {
             username: 'nu3',
@@ -290,6 +306,7 @@ describe('mutations', () => {
             errorMessage: '',
             tokenKey: null,
             crawlerName: 'cr2',
+            key: expect.any(Number),
           },
         ],
       })
@@ -315,6 +332,7 @@ describe('mutations', () => {
             errorMessage: '',
             tokenKey: null,
             crawlerName: 'cr1',
+            key: expect.any(Number),
           },
           {
             username: '',
@@ -324,6 +342,7 @@ describe('mutations', () => {
             errorMessage: '',
             tokenKey: null,
             crawlerName: 'cr1',
+            key: expect.any(Number),
           },
           {
             username: '',
@@ -333,6 +352,7 @@ describe('mutations', () => {
             errorMessage: '',
             tokenKey: null,
             crawlerName: 'cr2',
+            key: expect.any(Number),
           },
         ],
       })
@@ -358,6 +378,7 @@ describe('mutations', () => {
             errorMessage: '.....',
             tokenKey: 0.23333,
             crawlerName: 'cr1',
+            key: 0.66666666,
           },
         ],
       }
@@ -380,6 +401,7 @@ describe('mutations', () => {
             errorMessage: '.....',
             tokenKey: null,
             crawlerName: 'cr1',
+            key: 0.66666666,
           },
         ],
       })
@@ -407,6 +429,7 @@ describe('mutations', () => {
             errorMessage: '.....',
             tokenKey: 0.23333,
             crawlerName: 'cr2',
+            key: 0.66666666,
           },
         ],
       }
@@ -431,6 +454,7 @@ describe('mutations', () => {
             errorMessage: '.....',
             tokenKey: 0.23333,
             crawlerName: 'cr2',
+            key: 0.66666666,
           },
           {
             username: '',
@@ -440,6 +464,7 @@ describe('mutations', () => {
             errorMessage: '',
             tokenKey: null,
             crawlerName: 'cr1',
+            key: expect.any(Number),
           },
         ],
       })
@@ -464,6 +489,7 @@ describe('mutations', () => {
             errorMessage: '.....',
             tokenKey: 0.23333,
             crawlerName: 'cr1',
+            key: 0.6666666,
           },
           {
             username: 'user1',
@@ -473,6 +499,7 @@ describe('mutations', () => {
             errorMessage: '.....',
             tokenKey: 0.23333,
             crawlerName: 'cr2',
+            key: 0.6666666,
           },
         ],
       }
@@ -497,6 +524,7 @@ describe('mutations', () => {
             errorMessage: '.....',
             tokenKey: 0.23333,
             crawlerName: 'cr1',
+            key: 0.6666666,
           },
           {
             username: '',
@@ -506,6 +534,7 @@ describe('mutations', () => {
             errorMessage: '',
             tokenKey: null,
             crawlerName: 'cr1',
+            key: expect.any(Number),
           },
           {
             username: 'user1',
@@ -515,6 +544,7 @@ describe('mutations', () => {
             errorMessage: '.....',
             tokenKey: 0.23333,
             crawlerName: 'cr2',
+            key: 0.6666666,
           },
         ],
       })
@@ -658,6 +688,7 @@ describe('helper functions', () => {
             errorMessage: '.....',
             tokenKey: 0.23333,
             crawlerName: 'cr1',
+            key: 0.6666666,
           },
           {
             username: 'user2',
@@ -667,6 +698,7 @@ describe('helper functions', () => {
             errorMessage: '.....',
             tokenKey: 0.23333,
             crawlerName: 'cr1',
+            key: 0.6666666,
           },
           {
             username: 'user2',
@@ -676,6 +708,7 @@ describe('helper functions', () => {
             errorMessage: '.....',
             tokenKey: 0.23333,
             crawlerName: 'cr2',
+            key: 0.6666666,
           },
         ],
       }
@@ -713,6 +746,7 @@ describe('helper functions', () => {
             errorMessage: '.....',
             tokenKey: 0.23333,
             crawlerName: 'cr1',
+            key: 0.6666666,
           },
           {
             username: '',
@@ -722,6 +756,7 @@ describe('helper functions', () => {
             errorMessage: '.....',
             tokenKey: 0.23333,
             crawlerName: 'cr1',
+            key: 0.6666666,
           },
           {
             username: '',
@@ -731,6 +766,7 @@ describe('helper functions', () => {
             errorMessage: '.....',
             tokenKey: 0.23333,
             crawlerName: 'cr2',
+            key: 0.6666666,
           },
         ],
       }
@@ -770,6 +806,7 @@ describe('actions', () => {
             errorMessage: '.....',
             tokenKey: 0.23333,
             crawlerName: 'cr1',
+            key: 0.6666666,
           },
         ],
       }
@@ -796,6 +833,7 @@ describe('actions', () => {
             errorMessage: '',
             tokenKey: expect.any(Number),
             crawlerName: 'cr1',
+            key: 0.6666666,
           },
         ],
       })
@@ -819,6 +857,7 @@ describe('actions', () => {
             errorMessage: '.....',
             tokenKey: 0.23333,
             crawlerName: 'cr1',
+            key: 0.6666666,
           },
         ],
       }
@@ -845,6 +884,7 @@ describe('actions', () => {
             errorMessage: '用户不存在',
             tokenKey: expect.any(Number),
             crawlerName: 'cr1',
+            key: 0.6666666,
           },
         ],
       })
@@ -875,6 +915,7 @@ describe('actions', () => {
             errorMessage: '.....',
             tokenKey: 0.23333,
             crawlerName: 'cr1',
+            key: 0.6666666,
           },
         ],
       }
@@ -912,6 +953,7 @@ describe('actions', () => {
             errorMessage: '',
             tokenKey: null,
             crawlerName: 'cr1',
+            key: 0.6666666,
           },
         ],
       })
@@ -938,6 +980,7 @@ describe('actions', () => {
             errorMessage: '.....',
             tokenKey: 0.23333,
             crawlerName: 'cr1',
+            key: 0.6666666,
           },
         ],
       }
@@ -965,6 +1008,7 @@ describe('actions', () => {
             errorMessage: '.....',
             tokenKey: 0.23333,
             crawlerName: 'cr1',
+            key: 0.6666666,
           },
         ],
       })

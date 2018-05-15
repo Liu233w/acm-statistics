@@ -32,7 +32,8 @@ export default function (workers, columnNum) {
       index: i,
       // 序号，从 1 开始
       workerIdxOfCrawler: workerIdxOfCrawler,
-      key: workers[i].crawlerName + ':' + workerIdxOfCrawler,
+      crawlerName: worker.crawlerName,
+      key: worker.key,
     }
   }
 
