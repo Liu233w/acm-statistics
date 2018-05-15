@@ -49,16 +49,20 @@
         <v-layout column>
           <transition-group
             name="workers-column"
+            @before-leave="itemBeforeLeaveTransition"
           >
-            <v-flex v-for="(item, idx) in column"
-                    :key="item.key"
-                    :style="{'z-index': 1000 - idx}"
-                    :class="{'last-worker': item.index == $store.state.statistics.workers.length - 1}"
+            <div
+              v-for="(item, itemIdx) in column"
+              :key="item.key"
+              :style="{'z-index': 1000 - itemIdx}"
+              class="flex worker-item"
+              :data-column-idx="idx"
+              :data-column-item-idx="itemIdx"
             >
               <crawler-card
                 :index="item.index"
               />
-            </v-flex>
+            </div>
           </transition-group>
         </v-layout>
       </v-flex>
@@ -118,6 +122,9 @@
         const workers = this.$store.state.statistics.workers
         return statisticsLayoutBuilder(workers, this.columnCount)
       },
+      maxItemPerColumn() {
+        return Math.ceil(this.$store.state.statistics.workers.length / this.columnCount)
+      },
     },
     methods: {
       runWorker() {
@@ -157,6 +164,22 @@
       loadUsername() {
         this.$store.dispatch('statistics/loadUsernames')
       },
+      itemBeforeLeaveTransition(el) {
+        const columnIdx = Number.parseInt(el.dataset.columnIdx, 10)
+        const itemIdx = Number.parseInt(el.dataset.columnItemIdx, 10)
+
+        // 假如是每列的最后一个worker，说明要移动到下一列，动画化向下淡出
+        // 否则，说明是要删除本worker，向上淡出
+        if (itemIdx < this.workerLayout[columnIdx].length - 1) {
+          el.style.transform = 'translateY(-30px)'
+        } else {
+          el.style.transform = 'translateY(30px)'
+        }
+        // 最后一列单独判断，假如没有排满，即使是最后一个worker也向上淡出
+        if (columnIdx == this.columnCount - 1 && this.workerLayout[columnIdx].length < this.maxItemPerColumn) {
+          el.style.transform = 'translateY(-30px)'
+        }
+      },
     },
   }
 </script>
@@ -166,17 +189,21 @@
     transition: all 0.5s;
   }
 
-  .workers-column-enter, .workers-column-leave-to {
+  .workers-column-enter {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(-30px);
+  }
+
+  .workers-column-leave-to {
+    opacity: 0;
+    /*transform: translateY(30px);*/
   }
 
   .workers-column-leave-active {
     position: absolute;
   }
 
-  /* 最后一个 worker 需要单独的动画 */
-  .last-worker {
-    transition: opacity 0.2s ease-in-out;
+  .worker-item {
+    transition: all 0.5s;
   }
 </style>
