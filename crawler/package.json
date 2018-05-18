@@ -19,7 +19,7 @@
     "axios-mock-adapter": "^1.15.0",
     "eslint": "^4.19.1",
     "eslint-plugin-lodash": "^2.7.0",
-    "jest": "^22.4.3",
+    "jest": "^22.4.4",
     "memfs": "^2.9.0"
   },
   "jest": {
