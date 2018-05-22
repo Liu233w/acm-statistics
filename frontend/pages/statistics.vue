@@ -1,7 +1,7 @@
 <template>
   <v-container grid-list-md>
     <v-layout row>
-      <v-flex xs8>
+      <v-flex xs8 sm4>
         <v-text-field
           v-model="username"
           label="统一设置用户名"
@@ -10,10 +10,20 @@
           @keyup.enter="runWorker"
         />
       </v-flex>
-      <v-flex xs4>
+      <v-flex xs4 sm8>
         <v-btn class="primary" @click="runWorker" :disabled="isWorking">
           开始查询
         </v-btn>
+        <v-tooltip bottom>
+          <v-btn
+            class="error"
+            @click="clearWorkers"
+            slot="activator"
+          >
+            重置查询
+          </v-btn>
+          清空用户名，重置查询状态
+        </v-tooltip>
         <v-tooltip bottom>
           <v-btn @click="saveUsername"
                  slot="activator"
@@ -179,6 +189,9 @@
         if (columnIdx == this.columnCount - 1 && this.workerLayout[columnIdx].length < this.maxItemPerColumn) {
           el.style.transform = 'translateY(-30px)'
         }
+      },
+      clearWorkers() {
+        this.$store.dispatch('statistics/clearWorkers')
       },
     },
   }

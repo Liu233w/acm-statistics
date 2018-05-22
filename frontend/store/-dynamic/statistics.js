@@ -13,17 +13,7 @@ export function state() {
     crawlers[key].func = data.crawlers[key]
   })
 
-  const workers = []
-  _.forEach(crawlers, val => {
-
-    const worker = {
-      crawlerName: val.name,
-      username: '',
-      status: WORKER_STATUS.WAITING,
-    }
-    resetWorker(worker)
-    workers.push(worker)
-  })
+  const workers = initWorkers(crawlers)
 
   return {
     workers,
@@ -42,6 +32,7 @@ export const MUTATION_TYPES = {
   stopWorker: 'stopWorker',
   addWorkerForCrawler: 'addWorkerForCrawler',
   removeWorkerAtIndex: 'removeWorkerAtIndex',
+  clearWorkers: 'clearWorkers',
 }
 
 export const mutations = {
@@ -144,6 +135,10 @@ export const mutations = {
   },
   [MUTATION_TYPES.removeWorkerAtIndex](state, {index}) {
     state.workers.splice(index, 1)
+  },
+  [MUTATION_TYPES.clearWorkers](state) {
+    state.workers = initWorkers(state.crawlers)
+    state.mainUsername = ''
   },
 }
 
@@ -283,6 +278,9 @@ export const actions = {
 
     commit(MUTATION_TYPES.removeWorkerAtIndex, {index})
   },
+  clearWorkers({commit}) {
+    commit(MUTATION_TYPES.clearWorkers)
+  },
 }
 
 export const namespaced = true
@@ -318,6 +316,22 @@ function updateUsername(worker, username) {
     worker.username = username
   }
   worker.status = WORKER_STATUS.WAITING
+}
+
+function initWorkers(crawlers) {
+  const workers = []
+  _.forEach(crawlers, val => {
+
+    const worker = {
+      crawlerName: val.name,
+      username: '',
+      status: WORKER_STATUS.WAITING,
+    }
+    resetWorker(worker)
+    workers.push(worker)
+  })
+
+  return workers
 }
 
 export function getUsernameObjectFromState(state) {

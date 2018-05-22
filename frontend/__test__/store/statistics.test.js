@@ -1,6 +1,7 @@
 /* eslint-disable no-undef */
 
 import StoreContextSimulator from '../StoreContextSimulator'
+import {MUTATION_TYPES} from "../../store/-dynamic/statistics"
 
 jest.mock('~/dynamic/crawlers', () => function () {
   return {
@@ -586,6 +587,61 @@ describe('mutations', () => {
 
   })
 
+  describe('clearWorkers', () => {
+    it('能够重设 workers', () => {
+      const state = {
+        mainUsername: 'wwwwww',
+        crawlers: {
+          cr1: {
+            name: 'cr1',
+            title: 'crawler 1',
+            func: username => username,
+          },
+        },
+        workers: [
+          {
+            crawlerName: 'cr1',
+            username: 'asdfg',
+            solved: 0,
+            submissions: 0,
+            errorMessage: '',
+            tokenKey: 0.123,
+            key: 0.23333,
+          },
+          {
+            crawlerName: 'cr1',
+            username: 'qwert',
+            solved: 0,
+            submissions: 0,
+            errorMessage: '',
+            tokenKey: 0.456,
+            key: 0.666,
+          },
+        ],
+      }
+
+      store.mutations[MUTATION_TYPES.clearWorkers](state)
+      expect(state).toMatchObject({
+        mainUsername: '',
+        crawlers: {
+          cr1: {
+            name: 'cr1',
+            title: 'crawler 1',
+            func: expect.any(Function),
+          },
+        },
+        workers: [{
+          crawlerName: 'cr1',
+          username: '',
+          solved: 0,
+          submissions: 0,
+          errorMessage: '',
+          tokenKey: null,
+          key: expect.any(Number),
+        }],
+      })
+    })
+  })
 })
 
 describe('getters', () => {
