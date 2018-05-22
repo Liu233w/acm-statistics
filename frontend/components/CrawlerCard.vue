@@ -75,6 +75,7 @@
             :disabled="worker.status === WORKER_STATUS.WORKING"
             required
             @keyup.enter="startWorker"
+            :loading="worker.status === WORKER_STATUS.WORKING"
           />
         </v-flex>
       </v-layout>
@@ -96,13 +97,6 @@
           <br>
           <span class="grey--text">SUBMISSIONS: </span> {{ worker.submissions }}
         </v-flex>
-      </v-layout>
-      <v-layout row v-show="worker.status === WORKER_STATUS.WORKING">
-        <v-spacer/>
-        <v-flex xs2>
-          <v-progress-circular indeterminate color="primary"/>
-        </v-flex>
-        <v-spacer/>
       </v-layout>
     </v-container>
   </v-card>
