@@ -76,6 +76,7 @@
             required
             @keyup.enter="startWorker"
             :loading="worker.status === WORKER_STATUS.WORKING"
+            clearable
           />
         </v-flex>
       </v-layout>

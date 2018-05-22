@@ -311,7 +311,12 @@ function resetWorker(worker) {
 
 function updateUsername(worker, username) {
   resetWorker(worker)
-  worker.username = username
+  if (!username) {
+    // 假如 username 是 null 或 undefined，将其重设为 ''
+    worker.username = ''
+  } else {
+    worker.username = username
+  }
   worker.status = WORKER_STATUS.WAITING
 }
 

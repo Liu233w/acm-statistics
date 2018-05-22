@@ -79,6 +79,40 @@ describe('mutations', () => {
         ],
       })
     })
+
+    it('在用户名为 null 时能够重设为空字符串', () => {
+      const state = {
+        workers: [
+          {
+            username: 'user1',
+            status: 'DONE',
+            submissions: 33,
+            solved: 22,
+            errorMessage: '.....',
+            tokenKey: 0.23333,
+            crawlerName: 'cr1',
+            key: 0.6666666,
+          },
+        ],
+      }
+
+      store.mutations.updateUsername(state, {index: 0, username: null})
+
+      expect(state).toMatchObject({
+        workers: [
+          {
+            username: '',
+            status: 'WAITING',
+            submissions: 0,
+            solved: 0,
+            errorMessage: '',
+            tokenKey: null,
+            crawlerName: 'cr1',
+            key: 0.6666666,
+          },
+        ],
+      })
+    })
   })
 
   describe('updateMainUsername', () => {
@@ -1061,8 +1095,8 @@ describe('actions', () => {
     })
   })
 
-  describe('removeWorkerAtIndex', ()=>{
-    it('能够移除 worker', ()=>{
+  describe('removeWorkerAtIndex', () => {
+    it('能够移除 worker', () => {
       const state = {
         workers: [
           {
