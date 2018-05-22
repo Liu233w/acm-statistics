@@ -30,6 +30,10 @@ describe('poj', () => {
     await expect(poj(null, notExistUsername)).rejects.toThrow('用户不存在')
   })
 
+  test('test poj - 能够正确识别带有空格的用户名', async () => {
+    await expect(poj(null, ' ' + notExistUsername)).rejects.toThrow('用户不存在')
+  })
+
   test('test poj', async () => {
     const res = await poj(null, username)
     checkRes(res)
@@ -47,6 +51,10 @@ describe('hdu', () => {
     await expect(hdu(config, notExistUsername)).rejects.toThrow('用户不存在')
   })
 
+  test('test hdu - 能够正确识别带有空格的用户名', async () => {
+    await expect(hdu(config, ' ' + notExistUsername)).rejects.toThrow('用户不存在')
+  })
+
   test('test hdu', async () => {
     const res = await hdu(config, 'vjudge4')
     checkRes(res)
@@ -58,6 +66,10 @@ describe('zoj', () => {
 
   test('test zoj - 用户不存在时抛出异常', async () => {
     await expect(zoj(null, notExistUsername)).rejects.toThrow('用户不存在')
+  })
+
+  test('test zoj - 能够正确识别带有空格的用户名', async () => {
+    await expect(zoj(null, ' ' + notExistUsername)).rejects.toThrow('用户不存在')
   })
 
   test('test zoj', async () => {
@@ -73,6 +85,10 @@ describe('acdream', () => {
     await expect(acdream(null, notExistUsername)).rejects.toThrow('用户不存在')
   })
 
+  test('test acdream - 能够正确识别带有空格的用户名', async () => {
+    await expect(acdream(null, ' ' + notExistUsername)).rejects.toThrow('用户不存在')
+  })
+
   test('test acdream', async () => {
     const res = await acdream(null, username)
     checkRes(res)
@@ -86,6 +102,10 @@ describe('dashiye', () => {
     await expect(dashiye(null, notExistUsername)).rejects.toThrow('用户不存在')
   })
 
+  test('test dashiye - 能够正确识别带有空格的用户名', async () => {
+    await expect(dashiye(null, ' ' + notExistUsername)).rejects.toThrow('用户不存在')
+  })
+
   test('test dashiye', async () => {
     const res = await dashiye(null, username)
     checkRes(res)
@@ -97,6 +117,10 @@ describe('codeforces', () => {
 
   test('test codeforces - 用户不存在时抛出异常', async () => {
     await expect(codeforces(null, notExistUsername)).rejects.toThrow('用户不存在')
+  })
+
+  test('test codeforces - 能够正确识别带有空格的用户名', async () => {
+    await expect(codeforces(null, ' ' + notExistUsername)).rejects.toThrow('handle: Field should contain only Latin letters, digits, underscore or dash characters')
   })
 
   test('test codeforces', async () => {
@@ -138,6 +162,10 @@ describe('spoj', () => {
     await expect(spoj(null, notExistUsername)).rejects.toThrow('用户不存在')
   })
 
+  test('test spoj - 能够正确识别带有空格的用户名', async () => {
+    await expect(spoj(null, ' ' + notExistUsername)).rejects.toThrow('用户不存在')
+  })
+
   test('test spoj', async () => {
     const res = await spoj(null, username)
     checkRes(res)
@@ -149,6 +177,10 @@ describe('timus', () => {
 
   test('test timus - 用户不存在时抛出异常', async () => {
     await expect(timus(null, notExistUsername)).rejects.toThrow('用户不存在')
+  })
+
+  test('test timus - 能够正确识别带有空格的用户名', async () => {
+    await expect(timus(null, ' ' + notExistUsername)).rejects.toThrow('用户不存在')
   })
 
   test('test timus', async () => {
@@ -165,6 +197,10 @@ describe('sgu', () => {
     await expect(sgu(null, notExistUsername)).rejects.toThrow('用户不存在')
   })
 
+  test('test sgu - 能够正确识别带有空格的用户名', async () => {
+    await expect(sgu(null, ' ' + notExistUsername)).rejects.toThrow('用户不存在')
+  })
+
   test('test sgu', async () => {
     const res = await sgu(null, username)
     checkRes(res)
@@ -176,6 +212,10 @@ describe('leetcode_cn', () => {
 
   test('test leetcode_cn - 用户不存在时抛出异常', async () => {
     await expect(leetcode_cn(null, notExistUsername)).rejects.toThrow('用户不存在')
+  })
+
+  test('test leetcode_cn - 能够正确识别带有空格的用户名', async () => {
+    await expect(leetcode_cn(null, ' ' + notExistUsername)).rejects.toThrow('用户不存在')
   })
 
   test('test leetcode_cn', async () => {
@@ -204,6 +244,10 @@ describe('vjudge', () => {
 
   test('test vjudge - 用户不存在时抛出异常', async () => {
     await expect(vjudge(vjConfig, notExistUsername)).rejects.toThrow('用户不存在')
+  })
+
+  test('test vjudge - 能够正确识别带有空格的用户名', async () => {
+    await expect(vjudge(vjConfig, ' ' + notExistUsername)).rejects.toThrow('用户不存在')
   })
 
   test('test vjudge', async () => {
