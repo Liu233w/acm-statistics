@@ -84,7 +84,7 @@ async function queryForNumber(agent, username, maxId, acSet) {
   }
 
   // 处理结果 /////////////////////////////////////////////////////////////
-  if (res.body.error && /User \w* does not exist/.test(res.body.error)) {
+  if (res.body.error && /User .* does not exist/.test(res.body.error)) {
     throw new Error('用户不存在')
   }
 

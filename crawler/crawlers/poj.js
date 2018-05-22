@@ -21,7 +21,7 @@ module.exports = async function (config, username) {
     throw new Error('用户不存在')
   }
 
-  if (/<li>Sorry,\w* doesn't exist<\/li>/.test(res.text)) {
+  if (/<li>Sorry,.* doesn't exist<\/li>/.test(res.text)) {
     throw new Error('用户不存在')
   }
 
