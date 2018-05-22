@@ -1566,8 +1566,8 @@ exports[`/statistics 1`] = `
               <div class="content--wrap">
                 <div class="container">
                   <div class="container grid-list-md">
-                    <div class="layout row">
-                      <div class="flex xs8">
+                    <div class="layout row wrap">
+                      <div class="flex xs5 md3">
                         <div class="input-group input-group--required input-group--text-field primary--text">
                           <label>
                             &#x7EDF;&#x4E00;&#x8BBE;&#x7F6E;&#x7528;&#x6237;&#x540D;
@@ -1584,7 +1584,7 @@ exports[`/statistics 1`] = `
                           </div>
                         </div>
                       </div>
-                      <div class="flex xs4">
+                      <div class="flex xs5">
                         <button type="button"
                                 class="primary btn"
                         >
@@ -1592,6 +1592,22 @@ exports[`/statistics 1`] = `
                             &#x5F00;&#x59CB;&#x67E5;&#x8BE2;
                           </div>
                         </button>
+                        <span class="tooltip tooltip--bottom">
+                          <div class="tooltip__content"
+                               style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"
+                          >
+                            &#x6E05;&#x7A7A;&#x7528;&#x6237;&#x540D;&#xFF0C;&#x91CD;&#x7F6E;&#x67E5;&#x8BE2;&#x72B6;&#x6001;
+                          </div>
+                          <span>
+                            <button type="button"
+                                    class="error btn"
+                            >
+                              <div class="btn__content">
+                                &#x91CD;&#x7F6E;&#x67E5;&#x8BE2;
+                              </div>
+                            </button>
+                          </span>
+                        </span>
                         <span class="tooltip tooltip--bottom">
                           <div class="tooltip__content"
                                style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"
@@ -1611,25 +1627,18 @@ exports[`/statistics 1`] = `
                           </span>
                         </span>
                       </div>
-                    </div>
-                    <div class="layout row">
-                      <div class="flex">
-                        <div class="progress-linear"
-                             style="height:7px;"
+                      <div class="flex xs12 md4"
+                           style="display:none;"
+                      >
+                        <span tabindex="0"
+                              class="chip elevation-2 chip--label grey lighten-3"
                         >
-                          <div class="progress-linear__background primary"
-                               style="height:0;opacity:0.3;width:100%;"
-                          >
-                          </div>
-                          <div class="progress-linear__bar"
-                               style="height:0;"
-                          >
-                            <div class="progress-linear__bar__determinate primary"
-                                 style="width:100%;"
-                            >
-                            </div>
-                          </div>
-                        </div>
+                          <span class="chip__content">
+                            <span class="title">
+                              &#x7684;&#x603B;&#x9898;&#x91CF;&#xFF1A; 0 / 0
+                            </span>
+                          </span>
+                        </span>
                       </div>
                     </div>
                     <div class="layout row">
@@ -1773,6 +1782,10 @@ exports[`/statistics 1`] = `
                                                  type="text"
                                                  value
                                           >
+                                          <i aria-hidden="true"
+                                             class="icon material-icons input-group__append-icon"
+                                          >
+                                          </i>
                                         </div>
                                         <div class="input-group__details">
                                         </div>
@@ -1794,37 +1807,6 @@ exports[`/statistics 1`] = `
                                         SUBMISSIONS:
                                       </span>
                                       0
-                                    </div>
-                                  </div>
-                                  <div class="layout row"
-                                       style="display:none;"
-                                  >
-                                    <div class="spacer">
-                                    </div>
-                                    <div class="flex xs2">
-                                      <div class="progress-circular progress-circular--indeterminate primary--text"
-                                           style="height:32px;width:32px;"
-                                      >
-                                        <svg xmlns="http://www.w3.org/2000/svg"
-                                             viewbox="22.857142857142858 22.857142857142858 45.714285714285715 45.714285714285715"
-                                             style="transform:rotate(0deg);"
-                                        >
-                                          <circle fill="transparent"
-                                                  cx="45.714285714285715"
-                                                  cy="45.714285714285715"
-                                                  r="20"
-                                                  stroke-width="5.714285714285714"
-                                                  stroke-dasharray="125.664"
-                                                  stroke-dashoffset="125.66370614359172px"
-                                                  class="progress-circular__overlay"
-                                          >
-                                          </circle>
-                                        </svg>
-                                        <div class="progress-circular__info">
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div class="spacer">
                                     </div>
                                   </div>
                                 </div>
@@ -1967,6 +1949,10 @@ exports[`/statistics 1`] = `
                                                  type="text"
                                                  value
                                           >
+                                          <i aria-hidden="true"
+                                             class="icon material-icons input-group__append-icon"
+                                          >
+                                          </i>
                                         </div>
                                         <div class="input-group__details">
                                         </div>
@@ -1988,37 +1974,6 @@ exports[`/statistics 1`] = `
                                         SUBMISSIONS:
                                       </span>
                                       0
-                                    </div>
-                                  </div>
-                                  <div class="layout row"
-                                       style="display:none;"
-                                  >
-                                    <div class="spacer">
-                                    </div>
-                                    <div class="flex xs2">
-                                      <div class="progress-circular progress-circular--indeterminate primary--text"
-                                           style="height:32px;width:32px;"
-                                      >
-                                        <svg xmlns="http://www.w3.org/2000/svg"
-                                             viewbox="22.857142857142858 22.857142857142858 45.714285714285715 45.714285714285715"
-                                             style="transform:rotate(0deg);"
-                                        >
-                                          <circle fill="transparent"
-                                                  cx="45.714285714285715"
-                                                  cy="45.714285714285715"
-                                                  r="20"
-                                                  stroke-width="5.714285714285714"
-                                                  stroke-dasharray="125.664"
-                                                  stroke-dashoffset="125.66370614359172px"
-                                                  class="progress-circular__overlay"
-                                          >
-                                          </circle>
-                                        </svg>
-                                        <div class="progress-circular__info">
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div class="spacer">
                                     </div>
                                   </div>
                                 </div>
@@ -2161,6 +2116,10 @@ exports[`/statistics 1`] = `
                                                  type="text"
                                                  value
                                           >
+                                          <i aria-hidden="true"
+                                             class="icon material-icons input-group__append-icon"
+                                          >
+                                          </i>
                                         </div>
                                         <div class="input-group__details">
                                         </div>
@@ -2182,37 +2141,6 @@ exports[`/statistics 1`] = `
                                         SUBMISSIONS:
                                       </span>
                                       0
-                                    </div>
-                                  </div>
-                                  <div class="layout row"
-                                       style="display:none;"
-                                  >
-                                    <div class="spacer">
-                                    </div>
-                                    <div class="flex xs2">
-                                      <div class="progress-circular progress-circular--indeterminate primary--text"
-                                           style="height:32px;width:32px;"
-                                      >
-                                        <svg xmlns="http://www.w3.org/2000/svg"
-                                             viewbox="22.857142857142858 22.857142857142858 45.714285714285715 45.714285714285715"
-                                             style="transform:rotate(0deg);"
-                                        >
-                                          <circle fill="transparent"
-                                                  cx="45.714285714285715"
-                                                  cy="45.714285714285715"
-                                                  r="20"
-                                                  stroke-width="5.714285714285714"
-                                                  stroke-dasharray="125.664"
-                                                  stroke-dashoffset="125.66370614359172px"
-                                                  class="progress-circular__overlay"
-                                          >
-                                          </circle>
-                                        </svg>
-                                        <div class="progress-circular__info">
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div class="spacer">
                                     </div>
                                   </div>
                                 </div>
@@ -2361,6 +2289,10 @@ exports[`/statistics 1`] = `
                                                  type="text"
                                                  value
                                           >
+                                          <i aria-hidden="true"
+                                             class="icon material-icons input-group__append-icon"
+                                          >
+                                          </i>
                                         </div>
                                         <div class="input-group__details">
                                         </div>
@@ -2382,37 +2314,6 @@ exports[`/statistics 1`] = `
                                         SUBMISSIONS:
                                       </span>
                                       0
-                                    </div>
-                                  </div>
-                                  <div class="layout row"
-                                       style="display:none;"
-                                  >
-                                    <div class="spacer">
-                                    </div>
-                                    <div class="flex xs2">
-                                      <div class="progress-circular progress-circular--indeterminate primary--text"
-                                           style="height:32px;width:32px;"
-                                      >
-                                        <svg xmlns="http://www.w3.org/2000/svg"
-                                             viewbox="22.857142857142858 22.857142857142858 45.714285714285715 45.714285714285715"
-                                             style="transform:rotate(0deg);"
-                                        >
-                                          <circle fill="transparent"
-                                                  cx="45.714285714285715"
-                                                  cy="45.714285714285715"
-                                                  r="20"
-                                                  stroke-width="5.714285714285714"
-                                                  stroke-dasharray="125.664"
-                                                  stroke-dashoffset="125.66370614359172px"
-                                                  class="progress-circular__overlay"
-                                          >
-                                          </circle>
-                                        </svg>
-                                        <div class="progress-circular__info">
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div class="spacer">
                                     </div>
                                   </div>
                                 </div>
@@ -2555,6 +2456,10 @@ exports[`/statistics 1`] = `
                                                  type="text"
                                                  value
                                           >
+                                          <i aria-hidden="true"
+                                             class="icon material-icons input-group__append-icon"
+                                          >
+                                          </i>
                                         </div>
                                         <div class="input-group__details">
                                         </div>
@@ -2576,37 +2481,6 @@ exports[`/statistics 1`] = `
                                         SUBMISSIONS:
                                       </span>
                                       0
-                                    </div>
-                                  </div>
-                                  <div class="layout row"
-                                       style="display:none;"
-                                  >
-                                    <div class="spacer">
-                                    </div>
-                                    <div class="flex xs2">
-                                      <div class="progress-circular progress-circular--indeterminate primary--text"
-                                           style="height:32px;width:32px;"
-                                      >
-                                        <svg xmlns="http://www.w3.org/2000/svg"
-                                             viewbox="22.857142857142858 22.857142857142858 45.714285714285715 45.714285714285715"
-                                             style="transform:rotate(0deg);"
-                                        >
-                                          <circle fill="transparent"
-                                                  cx="45.714285714285715"
-                                                  cy="45.714285714285715"
-                                                  r="20"
-                                                  stroke-width="5.714285714285714"
-                                                  stroke-dasharray="125.664"
-                                                  stroke-dashoffset="125.66370614359172px"
-                                                  class="progress-circular__overlay"
-                                          >
-                                          </circle>
-                                        </svg>
-                                        <div class="progress-circular__info">
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div class="spacer">
                                     </div>
                                   </div>
                                 </div>
@@ -2748,6 +2622,10 @@ exports[`/statistics 1`] = `
                                                  type="text"
                                                  value
                                           >
+                                          <i aria-hidden="true"
+                                             class="icon material-icons input-group__append-icon"
+                                          >
+                                          </i>
                                         </div>
                                         <div class="input-group__details">
                                         </div>
@@ -2769,37 +2647,6 @@ exports[`/statistics 1`] = `
                                         SUBMISSIONS:
                                       </span>
                                       0
-                                    </div>
-                                  </div>
-                                  <div class="layout row"
-                                       style="display:none;"
-                                  >
-                                    <div class="spacer">
-                                    </div>
-                                    <div class="flex xs2">
-                                      <div class="progress-circular progress-circular--indeterminate primary--text"
-                                           style="height:32px;width:32px;"
-                                      >
-                                        <svg xmlns="http://www.w3.org/2000/svg"
-                                             viewbox="22.857142857142858 22.857142857142858 45.714285714285715 45.714285714285715"
-                                             style="transform:rotate(0deg);"
-                                        >
-                                          <circle fill="transparent"
-                                                  cx="45.714285714285715"
-                                                  cy="45.714285714285715"
-                                                  r="20"
-                                                  stroke-width="5.714285714285714"
-                                                  stroke-dasharray="125.664"
-                                                  stroke-dashoffset="125.66370614359172px"
-                                                  class="progress-circular__overlay"
-                                          >
-                                          </circle>
-                                        </svg>
-                                        <div class="progress-circular__info">
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div class="spacer">
                                     </div>
                                   </div>
                                 </div>
@@ -2946,6 +2793,10 @@ exports[`/statistics 1`] = `
                                                  type="text"
                                                  value
                                           >
+                                          <i aria-hidden="true"
+                                             class="icon material-icons input-group__append-icon"
+                                          >
+                                          </i>
                                         </div>
                                         <div class="input-group__details">
                                         </div>
@@ -2967,37 +2818,6 @@ exports[`/statistics 1`] = `
                                         SUBMISSIONS:
                                       </span>
                                       0
-                                    </div>
-                                  </div>
-                                  <div class="layout row"
-                                       style="display:none;"
-                                  >
-                                    <div class="spacer">
-                                    </div>
-                                    <div class="flex xs2">
-                                      <div class="progress-circular progress-circular--indeterminate primary--text"
-                                           style="height:32px;width:32px;"
-                                      >
-                                        <svg xmlns="http://www.w3.org/2000/svg"
-                                             viewbox="22.857142857142858 22.857142857142858 45.714285714285715 45.714285714285715"
-                                             style="transform:rotate(0deg);"
-                                        >
-                                          <circle fill="transparent"
-                                                  cx="45.714285714285715"
-                                                  cy="45.714285714285715"
-                                                  r="20"
-                                                  stroke-width="5.714285714285714"
-                                                  stroke-dasharray="125.664"
-                                                  stroke-dashoffset="125.66370614359172px"
-                                                  class="progress-circular__overlay"
-                                          >
-                                          </circle>
-                                        </svg>
-                                        <div class="progress-circular__info">
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div class="spacer">
                                     </div>
                                   </div>
                                 </div>
@@ -3137,6 +2957,10 @@ exports[`/statistics 1`] = `
                                                  type="text"
                                                  value
                                           >
+                                          <i aria-hidden="true"
+                                             class="icon material-icons input-group__append-icon"
+                                          >
+                                          </i>
                                         </div>
                                         <div class="input-group__details">
                                         </div>
@@ -3158,37 +2982,6 @@ exports[`/statistics 1`] = `
                                         SUBMISSIONS:
                                       </span>
                                       0
-                                    </div>
-                                  </div>
-                                  <div class="layout row"
-                                       style="display:none;"
-                                  >
-                                    <div class="spacer">
-                                    </div>
-                                    <div class="flex xs2">
-                                      <div class="progress-circular progress-circular--indeterminate primary--text"
-                                           style="height:32px;width:32px;"
-                                      >
-                                        <svg xmlns="http://www.w3.org/2000/svg"
-                                             viewbox="22.857142857142858 22.857142857142858 45.714285714285715 45.714285714285715"
-                                             style="transform:rotate(0deg);"
-                                        >
-                                          <circle fill="transparent"
-                                                  cx="45.714285714285715"
-                                                  cy="45.714285714285715"
-                                                  r="20"
-                                                  stroke-width="5.714285714285714"
-                                                  stroke-dasharray="125.664"
-                                                  stroke-dashoffset="125.66370614359172px"
-                                                  class="progress-circular__overlay"
-                                          >
-                                          </circle>
-                                        </svg>
-                                        <div class="progress-circular__info">
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div class="spacer">
                                     </div>
                                   </div>
                                 </div>
