@@ -14,7 +14,7 @@
     </v-toolbar>
     <v-content>
       <section>
-        <v-parallax :src="require('~/assets/img/frontpage/back7.jpg')" height="600">
+        <v-parallax :src="require('~/assets/img/frontpage/back7-brighten.jpg')" height="600">
           <v-layout
             column
             align-center
@@ -22,10 +22,10 @@
             class="white--text"
           >
             <img :src="require('~/assets/img/logo.png')" alt="Vuetify.js" height="300">
-            <h1 class="white--text mb-2 display-1 text-xs-center">欢迎使用 NWPU-ACM 查询系统</h1>
-            <div class="subheading mb-3 text-xs-center">由 NWPU-ACM 技术组强力驱动</div>
+            <h1 class="black--text mb-2 display-1 text-xs-center">欢迎使用 NWPU-ACM 查询系统</h1>
+            <div class="black--text subheading mb-3 text-xs-center">由 NWPU-ACM 技术组强力驱动</div>
             <v-btn
-              class="blue lighten-2 mt-5"
+              class="blue lighten-2 black--text mt-5"
               dark
               large
               to="/statistics"
