@@ -78,9 +78,18 @@
           />
         </v-flex>
       </v-layout>
+      <v-layout row wrap v-show="warnings">
+        <v-flex xs12 v-for="item in warnings" :key="item">
+          <v-icon color="orange darken-2">warning</v-icon>
+          &nbsp;
+          <span>{{ item }}</span>
+        </v-flex>
+      </v-layout>
       <v-layout row v-show="worker.status === WORKER_STATUS.DONE">
         <v-flex xs12 v-if="worker.errorMessage">
-          <span class="red--text">{{ worker.errorMessage }}</span>
+          <v-icon color="red">error</v-icon>
+          &nbsp;
+          <span>{{ worker.errorMessage }}</span>
         </v-flex>
         <v-flex xs12 v-else>
           <span class="grey--text">SOLVED: </span> {{ worker.solved }}
@@ -101,6 +110,7 @@
 
 <script>
   import {WORKER_STATUS} from '~/components/consts'
+  import {warningHelper} from '~/components/statisticsUtils'
 
   import {mapGetters} from 'vuex'
 
@@ -173,6 +183,9 @@
       },
       myWorkerIdxOfCrawler() {
         return this.workerIdxOfCrawler[this.index]
+      },
+      warnings() {
+        return warningHelper(this.worker)
       },
     },
   }
