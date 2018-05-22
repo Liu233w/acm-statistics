@@ -581,7 +581,7 @@ exports[`/ 1`] = `
                        style="height:600px;"
                   >
                     <div class="parallax__image-container">
-                      <img src="/_nuxt/img/back7.8539295.jpg"
+                      <img src="/_nuxt/img/back7-brighten.71e76da.jpg"
                            class="parallax__image"
                            style="display:block;opacity:0;transform:translate(-50%, nullpx);"
                       >
@@ -592,14 +592,14 @@ exports[`/ 1`] = `
                              alt="Vuetify.js"
                              height="300"
                         >
-                        <h1 class="white--text mb-2 display-1 text-xs-center">
+                        <h1 class="black--text mb-2 display-1 text-xs-center">
                           &#x6B22;&#x8FCE;&#x4F7F;&#x7528; NWPU-ACM &#x67E5;&#x8BE2;&#x7CFB;&#x7EDF;
                         </h1>
-                        <div class="subheading mb-3 text-xs-center">
+                        <div class="black--text subheading mb-3 text-xs-center">
                           &#x7531; NWPU-ACM &#x6280;&#x672F;&#x7EC4;&#x5F3A;&#x529B;&#x9A71;&#x52A8;
                         </div>
                         <a href="/statistics"
-                           class="blue lighten-2 mt-5 btn btn--large btn--router theme--dark"
+                           class="blue lighten-2 black--text mt-5 btn btn--large btn--router theme--dark"
                         >
                           <div class="btn__content">
                             &#x8FDB;&#x5165; OJ &#x9898;&#x91CF;&#x7EDF;&#x8BA1;
