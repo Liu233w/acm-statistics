@@ -1779,6 +1779,8 @@ exports[`/statistics 1`] = `
                                       </div>
                                     </div>
                                   </div>
+                                  <div class="layout row wrap">
+                                  </div>
                                   <div class="layout row"
                                        style="display:none;"
                                   >
@@ -1971,6 +1973,8 @@ exports[`/statistics 1`] = `
                                       </div>
                                     </div>
                                   </div>
+                                  <div class="layout row wrap">
+                                  </div>
                                   <div class="layout row"
                                        style="display:none;"
                                   >
@@ -2162,6 +2166,8 @@ exports[`/statistics 1`] = `
                                         </div>
                                       </div>
                                     </div>
+                                  </div>
+                                  <div class="layout row wrap">
                                   </div>
                                   <div class="layout row"
                                        style="display:none;"
@@ -2361,6 +2367,8 @@ exports[`/statistics 1`] = `
                                       </div>
                                     </div>
                                   </div>
+                                  <div class="layout row wrap">
+                                  </div>
                                   <div class="layout row"
                                        style="display:none;"
                                   >
@@ -2553,6 +2561,8 @@ exports[`/statistics 1`] = `
                                       </div>
                                     </div>
                                   </div>
+                                  <div class="layout row wrap">
+                                  </div>
                                   <div class="layout row"
                                        style="display:none;"
                                   >
@@ -2743,6 +2753,8 @@ exports[`/statistics 1`] = `
                                         </div>
                                       </div>
                                     </div>
+                                  </div>
+                                  <div class="layout row wrap">
                                   </div>
                                   <div class="layout row"
                                        style="display:none;"
@@ -2940,6 +2952,8 @@ exports[`/statistics 1`] = `
                                       </div>
                                     </div>
                                   </div>
+                                  <div class="layout row wrap">
+                                  </div>
                                   <div class="layout row"
                                        style="display:none;"
                                   >
@@ -3128,6 +3142,8 @@ exports[`/statistics 1`] = `
                                         </div>
                                       </div>
                                     </div>
+                                  </div>
+                                  <div class="layout row wrap">
                                   </div>
                                   <div class="layout row"
                                        style="display:none;"
