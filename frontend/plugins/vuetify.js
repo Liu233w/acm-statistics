@@ -19,6 +19,7 @@ import {
   VJumbotron,
   VParallax,
   VDialog,
+  VChip,
 } from 'vuetify'
 
 Vue.use(Vuetify, {
@@ -41,5 +42,6 @@ Vue.use(Vuetify, {
     VJumbotron,
     VParallax,
     VDialog,
+    VChip,
   },
 })

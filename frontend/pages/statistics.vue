@@ -1,16 +1,24 @@
 <template>
   <v-container grid-list-md>
-    <v-layout row>
-      <v-flex xs8 sm4>
+    <v-layout row wrap>
+      <v-flex xs5 md3>
         <v-text-field
           v-model="username"
           label="统一设置用户名"
           :disabled="isWorking"
           required
           @keyup.enter="runWorker"
-        />
+          :loading="isWorking"
+        >
+          <v-progress-linear
+            slot="progress"
+            color="primary"
+            :value="notWorkingRate"
+            :height="3"
+          />
+        </v-text-field>
       </v-flex>
-      <v-flex xs4 sm8>
+      <v-flex xs5>
         <v-btn class="primary" @click="runWorker" :disabled="isWorking">
           开始查询
         </v-btn>
@@ -39,18 +47,8 @@
           （使用“开始查询”按钮也会保存用户名）
         </v-tooltip>
       </v-flex>
-    </v-layout>
-    <v-layout row v-if="submissionsNum">
-      <v-flex>
-        <p class="title text-xs-center"> {{ username }} 的总题量： {{ solvedNum }} / {{ submissionsNum }} </p>
-      </v-flex>
-    </v-layout>
-    <v-layout row>
-      <v-flex>
-        <v-progress-linear color="primary"
-                           :value="notWorkingRate"
-                           :active="isWorking"
-        />
+      <v-flex xs12 md4 v-show="submissionsNum">
+        <v-chip label color="grey lighten-3" class="elevation-2"><span class="title">{{ summary }}</span></v-chip>
       </v-flex>
     </v-layout>
     <v-layout row>
@@ -134,6 +132,9 @@
       },
       maxItemPerColumn() {
         return Math.ceil(this.$store.state.statistics.workers.length / this.columnCount)
+      },
+      summary() {
+        return `${this.username} 的总题量： ${this.solvedNum} / ${this.submissionsNum}`
       },
     },
     methods: {
