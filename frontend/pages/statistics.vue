@@ -59,7 +59,7 @@
               :data-column-idx="idx"
               :data-column-item-idx="itemIdx"
             >
-              <crawler-card
+              <worker-card
                 :index="item.index"
               />
             </div>
@@ -74,14 +74,14 @@
   import {mapGetters} from 'vuex'
   import _ from 'lodash'
 
-  import CrawlerCard from '~/components/CrawlerCard'
+  import WorkerCard from '~/components/WorkerCard'
   import statisticsLayoutBuilder from '~/components/statisticsLayoutBuilder'
   import Store from '~/store/-dynamic/statistics'
 
   export default {
     name: 'Statistics',
     components: {
-      CrawlerCard,
+      WorkerCard,
     },
     created() {
       this.$store.registerModule('statistics', Store)
