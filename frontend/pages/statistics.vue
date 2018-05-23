@@ -198,7 +198,7 @@
   }
 </script>
 
-<style>
+<style scoped>
   .workers-column-move {
     transition: all 0.5s;
   }
