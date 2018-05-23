@@ -22,8 +22,8 @@
             class="white--text"
           >
             <img :src="require('~/assets/img/logo.png')" alt="Vuetify.js" height="300">
-            <h1 class="black--text mb-2 display-1 text-xs-center">欢迎使用 NWPU-ACM 查询系统</h1>
-            <div class="black--text subheading mb-3 text-xs-center">由 NWPU-ACM 技术组强力驱动</div>
+            <h1 class="black--text mb-2 display-1 text-xs-center index-title">欢迎使用 NWPU-ACM 查询系统</h1>
+            <div class="black--text subheading mb-3 text-xs-center index-title">由 NWPU-ACM 技术组强力驱动</div>
             <v-btn
               class="blue lighten-2 black--text mt-5"
               dark
@@ -106,9 +106,9 @@
       <section>
         <v-parallax :src="require('~/assets/img/frontpage/back4.jpg')" height="380">
           <v-layout column align-center justify-center>
-            <div class="headline white--text mb-3 text-xs-center">欢迎向我们提出意见以帮助本网站进步</div>
+            <div class="headline white--text mb-3 text-xs-center response-title">欢迎向我们提出意见以帮助本网站进步</div>
             <a :href="mailToGithubLink">
-              <em class="white--text">或者单击此处向本项目发送邮件</em>
+              <em class="white--text response-title">或者单击此处向本项目发送邮件</em>
             </a>
             <v-btn
               class="blue lighten-2 mt-5"
@@ -261,3 +261,13 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
   */
 </script>
+
+<style scoped>
+  .index-title {
+    text-shadow: 1px 0 #ecf5ff, 0 1px #ecf5ff, 0 -1px #ecf5ff, -1px 0 #ecf5ff;
+  }
+
+  .response-title {
+    text-shadow: 1px 0 #000000, 0 1px #000000, 0 -1px #000000, -1px 0 #000000;
+  }
+</style>
