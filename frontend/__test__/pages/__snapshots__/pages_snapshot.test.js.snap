@@ -708,7 +708,9 @@ exports[`/statistics 1`] = `
                                   <div class="toolbar__content"
                                        style="height:48px;"
                                   >
-                                    <div class="toolbar__title">
+                                    <div title="crawler0"
+                                         class="toolbar__title"
+                                    >
                                       crawler0
                                     </div>
                                     <div class="spacer">
@@ -875,7 +877,9 @@ exports[`/statistics 1`] = `
                                   <div class="toolbar__content"
                                        style="height:48px;"
                                   >
-                                    <div class="toolbar__title">
+                                    <div title="crawler1"
+                                         class="toolbar__title"
+                                    >
                                       crawler1
                                     </div>
                                     <div class="spacer">
@@ -1042,7 +1046,9 @@ exports[`/statistics 1`] = `
                                   <div class="toolbar__content"
                                        style="height:48px;"
                                   >
-                                    <div class="toolbar__title">
+                                    <div title="crawler2"
+                                         class="toolbar__title"
+                                    >
                                       crawler2
                                     </div>
                                     <div class="spacer">
@@ -1215,7 +1221,9 @@ exports[`/statistics 1`] = `
                                   <div class="toolbar__content"
                                        style="height:48px;"
                                   >
-                                    <div class="toolbar__title">
+                                    <div title="crawler3"
+                                         class="toolbar__title"
+                                    >
                                       crawler3
                                     </div>
                                     <div class="spacer">
@@ -1382,7 +1390,9 @@ exports[`/statistics 1`] = `
                                   <div class="toolbar__content"
                                        style="height:48px;"
                                   >
-                                    <div class="toolbar__title">
+                                    <div title="crawler4"
+                                         class="toolbar__title"
+                                    >
                                       crawler4
                                     </div>
                                     <div class="spacer">
@@ -1549,7 +1559,9 @@ exports[`/statistics 1`] = `
                                   <div class="toolbar__content"
                                        style="height:48px;"
                                   >
-                                    <div class="toolbar__title">
+                                    <div title="with description"
+                                         class="toolbar__title"
+                                    >
                                       with description
                                     </div>
                                     <div class="spacer">
@@ -1721,7 +1733,9 @@ exports[`/statistics 1`] = `
                                   <div class="toolbar__content"
                                        style="height:48px;"
                                   >
-                                    <div class="toolbar__title">
+                                    <div title="with url"
+                                         class="toolbar__title"
+                                    >
                                       with url
                                     </div>
                                     <div class="spacer">
@@ -1886,7 +1900,9 @@ exports[`/statistics 1`] = `
                                   <div class="toolbar__content"
                                        style="height:48px;"
                                   >
-                                    <div class="toolbar__title">
+                                    <div title="with all"
+                                         class="toolbar__title"
+                                    >
                                       with all
                                     </div>
                                     <div class="spacer">
