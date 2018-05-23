@@ -1,7 +1,7 @@
 <template>
   <v-card>
     <v-toolbar card dense class="blue-grey lighten-5">
-      <v-toolbar-title>
+      <v-toolbar-title :title="crawlerTitle">
         {{ crawlerTitle }}
       </v-toolbar-title>
       <v-spacer/>
