@@ -1,4 +1,6 @@
 import _ from 'lodash'
+import LRU from 'lru-cache'
+
 import Vue from 'vue'
 import {
   Vuetify,
@@ -48,5 +50,9 @@ Vue.use(Vuetify, {
   options: {
     minifyTheme: process.env.NODE_ENV === 'production' ?
       _.constant(null) : null,
+    themeCache: LRU({
+      max: 10,
+      maxAge: 1000 * 60 * 60 * 12, // 12 hour
+    }),
   },
 })

@@ -94,5 +94,6 @@ module.exports = {
   modules: [
     '@nuxtjs/proxy',
     '~/modules/crawlerLoader',
+    '@nuxtjs/component-cache',
   ],
 }
