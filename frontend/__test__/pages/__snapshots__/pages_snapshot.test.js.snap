@@ -41,7 +41,7 @@ exports[`/ 1`] = `
     >
     </style>
     <style>
-      .index-title[data-v-1b011d9c]{text-shadow:1px 0 #ecf5ff,0 1px #ecf5ff,0 -1px #ecf5ff,-1px 0 #ecf5ff}.response-title[data-v-1b011d9c]{text-shadow:1px 0 #000,0 1px #000,0 -1px #000,-1px 0 #000}
+      .index-title{text-shadow:1px 0 #ecf5ff,0 1px #ecf5ff,0 -1px #ecf5ff,-1px 0 #ecf5ff}.response-title{text-shadow:1px 0 #000,0 1px #000,0 -1px #000,-1px 0 #000}
     </style>
   </head>
   <body data-n-head>

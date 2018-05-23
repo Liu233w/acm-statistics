@@ -41,6 +41,11 @@ async function testPageByPath(path) {
     }
   })
 
+  // 将 css 中的id属性去掉
+  $('style').each((i, el) => {
+    $(el).html(_.replace($(el).html(), /\[data-v-.*?\]/g, ''))
+  })
+
   // 移除随机数
   const storeEl = $(_.filter($('script'), el => /window\.__NUXT__/.test($(el).html())))
   storeEl.html(_.replace(storeEl.html(), /,"key":0\.\d*/g, ''))
