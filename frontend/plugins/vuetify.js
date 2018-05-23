@@ -1,3 +1,4 @@
+import _ from 'lodash'
 import Vue from 'vue'
 import {
   Vuetify,
@@ -43,5 +44,9 @@ Vue.use(Vuetify, {
     VParallax,
     VDialog,
     VChip,
+  },
+  options: {
+    minifyTheme: process.env.NODE_ENV === 'production' ?
+      _.constant(null) : null,
   },
 })
