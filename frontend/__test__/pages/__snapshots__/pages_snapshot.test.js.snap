@@ -618,7 +618,7 @@ exports[`/statistics 1`] = `
                 <div class="container">
                   <div class="container grid-list-md">
                     <div class="layout row wrap">
-                      <div class="flex xs5 md3">
+                      <div class="flex xs12 sm5 md3">
                         <div class="input-group input-group--required input-group--text-field primary--text">
                           <label>
                             &#x7EDF;&#x4E00;&#x8BBE;&#x7F6E;&#x7528;&#x6237;&#x540D;
@@ -635,7 +635,7 @@ exports[`/statistics 1`] = `
                           </div>
                         </div>
                       </div>
-                      <div class="flex xs5">
+                      <div class="flex xs12 sm7 md5">
                         <button type="button"
                                 class="primary btn"
                         >
