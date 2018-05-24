@@ -1,7 +1,7 @@
 <template>
   <v-container grid-list-md>
     <v-layout row wrap>
-      <v-flex xs5 md3>
+      <v-flex xs12 sm5 md3>
         <v-text-field
           v-model="username"
           label="统一设置用户名"
@@ -18,7 +18,7 @@
           />
         </v-text-field>
       </v-flex>
-      <v-flex xs5>
+      <v-flex xs12 sm7 md5>
         <v-btn class="primary" @click="runWorker" :disabled="isWorking">
           开始查询
         </v-btn>
