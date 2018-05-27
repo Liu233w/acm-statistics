@@ -15,6 +15,7 @@ const timus = require('../crawlers/timus')
 const sgu = require('../crawlers/sgu')
 const leetcode_cn = require('../crawlers/leetcode_cn')
 const vjudge = require('../crawlers/vjudge')
+const csu = require('../crawlers/csu')
 const {ensureConfigAndRead} = require('../lib/configReader')
 
 jest.setTimeout(10000) // 最多10秒
@@ -220,6 +221,23 @@ describe('leetcode_cn', () => {
 
   test('test leetcode_cn', async () => {
     const res = await leetcode_cn(null, 'wwwlsmcom')
+    checkRes(res)
+  })
+
+})
+
+describe('csu', () => {
+
+  test('test csu - 用户不存在时抛出异常', async () => {
+    await expect(csu(null, notExistUsername)).rejects.toThrow('用户不存在')
+  })
+
+  test('test csu - 能够正确识别带有空格的用户名', async () => {
+    await expect(csu(null, ' ' + notExistUsername)).rejects.toThrow('用户不存在')
+  })
+
+  test('test csu', async () => {
+    const res = await csu(null, username)
     checkRes(res)
   })
 

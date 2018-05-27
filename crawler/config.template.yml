@@ -59,6 +59,11 @@ crawlers:
       title: LeetCode（中国）
       description:
       url: https://leetcode-cn.com
+  - name: csu
+    meta:
+      title: CSU
+      description:
+      url: http://acm.csu.edu.cn/
   - name: vjudge
     meta:
       title: VJudge
