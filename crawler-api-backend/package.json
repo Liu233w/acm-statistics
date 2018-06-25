@@ -19,7 +19,7 @@
     "log4js": "^2.10.0"
   },
   "devDependencies": {
-    "eslint": "^4.19.1",
+    "eslint": "^5.0.0",
     "eslint-plugin-lodash": "^2.7.0",
     "jest": "^23.2.0",
     "supertest": "^3.1.0"
