@@ -25,7 +25,7 @@
     "nuxt": "^1.4.1",
     "superagent": "^3.8.3",
     "virtual-module-webpack-plugin": "^0.4.0",
-    "vuetify": "^1.0.19"
+    "vuetify": "^1.1.8"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.6",
