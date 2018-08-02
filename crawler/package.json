@@ -26,6 +26,7 @@
     "testPathIgnorePatterns": [
       "/node_modules/"
     ],
+    "testEnvironment": "node",
     "coverageDirectory": "./coverage/",
     "collectCoverage": true
   }
