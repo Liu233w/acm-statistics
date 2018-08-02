@@ -36,10 +36,10 @@ exports[`/ 1`] = `
           href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"
     >
     <style data-n-head="true"
-           type="text/css"
            id="vuetify-theme-stylesheet"
+           type="text/css"
     >
-      a{color:#1976d2;}.primary{background-color:#1976d2!important;border-color:#1976d2!important;}.primary--text{color:#1976d2!important;}.primary--textinput,.primary--texttextarea{caret-color:#1976d2!important;}.primary--after::after{background:#1976d2!important;}.primary.lighten-5{background-color:#c7fdff!important;border-color:#c7fdff!important;}.primary--text.text--lighten-5{color:#c7fdff!important;}.primary--text.text--lighten-5input,.primary--text.text--lighten-5textarea{caret-color:#c7fdff!important;}.primary.lighten-5--after::after{background:#c7fdff!important;}.primary.lighten-4{background-color:#a8e0ff!important;border-color:#a8e0ff!important;}.primary--text.text--lighten-4{color:#a8e0ff!important;}.primary--text.text--lighten-4input,.primary--text.text--lighten-4textarea{caret-color:#a8e0ff!important;}.primary.lighten-4--after::after{background:#a8e0ff!important;}.primary.lighten-3{background-color:#8ac5ff!important;border-color:#8ac5ff!important;}.primary--text.text--lighten-3{color:#8ac5ff!important;}.primary--text.text--lighten-3input,.primary--text.text--lighten-3textarea{caret-color:#8ac5ff!important;}.primary.lighten-3--after::after{background:#8ac5ff!important;}.primary.lighten-2{background-color:#6aaaff!important;border-color:#6aaaff!important;}.primary--text.text--lighten-2{color:#6aaaff!important;}.primary--text.text--lighten-2input,.primary--text.text--lighten-2textarea{caret-color:#6aaaff!important;}.primary.lighten-2--after::after{background:#6aaaff!important;}.primary.lighten-1{background-color:#488fef!important;border-color:#488fef!important;}.primary--text.text--lighten-1{color:#488fef!important;}.primary--text.text--lighten-1input,.primary--text.text--lighten-1textarea{caret-color:#488fef!important;}.primary.lighten-1--after::after{background:#488fef!important;}.primary.darken-1{background-color:#005eb6!important;border-color:#005eb6!important;}.primary--text.text--darken-1{color:#005eb6!important;}.primary--text.text--darken-1input,.primary--text.text--darken-1textarea{caret-color:#005eb6!important;}.primary.darken-1--after::after{background:#005eb6!important;}.primary.darken-2{background-color:#00479b!important;border-color:#00479b!important;}.primary--text.text--darken-2{color:#00479b!important;}.primary--text.text--darken-2input,.primary--text.text--darken-2textarea{caret-color:#00479b!important;}.primary.darken-2--after::after{background:#00479b!important;}.primary.darken-3{background-color:#003180!important;border-color:#003180!important;}.primary--text.text--darken-3{color:#003180!important;}.primary--text.text--darken-3input,.primary--text.text--darken-3textarea{caret-color:#003180!important;}.primary.darken-3--after::after{background:#003180!important;}.primary.darken-4{background-color:#001e67!important;border-color:#001e67!important;}.primary--text.text--darken-4{color:#001e67!important;}.primary--text.text--darken-4input,.primary--text.text--darken-4textarea{caret-color:#001e67!important;}.primary.darken-4--after::after{background:#001e67!important;}.secondary{background-color:#424242!important;border-color:#424242!important;}.secondary--text{color:#424242!important;}.secondary--textinput,.secondary--texttextarea{caret-color:#424242!important;}.secondary--after::after{background:#424242!important;}.secondary.lighten-5{background-color:#c1c1c1!important;border-color:#c1c1c1!important;}.secondary--text.text--lighten-5{color:#c1c1c1!important;}.secondary--text.text--lighten-5input,.secondary--text.text--lighten-5textarea{caret-color:#c1c1c1!important;}.secondary.lighten-5--after::after{background:#c1c1c1!important;}.secondary.lighten-4{background-color:#a6a6a6!important;border-color:#a6a6a6!important;}.secondary--text.text--lighten-4{color:#a6a6a6!important;}.secondary--text.text--lighten-4input,.secondary--text.text--lighten-4textarea{caret-color:#a6a6a6!important;}.secondary.lighten-4--after::after{background:#a6a6a6!important;}.secondary.lighten-3{background-color:#8b8b8b!important;border-color:#8b8b8b!important;}.secondary--text.text--lighten-3{color:#8b8b8b!important;}.secondary--text.text--lighten-3input,.secondary--text.text--lighten-3textarea{caret-color:#8b8b8b!important;}.secondary.lighten-3--after::after{background:#8b8b8b!important;}.secondary.lighten-2{background-color:#727272!important;border-color:#727272!important;}.secondary--text.text--lighten-2{color:#727272!important;}.secondary--text.text--lighten-2input,.secondary--text.text--lighten-2textarea{caret-color:#727272!important;}.secondary.lighten-2--after::after{background:#727272!important;}.secondary.lighten-1{background-color:#595959!important;border-color:#595959!important;}.secondary--text.text--lighten-1{color:#595959!important;}.secondary--text.text--lighten-1input,.secondary--text.text--lighten-1textarea{caret-color:#595959!important;}.secondary.lighten-1--after::after{background:#595959!important;}.secondary.darken-1{background-color:#2c2c2c!important;border-color:#2c2c2c!important;}.secondary--text.text--darken-1{color:#2c2c2c!important;}.secondary--text.text--darken-1input,.secondary--text.text--darken-1textarea{caret-color:#2c2c2c!important;}.secondary.darken-1--after::after{background:#2c2c2c!important;}.secondary.darken-2{background-color:#171717!important;border-color:#171717!important;}.secondary--text.text--darken-2{color:#171717!important;}.secondary--text.text--darken-2input,.secondary--text.text--darken-2textarea{caret-color:#171717!important;}.secondary.darken-2--after::after{background:#171717!important;}.secondary.darken-3{background-color:#000000!important;border-color:#000000!important;}.secondary--text.text--darken-3{color:#000000!important;}.secondary--text.text--darken-3input,.secondary--text.text--darken-3textarea{caret-color:#000000!important;}.secondary.darken-3--after::after{background:#000000!important;}.secondary.darken-4{background-color:#000000!important;border-color:#000000!important;}.secondary--text.text--darken-4{color:#000000!important;}.secondary--text.text--darken-4input,.secondary--text.text--darken-4textarea{caret-color:#000000!important;}.secondary.darken-4--after::after{background:#000000!important;}.accent{background-color:#82b1ff!important;border-color:#82b1ff!important;}.accent--text{color:#82b1ff!important;}.accent--textinput,.accent--texttextarea{caret-color:#82b1ff!important;}.accent--after::after{background:#82b1ff!important;}.accent.lighten-5{background-color:#ffffff!important;border-color:#ffffff!important;}.accent--text.text--lighten-5{color:#ffffff!important;}.accent--text.text--lighten-5input,.accent--text.text--lighten-5textarea{caret-color:#ffffff!important;}.accent.lighten-5--after::after{background:#ffffff!important;}.accent.lighten-4{background-color:#f8ffff!important;border-color:#f8ffff!important;}.accent--text.text--lighten-4{color:#f8ffff!important;}.accent--text.text--lighten-4input,.accent--text.text--lighten-4textarea{caret-color:#f8ffff!important;}.accent.lighten-4--after::after{background:#f8ffff!important;}.accent.lighten-3{background-color:#daffff!important;border-color:#daffff!important;}.accent--text.text--lighten-3{color:#daffff!important;}.accent--text.text--lighten-3input,.accent--text.text--lighten-3textarea{caret-color:#daffff!important;}.accent.lighten-3--after::after{background:#daffff!important;}.accent.lighten-2{background-color:#bce8ff!important;border-color:#bce8ff!important;}.accent--text.text--lighten-2{color:#bce8ff!important;}.accent--text.text--lighten-2input,.accent--text.text--lighten-2textarea{caret-color:#bce8ff!important;}.accent.lighten-2--after::after{background:#bce8ff!important;}.accent.lighten-1{background-color:#9fccff!important;border-color:#9fccff!important;}.accent--text.text--lighten-1{color:#9fccff!important;}.accent--text.text--lighten-1input,.accent--text.text--lighten-1textarea{caret-color:#9fccff!important;}.accent.lighten-1--after::after{background:#9fccff!important;}.accent.darken-1{background-color:#6596e2!important;border-color:#6596e2!important;}.accent--text.text--darken-1{color:#6596e2!important;}.accent--text.text--darken-1input,.accent--text.text--darken-1textarea{caret-color:#6596e2!important;}.accent.darken-1--after::after{background:#6596e2!important;}.accent.darken-2{background-color:#467dc6!important;border-color:#467dc6!important;}.accent--text.text--darken-2{color:#467dc6!important;}.accent--text.text--darken-2input,.accent--text.text--darken-2textarea{caret-color:#467dc6!important;}.accent.darken-2--after::after{background:#467dc6!important;}.accent.darken-3{background-color:#2364aa!important;border-color:#2364aa!important;}.accent--text.text--darken-3{color:#2364aa!important;}.accent--text.text--darken-3input,.accent--text.text--darken-3textarea{caret-color:#2364aa!important;}.accent.darken-3--after::after{background:#2364aa!important;}.accent.darken-4{background-color:#004c90!important;border-color:#004c90!important;}.accent--text.text--darken-4{color:#004c90!important;}.accent--text.text--darken-4input,.accent--text.text--darken-4textarea{caret-color:#004c90!important;}.accent.darken-4--after::after{background:#004c90!important;}.error{background-color:#ff5252!important;border-color:#ff5252!important;}.error--text{color:#ff5252!important;}.error--textinput,.error--texttextarea{caret-color:#ff5252!important;}.error--after::after{background:#ff5252!important;}.info{background-color:#2196f3!important;border-color:#2196f3!important;}.info--text{color:#2196f3!important;}.info--textinput,.info--texttextarea{caret-color:#2196f3!important;}.info--after::after{background:#2196f3!important;}.success{background-color:#4caf50!important;border-color:#4caf50!important;}.success--text{color:#4caf50!important;}.success--textinput,.success--texttextarea{caret-color:#4caf50!important;}.success--after::after{background:#4caf50!important;}.warning{background-color:#ffc107!important;border-color:#ffc107!important;}.warning--text{color:#ffc107!important;}.warning--textinput,.warning--texttextarea{caret-color:#ffc107!important;}.warning--after::after{background:#ffc107!important;}
+      a{color:#1976d2;}.primary{background-color:#1976d2!important;border-color:#1976d2!important;}.primary--text{color:#1976d2!important;}.primary--textinput,.primary--texttextarea{caret-color:#1976d2!important;}.primary.lighten-5{background-color:#c7fdff!important;border-color:#c7fdff!important;}.primary--text.text--lighten-5{color:#c7fdff!important;}.primary--text.text--lighten-5input,.primary--text.text--lighten-5textarea{caret-color:#c7fdff!important;}.primary.lighten-4{background-color:#a8e0ff!important;border-color:#a8e0ff!important;}.primary--text.text--lighten-4{color:#a8e0ff!important;}.primary--text.text--lighten-4input,.primary--text.text--lighten-4textarea{caret-color:#a8e0ff!important;}.primary.lighten-3{background-color:#8ac5ff!important;border-color:#8ac5ff!important;}.primary--text.text--lighten-3{color:#8ac5ff!important;}.primary--text.text--lighten-3input,.primary--text.text--lighten-3textarea{caret-color:#8ac5ff!important;}.primary.lighten-2{background-color:#6aaaff!important;border-color:#6aaaff!important;}.primary--text.text--lighten-2{color:#6aaaff!important;}.primary--text.text--lighten-2input,.primary--text.text--lighten-2textarea{caret-color:#6aaaff!important;}.primary.lighten-1{background-color:#488fef!important;border-color:#488fef!important;}.primary--text.text--lighten-1{color:#488fef!important;}.primary--text.text--lighten-1input,.primary--text.text--lighten-1textarea{caret-color:#488fef!important;}.primary.darken-1{background-color:#005eb6!important;border-color:#005eb6!important;}.primary--text.text--darken-1{color:#005eb6!important;}.primary--text.text--darken-1input,.primary--text.text--darken-1textarea{caret-color:#005eb6!important;}.primary.darken-2{background-color:#00479b!important;border-color:#00479b!important;}.primary--text.text--darken-2{color:#00479b!important;}.primary--text.text--darken-2input,.primary--text.text--darken-2textarea{caret-color:#00479b!important;}.primary.darken-3{background-color:#003180!important;border-color:#003180!important;}.primary--text.text--darken-3{color:#003180!important;}.primary--text.text--darken-3input,.primary--text.text--darken-3textarea{caret-color:#003180!important;}.primary.darken-4{background-color:#001e67!important;border-color:#001e67!important;}.primary--text.text--darken-4{color:#001e67!important;}.primary--text.text--darken-4input,.primary--text.text--darken-4textarea{caret-color:#001e67!important;}.secondary{background-color:#424242!important;border-color:#424242!important;}.secondary--text{color:#424242!important;}.secondary--textinput,.secondary--texttextarea{caret-color:#424242!important;}.secondary.lighten-5{background-color:#c1c1c1!important;border-color:#c1c1c1!important;}.secondary--text.text--lighten-5{color:#c1c1c1!important;}.secondary--text.text--lighten-5input,.secondary--text.text--lighten-5textarea{caret-color:#c1c1c1!important;}.secondary.lighten-4{background-color:#a6a6a6!important;border-color:#a6a6a6!important;}.secondary--text.text--lighten-4{color:#a6a6a6!important;}.secondary--text.text--lighten-4input,.secondary--text.text--lighten-4textarea{caret-color:#a6a6a6!important;}.secondary.lighten-3{background-color:#8b8b8b!important;border-color:#8b8b8b!important;}.secondary--text.text--lighten-3{color:#8b8b8b!important;}.secondary--text.text--lighten-3input,.secondary--text.text--lighten-3textarea{caret-color:#8b8b8b!important;}.secondary.lighten-2{background-color:#727272!important;border-color:#727272!important;}.secondary--text.text--lighten-2{color:#727272!important;}.secondary--text.text--lighten-2input,.secondary--text.text--lighten-2textarea{caret-color:#727272!important;}.secondary.lighten-1{background-color:#595959!important;border-color:#595959!important;}.secondary--text.text--lighten-1{color:#595959!important;}.secondary--text.text--lighten-1input,.secondary--text.text--lighten-1textarea{caret-color:#595959!important;}.secondary.darken-1{background-color:#2c2c2c!important;border-color:#2c2c2c!important;}.secondary--text.text--darken-1{color:#2c2c2c!important;}.secondary--text.text--darken-1input,.secondary--text.text--darken-1textarea{caret-color:#2c2c2c!important;}.secondary.darken-2{background-color:#171717!important;border-color:#171717!important;}.secondary--text.text--darken-2{color:#171717!important;}.secondary--text.text--darken-2input,.secondary--text.text--darken-2textarea{caret-color:#171717!important;}.secondary.darken-3{background-color:#000000!important;border-color:#000000!important;}.secondary--text.text--darken-3{color:#000000!important;}.secondary--text.text--darken-3input,.secondary--text.text--darken-3textarea{caret-color:#000000!important;}.secondary.darken-4{background-color:#000000!important;border-color:#000000!important;}.secondary--text.text--darken-4{color:#000000!important;}.secondary--text.text--darken-4input,.secondary--text.text--darken-4textarea{caret-color:#000000!important;}.accent{background-color:#82b1ff!important;border-color:#82b1ff!important;}.accent--text{color:#82b1ff!important;}.accent--textinput,.accent--texttextarea{caret-color:#82b1ff!important;}.accent.lighten-5{background-color:#ffffff!important;border-color:#ffffff!important;}.accent--text.text--lighten-5{color:#ffffff!important;}.accent--text.text--lighten-5input,.accent--text.text--lighten-5textarea{caret-color:#ffffff!important;}.accent.lighten-4{background-color:#f8ffff!important;border-color:#f8ffff!important;}.accent--text.text--lighten-4{color:#f8ffff!important;}.accent--text.text--lighten-4input,.accent--text.text--lighten-4textarea{caret-color:#f8ffff!important;}.accent.lighten-3{background-color:#daffff!important;border-color:#daffff!important;}.accent--text.text--lighten-3{color:#daffff!important;}.accent--text.text--lighten-3input,.accent--text.text--lighten-3textarea{caret-color:#daffff!important;}.accent.lighten-2{background-color:#bce8ff!important;border-color:#bce8ff!important;}.accent--text.text--lighten-2{color:#bce8ff!important;}.accent--text.text--lighten-2input,.accent--text.text--lighten-2textarea{caret-color:#bce8ff!important;}.accent.lighten-1{background-color:#9fccff!important;border-color:#9fccff!important;}.accent--text.text--lighten-1{color:#9fccff!important;}.accent--text.text--lighten-1input,.accent--text.text--lighten-1textarea{caret-color:#9fccff!important;}.accent.darken-1{background-color:#6596e2!important;border-color:#6596e2!important;}.accent--text.text--darken-1{color:#6596e2!important;}.accent--text.text--darken-1input,.accent--text.text--darken-1textarea{caret-color:#6596e2!important;}.accent.darken-2{background-color:#467dc6!important;border-color:#467dc6!important;}.accent--text.text--darken-2{color:#467dc6!important;}.accent--text.text--darken-2input,.accent--text.text--darken-2textarea{caret-color:#467dc6!important;}.accent.darken-3{background-color:#2364aa!important;border-color:#2364aa!important;}.accent--text.text--darken-3{color:#2364aa!important;}.accent--text.text--darken-3input,.accent--text.text--darken-3textarea{caret-color:#2364aa!important;}.accent.darken-4{background-color:#004c90!important;border-color:#004c90!important;}.accent--text.text--darken-4{color:#004c90!important;}.accent--text.text--darken-4input,.accent--text.text--darken-4textarea{caret-color:#004c90!important;}.error{background-color:#ff5252!important;border-color:#ff5252!important;}.error--text{color:#ff5252!important;}.error--textinput,.error--texttextarea{caret-color:#ff5252!important;}.info{background-color:#2196f3!important;border-color:#2196f3!important;}.info--text{color:#2196f3!important;}.info--textinput,.info--texttextarea{caret-color:#2196f3!important;}.success{background-color:#4caf50!important;border-color:#4caf50!important;}.success--text{color:#4caf50!important;}.success--textinput,.success--texttextarea{caret-color:#4caf50!important;}.warning{background-color:#ffc107!important;border-color:#ffc107!important;}.warning--text{color:#ffc107!important;}.warning--textinput,.warning--texttextarea{caret-color:#ffc107!important;}
     </style>
     <style>
       .index-title{text-shadow:1px 0 #ecf5ff,0 1px #ecf5ff,0 -1px #ecf5ff,-1px 0 #ecf5ff}.response-title{text-shadow:1px 0 #000,0 1px #000,0 -1px #000,-1px 0 #000}
@@ -64,19 +64,19 @@ exports[`/ 1`] = `
              class="application theme--light"
         >
           <div class="application--wrap">
-            <nav class="white toolbar"
+            <nav class="white v-toolbar"
                  style="margin-top:0px;padding-right:0px;padding-left:0px;transform:translateY(0px);"
             >
-              <div class="toolbar__content"
+              <div class="v-toolbar__content"
                    style="height:56px;"
               >
-                <div class="toolbar__title">
+                <div class="v-toolbar__title">
                   NWPU-ACM &#x67E5;&#x8BE2;&#x7CFB;&#x7EDF;
                 </div>
                 <div class="spacer">
                 </div>
-                <span class="tooltip tooltip--left">
-                  <div class="tooltip__content"
+                <span class="v-tooltip v-tooltip--left">
+                  <div class="v-tooltip__content"
                        style="left:12px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"
                   >
                     <span>
@@ -86,11 +86,11 @@ exports[`/ 1`] = `
                   <span>
                     <a href="https://github.com/Liu233w/acm-statistics"
                        target="_blank"
-                       class="btn btn--icon"
+                       class="v-btn v-btn--icon"
                     >
-                      <div class="btn__content">
+                      <div class="v-btn__content">
                         <i aria-hidden="true"
-                           class="icon fa fa fa fa-github"
+                           class="v-icon fa fa fa fa-github"
                         >
                         </i>
                       </div>
@@ -99,21 +99,21 @@ exports[`/ 1`] = `
                 </span>
               </div>
             </nav>
-            <main class="content"
+            <main class="v-content"
                   style="padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px;"
             >
-              <div class="content--wrap">
+              <div class="v-content__wrap">
                 <section>
-                  <div class="parallax"
+                  <div class="v-parallax"
                        style="height:600px;"
                   >
-                    <div class="parallax__image-container">
+                    <div class="v-parallax__image-container">
                       <img src="/_nuxt/img/back7-brighten.71e76da.jpg"
-                           class="parallax__image"
-                           style="display:block;opacity:0;transform:translate(-50%, nullpx);"
+                           class="v-parallax__image"
+                           style="display:block;opacity:0;transform:translate(-50%, 0px);"
                       >
                     </div>
-                    <div class="parallax__content">
+                    <div class="v-parallax__content">
                       <div class="layout white--text column align-center justify-center">
                         <img src="/_nuxt/img/logo.ff6479c.png"
                              alt="Vuetify.js"
@@ -126,9 +126,9 @@ exports[`/ 1`] = `
                           &#x7531; NWPU-ACM &#x6280;&#x672F;&#x7EC4;&#x5F3A;&#x529B;&#x9A71;&#x52A8;
                         </div>
                         <a href="/statistics"
-                           class="blue lighten-2 black--text mt-5 btn btn--large btn--router theme--dark"
+                           class="blue lighten-2 black--text mt-5 v-btn v-btn--large v-btn--router theme--dark"
                         >
-                          <div class="btn__content">
+                          <div class="v-btn__content">
                             &#x8FDB;&#x5165; OJ &#x9898;&#x91CF;&#x7EDF;&#x8BA1;
                           </div>
                         </a>
@@ -152,23 +152,23 @@ exports[`/ 1`] = `
                       <div class="container grid-list-xl">
                         <div class="layout row wrap align-center">
                           <div class="flex xs12 md4">
-                            <div class="elevation-0 transparent card"
-                                 style="height:auto;"
+                            <div class="elevation-0 transparent v-card"
+                                 style="height:undefined;"
                             >
-                              <div class="card__text text-xs-center">
+                              <div class="v-card__text text-xs-center">
                                 <i aria-hidden="true"
-                                   class="icon blue--text text--lighten-2 material-icons"
+                                   class="v-icon blue--text text--lighten-2 material-icons"
                                    style="font-size:40px;"
                                 >
                                   link
                                 </i>
                               </div>
-                              <div class="card__title layout justify-center card__title--primary">
+                              <div class="v-card__title layout justify-center v-card__title--primary">
                                 <div class="headline text-xs-center">
                                   &#x514D;&#x8D39;&#x63D0;&#x4F9B;&#x9898;&#x91CF;&#x67E5;&#x8BE2;API
                                 </div>
                               </div>
-                              <div class="card__text">
+                              <div class="v-card__text">
                                 &#x6211;&#x4EEC;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E2A; RESTful API &#x6765;&#x4F9B;&#x60A8;&#x4F7F;&#x7528;&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x5728;&#x4EFB;&#x610F;&#x7684;&#x5BA2;&#x6237;&#x7AEF;&#x3001;&#x7F51;&#x7AD9;&#x4E2D;&#x8C03;&#x7528;&#x6B64;API&#x6765;&#x67E5;&#x8BE2;&#x67D0;&#x7528;&#x6237;&#x5728;OJ&#x4E0A;&#x7684;&#x63D0;&#x4EA4;&#x6570;/&#x901A;&#x8FC7;&#x6570;&#x3002;
                     &#x8BBF;&#x95EE;&#x6211;&#x4EEC;&#x7684;
                                 <a href="/swagger"
@@ -181,22 +181,22 @@ exports[`/ 1`] = `
                             </div>
                           </div>
                           <div class="flex xs12 md4">
-                            <div class="elevation-0 transparent card"
-                                 style="height:auto;"
+                            <div class="elevation-0 transparent v-card"
+                                 style="height:undefined;"
                             >
-                              <div class="card__text text-xs-center">
+                              <div class="v-card__text text-xs-center">
                                 <i aria-hidden="true"
-                                   class="icon blue--text text--lighten-2 fa fa fa fa-github"
+                                   class="v-icon blue--text text--lighten-2 fa fa fa fa-github"
                                    style="font-size:40px;"
                                 >
                                 </i>
                               </div>
-                              <div class="card__title layout justify-center card__title--primary">
+                              <div class="v-card__title layout justify-center v-card__title--primary">
                                 <div class="headline text-xs-center">
                                   &#x5B8C;&#x5168;&#x5F00;&#x6E90;
                                 </div>
                               </div>
-                              <div class="card__text">
+                              <div class="v-card__text">
                                 &#x8BBF;&#x95EE;&#x6211;&#x4EEC;&#x7684;
                                 <a href="https://github.com/Liu233w/acm-statistics"
                                    target="_blank"
@@ -209,23 +209,23 @@ exports[`/ 1`] = `
                             </div>
                           </div>
                           <div class="flex xs12 md4">
-                            <div class="elevation-0 transparent card"
-                                 style="height:auto;"
+                            <div class="elevation-0 transparent v-card"
+                                 style="height:undefined;"
                             >
-                              <div class="card__text text-xs-center">
+                              <div class="v-card__text text-xs-center">
                                 <i aria-hidden="true"
-                                   class="icon blue--text text--lighten-2 material-icons"
+                                   class="v-icon blue--text text--lighten-2 material-icons"
                                    style="font-size:40px;"
                                 >
                                   build
                                 </i>
                               </div>
-                              <div class="card__title layout justify-center card__title--primary">
+                              <div class="v-card__title layout justify-center v-card__title--primary">
                                 <div class="headline text-xs-center">
                                   &#x66F4;&#x591A;&#x529F;&#x80FD;&#x652F;&#x6301;&#x4E2D;
                                 </div>
                               </div>
-                              <div class="card__text">
+                              <div class="v-card__text">
                                 &#x65E7;&#x7248;&#x67E5;&#x8BE2;&#x7CFB;&#x7EDF;&#x4E2D;&#x7684;&#x529F;&#x80FD;&#x6B63;&#x5728;&#x88AB;&#x79FB;&#x690D;&#x5230;&#x65B0;&#x7248;&#x67E5;&#x8BE2;&#x7CFB;&#x7EDF;&#x4E2D;&#xFF0C;&#x5982;&#x679C;&#x60A8;&#x9700;&#x8981;&#x65E7;&#x7248;&#x67E5;&#x8BE2;&#x7CFB;&#x7EDF;&#x4E2D;&#x7684;&#x529F;&#x80FD;&#xFF0C;&#x8BF7;
                                 <a href="//npuacm.info/">
                                   &#x5355;&#x51FB;&#x6B64;&#x5904;&#x8FD4;&#x56DE;&#x65E7;&#x7248;&#x67E5;&#x8BE2;&#x7CFB;&#x7EDF;
@@ -239,16 +239,16 @@ exports[`/ 1`] = `
                   </div>
                 </section>
                 <section>
-                  <div class="parallax"
+                  <div class="v-parallax"
                        style="height:380px;"
                   >
-                    <div class="parallax__image-container">
+                    <div class="v-parallax__image-container">
                       <img src="/_nuxt/img/back4.5e3f578.jpg"
-                           class="parallax__image"
-                           style="display:block;opacity:0;transform:translate(-50%, nullpx);"
+                           class="v-parallax__image"
+                           style="display:block;opacity:0;transform:translate(-50%, 0px);"
                       >
                     </div>
-                    <div class="parallax__content">
+                    <div class="v-parallax__content">
                       <div class="layout column align-center justify-center">
                         <div class="headline white--text mb-3 text-xs-center response-title">
                           &#x6B22;&#x8FCE;&#x5411;&#x6211;&#x4EEC;&#x63D0;&#x51FA;&#x610F;&#x89C1;&#x4EE5;&#x5E2E;&#x52A9;&#x672C;&#x7F51;&#x7AD9;&#x8FDB;&#x6B65;
@@ -260,9 +260,9 @@ exports[`/ 1`] = `
                         </a>
                         <a href="https://github.com/Liu233w/acm-statistics/issues/new"
                            target="_blank"
-                           class="blue lighten-2 mt-5 btn btn--large theme--dark"
+                           class="blue lighten-2 mt-5 v-btn v-btn--large theme--dark"
                         >
-                          <div class="btn__content">
+                          <div class="v-btn__content">
                             Submit New Issue
                           </div>
                         </a>
@@ -274,15 +274,15 @@ exports[`/ 1`] = `
                   <div class="container grid-list-xl">
                     <div class="layout my-5 row wrap justify-center">
                       <div class="flex xs12 sm4">
-                        <div class="elevation-0 transparent card"
-                             style="height:auto;"
+                        <div class="elevation-0 transparent v-card"
+                             style="height:undefined;"
                         >
-                          <div class="card__title layout justify-center card__title--primary">
+                          <div class="v-card__title layout justify-center v-card__title--primary">
                             <div class="headline">
                               &#x5173;&#x4E8E;&#x6211;&#x4EEC;
                             </div>
                           </div>
-                          <div class="card__text">
+                          <div class="v-card__text">
                             <p>
                               &#x897F;&#x5317;&#x5DE5;&#x4E1A;&#x5927;&#x5B66;ACM&#x534F;&#x4F1A;&#x6280;&#x672F;&#x7EC4;&#x81F4;&#x529B;&#x4E8E;&#x4E3A;&#x5E7F;&#x5927;&#x5B66;&#x751F;&#x63D0;&#x4F9B;&#x5404;&#x7C7B;&#x8BA1;&#x7B97;&#x673A;&#x3001;&#x7B97;&#x6CD5;&#x3001;&#x8BA1;&#x7B97;&#x673A;&#x7C7B;&#x7ADE;&#x8D5B;&#x65B9;&#x9762;&#x7684;&#x8BBE;&#x65BD;&#x53CA;&#x670D;&#x52A1;&#x3002;
                   &#x6B22;&#x8FCE;&#x5404;&#x4F4D;&#x6709;&#x8BC6;&#x4E4B;&#x58EB;&#x52A0;&#x5165;&#x3002;
@@ -308,44 +308,44 @@ exports[`/ 1`] = `
                         </div>
                       </div>
                       <div class="flex xs12 sm4 offset-sm1">
-                        <div class="elevation-0 transparent card"
-                             style="height:auto;"
+                        <div class="elevation-0 transparent v-card"
+                             style="height:undefined;"
                         >
-                          <div class="card__title layout justify-center card__title--primary">
+                          <div class="v-card__title layout justify-center v-card__title--primary">
                             <div class="headline">
                               &#x8054;&#x7CFB;&#x6211;&#x4EEC;
                             </div>
                           </div>
-                          <div class="list transparent">
+                          <div class="v-list transparent">
                             <div>
                               <a href="https://jq.qq.com/?_wv=1027&amp;k=5qgzfQc"
                                  target="_blank"
-                                 class="list__tile list__tile--link"
+                                 class="v-list__tile v-list__tile--link"
                               >
-                                <div class="list__tile__action">
+                                <div class="v-list__tile__action">
                                   <i aria-hidden="true"
-                                     class="icon blue--text text--lighten-2 fa fa fa fa-qq"
+                                     class="v-icon blue--text text--lighten-2 fa fa fa fa-qq"
                                   >
                                   </i>
                                 </div>
-                                <div class="list__tile__content">
-                                  <div class="list__tile__title">
+                                <div class="v-list__tile__content">
+                                  <div class="v-list__tile__title">
                                     198820787
                                   </div>
                                 </div>
                               </a>
                             </div>
                             <div>
-                              <a class="list__tile list__tile--link">
-                                <div class="list__tile__action">
+                              <a class="v-list__tile v-list__tile--link">
+                                <div class="v-list__tile__action">
                                   <i aria-hidden="true"
-                                     class="icon blue--text text--lighten-2 material-icons"
+                                     class="v-icon blue--text text--lighten-2 material-icons"
                                   >
                                     place
                                   </i>
                                 </div>
-                                <div class="list__tile__content">
-                                  <div class="list__tile__title">
+                                <div class="v-list__tile__content">
+                                  <div class="v-list__tile__title">
                                     &#x9655;&#x897F;&#x7701;&#x897F;&#x5B89;&#x5E02;&#x957F;&#x5B89;&#x533A;&#x897F;&#x5317;&#x5DE5;&#x4E1A;&#x5927;&#x5B66;&#x957F;&#x5B89;&#x6821;&#x533A;&#x8BA1;&#x7B97;&#x673A;&#x5B66;&#x9662;110&#x5BA4;
                                   </div>
                                 </div>
@@ -353,32 +353,32 @@ exports[`/ 1`] = `
                             </div>
                             <div>
                               <a href="mailto:support@npuacm.info"
-                                 class="list__tile list__tile--link"
+                                 class="v-list__tile v-list__tile--link"
                               >
-                                <div class="list__tile__action">
+                                <div class="v-list__tile__action">
                                   <i aria-hidden="true"
-                                     class="icon blue--text text--lighten-2 material-icons"
+                                     class="v-icon blue--text text--lighten-2 material-icons"
                                   >
                                     email
                                   </i>
                                 </div>
-                                <div class="list__tile__content">
-                                  <div class="list__tile__title">
+                                <div class="v-list__tile__content">
+                                  <div class="v-list__tile__title">
                                     support@npuacm.info
                                   </div>
                                 </div>
                               </a>
                             </div>
                             <div>
-                              <a class="list__tile list__tile--link">
-                                <div class="list__tile__action">
+                              <a class="v-list__tile v-list__tile--link">
+                                <div class="v-list__tile__action">
                                   <i aria-hidden="true"
-                                     class="icon blue--text text--lighten-2 fa fa fa fa-weixin"
+                                     class="v-icon blue--text text--lighten-2 fa fa fa fa-weixin"
                                   >
                                   </i>
                                 </div>
-                                <div class="list__tile__content">
-                                  <div class="list__tile__title">
+                                <div class="v-list__tile__content">
+                                  <div class="v-list__tile__title">
                                     &#x5FAE;&#x4FE1;&#x516C;&#x4F17;&#x53F7;
                                   </div>
                                 </div>
@@ -388,35 +388,35 @@ exports[`/ 1`] = `
                         </div>
                       </div>
                     </div>
-                    <div class="dialog__container"
+                    <div class="v-dialog__container"
                          style="display:block;"
                     >
                       <div tabindex="-1"
-                           class="dialog__content"
+                           class="v-dialog__content"
                            style="z-index:0;"
                       >
-                        <div class="dialog"
+                        <div class="v-dialog"
                              style="max-width:500px;width:undefined;display:none;"
                         >
-                          <div class="card"
-                               style="height:auto;"
+                          <div class="v-card"
+                               style="height:undefined;"
                           >
-                            <div class="card__title">
+                            <div class="v-card__title">
                               <span>
                                 &#x5FAE;&#x4FE1;&#x516C;&#x4F17;&#x53F7;
                               </span>
                             </div>
-                            <div class="card__text">
+                            <div class="v-card__text">
                               <img src="/_nuxt/img/wechat.4d1d170.jpg"
                                    alt="&#x516C;&#x4F17;&#x53F7;&#x4E8C;&#x7EF4;&#x7801;"
                                    style="height:300px;"
                               >
                             </div>
-                            <div class="card__actions">
+                            <div class="v-card__actions">
                               <button type="button"
-                                      class="btn btn--flat primary--text"
+                                      class="v-btn v-btn--flat primary--text"
                               >
-                                <div class="btn__content">
+                                <div class="v-btn__content">
                                   &#x5173;&#x95ED;
                                 </div>
                               </button>
@@ -427,7 +427,7 @@ exports[`/ 1`] = `
                     </div>
                   </div>
                 </section>
-                <footer class="footer blue darken-2"
+                <footer class="v-footer blue darken-2"
                         style="height:32px;"
                 >
                   <span class="white--text ml-3">
@@ -489,10 +489,10 @@ exports[`/statistics 1`] = `
           href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"
     >
     <style data-n-head="true"
-           type="text/css"
            id="vuetify-theme-stylesheet"
+           type="text/css"
     >
-      a{color:#1976d2;}.primary{background-color:#1976d2!important;border-color:#1976d2!important;}.primary--text{color:#1976d2!important;}.primary--textinput,.primary--texttextarea{caret-color:#1976d2!important;}.primary--after::after{background:#1976d2!important;}.primary.lighten-5{background-color:#c7fdff!important;border-color:#c7fdff!important;}.primary--text.text--lighten-5{color:#c7fdff!important;}.primary--text.text--lighten-5input,.primary--text.text--lighten-5textarea{caret-color:#c7fdff!important;}.primary.lighten-5--after::after{background:#c7fdff!important;}.primary.lighten-4{background-color:#a8e0ff!important;border-color:#a8e0ff!important;}.primary--text.text--lighten-4{color:#a8e0ff!important;}.primary--text.text--lighten-4input,.primary--text.text--lighten-4textarea{caret-color:#a8e0ff!important;}.primary.lighten-4--after::after{background:#a8e0ff!important;}.primary.lighten-3{background-color:#8ac5ff!important;border-color:#8ac5ff!important;}.primary--text.text--lighten-3{color:#8ac5ff!important;}.primary--text.text--lighten-3input,.primary--text.text--lighten-3textarea{caret-color:#8ac5ff!important;}.primary.lighten-3--after::after{background:#8ac5ff!important;}.primary.lighten-2{background-color:#6aaaff!important;border-color:#6aaaff!important;}.primary--text.text--lighten-2{color:#6aaaff!important;}.primary--text.text--lighten-2input,.primary--text.text--lighten-2textarea{caret-color:#6aaaff!important;}.primary.lighten-2--after::after{background:#6aaaff!important;}.primary.lighten-1{background-color:#488fef!important;border-color:#488fef!important;}.primary--text.text--lighten-1{color:#488fef!important;}.primary--text.text--lighten-1input,.primary--text.text--lighten-1textarea{caret-color:#488fef!important;}.primary.lighten-1--after::after{background:#488fef!important;}.primary.darken-1{background-color:#005eb6!important;border-color:#005eb6!important;}.primary--text.text--darken-1{color:#005eb6!important;}.primary--text.text--darken-1input,.primary--text.text--darken-1textarea{caret-color:#005eb6!important;}.primary.darken-1--after::after{background:#005eb6!important;}.primary.darken-2{background-color:#00479b!important;border-color:#00479b!important;}.primary--text.text--darken-2{color:#00479b!important;}.primary--text.text--darken-2input,.primary--text.text--darken-2textarea{caret-color:#00479b!important;}.primary.darken-2--after::after{background:#00479b!important;}.primary.darken-3{background-color:#003180!important;border-color:#003180!important;}.primary--text.text--darken-3{color:#003180!important;}.primary--text.text--darken-3input,.primary--text.text--darken-3textarea{caret-color:#003180!important;}.primary.darken-3--after::after{background:#003180!important;}.primary.darken-4{background-color:#001e67!important;border-color:#001e67!important;}.primary--text.text--darken-4{color:#001e67!important;}.primary--text.text--darken-4input,.primary--text.text--darken-4textarea{caret-color:#001e67!important;}.primary.darken-4--after::after{background:#001e67!important;}.secondary{background-color:#424242!important;border-color:#424242!important;}.secondary--text{color:#424242!important;}.secondary--textinput,.secondary--texttextarea{caret-color:#424242!important;}.secondary--after::after{background:#424242!important;}.secondary.lighten-5{background-color:#c1c1c1!important;border-color:#c1c1c1!important;}.secondary--text.text--lighten-5{color:#c1c1c1!important;}.secondary--text.text--lighten-5input,.secondary--text.text--lighten-5textarea{caret-color:#c1c1c1!important;}.secondary.lighten-5--after::after{background:#c1c1c1!important;}.secondary.lighten-4{background-color:#a6a6a6!important;border-color:#a6a6a6!important;}.secondary--text.text--lighten-4{color:#a6a6a6!important;}.secondary--text.text--lighten-4input,.secondary--text.text--lighten-4textarea{caret-color:#a6a6a6!important;}.secondary.lighten-4--after::after{background:#a6a6a6!important;}.secondary.lighten-3{background-color:#8b8b8b!important;border-color:#8b8b8b!important;}.secondary--text.text--lighten-3{color:#8b8b8b!important;}.secondary--text.text--lighten-3input,.secondary--text.text--lighten-3textarea{caret-color:#8b8b8b!important;}.secondary.lighten-3--after::after{background:#8b8b8b!important;}.secondary.lighten-2{background-color:#727272!important;border-color:#727272!important;}.secondary--text.text--lighten-2{color:#727272!important;}.secondary--text.text--lighten-2input,.secondary--text.text--lighten-2textarea{caret-color:#727272!important;}.secondary.lighten-2--after::after{background:#727272!important;}.secondary.lighten-1{background-color:#595959!important;border-color:#595959!important;}.secondary--text.text--lighten-1{color:#595959!important;}.secondary--text.text--lighten-1input,.secondary--text.text--lighten-1textarea{caret-color:#595959!important;}.secondary.lighten-1--after::after{background:#595959!important;}.secondary.darken-1{background-color:#2c2c2c!important;border-color:#2c2c2c!important;}.secondary--text.text--darken-1{color:#2c2c2c!important;}.secondary--text.text--darken-1input,.secondary--text.text--darken-1textarea{caret-color:#2c2c2c!important;}.secondary.darken-1--after::after{background:#2c2c2c!important;}.secondary.darken-2{background-color:#171717!important;border-color:#171717!important;}.secondary--text.text--darken-2{color:#171717!important;}.secondary--text.text--darken-2input,.secondary--text.text--darken-2textarea{caret-color:#171717!important;}.secondary.darken-2--after::after{background:#171717!important;}.secondary.darken-3{background-color:#000000!important;border-color:#000000!important;}.secondary--text.text--darken-3{color:#000000!important;}.secondary--text.text--darken-3input,.secondary--text.text--darken-3textarea{caret-color:#000000!important;}.secondary.darken-3--after::after{background:#000000!important;}.secondary.darken-4{background-color:#000000!important;border-color:#000000!important;}.secondary--text.text--darken-4{color:#000000!important;}.secondary--text.text--darken-4input,.secondary--text.text--darken-4textarea{caret-color:#000000!important;}.secondary.darken-4--after::after{background:#000000!important;}.accent{background-color:#82b1ff!important;border-color:#82b1ff!important;}.accent--text{color:#82b1ff!important;}.accent--textinput,.accent--texttextarea{caret-color:#82b1ff!important;}.accent--after::after{background:#82b1ff!important;}.accent.lighten-5{background-color:#ffffff!important;border-color:#ffffff!important;}.accent--text.text--lighten-5{color:#ffffff!important;}.accent--text.text--lighten-5input,.accent--text.text--lighten-5textarea{caret-color:#ffffff!important;}.accent.lighten-5--after::after{background:#ffffff!important;}.accent.lighten-4{background-color:#f8ffff!important;border-color:#f8ffff!important;}.accent--text.text--lighten-4{color:#f8ffff!important;}.accent--text.text--lighten-4input,.accent--text.text--lighten-4textarea{caret-color:#f8ffff!important;}.accent.lighten-4--after::after{background:#f8ffff!important;}.accent.lighten-3{background-color:#daffff!important;border-color:#daffff!important;}.accent--text.text--lighten-3{color:#daffff!important;}.accent--text.text--lighten-3input,.accent--text.text--lighten-3textarea{caret-color:#daffff!important;}.accent.lighten-3--after::after{background:#daffff!important;}.accent.lighten-2{background-color:#bce8ff!important;border-color:#bce8ff!important;}.accent--text.text--lighten-2{color:#bce8ff!important;}.accent--text.text--lighten-2input,.accent--text.text--lighten-2textarea{caret-color:#bce8ff!important;}.accent.lighten-2--after::after{background:#bce8ff!important;}.accent.lighten-1{background-color:#9fccff!important;border-color:#9fccff!important;}.accent--text.text--lighten-1{color:#9fccff!important;}.accent--text.text--lighten-1input,.accent--text.text--lighten-1textarea{caret-color:#9fccff!important;}.accent.lighten-1--after::after{background:#9fccff!important;}.accent.darken-1{background-color:#6596e2!important;border-color:#6596e2!important;}.accent--text.text--darken-1{color:#6596e2!important;}.accent--text.text--darken-1input,.accent--text.text--darken-1textarea{caret-color:#6596e2!important;}.accent.darken-1--after::after{background:#6596e2!important;}.accent.darken-2{background-color:#467dc6!important;border-color:#467dc6!important;}.accent--text.text--darken-2{color:#467dc6!important;}.accent--text.text--darken-2input,.accent--text.text--darken-2textarea{caret-color:#467dc6!important;}.accent.darken-2--after::after{background:#467dc6!important;}.accent.darken-3{background-color:#2364aa!important;border-color:#2364aa!important;}.accent--text.text--darken-3{color:#2364aa!important;}.accent--text.text--darken-3input,.accent--text.text--darken-3textarea{caret-color:#2364aa!important;}.accent.darken-3--after::after{background:#2364aa!important;}.accent.darken-4{background-color:#004c90!important;border-color:#004c90!important;}.accent--text.text--darken-4{color:#004c90!important;}.accent--text.text--darken-4input,.accent--text.text--darken-4textarea{caret-color:#004c90!important;}.accent.darken-4--after::after{background:#004c90!important;}.error{background-color:#ff5252!important;border-color:#ff5252!important;}.error--text{color:#ff5252!important;}.error--textinput,.error--texttextarea{caret-color:#ff5252!important;}.error--after::after{background:#ff5252!important;}.info{background-color:#2196f3!important;border-color:#2196f3!important;}.info--text{color:#2196f3!important;}.info--textinput,.info--texttextarea{caret-color:#2196f3!important;}.info--after::after{background:#2196f3!important;}.success{background-color:#4caf50!important;border-color:#4caf50!important;}.success--text{color:#4caf50!important;}.success--textinput,.success--texttextarea{caret-color:#4caf50!important;}.success--after::after{background:#4caf50!important;}.warning{background-color:#ffc107!important;border-color:#ffc107!important;}.warning--text{color:#ffc107!important;}.warning--textinput,.warning--texttextarea{caret-color:#ffc107!important;}.warning--after::after{background:#ffc107!important;}
+      a{color:#1976d2;}.primary{background-color:#1976d2!important;border-color:#1976d2!important;}.primary--text{color:#1976d2!important;}.primary--textinput,.primary--texttextarea{caret-color:#1976d2!important;}.primary.lighten-5{background-color:#c7fdff!important;border-color:#c7fdff!important;}.primary--text.text--lighten-5{color:#c7fdff!important;}.primary--text.text--lighten-5input,.primary--text.text--lighten-5textarea{caret-color:#c7fdff!important;}.primary.lighten-4{background-color:#a8e0ff!important;border-color:#a8e0ff!important;}.primary--text.text--lighten-4{color:#a8e0ff!important;}.primary--text.text--lighten-4input,.primary--text.text--lighten-4textarea{caret-color:#a8e0ff!important;}.primary.lighten-3{background-color:#8ac5ff!important;border-color:#8ac5ff!important;}.primary--text.text--lighten-3{color:#8ac5ff!important;}.primary--text.text--lighten-3input,.primary--text.text--lighten-3textarea{caret-color:#8ac5ff!important;}.primary.lighten-2{background-color:#6aaaff!important;border-color:#6aaaff!important;}.primary--text.text--lighten-2{color:#6aaaff!important;}.primary--text.text--lighten-2input,.primary--text.text--lighten-2textarea{caret-color:#6aaaff!important;}.primary.lighten-1{background-color:#488fef!important;border-color:#488fef!important;}.primary--text.text--lighten-1{color:#488fef!important;}.primary--text.text--lighten-1input,.primary--text.text--lighten-1textarea{caret-color:#488fef!important;}.primary.darken-1{background-color:#005eb6!important;border-color:#005eb6!important;}.primary--text.text--darken-1{color:#005eb6!important;}.primary--text.text--darken-1input,.primary--text.text--darken-1textarea{caret-color:#005eb6!important;}.primary.darken-2{background-color:#00479b!important;border-color:#00479b!important;}.primary--text.text--darken-2{color:#00479b!important;}.primary--text.text--darken-2input,.primary--text.text--darken-2textarea{caret-color:#00479b!important;}.primary.darken-3{background-color:#003180!important;border-color:#003180!important;}.primary--text.text--darken-3{color:#003180!important;}.primary--text.text--darken-3input,.primary--text.text--darken-3textarea{caret-color:#003180!important;}.primary.darken-4{background-color:#001e67!important;border-color:#001e67!important;}.primary--text.text--darken-4{color:#001e67!important;}.primary--text.text--darken-4input,.primary--text.text--darken-4textarea{caret-color:#001e67!important;}.secondary{background-color:#424242!important;border-color:#424242!important;}.secondary--text{color:#424242!important;}.secondary--textinput,.secondary--texttextarea{caret-color:#424242!important;}.secondary.lighten-5{background-color:#c1c1c1!important;border-color:#c1c1c1!important;}.secondary--text.text--lighten-5{color:#c1c1c1!important;}.secondary--text.text--lighten-5input,.secondary--text.text--lighten-5textarea{caret-color:#c1c1c1!important;}.secondary.lighten-4{background-color:#a6a6a6!important;border-color:#a6a6a6!important;}.secondary--text.text--lighten-4{color:#a6a6a6!important;}.secondary--text.text--lighten-4input,.secondary--text.text--lighten-4textarea{caret-color:#a6a6a6!important;}.secondary.lighten-3{background-color:#8b8b8b!important;border-color:#8b8b8b!important;}.secondary--text.text--lighten-3{color:#8b8b8b!important;}.secondary--text.text--lighten-3input,.secondary--text.text--lighten-3textarea{caret-color:#8b8b8b!important;}.secondary.lighten-2{background-color:#727272!important;border-color:#727272!important;}.secondary--text.text--lighten-2{color:#727272!important;}.secondary--text.text--lighten-2input,.secondary--text.text--lighten-2textarea{caret-color:#727272!important;}.secondary.lighten-1{background-color:#595959!important;border-color:#595959!important;}.secondary--text.text--lighten-1{color:#595959!important;}.secondary--text.text--lighten-1input,.secondary--text.text--lighten-1textarea{caret-color:#595959!important;}.secondary.darken-1{background-color:#2c2c2c!important;border-color:#2c2c2c!important;}.secondary--text.text--darken-1{color:#2c2c2c!important;}.secondary--text.text--darken-1input,.secondary--text.text--darken-1textarea{caret-color:#2c2c2c!important;}.secondary.darken-2{background-color:#171717!important;border-color:#171717!important;}.secondary--text.text--darken-2{color:#171717!important;}.secondary--text.text--darken-2input,.secondary--text.text--darken-2textarea{caret-color:#171717!important;}.secondary.darken-3{background-color:#000000!important;border-color:#000000!important;}.secondary--text.text--darken-3{color:#000000!important;}.secondary--text.text--darken-3input,.secondary--text.text--darken-3textarea{caret-color:#000000!important;}.secondary.darken-4{background-color:#000000!important;border-color:#000000!important;}.secondary--text.text--darken-4{color:#000000!important;}.secondary--text.text--darken-4input,.secondary--text.text--darken-4textarea{caret-color:#000000!important;}.accent{background-color:#82b1ff!important;border-color:#82b1ff!important;}.accent--text{color:#82b1ff!important;}.accent--textinput,.accent--texttextarea{caret-color:#82b1ff!important;}.accent.lighten-5{background-color:#ffffff!important;border-color:#ffffff!important;}.accent--text.text--lighten-5{color:#ffffff!important;}.accent--text.text--lighten-5input,.accent--text.text--lighten-5textarea{caret-color:#ffffff!important;}.accent.lighten-4{background-color:#f8ffff!important;border-color:#f8ffff!important;}.accent--text.text--lighten-4{color:#f8ffff!important;}.accent--text.text--lighten-4input,.accent--text.text--lighten-4textarea{caret-color:#f8ffff!important;}.accent.lighten-3{background-color:#daffff!important;border-color:#daffff!important;}.accent--text.text--lighten-3{color:#daffff!important;}.accent--text.text--lighten-3input,.accent--text.text--lighten-3textarea{caret-color:#daffff!important;}.accent.lighten-2{background-color:#bce8ff!important;border-color:#bce8ff!important;}.accent--text.text--lighten-2{color:#bce8ff!important;}.accent--text.text--lighten-2input,.accent--text.text--lighten-2textarea{caret-color:#bce8ff!important;}.accent.lighten-1{background-color:#9fccff!important;border-color:#9fccff!important;}.accent--text.text--lighten-1{color:#9fccff!important;}.accent--text.text--lighten-1input,.accent--text.text--lighten-1textarea{caret-color:#9fccff!important;}.accent.darken-1{background-color:#6596e2!important;border-color:#6596e2!important;}.accent--text.text--darken-1{color:#6596e2!important;}.accent--text.text--darken-1input,.accent--text.text--darken-1textarea{caret-color:#6596e2!important;}.accent.darken-2{background-color:#467dc6!important;border-color:#467dc6!important;}.accent--text.text--darken-2{color:#467dc6!important;}.accent--text.text--darken-2input,.accent--text.text--darken-2textarea{caret-color:#467dc6!important;}.accent.darken-3{background-color:#2364aa!important;border-color:#2364aa!important;}.accent--text.text--darken-3{color:#2364aa!important;}.accent--text.text--darken-3input,.accent--text.text--darken-3textarea{caret-color:#2364aa!important;}.accent.darken-4{background-color:#004c90!important;border-color:#004c90!important;}.accent--text.text--darken-4{color:#004c90!important;}.accent--text.text--darken-4input,.accent--text.text--darken-4textarea{caret-color:#004c90!important;}.error{background-color:#ff5252!important;border-color:#ff5252!important;}.error--text{color:#ff5252!important;}.error--textinput,.error--texttextarea{caret-color:#ff5252!important;}.info{background-color:#2196f3!important;border-color:#2196f3!important;}.info--text{color:#2196f3!important;}.info--textinput,.info--texttextarea{caret-color:#2196f3!important;}.success{background-color:#4caf50!important;border-color:#4caf50!important;}.success--text{color:#4caf50!important;}.success--textinput,.success--texttextarea{caret-color:#4caf50!important;}.warning{background-color:#ffc107!important;border-color:#ffc107!important;}.warning--text{color:#ffc107!important;}.warning--textinput,.warning--texttextarea{caret-color:#ffc107!important;}
     </style>
     <style>
       .workers-column-move{-webkit-transition:all .5s;transition:all .5s}.workers-column-enter{opacity:0;-webkit-transform:translateY(-30px);transform:translateY(-30px)}.workers-column-leave-to{opacity:0}.workers-column-leave-active{position:absolute}.worker-item{-webkit-transition:all .5s;transition:all .5s}
@@ -519,24 +519,24 @@ exports[`/statistics 1`] = `
              class="application theme--light"
         >
           <div class="application--wrap">
-            <aside class="navigation-drawer navigation-drawer--clipped navigation-drawer--close navigation-drawer--fixed navigation-drawer--is-mobile"
+            <aside class="v-navigation-drawer v-navigation-drawer--clipped v-navigation-drawer--close v-navigation-drawer--fixed v-navigation-drawer--is-mobile"
                    style="height:100%;margin-top:0px;max-height:calc(100% - 0px);transform:translateX(-300px);width:300px;"
             >
-              <div class="list">
+              <div class="v-list">
                 <div>
                   <a href="/"
                      router
-                     class="list__tile list__tile--link"
+                     class="v-list__tile v-list__tile--link"
                   >
-                    <div class="list__tile__action">
+                    <div class="v-list__tile__action">
                       <i aria-hidden="true"
-                         class="icon material-icons"
+                         class="v-icon material-icons"
                       >
                         home
                       </i>
                     </div>
-                    <div class="list__tile__content">
-                      <div class="list__tile__title">
+                    <div class="v-list__tile__content">
+                      <div class="v-list__tile__title">
                         &#x8FD4;&#x56DE;&#x4E3B;&#x9875;
                       </div>
                     </div>
@@ -545,50 +545,50 @@ exports[`/statistics 1`] = `
                 <div>
                   <a href="/statistics"
                      router
-                     class="primary--text list__tile--active list__tile list__tile--link"
+                     class="primary--text v-list__tile--active v-list__tile v-list__tile--link"
                   >
-                    <div class="list__tile__action">
+                    <div class="v-list__tile__action">
                       <i aria-hidden="true"
-                         class="icon material-icons"
+                         class="v-icon material-icons"
                       >
                         code
                       </i>
                     </div>
-                    <div class="list__tile__content">
-                      <div class="list__tile__title">
+                    <div class="v-list__tile__content">
+                      <div class="v-list__tile__title">
                         OJ&#x9898;&#x91CF;&#x7EDF;&#x8BA1;
                       </div>
                     </div>
                   </a>
                 </div>
               </div>
-              <div class="navigation-drawer__border">
+              <div class="v-navigation-drawer__border">
               </div>
             </aside>
-            <nav class="toolbar toolbar--clipped toolbar--fixed"
+            <nav class="v-toolbar v-toolbar--clipped v-toolbar--fixed"
                  style="margin-top:0px;padding-right:0px;padding-left:0px;transform:translateY(0px);"
             >
-              <div class="toolbar__content"
+              <div class="v-toolbar__content"
                    style="height:56px;"
               >
                 <button type="button"
-                        class="toolbar__side-icon btn btn--icon"
+                        class="v-toolbar__side-icon v-btn v-btn--icon"
                 >
-                  <div class="btn__content">
+                  <div class="v-btn__content">
                     <i aria-hidden="true"
-                       class="icon material-icons"
+                       class="v-icon material-icons"
                     >
                       menu
                     </i>
                   </div>
                 </button>
-                <div class="toolbar__title">
+                <div class="v-toolbar__title">
                   NWPU-ACM &#x67E5;&#x8BE2;&#x7CFB;&#x7EDF;
                 </div>
                 <div class="spacer">
                 </div>
-                <span class="tooltip tooltip--left">
-                  <div class="tooltip__content"
+                <span class="v-tooltip v-tooltip--left">
+                  <div class="v-tooltip__content"
                        style="left:12px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"
                   >
                     <span>
@@ -598,11 +598,11 @@ exports[`/statistics 1`] = `
                   <span>
                     <a href="https://github.com/Liu233w/acm-statistics"
                        target="_blank"
-                       class="btn btn--icon"
+                       class="v-btn v-btn--icon"
                     >
-                      <div class="btn__content">
+                      <div class="v-btn__content">
                         <i aria-hidden="true"
-                           class="icon fa fa fa fa-github"
+                           class="v-icon fa fa fa fa-github"
                         >
                         </i>
                       </div>
@@ -611,56 +611,68 @@ exports[`/statistics 1`] = `
                 </span>
               </div>
             </nav>
-            <main class="content"
+            <main class="v-content"
                   style="padding-top:56px;padding-right:0px;padding-bottom:0px;padding-left:0px;"
             >
-              <div class="content--wrap">
+              <div class="v-content__wrap">
                 <div class="container">
                   <div class="container grid-list-md">
                     <div class="layout row wrap">
                       <div class="flex xs12 sm5 md3">
-                        <div class="input-group input-group--required input-group--text-field primary--text">
-                          <label>
-                            &#x7EDF;&#x4E00;&#x8BBE;&#x7F6E;&#x7528;&#x6237;&#x540D;
-                          </label>
-                          <div class="input-group__input">
-                            <input required="required"
-                                   tabindex="0"
-                                   aria-label="&#x7EDF;&#x4E00;&#x8BBE;&#x7F6E;&#x7528;&#x6237;&#x540D;"
-                                   type="text"
-                                   value
+                        <div class="v-input v-text-field">
+                          <div class="v-input__control">
+                            <div class="v-input__slot"
+                                 style="height:undefined;"
                             >
-                          </div>
-                          <div class="input-group__details">
+                              <div class="v-text-field__slot">
+                                <label aria-hidden="true"
+                                       class="v-label"
+                                       style="left:0px;right:auto;position:absolute;"
+                                >
+                                  &#x7EDF;&#x4E00;&#x8BBE;&#x7F6E;&#x7528;&#x6237;&#x540D;
+                                </label>
+                                <input aria-label="&#x7EDF;&#x4E00;&#x8BBE;&#x7F6E;&#x7528;&#x6237;&#x540D;"
+                                       required="required"
+                                       type="text"
+                                       value
+                                >
+                              </div>
+                            </div>
+                            <div class="v-text-field__details">
+                              <div class="v-messages">
+                                <div class="v-messages__wrapper">
+                                </div>
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>
                       <div class="flex xs12 sm7 md5">
                         <button type="button"
-                                class="primary btn"
+                                class="primary v-btn"
                         >
-                          <div class="btn__content">
+                          <div class="v-btn__content">
                             &#x5F00;&#x59CB;&#x67E5;&#x8BE2;
                           </div>
                         </button>
-                        <span class="tooltip tooltip--bottom">
-                          <div class="tooltip__content"
+                        <span class="v-tooltip v-tooltip--bottom">
+                          <div class="v-tooltip__content"
                                style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"
                           >
                             &#x6E05;&#x7A7A;&#x7528;&#x6237;&#x540D;&#xFF0C;&#x91CD;&#x7F6E;&#x67E5;&#x8BE2;&#x72B6;&#x6001;
                           </div>
                           <span>
                             <button type="button"
-                                    class="error btn"
+                                    class="error v-btn"
                             >
-                              <div class="btn__content">
+                              <div class="v-btn__content">
                                 &#x91CD;&#x7F6E;&#x67E5;&#x8BE2;
                               </div>
                             </button>
                           </span>
                         </span>
-                        <span class="tooltip tooltip--bottom">
-                          <div class="tooltip__content"
+                        <span class="v-tooltip v-tooltip--bottom">
+                          <div class="v-tooltip__content"
                                style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"
                           >
                             &#x5C06;&#x7528;&#x6237;&#x540D;&#x4FDD;&#x5B58;&#x5230;&#x672C;&#x5730;&#xFF0C;&#x4E0B;&#x6B21;&#x6253;&#x5F00;&#x9875;&#x9762;&#x7684;&#x65F6;&#x5019;&#x4F1A;&#x81EA;&#x52A8;&#x586B;&#x5199;
@@ -669,9 +681,9 @@ exports[`/statistics 1`] = `
                           </div>
                           <span>
                             <button type="button"
-                                    class="btn"
+                                    class="v-btn"
                             >
-                              <div class="btn__content">
+                              <div class="v-btn__content">
                                 &#x4FDD;&#x5B58;&#x7528;&#x6237;&#x540D;
                               </div>
                             </button>
@@ -682,9 +694,9 @@ exports[`/statistics 1`] = `
                            style="display:none;"
                       >
                         <span tabindex="0"
-                              class="chip elevation-2 chip--label grey lighten-3"
+                              class="v-chip elevation-2 v-chip--label grey lighten-3"
                         >
-                          <span class="chip__content">
+                          <span class="v-chip__content">
                             <span class="title">
                               &#x7684;&#x603B;&#x9898;&#x91CF;&#xFF1A; 0 / 0
                             </span>
@@ -701,27 +713,27 @@ exports[`/statistics 1`] = `
                                  class="flex worker-item"
                                  style="z-index:1000;"
                             >
-                              <div class="card"
-                                   style="height:auto;"
+                              <div class="v-card"
+                                   style="height:undefined;"
                               >
-                                <nav class="blue-grey lighten-5 toolbar toolbar--card toolbar--dense"
+                                <nav class="blue-grey lighten-5 v-toolbar v-toolbar--card v-toolbar--dense"
                                      style="margin-top:0px;padding-right:0px;padding-left:0px;transform:translateY(0px);"
                                 >
-                                  <div class="toolbar__content"
+                                  <div class="v-toolbar__content"
                                        style="height:48px;"
                                   >
                                     <div title="crawler0"
-                                         class="toolbar__title"
+                                         class="v-toolbar__title"
                                     >
                                       crawler0
                                     </div>
                                     <div class="spacer">
                                     </div>
-                                    <div class="toolbar__items">
-                                      <span class="tooltip tooltip--bottom"
+                                    <div class="v-toolbar__items">
+                                      <span class="v-tooltip v-tooltip--bottom"
                                             style="display:none;"
                                       >
-                                        <div class="tooltip__content"
+                                        <div class="v-tooltip__content"
                                              style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"
                                         >
                                           <span>
@@ -730,11 +742,11 @@ exports[`/statistics 1`] = `
                                         </div>
                                         <span>
                                           <button type="button"
-                                                  class="btn btn--icon"
+                                                  class="v-btn v-btn--icon"
                                           >
-                                            <div class="btn__content">
+                                            <div class="v-btn__content">
                                               <i aria-hidden="true"
-                                                 class="icon material-icons"
+                                                 class="v-icon material-icons"
                                               >
                                                 delete
                                               </i>
@@ -742,8 +754,8 @@ exports[`/statistics 1`] = `
                                           </button>
                                         </span>
                                       </span>
-                                      <span class="tooltip tooltip--bottom">
-                                        <div class="tooltip__content"
+                                      <span class="v-tooltip v-tooltip--bottom">
+                                        <div class="v-tooltip__content"
                                              style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"
                                         >
                                           <span>
@@ -752,11 +764,11 @@ exports[`/statistics 1`] = `
                                         </div>
                                         <span>
                                           <button type="button"
-                                                  class="btn btn--icon"
+                                                  class="v-btn v-btn--icon"
                                           >
-                                            <div class="btn__content">
+                                            <div class="v-btn__content">
                                               <i aria-hidden="true"
-                                                 class="icon material-icons"
+                                                 class="v-icon material-icons"
                                               >
                                                 add_circle
                                               </i>
@@ -764,10 +776,10 @@ exports[`/statistics 1`] = `
                                           </button>
                                         </span>
                                       </span>
-                                      <span class="tooltip tooltip--bottom"
+                                      <span class="v-tooltip v-tooltip--bottom"
                                             style="display:none;"
                                       >
-                                        <div class="tooltip__content"
+                                        <div class="v-tooltip__content"
                                              style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"
                                         >
                                           <span>
@@ -776,11 +788,11 @@ exports[`/statistics 1`] = `
                                         </div>
                                         <span>
                                           <button type="button"
-                                                  class="btn btn--icon"
+                                                  class="v-btn v-btn--icon"
                                           >
-                                            <div class="btn__content">
+                                            <div class="v-btn__content">
                                               <i aria-hidden="true"
-                                                 class="icon material-icons"
+                                                 class="v-icon material-icons"
                                               >
                                                 link
                                               </i>
@@ -788,8 +800,8 @@ exports[`/statistics 1`] = `
                                           </button>
                                         </span>
                                       </span>
-                                      <span class="tooltip tooltip--bottom">
-                                        <div class="tooltip__content"
+                                      <span class="v-tooltip v-tooltip--bottom">
+                                        <div class="v-tooltip__content"
                                              style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"
                                         >
                                           <span>
@@ -798,11 +810,11 @@ exports[`/statistics 1`] = `
                                         </div>
                                         <span>
                                           <button type="button"
-                                                  class="btn btn--icon"
+                                                  class="v-btn v-btn--icon"
                                           >
-                                            <div class="btn__content">
+                                            <div class="v-btn__content">
                                               <i aria-hidden="true"
-                                                 class="icon material-icons"
+                                                 class="v-icon material-icons"
                                               >
                                                 refresh
                                               </i>
@@ -824,23 +836,39 @@ exports[`/statistics 1`] = `
                                   </div>
                                   <div class="layout row wrap">
                                     <div class="flex xs12">
-                                      <div class="input-group input-group--required input-group--text-field primary--text">
-                                        <label>
-                                          Username
-                                        </label>
-                                        <div class="input-group__input">
-                                          <input required="required"
-                                                 tabindex="0"
-                                                 aria-label="Username"
-                                                 type="text"
-                                                 value
+                                      <div class="v-input v-text-field">
+                                        <div class="v-input__control">
+                                          <div class="v-input__slot"
+                                               style="height:undefined;"
                                           >
-                                          <i aria-hidden="true"
-                                             class="icon material-icons input-group__append-icon"
-                                          >
-                                          </i>
-                                        </div>
-                                        <div class="input-group__details">
+                                            <div class="v-text-field__slot">
+                                              <label aria-hidden="true"
+                                                     class="v-label"
+                                                     style="left:0px;right:auto;position:absolute;"
+                                              >
+                                                Username
+                                              </label>
+                                              <input aria-label="Username"
+                                                     required="required"
+                                                     type="text"
+                                                     value
+                                              >
+                                            </div>
+                                            <div class="v-input__append-inner">
+                                              <div class="v-input__icon v-input__icon--">
+                                                <i aria-hidden="true"
+                                                   class="v-icon v-icon--link material-icons"
+                                                >
+                                                </i>
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <div class="v-text-field__details">
+                                            <div class="v-messages">
+                                              <div class="v-messages__wrapper">
+                                              </div>
+                                            </div>
+                                          </div>
                                         </div>
                                       </div>
                                     </div>
@@ -870,27 +898,27 @@ exports[`/statistics 1`] = `
                                  class="flex worker-item"
                                  style="z-index:999;"
                             >
-                              <div class="card"
-                                   style="height:auto;"
+                              <div class="v-card"
+                                   style="height:undefined;"
                               >
-                                <nav class="blue-grey lighten-5 toolbar toolbar--card toolbar--dense"
+                                <nav class="blue-grey lighten-5 v-toolbar v-toolbar--card v-toolbar--dense"
                                      style="margin-top:0px;padding-right:0px;padding-left:0px;transform:translateY(0px);"
                                 >
-                                  <div class="toolbar__content"
+                                  <div class="v-toolbar__content"
                                        style="height:48px;"
                                   >
                                     <div title="crawler1"
-                                         class="toolbar__title"
+                                         class="v-toolbar__title"
                                     >
                                       crawler1
                                     </div>
                                     <div class="spacer">
                                     </div>
-                                    <div class="toolbar__items">
-                                      <span class="tooltip tooltip--bottom"
+                                    <div class="v-toolbar__items">
+                                      <span class="v-tooltip v-tooltip--bottom"
                                             style="display:none;"
                                       >
-                                        <div class="tooltip__content"
+                                        <div class="v-tooltip__content"
                                              style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"
                                         >
                                           <span>
@@ -899,11 +927,11 @@ exports[`/statistics 1`] = `
                                         </div>
                                         <span>
                                           <button type="button"
-                                                  class="btn btn--icon"
+                                                  class="v-btn v-btn--icon"
                                           >
-                                            <div class="btn__content">
+                                            <div class="v-btn__content">
                                               <i aria-hidden="true"
-                                                 class="icon material-icons"
+                                                 class="v-icon material-icons"
                                               >
                                                 delete
                                               </i>
@@ -911,8 +939,8 @@ exports[`/statistics 1`] = `
                                           </button>
                                         </span>
                                       </span>
-                                      <span class="tooltip tooltip--bottom">
-                                        <div class="tooltip__content"
+                                      <span class="v-tooltip v-tooltip--bottom">
+                                        <div class="v-tooltip__content"
                                              style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"
                                         >
                                           <span>
@@ -921,11 +949,11 @@ exports[`/statistics 1`] = `
                                         </div>
                                         <span>
                                           <button type="button"
-                                                  class="btn btn--icon"
+                                                  class="v-btn v-btn--icon"
                                           >
-                                            <div class="btn__content">
+                                            <div class="v-btn__content">
                                               <i aria-hidden="true"
-                                                 class="icon material-icons"
+                                                 class="v-icon material-icons"
                                               >
                                                 add_circle
                                               </i>
@@ -933,10 +961,10 @@ exports[`/statistics 1`] = `
                                           </button>
                                         </span>
                                       </span>
-                                      <span class="tooltip tooltip--bottom"
+                                      <span class="v-tooltip v-tooltip--bottom"
                                             style="display:none;"
                                       >
-                                        <div class="tooltip__content"
+                                        <div class="v-tooltip__content"
                                              style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"
                                         >
                                           <span>
@@ -945,11 +973,11 @@ exports[`/statistics 1`] = `
                                         </div>
                                         <span>
                                           <button type="button"
-                                                  class="btn btn--icon"
+                                                  class="v-btn v-btn--icon"
                                           >
-                                            <div class="btn__content">
+                                            <div class="v-btn__content">
                                               <i aria-hidden="true"
-                                                 class="icon material-icons"
+                                                 class="v-icon material-icons"
                                               >
                                                 link
                                               </i>
@@ -957,8 +985,8 @@ exports[`/statistics 1`] = `
                                           </button>
                                         </span>
                                       </span>
-                                      <span class="tooltip tooltip--bottom">
-                                        <div class="tooltip__content"
+                                      <span class="v-tooltip v-tooltip--bottom">
+                                        <div class="v-tooltip__content"
                                              style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"
                                         >
                                           <span>
@@ -967,11 +995,11 @@ exports[`/statistics 1`] = `
                                         </div>
                                         <span>
                                           <button type="button"
-                                                  class="btn btn--icon"
+                                                  class="v-btn v-btn--icon"
                                           >
-                                            <div class="btn__content">
+                                            <div class="v-btn__content">
                                               <i aria-hidden="true"
-                                                 class="icon material-icons"
+                                                 class="v-icon material-icons"
                                               >
                                                 refresh
                                               </i>
@@ -993,23 +1021,39 @@ exports[`/statistics 1`] = `
                                   </div>
                                   <div class="layout row wrap">
                                     <div class="flex xs12">
-                                      <div class="input-group input-group--required input-group--text-field primary--text">
-                                        <label>
-                                          Username
-                                        </label>
-                                        <div class="input-group__input">
-                                          <input required="required"
-                                                 tabindex="0"
-                                                 aria-label="Username"
-                                                 type="text"
-                                                 value
+                                      <div class="v-input v-text-field">
+                                        <div class="v-input__control">
+                                          <div class="v-input__slot"
+                                               style="height:undefined;"
                                           >
-                                          <i aria-hidden="true"
-                                             class="icon material-icons input-group__append-icon"
-                                          >
-                                          </i>
-                                        </div>
-                                        <div class="input-group__details">
+                                            <div class="v-text-field__slot">
+                                              <label aria-hidden="true"
+                                                     class="v-label"
+                                                     style="left:0px;right:auto;position:absolute;"
+                                              >
+                                                Username
+                                              </label>
+                                              <input aria-label="Username"
+                                                     required="required"
+                                                     type="text"
+                                                     value
+                                              >
+                                            </div>
+                                            <div class="v-input__append-inner">
+                                              <div class="v-input__icon v-input__icon--">
+                                                <i aria-hidden="true"
+                                                   class="v-icon v-icon--link material-icons"
+                                                >
+                                                </i>
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <div class="v-text-field__details">
+                                            <div class="v-messages">
+                                              <div class="v-messages__wrapper">
+                                              </div>
+                                            </div>
+                                          </div>
                                         </div>
                                       </div>
                                     </div>
@@ -1039,27 +1083,27 @@ exports[`/statistics 1`] = `
                                  class="flex worker-item"
                                  style="z-index:998;"
                             >
-                              <div class="card"
-                                   style="height:auto;"
+                              <div class="v-card"
+                                   style="height:undefined;"
                               >
-                                <nav class="blue-grey lighten-5 toolbar toolbar--card toolbar--dense"
+                                <nav class="blue-grey lighten-5 v-toolbar v-toolbar--card v-toolbar--dense"
                                      style="margin-top:0px;padding-right:0px;padding-left:0px;transform:translateY(0px);"
                                 >
-                                  <div class="toolbar__content"
+                                  <div class="v-toolbar__content"
                                        style="height:48px;"
                                   >
                                     <div title="crawler2"
-                                         class="toolbar__title"
+                                         class="v-toolbar__title"
                                     >
                                       crawler2
                                     </div>
                                     <div class="spacer">
                                     </div>
-                                    <div class="toolbar__items">
-                                      <span class="tooltip tooltip--bottom"
+                                    <div class="v-toolbar__items">
+                                      <span class="v-tooltip v-tooltip--bottom"
                                             style="display:none;"
                                       >
-                                        <div class="tooltip__content"
+                                        <div class="v-tooltip__content"
                                              style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"
                                         >
                                           <span>
@@ -1068,11 +1112,11 @@ exports[`/statistics 1`] = `
                                         </div>
                                         <span>
                                           <button type="button"
-                                                  class="btn btn--icon"
+                                                  class="v-btn v-btn--icon"
                                           >
-                                            <div class="btn__content">
+                                            <div class="v-btn__content">
                                               <i aria-hidden="true"
-                                                 class="icon material-icons"
+                                                 class="v-icon material-icons"
                                               >
                                                 delete
                                               </i>
@@ -1080,8 +1124,8 @@ exports[`/statistics 1`] = `
                                           </button>
                                         </span>
                                       </span>
-                                      <span class="tooltip tooltip--bottom">
-                                        <div class="tooltip__content"
+                                      <span class="v-tooltip v-tooltip--bottom">
+                                        <div class="v-tooltip__content"
                                              style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"
                                         >
                                           <span>
@@ -1090,11 +1134,11 @@ exports[`/statistics 1`] = `
                                         </div>
                                         <span>
                                           <button type="button"
-                                                  class="btn btn--icon"
+                                                  class="v-btn v-btn--icon"
                                           >
-                                            <div class="btn__content">
+                                            <div class="v-btn__content">
                                               <i aria-hidden="true"
-                                                 class="icon material-icons"
+                                                 class="v-icon material-icons"
                                               >
                                                 add_circle
                                               </i>
@@ -1102,10 +1146,10 @@ exports[`/statistics 1`] = `
                                           </button>
                                         </span>
                                       </span>
-                                      <span class="tooltip tooltip--bottom"
+                                      <span class="v-tooltip v-tooltip--bottom"
                                             style="display:none;"
                                       >
-                                        <div class="tooltip__content"
+                                        <div class="v-tooltip__content"
                                              style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"
                                         >
                                           <span>
@@ -1114,11 +1158,11 @@ exports[`/statistics 1`] = `
                                         </div>
                                         <span>
                                           <button type="button"
-                                                  class="btn btn--icon"
+                                                  class="v-btn v-btn--icon"
                                           >
-                                            <div class="btn__content">
+                                            <div class="v-btn__content">
                                               <i aria-hidden="true"
-                                                 class="icon material-icons"
+                                                 class="v-icon material-icons"
                                               >
                                                 link
                                               </i>
@@ -1126,8 +1170,8 @@ exports[`/statistics 1`] = `
                                           </button>
                                         </span>
                                       </span>
-                                      <span class="tooltip tooltip--bottom">
-                                        <div class="tooltip__content"
+                                      <span class="v-tooltip v-tooltip--bottom">
+                                        <div class="v-tooltip__content"
                                              style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"
                                         >
                                           <span>
@@ -1136,11 +1180,11 @@ exports[`/statistics 1`] = `
                                         </div>
                                         <span>
                                           <button type="button"
-                                                  class="btn btn--icon"
+                                                  class="v-btn v-btn--icon"
                                           >
-                                            <div class="btn__content">
+                                            <div class="v-btn__content">
                                               <i aria-hidden="true"
-                                                 class="icon material-icons"
+                                                 class="v-icon material-icons"
                                               >
                                                 refresh
                                               </i>
@@ -1162,23 +1206,39 @@ exports[`/statistics 1`] = `
                                   </div>
                                   <div class="layout row wrap">
                                     <div class="flex xs12">
-                                      <div class="input-group input-group--required input-group--text-field primary--text">
-                                        <label>
-                                          Username
-                                        </label>
-                                        <div class="input-group__input">
-                                          <input required="required"
-                                                 tabindex="0"
-                                                 aria-label="Username"
-                                                 type="text"
-                                                 value
+                                      <div class="v-input v-text-field">
+                                        <div class="v-input__control">
+                                          <div class="v-input__slot"
+                                               style="height:undefined;"
                                           >
-                                          <i aria-hidden="true"
-                                             class="icon material-icons input-group__append-icon"
-                                          >
-                                          </i>
-                                        </div>
-                                        <div class="input-group__details">
+                                            <div class="v-text-field__slot">
+                                              <label aria-hidden="true"
+                                                     class="v-label"
+                                                     style="left:0px;right:auto;position:absolute;"
+                                              >
+                                                Username
+                                              </label>
+                                              <input aria-label="Username"
+                                                     required="required"
+                                                     type="text"
+                                                     value
+                                              >
+                                            </div>
+                                            <div class="v-input__append-inner">
+                                              <div class="v-input__icon v-input__icon--">
+                                                <i aria-hidden="true"
+                                                   class="v-icon v-icon--link material-icons"
+                                                >
+                                                </i>
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <div class="v-text-field__details">
+                                            <div class="v-messages">
+                                              <div class="v-messages__wrapper">
+                                              </div>
+                                            </div>
+                                          </div>
                                         </div>
                                       </div>
                                     </div>
@@ -1214,27 +1274,27 @@ exports[`/statistics 1`] = `
                                  class="flex worker-item"
                                  style="z-index:1000;"
                             >
-                              <div class="card"
-                                   style="height:auto;"
+                              <div class="v-card"
+                                   style="height:undefined;"
                               >
-                                <nav class="blue-grey lighten-5 toolbar toolbar--card toolbar--dense"
+                                <nav class="blue-grey lighten-5 v-toolbar v-toolbar--card v-toolbar--dense"
                                      style="margin-top:0px;padding-right:0px;padding-left:0px;transform:translateY(0px);"
                                 >
-                                  <div class="toolbar__content"
+                                  <div class="v-toolbar__content"
                                        style="height:48px;"
                                   >
                                     <div title="crawler3"
-                                         class="toolbar__title"
+                                         class="v-toolbar__title"
                                     >
                                       crawler3
                                     </div>
                                     <div class="spacer">
                                     </div>
-                                    <div class="toolbar__items">
-                                      <span class="tooltip tooltip--bottom"
+                                    <div class="v-toolbar__items">
+                                      <span class="v-tooltip v-tooltip--bottom"
                                             style="display:none;"
                                       >
-                                        <div class="tooltip__content"
+                                        <div class="v-tooltip__content"
                                              style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"
                                         >
                                           <span>
@@ -1243,11 +1303,11 @@ exports[`/statistics 1`] = `
                                         </div>
                                         <span>
                                           <button type="button"
-                                                  class="btn btn--icon"
+                                                  class="v-btn v-btn--icon"
                                           >
-                                            <div class="btn__content">
+                                            <div class="v-btn__content">
                                               <i aria-hidden="true"
-                                                 class="icon material-icons"
+                                                 class="v-icon material-icons"
                                               >
                                                 delete
                                               </i>
@@ -1255,8 +1315,8 @@ exports[`/statistics 1`] = `
                                           </button>
                                         </span>
                                       </span>
-                                      <span class="tooltip tooltip--bottom">
-                                        <div class="tooltip__content"
+                                      <span class="v-tooltip v-tooltip--bottom">
+                                        <div class="v-tooltip__content"
                                              style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"
                                         >
                                           <span>
@@ -1265,11 +1325,11 @@ exports[`/statistics 1`] = `
                                         </div>
                                         <span>
                                           <button type="button"
-                                                  class="btn btn--icon"
+                                                  class="v-btn v-btn--icon"
                                           >
-                                            <div class="btn__content">
+                                            <div class="v-btn__content">
                                               <i aria-hidden="true"
-                                                 class="icon material-icons"
+                                                 class="v-icon material-icons"
                                               >
                                                 add_circle
                                               </i>
@@ -1277,10 +1337,10 @@ exports[`/statistics 1`] = `
                                           </button>
                                         </span>
                                       </span>
-                                      <span class="tooltip tooltip--bottom"
+                                      <span class="v-tooltip v-tooltip--bottom"
                                             style="display:none;"
                                       >
-                                        <div class="tooltip__content"
+                                        <div class="v-tooltip__content"
                                              style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"
                                         >
                                           <span>
@@ -1289,11 +1349,11 @@ exports[`/statistics 1`] = `
                                         </div>
                                         <span>
                                           <button type="button"
-                                                  class="btn btn--icon"
+                                                  class="v-btn v-btn--icon"
                                           >
-                                            <div class="btn__content">
+                                            <div class="v-btn__content">
                                               <i aria-hidden="true"
-                                                 class="icon material-icons"
+                                                 class="v-icon material-icons"
                                               >
                                                 link
                                               </i>
@@ -1301,8 +1361,8 @@ exports[`/statistics 1`] = `
                                           </button>
                                         </span>
                                       </span>
-                                      <span class="tooltip tooltip--bottom">
-                                        <div class="tooltip__content"
+                                      <span class="v-tooltip v-tooltip--bottom">
+                                        <div class="v-tooltip__content"
                                              style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"
                                         >
                                           <span>
@@ -1311,11 +1371,11 @@ exports[`/statistics 1`] = `
                                         </div>
                                         <span>
                                           <button type="button"
-                                                  class="btn btn--icon"
+                                                  class="v-btn v-btn--icon"
                                           >
-                                            <div class="btn__content">
+                                            <div class="v-btn__content">
                                               <i aria-hidden="true"
-                                                 class="icon material-icons"
+                                                 class="v-icon material-icons"
                                               >
                                                 refresh
                                               </i>
@@ -1337,23 +1397,39 @@ exports[`/statistics 1`] = `
                                   </div>
                                   <div class="layout row wrap">
                                     <div class="flex xs12">
-                                      <div class="input-group input-group--required input-group--text-field primary--text">
-                                        <label>
-                                          Username
-                                        </label>
-                                        <div class="input-group__input">
-                                          <input required="required"
-                                                 tabindex="0"
-                                                 aria-label="Username"
-                                                 type="text"
-                                                 value
+                                      <div class="v-input v-text-field">
+                                        <div class="v-input__control">
+                                          <div class="v-input__slot"
+                                               style="height:undefined;"
                                           >
-                                          <i aria-hidden="true"
-                                             class="icon material-icons input-group__append-icon"
-                                          >
-                                          </i>
-                                        </div>
-                                        <div class="input-group__details">
+                                            <div class="v-text-field__slot">
+                                              <label aria-hidden="true"
+                                                     class="v-label"
+                                                     style="left:0px;right:auto;position:absolute;"
+                                              >
+                                                Username
+                                              </label>
+                                              <input aria-label="Username"
+                                                     required="required"
+                                                     type="text"
+                                                     value
+                                              >
+                                            </div>
+                                            <div class="v-input__append-inner">
+                                              <div class="v-input__icon v-input__icon--">
+                                                <i aria-hidden="true"
+                                                   class="v-icon v-icon--link material-icons"
+                                                >
+                                                </i>
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <div class="v-text-field__details">
+                                            <div class="v-messages">
+                                              <div class="v-messages__wrapper">
+                                              </div>
+                                            </div>
+                                          </div>
                                         </div>
                                       </div>
                                     </div>
@@ -1383,27 +1459,27 @@ exports[`/statistics 1`] = `
                                  class="flex worker-item"
                                  style="z-index:999;"
                             >
-                              <div class="card"
-                                   style="height:auto;"
+                              <div class="v-card"
+                                   style="height:undefined;"
                               >
-                                <nav class="blue-grey lighten-5 toolbar toolbar--card toolbar--dense"
+                                <nav class="blue-grey lighten-5 v-toolbar v-toolbar--card v-toolbar--dense"
                                      style="margin-top:0px;padding-right:0px;padding-left:0px;transform:translateY(0px);"
                                 >
-                                  <div class="toolbar__content"
+                                  <div class="v-toolbar__content"
                                        style="height:48px;"
                                   >
                                     <div title="crawler4"
-                                         class="toolbar__title"
+                                         class="v-toolbar__title"
                                     >
                                       crawler4
                                     </div>
                                     <div class="spacer">
                                     </div>
-                                    <div class="toolbar__items">
-                                      <span class="tooltip tooltip--bottom"
+                                    <div class="v-toolbar__items">
+                                      <span class="v-tooltip v-tooltip--bottom"
                                             style="display:none;"
                                       >
-                                        <div class="tooltip__content"
+                                        <div class="v-tooltip__content"
                                              style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"
                                         >
                                           <span>
@@ -1412,11 +1488,11 @@ exports[`/statistics 1`] = `
                                         </div>
                                         <span>
                                           <button type="button"
-                                                  class="btn btn--icon"
+                                                  class="v-btn v-btn--icon"
                                           >
-                                            <div class="btn__content">
+                                            <div class="v-btn__content">
                                               <i aria-hidden="true"
-                                                 class="icon material-icons"
+                                                 class="v-icon material-icons"
                                               >
                                                 delete
                                               </i>
@@ -1424,8 +1500,8 @@ exports[`/statistics 1`] = `
                                           </button>
                                         </span>
                                       </span>
-                                      <span class="tooltip tooltip--bottom">
-                                        <div class="tooltip__content"
+                                      <span class="v-tooltip v-tooltip--bottom">
+                                        <div class="v-tooltip__content"
                                              style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"
                                         >
                                           <span>
@@ -1434,11 +1510,11 @@ exports[`/statistics 1`] = `
                                         </div>
                                         <span>
                                           <button type="button"
-                                                  class="btn btn--icon"
+                                                  class="v-btn v-btn--icon"
                                           >
-                                            <div class="btn__content">
+                                            <div class="v-btn__content">
                                               <i aria-hidden="true"
-                                                 class="icon material-icons"
+                                                 class="v-icon material-icons"
                                               >
                                                 add_circle
                                               </i>
@@ -1446,10 +1522,10 @@ exports[`/statistics 1`] = `
                                           </button>
                                         </span>
                                       </span>
-                                      <span class="tooltip tooltip--bottom"
+                                      <span class="v-tooltip v-tooltip--bottom"
                                             style="display:none;"
                                       >
-                                        <div class="tooltip__content"
+                                        <div class="v-tooltip__content"
                                              style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"
                                         >
                                           <span>
@@ -1458,11 +1534,11 @@ exports[`/statistics 1`] = `
                                         </div>
                                         <span>
                                           <button type="button"
-                                                  class="btn btn--icon"
+                                                  class="v-btn v-btn--icon"
                                           >
-                                            <div class="btn__content">
+                                            <div class="v-btn__content">
                                               <i aria-hidden="true"
-                                                 class="icon material-icons"
+                                                 class="v-icon material-icons"
                                               >
                                                 link
                                               </i>
@@ -1470,8 +1546,8 @@ exports[`/statistics 1`] = `
                                           </button>
                                         </span>
                                       </span>
-                                      <span class="tooltip tooltip--bottom">
-                                        <div class="tooltip__content"
+                                      <span class="v-tooltip v-tooltip--bottom">
+                                        <div class="v-tooltip__content"
                                              style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"
                                         >
                                           <span>
@@ -1480,11 +1556,11 @@ exports[`/statistics 1`] = `
                                         </div>
                                         <span>
                                           <button type="button"
-                                                  class="btn btn--icon"
+                                                  class="v-btn v-btn--icon"
                                           >
-                                            <div class="btn__content">
+                                            <div class="v-btn__content">
                                               <i aria-hidden="true"
-                                                 class="icon material-icons"
+                                                 class="v-icon material-icons"
                                               >
                                                 refresh
                                               </i>
@@ -1506,23 +1582,39 @@ exports[`/statistics 1`] = `
                                   </div>
                                   <div class="layout row wrap">
                                     <div class="flex xs12">
-                                      <div class="input-group input-group--required input-group--text-field primary--text">
-                                        <label>
-                                          Username
-                                        </label>
-                                        <div class="input-group__input">
-                                          <input required="required"
-                                                 tabindex="0"
-                                                 aria-label="Username"
-                                                 type="text"
-                                                 value
+                                      <div class="v-input v-text-field">
+                                        <div class="v-input__control">
+                                          <div class="v-input__slot"
+                                               style="height:undefined;"
                                           >
-                                          <i aria-hidden="true"
-                                             class="icon material-icons input-group__append-icon"
-                                          >
-                                          </i>
-                                        </div>
-                                        <div class="input-group__details">
+                                            <div class="v-text-field__slot">
+                                              <label aria-hidden="true"
+                                                     class="v-label"
+                                                     style="left:0px;right:auto;position:absolute;"
+                                              >
+                                                Username
+                                              </label>
+                                              <input aria-label="Username"
+                                                     required="required"
+                                                     type="text"
+                                                     value
+                                              >
+                                            </div>
+                                            <div class="v-input__append-inner">
+                                              <div class="v-input__icon v-input__icon--">
+                                                <i aria-hidden="true"
+                                                   class="v-icon v-icon--link material-icons"
+                                                >
+                                                </i>
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <div class="v-text-field__details">
+                                            <div class="v-messages">
+                                              <div class="v-messages__wrapper">
+                                              </div>
+                                            </div>
+                                          </div>
                                         </div>
                                       </div>
                                     </div>
@@ -1552,27 +1644,27 @@ exports[`/statistics 1`] = `
                                  class="flex worker-item"
                                  style="z-index:998;"
                             >
-                              <div class="card"
-                                   style="height:auto;"
+                              <div class="v-card"
+                                   style="height:undefined;"
                               >
-                                <nav class="blue-grey lighten-5 toolbar toolbar--card toolbar--dense"
+                                <nav class="blue-grey lighten-5 v-toolbar v-toolbar--card v-toolbar--dense"
                                      style="margin-top:0px;padding-right:0px;padding-left:0px;transform:translateY(0px);"
                                 >
-                                  <div class="toolbar__content"
+                                  <div class="v-toolbar__content"
                                        style="height:48px;"
                                   >
                                     <div title="with description"
-                                         class="toolbar__title"
+                                         class="v-toolbar__title"
                                     >
                                       with description
                                     </div>
                                     <div class="spacer">
                                     </div>
-                                    <div class="toolbar__items">
-                                      <span class="tooltip tooltip--bottom"
+                                    <div class="v-toolbar__items">
+                                      <span class="v-tooltip v-tooltip--bottom"
                                             style="display:none;"
                                       >
-                                        <div class="tooltip__content"
+                                        <div class="v-tooltip__content"
                                              style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"
                                         >
                                           <span>
@@ -1581,11 +1673,11 @@ exports[`/statistics 1`] = `
                                         </div>
                                         <span>
                                           <button type="button"
-                                                  class="btn btn--icon"
+                                                  class="v-btn v-btn--icon"
                                           >
-                                            <div class="btn__content">
+                                            <div class="v-btn__content">
                                               <i aria-hidden="true"
-                                                 class="icon material-icons"
+                                                 class="v-icon material-icons"
                                               >
                                                 delete
                                               </i>
@@ -1593,8 +1685,8 @@ exports[`/statistics 1`] = `
                                           </button>
                                         </span>
                                       </span>
-                                      <span class="tooltip tooltip--bottom">
-                                        <div class="tooltip__content"
+                                      <span class="v-tooltip v-tooltip--bottom">
+                                        <div class="v-tooltip__content"
                                              style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"
                                         >
                                           <span>
@@ -1603,11 +1695,11 @@ exports[`/statistics 1`] = `
                                         </div>
                                         <span>
                                           <button type="button"
-                                                  class="btn btn--icon"
+                                                  class="v-btn v-btn--icon"
                                           >
-                                            <div class="btn__content">
+                                            <div class="v-btn__content">
                                               <i aria-hidden="true"
-                                                 class="icon material-icons"
+                                                 class="v-icon material-icons"
                                               >
                                                 add_circle
                                               </i>
@@ -1615,10 +1707,10 @@ exports[`/statistics 1`] = `
                                           </button>
                                         </span>
                                       </span>
-                                      <span class="tooltip tooltip--bottom"
+                                      <span class="v-tooltip v-tooltip--bottom"
                                             style="display:none;"
                                       >
-                                        <div class="tooltip__content"
+                                        <div class="v-tooltip__content"
                                              style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"
                                         >
                                           <span>
@@ -1627,11 +1719,11 @@ exports[`/statistics 1`] = `
                                         </div>
                                         <span>
                                           <button type="button"
-                                                  class="btn btn--icon"
+                                                  class="v-btn v-btn--icon"
                                           >
-                                            <div class="btn__content">
+                                            <div class="v-btn__content">
                                               <i aria-hidden="true"
-                                                 class="icon material-icons"
+                                                 class="v-icon material-icons"
                                               >
                                                 link
                                               </i>
@@ -1639,8 +1731,8 @@ exports[`/statistics 1`] = `
                                           </button>
                                         </span>
                                       </span>
-                                      <span class="tooltip tooltip--bottom">
-                                        <div class="tooltip__content"
+                                      <span class="v-tooltip v-tooltip--bottom">
+                                        <div class="v-tooltip__content"
                                              style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"
                                         >
                                           <span>
@@ -1649,11 +1741,11 @@ exports[`/statistics 1`] = `
                                         </div>
                                         <span>
                                           <button type="button"
-                                                  class="btn btn--icon"
+                                                  class="v-btn v-btn--icon"
                                           >
-                                            <div class="btn__content">
+                                            <div class="v-btn__content">
                                               <i aria-hidden="true"
-                                                 class="icon material-icons"
+                                                 class="v-icon material-icons"
                                               >
                                                 refresh
                                               </i>
@@ -1674,23 +1766,39 @@ exports[`/statistics 1`] = `
                                   </div>
                                   <div class="layout row wrap">
                                     <div class="flex xs12">
-                                      <div class="input-group input-group--required input-group--text-field primary--text">
-                                        <label>
-                                          Username
-                                        </label>
-                                        <div class="input-group__input">
-                                          <input required="required"
-                                                 tabindex="0"
-                                                 aria-label="Username"
-                                                 type="text"
-                                                 value
+                                      <div class="v-input v-text-field">
+                                        <div class="v-input__control">
+                                          <div class="v-input__slot"
+                                               style="height:undefined;"
                                           >
-                                          <i aria-hidden="true"
-                                             class="icon material-icons input-group__append-icon"
-                                          >
-                                          </i>
-                                        </div>
-                                        <div class="input-group__details">
+                                            <div class="v-text-field__slot">
+                                              <label aria-hidden="true"
+                                                     class="v-label"
+                                                     style="left:0px;right:auto;position:absolute;"
+                                              >
+                                                Username
+                                              </label>
+                                              <input aria-label="Username"
+                                                     required="required"
+                                                     type="text"
+                                                     value
+                                              >
+                                            </div>
+                                            <div class="v-input__append-inner">
+                                              <div class="v-input__icon v-input__icon--">
+                                                <i aria-hidden="true"
+                                                   class="v-icon v-icon--link material-icons"
+                                                >
+                                                </i>
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <div class="v-text-field__details">
+                                            <div class="v-messages">
+                                              <div class="v-messages__wrapper">
+                                              </div>
+                                            </div>
+                                          </div>
                                         </div>
                                       </div>
                                     </div>
@@ -1726,27 +1834,27 @@ exports[`/statistics 1`] = `
                                  class="flex worker-item"
                                  style="z-index:1000;"
                             >
-                              <div class="card"
-                                   style="height:auto;"
+                              <div class="v-card"
+                                   style="height:undefined;"
                               >
-                                <nav class="blue-grey lighten-5 toolbar toolbar--card toolbar--dense"
+                                <nav class="blue-grey lighten-5 v-toolbar v-toolbar--card v-toolbar--dense"
                                      style="margin-top:0px;padding-right:0px;padding-left:0px;transform:translateY(0px);"
                                 >
-                                  <div class="toolbar__content"
+                                  <div class="v-toolbar__content"
                                        style="height:48px;"
                                   >
                                     <div title="with url"
-                                         class="toolbar__title"
+                                         class="v-toolbar__title"
                                     >
                                       with url
                                     </div>
                                     <div class="spacer">
                                     </div>
-                                    <div class="toolbar__items">
-                                      <span class="tooltip tooltip--bottom"
+                                    <div class="v-toolbar__items">
+                                      <span class="v-tooltip v-tooltip--bottom"
                                             style="display:none;"
                                       >
-                                        <div class="tooltip__content"
+                                        <div class="v-tooltip__content"
                                              style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"
                                         >
                                           <span>
@@ -1755,11 +1863,11 @@ exports[`/statistics 1`] = `
                                         </div>
                                         <span>
                                           <button type="button"
-                                                  class="btn btn--icon"
+                                                  class="v-btn v-btn--icon"
                                           >
-                                            <div class="btn__content">
+                                            <div class="v-btn__content">
                                               <i aria-hidden="true"
-                                                 class="icon material-icons"
+                                                 class="v-icon material-icons"
                                               >
                                                 delete
                                               </i>
@@ -1767,8 +1875,8 @@ exports[`/statistics 1`] = `
                                           </button>
                                         </span>
                                       </span>
-                                      <span class="tooltip tooltip--bottom">
-                                        <div class="tooltip__content"
+                                      <span class="v-tooltip v-tooltip--bottom">
+                                        <div class="v-tooltip__content"
                                              style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"
                                         >
                                           <span>
@@ -1777,11 +1885,11 @@ exports[`/statistics 1`] = `
                                         </div>
                                         <span>
                                           <button type="button"
-                                                  class="btn btn--icon"
+                                                  class="v-btn v-btn--icon"
                                           >
-                                            <div class="btn__content">
+                                            <div class="v-btn__content">
                                               <i aria-hidden="true"
-                                                 class="icon material-icons"
+                                                 class="v-icon material-icons"
                                               >
                                                 add_circle
                                               </i>
@@ -1789,8 +1897,8 @@ exports[`/statistics 1`] = `
                                           </button>
                                         </span>
                                       </span>
-                                      <span class="tooltip tooltip--bottom">
-                                        <div class="tooltip__content"
+                                      <span class="v-tooltip v-tooltip--bottom">
+                                        <div class="v-tooltip__content"
                                              style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"
                                         >
                                           <span>
@@ -1799,11 +1907,11 @@ exports[`/statistics 1`] = `
                                         </div>
                                         <span>
                                           <button type="button"
-                                                  class="btn btn--icon"
+                                                  class="v-btn v-btn--icon"
                                           >
-                                            <div class="btn__content">
+                                            <div class="v-btn__content">
                                               <i aria-hidden="true"
-                                                 class="icon material-icons"
+                                                 class="v-icon material-icons"
                                               >
                                                 link
                                               </i>
@@ -1811,8 +1919,8 @@ exports[`/statistics 1`] = `
                                           </button>
                                         </span>
                                       </span>
-                                      <span class="tooltip tooltip--bottom">
-                                        <div class="tooltip__content"
+                                      <span class="v-tooltip v-tooltip--bottom">
+                                        <div class="v-tooltip__content"
                                              style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"
                                         >
                                           <span>
@@ -1821,11 +1929,11 @@ exports[`/statistics 1`] = `
                                         </div>
                                         <span>
                                           <button type="button"
-                                                  class="btn btn--icon"
+                                                  class="v-btn v-btn--icon"
                                           >
-                                            <div class="btn__content">
+                                            <div class="v-btn__content">
                                               <i aria-hidden="true"
-                                                 class="icon material-icons"
+                                                 class="v-icon material-icons"
                                               >
                                                 refresh
                                               </i>
@@ -1847,23 +1955,39 @@ exports[`/statistics 1`] = `
                                   </div>
                                   <div class="layout row wrap">
                                     <div class="flex xs12">
-                                      <div class="input-group input-group--required input-group--text-field primary--text">
-                                        <label>
-                                          Username
-                                        </label>
-                                        <div class="input-group__input">
-                                          <input required="required"
-                                                 tabindex="0"
-                                                 aria-label="Username"
-                                                 type="text"
-                                                 value
+                                      <div class="v-input v-text-field">
+                                        <div class="v-input__control">
+                                          <div class="v-input__slot"
+                                               style="height:undefined;"
                                           >
-                                          <i aria-hidden="true"
-                                             class="icon material-icons input-group__append-icon"
-                                          >
-                                          </i>
-                                        </div>
-                                        <div class="input-group__details">
+                                            <div class="v-text-field__slot">
+                                              <label aria-hidden="true"
+                                                     class="v-label"
+                                                     style="left:0px;right:auto;position:absolute;"
+                                              >
+                                                Username
+                                              </label>
+                                              <input aria-label="Username"
+                                                     required="required"
+                                                     type="text"
+                                                     value
+                                              >
+                                            </div>
+                                            <div class="v-input__append-inner">
+                                              <div class="v-input__icon v-input__icon--">
+                                                <i aria-hidden="true"
+                                                   class="v-icon v-icon--link material-icons"
+                                                >
+                                                </i>
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <div class="v-text-field__details">
+                                            <div class="v-messages">
+                                              <div class="v-messages__wrapper">
+                                              </div>
+                                            </div>
+                                          </div>
                                         </div>
                                       </div>
                                     </div>
@@ -1893,27 +2017,27 @@ exports[`/statistics 1`] = `
                                  class="flex worker-item"
                                  style="z-index:999;"
                             >
-                              <div class="card"
-                                   style="height:auto;"
+                              <div class="v-card"
+                                   style="height:undefined;"
                               >
-                                <nav class="blue-grey lighten-5 toolbar toolbar--card toolbar--dense"
+                                <nav class="blue-grey lighten-5 v-toolbar v-toolbar--card v-toolbar--dense"
                                      style="margin-top:0px;padding-right:0px;padding-left:0px;transform:translateY(0px);"
                                 >
-                                  <div class="toolbar__content"
+                                  <div class="v-toolbar__content"
                                        style="height:48px;"
                                   >
                                     <div title="with all"
-                                         class="toolbar__title"
+                                         class="v-toolbar__title"
                                     >
                                       with all
                                     </div>
                                     <div class="spacer">
                                     </div>
-                                    <div class="toolbar__items">
-                                      <span class="tooltip tooltip--bottom"
+                                    <div class="v-toolbar__items">
+                                      <span class="v-tooltip v-tooltip--bottom"
                                             style="display:none;"
                                       >
-                                        <div class="tooltip__content"
+                                        <div class="v-tooltip__content"
                                              style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"
                                         >
                                           <span>
@@ -1922,11 +2046,11 @@ exports[`/statistics 1`] = `
                                         </div>
                                         <span>
                                           <button type="button"
-                                                  class="btn btn--icon"
+                                                  class="v-btn v-btn--icon"
                                           >
-                                            <div class="btn__content">
+                                            <div class="v-btn__content">
                                               <i aria-hidden="true"
-                                                 class="icon material-icons"
+                                                 class="v-icon material-icons"
                                               >
                                                 delete
                                               </i>
@@ -1934,8 +2058,8 @@ exports[`/statistics 1`] = `
                                           </button>
                                         </span>
                                       </span>
-                                      <span class="tooltip tooltip--bottom">
-                                        <div class="tooltip__content"
+                                      <span class="v-tooltip v-tooltip--bottom">
+                                        <div class="v-tooltip__content"
                                              style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"
                                         >
                                           <span>
@@ -1944,11 +2068,11 @@ exports[`/statistics 1`] = `
                                         </div>
                                         <span>
                                           <button type="button"
-                                                  class="btn btn--icon"
+                                                  class="v-btn v-btn--icon"
                                           >
-                                            <div class="btn__content">
+                                            <div class="v-btn__content">
                                               <i aria-hidden="true"
-                                                 class="icon material-icons"
+                                                 class="v-icon material-icons"
                                               >
                                                 add_circle
                                               </i>
@@ -1956,8 +2080,8 @@ exports[`/statistics 1`] = `
                                           </button>
                                         </span>
                                       </span>
-                                      <span class="tooltip tooltip--bottom">
-                                        <div class="tooltip__content"
+                                      <span class="v-tooltip v-tooltip--bottom">
+                                        <div class="v-tooltip__content"
                                              style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"
                                         >
                                           <span>
@@ -1966,11 +2090,11 @@ exports[`/statistics 1`] = `
                                         </div>
                                         <span>
                                           <button type="button"
-                                                  class="btn btn--icon"
+                                                  class="v-btn v-btn--icon"
                                           >
-                                            <div class="btn__content">
+                                            <div class="v-btn__content">
                                               <i aria-hidden="true"
-                                                 class="icon material-icons"
+                                                 class="v-icon material-icons"
                                               >
                                                 link
                                               </i>
@@ -1978,8 +2102,8 @@ exports[`/statistics 1`] = `
                                           </button>
                                         </span>
                                       </span>
-                                      <span class="tooltip tooltip--bottom">
-                                        <div class="tooltip__content"
+                                      <span class="v-tooltip v-tooltip--bottom">
+                                        <div class="v-tooltip__content"
                                              style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"
                                         >
                                           <span>
@@ -1988,11 +2112,11 @@ exports[`/statistics 1`] = `
                                         </div>
                                         <span>
                                           <button type="button"
-                                                  class="btn btn--icon"
+                                                  class="v-btn v-btn--icon"
                                           >
-                                            <div class="btn__content">
+                                            <div class="v-btn__content">
                                               <i aria-hidden="true"
-                                                 class="icon material-icons"
+                                                 class="v-icon material-icons"
                                               >
                                                 refresh
                                               </i>
@@ -2013,23 +2137,39 @@ exports[`/statistics 1`] = `
                                   </div>
                                   <div class="layout row wrap">
                                     <div class="flex xs12">
-                                      <div class="input-group input-group--required input-group--text-field primary--text">
-                                        <label>
-                                          Username
-                                        </label>
-                                        <div class="input-group__input">
-                                          <input required="required"
-                                                 tabindex="0"
-                                                 aria-label="Username"
-                                                 type="text"
-                                                 value
+                                      <div class="v-input v-text-field">
+                                        <div class="v-input__control">
+                                          <div class="v-input__slot"
+                                               style="height:undefined;"
                                           >
-                                          <i aria-hidden="true"
-                                             class="icon material-icons input-group__append-icon"
-                                          >
-                                          </i>
-                                        </div>
-                                        <div class="input-group__details">
+                                            <div class="v-text-field__slot">
+                                              <label aria-hidden="true"
+                                                     class="v-label"
+                                                     style="left:0px;right:auto;position:absolute;"
+                                              >
+                                                Username
+                                              </label>
+                                              <input aria-label="Username"
+                                                     required="required"
+                                                     type="text"
+                                                     value
+                                              >
+                                            </div>
+                                            <div class="v-input__append-inner">
+                                              <div class="v-input__icon v-input__icon--">
+                                                <i aria-hidden="true"
+                                                   class="v-icon v-icon--link material-icons"
+                                                >
+                                                </i>
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <div class="v-text-field__details">
+                                            <div class="v-messages">
+                                              <div class="v-messages__wrapper">
+                                              </div>
+                                            </div>
+                                          </div>
                                         </div>
                                       </div>
                                     </div>
@@ -2062,7 +2202,7 @@ exports[`/statistics 1`] = `
                 </div>
               </div>
             </main>
-            <footer class="footer footer--fixed"
+            <footer class="v-footer v-footer--fixed"
                     style="height:32px;"
             >
               <span>
