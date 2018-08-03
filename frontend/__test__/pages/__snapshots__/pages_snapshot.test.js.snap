@@ -108,7 +108,7 @@ exports[`/ 1`] = `
                        style="height:600px;"
                   >
                     <div class="v-parallax__image-container">
-                      <img src="/_nuxt/img/back7-brighten.71e76da.jpg"
+                      <img src="/_nuxt/img/back7-brighten.b26d671.jpg"
                            class="v-parallax__image"
                            style="display:block;opacity:0;transform:translate(-50%, 0px);"
                       >
@@ -243,7 +243,7 @@ exports[`/ 1`] = `
                        style="height:380px;"
                   >
                     <div class="v-parallax__image-container">
-                      <img src="/_nuxt/img/back4.5e3f578.jpg"
+                      <img src="/_nuxt/img/back4.e2083dc.jpg"
                            class="v-parallax__image"
                            style="display:block;opacity:0;transform:translate(-50%, 0px);"
                       >
