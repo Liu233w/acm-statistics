@@ -17,7 +17,7 @@ exports[`/ 1`] = `
     <meta data-n-head="true"
           data-hid="description"
           name="description"
-          content="NWPU-ACM &#x67E5;&#x8BE2;&#x7CFB;&#x7EDF; -- &#x897F;&#x5317;&#x5DE5;&#x4E1A;&#x5927;&#x5B66; ACM &#x5F00;&#x53D1;&#x7EC4;"
+          content="&#x897F;&#x5317;&#x5DE5;&#x4E1A;&#x5927;&#x5B66;ACM&#x57FA;&#x5730;&#x67E5;&#x9898;&#x4E3B;&#x9875;&#xFF0C;&#x63D0;&#x4F9B;&#x56FD;&#x5185;&#x5404;&#x5927;OJ&#x7684;&#x67E5;&#x8BE2;&#x9898;&#x91CF;&#x3001;&#x8BA1;&#x7B97;Rating&#x7684;&#x670D;&#x52A1;&#x3002;"
     >
     <title data-n-head="true">
       NWPU-ACM &#x67E5;&#x8BE2;&#x7CFB;&#x7EDF;
@@ -470,7 +470,7 @@ exports[`/statistics 1`] = `
     <meta data-n-head="true"
           data-hid="description"
           name="description"
-          content="NWPU-ACM &#x67E5;&#x8BE2;&#x7CFB;&#x7EDF; -- &#x897F;&#x5317;&#x5DE5;&#x4E1A;&#x5927;&#x5B66; ACM &#x5F00;&#x53D1;&#x7EC4;"
+          content="&#x897F;&#x5317;&#x5DE5;&#x4E1A;&#x5927;&#x5B66;ACM&#x57FA;&#x5730;&#x67E5;&#x9898;&#x4E3B;&#x9875;&#xFF0C;&#x63D0;&#x4F9B;&#x56FD;&#x5185;&#x5404;&#x5927;OJ&#x7684;&#x67E5;&#x8BE2;&#x9898;&#x91CF;&#x3001;&#x8BA1;&#x7B97;Rating&#x7684;&#x670D;&#x52A1;&#x3002;"
     >
     <title data-n-head="true">
       NWPU-ACM &#x67E5;&#x8BE2;&#x7CFB;&#x7EDF;

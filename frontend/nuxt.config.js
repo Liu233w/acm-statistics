@@ -12,7 +12,7 @@ module.exports = {
     meta: [
       {charset: 'utf-8'},
       {name: 'viewport', content: 'width=device-width, initial-scale=1'},
-      {hid: 'description', name: 'description', content: 'NWPU-ACM 查询系统 -- 西北工业大学 ACM 开发组'},
+      {hid: 'description', name: 'description', content: '西北工业大学ACM基地查题主页，提供国内各大OJ的查询题量、计算Rating的服务。'},
     ],
     link: [
       {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'},
