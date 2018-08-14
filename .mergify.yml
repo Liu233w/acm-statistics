@@ -13,3 +13,4 @@ rules:
         dismiss_stale_reviews: true
     merge_strategy:
       method: rebase
+    disabling_label: dependencies
