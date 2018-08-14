@@ -6,7 +6,7 @@ rules:
         contexts:
           - continuous-integration/travis-ci
           - mergify/future-config-checker
-          - codecov
+          - codecov/project
           - WIP
       required_pull_request_reviews: null
     merge_strategy:
