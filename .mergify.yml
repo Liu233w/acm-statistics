@@ -8,9 +8,7 @@ rules:
           - mergify/future-config-checker
           - codecov
           - WIP
-      required_pull_request_reviews:
-        required_approving_review_count: 0
-        dismiss_stale_reviews: true
+      required_pull_request_reviews: null
     merge_strategy:
       method: rebase
     enabling_label: ready-to-be-merged
