@@ -7,7 +7,7 @@ rules:
           - continuous-integration/travis-ci
           - codecov/project
           - WIP
-      required_pull_request_reviews: null
+      required_pul
     merge_strategy:
       method: rebase
     enabling_label: ready-to-be-merged
