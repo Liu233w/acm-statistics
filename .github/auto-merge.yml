@@ -3,4 +3,5 @@ minApprovals:
 
 mergeMethod: rebase
 
-requiredLabels: ready-to-be-merged
+requiredLabels: 
+  - ready-to-be-merged
