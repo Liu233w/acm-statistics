@@ -17,7 +17,7 @@
     "postinstall": "node -e \"var s='../crawler',d='./node_modules/crawler',fs=require('fs'), r=require('path').resolve;fs.exists(d,function(e){e||fs.symlinkSync(r(s),r(d),'junction')});\""
   },
   "dependencies": {
-    "@nuxtjs/component-cache": "^1.1.1",
+    "@nuxtjs/component-cache": "^1.1.2",
     "@nuxtjs/proxy": "^1.2.4",
     "axios": "^0.18.0",
     "cheerio": "^1.0.0-rc.2",
