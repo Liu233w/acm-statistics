@@ -21,7 +21,7 @@
     "@nuxtjs/proxy": "^1.2.4",
     "axios": "^0.18.0",
     "cheerio": "^1.0.0-rc.2",
-    "lodash": "^4.17.10",
+    "lodash": "^4.17.11",
     "nuxt": "^1.4.2",
     "superagent": "^3.8.3",
     "virtual-module-webpack-plugin": "^0.4.0",
