@@ -22,10 +22,11 @@ module.exports = async function (config, username) {
   const $ = cheerio.load(res.text)
 
   try {
-    const spans = $('span.badge.progress-bar-success')
+    const solvedElem = $('li.list-group-item:contains("解决的题目") > span')
+    const submissionsElem = $('li.list-group-item:contains("通过的提交") > span')
     return {
-      solved: Number($(spans[1]).text().replace(/[ \n]/g, '').split('/')[0]),
-      submissions: Number($(spans[2]).text().replace(/[ \n]/g, '').split('/')[1]),
+      solved: Number($(solvedElem).text().replace(/[ \n]/g, '').split('/')[0]),
+      submissions: Number($(submissionsElem).text().replace(/[ \n]/g, '').split('/')[1]),
     }
   } catch (e) {
     throw new Error('无法解析数据')
