@@ -13,7 +13,7 @@
   "author": "Liu233w <wwwlsmcom@outlook.com>",
   "license": "GPL-3.0",
   "dependencies": {
-    "koa": "^2.5.3",
+    "koa": "^2.6.2",
     "koa-router": "^7.4.0",
     "lodash": "^4.17.11",
     "log4js": "^3.0.6"
