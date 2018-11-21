@@ -20,7 +20,7 @@
   },
   "devDependencies": {
     "eslint": "^5.9.0",
-    "eslint-plugin-lodash": "^2.7.0",
+    "eslint-plugin-lodash": "^4.0.0",
     "jest": "^23.6.0",
     "supertest": "^3.3.0"
   },
