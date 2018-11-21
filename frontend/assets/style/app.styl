@@ -1,5 +1,18 @@
+// Import and define Vuetify color theme
+// https://vuetifyjs.com/en/style/colors
+@require '~vuetify/src/stylus/settings/_colors'
+$theme := {
+  primary:     $blue.darken-2
+  accent:      $blue.accent-2
+  secondary:   $grey.lighten-1
+  info:        $blue.lighten-1
+  warning:     $amber.darken-2
+  error:       $red.accent-4
+  success:     $green.lighten-2
+}
+
 // Import Vuetify styling
-@require '~vuetify/src/stylus/app.styl'
+@require '~vuetify/src/stylus/app'
 
 .page
   @extend .fade-transition

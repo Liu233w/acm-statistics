@@ -23,6 +23,10 @@ import Vuetify, {
   VChip,
 } from 'vuetify/lib'
 
+import {
+  Ripple,
+} from 'vuetify/lib/directives'
+
 Vue.use(Vuetify, {
   components: {
     VApp,
@@ -43,6 +47,9 @@ Vue.use(Vuetify, {
     VParallax,
     VDialog,
     VChip,
+  },
+  directives: {
+    Ripple,
   },
   options: {
     minifyTheme: function (val) {
