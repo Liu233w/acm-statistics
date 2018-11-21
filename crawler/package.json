@@ -18,7 +18,7 @@
     "axios": "^0.18.0",
     "axios-mock-adapter": "^1.15.0",
     "eslint": "^5.9.0",
-    "eslint-plugin-lodash": "^2.7.0",
+    "eslint-plugin-lodash": "^4.0.0",
     "jest": "^23.6.0",
     "memfs": "^2.14.0"
   },
