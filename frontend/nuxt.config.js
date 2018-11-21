@@ -74,8 +74,8 @@ module.exports = {
       }),
       new VuetifyLoaderPlugin(),
     ],
-    uglify: {
-      uglifyOptions: {
+    terser: {
+      terserOptions: {
         compress: {
           drop_console: true,
         },
