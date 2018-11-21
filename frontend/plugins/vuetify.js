@@ -2,8 +2,7 @@ import _ from 'lodash'
 import LRU from 'lru-cache'
 
 import Vue from 'vue'
-import {
-  Vuetify,
+import Vuetify, {
   VApp,
   VCard,
   VNavigationDrawer,
@@ -11,7 +10,6 @@ import {
   VList,
   VBtn,
   VIcon,
-  VGrid,
   VToolbar,
   VTextField,
   VTooltip,
@@ -23,7 +21,7 @@ import {
   VParallax,
   VDialog,
   VChip,
-} from 'vuetify'
+} from 'vuetify/lib'
 
 Vue.use(Vuetify, {
   components: {
@@ -34,7 +32,6 @@ Vue.use(Vuetify, {
     VList,
     VBtn,
     VIcon,
-    VGrid,
     VToolbar,
     VTextField,
     VTooltip,

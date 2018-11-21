@@ -33,5 +33,4 @@ module.exports = async function () {
     moduleName: 'dynamic/crawlers.js',
     contents: await buildSources(),
   }))
-  this.addVendor(['axios'])
 }
