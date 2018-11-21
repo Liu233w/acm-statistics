@@ -33,6 +33,8 @@ module.exports = {
   ** Customize the progress bar color
   */
   loading: {color: '#3B8070'},
+  // 根据请求的浏览器版本决定babel的preset
+  modern: 'server',
   /*
   ** Build configuration
   */
