@@ -2,17 +2,25 @@ import {WORKER_STATUS} from '~/components/consts'
 import getCrawlerData from '~/dynamic/crawlers'
 
 import _ from 'lodash'
+const crawlerFunctions = {}
 
-export function state() {
+function initCrawlers() {
+
   const data = getCrawlerData()
 
   const crawlers = {}
   _.forEach(data.metas, (val, key) => {
     crawlers[key] = val
     crawlers[key].name = key
-    crawlers[key].func = data.crawlers[key]
+    crawlerFunctions[key] = data.crawlers[key]
   })
 
+  return crawlers
+}
+
+export function state() {
+
+  const crawlers = initCrawlers()
   const workers = initWorkers(crawlers)
 
   return {
@@ -236,7 +244,7 @@ export const actions = {
     commit(MUTATION_TYPES.startWorker, {index, tokenKey})
 
     try {
-      const res = await state.crawlers[worker.crawlerName].func(worker.username)
+      const res = await crawlerFunctions[worker.crawlerName](worker.username)
       if (state.workers[index].tokenKey !== tokenKey) {
         console.log('done but stopped')
         return
