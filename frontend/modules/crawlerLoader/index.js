@@ -1,4 +1,12 @@
-const {readMetaConfigs, generateBrowserCrawlerFunctions} = require('crawler')
+let crawlerModule
+if (process.env.E2E) {
+  console.log('running project in e2e test, will mock crawlerModule')
+  crawlerModule = require('../../__test__/e2eMocks/crawler.js')
+} else {
+  crawlerModule = require('crawler')
+}
+
+const {readMetaConfigs, generateBrowserCrawlerFunctions} = crawlerModule
 const path = require('path')
 const fs = require('fs-extra')
 const VirtualModulePlugin = require('virtual-module-webpack-plugin')
@@ -14,7 +22,7 @@ async function buildSources() {
     const crawlers = {
   `
   const functions = await generateBrowserCrawlerFunctions()
-  for(let key in functions) {
+  for (let key in functions) {
     crawlersModule += `${key}: ${functions[key]},\n`
   }
   crawlersModule += `

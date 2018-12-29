@@ -1,31 +1,43 @@
 /* eslint-disable no-undef */
 
-const {Nuxt, Builder} = require('nuxt')
-const {resolve} = require('path')
-const cheerio = require('cheerio')
+const path = require('path')
+const {spawn} = require('child_process')
 const _ = require('lodash')
+const superagent = require('superagent')
+const cheerio = require('cheerio')
 
-// mock 爬虫，防止修改 crawler 模块引起快照改变
-jest.mock('../../modules/crawlerLoader')
+const basePath = 'http://localhost:3000'
 
-// We keep a reference to Nuxt so we can close
-// the server at the end of the test
-let nuxt = null
+let runProcess = null
 
-// Init Nuxt.js
 beforeAll(async () => {
-  const rootDir = resolve(__dirname, '../..')
-  const config = require(resolve(rootDir, 'nuxt.config.js'))
-  config.rootDir = rootDir // project folder
-  config.dev = false // production build
-  nuxt = new Nuxt(config)
-  await new Builder(nuxt).build()
-}, 1200000) // 用两分钟的时间启动 nuxt
+
+  console.log('start building nuxt...')
+  await wrapSpawn('npm', ['run', 'build'])
+
+  console.log('start running nuxt...')
+  await wrapSpawn('npm', ['start'], (child, resolve) => {
+    runProcess = child
+    child.stdout.on('data', data => {
+      // waiting for 'Listening on: http://localhost:3000'
+      if (_.includes(data.toString(), basePath)) {
+        resolve()
+      }
+    })
+  })
+}, 600000) // 最多等待 10 分钟
 
 async function testPageByPath(path) {
-  const context = {}
-  const {html} = await nuxt.renderRoute(path, context)
-  const $ = cheerio.load(html)
+
+  const url = basePath + path
+  console.log(`request url at ${url}`)
+
+  const res = await superagent.get(url)
+  if (!res.ok) {
+    console.log(`path ${path} does not have a 200 response, the response: `, res)
+    throw Error(`path ${path} does not have a 200 response`)
+  }
+  const $ = cheerio.load(res.text)
 
   $('link[href^="/_nuxt/"]').remove()
   $('script[src^="/_nuxt/"]').remove()
@@ -62,7 +74,54 @@ for (let path of testPaths) {
   test(path, () => testPageByPath(path))
 }
 
+let cleaningUp = false
+
 // Close the Nuxt server
-afterAll(() => {
-  nuxt.close()
+afterAll(async () => {
+  cleaningUp = true
+  await wrapSpawn('kill', ['-INT', '-' + runProcess.pid])
 })
+
+function wrapSpawn(cmd, args, callback) {
+  return new Promise((resolve, reject) => {
+    try {
+
+      const child = spawn(cmd, args, {
+        cwd: path.resolve(__dirname, '../..'),
+        env: {
+          E2E: 1,
+          ...process.env,
+        },
+        shell: true,
+      })
+      child.on('error', reject)
+
+      child.stdout.on('data', data => {
+        console.log(data.toString())
+      })
+      child.stderr.on('data', data => {
+        console.error(data.toString())
+      })
+
+      child.on('close', code => {
+        if (code === 0) {
+          resolve()
+        } else {
+          if (cleaningUp) {
+            console.error(`process exited with code ${code}`)
+            resolve()
+          } else {
+            reject(`process exited with code ${code}`)
+          }
+        }
+      })
+
+      if (callback) {
+        callback(child, resolve, reject)
+      }
+
+    } catch (e) {
+      reject(e)
+    }
+  })
+}
