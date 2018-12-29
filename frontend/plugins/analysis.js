@@ -15,7 +15,7 @@ export default function ({ app }) {
   if (process.client) {
     app.router.afterEach(() => {
       addScriptTag('//tajs.qq.com/stats?sId=65546290')
-      addScriptTag('//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js')
+      addScriptTag('//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js')
     })
   }
 }
