@@ -60,7 +60,7 @@ async function testPageByPath(path) {
 
   // 移除随机数
   const storeEl = $(_.filter($('script'), el => /window\.__NUXT__/.test($(el).html())))
-  storeEl.html(_.replace(storeEl.html(), /,"key":0\.\d*/g, ''))
+  storeEl.html(_.replace(storeEl.html(), /,key:\.\d*/g, ''))
 
   expect($.html()).toMatchSnapshot()
 }
@@ -79,7 +79,7 @@ let cleaningUp = false
 // Close the Nuxt server
 afterAll(async () => {
   cleaningUp = true
-  await wrapSpawn('kill', ['-INT', '-' + runProcess.pid])
+  await wrapSpawn('kill', ['-9', '' + runProcess.pid])
 })
 
 function wrapSpawn(cmd, args, callback) {

@@ -7,6 +7,9 @@ exports[`/ 1`] = `
       data-n-head
 >
   <head>
+    <title data-n-head="true">
+      NWPU-ACM &#x67E5;&#x8BE2;&#x7CFB;&#x7EDF;
+    </title>
     <meta data-n-head="true"
           charset="utf-8"
     >
@@ -19,9 +22,6 @@ exports[`/ 1`] = `
           name="description"
           content="&#x897F;&#x5317;&#x5DE5;&#x4E1A;&#x5927;&#x5B66;ACM&#x57FA;&#x5730;&#x67E5;&#x9898;&#x4E3B;&#x9875;&#xFF0C;&#x63D0;&#x4F9B;&#x56FD;&#x5185;&#x5404;&#x5927;OJ&#x7684;&#x67E5;&#x8BE2;&#x9898;&#x91CF;&#x3001;&#x8BA1;&#x7B97;Rating&#x7684;&#x670D;&#x52A1;&#x3002;"
     >
-    <title data-n-head="true">
-      NWPU-ACM &#x67E5;&#x8BE2;&#x7CFB;&#x7EDF;
-    </title>
     <link data-n-head="true"
           rel="icon"
           type="image/x-icon"
@@ -39,32 +39,23 @@ exports[`/ 1`] = `
            id="vuetify-theme-stylesheet"
            type="text/css"
     >
-      a{color:#1976d2;}.primary{background-color:#1976d2!important;border-color:#1976d2!important;}.primary--text{color:#1976d2!important;}.primary--textinput,.primary--texttextarea{caret-color:#1976d2!important;}.primary.lighten-5{background-color:#c7fdff!important;border-color:#c7fdff!important;}.primary--text.text--lighten-5{color:#c7fdff!important;}.primary--text.text--lighten-5input,.primary--text.text--lighten-5textarea{caret-color:#c7fdff!important;}.primary.lighten-4{background-color:#a8e0ff!important;border-color:#a8e0ff!important;}.primary--text.text--lighten-4{color:#a8e0ff!important;}.primary--text.text--lighten-4input,.primary--text.text--lighten-4textarea{caret-color:#a8e0ff!important;}.primary.lighten-3{background-color:#8ac5ff!important;border-color:#8ac5ff!important;}.primary--text.text--lighten-3{color:#8ac5ff!important;}.primary--text.text--lighten-3input,.primary--text.text--lighten-3textarea{caret-color:#8ac5ff!important;}.primary.lighten-2{background-color:#6aaaff!important;border-color:#6aaaff!important;}.primary--text.text--lighten-2{color:#6aaaff!important;}.primary--text.text--lighten-2input,.primary--text.text--lighten-2textarea{caret-color:#6aaaff!important;}.primary.lighten-1{background-color:#488fef!important;border-color:#488fef!important;}.primary--text.text--lighten-1{color:#488fef!important;}.primary--text.text--lighten-1input,.primary--text.text--lighten-1textarea{caret-color:#488fef!important;}.primary.darken-1{background-color:#005eb6!important;border-color:#005eb6!important;}.primary--text.text--darken-1{color:#005eb6!important;}.primary--text.text--darken-1input,.primary--text.text--darken-1textarea{caret-color:#005eb6!important;}.primary.darken-2{background-color:#00479b!important;border-color:#00479b!important;}.primary--text.text--darken-2{color:#00479b!important;}.primary--text.text--darken-2input,.primary--text.text--darken-2textarea{caret-color:#00479b!important;}.primary.darken-3{background-color:#003180!important;border-color:#003180!important;}.primary--text.text--darken-3{color:#003180!important;}.primary--text.text--darken-3input,.primary--text.text--darken-3textarea{caret-color:#003180!important;}.primary.darken-4{background-color:#001e67!important;border-color:#001e67!important;}.primary--text.text--darken-4{color:#001e67!important;}.primary--text.text--darken-4input,.primary--text.text--darken-4textarea{caret-color:#001e67!important;}.secondary{background-color:#424242!important;border-color:#424242!important;}.secondary--text{color:#424242!important;}.secondary--textinput,.secondary--texttextarea{caret-color:#424242!important;}.secondary.lighten-5{background-color:#c1c1c1!important;border-color:#c1c1c1!important;}.secondary--text.text--lighten-5{color:#c1c1c1!important;}.secondary--text.text--lighten-5input,.secondary--text.text--lighten-5textarea{caret-color:#c1c1c1!important;}.secondary.lighten-4{background-color:#a6a6a6!important;border-color:#a6a6a6!important;}.secondary--text.text--lighten-4{color:#a6a6a6!important;}.secondary--text.text--lighten-4input,.secondary--text.text--lighten-4textarea{caret-color:#a6a6a6!important;}.secondary.lighten-3{background-color:#8b8b8b!important;border-color:#8b8b8b!important;}.secondary--text.text--lighten-3{color:#8b8b8b!important;}.secondary--text.text--lighten-3input,.secondary--text.text--lighten-3textarea{caret-color:#8b8b8b!important;}.secondary.lighten-2{background-color:#727272!important;border-color:#727272!important;}.secondary--text.text--lighten-2{color:#727272!important;}.secondary--text.text--lighten-2input,.secondary--text.text--lighten-2textarea{caret-color:#727272!important;}.secondary.lighten-1{background-color:#595959!important;border-color:#595959!important;}.secondary--text.text--lighten-1{color:#595959!important;}.secondary--text.text--lighten-1input,.secondary--text.text--lighten-1textarea{caret-color:#595959!important;}.secondary.darken-1{background-color:#2c2c2c!important;border-color:#2c2c2c!important;}.secondary--text.text--darken-1{color:#2c2c2c!important;}.secondary--text.text--darken-1input,.secondary--text.text--darken-1textarea{caret-color:#2c2c2c!important;}.secondary.darken-2{background-color:#171717!important;border-color:#171717!important;}.secondary--text.text--darken-2{color:#171717!important;}.secondary--text.text--darken-2input,.secondary--text.text--darken-2textarea{caret-color:#171717!important;}.secondary.darken-3{background-color:#000000!important;border-color:#000000!important;}.secondary--text.text--darken-3{color:#000000!important;}.secondary--text.text--darken-3input,.secondary--text.text--darken-3textarea{caret-color:#000000!important;}.secondary.darken-4{background-color:#000000!important;border-color:#000000!important;}.secondary--text.text--darken-4{color:#000000!important;}.secondary--text.text--darken-4input,.secondary--text.text--darken-4textarea{caret-color:#000000!important;}.accent{background-color:#82b1ff!important;border-color:#82b1ff!important;}.accent--text{color:#82b1ff!important;}.accent--textinput,.accent--texttextarea{caret-color:#82b1ff!important;}.accent.lighten-5{background-color:#ffffff!important;border-color:#ffffff!important;}.accent--text.text--lighten-5{color:#ffffff!important;}.accent--text.text--lighten-5input,.accent--text.text--lighten-5textarea{caret-color:#ffffff!important;}.accent.lighten-4{background-color:#f8ffff!important;border-color:#f8ffff!important;}.accent--text.text--lighten-4{color:#f8ffff!important;}.accent--text.text--lighten-4input,.accent--text.text--lighten-4textarea{caret-color:#f8ffff!important;}.accent.lighten-3{background-color:#daffff!important;border-color:#daffff!important;}.accent--text.text--lighten-3{color:#daffff!important;}.accent--text.text--lighten-3input,.accent--text.text--lighten-3textarea{caret-color:#daffff!important;}.accent.lighten-2{background-color:#bce8ff!important;border-color:#bce8ff!important;}.accent--text.text--lighten-2{color:#bce8ff!important;}.accent--text.text--lighten-2input,.accent--text.text--lighten-2textarea{caret-color:#bce8ff!important;}.accent.lighten-1{background-color:#9fccff!important;border-color:#9fccff!important;}.accent--text.text--lighten-1{color:#9fccff!important;}.accent--text.text--lighten-1input,.accent--text.text--lighten-1textarea{caret-color:#9fccff!important;}.accent.darken-1{background-color:#6596e2!important;border-color:#6596e2!important;}.accent--text.text--darken-1{color:#6596e2!important;}.accent--text.text--darken-1input,.accent--text.text--darken-1textarea{caret-color:#6596e2!important;}.accent.darken-2{background-color:#467dc6!important;border-color:#467dc6!important;}.accent--text.text--darken-2{color:#467dc6!important;}.accent--text.text--darken-2input,.accent--text.text--darken-2textarea{caret-color:#467dc6!important;}.accent.darken-3{background-color:#2364aa!important;border-color:#2364aa!important;}.accent--text.text--darken-3{color:#2364aa!important;}.accent--text.text--darken-3input,.accent--text.text--darken-3textarea{caret-color:#2364aa!important;}.accent.darken-4{background-color:#004c90!important;border-color:#004c90!important;}.accent--text.text--darken-4{color:#004c90!important;}.accent--text.text--darken-4input,.accent--text.text--darken-4textarea{caret-color:#004c90!important;}.error{background-color:#ff5252!important;border-color:#ff5252!important;}.error--text{color:#ff5252!important;}.error--textinput,.error--texttextarea{caret-color:#ff5252!important;}.info{background-color:#2196f3!important;border-color:#2196f3!important;}.info--text{color:#2196f3!important;}.info--textinput,.info--texttextarea{caret-color:#2196f3!important;}.success{background-color:#4caf50!important;border-color:#4caf50!important;}.success--text{color:#4caf50!important;}.success--textinput,.success--texttextarea{caret-color:#4caf50!important;}.warning{background-color:#ffc107!important;border-color:#ffc107!important;}.warning--text{color:#ffc107!important;}.warning--textinput,.warning--texttextarea{caret-color:#ffc107!important;}
-    </style>
-    <style>
-      .index-title{text-shadow:1px 0 #ecf5ff,0 1px #ecf5ff,0 -1px #ecf5ff,-1px 0 #ecf5ff}.response-title{text-shadow:1px 0 #000,0 1px #000,0 -1px #000,-1px 0 #000}
+      a{color:#1976d2;}.primary{background-color:#1976d2!important;border-color:#1976d2!important;}.primary--text{color:#1976d2!important;caret-color:#1976d2!important;}.primary.lighten-5{background-color:#c7fdff!important;border-color:#c7fdff!important;}.primary--text.text--lighten-5{color:#c7fdff!important;caret-color:#c7fdff!important;}.primary.lighten-4{background-color:#a8e0ff!important;border-color:#a8e0ff!important;}.primary--text.text--lighten-4{color:#a8e0ff!important;caret-color:#a8e0ff!important;}.primary.lighten-3{background-color:#8ac5ff!important;border-color:#8ac5ff!important;}.primary--text.text--lighten-3{color:#8ac5ff!important;caret-color:#8ac5ff!important;}.primary.lighten-2{background-color:#6aaaff!important;border-color:#6aaaff!important;}.primary--text.text--lighten-2{color:#6aaaff!important;caret-color:#6aaaff!important;}.primary.lighten-1{background-color:#488fef!important;border-color:#488fef!important;}.primary--text.text--lighten-1{color:#488fef!important;caret-color:#488fef!important;}.primary.darken-1{background-color:#005eb6!important;border-color:#005eb6!important;}.primary--text.text--darken-1{color:#005eb6!important;caret-color:#005eb6!important;}.primary.darken-2{background-color:#00479b!important;border-color:#00479b!important;}.primary--text.text--darken-2{color:#00479b!important;caret-color:#00479b!important;}.primary.darken-3{background-color:#003180!important;border-color:#003180!important;}.primary--text.text--darken-3{color:#003180!important;caret-color:#003180!important;}.primary.darken-4{background-color:#001e67!important;border-color:#001e67!important;}.primary--text.text--darken-4{color:#001e67!important;caret-color:#001e67!important;}.secondary{background-color:#424242!important;border-color:#424242!important;}.secondary--text{color:#424242!important;caret-color:#424242!important;}.secondary.lighten-5{background-color:#c1c1c1!important;border-color:#c1c1c1!important;}.secondary--text.text--lighten-5{color:#c1c1c1!important;caret-color:#c1c1c1!important;}.secondary.lighten-4{background-color:#a6a6a6!important;border-color:#a6a6a6!important;}.secondary--text.text--lighten-4{color:#a6a6a6!important;caret-color:#a6a6a6!important;}.secondary.lighten-3{background-color:#8b8b8b!important;border-color:#8b8b8b!important;}.secondary--text.text--lighten-3{color:#8b8b8b!important;caret-color:#8b8b8b!important;}.secondary.lighten-2{background-color:#727272!important;border-color:#727272!important;}.secondary--text.text--lighten-2{color:#727272!important;caret-color:#727272!important;}.secondary.lighten-1{background-color:#595959!important;border-color:#595959!important;}.secondary--text.text--lighten-1{color:#595959!important;caret-color:#595959!important;}.secondary.darken-1{background-color:#2c2c2c!important;border-color:#2c2c2c!important;}.secondary--text.text--darken-1{color:#2c2c2c!important;caret-color:#2c2c2c!important;}.secondary.darken-2{background-color:#171717!important;border-color:#171717!important;}.secondary--text.text--darken-2{color:#171717!important;caret-color:#171717!important;}.secondary.darken-3{background-color:#000000!important;border-color:#000000!important;}.secondary--text.text--darken-3{color:#000000!important;caret-color:#000000!important;}.secondary.darken-4{background-color:#000000!important;border-color:#000000!important;}.secondary--text.text--darken-4{color:#000000!important;caret-color:#000000!important;}.accent{background-color:#82b1ff!important;border-color:#82b1ff!important;}.accent--text{color:#82b1ff!important;caret-color:#82b1ff!important;}.accent.lighten-5{background-color:#ffffff!important;border-color:#ffffff!important;}.accent--text.text--lighten-5{color:#ffffff!important;caret-color:#ffffff!important;}.accent.lighten-4{background-color:#f8ffff!important;border-color:#f8ffff!important;}.accent--text.text--lighten-4{color:#f8ffff!important;caret-color:#f8ffff!important;}.accent.lighten-3{background-color:#daffff!important;border-color:#daffff!important;}.accent--text.text--lighten-3{color:#daffff!important;caret-color:#daffff!important;}.accent.lighten-2{background-color:#bce8ff!important;border-color:#bce8ff!important;}.accent--text.text--lighten-2{color:#bce8ff!important;caret-color:#bce8ff!important;}.accent.lighten-1{background-color:#9fccff!important;border-color:#9fccff!important;}.accent--text.text--lighten-1{color:#9fccff!important;caret-color:#9fccff!important;}.accent.darken-1{background-color:#6596e2!important;border-color:#6596e2!important;}.accent--text.text--darken-1{color:#6596e2!important;caret-color:#6596e2!important;}.accent.darken-2{background-color:#467dc6!important;border-color:#467dc6!important;}.accent--text.text--darken-2{color:#467dc6!important;caret-color:#467dc6!important;}.accent.darken-3{background-color:#2364aa!important;border-color:#2364aa!important;}.accent--text.text--darken-3{color:#2364aa!important;caret-color:#2364aa!important;}.accent.darken-4{background-color:#004c90!important;border-color:#004c90!important;}.accent--text.text--darken-4{color:#004c90!important;caret-color:#004c90!important;}.error{background-color:#ff5252!important;border-color:#ff5252!important;}.error--text{color:#ff5252!important;caret-color:#ff5252!important;}.error.lighten-5{background-color:#ffe4d5!important;border-color:#ffe4d5!important;}.error--text.text--lighten-5{color:#ffe4d5!important;caret-color:#ffe4d5!important;}.error.lighten-4{background-color:#ffc6b9!important;border-color:#ffc6b9!important;}.error--text.text--lighten-4{color:#ffc6b9!important;caret-color:#ffc6b9!important;}.error.lighten-3{background-color:#ffa99e!important;border-color:#ffa99e!important;}.error--text.text--lighten-3{color:#ffa99e!important;caret-color:#ffa99e!important;}.error.lighten-2{background-color:#ff8c84!important;border-color:#ff8c84!important;}.error--text.text--lighten-2{color:#ff8c84!important;caret-color:#ff8c84!important;}.error.lighten-1{background-color:#ff6f6a!important;border-color:#ff6f6a!important;}.error--text.text--lighten-1{color:#ff6f6a!important;caret-color:#ff6f6a!important;}.error.darken-1{background-color:#df323b!important;border-color:#df323b!important;}.error--text.text--darken-1{color:#df323b!important;caret-color:#df323b!important;}.error.darken-2{background-color:#bf0025!important;border-color:#bf0025!important;}.error--text.text--darken-2{color:#bf0025!important;caret-color:#bf0025!important;}.error.darken-3{background-color:#9f0010!important;border-color:#9f0010!important;}.error--text.text--darken-3{color:#9f0010!important;caret-color:#9f0010!important;}.error.darken-4{background-color:#800000!important;border-color:#800000!important;}.error--text.text--darken-4{color:#800000!important;caret-color:#800000!important;}.info{background-color:#2196f3!important;border-color:#2196f3!important;}.info--text{color:#2196f3!important;caret-color:#2196f3!important;}.info.lighten-5{background-color:#d4ffff!important;border-color:#d4ffff!important;}.info--text.text--lighten-5{color:#d4ffff!important;caret-color:#d4ffff!important;}.info.lighten-4{background-color:#b5ffff!important;border-color:#b5ffff!important;}.info--text.text--lighten-4{color:#b5ffff!important;caret-color:#b5ffff!important;}.info.lighten-3{background-color:#95e8ff!important;border-color:#95e8ff!important;}.info--text.text--lighten-3{color:#95e8ff!important;caret-color:#95e8ff!important;}.info.lighten-2{background-color:#75ccff!important;border-color:#75ccff!important;}.info--text.text--lighten-2{color:#75ccff!important;caret-color:#75ccff!important;}.info.lighten-1{background-color:#51b0ff!important;border-color:#51b0ff!important;}.info--text.text--lighten-1{color:#51b0ff!important;caret-color:#51b0ff!important;}.info.darken-1{background-color:#007cd6!important;border-color:#007cd6!important;}.info--text.text--darken-1{color:#007cd6!important;caret-color:#007cd6!important;}.info.darken-2{background-color:#0064ba!important;border-color:#0064ba!important;}.info--text.text--darken-2{color:#0064ba!important;caret-color:#0064ba!important;}.info.darken-3{background-color:#004d9f!important;border-color:#004d9f!important;}.info--text.text--darken-3{color:#004d9f!important;caret-color:#004d9f!important;}.info.darken-4{background-color:#003784!important;border-color:#003784!important;}.info--text.text--darken-4{color:#003784!important;caret-color:#003784!important;}.success{background-color:#4caf50!important;border-color:#4caf50!important;}.success--text{color:#4caf50!important;caret-color:#4caf50!important;}.success.lighten-5{background-color:#dcffd6!important;border-color:#dcffd6!important;}.success--text.text--lighten-5{color:#dcffd6!important;caret-color:#dcffd6!important;}.success.lighten-4{background-color:#beffba!important;border-color:#beffba!important;}.success--text.text--lighten-4{color:#beffba!important;caret-color:#beffba!important;}.success.lighten-3{background-color:#a2ff9e!important;border-color:#a2ff9e!important;}.success--text.text--lighten-3{color:#a2ff9e!important;caret-color:#a2ff9e!important;}.success.lighten-2{background-color:#85e783!important;border-color:#85e783!important;}.success--text.text--lighten-2{color:#85e783!important;caret-color:#85e783!important;}.success.lighten-1{background-color:#69cb69!important;border-color:#69cb69!important;}.success--text.text--lighten-1{color:#69cb69!important;caret-color:#69cb69!important;}.success.darken-1{background-color:#2d9437!important;border-color:#2d9437!important;}.success--text.text--darken-1{color:#2d9437!important;caret-color:#2d9437!important;}.success.darken-2{background-color:#00791e!important;border-color:#00791e!important;}.success--text.text--darken-2{color:#00791e!important;caret-color:#00791e!important;}.success.darken-3{background-color:#006000!important;border-color:#006000!important;}.success--text.text--darken-3{color:#006000!important;caret-color:#006000!important;}.success.darken-4{background-color:#004700!important;border-color:#004700!important;}.success--text.text--darken-4{color:#004700!important;caret-color:#004700!important;}.warning{background-color:#ffc107!important;border-color:#ffc107!important;}.warning--text{color:#ffc107!important;caret-color:#ffc107!important;}.warning.lighten-5{background-color:#ffffae!important;border-color:#ffffae!important;}.warning--text.text--lighten-5{color:#ffffae!important;caret-color:#ffffae!important;}.warning.lighten-4{background-color:#ffff91!important;border-color:#ffff91!important;}.warning--text.text--lighten-4{color:#ffff91!important;caret-color:#ffff91!important;}.warning.lighten-3{background-color:#ffff74!important;border-color:#ffff74!important;}.warning--text.text--lighten-3{color:#ffff74!important;caret-color:#ffff74!important;}.warning.lighten-2{background-color:#fff956!important;border-color:#fff956!important;}.warning--text.text--lighten-2{color:#fff956!important;caret-color:#fff956!important;}.warning.lighten-1{background-color:#ffdd37!important;border-color:#ffdd37!important;}.warning--text.text--lighten-1{color:#ffdd37!important;caret-color:#ffdd37!important;}.warning.darken-1{background-color:#e0a600!important;border-color:#e0a600!important;}.warning--text.text--darken-1{color:#e0a600!important;caret-color:#e0a600!important;}.warning.darken-2{background-color:#c18c00!important;border-color:#c18c00!important;}.warning--text.text--darken-2{color:#c18c00!important;caret-color:#c18c00!important;}.warning.darken-3{background-color:#a27300!important;border-color:#a27300!important;}.warning--text.text--darken-3{color:#a27300!important;caret-color:#a27300!important;}.warning.darken-4{background-color:#855a00!important;border-color:#855a00!important;}.warning--text.text--darken-4{color:#855a00!important;caret-color:#855a00!important;}
     </style>
   </head>
   <body data-n-head>
     <script>
-      if (!!window.ActiveXObject || "ActiveXObject" in window)
-    alert('本网站不支持IE或IE内核的浏览器，建议您使用火狐浏览器、谷歌浏览器或微软的Edge浏览器（Windows10自带）');
+      (window.ActiveXObject||"ActiveXObject"in window)&&alert("本网站不支持IE或IE内核的浏览器，建议您使用火狐浏览器、谷歌浏览器或微软的Edge浏览器（Windows10自带）")
     </script>
     <div data-server-rendered="true"
          id="__nuxt"
     >
-      <div class="nuxt-progress"
-           style="width:0%;height:2px;background-color:#3B8070;opacity:0;"
-      >
-      </div>
       <div id="__layout">
         <div data-app="true"
-             light
              id="app"
              class="application theme--light"
         >
           <div class="application--wrap">
-            <nav class="white v-toolbar"
+            <nav class="white v-toolbar theme--light"
                  style="margin-top:0px;padding-right:0px;padding-left:0px;transform:translateY(0px);"
             >
               <div class="v-toolbar__content"
@@ -86,11 +77,11 @@ exports[`/ 1`] = `
                   <span>
                     <a href="https://github.com/Liu233w/acm-statistics"
                        target="_blank"
-                       class="v-btn v-btn--icon"
+                       class="v-btn v-btn--icon theme--light"
                     >
                       <div class="v-btn__content">
                         <i aria-hidden="true"
-                           class="v-icon fa fa fa fa-github"
+                           class="v-icon fa fa fa fa-github theme--light"
                         >
                         </i>
                       </div>
@@ -108,14 +99,14 @@ exports[`/ 1`] = `
                        style="height:600px;"
                   >
                     <div class="v-parallax__image-container">
-                      <img src="/_nuxt/img/back7-brighten.b26d671.jpg"
+                      <img src="/_nuxt/img/b26d671.jpg"
                            class="v-parallax__image"
                            style="display:block;opacity:0;transform:translate(-50%, 0px);"
                       >
                     </div>
                     <div class="v-parallax__content">
                       <div class="layout white--text column align-center justify-center">
-                        <img src="/_nuxt/img/logo.ff6479c.png"
+                        <img src="/_nuxt/img/ff6479c.png"
                              alt="Vuetify.js"
                              height="300"
                         >
@@ -152,12 +143,12 @@ exports[`/ 1`] = `
                       <div class="container grid-list-xl">
                         <div class="layout row wrap align-center">
                           <div class="flex xs12 md4">
-                            <div class="elevation-0 transparent v-card"
+                            <div class="elevation-0 transparent v-card theme--light"
                                  style="height:undefined;"
                             >
                               <div class="v-card__text text-xs-center">
                                 <i aria-hidden="true"
-                                   class="v-icon blue--text text--lighten-2 material-icons"
+                                   class="v-icon blue--text text--lighten-2 material-icons theme--light"
                                    style="font-size:40px;"
                                 >
                                   link
@@ -181,12 +172,12 @@ exports[`/ 1`] = `
                             </div>
                           </div>
                           <div class="flex xs12 md4">
-                            <div class="elevation-0 transparent v-card"
+                            <div class="elevation-0 transparent v-card theme--light"
                                  style="height:undefined;"
                             >
                               <div class="v-card__text text-xs-center">
                                 <i aria-hidden="true"
-                                   class="v-icon blue--text text--lighten-2 fa fa fa fa-github"
+                                   class="v-icon blue--text text--lighten-2 fa fa fa fa-github theme--light"
                                    style="font-size:40px;"
                                 >
                                 </i>
@@ -209,12 +200,12 @@ exports[`/ 1`] = `
                             </div>
                           </div>
                           <div class="flex xs12 md4">
-                            <div class="elevation-0 transparent v-card"
+                            <div class="elevation-0 transparent v-card theme--light"
                                  style="height:undefined;"
                             >
                               <div class="v-card__text text-xs-center">
                                 <i aria-hidden="true"
-                                   class="v-icon blue--text text--lighten-2 material-icons"
+                                   class="v-icon blue--text text--lighten-2 material-icons theme--light"
                                    style="font-size:40px;"
                                 >
                                   build
@@ -243,7 +234,7 @@ exports[`/ 1`] = `
                        style="height:380px;"
                   >
                     <div class="v-parallax__image-container">
-                      <img src="/_nuxt/img/back4.e2083dc.jpg"
+                      <img src="/_nuxt/img/e2083dc.jpg"
                            class="v-parallax__image"
                            style="display:block;opacity:0;transform:translate(-50%, 0px);"
                       >
@@ -274,7 +265,7 @@ exports[`/ 1`] = `
                   <div class="container grid-list-xl">
                     <div class="layout my-5 row wrap justify-center">
                       <div class="flex xs12 sm4">
-                        <div class="elevation-0 transparent v-card"
+                        <div class="elevation-0 transparent v-card theme--light"
                              style="height:undefined;"
                         >
                           <div class="v-card__title layout justify-center v-card__title--primary">
@@ -308,7 +299,7 @@ exports[`/ 1`] = `
                         </div>
                       </div>
                       <div class="flex xs12 sm4 offset-sm1">
-                        <div class="elevation-0 transparent v-card"
+                        <div class="elevation-0 transparent v-card theme--light"
                              style="height:undefined;"
                         >
                           <div class="v-card__title layout justify-center v-card__title--primary">
@@ -316,15 +307,15 @@ exports[`/ 1`] = `
                               &#x8054;&#x7CFB;&#x6211;&#x4EEC;
                             </div>
                           </div>
-                          <div class="v-list transparent">
+                          <div class="v-list transparent theme--light">
                             <div>
                               <a href="https://jq.qq.com/?_wv=1027&amp;k=5qgzfQc"
                                  target="_blank"
-                                 class="v-list__tile v-list__tile--link"
+                                 class="v-list__tile v-list__tile--link theme--light"
                               >
                                 <div class="v-list__tile__action">
                                   <i aria-hidden="true"
-                                     class="v-icon blue--text text--lighten-2 fa fa fa fa-qq"
+                                     class="v-icon blue--text text--lighten-2 fa fa fa fa-qq theme--light"
                                   >
                                   </i>
                                 </div>
@@ -336,10 +327,10 @@ exports[`/ 1`] = `
                               </a>
                             </div>
                             <div>
-                              <a class="v-list__tile v-list__tile--link">
+                              <a class="v-list__tile v-list__tile--link theme--light">
                                 <div class="v-list__tile__action">
                                   <i aria-hidden="true"
-                                     class="v-icon blue--text text--lighten-2 material-icons"
+                                     class="v-icon blue--text text--lighten-2 material-icons theme--light"
                                   >
                                     place
                                   </i>
@@ -353,11 +344,11 @@ exports[`/ 1`] = `
                             </div>
                             <div>
                               <a href="mailto:support@npuacm.info"
-                                 class="v-list__tile v-list__tile--link"
+                                 class="v-list__tile v-list__tile--link theme--light"
                               >
                                 <div class="v-list__tile__action">
                                   <i aria-hidden="true"
-                                     class="v-icon blue--text text--lighten-2 material-icons"
+                                     class="v-icon blue--text text--lighten-2 material-icons theme--light"
                                   >
                                     email
                                   </i>
@@ -370,10 +361,10 @@ exports[`/ 1`] = `
                               </a>
                             </div>
                             <div>
-                              <a class="v-list__tile v-list__tile--link">
+                              <a class="v-list__tile v-list__tile--link theme--light">
                                 <div class="v-list__tile__action">
                                   <i aria-hidden="true"
-                                     class="v-icon blue--text text--lighten-2 fa fa fa fa-weixin"
+                                     class="v-icon blue--text text--lighten-2 fa fa fa fa-weixin theme--light"
                                   >
                                   </i>
                                 </div>
@@ -398,7 +389,7 @@ exports[`/ 1`] = `
                         <div class="v-dialog"
                              style="max-width:500px;width:undefined;display:none;"
                         >
-                          <div class="v-card"
+                          <div class="v-card theme--light"
                                style="height:undefined;"
                           >
                             <div class="v-card__title">
@@ -407,14 +398,14 @@ exports[`/ 1`] = `
                               </span>
                             </div>
                             <div class="v-card__text">
-                              <img src="/_nuxt/img/wechat.4d1d170.jpg"
+                              <img src="/_nuxt/img/4d1d170.jpg"
                                    alt="&#x516C;&#x4F17;&#x53F7;&#x4E8C;&#x7EF4;&#x7801;"
                                    style="height:300px;"
                               >
                             </div>
                             <div class="v-card__actions">
                               <button type="button"
-                                      class="v-btn v-btn--flat primary--text"
+                                      class="v-btn v-btn--flat theme--light primary--text"
                               >
                                 <div class="v-btn__content">
                                   &#x5173;&#x95ED;
@@ -427,7 +418,7 @@ exports[`/ 1`] = `
                     </div>
                   </div>
                 </section>
-                <footer class="v-footer blue darken-2"
+                <footer class="v-footer blue darken-2 theme--light"
                         style="height:32px;"
                 >
                   <span class="white--text ml-3">
@@ -445,8 +436,8 @@ exports[`/ 1`] = `
         </div>
       </div>
     </div>
-    <script type="text/javascript">
-      window.__NUXT__={"layout":"none","data":[{}],"error":null,"state":{"sidebar":false},"serverRendered":true};
+    <script>
+      window.__NUXT__={layout:"none",data:[{}],error:null,state:{sidebar:false},serverRendered:true};
     </script>
   </body>
 </html>
@@ -460,6 +451,9 @@ exports[`/statistics 1`] = `
       data-n-head
 >
   <head>
+    <title data-n-head="true">
+      NWPU-ACM &#x67E5;&#x8BE2;&#x7CFB;&#x7EDF;
+    </title>
     <meta data-n-head="true"
           charset="utf-8"
     >
@@ -472,9 +466,6 @@ exports[`/statistics 1`] = `
           name="description"
           content="&#x897F;&#x5317;&#x5DE5;&#x4E1A;&#x5927;&#x5B66;ACM&#x57FA;&#x5730;&#x67E5;&#x9898;&#x4E3B;&#x9875;&#xFF0C;&#x63D0;&#x4F9B;&#x56FD;&#x5185;&#x5404;&#x5927;OJ&#x7684;&#x67E5;&#x8BE2;&#x9898;&#x91CF;&#x3001;&#x8BA1;&#x7B97;Rating&#x7684;&#x670D;&#x52A1;&#x3002;"
     >
-    <title data-n-head="true">
-      NWPU-ACM &#x67E5;&#x8BE2;&#x7CFB;&#x7EDF;
-    </title>
     <link data-n-head="true"
           rel="icon"
           type="image/x-icon"
@@ -492,45 +483,34 @@ exports[`/statistics 1`] = `
            id="vuetify-theme-stylesheet"
            type="text/css"
     >
-      a{color:#1976d2;}.primary{background-color:#1976d2!important;border-color:#1976d2!important;}.primary--text{color:#1976d2!important;}.primary--textinput,.primary--texttextarea{caret-color:#1976d2!important;}.primary.lighten-5{background-color:#c7fdff!important;border-color:#c7fdff!important;}.primary--text.text--lighten-5{color:#c7fdff!important;}.primary--text.text--lighten-5input,.primary--text.text--lighten-5textarea{caret-color:#c7fdff!important;}.primary.lighten-4{background-color:#a8e0ff!important;border-color:#a8e0ff!important;}.primary--text.text--lighten-4{color:#a8e0ff!important;}.primary--text.text--lighten-4input,.primary--text.text--lighten-4textarea{caret-color:#a8e0ff!important;}.primary.lighten-3{background-color:#8ac5ff!important;border-color:#8ac5ff!important;}.primary--text.text--lighten-3{color:#8ac5ff!important;}.primary--text.text--lighten-3input,.primary--text.text--lighten-3textarea{caret-color:#8ac5ff!important;}.primary.lighten-2{background-color:#6aaaff!important;border-color:#6aaaff!important;}.primary--text.text--lighten-2{color:#6aaaff!important;}.primary--text.text--lighten-2input,.primary--text.text--lighten-2textarea{caret-color:#6aaaff!important;}.primary.lighten-1{background-color:#488fef!important;border-color:#488fef!important;}.primary--text.text--lighten-1{color:#488fef!important;}.primary--text.text--lighten-1input,.primary--text.text--lighten-1textarea{caret-color:#488fef!important;}.primary.darken-1{background-color:#005eb6!important;border-color:#005eb6!important;}.primary--text.text--darken-1{color:#005eb6!important;}.primary--text.text--darken-1input,.primary--text.text--darken-1textarea{caret-color:#005eb6!important;}.primary.darken-2{background-color:#00479b!important;border-color:#00479b!important;}.primary--text.text--darken-2{color:#00479b!important;}.primary--text.text--darken-2input,.primary--text.text--darken-2textarea{caret-color:#00479b!important;}.primary.darken-3{background-color:#003180!important;border-color:#003180!important;}.primary--text.text--darken-3{color:#003180!important;}.primary--text.text--darken-3input,.primary--text.text--darken-3textarea{caret-color:#003180!important;}.primary.darken-4{background-color:#001e67!important;border-color:#001e67!important;}.primary--text.text--darken-4{color:#001e67!important;}.primary--text.text--darken-4input,.primary--text.text--darken-4textarea{caret-color:#001e67!important;}.secondary{background-color:#424242!important;border-color:#424242!important;}.secondary--text{color:#424242!important;}.secondary--textinput,.secondary--texttextarea{caret-color:#424242!important;}.secondary.lighten-5{background-color:#c1c1c1!important;border-color:#c1c1c1!important;}.secondary--text.text--lighten-5{color:#c1c1c1!important;}.secondary--text.text--lighten-5input,.secondary--text.text--lighten-5textarea{caret-color:#c1c1c1!important;}.secondary.lighten-4{background-color:#a6a6a6!important;border-color:#a6a6a6!important;}.secondary--text.text--lighten-4{color:#a6a6a6!important;}.secondary--text.text--lighten-4input,.secondary--text.text--lighten-4textarea{caret-color:#a6a6a6!important;}.secondary.lighten-3{background-color:#8b8b8b!important;border-color:#8b8b8b!important;}.secondary--text.text--lighten-3{color:#8b8b8b!important;}.secondary--text.text--lighten-3input,.secondary--text.text--lighten-3textarea{caret-color:#8b8b8b!important;}.secondary.lighten-2{background-color:#727272!important;border-color:#727272!important;}.secondary--text.text--lighten-2{color:#727272!important;}.secondary--text.text--lighten-2input,.secondary--text.text--lighten-2textarea{caret-color:#727272!important;}.secondary.lighten-1{background-color:#595959!important;border-color:#595959!important;}.secondary--text.text--lighten-1{color:#595959!important;}.secondary--text.text--lighten-1input,.secondary--text.text--lighten-1textarea{caret-color:#595959!important;}.secondary.darken-1{background-color:#2c2c2c!important;border-color:#2c2c2c!important;}.secondary--text.text--darken-1{color:#2c2c2c!important;}.secondary--text.text--darken-1input,.secondary--text.text--darken-1textarea{caret-color:#2c2c2c!important;}.secondary.darken-2{background-color:#171717!important;border-color:#171717!important;}.secondary--text.text--darken-2{color:#171717!important;}.secondary--text.text--darken-2input,.secondary--text.text--darken-2textarea{caret-color:#171717!important;}.secondary.darken-3{background-color:#000000!important;border-color:#000000!important;}.secondary--text.text--darken-3{color:#000000!important;}.secondary--text.text--darken-3input,.secondary--text.text--darken-3textarea{caret-color:#000000!important;}.secondary.darken-4{background-color:#000000!important;border-color:#000000!important;}.secondary--text.text--darken-4{color:#000000!important;}.secondary--text.text--darken-4input,.secondary--text.text--darken-4textarea{caret-color:#000000!important;}.accent{background-color:#82b1ff!important;border-color:#82b1ff!important;}.accent--text{color:#82b1ff!important;}.accent--textinput,.accent--texttextarea{caret-color:#82b1ff!important;}.accent.lighten-5{background-color:#ffffff!important;border-color:#ffffff!important;}.accent--text.text--lighten-5{color:#ffffff!important;}.accent--text.text--lighten-5input,.accent--text.text--lighten-5textarea{caret-color:#ffffff!important;}.accent.lighten-4{background-color:#f8ffff!important;border-color:#f8ffff!important;}.accent--text.text--lighten-4{color:#f8ffff!important;}.accent--text.text--lighten-4input,.accent--text.text--lighten-4textarea{caret-color:#f8ffff!important;}.accent.lighten-3{background-color:#daffff!important;border-color:#daffff!important;}.accent--text.text--lighten-3{color:#daffff!important;}.accent--text.text--lighten-3input,.accent--text.text--lighten-3textarea{caret-color:#daffff!important;}.accent.lighten-2{background-color:#bce8ff!important;border-color:#bce8ff!important;}.accent--text.text--lighten-2{color:#bce8ff!important;}.accent--text.text--lighten-2input,.accent--text.text--lighten-2textarea{caret-color:#bce8ff!important;}.accent.lighten-1{background-color:#9fccff!important;border-color:#9fccff!important;}.accent--text.text--lighten-1{color:#9fccff!important;}.accent--text.text--lighten-1input,.accent--text.text--lighten-1textarea{caret-color:#9fccff!important;}.accent.darken-1{background-color:#6596e2!important;border-color:#6596e2!important;}.accent--text.text--darken-1{color:#6596e2!important;}.accent--text.text--darken-1input,.accent--text.text--darken-1textarea{caret-color:#6596e2!important;}.accent.darken-2{background-color:#467dc6!important;border-color:#467dc6!important;}.accent--text.text--darken-2{color:#467dc6!important;}.accent--text.text--darken-2input,.accent--text.text--darken-2textarea{caret-color:#467dc6!important;}.accent.darken-3{background-color:#2364aa!important;border-color:#2364aa!important;}.accent--text.text--darken-3{color:#2364aa!important;}.accent--text.text--darken-3input,.accent--text.text--darken-3textarea{caret-color:#2364aa!important;}.accent.darken-4{background-color:#004c90!important;border-color:#004c90!important;}.accent--text.text--darken-4{color:#004c90!important;}.accent--text.text--darken-4input,.accent--text.text--darken-4textarea{caret-color:#004c90!important;}.error{background-color:#ff5252!important;border-color:#ff5252!important;}.error--text{color:#ff5252!important;}.error--textinput,.error--texttextarea{caret-color:#ff5252!important;}.info{background-color:#2196f3!important;border-color:#2196f3!important;}.info--text{color:#2196f3!important;}.info--textinput,.info--texttextarea{caret-color:#2196f3!important;}.success{background-color:#4caf50!important;border-color:#4caf50!important;}.success--text{color:#4caf50!important;}.success--textinput,.success--texttextarea{caret-color:#4caf50!important;}.warning{background-color:#ffc107!important;border-color:#ffc107!important;}.warning--text{color:#ffc107!important;}.warning--textinput,.warning--texttextarea{caret-color:#ffc107!important;}
-    </style>
-    <style>
-      .workers-column-move{-webkit-transition:all .5s;transition:all .5s}.workers-column-enter{opacity:0;-webkit-transform:translateY(-30px);transform:translateY(-30px)}.workers-column-leave-to{opacity:0}.workers-column-leave-active{position:absolute}.worker-item{-webkit-transition:all .5s;transition:all .5s}
-    </style>
-    <style>
-      .fade-enter-active,.fade-leave-active{-webkit-transition:opacity .5s;transition:opacity .5s}.fade-enter,.fade-leave-to{opacity:0}
+      a{color:#1976d2;}.primary{background-color:#1976d2!important;border-color:#1976d2!important;}.primary--text{color:#1976d2!important;caret-color:#1976d2!important;}.primary.lighten-5{background-color:#c7fdff!important;border-color:#c7fdff!important;}.primary--text.text--lighten-5{color:#c7fdff!important;caret-color:#c7fdff!important;}.primary.lighten-4{background-color:#a8e0ff!important;border-color:#a8e0ff!important;}.primary--text.text--lighten-4{color:#a8e0ff!important;caret-color:#a8e0ff!important;}.primary.lighten-3{background-color:#8ac5ff!important;border-color:#8ac5ff!important;}.primary--text.text--lighten-3{color:#8ac5ff!important;caret-color:#8ac5ff!important;}.primary.lighten-2{background-color:#6aaaff!important;border-color:#6aaaff!important;}.primary--text.text--lighten-2{color:#6aaaff!important;caret-color:#6aaaff!important;}.primary.lighten-1{background-color:#488fef!important;border-color:#488fef!important;}.primary--text.text--lighten-1{color:#488fef!important;caret-color:#488fef!important;}.primary.darken-1{background-color:#005eb6!important;border-color:#005eb6!important;}.primary--text.text--darken-1{color:#005eb6!important;caret-color:#005eb6!important;}.primary.darken-2{background-color:#00479b!important;border-color:#00479b!important;}.primary--text.text--darken-2{color:#00479b!important;caret-color:#00479b!important;}.primary.darken-3{background-color:#003180!important;border-color:#003180!important;}.primary--text.text--darken-3{color:#003180!important;caret-color:#003180!important;}.primary.darken-4{background-color:#001e67!important;border-color:#001e67!important;}.primary--text.text--darken-4{color:#001e67!important;caret-color:#001e67!important;}.secondary{background-color:#424242!important;border-color:#424242!important;}.secondary--text{color:#424242!important;caret-color:#424242!important;}.secondary.lighten-5{background-color:#c1c1c1!important;border-color:#c1c1c1!important;}.secondary--text.text--lighten-5{color:#c1c1c1!important;caret-color:#c1c1c1!important;}.secondary.lighten-4{background-color:#a6a6a6!important;border-color:#a6a6a6!important;}.secondary--text.text--lighten-4{color:#a6a6a6!important;caret-color:#a6a6a6!important;}.secondary.lighten-3{background-color:#8b8b8b!important;border-color:#8b8b8b!important;}.secondary--text.text--lighten-3{color:#8b8b8b!important;caret-color:#8b8b8b!important;}.secondary.lighten-2{background-color:#727272!important;border-color:#727272!important;}.secondary--text.text--lighten-2{color:#727272!important;caret-color:#727272!important;}.secondary.lighten-1{background-color:#595959!important;border-color:#595959!important;}.secondary--text.text--lighten-1{color:#595959!important;caret-color:#595959!important;}.secondary.darken-1{background-color:#2c2c2c!important;border-color:#2c2c2c!important;}.secondary--text.text--darken-1{color:#2c2c2c!important;caret-color:#2c2c2c!important;}.secondary.darken-2{background-color:#171717!important;border-color:#171717!important;}.secondary--text.text--darken-2{color:#171717!important;caret-color:#171717!important;}.secondary.darken-3{background-color:#000000!important;border-color:#000000!important;}.secondary--text.text--darken-3{color:#000000!important;caret-color:#000000!important;}.secondary.darken-4{background-color:#000000!important;border-color:#000000!important;}.secondary--text.text--darken-4{color:#000000!important;caret-color:#000000!important;}.accent{background-color:#82b1ff!important;border-color:#82b1ff!important;}.accent--text{color:#82b1ff!important;caret-color:#82b1ff!important;}.accent.lighten-5{background-color:#ffffff!important;border-color:#ffffff!important;}.accent--text.text--lighten-5{color:#ffffff!important;caret-color:#ffffff!important;}.accent.lighten-4{background-color:#f8ffff!important;border-color:#f8ffff!important;}.accent--text.text--lighten-4{color:#f8ffff!important;caret-color:#f8ffff!important;}.accent.lighten-3{background-color:#daffff!important;border-color:#daffff!important;}.accent--text.text--lighten-3{color:#daffff!important;caret-color:#daffff!important;}.accent.lighten-2{background-color:#bce8ff!important;border-color:#bce8ff!important;}.accent--text.text--lighten-2{color:#bce8ff!important;caret-color:#bce8ff!important;}.accent.lighten-1{background-color:#9fccff!important;border-color:#9fccff!important;}.accent--text.text--lighten-1{color:#9fccff!important;caret-color:#9fccff!important;}.accent.darken-1{background-color:#6596e2!important;border-color:#6596e2!important;}.accent--text.text--darken-1{color:#6596e2!important;caret-color:#6596e2!important;}.accent.darken-2{background-color:#467dc6!important;border-color:#467dc6!important;}.accent--text.text--darken-2{color:#467dc6!important;caret-color:#467dc6!important;}.accent.darken-3{background-color:#2364aa!important;border-color:#2364aa!important;}.accent--text.text--darken-3{color:#2364aa!important;caret-color:#2364aa!important;}.accent.darken-4{background-color:#004c90!important;border-color:#004c90!important;}.accent--text.text--darken-4{color:#004c90!important;caret-color:#004c90!important;}.error{background-color:#ff5252!important;border-color:#ff5252!important;}.error--text{color:#ff5252!important;caret-color:#ff5252!important;}.error.lighten-5{background-color:#ffe4d5!important;border-color:#ffe4d5!important;}.error--text.text--lighten-5{color:#ffe4d5!important;caret-color:#ffe4d5!important;}.error.lighten-4{background-color:#ffc6b9!important;border-color:#ffc6b9!important;}.error--text.text--lighten-4{color:#ffc6b9!important;caret-color:#ffc6b9!important;}.error.lighten-3{background-color:#ffa99e!important;border-color:#ffa99e!important;}.error--text.text--lighten-3{color:#ffa99e!important;caret-color:#ffa99e!important;}.error.lighten-2{background-color:#ff8c84!important;border-color:#ff8c84!important;}.error--text.text--lighten-2{color:#ff8c84!important;caret-color:#ff8c84!important;}.error.lighten-1{background-color:#ff6f6a!important;border-color:#ff6f6a!important;}.error--text.text--lighten-1{color:#ff6f6a!important;caret-color:#ff6f6a!important;}.error.darken-1{background-color:#df323b!important;border-color:#df323b!important;}.error--text.text--darken-1{color:#df323b!important;caret-color:#df323b!important;}.error.darken-2{background-color:#bf0025!important;border-color:#bf0025!important;}.error--text.text--darken-2{color:#bf0025!important;caret-color:#bf0025!important;}.error.darken-3{background-color:#9f0010!important;border-color:#9f0010!important;}.error--text.text--darken-3{color:#9f0010!important;caret-color:#9f0010!important;}.error.darken-4{background-color:#800000!important;border-color:#800000!important;}.error--text.text--darken-4{color:#800000!important;caret-color:#800000!important;}.info{background-color:#2196f3!important;border-color:#2196f3!important;}.info--text{color:#2196f3!important;caret-color:#2196f3!important;}.info.lighten-5{background-color:#d4ffff!important;border-color:#d4ffff!important;}.info--text.text--lighten-5{color:#d4ffff!important;caret-color:#d4ffff!important;}.info.lighten-4{background-color:#b5ffff!important;border-color:#b5ffff!important;}.info--text.text--lighten-4{color:#b5ffff!important;caret-color:#b5ffff!important;}.info.lighten-3{background-color:#95e8ff!important;border-color:#95e8ff!important;}.info--text.text--lighten-3{color:#95e8ff!important;caret-color:#95e8ff!important;}.info.lighten-2{background-color:#75ccff!important;border-color:#75ccff!important;}.info--text.text--lighten-2{color:#75ccff!important;caret-color:#75ccff!important;}.info.lighten-1{background-color:#51b0ff!important;border-color:#51b0ff!important;}.info--text.text--lighten-1{color:#51b0ff!important;caret-color:#51b0ff!important;}.info.darken-1{background-color:#007cd6!important;border-color:#007cd6!important;}.info--text.text--darken-1{color:#007cd6!important;caret-color:#007cd6!important;}.info.darken-2{background-color:#0064ba!important;border-color:#0064ba!important;}.info--text.text--darken-2{color:#0064ba!important;caret-color:#0064ba!important;}.info.darken-3{background-color:#004d9f!important;border-color:#004d9f!important;}.info--text.text--darken-3{color:#004d9f!important;caret-color:#004d9f!important;}.info.darken-4{background-color:#003784!important;border-color:#003784!important;}.info--text.text--darken-4{color:#003784!important;caret-color:#003784!important;}.success{background-color:#4caf50!important;border-color:#4caf50!important;}.success--text{color:#4caf50!important;caret-color:#4caf50!important;}.success.lighten-5{background-color:#dcffd6!important;border-color:#dcffd6!important;}.success--text.text--lighten-5{color:#dcffd6!important;caret-color:#dcffd6!important;}.success.lighten-4{background-color:#beffba!important;border-color:#beffba!important;}.success--text.text--lighten-4{color:#beffba!important;caret-color:#beffba!important;}.success.lighten-3{background-color:#a2ff9e!important;border-color:#a2ff9e!important;}.success--text.text--lighten-3{color:#a2ff9e!important;caret-color:#a2ff9e!important;}.success.lighten-2{background-color:#85e783!important;border-color:#85e783!important;}.success--text.text--lighten-2{color:#85e783!important;caret-color:#85e783!important;}.success.lighten-1{background-color:#69cb69!important;border-color:#69cb69!important;}.success--text.text--lighten-1{color:#69cb69!important;caret-color:#69cb69!important;}.success.darken-1{background-color:#2d9437!important;border-color:#2d9437!important;}.success--text.text--darken-1{color:#2d9437!important;caret-color:#2d9437!important;}.success.darken-2{background-color:#00791e!important;border-color:#00791e!important;}.success--text.text--darken-2{color:#00791e!important;caret-color:#00791e!important;}.success.darken-3{background-color:#006000!important;border-color:#006000!important;}.success--text.text--darken-3{color:#006000!important;caret-color:#006000!important;}.success.darken-4{background-color:#004700!important;border-color:#004700!important;}.success--text.text--darken-4{color:#004700!important;caret-color:#004700!important;}.warning{background-color:#ffc107!important;border-color:#ffc107!important;}.warning--text{color:#ffc107!important;caret-color:#ffc107!important;}.warning.lighten-5{background-color:#ffffae!important;border-color:#ffffae!important;}.warning--text.text--lighten-5{color:#ffffae!important;caret-color:#ffffae!important;}.warning.lighten-4{background-color:#ffff91!important;border-color:#ffff91!important;}.warning--text.text--lighten-4{color:#ffff91!important;caret-color:#ffff91!important;}.warning.lighten-3{background-color:#ffff74!important;border-color:#ffff74!important;}.warning--text.text--lighten-3{color:#ffff74!important;caret-color:#ffff74!important;}.warning.lighten-2{background-color:#fff956!important;border-color:#fff956!important;}.warning--text.text--lighten-2{color:#fff956!important;caret-color:#fff956!important;}.warning.lighten-1{background-color:#ffdd37!important;border-color:#ffdd37!important;}.warning--text.text--lighten-1{color:#ffdd37!important;caret-color:#ffdd37!important;}.warning.darken-1{background-color:#e0a600!important;border-color:#e0a600!important;}.warning--text.text--darken-1{color:#e0a600!important;caret-color:#e0a600!important;}.warning.darken-2{background-color:#c18c00!important;border-color:#c18c00!important;}.warning--text.text--darken-2{color:#c18c00!important;caret-color:#c18c00!important;}.warning.darken-3{background-color:#a27300!important;border-color:#a27300!important;}.warning--text.text--darken-3{color:#a27300!important;caret-color:#a27300!important;}.warning.darken-4{background-color:#855a00!important;border-color:#855a00!important;}.warning--text.text--darken-4{color:#855a00!important;caret-color:#855a00!important;}
     </style>
   </head>
   <body data-n-head>
     <script>
-      if (!!window.ActiveXObject || "ActiveXObject" in window)
-    alert('本网站不支持IE或IE内核的浏览器，建议您使用火狐浏览器、谷歌浏览器或微软的Edge浏览器（Windows10自带）');
+      (window.ActiveXObject||"ActiveXObject"in window)&&alert("本网站不支持IE或IE内核的浏览器，建议您使用火狐浏览器、谷歌浏览器或微软的Edge浏览器（Windows10自带）")
     </script>
     <div data-server-rendered="true"
          id="__nuxt"
     >
-      <div class="nuxt-progress"
-           style="width:0%;height:2px;background-color:#3B8070;opacity:0;"
-      >
-      </div>
       <div id="__layout">
         <div data-app="true"
              id="app"
              class="application theme--light"
         >
           <div class="application--wrap">
-            <aside class="v-navigation-drawer v-navigation-drawer--clipped v-navigation-drawer--close v-navigation-drawer--fixed v-navigation-drawer--is-mobile"
+            <aside class="v-navigation-drawer v-navigation-drawer--clipped v-navigation-drawer--close v-navigation-drawer--fixed v-navigation-drawer--is-mobile theme--light"
                    style="height:100%;margin-top:0px;max-height:calc(100% - 0px);transform:translateX(-300px);width:300px;"
             >
-              <div class="v-list">
+              <div class="v-list theme--light">
                 <div>
                   <a href="/"
                      router
-                     class="v-list__tile v-list__tile--link"
+                     class="v-list__tile v-list__tile--link theme--light"
                   >
                     <div class="v-list__tile__action">
                       <i aria-hidden="true"
-                         class="v-icon material-icons"
+                         class="v-icon material-icons theme--light"
                       >
                         home
                       </i>
@@ -545,11 +525,11 @@ exports[`/statistics 1`] = `
                 <div>
                   <a href="/statistics"
                      router
-                     class="primary--text v-list__tile--active v-list__tile v-list__tile--link"
+                     class="primary--text v-list__tile--active v-list__tile v-list__tile--link theme--light"
                   >
                     <div class="v-list__tile__action">
                       <i aria-hidden="true"
-                         class="v-icon material-icons"
+                         class="v-icon material-icons theme--light"
                       >
                         code
                       </i>
@@ -565,18 +545,18 @@ exports[`/statistics 1`] = `
               <div class="v-navigation-drawer__border">
               </div>
             </aside>
-            <nav class="v-toolbar v-toolbar--clipped v-toolbar--fixed"
+            <nav class="v-toolbar v-toolbar--clipped v-toolbar--fixed theme--light"
                  style="margin-top:0px;padding-right:0px;padding-left:0px;transform:translateY(0px);"
             >
               <div class="v-toolbar__content"
                    style="height:56px;"
               >
                 <button type="button"
-                        class="v-toolbar__side-icon v-btn v-btn--icon"
+                        class="v-toolbar__side-icon v-btn v-btn--icon theme--light"
                 >
                   <div class="v-btn__content">
                     <i aria-hidden="true"
-                       class="v-icon material-icons"
+                       class="v-icon material-icons theme--light"
                     >
                       menu
                     </i>
@@ -598,11 +578,11 @@ exports[`/statistics 1`] = `
                   <span>
                     <a href="https://github.com/Liu233w/acm-statistics"
                        target="_blank"
-                       class="v-btn v-btn--icon"
+                       class="v-btn v-btn--icon theme--light"
                     >
                       <div class="v-btn__content">
                         <i aria-hidden="true"
-                           class="v-icon fa fa fa fa-github"
+                           class="v-icon fa fa fa fa-github theme--light"
                         >
                         </i>
                       </div>
@@ -619,14 +599,14 @@ exports[`/statistics 1`] = `
                   <div class="container grid-list-md">
                     <div class="layout row wrap">
                       <div class="flex xs12 sm5 md3">
-                        <div class="v-input v-text-field">
+                        <div class="v-input v-text-field theme--light">
                           <div class="v-input__control">
                             <div class="v-input__slot"
                                  style="height:undefined;"
                             >
                               <div class="v-text-field__slot">
                                 <label aria-hidden="true"
-                                       class="v-label"
+                                       class="v-label theme--light"
                                        style="left:0px;right:auto;position:absolute;"
                                 >
                                   &#x7EDF;&#x4E00;&#x8BBE;&#x7F6E;&#x7528;&#x6237;&#x540D;
@@ -639,7 +619,7 @@ exports[`/statistics 1`] = `
                               </div>
                             </div>
                             <div class="v-text-field__details">
-                              <div class="v-messages">
+                              <div class="v-messages theme--light">
                                 <div class="v-messages__wrapper">
                                 </div>
                               </div>
@@ -649,7 +629,7 @@ exports[`/statistics 1`] = `
                       </div>
                       <div class="flex xs12 sm7 md5">
                         <button type="button"
-                                class="primary v-btn"
+                                class="primary v-btn theme--light"
                         >
                           <div class="v-btn__content">
                             &#x5F00;&#x59CB;&#x67E5;&#x8BE2;
@@ -663,7 +643,7 @@ exports[`/statistics 1`] = `
                           </div>
                           <span>
                             <button type="button"
-                                    class="error v-btn"
+                                    class="error v-btn theme--light"
                             >
                               <div class="v-btn__content">
                                 &#x91CD;&#x7F6E;&#x67E5;&#x8BE2;
@@ -681,7 +661,7 @@ exports[`/statistics 1`] = `
                           </div>
                           <span>
                             <button type="button"
-                                    class="v-btn"
+                                    class="v-btn theme--light"
                             >
                               <div class="v-btn__content">
                                 &#x4FDD;&#x5B58;&#x7528;&#x6237;&#x540D;
@@ -694,7 +674,7 @@ exports[`/statistics 1`] = `
                            style="display:none;"
                       >
                         <span tabindex="0"
-                              class="v-chip elevation-2 v-chip--label grey lighten-3"
+                              class="v-chip elevation-2 v-chip--label theme--light grey lighten-3"
                         >
                           <span class="v-chip__content">
                             <span class="title">
@@ -713,10 +693,10 @@ exports[`/statistics 1`] = `
                                  class="flex worker-item"
                                  style="z-index:1000;"
                             >
-                              <div class="v-card"
+                              <div class="v-card theme--light"
                                    style="height:undefined;"
                               >
-                                <nav class="blue-grey lighten-5 v-toolbar v-toolbar--card v-toolbar--dense"
+                                <nav class="blue-grey lighten-5 v-toolbar v-toolbar--card v-toolbar--dense theme--light"
                                      style="margin-top:0px;padding-right:0px;padding-left:0px;transform:translateY(0px);"
                                 >
                                   <div class="v-toolbar__content"
@@ -742,11 +722,11 @@ exports[`/statistics 1`] = `
                                         </div>
                                         <span>
                                           <button type="button"
-                                                  class="v-btn v-btn--icon"
+                                                  class="v-btn v-btn--icon theme--light"
                                           >
                                             <div class="v-btn__content">
                                               <i aria-hidden="true"
-                                                 class="v-icon material-icons"
+                                                 class="v-icon material-icons theme--light"
                                               >
                                                 delete
                                               </i>
@@ -764,11 +744,11 @@ exports[`/statistics 1`] = `
                                         </div>
                                         <span>
                                           <button type="button"
-                                                  class="v-btn v-btn--icon"
+                                                  class="v-btn v-btn--icon theme--light"
                                           >
                                             <div class="v-btn__content">
                                               <i aria-hidden="true"
-                                                 class="v-icon material-icons"
+                                                 class="v-icon material-icons theme--light"
                                               >
                                                 add_circle
                                               </i>
@@ -788,11 +768,11 @@ exports[`/statistics 1`] = `
                                         </div>
                                         <span>
                                           <button type="button"
-                                                  class="v-btn v-btn--icon"
+                                                  class="v-btn v-btn--icon theme--light"
                                           >
                                             <div class="v-btn__content">
                                               <i aria-hidden="true"
-                                                 class="v-icon material-icons"
+                                                 class="v-icon material-icons theme--light"
                                               >
                                                 link
                                               </i>
@@ -810,11 +790,11 @@ exports[`/statistics 1`] = `
                                         </div>
                                         <span>
                                           <button type="button"
-                                                  class="v-btn v-btn--icon"
+                                                  class="v-btn v-btn--icon theme--light"
                                           >
                                             <div class="v-btn__content">
                                               <i aria-hidden="true"
-                                                 class="v-icon material-icons"
+                                                 class="v-icon material-icons theme--light"
                                               >
                                                 refresh
                                               </i>
@@ -836,14 +816,14 @@ exports[`/statistics 1`] = `
                                   </div>
                                   <div class="layout row wrap">
                                     <div class="flex xs12">
-                                      <div class="v-input v-text-field">
+                                      <div class="v-input v-text-field theme--light">
                                         <div class="v-input__control">
                                           <div class="v-input__slot"
                                                style="height:undefined;"
                                           >
                                             <div class="v-text-field__slot">
                                               <label aria-hidden="true"
-                                                     class="v-label"
+                                                     class="v-label theme--light"
                                                      style="left:0px;right:auto;position:absolute;"
                                               >
                                                 Username
@@ -857,14 +837,14 @@ exports[`/statistics 1`] = `
                                             <div class="v-input__append-inner">
                                               <div class="v-input__icon v-input__icon--">
                                                 <i aria-hidden="true"
-                                                   class="v-icon v-icon--link material-icons"
+                                                   class="v-icon v-icon--link material-icons theme--light"
                                                 >
                                                 </i>
                                               </div>
                                             </div>
                                           </div>
                                           <div class="v-text-field__details">
-                                            <div class="v-messages">
+                                            <div class="v-messages theme--light">
                                               <div class="v-messages__wrapper">
                                               </div>
                                             </div>
@@ -898,10 +878,10 @@ exports[`/statistics 1`] = `
                                  class="flex worker-item"
                                  style="z-index:999;"
                             >
-                              <div class="v-card"
+                              <div class="v-card theme--light"
                                    style="height:undefined;"
                               >
-                                <nav class="blue-grey lighten-5 v-toolbar v-toolbar--card v-toolbar--dense"
+                                <nav class="blue-grey lighten-5 v-toolbar v-toolbar--card v-toolbar--dense theme--light"
                                      style="margin-top:0px;padding-right:0px;padding-left:0px;transform:translateY(0px);"
                                 >
                                   <div class="v-toolbar__content"
@@ -927,11 +907,11 @@ exports[`/statistics 1`] = `
                                         </div>
                                         <span>
                                           <button type="button"
-                                                  class="v-btn v-btn--icon"
+                                                  class="v-btn v-btn--icon theme--light"
                                           >
                                             <div class="v-btn__content">
                                               <i aria-hidden="true"
-                                                 class="v-icon material-icons"
+                                                 class="v-icon material-icons theme--light"
                                               >
                                                 delete
                                               </i>
@@ -949,11 +929,11 @@ exports[`/statistics 1`] = `
                                         </div>
                                         <span>
                                           <button type="button"
-                                                  class="v-btn v-btn--icon"
+                                                  class="v-btn v-btn--icon theme--light"
                                           >
                                             <div class="v-btn__content">
                                               <i aria-hidden="true"
-                                                 class="v-icon material-icons"
+                                                 class="v-icon material-icons theme--light"
                                               >
                                                 add_circle
                                               </i>
@@ -973,11 +953,11 @@ exports[`/statistics 1`] = `
                                         </div>
                                         <span>
                                           <button type="button"
-                                                  class="v-btn v-btn--icon"
+                                                  class="v-btn v-btn--icon theme--light"
                                           >
                                             <div class="v-btn__content">
                                               <i aria-hidden="true"
-                                                 class="v-icon material-icons"
+                                                 class="v-icon material-icons theme--light"
                                               >
                                                 link
                                               </i>
@@ -995,11 +975,11 @@ exports[`/statistics 1`] = `
                                         </div>
                                         <span>
                                           <button type="button"
-                                                  class="v-btn v-btn--icon"
+                                                  class="v-btn v-btn--icon theme--light"
                                           >
                                             <div class="v-btn__content">
                                               <i aria-hidden="true"
-                                                 class="v-icon material-icons"
+                                                 class="v-icon material-icons theme--light"
                                               >
                                                 refresh
                                               </i>
@@ -1021,14 +1001,14 @@ exports[`/statistics 1`] = `
                                   </div>
                                   <div class="layout row wrap">
                                     <div class="flex xs12">
-                                      <div class="v-input v-text-field">
+                                      <div class="v-input v-text-field theme--light">
                                         <div class="v-input__control">
                                           <div class="v-input__slot"
                                                style="height:undefined;"
                                           >
                                             <div class="v-text-field__slot">
                                               <label aria-hidden="true"
-                                                     class="v-label"
+                                                     class="v-label theme--light"
                                                      style="left:0px;right:auto;position:absolute;"
                                               >
                                                 Username
@@ -1042,14 +1022,14 @@ exports[`/statistics 1`] = `
                                             <div class="v-input__append-inner">
                                               <div class="v-input__icon v-input__icon--">
                                                 <i aria-hidden="true"
-                                                   class="v-icon v-icon--link material-icons"
+                                                   class="v-icon v-icon--link material-icons theme--light"
                                                 >
                                                 </i>
                                               </div>
                                             </div>
                                           </div>
                                           <div class="v-text-field__details">
-                                            <div class="v-messages">
+                                            <div class="v-messages theme--light">
                                               <div class="v-messages__wrapper">
                                               </div>
                                             </div>
@@ -1083,10 +1063,10 @@ exports[`/statistics 1`] = `
                                  class="flex worker-item"
                                  style="z-index:998;"
                             >
-                              <div class="v-card"
+                              <div class="v-card theme--light"
                                    style="height:undefined;"
                               >
-                                <nav class="blue-grey lighten-5 v-toolbar v-toolbar--card v-toolbar--dense"
+                                <nav class="blue-grey lighten-5 v-toolbar v-toolbar--card v-toolbar--dense theme--light"
                                      style="margin-top:0px;padding-right:0px;padding-left:0px;transform:translateY(0px);"
                                 >
                                   <div class="v-toolbar__content"
@@ -1112,11 +1092,11 @@ exports[`/statistics 1`] = `
                                         </div>
                                         <span>
                                           <button type="button"
-                                                  class="v-btn v-btn--icon"
+                                                  class="v-btn v-btn--icon theme--light"
                                           >
                                             <div class="v-btn__content">
                                               <i aria-hidden="true"
-                                                 class="v-icon material-icons"
+                                                 class="v-icon material-icons theme--light"
                                               >
                                                 delete
                                               </i>
@@ -1134,11 +1114,11 @@ exports[`/statistics 1`] = `
                                         </div>
                                         <span>
                                           <button type="button"
-                                                  class="v-btn v-btn--icon"
+                                                  class="v-btn v-btn--icon theme--light"
                                           >
                                             <div class="v-btn__content">
                                               <i aria-hidden="true"
-                                                 class="v-icon material-icons"
+                                                 class="v-icon material-icons theme--light"
                                               >
                                                 add_circle
                                               </i>
@@ -1158,11 +1138,11 @@ exports[`/statistics 1`] = `
                                         </div>
                                         <span>
                                           <button type="button"
-                                                  class="v-btn v-btn--icon"
+                                                  class="v-btn v-btn--icon theme--light"
                                           >
                                             <div class="v-btn__content">
                                               <i aria-hidden="true"
-                                                 class="v-icon material-icons"
+                                                 class="v-icon material-icons theme--light"
                                               >
                                                 link
                                               </i>
@@ -1180,11 +1160,11 @@ exports[`/statistics 1`] = `
                                         </div>
                                         <span>
                                           <button type="button"
-                                                  class="v-btn v-btn--icon"
+                                                  class="v-btn v-btn--icon theme--light"
                                           >
                                             <div class="v-btn__content">
                                               <i aria-hidden="true"
-                                                 class="v-icon material-icons"
+                                                 class="v-icon material-icons theme--light"
                                               >
                                                 refresh
                                               </i>
@@ -1206,14 +1186,14 @@ exports[`/statistics 1`] = `
                                   </div>
                                   <div class="layout row wrap">
                                     <div class="flex xs12">
-                                      <div class="v-input v-text-field">
+                                      <div class="v-input v-text-field theme--light">
                                         <div class="v-input__control">
                                           <div class="v-input__slot"
                                                style="height:undefined;"
                                           >
                                             <div class="v-text-field__slot">
                                               <label aria-hidden="true"
-                                                     class="v-label"
+                                                     class="v-label theme--light"
                                                      style="left:0px;right:auto;position:absolute;"
                                               >
                                                 Username
@@ -1227,14 +1207,14 @@ exports[`/statistics 1`] = `
                                             <div class="v-input__append-inner">
                                               <div class="v-input__icon v-input__icon--">
                                                 <i aria-hidden="true"
-                                                   class="v-icon v-icon--link material-icons"
+                                                   class="v-icon v-icon--link material-icons theme--light"
                                                 >
                                                 </i>
                                               </div>
                                             </div>
                                           </div>
                                           <div class="v-text-field__details">
-                                            <div class="v-messages">
+                                            <div class="v-messages theme--light">
                                               <div class="v-messages__wrapper">
                                               </div>
                                             </div>
@@ -1274,10 +1254,10 @@ exports[`/statistics 1`] = `
                                  class="flex worker-item"
                                  style="z-index:1000;"
                             >
-                              <div class="v-card"
+                              <div class="v-card theme--light"
                                    style="height:undefined;"
                               >
-                                <nav class="blue-grey lighten-5 v-toolbar v-toolbar--card v-toolbar--dense"
+                                <nav class="blue-grey lighten-5 v-toolbar v-toolbar--card v-toolbar--dense theme--light"
                                      style="margin-top:0px;padding-right:0px;padding-left:0px;transform:translateY(0px);"
                                 >
                                   <div class="v-toolbar__content"
@@ -1303,11 +1283,11 @@ exports[`/statistics 1`] = `
                                         </div>
                                         <span>
                                           <button type="button"
-                                                  class="v-btn v-btn--icon"
+                                                  class="v-btn v-btn--icon theme--light"
                                           >
                                             <div class="v-btn__content">
                                               <i aria-hidden="true"
-                                                 class="v-icon material-icons"
+                                                 class="v-icon material-icons theme--light"
                                               >
                                                 delete
                                               </i>
@@ -1325,11 +1305,11 @@ exports[`/statistics 1`] = `
                                         </div>
                                         <span>
                                           <button type="button"
-                                                  class="v-btn v-btn--icon"
+                                                  class="v-btn v-btn--icon theme--light"
                                           >
                                             <div class="v-btn__content">
                                               <i aria-hidden="true"
-                                                 class="v-icon material-icons"
+                                                 class="v-icon material-icons theme--light"
                                               >
                                                 add_circle
                                               </i>
@@ -1349,11 +1329,11 @@ exports[`/statistics 1`] = `
                                         </div>
                                         <span>
                                           <button type="button"
-                                                  class="v-btn v-btn--icon"
+                                                  class="v-btn v-btn--icon theme--light"
                                           >
                                             <div class="v-btn__content">
                                               <i aria-hidden="true"
-                                                 class="v-icon material-icons"
+                                                 class="v-icon material-icons theme--light"
                                               >
                                                 link
                                               </i>
@@ -1371,11 +1351,11 @@ exports[`/statistics 1`] = `
                                         </div>
                                         <span>
                                           <button type="button"
-                                                  class="v-btn v-btn--icon"
+                                                  class="v-btn v-btn--icon theme--light"
                                           >
                                             <div class="v-btn__content">
                                               <i aria-hidden="true"
-                                                 class="v-icon material-icons"
+                                                 class="v-icon material-icons theme--light"
                                               >
                                                 refresh
                                               </i>
@@ -1397,14 +1377,14 @@ exports[`/statistics 1`] = `
                                   </div>
                                   <div class="layout row wrap">
                                     <div class="flex xs12">
-                                      <div class="v-input v-text-field">
+                                      <div class="v-input v-text-field theme--light">
                                         <div class="v-input__control">
                                           <div class="v-input__slot"
                                                style="height:undefined;"
                                           >
                                             <div class="v-text-field__slot">
                                               <label aria-hidden="true"
-                                                     class="v-label"
+                                                     class="v-label theme--light"
                                                      style="left:0px;right:auto;position:absolute;"
                                               >
                                                 Username
@@ -1418,14 +1398,14 @@ exports[`/statistics 1`] = `
                                             <div class="v-input__append-inner">
                                               <div class="v-input__icon v-input__icon--">
                                                 <i aria-hidden="true"
-                                                   class="v-icon v-icon--link material-icons"
+                                                   class="v-icon v-icon--link material-icons theme--light"
                                                 >
                                                 </i>
                                               </div>
                                             </div>
                                           </div>
                                           <div class="v-text-field__details">
-                                            <div class="v-messages">
+                                            <div class="v-messages theme--light">
                                               <div class="v-messages__wrapper">
                                               </div>
                                             </div>
@@ -1459,10 +1439,10 @@ exports[`/statistics 1`] = `
                                  class="flex worker-item"
                                  style="z-index:999;"
                             >
-                              <div class="v-card"
+                              <div class="v-card theme--light"
                                    style="height:undefined;"
                               >
-                                <nav class="blue-grey lighten-5 v-toolbar v-toolbar--card v-toolbar--dense"
+                                <nav class="blue-grey lighten-5 v-toolbar v-toolbar--card v-toolbar--dense theme--light"
                                      style="margin-top:0px;padding-right:0px;padding-left:0px;transform:translateY(0px);"
                                 >
                                   <div class="v-toolbar__content"
@@ -1488,11 +1468,11 @@ exports[`/statistics 1`] = `
                                         </div>
                                         <span>
                                           <button type="button"
-                                                  class="v-btn v-btn--icon"
+                                                  class="v-btn v-btn--icon theme--light"
                                           >
                                             <div class="v-btn__content">
                                               <i aria-hidden="true"
-                                                 class="v-icon material-icons"
+                                                 class="v-icon material-icons theme--light"
                                               >
                                                 delete
                                               </i>
@@ -1510,11 +1490,11 @@ exports[`/statistics 1`] = `
                                         </div>
                                         <span>
                                           <button type="button"
-                                                  class="v-btn v-btn--icon"
+                                                  class="v-btn v-btn--icon theme--light"
                                           >
                                             <div class="v-btn__content">
                                               <i aria-hidden="true"
-                                                 class="v-icon material-icons"
+                                                 class="v-icon material-icons theme--light"
                                               >
                                                 add_circle
                                               </i>
@@ -1534,11 +1514,11 @@ exports[`/statistics 1`] = `
                                         </div>
                                         <span>
                                           <button type="button"
-                                                  class="v-btn v-btn--icon"
+                                                  class="v-btn v-btn--icon theme--light"
                                           >
                                             <div class="v-btn__content">
                                               <i aria-hidden="true"
-                                                 class="v-icon material-icons"
+                                                 class="v-icon material-icons theme--light"
                                               >
                                                 link
                                               </i>
@@ -1556,11 +1536,11 @@ exports[`/statistics 1`] = `
                                         </div>
                                         <span>
                                           <button type="button"
-                                                  class="v-btn v-btn--icon"
+                                                  class="v-btn v-btn--icon theme--light"
                                           >
                                             <div class="v-btn__content">
                                               <i aria-hidden="true"
-                                                 class="v-icon material-icons"
+                                                 class="v-icon material-icons theme--light"
                                               >
                                                 refresh
                                               </i>
@@ -1582,14 +1562,14 @@ exports[`/statistics 1`] = `
                                   </div>
                                   <div class="layout row wrap">
                                     <div class="flex xs12">
-                                      <div class="v-input v-text-field">
+                                      <div class="v-input v-text-field theme--light">
                                         <div class="v-input__control">
                                           <div class="v-input__slot"
                                                style="height:undefined;"
                                           >
                                             <div class="v-text-field__slot">
                                               <label aria-hidden="true"
-                                                     class="v-label"
+                                                     class="v-label theme--light"
                                                      style="left:0px;right:auto;position:absolute;"
                                               >
                                                 Username
@@ -1603,14 +1583,14 @@ exports[`/statistics 1`] = `
                                             <div class="v-input__append-inner">
                                               <div class="v-input__icon v-input__icon--">
                                                 <i aria-hidden="true"
-                                                   class="v-icon v-icon--link material-icons"
+                                                   class="v-icon v-icon--link material-icons theme--light"
                                                 >
                                                 </i>
                                               </div>
                                             </div>
                                           </div>
                                           <div class="v-text-field__details">
-                                            <div class="v-messages">
+                                            <div class="v-messages theme--light">
                                               <div class="v-messages__wrapper">
                                               </div>
                                             </div>
@@ -1644,10 +1624,10 @@ exports[`/statistics 1`] = `
                                  class="flex worker-item"
                                  style="z-index:998;"
                             >
-                              <div class="v-card"
+                              <div class="v-card theme--light"
                                    style="height:undefined;"
                               >
-                                <nav class="blue-grey lighten-5 v-toolbar v-toolbar--card v-toolbar--dense"
+                                <nav class="blue-grey lighten-5 v-toolbar v-toolbar--card v-toolbar--dense theme--light"
                                      style="margin-top:0px;padding-right:0px;padding-left:0px;transform:translateY(0px);"
                                 >
                                   <div class="v-toolbar__content"
@@ -1673,11 +1653,11 @@ exports[`/statistics 1`] = `
                                         </div>
                                         <span>
                                           <button type="button"
-                                                  class="v-btn v-btn--icon"
+                                                  class="v-btn v-btn--icon theme--light"
                                           >
                                             <div class="v-btn__content">
                                               <i aria-hidden="true"
-                                                 class="v-icon material-icons"
+                                                 class="v-icon material-icons theme--light"
                                               >
                                                 delete
                                               </i>
@@ -1695,11 +1675,11 @@ exports[`/statistics 1`] = `
                                         </div>
                                         <span>
                                           <button type="button"
-                                                  class="v-btn v-btn--icon"
+                                                  class="v-btn v-btn--icon theme--light"
                                           >
                                             <div class="v-btn__content">
                                               <i aria-hidden="true"
-                                                 class="v-icon material-icons"
+                                                 class="v-icon material-icons theme--light"
                                               >
                                                 add_circle
                                               </i>
@@ -1719,11 +1699,11 @@ exports[`/statistics 1`] = `
                                         </div>
                                         <span>
                                           <button type="button"
-                                                  class="v-btn v-btn--icon"
+                                                  class="v-btn v-btn--icon theme--light"
                                           >
                                             <div class="v-btn__content">
                                               <i aria-hidden="true"
-                                                 class="v-icon material-icons"
+                                                 class="v-icon material-icons theme--light"
                                               >
                                                 link
                                               </i>
@@ -1741,11 +1721,11 @@ exports[`/statistics 1`] = `
                                         </div>
                                         <span>
                                           <button type="button"
-                                                  class="v-btn v-btn--icon"
+                                                  class="v-btn v-btn--icon theme--light"
                                           >
                                             <div class="v-btn__content">
                                               <i aria-hidden="true"
-                                                 class="v-icon material-icons"
+                                                 class="v-icon material-icons theme--light"
                                               >
                                                 refresh
                                               </i>
@@ -1766,14 +1746,14 @@ exports[`/statistics 1`] = `
                                   </div>
                                   <div class="layout row wrap">
                                     <div class="flex xs12">
-                                      <div class="v-input v-text-field">
+                                      <div class="v-input v-text-field theme--light">
                                         <div class="v-input__control">
                                           <div class="v-input__slot"
                                                style="height:undefined;"
                                           >
                                             <div class="v-text-field__slot">
                                               <label aria-hidden="true"
-                                                     class="v-label"
+                                                     class="v-label theme--light"
                                                      style="left:0px;right:auto;position:absolute;"
                                               >
                                                 Username
@@ -1787,14 +1767,14 @@ exports[`/statistics 1`] = `
                                             <div class="v-input__append-inner">
                                               <div class="v-input__icon v-input__icon--">
                                                 <i aria-hidden="true"
-                                                   class="v-icon v-icon--link material-icons"
+                                                   class="v-icon v-icon--link material-icons theme--light"
                                                 >
                                                 </i>
                                               </div>
                                             </div>
                                           </div>
                                           <div class="v-text-field__details">
-                                            <div class="v-messages">
+                                            <div class="v-messages theme--light">
                                               <div class="v-messages__wrapper">
                                               </div>
                                             </div>
@@ -1834,10 +1814,10 @@ exports[`/statistics 1`] = `
                                  class="flex worker-item"
                                  style="z-index:1000;"
                             >
-                              <div class="v-card"
+                              <div class="v-card theme--light"
                                    style="height:undefined;"
                               >
-                                <nav class="blue-grey lighten-5 v-toolbar v-toolbar--card v-toolbar--dense"
+                                <nav class="blue-grey lighten-5 v-toolbar v-toolbar--card v-toolbar--dense theme--light"
                                      style="margin-top:0px;padding-right:0px;padding-left:0px;transform:translateY(0px);"
                                 >
                                   <div class="v-toolbar__content"
@@ -1863,11 +1843,11 @@ exports[`/statistics 1`] = `
                                         </div>
                                         <span>
                                           <button type="button"
-                                                  class="v-btn v-btn--icon"
+                                                  class="v-btn v-btn--icon theme--light"
                                           >
                                             <div class="v-btn__content">
                                               <i aria-hidden="true"
-                                                 class="v-icon material-icons"
+                                                 class="v-icon material-icons theme--light"
                                               >
                                                 delete
                                               </i>
@@ -1885,11 +1865,11 @@ exports[`/statistics 1`] = `
                                         </div>
                                         <span>
                                           <button type="button"
-                                                  class="v-btn v-btn--icon"
+                                                  class="v-btn v-btn--icon theme--light"
                                           >
                                             <div class="v-btn__content">
                                               <i aria-hidden="true"
-                                                 class="v-icon material-icons"
+                                                 class="v-icon material-icons theme--light"
                                               >
                                                 add_circle
                                               </i>
@@ -1907,11 +1887,11 @@ exports[`/statistics 1`] = `
                                         </div>
                                         <span>
                                           <button type="button"
-                                                  class="v-btn v-btn--icon"
+                                                  class="v-btn v-btn--icon theme--light"
                                           >
                                             <div class="v-btn__content">
                                               <i aria-hidden="true"
-                                                 class="v-icon material-icons"
+                                                 class="v-icon material-icons theme--light"
                                               >
                                                 link
                                               </i>
@@ -1929,11 +1909,11 @@ exports[`/statistics 1`] = `
                                         </div>
                                         <span>
                                           <button type="button"
-                                                  class="v-btn v-btn--icon"
+                                                  class="v-btn v-btn--icon theme--light"
                                           >
                                             <div class="v-btn__content">
                                               <i aria-hidden="true"
-                                                 class="v-icon material-icons"
+                                                 class="v-icon material-icons theme--light"
                                               >
                                                 refresh
                                               </i>
@@ -1955,14 +1935,14 @@ exports[`/statistics 1`] = `
                                   </div>
                                   <div class="layout row wrap">
                                     <div class="flex xs12">
-                                      <div class="v-input v-text-field">
+                                      <div class="v-input v-text-field theme--light">
                                         <div class="v-input__control">
                                           <div class="v-input__slot"
                                                style="height:undefined;"
                                           >
                                             <div class="v-text-field__slot">
                                               <label aria-hidden="true"
-                                                     class="v-label"
+                                                     class="v-label theme--light"
                                                      style="left:0px;right:auto;position:absolute;"
                                               >
                                                 Username
@@ -1976,14 +1956,14 @@ exports[`/statistics 1`] = `
                                             <div class="v-input__append-inner">
                                               <div class="v-input__icon v-input__icon--">
                                                 <i aria-hidden="true"
-                                                   class="v-icon v-icon--link material-icons"
+                                                   class="v-icon v-icon--link material-icons theme--light"
                                                 >
                                                 </i>
                                               </div>
                                             </div>
                                           </div>
                                           <div class="v-text-field__details">
-                                            <div class="v-messages">
+                                            <div class="v-messages theme--light">
                                               <div class="v-messages__wrapper">
                                               </div>
                                             </div>
@@ -2017,10 +1997,10 @@ exports[`/statistics 1`] = `
                                  class="flex worker-item"
                                  style="z-index:999;"
                             >
-                              <div class="v-card"
+                              <div class="v-card theme--light"
                                    style="height:undefined;"
                               >
-                                <nav class="blue-grey lighten-5 v-toolbar v-toolbar--card v-toolbar--dense"
+                                <nav class="blue-grey lighten-5 v-toolbar v-toolbar--card v-toolbar--dense theme--light"
                                      style="margin-top:0px;padding-right:0px;padding-left:0px;transform:translateY(0px);"
                                 >
                                   <div class="v-toolbar__content"
@@ -2046,11 +2026,11 @@ exports[`/statistics 1`] = `
                                         </div>
                                         <span>
                                           <button type="button"
-                                                  class="v-btn v-btn--icon"
+                                                  class="v-btn v-btn--icon theme--light"
                                           >
                                             <div class="v-btn__content">
                                               <i aria-hidden="true"
-                                                 class="v-icon material-icons"
+                                                 class="v-icon material-icons theme--light"
                                               >
                                                 delete
                                               </i>
@@ -2068,11 +2048,11 @@ exports[`/statistics 1`] = `
                                         </div>
                                         <span>
                                           <button type="button"
-                                                  class="v-btn v-btn--icon"
+                                                  class="v-btn v-btn--icon theme--light"
                                           >
                                             <div class="v-btn__content">
                                               <i aria-hidden="true"
-                                                 class="v-icon material-icons"
+                                                 class="v-icon material-icons theme--light"
                                               >
                                                 add_circle
                                               </i>
@@ -2090,11 +2070,11 @@ exports[`/statistics 1`] = `
                                         </div>
                                         <span>
                                           <button type="button"
-                                                  class="v-btn v-btn--icon"
+                                                  class="v-btn v-btn--icon theme--light"
                                           >
                                             <div class="v-btn__content">
                                               <i aria-hidden="true"
-                                                 class="v-icon material-icons"
+                                                 class="v-icon material-icons theme--light"
                                               >
                                                 link
                                               </i>
@@ -2112,11 +2092,11 @@ exports[`/statistics 1`] = `
                                         </div>
                                         <span>
                                           <button type="button"
-                                                  class="v-btn v-btn--icon"
+                                                  class="v-btn v-btn--icon theme--light"
                                           >
                                             <div class="v-btn__content">
                                               <i aria-hidden="true"
-                                                 class="v-icon material-icons"
+                                                 class="v-icon material-icons theme--light"
                                               >
                                                 refresh
                                               </i>
@@ -2137,14 +2117,14 @@ exports[`/statistics 1`] = `
                                   </div>
                                   <div class="layout row wrap">
                                     <div class="flex xs12">
-                                      <div class="v-input v-text-field">
+                                      <div class="v-input v-text-field theme--light">
                                         <div class="v-input__control">
                                           <div class="v-input__slot"
                                                style="height:undefined;"
                                           >
                                             <div class="v-text-field__slot">
                                               <label aria-hidden="true"
-                                                     class="v-label"
+                                                     class="v-label theme--light"
                                                      style="left:0px;right:auto;position:absolute;"
                                               >
                                                 Username
@@ -2158,14 +2138,14 @@ exports[`/statistics 1`] = `
                                             <div class="v-input__append-inner">
                                               <div class="v-input__icon v-input__icon--">
                                                 <i aria-hidden="true"
-                                                   class="v-icon v-icon--link material-icons"
+                                                   class="v-icon v-icon--link material-icons theme--light"
                                                 >
                                                 </i>
                                               </div>
                                             </div>
                                           </div>
                                           <div class="v-text-field__details">
-                                            <div class="v-messages">
+                                            <div class="v-messages theme--light">
                                               <div class="v-messages__wrapper">
                                               </div>
                                             </div>
@@ -2202,7 +2182,7 @@ exports[`/statistics 1`] = `
                 </div>
               </div>
             </main>
-            <footer class="v-footer v-footer--fixed"
+            <footer class="v-footer v-footer--fixed theme--light"
                     style="height:32px;"
             >
               <span>
@@ -2218,8 +2198,8 @@ exports[`/statistics 1`] = `
         </div>
       </div>
     </div>
-    <script type="text/javascript">
-      window.__NUXT__={"layout":"default","data":[{}],"error":null,"state":{"sidebar":false,"statistics":{"workers":[{"crawlerName":"crawler0","username":"","status":"WAITING","solved":0,"submissions":0,"errorMessage":"","tokenKey":null},{"crawlerName":"crawler1","username":"","status":"WAITING","solved":0,"submissions":0,"errorMessage":"","tokenKey":null},{"crawlerName":"crawler2","username":"","status":"WAITING","solved":0,"submissions":0,"errorMessage":"","tokenKey":null},{"crawlerName":"crawler3","username":"","status":"WAITING","solved":0,"submissions":0,"errorMessage":"","tokenKey":null},{"crawlerName":"crawler4","username":"","status":"WAITING","solved":0,"submissions":0,"errorMessage":"","tokenKey":null},{"crawlerName":"withDescription","username":"","status":"WAITING","solved":0,"submissions":0,"errorMessage":"","tokenKey":null},{"crawlerName":"withUrl","username":"","status":"WAITING","solved":0,"submissions":0,"errorMessage":"","tokenKey":null},{"crawlerName":"withAll","username":"","status":"WAITING","solved":0,"submissions":0,"errorMessage":"","tokenKey":null}],"crawlers":{"crawler0":{"title":"crawler0","name":"crawler0"},"crawler1":{"title":"crawler1","name":"crawler1"},"crawler2":{"title":"crawler2","name":"crawler2"},"crawler3":{"title":"crawler3","name":"crawler3"},"crawler4":{"title":"crawler4","name":"crawler4"},"withDescription":{"title":"with description","description":"a description","name":"withDescription"},"withUrl":{"title":"with url","url":"http:\\u002F\\u002Ftest.aaa.com","name":"withUrl"},"withAll":{"title":"with all","description":"with all description and url","url":"http:\\u002F\\u002Ftest.aaa.com","name":"withAll"}},"mainUsername":""}},"serverRendered":true};
+    <script>
+      window.__NUXT__=(function(a,b,c,d,e,f,g,h,i,j,k,l,m){return {layout:"default",data:[{}],error:c,state:{sidebar:false,statistics:{workers:[{crawlerName:g,username:a,status:d,solved:b,submissions:b,errorMessage:a,tokenKey:c},{crawlerName:f,username:a,status:d,solved:b,submissions:b,errorMessage:a,tokenKey:c},{crawlerName:e,username:a,status:d,solved:b,submissions:b,errorMessage:a,tokenKey:c},{crawlerName:h,username:a,status:d,solved:b,submissions:b,errorMessage:a,tokenKey:c},{crawlerName:i,username:a,status:d,solved:b,submissions:b,errorMessage:a,tokenKey:c},{crawlerName:j,username:a,status:d,solved:b,submissions:b,errorMessage:a,tokenKey:c},{crawlerName:k,username:a,status:d,solved:b,submissions:b,errorMessage:a,tokenKey:c},{crawlerName:l,username:a,status:d,solved:b,submissions:b,errorMessage:a,tokenKey:c}],crawlers:{crawler0:{title:g,name:g},crawler1:{title:f,name:f},crawler2:{title:e,name:e},crawler3:{title:h,name:h},crawler4:{title:i,name:i},withDescription:{title:"with description",description:"a description",name:j},withUrl:{title:"with url",url:m,name:k},withAll:{title:"with all",description:"with all description and url",url:m,name:l}},mainUsername:a}},serverRendered:true}}("",0,null,"WAITING","crawler2","crawler1","crawler0","crawler3","crawler4","withDescription","withUrl","withAll","http:\\u002F\\u002Ftest.aaa.com"));
     </script>
   </body>
 </html>
