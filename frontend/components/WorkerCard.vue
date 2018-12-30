@@ -1,77 +1,77 @@
 <template>
-  <VCard>
-    <VToolbar card dense class="blue-grey lighten-5">
-      <VToolbarTitle :title="crawlerTitle">
+  <v-card>
+    <v-toolbar card dense class="blue-grey lighten-5">
+      <v-toolbar-title :title="crawlerTitle">
         {{ crawlerTitle }}
-      </VToolbarTitle>
-      <VSpacer />
-      <VToolbarItems>
-        <VTooltip bottom v-show="workerNum >= 2">
-          <VBtn icon
-                slot="activator"
-                @click="removeWorker"
+      </v-toolbar-title>
+      <v-spacer />
+      <v-toolbar-items>
+        <v-tooltip bottom v-show="workerNum >= 2">
+          <v-btn icon
+                 slot="activator"
+                 @click="removeWorker"
           >
-            <VIcon>delete</VIcon>
-          </VBtn>
+            <v-icon>delete</v-icon>
+          </v-btn>
           <span>
             移除此窗格
           </span>
-        </VTooltip>
-        <VTooltip bottom v-show="myWorkerIdxOfCrawler == workerNum">
-          <VBtn icon
-                slot="activator"
-                @click="addWorker"
+        </v-tooltip>
+        <v-tooltip bottom v-show="myWorkerIdxOfCrawler == workerNum">
+          <v-btn icon
+                 slot="activator"
+                 @click="addWorker"
           >
-            <VIcon>add_circle</VIcon>
-          </VBtn>
+            <v-icon>add_circle</v-icon>
+          </v-btn>
           <span>
             添加一个此 OJ 的窗格
           </span>
-        </VTooltip>
-        <VTooltip bottom v-show="crawlerUrl">
-          <VBtn icon
-                slot="activator"
-                @click="openOj"
+        </v-tooltip>
+        <v-tooltip bottom v-show="crawlerUrl">
+          <v-btn icon
+                 slot="activator"
+                 @click="openOj"
           >
-            <VIcon>link</VIcon>
-          </VBtn>
+            <v-icon>link</v-icon>
+          </v-btn>
           <span>
             转到此OJ
           </span>
-        </VTooltip>
-        <Transition name="fade">
-          <VTooltip bottom v-if="worker.status === WORKER_STATUS.WORKING">
-            <VBtn icon
-                  slot="activator"
-                  @click="stopWorker"
+        </v-tooltip>
+        <transition name="fade">
+          <v-tooltip bottom v-if="worker.status === WORKER_STATUS.WORKING">
+            <v-btn icon
+                   slot="activator"
+                   @click="stopWorker"
             >
-              <VIcon>stop</VIcon>
-            </VBtn>
+              <v-icon>stop</v-icon>
+            </v-btn>
             <span>停止查询</span>
-          </VTooltip>
-          <VTooltip bottom v-else>
-            <VBtn icon
-                  slot="activator"
-                  @click="startWorker"
+          </v-tooltip>
+          <v-tooltip bottom v-else>
+            <v-btn icon
+                   slot="activator"
+                   @click="startWorker"
             >
-              <VIcon>refresh</VIcon>
-            </VBtn>
+              <v-icon>refresh</v-icon>
+            </v-btn>
             <span>重新爬取此处信息</span>
-          </VTooltip>
-        </Transition>
-      </VToolbarItems>
-    </VToolbar>
-    <VContainer>
-      <VLayout row>
-        <VFlex xs12>
+          </v-tooltip>
+        </transition>
+      </v-toolbar-items>
+    </v-toolbar>
+    <v-container>
+      <v-layout row>
+        <v-flex xs12>
           <span class="grey--text" v-show="crawlerDescription">
             {{ crawlerDescription }}
           </span>
-        </VFlex>
-      </VLayout>
-      <VLayout row wrap>
-        <VFlex xs12>
-          <VTextField
+        </v-flex>
+      </v-layout>
+      <v-layout row wrap>
+        <v-flex xs12>
+          <v-text-field
             v-model="username"
             label="Username"
             :disabled="worker.status === WORKER_STATUS.WORKING"
@@ -80,26 +80,26 @@
             :loading="worker.status === WORKER_STATUS.WORKING"
             clearable
           />
-        </VFlex>
-      </VLayout>
-      <VLayout row wrap v-show="warnings">
-        <VFlex xs12 v-for="item in warnings" :key="item">
-          <VIcon color="orange darken-2">
+        </v-flex>
+      </v-layout>
+      <v-layout row wrap v-show="warnings">
+        <v-flex xs12 v-for="item in warnings" :key="item">
+          <v-icon color="orange darken-2">
             warning
-          </VIcon>
+          </v-icon>
           &nbsp;
           <span>{{ item }}</span>
-        </VFlex>
-      </VLayout>
-      <VLayout row v-show="worker.status === WORKER_STATUS.DONE">
-        <VFlex xs12 v-if="worker.errorMessage">
-          <VIcon color="red">
+        </v-flex>
+      </v-layout>
+      <v-layout row v-show="worker.status === WORKER_STATUS.DONE">
+        <v-flex xs12 v-if="worker.errorMessage">
+          <v-icon color="red">
             error
-          </VIcon>
+          </v-icon>
           &nbsp;
           <span>{{ worker.errorMessage }}</span>
-        </VFlex>
-        <VFlex xs12 v-else>
+        </v-flex>
+        <v-flex xs12 v-else>
           <span class="grey--text">
             SOLVED:
           </span> {{ worker.solved }}
@@ -107,10 +107,10 @@
           <span class="grey--text">
             SUBMISSIONS:
           </span> {{ worker.submissions }}
-        </VFlex>
-      </VLayout>
-    </VContainer>
-  </VCard>
+        </v-flex>
+      </v-layout>
+    </v-container>
+  </v-card>
 </template>
 
 <script>

@@ -32,5 +32,7 @@ module.exports = {
     // 这个方法的可读性太低了
     'lodash/matches-prop-shorthand': "off",
     'lodash/prefer-reject': 'off',
+    // 其他的组件都是用kebab-case定义的，因此这里也要用
+    "vue/component-name-in-template-casing": ["error", "kebab-case"],
   }
 }
