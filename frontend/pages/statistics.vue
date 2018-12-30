@@ -40,7 +40,9 @@
                  :class="{ green: savingUsername }"
           >
             保存用户名
-            <span slot="loader">保存成功</span>
+            <span slot="loader">
+              保存成功
+            </span>
           </v-btn>
           将用户名保存到本地，下次打开页面的时候会自动填写
           <br>
@@ -48,12 +50,17 @@
         </v-tooltip>
       </v-flex>
       <v-flex xs12 md4 v-show="submissionsNum">
-        <v-chip label color="grey lighten-3" class="elevation-2"><span class="title">{{ summary }}</span></v-chip>
+        <v-chip label color="grey lighten-3" class="elevation-2">
+          <span class="title">
+            {{ summary }}
+          </span>
+        </v-chip>
       </v-flex>
     </v-layout>
     <v-layout row>
       <v-flex xs12 sm12 md6 lg4 xl3
-              v-for="(column, idx) in workerLayout" :key="idx">
+              v-for="(column, idx) in workerLayout" :key="idx"
+      >
         <v-layout column>
           <transition-group
             name="workers-column"
