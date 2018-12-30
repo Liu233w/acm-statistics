@@ -1,8 +1,8 @@
 <template>
-  <v-container grid-list-md>
-    <v-layout row wrap>
-      <v-flex xs12 sm5 md3>
-        <v-text-field
+  <VContainer grid-list-md>
+    <VLayout row wrap>
+      <VFlex xs12 sm5 md3>
+        <VTextField
           v-model="username"
           label="统一设置用户名"
           :disabled="isWorking"
@@ -10,52 +10,59 @@
           @keyup.enter="runWorker"
           :loading="isWorking"
         >
-          <v-progress-linear
+          <VProgressLinear
             slot="progress"
             color="primary"
             :value="notWorkingRate"
             :height="3"
           />
-        </v-text-field>
-      </v-flex>
-      <v-flex xs12 sm7 md5>
-        <v-btn class="primary" @click="runWorker" :disabled="isWorking">
+        </VTextField>
+      </VFlex>
+      <VFlex xs12 sm7 md5>
+        <VBtn class="primary" @click="runWorker" :disabled="isWorking">
           开始查询
-        </v-btn>
-        <v-tooltip bottom>
-          <v-btn
+        </VBtn>
+        <VTooltip bottom>
+          <VBtn
             class="error"
             @click="clearWorkers"
             slot="activator"
           >
             重置查询
-          </v-btn>
+          </VBtn>
           清空用户名，重置查询状态
-        </v-tooltip>
-        <v-tooltip bottom>
-          <v-btn @click="saveUsername"
-                 slot="activator"
-                 :loading="savingUsername"
-                 :disable="savingUsername"
-                 :class="{ green: savingUsername }"
+        </VTooltip>
+        <VTooltip bottom>
+          <VBtn @click="saveUsername"
+                slot="activator"
+                :loading="savingUsername"
+                :disable="savingUsername"
+                :class="{ green: savingUsername }"
           >
             保存用户名
-            <span slot="loader">保存成功</span>
-          </v-btn>
+            <span slot="loader">
+              保存成功
+            </span>
+          </VBtn>
           将用户名保存到本地，下次打开页面的时候会自动填写
           <br>
           （使用“开始查询”按钮也会保存用户名）
-        </v-tooltip>
-      </v-flex>
-      <v-flex xs12 md4 v-show="submissionsNum">
-        <v-chip label color="grey lighten-3" class="elevation-2"><span class="title">{{ summary }}</span></v-chip>
-      </v-flex>
-    </v-layout>
-    <v-layout row>
-      <v-flex xs12 sm12 md6 lg4 xl3
-              v-for="(column, idx) in workerLayout" :key="idx">
-        <v-layout column>
-          <transition-group
+        </VTooltip>
+      </VFlex>
+      <VFlex xs12 md4 v-show="submissionsNum">
+        <VChip label color="grey lighten-3" class="elevation-2">
+          <span class="title">
+            {{ summary }}
+          </span>
+        </VChip>
+      </VFlex>
+    </VLayout>
+    <VLayout row>
+      <VFlex xs12 sm12 md6 lg4 xl3
+             v-for="(column, idx) in workerLayout" :key="idx"
+      >
+        <VLayout column>
+          <TransitionGroup
             name="workers-column"
             @before-leave="itemBeforeLeaveTransition"
           >
@@ -67,15 +74,15 @@
               :data-column-idx="idx"
               :data-column-item-idx="itemIdx"
             >
-              <worker-card
+              <WorkerCard
                 :index="item.index"
               />
             </div>
-          </transition-group>
-        </v-layout>
-      </v-flex>
-    </v-layout>
-  </v-container>
+          </TransitionGroup>
+        </VLayout>
+      </VFlex>
+    </VLayout>
+  </VContainer>
 </template>
 
 <script>
