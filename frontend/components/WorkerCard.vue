@@ -4,7 +4,7 @@
       <v-toolbar-title :title="crawlerTitle">
         {{ crawlerTitle }}
       </v-toolbar-title>
-      <v-spacer/>
+      <v-spacer />
       <v-toolbar-items>
         <v-tooltip bottom v-show="workerNum >= 2">
           <v-btn icon
@@ -64,7 +64,9 @@
     <v-container>
       <v-layout row>
         <v-flex xs12>
-          <span class="grey--text" v-show="crawlerDescription">{{ crawlerDescription }} </span>
+          <span class="grey--text" v-show="crawlerDescription">
+            {{ crawlerDescription }}
+          </span>
         </v-flex>
       </v-layout>
       <v-layout row wrap>
@@ -82,21 +84,29 @@
       </v-layout>
       <v-layout row wrap v-show="warnings">
         <v-flex xs12 v-for="item in warnings" :key="item">
-          <v-icon color="orange darken-2">warning</v-icon>
+          <v-icon color="orange darken-2">
+            warning
+          </v-icon>
           &nbsp;
           <span>{{ item }}</span>
         </v-flex>
       </v-layout>
       <v-layout row v-show="worker.status === WORKER_STATUS.DONE">
         <v-flex xs12 v-if="worker.errorMessage">
-          <v-icon color="red">error</v-icon>
+          <v-icon color="red">
+            error
+          </v-icon>
           &nbsp;
           <span>{{ worker.errorMessage }}</span>
         </v-flex>
         <v-flex xs12 v-else>
-          <span class="grey--text">SOLVED: </span> {{ worker.solved }}
+          <span class="grey--text">
+            SOLVED:
+          </span> {{ worker.solved }}
           <br>
-          <span class="grey--text">SUBMISSIONS: </span> {{ worker.submissions }}
+          <span class="grey--text">
+            SUBMISSIONS:
+          </span> {{ worker.submissions }}
         </v-flex>
       </v-layout>
     </v-container>
