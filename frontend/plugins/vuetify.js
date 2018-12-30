@@ -2,51 +2,9 @@ import _ from 'lodash'
 import LRU from 'lru-cache'
 
 import Vue from 'vue'
-import {
-  Vuetify,
-  VApp,
-  VCard,
-  VNavigationDrawer,
-  VFooter,
-  VList,
-  VBtn,
-  VIcon,
-  VGrid,
-  VToolbar,
-  VTextField,
-  VTooltip,
-  VProgressCircular,
-  VForm,
-  VProgressLinear,
-  VAvatar,
-  VJumbotron,
-  VParallax,
-  VDialog,
-  VChip,
-} from 'vuetify'
+import Vuetify from 'vuetify/lib'
 
 Vue.use(Vuetify, {
-  components: {
-    VApp,
-    VCard,
-    VNavigationDrawer,
-    VFooter,
-    VList,
-    VBtn,
-    VIcon,
-    VGrid,
-    VToolbar,
-    VTextField,
-    VTooltip,
-    VProgressCircular,
-    VForm,
-    VProgressLinear,
-    VAvatar,
-    VJumbotron,
-    VParallax,
-    VDialog,
-    VChip,
-  },
   options: {
     minifyTheme: function (val) {
       if (process.env.NODE_ENV === 'production') {

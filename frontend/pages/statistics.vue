@@ -92,7 +92,7 @@
       WorkerCard,
     },
     created() {
-      this.$store.registerModule('statistics', Store)
+      this.$store.registerModule('statistics', Store, { preserveState: false })
     },
     destroyed() {
       this.$store.unregisterModule('statistics')

@@ -1,4 +1,5 @@
 const nodeExternals = require('webpack-node-externals')
+const VuetifyLoaderPlugin = require('vuetify-loader/lib/plugin')
 const LodashModuleReplacementPlugin = require('lodash-webpack-plugin')
 // eslint-disable-next-line no-unused-vars
 const resolve = (dir) => require('path').join(__dirname, dir)
@@ -32,24 +33,17 @@ module.exports = {
   ** Customize the progress bar color
   */
   loading: {color: '#3B8070'},
+  // 根据请求的浏览器版本决定babel的preset
+  modern: 'server',
   /*
   ** Build configuration
   */
   build: {
     babel: {
       plugins: [
-        ['transform-imports', {
-          vuetify: {
-            transform: 'vuetify/es5/components/${member}',
-            preventFullImport: true,
-          },
-        }],
         'lodash',
       ],
     },
-    vendor: [
-      '~/plugins/vuetify.js',
-    ],
     extractCSS: true,
     /*
     ** Run ESLint on save
@@ -63,7 +57,7 @@ module.exports = {
           exclude: /(node_modules)/,
         })
       }
-      if (ctx.isServer) {
+      if (process.server) {
         config.externals = [
           nodeExternals({
             whitelist: [/^vuetify/],
@@ -71,6 +65,7 @@ module.exports = {
         ]
       }
     },
+    transpile: [/^vuetify/],
     plugins: [
       // 参见 https://github.com/lodash/lodash-webpack-plugin 来引入需要的功能
       new LodashModuleReplacementPlugin({
@@ -79,9 +74,10 @@ module.exports = {
         collections: true,
         shorthands: true,
       }),
+      new VuetifyLoaderPlugin(),
     ],
-    uglify: {
-      uglifyOptions: {
+    terser: {
+      terserOptions: {
         compress: {
           drop_console: true,
         },

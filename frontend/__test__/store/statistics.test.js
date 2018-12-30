@@ -9,10 +9,23 @@ jest.mock('~/dynamic/crawlers', () => function () {
       cr1: {
         title: 'crawler 1',
       },
+      cr2: {
+        title: 'crawler 2, should throw exception',
+      },
+      cr3: {
+        title: 'crawler 3, return at next tick',
+      },
     },
     crawlers: {
       // eslint-disable-next-line no-unused-vars
-      cr1: username => ({submissions: 10, solved: 5}),
+      cr1: username => Promise.resolve({submissions: 10, solved: 5}),
+      // eslint-disable-next-line no-unused-vars
+      cr2: (username) => Promise.reject(new Error('用户不存在')),
+      // eslint-disable-next-line no-unused-vars
+      cr3: (username) => {
+        return new Promise(resolve =>
+          setImmediate(() => resolve({submissions: 10, solved: 1})))
+      },
     },
   }
 }, {virtual: true})
@@ -28,18 +41,43 @@ describe('state', () => {
         cr1: {
           name: 'cr1',
           title: 'crawler 1',
-          func: expect.any(Function),
+        },
+        cr2: {
+          title: 'crawler 2, should throw exception',
+        },
+        cr3: {
+          title: 'crawler 3, return at next tick',
         },
       },
-      workers: [{
-        crawlerName: 'cr1',
-        username: '',
-        solved: 0,
-        submissions: 0,
-        errorMessage: '',
-        tokenKey: null,
-        key: expect.any(Number),
-      }],
+      workers: [
+        {
+          crawlerName: 'cr1',
+          username: '',
+          solved: 0,
+          submissions: 0,
+          errorMessage: '',
+          tokenKey: null,
+          key: expect.any(Number),
+        },
+        {
+          crawlerName: 'cr2',
+          username: '',
+          solved: 0,
+          submissions: 0,
+          errorMessage: '',
+          tokenKey: null,
+          key: expect.any(Number),
+        },
+        {
+          crawlerName: 'cr3',
+          username: '',
+          solved: 0,
+          submissions: 0,
+          errorMessage: '',
+          tokenKey: null,
+          key: expect.any(Number),
+        },
+      ],
     })
   })
 })
@@ -176,9 +214,6 @@ describe('mutations', () => {
 
   describe('updateUsernamesFromObject', () => {
 
-    // eslint-disable-next-line no-unused-vars
-    const testFunc = username => ({submissions: 33, solved: 22})
-
     let startState
 
     beforeEach(() => {
@@ -187,11 +222,9 @@ describe('mutations', () => {
         crawlers: {
           cr1: {
             name: 'cr1',
-            func: testFunc,
           },
           cr2: {
             name: 'cr2',
-            func: testFunc,
           },
         },
         workers: [
@@ -400,8 +433,6 @@ describe('mutations', () => {
         crawlers: {
           cr1: {
             name: 'cr1',
-            // eslint-disable-next-line no-unused-vars
-            func: (username) => Promise.resolve({submissions: 33, solved: 22}),
           },
         },
         workers: [
@@ -424,7 +455,6 @@ describe('mutations', () => {
         crawlers: {
           cr1: {
             name: 'cr1',
-            func: expect.any(Function),
           },
         },
         workers: [
@@ -595,7 +625,6 @@ describe('mutations', () => {
           cr1: {
             name: 'cr1',
             title: 'crawler 1',
-            func: username => username,
           },
         },
         workers: [
@@ -627,7 +656,6 @@ describe('mutations', () => {
           cr1: {
             name: 'cr1',
             title: 'crawler 1',
-            func: expect.any(Function),
           },
         },
         workers: [{
@@ -752,9 +780,6 @@ describe('helper functions', () => {
 
   describe('getUsernameObjectFromState', () => {
 
-    // eslint-disable-next-line no-unused-vars
-    const testFunc = username => ({submissions: 33, solved: 22})
-
     it('能够正确生成数据', () => {
 
       const state = {
@@ -762,11 +787,9 @@ describe('helper functions', () => {
         crawlers: {
           cr1: {
             name: 'cr1',
-            func: testFunc,
           },
           cr2: {
             name: 'cr2',
-            func: testFunc,
           },
         },
         workers: [
@@ -820,11 +843,9 @@ describe('helper functions', () => {
         crawlers: {
           cr1: {
             name: 'cr1',
-            func: testFunc,
           },
           cr2: {
             name: 'cr2',
-            func: testFunc,
           },
         },
         workers: [
@@ -882,9 +903,8 @@ describe('actions', () => {
       const state = {
         crawlers: {
           cr1: {
+            // mock 在文件开头 ({submissions: 10, solved: 5}),
             name: 'cr1',
-            // eslint-disable-next-line no-unused-vars
-            func: (username) => Promise.resolve({submissions: 33, solved: 22}),
           },
         },
         workers: [
@@ -911,15 +931,14 @@ describe('actions', () => {
         crawlers: {
           cr1: {
             name: 'cr1',
-            func: expect.any(Function),
           },
         },
         workers: [
           {
             username: 'user1',
             status: 'DONE',
-            submissions: 33,
-            solved: 22,
+            submissions: 10,
+            solved: 5,
             errorMessage: '',
             tokenKey: expect.any(Number),
             crawlerName: 'cr1',
@@ -932,10 +951,8 @@ describe('actions', () => {
     it('在爬虫抛出异常时能正确设置状态', async () => {
       const state = {
         crawlers: {
-          cr1: {
-            name: 'cr1',
-            // eslint-disable-next-line no-unused-vars
-            func: (username) => Promise.reject(new Error('用户不存在')),
+          cr2: {
+            name: 'cr2',
           },
         },
         workers: [
@@ -946,7 +963,7 @@ describe('actions', () => {
             solved: 0,
             errorMessage: '.....',
             tokenKey: 0.23333,
-            crawlerName: 'cr1',
+            crawlerName: 'cr2',
             key: 0.6666666,
           },
         ],
@@ -960,9 +977,8 @@ describe('actions', () => {
 
       expect(state).toMatchObject({
         crawlers: {
-          cr1: {
-            name: 'cr1',
-            func: expect.any(Function),
+          cr2: {
+            name: 'cr2',
           },
         },
         workers: [
@@ -973,7 +989,7 @@ describe('actions', () => {
             solved: 0,
             errorMessage: '用户不存在',
             tokenKey: expect.any(Number),
-            crawlerName: 'cr1',
+            crawlerName: 'cr2',
             key: 0.6666666,
           },
         ],
@@ -982,18 +998,10 @@ describe('actions', () => {
 
     it('在 tokenKey 改变时不会提交结果', async () => {
 
-      // prepare
-      // eslint-disable-next-line no-unused-vars
-      const func = (username) => {
-        return new Promise(resolve =>
-          setImmediate(() => resolve({submissions: 10, solved: 1})))
-      }
-
       const state = {
         crawlers: {
-          cr1: {
-            name: 'cr1',
-            func,
+          cr3: {
+            name: 'cr3',
           },
         },
         workers: [
@@ -1004,7 +1012,7 @@ describe('actions', () => {
             solved: 0,
             errorMessage: '.....',
             tokenKey: 0.23333,
-            crawlerName: 'cr1',
+            crawlerName: 'cr3',
             key: 0.6666666,
           },
         ],
@@ -1028,9 +1036,8 @@ describe('actions', () => {
 
       expect(state).toMatchObject({
         crawlers: {
-          cr1: {
-            name: 'cr1',
-            func: expect.any(Function),
+          cr3: {
+            name: 'cr3',
           },
         },
         workers: [
@@ -1042,7 +1049,7 @@ describe('actions', () => {
             solved: 0,
             errorMessage: '',
             tokenKey: null,
-            crawlerName: 'cr1',
+            crawlerName: 'cr3',
             key: 0.6666666,
           },
         ],
@@ -1055,10 +1062,7 @@ describe('actions', () => {
       const state = {
         crawlers: {
           cr1: {
-            name: 'cr1',
-            func: () => {
-              throw new Error('不应运行此查询')
-            },
+            name: 'cr2',
           },
         },
         workers: [
@@ -1069,7 +1073,7 @@ describe('actions', () => {
             solved: 0,
             errorMessage: '.....',
             tokenKey: 0.23333,
-            crawlerName: 'cr1',
+            crawlerName: 'cr2',
             key: 0.6666666,
           },
         ],
@@ -1085,8 +1089,7 @@ describe('actions', () => {
       expect(state).toMatchObject({
         crawlers: {
           cr1: {
-            name: 'cr1',
-            func: expect.any(Function),
+            name: 'cr2',
           },
         },
         workers: [
@@ -1097,7 +1100,7 @@ describe('actions', () => {
             solved: 0,
             errorMessage: '.....',
             tokenKey: 0.23333,
-            crawlerName: 'cr1',
+            crawlerName: 'cr2',
             key: 0.6666666,
           },
         ],

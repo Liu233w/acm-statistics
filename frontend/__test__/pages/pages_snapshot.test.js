@@ -1,31 +1,49 @@
 /* eslint-disable no-undef */
 
-const {Nuxt, Builder} = require('nuxt')
-const {resolve} = require('path')
-const cheerio = require('cheerio')
+const {exec} = require('child_process')
 const _ = require('lodash')
+const superagent = require('superagent')
+const cheerio = require('cheerio')
+const psTree = require('ps-tree')
 
-// mock 爬虫，防止修改 crawler 模块引起快照改变
-jest.mock('../../modules/crawlerLoader')
+const basePath = 'http://localhost:3000'
 
-// We keep a reference to Nuxt so we can close
-// the server at the end of the test
-let nuxt = null
+let childProcess = null
 
-// Init Nuxt.js
-beforeAll(async () => {
-  const rootDir = resolve(__dirname, '../..')
-  const config = require(resolve(rootDir, 'nuxt.config.js'))
-  config.rootDir = rootDir // project folder
-  config.dev = false // production build
-  nuxt = new Nuxt(config)
-  await new Builder(nuxt).build()
-}, 1200000) // 用两分钟的时间启动 nuxt
+beforeAll(done => {
+
+  const execOption = {
+    env: {
+      E2E: 1,
+      ...process.env,
+    },
+  }
+
+  console.log('start building nuxt...')
+  exec('npm run build', execOption, (err, stdout, stderr) => {
+    if (err) {
+      console.error('build process fail to start', err)
+    }
+    console.log('build process out', stdout)
+    console.error('build process error', stderr)
+
+    console.log('start running nuxt...')
+    childProcess = exec('npm start', execOption)
+    setTimeout(done, 10000)
+  })
+}, 600000) // 最多等待 10 分钟
 
 async function testPageByPath(path) {
-  const context = {}
-  const {html} = await nuxt.renderRoute(path, context)
-  const $ = cheerio.load(html)
+
+  const url = basePath + path
+  console.log(`request url at ${url}`)
+
+  const res = await superagent.get(url)
+  if (!res.ok) {
+    console.log(`path ${path} does not have a 200 response, the response: `, res)
+    throw Error(`path ${path} does not have a 200 response`)
+  }
+  const $ = cheerio.load(res.text)
 
   $('link[href^="/_nuxt/"]').remove()
   $('script[src^="/_nuxt/"]').remove()
@@ -48,7 +66,7 @@ async function testPageByPath(path) {
 
   // 移除随机数
   const storeEl = $(_.filter($('script'), el => /window\.__NUXT__/.test($(el).html())))
-  storeEl.html(_.replace(storeEl.html(), /,"key":0\.\d*/g, ''))
+  storeEl.html(_.replace(storeEl.html(), /,key:\.\d*/g, ''))
 
   expect($.html()).toMatchSnapshot()
 }
@@ -62,7 +80,31 @@ for (let path of testPaths) {
   test(path, () => testPageByPath(path))
 }
 
-// Close the Nuxt server
 afterAll(() => {
-  nuxt.close()
+  if (!childProcess) {
+    return
+  }
+  console.log(`trying to kill process ${childProcess.pid}`)
+  if (/^win/.test(process.platform)) {
+    exec(`taskkill /PID ${childProcess.pid} /T /F`)
+  } else {
+    treeKill(childProcess.pid)
+  }
 })
+
+// from http://krasimirtsonev.com/blog/article/Nodejs-managing-child-processes-starting-stopping-exec-spawn
+function treeKill(pid, signal, callback) {
+  signal = signal || 'SIGKILL'
+  psTree(pid, (err, children) => {
+    try {
+      if (err) throw err
+      process.kill(pid, signal)
+      _.forEach(children, p => {
+        process.kill(p.PID, signal)
+      })
+      callback && callback()
+    } catch (e) {
+      callback && callback(e)
+    }
+  })
+}
