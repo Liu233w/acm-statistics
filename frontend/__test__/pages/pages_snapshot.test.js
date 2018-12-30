@@ -1,29 +1,35 @@
 /* eslint-disable no-undef */
 
-const path = require('path')
-const {spawn} = require('child_process')
+const {exec} = require('child_process')
 const _ = require('lodash')
 const superagent = require('superagent')
 const cheerio = require('cheerio')
+const psTree = require('ps-tree')
 
 const basePath = 'http://localhost:3000'
 
-let runProcess = null
+let childProcess = null
 
-beforeAll(async () => {
+beforeAll(done => {
+
+  const execOption = {
+    env: {
+      E2E: 1,
+      ...process.env,
+    },
+  }
 
   console.log('start building nuxt...')
-  await wrapSpawn('npm', ['run', 'build'])
+  exec('npm run build', execOption, (err, stdout, stderr) => {
+    if (err) {
+      console.error('build process fail to start', err)
+    }
+    console.log('build process out', stdout)
+    console.error('build process error', stderr)
 
-  console.log('start running nuxt...')
-  await wrapSpawn('npm', ['start'], (child, resolve) => {
-    runProcess = child
-    child.stdout.on('data', data => {
-      // waiting for 'Listening on: http://localhost:3000'
-      if (_.includes(data.toString(), basePath)) {
-        resolve()
-      }
-    })
+    console.log('start running nuxt...')
+    childProcess = exec('npm start', execOption)
+    setTimeout(done, 10000)
   })
 }, 600000) // 最多等待 10 分钟
 
@@ -74,54 +80,31 @@ for (let path of testPaths) {
   test(path, () => testPageByPath(path))
 }
 
-let cleaningUp = false
-
-// Close the Nuxt server
-afterAll(async () => {
-  cleaningUp = true
-  await wrapSpawn('kill', ['-9', '' + runProcess.pid])
+afterAll(() => {
+  if (!childProcess) {
+    return
+  }
+  console.log(`trying to kill process ${childProcess.pid}`)
+  if (/^win/.test(process.platform)) {
+    exec(`taskkill /PID ${childProcess.pid} /T /F`)
+  } else {
+    treeKill(childProcess.pid)
+  }
 })
 
-function wrapSpawn(cmd, args, callback) {
-  return new Promise((resolve, reject) => {
+// from http://krasimirtsonev.com/blog/article/Nodejs-managing-child-processes-starting-stopping-exec-spawn
+function treeKill(pid, signal, callback) {
+  signal = signal || 'SIGKILL'
+  psTree(pid, (err, children) => {
     try {
-
-      const child = spawn(cmd, args, {
-        cwd: path.resolve(__dirname, '../..'),
-        env: {
-          E2E: 1,
-          ...process.env,
-        },
-        shell: true,
+      if (err) throw err
+      process.kill(pid, signal)
+      _.forEach(children, p => {
+        process.kill(p.PID, signal)
       })
-      child.on('error', reject)
-
-      child.stdout.on('data', data => {
-        console.log(data.toString())
-      })
-      child.stderr.on('data', data => {
-        console.error(data.toString())
-      })
-
-      child.on('close', code => {
-        if (code === 0) {
-          resolve()
-        } else {
-          if (cleaningUp) {
-            console.error(`process exited with code ${code}`)
-            resolve()
-          } else {
-            reject(`process exited with code ${code}`)
-          }
-        }
-      })
-
-      if (callback) {
-        callback(child, resolve, reject)
-      }
-
+      callback && callback()
     } catch (e) {
-      reject(e)
+      callback && callback(e)
     }
   })
 }
