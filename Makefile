@@ -3,10 +3,6 @@ CrawlerTag = acm-statistics-crawler
 FrontendBaseTag = acm-statistics-frontend-base
 FrontendTag = acm-statistics-frontend
 
-CodecovEnvCmd = bash <(curl -s https://codecov.io/env)
-CodecovEnv = $(shell $(CodecovEnvCmd))
-CodecovCmd = bash <(curl -s https://codecov.io/bash)
-
 CrawlerLibraryPath = /var/project
 
 # pass arbitrary argument to make, from https://stackoverflow.com/a/14061796
@@ -44,12 +40,6 @@ build-crawler: node-base
 test-crawler: build-crawler
 	docker run --rm $(CrawlerTag) npm test
 
-test-crawler-ci: build-crawler
-	docker run --rm $(CodecovEnv) $(CrawlerTag) /bin/bash -c "\
-		apk add --no-cache bash curl && \
-		npm test -- '--testPathPattern=__test__/(?!crawlers\.test).*\.js' && \
-		$(CodecovCmd)"
-
 run-crawler: build-crawler
 	docker run -it --rm $(CrawlerTag) $(RunArgs)
 
@@ -72,12 +62,6 @@ build-frontend: frontend-base
 
 test-frontend: frontend-base
 	docker run --rm $(FrontendBaseTag) npm test
-
-test-frontend-ci: frontend-base
-	docker run --rm $(CodecovEnv) $(FrontendBaseTag) /bin/bash -c "\
-		apk add --no-cache bash curl && \
-		npm test -- --ci && \
-		$(CodecovCmd)"
 
 run-frontend: frontend-base
 	docker run -it --rm $(FrontendBaseTag) $(RunArgs)
