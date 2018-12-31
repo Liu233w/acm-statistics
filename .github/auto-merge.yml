@@ -4,4 +4,6 @@ minApprovals:
 mergeMethod: rebase
 
 requiredLabels: 
-  - ready-to-be-merged
+- ready-to-be-merged
+
+reportStatus: true
