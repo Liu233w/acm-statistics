@@ -1,0 +1,19 @@
+# dependencies
+node_modules
+
+# logs
+npm-debug.log
+
+# Nuxt build
+.nuxt
+
+# Nuxt generate
+dist
+
+# codecov
+coverage
+
+# docker
+.dockerignore
+base.Dockerfile
+build.Dockerfile

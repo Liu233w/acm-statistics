@@ -1,0 +1,12 @@
+ARG FRONTEND_BASE_IMAGE
+
+FROM ${FRONTEND_BASE_IMAGE}
+
+RUN npm run build
+
+ENV HOST 0.0.0.0 \
+    PORT 3000
+
+EXPOSE 3000
+
+CMD ["npm", "start"]
