@@ -177,7 +177,10 @@ exports[`/ 1`] = `
                             >
                               <div class="v-card__text text-xs-center">
                                 <i aria-hidden="true"
-                                   class="v-icon blue--text text--lighten-2 fa fa fa fa-github theme--light"
+                                   class="v-icon blue--text text--lighten-2 
+                      fa fa 
+                      fa fa-github
+                     theme--light"
                                    style="font-size:40px;"
                                 >
                                 </i>
@@ -315,7 +318,10 @@ exports[`/ 1`] = `
                               >
                                 <div class="v-list__tile__action">
                                   <i aria-hidden="true"
-                                     class="v-icon blue--text text--lighten-2 fa fa fa fa-qq theme--light"
+                                     class="v-icon blue--text text--lighten-2 
+                      fa fa 
+                      fa fa-qq
+                     theme--light"
                                   >
                                   </i>
                                 </div>
@@ -364,7 +370,10 @@ exports[`/ 1`] = `
                               <a class="v-list__tile v-list__tile--link theme--light">
                                 <div class="v-list__tile__action">
                                   <i aria-hidden="true"
-                                     class="v-icon blue--text text--lighten-2 fa fa fa fa-weixin theme--light"
+                                     class="v-icon blue--text text--lighten-2 
+                      fa fa 
+                      fa fa-weixin
+                     theme--light"
                                   >
                                   </i>
                                 </div>
