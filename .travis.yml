@@ -12,6 +12,9 @@ stages:
   - name: deploy
     if: tag =~ ^v
 
+services:
+  - docker
+
 cache:
   directories:
     - $HOME/.sonar/cache
@@ -36,16 +39,14 @@ matrix:
     - env: NAME=Frontend
       stage: test
       script:
-        - cd frontend
-        - npm run lint
-        - npm test -- --ci && codecov
+        - make -- run-frontend npm run lint
+        - make test-frontend-ci
 
     - env: NAME=Crawler
       stage: test
       script:
-        - cd crawler
-        - npm run lint
-        - npm test -- '--testPathPattern=__test__/(?!crawlers\.test).*\.js' && codecov
+        - make -- run-crawler npm run lint
+        - make test-crawler-ci
 
     - env: NAME=Crawler-api-backend
       stage: test
