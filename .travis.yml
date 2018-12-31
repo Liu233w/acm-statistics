@@ -40,13 +40,13 @@ matrix:
       stage: test
       script:
         - make -- run-frontend npm run lint
-        - make test-frontend-ci
+        - docker run -v "$(pwd)/frontend/coverage:/var/project/coverage" acm-statistics-frontend-base npm test -- --ci && cd frontend && codecov
 
     - env: NAME=Crawler
       stage: test
       script:
         - make -- run-crawler npm run lint
-        - make test-crawler-ci
+        - docker run -v "$(pwd)/crawler/coverage:/var/project/coverage" acm-statistics-crawler npm test -- '--testPathPattern=__test__/(?!crawlers\.test).*\.js' && cd crawler && codecov
 
     - env: NAME=Crawler-api-backend
       stage: test
