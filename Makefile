@@ -9,6 +9,17 @@ CrawlerLibraryPath = /var/project
 
 TargetList = crawler frontend crawler-api-backend
 
+# == resolve run-args ==
+ifeq ($(filter r no-rm,$(make-args)),)
+override run-args := $(run-args) --rm
+endif
+ifeq ($(filter i no-interactive,$(make-args)),)
+override run-args := $(run-args) --interactive
+endif
+ifeq ($(filter t no-tty,$(make-args)),)
+override run-args := $(run-args) --tty
+endif
+
 # == common suffix ==
 
 # use command like `make target=crawler test clean` to invoke `make test-crawler clean-crawler`
@@ -56,10 +67,10 @@ build-crawler: .node-base
 		--build-arg CRAWLER_LIBRARY_PATH=$(CrawlerLibraryPath)
 
 test-crawler: build-crawler
-	docker run --rm -t $(run-args) $(CrawlerTag) npm test
+	docker run --rm -t $(CrawlerTag) npm test
 
 run-crawler: build-crawler
-	docker run -it --rm $(run-args) $(CrawlerTag) $(run-cmd)
+	docker run $(run-args) $(CrawlerTag) $(run-cmd)
 
 clean-crawler:
 	docker image rm $(CrawlerTag); true
@@ -81,10 +92,10 @@ build-frontend: .frontend-base
 		--build-arg FRONTEND_BASE_IMAGE=$(FrontendBaseTag)
 
 test-frontend: .frontend-base
-	docker run --rm -t $(run-args) $(FrontendBaseTag) npm test
+	docker run --rm -t $(FrontendBaseTag) npm test
 
 run-frontend: .frontend-base
-	docker run -it --rm $(run-args) $(FrontendBaseTag) $(run-cmd)
+	docker run $(run-args) $(FrontendBaseTag) $(run-cmd)
 
 clean-frontend:
 	docker image rm $(FrontendBaseTag) $(FrontendTag); true
@@ -99,10 +110,10 @@ build-crawler-api-backend: .node-base build-crawler
 		--build-arg CRAWLER_LIBRARY_PATH=$(CrawlerLibraryPath)
 
 test-crawler-api-backend: build-crawler-api-backend
-	docker run --rm -t $(run-args) $(CrawlerApiBackendTag) npm test
+	docker run --rm -t $(CrawlerApiBackendTag) npm test
 
 run-crawler-api-backend: build-crawler-api-backend
-	docker run -it --rm $(run-args) $(CrawlerApiBackendTag) $(run-cmd)
+	docker run $(run-args) $(CrawlerApiBackendTag) $(run-cmd)
 
 clean-crawler-api-backend:
 	docker image rm $(CrawlerApiBackendTag); true
