@@ -19,20 +19,9 @@ cache:
   directories:
     - $HOME/.sonar/cache
     - $HOME/.m2
-    - $HOME/.npm
-    - frontend/node_modules
-    - crawler/node_modules
-    - crawler-api-backend/node_modules
 
 install:
   - npm install -g codecov
-  - cd frontend
-  - npm install
-  - cd ../crawler
-  - npm install
-  - cd ../crawler-api-backend
-  - npm install
-  - cd ..
 
 matrix:
   include:
@@ -51,9 +40,8 @@ matrix:
     - env: NAME=Crawler-api-backend
       stage: test
       script:
-        - cd crawler-api-backend
-        - npm run lint
-        - npm test && codecov
+        - make -- run-crawler-api-backend npm run lint
+        - docker run -v "$(pwd)/frontend/coverage:/var/project/coverage" acm-statistics-crawler-api-backend npm test && cd crawler-api-backend && codecov
 
     - env: NAME=Root
       stage: test
