@@ -1,0 +1,12 @@
+# dependencies
+node_modules
+
+# logs
+npm-debug.log
+
+# codecov
+coverage
+
+# docker
+.dockerignore
+Dockerfile
