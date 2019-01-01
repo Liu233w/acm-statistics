@@ -28,20 +28,26 @@ jobs:
     - name: Frontend
       stage: test
       script:
-        - make -- run-frontend npm run lint
-        - docker run -t -v "$(pwd)/frontend/coverage:/var/project/coverage" acm-statistics-frontend-base npm test -- --ci && cd frontend && codecov
+        - make run-frontend run-cmd="npm run lint"
+        - make run-frontend run-args="-v \"/var/coverage:/var/project/coverage\"" run-cmd="npm test -- --ci"
+        - cd /var/coverage
+        - codecov
 
     - name: Crawler
       stage: test
       script:
-        - make -- run-crawler npm run lint
-        - docker run -t -v "$(pwd)/crawler/coverage:/var/project/coverage" acm-statistics-crawler npm test -- '--testPathPattern=__test__/(?!crawlers\.test).*\.js' && cd crawler && codecov
+        - make run-crawler run-cmd="npm run lint"
+        - make run-crawler run-args="-v \"/var/coverage:/var/project/coverage\"" run-cmd="npm test -- '--testPathPattern=__test__/(?!crawlers\.test).*\.js'"
+        - cd /var/coverage
+        - codecov
 
     - name: Crawler Api Backend
       stage: test
       script:
-        - make -- run-crawler-api-backend npm run lint
-        - docker run -t -v "$(pwd)/frontend/coverage:/var/project/coverage" acm-statistics-crawler-api-backend npm test && cd crawler-api-backend && codecov
+        - make run-crawler-api-backend run-cmd="npm run lint"
+        - make run-crawler-api-backend run-args="-v \"/var/coverage:/var/project/coverage\"" run-cmd="npm test"
+        - cd /var/coverage
+        - codecov
 
     - name: Root
       stage: test

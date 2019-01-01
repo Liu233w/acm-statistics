@@ -9,19 +9,6 @@ CrawlerLibraryPath = /var/project
 
 TargetList = crawler frontend crawler-api-backend
 
-# pass arbitrary argument to make, from https://stackoverflow.com/a/14061796
-# usage: make -- run-crawler npm run lint
-# pass '--' after make allow you to use '--option' like 'make -- run-fontend npm run test -- --ci'
-CmdList := run $(addprefix run-,$(TargetList))
-RunCmd := $(findstring $(firstword $(MAKECMDGOALS)),$(CmdList))
-RunArgs =
-ifneq ($(RunCmd),)
-  # use the rest as arguments for "run"
-  RunArgs := $(wordlist 2,$(words $(MAKECMDGOALS)),$(MAKECMDGOALS))
-  # ...and turn them into do-nothing targets
-  $(eval $(RunArgs):[SKIP-REST];@:)
-endif
-
 # == common suffix ==
 
 # use command like `make target=crawler test clean` to invoke `make test-crawler clean-crawler`
@@ -72,7 +59,7 @@ test-crawler: build-crawler
 	docker run --rm -t $(run-args) $(CrawlerTag) npm test
 
 run-crawler: build-crawler
-	docker run -it --rm $(run-args) $(CrawlerTag) $(RunArgs)
+	docker run -it --rm $(run-args) $(CrawlerTag) $(run-cmd)
 
 clean-crawler:
 	docker image rm $(CrawlerTag); true
@@ -97,7 +84,7 @@ test-frontend: .frontend-base
 	docker run --rm -t $(run-args) $(FrontendBaseTag) npm test
 
 run-frontend: .frontend-base
-	docker run -it --rm $(run-args) $(FrontendBaseTag) $(RunArgs)
+	docker run -it --rm $(run-args) $(FrontendBaseTag) $(run-cmd)
 
 clean-frontend:
 	docker image rm $(FrontendBaseTag) $(FrontendTag); true
@@ -115,7 +102,7 @@ test-crawler-api-backend: build-crawler-api-backend
 	docker run --rm -t $(run-args) $(CrawlerApiBackendTag) npm test
 
 run-crawler-api-backend: build-crawler-api-backend
-	docker run -it --rm $(run-args) $(CrawlerApiBackendTag) $(RunArgs)
+	docker run -it --rm $(run-args) $(CrawlerApiBackendTag) $(run-cmd)
 
 clean-crawler-api-backend:
 	docker image rm $(CrawlerApiBackendTag); true
