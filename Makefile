@@ -7,13 +7,15 @@ CrawlerApiBackendTag = $(CommonTagPrefix)-crawler-api-backend
 
 CrawlerLibraryPath = /var/project
 
+TargetList = crawler frontend crawler-api-backend
+
 # pass arbitrary argument to make, from https://stackoverflow.com/a/14061796
 # usage: make -- run-crawler npm run lint
 # pass '--' after make allow you to use '--option' like 'make -- run-fontend npm run test -- --ci'
-CmdList = run run-crawler run-frontend run-crawler-api-backend
-RunCmd = $(findstring $(firstword $(MAKECMDGOALS)),$(CmdList))
+CmdList := run $(addprefix run-,$(TargetList))
+RunCmd := $(findstring $(firstword $(MAKECMDGOALS)),$(CmdList))
 RunArgs =
-ifeq (true,$(if RunCmd,true,false))
+ifneq ($(RunCmd),)
   # use the rest as arguments for "run"
   RunArgs := $(wordlist 2,$(words $(MAKECMDGOALS)),$(MAKECMDGOALS))
   # ...and turn them into do-nothing targets
@@ -21,17 +23,25 @@ ifeq (true,$(if RunCmd,true,false))
 endif
 
 # == common suffix ==
+
 # use command like `make target=crawler test clean` to invoke `make test-crawler clean-crawler`
 # support command like `make target="crawler frontend" build`
 
-test: $(addprefix test-,$(target))
-build: $(addprefix build-,$(target))
-run: $(addprefix run-,$(target))
+AllTarget := $(if $(target),$(target),$(TargetList))
+
+test: $(addprefix test-,$(AllTarget))
+	@echo tested target: $(AllTarget)
+build: $(addprefix build-,$(AllTarget))
+	@echo builded target: $(AllTarget)
+run: $(addprefix run-,$(AllTarget))
+	@echo run target: $(AllTarget)
 
 ifeq ($(target),)
-clean: .clean-node-base clean-crawler clean-frontend clean-crawler-api-backend
+clean: .clean-node-base $(addprefix clean-,$(TargetList))
+	@echo cleaned all target
 else
 clean: $(addprefix clean-,$(target))
+	@echo cleaned $(target)
 endif
 
 # == base image ==
@@ -101,6 +111,3 @@ run-crawler-api-backend: build-crawler-api-backend
 
 clean-crawler-api-backend:
 	docker image rm $(CrawlerApiBackendTag); true
-
-# == other stages ==
-
