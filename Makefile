@@ -69,7 +69,7 @@ build-crawler: .node-base
 		--build-arg CRAWLER_LIBRARY_PATH=$(CrawlerLibraryPath)
 
 test-crawler: build-crawler
-	docker run --rm $(run-args) $(CrawlerTag) npm test
+	docker run --rm -t $(run-args) $(CrawlerTag) npm test
 
 run-crawler: build-crawler
 	docker run -it --rm $(run-args) $(CrawlerTag) $(RunArgs)
@@ -94,7 +94,7 @@ build-frontend: .frontend-base
 		--build-arg FRONTEND_BASE_IMAGE=$(FrontendBaseTag)
 
 test-frontend: .frontend-base
-	docker run --rm $(run-args) $(FrontendBaseTag) npm test
+	docker run --rm -t $(run-args) $(FrontendBaseTag) npm test
 
 run-frontend: .frontend-base
 	docker run -it --rm $(run-args) $(FrontendBaseTag) $(RunArgs)
@@ -112,7 +112,7 @@ build-crawler-api-backend: .node-base build-crawler
 		--build-arg CRAWLER_LIBRARY_PATH=$(CrawlerLibraryPath)
 
 test-crawler-api-backend: build-crawler-api-backend
-	docker run --rm $(run-args) $(CrawlerApiBackendTag) npm test
+	docker run --rm -t $(run-args) $(CrawlerApiBackendTag) npm test
 
 run-crawler-api-backend: build-crawler-api-backend
 	docker run -it --rm $(run-args) $(CrawlerApiBackendTag) $(RunArgs)
