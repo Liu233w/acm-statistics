@@ -19,7 +19,7 @@ ifneq ($(RunCmd),)
   # use the rest as arguments for "run"
   RunArgs := $(wordlist 2,$(words $(MAKECMDGOALS)),$(MAKECMDGOALS))
   # ...and turn them into do-nothing targets
-  $(eval $(RunArgs):;@:)
+  $(eval $(RunArgs):[SKIP-REST];@:)
 endif
 
 # == common suffix ==
