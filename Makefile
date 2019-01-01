@@ -64,14 +64,15 @@ endif
 
 build-crawler: .node-base
 	docker build ./crawler -t $(CrawlerTag) \
+		$(build-args) \
 		--build-arg NODE_BASE_IMAGE=$(NodeBaseTag) \
 		--build-arg CRAWLER_LIBRARY_PATH=$(CrawlerLibraryPath)
 
 test-crawler: build-crawler
-	docker run --rm $(CrawlerTag) npm test
+	docker run --rm $(run-args) $(CrawlerTag) npm test
 
 run-crawler: build-crawler
-	docker run -it --rm $(CrawlerTag) $(RunArgs)
+	docker run -it --rm $(run-args) $(CrawlerTag) $(RunArgs)
 
 clean-crawler:
 	docker image rm $(CrawlerTag); true
@@ -80,6 +81,7 @@ clean-crawler:
 
 .frontend-base: .node-base build-crawler
 	docker build ./frontend -t $(FrontendBaseTag) \
+		$(build-args) \
 		-f ./frontend/base.Dockerfile \
 		--build-arg NODE_BASE_IMAGE=$(NodeBaseTag) \
 		--build-arg CRAWLER_IMAGE=$(CrawlerTag) \
@@ -87,14 +89,15 @@ clean-crawler:
 
 build-frontend: .frontend-base
 	docker build ./frontend -t $(FrontendTag) \
+		$(build-args) \
 		-f ./frontend/build.Dockerfile \
 		--build-arg FRONTEND_BASE_IMAGE=$(FrontendBaseTag)
 
 test-frontend: .frontend-base
-	docker run --rm $(FrontendBaseTag) npm test
+	docker run --rm $(run-args) $(FrontendBaseTag) npm test
 
 run-frontend: .frontend-base
-	docker run -it --rm $(FrontendBaseTag) $(RunArgs)
+	docker run -it --rm $(run-args) $(FrontendBaseTag) $(RunArgs)
 
 clean-frontend:
 	docker image rm $(FrontendBaseTag) $(FrontendTag); true
@@ -103,15 +106,16 @@ clean-frontend:
 
 build-crawler-api-backend: .node-base build-crawler
 	docker build ./crawler-api-backend -t $(CrawlerApiBackendTag) \
+		$(build-args) \
 		--build-arg NODE_BASE_IMAGE=$(NodeBaseTag) \
 		--build-arg CRAWLER_IMAGE=$(CrawlerTag) \
 		--build-arg CRAWLER_LIBRARY_PATH=$(CrawlerLibraryPath)
 
 test-crawler-api-backend: build-crawler-api-backend
-	docker run --rm $(CrawlerApiBackendTag) npm test
+	docker run --rm $(run-args) $(CrawlerApiBackendTag) npm test
 
 run-crawler-api-backend: build-crawler-api-backend
-	docker run -it --rm $(CrawlerApiBackendTag) $(RunArgs)
+	docker run -it --rm $(run-args) $(CrawlerApiBackendTag) $(RunArgs)
 
 clean-crawler-api-backend:
 	docker image rm $(CrawlerApiBackendTag); true
