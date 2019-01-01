@@ -22,6 +22,7 @@ cache:
 
 install:
   - npm install -g codecov
+  - ci_env=`bash <(curl -s https://codecov.io/env)`
 
 jobs:
   include:
@@ -29,25 +30,37 @@ jobs:
       stage: test
       script:
         - make run-frontend run-cmd="npm run lint"
-        - make run-frontend make-args="i t" run-args="-v \"/var/coverage:/var/project/coverage\"" run-cmd="npm test -- --colors --ci"
-        - cd /var/coverage
-        - codecov
+        - |
+            make run-frontend CODECOV=1 \
+            make-args="i t" run-args="$ci_env" run-cmd=" \
+                /bin/bash -c \" \
+                    npm test -- --colors --ci && \
+                    bash <(curl -s https://codecov.io/bash) \
+                \""
 
     - name: Crawler
       stage: test
       script:
         - make run-crawler run-cmd="npm run lint"
-        - make run-crawler make-args="i t" run-args="-v \"/var/coverage:/var/project/coverage\"" run-cmd="npm test -- --colors '--testPathPattern=__test__/(?!crawlers\.test).*\.js'"
-        - cd /var/coverage
-        - codecov
+        - |
+            make run-crawler CODECOV=1 \
+                make-args="i t" run-args="$ci_env" run-cmd=" \
+                /bin/bash -c \" \
+                    npm test -- --colors '--testPathPattern=__test__/(?!crawlers\.test).*\.js' && \
+                    bash <(curl -s https://codecov.io/bash) \
+                \""
 
     - name: Crawler Api Backend
       stage: test
       script:
         - make run-crawler-api-backend run-cmd="npm run lint"
-        - make run-crawler-api-backend make-args="i t" run-args="-v \"/var/coverage:/var/project/coverage\"" run-cmd="npm test -- --colors"
-        - cd /var/coverage
-        - codecov
+        - |
+            make run-crawler-api-backend CODECOV=1 \
+            make-args="i t" run-args="$ci_env" run-cmd=" \
+                /bin/bash -c \" \
+                    npm test -- --colors && \
+                    bash <(curl -s https://codecov.io/bash) \
+                \""
 
     - name: Root
       stage: test
