@@ -29,7 +29,7 @@ jobs:
       stage: test
       script:
         - make run-frontend run-cmd="npm run lint"
-        - make run-frontend make-args="i" run-args="-v \"/var/coverage:/var/project/coverage\"" run-cmd="npm test -- --ci"
+        - make run-frontend make-args="i t" run-args="-v \"/var/coverage:/var/project/coverage\"" run-cmd="npm test -- --colors --ci"
         - cd /var/coverage
         - codecov
 
@@ -37,7 +37,7 @@ jobs:
       stage: test
       script:
         - make run-crawler run-cmd="npm run lint"
-        - make run-crawler make-args="i" run-args="-v \"/var/coverage:/var/project/coverage\"" run-cmd="npm test -- '--testPathPattern=__test__/(?!crawlers\.test).*\.js'"
+        - make run-crawler make-args="i t" run-args="-v \"/var/coverage:/var/project/coverage\"" run-cmd="npm test -- --colors '--testPathPattern=__test__/(?!crawlers\.test).*\.js'"
         - cd /var/coverage
         - codecov
 
@@ -45,7 +45,7 @@ jobs:
       stage: test
       script:
         - make run-crawler-api-backend run-cmd="npm run lint"
-        - make run-crawler-api-backend make-args="i" run-args="-v \"/var/coverage:/var/project/coverage\"" run-cmd="npm test"
+        - make run-crawler-api-backend make-args="i t" run-args="-v \"/var/coverage:/var/project/coverage\"" run-cmd="npm test -- --colors"
         - cd /var/coverage
         - codecov
 
