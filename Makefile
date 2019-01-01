@@ -48,12 +48,16 @@ endif
 
 # == base image ==
 
-.node-base:
-ifeq ($(APK_MIRROR),1)
-	docker build ./docker -f ./docker/node-base-with-apk-mirror.Dockerfile -t $(NodeBaseTag)
-else
-	docker build ./docker -f ./docker/node-base.Dockerfile -t $(NodeBaseTag)
+NodeBaseOption =
+ifdef APK_MIRROR
+NodeBaseOption := --build-arg APK_MIRROR=$(APK_MIRROR) $(NodeBaseOption)
 endif
+ifdef CODECOV
+NodeBaseOption := --build-arg CODECOV=$(CODECOV) $(NodeBaseOption)
+endif
+
+.node-base:
+	docker build ./build -f ./build/node-base.Dockerfile -t $(NodeBaseTag) $(NodeBaseOption)
 
 .clean-node-base:
 	docker image rm $(NodeBaseTag); true
