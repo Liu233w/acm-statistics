@@ -29,13 +29,17 @@ endif
 
 AllTarget := $(if $(target),$(target),$(TargetList))
 
+.PHONY: test
 test: $(addprefix test-,$(AllTarget))
 	@echo tested target: $(AllTarget)
+.PHONY: build
 build: $(addprefix build-,$(AllTarget))
 	@echo builded target: $(AllTarget)
+.PHONY: run
 run: $(addprefix run-,$(AllTarget))
 	@echo run target: $(AllTarget)
 
+.PHONY: clean
 ifeq ($(target),)
 clean: .clean-node-base $(addprefix clean-,$(TargetList))
 	@echo cleaned all target
