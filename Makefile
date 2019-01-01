@@ -97,7 +97,7 @@ clean-frontend:
 
 # == crawler api backend ==
 
-build-crawler-api-backend: .node-base
+build-crawler-api-backend: .node-base build-crawler
 	docker build ./crawler-api-backend -t $(CrawlerApiBackendTag) \
 		--build-arg NODE_BASE_IMAGE=$(NodeBaseTag) \
 		--build-arg CRAWLER_IMAGE=$(CrawlerTag) \
