@@ -98,6 +98,11 @@ build-frontend: .frontend-base
 test-frontend: .frontend-base
 	docker run --rm -t $(FrontendBaseTag) npm test
 
+update-frontend-snapshot: .frontend-base
+	docker run --rm -t \
+		-v "$(CURDIR)/frontend/__test__:/var/project/__test__" \
+		$(FrontendBaseTag) npm test -- -u
+
 run-frontend: .frontend-base
 	docker run $(run-args) $(FrontendBaseTag) $(run-cmd)
 
