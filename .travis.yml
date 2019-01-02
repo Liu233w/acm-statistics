@@ -22,7 +22,6 @@ cache:
 
 install:
   - npm install -g codecov
-  - ci_env=`bash <(curl -s https://codecov.io/env)`
 
 jobs:
   include:
@@ -31,36 +30,33 @@ jobs:
       script:
         - make run-frontend run-cmd="npm run lint"
         - |
-            make run-frontend CODECOV=1 \
-            make-args="i t" run-args="$ci_env" run-cmd=" \
-                /bin/bash -c \" \
-                    npm test -- --colors --ci && \
-                    bash <(curl -s https://codecov.io/bash) \
-                \""
+            make run-frontend \
+            make-args="i t" \
+            run-args="-v \"$PWD/frontend/coverage:/var/project/coverage\"" \
+            run-cmd="npm test -- --colors --ci"
+        - cd frontend && codecov
 
     - name: Crawler
       stage: test
       script:
         - make run-crawler run-cmd="npm run lint"
         - |
-            make run-crawler CODECOV=1 \
-                make-args="i t" run-args="$ci_env" run-cmd=" \
-                /bin/bash -c \" \
-                    npm test -- --colors '--testPathPattern=__test__/(?!crawlers\.test).*\.js' && \
-                    bash <(curl -s https://codecov.io/bash) \
-                \""
+            make run-crawler \
+            make-args="i t" \
+            run-args="-v \"$PWD/crawler/coverage:/var/project/coverage\"" \
+            run-cmd="npm test -- --colors \"--testPathPattern=__test__/(?!crawlers\.test).*\.js\""
+        - cd crawler && codecov
 
     - name: Crawler Api Backend
       stage: test
       script:
         - make run-crawler-api-backend run-cmd="npm run lint"
         - |
-            make run-crawler-api-backend CODECOV=1 \
-            make-args="i t" run-args="$ci_env" run-cmd=" \
-                /bin/bash -c \" \
-                    npm test -- --colors && \
-                    bash <(curl -s https://codecov.io/bash) \
-                \""
+            make run-crawler-api-backend \
+            make-args="i t" \
+            run-args="-v \"$PWD/crawler-api-backend/coverage:/var/project/coverage\"" \
+            run-cmd="npm test -- --colors"
+        - cd crawler-api-backend && codecov
 
     - name: Root
       stage: test
