@@ -103,8 +103,13 @@ update-frontend-snapshot: .frontend-base
 		-v "$(CURDIR)/frontend/__test__:/var/project/__test__" \
 		$(FrontendBaseTag) npm test -- -u
 
+ifdef BUILD_FRONTEND
+run-frontend: build-frontend
+	docker run $(run-args) $(FrontendTag) $(run-cmd)
+else
 run-frontend: .frontend-base
 	docker run $(run-args) $(FrontendBaseTag) $(run-cmd)
+endif
 
 clean-frontend:
 	docker image rm $(FrontendBaseTag) $(FrontendTag); true
