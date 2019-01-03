@@ -9,6 +9,11 @@ CrawlerLibraryPath = /var/project
 
 TargetList = crawler frontend crawler-api-backend
 
+# == set variables ==
+
+# enable correct path on msys2 in windows
+export MSYS2_ARG_CONV_EXCL = *
+
 # == resolve run-args ==
 ifeq ($(filter r no-rm,$(make-args)),)
 override run-args := $(run-args) --rm
