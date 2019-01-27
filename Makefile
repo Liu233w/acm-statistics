@@ -1,138 +1,41 @@
-CommonTagPrefix = acm-statistics
-NodeBaseTag = $(CommonTagPrefix)-node-base
-CrawlerTag = $(CommonTagPrefix)-crawler
-FrontendBaseTag = $(CommonTagPrefix)-frontend-base
-FrontendTag = $(CommonTagPrefix)-frontend
-CrawlerApiBackendTag = $(CommonTagPrefix)-crawler-api-backend
+## root makefile
 
-CrawlerLibraryPath = /var/project
-
-TargetList = crawler frontend crawler-api-backend
-
-# == set variables ==
-
-# enable correct path on msys2 in windows
-export MSYS2_ARG_CONV_EXCL = *
-
-# == resolve run-args ==
-ifeq ($(filter r no-rm,$(make-args)),)
-override run-args := $(run-args) --rm
-endif
-ifeq ($(filter i no-interactive,$(make-args)),)
-override run-args := $(run-args) --interactive
-endif
-ifeq ($(filter t no-tty,$(make-args)),)
-override run-args := $(run-args) --tty
-endif
+include ./build/share.mk
 
 # == common suffix ==
 
-# use command like `make target=crawler test clean` to invoke `make test-crawler clean-crawler`
+# use command like `make target=crawler test clean` to invoke `make -C crawler test clean`
 # support command like `make target="crawler frontend" build`
 
+TargetList = crawler frontend crawler-api-backend
 AllTarget := $(if $(target),$(target),$(TargetList))
 
-.PHONY: test
-test: $(addprefix test-,$(AllTarget))
-	@echo tested target: $(AllTarget)
-.PHONY: build
-build: $(addprefix build-,$(AllTarget))
-	@echo builded target: $(AllTarget)
-.PHONY: run
-run: $(addprefix run-,$(AllTarget))
-	@echo run target: $(AllTarget)
+test:
+	@echo testing target: $(AllTarget)
+	for dir in $(AllTarget); do \
+  	$(MAKE) -C $$dir test; \
+  done
 
-.PHONY: clean
+build:
+	@echo building target: $(AllTarget)
+	for dir in $(AllTarget); do \
+  	$(MAKE) -C $$dir build; \
+  done
+
+run:
+	@echo running target: $(AllTarget)
+	for dir in $(AllTarget); do \
+  	$(MAKE) -C $$dir run; \
+  done
+
+
+clean:
+	for dir in $(AllTarget); do \
+  	$(MAKE) -C $$dir clean; \
+  done
 ifeq ($(target),)
-clean: .clean-node-base $(addprefix clean-,$(TargetList))
+	cd ./build && $(MAKE) -f node-base.mk clean
 	@echo cleaned all target
 else
-clean: $(addprefix clean-,$(target))
 	@echo cleaned $(target)
 endif
-
-# == base image ==
-
-NodeBaseOption =
-ifdef APK_MIRROR
-NodeBaseOption := --build-arg APK_MIRROR=$(APK_MIRROR) $(NodeBaseOption)
-endif
-ifdef CODECOV
-NodeBaseOption := --build-arg CODECOV=$(CODECOV) $(NodeBaseOption)
-endif
-
-.node-base:
-	docker build ./build -f ./build/node-base.Dockerfile -t $(NodeBaseTag) $(NodeBaseOption)
-
-.clean-node-base:
-	docker image rm $(NodeBaseTag); true
-
-# == crawler ==
-
-build-crawler: .node-base
-	docker build ./crawler -t $(CrawlerTag) \
-		$(build-args) \
-		--build-arg NODE_BASE_IMAGE=$(NodeBaseTag) \
-		--build-arg CRAWLER_LIBRARY_PATH=$(CrawlerLibraryPath)
-
-test-crawler: build-crawler
-	docker run --rm -t $(CrawlerTag) npm test
-
-run-crawler: build-crawler
-	docker run $(run-args) $(CrawlerTag) $(run-cmd)
-
-clean-crawler:
-	docker image rm $(CrawlerTag); true
-
-# == frontend ==
-
-.frontend-base: .node-base build-crawler
-	docker build ./frontend -t $(FrontendBaseTag) \
-		$(build-args) \
-		-f ./frontend/base.Dockerfile \
-		--build-arg NODE_BASE_IMAGE=$(NodeBaseTag) \
-		--build-arg CRAWLER_IMAGE=$(CrawlerTag) \
-		--build-arg CRAWLER_LIBRARY_PATH=$(CrawlerLibraryPath)
-
-build-frontend: .frontend-base
-	docker build ./frontend -t $(FrontendTag) \
-		$(build-args) \
-		-f ./frontend/build.Dockerfile \
-		--build-arg FRONTEND_BASE_IMAGE=$(FrontendBaseTag)
-
-test-frontend: .frontend-base
-	docker run --rm -t $(FrontendBaseTag) npm test
-
-update-frontend-snapshot: .frontend-base
-	docker run --rm -t \
-		-v "$(CURDIR)/frontend/__test__:/var/project/__test__" \
-		$(FrontendBaseTag) npm test -- -u
-
-ifdef BUILD_FRONTEND
-run-frontend: build-frontend
-	docker run $(run-args) $(FrontendTag) $(run-cmd)
-else
-run-frontend: .frontend-base
-	docker run $(run-args) $(FrontendBaseTag) $(run-cmd)
-endif
-
-clean-frontend:
-	docker image rm $(FrontendBaseTag) $(FrontendTag); true
-
-# == crawler api backend ==
-
-build-crawler-api-backend: .node-base build-crawler
-	docker build ./crawler-api-backend -t $(CrawlerApiBackendTag) \
-		$(build-args) \
-		--build-arg NODE_BASE_IMAGE=$(NodeBaseTag) \
-		--build-arg CRAWLER_IMAGE=$(CrawlerTag) \
-		--build-arg CRAWLER_LIBRARY_PATH=$(CrawlerLibraryPath)
-
-test-crawler-api-backend: build-crawler-api-backend
-	docker run --rm -t $(CrawlerApiBackendTag) npm test
-
-run-crawler-api-backend: build-crawler-api-backend
-	docker run $(run-args) $(CrawlerApiBackendTag) $(run-cmd)
-
-clean-crawler-api-backend:
-	docker image rm $(CrawlerApiBackendTag); true
