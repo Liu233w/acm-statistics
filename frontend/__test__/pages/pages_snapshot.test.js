@@ -24,8 +24,12 @@ beforeAll(done => {
     if (err) {
       console.error('build process fail to start', err)
     }
-    console.log('build process out', stdout)
-    console.error('build process error', stderr)
+    if (stdout) {
+      console.log('build process out', stdout)
+    }
+    if (stderr) {
+      console.error('build process error', stderr)
+    }
 
     console.log('start running nuxt...')
     childProcess = exec('npm start', execOption)
