@@ -1,5 +1,3 @@
-/* eslint-disable no-undef */
-
 import {shallowMount, createLocalVue, mount} from '@vue/test-utils'
 import Vuex from 'vuex'
 import Vue from 'vue'

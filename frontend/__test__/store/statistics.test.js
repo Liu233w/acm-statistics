@@ -1,5 +1,3 @@
-/* eslint-disable no-undef */
-
 import StoreContextSimulator from '../StoreContextSimulator'
 import {MUTATION_TYPES} from '../../store/-dynamic/statistics'
 
