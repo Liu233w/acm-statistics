@@ -28,35 +28,38 @@ jobs:
     - name: Frontend
       stage: test
       script:
-        - make run-frontend run-cmd="npm run lint"
+        - cd frontend
+        - make run run-cmd="npm run lint"
         - |
-            make run-frontend \
+            make run \
             make-args="i t" \
             run-args="-v \"$PWD/frontend/coverage:/var/project/coverage\"" \
             run-cmd="npm test -- --colors --ci"
-        - cd frontend && codecov
+        - codecov
 
     - name: Crawler
       stage: test
       script:
-        - make run-crawler run-cmd="npm run lint"
+        - cd crawler
+        - make run run-cmd="npm run lint"
         - |
-            make run-crawler \
+            make run \
             make-args="i t" \
             run-args="-v \"$PWD/crawler/coverage:/var/project/coverage\"" \
             run-cmd="npm test -- --colors \"--testPathPattern=__test__/(?!crawlers\.test).*\.js\""
-        - cd crawler && codecov
+        - codecov
 
     - name: Crawler Api Backend
       stage: test
       script:
-        - make run-crawler-api-backend run-cmd="npm run lint"
+        - cd crawler-api-backend
+        - make run run-cmd="npm run lint"
         - |
-            make run-crawler-api-backend \
+            make run \
             make-args="i t" \
             run-args="-v \"$PWD/crawler-api-backend/coverage:/var/project/coverage\"" \
             run-cmd="npm test -- --colors"
-        - cd crawler-api-backend && codecov
+        - codecov
 
     - name: Root
       stage: test
