@@ -67,8 +67,8 @@ jobs:
         sonarcloud:
           organization: "liu233w-github"
           token: $SONAR_TOKEN
-      script:
+      install:
         - npm install
+      script:
         - npm run commitlint-travis
-      after_script:
         - sonar-scanner -Dsonar.projectKey=acm-statistics -Dsonar.organization=liu233w-github -Dsonar.sources=. -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$SONAR_TOKEN -Dsonar.exclusions=**/node_modules/**/*,backend
