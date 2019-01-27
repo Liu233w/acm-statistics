@@ -1,5 +1,3 @@
-/* eslint-disable no-undef */
-
 import {warningHelper} from '~/components/statisticsUtils'
 
 describe('warningHelper', () => {

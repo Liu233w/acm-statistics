@@ -1,5 +1,3 @@
-/* eslint-disable no-undef */
-
 const {exec} = require('child_process')
 const _ = require('lodash')
 const superagent = require('superagent')

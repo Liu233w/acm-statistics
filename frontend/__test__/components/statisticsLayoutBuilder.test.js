@@ -1,5 +1,3 @@
-/* eslint-disable no-undef */
-
 import statisticsLayoutBuilder from '~/components/statisticsLayoutBuilder'
 
 describe('statisticsLayoutBuilder', () => {
