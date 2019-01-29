@@ -30,11 +30,7 @@ jobs:
       script:
         - cd frontend
         - make run run-cmd="npm run lint"
-        - |
-            make run \
-            make-args="i t" \
-            run-args="-v \"$PWD/frontend/coverage:/var/project/coverage\"" \
-            run-cmd="npm test -- --colors --ci"
+        - make test-ci
         - codecov
 
     - name: Crawler
@@ -42,11 +38,7 @@ jobs:
       script:
         - cd crawler
         - make run run-cmd="npm run lint"
-        - |
-            make run \
-            make-args="i t" \
-            run-args="-v \"$PWD/crawler/coverage:/var/project/coverage\"" \
-            run-cmd="npm test -- --colors \"--testPathPattern=__test__/(?!crawlers\.test).*\.js\""
+        - make test-ci
         - codecov
 
     - name: Crawler Api Backend
@@ -54,11 +46,7 @@ jobs:
       script:
         - cd crawler-api-backend
         - make run run-cmd="npm run lint"
-        - |
-            make run \
-            make-args="i t" \
-            run-args="-v \"$PWD/crawler-api-backend/coverage:/var/project/coverage\"" \
-            run-cmd="npm test -- --colors"
+        - make test-ci
         - codecov
 
     - name: Root

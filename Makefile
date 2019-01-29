@@ -28,7 +28,6 @@ run:
   	$(MAKE) -C $$dir run; \
   done
 
-
 clean:
 	for dir in $(AllTarget); do \
   	$(MAKE) -C $$dir clean; \
@@ -39,3 +38,9 @@ ifeq ($(target),)
 else
 	@echo cleaned $(target)
 endif
+
+test-ci:
+	@echo testing ci on target: $(AllTarget)
+	for dir in $(AllTarget); do \
+  	$(MAKE) -C $$dir test-ci; \
+  done
