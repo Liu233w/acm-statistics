@@ -17,3 +17,6 @@ coverage
 .dockerignore
 base.Dockerfile
 build.Dockerfile
+
+# make
+Makefile
