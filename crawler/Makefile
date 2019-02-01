@@ -25,4 +25,4 @@ test-ci: build
 	docker run --rm \
 		-v "$(MakefilePathDirectory)coverage:/var/project/coverage" \
 		$(CrawlerTag) \
-		npm test -- --colors "--testPathPattern=__test__/(?!crawlers\.test).*\.js"
+		npm test -- --colors "--testPathPattern=__test__/(?!crawlers\\.test).*\\.js"
