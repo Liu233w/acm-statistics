@@ -33,6 +33,7 @@ commitlint-travis: SHELL:=/bin/bash
 commitlint-travis: build
 	docker run --rm \
 		-v "$(CommitlintValidPath):/var/project" \
+		--env CI=true \
 		--env-file <(env | grep TRAVIS) \
 		$(CommitlintImageTag) \
 		commitlint-travis --color
