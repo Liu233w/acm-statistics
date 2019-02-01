@@ -44,6 +44,6 @@ clean:
 
 test-ci: .base
 	docker run --rm \
-		-v "$(MakefilePathDirectory)coverage:/var/project/coverage" \
+		-v "$(CURDIR)/coverage:/var/project/coverage" \
 		$(FrontendBaseTag) \
 		npm test -- --colors --ci

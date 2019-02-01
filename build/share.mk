@@ -17,10 +17,6 @@ CrawlerLibraryPath = /var/project
 # enable correct path on msys2 in windows
 export MSYS2_ARG_CONV_EXCL = *
 
-# 当前 makefile 所在的目录的绝对地址
-# 由于延迟求值，因此是在引用这个变量的位置进行获取
-MakefilePathDirectory = $(dir $(realpath $(firstword $(MAKEFILE_LIST))))
-
 # == resolve run-args ==
 ifeq ($(filter r no-rm,$(make-args)),)
 override run-args := $(run-args) --rm

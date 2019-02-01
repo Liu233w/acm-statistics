@@ -5,7 +5,7 @@ include share.mk
 # === consts ===
 CommitlintImageTag = $(CommonTagPrefix)-commitlint-image
 # 用来执行 commitlint 的地址，可以被覆盖
-CommitlintValidPath = $(MakefilePathDirectory)..
+CommitlintValidPath = $(CURDIR)/..
 
 # === targets ===
 .PHONY: test-commit commitlint-travis
