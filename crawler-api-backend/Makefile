@@ -23,3 +23,9 @@ run: build
 
 clean:
 	docker image rm $(CrawlerApiBackendTag); true
+
+test-ci: build
+	docker run --rm \
+		-v "$(CURDIR)/coverage:/var/project/coverage" \
+		$(CrawlerApiBackendTag) \
+		npm test -- --colors

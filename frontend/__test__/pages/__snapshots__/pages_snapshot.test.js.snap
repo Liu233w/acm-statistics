@@ -771,7 +771,7 @@ exports[`/ 1`] = `
                     <div class="container grid-list-xl">
                       <div class="layout row wrap align-center">
                         <div class="flex xs12 md4">
-                          <div class="elevation-0 transparent v-card v-sheet theme--light">
+                          <div class="elevation-0 transparent v-card v-card--flat v-sheet theme--light">
                             <div class="v-card__text text-xs-center"><i aria-hidden="true" class="v-icon blue--text text--lighten-2 material-icons theme--light" style="font-size:40px;">
                                 link
                               </i></div>
@@ -789,7 +789,7 @@ exports[`/ 1`] = `
                           </div>
                         </div>
                         <div class="flex xs12 md4">
-                          <div class="elevation-0 transparent v-card v-sheet theme--light">
+                          <div class="elevation-0 transparent v-card v-card--flat v-sheet theme--light">
                             <div class="v-card__text text-xs-center"><i aria-hidden="true" class="v-icon blue--text text--lighten-2 
                       fa fa 
                       fa fa-github
@@ -809,7 +809,7 @@ exports[`/ 1`] = `
                           </div>
                         </div>
                         <div class="flex xs12 md4">
-                          <div class="elevation-0 transparent v-card v-sheet theme--light">
+                          <div class="elevation-0 transparent v-card v-card--flat v-sheet theme--light">
                             <div class="v-card__text text-xs-center"><i aria-hidden="true" class="v-icon blue--text text--lighten-2 material-icons theme--light" style="font-size:40px;">
                                 build
                               </i></div>
@@ -852,7 +852,7 @@ exports[`/ 1`] = `
                 <div class="container grid-list-xl">
                   <div class="layout my-5 row wrap justify-center">
                     <div class="flex xs12 sm4">
-                      <div class="elevation-0 transparent v-card v-sheet theme--light">
+                      <div class="elevation-0 transparent v-card v-card--flat v-sheet theme--light">
                         <div class="v-card__title layout justify-center v-card__title--primary">
                           <div class="headline">
                             &#x5173;&#x4E8E;&#x6211;&#x4EEC;
@@ -872,7 +872,7 @@ exports[`/ 1`] = `
                       </div>
                     </div>
                     <div class="flex xs12 sm4 offset-sm1">
-                      <div class="elevation-0 transparent v-card v-sheet theme--light">
+                      <div class="elevation-0 transparent v-card v-card--flat v-sheet theme--light">
                         <div class="v-card__title layout justify-center v-card__title--primary">
                           <div class="headline">
                             &#x8054;&#x7CFB;&#x6211;&#x4EEC;
@@ -920,7 +920,7 @@ exports[`/ 1`] = `
                   <div class="v-dialog__container" style="display:block;">
                     <div tabindex="-1" class="v-dialog__content" style="z-index:0;">
                       <div class="v-dialog" style="max-width:500px;width:undefined;display:none;">
-                        <div class="v-card v-sheet theme--light elevation-2">
+                        <div class="v-card v-sheet theme--light">
                           <div class="v-card__title"><span>&#x5FAE;&#x4FE1;&#x516C;&#x4F17;&#x53F7;</span></div>
                           <div class="v-card__text"><img src="/_nuxt/img/4d1d170.jpg" alt="&#x516C;&#x4F17;&#x53F7;&#x4E8C;&#x7EF4;&#x7801;" style="height:300px;"></div>
                           <div class="v-card__actions"><button type="button" class="v-btn v-btn--flat theme--light primary--text">
@@ -957,7 +957,20 @@ exports[`/ 1`] = `
         serverRendered: true
       };
     </script>
-
+    <script>
+      ! function() {
+        var e = document,
+          t = e.createElement("script");
+        if (!("noModule" in t) && "onbeforeload" in t) {
+          var n = !1;
+          e.addEventListener("beforeload", function(e) {
+            if (e.target === t) n = !0;
+            else if (!e.target.hasAttribute("nomodule") || !n) return;
+            e.preventDefault()
+          }, !0), t.type = "module", t.src = ".", e.head.appendChild(t), t.remove()
+        }
+      }();
+    </script>
 
   </body>
 
@@ -1756,7 +1769,7 @@ exports[`/statistics 1`] = `
                   </div>
                   <div class="layout row">
                     <div class="flex xs12 sm12 md6 lg4 xl3">
-                      <div class="layout column"><span><div data-column-idx="0" data-column-item-idx="0" class="flex worker-item" style="z-index:1000;"><div class="v-card v-sheet theme--light elevation-2"><nav class="blue-grey lighten-5 v-toolbar v-toolbar--card v-toolbar--dense theme--light" style="margin-top:0px;padding-right:0px;padding-left:0px;transform:translateY(0px);"><div class="v-toolbar__content" style="height:48px;"><div title="crawler0" class="v-toolbar__title">
+                      <div class="layout column"><span><div data-column-idx="0" data-column-item-idx="0" class="flex worker-item" style="z-index:1000;"><div class="v-card v-sheet theme--light"><nav class="blue-grey lighten-5 v-toolbar v-toolbar--card v-toolbar--dense theme--light" style="margin-top:0px;padding-right:0px;padding-left:0px;transform:translateY(0px);"><div class="v-toolbar__content" style="height:48px;"><div title="crawler0" class="v-toolbar__title">
       crawler0
     </div> <div class="spacer"></div> <div class="v-toolbar__items"><span class="v-tooltip v-tooltip--bottom" style="display:none;"><div class="v-tooltip__content" style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"> <span>
           &#x79FB;&#x9664;&#x6B64;&#x7A97;&#x683C;
@@ -1810,7 +1823,7 @@ exports[`/statistics 1`] = `
         </div>
       </div>
       <div data-column-idx="0" data-column-item-idx="1" class="flex worker-item" style="z-index:999;">
-        <div class="v-card v-sheet theme--light elevation-2">
+        <div class="v-card v-sheet theme--light">
           <nav class="blue-grey lighten-5 v-toolbar v-toolbar--card v-toolbar--dense theme--light" style="margin-top:0px;padding-right:0px;padding-left:0px;transform:translateY(0px);">
             <div class="v-toolbar__content" style="height:48px;">
               <div title="crawler1" class="v-toolbar__title">
@@ -1869,7 +1882,7 @@ exports[`/statistics 1`] = `
     </div>
     </div>
     <div data-column-idx="0" data-column-item-idx="2" class="flex worker-item" style="z-index:998;">
-      <div class="v-card v-sheet theme--light elevation-2">
+      <div class="v-card v-sheet theme--light">
         <nav class="blue-grey lighten-5 v-toolbar v-toolbar--card v-toolbar--dense theme--light" style="margin-top:0px;padding-right:0px;padding-left:0px;transform:translateY(0px);">
           <div class="v-toolbar__content" style="height:48px;">
             <div title="crawler2" class="v-toolbar__title">
@@ -1928,7 +1941,7 @@ exports[`/statistics 1`] = `
     </div></span></div>
     </div>
     <div class="flex xs12 sm12 md6 lg4 xl3">
-      <div class="layout column"><span><div data-column-idx="1" data-column-item-idx="0" class="flex worker-item" style="z-index:1000;"><div class="v-card v-sheet theme--light elevation-2"><nav class="blue-grey lighten-5 v-toolbar v-toolbar--card v-toolbar--dense theme--light" style="margin-top:0px;padding-right:0px;padding-left:0px;transform:translateY(0px);"><div class="v-toolbar__content" style="height:48px;"><div title="crawler3" class="v-toolbar__title">
+      <div class="layout column"><span><div data-column-idx="1" data-column-item-idx="0" class="flex worker-item" style="z-index:1000;"><div class="v-card v-sheet theme--light"><nav class="blue-grey lighten-5 v-toolbar v-toolbar--card v-toolbar--dense theme--light" style="margin-top:0px;padding-right:0px;padding-left:0px;transform:translateY(0px);"><div class="v-toolbar__content" style="height:48px;"><div title="crawler3" class="v-toolbar__title">
       crawler3
     </div> <div class="spacer"></div> <div class="v-toolbar__items"><span class="v-tooltip v-tooltip--bottom" style="display:none;"><div class="v-tooltip__content" style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"> <span>
           &#x79FB;&#x9664;&#x6B64;&#x7A97;&#x683C;
@@ -1979,7 +1992,7 @@ exports[`/statistics 1`] = `
     </div>
     </div>
     <div data-column-idx="1" data-column-item-idx="1" class="flex worker-item" style="z-index:999;">
-      <div class="v-card v-sheet theme--light elevation-2">
+      <div class="v-card v-sheet theme--light">
         <nav class="blue-grey lighten-5 v-toolbar v-toolbar--card v-toolbar--dense theme--light" style="margin-top:0px;padding-right:0px;padding-left:0px;transform:translateY(0px);">
           <div class="v-toolbar__content" style="height:48px;">
             <div title="crawler4" class="v-toolbar__title">
@@ -2037,7 +2050,7 @@ exports[`/statistics 1`] = `
     </div>
     </div>
     <div data-column-idx="1" data-column-item-idx="2" class="flex worker-item" style="z-index:998;">
-      <div class="v-card v-sheet theme--light elevation-2">
+      <div class="v-card v-sheet theme--light">
         <nav class="blue-grey lighten-5 v-toolbar v-toolbar--card v-toolbar--dense theme--light" style="margin-top:0px;padding-right:0px;padding-left:0px;transform:translateY(0px);">
           <div class="v-toolbar__content" style="height:48px;">
             <div title="with description" class="v-toolbar__title">
@@ -2097,7 +2110,7 @@ exports[`/statistics 1`] = `
     </span></div>
     </div>
     <div class="flex xs12 sm12 md6 lg4 xl3">
-      <div class="layout column"><span><div data-column-idx="2" data-column-item-idx="0" class="flex worker-item" style="z-index:1000;"><div class="v-card v-sheet theme--light elevation-2"><nav class="blue-grey lighten-5 v-toolbar v-toolbar--card v-toolbar--dense theme--light" style="margin-top:0px;padding-right:0px;padding-left:0px;transform:translateY(0px);"><div class="v-toolbar__content" style="height:48px;"><div title="with url" class="v-toolbar__title">
+      <div class="layout column"><span><div data-column-idx="2" data-column-item-idx="0" class="flex worker-item" style="z-index:1000;"><div class="v-card v-sheet theme--light"><nav class="blue-grey lighten-5 v-toolbar v-toolbar--card v-toolbar--dense theme--light" style="margin-top:0px;padding-right:0px;padding-left:0px;transform:translateY(0px);"><div class="v-toolbar__content" style="height:48px;"><div title="with url" class="v-toolbar__title">
       with url
     </div> <div class="spacer"></div> <div class="v-toolbar__items"><span class="v-tooltip v-tooltip--bottom" style="display:none;"><div class="v-tooltip__content" style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"> <span>
           &#x79FB;&#x9664;&#x6B64;&#x7A97;&#x683C;
@@ -2148,7 +2161,7 @@ exports[`/statistics 1`] = `
     </div>
     </div>
     <div data-column-idx="2" data-column-item-idx="1" class="flex worker-item" style="z-index:999;">
-      <div class="v-card v-sheet theme--light elevation-2">
+      <div class="v-card v-sheet theme--light">
         <nav class="blue-grey lighten-5 v-toolbar v-toolbar--card v-toolbar--dense theme--light" style="margin-top:0px;padding-right:0px;padding-left:0px;transform:translateY(0px);">
           <div class="v-toolbar__content" style="height:48px;">
             <div title="with all" class="v-toolbar__title">
@@ -2337,7 +2350,20 @@ exports[`/statistics 1`] = `
         }
       }("", 0, null, "WAITING", "crawler2", "crawler1", "crawler0", "crawler3", "crawler4", "withDescription", "withUrl", "withAll", "http:\\u002F\\u002Ftest.aaa.com"));
     </script>
-
+    <script>
+      ! function() {
+        var e = document,
+          t = e.createElement("script");
+        if (!("noModule" in t) && "onbeforeload" in t) {
+          var n = !1;
+          e.addEventListener("beforeload", function(e) {
+            if (e.target === t) n = !0;
+            else if (!e.target.hasAttribute("nomodule") || !n) return;
+            e.preventDefault()
+          }, !0), t.type = "module", t.src = ".", e.head.appendChild(t), t.remove()
+        }
+      }();
+    </script>
 
   </body>
 

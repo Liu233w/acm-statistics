@@ -28,14 +28,30 @@ run:
   	$(MAKE) -C $$dir run; \
   done
 
-
 clean:
 	for dir in $(AllTarget); do \
   	$(MAKE) -C $$dir clean; \
   done
 ifeq ($(target),)
 	cd ./build && $(MAKE) -f node-base.mk clean
+	cd ./build && $(MAKE) -f commitlint.mk clean
 	@echo cleaned all target
 else
 	@echo cleaned $(target)
 endif
+
+test-ci:
+	@echo testing ci on target: $(AllTarget)
+	for dir in $(AllTarget); do \
+  	$(MAKE) -C $$dir test-ci; \
+  done
+
+# === commitlint ===
+
+.PHONY: test-commit commitlint-travis
+
+test-commit:
+	cd ./build && $(MAKE) -f commitlint.mk test-commit
+
+commitlint-travis:
+	cd ./build && $(MAKE) -f commitlint.mk commitlint-travis

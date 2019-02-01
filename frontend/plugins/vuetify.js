@@ -12,7 +12,7 @@ Vue.use(Vuetify, {
       }
       return val
     },
-    themeCache: LRU({
+    themeCache: new LRU({
       max: 10,
       maxAge: 1000 * 60 * 60 * 12, // 12 hour
     }),

@@ -41,3 +41,9 @@ endif
 
 clean:
 	docker image rm $(FrontendBaseTag) $(FrontendTag); true
+
+test-ci: .base
+	docker run --rm \
+		-v "$(CURDIR)/coverage:/var/project/coverage" \
+		$(FrontendBaseTag) \
+		npm test -- --colors --ci

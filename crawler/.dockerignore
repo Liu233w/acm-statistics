@@ -10,3 +10,6 @@ coverage
 # docker
 .dockerignore
 Dockerfile
+
+# make
+Makefile

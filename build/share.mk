@@ -10,7 +10,7 @@ CrawlerApiBackendTag = $(CommonTagPrefix)-crawler-api-backend
 CrawlerLibraryPath = /var/project
 
 # == phony
-.PHONY: test build run clean
+.PHONY: test build run clean test-ci
 
 # == set variables ==
 
@@ -27,3 +27,4 @@ endif
 ifeq ($(filter t no-tty,$(make-args)),)
 override run-args := $(run-args) --tty
 endif
+

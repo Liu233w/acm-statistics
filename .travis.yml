@@ -3,9 +3,7 @@ notifications:
     on_success: never
     on_failure: always
 
-language: node_js
-node_js:
-  - 8
+language: generic
 
 stages:
   - name: test
@@ -20,8 +18,8 @@ cache:
     - $HOME/.sonar/cache
     - $HOME/.m2
 
-install:
-  - npm install -g codecov
+after_script:
+  - bash <(curl -s https://codecov.io/bash)
 
 jobs:
   include:
@@ -30,36 +28,21 @@ jobs:
       script:
         - cd frontend
         - make run run-cmd="npm run lint"
-        - |
-            make run \
-            make-args="i t" \
-            run-args="-v \"$PWD/frontend/coverage:/var/project/coverage\"" \
-            run-cmd="npm test -- --colors --ci"
-        - codecov
+        - make test-ci
 
     - name: Crawler
       stage: test
       script:
         - cd crawler
         - make run run-cmd="npm run lint"
-        - |
-            make run \
-            make-args="i t" \
-            run-args="-v \"$PWD/crawler/coverage:/var/project/coverage\"" \
-            run-cmd="npm test -- --colors \"--testPathPattern=__test__/(?!crawlers\.test).*\.js\""
-        - codecov
+        - make test-ci
 
     - name: Crawler Api Backend
       stage: test
       script:
         - cd crawler-api-backend
         - make run run-cmd="npm run lint"
-        - |
-            make run \
-            make-args="i t" \
-            run-args="-v \"$PWD/crawler-api-backend/coverage:/var/project/coverage\"" \
-            run-cmd="npm test -- --colors"
-        - codecov
+        - make test-ci
 
     - name: Root
       stage: test
@@ -67,8 +50,6 @@ jobs:
         sonarcloud:
           organization: "liu233w-github"
           token: $SONAR_TOKEN
-      install:
-        - npm install -g @commitlint/cli @commitlint/config-conventional @commitlint/travis-cli
       script:
-        - commitlint-travis
+        - make commitlint-travis
         - sonar-scanner -Dsonar.projectKey=acm-statistics -Dsonar.organization=liu233w-github -Dsonar.sources=. -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$SONAR_TOKEN -Dsonar.exclusions=**/node_modules/**/*,backend
