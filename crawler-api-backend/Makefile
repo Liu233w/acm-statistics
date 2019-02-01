@@ -27,5 +27,5 @@ clean:
 test-ci: build
 	docker run --rm \
 		-v "$(MakefilePathDirectory)coverage:/var/project/coverage" \
-		$(CrawlerTag) \
+		$(CrawlerApiBackendTag) \
 		npm test -- --colors
