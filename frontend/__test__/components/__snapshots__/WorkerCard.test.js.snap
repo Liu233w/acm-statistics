@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`WorkerCard 能正确渲染 1`] = `
-<div class="v-card v-sheet theme--light elevation-2">
+<div class="v-card v-sheet theme--light">
   <nav class="blue-grey lighten-5 v-toolbar v-toolbar--card v-toolbar--dense theme--light" style="margin-top: 0px; padding-right: 0px; padding-left: 0px; transform: translateY(0px);">
     <div class="v-toolbar__content" style="height: 48px;">
       <div title="crawler title" class="v-toolbar__title">
@@ -59,7 +59,7 @@ exports[`WorkerCard 能正确渲染 1`] = `
 `;
 
 exports[`WorkerCard 能正确渲染用户名 1`] = `
-<div class="v-card v-sheet theme--light elevation-2">
+<div class="v-card v-sheet theme--light">
   <nav class="blue-grey lighten-5 v-toolbar v-toolbar--card v-toolbar--dense theme--light" style="margin-top: 0px; padding-right: 0px; padding-left: 0px; transform: translateY(0px);">
     <div class="v-toolbar__content" style="height: 48px;">
       <div title="crawler title" class="v-toolbar__title">
@@ -117,7 +117,7 @@ exports[`WorkerCard 能正确渲染用户名 1`] = `
 `;
 
 exports[`WorkerCard 能正确渲染结果 1`] = `
-<div class="v-card v-sheet theme--light elevation-2">
+<div class="v-card v-sheet theme--light">
   <nav class="blue-grey lighten-5 v-toolbar v-toolbar--card v-toolbar--dense theme--light" style="margin-top: 0px; padding-right: 0px; padding-left: 0px; transform: translateY(0px);">
     <div class="v-toolbar__content" style="height: 48px;">
       <div title="crawler title" class="v-toolbar__title">
@@ -175,7 +175,7 @@ exports[`WorkerCard 能正确渲染结果 1`] = `
 `;
 
 exports[`WorkerCard 能正确渲染警告 1`] = `
-<div class="v-card v-sheet theme--light elevation-2">
+<div class="v-card v-sheet theme--light">
   <nav class="blue-grey lighten-5 v-toolbar v-toolbar--card v-toolbar--dense theme--light" style="margin-top: 0px; padding-right: 0px; padding-left: 0px; transform: translateY(0px);">
     <div class="v-toolbar__content" style="height: 48px;">
       <div title="crawler title" class="v-toolbar__title">
@@ -244,7 +244,7 @@ exports[`WorkerCard 能正确渲染警告 1`] = `
 `;
 
 exports[`WorkerCard 能正确渲染错误 1`] = `
-<div class="v-card v-sheet theme--light elevation-2">
+<div class="v-card v-sheet theme--light">
   <nav class="blue-grey lighten-5 v-toolbar v-toolbar--card v-toolbar--dense theme--light" style="margin-top: 0px; padding-right: 0px; padding-left: 0px; transform: translateY(0px);">
     <div class="v-toolbar__content" style="height: 48px;">
       <div title="crawler title" class="v-toolbar__title">
