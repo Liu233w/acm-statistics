@@ -29,6 +29,7 @@ test-commit: build
 		commitlint --from master --color
 
 # travis only, cannot run on windows
+commitlint-travis: SHELL:=/bin/bash
 commitlint-travis: build
 	docker run --rm \
 		-v "$(CommitlintValidPath):/var/project" \
