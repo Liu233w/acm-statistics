@@ -3,9 +3,7 @@ notifications:
     on_success: never
     on_failure: always
 
-language: node_js
-node_js:
-  - 8
+language: generic
 
 stages:
   - name: test
