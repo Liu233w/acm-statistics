@@ -20,8 +20,8 @@ cache:
     - $HOME/.sonar/cache
     - $HOME/.m2
 
-install:
-  - npm install -g codecov
+after_script:
+  - bash <(curl -s https://codecov.io/bash)
 
 jobs:
   include:
@@ -31,7 +31,6 @@ jobs:
         - cd frontend
         - make run run-cmd="npm run lint"
         - make test-ci
-        - codecov
 
     - name: Crawler
       stage: test
@@ -39,7 +38,6 @@ jobs:
         - cd crawler
         - make run run-cmd="npm run lint"
         - make test-ci
-        - codecov
 
     - name: Crawler Api Backend
       stage: test
@@ -47,7 +45,6 @@ jobs:
         - cd crawler-api-backend
         - make run run-cmd="npm run lint"
         - make test-ci
-        - codecov
 
     - name: Root
       stage: test
