@@ -42,8 +42,8 @@ endif
 clean:
 	docker image rm $(FrontendBaseTag) $(FrontendTag); true
 
-test-ci: build
+test-ci: .base
 	docker run --rm \
 		-v "$(MakefilePathDirectory)coverage:/var/project/coverage" \
-		$(CrawlerApiBackendTag) \
+		$(FrontendBaseTag) \
 		npm test -- --colors --ci
