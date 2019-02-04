@@ -59,6 +59,3 @@ typings/
 
 # next.js build output
 .next
-
-# 配置文件
-/config.yml
