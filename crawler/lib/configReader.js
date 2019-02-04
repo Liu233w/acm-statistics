@@ -25,7 +25,7 @@ exports.ensureConfigAndRead = async () => {
 
 /**
  * 返回一个对象，其中key是爬虫名，value是一个Object，包含爬虫的元信息
- * @returns {Promise<{Object.<{String}, {Object}>}>}
+ * @returns {Promise<Object.<String, Object>>}
  */
 exports.readMetaConfigs = async () => {
   const config = await exports.ensureConfigAndRead()
