@@ -30,7 +30,7 @@ const join = require('path').join
  * @returns {Promise<{Object.<string, {serverCrawlerFunction}>}>}
  */
 exports.generateServerCrawlerFunctions = async () => {
-  const config = await configReader.ensureConfigAndRead()
+  const config = await configReader.readConfigs()
 
   const ret = {}
   for (let item of config.crawlers) {
@@ -66,7 +66,7 @@ exports.generateServerCrawlerFunctions = async () => {
  * @returns {Promise<{Object.<string, {clientCrawlerFunction}>}>}
  */
 exports.generateBrowserCrawlerFunctions = async () => {
-  const config = await configReader.ensureConfigAndRead()
+  const config = await configReader.readConfigs()
 
   const ret = {}
   for (let item of config.crawlers) {

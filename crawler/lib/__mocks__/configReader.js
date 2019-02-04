@@ -1,4 +1,4 @@
-exports.ensureConfigAndRead = async () => {
+exports.readConfigs = async () => {
   return {
     crawlers: [
       {
