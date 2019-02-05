@@ -52,6 +52,16 @@ describe('mergeConfigWithEnv', () => {
       },
     })
   })
+
+  it('只导入有指定前缀的环境变量', ()=>{
+
+    const baseConfig = {}
+    configReader.mergeConfigWithEnv(baseConfig, {
+      'NNNNNN': 'asdf',
+    })
+    expect(baseConfig).toMatchObject({})
+
+  })
 })
 
 test('readMetaConfigs 能够读取元信息', async () => {
