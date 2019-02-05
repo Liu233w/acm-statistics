@@ -53,6 +53,18 @@ exports.readConfigs = async () => {
 }
 
 /**
+ * 获取爬虫的所有配置
+ * @return {Promise<Array<Object>>}
+ */
+exports.readCrawlerConfigs = async () => {
+
+  const config = await exports.readConfigs()
+
+  return _.map(config.crawler_order, name =>
+    _.assign({name: name}, config.crawlers[name]))
+}
+
+/**
  * 返回一个对象，其中key是爬虫名，value是一个Object，包含爬虫的元信息
  * @returns {Promise<Object.<String, Object>>}
  */
@@ -60,8 +72,8 @@ exports.readMetaConfigs = async () => {
   const config = await exports.readConfigs()
 
   let ret = {}
-  for (let item of config.crawlers) {
-    ret[item.name] = item.meta
+  for (let name of config.crawler_order) {
+    ret[name] = config.crawlers[name].meta
   }
   return ret
 }

@@ -1,70 +1,86 @@
+crawler_order:
+  - poj
+  - hdu
+  - zoj
+  - acdream
+  - dashiye
+  - codeforces
+  - uva
+  - fzu
+  - spoj
+  - timus
+  - sgu
+  - leetcode_cn
+  - csu
+  - vjudge
+
 crawlers:
-  - name: poj
+  poj:
     meta:
       title: POJ
       description:
       url: http://poj.org/
-  - name: hdu
+  hdu:
     meta:
       title: HDU
       description:
       url: http://acm.hdu.edu.cn/
-  - name: zoj
+  zoj:
     meta:
       title: ZOJ
       description:
       url: http://acm.zju.edu.cn/onlinejudge/
-  - name: acdream
+  acdream:
     meta:
       title: ACdream
       description:
       url: http://acdream.info/
-  - name: dashiye
+  dashiye:
     meta:
       title: 大视野在线测评
       description:
       url: http://www.lydsy.com/JudgeOnline/
-  - name: codeforces
+  codeforces:
     meta:
       title: CodeForces
       description:
       url: http://codeforces.com/
-  - name: uva
+  uva:
     meta:
       title: UVA
       description:
       url: https://uva.onlinejudge.org/
-  - name: fzu
+  fzu:
     meta:
       title: FZU
       description:
       url: http://acm.fzu.edu.cn/index.php
-  - name: spoj
+  spoj:
     meta:
       title: SPOJ
       description:
       url: http://www.spoj.com/
-  - name: timus
+  timus:
     meta:
       title: Timus
       description:
       url: http://acm.timus.ru/
-  - name: sgu
+  sgu:
     meta:
       title: SGU
       description: SGU允许多个用户有相同的名字（ID不同），本爬虫会选择在 http://acm.sgu.ru/find.php?find_id= 中出现的第一个
       url: http://acm.sgu.ru/
-  - name: leetcode_cn
+  leetcode_cn:
     meta:
       title: LeetCode（中国）
       description:
       url: https://leetcode-cn.com
-  - name: csu
+  csu:
     meta:
       title: CSU
       description:
       url: http://acm.csu.edu.cn/
-  - name: vjudge
+  vjudge:
     meta:
       title: VJudge
       description: virtual judge，这个OJ的题量是单独计算的

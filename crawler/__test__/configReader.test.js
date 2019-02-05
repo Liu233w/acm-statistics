@@ -5,10 +5,19 @@ test('readConfigs 能够正确读取配置', async () => {
   const config = await configReader.readConfigs()
   expect(config.crawlers.length).not.toBe(0)
 
-  const sguConfig = _.find(config.crawlers, item => item.name === 'sgu')
+  const sguConfig = config.crawlers.sgu
   expect(sguConfig).toBeTruthy()
   expect(sguConfig.meta).toBeTruthy()
 
+})
+
+test('readCrawlerConfigs 能够正确读取配置', async () => {
+  const config = await configReader.readCrawlerConfigs()
+  expect(config.length).not.toBe(0)
+
+  const sguConfig = _.find(config, item => item.name === 'sgu')
+  expect(sguConfig).toBeTruthy()
+  expect(sguConfig.meta).toBeTruthy()
 })
 
 describe('mergeConfigWithEnv', () => {
