@@ -79,7 +79,7 @@ describe('mergeConfigWithEnv', () => {
       'ACM_STATISTICS_CRAWLER_ENV:a': '"{asdf}"',
     })
     expect(baseConfig).toMatchObject({
-      a: '{asdf}'
+      a: '{asdf}',
     })
   })
 })

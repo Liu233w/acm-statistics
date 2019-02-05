@@ -1,30 +1,28 @@
-exports.readConfigs = async () => {
-  return {
-    crawlers: [
-      {
-        name: 'crawler1',
-        meta: {
-          title: 'Crawler1',
-          description: 'Description1',
-          url: 'http://www.c1.com',
-        },
+exports.readCrawlerConfigs = async () => {
+  return [
+    {
+      name: 'crawler1',
+      meta: {
+        title: 'Crawler1',
+        description: 'Description1',
+        url: 'http://www.c1.com',
       },
-      {
-        name: 'crawler2',
-        meta: {
-          title: 'Crawler2',
-        },
-        custom_data: 'CustomData',
+    },
+    {
+      name: 'crawler2',
+      meta: {
+        title: 'Crawler2',
       },
-      {
-        name: 'crawler_for_server',
-        meta: {
-          title: 'CrawlerForServer',
-        },
-        server_only: true,
+      custom_data: 'CustomData',
+    },
+    {
+      name: 'crawler_for_server',
+      meta: {
+        title: 'CrawlerForServer',
       },
-    ],
-  }
+      server_only: true,
+    },
+  ]
 }
 
 exports.readMetaConfigs = async () => {
