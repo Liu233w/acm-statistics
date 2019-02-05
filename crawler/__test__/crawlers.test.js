@@ -1,5 +1,3 @@
-/* eslint-disable no-undef */
-
 const _ = require('lodash')
 
 const poj = require('../crawlers/poj')

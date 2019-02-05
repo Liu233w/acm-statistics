@@ -1,5 +1,3 @@
-/* eslint-disable no-undef */
-
 const configReader = require('../lib/configReader')
 const _ = require('lodash')
 
