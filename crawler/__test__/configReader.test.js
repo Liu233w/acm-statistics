@@ -41,7 +41,7 @@ describe('mergeConfigWithEnv', () => {
     }
 
     configReader.mergeConfigWithEnv(baseConfig, {
-      'ACM_STATISTICS_CRAWLER_ENV_OBJECT:a': '{"b":{"c":"aaa"}}',
+      'ACM_STATISTICS_CRAWLER_ENV:a': '{"b":{"c":"aaa"}}',
     })
 
     expect(baseConfig).toMatchObject({
@@ -53,7 +53,7 @@ describe('mergeConfigWithEnv', () => {
     })
   })
 
-  it('只导入有指定前缀的环境变量', ()=>{
+  it('只导入有指定前缀的环境变量', () => {
 
     const baseConfig = {}
     configReader.mergeConfigWithEnv(baseConfig, {
@@ -61,6 +61,17 @@ describe('mergeConfigWithEnv', () => {
     })
     expect(baseConfig).toMatchObject({})
 
+  })
+
+  it('能够导入字符串环境变量', () => {
+
+    const baseConfig = {}
+    configReader.mergeConfigWithEnv(baseConfig, {
+      'ACM_STATISTICS_CRAWLER_ENV:a': '"{asdf}"',
+    })
+    expect(baseConfig).toMatchObject({
+      a: '{asdf}'
+    })
   })
 })
 
