@@ -1,5 +1,3 @@
-/* eslint-disable no-undef */
-
 // 在 require 的时候程序会直接 require 爬虫，如果在 beforeAll 里面 mock 的话就晚了
 jest.mock('crawler')
 
