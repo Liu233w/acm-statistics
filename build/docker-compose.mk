@@ -22,7 +22,7 @@ $(ImageToTag) $(ImageToPush): ImageNameWithLatest = $(RepoName)$(Image):latest
 
 # === targets ===
 
-.PHONY: .build tag push
+.PHONY: .build tag push up
 
 .build:
 	$(MAKE) -C ../crawler-api-backend build
@@ -41,3 +41,6 @@ $(ImageToPush):
 	@echo try to push $(ImageNameWithHash) and $(ImageNameWithLatest)
 	docker push $(ImageNameWithHash)
 	docker push $(ImageNameWithLatest)
+
+up: .build
+	docker-compose up
