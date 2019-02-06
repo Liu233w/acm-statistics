@@ -3,14 +3,14 @@ version: '3'
 services:
 
   frontend:
-    image: acm-statistics-frontend
+    image: ${DOCKER_REPO}acm-statistics-frontend${DOCKER_TAG}
     environment:
     - HOST=0.0.0.0
     ports:
-    - "3000:3000"
+    - "${EXPOSE_PORT}:3000"
 
   crawler-api-backend:
-    image: acm-statistics-crawler-api-backend
+    image: ${DOCKER_REPO}acm-statistics-crawler-api-backend${DOCKER_TAG}
     environment:
     - ACM_STATISTICS_CRAWLER_ENV:crawlers:vjudge:crawler_login_user="${VJUDGE_USERNAME}"
     - ACM_STATISTICS_CRAWLER_ENV:crawlers:vjudge:crawler_login_password="${VJUDGE_PASSWORD}"
