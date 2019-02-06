@@ -36,15 +36,18 @@ module.exports = {
       'pattern': '-yyyy-MM-dd.log',
       'path': responsePath,
     },
+    'console': {
+      'type': 'console',
+    },
   },
   //设置logger名称对应的的日志等级
   'categories': {
     'error': {
-      'appenders': ['errorOutput', 'responseOutput'],
+      'appenders': ['errorOutput', 'responseOutput', 'console'],
       'level': 'ALL',
     },
     'response': {
-      'appenders': ['responseOutput'],
+      'appenders': ['responseOutput', 'console'],
       'level': 'ALL',
     },
     'default': { // 这个目前还不需要
