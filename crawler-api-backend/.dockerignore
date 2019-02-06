@@ -13,3 +13,6 @@ Dockerfile
 
 # make
 Makefile
+
+# 日志文件
+/logs/

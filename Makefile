@@ -55,3 +55,15 @@ test-commit:
 
 commitlint-travis:
 	cd ./build && $(MAKE) -f commitlint.mk commitlint-travis
+
+# === publish image ===
+.PHONY: tag-and-push
+
+tag-and-push:
+	cd ./build && $(MAKE) -f docker-compose.mk push
+
+# === run all ===
+.PHONY: up
+
+up:
+	cd ./build && $(MAKE) -f docker-compose.mk up
