@@ -13,12 +13,11 @@ then
 # 使用类似于 curl -s ...sh | bash 的方式运行的此脚本，不创建额外的文件
 # 这么做是功能受限的
 
-# docker 的镜像名称
-export DOCKER_TAG=:latest
-export DOCKER_REPO=liu233w/
+# 导入默认环境变量
+export $(curl -s https://raw.githubusercontent.com/Liu233w/acm-statistics/master/build/template.env | xargs)
 
-# 输出端口
-export EXPOSE_PORT=3000
+# 覆盖 namespace （用于下载 docker 镜像）
+export DOCKER_REPO=liu233w/
 
 # 执行 docker compose
 curl -s https://raw.githubusercontent.com/Liu233w/acm-statistics/master/build/docker-compose.yml \
@@ -31,10 +30,14 @@ else
 cd $(dirname $0)
 curl -L -o docker-compose.yml \
   https://raw.githubusercontent.com/Liu233w/acm-statistics/master/build/docker-compose.yml
-curl -L -o .env.template \
-  https://raw.githubusercontent.com/Liu233w/acm-statistics/master/build/.env.template
+curl -L -o template.env \
+  https://raw.githubusercontent.com/Liu233w/acm-statistics/master/build/template.env
 
-echo remember to edit your .env file
-cp .env.template .env
+if ! [ -e .env ]; then
+  cat template.env | sed 's/^DOCKER_REPO=$/DOCKER_REPO=liu233w\//' > .env
+  echo .env file created, remember to edit it
+fi
+
+fi
 
 docker-compose up
