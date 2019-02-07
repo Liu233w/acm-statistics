@@ -4,10 +4,10 @@
 
 set -e
 
-if [[ $0 == */bin/bash ]]
-|| [[ $0 == */bin/zsh ]]
-|| [[ $0 == */bin/fish ]]
-|| [[ $0 == */bin/sh ]];
+if [[ $0 == */bin/bash ]] \
+|| [[ $0 == */bin/zsh ]] \
+|| [[ $0 == */bin/fish ]] \
+|| [[ $0 == */bin/sh ]]
 then
 
 # 使用类似于 curl -s ...sh | bash 的方式运行的此脚本，不创建额外的文件
