@@ -42,5 +42,8 @@ $(ImageToPush):
 	docker push $(ImageNameWithHash)
 	docker push $(ImageNameWithLatest)
 
-up: .build
+up: .build .env
 	docker-compose up
+
+.env:
+	cp template.env .env
