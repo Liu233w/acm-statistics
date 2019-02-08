@@ -67,3 +67,10 @@ tag-and-push:
 
 up:
 	cd ./build && $(MAKE) -f docker-compose.mk up
+# === util command ==
+
+.PHONY: view-image-size
+
+# 输出项目中 latest 标签标记的镜像的大小
+view-image-size:
+	docker images --format "table {{.Repository}}:{{.Tag}}\t{{.Size}}" --filter=reference='acm-statistics*:latest'
