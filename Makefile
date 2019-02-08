@@ -63,10 +63,14 @@ tag-and-push:
 	cd ./build && $(MAKE) -f docker-compose.mk push
 
 # === run all ===
-.PHONY: up
+.PHONY: up dev
 
 up:
 	cd ./build && $(MAKE) -f docker-compose.mk up
+
+dev:
+	cd ./build && $(MAKE) -f docker-compose.mk dev
+
 # === util command ==
 
 .PHONY: view-image-size
