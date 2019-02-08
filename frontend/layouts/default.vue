@@ -31,7 +31,7 @@
         <v-btn icon slot="activator" href="https://github.com/Liu233w/acm-statistics" target="_blank">
           <v-icon>fa fa-github</v-icon>
         </v-btn>
-        <span>Fork me on Github!</span>
+        <span>Star me on Github!</span>
       </v-tooltip>
     </v-toolbar>
     <v-content>
