@@ -22,11 +22,16 @@ $(ImageToTag) $(ImageToPush): ImageNameWithLatest = $(RepoName)$(Image):latest
 
 # === targets ===
 
-.PHONY: .build tag push up
+.PHONY: .build tag push up dev .build-dev
 
 .build:
 	$(MAKE) -C ../crawler-api-backend build
 	$(MAKE) -C ../frontend build
+
+# 为了开发而构建的目标
+.build-dev:
+	$(MAKE) -C ../crawler-api-backend build
+	$(MAKE) -C ../frontend .base
 
 tag: .build $(ImageToTag)
 
@@ -47,3 +52,6 @@ up: .build .env
 
 .env:
 	cp template.env .env
+
+dev: .build-dev
+	docker-compose -f docker-compose.yml -f docker-compose.dev.yml up
