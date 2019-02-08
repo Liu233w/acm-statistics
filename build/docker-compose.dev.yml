@@ -3,7 +3,11 @@ version: '3'
 services:
   # 只有前端支持 hot reload，所以只改动前端
   frontend:
-    image: acm-statistics-frontend-base
+    image: acm-statistics-node-base
+    working_dir: /var/project
     volumes:
     - ../frontend:/var/project
-    command: npm run dev
+    environment:
+    - NODE_ENV=development
+    command: sh -c "npm run dev"
+    #command: ls -la

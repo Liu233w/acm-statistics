@@ -68,8 +68,8 @@ tag-and-push:
 up:
 	cd ./build && $(MAKE) -f docker-compose.mk up
 
-dev:
-	cd ./build && $(MAKE) -f docker-compose.mk dev
+#dev:
+#	cd ./build && $(MAKE) -f docker-compose.mk dev
 
 # === util command ==
 
@@ -80,4 +80,4 @@ view-image-size:
 	docker images --format "table {{.Repository}}:{{.Tag}}\t{{.Size}}" --filter=reference='acm-statistics*:latest'
 
 shell:
-	 cd build && $(MAKE) -f shell.mk shell
+	cd build && $(MAKE) -f shell.mk shell
