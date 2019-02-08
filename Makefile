@@ -73,8 +73,11 @@ dev:
 
 # === util command ==
 
-.PHONY: view-image-size
+.PHONY: view-image-size shell
 
 # 输出项目中 latest 标签标记的镜像的大小
 view-image-size:
 	docker images --format "table {{.Repository}}:{{.Tag}}\t{{.Size}}" --filter=reference='acm-statistics*:latest'
+
+shell:
+	 cd build && $(MAKE) -f shell.mk shell
