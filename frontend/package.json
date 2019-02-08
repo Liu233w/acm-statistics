@@ -53,7 +53,7 @@
     "ps-tree": "^1.2.0",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",
-    "vue-jest": "^3.0.2"
+    "vue-jest": "^3.0.3"
   },
   "jest": {
     "globals": {
