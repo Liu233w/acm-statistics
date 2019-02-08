@@ -59,7 +59,7 @@
           </v-flex>
           <v-flex xs12>
             <v-container grid-list-xl>
-              <v-layout row wrap align-center>
+              <v-layout row wrap>
                 <v-flex xs12 md4>
                   <v-card class="elevation-0 transparent" :flat="true">
                     <v-card-text class="text-xs-center">
@@ -72,7 +72,7 @@
                         免费提供题量查询API
                       </div>
                     </v-card-title>
-                    <v-card-text>
+                    <v-card-text class="text-xs-center">
                       我们提供了一个 RESTful API 来供您使用，您可以在任意的客户端、网站中调用此API来查询某用户在OJ上的提交数/通过数。
                       访问我们的<a href="/swagger" target="_blank">
                         API文档
@@ -92,7 +92,7 @@
                         完全开源
                       </div>
                     </v-card-title>
-                    <v-card-text>
+                    <v-card-text class="text-xs-center">
                       访问我们的 <a href="https://github.com/Liu233w/acm-statistics" target="_blank">
                         项目地址
                       </a>
@@ -113,7 +113,7 @@
                         更多功能支持中
                       </div>
                     </v-card-title>
-                    <v-card-text>
+                    <v-card-text class="text-xs-center">
                       旧版查询系统中的功能正在被移植到新版查询系统中，如果您需要旧版查询系统中的功能，请
                       <a href="//npuacm.info/">
                         单击此处返回旧版查询系统
