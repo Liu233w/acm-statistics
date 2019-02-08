@@ -61,7 +61,7 @@
             <v-container grid-list-xl>
               <v-layout row wrap align-center>
                 <v-flex xs12 md4>
-                  <v-card class="elevation-0 transparent" flat="true">
+                  <v-card class="elevation-0 transparent" :flat="true">
                     <v-card-text class="text-xs-center">
                       <v-icon x-large class="blue--text text--lighten-2">
                         link
@@ -81,7 +81,7 @@
                   </v-card>
                 </v-flex>
                 <v-flex xs12 md4>
-                  <v-card class="elevation-0 transparent" flat="true">
+                  <v-card class="elevation-0 transparent" :flat="true">
                     <v-card-text class="text-xs-center">
                       <v-icon x-large class="blue--text text--lighten-2">
                         fa fa-github
@@ -102,7 +102,7 @@
                   </v-card>
                 </v-flex>
                 <v-flex xs12 md4>
-                  <v-card class="elevation-0 transparent" flat="true">
+                  <v-card class="elevation-0 transparent" :flat="true">
                     <v-card-text class="text-xs-center">
                       <v-icon x-large class="blue--text text--lighten-2">
                         build
@@ -155,7 +155,7 @@
         <v-container grid-list-xl>
           <v-layout row wrap justify-center class="my-5">
             <v-flex xs12 sm4>
-              <v-card class="elevation-0 transparent" flat="true">
+              <v-card class="elevation-0 transparent" :flat="true">
                 <v-card-title primary-title class="layout justify-center">
                   <div class="headline">
                     关于我们
@@ -176,7 +176,7 @@
               </v-card>
             </v-flex>
             <v-flex xs12 sm4 offset-sm1>
-              <v-card class="elevation-0 transparent" flat="true">
+              <v-card class="elevation-0 transparent" :flat="true">
                 <v-card-title primary-title class="layout justify-center">
                   <div class="headline">
                     联系我们
