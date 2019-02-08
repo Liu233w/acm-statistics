@@ -731,7 +731,7 @@ exports[`/ 1`] = `
                 <div class="v-toolbar__title">
                   NWPU-ACM &#x67E5;&#x8BE2;&#x7CFB;&#x7EDF;
                 </div>
-                <div class="spacer"></div> <span class="v-tooltip v-tooltip--left"><div class="v-tooltip__content" style="left:12px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"> <span>Fork me on Github!</span>
+                <div class="spacer"></div> <span class="v-tooltip v-tooltip--left"><div class="v-tooltip__content" style="left:12px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"> <span>Star me on Github!</span>
               </div><span><a href="https://github.com/Liu233w/acm-statistics" target="_blank" class="v-btn v-btn--icon theme--light"><div class="v-btn__content"><i aria-hidden="true" class="v-icon fa fa fa fa-github theme--light"></i></div></a></span></span>
           </div>
           </nav>
@@ -769,7 +769,7 @@ exports[`/ 1`] = `
                   </div>
                   <div class="flex xs12">
                     <div class="container grid-list-xl">
-                      <div class="layout row wrap align-center">
+                      <div class="layout row wrap">
                         <div class="flex xs12 md4">
                           <div class="elevation-0 transparent v-card v-card--flat v-sheet theme--light">
                             <div class="v-card__text text-xs-center"><i aria-hidden="true" class="v-icon blue--text text--lighten-2 material-icons theme--light" style="font-size:40px;">
@@ -780,7 +780,7 @@ exports[`/ 1`] = `
                                 &#x514D;&#x8D39;&#x63D0;&#x4F9B;&#x9898;&#x91CF;&#x67E5;&#x8BE2;API
                               </div>
                             </div>
-                            <div class="v-card__text">
+                            <div class="v-card__text text-xs-center">
                               &#x6211;&#x4EEC;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E2A; RESTful API &#x6765;&#x4F9B;&#x60A8;&#x4F7F;&#x7528;&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x5728;&#x4EFB;&#x610F;&#x7684;&#x5BA2;&#x6237;&#x7AEF;&#x3001;&#x7F51;&#x7AD9;&#x4E2D;&#x8C03;&#x7528;&#x6B64;API&#x6765;&#x67E5;&#x8BE2;&#x67D0;&#x7528;&#x6237;&#x5728;OJ&#x4E0A;&#x7684;&#x63D0;&#x4EA4;&#x6570;/&#x901A;&#x8FC7;&#x6570;&#x3002;
                               &#x8BBF;&#x95EE;&#x6211;&#x4EEC;&#x7684;<a href="/swagger" target="_blank">
                                 API&#x6587;&#x6863;
@@ -799,7 +799,7 @@ exports[`/ 1`] = `
                                 &#x5B8C;&#x5168;&#x5F00;&#x6E90;
                               </div>
                             </div>
-                            <div class="v-card__text">
+                            <div class="v-card__text text-xs-center">
                               &#x8BBF;&#x95EE;&#x6211;&#x4EEC;&#x7684; <a href="https://github.com/Liu233w/acm-statistics" target="_blank">
                                 &#x9879;&#x76EE;&#x5730;&#x5740;
                               </a>
@@ -818,7 +818,7 @@ exports[`/ 1`] = `
                                 &#x66F4;&#x591A;&#x529F;&#x80FD;&#x652F;&#x6301;&#x4E2D;
                               </div>
                             </div>
-                            <div class="v-card__text">
+                            <div class="v-card__text text-xs-center">
                               &#x65E7;&#x7248;&#x67E5;&#x8BE2;&#x7CFB;&#x7EDF;&#x4E2D;&#x7684;&#x529F;&#x80FD;&#x6B63;&#x5728;&#x88AB;&#x79FB;&#x690D;&#x5230;&#x65B0;&#x7248;&#x67E5;&#x8BE2;&#x7CFB;&#x7EDF;&#x4E2D;&#xFF0C;&#x5982;&#x679C;&#x60A8;&#x9700;&#x8981;&#x65E7;&#x7248;&#x67E5;&#x8BE2;&#x7CFB;&#x7EDF;&#x4E2D;&#x7684;&#x529F;&#x80FD;&#xFF0C;&#x8BF7;
                               <a href="//npuacm.info/">
                                 &#x5355;&#x51FB;&#x6B64;&#x5904;&#x8FD4;&#x56DE;&#x65E7;&#x7248;&#x67E5;&#x8BE2;&#x7CFB;&#x7EDF;
@@ -919,7 +919,7 @@ exports[`/ 1`] = `
                   </div>
                   <div class="v-dialog__container" style="display:block;">
                     <div tabindex="-1" class="v-dialog__content" style="z-index:0;">
-                      <div class="v-dialog" style="max-width:500px;width:undefined;display:none;">
+                      <div class="v-dialog" style="max-width:500px;display:none;">
                         <div class="v-card v-sheet theme--light">
                           <div class="v-card__title"><span>&#x5FAE;&#x4FE1;&#x516C;&#x4F17;&#x53F7;</span></div>
                           <div class="v-card__text"><img src="/_nuxt/img/4d1d170.jpg" alt="&#x516C;&#x4F17;&#x53F7;&#x4E8C;&#x7EF4;&#x7801;" style="height:300px;"></div>
@@ -1703,7 +1703,7 @@ exports[`/statistics 1`] = `
       <div id="__layout">
         <div data-app="true" id="app" class="application theme--light">
           <div class="application--wrap">
-            <aside class="v-navigation-drawer v-navigation-drawer--clipped v-navigation-drawer--close v-navigation-drawer--fixed v-navigation-drawer--is-mobile theme--light" style="height:100%;margin-top:0px;max-height:calc(100% - 0px);transform:translateX(-300px);width:300px;">
+            <aside class="v-navigation-drawer v-navigation-drawer--clipped v-navigation-drawer--close v-navigation-drawer--fixed v-navigation-drawer--is-mobile theme--light" style="height:100%;margin-top:0px;transform:translateX(-300px);width:300px;">
               <div role="list" class="v-list theme--light">
                 <div role="listitem"><a href="/" router="" class="v-list__tile v-list__tile--link theme--light">
                     <div class="v-list__tile__action"><i aria-hidden="true" class="v-icon material-icons theme--light">home</i></div>
@@ -1725,7 +1725,7 @@ exports[`/statistics 1`] = `
                   <div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light">menu</i></div>
                 </button>
                 <div class="v-toolbar__title">NWPU-ACM &#x67E5;&#x8BE2;&#x7CFB;&#x7EDF;</div>
-                <div class="spacer"></div> <span class="v-tooltip v-tooltip--left"><div class="v-tooltip__content" style="left:12px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"> <span>Fork me on Github!</span>
+                <div class="spacer"></div> <span class="v-tooltip v-tooltip--left"><div class="v-tooltip__content" style="left:12px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"> <span>Star me on Github!</span>
               </div><span><a href="https://github.com/Liu233w/acm-statistics" target="_blank" class="v-btn v-btn--icon theme--light"><div class="v-btn__content"><i aria-hidden="true" class="v-icon fa fa fa fa-github theme--light"></i></div></a></span></span>
           </div>
           </nav>
@@ -1737,7 +1737,7 @@ exports[`/statistics 1`] = `
                     <div class="flex xs12 sm5 md3">
                       <div class="v-input v-text-field theme--light">
                         <div class="v-input__control">
-                          <div class="v-input__slot" style="height:undefined;">
+                          <div class="v-input__slot">
                             <div class="v-text-field__slot"><label aria-hidden="true" class="v-label theme--light" style="left:0px;right:auto;position:absolute;">&#x7EDF;&#x4E00;&#x8BBE;&#x7F6E;&#x7528;&#x6237;&#x540D;</label><input aria-label="&#x7EDF;&#x4E00;&#x8BBE;&#x7F6E;&#x7528;&#x6237;&#x540D;" required="required" type="text" value=""></div>
                           </div>
                           <div class="v-text-field__details">
@@ -1794,7 +1794,7 @@ exports[`/statistics 1`] = `
                 <div class="flex xs12">
                   <div class="v-input v-text-field theme--light">
                     <div class="v-input__control">
-                      <div class="v-input__slot" style="height:undefined;">
+                      <div class="v-input__slot">
                         <div class="v-text-field__slot"><label aria-hidden="true" class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Username</label><input aria-label="Username" required="required" type="text" value=""></div>
                         <div class="v-input__append-inner">
                           <div class="v-input__icon v-input__icon--"><i aria-hidden="true" class="v-icon v-icon--link material-icons theme--light"></i></div>
@@ -1853,7 +1853,7 @@ exports[`/statistics 1`] = `
         <div class="flex xs12">
           <div class="v-input v-text-field theme--light">
             <div class="v-input__control">
-              <div class="v-input__slot" style="height:undefined;">
+              <div class="v-input__slot">
                 <div class="v-text-field__slot"><label aria-hidden="true" class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Username</label><input aria-label="Username" required="required" type="text" value=""></div>
                 <div class="v-input__append-inner">
                   <div class="v-input__icon v-input__icon--"><i aria-hidden="true" class="v-icon v-icon--link material-icons theme--light"></i></div>
@@ -1911,7 +1911,7 @@ exports[`/statistics 1`] = `
         <div class="flex xs12">
           <div class="v-input v-text-field theme--light">
             <div class="v-input__control">
-              <div class="v-input__slot" style="height:undefined;">
+              <div class="v-input__slot">
                 <div class="v-text-field__slot"><label aria-hidden="true" class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Username</label><input aria-label="Username" required="required" type="text" value=""></div>
                 <div class="v-input__append-inner">
                   <div class="v-input__icon v-input__icon--"><i aria-hidden="true" class="v-icon v-icon--link material-icons theme--light"></i></div>
@@ -1963,7 +1963,7 @@ exports[`/statistics 1`] = `
         <div class="flex xs12">
           <div class="v-input v-text-field theme--light">
             <div class="v-input__control">
-              <div class="v-input__slot" style="height:undefined;">
+              <div class="v-input__slot">
                 <div class="v-text-field__slot"><label aria-hidden="true" class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Username</label><input aria-label="Username" required="required" type="text" value=""></div>
                 <div class="v-input__append-inner">
                   <div class="v-input__icon v-input__icon--"><i aria-hidden="true" class="v-icon v-icon--link material-icons theme--light"></i></div>
@@ -2021,7 +2021,7 @@ exports[`/statistics 1`] = `
         <div class="flex xs12">
           <div class="v-input v-text-field theme--light">
             <div class="v-input__control">
-              <div class="v-input__slot" style="height:undefined;">
+              <div class="v-input__slot">
                 <div class="v-text-field__slot"><label aria-hidden="true" class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Username</label><input aria-label="Username" required="required" type="text" value=""></div>
                 <div class="v-input__append-inner">
                   <div class="v-input__icon v-input__icon--"><i aria-hidden="true" class="v-icon v-icon--link material-icons theme--light"></i></div>
@@ -2079,7 +2079,7 @@ exports[`/statistics 1`] = `
         <div class="flex xs12">
           <div class="v-input v-text-field theme--light">
             <div class="v-input__control">
-              <div class="v-input__slot" style="height:undefined;">
+              <div class="v-input__slot">
                 <div class="v-text-field__slot"><label aria-hidden="true" class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Username</label><input aria-label="Username" required="required" type="text" value=""></div>
                 <div class="v-input__append-inner">
                   <div class="v-input__icon v-input__icon--"><i aria-hidden="true" class="v-icon v-icon--link material-icons theme--light"></i></div>
@@ -2132,7 +2132,7 @@ exports[`/statistics 1`] = `
         <div class="flex xs12">
           <div class="v-input v-text-field theme--light">
             <div class="v-input__control">
-              <div class="v-input__slot" style="height:undefined;">
+              <div class="v-input__slot">
                 <div class="v-text-field__slot"><label aria-hidden="true" class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Username</label><input aria-label="Username" required="required" type="text" value=""></div>
                 <div class="v-input__append-inner">
                   <div class="v-input__icon v-input__icon--"><i aria-hidden="true" class="v-icon v-icon--link material-icons theme--light"></i></div>
@@ -2190,7 +2190,7 @@ exports[`/statistics 1`] = `
         <div class="flex xs12">
           <div class="v-input v-text-field theme--light">
             <div class="v-input__control">
-              <div class="v-input__slot" style="height:undefined;">
+              <div class="v-input__slot">
                 <div class="v-text-field__slot"><label aria-hidden="true" class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Username</label><input aria-label="Username" required="required" type="text" value=""></div>
                 <div class="v-input__append-inner">
                   <div class="v-input__icon v-input__icon--"><i aria-hidden="true" class="v-icon v-icon--link material-icons theme--light"></i></div>
