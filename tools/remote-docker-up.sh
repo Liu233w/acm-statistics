@@ -4,17 +4,27 @@
 
 set -e
 
+echo debug: current \$0 is $0
+
 if [[ $0 == */bin/bash ]] \
 || [[ $0 == */bin/zsh ]] \
 || [[ $0 == */bin/fish ]] \
-|| [[ $0 == */bin/sh ]]
+|| [[ $0 == */bin/sh ]] \
+|| [[ $0 == bash ]] \
+|| [[ $0 == zsh ]] \
+|| [[ $0 == fish ]] \
+|| [[ $0 == sh ]] \
+;
 then
 
 # 使用类似于 curl -s ...sh | bash 的方式运行的此脚本，不创建额外的文件
 # 这么做是功能受限的
 
 # 导入默认环境变量
-export $(curl -s https://raw.githubusercontent.com/Liu233w/acm-statistics/master/build/template.env | xargs)
+export $(curl -s https://raw.githubusercontent.com/Liu233w/acm-statistics/master/build/template.env \
+  | sed '/^#.*$/d' \
+  | sed '/^\w*$/d' \
+  | xargs)
 
 # 覆盖 namespace （用于下载 docker 镜像）
 export DOCKER_REPO=liu233w/
