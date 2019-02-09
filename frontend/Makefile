@@ -25,7 +25,9 @@ build: .base
 		-t $(FrontendTag) \
 		$(build-args) \
 		--build-arg NODE_BASE_IMAGE=$(NodeBaseTag) \
-		--build-arg FRONTEND_BASE_IMAGE=$(FrontendBaseTag)
+		--build-arg FRONTEND_BASE_IMAGE=$(FrontendBaseTag) \
+		--build-arg CRAWLER_IMAGE=$(CrawlerTag) \
+		--build-arg CRAWLER_LIBRARY_PATH=$(CrawlerLibraryPath)
 
 test: .base
 	docker run --rm -t $(FrontendBaseTag) npm test

@@ -22,7 +22,10 @@
     "axios": "^0.18.0",
     "cheerio": "^1.0.0-rc.2",
     "lodash": "^4.17.11",
+    "lodash-webpack-plugin": "^0.11.5",
     "nuxt": "^2.4.3",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.2",
     "superagent": "^4.1.0",
     "virtual-module-webpack-plugin": "^0.4.1",
     "vuetify": "^1.5.0",
@@ -49,10 +52,7 @@
     "eslint-plugin-vue": "^5.1.0",
     "jest": "^24.1.0",
     "jest-serializer-vue": "^2.0.2",
-    "lodash-webpack-plugin": "^0.11.5",
     "ps-tree": "^1.2.0",
-    "stylus": "^0.54.5",
-    "stylus-loader": "^3.0.2",
     "vue-jest": "^3.0.3"
   },
   "jest": {

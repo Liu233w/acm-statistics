@@ -1,13 +1,18 @@
 ARG FRONTEND_BASE_IMAGE
 ARG NODE_BASE_IMAGE
+ARG CRAWLER_IMAGE
+
+
+FROM ${CRAWLER_IMAGE} AS crawler
 
 
 FROM ${FRONTEND_BASE_IMAGE} AS build
+ARG CRAWLER_LIBRARY_PATH
 
 RUN npm run build
 # 排除 devDependencies
 RUN rm -rf node_modules && npm install --only=production
-# frontend 在运行期间不需要 crawler 模块，这里就不复制了
+COPY --from=crawler ${CRAWLER_LIBRARY_PATH} ./node_modules/crawler
 
 
 FROM ${NODE_BASE_IMAGE}
