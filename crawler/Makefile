@@ -8,24 +8,33 @@ help:
 .node-base:
 	cd ../build && $(MAKE) -f node-base.mk build
 
-build: .node-base
+.base: .node-base
 	docker build . \
+		-f base.Dockerfile \
+		-t $(CrawlerBaseTag) \
+		$(build-args) \
+		--build-arg NODE_BASE_IMAGE=$(NodeBaseTag)
+
+build: .base
+	docker build . \
+		-f release.Dockerfile \
 		-t $(CrawlerTag) \
 		$(build-args) \
+		--build-arg CRAWLER_BASE_IMAGE=$(CrawlerBaseTag) \
 		--build-arg NODE_BASE_IMAGE=$(NodeBaseTag) \
 		--build-arg CRAWLER_LIBRARY_PATH=$(CrawlerLibraryPath)
 
-test: build
-	docker run --rm -t $(CrawlerTag) npm test
+test: .base
+	docker run --rm -t $(CrawlerBaseTag) npm test
 
-run: build
-	docker run $(run-args) $(CrawlerTag) $(run-cmd)
+run: .base
+	docker run $(run-args) $(CrawlerBaseTag) $(run-cmd)
 
 clean:
-	docker image rm $(CrawlerTag); true
+	docker image rm $(CrawlerTag) $(CrawlerBaseTag); true
 
-test-ci: build
+test-ci: .base
 	docker run --rm \
 		-v "$(CURDIR)/coverage:/var/project/coverage" \
-		$(CrawlerTag) \
+		$(CrawlerBaseTag) \
 		npm test -- --colors "--testPathPattern=__test__/(?!crawlers\\.test).*\\.js"

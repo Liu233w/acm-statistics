@@ -21,9 +21,10 @@ help:
 
 build: .base
 	docker build . \
+		-f release.Dockerfile \
 		-t $(FrontendTag) \
 		$(build-args) \
-		-f build.Dockerfile \
+		--build-arg NODE_BASE_IMAGE=$(NodeBaseTag) \
 		--build-arg FRONTEND_BASE_IMAGE=$(FrontendBaseTag)
 
 test: .base

@@ -3,9 +3,11 @@
 CommonTagPrefix = acm-statistics
 NodeBaseTag = $(CommonTagPrefix)-node-base
 CrawlerTag = $(CommonTagPrefix)-crawler
+CrawlerBaseTag = $(CommonTagPrefix)-crawler-base
 FrontendBaseTag = $(CommonTagPrefix)-frontend-base
 FrontendTag = $(CommonTagPrefix)-frontend
 CrawlerApiBackendTag = $(CommonTagPrefix)-crawler-api-backend
+CrawlerApiBackendBaseTag = $(CommonTagPrefix)-crawler-api-backend-base
 
 CrawlerLibraryPath = /var/project
 
