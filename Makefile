@@ -73,10 +73,10 @@ up:
 
 # === util command ==
 
-.PHONY: view-image-size shell
+.PHONY: show-image-size shell
 
 # 输出项目中 latest 标签标记的镜像的大小
-view-image-size:
+show-image-size:
 	docker images --format "table {{.Repository}}:{{.Tag}}\t{{.Size}}" --filter=reference='acm-statistics*:latest'
 
 shell:
@@ -135,7 +135,7 @@ tag-and-push
 up
 使用 docker-compose 启动项目，会自动创建 ./build/.env 配置文件，建议根据上面的说明修改一下配置文件内容，以使用项目的全部功能。
 
-view-image-size
+show-image-size
 查看本项目生成的所有镜像的体积。此命令不会生成镜像，而是查看以前生成的镜像。
 
 shell
