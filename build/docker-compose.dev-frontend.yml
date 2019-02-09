@@ -4,10 +4,10 @@ services:
   # 只有前端支持 hot reload，所以只改动前端
   frontend:
     image: acm-statistics-node-base
-    working_dir: /var/project
+    working_dir: /var/project/frontend
     volumes:
-    - ../frontend:/var/project
+    - ..:/var/project
+    - /var/project/frontend/node_modules
     environment:
     - NODE_ENV=development
-    command: sh -c "npm run dev"
-    #command: ls -la
+    command: sh -c "npm i --unsafe-perm && npm run dev"

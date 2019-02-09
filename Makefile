@@ -66,13 +66,10 @@ tag-and-push:
 	cd ./build && $(MAKE) -f docker-compose.mk push
 
 # === run all ===
-.PHONY: up dev
+.PHONY: up
 
 up:
 	cd ./build && $(MAKE) -f docker-compose.mk up
-
-#dev:
-#	cd ./build && $(MAKE) -f docker-compose.mk dev
 
 # === util command ==
 

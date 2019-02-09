@@ -29,6 +29,7 @@ build: .base
 test: .base
 	docker run --rm -t $(FrontendBaseTag) npm test
 
+# 更新快照
 update-snapshot: .base
 	docker run --rm -t \
 		-v "$(CURDIR)/__test__:/var/project/__test__" \
@@ -51,3 +52,7 @@ test-ci: .base
 		-v "$(CURDIR)/coverage:/var/project/coverage" \
 		$(FrontendBaseTag) \
 		npm test -- --colors --ci
+
+# 使用 docker 来进行开发，将运行 npm run dev
+dev:
+	cd ../build && $(MAKE) -f docker-compose.mk dev-frontend
