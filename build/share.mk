@@ -10,7 +10,7 @@ CrawlerApiBackendTag = $(CommonTagPrefix)-crawler-api-backend
 CrawlerLibraryPath = /var/project
 
 # == phony
-.PHONY: test build run clean test-ci
+.PHONY: test build run clean test-ci help
 
 # == set variables ==
 

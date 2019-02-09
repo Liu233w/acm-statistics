@@ -2,6 +2,9 @@
 
 include ../build/share.mk
 
+help:
+	@echo run \"make help\" in root directory to get help
+
 .node-base:
 	cd ../build && $(MAKE) -f node-base.mk build
 
