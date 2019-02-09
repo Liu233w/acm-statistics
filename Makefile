@@ -106,6 +106,7 @@ test
 
 build
 构建项目
+如果指定 build-args 参数，将附加到所有的 docker build 命令中
 
 run
 在项目中运行shell命令
