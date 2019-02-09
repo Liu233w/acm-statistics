@@ -739,7 +739,7 @@ exports[`/ 1`] = `
             <div class="v-content__wrap">
               <section>
                 <div class="v-parallax" style="height:600px;">
-                  <div class="v-parallax__image-container"><img src="/_nuxt/img/b26d671.jpg" alt="" class="v-parallax__image" style="display:block;opacity:0;transform:translate(-50%, 0px);"></div>
+                  <div class="v-parallax__image-container"><img src="/_nuxt/img/b1ae895.jpg" alt="" class="v-parallax__image" style="display:block;opacity:0;transform:translate(-50%, 0px);"></div>
                   <div class="v-parallax__content">
                     <div class="layout white--text column align-center justify-center"><img src="/_nuxt/img/ff6479c.png" alt="Vuetify.js" height="300">
                       <h1 class="black--text mb-2 display-1 text-xs-center index-title">
@@ -832,7 +832,7 @@ exports[`/ 1`] = `
               </section>
               <section>
                 <div class="v-parallax" style="height:380px;">
-                  <div class="v-parallax__image-container"><img src="/_nuxt/img/e2083dc.jpg" alt="" class="v-parallax__image" style="display:block;opacity:0;transform:translate(-50%, 0px);"></div>
+                  <div class="v-parallax__image-container"><img src="/_nuxt/img/7a685f5.jpg" alt="" class="v-parallax__image" style="display:block;opacity:0;transform:translate(-50%, 0px);"></div>
                   <div class="v-parallax__content">
                     <div class="layout column align-center justify-center">
                       <div class="headline white--text mb-3 text-xs-center response-title">
