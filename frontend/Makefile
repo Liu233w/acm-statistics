@@ -2,6 +2,9 @@
 
 include ../build/share.mk
 
+help:
+	@echo run \"make help\" in root directory to get help
+
 .crawler:
 	cd ../crawler && $(MAKE) build
 .node-base:
@@ -31,6 +34,7 @@ update-snapshot: .base
 		-v "$(CURDIR)/__test__:/var/project/__test__" \
 		$(FrontendBaseTag) npm test -- -u
 
+# 指定 BUILD_FRONTEND 之后将会在 run 之前先编译好前端
 ifdef BUILD_FRONTEND
 run: build
 	docker run $(run-args) $(FrontendTag) $(run-cmd)
