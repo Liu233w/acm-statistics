@@ -92,4 +92,11 @@ module.exports = {
     '~/modules/crawlerLoader',
     '@nuxtjs/component-cache',
   ],
+  watchers: {
+    // 尽管这是文档里的默认值，但是不设置它的话并不会生效。估计这是一个bug
+    webpack: {
+      aggregateTimeout: 300,
+      poll: 1000,
+    },
+  },
 }
