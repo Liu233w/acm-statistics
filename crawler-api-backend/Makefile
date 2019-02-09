@@ -10,25 +10,34 @@ help:
 .node-base:
 	cd ../build && $(MAKE) -f node-base.mk build
 
-build: .node-base .crawler
+.base: .node-base .crawler
 	docker build . \
+		-f base.Dockerfile \
+		-t $(CrawlerApiBackendBaseTag) \
+		$(build-args) \
+		--build-arg NODE_BASE_IMAGE=$(NodeBaseTag)
+
+build: .base
+	docker build . \
+		-f release.Dockerfile \
 		-t $(CrawlerApiBackendTag) \
 		$(build-args) \
 		--build-arg NODE_BASE_IMAGE=$(NodeBaseTag) \
+		--build-arg BACKEND_BASE_IMAGE=$(CrawlerApiBackendBaseTag) \
 		--build-arg CRAWLER_IMAGE=$(CrawlerTag) \
 		--build-arg CRAWLER_LIBRARY_PATH=$(CrawlerLibraryPath)
 
-test: build
-	docker run --rm -t $(CrawlerApiBackendTag) npm test
+test: .base
+	docker run --rm -t $(CrawlerApiBackendBaseTag) npm test
 
-run: build
-	docker run $(run-args) $(CrawlerApiBackendTag) $(run-cmd)
+run: .base
+	docker run $(run-args) $(CrawlerApiBackendBaseTag) $(run-cmd)
 
 clean:
-	docker image rm $(CrawlerApiBackendTag); true
+	docker image rm $(CrawlerApiBackendTag) $(CrawlerApiBackendBaseTag); true
 
-test-ci: build
+test-ci: .base
 	docker run --rm \
 		-v "$(CURDIR)/coverage:/var/project/coverage" \
-		$(CrawlerApiBackendTag) \
+		$(CrawlerApiBackendBaseTag) \
 		npm test -- --colors

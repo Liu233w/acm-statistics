@@ -1,4 +1,12 @@
+ARG CRAWLER_BASE_IMAGE
 ARG NODE_BASE_IMAGE
+
+
+FROM ${CRAWLER_BASE_IMAGE} AS build
+
+# 排除 devDependencies
+RUN rm -rf node_modules && npm install --only=production
+
 
 FROM ${NODE_BASE_IMAGE}
 
@@ -7,7 +15,4 @@ FROM ${NODE_BASE_IMAGE}
 ARG CRAWLER_LIBRARY_PATH
 WORKDIR ${CRAWLER_LIBRARY_PATH}
 
-COPY package.json package-lock.json ./
-RUN npm install
-
-COPY . .
+COPY --from=build /var/project .
