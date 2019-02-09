@@ -16,7 +16,7 @@ coverage
 # docker
 .dockerignore
 base.Dockerfile
-build.Dockerfile
+release.Dockerfile
 
 # make
 Makefile

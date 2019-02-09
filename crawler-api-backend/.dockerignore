@@ -9,7 +9,8 @@ coverage
 
 # docker
 .dockerignore
-Dockerfile
+base.Dockerfile
+release.Dockerfile
 
 # make
 Makefile
