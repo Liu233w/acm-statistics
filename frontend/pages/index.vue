@@ -32,6 +32,7 @@
               class="blue lighten-2 black--text mt-5"
               dark
               large
+              nuxt
               to="/statistics"
             >
               进入 OJ 题量统计
