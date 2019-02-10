@@ -15,3 +15,9 @@ RUN if [ "$CODECOV" != "false" ]; then \
     bash \
     curl \
     ; fi
+
+# npm 的国内镜像源
+ARG NPM_MIRROR=false
+RUN if [ "$NPM_MIRROR" != "false" ]; then \
+    npm config set registry https://registry.npm.taobao.org \
+    ; fi

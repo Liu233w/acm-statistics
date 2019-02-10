@@ -9,6 +9,9 @@ endif
 ifdef CODECOV
 NodeBaseOption := --build-arg CODECOV=$(CODECOV) $(NodeBaseOption)
 endif
+ifdef NPM_MIRROR
+NodeBaseOption := --build-arg NPM_MIRROR=$(NPM_MIRROR) $(NodeBaseOption)
+endif
 
 build:
 	docker build . -f node-base.Dockerfile -t $(NodeBaseTag) $(NodeBaseOption)
