@@ -76,9 +76,10 @@
                       </div>
                     </v-card-title>
                     <v-card-text class="text-xs-center">
-                      我们提供了一个 RESTful API 来供您使用，您可以在任意的客户端、网站中调用此API来查询某用户在OJ上的提交数/通过数。
-                      访问我们的<a href="/swagger" target="_blank">
-                        API文档
+                      我们提供了一个 restful api 来供您使用，您可以在任意的客户端、网站中调用此api来查询某用户在oj上的提交数/通过数。
+                      访问我们的
+                      <a href="/swagger" target="_blank">
+                        api文档
                       </a>以获取更多信息。
                     </v-card-text>
                   </v-card>
@@ -96,7 +97,8 @@
                       </div>
                     </v-card-title>
                     <v-card-text class="text-xs-center">
-                      访问我们的 <a href="https://github.com/Liu233w/acm-statistics" target="_blank">
+                      访问我们的
+                      <a href="https://github.com/Liu233w/acm-statistics" target="_blank">
                         项目地址
                       </a>
                       以获取本网站的最新源代码，您可以在自己的服务器上部署本网站或者在自己的项目中使用我们的爬虫代码。
