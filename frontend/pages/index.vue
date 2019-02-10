@@ -1,23 +1,23 @@
 <template>
-  <v-app light>
-    <v-toolbar class="white">
-      <v-toolbar-title>
+  <VApp light>
+    <VToolbar class="white">
+      <VToolbarTitle>
         {{ projectTitle }}
-      </v-toolbar-title>
-      <v-spacer />
-      <v-tooltip left>
-        <v-btn icon slot="activator" href="https://github.com/Liu233w/acm-statistics" target="_blank">
-          <v-icon medium>
+      </VToolbarTitle>
+      <VSpacer />
+      <VTooltip left>
+        <VBtn icon slot="activator" href="https://github.com/Liu233w/acm-statistics" target="_blank">
+          <VIcon medium>
             fa fa-github
-          </v-icon>
-        </v-btn>
+          </VIcon>
+        </VBtn>
         <span>Star me on Github!</span>
-      </v-tooltip>
-    </v-toolbar>
-    <v-content>
+      </VTooltip>
+    </VToolbar>
+    <VContent>
       <section>
-        <v-parallax :src="require('~/assets/img/frontpage/back7-brighten.jpg')" height="600">
-          <v-layout
+        <VParallax :src="require('~/assets/img/frontpage/back7-brighten.jpg')" height="600">
+          <VLayout
             column
             align-center
             justify-center
@@ -30,7 +30,7 @@
             <div class="black--text subheading mb-3 text-xs-center index-title">
               由 NWPU-ACM 技术组强力驱动
             </div>
-            <v-btn
+            <VBtn
               class="blue lighten-2 black--text mt-5"
               dark
               large
@@ -38,19 +38,19 @@
               to="/statistics"
             >
               进入 OJ 题量统计
-            </v-btn>
-          </v-layout>
-        </v-parallax>
+            </VBtn>
+          </VLayout>
+        </VParallax>
       </section>
 
       <section>
-        <v-layout
+        <VLayout
           column
           wrap
           class="my-5"
           align-center
         >
-          <v-flex xs12 sm4 class="my-3">
+          <VFlex xs12 sm4 class="my-3">
             <div class="text-xs-center">
               <h2 class="headline">
                 全新查询系统，更加稳定
@@ -59,82 +59,82 @@
                 异步API + 浏览器端爬虫，速度加倍
               </span>
             </div>
-          </v-flex>
-          <v-flex xs12>
-            <v-container grid-list-xl>
-              <v-layout row wrap>
-                <v-flex xs12 md4>
-                  <v-card class="elevation-0 transparent" :flat="true">
-                    <v-card-text class="text-xs-center">
-                      <v-icon x-large class="blue--text text--lighten-2">
+          </VFlex>
+          <VFlex xs12>
+            <VContainer grid-list-xl>
+              <VLayout row wrap>
+                <VFlex xs12 md4>
+                  <VCard class="elevation-0 transparent" :flat="true">
+                    <VCardText class="text-xs-center">
+                      <VIcon x-large class="blue--text text--lighten-2">
                         link
-                      </v-icon>
-                    </v-card-text>
-                    <v-card-title primary-title class="layout justify-center">
+                      </VIcon>
+                    </VCardText>
+                    <VCardTitle primary-title class="layout justify-center">
                       <div class="headline text-xs-center">
                         免费提供题量查询API
                       </div>
-                    </v-card-title>
-                    <v-card-text class="text-xs-center">
+                    </VCardTitle>
+                    <VCardText class="text-xs-center">
                       我们提供了一个 restful api 来供您使用，您可以在任意的客户端、网站中调用此api来查询某用户在oj上的提交数/通过数。
                       访问我们的
                       <a href="/swagger" target="_blank">
                         api文档
                       </a>以获取更多信息。
-                    </v-card-text>
-                  </v-card>
-                </v-flex>
-                <v-flex xs12 md4>
-                  <v-card class="elevation-0 transparent" :flat="true">
-                    <v-card-text class="text-xs-center">
-                      <v-icon x-large class="blue--text text--lighten-2">
+                    </VCardText>
+                  </VCard>
+                </VFlex>
+                <VFlex xs12 md4>
+                  <VCard class="elevation-0 transparent" :flat="true">
+                    <VCardText class="text-xs-center">
+                      <VIcon x-large class="blue--text text--lighten-2">
                         fa fa-github
-                      </v-icon>
-                    </v-card-text>
-                    <v-card-title primary-title class="layout justify-center">
+                      </VIcon>
+                    </VCardText>
+                    <VCardTitle primary-title class="layout justify-center">
                       <div class="headline text-xs-center">
                         完全开源
                       </div>
-                    </v-card-title>
-                    <v-card-text class="text-xs-center">
+                    </VCardTitle>
+                    <VCardText class="text-xs-center">
                       访问我们的
                       <a href="https://github.com/Liu233w/acm-statistics" target="_blank">
                         项目地址
                       </a>
                       以获取本网站的最新源代码，您可以在自己的服务器上部署本网站或者在自己的项目中使用我们的爬虫代码。
                       欢迎向我们提出问题建议、贡献代码或给我们点赞（Star），您的支持是我们前进的动力
-                    </v-card-text>
-                  </v-card>
-                </v-flex>
-                <v-flex xs12 md4>
-                  <v-card class="elevation-0 transparent" :flat="true">
-                    <v-card-text class="text-xs-center">
-                      <v-icon x-large class="blue--text text--lighten-2">
+                    </VCardText>
+                  </VCard>
+                </VFlex>
+                <VFlex xs12 md4>
+                  <VCard class="elevation-0 transparent" :flat="true">
+                    <VCardText class="text-xs-center">
+                      <VIcon x-large class="blue--text text--lighten-2">
                         build
-                      </v-icon>
-                    </v-card-text>
-                    <v-card-title primary-title class="layout justify-center">
+                      </VIcon>
+                    </VCardText>
+                    <VCardTitle primary-title class="layout justify-center">
                       <div class="headline text-xs-center">
                         更多功能支持中
                       </div>
-                    </v-card-title>
-                    <v-card-text class="text-xs-center">
+                    </VCardTitle>
+                    <VCardText class="text-xs-center">
                       旧版查询系统中的功能正在被移植到新版查询系统中，如果您需要旧版查询系统中的功能，请
                       <a href="//npuacm.info/">
                         单击此处返回旧版查询系统
                       </a>
-                    </v-card-text>
-                  </v-card>
-                </v-flex>
-              </v-layout>
-            </v-container>
-          </v-flex>
-        </v-layout>
+                    </VCardText>
+                  </VCard>
+                </VFlex>
+              </VLayout>
+            </VContainer>
+          </VFlex>
+        </VLayout>
       </section>
 
       <section>
-        <v-parallax :src="require('~/assets/img/frontpage/back4.jpg')" height="380">
-          <v-layout column align-center justify-center>
+        <VParallax :src="require('~/assets/img/frontpage/back4.jpg')" height="380">
+          <VLayout column align-center justify-center>
             <div class="headline white--text mb-3 text-xs-center response-title">
               欢迎向我们提出意见以帮助本网站进步
             </div>
@@ -143,7 +143,7 @@
                 或者单击此处向本项目发送邮件
               </em>
             </a>
-            <v-btn
+            <VBtn
               class="blue lighten-2 mt-5"
               dark
               large
@@ -151,22 +151,22 @@
               target="_blank"
             >
               Submit New Issue
-            </v-btn>
-          </v-layout>
-        </v-parallax>
+            </VBtn>
+          </VLayout>
+        </VParallax>
       </section>
 
       <section>
-        <v-container grid-list-xl>
-          <v-layout row wrap justify-center class="my-5">
-            <v-flex xs12 sm4>
-              <v-card class="elevation-0 transparent" :flat="true">
-                <v-card-title primary-title class="layout justify-center">
+        <VContainer grid-list-xl>
+          <VLayout row wrap justify-center class="my-5">
+            <VFlex xs12 sm4>
+              <VCard class="elevation-0 transparent" :flat="true">
+                <VCardTitle primary-title class="layout justify-center">
                   <div class="headline">
                     关于我们
                   </div>
-                </v-card-title>
-                <v-card-text>
+                </VCardTitle>
+                <VCardText>
                   <p>
                     西北工业大学ACM协会技术组致力于为广大学生提供各类计算机、算法、计算机类竞赛方面的设施及服务。
                     欢迎各位有识之士加入。
@@ -177,90 +177,90 @@
                   <p id="busuanzi_container_site_uv" style="display: none;">
                     本站总访客数: <span id="busuanzi_value_site_uv" />次
                   </p>
-                </v-card-text>
-              </v-card>
-            </v-flex>
-            <v-flex xs12 sm4 offset-sm1>
-              <v-card class="elevation-0 transparent" :flat="true">
-                <v-card-title primary-title class="layout justify-center">
+                </VCardText>
+              </VCard>
+            </VFlex>
+            <VFlex xs12 sm4 offset-sm1>
+              <VCard class="elevation-0 transparent" :flat="true">
+                <VCardTitle primary-title class="layout justify-center">
                   <div class="headline">
                     联系我们
                   </div>
-                </v-card-title>
-                <v-list class="transparent">
-                  <v-list-tile href="https://jq.qq.com/?_wv=1027&k=5qgzfQc" target="_blank">
-                    <v-list-tile-action>
-                      <v-icon class="blue--text text--lighten-2">
+                </VCardTitle>
+                <VList class="transparent">
+                  <VListTile href="https://jq.qq.com/?_wv=1027&k=5qgzfQc" target="_blank">
+                    <VListTileAction>
+                      <VIcon class="blue--text text--lighten-2">
                         fa fa-qq
-                      </v-icon>
-                    </v-list-tile-action>
-                    <v-list-tile-content>
-                      <v-list-tile-title>198820787</v-list-tile-title>
-                    </v-list-tile-content>
-                  </v-list-tile>
-                  <v-list-tile @click="showAddress">
-                    <v-list-tile-action>
-                      <v-icon class="blue--text text--lighten-2">
+                      </VIcon>
+                    </VListTileAction>
+                    <VListTileContent>
+                      <VListTileTitle>198820787</VListTileTitle>
+                    </VListTileContent>
+                  </VListTile>
+                  <VListTile @click="showAddress">
+                    <VListTileAction>
+                      <VIcon class="blue--text text--lighten-2">
                         place
-                      </v-icon>
-                    </v-list-tile-action>
-                    <v-list-tile-content>
-                      <v-list-tile-title>陕西省西安市长安区西北工业大学长安校区计算机学院110室</v-list-tile-title>
-                    </v-list-tile-content>
-                  </v-list-tile>
-                  <v-list-tile href="mailto:support@npuacm.info">
-                    <v-list-tile-action>
-                      <v-icon class="blue--text text--lighten-2">
+                      </VIcon>
+                    </VListTileAction>
+                    <VListTileContent>
+                      <VListTileTitle>陕西省西安市长安区西北工业大学长安校区计算机学院110室</VListTileTitle>
+                    </VListTileContent>
+                  </VListTile>
+                  <VListTile href="mailto:support@npuacm.info">
+                    <VListTileAction>
+                      <VIcon class="blue--text text--lighten-2">
                         email
-                      </v-icon>
-                    </v-list-tile-action>
-                    <v-list-tile-content>
-                      <v-list-tile-title>support@npuacm.info</v-list-tile-title>
-                    </v-list-tile-content>
-                  </v-list-tile>
-                  <v-list-tile @click="dialog = !dialog">
-                    <v-list-tile-action>
-                      <v-icon class="blue--text text--lighten-2">
+                      </VIcon>
+                    </VListTileAction>
+                    <VListTileContent>
+                      <VListTileTitle>support@npuacm.info</VListTileTitle>
+                    </VListTileContent>
+                  </VListTile>
+                  <VListTile @click="dialog = !dialog">
+                    <VListTileAction>
+                      <VIcon class="blue--text text--lighten-2">
                         fa fa-weixin
-                      </v-icon>
-                    </v-list-tile-action>
-                    <v-list-tile-content>
-                      <v-list-tile-title>微信公众号</v-list-tile-title>
-                    </v-list-tile-content>
-                  </v-list-tile>
-                </v-list>
-              </v-card>
-            </v-flex>
-          </v-layout>
-          <v-dialog v-model="dialog" max-width="500px">
-            <v-card>
-              <v-card-title>
+                      </VIcon>
+                    </VListTileAction>
+                    <VListTileContent>
+                      <VListTileTitle>微信公众号</VListTileTitle>
+                    </VListTileContent>
+                  </VListTile>
+                </VList>
+              </VCard>
+            </VFlex>
+          </VLayout>
+          <VDialog v-model="dialog" max-width="500px">
+            <VCard>
+              <VCardTitle>
                 <span>微信公众号</span>
-              </v-card-title>
-              <v-card-text>
+              </VCardTitle>
+              <VCardText>
                 <img :src="require('~/assets/img/wechat.jpg')" alt="公众号二维码" style="height: 300px">
-              </v-card-text>
-              <v-card-actions>
-                <v-btn color="primary" flat @click.stop="dialog=false">
+              </VCardText>
+              <VCardActions>
+                <VBtn color="primary" flat @click.stop="dialog=false">
                   关闭
-                </v-btn>
-              </v-card-actions>
-            </v-card>
-          </v-dialog>
-        </v-container>
+                </VBtn>
+              </VCardActions>
+            </VCard>
+          </VDialog>
+        </VContainer>
       </section>
 
-      <v-footer class="blue darken-2">
-        <v-btn flat nuxt to="/about" class="white--text ml-3">
+      <VFooter class="blue darken-2">
+        <VBtn flat nuxt to="/about" class="white--text ml-3">
           &copy; 2018 NWPU-ACM 技术组
-        </v-btn>
-        <v-spacer />
+        </VBtn>
+        <VSpacer />
         <span class="white--text ml-3">
           陕ICP备17008184号
         </span>
-      </v-footer>
-    </v-content>
-  </v-app>
+      </VFooter>
+    </VContent>
+  </VApp>
 </template>
 
 <script>
