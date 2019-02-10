@@ -55,6 +55,7 @@
         items: [
           {icon: 'home', title: '返回主页', to: '/'},
           {icon: 'code', title: 'OJ题量统计', to: '/statistics'},
+          {icon: 'info', title: '关于', to: '/about'},
         ],
         title: 'NWPU-ACM 查询系统',
       }

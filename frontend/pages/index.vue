@@ -246,9 +246,9 @@
       </section>
 
       <v-footer class="blue darken-2">
-        <span class="white--text ml-3">
+        <v-btn flat nuxt to="/about" class="white--text ml-3">
           &copy; 2018 NWPU-ACM 技术组
-        </span>
+        </v-btn>
         <v-spacer />
         <span class="white--text ml-3">
           陕ICP备17008184号
