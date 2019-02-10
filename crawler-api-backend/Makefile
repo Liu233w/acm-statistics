@@ -10,7 +10,7 @@ help:
 .node-base:
 	cd ../build && $(MAKE) -f node-base.mk build
 
-.base: .node-base
+.base: .node-base .crawler
 	docker build . \
 		-f base.Dockerfile \
 		-t $(CrawlerApiBackendBaseTag) \
