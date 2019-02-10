@@ -72,6 +72,8 @@ vim .env
 
 设置成功之后即可使用单独的 `./run.sh` 来运行脚本，使用 systemd 或者其他工具均可。
 
+`./tools/acm-statistics.service` 里是一个 systemd 配置文件的参考。
+
 ## 开源协议
 - 如无特殊声明，均为 GPL-3.0 协议
 - crawler 模块中的 `crawlers` 目录中的文件为 BSD 2-Clause 协议

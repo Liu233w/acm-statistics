@@ -1,0 +1,20 @@
+# 用于 docker compose 的配置文件
+
+[Unit]
+Description=ACM Statistic Docker
+After=syslog.target
+
+[Service]
+Type=simple
+ExecStart=/bin/bash run.sh
+WorkingDirectory=/var/www/acm-statistics-docker
+Restart=on-failure
+RestartSec=5s
+
+# 用 SIGINT 来保证 docker-compose 可以正常关闭
+KillSignal=SIGINT
+StandardError=syslog
+NotifyAccess=all
+
+[Install]
+WantedBy=multi-user.target
