@@ -2,7 +2,7 @@
   <v-app light>
     <v-toolbar class="white">
       <v-toolbar-title>
-        NWPU-ACM 查询系统
+        {{ projectTitle }}
       </v-toolbar-title>
       <v-spacer />
       <v-tooltip left>
@@ -25,7 +25,7 @@
           >
             <img :src="require('~/assets/img/logo.png')" alt="Vuetify.js" height="300">
             <h1 class="black--text mb-2 display-1 text-xs-center index-title">
-              欢迎使用 NWPU-ACM 查询系统
+              欢迎使用 {{ projectTitle }}
             </h1>
             <div class="black--text subheading mb-3 text-xs-center index-title">
               由 NWPU-ACM 技术组强力驱动
@@ -262,11 +262,14 @@
 </template>
 
 <script>
+  import {PROJECT_TITLE} from '~/components/consts'
+
   export default {
     layout: 'none',
     data() {
       return {
         dialog: false,
+        projectTitle: PROJECT_TITLE,
       }
     },
     methods: {
