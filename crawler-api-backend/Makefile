@@ -10,14 +10,14 @@ help:
 .node-base:
 	cd ../build && $(MAKE) -f node-base.mk build
 
-.base: .node-base .crawler
+.base: .node-base
 	docker build . \
 		-f base.Dockerfile \
 		-t $(CrawlerApiBackendBaseTag) \
 		$(build-args) \
 		--build-arg NODE_BASE_IMAGE=$(NodeBaseTag)
 
-build: .base
+build: .base .crawler
 	docker build . \
 		-f release.Dockerfile \
 		-t $(CrawlerApiBackendTag) \
