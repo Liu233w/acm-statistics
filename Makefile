@@ -38,6 +38,7 @@ clean:
 ifeq ($(target),)
 	cd ./build && $(MAKE) -f node-base.mk clean
 	cd ./build && $(MAKE) -f commitlint.mk clean
+	cd ./build && $(MAKE) -f shell.mk clean
 	@echo cleaned all target
 else
 	@echo cleaned $(target)
