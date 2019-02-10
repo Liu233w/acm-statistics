@@ -76,6 +76,7 @@ async function testPageByPath(path) {
 const testPaths = [
   '/',
   '/statistics',
+  '/about',
 ]
 
 for (let path of testPaths) {
