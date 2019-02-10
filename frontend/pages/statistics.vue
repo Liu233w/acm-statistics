@@ -92,11 +92,15 @@
   import WorkerCard from '~/components/WorkerCard'
   import statisticsLayoutBuilder from '~/components/statisticsLayoutBuilder'
   import Store from '~/store/-dynamic/statistics'
+  import {PROJECT_TITLE} from '~/components/consts'
 
   export default {
     name: 'Statistics',
     components: {
       WorkerCard,
+    },
+    head: {
+      title: `OJ 题量统计 - ${PROJECT_TITLE}`,
     },
     created() {
       this.$store.registerModule('statistics', Store, { preserveState: false })

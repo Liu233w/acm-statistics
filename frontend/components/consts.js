@@ -3,3 +3,5 @@ export const WORKER_STATUS = {
   WORKING: 'WORKING',
   DONE: 'DONE',
 }
+
+export const PROJECT_TITLE = 'NWPU-ACM 查询系统'

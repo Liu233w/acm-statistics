@@ -40,7 +40,13 @@
 </template>
 
 <script>
-  export default {}
+  import {PROJECT_TITLE} from '~/components/consts'
+
+  export default {
+    head: {
+      title: `关于 - ${PROJECT_TITLE}`,
+    },
+  }
 </script>
 
 <style scoped>
