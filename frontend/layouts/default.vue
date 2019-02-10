@@ -8,7 +8,7 @@
     >
       <v-list>
         <v-list-tile
-          router
+          nuxt
           :to="item.to"
           :key="i"
           v-for="(item, i) in items"
