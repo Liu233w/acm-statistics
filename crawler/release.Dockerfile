@@ -2,10 +2,19 @@ ARG CRAWLER_BASE_IMAGE
 ARG NODE_BASE_IMAGE
 
 
-FROM ${CRAWLER_BASE_IMAGE} AS build
+FROM ${CRAWLER_BASE_IMAGE} AS base
 
 # 排除 devDependencies
-RUN rm -rf node_modules && npm install --only=production
+RUN rm -rf node_modules
+
+FROM ${NODE_BASE_IMAGE} AS build
+
+WORKDIR /var/project
+
+COPY package.json package-lock.json ./
+RUN npm install --only=production
+
+COPY --from=base /var/project .
 
 
 FROM ${NODE_BASE_IMAGE}
