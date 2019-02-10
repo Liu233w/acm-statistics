@@ -22,3 +22,6 @@ build: .node-base
 
 .node-base:
 	$(MAKE) -f node-base.mk build
+
+clean:
+	docker image rm $(ShellTag); true
