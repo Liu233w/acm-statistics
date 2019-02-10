@@ -11,3 +11,6 @@ services:
     environment:
     - NODE_ENV=development
     command: sh -c "npm i --unsafe-perm && npm run dev"
+
+  watchtower:
+    entrypoint: echo "skip watchtower in development..."
