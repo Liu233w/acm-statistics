@@ -732,7 +732,10 @@ exports[`/ 1`] = `
                   NWPU-ACM &#x67E5;&#x8BE2;&#x7CFB;&#x7EDF;
                 </div>
                 <div class="spacer"></div> <span class="v-tooltip v-tooltip--left"><div class="v-tooltip__content" style="left:12px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"> <span>Star me on Github!</span>
-              </div><span><a href="https://github.com/Liu233w/acm-statistics" target="_blank" class="v-btn v-btn--icon theme--light"><div class="v-btn__content"><i aria-hidden="true" class="v-icon fa fa fa fa-github theme--light"></i></div></a></span></span>
+              </div><span><a href="https://github.com/Liu233w/acm-statistics" target="_blank" class="v-btn v-btn--icon theme--light"><div class="v-btn__content"><i aria-hidden="true" class="v-icon 
+          fa fa 
+          fa fa-github
+         theme--light" style="font-size:28px;"></i></div></a></span></span>
           </div>
           </nav>
           <main class="v-content" style="padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px;">
@@ -781,9 +784,10 @@ exports[`/ 1`] = `
                               </div>
                             </div>
                             <div class="v-card__text text-xs-center">
-                              &#x6211;&#x4EEC;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E2A; RESTful API &#x6765;&#x4F9B;&#x60A8;&#x4F7F;&#x7528;&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x5728;&#x4EFB;&#x610F;&#x7684;&#x5BA2;&#x6237;&#x7AEF;&#x3001;&#x7F51;&#x7AD9;&#x4E2D;&#x8C03;&#x7528;&#x6B64;API&#x6765;&#x67E5;&#x8BE2;&#x67D0;&#x7528;&#x6237;&#x5728;OJ&#x4E0A;&#x7684;&#x63D0;&#x4EA4;&#x6570;/&#x901A;&#x8FC7;&#x6570;&#x3002;
-                              &#x8BBF;&#x95EE;&#x6211;&#x4EEC;&#x7684;<a href="/swagger" target="_blank">
-                                API&#x6587;&#x6863;
+                              &#x6211;&#x4EEC;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E2A; restful api &#x6765;&#x4F9B;&#x60A8;&#x4F7F;&#x7528;&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x5728;&#x4EFB;&#x610F;&#x7684;&#x5BA2;&#x6237;&#x7AEF;&#x3001;&#x7F51;&#x7AD9;&#x4E2D;&#x8C03;&#x7528;&#x6B64;api&#x6765;&#x67E5;&#x8BE2;&#x67D0;&#x7528;&#x6237;&#x5728;oj&#x4E0A;&#x7684;&#x63D0;&#x4EA4;&#x6570;/&#x901A;&#x8FC7;&#x6570;&#x3002;
+                              &#x8BBF;&#x95EE;&#x6211;&#x4EEC;&#x7684;
+                              <a href="/swagger" target="_blank">
+                                api&#x6587;&#x6863;
                               </a>&#x4EE5;&#x83B7;&#x53D6;&#x66F4;&#x591A;&#x4FE1;&#x606F;&#x3002;
                             </div>
                           </div>
@@ -800,7 +804,8 @@ exports[`/ 1`] = `
                               </div>
                             </div>
                             <div class="v-card__text text-xs-center">
-                              &#x8BBF;&#x95EE;&#x6211;&#x4EEC;&#x7684; <a href="https://github.com/Liu233w/acm-statistics" target="_blank">
+                              &#x8BBF;&#x95EE;&#x6211;&#x4EEC;&#x7684;
+                              <a href="https://github.com/Liu233w/acm-statistics" target="_blank">
                                 &#x9879;&#x76EE;&#x5730;&#x5740;
                               </a>
                               &#x4EE5;&#x83B7;&#x53D6;&#x672C;&#x7F51;&#x7AD9;&#x7684;&#x6700;&#x65B0;&#x6E90;&#x4EE3;&#x7801;&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x5728;&#x81EA;&#x5DF1;&#x7684;&#x670D;&#x52A1;&#x5668;&#x4E0A;&#x90E8;&#x7F72;&#x672C;&#x7F51;&#x7AD9;&#x6216;&#x8005;&#x5728;&#x81EA;&#x5DF1;&#x7684;&#x9879;&#x76EE;&#x4E2D;&#x4F7F;&#x7528;&#x6211;&#x4EEC;&#x7684;&#x722C;&#x866B;&#x4EE3;&#x7801;&#x3002;
@@ -934,12 +939,15 @@ exports[`/ 1`] = `
                   </div>
                 </div>
               </section>
-              <footer class="v-footer blue darken-2 theme--light" style="height:32px;"><span class="white--text ml-3">
-        &#xA9; 2018 NWPU-ACM &#x6280;&#x672F;&#x7EC4;
-      </span>
+              <footer class="v-footer blue darken-2 theme--light" style="height:32px;"><a href="/about" class="white--text ml-3 v-btn v-btn--flat v-btn--router theme--light">
+                  <div class="v-btn__content">
+                    &#xA9; 2018 NWPU-ACM &#x6280;&#x672F;&#x7EC4;
+                  </div>
+                </a>
                 <div class="spacer"></div> <span class="white--text ml-3">
         &#x9655;ICP&#x5907;17008184&#x53F7;
-      </span></footer>
+      </span>
+              </footer>
             </div>
           </main>
         </div>
@@ -954,7 +962,10 @@ exports[`/ 1`] = `
         state: {
           sidebar: false
         },
-        serverRendered: true
+        serverRendered: true,
+        env: {
+          VERSION_NUM: "development"
+        }
       };
     </script>
     <script>
@@ -977,12 +988,12 @@ exports[`/ 1`] = `
 </html>
 `;
 
-exports[`/statistics 1`] = `
+exports[`/about 1`] = `
 <!DOCTYPE html>
 <html data-n-head-ssr="" data-n-head="">
 
   <head>
-    <title data-n-head="true">NWPU-ACM &#x67E5;&#x8BE2;&#x7CFB;&#x7EDF;</title>
+    <title data-n-head="true">&#x5173;&#x4E8E; - NWPU-ACM &#x67E5;&#x8BE2;&#x7CFB;&#x7EDF;</title>
     <meta data-n-head="true" charset="utf-8">
     <meta data-n-head="true" name="viewport" content="width=device-width, initial-scale=1">
     <meta data-n-head="true" data-hid="description" name="description" content="&#x897F;&#x5317;&#x5DE5;&#x4E1A;&#x5927;&#x5B66;ACM&#x57FA;&#x5730;&#x67E5;&#x9898;&#x4E3B;&#x9875;&#xFF0C;&#x63D0;&#x4F9B;&#x56FD;&#x5185;&#x5404;&#x5927;OJ&#x7684;&#x67E5;&#x8BE2;&#x9898;&#x91CF;&#x3001;&#x8BA1;&#x7B97;Rating&#x7684;&#x670D;&#x52A1;&#x3002;">
@@ -1705,16 +1716,22 @@ exports[`/statistics 1`] = `
           <div class="application--wrap">
             <aside class="v-navigation-drawer v-navigation-drawer--clipped v-navigation-drawer--close v-navigation-drawer--fixed v-navigation-drawer--is-mobile theme--light" style="height:100%;margin-top:0px;transform:translateX(-300px);width:300px;">
               <div role="list" class="v-list theme--light">
-                <div role="listitem"><a href="/" router="" class="v-list__tile v-list__tile--link theme--light">
+                <div role="listitem"><a href="/" class="v-list__tile v-list__tile--link theme--light">
                     <div class="v-list__tile__action"><i aria-hidden="true" class="v-icon material-icons theme--light">home</i></div>
                     <div class="v-list__tile__content">
                       <div class="v-list__tile__title">&#x8FD4;&#x56DE;&#x4E3B;&#x9875;</div>
                     </div>
                   </a></div>
-                <div role="listitem"><a href="/statistics" router="" class="primary--text v-list__tile--active v-list__tile v-list__tile--link theme--light">
+                <div role="listitem"><a href="/statistics" class="v-list__tile v-list__tile--link theme--light">
                     <div class="v-list__tile__action"><i aria-hidden="true" class="v-icon material-icons theme--light">code</i></div>
                     <div class="v-list__tile__content">
                       <div class="v-list__tile__title">OJ&#x9898;&#x91CF;&#x7EDF;&#x8BA1;</div>
+                    </div>
+                  </a></div>
+                <div role="listitem"><a href="/about" class="primary--text v-list__tile--active v-list__tile v-list__tile--link theme--light">
+                    <div class="v-list__tile__action"><i aria-hidden="true" class="v-icon material-icons theme--light">info</i></div>
+                    <div class="v-list__tile__content">
+                      <div class="v-list__tile__title">&#x5173;&#x4E8E;</div>
                     </div>
                   </a></div>
               </div>
@@ -1726,7 +1743,857 @@ exports[`/statistics 1`] = `
                 </button>
                 <div class="v-toolbar__title">NWPU-ACM &#x67E5;&#x8BE2;&#x7CFB;&#x7EDF;</div>
                 <div class="spacer"></div> <span class="v-tooltip v-tooltip--left"><div class="v-tooltip__content" style="left:12px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"> <span>Star me on Github!</span>
-              </div><span><a href="https://github.com/Liu233w/acm-statistics" target="_blank" class="v-btn v-btn--icon theme--light"><div class="v-btn__content"><i aria-hidden="true" class="v-icon fa fa fa fa-github theme--light"></i></div></a></span></span>
+              </div><span><a href="https://github.com/Liu233w/acm-statistics" target="_blank" class="v-btn v-btn--icon theme--light"><div class="v-btn__content"><i aria-hidden="true" class="v-icon 
+          fa fa 
+          fa fa-github
+         theme--light" style="font-size:28px;"></i></div></a></span></span>
+          </div>
+          </nav>
+          <main class="v-content" style="padding-top:56px;padding-right:0px;padding-bottom:32px;padding-left:0px;">
+            <div class="v-content__wrap">
+              <div class="container">
+                <div class="container">
+                  <div class="layout row">
+                    <div class="flex xs12 sm6 offset-sm3">
+                      <div class="v-card v-sheet theme--light">
+                        <nav class="v-toolbar theme--dark light-blue" style="margin-top:0px;padding-right:0px;padding-left:0px;transform:translateY(0px);">
+                          <div class="v-toolbar__content" style="height:56px;">
+                            <div class="v-toolbar__title">&#x5173;&#x4E8E;</div>
+                            <div class="spacer"></div>
+                          </div>
+                        </nav>
+                        <div role="list" class="v-list theme--light">
+                          <div role="listitem">
+                            <div class="v-list__tile theme--light">
+                              <div class="v-list__tile__content">
+                                <div class="v-list__tile__title">&#x7248;&#x672C;&#x53F7;</div>
+                                <div class="v-list__tile__sub-title">development</div>
+                              </div>
+                            </div>
+                          </div>
+                          <div role="listitem"><a href="https://github.com/Liu233w/acm-statistics/tree/development" class="v-list__tile v-list__tile--link theme--light">
+                              <div class="v-list__tile__content">
+                                <div class="v-list__tile__title">&#x5F53;&#x524D;&#x7248;&#x672C;&#x6E90;&#x4EE3;&#x7801;</div>
+                                <div class="v-list__tile__sub-title">
+                                  https://github.com/Liu233w/acm-statistics/tree/development
+                                </div>
+                              </div>
+                            </a></div>
+                          <div role="listitem"><a href="https://github.com/Liu233w/acm-statistics/commit/development" class="v-list__tile v-list__tile--link theme--light">
+                              <div class="v-list__tile__content">
+                                <div class="v-list__tile__title">&#x6700;&#x8FD1;&#x66F4;&#x65B0;</div>
+                                <div class="v-list__tile__sub-title">
+                                  https://github.com/Liu233w/acm-statistics/commit/development
+                                </div>
+                              </div>
+                            </a></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </main>
+          <footer class="v-footer v-footer--fixed theme--light" style="height:32px;"><span>&#xA9; 2018 NWPU-ACM &#x6280;&#x672F;&#x7EC4;</span>
+            <div class="spacer"></div> <span>&#x9655;ICP&#x5907;17008184&#x53F7;</span></footer>
+        </div>
+      </div>
+    </div>
+    </div>
+    <script>
+      window.__NUXT__ = {
+        layout: "default",
+        data: [{}],
+        error: null,
+        state: {
+          sidebar: false
+        },
+        serverRendered: true,
+        env: {
+          VERSION_NUM: "development"
+        }
+      };
+    </script>
+    <script>
+      ! function() {
+        var e = document,
+          t = e.createElement("script");
+        if (!("noModule" in t) && "onbeforeload" in t) {
+          var n = !1;
+          e.addEventListener("beforeload", function(e) {
+            if (e.target === t) n = !0;
+            else if (!e.target.hasAttribute("nomodule") || !n) return;
+            e.preventDefault()
+          }, !0), t.type = "module", t.src = ".", e.head.appendChild(t), t.remove()
+        }
+      }();
+    </script>
+
+  </body>
+
+</html>
+`;
+
+exports[`/statistics 1`] = `
+<!DOCTYPE html>
+<html data-n-head-ssr="" data-n-head="">
+
+  <head>
+    <title data-n-head="true">OJ &#x9898;&#x91CF;&#x7EDF;&#x8BA1; - NWPU-ACM &#x67E5;&#x8BE2;&#x7CFB;&#x7EDF;</title>
+    <meta data-n-head="true" charset="utf-8">
+    <meta data-n-head="true" name="viewport" content="width=device-width, initial-scale=1">
+    <meta data-n-head="true" data-hid="description" name="description" content="&#x897F;&#x5317;&#x5DE5;&#x4E1A;&#x5927;&#x5B66;ACM&#x57FA;&#x5730;&#x67E5;&#x9898;&#x4E3B;&#x9875;&#xFF0C;&#x63D0;&#x4F9B;&#x56FD;&#x5185;&#x5404;&#x5927;OJ&#x7684;&#x67E5;&#x8BE2;&#x9898;&#x91CF;&#x3001;&#x8BA1;&#x7B97;Rating&#x7684;&#x670D;&#x52A1;&#x3002;">
+    <link data-n-head="true" rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link data-n-head="true" rel="stylesheet" href="https://fonts.loli.net/css?family=Roboto:300,400,500,700|Material+Icons">
+    <link data-n-head="true" rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style data-n-head="true" id="vuetify-theme-stylesheet" type="text/css">
+      a {
+        color: #1976d2;
+      }
+
+      .primary {
+        background-color: #1976d2 !important;
+        border-color: #1976d2 !important;
+      }
+
+      .primary--text {
+        color: #1976d2 !important;
+        caret-color: #1976d2 !important;
+      }
+
+      .primary.lighten-5 {
+        background-color: #c7fdff !important;
+        border-color: #c7fdff !important;
+      }
+
+      .primary--text.text--lighten-5 {
+        color: #c7fdff !important;
+        caret-color: #c7fdff !important;
+      }
+
+      .primary.lighten-4 {
+        background-color: #a8e0ff !important;
+        border-color: #a8e0ff !important;
+      }
+
+      .primary--text.text--lighten-4 {
+        color: #a8e0ff !important;
+        caret-color: #a8e0ff !important;
+      }
+
+      .primary.lighten-3 {
+        background-color: #8ac5ff !important;
+        border-color: #8ac5ff !important;
+      }
+
+      .primary--text.text--lighten-3 {
+        color: #8ac5ff !important;
+        caret-color: #8ac5ff !important;
+      }
+
+      .primary.lighten-2 {
+        background-color: #6aaaff !important;
+        border-color: #6aaaff !important;
+      }
+
+      .primary--text.text--lighten-2 {
+        color: #6aaaff !important;
+        caret-color: #6aaaff !important;
+      }
+
+      .primary.lighten-1 {
+        background-color: #488fef !important;
+        border-color: #488fef !important;
+      }
+
+      .primary--text.text--lighten-1 {
+        color: #488fef !important;
+        caret-color: #488fef !important;
+      }
+
+      .primary.darken-1 {
+        background-color: #005eb6 !important;
+        border-color: #005eb6 !important;
+      }
+
+      .primary--text.text--darken-1 {
+        color: #005eb6 !important;
+        caret-color: #005eb6 !important;
+      }
+
+      .primary.darken-2 {
+        background-color: #00479b !important;
+        border-color: #00479b !important;
+      }
+
+      .primary--text.text--darken-2 {
+        color: #00479b !important;
+        caret-color: #00479b !important;
+      }
+
+      .primary.darken-3 {
+        background-color: #003180 !important;
+        border-color: #003180 !important;
+      }
+
+      .primary--text.text--darken-3 {
+        color: #003180 !important;
+        caret-color: #003180 !important;
+      }
+
+      .primary.darken-4 {
+        background-color: #001e67 !important;
+        border-color: #001e67 !important;
+      }
+
+      .primary--text.text--darken-4 {
+        color: #001e67 !important;
+        caret-color: #001e67 !important;
+      }
+
+      .secondary {
+        background-color: #424242 !important;
+        border-color: #424242 !important;
+      }
+
+      .secondary--text {
+        color: #424242 !important;
+        caret-color: #424242 !important;
+      }
+
+      .secondary.lighten-5 {
+        background-color: #c1c1c1 !important;
+        border-color: #c1c1c1 !important;
+      }
+
+      .secondary--text.text--lighten-5 {
+        color: #c1c1c1 !important;
+        caret-color: #c1c1c1 !important;
+      }
+
+      .secondary.lighten-4 {
+        background-color: #a6a6a6 !important;
+        border-color: #a6a6a6 !important;
+      }
+
+      .secondary--text.text--lighten-4 {
+        color: #a6a6a6 !important;
+        caret-color: #a6a6a6 !important;
+      }
+
+      .secondary.lighten-3 {
+        background-color: #8b8b8b !important;
+        border-color: #8b8b8b !important;
+      }
+
+      .secondary--text.text--lighten-3 {
+        color: #8b8b8b !important;
+        caret-color: #8b8b8b !important;
+      }
+
+      .secondary.lighten-2 {
+        background-color: #727272 !important;
+        border-color: #727272 !important;
+      }
+
+      .secondary--text.text--lighten-2 {
+        color: #727272 !important;
+        caret-color: #727272 !important;
+      }
+
+      .secondary.lighten-1 {
+        background-color: #595959 !important;
+        border-color: #595959 !important;
+      }
+
+      .secondary--text.text--lighten-1 {
+        color: #595959 !important;
+        caret-color: #595959 !important;
+      }
+
+      .secondary.darken-1 {
+        background-color: #2c2c2c !important;
+        border-color: #2c2c2c !important;
+      }
+
+      .secondary--text.text--darken-1 {
+        color: #2c2c2c !important;
+        caret-color: #2c2c2c !important;
+      }
+
+      .secondary.darken-2 {
+        background-color: #171717 !important;
+        border-color: #171717 !important;
+      }
+
+      .secondary--text.text--darken-2 {
+        color: #171717 !important;
+        caret-color: #171717 !important;
+      }
+
+      .secondary.darken-3 {
+        background-color: #000000 !important;
+        border-color: #000000 !important;
+      }
+
+      .secondary--text.text--darken-3 {
+        color: #000000 !important;
+        caret-color: #000000 !important;
+      }
+
+      .secondary.darken-4 {
+        background-color: #000000 !important;
+        border-color: #000000 !important;
+      }
+
+      .secondary--text.text--darken-4 {
+        color: #000000 !important;
+        caret-color: #000000 !important;
+      }
+
+      .accent {
+        background-color: #82b1ff !important;
+        border-color: #82b1ff !important;
+      }
+
+      .accent--text {
+        color: #82b1ff !important;
+        caret-color: #82b1ff !important;
+      }
+
+      .accent.lighten-5 {
+        background-color: #ffffff !important;
+        border-color: #ffffff !important;
+      }
+
+      .accent--text.text--lighten-5 {
+        color: #ffffff !important;
+        caret-color: #ffffff !important;
+      }
+
+      .accent.lighten-4 {
+        background-color: #f8ffff !important;
+        border-color: #f8ffff !important;
+      }
+
+      .accent--text.text--lighten-4 {
+        color: #f8ffff !important;
+        caret-color: #f8ffff !important;
+      }
+
+      .accent.lighten-3 {
+        background-color: #daffff !important;
+        border-color: #daffff !important;
+      }
+
+      .accent--text.text--lighten-3 {
+        color: #daffff !important;
+        caret-color: #daffff !important;
+      }
+
+      .accent.lighten-2 {
+        background-color: #bce8ff !important;
+        border-color: #bce8ff !important;
+      }
+
+      .accent--text.text--lighten-2 {
+        color: #bce8ff !important;
+        caret-color: #bce8ff !important;
+      }
+
+      .accent.lighten-1 {
+        background-color: #9fccff !important;
+        border-color: #9fccff !important;
+      }
+
+      .accent--text.text--lighten-1 {
+        color: #9fccff !important;
+        caret-color: #9fccff !important;
+      }
+
+      .accent.darken-1 {
+        background-color: #6596e2 !important;
+        border-color: #6596e2 !important;
+      }
+
+      .accent--text.text--darken-1 {
+        color: #6596e2 !important;
+        caret-color: #6596e2 !important;
+      }
+
+      .accent.darken-2 {
+        background-color: #467dc6 !important;
+        border-color: #467dc6 !important;
+      }
+
+      .accent--text.text--darken-2 {
+        color: #467dc6 !important;
+        caret-color: #467dc6 !important;
+      }
+
+      .accent.darken-3 {
+        background-color: #2364aa !important;
+        border-color: #2364aa !important;
+      }
+
+      .accent--text.text--darken-3 {
+        color: #2364aa !important;
+        caret-color: #2364aa !important;
+      }
+
+      .accent.darken-4 {
+        background-color: #004c90 !important;
+        border-color: #004c90 !important;
+      }
+
+      .accent--text.text--darken-4 {
+        color: #004c90 !important;
+        caret-color: #004c90 !important;
+      }
+
+      .error {
+        background-color: #ff5252 !important;
+        border-color: #ff5252 !important;
+      }
+
+      .error--text {
+        color: #ff5252 !important;
+        caret-color: #ff5252 !important;
+      }
+
+      .error.lighten-5 {
+        background-color: #ffe4d5 !important;
+        border-color: #ffe4d5 !important;
+      }
+
+      .error--text.text--lighten-5 {
+        color: #ffe4d5 !important;
+        caret-color: #ffe4d5 !important;
+      }
+
+      .error.lighten-4 {
+        background-color: #ffc6b9 !important;
+        border-color: #ffc6b9 !important;
+      }
+
+      .error--text.text--lighten-4 {
+        color: #ffc6b9 !important;
+        caret-color: #ffc6b9 !important;
+      }
+
+      .error.lighten-3 {
+        background-color: #ffa99e !important;
+        border-color: #ffa99e !important;
+      }
+
+      .error--text.text--lighten-3 {
+        color: #ffa99e !important;
+        caret-color: #ffa99e !important;
+      }
+
+      .error.lighten-2 {
+        background-color: #ff8c84 !important;
+        border-color: #ff8c84 !important;
+      }
+
+      .error--text.text--lighten-2 {
+        color: #ff8c84 !important;
+        caret-color: #ff8c84 !important;
+      }
+
+      .error.lighten-1 {
+        background-color: #ff6f6a !important;
+        border-color: #ff6f6a !important;
+      }
+
+      .error--text.text--lighten-1 {
+        color: #ff6f6a !important;
+        caret-color: #ff6f6a !important;
+      }
+
+      .error.darken-1 {
+        background-color: #df323b !important;
+        border-color: #df323b !important;
+      }
+
+      .error--text.text--darken-1 {
+        color: #df323b !important;
+        caret-color: #df323b !important;
+      }
+
+      .error.darken-2 {
+        background-color: #bf0025 !important;
+        border-color: #bf0025 !important;
+      }
+
+      .error--text.text--darken-2 {
+        color: #bf0025 !important;
+        caret-color: #bf0025 !important;
+      }
+
+      .error.darken-3 {
+        background-color: #9f0010 !important;
+        border-color: #9f0010 !important;
+      }
+
+      .error--text.text--darken-3 {
+        color: #9f0010 !important;
+        caret-color: #9f0010 !important;
+      }
+
+      .error.darken-4 {
+        background-color: #800000 !important;
+        border-color: #800000 !important;
+      }
+
+      .error--text.text--darken-4 {
+        color: #800000 !important;
+        caret-color: #800000 !important;
+      }
+
+      .info {
+        background-color: #2196f3 !important;
+        border-color: #2196f3 !important;
+      }
+
+      .info--text {
+        color: #2196f3 !important;
+        caret-color: #2196f3 !important;
+      }
+
+      .info.lighten-5 {
+        background-color: #d4ffff !important;
+        border-color: #d4ffff !important;
+      }
+
+      .info--text.text--lighten-5 {
+        color: #d4ffff !important;
+        caret-color: #d4ffff !important;
+      }
+
+      .info.lighten-4 {
+        background-color: #b5ffff !important;
+        border-color: #b5ffff !important;
+      }
+
+      .info--text.text--lighten-4 {
+        color: #b5ffff !important;
+        caret-color: #b5ffff !important;
+      }
+
+      .info.lighten-3 {
+        background-color: #95e8ff !important;
+        border-color: #95e8ff !important;
+      }
+
+      .info--text.text--lighten-3 {
+        color: #95e8ff !important;
+        caret-color: #95e8ff !important;
+      }
+
+      .info.lighten-2 {
+        background-color: #75ccff !important;
+        border-color: #75ccff !important;
+      }
+
+      .info--text.text--lighten-2 {
+        color: #75ccff !important;
+        caret-color: #75ccff !important;
+      }
+
+      .info.lighten-1 {
+        background-color: #51b0ff !important;
+        border-color: #51b0ff !important;
+      }
+
+      .info--text.text--lighten-1 {
+        color: #51b0ff !important;
+        caret-color: #51b0ff !important;
+      }
+
+      .info.darken-1 {
+        background-color: #007cd6 !important;
+        border-color: #007cd6 !important;
+      }
+
+      .info--text.text--darken-1 {
+        color: #007cd6 !important;
+        caret-color: #007cd6 !important;
+      }
+
+      .info.darken-2 {
+        background-color: #0064ba !important;
+        border-color: #0064ba !important;
+      }
+
+      .info--text.text--darken-2 {
+        color: #0064ba !important;
+        caret-color: #0064ba !important;
+      }
+
+      .info.darken-3 {
+        background-color: #004d9f !important;
+        border-color: #004d9f !important;
+      }
+
+      .info--text.text--darken-3 {
+        color: #004d9f !important;
+        caret-color: #004d9f !important;
+      }
+
+      .info.darken-4 {
+        background-color: #003784 !important;
+        border-color: #003784 !important;
+      }
+
+      .info--text.text--darken-4 {
+        color: #003784 !important;
+        caret-color: #003784 !important;
+      }
+
+      .success {
+        background-color: #4caf50 !important;
+        border-color: #4caf50 !important;
+      }
+
+      .success--text {
+        color: #4caf50 !important;
+        caret-color: #4caf50 !important;
+      }
+
+      .success.lighten-5 {
+        background-color: #dcffd6 !important;
+        border-color: #dcffd6 !important;
+      }
+
+      .success--text.text--lighten-5 {
+        color: #dcffd6 !important;
+        caret-color: #dcffd6 !important;
+      }
+
+      .success.lighten-4 {
+        background-color: #beffba !important;
+        border-color: #beffba !important;
+      }
+
+      .success--text.text--lighten-4 {
+        color: #beffba !important;
+        caret-color: #beffba !important;
+      }
+
+      .success.lighten-3 {
+        background-color: #a2ff9e !important;
+        border-color: #a2ff9e !important;
+      }
+
+      .success--text.text--lighten-3 {
+        color: #a2ff9e !important;
+        caret-color: #a2ff9e !important;
+      }
+
+      .success.lighten-2 {
+        background-color: #85e783 !important;
+        border-color: #85e783 !important;
+      }
+
+      .success--text.text--lighten-2 {
+        color: #85e783 !important;
+        caret-color: #85e783 !important;
+      }
+
+      .success.lighten-1 {
+        background-color: #69cb69 !important;
+        border-color: #69cb69 !important;
+      }
+
+      .success--text.text--lighten-1 {
+        color: #69cb69 !important;
+        caret-color: #69cb69 !important;
+      }
+
+      .success.darken-1 {
+        background-color: #2d9437 !important;
+        border-color: #2d9437 !important;
+      }
+
+      .success--text.text--darken-1 {
+        color: #2d9437 !important;
+        caret-color: #2d9437 !important;
+      }
+
+      .success.darken-2 {
+        background-color: #00791e !important;
+        border-color: #00791e !important;
+      }
+
+      .success--text.text--darken-2 {
+        color: #00791e !important;
+        caret-color: #00791e !important;
+      }
+
+      .success.darken-3 {
+        background-color: #006000 !important;
+        border-color: #006000 !important;
+      }
+
+      .success--text.text--darken-3 {
+        color: #006000 !important;
+        caret-color: #006000 !important;
+      }
+
+      .success.darken-4 {
+        background-color: #004700 !important;
+        border-color: #004700 !important;
+      }
+
+      .success--text.text--darken-4 {
+        color: #004700 !important;
+        caret-color: #004700 !important;
+      }
+
+      .warning {
+        background-color: #fb8c00 !important;
+        border-color: #fb8c00 !important;
+      }
+
+      .warning--text {
+        color: #fb8c00 !important;
+        caret-color: #fb8c00 !important;
+      }
+
+      .warning.lighten-5 {
+        background-color: #ffff9e !important;
+        border-color: #ffff9e !important;
+      }
+
+      .warning--text.text--lighten-5 {
+        color: #ffff9e !important;
+        caret-color: #ffff9e !important;
+      }
+
+      .warning.lighten-4 {
+        background-color: #fffb82 !important;
+        border-color: #fffb82 !important;
+      }
+
+      .warning--text.text--lighten-4 {
+        color: #fffb82 !important;
+        caret-color: #fffb82 !important;
+      }
+
+      .warning.lighten-3 {
+        background-color: #ffdf67 !important;
+        border-color: #ffdf67 !important;
+      }
+
+      .warning--text.text--lighten-3 {
+        color: #ffdf67 !important;
+        caret-color: #ffdf67 !important;
+      }
+
+      .warning.lighten-2 {
+        background-color: #ffc24b !important;
+        border-color: #ffc24b !important;
+      }
+
+      .warning--text.text--lighten-2 {
+        color: #ffc24b !important;
+        caret-color: #ffc24b !important;
+      }
+
+      .warning.lighten-1 {
+        background-color: #ffa72d !important;
+        border-color: #ffa72d !important;
+      }
+
+      .warning--text.text--lighten-1 {
+        color: #ffa72d !important;
+        caret-color: #ffa72d !important;
+      }
+
+      .warning.darken-1 {
+        background-color: #db7200 !important;
+        border-color: #db7200 !important;
+      }
+
+      .warning--text.text--darken-1 {
+        color: #db7200 !important;
+        caret-color: #db7200 !important;
+      }
+
+      .warning.darken-2 {
+        background-color: #bb5900 !important;
+        border-color: #bb5900 !important;
+      }
+
+      .warning--text.text--darken-2 {
+        color: #bb5900 !important;
+        caret-color: #bb5900 !important;
+      }
+
+      .warning.darken-3 {
+        background-color: #9d4000 !important;
+        border-color: #9d4000 !important;
+      }
+
+      .warning--text.text--darken-3 {
+        color: #9d4000 !important;
+        caret-color: #9d4000 !important;
+      }
+
+      .warning.darken-4 {
+        background-color: #802700 !important;
+        border-color: #802700 !important;
+      }
+
+      .warning--text.text--darken-4 {
+        color: #802700 !important;
+        caret-color: #802700 !important;
+      }
+    </style>
+  </head>
+
+  <body data-n-head="">
+    <script>(window.ActiveXObject||"ActiveXObject"in window)&&alert("本网站不支持IE或IE内核的浏览器，建议您使用火狐浏览器、谷歌浏览器或微软的Edge浏览器（Windows10自带）")</script>
+    <div id="__nuxt">
+      <!---->
+      <div id="__layout">
+        <div data-app="true" id="app" class="application theme--light">
+          <div class="application--wrap">
+            <aside class="v-navigation-drawer v-navigation-drawer--clipped v-navigation-drawer--close v-navigation-drawer--fixed v-navigation-drawer--is-mobile theme--light" style="height:100%;margin-top:0px;transform:translateX(-300px);width:300px;">
+              <div role="list" class="v-list theme--light">
+                <div role="listitem"><a href="/" class="v-list__tile v-list__tile--link theme--light">
+                    <div class="v-list__tile__action"><i aria-hidden="true" class="v-icon material-icons theme--light">home</i></div>
+                    <div class="v-list__tile__content">
+                      <div class="v-list__tile__title">&#x8FD4;&#x56DE;&#x4E3B;&#x9875;</div>
+                    </div>
+                  </a></div>
+                <div role="listitem"><a href="/statistics" class="primary--text v-list__tile--active v-list__tile v-list__tile--link theme--light">
+                    <div class="v-list__tile__action"><i aria-hidden="true" class="v-icon material-icons theme--light">code</i></div>
+                    <div class="v-list__tile__content">
+                      <div class="v-list__tile__title">OJ&#x9898;&#x91CF;&#x7EDF;&#x8BA1;</div>
+                    </div>
+                  </a></div>
+                <div role="listitem"><a href="/about" class="v-list__tile v-list__tile--link theme--light">
+                    <div class="v-list__tile__action"><i aria-hidden="true" class="v-icon material-icons theme--light">info</i></div>
+                    <div class="v-list__tile__content">
+                      <div class="v-list__tile__title">&#x5173;&#x4E8E;</div>
+                    </div>
+                  </a></div>
+              </div>
+              <div class="v-navigation-drawer__border"></div>
+            </aside>
+            <nav class="v-toolbar v-toolbar--clipped v-toolbar--fixed theme--light" style="margin-top:0px;padding-right:0px;padding-left:0px;transform:translateY(0px);">
+              <div class="v-toolbar__content" style="height:56px;"><button type="button" class="v-toolbar__side-icon v-btn v-btn--icon theme--light">
+                  <div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light">menu</i></div>
+                </button>
+                <div class="v-toolbar__title">NWPU-ACM &#x67E5;&#x8BE2;&#x7CFB;&#x7EDF;</div>
+                <div class="spacer"></div> <span class="v-tooltip v-tooltip--left"><div class="v-tooltip__content" style="left:12px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"> <span>Star me on Github!</span>
+              </div><span><a href="https://github.com/Liu233w/acm-statistics" target="_blank" class="v-btn v-btn--icon theme--light"><div class="v-btn__content"><i aria-hidden="true" class="v-icon 
+          fa fa 
+          fa fa-github
+         theme--light" style="font-size:28px;"></i></div></a></span></span>
           </div>
           </nav>
           <main class="v-content" style="padding-top:56px;padding-right:0px;padding-bottom:0px;padding-left:0px;">
@@ -2346,7 +3213,10 @@ exports[`/statistics 1`] = `
               mainUsername: a
             }
           },
-          serverRendered: true
+          serverRendered: true,
+          env: {
+            VERSION_NUM: "development"
+          }
         }
       }("", 0, null, "WAITING", "crawler2", "crawler1", "crawler0", "crawler3", "crawler4", "withDescription", "withUrl", "withAll", "http:\\u002F\\u002Ftest.aaa.com"));
     </script>

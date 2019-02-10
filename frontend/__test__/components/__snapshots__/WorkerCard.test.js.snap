@@ -16,7 +16,7 @@ exports[`WorkerCard 能正确渲染 1`] = `
     </div><span><button type="button" class="v-btn v-btn--icon theme--light"><div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light">add_circle</i></div></button></span></span> <span class="v-tooltip v-tooltip--bottom"><div class="v-tooltip__content" style="left: 0px; max-width: auto; opacity: 0; top: 12px; z-index: 0; display: none;"> <span>
           转到此OJ
         </span>
-</div><span><button type="button" class="v-btn v-btn--icon theme--light"><div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light">link</i></div></button></span></span> <span class="v-tooltip v-tooltip--bottom" name="fade"><div class="v-tooltip__content" style="left: 0px; max-width: auto; opacity: 0; top: 12px; z-index: 0; display: none;"> <span>重新爬取此处信息</span></div><span><button type="button" class="v-btn v-btn--icon theme--light"><div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light">refresh</i></div></button></span></span></div>
+</div><span><button type="button" class="v-btn v-btn--icon theme--light"><div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light">link</i></div></button></span></span> <span class="v-tooltip v-tooltip--bottom"><div class="v-tooltip__content" style="left: 0px; max-width: auto; opacity: 0; top: 12px; z-index: 0; display: none;"> <span>重新爬取此处信息</span></div><span><button type="button" class="v-btn v-btn--icon theme--light"><div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light">refresh</i></div></button></span></span></div>
 </div>
 </nav>
 <div class="container">
@@ -74,7 +74,7 @@ exports[`WorkerCard 能正确渲染用户名 1`] = `
     </div><span><button type="button" class="v-btn v-btn--icon theme--light"><div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light">add_circle</i></div></button></span></span> <span class="v-tooltip v-tooltip--bottom"><div class="v-tooltip__content" style="left: 0px; max-width: auto; opacity: 0; top: 12px; z-index: 0; display: none;"> <span>
           转到此OJ
         </span>
-</div><span><button type="button" class="v-btn v-btn--icon theme--light"><div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light">link</i></div></button></span></span> <span class="v-tooltip v-tooltip--bottom" name="fade"><div class="v-tooltip__content" style="left: 0px; max-width: auto; opacity: 0; top: 12px; z-index: 0; display: none;"> <span>重新爬取此处信息</span></div><span><button type="button" class="v-btn v-btn--icon theme--light"><div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light">refresh</i></div></button></span></span></div>
+</div><span><button type="button" class="v-btn v-btn--icon theme--light"><div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light">link</i></div></button></span></span> <span class="v-tooltip v-tooltip--bottom"><div class="v-tooltip__content" style="left: 0px; max-width: auto; opacity: 0; top: 12px; z-index: 0; display: none;"> <span>重新爬取此处信息</span></div><span><button type="button" class="v-btn v-btn--icon theme--light"><div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light">refresh</i></div></button></span></span></div>
 </div>
 </nav>
 <div class="container">
@@ -132,7 +132,7 @@ exports[`WorkerCard 能正确渲染结果 1`] = `
     </div><span><button type="button" class="v-btn v-btn--icon theme--light"><div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light">add_circle</i></div></button></span></span> <span class="v-tooltip v-tooltip--bottom"><div class="v-tooltip__content" style="left: 0px; max-width: auto; opacity: 0; top: 12px; z-index: 0; display: none;"> <span>
           转到此OJ
         </span>
-</div><span><button type="button" class="v-btn v-btn--icon theme--light"><div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light">link</i></div></button></span></span> <span class="v-tooltip v-tooltip--bottom" name="fade"><div class="v-tooltip__content" style="left: 0px; max-width: auto; opacity: 0; top: 12px; z-index: 0; display: none;"> <span>重新爬取此处信息</span></div><span><button type="button" class="v-btn v-btn--icon theme--light"><div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light">refresh</i></div></button></span></span></div>
+</div><span><button type="button" class="v-btn v-btn--icon theme--light"><div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light">link</i></div></button></span></span> <span class="v-tooltip v-tooltip--bottom"><div class="v-tooltip__content" style="left: 0px; max-width: auto; opacity: 0; top: 12px; z-index: 0; display: none;"> <span>重新爬取此处信息</span></div><span><button type="button" class="v-btn v-btn--icon theme--light"><div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light">refresh</i></div></button></span></span></div>
 </div>
 </nav>
 <div class="container">
@@ -190,7 +190,7 @@ exports[`WorkerCard 能正确渲染警告 1`] = `
     </div><span><button type="button" class="v-btn v-btn--icon theme--light"><div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light">add_circle</i></div></button></span></span> <span class="v-tooltip v-tooltip--bottom"><div class="v-tooltip__content" style="left: 0px; max-width: auto; opacity: 0; top: 12px; z-index: 0; display: none;"> <span>
           转到此OJ
         </span>
-</div><span><button type="button" class="v-btn v-btn--icon theme--light"><div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light">link</i></div></button></span></span> <span class="v-tooltip v-tooltip--bottom" name="fade"><div class="v-tooltip__content" style="left: 0px; max-width: auto; opacity: 0; top: 12px; z-index: 0; display: none;"> <span>重新爬取此处信息</span></div><span><button type="button" class="v-btn v-btn--icon theme--light"><div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light">refresh</i></div></button></span></span></div>
+</div><span><button type="button" class="v-btn v-btn--icon theme--light"><div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light">link</i></div></button></span></span> <span class="v-tooltip v-tooltip--bottom"><div class="v-tooltip__content" style="left: 0px; max-width: auto; opacity: 0; top: 12px; z-index: 0; display: none;"> <span>重新爬取此处信息</span></div><span><button type="button" class="v-btn v-btn--icon theme--light"><div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light">refresh</i></div></button></span></span></div>
 </div>
 </nav>
 <div class="container">
@@ -259,7 +259,7 @@ exports[`WorkerCard 能正确渲染错误 1`] = `
     </div><span><button type="button" class="v-btn v-btn--icon theme--light"><div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light">add_circle</i></div></button></span></span> <span class="v-tooltip v-tooltip--bottom"><div class="v-tooltip__content" style="left: 0px; max-width: auto; opacity: 0; top: 12px; z-index: 0; display: none;"> <span>
           转到此OJ
         </span>
-</div><span><button type="button" class="v-btn v-btn--icon theme--light"><div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light">link</i></div></button></span></span> <span class="v-tooltip v-tooltip--bottom" name="fade"><div class="v-tooltip__content" style="left: 0px; max-width: auto; opacity: 0; top: 12px; z-index: 0; display: none;"> <span>重新爬取此处信息</span></div><span><button type="button" class="v-btn v-btn--icon theme--light"><div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light">refresh</i></div></button></span></span></div>
+</div><span><button type="button" class="v-btn v-btn--icon theme--light"><div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light">link</i></div></button></span></span> <span class="v-tooltip v-tooltip--bottom"><div class="v-tooltip__content" style="left: 0px; max-width: auto; opacity: 0; top: 12px; z-index: 0; display: none;"> <span>重新爬取此处信息</span></div><span><button type="button" class="v-btn v-btn--icon theme--light"><div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light">refresh</i></div></button></span></span></div>
 </div>
 </nav>
 <div class="container">
