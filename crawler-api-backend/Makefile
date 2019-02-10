@@ -15,7 +15,9 @@ help:
 		-f base.Dockerfile \
 		-t $(CrawlerApiBackendBaseTag) \
 		$(build-args) \
-		--build-arg NODE_BASE_IMAGE=$(NodeBaseTag)
+		--build-arg NODE_BASE_IMAGE=$(NodeBaseTag) \
+		--build-arg CRAWLER_IMAGE=$(CrawlerTag) \
+		--build-arg CRAWLER_LIBRARY_PATH=$(CrawlerLibraryPath)
 
 build: .base .crawler
 	docker build . \
