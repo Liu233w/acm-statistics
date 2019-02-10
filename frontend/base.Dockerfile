@@ -16,3 +16,5 @@ RUN npm install && rm -rf ./node_modules/crawler
 COPY --from=crawler ${CRAWLER_LIBRARY_PATH} ./node_modules/crawler
 
 COPY . .
+
+ENV VERSION_NUM=development
