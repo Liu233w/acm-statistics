@@ -28,7 +28,7 @@
               <VListTileContent>
                 <VListTileTitle>最近更新</VListTileTitle>
                 <VListTileSubTitle>
-                  https://github.com/Liu233w/acm-statistics/commit/{{ $env.VERSION_NUM }}
+                  https://github.com/Liu233w/acm-statistics/commits/{{ $env.VERSION_NUM }}
                 </VListTileSubTitle>
               </VListTileContent>
             </VListTile>
