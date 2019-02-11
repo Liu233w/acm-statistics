@@ -2,7 +2,6 @@ crawler_order:
   - poj
   - hdu
   - zoj
-  - acdream
   - dashiye
   - codeforces
   - uva
@@ -30,11 +29,6 @@ crawlers:
       title: ZOJ
       description:
       url: http://acm.zju.edu.cn/onlinejudge/
-  acdream:
-    meta:
-      title: ACdream
-      description:
-      url: http://acdream.info/
   dashiye:
     meta:
       title: 大视野在线测评
