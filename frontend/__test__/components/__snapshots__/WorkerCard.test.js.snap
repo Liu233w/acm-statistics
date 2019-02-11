@@ -44,16 +44,7 @@ exports[`WorkerCard 能正确渲染 1`] = `
       </div>
     </div>
   </div>
-  <div class="layout row wrap"></div>
-  <div class="layout row" style="display: none;">
-    <div class="flex xs12"><span class="grey--text">
-          SOLVED:
-        </span> 0
-      <br> <span class="grey--text">
-          SUBMISSIONS:
-        </span> 0
-    </div>
-  </div>
+  <!---->
 </div>
 </div>
 `;
@@ -102,16 +93,7 @@ exports[`WorkerCard 能正确渲染用户名 1`] = `
       </div>
     </div>
   </div>
-  <div class="layout row wrap"></div>
-  <div class="layout row" style="display: none;">
-    <div class="flex xs12"><span class="grey--text">
-          SOLVED:
-        </span> 0
-      <br> <span class="grey--text">
-          SUBMISSIONS:
-        </span> 0
-    </div>
-  </div>
+  <!---->
 </div>
 </div>
 `;
@@ -160,16 +142,7 @@ exports[`WorkerCard 能正确渲染结果 1`] = `
       </div>
     </div>
   </div>
-  <div class="layout row wrap"></div>
-  <div class="layout row" style="display: none;">
-    <div class="flex xs12"><span class="grey--text">
-          SOLVED:
-        </span> 10
-      <br> <span class="grey--text">
-          SUBMISSIONS:
-        </span> 20
-    </div>
-  </div>
+  <!---->
 </div>
 </div>
 `;
@@ -218,27 +191,19 @@ exports[`WorkerCard 能正确渲染警告 1`] = `
       </div>
     </div>
   </div>
-  <div class="layout row wrap">
-    <div class="flex xs12"><i aria-hidden="true" class="v-icon material-icons theme--light orange--text text--darken-2">
+  <div class="layout row xs12">
+    <div class="flex align-self-start shrink"><i aria-hidden="true" class="v-icon material-icons theme--light orange--text text--darken-2">
         warning
-      </i>
-      &nbsp;
-      <span>用户名以空格开头</span></div>
-    <div class="flex xs12"><i aria-hidden="true" class="v-icon material-icons theme--light orange--text text--darken-2">
+      </i></div>
+    <div class="flex align-self-start"><span>用户名以空格开头</span></div>
+  </div>
+  <div class="layout row xs12">
+    <div class="flex align-self-start shrink"><i aria-hidden="true" class="v-icon material-icons theme--light orange--text text--darken-2">
         warning
-      </i>
-      &nbsp;
-      <span>用户名含有空格，部分爬虫可能不支持</span></div>
+      </i></div>
+    <div class="flex align-self-start"><span>用户名含有空格，部分爬虫可能不支持</span></div>
   </div>
-  <div class="layout row" style="display: none;">
-    <div class="flex xs12"><span class="grey--text">
-          SOLVED:
-        </span> 0
-      <br> <span class="grey--text">
-          SUBMISSIONS:
-        </span> 0
-    </div>
-  </div>
+  <!---->
 </div>
 </div>
 `;
@@ -287,14 +252,7 @@ exports[`WorkerCard 能正确渲染错误 1`] = `
       </div>
     </div>
   </div>
-  <div class="layout row wrap"></div>
-  <div class="layout row" style="display: none;">
-    <div class="flex xs12"><i aria-hidden="true" class="v-icon material-icons theme--light red--text">
-        error
-      </i>
-      &nbsp;
-      <span>a error is occurred</span></div>
-  </div>
+  <!---->
 </div>
 </div>
 `;

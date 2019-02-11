@@ -2676,16 +2676,7 @@ exports[`/statistics 1`] = `
                   </div>
                 </div>
               </div>
-              <div class="layout row wrap"></div>
-              <div class="layout row" style="display:none;">
-                <div class="flex xs12"><span class="grey--text">
-          SOLVED:
-        </span> 0
-                  <br> <span class="grey--text">
-          SUBMISSIONS:
-        </span> 0
-                </div>
-              </div>
+              <!---->
             </div>
         </div>
       </div>
@@ -2735,16 +2726,7 @@ exports[`/statistics 1`] = `
           </div>
         </div>
       </div>
-      <div class="layout row wrap"></div>
-      <div class="layout row" style="display:none;">
-        <div class="flex xs12"><span class="grey--text">
-          SOLVED:
-        </span> 0
-          <br> <span class="grey--text">
-          SUBMISSIONS:
-        </span> 0
-        </div>
-      </div>
+      <!---->
     </div>
     </div>
     </div>
@@ -2793,16 +2775,7 @@ exports[`/statistics 1`] = `
           </div>
         </div>
       </div>
-      <div class="layout row wrap"></div>
-      <div class="layout row" style="display:none;">
-        <div class="flex xs12"><span class="grey--text">
-          SOLVED:
-        </span> 0
-          <br> <span class="grey--text">
-          SUBMISSIONS:
-        </span> 0
-        </div>
-      </div>
+      <!---->
     </div>
     </div>
     </div></span></div>
@@ -2845,16 +2818,7 @@ exports[`/statistics 1`] = `
           </div>
         </div>
       </div>
-      <div class="layout row wrap"></div>
-      <div class="layout row" style="display:none;">
-        <div class="flex xs12"><span class="grey--text">
-          SOLVED:
-        </span> 0
-          <br> <span class="grey--text">
-          SUBMISSIONS:
-        </span> 0
-        </div>
-      </div>
+      <!---->
     </div>
     </div>
     </div>
@@ -2903,16 +2867,7 @@ exports[`/statistics 1`] = `
           </div>
         </div>
       </div>
-      <div class="layout row wrap"></div>
-      <div class="layout row" style="display:none;">
-        <div class="flex xs12"><span class="grey--text">
-          SOLVED:
-        </span> 0
-          <br> <span class="grey--text">
-          SUBMISSIONS:
-        </span> 0
-        </div>
-      </div>
+      <!---->
     </div>
     </div>
     </div>
@@ -2961,16 +2916,7 @@ exports[`/statistics 1`] = `
           </div>
         </div>
       </div>
-      <div class="layout row wrap"></div>
-      <div class="layout row" style="display:none;">
-        <div class="flex xs12"><span class="grey--text">
-          SOLVED:
-        </span> 0
-          <br> <span class="grey--text">
-          SUBMISSIONS:
-        </span> 0
-        </div>
-      </div>
+      <!---->
     </div>
     </div>
     </div>
@@ -3014,16 +2960,7 @@ exports[`/statistics 1`] = `
           </div>
         </div>
       </div>
-      <div class="layout row wrap"></div>
-      <div class="layout row" style="display:none;">
-        <div class="flex xs12"><span class="grey--text">
-          SOLVED:
-        </span> 0
-          <br> <span class="grey--text">
-          SUBMISSIONS:
-        </span> 0
-        </div>
-      </div>
+      <!---->
     </div>
     </div>
     </div>
@@ -3072,16 +3009,7 @@ exports[`/statistics 1`] = `
           </div>
         </div>
       </div>
-      <div class="layout row wrap"></div>
-      <div class="layout row" style="display:none;">
-        <div class="flex xs12"><span class="grey--text">
-          SOLVED:
-        </span> 0
-          <br> <span class="grey--text">
-          SUBMISSIONS:
-        </span> 0
-        </div>
-      </div>
+      <!---->
     </div>
     </div>
     </div>
