@@ -9,7 +9,6 @@ const uva = require('../crawlers/uva')
 const fzu = require('../crawlers/fzu')
 const spoj = require('../crawlers/spoj')
 const timus = require('../crawlers/timus')
-const sgu = require('../crawlers/sgu')
 const leetcode_cn = require('../crawlers/leetcode_cn')
 const vjudge = require('../crawlers/vjudge')
 const csu = require('../crawlers/csu')
@@ -168,23 +167,6 @@ describe('timus', () => {
     const res = await timus(null, 'vjudge11')
     checkRes(res)
     expect(res.submissions).toBeGreaterThan(10)
-  })
-
-})
-
-describe('sgu', () => {
-
-  test('test sgu - 用户不存在时抛出异常', async () => {
-    await expect(sgu(null, notExistUsername)).rejects.toThrow('用户不存在')
-  })
-
-  test('test sgu - 能够正确识别带有空格的用户名', async () => {
-    await expect(sgu(null, ' ' + notExistUsername)).rejects.toThrow('用户不存在')
-  })
-
-  test('test sgu', async () => {
-    const res = await sgu(null, username)
-    checkRes(res)
   })
 
 })
