@@ -82,33 +82,44 @@
           />
         </VFlex>
       </VLayout>
-      <VLayout row wrap v-show="warnings">
-        <VFlex xs12 v-for="item in warnings" :key="item">
-          <VIcon color="orange darken-2">
-            warning
-          </VIcon>
-          &nbsp;
-          <span>{{ item }}</span>
-        </VFlex>
-      </VLayout>
-      <VLayout row v-show="worker.status === WORKER_STATUS.DONE">
-        <VFlex xs12 v-if="worker.errorMessage">
-          <VIcon color="red">
-            error
-          </VIcon>
-          &nbsp;
-          <span>{{ worker.errorMessage }}</span>
-        </VFlex>
-        <VFlex xs12 v-else>
-          <span class="grey--text">
-            SOLVED:
-          </span> {{ worker.solved }}
-          <br>
-          <span class="grey--text">
-            SUBMISSIONS:
-          </span> {{ worker.submissions }}
-        </VFlex>
-      </VLayout>
+      <template v-if="warnings">
+        <VLayout row xs12 v-for="item in warnings" :key="item">
+          <VFlex align-self-start shrink>
+            <VIcon color="orange darken-2">
+              warning
+            </VIcon>
+          </VFlex>
+          <VFlex align-self-start>
+            <span>{{ item }}</span>
+          </VFlex>
+        </VLayout>
+      </template>
+      <template v-if="worker.status === WORKER_STATUS.DONE">
+        <VLayout row xs12 v-if="worker.errorMessage">
+          <VFlex align-self-start shrink>
+            <VIcon color="red">
+              error
+            </VIcon>
+          </VFlex>
+          <VFlex align-self-start>
+            <span>{{ worker.errorMessage }}</span>
+          </VFlex>
+        </VLayout>
+        <VLayout column xs12 v-else>
+          <VFlex>
+            <span class="grey--text">
+              SOLVED:
+            </span>
+            {{ worker.solved }}
+          </VFlex>
+          <VFlex>
+            <span class="grey--text">
+              SUBMISSIONS:
+            </span>
+            {{ worker.submissions }}
+          </VFlex>
+        </VLayout>
+      </template>
     </VContainer>
   </VCard>
 </template>
@@ -196,7 +207,7 @@
   }
 </script>
 
-<style>
+<style scoped>
   .fade-enter-active, .fade-leave-active {
     transition: opacity .5s;
   }
