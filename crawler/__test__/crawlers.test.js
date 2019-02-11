@@ -3,7 +3,6 @@ const _ = require('lodash')
 const poj = require('../crawlers/poj')
 const hdu = require('../crawlers/hdu')
 const zoj = require('../crawlers/zoj')
-const acdream = require('../crawlers/acdream')
 const dashiye = require('../crawlers/dashiye')
 const codeforces = require('../crawlers/codeforces')
 const uva = require('../crawlers/uva')
@@ -73,23 +72,6 @@ describe('zoj', () => {
 
   test('test zoj', async () => {
     const res = await zoj(null, username)
-    checkRes(res)
-  })
-
-})
-
-describe('acdream', () => {
-
-  test('test acdream - 用户不存在时抛出异常', async () => {
-    await expect(acdream(null, notExistUsername)).rejects.toThrow('用户不存在')
-  })
-
-  test('test acdream - 能够正确识别带有空格的用户名', async () => {
-    await expect(acdream(null, ' ' + notExistUsername)).rejects.toThrow('用户不存在')
-  })
-
-  test('test acdream', async () => {
-    const res = await acdream(null, username)
     checkRes(res)
   })
 
