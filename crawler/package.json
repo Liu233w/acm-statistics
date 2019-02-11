@@ -21,7 +21,7 @@
     "eslint-plugin-jest": "^22.2.2",
     "eslint-plugin-lodash": "^5.1.0",
     "jest": "^24.1.0",
-    "memfs": "^2.15.0"
+    "memfs": "^2.15.1"
   },
   "jest": {
     "testPathIgnorePatterns": [
