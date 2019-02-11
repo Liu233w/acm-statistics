@@ -16,12 +16,7 @@ services:
     - ACM_STATISTICS_CRAWLER_ENV:crawlers:vjudge:crawler_login_password="${VJUDGE_PASSWORD}"
 
   watchtower:
-    # 这个项目比 watchtower 更好用一些，便于以后更新 NOTIFIER
-    image: pyouroboros/ouroboros
+    image: v2tec/watchtower
     volumes:
     - /var/run/docker.sock:/var/run/docker.sock
-    environment:
-    # 半小时更新一次
-    - CRON=*/30 * * * *
-    - CLEANUP=true
-    - SELF_UPDATE=true
+    command: -s "0 */30 * * * *" --cleanup
