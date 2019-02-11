@@ -8,7 +8,6 @@ crawler_order:
   - fzu
   - spoj
   - timus
-  - sgu
   - leetcode_cn
   - csu
   - vjudge
@@ -59,11 +58,6 @@ crawlers:
       title: Timus
       description:
       url: http://acm.timus.ru/
-  sgu:
-    meta:
-      title: SGU
-      description: SGU允许多个用户有相同的名字（ID不同），本爬虫会选择在 http://acm.sgu.ru/find.php?find_id= 中出现的第一个
-      url: http://acm.sgu.ru/
   leetcode_cn:
     meta:
       title: LeetCode（中国）
