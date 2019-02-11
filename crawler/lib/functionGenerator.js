@@ -14,6 +14,7 @@ const join = require('path').join
  * @type {Object}
  * @property {Number} solved - 用户通过的题量
  * @property {Number} submissions - 用户的总提交量
+ * @property {Array<String>|undefined|null} solved_list - 用户通过的题目列表
  */
 
 /**
