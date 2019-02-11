@@ -13,4 +13,6 @@ services:
     command: sh -c "npm i --unsafe-perm && npm run dev"
 
   watchtower:
-    entrypoint: echo "skip watchtower in development..."
+    # skip watchtower in development
+    image: tianon/true
+    command: ''
