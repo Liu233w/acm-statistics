@@ -10,7 +10,7 @@ const join = require('path').join
 
 /**
  * 爬虫函数的返回类型
- * @typedef crawlerReturns
+ * @typedef {Object} CrawlerReturns
  * @type {Object}
  * @property {Number} solved - 用户通过的题量
  * @property {Number} submissions - 用户的总提交量
@@ -18,16 +18,16 @@ const join = require('path').join
 
 /**
  * 为服务端返回的爬虫函数
- * @typedef serverCrawlerFunction
+ * @typedef {Function} ServerCrawlerFunction
  * @type {Function}
  * @param {String} username - 要爬取的用户名
- * @returns {Promise<{crawlerReturns}>}
+ * @returns {Promise<CrawlerReturns>}
  */
 
 /**
  * 为服务器端返回爬虫函数，会从config.yml读取信息，并返回一个对象
  *
- * @returns {Promise<{Object.<string, {serverCrawlerFunction}>}>}
+ * @returns {Promise<Object.<string, ServerCrawlerFunction>>}
  */
 exports.generateServerCrawlerFunctions = async () => {
   const config = await configReader.readCrawlerConfigs()
@@ -55,15 +55,17 @@ exports.generateServerCrawlerFunctions = async () => {
  * 如果爬虫不是server_only的，返回已经注入了设置信息的爬虫源代码。
  * 请注意：本函数返回的对象中不含有“函数”，只有“函数的源代码”。
  * 需要使用eval或者将源代码拼接进源码文件中使用。
- * @typedef clientCrawlerFunction
- * @type {String}
+ * @typedef {Function} ClientCrawlerFunction
+ * @type {Function}
+ * @param {String} username - 要爬取的用户名
+ * @returns {Promise<CrawlerReturns>}
  */
 
 /**
  * 返回给前端使用的爬虫函数，会从 config.yml 读取配置信息，装配配置信息并返回。
  * 设置了 server_only 的爬虫会返回一个 axios 的请求
  *
- * @returns {Promise<{Object.<string, {clientCrawlerFunction}>}>}
+ * @returns {Promise<Object.<string, ClientCrawlerFunction>>}
  */
 exports.generateBrowserCrawlerFunctions = async () => {
   const config = await configReader.readCrawlerConfigs()
