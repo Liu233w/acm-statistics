@@ -5,9 +5,9 @@ test('readConfigs 能够正确读取配置', async () => {
   const config = await configReader.readConfigs()
   expect(config.crawlers.length).not.toBe(0)
 
-  const sguConfig = config.crawlers.sgu
-  expect(sguConfig).toBeTruthy()
-  expect(sguConfig.meta).toBeTruthy()
+  const pojConfig = config.crawlers.poj
+  expect(pojConfig).toBeTruthy()
+  expect(pojConfig.meta).toBeTruthy()
 
 })
 
@@ -15,9 +15,9 @@ test('readCrawlerConfigs 能够正确读取配置', async () => {
   const config = await configReader.readCrawlerConfigs()
   expect(config.length).not.toBe(0)
 
-  const sguConfig = _.find(config, item => item.name === 'sgu')
-  expect(sguConfig).toBeTruthy()
-  expect(sguConfig.meta).toBeTruthy()
+  const pojConfig = _.find(config, item => item.name === 'poj')
+  expect(pojConfig).toBeTruthy()
+  expect(pojConfig.meta).toBeTruthy()
 })
 
 describe('mergeConfigWithEnv', () => {
@@ -86,7 +86,7 @@ describe('mergeConfigWithEnv', () => {
 
 test('readMetaConfigs 能够读取元信息', async () => {
   const meta = await configReader.readMetaConfigs()
-  expect(meta.sgu).toBeTruthy()
-  expect(meta.sgu.title).toBe('SGU')
-  expect(meta.sgu.description).toBeTruthy()
+  expect(meta.vjudge).toBeTruthy()
+  expect(meta.vjudge.title).toBe('VJudge')
+  expect(meta.vjudge.description).toBeTruthy()
 })
