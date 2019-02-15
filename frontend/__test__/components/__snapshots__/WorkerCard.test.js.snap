@@ -192,15 +192,11 @@ exports[`WorkerCard 能正确渲染警告 1`] = `
     </div>
   </div>
   <div class="layout row xs12">
-    <div class="flex align-self-start shrink"><i aria-hidden="true" class="v-icon material-icons theme--light orange--text text--darken-2">
-        warning
-      </i></div>
+    <div class="flex align-self-start shrink"><i aria-hidden="true" class="v-icon material-icons theme--light orange--text text--darken-2">warning</i></div>
     <div class="flex align-self-start"><span>用户名以空格开头</span></div>
   </div>
   <div class="layout row xs12">
-    <div class="flex align-self-start shrink"><i aria-hidden="true" class="v-icon material-icons theme--light orange--text text--darken-2">
-        warning
-      </i></div>
+    <div class="flex align-self-start shrink"><i aria-hidden="true" class="v-icon material-icons theme--light orange--text text--darken-2">warning</i></div>
     <div class="flex align-self-start"><span>用户名含有空格，部分爬虫可能不支持</span></div>
   </div>
   <!---->
