@@ -59,6 +59,7 @@ describe('warningHelper', () => {
       solvedList: [
         'A-001',
         'B-001',
+        'B-002',
         'C-001',
       ],
       crawlerName: 'vjudge',
