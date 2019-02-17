@@ -105,22 +105,67 @@
             <span>{{ worker.errorMessage }}</span>
           </VFlex>
         </VLayout>
-        <VLayout column xs12 v-else>
-          <VFlex>
-            <span class="grey--text">
-              SOLVED:
-            </span>
-            {{ worker.solved }}
-          </VFlex>
-          <VFlex>
-            <span class="grey--text">
-              SUBMISSIONS:
-            </span>
-            {{ worker.submissions }}
-          </VFlex>
-        </VLayout>
+        <!-- 直接把 v-else 放到 VTooltip 上会引发bug导致内容无法正常删除 -->
+        <!-- TODO: 等待此bug修复 -->
+        <div v-else>
+          <VTooltip bottom>
+            <template #activator="tip">
+              <VLayout column xs12
+                       ripple :class="{ 'elevation-2': hoverOnResult }"
+                       @mouseover="hoverOnResult = true" @mouseleave="hoverOnResult = false"
+                       @click="solvedListDialog = true"
+                       v-on="tip.on"
+              >
+                <VFlex>
+                  <span class="grey--text">
+                    SOLVED:
+                  </span>
+                  {{ worker.solved }}
+                </VFlex>
+                <VFlex>
+                  <span class="grey--text">
+                    SUBMISSIONS:
+                  </span>
+                  {{ worker.submissions }}
+                </VFlex>
+              </VLayout>
+            </template>
+            <span>查看通过的题目列表</span>
+          </VTooltip>
+        </div>
       </template>
     </VContainer>
+
+    <VDialog v-model="solvedListDialog" max-width="500" scrollable>
+      <VCard xs12 md8 lg6>
+        <VCardTitle>
+          <span class="headline">
+            用户 {{ worker.username }} 在 {{ crawler.title }} 通过的题目列表
+          </span>
+        </VCardTitle>
+        <VCardText v-if="solvedListStatus === 'empty'">
+          当前没有通过的题目
+        </VCardText>
+        <VCardText v-else-if="solvedListStatus === 'none'">
+          当前爬虫无法获取通过的题目列表
+        </VCardText>
+        <VCardText v-else>
+          <VContainer justify-center>
+            <VLayout row wrap>
+              <VFlex xs4 sm3 v-for="item in worker.solved_list" :key="item">
+                <VChip>{{ item }}</VChip>
+              </VFlex>
+            </VLayout>
+          </VContainer>
+        </VCardText>
+        <VDivider />
+        <VCardActions>
+          <VBtn color="blue darken-1" flat @click="solvedListDialog = false">
+            Close
+          </VBtn>
+        </VCardActions>
+      </VCard>
+    </VDialog>
   </VCard>
 </template>
 
@@ -129,6 +174,7 @@
   import {warningHelper} from '~/components/statisticsUtils'
 
   import {mapGetters} from 'vuex'
+  import _ from 'lodash'
 
   export default {
     name: 'CrawlerCard',
@@ -141,6 +187,8 @@
     data() {
       return {
         WORKER_STATUS: WORKER_STATUS,
+        solvedListDialog: false,
+        hoverOnResult: false,
       }
     },
     methods: {
@@ -202,6 +250,17 @@
       },
       warnings() {
         return warningHelper(this.worker)
+      },
+      solvedListStatus() {
+        if (_.isArray(this.worker.solved_list)) {
+          if (this.worker.solved_list.length > 0) {
+            return 'list'
+          } else {
+            return 'empty'
+          }
+        } else {
+          return 'none'
+        }
       },
     },
   }
