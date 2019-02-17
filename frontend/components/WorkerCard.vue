@@ -152,7 +152,7 @@
         <VCardText v-else>
           <VContainer justify-center>
             <VLayout row wrap>
-              <VFlex xs4 sm3 v-for="item in worker.solved_list" :key="item">
+              <VFlex xs4 sm3 v-for="item in worker.solvedList" :key="item">
                 <VChip>{{ item }}</VChip>
               </VFlex>
             </VLayout>
@@ -252,8 +252,8 @@
         return warningHelper(this.worker)
       },
       solvedListStatus() {
-        if (_.isArray(this.worker.solved_list)) {
-          if (this.worker.solved_list.length > 0) {
+        if (_.isArray(this.worker.solvedList)) {
+          if (this.worker.solvedList.length > 0) {
             return 'list'
           } else {
             return 'empty'

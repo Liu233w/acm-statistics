@@ -8,7 +8,7 @@ module.exports = async function (config, username) {
   return {
     solved: acSet.size,
     submissions: submissions,
-    solved_list: [...acSet],
+    solvedList: [...acSet],
   }
 }
 
