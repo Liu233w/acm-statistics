@@ -6,7 +6,7 @@
     <inspection_tool class="HtmlUnknownTag" enabled="true" level="WARNING" enabled_by_default="true">
       <option name="myValues">
         <value>
-          <list size="35">
+          <list size="37">
             <item index="0" class="java.lang.String" itemvalue="nobr" />
             <item index="1" class="java.lang.String" itemvalue="noembed" />
             <item index="2" class="java.lang.String" itemvalue="comment" />
@@ -42,6 +42,8 @@
             <item index="32" class="java.lang.String" itemvalue="transitiongroup" />
             <item index="33" class="java.lang.String" itemvalue="vchip" />
             <item index="34" class="java.lang.String" itemvalue="vprogresslinear" />
+            <item index="35" class="java.lang.String" itemvalue="vdivider" />
+            <item index="36" class="java.lang.String" itemvalue="vspan" />
           </list>
         </value>
       </option>

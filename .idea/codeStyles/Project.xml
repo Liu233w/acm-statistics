@@ -2,6 +2,7 @@
   <code_scheme name="Project" version="173">
     <HTMLCodeStyleSettings>
       <option name="HTML_SPACE_INSIDE_EMPTY_TAG" value="true" />
+      <option name="HTML_KEEP_WHITESPACES_INSIDE" value="pre,textarea" />
     </HTMLCodeStyleSettings>
     <JSCodeStyleSettings>
       <option name="USE_SEMICOLON_AFTER_STATEMENT" value="false" />
