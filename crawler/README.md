@@ -67,6 +67,7 @@ crawlers 中的 value 是一个字典，其中包含以下字段：
   - title: {String} - OJ名，这是显示在前端上作为标题的
   - description: {String} - OJ的说明，可以补充一些信息，会在前端显示出来。这是可选的
   - url: {String} - 到OJ的链接，也是可选的。
+  - virtual_judge: {Boolean} - 是否是 virtual_judge，在计算题目列表时逻辑会稍有不同。
 - 其他字段: 配置文件中可以包含任何其他字段
 
 在运行爬虫时，crawlers中的每一项都会被传递给相应的爬虫（从
