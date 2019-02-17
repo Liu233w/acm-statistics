@@ -152,7 +152,7 @@
         <VCardText v-else>
           <VContainer justify-center>
             <VLayout row wrap>
-              <VFlex xs4 sm3 v-for="item in worker.solvedList" :key="item">
+              <VFlex xs4 sm3 v-for="item in prettifiedSolvedList" :key="item">
                 <VChip>{{ item }}</VChip>
               </VFlex>
             </VLayout>
@@ -171,7 +171,7 @@
 
 <script>
   import {WORKER_STATUS} from '~/components/consts'
-  import {warningHelper} from '~/components/statisticsUtils'
+  import {warningHelper, mapVirtualJudgeProblemTitle} from '~/components/statisticsUtils'
 
   import {mapGetters} from 'vuex'
   import _ from 'lodash'
@@ -260,6 +260,20 @@
           }
         } else {
           return 'none'
+        }
+      },
+      prettifiedSolvedList() {
+
+        if (this.worker.solvedList == null) {
+          return null
+        }
+
+        if (this.crawler.virtual_judge) {
+          return mapVirtualJudgeProblemTitle(
+            this.worker.solvedList,
+            this.$store.state.statistics.crawlers)
+        } else {
+          return _.map(this.worker.solvedList, item => `${this.crawler.title}-${item}`)
         }
       },
     },
