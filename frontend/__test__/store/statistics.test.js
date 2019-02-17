@@ -975,6 +975,21 @@ describe('helper functions', () => {
     })
 
   })
+
+  describe('addProblemPrefix', () => {
+    it('能够得到正确的结果', () => {
+      const res = store.addProblemPrefix(['1001', '1002'], 'A')
+      expect(res).toMatchObject(['A-1001', 'A-1002'])
+    })
+  })
+
+  describe('pushSet', () => {
+    it('能够得到正确的结果', () => {
+      const set = new Set([1, 2])
+      store.pushSet(set, [2, 3])
+      expect(set).toMatchObject(new Set([1, 2, 3]))
+    })
+  })
 })
 
 describe('actions', () => {
