@@ -212,6 +212,7 @@
       ...mapGetters('statistics', [
         'workerNumberOfCrawler',
         'workerIdxOfCrawler',
+        'nullSolvedListCrawlers',
       ]),
       worker() {
         return this.$store.state.statistics.workers[this.index]
@@ -249,7 +250,8 @@
         return this.workerIdxOfCrawler[this.index]
       },
       warnings() {
-        return warningHelper(this.worker, this.crawler, this.$store.getters.statistics)
+        const nullSolvedListCrawlers = this.nullSolvedListCrawlers
+        return warningHelper(this.worker, this.crawler, {nullSolvedListCrawlers})
       },
       solvedListStatus() {
         if (_.isArray(this.worker.solvedList)) {
