@@ -12,7 +12,7 @@ const timus = require('../crawlers/timus')
 const leetcode_cn = require('../crawlers/leetcode_cn')
 const vjudge = require('../crawlers/vjudge')
 const csu = require('../crawlers/csu')
-const {ensureConfigAndRead} = require('../lib/configReader')
+const {readConfigs} = require('../lib/configReader')
 
 jest.setTimeout(10000) // 最多10秒
 
@@ -214,14 +214,19 @@ describe('vjudge', () => {
   let vjConfig
 
   beforeAll(async () => {
-    const config = await ensureConfigAndRead()
+    const config = await readConfigs()
     // 需要读取设置，因此没法在 ci 里面测试
-    vjConfig = _.find(config.crawlers, item => item.name === 'vjudge')
+    // 在进行测试之前首先要根据 README.md 里的说明来设置环境变量
+    vjConfig = config.crawlers.vjudge
+  })
 
+  test('首先保证配置文件正确并且拥有正确的环境变量', () => {
     // 必须要保证配置文件正确才能进行此项测试
     expect(vjConfig).toBeTruthy()
     expect(vjConfig.crawler_login_user).toBeTruthy()
     expect(vjConfig.crawler_login_user).not.toBe('用户名')
+    expect(vjConfig.crawler_login_password).toBeTruthy()
+    expect(vjConfig.crawler_login_password).not.toBe('密码')
 
     // console.log(vjConfig)
   })
