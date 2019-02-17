@@ -379,3 +379,24 @@ export function getUsernameObjectFromState(state) {
 
   return username
 }
+
+/**
+ * 给题目列表里的每个题目加上前缀
+ * @param {String[]} lst 题目列表
+ * @param {String} prefix 前缀
+ * @return {String[]}
+ */
+export function addProblemPrefix(lst, prefix) {
+  return _.map(lst, item => `${prefix}-${item}`)
+}
+
+/**
+ * 将 lst 的内容合并进 set 中
+ * @param {Set<*>} set
+ * @param {*[]} lst
+ */
+export function pushSet(set, lst) {
+  for (let item of lst) {
+    set.add(item)
+  }
+}
