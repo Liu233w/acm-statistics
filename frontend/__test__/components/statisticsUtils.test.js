@@ -1,4 +1,4 @@
-import {warningHelper} from '~/components/statisticsUtils'
+import {warningHelper, mapVirtualJudgeProblemTitle} from '~/components/statisticsUtils'
 
 describe('warningHelper', () => {
   it('在正确时不会生成警告', () => {
@@ -78,6 +78,33 @@ describe('warningHelper', () => {
     expect(res).toMatchObject([
       '爬虫 a title 无法返回题目列表，因此它的结果和本爬虫的结果可能会有重复',
       '爬虫 b title 无法返回题目列表，因此它的结果和本爬虫的结果可能会有重复',
+    ])
+  })
+})
+
+describe('mapVirtualJudgeProblemTitle', () => {
+  it('能够正常运行', () => {
+
+    const solvedList = [
+      'aa-001',
+      'b-002',
+      'C-003',
+    ]
+    const crawlers = {
+      aa: {
+        title: 'AA',
+      },
+      b: {
+        title: 'B',
+      },
+    }
+
+    const res = mapVirtualJudgeProblemTitle(solvedList, crawlers)
+
+    expect(res).toMatchObject([
+      'AA-001',
+      'B-002',
+      'C-003',
     ])
   })
 })

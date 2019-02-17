@@ -32,3 +32,21 @@ export function warningHelper(worker, crawlerMeta, getters) {
 
   return warnings
 }
+
+/**
+ * 在 vjudge 中，如果返回的 ac 题目列表包含了支持的爬虫，将其名称换成 爬虫的 title，否则保留原来的名称
+ * @param {String[]} solvedList
+ * @param {{title: String}} crawlers
+ * @return {String[]}
+ */
+export function mapVirtualJudgeProblemTitle(solvedList, crawlers) {
+
+  return _.map(solvedList, item => {
+    const [oj, problem] = _.split(item, '-', 2)
+    if (oj in crawlers) {
+      return `${crawlers[oj].title}-${problem}`
+    } else {
+      return item
+    }
+  })
+}
