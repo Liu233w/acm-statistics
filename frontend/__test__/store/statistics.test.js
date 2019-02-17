@@ -812,6 +812,44 @@ describe('getters', () => {
       ])
     })
   })
+
+  describe('nullSolvedListCrawlers', () => {
+    it('能够得到正确的结果', () => {
+
+      const res = store.getters.nullSolvedListCrawlers({
+        crawlers: {
+          cr1: {
+            title: 'cr1 title',
+          },
+          cr2: {
+            title: 'cr2 title',
+          },
+          cr3: {
+            title: 'cr3 title',
+          },
+        },
+        workers: [
+          {
+            solvedList: null,
+            crawlerName: 'cr1',
+          },
+          {
+            solvedList: ['1', '2'],
+            crawlerName: 'cr2',
+          },
+          {
+            solvedList: null,
+            crawlerName: 'cr3',
+          },
+        ],
+      })
+
+      expect(res).toMatchObject({
+        cr1: 'cr1 title',
+        cr3: 'cr3 title',
+      })
+    })
+  })
 })
 
 describe('helper functions', () => {
