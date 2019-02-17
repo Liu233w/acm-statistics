@@ -2,6 +2,7 @@ import {WORKER_STATUS} from '~/components/consts'
 import getCrawlerData from '~/dynamic/crawlers'
 
 import _ from 'lodash'
+
 const crawlerFunctions = {}
 
 function initCrawlers() {
@@ -93,11 +94,16 @@ export const mutations = {
       }
     })
   },
-  [MUTATION_TYPES.setWorkerDone](state, {index, solved, submissions}) {
+  [MUTATION_TYPES.setWorkerDone](state, {index, solved, submissions, solved_list}) {
     const worker = state.workers[index]
 
     worker.solved = solved
     worker.submissions = submissions
+    if (_.isArray(solved_list)) {
+      worker.solved_list = solved_list
+    } else {
+      worker.solved_list = null
+    }
     worker.status = WORKER_STATUS.DONE
   },
   [MUTATION_TYPES.setWorkerError](state, {index, errorMessage}) {
@@ -309,6 +315,7 @@ function resetWorker(worker) {
   worker.submissions = 0
   worker.errorMessage = ''
   worker.tokenKey = null
+  worker.solved_list = []
 
   if (!worker.key) {
     worker.key = Math.random()
