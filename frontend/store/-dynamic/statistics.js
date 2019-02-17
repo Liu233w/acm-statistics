@@ -94,15 +94,15 @@ export const mutations = {
       }
     })
   },
-  [MUTATION_TYPES.setWorkerDone](state, {index, solved, submissions, solved_list}) {
+  [MUTATION_TYPES.setWorkerDone](state, {index, solved, submissions, solvedList}) {
     const worker = state.workers[index]
 
     worker.solved = solved
     worker.submissions = submissions
-    if (_.isArray(solved_list)) {
-      worker.solved_list = solved_list
+    if (_.isArray(solvedList)) {
+      worker.solvedList = solvedList
     } else {
-      worker.solved_list = null
+      worker.solvedList = null
     }
     worker.status = WORKER_STATUS.DONE
   },
@@ -315,7 +315,7 @@ function resetWorker(worker) {
   worker.submissions = 0
   worker.errorMessage = ''
   worker.tokenKey = null
-  worker.solved_list = []
+  worker.solvedList = []
 
   if (!worker.key) {
     worker.key = Math.random()

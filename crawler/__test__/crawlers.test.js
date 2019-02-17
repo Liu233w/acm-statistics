@@ -107,7 +107,7 @@ describe('codeforces', () => {
     const res = await codeforces(null, 'leoloveacm') // 没有找到好的测试多页返回的帐号，还是用这个测试单页吧
     checkRes(res)
 
-    expect(new Set(res.solved_list)).toMatchObject(new Set([
+    expect(new Set(res.solvedList)).toMatchObject(new Set([
       '754-B', '165-E', '492-E', '338-D', '333-A', '703-A', '540-C', '680-B', '680-A', '676-A', '450-B', '667-A', '667-C',
     ]))
   })
