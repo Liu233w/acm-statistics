@@ -158,6 +158,20 @@ export const mutations = {
 
 export const getters = {
   /**
+   * 没法得到 solvedList 的 worker 的爬虫名
+   * @param state
+   * @return {Object.<String, String>} key 是 crawler name， value 是 title
+   */
+  nullSolvedListCrawlers(state) {
+    const res = {}
+    for (let item of state.workers) {
+      if (item.solvedList === null) {
+        res[item.crawlerName] = state.crawlers[item.crawlerName].title
+      }
+    }
+    return res
+  },
+  /**
    * 总体 solved 数量
    * @param state
    * @returns {number}

@@ -249,7 +249,7 @@
         return this.workerIdxOfCrawler[this.index]
       },
       warnings() {
-        return warningHelper(this.worker)
+        return warningHelper(this.worker, this.crawler, this.$store.getters.statistics)
       },
       solvedListStatus() {
         if (_.isArray(this.worker.solvedList)) {
