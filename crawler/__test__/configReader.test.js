@@ -89,4 +89,5 @@ test('readMetaConfigs 能够读取元信息', async () => {
   expect(meta.vjudge).toBeTruthy()
   expect(meta.vjudge.title).toBe('VJudge')
   expect(meta.vjudge.description).toBeTruthy()
+  expect(meta.vjudge.virtual_judge).toBe(true)
 })
