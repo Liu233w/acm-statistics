@@ -20,12 +20,13 @@ export function warningHelper(worker, crawlerMeta, {nullSolvedListCrawlers}) {
 
   if (crawlerMeta.virtual_judge && worker.solvedList) {
 
-    for (let item of worker.solvedList) {
+    const allCrawlerNames = new Set(_.map(
+      worker.solvedList,
+      item => _.split(item, '-', 2)[0]))
 
-      const crawlerName = _.split(item, '-', 2)[0]
-
-      if (crawlerName in nullSolvedListCrawlers) {
-        warnings.push(`爬虫 ${nullSolvedListCrawlers[crawlerName]} 无法返回题目列表，因此它的结果和本爬虫的结果可能会有重复`)
+    for (let item of allCrawlerNames) {
+      if (item in nullSolvedListCrawlers) {
+        warnings.push(`爬虫 ${nullSolvedListCrawlers[item]} 无法返回题目列表，因此它的结果和本爬虫的结果可能会有重复`)
       }
     }
   }
