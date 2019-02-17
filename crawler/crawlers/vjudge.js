@@ -48,7 +48,50 @@ module.exports = async function (config, username) {
   return {
     solved: acSet.size,
     submissions: submissions,
+    solvedList: resolveSolvedList(acSet),
   }
+}
+
+/**
+ * 从 acSet 获得指定格式的 solvedList
+ * @param {Set<String>} acSet
+ * @return {String[]}
+ */
+function resolveSolvedList(acSet) {
+
+  // 可以简单地通过大小写转换来变成 crawler name 的 oj
+  const simpleMapOj = new Set([
+    'codeforces',
+    'uva',
+    'poj',
+    'hdu',
+    'zoj',
+    'fzu',
+    'spoj',
+    'timus',
+    'csu',
+    // 'hust',
+  ])
+  // 可以用来映射的 crawler name
+  const ojMap = {
+    '': 'NO_NAME',
+  }
+
+  const res = []
+
+  for (let item of acSet) {
+    // 对于部分能识别的oj，将大写字母换成小写就是 crawler name 了
+    const [oj, problem] = item.split('-', 2)
+    if (simpleMapOj.has(oj.toLowerCase())) {
+      res.push(`${oj.toLowerCase()}-${problem}`)
+    } else if (oj in ojMap) {
+      res.push(`${ojMap[oj]}-${problem}`)
+    } else {
+      res.push(item)
+    }
+  }
+
+  return res
 }
 
 const MAX_PAGE_SIZE = 500

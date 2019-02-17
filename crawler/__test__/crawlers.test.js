@@ -242,7 +242,8 @@ describe('vjudge', () => {
   test('test vjudge', async () => {
     const res = await vjudge(vjConfig, 'leoloveacm')
     checkRes(res)
-  })
+    expect(res.solvedList).toContain('codeforces-436B')
+  }, 50000)
 })
 
 function checkRes(res) {
