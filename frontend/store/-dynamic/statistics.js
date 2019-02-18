@@ -181,10 +181,28 @@ export const getters = {
   /**
    * 总体 solved 数量
    * @param state
+   * @param nullSolvedListWorkers
    * @returns {number}
    */
-  solvedNum(state) {
-    return _.reduce(state.workers, (sum, val) => sum + val.solved, 0)
+  solvedNum(state, {nullSolvedListWorkers}) {
+
+    const nullSolvedListWorkerSolvedNum = _.reduce(
+      nullSolvedListWorkers,
+      (sum, item) => sum + item.solved,
+      0)
+
+    const acSet = new Set()
+    for (let worker of state.workers) {
+      if (worker.solvedList) {
+        if (state.crawlers[worker.crawlerName].virtual_judge) {
+          pushSet(acSet, worker.solvedList)
+        } else {
+          pushSet(acSet, addProblemPrefix(worker.solvedList, worker.crawlerName))
+        }
+      }
+    }
+
+    return acSet.size + nullSolvedListWorkerSolvedNum
   },
   /**
    * 总体 submissions 数量
