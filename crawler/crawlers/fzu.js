@@ -22,9 +22,15 @@ module.exports = async function (config, username) {
   }
 
   try {
+
+    const acList = $('b > a[href^="problem.php?pid="]')
+      .map((i, elem) => $(elem).text())
+      .get()
+
     return {
-      submissions: Number($('td').filter((i,el)=>$(el).text()==='Total Submitted').next().text()),
-      solved: Number($('td').filter((i,el)=>$(el).text()==='Total Accepted').next().text()),
+      submissions: Number($('td:contains("Total Submitted") + td').text()),
+      solved: Number($('td:contains("Total Accepted") + td').text()),
+      solvedList: acList,
     }
   } catch (e) {
     throw new Error('无法解析数据')

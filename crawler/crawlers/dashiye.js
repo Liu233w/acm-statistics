@@ -22,12 +22,18 @@ module.exports = async function (config, username) {
   }
 
   try {
-    const solvedTd = $('td').filter((i, el) => $(el).text() === 'Solved')
-    const submitTd = $('td').filter((i, el) => $(el).text() === 'Submit')
+
+    // p(1000);p(1001);p(1002)....p(XXXX);
+    // 这个题目列表是前端渲染的
+    const acListScript = $('td[rowspan=14] > script').html().split('\n')[2]
+    // ['p(1000)', 'p(1001)' ...]
+    const singleList = acListScript.split(';').slice(0, -1)
+    const acList = singleList.map(item => item.substring(2, item.length - 1))
 
     return {
-      solved: Number(solvedTd.next().children().text()),
-      submissions: Number(submitTd.next().children().text()),
+      solved: Number($('td:contains("Solved") + td > a').text()),
+      submissions: Number($('td:contains("Submit") + td > a').text()),
+      solvedList: acList,
     }
   } catch (e) {
     throw new Error('无法解析数据')
