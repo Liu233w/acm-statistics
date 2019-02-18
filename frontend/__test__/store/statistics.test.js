@@ -712,6 +712,143 @@ describe('mutations', () => {
 
 describe('getters', () => {
 
+  describe('solvedNum', () => {
+
+    it('能够统计普通的 worker', () => {
+      const state = {
+        workers: [
+          {
+            solved: 1,
+            solvedList: null,
+            crawlerName: 'cr1',
+          },
+          {
+            solved: 2,
+            solvedList: null,
+            crawlerName: 'cr1',
+          },
+          {
+            solved: 4,
+            solvedList: null,
+            crawlerName: 'cr2',
+          },
+        ],
+        crawlers: {
+          cr1: {},
+          cr2: {},
+        },
+      }
+      const nullSolvedListWorkers = store.getters.nullSolvedListWorkers(state)
+
+      const res = store.getters.solvedNum(state, {nullSolvedListWorkers})
+
+      expect(res).toBe(7)
+    })
+
+    it('能够统计带列表的 worker', () => {
+      const state = {
+        workers: [
+          {
+            solved: 1,
+            solvedList: ['1001'],
+            crawlerName: 'cr1',
+          },
+          {
+            solved: 2,
+            solvedList: ['1001', '1002'],
+            crawlerName: 'cr2',
+          },
+        ],
+        crawlers: {
+          cr1: {},
+          cr2: {},
+        },
+      }
+      const nullSolvedListWorkers = store.getters.nullSolvedListWorkers(state)
+
+      const res = store.getters.solvedNum(state, {nullSolvedListWorkers})
+
+      expect(res).toBe(3)
+    })
+
+    it('能够统计混合型的 worker', () => {
+      const state = {
+        workers: [
+          {
+            solved: 1,
+            solvedList: ['1001'],
+            crawlerName: 'cr1',
+          },
+          {
+            solved: 4,
+            solvedList: null,
+            crawlerName: 'cr1',
+          },
+          {
+            solved: 2,
+            solvedList: ['1001', '1002'],
+            crawlerName: 'cr2',
+          },
+        ],
+        crawlers: {
+          cr1: {},
+          cr2: {},
+        },
+      }
+      const nullSolvedListWorkers = store.getters.nullSolvedListWorkers(state)
+
+      const res = store.getters.solvedNum(state, {nullSolvedListWorkers})
+
+      expect(res).toBe(7)
+    })
+
+    it('能够统计 virtual_judge 的 worker', () => {
+      const state = {
+        workers: [
+          {
+            solved: 1,
+            solvedList: ['1001'],
+            crawlerName: 'cr1',
+          },
+          {
+            solved: 4,
+            solvedList: null,
+            crawlerName: 'cr1',
+          },
+          {
+            solved: 2,
+            solvedList: ['1001', '1002'],
+            crawlerName: 'cr2',
+          },
+          {
+            solved: 5,
+            solvedList: ['cr1-1001', 'cr1-1002', 'cr2-1002', 'cr2-1003', 'NN-1001'],
+            crawlerName: 'cr3',
+          },
+          { // 重复名称
+            solved: 1,
+            solvedList: ['cr1-1001'],
+            crawlerName: 'cr4',
+          },
+        ],
+        crawlers: {
+          cr1: {},
+          cr2: {},
+          cr3: {
+            virtual_judge: true,
+          },
+          cr4: {},
+        },
+      }
+      const nullSolvedListWorkers = store.getters.nullSolvedListWorkers(state)
+
+      const res = store.getters.solvedNum(state, {nullSolvedListWorkers})
+
+      expect(res).toBe(11)
+    })
+
+  })
+
   describe('notWorkingRate', () => {
 
     it('能够正常运作', () => {
