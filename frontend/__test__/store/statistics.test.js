@@ -816,7 +816,7 @@ describe('getters', () => {
   describe('nullSolvedListCrawlers', () => {
     it('能够得到正确的结果', () => {
 
-      const res = store.getters.nullSolvedListCrawlers({
+      const state = {
         crawlers: {
           cr1: {
             title: 'cr1 title',
@@ -842,7 +842,10 @@ describe('getters', () => {
             crawlerName: 'cr3',
           },
         ],
-      })
+      }
+      const nullSolvedListWorkers = store.getters.nullSolvedListWorkers(state)
+
+      const res = store.getters.nullSolvedListCrawlers(state, {nullSolvedListWorkers})
 
       expect(res).toMatchObject({
         cr1: 'cr1 title',
