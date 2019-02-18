@@ -19,7 +19,7 @@ module.exports = async function (config, username) {
 
   let solved = null
   try {
-    solved = Number($($('td.author_stats_value')[1]).text().split(' ')[0])
+    solved = Number($('td.author_stats_name:contains("Problems solved") + td').text().match(/\d+/g)[0])
   } catch (e) {
     throw new Error('无法解析数据')
   }
@@ -27,9 +27,14 @@ module.exports = async function (config, username) {
   const submissionPageUri = $('a').filter((i, el) => $(el).text() === 'Recent submissions')
   const submissions = await queryList(submissionPageUri.attr('href'))
 
+  const solvedList = $('td.accepted > a')
+    .map((i, elem) => $(elem).text().trim())
+    .get()
+
   return {
-    solved: solved,
-    submissions: submissions,
+    solved,
+    submissions,
+    solvedList,
   }
 }
 
@@ -48,7 +53,7 @@ async function queryList(uri) {
     return 0
   }
 
-  const nextLink = $('a').filter((i, el) => $(el).text().startsWith('Next'))
+  const nextLink = $('a:contains("Next")')
   if (nextLink.length === 0) {
     return num
   } else {

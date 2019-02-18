@@ -24,9 +24,15 @@ module.exports = async function (config, username) {
 
   try {
     const num = data.split('/')
+
+    const solvedList = $('div:has(b:contains("Solved Problems")) > a')
+      .map((i, elem) => $(elem).text().trim())
+      .get()
+
     return {
       solved: Number(num[0]),
       submissions: Number(num[1]),
+      solvedList,
     }
   } catch (e) {
     throw new Error('无法解析数据')

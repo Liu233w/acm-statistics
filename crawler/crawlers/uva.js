@@ -23,8 +23,14 @@ module.exports = async function (config, username) {
     }
   })
 
+  const solvedList = []
+  for (let item of acSet) {
+    solvedList.push(String(item))
+  }
+
   return {
     solved: acSet.size,
     submissions: problemArray.length,
+    solvedList,
   }
 }

@@ -55,6 +55,7 @@ describe('hdu', () => {
   test('test hdu', async () => {
     const res = await hdu(config, 'vjudge4')
     checkRes(res)
+    expect(res.solvedList).toContain('1001')
   })
 
 })
@@ -72,6 +73,7 @@ describe('zoj', () => {
   test('test zoj', async () => {
     const res = await zoj(null, username)
     checkRes(res)
+    expect(res.solvedList).toContain('1001')
   })
 
 })
@@ -89,6 +91,7 @@ describe('dashiye', () => {
   test('test dashiye', async () => {
     const res = await dashiye(null, username)
     checkRes(res)
+    expect(res.solvedList).toContain('1001')
   })
 
 })
@@ -123,6 +126,7 @@ describe('uva', () => {
   test('test uva', async () => {
     const res = await uva(null, 'leoloveacm')
     checkRes(res)
+    expect(res.solvedList).toContain('4141')
   })
 
 })
@@ -136,6 +140,7 @@ describe('fzu', () => {
   test('test fzu', async () => {
     const res = await fzu(null, username)
     checkRes(res)
+    expect(res.solvedList).toContain('1001')
   })
 
 })
@@ -153,6 +158,7 @@ describe('spoj', () => {
   test('test spoj', async () => {
     const res = await spoj(null, username)
     checkRes(res)
+    expect(res.solvedList).toContain('ABA12D')
   })
 
 })
@@ -171,6 +177,7 @@ describe('timus', () => {
     const res = await timus(null, 'vjudge11')
     checkRes(res)
     expect(res.submissions).toBeGreaterThan(10)
+    expect(res.solvedList).toContain('1387')
   })
 
 })
@@ -254,4 +261,8 @@ function checkRes(res) {
   expect(res.submissions).toBeGreaterThan(0)
 
   expect(res.submissions).toBeGreaterThan(res.solved)
+
+  if (!_.isNil(res.solvedList)) {
+    expect(res.solvedList.length).toBe(res.solved)
+  }
 }
