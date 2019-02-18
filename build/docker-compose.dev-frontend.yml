@@ -12,6 +12,11 @@ services:
     - NODE_ENV=development
     command: sh -c "npm i --unsafe-perm && npm run dev"
 
+  crawler-api-backend:
+    environment:
+    # 显示后端详细日志
+    - NODE_ENV=development
+
   watchtower:
     # skip watchtower in development
     image: tianon/true

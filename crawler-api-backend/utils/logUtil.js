@@ -67,8 +67,11 @@ const formatRes = (ctx, resTime) => {
   logText += 'response status: ' + ctx.status + '\n'
 
   //响应内容
-  logText += 'response body: skipped\n'
-  // logText += 'response body: ' + '\n' + JSON.stringify(ctx.body) + '\n'
+  if (process.env.NODE_ENV === 'development') {
+    logText += 'response body: ' + '\n' + JSON.stringify(ctx.body) + '\n'
+  } else {
+    logText += 'response body: skipped\n'
+  }
 
   //响应日志结束
   logText += '*************** response log end ***************' + '\n'
