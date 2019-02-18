@@ -158,16 +158,23 @@ export const mutations = {
 
 export const getters = {
   /**
+   * 没法得到 solvedList 的 worker
+   * @param state
+   * @return {Object[]}
+   */
+  nullSolvedListWorkers(state) {
+    return _.filter(state.workers, item => item.solvedList === null)
+  },
+  /**
    * 没法得到 solvedList 的 worker 的爬虫名
    * @param state
+   * @param nullSolvedListWorkers
    * @return {Object.<String, String>} key 是 crawler name， value 是 title
    */
-  nullSolvedListCrawlers(state) {
+  nullSolvedListCrawlers(state, {nullSolvedListWorkers}) {
     const res = {}
-    for (let item of state.workers) {
-      if (item.solvedList === null) {
-        res[item.crawlerName] = state.crawlers[item.crawlerName].title
-      }
+    for (let item of nullSolvedListWorkers) {
+      res[item.crawlerName] = state.crawlers[item.crawlerName].title
     }
     return res
   },
