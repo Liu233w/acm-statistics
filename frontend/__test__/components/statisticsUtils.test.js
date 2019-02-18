@@ -53,7 +53,7 @@ describe('warningHelper', () => {
     ])
   })
 
-  it('能够警告题目列表可能有重复', () => {
+  it('能够警告 vjudge 的题目列表可能有重复', () => {
 
     const worker = {
       solvedList: [
@@ -77,8 +77,31 @@ describe('warningHelper', () => {
     const res = warningHelper(worker, crawlerMeta, getters)
 
     expect(res).toMatchObject([
-      '爬虫 a title 无法返回题目列表，因此它的结果和本爬虫的结果可能会有重复',
-      '爬虫 b title 无法返回题目列表，因此它的结果和本爬虫的结果可能会有重复',
+      '爬虫 a title 无法返回题目列表，因此它的结果和本爬虫的结果可能会重复计算',
+      '爬虫 b title 无法返回题目列表，因此它的结果和本爬虫的结果可能会重复计算',
+    ])
+  })
+
+  it('能够警告多 worker 的爬虫的题目列表可能会有重复', () => {
+
+    const worker = {
+      solvedList: null,
+      crawlerName: 'cr1',
+    }
+    const crawlerMeta = {}
+    const getters = {
+      nullSolvedListCrawlers: {
+        'cr1': 'cr1 title',
+      },
+      workerNumberOfCrawler: {
+        'cr1': 2,
+      },
+    }
+
+    const res = warningHelper(worker, crawlerMeta, getters)
+
+    expect(res).toMatchObject([
+      '本爬虫无法返回题目列表，因此多个账户的通过题目可能会被重复计算',
     ])
   })
 })

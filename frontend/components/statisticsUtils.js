@@ -5,9 +5,10 @@ import _ from 'lodash'
  * @param worker
  * @param crawlerMeta
  * @param nullSolvedListCrawlers
+ * @param workerNumberOfCrawler
  * @return {Array<string>}
  */
-export function warningHelper(worker, crawlerMeta, {nullSolvedListCrawlers}) {
+export function warningHelper(worker, crawlerMeta, {nullSolvedListCrawlers, workerNumberOfCrawler}) {
   const warnings = []
 
   if (_.startsWith(worker.username, ' ')) {
@@ -26,9 +27,16 @@ export function warningHelper(worker, crawlerMeta, {nullSolvedListCrawlers}) {
 
     for (let item of allCrawlerNames) {
       if (item in nullSolvedListCrawlers) {
-        warnings.push(`爬虫 ${nullSolvedListCrawlers[item]} 无法返回题目列表，因此它的结果和本爬虫的结果可能会有重复`)
+        warnings.push(`爬虫 ${nullSolvedListCrawlers[item]} 无法返回题目列表，因此它的结果和本爬虫的结果可能会重复计算`)
       }
     }
+  }
+
+  if (!crawlerMeta.virtual_judge
+    && worker.solvedList === null
+    && workerNumberOfCrawler[worker.crawlerName] >= 2) {
+
+    warnings.push('本爬虫无法返回题目列表，因此多个账户的通过题目可能会被重复计算')
   }
 
   return warnings
