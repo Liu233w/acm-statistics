@@ -250,8 +250,10 @@
         return this.workerIdxOfCrawler[this.index]
       },
       warnings() {
-        const nullSolvedListCrawlers = this.nullSolvedListCrawlers
-        return warningHelper(this.worker, this.crawler, {nullSolvedListCrawlers})
+        return warningHelper(this.worker, this.crawler, {
+          nullSolvedListCrawlers: this.nullSolvedListCrawlers,
+          workerNumberOfCrawler: this.workerNumberOfCrawler,
+        })
       },
       solvedListStatus() {
         if (_.isArray(this.worker.solvedList)) {
