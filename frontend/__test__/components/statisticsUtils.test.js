@@ -62,6 +62,7 @@ describe('warningHelper', () => {
         'B-002',
         'C-001',
       ],
+      solved: 4,
       crawlerName: 'vjudge',
     }
     const crawlerMeta = {
@@ -102,6 +103,20 @@ describe('warningHelper', () => {
 
     expect(res).toMatchObject([
       '本爬虫无法返回题目列表，因此多个账户的通过题目可能会被重复计算',
+    ])
+  })
+
+  it('在爬虫返回的solved和solvedList.length不一致时显示警告', () => {
+
+    const worker = {
+      solved: 2,
+      solvedList: ['1001'],
+    }
+
+    const res = warningHelper(worker, {}, {})
+
+    expect(res).toMatchObject([
+      '本爬虫获取到的通过数为 2，但是通过的题目列表有 1 道题目，这可能是一个爬虫的错误。',
     ])
   })
 })

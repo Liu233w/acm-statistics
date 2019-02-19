@@ -39,6 +39,12 @@ export function warningHelper(worker, crawlerMeta, {nullSolvedListCrawlers, work
     warnings.push('本爬虫无法返回题目列表，因此多个账户的通过题目可能会被重复计算')
   }
 
+  if (!_.isNil(worker.solvedList)
+    && worker.solvedList.length !== worker.solved) {
+    warnings.push(`本爬虫获取到的通过数为 ${worker.solved}，但是通过的题目列表有 ${worker.solvedList.length}` +
+      ' 道题目，这可能是一个爬虫的错误。')
+  }
+
   return warnings
 }
 
