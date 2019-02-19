@@ -105,34 +105,32 @@
             <span>{{ worker.errorMessage }}</span>
           </VFlex>
         </VLayout>
-        <!-- 直接把 v-else 放到 VTooltip 上会引发bug导致内容无法正常删除 -->
-        <!-- TODO: 等待此bug修复 -->
-        <div v-else>
-          <VTooltip bottom>
-            <template #activator="tip">
-              <VLayout column xs12
-                       ripple :class="{ 'elevation-2': hoverOnResult }"
-                       @mouseover="hoverOnResult = true" @mouseleave="hoverOnResult = false"
-                       @click="solvedListDialog = true"
-                       v-on="tip.on"
-              >
-                <VFlex>
-                  <span class="grey--text">
-                    SOLVED:
-                  </span>
-                  {{ worker.solved }}
-                </VFlex>
-                <VFlex>
-                  <span class="grey--text">
-                    SUBMISSIONS:
-                  </span>
-                  {{ worker.submissions }}
-                </VFlex>
-              </VLayout>
+        <VLayout column xs12 v-else>
+          <VFlex>
+            <span class="grey--text">
+              SOLVED:
+            </span>
+            <template v-if="solvedListStatus === 'none'">
+              {{ worker.solved }}
             </template>
-            <span>查看通过的题目列表</span>
-          </VTooltip>
-        </div>
+            <VTooltip bottom v-else>
+              <template #activator="tip">
+                <a v-on="tip.on"
+                   @click="solvedListDialog = true"
+                >
+                  {{ worker.solved }}
+                </a>
+              </template>
+              <span>查看通过的题目列表</span>
+            </VTooltip>
+          </VFlex>
+          <VFlex>
+            <span class="grey--text">
+              SUBMISSIONS:
+            </span>
+            {{ worker.submissions }}
+          </VFlex>
+        </VLayout>
       </template>
     </VContainer>
 
@@ -188,7 +186,6 @@
       return {
         WORKER_STATUS: WORKER_STATUS,
         solvedListDialog: false,
-        hoverOnResult: false,
       }
     },
     methods: {
