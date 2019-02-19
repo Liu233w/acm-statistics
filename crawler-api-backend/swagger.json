@@ -113,6 +113,13 @@
         "submissions": {
           "type": "integer",
           "format": "int64"
+        },
+        "solvedList": {
+          "type": "array",
+          "description": "用户通过的题目列表。如果是普通的爬虫，只包含题目编号；如果是 virtual judge 的爬虫，格式为 `crawlerName-problemNumber`",
+          "items": {
+            "type": "string"
+          }
         }
       }
     },
