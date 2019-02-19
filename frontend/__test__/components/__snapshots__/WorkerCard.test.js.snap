@@ -46,6 +46,26 @@ exports[`WorkerCard 能正确渲染 1`] = `
   </div>
   <!---->
 </div>
+<div class="v-dialog__container" style="display: block;">
+  <div tabindex="-1" class="v-dialog__content" style="z-index: 0;">
+    <div class="v-dialog v-dialog--scrollable" style="max-width: 500px; display: none;">
+      <div class="v-card v-sheet theme--light" xs12="" md8="" lg6="">
+        <div class="v-card__title"><span class="headline">
+          用户  在 crawler title 通过的题目列表
+        </span></div>
+        <div class="v-card__text">
+          当前没有通过的题目
+        </div>
+        <hr class="v-divider theme--light">
+        <div class="v-card__actions"><button type="button" class="v-btn v-btn--flat theme--light blue--text text--darken-1">
+            <div class="v-btn__content">
+              Close
+            </div>
+          </button></div>
+      </div>
+    </div>
+  </div>
+</div>
 </div>
 `;
 
@@ -95,6 +115,26 @@ exports[`WorkerCard 能正确渲染用户名 1`] = `
   </div>
   <!---->
 </div>
+<div class="v-dialog__container" style="display: block;">
+  <div tabindex="-1" class="v-dialog__content" style="z-index: 0;">
+    <div class="v-dialog v-dialog--scrollable" style="max-width: 500px; display: none;">
+      <div class="v-card v-sheet theme--light" xs12="" md8="" lg6="">
+        <div class="v-card__title"><span class="headline">
+          用户 test_crawler_username 在 crawler title 通过的题目列表
+        </span></div>
+        <div class="v-card__text">
+          当前爬虫无法获取通过的题目列表
+        </div>
+        <hr class="v-divider theme--light">
+        <div class="v-card__actions"><button type="button" class="v-btn v-btn--flat theme--light blue--text text--darken-1">
+            <div class="v-btn__content">
+              Close
+            </div>
+          </button></div>
+      </div>
+    </div>
+  </div>
+</div>
 </div>
 `;
 
@@ -143,6 +183,26 @@ exports[`WorkerCard 能正确渲染结果 1`] = `
     </div>
   </div>
   <!---->
+</div>
+<div class="v-dialog__container" style="display: block;">
+  <div tabindex="-1" class="v-dialog__content" style="z-index: 0;">
+    <div class="v-dialog v-dialog--scrollable" style="max-width: 500px; display: none;">
+      <div class="v-card v-sheet theme--light" xs12="" md8="" lg6="">
+        <div class="v-card__title"><span class="headline">
+          用户 test_crawler_username 在 crawler title 通过的题目列表
+        </span></div>
+        <div class="v-card__text">
+          当前爬虫无法获取通过的题目列表
+        </div>
+        <hr class="v-divider theme--light">
+        <div class="v-card__actions"><button type="button" class="v-btn v-btn--flat theme--light blue--text text--darken-1">
+            <div class="v-btn__content">
+              Close
+            </div>
+          </button></div>
+      </div>
+    </div>
+  </div>
 </div>
 </div>
 `;
@@ -201,6 +261,26 @@ exports[`WorkerCard 能正确渲染警告 1`] = `
   </div>
   <!---->
 </div>
+<div class="v-dialog__container" style="display: block;">
+  <div tabindex="-1" class="v-dialog__content" style="z-index: 0;">
+    <div class="v-dialog v-dialog--scrollable" style="max-width: 500px; display: none;">
+      <div class="v-card v-sheet theme--light" xs12="" md8="" lg6="">
+        <div class="v-card__title"><span class="headline">
+          用户  username with space 在 crawler title 通过的题目列表
+        </span></div>
+        <div class="v-card__text">
+          当前爬虫无法获取通过的题目列表
+        </div>
+        <hr class="v-divider theme--light">
+        <div class="v-card__actions"><button type="button" class="v-btn v-btn--flat theme--light blue--text text--darken-1">
+            <div class="v-btn__content">
+              Close
+            </div>
+          </button></div>
+      </div>
+    </div>
+  </div>
+</div>
 </div>
 `;
 
@@ -249,6 +329,26 @@ exports[`WorkerCard 能正确渲染错误 1`] = `
     </div>
   </div>
   <!---->
+</div>
+<div class="v-dialog__container" style="display: block;">
+  <div tabindex="-1" class="v-dialog__content" style="z-index: 0;">
+    <div class="v-dialog v-dialog--scrollable" style="max-width: 500px; display: none;">
+      <div class="v-card v-sheet theme--light" xs12="" md8="" lg6="">
+        <div class="v-card__title"><span class="headline">
+          用户 test_crawler_username 在 crawler title 通过的题目列表
+        </span></div>
+        <div class="v-card__text">
+          当前爬虫无法获取通过的题目列表
+        </div>
+        <hr class="v-divider theme--light">
+        <div class="v-card__actions"><button type="button" class="v-btn v-btn--flat theme--light blue--text text--darken-1">
+            <div class="v-btn__content">
+              Close
+            </div>
+          </button></div>
+      </div>
+    </div>
+  </div>
 </div>
 </div>
 `;
