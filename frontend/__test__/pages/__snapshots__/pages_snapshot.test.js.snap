@@ -2652,6 +2652,26 @@ exports[`/statistics 1`] = `
               </div>
               <!---->
             </div>
+            <div class="v-dialog__container" style="display:block;">
+              <div tabindex="-1" class="v-dialog__content" style="z-index:0;">
+                <div class="v-dialog v-dialog--scrollable" style="max-width:500px;display:none;">
+                  <div xs12="" md8="" lg6="" class="v-card v-sheet theme--light">
+                    <div class="v-card__title"><span class="headline">
+          &#x7528;&#x6237;  &#x5728; crawler0 &#x901A;&#x8FC7;&#x7684;&#x9898;&#x76EE;&#x5217;&#x8868;
+        </span></div>
+                    <div class="v-card__text">
+                      &#x5F53;&#x524D;&#x6CA1;&#x6709;&#x901A;&#x8FC7;&#x7684;&#x9898;&#x76EE;
+                    </div>
+                    <hr class="v-divider theme--light">
+                    <div class="v-card__actions"><button type="button" class="v-btn v-btn--flat theme--light blue--text text--darken-1">
+                        <div class="v-btn__content">
+                          Close
+                        </div>
+                      </button></div>
+                  </div>
+                </div>
+              </div>
+            </div>
         </div>
       </div>
       <div data-column-idx="0" data-column-item-idx="1" class="flex worker-item" style="z-index:999;">
@@ -2702,6 +2722,26 @@ exports[`/statistics 1`] = `
       </div>
       <!---->
     </div>
+    <div class="v-dialog__container" style="display:block;">
+      <div tabindex="-1" class="v-dialog__content" style="z-index:0;">
+        <div class="v-dialog v-dialog--scrollable" style="max-width:500px;display:none;">
+          <div xs12="" md8="" lg6="" class="v-card v-sheet theme--light">
+            <div class="v-card__title"><span class="headline">
+          &#x7528;&#x6237;  &#x5728; crawler1 &#x901A;&#x8FC7;&#x7684;&#x9898;&#x76EE;&#x5217;&#x8868;
+        </span></div>
+            <div class="v-card__text">
+              &#x5F53;&#x524D;&#x6CA1;&#x6709;&#x901A;&#x8FC7;&#x7684;&#x9898;&#x76EE;
+            </div>
+            <hr class="v-divider theme--light">
+            <div class="v-card__actions"><button type="button" class="v-btn v-btn--flat theme--light blue--text text--darken-1">
+                <div class="v-btn__content">
+                  Close
+                </div>
+              </button></div>
+          </div>
+        </div>
+      </div>
+    </div>
     </div>
     </div>
     <div data-column-idx="0" data-column-item-idx="2" class="flex worker-item" style="z-index:998;">
@@ -2751,6 +2791,26 @@ exports[`/statistics 1`] = `
       </div>
       <!---->
     </div>
+    <div class="v-dialog__container" style="display:block;">
+      <div tabindex="-1" class="v-dialog__content" style="z-index:0;">
+        <div class="v-dialog v-dialog--scrollable" style="max-width:500px;display:none;">
+          <div xs12="" md8="" lg6="" class="v-card v-sheet theme--light">
+            <div class="v-card__title"><span class="headline">
+          &#x7528;&#x6237;  &#x5728; crawler2 &#x901A;&#x8FC7;&#x7684;&#x9898;&#x76EE;&#x5217;&#x8868;
+        </span></div>
+            <div class="v-card__text">
+              &#x5F53;&#x524D;&#x6CA1;&#x6709;&#x901A;&#x8FC7;&#x7684;&#x9898;&#x76EE;
+            </div>
+            <hr class="v-divider theme--light">
+            <div class="v-card__actions"><button type="button" class="v-btn v-btn--flat theme--light blue--text text--darken-1">
+                <div class="v-btn__content">
+                  Close
+                </div>
+              </button></div>
+          </div>
+        </div>
+      </div>
+    </div>
     </div>
     </div></span></div>
     </div>
@@ -2793,6 +2853,26 @@ exports[`/statistics 1`] = `
         </div>
       </div>
       <!---->
+    </div>
+    <div class="v-dialog__container" style="display:block;">
+      <div tabindex="-1" class="v-dialog__content" style="z-index:0;">
+        <div class="v-dialog v-dialog--scrollable" style="max-width:500px;display:none;">
+          <div xs12="" md8="" lg6="" class="v-card v-sheet theme--light">
+            <div class="v-card__title"><span class="headline">
+          &#x7528;&#x6237;  &#x5728; crawler3 &#x901A;&#x8FC7;&#x7684;&#x9898;&#x76EE;&#x5217;&#x8868;
+        </span></div>
+            <div class="v-card__text">
+              &#x5F53;&#x524D;&#x6CA1;&#x6709;&#x901A;&#x8FC7;&#x7684;&#x9898;&#x76EE;
+            </div>
+            <hr class="v-divider theme--light">
+            <div class="v-card__actions"><button type="button" class="v-btn v-btn--flat theme--light blue--text text--darken-1">
+                <div class="v-btn__content">
+                  Close
+                </div>
+              </button></div>
+          </div>
+        </div>
+      </div>
     </div>
     </div>
     </div>
@@ -2843,6 +2923,26 @@ exports[`/statistics 1`] = `
       </div>
       <!---->
     </div>
+    <div class="v-dialog__container" style="display:block;">
+      <div tabindex="-1" class="v-dialog__content" style="z-index:0;">
+        <div class="v-dialog v-dialog--scrollable" style="max-width:500px;display:none;">
+          <div xs12="" md8="" lg6="" class="v-card v-sheet theme--light">
+            <div class="v-card__title"><span class="headline">
+          &#x7528;&#x6237;  &#x5728; crawler4 &#x901A;&#x8FC7;&#x7684;&#x9898;&#x76EE;&#x5217;&#x8868;
+        </span></div>
+            <div class="v-card__text">
+              &#x5F53;&#x524D;&#x6CA1;&#x6709;&#x901A;&#x8FC7;&#x7684;&#x9898;&#x76EE;
+            </div>
+            <hr class="v-divider theme--light">
+            <div class="v-card__actions"><button type="button" class="v-btn v-btn--flat theme--light blue--text text--darken-1">
+                <div class="v-btn__content">
+                  Close
+                </div>
+              </button></div>
+          </div>
+        </div>
+      </div>
+    </div>
     </div>
     </div>
     <div data-column-idx="1" data-column-item-idx="2" class="flex worker-item" style="z-index:998;">
@@ -2892,6 +2992,26 @@ exports[`/statistics 1`] = `
       </div>
       <!---->
     </div>
+    <div class="v-dialog__container" style="display:block;">
+      <div tabindex="-1" class="v-dialog__content" style="z-index:0;">
+        <div class="v-dialog v-dialog--scrollable" style="max-width:500px;display:none;">
+          <div xs12="" md8="" lg6="" class="v-card v-sheet theme--light">
+            <div class="v-card__title"><span class="headline">
+          &#x7528;&#x6237;  &#x5728; with description &#x901A;&#x8FC7;&#x7684;&#x9898;&#x76EE;&#x5217;&#x8868;
+        </span></div>
+            <div class="v-card__text">
+              &#x5F53;&#x524D;&#x6CA1;&#x6709;&#x901A;&#x8FC7;&#x7684;&#x9898;&#x76EE;
+            </div>
+            <hr class="v-divider theme--light">
+            <div class="v-card__actions"><button type="button" class="v-btn v-btn--flat theme--light blue--text text--darken-1">
+                <div class="v-btn__content">
+                  Close
+                </div>
+              </button></div>
+          </div>
+        </div>
+      </div>
+    </div>
     </div>
     </div>
     </span></div>
@@ -2935,6 +3055,26 @@ exports[`/statistics 1`] = `
         </div>
       </div>
       <!---->
+    </div>
+    <div class="v-dialog__container" style="display:block;">
+      <div tabindex="-1" class="v-dialog__content" style="z-index:0;">
+        <div class="v-dialog v-dialog--scrollable" style="max-width:500px;display:none;">
+          <div xs12="" md8="" lg6="" class="v-card v-sheet theme--light">
+            <div class="v-card__title"><span class="headline">
+          &#x7528;&#x6237;  &#x5728; with url &#x901A;&#x8FC7;&#x7684;&#x9898;&#x76EE;&#x5217;&#x8868;
+        </span></div>
+            <div class="v-card__text">
+              &#x5F53;&#x524D;&#x6CA1;&#x6709;&#x901A;&#x8FC7;&#x7684;&#x9898;&#x76EE;
+            </div>
+            <hr class="v-divider theme--light">
+            <div class="v-card__actions"><button type="button" class="v-btn v-btn--flat theme--light blue--text text--darken-1">
+                <div class="v-btn__content">
+                  Close
+                </div>
+              </button></div>
+          </div>
+        </div>
+      </div>
     </div>
     </div>
     </div>
@@ -2985,6 +3125,26 @@ exports[`/statistics 1`] = `
       </div>
       <!---->
     </div>
+    <div class="v-dialog__container" style="display:block;">
+      <div tabindex="-1" class="v-dialog__content" style="z-index:0;">
+        <div class="v-dialog v-dialog--scrollable" style="max-width:500px;display:none;">
+          <div xs12="" md8="" lg6="" class="v-card v-sheet theme--light">
+            <div class="v-card__title"><span class="headline">
+          &#x7528;&#x6237;  &#x5728; with all &#x901A;&#x8FC7;&#x7684;&#x9898;&#x76EE;&#x5217;&#x8868;
+        </span></div>
+            <div class="v-card__text">
+              &#x5F53;&#x524D;&#x6CA1;&#x6709;&#x901A;&#x8FC7;&#x7684;&#x9898;&#x76EE;
+            </div>
+            <hr class="v-divider theme--light">
+            <div class="v-card__actions"><button type="button" class="v-btn v-btn--flat theme--light blue--text text--darken-1">
+                <div class="v-btn__content">
+                  Close
+                </div>
+              </button></div>
+          </div>
+        </div>
+      </div>
+    </div>
     </div>
     </div>
     </span></div>
@@ -3016,7 +3176,8 @@ exports[`/statistics 1`] = `
                 solved: b,
                 submissions: b,
                 errorMessage: a,
-                tokenKey: c
+                tokenKey: c,
+                solvedList: []
               }, {
                 crawlerName: f,
                 username: a,
@@ -3024,7 +3185,8 @@ exports[`/statistics 1`] = `
                 solved: b,
                 submissions: b,
                 errorMessage: a,
-                tokenKey: c
+                tokenKey: c,
+                solvedList: []
               }, {
                 crawlerName: e,
                 username: a,
@@ -3032,7 +3194,8 @@ exports[`/statistics 1`] = `
                 solved: b,
                 submissions: b,
                 errorMessage: a,
-                tokenKey: c
+                tokenKey: c,
+                solvedList: []
               }, {
                 crawlerName: h,
                 username: a,
@@ -3040,7 +3203,8 @@ exports[`/statistics 1`] = `
                 solved: b,
                 submissions: b,
                 errorMessage: a,
-                tokenKey: c
+                tokenKey: c,
+                solvedList: []
               }, {
                 crawlerName: i,
                 username: a,
@@ -3048,7 +3212,8 @@ exports[`/statistics 1`] = `
                 solved: b,
                 submissions: b,
                 errorMessage: a,
-                tokenKey: c
+                tokenKey: c,
+                solvedList: []
               }, {
                 crawlerName: j,
                 username: a,
@@ -3056,7 +3221,8 @@ exports[`/statistics 1`] = `
                 solved: b,
                 submissions: b,
                 errorMessage: a,
-                tokenKey: c
+                tokenKey: c,
+                solvedList: []
               }, {
                 crawlerName: k,
                 username: a,
@@ -3064,7 +3230,8 @@ exports[`/statistics 1`] = `
                 solved: b,
                 submissions: b,
                 errorMessage: a,
-                tokenKey: c
+                tokenKey: c,
+                solvedList: []
               }, {
                 crawlerName: l,
                 username: a,
@@ -3072,7 +3239,8 @@ exports[`/statistics 1`] = `
                 solved: b,
                 submissions: b,
                 errorMessage: a,
-                tokenKey: c
+                tokenKey: c,
+                solvedList: []
               }],
               crawlers: {
                 crawler0: {
