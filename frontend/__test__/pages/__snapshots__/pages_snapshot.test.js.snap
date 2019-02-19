@@ -732,10 +732,7 @@ exports[`/ 1`] = `
                   NWPU-ACM &#x67E5;&#x8BE2;&#x7CFB;&#x7EDF;
                 </div>
                 <div class="spacer"></div> <span class="v-tooltip v-tooltip--left"><div class="v-tooltip__content" style="left:12px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"> <span>Star me on Github!</span>
-              </div><span><a href="https://github.com/Liu233w/acm-statistics" target="_blank" class="v-btn v-btn--icon theme--light"><div class="v-btn__content"><i aria-hidden="true" class="v-icon 
-          fa fa 
-          fa fa-github
-         theme--light" style="font-size:28px;"></i></div></a></span></span>
+              </div><span><a href="https://github.com/Liu233w/acm-statistics" target="_blank" class="v-btn v-btn--icon theme--light"><div class="v-btn__content"><i aria-hidden="true" class="v-icon fa fa fa fa-github theme--light" style="font-size:28px;"></i></div></a></span></span>
           </div>
           </nav>
           <main class="v-content" style="padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px;">
@@ -775,9 +772,7 @@ exports[`/ 1`] = `
                       <div class="layout row wrap">
                         <div class="flex xs12 md4">
                           <div class="elevation-0 transparent v-card v-card--flat v-sheet theme--light">
-                            <div class="v-card__text text-xs-center"><i aria-hidden="true" class="v-icon blue--text text--lighten-2 material-icons theme--light" style="font-size:40px;">
-                                link
-                              </i></div>
+                            <div class="v-card__text text-xs-center"><i aria-hidden="true" class="v-icon blue--text text--lighten-2 material-icons theme--light" style="font-size:40px;">link</i></div>
                             <div class="v-card__title layout justify-center v-card__title--primary">
                               <div class="headline text-xs-center">
                                 &#x514D;&#x8D39;&#x63D0;&#x4F9B;&#x9898;&#x91CF;&#x67E5;&#x8BE2;API
@@ -794,10 +789,7 @@ exports[`/ 1`] = `
                         </div>
                         <div class="flex xs12 md4">
                           <div class="elevation-0 transparent v-card v-card--flat v-sheet theme--light">
-                            <div class="v-card__text text-xs-center"><i aria-hidden="true" class="v-icon blue--text text--lighten-2 
-                      fa fa 
-                      fa fa-github
-                     theme--light" style="font-size:40px;"></i></div>
+                            <div class="v-card__text text-xs-center"><i aria-hidden="true" class="v-icon blue--text text--lighten-2 fa fa fa fa-github theme--light" style="font-size:40px;"></i></div>
                             <div class="v-card__title layout justify-center v-card__title--primary">
                               <div class="headline text-xs-center">
                                 &#x5B8C;&#x5168;&#x5F00;&#x6E90;
@@ -815,9 +807,7 @@ exports[`/ 1`] = `
                         </div>
                         <div class="flex xs12 md4">
                           <div class="elevation-0 transparent v-card v-card--flat v-sheet theme--light">
-                            <div class="v-card__text text-xs-center"><i aria-hidden="true" class="v-icon blue--text text--lighten-2 material-icons theme--light" style="font-size:40px;">
-                                build
-                              </i></div>
+                            <div class="v-card__text text-xs-center"><i aria-hidden="true" class="v-icon blue--text text--lighten-2 material-icons theme--light" style="font-size:40px;">build</i></div>
                             <div class="v-card__title layout justify-center v-card__title--primary">
                               <div class="headline text-xs-center">
                                 &#x66F4;&#x591A;&#x529F;&#x80FD;&#x652F;&#x6301;&#x4E2D;
@@ -885,35 +875,25 @@ exports[`/ 1`] = `
                         </div>
                         <div role="list" class="v-list transparent theme--light">
                           <div role="listitem"><a href="https://jq.qq.com/?_wv=1027&amp;k=5qgzfQc" target="_blank" class="v-list__tile v-list__tile--link theme--light">
-                              <div class="v-list__tile__action"><i aria-hidden="true" class="v-icon blue--text text--lighten-2 
-                      fa fa 
-                      fa fa-qq
-                     theme--light"></i></div>
+                              <div class="v-list__tile__action"><i aria-hidden="true" class="v-icon blue--text text--lighten-2 fa fa fa fa-qq theme--light"></i></div>
                               <div class="v-list__tile__content">
                                 <div class="v-list__tile__title">198820787</div>
                               </div>
                             </a></div>
                           <div role="listitem"><a class="v-list__tile v-list__tile--link theme--light">
-                              <div class="v-list__tile__action"><i aria-hidden="true" class="v-icon blue--text text--lighten-2 material-icons theme--light">
-                                  place
-                                </i></div>
+                              <div class="v-list__tile__action"><i aria-hidden="true" class="v-icon blue--text text--lighten-2 material-icons theme--light">place</i></div>
                               <div class="v-list__tile__content">
                                 <div class="v-list__tile__title">&#x9655;&#x897F;&#x7701;&#x897F;&#x5B89;&#x5E02;&#x957F;&#x5B89;&#x533A;&#x897F;&#x5317;&#x5DE5;&#x4E1A;&#x5927;&#x5B66;&#x957F;&#x5B89;&#x6821;&#x533A;&#x8BA1;&#x7B97;&#x673A;&#x5B66;&#x9662;110&#x5BA4;</div>
                               </div>
                             </a></div>
                           <div role="listitem"><a href="mailto:support@npuacm.info" class="v-list__tile v-list__tile--link theme--light">
-                              <div class="v-list__tile__action"><i aria-hidden="true" class="v-icon blue--text text--lighten-2 material-icons theme--light">
-                                  email
-                                </i></div>
+                              <div class="v-list__tile__action"><i aria-hidden="true" class="v-icon blue--text text--lighten-2 material-icons theme--light">email</i></div>
                               <div class="v-list__tile__content">
                                 <div class="v-list__tile__title">support@npuacm.info</div>
                               </div>
                             </a></div>
                           <div role="listitem"><a class="v-list__tile v-list__tile--link theme--light">
-                              <div class="v-list__tile__action"><i aria-hidden="true" class="v-icon blue--text text--lighten-2 
-                      fa fa 
-                      fa fa-weixin
-                     theme--light"></i></div>
+                              <div class="v-list__tile__action"><i aria-hidden="true" class="v-icon blue--text text--lighten-2 fa fa fa fa-weixin theme--light"></i></div>
                               <div class="v-list__tile__content">
                                 <div class="v-list__tile__title">&#x5FAE;&#x4FE1;&#x516C;&#x4F17;&#x53F7;</div>
                               </div>
@@ -1743,10 +1723,7 @@ exports[`/about 1`] = `
                 </button>
                 <div class="v-toolbar__title">NWPU-ACM &#x67E5;&#x8BE2;&#x7CFB;&#x7EDF;</div>
                 <div class="spacer"></div> <span class="v-tooltip v-tooltip--left"><div class="v-tooltip__content" style="left:12px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"> <span>Star me on Github!</span>
-              </div><span><a href="https://github.com/Liu233w/acm-statistics" target="_blank" class="v-btn v-btn--icon theme--light"><div class="v-btn__content"><i aria-hidden="true" class="v-icon 
-          fa fa 
-          fa fa-github
-         theme--light" style="font-size:28px;"></i></div></a></span></span>
+              </div><span><a href="https://github.com/Liu233w/acm-statistics" target="_blank" class="v-btn v-btn--icon theme--light"><div class="v-btn__content"><i aria-hidden="true" class="v-icon fa fa fa fa-github theme--light" style="font-size:28px;"></i></div></a></span></span>
           </div>
           </nav>
           <main class="v-content" style="padding-top:56px;padding-right:0px;padding-bottom:32px;padding-left:0px;">
@@ -1779,11 +1756,11 @@ exports[`/about 1`] = `
                                 </div>
                               </div>
                             </a></div>
-                          <div role="listitem"><a href="https://github.com/Liu233w/acm-statistics/commit/development" class="v-list__tile v-list__tile--link theme--light">
+                          <div role="listitem"><a href="https://github.com/Liu233w/acm-statistics/commits/development" class="v-list__tile v-list__tile--link theme--light">
                               <div class="v-list__tile__content">
                                 <div class="v-list__tile__title">&#x6700;&#x8FD1;&#x66F4;&#x65B0;</div>
                                 <div class="v-list__tile__sub-title">
-                                  https://github.com/Liu233w/acm-statistics/commit/development
+                                  https://github.com/Liu233w/acm-statistics/commits/development
                                 </div>
                               </div>
                             </a></div>
@@ -2590,10 +2567,7 @@ exports[`/statistics 1`] = `
                 </button>
                 <div class="v-toolbar__title">NWPU-ACM &#x67E5;&#x8BE2;&#x7CFB;&#x7EDF;</div>
                 <div class="spacer"></div> <span class="v-tooltip v-tooltip--left"><div class="v-tooltip__content" style="left:12px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"> <span>Star me on Github!</span>
-              </div><span><a href="https://github.com/Liu233w/acm-statistics" target="_blank" class="v-btn v-btn--icon theme--light"><div class="v-btn__content"><i aria-hidden="true" class="v-icon 
-          fa fa 
-          fa fa-github
-         theme--light" style="font-size:28px;"></i></div></a></span></span>
+              </div><span><a href="https://github.com/Liu233w/acm-statistics" target="_blank" class="v-btn v-btn--icon theme--light"><div class="v-btn__content"><i aria-hidden="true" class="v-icon fa fa fa fa-github theme--light" style="font-size:28px;"></i></div></a></span></span>
           </div>
           </nav>
           <main class="v-content" style="padding-top:56px;padding-right:0px;padding-bottom:0px;padding-left:0px;">
