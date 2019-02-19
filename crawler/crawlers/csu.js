@@ -8,7 +8,7 @@ module.exports = async function (config, username) {
   }
 
   const res = await request
-    .get('http://acm.csu.edu.cn/csuoj/user/userinfo')
+    .get('http://acm.csu.edu.cn:20080/csuoj/user/userinfo')
     .query({user_id: username})
 
   if (!res.ok) {
