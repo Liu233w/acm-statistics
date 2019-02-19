@@ -34,6 +34,7 @@ describe('poj', () => {
   test('test poj', async () => {
     const res = await poj(null, username)
     checkRes(res)
+    expect(res.solvedList).toContain('1001')
   })
 
 })
