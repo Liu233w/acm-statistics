@@ -25,15 +25,20 @@ module.exports = async function (config, username) {
     throw new Error('用户不存在')
   }
 
-  let ret = null
   try {
-    ret = {
+
+    // function p(id)\n{\n......\np(1000)\np(1001)\n...\n
+    // 这个题目列表是前端渲染的
+    const acListScript = $('td[rowspan=4] > script').html()
+    // js 不支持零宽后发断言，所以没法加上 (?<=p\() 表达式
+    const solvedList = acListScript.match(/\d+(?=\)\n)/g)
+
+    return {
       solved: Number($('a[href^="status?result=0&user_id="]').text()),
       submissions: Number($('a[href^="status?user_id="]').text()),
+      solvedList,
     }
   } catch (e) {
     throw new Error('无法解析数据')
   }
-
-  return ret
 }
