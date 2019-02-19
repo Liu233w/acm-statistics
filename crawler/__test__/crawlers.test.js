@@ -213,6 +213,7 @@ describe('csu', () => {
   test('test csu', async () => {
     const res = await csu(null, username)
     checkRes(res)
+    expect(res.solvedList).toContain('1001')
   })
 
 })
