@@ -148,13 +148,9 @@
           当前爬虫无法获取通过的题目列表
         </VCardText>
         <VCardText v-else>
-          <VContainer justify-center>
-            <VLayout row wrap>
-              <VFlex xs4 sm3 v-for="item in prettifiedSolvedList" :key="item">
-                <VChip>{{ item }}</VChip>
-              </VFlex>
-            </VLayout>
-          </VContainer>
+          <VChip v-for="item in prettifiedSolvedList" :key="item">
+            {{ item }}
+          </VChip>
         </VCardText>
         <VDivider />
         <VCardActions>
