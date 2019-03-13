@@ -23,7 +23,7 @@
     "eslint-plugin-jest": "^22.3.2",
     "eslint-plugin-lodash": "^5.1.0",
     "jest": "^24.5.0",
-    "supertest": "^3.4.2"
+    "supertest": "^4.0.0"
   },
   "jest": {
     "testEnvironment": "node",
