@@ -13,10 +13,14 @@ const VirtualModulePlugin = require('virtual-module-webpack-plugin')
 
 async function buildSources() {
   const corsModule = await fs.readFile(path.join(__dirname, 'cors.js'), 'utf-8')
+  const mockedRequire = await fs.readFile(path.join(__dirname, 'mockRequire.js'), 'utf-8')
   let crawlersModule = `
   /* eslint-disable */
-  ${corsModule}
   import axios from 'axios'
+  import superagent from 'superagent'
+  import jquery from 'jquery'
+  ${corsModule}
+  ${mockedRequire}
   export default () => {
     const metas = ${JSON.stringify(await readMetaConfigs())};
     const crawlers = {

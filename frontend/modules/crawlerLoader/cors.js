@@ -1,8 +1,7 @@
 /**
  * 魔改 superagent 以解决同源问题——使用 cors proxy
+ * 必须以字符串形式引入
  */
-
-import superagent from 'superagent'
 
 const corsProxyUrl = 'https://cors-anywhere.herokuapp.com/'
 
