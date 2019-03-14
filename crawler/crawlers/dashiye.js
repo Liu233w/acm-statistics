@@ -17,7 +17,9 @@ module.exports = async function (config, username) {
 
   const $ = cheerio.load(res.text)
 
-  if ($('body').text().endsWith('No such User!')) {
+  // 返回的页面不是一个完整的 html，没有后面的 </body></html>
+  // 所以用 jquery 解析会出错
+  if (res.text.endsWith('No such User!')) {
     throw new Error('用户不存在')
   }
 
