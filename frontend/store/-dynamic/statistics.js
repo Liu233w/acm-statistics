@@ -345,7 +345,7 @@ export const actions = {
   },
   setCheckDuplicateAc({commit}, {value}) {
     commit(MUTATION_TYPES.setCheckDuplicateAc, {value})
-  }
+  },
 }
 
 export const namespaced = true
