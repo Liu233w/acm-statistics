@@ -2604,95 +2604,111 @@ exports[`/statistics 1`] = `
       </div><span><button type="button" class="v-btn theme--light"><div class="v-btn__content">
           &#x4FDD;&#x5B58;&#x7528;&#x6237;&#x540D;
           </div></button></span></span></div>
-                    <div class="flex xs12 md4" style="display:none;"><span tabindex="0" class="v-chip elevation-2 v-chip--label theme--light grey lighten-3"><span class="v-chip__content"><span class="title">
+                    <div class="flex xs12 md4" style="display:none;"><span tabindex="0" class="v-chip elevation-2 v-chip--label theme--light grey lighten-3"><span class="v-chip__content"><span class="v-tooltip v-tooltip--bottom"><div class="v-tooltip__content" style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"> <span>&#x7EDF;&#x8BA1;AC&#x6570;&#x65F6;&#xFF0C;&#x662F;&#x5426;&#x79FB;&#x9664;&#x91CD;&#x590D;&#x7684;&#x9898;&#x76EE;</span></div>
+                    <div class="v-input v-input--selection-controls v-input--switch v-input--is-label-active v-input--is-dirty theme--light">
+                      <div class="v-input__control">
+                        <div class="v-input__slot">
+                          <div class="v-input--selection-controls__input"><input aria-checked="true" role="checkbox" type="checkbox" checked="checked">
+                            <div class="v-input--selection-controls__ripple accent--text"></div>
+                            <div class="v-input--switch__track theme--light accent--text"></div>
+                            <div class="v-input--switch__thumb theme--light accent--text">
+                              <!---->
+                            </div>
+                          </div>
+                        </div>
+                        <div class="v-messages theme--light">
+                          <div class="v-messages__wrapper"></div>
+                        </div>
+                      </div>
+                    </div></span> <span class="title">
            &#x7684;&#x603B;&#x9898;&#x91CF;&#xFF1A; 0 / 0
-        </span></span></span></div>
+        </span></span></span>
                   </div>
-                  <div class="layout row">
-                    <div class="flex xs12 sm12 md6 lg4 xl3">
-                      <div class="layout column"><span><div data-column-idx="0" data-column-item-idx="0" class="flex worker-item" style="z-index:1000;"><div class="v-card v-sheet theme--light"><nav class="blue-grey lighten-5 v-toolbar v-toolbar--card v-toolbar--dense theme--light" style="margin-top:0px;padding-right:0px;padding-left:0px;transform:translateY(0px);"><div class="v-toolbar__content" style="height:48px;"><div title="crawler0" class="v-toolbar__title">
+                </div>
+                <div class="layout row">
+                  <div class="flex xs12 sm12 md6 lg4 xl3">
+                    <div class="layout column"><span><div data-column-idx="0" data-column-item-idx="0" class="flex worker-item" style="z-index:1000;"><div class="v-card v-sheet theme--light"><nav class="blue-grey lighten-5 v-toolbar v-toolbar--card v-toolbar--dense theme--light" style="margin-top:0px;padding-right:0px;padding-left:0px;transform:translateY(0px);"><div class="v-toolbar__content" style="height:48px;"><div title="crawler0" class="v-toolbar__title">
       crawler0
     </div> <div class="spacer"></div> <div class="v-toolbar__items"><span class="v-tooltip v-tooltip--bottom" style="display:none;"><div class="v-tooltip__content" style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"> <span>
           &#x79FB;&#x9664;&#x6B64;&#x7A97;&#x683C;
         </span></div><span><button type="button" class="v-btn v-btn--icon theme--light"><div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light">delete</i></div></button></span></span> <span class="v-tooltip v-tooltip--bottom"><div class="v-tooltip__content" style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"> <span>
           &#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x6B64; OJ &#x7684;&#x7A97;&#x683C;
         </span>
-                    </div><span><button type="button" class="v-btn v-btn--icon theme--light"><div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light">add_circle</i></div></button></span></span> <span class="v-tooltip v-tooltip--bottom" style="display:none;"><div class="v-tooltip__content" style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"> <span>
+                  </div><span><button type="button" class="v-btn v-btn--icon theme--light"><div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light">add_circle</i></div></button></span></span> <span class="v-tooltip v-tooltip--bottom" style="display:none;"><div class="v-tooltip__content" style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"> <span>
           &#x8F6C;&#x5230;&#x6B64;OJ
         </span>
-                  </div><span><button type="button" class="v-btn v-btn--icon theme--light"><div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light">link</i></div></button></span></span> <span class="v-tooltip v-tooltip--bottom"><div class="v-tooltip__content" style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"> <span>&#x91CD;&#x65B0;&#x722C;&#x53D6;&#x6B64;&#x5904;&#x4FE1;&#x606F;</span>
-                </div><span><button type="button" class="v-btn v-btn--icon theme--light"><div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light">refresh</i></div></button></span></span>
-              </div>
-            </div>
-            </nav>
-            <div class="container">
-              <div class="layout row">
-                <div class="flex xs12"><span class="grey--text" style="display:none;">
-
-        </span></div>
-              </div>
-              <div class="layout row wrap">
-                <div class="flex xs12">
-                  <div class="v-input v-text-field theme--light">
-                    <div class="v-input__control">
-                      <div class="v-input__slot">
-                        <div class="v-text-field__slot"><label aria-hidden="true" class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Username</label><input aria-label="Username" required="required" type="text" value=""></div>
-                        <div class="v-input__append-inner">
-                          <div class="v-input__icon v-input__icon--"><i aria-hidden="true" class="v-icon v-icon--link material-icons theme--light"></i></div>
-                        </div>
-                      </div>
-                      <div class="v-text-field__details">
-                        <div class="v-messages theme--light">
-                          <div class="v-messages__wrapper"></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!---->
-            </div>
-            <div class="v-dialog__container" style="display:block;">
-              <div tabindex="-1" class="v-dialog__content" style="z-index:0;">
-                <div class="v-dialog v-dialog--scrollable" style="max-width:500px;display:none;">
-                  <div xs12="" md8="" lg6="" class="v-card v-sheet theme--light">
-                    <div class="v-card__title"><span class="headline">
-          &#x7528;&#x6237;  &#x5728; crawler0 &#x901A;&#x8FC7;&#x7684;&#x9898;&#x76EE;&#x5217;&#x8868;
-        </span></div>
-                    <div class="v-card__text">
-                      &#x5F53;&#x524D;&#x6CA1;&#x6709;&#x901A;&#x8FC7;&#x7684;&#x9898;&#x76EE;
-                    </div>
-                    <hr class="v-divider theme--light">
-                    <div class="v-card__actions"><button type="button" class="v-btn v-btn--flat theme--light blue--text text--darken-1">
-                        <div class="v-btn__content">
-                          Close
-                        </div>
-                      </button></div>
-                  </div>
-                </div>
-              </div>
+                </div><span><button type="button" class="v-btn v-btn--icon theme--light"><div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light">link</i></div></button></span></span> <span class="v-tooltip v-tooltip--bottom"><div class="v-tooltip__content" style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"> <span>&#x91CD;&#x65B0;&#x722C;&#x53D6;&#x6B64;&#x5904;&#x4FE1;&#x606F;</span>
+              </div><span><button type="button" class="v-btn v-btn--icon theme--light"><div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light">refresh</i></div></button></span></span>
             </div>
         </div>
-      </div>
-      <div data-column-idx="0" data-column-item-idx="1" class="flex worker-item" style="z-index:999;">
-        <div class="v-card v-sheet theme--light">
-          <nav class="blue-grey lighten-5 v-toolbar v-toolbar--card v-toolbar--dense theme--light" style="margin-top:0px;padding-right:0px;padding-left:0px;transform:translateY(0px);">
-            <div class="v-toolbar__content" style="height:48px;">
-              <div title="crawler1" class="v-toolbar__title">
-                crawler1
+        </nav>
+        <div class="container">
+          <div class="layout row">
+            <div class="flex xs12"><span class="grey--text" style="display:none;">
+
+        </span></div>
+          </div>
+          <div class="layout row wrap">
+            <div class="flex xs12">
+              <div class="v-input v-text-field theme--light">
+                <div class="v-input__control">
+                  <div class="v-input__slot">
+                    <div class="v-text-field__slot"><label aria-hidden="true" class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Username</label><input aria-label="Username" required="required" type="text" value=""></div>
+                    <div class="v-input__append-inner">
+                      <div class="v-input__icon v-input__icon--"><i aria-hidden="true" class="v-icon v-icon--link material-icons theme--light"></i></div>
+                    </div>
+                  </div>
+                  <div class="v-text-field__details">
+                    <div class="v-messages theme--light">
+                      <div class="v-messages__wrapper"></div>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div class="spacer"></div>
-              <div class="v-toolbar__items"><span class="v-tooltip v-tooltip--bottom" style="display:none;"><div class="v-tooltip__content" style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"> <span>
+            </div>
+          </div>
+          <!---->
+        </div>
+        <div class="v-dialog__container" style="display:block;">
+          <div tabindex="-1" class="v-dialog__content" style="z-index:0;">
+            <div class="v-dialog v-dialog--scrollable" style="max-width:500px;display:none;">
+              <div xs12="" md8="" lg6="" class="v-card v-sheet theme--light">
+                <div class="v-card__title"><span class="headline">
+          &#x7528;&#x6237;  &#x5728; crawler0 &#x901A;&#x8FC7;&#x7684;&#x9898;&#x76EE;&#x5217;&#x8868;
+        </span></div>
+                <div class="v-card__text">
+                  &#x5F53;&#x524D;&#x6CA1;&#x6709;&#x901A;&#x8FC7;&#x7684;&#x9898;&#x76EE;
+                </div>
+                <hr class="v-divider theme--light">
+                <div class="v-card__actions"><button type="button" class="v-btn v-btn--flat theme--light blue--text text--darken-1">
+                    <div class="v-btn__content">
+                      Close
+                    </div>
+                  </button></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div data-column-idx="0" data-column-item-idx="1" class="flex worker-item" style="z-index:999;">
+      <div class="v-card v-sheet theme--light">
+        <nav class="blue-grey lighten-5 v-toolbar v-toolbar--card v-toolbar--dense theme--light" style="margin-top:0px;padding-right:0px;padding-left:0px;transform:translateY(0px);">
+          <div class="v-toolbar__content" style="height:48px;">
+            <div title="crawler1" class="v-toolbar__title">
+              crawler1
+            </div>
+            <div class="spacer"></div>
+            <div class="v-toolbar__items"><span class="v-tooltip v-tooltip--bottom" style="display:none;"><div class="v-tooltip__content" style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"> <span>
           &#x79FB;&#x9664;&#x6B64;&#x7A97;&#x683C;
         </span></div><span><button type="button" class="v-btn v-btn--icon theme--light"><div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light">delete</i></div></button></span></span> <span class="v-tooltip v-tooltip--bottom"><div class="v-tooltip__content" style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"> <span>
           &#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x6B64; OJ &#x7684;&#x7A97;&#x683C;
         </span>
-            </div><span><button type="button" class="v-btn v-btn--icon theme--light"><div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light">add_circle</i></div></button></span></span> <span class="v-tooltip v-tooltip--bottom" style="display:none;"><div class="v-tooltip__content" style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"> <span>
+          </div><span><button type="button" class="v-btn v-btn--icon theme--light"><div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light">add_circle</i></div></button></span></span> <span class="v-tooltip v-tooltip--bottom" style="display:none;"><div class="v-tooltip__content" style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"> <span>
           &#x8F6C;&#x5230;&#x6B64;OJ
         </span>
-        </div><span><button type="button" class="v-btn v-btn--icon theme--light"><div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light">link</i></div></button></span></span> <span class="v-tooltip v-tooltip--bottom"><div class="v-tooltip__content" style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"> <span>&#x91CD;&#x65B0;&#x722C;&#x53D6;&#x6B64;&#x5904;&#x4FE1;&#x606F;</span>
-      </div><span><button type="button" class="v-btn v-btn--icon theme--light"><div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light">refresh</i></div></button></span></span>
-    </div>
+      </div><span><button type="button" class="v-btn v-btn--icon theme--light"><div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light">link</i></div></button></span></span> <span class="v-tooltip v-tooltip--bottom"><div class="v-tooltip__content" style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"> <span>&#x91CD;&#x65B0;&#x722C;&#x53D6;&#x6B64;&#x5904;&#x4FE1;&#x606F;</span>
+    </div><span><button type="button" class="v-btn v-btn--icon theme--light"><div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light">refresh</i></div></button></span></span></div>
     </div>
     </nav>
     <div class="container">
@@ -3161,7 +3177,7 @@ exports[`/statistics 1`] = `
     </div>
     </div>
     <script>
-      window.__NUXT__ = (function(a, b, c, d, e, f, g, h, i, j, k, l, m) {
+      window.__NUXT__ = (function(a, b, c, d, e, f, g, h, i, j, k, l, m, n) {
         return {
           layout: "default",
           data: [{}],
@@ -3170,7 +3186,7 @@ exports[`/statistics 1`] = `
             sidebar: false,
             statistics: {
               workers: [{
-                crawlerName: g,
+                crawlerName: h,
                 username: a,
                 status: d,
                 solved: b,
@@ -3188,7 +3204,7 @@ exports[`/statistics 1`] = `
                 tokenKey: c,
                 solvedList: []
               }, {
-                crawlerName: e,
+                crawlerName: g,
                 username: a,
                 status: d,
                 solved: b,
@@ -3197,7 +3213,7 @@ exports[`/statistics 1`] = `
                 tokenKey: c,
                 solvedList: []
               }, {
-                crawlerName: h,
+                crawlerName: e,
                 username: a,
                 status: d,
                 solved: b,
@@ -3244,20 +3260,20 @@ exports[`/statistics 1`] = `
               }],
               crawlers: {
                 crawler0: {
-                  title: g,
-                  name: g
+                  title: h,
+                  name: h
                 },
                 crawler1: {
                   title: f,
                   name: f
                 },
                 crawler2: {
-                  title: e,
-                  name: e
+                  title: g,
+                  name: g
                 },
                 crawler3: {
-                  title: h,
-                  name: h
+                  title: e,
+                  name: e
                 },
                 crawler4: {
                   title: i,
@@ -3280,15 +3296,16 @@ exports[`/statistics 1`] = `
                   name: l
                 }
               },
-              mainUsername: a
+              mainUsername: a,
+              checkDuplicateAc: n
             }
           },
-          serverRendered: true,
+          serverRendered: n,
           env: {
             VERSION_NUM: "development"
           }
         }
-      }("", 0, null, "WAITING", "crawler2", "crawler1", "crawler0", "crawler3", "crawler4", "withDescription", "withUrl", "withAll", "http:\\u002F\\u002Ftest.aaa.com"));
+      }("", 0, null, "WAITING", "crawler3", "crawler1", "crawler2", "crawler0", "crawler4", "withDescription", "withUrl", "withAll", "http:\\u002F\\u002Ftest.aaa.com", true));
     </script>
     <script>
       ! function() {
