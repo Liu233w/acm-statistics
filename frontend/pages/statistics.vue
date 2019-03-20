@@ -51,6 +51,15 @@
       </VFlex>
       <VFlex xs12 md4 v-show="submissionsNum">
         <VChip label color="grey lighten-3" class="elevation-2">
+          <VTooltip bottom>
+            <template #activator="{ on }">
+              <VSwitch
+                v-on="on"
+                v-model="checkDuplicateAc"
+              />
+            </template>
+            <span>统计AC数时，是否移除重复的题目</span>
+          </VTooltip>
           <span class="title">
             {{ summary }}
           </span>
@@ -103,7 +112,7 @@
       title: `OJ 题量统计 - ${PROJECT_TITLE}`,
     },
     created() {
-      this.$store.registerModule('statistics', Store, { preserveState: false })
+      this.$store.registerModule('statistics', Store, {preserveState: false})
     },
     destroyed() {
       this.$store.unregisterModule('statistics')
@@ -129,6 +138,14 @@
         'notWorkingRate',
         'workerIdxOfCrawler',
       ]),
+      checkDuplicateAc: {
+        get() {
+          return this.$store.state.statistics.checkDuplicateAc
+        },
+        set(value) {
+          this.$store.dispatch('statistics/setCheckDuplicateAc', {value})
+        },
+      },
       username: {
         get() {
           return this.$store.state.statistics.mainUsername
