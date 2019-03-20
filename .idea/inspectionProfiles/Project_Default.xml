@@ -3,10 +3,20 @@
     <option name="myName" value="Project Default" />
     <inspection_tool class="CheckEmptyScriptTag" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="Eslint" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="HtmlUnknownAttribute" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="myValues">
+        <value>
+          <list size="1">
+            <item index="0" class="java.lang.String" itemvalue="#activator" />
+          </list>
+        </value>
+      </option>
+      <option name="myCustomValuesEnabled" value="true" />
+    </inspection_tool>
     <inspection_tool class="HtmlUnknownTag" enabled="true" level="WARNING" enabled_by_default="true">
       <option name="myValues">
         <value>
-          <list size="37">
+          <list size="38">
             <item index="0" class="java.lang.String" itemvalue="nobr" />
             <item index="1" class="java.lang.String" itemvalue="noembed" />
             <item index="2" class="java.lang.String" itemvalue="comment" />
@@ -44,6 +54,7 @@
             <item index="34" class="java.lang.String" itemvalue="vprogresslinear" />
             <item index="35" class="java.lang.String" itemvalue="vdivider" />
             <item index="36" class="java.lang.String" itemvalue="vspan" />
+            <item index="37" class="java.lang.String" itemvalue="vswitch" />
           </list>
         </value>
       </option>
