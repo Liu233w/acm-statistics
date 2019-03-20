@@ -31,7 +31,7 @@ $(ImageToTag) $(ImageToPush): ImageNameWithLatest = $(RepoName)$(Image):latest
 # 为了开发而构建的目标
 .build-dev:
 	$(MAKE) -C ../crawler-api-backend build
-	# 前端直接映射本地的目录，不需要构建
+# 前端直接映射本地的目录，不需要构建
 
 tag: .build $(ImageToTag)
 
