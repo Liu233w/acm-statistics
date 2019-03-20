@@ -716,6 +716,7 @@ describe('getters', () => {
 
     it('能够统计普通的 worker', () => {
       const state = {
+        checkDuplicateAc: true,
         workers: [
           {
             solved: 1,
@@ -747,6 +748,7 @@ describe('getters', () => {
 
     it('能够统计带列表的 worker', () => {
       const state = {
+        checkDuplicateAc: true,
         workers: [
           {
             solved: 1,
@@ -756,6 +758,11 @@ describe('getters', () => {
           {
             solved: 2,
             solvedList: ['1001', '1002'],
+            crawlerName: 'cr2',
+          },
+          {
+            solved: 1,
+            solvedList: ['1001'],
             crawlerName: 'cr2',
           },
         ],
@@ -773,6 +780,7 @@ describe('getters', () => {
 
     it('能够统计混合型的 worker', () => {
       const state = {
+        checkDuplicateAc: true,
         workers: [
           {
             solved: 1,
@@ -804,6 +812,7 @@ describe('getters', () => {
 
     it('能够统计 virtual_judge 的 worker', () => {
       const state = {
+        checkDuplicateAc: true,
         workers: [
           {
             solved: 1,
@@ -847,6 +856,37 @@ describe('getters', () => {
       expect(res).toBe(11)
     })
 
+    it('能够关闭题目编号查重', () => {
+      const state = {
+        checkDuplicateAc: false,
+        workers: [
+          {
+            solved: 1,
+            solvedList: ['1001'],
+            crawlerName: 'cr1',
+          },
+          {
+            solved: 2,
+            solvedList: ['1001', '1002'],
+            crawlerName: 'cr2',
+          },
+          {
+            solved: 1,
+            solvedList: ['1001'],
+            crawlerName: 'cr2',
+          },
+        ],
+        crawlers: {
+          cr1: {},
+          cr2: {},
+        },
+      }
+      const nullSolvedListWorkers = store.getters.nullSolvedListWorkers(state)
+
+      const res = store.getters.solvedNum(state, {nullSolvedListWorkers})
+
+      expect(res).toBe(4)
+    })
   })
 
   describe('notWorkingRate', () => {
