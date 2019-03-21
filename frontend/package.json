@@ -23,7 +23,7 @@
     "cheerio": "^1.0.0-rc.2",
     "lodash": "^4.17.11",
     "lodash-webpack-plugin": "^0.11.5",
-    "nuxt": "^2.4.5",
+    "nuxt": "^2.5.0",
     "nuxt-env": "0.1.0",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",
