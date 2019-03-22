@@ -15,6 +15,7 @@ beforeAll(done => {
       E2E: 1,
       ...process.env,
     },
+    cwd: `${__dirname}/../..`,
   }
 
   console.log('start building nuxt...')
