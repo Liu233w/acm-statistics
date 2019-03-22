@@ -2,6 +2,12 @@
 
 > ACM查题网站前端
 
+## Using Docker
+
+- `make dev` 启动开发模式（需要先使用npm安装依赖）
+- `make update-snapshot` 更新快照
+- `make test` 或 `make test-ci` 来运行测试
+
 ## Build Setup
 
 ``` bash
