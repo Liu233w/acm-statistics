@@ -3,14 +3,17 @@ version: '3'
 services:
   # 只有前端支持 hot reload，所以只改动前端
   frontend:
-    image: acm-statistics-frontend-base
+    image: acm-statistics-node-base
     working_dir: /var/project/frontend
     volumes:
     - ..:/var/project
-    - /var/project/frontend/node_modules
     environment:
     - NODE_ENV=development
-    command: sh -c "npm i --unsafe-perm && npm run dev"
+    command: sh -c "npm run dev"
+    labels:
+      # 不加上这一条就没法被 traefik 识别，暂时还不知道是怎么回事
+      # TODO: 修复这个问题
+      traefik.backend: frontend:3000
 
   crawler-api-backend:
     environment:
