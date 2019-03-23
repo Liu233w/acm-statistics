@@ -2,6 +2,8 @@
   "name": "e2e",
   "description": "e2e test",
   "scripts": {
+    "lint": "eslint --ext .js .",
+    "lintfix": "eslint --fix --ext .js .gitignore .",
     "cypress:open": "cypress open"
   },
   "dependencies": {
