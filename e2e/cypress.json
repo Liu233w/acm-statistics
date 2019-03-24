@@ -1,1 +1,4 @@
-{}
+{
+  "baseUrl": "http://localhost:3000",
+  "reporter": "cypress-image-snapshot/reporter"
+}

@@ -63,3 +63,4 @@ typings/
 # cypress generation
 /cypress/screenshots
 /cypress/videos
+__diff_output__
