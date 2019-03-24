@@ -4,7 +4,8 @@
   "scripts": {
     "lint": "eslint --ext .js .",
     "lintfix": "eslint --fix --ext .js .gitignore .",
-    "cypress:open": "cypress open"
+    "test": "cypress run",
+    "start": "cypress open"
   },
   "dependencies": {
     "cypress": "^3.2.0",
