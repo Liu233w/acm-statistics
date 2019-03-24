@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="WEB_MODULE" version="4">
   <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$/build" />
     <content url="file://$MODULE_DIR$/crawler">
       <sourceFolder url="file://$MODULE_DIR$/crawler/__test__" isTestSource="true" />
     </content>
     <content url="file://$MODULE_DIR$/crawler-api-backend">
       <sourceFolder url="file://$MODULE_DIR$/crawler-api-backend/__test__" isTestSource="true" />
     </content>
+    <content url="file://$MODULE_DIR$/e2e" />
     <content url="file://$MODULE_DIR$/frontend">
       <sourceFolder url="file://$MODULE_DIR$/frontend/__test__" isTestSource="true" />
     </content>
