@@ -69,6 +69,32 @@ exports.generateServerCrawlerFunctions = async () => {
  * @returns {Promise<Object.<string, ClientCrawlerFunction>>}
  */
 exports.generateBrowserCrawlerFunctions = async () => {
+
+  // 生成从服务器端进行查询的代码
+  const resolveServerQuery = (crawlerName) => `
+    new Promise((resolve, reject) => {
+      axios.get('/api/crawlers/${crawlerName}/'+username)
+        .then(response => {
+          // console.log(response)
+          if (response.data.error) {
+            reject(new Error(response.data.message))
+          } else {
+            resolve(response.data.data)
+          }
+        })
+        .catch(err => {
+          // console.error(err)
+          if (err.response && err.response.data.message) {
+            // 服务端的爬虫报的错
+            reject(new Error(err.response.data.message))
+          } else {
+            //网络错误或其他错误
+            reject(err)
+          }
+        })
+    })
+  `.trim()
+
   const config = await configReader.readCrawlerConfigs()
 
   const ret = {}
@@ -79,27 +105,7 @@ exports.generateBrowserCrawlerFunctions = async () => {
     if (item.server_only) {
       ret[item.name] = `
         (username) => {
-          return new Promise((resolve, reject) => {
-            axios.get('/api/crawlers/${item.name}/'+username)
-              .then(response => {
-                // console.log(response)
-                if (response.data.error) {
-                  reject(new Error(response.data.message))
-                } else {
-                  resolve(response.data.data)
-                }
-              })
-              .catch(err => {
-                // console.error(err)
-                if (err.response && err.response.data.message) {
-                  // 服务端的爬虫报的错
-                  reject(new Error(err.response.data.message))
-                } else {
-                  //网络错误或其他错误
-                  reject(err)
-                }
-              })
-          })
+          return ${resolveServerQuery(item.name)}
         }
       `
     } else {
@@ -113,8 +119,17 @@ exports.generateBrowserCrawlerFunctions = async () => {
           let module = {exports: {}}
           ;(function(module, exports) { ${crawlerFuncStr} })(module, module.exports)
           return module.exports(${JSON.stringify(crawlerConfig)}, username)
+            .catch(err => {
+              if (err.response || err.url) {
+                // 有response字段说明这是由 superagent 抛出的异常
+                // 有url字段（而没有 response字段）说明是cors的异常
+                return ${resolveServerQuery(item.name)}
+              } else {
+                throw err
+              }
+            })
         }
-    `
+      `
     }
   }
   return ret
