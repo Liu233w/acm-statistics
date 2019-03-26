@@ -71,7 +71,7 @@ exports.generateServerCrawlerFunctions = async () => {
 exports.generateBrowserCrawlerFunctions = async () => {
 
   // 生成从服务器端进行查询的代码
-  const resolveServerQuery = (crawlerName) => `
+  const resolveServerQuery = (crawlerName) => _.trim(`
     new Promise((resolve, reject) => {
       axios.get('/api/crawlers/${crawlerName}/'+username)
         .then(response => {
@@ -93,7 +93,7 @@ exports.generateBrowserCrawlerFunctions = async () => {
           }
         })
     })
-  `.trim()
+  `)
 
   const config = await configReader.readCrawlerConfigs()
 
