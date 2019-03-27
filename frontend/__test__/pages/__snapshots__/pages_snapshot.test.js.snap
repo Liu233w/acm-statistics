@@ -921,7 +921,7 @@ exports[`/ 1`] = `
               </section>
               <footer class="v-footer blue darken-2 theme--light" style="height:32px;"><a href="/about" class="white--text ml-3 v-btn v-btn--flat v-btn--router theme--light">
                   <div class="v-btn__content">
-                    &#xA9; 2018 NWPU-ACM &#x6280;&#x672F;&#x7EC4;
+                    &#xA9; 2018 - 1970 NWPU-ACM &#x6280;&#x672F;&#x7EC4;
                   </div>
                 </a>
                 <div class="spacer"></div> <span class="white--text ml-3">
@@ -944,7 +944,8 @@ exports[`/ 1`] = `
         },
         serverRendered: true,
         env: {
-          VERSION_NUM: "development"
+          VERSION_NUM: "development",
+          BUILD_TIME: "0"
         }
       };
     </script>
@@ -1748,6 +1749,14 @@ exports[`/about 1`] = `
                               </div>
                             </div>
                           </div>
+                          <div role="listitem">
+                            <div class="v-list__tile theme--light">
+                              <div class="v-list__tile__content">
+                                <div class="v-list__tile__title">&#x6784;&#x5EFA;&#x65F6;&#x95F4;</div>
+                                <div class="v-list__tile__sub-title">1/1/1970, 12:00:00 AM</div>
+                              </div>
+                            </div>
+                          </div>
                           <div role="listitem"><a href="https://github.com/Liu233w/acm-statistics/tree/development" class="v-list__tile v-list__tile--link theme--light">
                               <div class="v-list__tile__content">
                                 <div class="v-list__tile__title">&#x5F53;&#x524D;&#x7248;&#x672C;&#x6E90;&#x4EE3;&#x7801;</div>
@@ -1772,7 +1781,7 @@ exports[`/about 1`] = `
               </div>
             </div>
           </main>
-          <footer class="v-footer v-footer--fixed theme--light" style="height:32px;"><span>&#xA9; 2018 NWPU-ACM &#x6280;&#x672F;&#x7EC4;</span>
+          <footer class="v-footer v-footer--fixed theme--light" style="height:32px;"><span>&#xA9; 2018 - 1970 NWPU-ACM &#x6280;&#x672F;&#x7EC4;</span>
             <div class="spacer"></div> <span>&#x9655;ICP&#x5907;17008184&#x53F7;</span></footer>
         </div>
       </div>
@@ -1788,7 +1797,8 @@ exports[`/about 1`] = `
         },
         serverRendered: true,
         env: {
-          VERSION_NUM: "development"
+          VERSION_NUM: "development",
+          BUILD_TIME: "0"
         }
       };
     </script>
@@ -3170,7 +3180,7 @@ exports[`/statistics 1`] = `
     </div>
     </div>
     </main>
-    <footer class="v-footer v-footer--fixed theme--light" style="height:32px;"><span>&#xA9; 2018 NWPU-ACM &#x6280;&#x672F;&#x7EC4;</span>
+    <footer class="v-footer v-footer--fixed theme--light" style="height:32px;"><span>&#xA9; 2018 - 1970 NWPU-ACM &#x6280;&#x672F;&#x7EC4;</span>
       <div class="spacer"></div> <span>&#x9655;ICP&#x5907;17008184&#x53F7;</span></footer>
     </div>
     </div>
@@ -3302,7 +3312,8 @@ exports[`/statistics 1`] = `
           },
           serverRendered: n,
           env: {
-            VERSION_NUM: "development"
+            VERSION_NUM: "development",
+            BUILD_TIME: "0"
           }
         }
       }("", 0, null, "WAITING", "crawler3", "crawler1", "crawler2", "crawler0", "crawler4", "withDescription", "withUrl", "withAll", "http:\\u002F\\u002Ftest.aaa.com", true));
