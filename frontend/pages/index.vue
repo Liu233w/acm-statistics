@@ -252,7 +252,7 @@
 
       <VFooter class="blue darken-2">
         <VBtn flat nuxt to="/about" class="white--text ml-3">
-          &copy; 2018 - {{ new Date($env.BUILD_TIME).getFullYear() }} NWPU-ACM 技术组
+          &copy; 2018 - {{ buildYear }} NWPU-ACM 技术组
         </VBtn>
         <VSpacer />
         <span class="white--text ml-3">
@@ -265,6 +265,7 @@
 
 <script>
   import {PROJECT_TITLE} from '~/components/consts'
+  import {getDateFromTimestamp} from '~/components/utils'
 
   export default {
     layout: 'none',
@@ -272,6 +273,7 @@
       return {
         dialog: false,
         projectTitle: PROJECT_TITLE,
+        buildYear: getDateFromTimestamp(this.$env.BUILD_TIME).getFullYear(),
       }
     },
     methods: {

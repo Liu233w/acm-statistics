@@ -42,7 +42,7 @@
       </VContainer>
     </VContent>
     <VFooter fixed app>
-      <span>&copy; 2018 - {{ new Date($env.BUILD_TIME).getFullYear() }} NWPU-ACM 技术组</span>
+      <span>&copy; 2018 - {{ buildYear }} NWPU-ACM 技术组</span>
       <VSpacer />
       <span>陕ICP备17008184号</span>
     </VFooter>
@@ -50,6 +50,8 @@
 </template>
 
 <script>
+  import {getDateFromTimestamp} from '~/components/utils'
+
   export default {
     data() {
       return {
@@ -60,6 +62,7 @@
           {icon: 'info', title: '关于', to: '/about'},
         ],
         title: 'NWPU-ACM 查询系统',
+        buildYear: getDateFromTimestamp(this.$env.BUILD_TIME).getFullYear(),
       }
     },
   }
