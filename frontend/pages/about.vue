@@ -18,7 +18,7 @@
             <VListTile>
               <VListTileContent>
                 <VListTileTitle>构建时间</VListTileTitle>
-                <VListTileSubTitle>{{ new Date($env.BUILD_TIME).toLocaleString() }}</VListTileSubTitle>
+                <VListTileSubTitle>{{ buildTime }}</VListTileSubTitle>
               </VListTileContent>
             </VListTile>
 
@@ -48,8 +48,14 @@
 
 <script>
   import {PROJECT_TITLE} from '~/components/consts'
+  import {getDateFromTimestamp} from '../components/utils'
 
   export default {
+    data() {
+      return {
+        buildTime: getDateFromTimestamp(this.$env.BUILD_TIME).toLocaleString(),
+      }
+    },
     head: {
       title: `关于 - ${PROJECT_TITLE}`,
     },
