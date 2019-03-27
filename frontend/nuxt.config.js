@@ -88,7 +88,7 @@ module.exports = {
     '~/modules/crawlerLoader',
     '@nuxtjs/component-cache',
     ['nuxt-env', {
-      keys: ['VERSION_NUM'],
+      keys: ['VERSION_NUM', 'BUILD_TIME'],
     }],
   ],
   watchers: {

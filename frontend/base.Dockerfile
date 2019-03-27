@@ -18,3 +18,4 @@ COPY --from=crawler ${CRAWLER_LIBRARY_PATH} ./node_modules/crawler
 COPY . .
 
 ENV VERSION_NUM=development
+ENV BUILD_TIME=0
