@@ -7,10 +7,22 @@ module.exports = async function (config, username) {
     throw new Error('请输入用户名')
   }
 
-  const res = await request
-    .get('http://acm.hdu.edu.cn/userstatus.php')
-    .query({user: username})
-    .retry(config.env === 'server' ? 1 : 2)
+  let res
+
+  const RETRY_TIMES = config.env === 'server' ? 1 : 2
+  for (let i = 0; i < RETRY_TIMES; ++i) {
+    try {
+      res = await request
+        .get('http://acm.hdu.edu.cn/userstatus.php')
+        .query({user: username})
+      break
+    } catch (e) {
+      if (i >= RETRY_TIMES - 1) {
+        throw e
+      }
+      console.log('HDU connection error, retry ...')
+    }
+  }
 
   if (!res.ok) {
     throw new Error(`Server Response Error: ${res.status}`)
