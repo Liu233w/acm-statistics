@@ -15,6 +15,13 @@
               </VListTileContent>
             </VListTile>
 
+            <VListTile>
+              <VListTileContent>
+                <VListTileTitle>构建时间</VListTileTitle>
+                <VListTileSubTitle>{{ new Date($env.BUILD_TIME).toLocaleString() }}</VListTileSubTitle>
+              </VListTileContent>
+            </VListTile>
+
             <VListTile :href="`https://github.com/Liu233w/acm-statistics/tree/${$env.VERSION_NUM}`">
               <VListTileContent>
                 <VListTileTitle>当前版本源代码</VListTileTitle>

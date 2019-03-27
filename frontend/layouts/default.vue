@@ -42,7 +42,7 @@
       </VContainer>
     </VContent>
     <VFooter fixed app>
-      <span>&copy; 2018 NWPU-ACM 技术组</span>
+      <span>&copy; 2018 - {{ new Date($env.BUILD_TIME).getFullYear() }} NWPU-ACM 技术组</span>
       <VSpacer />
       <span>陕ICP备17008184号</span>
     </VFooter>

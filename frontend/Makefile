@@ -5,6 +5,8 @@ include ../build/share.mk
 # === consts ==
 # 程序的版本号，显示在“关于”页面
 VERSION_NUM := $(shell git log -1 --pretty=%H)
+# 程序的构建时间，用在“关于”和版权声明界面，为 linux 时间戳
+BUILD_TIME := $(shell date +%s)
 
 # === targets ===
 
@@ -31,6 +33,7 @@ build: .base
 		-t $(FrontendTag) \
 		$(build-args) \
 		--build-arg VERSION_NUM=$(VERSION_NUM) \
+		--build-arg BUILD_TIME=$(BUILD_TIME) \
 		--build-arg NODE_BASE_IMAGE=$(NodeBaseTag) \
 		--build-arg FRONTEND_BASE_IMAGE=$(FrontendBaseTag) \
 		--build-arg CRAWLER_IMAGE=$(CrawlerTag) \

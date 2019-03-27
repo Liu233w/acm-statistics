@@ -26,6 +26,7 @@ COPY --from=base /var/project .
 
 FROM ${NODE_BASE_IMAGE}
 ARG VERSION_NUM
+ARG BUILD_TIME
 
 WORKDIR /var/project
 
@@ -36,6 +37,7 @@ ENV \
     NODE_ENV=production \
     PORT=3000 \
     VERSION_NUM="${VERSION_NUM}" \
+    BUILD_TIME="${BUILD_TIME}" \
     ;=;
 
 EXPOSE 3000

@@ -252,7 +252,7 @@
 
       <VFooter class="blue darken-2">
         <VBtn flat nuxt to="/about" class="white--text ml-3">
-          &copy; 2018 NWPU-ACM 技术组
+          &copy; 2018 - {{ new Date($env.BUILD_TIME).getFullYear() }} NWPU-ACM 技术组
         </VBtn>
         <VSpacer />
         <span class="white--text ml-3">
