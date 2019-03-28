@@ -15,7 +15,7 @@ services:
   - docker
 
 env:
-  - force-docker-cache=1
+  - FORCE_DOCKER_CACHE=1
 
 cache:
   bundler: true
