@@ -10,8 +10,8 @@ stages:
   - name: deploy
     if: branch == master && type == push
 
-services:
-  - docker
+env:
+  - DOCKER_BUILDKIT=1
 
 cache:
   bundler: true
@@ -27,6 +27,11 @@ before_cache:
     | xargs -n 2 -t sh -c 'test -e $HOME/docker/$1.tar.gz || docker save $0 | gzip -2 > $HOME/docker/$1.tar.gz'
 
 before_install:
+  # 更新 docker 版本，以使用 buildkit
+  - curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+  - sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+  - sudo apt-get update
+  - sudo apt-get -y -o Dpkg::Options::="--force-confnew" install docker-ce
   # Load cached docker images
   - if [[ -d $HOME/docker ]]; then ls $HOME/docker/*.tar.gz | xargs -I {file} sh -c "zcat {file} | docker load"; fi
 
