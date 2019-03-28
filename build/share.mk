@@ -30,3 +30,7 @@ ifeq ($(filter t no-tty,$(make-args)),)
 override run-args := $(run-args) --tty
 endif
 
+# check if force cache
+ifeq ($(force-docker-cache),1)
+override build-args := $(build-args) $(addprefix --cache-from ,$(shell docker images -a --filter='dangling=false' --format '{{.Repository}}:{{.Tag}}'))
+endif

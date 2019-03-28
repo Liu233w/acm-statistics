@@ -14,7 +14,11 @@ NodeBaseOption := --build-arg NPM_MIRROR=$(NPM_MIRROR) $(NodeBaseOption)
 endif
 
 build:
-	docker build . -f node-base.Dockerfile -t $(NodeBaseTag) $(NodeBaseOption)
+	docker build . \
+		$(build-args) \
+		-t $(NodeBaseTag) \
+		-f node-base.Dockerfile \
+		$(NodeBaseOption)
 
 clean:
 	docker image rm $(NodeBaseTag); true

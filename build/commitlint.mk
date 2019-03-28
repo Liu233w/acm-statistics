@@ -15,6 +15,7 @@ CommitlintValidPath = $(CURDIR)/..
 
 build: .node-base
 	docker build . \
+		$(build-args) \
 		-t $(CommitlintImageTag) \
 		-f commitlint.Dockerfile \
 		--build-arg NODE_BASE_IMAGE=$(NodeBaseTag)

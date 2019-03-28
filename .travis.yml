@@ -13,6 +13,9 @@ stages:
 services:
   - docker
 
+env:
+  - force-docker-cache=1
+
 cache:
   bundler: true
   directories:
