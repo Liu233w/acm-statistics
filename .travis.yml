@@ -6,6 +6,7 @@ notifications:
 language: generic
 
 stages:
+  - name: build
   - name: test
   - name: deploy
     if: branch == master && type == push
@@ -38,6 +39,16 @@ after_script:
 
 jobs:
   include:
+    - name: Build Images
+      stage: build
+      script:
+        - cd frontend
+        - make .base
+        - cd ../crawler-api-backend
+        - make .base
+        - cd ../crawler
+        - make .base
+
     - name: Frontend
       stage: test
       script:
