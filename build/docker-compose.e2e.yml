@@ -1,0 +1,28 @@
+# fixture of build/docker-compose.yml
+
+version: '3'
+
+services:
+  frontend:
+    environment:
+      - http_proxy=mock-proxy:1080
+
+  crawler-api-backend:
+    environment:
+      - http_proxy=mock-proxy:1080
+
+  watchtower:
+    # skip watchtower in development
+    image: tianon/true
+    command: ''
+
+  mock-proxy:
+    image: jamesdbloom/mockserver
+    ports:
+      # 在宿主机上使用 cypress 的时候可以用这个端口
+      - 1081:1080
+
+  proxy-configurer:
+    image: acm-statistics-e2e-mock-configurer
+    depends_on:
+      - mock-proxy
