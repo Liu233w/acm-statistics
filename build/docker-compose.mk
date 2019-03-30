@@ -22,7 +22,7 @@ $(ImageToTag) $(ImageToPush): ImageNameWithLatest = $(RepoName)$(Image):latest
 
 # === targets ===
 
-.PHONY: .build tag push up dev-frontend .build-dev
+.PHONY: .build tag push up dev-frontend .build-dev e2e-up
 
 .build:
 	$(MAKE) -C ../crawler-api-backend build
@@ -49,6 +49,11 @@ $(ImageToPush):
 
 up: .build .env
 	docker-compose up
+
+# 为了进行e2e测试而启动的服务器，除了正常的代码外，还会启动 mock-server
+e2e-up: .build .env
+	$(MAKE) -C ../e2e build-http-mocks
+	docker-compose -f docker-compose.yml -f docker-compose.e2e.yml up
 
 .env:
 	cp template.env .env
