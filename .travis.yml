@@ -48,8 +48,6 @@ jobs:
 
     - name: E2E
       stage: test
-      env:
-        - http_proxy=http://localhost:1081
       install:
         - cd e2e
         - npm install
@@ -57,7 +55,7 @@ jobs:
       script:
         - npm run lint
         - make server & wait-on http://localhost:3000
-        - npm test
+        - http_proxy=http://localhost:1081 npm test
 
     - name: Root
       stage: test
