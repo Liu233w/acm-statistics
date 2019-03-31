@@ -3,6 +3,8 @@ ARG NODE_BASE_IMAGE
 FROM ${NODE_BASE_IMAGE}
 
 RUN apk add --no-cache git
+RUN git config --global user.email "test@test.com"
+RUN git config --global user.name "Test Name"
 
 RUN npm install -g \
   @commitlint/cli \
