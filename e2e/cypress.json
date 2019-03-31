@@ -1,3 +1,4 @@
 {
-  "reporter": "cypress-image-snapshot/reporter"
+  "reporter": "cypress-image-snapshot/reporter",
+  "projectId": "4s32o7"
 }

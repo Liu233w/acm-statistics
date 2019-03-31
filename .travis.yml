@@ -56,7 +56,7 @@ jobs:
       script:
         - npm run lint
         - make server > /dev/null & wait-on http://localhost:3000
-        - make test
+        - http_proxy=http://localhost:1081 npm test -- --record
 
     - name: Root
       stage: test
