@@ -5,11 +5,11 @@ version: '3'
 services:
   frontend:
     environment:
-      - http_proxy=mock-proxy:1080
+      - http_proxy=http://mock-proxy:1080
 
   crawler-api-backend:
     environment:
-      - http_proxy=mock-proxy:1080
+      - http_proxy=http://mock-proxy:1080
 
   watchtower:
     # skip watchtower in development
