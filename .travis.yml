@@ -17,6 +17,8 @@ cache:
   directories:
     - $HOME/.sonar/cache
     - $HOME/.m2
+    - ./e2e/node_modules
+    - $HOME/.npm
 
 after_script:
   - bash <(curl -s https://codecov.io/bash)
@@ -43,6 +45,17 @@ jobs:
         - cd crawler-api-backend
         - make run run-cmd="npm run lint"
         - make test-ci
+
+    - name: E2E
+      stage: test
+      install:
+        - cd e2e
+        - npm install
+        - npm install -g wait-on
+      script:
+        - npm run lint
+        - make server & wait-on http://localhost:3000
+        - npm test
 
     - name: Root
       stage: test
