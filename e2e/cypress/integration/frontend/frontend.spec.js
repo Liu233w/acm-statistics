@@ -1,13 +1,20 @@
 Cypress.config('baseUrl', 'http://reverse-proxy')
 
-describe('/', () => {
+describe('整体视觉测试', () => {
 
   beforeEach(() => {
     cy.mockServer('busuanzi')
+
+    cy.visit('/')
+
+    // 移除卷动图像，防止它影响到快照
+    cy.document().then(document => {
+      document.querySelectorAll('.v-parallax__image')
+        .forEach(item => item.setAttribute('style', null))
+    })
   })
 
   it('能够正确渲染', () => {
-    cy.visit('/')
     cy.matchImageSnapshot()
   })
 
@@ -22,7 +29,6 @@ describe('/', () => {
 
       it(item.toString(), () => {
         cy.viewport(item)
-        cy.visit('/')
         cy.matchImageSnapshot()
       })
     })
