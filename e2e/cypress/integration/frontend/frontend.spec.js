@@ -1,3 +1,5 @@
+Cypress.config('baseUrl', 'http://reverse-proxy')
+
 describe('/', () => {
 
   beforeEach(() => {

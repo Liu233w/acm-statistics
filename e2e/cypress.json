@@ -1,4 +1,3 @@
 {
-  "baseUrl": "http://reverse-proxy",
   "reporter": "cypress-image-snapshot/reporter"
 }
