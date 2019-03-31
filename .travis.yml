@@ -55,8 +55,8 @@ jobs:
         - npm install -g wait-on
       script:
         - npm run lint
-        - make server & wait-on http://localhost:3000
-        - http_proxy=http://localhost:1081 npm test
+        - make server > /dev/null & wait-on http://localhost:3000
+        - make test
 
     - name: Root
       stage: test
