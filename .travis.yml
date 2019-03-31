@@ -19,6 +19,7 @@ cache:
     - $HOME/.m2
     - ./e2e/node_modules
     - $HOME/.npm
+    - $HOME/.cache/Cypress
 
 after_script:
   - bash <(curl -s https://codecov.io/bash)
