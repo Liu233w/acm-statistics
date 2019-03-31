@@ -26,3 +26,5 @@ services:
     image: acm-statistics-e2e-mock-configurer
     depends_on:
       - mock-proxy
+    volumes:
+      - ../e2e/http-mocks/mocks:/mocks/mocks
