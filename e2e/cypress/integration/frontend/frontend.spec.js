@@ -35,3 +35,39 @@ describe('整体视觉测试', () => {
   })
 
 })
+
+describe('卷动图片的视觉测试', () => {
+
+  beforeEach(() => {
+    cy.visit('/')
+  })
+
+  describe('第一张卷动图片', () => {
+    it('能够正常显示', () => {
+      cy.get('.v-parallax').eq(0).matchImageSnapshot()
+    })
+  })
+
+  describe('第二章卷动图片', () => {
+    it('能够正常显示', () => {
+      cy.get('.v-parallax').eq(1).matchImageSnapshot()
+    })
+  })
+})
+
+describe('其他部分', () => {
+
+  beforeEach(() => {
+    cy.visit('/')
+  })
+
+  it('点击进入查题按钮可以进入查题', () => {
+    cy.contains('进入 OJ 题量统计').click()
+    cy.url().should('be', '/statistics')
+  })
+
+  it('显示微信公众号窗口', () => {
+    cy.contains('div[role="listitem"]', '微信公众号').click()
+    cy.get('.v-dialog.v-dialog--active').matchImageSnapshot()
+  })
+})
