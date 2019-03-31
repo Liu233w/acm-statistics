@@ -17,7 +17,7 @@ services:
     - HOST=0.0.0.0
     labels:
       traefik.frontend.rule: PathPrefix:/
-      traefik.port: 3000
+      traefik.port: "3000"
 
   crawler-api-backend:
     image: ${DOCKER_REPO}acm-statistics-crawler-api-backend${DOCKER_TAG}
@@ -26,7 +26,7 @@ services:
     - ACM_STATISTICS_CRAWLER_ENV:crawlers:vjudge:crawler_login_password="${VJUDGE_PASSWORD}"
     labels:
       traefik.frontend.rule: PathPrefix:/api/crawlers/
-      traefik.port: 12001
+      traefik.port: "12001"
 
   watchtower:
     image: v2tec/watchtower
