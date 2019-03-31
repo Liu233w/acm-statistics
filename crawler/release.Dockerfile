@@ -15,6 +15,7 @@ COPY package.json package-lock.json ./
 RUN npm install --only=production
 
 COPY --from=base /var/project .
+RUN npm run postinstall
 
 
 FROM ${NODE_BASE_IMAGE}
