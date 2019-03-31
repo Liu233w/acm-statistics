@@ -9,4 +9,4 @@ RUN npm install -g mockserver-client
 ADD . /mocks
 RUN npm link mockserver-client
 
-CMD ["sh", "execute-all.sh"]
+CMD ["node", "index.js"]

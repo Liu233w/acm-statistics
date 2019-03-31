@@ -22,7 +22,7 @@ services:
       # 在宿主机上使用 cypress 的时候可以用这个端口
       - 1081:1080
 
-  proxy-configurer:
+  mock-configurer:
     image: acm-statistics-e2e-mock-configurer
     depends_on:
       - mock-proxy
