@@ -23,3 +23,10 @@
 //
 // -- This is will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
+
+/*
+ * 使用 cy.mockServer('busuanzi') 或者 cy.mockServer('oj/poj') 这样的命令来进行
+ */
+Cypress.Commands.add('mockServer', path => {
+  cy.request(`http://mock-configurer/${path}`)
+})
