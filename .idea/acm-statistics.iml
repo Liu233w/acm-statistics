@@ -8,7 +8,9 @@
     <content url="file://$MODULE_DIR$/crawler-api-backend">
       <sourceFolder url="file://$MODULE_DIR$/crawler-api-backend/__test__" isTestSource="true" />
     </content>
-    <content url="file://$MODULE_DIR$/e2e" />
+    <content url="file://$MODULE_DIR$/e2e">
+      <sourceFolder url="file://$MODULE_DIR$/e2e/cypress/integration" isTestSource="true" />
+    </content>
     <content url="file://$MODULE_DIR$/frontend">
       <sourceFolder url="file://$MODULE_DIR$/frontend/__test__" isTestSource="true" />
     </content>
