@@ -1,7 +1,4 @@
 {
   "reporter": "cypress-image-snapshot/reporter",
-  "projectId": "4s32o7",
-  "env": {
-    "failOnSnapshotDiff": "false"
-  }
+  "projectId": "4s32o7"
 }
