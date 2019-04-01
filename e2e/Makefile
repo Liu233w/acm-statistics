@@ -23,10 +23,9 @@ build-http-mocks: .node-base
 		-t $(E2eBaseTag) \
 		$(build-args)
 
-# mount .git 文件夹，以让 cypress 获取当前的分支信息
 ci: .base
 	docker run --rm -t --ipc=host --network=host \
-		-v "$(CURDIR)/../.git:/e2e/.git" \
+		$(shell printenv | grep -E '^TRAVIS' | sed 's/\(.*\)/"\1"/g; s/^/-e /g') \
 	 	$(E2eBaseTag) \
 		npm test -- --record --key $(CYPRESS_RECORD_KEY)
 
