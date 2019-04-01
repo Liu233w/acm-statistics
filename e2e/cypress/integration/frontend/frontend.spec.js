@@ -68,6 +68,9 @@ describe('其他部分', () => {
 
   it('显示微信公众号窗口', () => {
     cy.contains('div[role="listitem"]', '微信公众号').click()
-    cy.get('.v-dialog.v-dialog--active').matchImageSnapshot()
+    cy.get('.v-dialog.v-dialog--active').within(() => {
+      cy.contains('微信公众号')
+      cy.matchImageSnapshot()
+    })
   })
 })
