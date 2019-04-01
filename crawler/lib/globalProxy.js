@@ -7,27 +7,12 @@ if (process.env.http_proxy) {
 
   const superagent = require('superagent')
   const request = require('superagent-proxy')(superagent)
-  const mock = {
-    get(url) {
-      console.log('use stubbed get proxy')
-      return request.get(url).proxy(process.env.http_proxy)
-    },
-    post(url) {
-      console.log('use stubbed post proxy')
-      return request.post(url).proxy(process.env.http_proxy)
-    },
-    '@runtimeGlobal': true,
+
+  const OrigRequest = request.Request
+  superagent.Request = function RequestWithAgent(method, url) {
+    console.log(`use stubbed ${method} proxy in url: ${url}`)
+    const req = new OrigRequest(method, url)
+    return req.proxy(process.env.http_proxy)
   }
-
-  const proxyquire = require('proxyquire')
-
-  const {join} = require('path')
-  require('fs').readdirSync(join(__dirname, '../crawlers')).forEach(file => {
-    if (file.endsWith('.js')) {
-      file = file.replace(/\.js$/, '')
-      console.log('stubbed on', file)
-      proxyquire(`../crawlers/${file}`, {superagent: mock})
-    }
-  })
 }
 
