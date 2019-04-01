@@ -28,3 +28,4 @@ services:
       - mock-proxy
     volumes:
       - ../e2e/http-mocks/mocks:/mocks/mocks
+      - ../e2e/http-mocks/lib:/mocks/lib
