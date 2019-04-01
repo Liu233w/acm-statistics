@@ -57,7 +57,7 @@ describe('爬虫测试', () => {
 
       snapshot('worker-idle')
 
-      cy.get('input[aria-label="Username"]').type('vjudge5')
+      cy.get('input[aria-label="Username"]').type('vjudge5').blur()
       snapshot('worker-typed')
 
       cy.get('button').contains('refresh').click()
