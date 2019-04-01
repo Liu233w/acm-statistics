@@ -9,5 +9,9 @@ const client = mockServerClient('mock-proxy', 1080)
  */
 module.exports = func => {
   const promise = func(client)
-  return new Promise((resolve, reject) => promise.then(resolve, reject))
+  if (promise instanceof Promise) {
+    return promise
+  } else {
+    return new Promise((resolve, reject) => promise.then(resolve, reject))
+  }
 }

@@ -1,11 +1,15 @@
 const http = require('http')
 const mock = require('./lib/mock')
 
+mock(client => client.reset())
+  .then(() => console.log('All expectations reset'))
+  .catch(console.error)
+
 const mocks = {}
 // 这个只会从 docker 运行，运行环境永远是一致的，就不管相对路径了。
 require('fs').readdirSync('./mocks').forEach(file => {
   if (file.endsWith('.js')) {
-    file = file.replace(/\.js$/,'')
+    file = file.replace(/\.js$/, '')
     mocks[file] = require('./mocks/' + file)
   }
 })
@@ -19,7 +23,9 @@ http.createServer(async (req, res) => {
     if (!func) {
       throw new Error(`mock ${req.url} is not in the list`)
     }
-    await mock(func)
+
+    const response = await mock(func)
+    console.log(response)
 
     res.writeHead(200, {'Content-Type': 'text/text'})
     res.write(`mock ${req.url} successfully created`)
