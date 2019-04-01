@@ -10,7 +10,7 @@
   "dependencies": {
     "cypress": "^3.2.0",
     "cypress-image-snapshot": "^3.0.1",
-    "eslint": "^5.15.3",
+    "eslint": "^5.16.0",
     "eslint-plugin-cypress": "^2.2.1"
   }
 }
