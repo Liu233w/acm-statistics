@@ -7,6 +7,6 @@ RUN npm install
 
 RUN $(npm bin)/cypress verify
 
-ENV http_proxy=http://host.docker.internal:1081
+ENV http_proxy=http://localhost:1081
 
 COPY . .

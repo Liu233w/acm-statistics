@@ -25,7 +25,7 @@ build-http-mocks: .node-base
 
 # mount .git 文件夹，以让 cypress 获取当前的分支信息
 ci: .base
-	docker run --rm -t --ipc=host \
+	docker run --rm -t --ipc=host --network=host \
 		-v "$(CURDIR)/../.git:/e2e/.git" \
 	 	$(E2eBaseTag) \
 		npm test -- --record --key $(CYPRESS_RECORD_KEY)
@@ -35,7 +35,7 @@ run: .base
 
 # test 也mount，这样的话就可以查看图片的diff了
 test: .base
-	docker run --rm -t --ipc=host \
+	docker run --rm -t --ipc=host --network=host \
 		-v "$(CURDIR)/cypress:/e2e/cypress" \
 	 	$(E2eBaseTag) \
 		npm test
@@ -45,7 +45,7 @@ open:
 	npm start -- --env failOnSnapshotDiff=false
 
 update-snapshot: .base
-	docker run --rm -t --ipc=host \
+	docker run --rm -t --ipc=host --network=host \
 		-v "$(CURDIR)/cypress:/e2e/cypress" \
 	 	$(E2eBaseTag) \
 		npm test -- --env updateSnapshots=true
