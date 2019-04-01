@@ -1,3 +1,5 @@
+require('./lib/globalProxy')
+
 const {readMetaConfigs} = require('./lib/configReader')
 const {generateBrowserCrawlerFunctions, generateServerCrawlerFunctions} = require('./lib/functionGenerator')
 
