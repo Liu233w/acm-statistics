@@ -5,15 +5,13 @@
   "scripts": {
     "test": "jest",
     "lint": "eslint --ext .js --ignore-path .gitignore .",
-    "lintfix": "eslint --fix --ext .js --ignore-path .gitignore .",
-    "postinstall": "patch-package"
+    "lintfix": "eslint --fix --ext .js --ignore-path .gitignore ."
   },
   "dependencies": {
     "cheerio": "^1.0.0-rc.2",
     "fs-extra": "^7.0.1",
     "js-yaml": "^3.13.0",
     "lodash": "^4.17.11",
-    "patch-package": "^6.1.0",
     "superagent": "^4.1.0"
   },
   "devDependencies": {
