@@ -21,7 +21,7 @@ module.exports = json => new Promise((resolve, reject) => {
 
     // The whole response has been received. Print out the result.
     resp.on('end', () => {
-      resolve(JSON.parse(data).explanation)
+      resolve(data)
     })
 
   }).on('error', reject)
