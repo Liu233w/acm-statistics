@@ -116,6 +116,8 @@ describe('爬虫测试', () => {
       snapshot('worker-working')
 
       cy.get('button').contains('stop').click()
+
+      snapshot('worker-after-stop')
     })
   })
 
@@ -140,6 +142,9 @@ describe('爬虫测试', () => {
 
 function snapshot(name) {
   if (name) {
+    // 让动画播完
+    // eslint-disable-next-line cypress/no-unnecessary-waiting
+    cy.wait(500)
     cy.matchImageSnapshot(name, {
       capture: 'viewport',
     })
