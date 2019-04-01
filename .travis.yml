@@ -50,11 +50,10 @@ jobs:
     - name: E2E
       stage: test
       install:
-        - cd e2e
-        - npm install
         - npm install -g wait-on
       script:
-        - npm run lint
+        - cd e2e
+        - make run run-cmd="npm run lint"
         - make server > /dev/null & wait-on http://localhost:3000
         - make ci
 
