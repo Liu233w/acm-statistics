@@ -4,7 +4,7 @@ include ../build/share.mk
 
 # === targets ===
 
-.PHONY: server .node-base build-http-mocks test cypress
+.PHONY: server .node-base build-http-mocks test open ci .base
 
 .node-base:
 	cd ../build && $(MAKE) -f node-base.mk build
@@ -18,10 +18,29 @@ build-http-mocks: .node-base
 		$(build-args) \
 		--build-arg NODE_BASE_IMAGE=$(NodeBaseTag)
 
-test: export http_proxy=http://localhost:1081
-test:
-	npm test
+.base:
+	docker build . \
+		-t $(E2eBaseTag) \
+		$(build-args)
+
+# 不使用docker，让cypress来识别git状态
+ci: export http_proxy=http://localhost:1081
+ci:
+	npm test -- --record
+
+# test 也mount，这样的话就可以查看图片的diff了
+test: .base
+	docker run --rm -t --ipc=host \
+		-v "$(CURDIR)/cypress:/e2e/cypress" \
+	 	$(E2eBaseTag) \
+		npm test
 
 open: export http_proxy=http://localhost:1081
 open:
-	npm start
+	npm start -- --env failOnSnapshotDiff=false
+
+update-snapshot: .base
+	docker run --rm -t --ipc=host \
+		-v "$(CURDIR)/cypress:/e2e/cypress" \
+	 	$(E2eBaseTag) \
+		npm test -- --env updateSnapshots=true
