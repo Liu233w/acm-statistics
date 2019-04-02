@@ -1,5 +1,6 @@
 const http = require('http')
 const mock = require('./lib/mock')
+const preActivation = require('./preActivation')
 
 mock(client => client.reset())
   .then(() => console.log('All expectations reset'))
@@ -15,6 +16,9 @@ require('fs').readdirSync('./mocks').forEach(file => {
 })
 
 console.log('mock list', mocks)
+
+// 激活预先的mock
+preActivation(mocks)
 
 http.createServer(async (req, res) => {
 

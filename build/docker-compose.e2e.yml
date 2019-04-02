@@ -27,5 +27,8 @@ services:
     depends_on:
       - mock-proxy
     volumes:
+      # 防止node_module被挂载进来，只能单独挂载其他的文件了
       - ../e2e/http-mocks/mocks:/mocks/mocks
       - ../e2e/http-mocks/lib:/mocks/lib
+      - ../e2e/http-mocks/preActivation.js:/mocks/preActivation.js
+      - ../e2e/http-mocks/index.js:/mocks/index.js
