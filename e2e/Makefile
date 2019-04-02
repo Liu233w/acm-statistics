@@ -28,7 +28,7 @@ ci: .base
 	http_proxy=http://localhost:1081 curl mock-configurer/travis/mock_font_awesome
 	http_proxy=http://localhost:1081 curl mock-configurer/travis/mock_font_cdn
 	docker run --rm -t --ipc=host --network=host \
-		$(shell printenv | grep -E '^TRAVIS' | sed 's/\(.*\)/"\1"/g; s/^/-e /g') \
+		$(shell printenv | grep -E '^TRAVIS' | sed 's/"/\\"/g; s/\(.*\)/"\1"/g; s/^/-e /g') \
 	 	$(E2eBaseTag) \
 		npm test -- --record --key $(CYPRESS_RECORD_KEY)
 
