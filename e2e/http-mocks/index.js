@@ -1,10 +1,7 @@
 const http = require('http')
+const wait = require('wait-on')
 const mock = require('./lib/mock')
 const preActivation = require('./preActivation')
-
-mock(client => client.reset())
-  .then(() => console.log('All expectations reset'))
-  .catch(console.error)
 
 const mocks = {}
 // 这个只会从 docker 运行，运行环境永远是一致的，就不管相对路径了。
@@ -17,10 +14,7 @@ require('fs').readdirSync('./mocks').forEach(file => {
 
 console.log('mock list', mocks)
 
-// 激活预先的mock
-preActivation(mocks)
-
-http.createServer(async (req, res) => {
+const server = http.createServer(async (req, res) => {
 
   try {
     const func = findInPath(mocks, req.url)
@@ -42,7 +36,7 @@ http.createServer(async (req, res) => {
     res.write(`mock ${req.url} yield following error message: ${e.message}`)
     res.end()
   }
-}).listen(80)
+})
 
 /**
  * 对于 /a/c/d 这样的 path，找到 obj 中的 obj.a.c.d，否则返回 null
@@ -64,3 +58,24 @@ function findInPath(obj, path) {
 
   return current
 }
+
+console.log('waiting for proxy server to be available...')
+
+wait({
+  resources: [
+    'tcp:mock-proxy:1080',
+  ],
+  timeout: 10000,
+}).then(() => {
+
+  console.log('proxy server started, now starting configurer server')
+
+  mock(client => client.reset())
+    .then(() => console.log('All expectations reset'))
+    .catch(console.error)
+
+  // 激活预先的mock
+  preActivation(mocks)
+
+  server.listen(80)
+})

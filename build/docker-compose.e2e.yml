@@ -24,8 +24,6 @@ services:
 
   mock-configurer:
     image: acm-statistics-e2e-mock-configurer
-    depends_on:
-      - mock-proxy
     volumes:
       # 防止node_module被挂载进来，只能单独挂载其他的文件了
       - ../e2e/http-mocks/mocks:/mocks/mocks

@@ -4,9 +4,9 @@ ARG NODE_BASE_IMAGE
 FROM ${NODE_BASE_IMAGE}
 
 WORKDIR /mocks
-RUN npm install -g mockserver-client nodemon
+COPY package.json package-lock.json ./
+RUN npm install
 
 ADD . /mocks
-RUN npm link mockserver-client
 
-CMD nodemon --legacy-watch index.js
+CMD ["npm", "start"]
