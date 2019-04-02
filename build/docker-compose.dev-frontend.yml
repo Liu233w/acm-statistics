@@ -6,9 +6,9 @@ services:
     image: acm-statistics-node-base
     working_dir: /var/project/frontend
     volumes:
-    - ..:/var/project
+      - ..:/var/project
     environment:
-    - NODE_ENV=development
+      - NODE_ENV=development
     command: sh -c "npm run dev"
     labels:
       # 不加上这一条就没法被 traefik 识别，暂时还不知道是怎么回事
@@ -17,8 +17,8 @@ services:
 
   crawler-api-backend:
     environment:
-    # 显示后端详细日志
-    - NODE_ENV=development
+      # 显示后端详细日志
+      - NODE_ENV=development
 
   watchtower:
     # skip watchtower in development
