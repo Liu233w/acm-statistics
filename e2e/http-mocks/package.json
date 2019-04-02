@@ -1,7 +1,7 @@
 {
   "name": "http-mocks",
   "scripts": {
-    "start": "nodemon --legacy-watch index.js"
+    "start": "nodemon --legacy-watch ./src/index.js"
   },
   "dependencies": {
     "mockserver-client": "^5.5.1",
