@@ -25,8 +25,5 @@ services:
   mock-configurer:
     image: acm-statistics-e2e-mock-configurer
     volumes:
-      # 防止node_module被挂载进来，只能单独挂载其他的文件了
-      - ../e2e/http-mocks/mocks:/mocks/mocks
-      - ../e2e/http-mocks/lib:/mocks/lib
-      - ../e2e/http-mocks/preActivation.js:/mocks/preActivation.js
-      - ../e2e/http-mocks/index.js:/mocks/index.js
+      # 防止node_module被挂载进来，只能把代码放在单独的文件夹里了
+      - ${PWD}/../e2e/http-mocks/src:/mocks/src

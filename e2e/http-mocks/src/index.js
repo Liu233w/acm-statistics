@@ -1,11 +1,11 @@
 const http = require('http')
+const {join} = require('path')
 const wait = require('wait-on')
 const mock = require('./lib/mock')
 const preActivation = require('./preActivation')
 
 const mocks = {}
-// 这个只会从 docker 运行，运行环境永远是一致的，就不管相对路径了。
-require('fs').readdirSync('./mocks').forEach(file => {
+require('fs').readdirSync(join(__dirname, 'mocks')).forEach(file => {
   if (file.endsWith('.js')) {
     file = file.replace(/\.js$/, '')
     mocks[file] = require('./mocks/' + file)
