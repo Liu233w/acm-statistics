@@ -3,8 +3,6 @@ Cypress.config('baseUrl', 'http://reverse-proxy')
 describe('整体视觉测试', () => {
 
   beforeEach(() => {
-    cy.mockServer('busuanzi')
-
     cy.visit('/')
 
     // 移除卷动图像，防止它影响到快照

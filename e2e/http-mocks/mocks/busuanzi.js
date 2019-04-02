@@ -13,4 +13,6 @@ module.exports = client =>
       statusCode: 200,
       body: `try{${req.queryStringParameters.jsonpCallback[0]}({"site_uv":3492,"page_pv":2770,"version":2.4,"site_pv":7164});}catch(e){}`,
     }
+  }, {
+    unlimited: true,
   })
