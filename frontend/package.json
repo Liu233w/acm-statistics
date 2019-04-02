@@ -28,7 +28,7 @@
     "stylus-loader": "^3.0.2",
     "superagent": "^5.0.2",
     "virtual-module-webpack-plugin": "^0.4.1",
-    "vuetify": "^1.5.8",
+    "vuetify": "^1.5.9",
     "vuetify-loader": "^1.2.1"
   },
   "devDependencies": {
