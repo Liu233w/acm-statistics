@@ -1,9 +1,0 @@
-minApprovals:
-  NONE: 0
-
-mergeMethod: rebase
-
-requiredLabels: 
-- ready-to-be-merged
-
-reportStatus: true
