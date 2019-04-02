@@ -6,15 +6,15 @@ services:
     image: traefik
     command: --api --docker
     ports:
-    - ${EXPOSE_PORT}:80
-    - ${TRAEFIK_PORT}:8080 # The Web UI (enabled by --api)
+      - ${EXPOSE_PORT}:80
+      - ${TRAEFIK_PORT}:8080 # The Web UI (enabled by --api)
     volumes:
-    - /var/run/docker.sock:/var/run/docker.sock
+      - /var/run/docker.sock:/var/run/docker.sock
 
   frontend:
     image: ${DOCKER_REPO}acm-statistics-frontend${DOCKER_TAG}
     environment:
-    - HOST=0.0.0.0
+      - HOST=0.0.0.0
     labels:
       traefik.frontend.rule: PathPrefix:/
       traefik.port: "3000"
@@ -22,8 +22,8 @@ services:
   crawler-api-backend:
     image: ${DOCKER_REPO}acm-statistics-crawler-api-backend${DOCKER_TAG}
     environment:
-    - ACM_STATISTICS_CRAWLER_ENV:crawlers:vjudge:crawler_login_user="${VJUDGE_USERNAME}"
-    - ACM_STATISTICS_CRAWLER_ENV:crawlers:vjudge:crawler_login_password="${VJUDGE_PASSWORD}"
+      - ACM_STATISTICS_CRAWLER_ENV:crawlers:vjudge:crawler_login_user="${VJUDGE_USERNAME}"
+      - ACM_STATISTICS_CRAWLER_ENV:crawlers:vjudge:crawler_login_password="${VJUDGE_PASSWORD}"
     labels:
       traefik.frontend.rule: PathPrefix:/api/crawlers/
       traefik.port: "12001"
@@ -31,5 +31,5 @@ services:
   watchtower:
     image: v2tec/watchtower
     volumes:
-    - /var/run/docker.sock:/var/run/docker.sock
+      - /var/run/docker.sock:/var/run/docker.sock
     command: -s "0 */30 * * * *" --cleanup
