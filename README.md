@@ -5,7 +5,7 @@
 [![Build Status](https://travis-ci.org/Liu233w/acm-statistics.svg?branch=master)](https://travis-ci.org/Liu233w/acm-statistics)
 [![Quality Gate](https://sonarcloud.io/api/project_badges/measure?project=acm-statistics&metric=alert_status)](https://sonarcloud.io/dashboard?id=acm-statistics)
 [![codecov](https://codecov.io/gh/Liu233w/acm-statistics/branch/master/graph/badge.svg)](https://codecov.io/gh/Liu233w/acm-statistics)
-[![Cypress.io](https://img.shields.io/badge/E2E-Cypress.io-blueviolet.svg)](https://dashboard.cypress.io/#/projects/4s32o7/runs)
+[![Cypress.io](https://img.shields.io/badge/cypress.io-tests-green.svg)](https://dashboard.cypress.io/#/projects/4s32o7/runs)
 [![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=Liu233w/acm-statistics)](https://dependabot.com)
 [![Mergify Status](https://img.shields.io/badge/Mergify-enabled-green.svg)](https://mergify.io)
 
