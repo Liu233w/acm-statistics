@@ -10,7 +10,7 @@ include ../build/share.mk
 	cd ../build && $(MAKE) -f node-base.mk build
 
 server:
-	cd ../build && $(MAKE) -f docker-compose.mk e2e-up
+	cd ../build && $(MAKE) -f docker-compose.mk e2e-up | sed '/HttpStateHandler returning response/,/curl -v/ d'
 
 build-http-mocks: .node-base
 	docker build ./http-mocks \
