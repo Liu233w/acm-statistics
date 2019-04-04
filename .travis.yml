@@ -54,8 +54,12 @@ jobs:
       script:
         - cd e2e
         - make run run-cmd="npm run lint"
-        - make server > /dev/null & wait-on http://localhost:3000
+        - make server > server.log & wait-on http://localhost:3000
         - make ci
+      after_script:
+        - fold_start
+        - cat server.log
+        - fold_end
 
     - name: Root
       stage: test
