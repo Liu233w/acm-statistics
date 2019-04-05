@@ -51,10 +51,11 @@ jobs:
       stage: test
       install:
         - npm install -g wait-on
+        - sudo apt-get install jq
       script:
         - cd e2e
         - make run run-cmd="npm run lint"
-        - make server & wait-on http://localhost:3000
+        - make server | awk -f ../tools/join-json-in-mock-proxy.awk & wait-on http://localhost:3000
         - make ci
 
     - name: Root
