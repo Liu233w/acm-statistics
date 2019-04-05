@@ -1,3 +1,5 @@
+# 简化 mock-proxy 的输出，防止输出内容太多影响 travis-ci 显示
+
 BEGIN { FS="\\|\033\\[0m" ; line=""}
 
 {
@@ -19,11 +21,26 @@ BEGIN { FS="\\|\033\\[0m" ; line=""}
             print $1 "|\033[0m\t" res
 
             line = ""
+        } else if ($2 ~ /^\s*because:\s*$/) {
+            line = $2
+        } else if ($2 ~ /^\s*$/){
+            # 一个空行
+            if (line ~ /^\s*because:\s*$/) {
+                # because 之后的第一个空行
+                next
+            } else if (line ~ /^\s*because:/) {
+                # because 段落完成之后的空行
+                print $1 "|\033[0m\t" line
+                line = ""
+            } else {
+                #print $0
+                # 跳过所有的空行
+            }
         } else if (line != "") {
-            # json 中间
+            # 中间部分
             line = line $2
         } else {
-            # 非 json
+            # 其他内容
             print $0
         }
     } else {
