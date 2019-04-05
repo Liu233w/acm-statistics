@@ -2,7 +2,7 @@ BEGIN { FS="\\|\033\\[0m" ; line=""}
 
 {
     # 只处理 mock-proxy 的日志
-    if(/\033\[31mmock-proxy/) {
+    if($1 ~ /\033\[[0-9]{2}mmock-proxy/) {
         if($2 ~ /^ \t\{/) {
             # json 开头
             line = "{"
