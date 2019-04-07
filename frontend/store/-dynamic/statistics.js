@@ -103,7 +103,10 @@ export const mutations = {
     worker.solved = solved
     worker.submissions = submissions
     if (_.isArray(solvedList)) {
-      worker.solvedList = solvedList
+      // 冻结列表，这样 vue 就不会给列表中的每个元素创建proxy了，可以显著提升性能
+      // 来自 https://vuejs.org/v2/guide/instance.html#Data-and-Methods
+      // 和 https://vuedose.tips/tips/improve-performance-on-large-lists-in-vue-js/
+      worker.solvedList = Object.freeze(solvedList)
     } else {
       worker.solvedList = null
     }

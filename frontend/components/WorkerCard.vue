@@ -147,7 +147,8 @@
         <VCardText v-else-if="solvedListStatus === 'none'">
           当前爬虫无法获取通过的题目列表
         </VCardText>
-        <VCardText v-else>
+        <!--在不打开对话框的时候就不渲染题目列表，防止额外的dom更新，以提升性能-->
+        <VCardText v-else-if="solvedListDialog">
           <VChip v-for="item in prettifiedSolvedList" :key="item">
             {{ item }}
           </VChip>
@@ -265,13 +266,19 @@
           return null
         }
 
+        let res
         if (this.crawler.virtual_judge) {
-          return mapVirtualJudgeProblemTitle(
+          res = mapVirtualJudgeProblemTitle(
             this.worker.solvedList,
             this.$store.state.statistics.crawlers)
         } else {
-          return _.map(this.worker.solvedList, item => `${this.crawler.title}-${item}`)
+          res = _.map(this.worker.solvedList, item => `${this.crawler.title}-${item}`)
         }
+
+        // 冻结列表，这样 vue 就不会给列表中的每个元素创建proxy了，可以显著提升性能
+        // 来自 https://vuejs.org/v2/guide/instance.html#Data-and-Methods
+        // 和 https://vuedose.tips/tips/improve-performance-on-large-lists-in-vue-js/
+        return Object.freeze(res)
       },
     },
   }
