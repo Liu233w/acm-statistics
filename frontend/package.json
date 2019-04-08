@@ -19,7 +19,7 @@
   "dependencies": {
     "@nuxtjs/component-cache": "^1.1.4",
     "axios": "^0.18.0",
-    "cheerio": "^1.0.0-rc.2",
+    "cheerio": "^1.0.0-rc.3",
     "lodash": "^4.17.11",
     "lodash-webpack-plugin": "^0.11.5",
     "nuxt": "^2.6.1",
