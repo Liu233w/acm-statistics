@@ -2,7 +2,7 @@
 
 exports[`/ 1`] = `
 <!DOCTYPE html>
-<html data-n-head-ssr="" data-n-head="">
+<html data-n-head-ssr data-n-head>
 
   <head>
     <title data-n-head="true">NWPU-ACM &#x67E5;&#x8BE2;&#x7CFB;&#x7EDF;</title>
@@ -719,7 +719,7 @@ exports[`/ 1`] = `
     </style>
   </head>
 
-  <body data-n-head="">
+  <body data-n-head>
     <script>(window.ActiveXObject||"ActiveXObject"in window)&&alert("本网站不支持IE或IE内核的浏览器，建议您使用火狐浏览器、谷歌浏览器或微软的Edge浏览器（Windows10自带）")</script>
     <div id="__nuxt">
       <!---->
@@ -739,7 +739,7 @@ exports[`/ 1`] = `
             <div class="v-content__wrap">
               <section>
                 <div class="v-parallax" style="height:600px;">
-                  <div class="v-parallax__image-container"><img src="/_nuxt/img/b1ae895.jpg" alt="" class="v-parallax__image" style="display:block;opacity:0;transform:translate(-50%, 0px);"></div>
+                  <div class="v-parallax__image-container"><img src="/_nuxt/img/b1ae895.jpg" alt class="v-parallax__image" style="display:block;opacity:0;transform:translate(-50%, 0px);"></div>
                   <div class="v-parallax__content">
                     <div class="layout white--text column align-center justify-center"><img src="/_nuxt/img/ff6479c.png" alt="Vuetify.js" height="300">
                       <h1 class="black--text mb-2 display-1 text-xs-center index-title">
@@ -827,7 +827,7 @@ exports[`/ 1`] = `
               </section>
               <section>
                 <div class="v-parallax" style="height:380px;">
-                  <div class="v-parallax__image-container"><img src="/_nuxt/img/7a685f5.jpg" alt="" class="v-parallax__image" style="display:block;opacity:0;transform:translate(-50%, 0px);"></div>
+                  <div class="v-parallax__image-container"><img src="/_nuxt/img/7a685f5.jpg" alt class="v-parallax__image" style="display:block;opacity:0;transform:translate(-50%, 0px);"></div>
                   <div class="v-parallax__content">
                     <div class="layout column align-center justify-center">
                       <div class="headline white--text mb-3 text-xs-center response-title">
@@ -971,7 +971,7 @@ exports[`/ 1`] = `
 
 exports[`/about 1`] = `
 <!DOCTYPE html>
-<html data-n-head-ssr="" data-n-head="">
+<html data-n-head-ssr data-n-head>
 
   <head>
     <title data-n-head="true">&#x5173;&#x4E8E; - NWPU-ACM &#x67E5;&#x8BE2;&#x7CFB;&#x7EDF;</title>
@@ -1688,7 +1688,7 @@ exports[`/about 1`] = `
     </style>
   </head>
 
-  <body data-n-head="">
+  <body data-n-head>
     <script>(window.ActiveXObject||"ActiveXObject"in window)&&alert("本网站不支持IE或IE内核的浏览器，建议您使用火狐浏览器、谷歌浏览器或微软的Edge浏览器（Windows10自带）")</script>
     <div id="__nuxt">
       <!---->
@@ -1824,7 +1824,7 @@ exports[`/about 1`] = `
 
 exports[`/statistics 1`] = `
 <!DOCTYPE html>
-<html data-n-head-ssr="" data-n-head="">
+<html data-n-head-ssr data-n-head>
 
   <head>
     <title data-n-head="true">OJ &#x9898;&#x91CF;&#x7EDF;&#x8BA1; - NWPU-ACM &#x67E5;&#x8BE2;&#x7CFB;&#x7EDF;</title>
@@ -2541,7 +2541,7 @@ exports[`/statistics 1`] = `
     </style>
   </head>
 
-  <body data-n-head="">
+  <body data-n-head>
     <script>(window.ActiveXObject||"ActiveXObject"in window)&&alert("本网站不支持IE或IE内核的浏览器，建议您使用火狐浏览器、谷歌浏览器或微软的Edge浏览器（Windows10自带）")</script>
     <div id="__nuxt">
       <!---->
@@ -2589,7 +2589,7 @@ exports[`/statistics 1`] = `
                       <div class="v-input v-text-field theme--light">
                         <div class="v-input__control">
                           <div class="v-input__slot">
-                            <div class="v-text-field__slot"><label aria-hidden="true" class="v-label theme--light" style="left:0px;right:auto;position:absolute;">&#x7EDF;&#x4E00;&#x8BBE;&#x7F6E;&#x7528;&#x6237;&#x540D;</label><input aria-label="&#x7EDF;&#x4E00;&#x8BBE;&#x7F6E;&#x7528;&#x6237;&#x540D;" required="required" type="text" value=""></div>
+                            <div class="v-text-field__slot"><label aria-hidden="true" class="v-label theme--light" style="left:0px;right:auto;position:absolute;">&#x7EDF;&#x4E00;&#x8BBE;&#x7F6E;&#x7528;&#x6237;&#x540D;</label><input aria-label="&#x7EDF;&#x4E00;&#x8BBE;&#x7F6E;&#x7528;&#x6237;&#x540D;" required="required" type="text" value></div>
                           </div>
                           <div class="v-text-field__details">
                             <div class="v-messages theme--light">
@@ -2663,7 +2663,7 @@ exports[`/statistics 1`] = `
               <div class="v-input v-text-field theme--light">
                 <div class="v-input__control">
                   <div class="v-input__slot">
-                    <div class="v-text-field__slot"><label aria-hidden="true" class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Username</label><input aria-label="Username" required="required" type="text" value=""></div>
+                    <div class="v-text-field__slot"><label aria-hidden="true" class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Username</label><input aria-label="Username" required="required" type="text" value></div>
                     <div class="v-input__append-inner">
                       <div class="v-input__icon v-input__icon--"><i aria-hidden="true" class="v-icon v-icon--link material-icons theme--light"></i></div>
                     </div>
@@ -2682,7 +2682,7 @@ exports[`/statistics 1`] = `
         <div class="v-dialog__container" style="display:block;">
           <div tabindex="-1" class="v-dialog__content" style="z-index:0;">
             <div class="v-dialog v-dialog--scrollable" style="max-width:500px;display:none;">
-              <div xs12="" md8="" lg6="" class="v-card v-sheet theme--light">
+              <div xs12 md8 lg6 class="v-card v-sheet theme--light">
                 <div class="v-card__title"><span class="headline">
           &#x7528;&#x6237;  &#x5728; crawler0 &#x901A;&#x8FC7;&#x7684;&#x9898;&#x76EE;&#x5217;&#x8868;
         </span></div>
@@ -2732,7 +2732,7 @@ exports[`/statistics 1`] = `
           <div class="v-input v-text-field theme--light">
             <div class="v-input__control">
               <div class="v-input__slot">
-                <div class="v-text-field__slot"><label aria-hidden="true" class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Username</label><input aria-label="Username" required="required" type="text" value=""></div>
+                <div class="v-text-field__slot"><label aria-hidden="true" class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Username</label><input aria-label="Username" required="required" type="text" value></div>
                 <div class="v-input__append-inner">
                   <div class="v-input__icon v-input__icon--"><i aria-hidden="true" class="v-icon v-icon--link material-icons theme--light"></i></div>
                 </div>
@@ -2751,7 +2751,7 @@ exports[`/statistics 1`] = `
     <div class="v-dialog__container" style="display:block;">
       <div tabindex="-1" class="v-dialog__content" style="z-index:0;">
         <div class="v-dialog v-dialog--scrollable" style="max-width:500px;display:none;">
-          <div xs12="" md8="" lg6="" class="v-card v-sheet theme--light">
+          <div xs12 md8 lg6 class="v-card v-sheet theme--light">
             <div class="v-card__title"><span class="headline">
           &#x7528;&#x6237;  &#x5728; crawler1 &#x901A;&#x8FC7;&#x7684;&#x9898;&#x76EE;&#x5217;&#x8868;
         </span></div>
@@ -2801,7 +2801,7 @@ exports[`/statistics 1`] = `
           <div class="v-input v-text-field theme--light">
             <div class="v-input__control">
               <div class="v-input__slot">
-                <div class="v-text-field__slot"><label aria-hidden="true" class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Username</label><input aria-label="Username" required="required" type="text" value=""></div>
+                <div class="v-text-field__slot"><label aria-hidden="true" class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Username</label><input aria-label="Username" required="required" type="text" value></div>
                 <div class="v-input__append-inner">
                   <div class="v-input__icon v-input__icon--"><i aria-hidden="true" class="v-icon v-icon--link material-icons theme--light"></i></div>
                 </div>
@@ -2820,7 +2820,7 @@ exports[`/statistics 1`] = `
     <div class="v-dialog__container" style="display:block;">
       <div tabindex="-1" class="v-dialog__content" style="z-index:0;">
         <div class="v-dialog v-dialog--scrollable" style="max-width:500px;display:none;">
-          <div xs12="" md8="" lg6="" class="v-card v-sheet theme--light">
+          <div xs12 md8 lg6 class="v-card v-sheet theme--light">
             <div class="v-card__title"><span class="headline">
           &#x7528;&#x6237;  &#x5728; crawler2 &#x901A;&#x8FC7;&#x7684;&#x9898;&#x76EE;&#x5217;&#x8868;
         </span></div>
@@ -2864,7 +2864,7 @@ exports[`/statistics 1`] = `
           <div class="v-input v-text-field theme--light">
             <div class="v-input__control">
               <div class="v-input__slot">
-                <div class="v-text-field__slot"><label aria-hidden="true" class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Username</label><input aria-label="Username" required="required" type="text" value=""></div>
+                <div class="v-text-field__slot"><label aria-hidden="true" class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Username</label><input aria-label="Username" required="required" type="text" value></div>
                 <div class="v-input__append-inner">
                   <div class="v-input__icon v-input__icon--"><i aria-hidden="true" class="v-icon v-icon--link material-icons theme--light"></i></div>
                 </div>
@@ -2883,7 +2883,7 @@ exports[`/statistics 1`] = `
     <div class="v-dialog__container" style="display:block;">
       <div tabindex="-1" class="v-dialog__content" style="z-index:0;">
         <div class="v-dialog v-dialog--scrollable" style="max-width:500px;display:none;">
-          <div xs12="" md8="" lg6="" class="v-card v-sheet theme--light">
+          <div xs12 md8 lg6 class="v-card v-sheet theme--light">
             <div class="v-card__title"><span class="headline">
           &#x7528;&#x6237;  &#x5728; crawler3 &#x901A;&#x8FC7;&#x7684;&#x9898;&#x76EE;&#x5217;&#x8868;
         </span></div>
@@ -2933,7 +2933,7 @@ exports[`/statistics 1`] = `
           <div class="v-input v-text-field theme--light">
             <div class="v-input__control">
               <div class="v-input__slot">
-                <div class="v-text-field__slot"><label aria-hidden="true" class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Username</label><input aria-label="Username" required="required" type="text" value=""></div>
+                <div class="v-text-field__slot"><label aria-hidden="true" class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Username</label><input aria-label="Username" required="required" type="text" value></div>
                 <div class="v-input__append-inner">
                   <div class="v-input__icon v-input__icon--"><i aria-hidden="true" class="v-icon v-icon--link material-icons theme--light"></i></div>
                 </div>
@@ -2952,7 +2952,7 @@ exports[`/statistics 1`] = `
     <div class="v-dialog__container" style="display:block;">
       <div tabindex="-1" class="v-dialog__content" style="z-index:0;">
         <div class="v-dialog v-dialog--scrollable" style="max-width:500px;display:none;">
-          <div xs12="" md8="" lg6="" class="v-card v-sheet theme--light">
+          <div xs12 md8 lg6 class="v-card v-sheet theme--light">
             <div class="v-card__title"><span class="headline">
           &#x7528;&#x6237;  &#x5728; crawler4 &#x901A;&#x8FC7;&#x7684;&#x9898;&#x76EE;&#x5217;&#x8868;
         </span></div>
@@ -3002,7 +3002,7 @@ exports[`/statistics 1`] = `
           <div class="v-input v-text-field theme--light">
             <div class="v-input__control">
               <div class="v-input__slot">
-                <div class="v-text-field__slot"><label aria-hidden="true" class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Username</label><input aria-label="Username" required="required" type="text" value=""></div>
+                <div class="v-text-field__slot"><label aria-hidden="true" class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Username</label><input aria-label="Username" required="required" type="text" value></div>
                 <div class="v-input__append-inner">
                   <div class="v-input__icon v-input__icon--"><i aria-hidden="true" class="v-icon v-icon--link material-icons theme--light"></i></div>
                 </div>
@@ -3021,7 +3021,7 @@ exports[`/statistics 1`] = `
     <div class="v-dialog__container" style="display:block;">
       <div tabindex="-1" class="v-dialog__content" style="z-index:0;">
         <div class="v-dialog v-dialog--scrollable" style="max-width:500px;display:none;">
-          <div xs12="" md8="" lg6="" class="v-card v-sheet theme--light">
+          <div xs12 md8 lg6 class="v-card v-sheet theme--light">
             <div class="v-card__title"><span class="headline">
           &#x7528;&#x6237;  &#x5728; with description &#x901A;&#x8FC7;&#x7684;&#x9898;&#x76EE;&#x5217;&#x8868;
         </span></div>
@@ -3066,7 +3066,7 @@ exports[`/statistics 1`] = `
           <div class="v-input v-text-field theme--light">
             <div class="v-input__control">
               <div class="v-input__slot">
-                <div class="v-text-field__slot"><label aria-hidden="true" class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Username</label><input aria-label="Username" required="required" type="text" value=""></div>
+                <div class="v-text-field__slot"><label aria-hidden="true" class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Username</label><input aria-label="Username" required="required" type="text" value></div>
                 <div class="v-input__append-inner">
                   <div class="v-input__icon v-input__icon--"><i aria-hidden="true" class="v-icon v-icon--link material-icons theme--light"></i></div>
                 </div>
@@ -3085,7 +3085,7 @@ exports[`/statistics 1`] = `
     <div class="v-dialog__container" style="display:block;">
       <div tabindex="-1" class="v-dialog__content" style="z-index:0;">
         <div class="v-dialog v-dialog--scrollable" style="max-width:500px;display:none;">
-          <div xs12="" md8="" lg6="" class="v-card v-sheet theme--light">
+          <div xs12 md8 lg6 class="v-card v-sheet theme--light">
             <div class="v-card__title"><span class="headline">
           &#x7528;&#x6237;  &#x5728; with url &#x901A;&#x8FC7;&#x7684;&#x9898;&#x76EE;&#x5217;&#x8868;
         </span></div>
@@ -3135,7 +3135,7 @@ exports[`/statistics 1`] = `
           <div class="v-input v-text-field theme--light">
             <div class="v-input__control">
               <div class="v-input__slot">
-                <div class="v-text-field__slot"><label aria-hidden="true" class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Username</label><input aria-label="Username" required="required" type="text" value=""></div>
+                <div class="v-text-field__slot"><label aria-hidden="true" class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Username</label><input aria-label="Username" required="required" type="text" value></div>
                 <div class="v-input__append-inner">
                   <div class="v-input__icon v-input__icon--"><i aria-hidden="true" class="v-icon v-icon--link material-icons theme--light"></i></div>
                 </div>
@@ -3154,7 +3154,7 @@ exports[`/statistics 1`] = `
     <div class="v-dialog__container" style="display:block;">
       <div tabindex="-1" class="v-dialog__content" style="z-index:0;">
         <div class="v-dialog v-dialog--scrollable" style="max-width:500px;display:none;">
-          <div xs12="" md8="" lg6="" class="v-card v-sheet theme--light">
+          <div xs12 md8 lg6 class="v-card v-sheet theme--light">
             <div class="v-card__title"><span class="headline">
           &#x7528;&#x6237;  &#x5728; with all &#x901A;&#x8FC7;&#x7684;&#x9898;&#x76EE;&#x5217;&#x8868;
         </span></div>
