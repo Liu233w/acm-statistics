@@ -10,7 +10,7 @@ exports[`/ 1`] = `
     <meta data-n-head="true" name="viewport" content="width=device-width, initial-scale=1">
     <meta data-n-head="true" data-hid="description" name="description" content="&#x897F;&#x5317;&#x5DE5;&#x4E1A;&#x5927;&#x5B66;ACM&#x57FA;&#x5730;&#x67E5;&#x9898;&#x4E3B;&#x9875;&#xFF0C;&#x63D0;&#x4F9B;&#x56FD;&#x5185;&#x5404;&#x5927;OJ&#x7684;&#x67E5;&#x8BE2;&#x9898;&#x91CF;&#x3001;&#x8BA1;&#x7B97;Rating&#x7684;&#x670D;&#x52A1;&#x3002;">
     <link data-n-head="true" rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link data-n-head="true" rel="stylesheet" href="https://fonts.loli.net/css?family=Roboto:300,400,500,700|Material+Icons|Noto+Sans+SC">
+    <link data-n-head="true" rel="stylesheet" href="https://fonts.loli.net/css?family=Material+Icons|Noto+Serif+SC:300,400,500,700">
     <link data-n-head="true" rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <style data-n-head="true" id="vuetify-theme-stylesheet" type="text/css">
       a {
@@ -741,8 +741,12 @@ exports[`/ 1`] = `
                 <div class="v-parallax" style="height:600px;">
                   <div class="v-parallax__image-container"><img src="/_nuxt/img/b1ae895.jpg" alt class="v-parallax__image" style="display:block;opacity:0;transform:translate(-50%, 0px);"></div>
                   <div class="v-parallax__content">
-                    <div class="layout white--text column align-center justify-center"><img src="/_nuxt/img/ff6479c.png" alt="Vuetify.js" height="300">
-                      <h1 class="black--text mb-2 display-1 text-xs-center index-title">
+                    <div class="layout white--text column align-center justify-center"><img src="/_nuxt/img/db320b9.png" alt="Vuetify.js" height="190" class="mb-3">
+                      <h2 class="black--text headline text-xs-center font-weight-light">
+                        ACM-ICPC &#x534F;&#x4F1A;
+                      </h2>
+                      <div style="height:50px;"></div>
+                      <h1 class="black--text mb-2 display-1 text-xs-center index-title font-weight-bold">
                         &#x6B22;&#x8FCE;&#x4F7F;&#x7528; NWPU-ACM &#x67E5;&#x8BE2;&#x7CFB;&#x7EDF;
                       </h1>
                       <div class="black--text subheading mb-3 text-xs-center index-title">
@@ -979,7 +983,7 @@ exports[`/about 1`] = `
     <meta data-n-head="true" name="viewport" content="width=device-width, initial-scale=1">
     <meta data-n-head="true" data-hid="description" name="description" content="&#x897F;&#x5317;&#x5DE5;&#x4E1A;&#x5927;&#x5B66;ACM&#x57FA;&#x5730;&#x67E5;&#x9898;&#x4E3B;&#x9875;&#xFF0C;&#x63D0;&#x4F9B;&#x56FD;&#x5185;&#x5404;&#x5927;OJ&#x7684;&#x67E5;&#x8BE2;&#x9898;&#x91CF;&#x3001;&#x8BA1;&#x7B97;Rating&#x7684;&#x670D;&#x52A1;&#x3002;">
     <link data-n-head="true" rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link data-n-head="true" rel="stylesheet" href="https://fonts.loli.net/css?family=Roboto:300,400,500,700|Material+Icons|Noto+Sans+SC">
+    <link data-n-head="true" rel="stylesheet" href="https://fonts.loli.net/css?family=Material+Icons|Noto+Serif+SC:300,400,500,700">
     <link data-n-head="true" rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <style data-n-head="true" id="vuetify-theme-stylesheet" type="text/css">
       a {
@@ -1832,7 +1836,7 @@ exports[`/statistics 1`] = `
     <meta data-n-head="true" name="viewport" content="width=device-width, initial-scale=1">
     <meta data-n-head="true" data-hid="description" name="description" content="&#x897F;&#x5317;&#x5DE5;&#x4E1A;&#x5927;&#x5B66;ACM&#x57FA;&#x5730;&#x67E5;&#x9898;&#x4E3B;&#x9875;&#xFF0C;&#x63D0;&#x4F9B;&#x56FD;&#x5185;&#x5404;&#x5927;OJ&#x7684;&#x67E5;&#x8BE2;&#x9898;&#x91CF;&#x3001;&#x8BA1;&#x7B97;Rating&#x7684;&#x670D;&#x52A1;&#x3002;">
     <link data-n-head="true" rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link data-n-head="true" rel="stylesheet" href="https://fonts.loli.net/css?family=Roboto:300,400,500,700|Material+Icons|Noto+Sans+SC">
+    <link data-n-head="true" rel="stylesheet" href="https://fonts.loli.net/css?family=Material+Icons|Noto+Serif+SC:300,400,500,700">
     <link data-n-head="true" rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <style data-n-head="true" id="vuetify-theme-stylesheet" type="text/css">
       a {
