@@ -30,7 +30,7 @@ ci: .base
 	docker run --rm -t --ipc=host --network=host \
 		$(shell printenv | grep -E '^TRAVIS' | sed 's/"/\\"/g; s/\(.*\)/"\1"/g; s/^/-e /g') \
 	 	$(E2eBaseTag) \
-		npm test
+		npm test -- --record --key $(CYPRESS_RECORD_KEY)
 
 run: .base
 	docker run $(run-args) $(E2eBaseTag) $(run-cmd)
