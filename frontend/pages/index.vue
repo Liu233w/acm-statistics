@@ -23,8 +23,12 @@
             justify-center
             class="white--text"
           >
-            <img :src="require('~/assets/img/logo.png')" alt="Vuetify.js" height="300">
-            <h1 class="black--text mb-2 display-1 text-xs-center index-title">
+            <img :src="require('~/assets/img/logo.png')" alt="Vuetify.js" height="190" class="mb-3">
+            <h2 class="black--text headline text-xs-center font-weight-light">
+              ACM-ICPC 协会
+            </h2>
+            <div style="height: 50px" />
+            <h1 class="black--text mb-2 display-1 text-xs-center index-title font-weight-bold">
               欢迎使用 {{ projectTitle }}
             </h1>
             <div class="black--text subheading mb-3 text-xs-center index-title">
