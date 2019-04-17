@@ -29,7 +29,7 @@
     "superagent": "^5.0.2",
     "virtual-module-webpack-plugin": "^0.4.1",
     "vuetify": "^1.5.11",
-    "vuetify-loader": "^1.2.1"
+    "vuetify-loader": "^1.2.2"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.4.3",
