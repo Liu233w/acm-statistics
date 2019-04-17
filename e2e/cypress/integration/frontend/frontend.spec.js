@@ -68,6 +68,9 @@ describe('其他部分', () => {
     cy.contains('div[role="listitem"]', '微信公众号').click()
     cy.get('.v-dialog.v-dialog--active').within(() => {
       cy.contains('微信公众号')
+      // 等待字体加载
+      // eslint-disable-next-line cypress/no-unnecessary-waiting
+      cy.wait(1000)
       cy.matchImageSnapshot()
     })
   })
