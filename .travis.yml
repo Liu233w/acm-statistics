@@ -54,7 +54,7 @@ jobs:
       script:
         - cd e2e
         - make run run-cmd="npm run lint"
-        - make server > /dev/null & wait-on http://localhost:3000
+        - make server > /dev/null & wait-on http://localhost:1081
         - make ci
 
     - name: Root
