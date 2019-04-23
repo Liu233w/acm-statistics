@@ -65,7 +65,7 @@ wait({
   resources: [
     'tcp:mock-proxy:1080',
   ],
-  timeout: 10000,
+  timeout: 60000,
 }).then(() => {
 
   console.log('proxy server started, now starting configurer server')
