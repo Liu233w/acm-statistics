@@ -53,9 +53,9 @@ jobs:
         - npm install -g wait-on
       script:
         - cd e2e
-        - make run run-cmd="npm run lint"
         - make server > /dev/null & wait-on tcp:localhost:1081
         - make ci
+        - make run run-cmd="npm run lint"
 
     - name: Root
       stage: test
