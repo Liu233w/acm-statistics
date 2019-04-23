@@ -9,6 +9,9 @@ include ../build/share.mk
 .node-base:
 	cd ../build && $(MAKE) -f node-base.mk build
 
+## 覆盖跟时间和版本有关的变量，用于快照。
+server: export VERSION_NUM = 0
+server: export BUILD_TIME = 0
 server:
 	cd ../build && $(MAKE) -f docker-compose.mk e2e-up
 

@@ -4,9 +4,13 @@ include ../build/share.mk
 
 # === consts ==
 # 程序的版本号，显示在“关于”页面
+ifndef VERSION_NUM
 VERSION_NUM := $(shell git log -1 --pretty=%H)
+endif
 # 程序的构建时间，用在“关于”和版权声明界面，为 linux 时间戳
+ifndef BUILD_TIME
 BUILD_TIME := $(shell date +%s)
+endif
 
 # === targets ===
 
