@@ -12,7 +12,7 @@
     "fs-extra": "^7.0.1",
     "js-yaml": "^3.13.1",
     "lodash": "^4.17.11",
-    "superagent": "^5.0.2",
+    "superagent": "^5.0.3",
     "superagent-proxy": "^2.0.0"
   },
   "devDependencies": {
