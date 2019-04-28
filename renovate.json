@@ -3,7 +3,7 @@
     "config:base",
     "docker:enableMajor"
   ],
-  "automerge": false,
+  "automerge": true,
   "dockerfile": {
     "fileMatch": ["(^|/|\\.)Dockerfile$"]
   }
