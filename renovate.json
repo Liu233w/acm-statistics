@@ -4,6 +4,7 @@
     "docker:enableMajor",
     "group:monorepos"
   ],
+  "labels": ["dependencies"],
   "automerge": true,
   "dockerfile": {
     "fileMatch": ["(^|/|\\.)Dockerfile$"]
