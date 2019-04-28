@@ -14,5 +14,4 @@
 *.rtf	 diff=astextplain
 *.RTF	 diff=astextplain
 # Settings for linguist
-/backend/* linguist-vendored
 *.snap.png filter=lfs diff=lfs merge=lfs -text
