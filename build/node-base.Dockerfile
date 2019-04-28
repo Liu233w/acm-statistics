@@ -1,4 +1,4 @@
-FROM node:10-alpine
+FROM node:10.15.3-alpine
 
 # 将 apk 源替换成 ustc 版本
 ARG APK_MIRROR=false

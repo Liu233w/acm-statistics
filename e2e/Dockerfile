@@ -1,4 +1,4 @@
-FROM cypress/base:10
+FROM cypress/base:10.15.3
 
 WORKDIR /e2e
 
