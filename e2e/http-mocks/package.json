@@ -4,8 +4,8 @@
     "start": "nodemon --legacy-watch ./src/index.js"
   },
   "dependencies": {
-    "mockserver-client": "^5.5.1",
-    "nodemon": "^1.18.11",
-    "wait-on": "^3.2.0"
+    "mockserver-client": "5.5.1",
+    "nodemon": "1.18.11",
+    "wait-on": "3.2.0"
   }
 }
