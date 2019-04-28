@@ -1,0 +1,12 @@
+{
+  "extends": [
+    "config:base"
+  ],
+  "automerge": false,
+  "docker": {
+    "fileMatch": [
+      "Dockerfile",
+      ".*\\.Dockerfile"
+    ]
+  }
+}
