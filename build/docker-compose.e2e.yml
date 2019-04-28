@@ -13,11 +13,11 @@ services:
 
   watchtower:
     # skip watchtower in development
-    image: tianon/true
+    image: tianon/true:latest@sha256:009cce421096698832595ce039aa13fa44327d96beedb84282a69d3dbcf5a81b
     command: ''
 
   mock-proxy:
-    image: jamesdbloom/mockserver
+    image: jamesdbloom/mockserver:mockserver-5.5.1@sha256:50c5208622435c32e8ac1b3cc29f91fb70a87608dd3b8bc9364e1950d55341f9
     ports:
       # 在宿主机上使用 cypress 的时候可以用这个端口
       - 1081:1080
