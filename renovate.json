@@ -1,7 +1,8 @@
 {
   "extends": [
     "config:base",
-    "docker:enableMajor"
+    "docker:enableMajor",
+    "group:monorepos"
   ],
   "automerge": true,
   "dockerfile": {
