@@ -3200,7 +3200,7 @@ exports[`/statistics 1`] = `
             sidebar: false,
             statistics: {
               workers: [{
-                crawlerName: h,
+                crawlerName: e,
                 username: a,
                 status: d,
                 solved: b,
@@ -3227,7 +3227,7 @@ exports[`/statistics 1`] = `
                 tokenKey: c,
                 solvedList: []
               }, {
-                crawlerName: e,
+                crawlerName: h,
                 username: a,
                 status: d,
                 solved: b,
@@ -3274,8 +3274,8 @@ exports[`/statistics 1`] = `
               }],
               crawlers: {
                 crawler0: {
-                  title: h,
-                  name: h
+                  title: e,
+                  name: e
                 },
                 crawler1: {
                   title: f,
@@ -3286,8 +3286,8 @@ exports[`/statistics 1`] = `
                   name: g
                 },
                 crawler3: {
-                  title: e,
-                  name: e
+                  title: h,
+                  name: h
                 },
                 crawler4: {
                   title: i,
@@ -3320,7 +3320,7 @@ exports[`/statistics 1`] = `
             BUILD_TIME: "0"
           }
         }
-      }("", 0, null, "WAITING", "crawler3", "crawler1", "crawler2", "crawler0", "crawler4", "withDescription", "withUrl", "withAll", "http:\\u002F\\u002Ftest.aaa.com", true));
+      }("", 0, null, "WAITING", "crawler0", "crawler1", "crawler2", "crawler3", "crawler4", "withDescription", "withUrl", "withAll", "http:\\u002F\\u002Ftest.aaa.com", true));
     </script>
     <script>
       ! function() {
