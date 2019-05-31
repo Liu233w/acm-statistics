@@ -6,7 +6,7 @@ module.exports = client =>
       jsonpCallback: ['.*'],
     },
     headers: {
-      host: ['busuanzi.ibruce.info'],
+      host: ['busuanzi\\.ibruce\\.info(:80)?'],
     },
   }, function (req) {
     return {
