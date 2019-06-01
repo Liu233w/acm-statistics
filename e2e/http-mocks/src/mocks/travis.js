@@ -2,7 +2,7 @@ module.exports = {
   mock_font_awesome(client) {
     return client.mockAnyResponse({
       httpRequest: {
-        path: '/font-awesome',
+        path: '/font-awesome/.*',
         headers: {
           host: ['cdn.bootcss.com'],
         },
