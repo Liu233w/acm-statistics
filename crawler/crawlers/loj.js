@@ -3,41 +3,42 @@ const cheerio = require('cheerio')
 
 module.exports = async function (config, username) {
 
-    if (!username) {
-        throw new Error('请输入用户名')
-    }
+  if (!username) {
+    throw new Error('请输入用户名')
+  }
 
-    const res = await request
-        .get('http://loj.ac/find_user')
-        .query({ nickname: username })
+  const res = await request
+    .get('http://loj.ac/find_user')
+    .query({nickname: username})
 
-    if (!res.ok) {
-        throw new Error(`Server Response Error: ${res.status}`)
-    }
-    var $ = cheerio.load(res.text);
+  if (!res.ok) {
+    throw new Error(`Server Response Error: ${res.status}`)
+  }
+  const $ = cheerio.load(res.text)
 
-    if ($('.header').filter((i, el) => $(el).text().trim() === '无此用户。').length >= 1) {
-        throw new Error('用户不存在')
+  if ($('.header').filter((i, el) => $(el).text().trim() === '无此用户。').length >= 1) {
+    throw new Error('用户不存在')
+  }
+  try {
+    const acList = []
+    $('[href^="/problem/"]').each(function (i, el) {
+      acList.push($(el).text().trim())
+    })
+
+    const text = $('script:contains("new Chart")').html().replace(/\s/gi, '')
+    const submitMatchArray = text.match(/data:\[(\d+),(\d+),(\d+),(\d+),(\d+),(\d+),\]/i)
+    const submissions = submitMatchArray
+      .slice(1, submitMatchArray.length)
+      .reduce((sum, a) => sum + parseInt(a), 0)
+
+    return {
+      submissions,
+      solved: parseInt($('a:has(i.check.icon)').text().trim().split(' ')[1]),
+      solvedList: acList,
     }
-    try {
-        var acList = new Array();
-        $('[href^="/problem/"]').filter(function (i, el) {
-            acList.push($(el).text().trim());
-        });
-        var html = res.text.replace(/\s/gi, '');
-        var submitDetailArr = html.match(/data:\[(\d+),(\d+),(\d+),(\d+),(\d+),(\d+),\]/i);
-        var subCount = 0;
-        for (var i = 1; i <= 6; i++) {
-            subCount += parseInt(submitDetailArr[i]);
-        }
-        return {
-            submissions: subCount,
-            solved: parseInt(submitDetailArr[1]),
-            solvedList: acList
-        };
-    }
-    catch (e) {
-        throw new Error('无法解析数据')
-    }
+  }
+  catch (e) {
+    throw new Error('无法解析数据')
+  }
 
 }
