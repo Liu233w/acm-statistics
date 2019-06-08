@@ -79,3 +79,8 @@ crawlers:
     # vjudge 有一个api接口，需要用任意的用户名和密码来接入才能访问
     crawler_login_user: 用户名
     crawler_login_password: 密码
+  loj:
+    meta:
+      title: LOJ
+      description:
+      url: https://loj.ac/

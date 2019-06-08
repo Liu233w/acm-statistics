@@ -12,7 +12,7 @@ const timus = require('../crawlers/timus')
 const leetcode_cn = require('../crawlers/leetcode_cn')
 const vjudge = require('../crawlers/vjudge')
 const csu = require('../crawlers/csu')
-const {readConfigs} = require('../lib/configReader')
+const { readConfigs } = require('../lib/configReader')
 
 jest.setTimeout(10000) // 最多10秒
 
@@ -253,6 +253,24 @@ describe('vjudge', () => {
     checkRes(res)
     expect(res.solvedList).toContain('codeforces-436B')
   }, 50000)
+})
+
+describe('loj', () => {
+
+  test('test loj - 用户不存在时抛出异常', async () => {
+    await expect(loj(null, notExistUsername)).rejects.toThrow('用户不存在')
+  })
+
+  test('test loj - 能够正确识别带有空格的用户名', async () => {
+    await expect(loj(null, ' ' + notExistUsername)).rejects.toThrow('用户不存在')
+  })
+
+  test('test loj', async () => {
+    const res = await loj(null, 'cz_xuyixuan') // 自定义存在的用户名
+    checkRes(res)
+    expect(res.solvedList).toContain('103')
+  })
+
 })
 
 function checkRes(res) {
