@@ -12,7 +12,9 @@ const timus = require('../crawlers/timus')
 const leetcode_cn = require('../crawlers/leetcode_cn')
 const vjudge = require('../crawlers/vjudge')
 const csu = require('../crawlers/csu')
-const { readConfigs } = require('../lib/configReader')
+const loj = require('../crawlers/loj')
+
+const {readConfigs} = require('../lib/configReader')
 
 jest.setTimeout(10000) // 最多10秒
 
