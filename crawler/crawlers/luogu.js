@@ -21,7 +21,7 @@ module.exports = async function (config, username) {
     throw new Error('用户不存在')
   }
 
-  const uid = uidJSON.more.uid;
+  const uid = uidJSON.more.uid
   const res = await request
     .get('https://www.luogu.org/space/show')
     .query({uid: uid})
@@ -30,14 +30,24 @@ module.exports = async function (config, username) {
     throw new Error(`Server Response Error: ${res.status}`)
   }
 
-  const $ = cheerio.load(res.text);
+  const $ = cheerio.load(res.text)
 
   try {
     const acList = []
     $('.lg-article > [href^="/problem/show?pid="]').each(function (i, el) {
       acList.push($(el).text().trim())
     })
-    const submissions = $('li:contains("提交") > span.lg-bignum-num').text();
+    /**
+     * @type {string}
+     */
+    const submissionText = $('li:contains("提交") > span.lg-bignum-num').text()
+    let submissions
+    if (submissionText.includes('.')) {
+      // 对于含有 K 的数据，目前没法获取精确的数值
+      submissions = Math.floor(parseFloat(submissionText) * 1000)
+    } else {
+      submissions = parseInt(submissionText)
+    }
 
     return {
       submissions: submissions,
