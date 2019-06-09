@@ -289,7 +289,14 @@ describe('luogu', () => {
   test('test luogu', async () => {
     const res = await luogu(null, 'CancerGary') // 自定义存在的用户名
     checkRes(res)
-    expect(res.solvedList).toMatchObject(['P1001', 'P1077', 'P1305', 'P1403', 'P1803', 'P2722'])
+    expect(res.solvedList).toContain('P1001')
+    expect(res.solvedList.length).toBeGreaterThan(100)
+  })
+
+  test('test luogu - 能够正确处理提交数大于 1000 的用户', async () => {
+    const res = await luogu(null, 'NaCly_Fish')
+    checkRes(res)
+    expect(res.submissions).toBeGreaterThan(1000)
   })
 })
 
