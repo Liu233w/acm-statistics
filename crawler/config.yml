@@ -11,6 +11,7 @@ crawler_order:
   - leetcode_cn
   - csu
   - loj
+  - luogu
   - vjudge
 
 crawlers:
@@ -74,6 +75,11 @@ crawlers:
       title: LOJ
       description:
       url: https://loj.ac/
+  luogu:
+    meta:
+      title: 洛谷
+      description:
+      url: https://luogu.org/
   vjudge:
     meta:
       title: VJudge
