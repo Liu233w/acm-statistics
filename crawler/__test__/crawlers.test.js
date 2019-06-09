@@ -13,6 +13,7 @@ const leetcode_cn = require('../crawlers/leetcode_cn')
 const vjudge = require('../crawlers/vjudge')
 const csu = require('../crawlers/csu')
 const loj = require('../crawlers/loj')
+const luogu = require('../crawlers/luogu')
 
 const {readConfigs} = require('../lib/configReader')
 
@@ -271,6 +272,12 @@ describe('loj', () => {
     const res = await loj(null, 'cz_xuyixuan') // 自定义存在的用户名
     checkRes(res)
     expect(res.solvedList).toContain('103')
+  })
+
+  test('test luogu', async () => {
+    const res = await luogu(null, 'CancerGary') // 自定义存在的用户名
+    checkRes(res)
+    expect(res.solvedList).toMatchObject(['P1001', 'P1077', 'P1305', 'P1403', 'P1803', 'P2722'])
   })
 
 })
