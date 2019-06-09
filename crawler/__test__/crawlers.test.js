@@ -274,12 +274,23 @@ describe('loj', () => {
     expect(res.solvedList).toContain('103')
   })
 
+})
+
+describe('luogu', () => {
+
+  test('test luogu - 用户不存在时抛出异常', async () => {
+    await expect(luogu(null, notExistUsername)).rejects.toThrow('用户不存在')
+  })
+
+  test('test loj - 能够正确识别带有空格的用户名', async () => {
+    await expect(luogu(null, ' ' + notExistUsername)).rejects.toThrow('用户不存在')
+  })
+
   test('test luogu', async () => {
     const res = await luogu(null, 'CancerGary') // 自定义存在的用户名
     checkRes(res)
     expect(res.solvedList).toMatchObject(['P1001', 'P1077', 'P1305', 'P1403', 'P1803', 'P2722'])
   })
-
 })
 
 function checkRes(res) {
