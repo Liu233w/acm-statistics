@@ -282,7 +282,7 @@ describe('luogu', () => {
     await expect(luogu(null, notExistUsername)).rejects.toThrow('用户不存在')
   })
 
-  test('test loj - 能够正确识别带有空格的用户名', async () => {
+  test('test luogu - 能够正确识别带有空格的用户名', async () => {
     await expect(luogu(null, ' ' + notExistUsername)).rejects.toThrow('用户不存在')
   })
 
