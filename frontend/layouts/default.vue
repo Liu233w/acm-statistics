@@ -30,7 +30,7 @@
       <VTooltip left>
         <VBtn icon slot="activator" href="https://github.com/Liu233w/acm-statistics" target="_blank">
           <VIcon medium>
-            fa fa-github
+            fab fa-github
           </VIcon>
         </VBtn>
         <span>Star me on Github!</span>
