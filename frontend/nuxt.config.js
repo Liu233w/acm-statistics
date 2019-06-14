@@ -18,13 +18,13 @@ module.exports = {
     link: [
       {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'},
       {rel: 'stylesheet', href: 'https://fonts.loli.net/css?family=Material+Icons|Noto+Serif+SC:300,400,500,700'},
-      {rel: 'stylesheet', href: 'https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css'},
     ],
   },
   plugins: [
     '~/plugins/vuetify.js',
     '~/plugins/debug.js',
     '~/plugins/analysis.js',
+    '~/plugins/fontAwesome.js',
   ],
   css: [
     '~/assets/style/app.styl',

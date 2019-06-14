@@ -8,7 +8,7 @@
       <VTooltip left>
         <VBtn icon slot="activator" href="https://github.com/Liu233w/acm-statistics" target="_blank">
           <VIcon medium>
-            fa fa-github
+            fab fa-github
           </VIcon>
         </VBtn>
         <span>Star me on Github!</span>
@@ -92,7 +92,7 @@
                   <VCard class="elevation-0 transparent" :flat="true">
                     <VCardText class="text-xs-center">
                       <VIcon x-large class="blue--text text--lighten-2">
-                        fa fa-github
+                        fab fa-github
                       </VIcon>
                     </VCardText>
                     <VCardTitle primary-title class="layout justify-center">
@@ -195,7 +195,7 @@
                   <VListTile href="https://jq.qq.com/?_wv=1027&k=5qgzfQc" target="_blank">
                     <VListTileAction>
                       <VIcon class="blue--text text--lighten-2">
-                        fa fa-qq
+                        fab fa-qq
                       </VIcon>
                     </VListTileAction>
                     <VListTileContent>
@@ -225,7 +225,7 @@
                   <VListTile @click="dialog = !dialog">
                     <VListTileAction>
                       <VIcon class="blue--text text--lighten-2">
-                        fa fa-weixin
+                        fab fa-weixin
                       </VIcon>
                     </VListTileAction>
                     <VListTileContent>
