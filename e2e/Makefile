@@ -28,7 +28,6 @@ build-http-mocks: .node-base
 
 ci: .base
 	# 让字体走外网，防止因为连接问题导致快照错误
-	http_proxy=http://localhost:1081 curl http://mock-configurer/travis/mock_font_awesome
 	http_proxy=http://localhost:1081 curl http://mock-configurer/travis/mock_font_cdn
 	docker run --rm -t --ipc=host --network=host \
 		$(shell printenv | grep -E '^TRAVIS' | sed 's/"/\\"/g; s/\(.*\)/"\1"/g; s/^/-e /g') \
@@ -37,7 +36,6 @@ ci: .base
 
 ci-no-record: .base
 	# 让字体走外网，防止因为连接问题导致快照错误
-	http_proxy=http://localhost:1081 curl http://mock-configurer/travis/mock_font_awesome
 	http_proxy=http://localhost:1081 curl http://mock-configurer/travis/mock_font_cdn
 	docker run --rm -t --ipc=host --network=host \
 		$(shell printenv | grep -E '^TRAVIS' | sed 's/"/\\"/g; s/\(.*\)/"\1"/g; s/^/-e /g') \
