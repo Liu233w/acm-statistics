@@ -34,7 +34,7 @@ module.exports = async function (config, username) {
 
   try {
     const acList = []
-    $('.lg-article > [href^="/problem/show?pid="]').each(function (i, el) {
+    $('.lg-article > [href^="/problemnew/show/"]').each(function (i, el) {
       acList.push($(el).text().trim())
     })
     /**
