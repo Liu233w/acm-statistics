@@ -3,19 +3,19 @@ const cheerio = require('cheerio')
 
 module.exports = async function (config, username) {
 
-  let res = await request
+  const idRes = await request
     .get('http://acm.timus.ru/search.aspx')
-    .query({Str: username})
+    .query({ Str: username })
 
-  let $ = cheerio.load(res.text)
-  const name = $('td.name').filter((i, el) => $(el).text() === username)
+  const id$ = cheerio.load(idRes.text)
+  const name = id$('td.name').filter((i, el) => id$(el).text() === username)
   if (name.length === 0) {
     throw new Error('用户不存在')
   }
 
-  res = await request
+  const res = await request
     .get('http://acm.timus.ru/' + name.find('a').attr('href'))
-  $ = cheerio.load(res.text)
+  const $ = cheerio.load(res.text)
 
   let solved = null
   try {
