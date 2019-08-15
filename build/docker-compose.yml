@@ -3,7 +3,7 @@ version: '3'
 services:
 
   reverse-proxy:
-    image: traefik:v1.7.12@sha256:02cfdb77b0cd82d973dffb3dafe498283f82399bd75b335797d7f0fe3ebeccb8
+    image: traefik:1.7.14@sha256:e1e1b1dadfaab6d64f420f4352356e98e289fc7c8bf9f47387866f221c60e4e6
     command: --api --docker
     ports:
       - ${EXPOSE_PORT}:80
