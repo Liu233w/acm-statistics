@@ -1,9 +1,9 @@
 <template>
   <VApp light>
     <VAppBar class="white">
-      <VAppBarTitle>
+      <VToolbarTitle>
         {{ projectTitle }}
-      </VAppBarTitle>
+      </VToolbarTitle>
       <VSpacer />
       <VTooltip left>
         <template #activator="{ on }">
@@ -257,11 +257,11 @@
       </section>
 
       <VFooter class="blue darken-2">
-        <VBtn text nuxt to="/about" class="white--text ml-4">
+        <NuxtLink to="/about" class="white--text ml-4 body-2">
           &copy; 2018 - {{ buildYear }} NWPU-ACM 技术组
-        </VBtn>
+        </NuxtLink>
         <VSpacer />
-        <span class="white--text ml-4">
+        <span class="white--text ml-4 body-2">
           陕ICP备17008184号
         </span>
       </VFooter>

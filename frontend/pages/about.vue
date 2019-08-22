@@ -4,7 +4,7 @@
       <VFlex xs12 sm6 offset-sm3>
         <VCard>
           <VAppBar color="light-blue" dark>
-            <VAppBarTitle>关于</VAppBarTitle>
+            <VToolbarTitle>关于</VToolbarTitle>
             <VSpacer />
           </VAppBar>
           <VList>
