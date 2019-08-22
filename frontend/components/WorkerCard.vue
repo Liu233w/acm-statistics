@@ -7,55 +7,65 @@
       <VSpacer />
       <VAppBarItems>
         <VTooltip bottom v-show="workerNum >= 2">
-          <VBtn icon
-                slot="activator"
-                @click="removeWorker"
-          >
-            <VIcon>delete</VIcon>
-          </VBtn>
+          <template #activator="{ on }">
+            <VBtn icon
+                  v-on="on"
+                  @click="removeWorker"
+            >
+              <VIcon>delete</VIcon>
+            </VBtn>
+          </template>
           <span>
             移除此窗格
           </span>
         </VTooltip>
         <VTooltip bottom v-show="myWorkerIdxOfCrawler == workerNum">
-          <VBtn icon
-                slot="activator"
-                @click="addWorker"
-          >
-            <VIcon>add_circle</VIcon>
-          </VBtn>
+          <template #activator="{ on }">
+            <VBtn icon
+                  v-on="on"
+                  @click="addWorker"
+            >
+              <VIcon>add_circle</VIcon>
+            </VBtn>
+          </template>
           <span>
             添加一个此 OJ 的窗格
           </span>
         </VTooltip>
         <VTooltip bottom v-show="crawlerUrl">
-          <VBtn icon
-                slot="activator"
-                @click="openOj"
-          >
-            <VIcon>link</VIcon>
-          </VBtn>
+          <template #activator="{ on }">
+            <VBtn icon
+                  v-on="on"
+                  @click="openOj"
+            >
+              <VIcon>link</VIcon>
+            </VBtn>
+          </template>
           <span>
             转到此OJ
           </span>
         </VTooltip>
         <Transition name="fade">
           <VTooltip bottom v-if="worker.status === WORKER_STATUS.WORKING">
-            <VBtn icon
-                  slot="activator"
-                  @click="stopWorker"
-            >
-              <VIcon>stop</VIcon>
-            </VBtn>
+            <template #activator="{ on }">
+              <VBtn icon
+                    v-on="on"
+                    @click="stopWorker"
+              >
+                <VIcon>stop</VIcon>
+              </VBtn>
+            </template>
             <span>停止查询</span>
           </VTooltip>
           <VTooltip bottom v-else>
-            <VBtn icon
-                  slot="activator"
-                  @click="startWorker"
-            >
-              <VIcon>refresh</VIcon>
-            </VBtn>
+            <template #activator="{ on }">
+              <VBtn icon
+                    v-on="on"
+                    @click="startWorker"
+              >
+                <VIcon>refresh</VIcon>
+              </VBtn>
+            </template>
             <span>重新爬取此处信息</span>
           </VTooltip>
         </Transition>

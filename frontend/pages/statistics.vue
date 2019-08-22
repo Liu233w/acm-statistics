@@ -10,12 +10,13 @@
           @keyup.enter="runWorker"
           :loading="isWorking"
         >
-          <VProgressLinear
-            slot="progress"
-            color="primary"
-            :value="notWorkingRate"
-            :height="3"
-          />
+          <template #progress>
+            <VProgressLinear
+              color="primary"
+              :value="notWorkingRate"
+              :height="3"
+            />
+          </template>
         </VTextField>
       </VFlex>
       <VFlex xs12 sm7 md5>
@@ -23,27 +24,33 @@
           开始查询
         </VBtn>
         <VTooltip bottom>
-          <VBtn
-            class="error"
-            @click="clearWorkers"
-            slot="activator"
-          >
-            重置查询
-          </VBtn>
+          <template #activator="{ on }">
+            <VBtn
+              class="error"
+              v-on="on"
+              @click="clearWorkers"
+            >
+              重置查询
+            </VBtn>
+          </template>
           清空用户名，重置查询状态
         </VTooltip>
         <VTooltip bottom>
-          <VBtn @click="saveUsername"
-                slot="activator"
-                :loading="savingUsername"
-                :disable="savingUsername"
-                :class="{ green: savingUsername }"
-          >
-            保存用户名
-            <span slot="loader">
-              保存成功
-            </span>
-          </VBtn>
+          <template #activator="{ on }">
+            <VBtn @click="saveUsername"
+                  v-on="on"
+                  :loading="savingUsername"
+                  :disable="savingUsername"
+                  :class="{ green: savingUsername }"
+            >
+              保存用户名
+              <template #loader>
+                <span>
+                  保存成功
+                </span>
+              </template>
+            </VBtn>
+          </template>
           将用户名保存到本地，下次打开页面的时候会自动填写
           <br>
           （使用“开始查询”按钮也会保存用户名）
