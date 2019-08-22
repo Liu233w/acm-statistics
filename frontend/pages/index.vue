@@ -24,14 +24,14 @@
             class="white--text"
           >
             <img :src="require('~/assets/img/logo.png')" alt="Vuetify.js" height="190" class="mb-3">
-            <h2 class="black--text headline text-xs-center font-weight-light">
+            <h2 class="black--text headline text-center font-weight-light">
               ACM-ICPC 协会
             </h2>
             <div style="height: 50px" />
-            <h1 class="black--text mb-2 display-1 text-xs-center index-title font-weight-bold">
+            <h1 class="black--text mb-2 display-1 text-center index-title font-weight-bold">
               欢迎使用 {{ projectTitle }}
             </h1>
-            <div class="black--text subheading mb-3 text-xs-center index-title">
+            <div class="black--text subheading mb-3 text-center index-title">
               由 NWPU-ACM 技术组强力驱动
             </div>
             <VBtn
@@ -55,7 +55,7 @@
           align-center
         >
           <VFlex xs12 sm4 class="my-3">
-            <div class="text-xs-center">
+            <div class="text-center">
               <h2 class="headline">
                 全新查询系统，更加稳定
               </h2>
@@ -66,20 +66,20 @@
           </VFlex>
           <VFlex xs12>
             <VContainer grid-list-xl>
-              <VLayout row wrap>
+              <VLayout wrap>
                 <VFlex xs12 md4>
                   <VCard class="elevation-0 transparent" :flat="true">
-                    <VCardText class="text-xs-center">
+                    <VCardText class="text-center">
                       <VIcon x-large class="blue--text text--lighten-2">
                         link
                       </VIcon>
                     </VCardText>
                     <VCardTitle primary-title class="layout justify-center">
-                      <div class="headline text-xs-center">
+                      <div class="headline text-center">
                         免费提供题量查询API
                       </div>
                     </VCardTitle>
-                    <VCardText class="text-xs-center">
+                    <VCardText class="text-center">
                       我们提供了一个 restful api 来供您使用，您可以在任意的客户端、网站中调用此api来查询某用户在oj上的提交数/通过数。
                       访问我们的
                       <a href="/swagger" target="_blank">
@@ -90,17 +90,17 @@
                 </VFlex>
                 <VFlex xs12 md4>
                   <VCard class="elevation-0 transparent" :flat="true">
-                    <VCardText class="text-xs-center">
+                    <VCardText class="text-center">
                       <VIcon x-large class="blue--text text--lighten-2">
                         fab fa-github
                       </VIcon>
                     </VCardText>
                     <VCardTitle primary-title class="layout justify-center">
-                      <div class="headline text-xs-center">
+                      <div class="headline text-center">
                         完全开源
                       </div>
                     </VCardTitle>
-                    <VCardText class="text-xs-center">
+                    <VCardText class="text-center">
                       访问我们的
                       <a href="https://github.com/Liu233w/acm-statistics" target="_blank">
                         项目地址
@@ -112,17 +112,17 @@
                 </VFlex>
                 <VFlex xs12 md4>
                   <VCard class="elevation-0 transparent" :flat="true">
-                    <VCardText class="text-xs-center">
+                    <VCardText class="text-center">
                       <VIcon x-large class="blue--text text--lighten-2">
                         build
                       </VIcon>
                     </VCardText>
                     <VCardTitle primary-title class="layout justify-center">
-                      <div class="headline text-xs-center">
+                      <div class="headline text-center">
                         更多功能支持中
                       </div>
                     </VCardTitle>
-                    <VCardText class="text-xs-center">
+                    <VCardText class="text-center">
                       旧版查询系统中的功能正在被移植到新版查询系统中，如果您需要旧版查询系统中的功能，请
                       <a href="//npuacm.info/">
                         单击此处返回旧版查询系统
@@ -139,7 +139,7 @@
       <section>
         <VParallax :src="require('~/assets/img/frontpage/back4.jpg')" height="380">
           <VLayout column align-center justify-center>
-            <div class="headline white--text mb-3 text-xs-center response-title">
+            <div class="headline white--text mb-3 text-center response-title">
               欢迎向我们提出意见以帮助本网站进步
             </div>
             <a :href="mailToGithubLink">
@@ -162,7 +162,7 @@
 
       <section>
         <VContainer grid-list-xl>
-          <VLayout row wrap justify-center class="my-5">
+          <VLayout wrap justify-center class="my-5">
             <VFlex xs12 sm4>
               <VCard class="elevation-0 transparent" :flat="true">
                 <VCardTitle primary-title class="layout justify-center">

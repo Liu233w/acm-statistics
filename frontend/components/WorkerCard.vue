@@ -62,14 +62,14 @@
       </VToolbarItems>
     </VToolbar>
     <VContainer>
-      <VLayout row>
+      <VLayout>
         <VFlex xs12>
           <span class="grey--text" v-show="crawlerDescription">
             {{ crawlerDescription }}
           </span>
         </VFlex>
       </VLayout>
-      <VLayout row wrap>
+      <VLayout wrap>
         <VFlex xs12>
           <VTextField
             v-model="username"
@@ -83,7 +83,7 @@
         </VFlex>
       </VLayout>
       <template v-if="warnings">
-        <VLayout row xs12 v-for="item in warnings" :key="item">
+        <VLayout xs12 v-for="item in warnings" :key="item">
           <VFlex align-self-start shrink>
             <VIcon color="orange darken-2">
               warning
@@ -95,7 +95,7 @@
         </VLayout>
       </template>
       <template v-if="worker.status === WORKER_STATUS.DONE">
-        <VLayout row xs12 v-if="worker.errorMessage">
+        <VLayout xs12 v-if="worker.errorMessage">
           <VFlex align-self-start shrink>
             <VIcon color="red">
               error
