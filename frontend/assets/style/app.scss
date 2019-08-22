@@ -1,0 +1,10 @@
+@import '~vuetify/src/styles/styles.sass';
+
+// override default font
+$body-font-family: 'Noto Serif SC', sans-serif;
+$heading-font-family: $body-font-family;
+@each $heading, $style in $headings {
+  $headings: map-merge($headings, ($heading: map-merge($style, ('font-family': $heading-font-family))));
+}
+
+$font-size-root: 20px;

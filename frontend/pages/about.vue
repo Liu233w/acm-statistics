@@ -3,42 +3,42 @@
     <VLayout>
       <VFlex xs12 sm6 offset-sm3>
         <VCard>
-          <VToolbar color="light-blue" dark>
-            <VToolbarTitle>关于</VToolbarTitle>
+          <VAppBar color="light-blue" dark>
+            <VAppBarTitle>关于</VAppBarTitle>
             <VSpacer />
-          </VToolbar>
+          </VAppBar>
           <VList>
-            <VListTile>
-              <VListTileContent>
-                <VListTileTitle>版本号</VListTileTitle>
-                <VListTileSubTitle>{{ $env.VERSION_NUM }}</VListTileSubTitle>
-              </VListTileContent>
-            </VListTile>
+            <VListItem>
+              <VListItemContent>
+                <VListItemTitle>版本号</VListItemTitle>
+                <VListItemSubTitle>{{ $env.VERSION_NUM }}</VListItemSubTitle>
+              </VListItemContent>
+            </VListItem>
 
-            <VListTile>
-              <VListTileContent>
-                <VListTileTitle>构建时间</VListTileTitle>
-                <VListTileSubTitle>{{ buildTime }}</VListTileSubTitle>
-              </VListTileContent>
-            </VListTile>
+            <VListItem>
+              <VListItemContent>
+                <VListItemTitle>构建时间</VListItemTitle>
+                <VListItemSubTitle>{{ buildTime }}</VListItemSubTitle>
+              </VListItemContent>
+            </VListItem>
 
-            <VListTile :href="`https://github.com/Liu233w/acm-statistics/tree/${$env.VERSION_NUM}`">
-              <VListTileContent>
-                <VListTileTitle>当前版本源代码</VListTileTitle>
-                <VListTileSubTitle>
+            <VListItem :href="`https://github.com/Liu233w/acm-statistics/tree/${$env.VERSION_NUM}`">
+              <VListItemContent>
+                <VListItemTitle>当前版本源代码</VListItemTitle>
+                <VListItemSubTitle>
                   https://github.com/Liu233w/acm-statistics/tree/{{ $env.VERSION_NUM }}
-                </VListTileSubTitle>
-              </VListTileContent>
-            </VListTile>
+                </VListItemSubTitle>
+              </VListItemContent>
+            </VListItem>
 
-            <VListTile :href="`https://github.com/Liu233w/acm-statistics/commits/${$env.VERSION_NUM}`">
-              <VListTileContent>
-                <VListTileTitle>最近更新</VListTileTitle>
-                <VListTileSubTitle>
+            <VListItem :href="`https://github.com/Liu233w/acm-statistics/commits/${$env.VERSION_NUM}`">
+              <VListItemContent>
+                <VListItemTitle>最近更新</VListItemTitle>
+                <VListItemSubTitle>
                   https://github.com/Liu233w/acm-statistics/commits/{{ $env.VERSION_NUM }}
-                </VListTileSubTitle>
-              </VListTileContent>
-            </VListTile>
+                </VListItemSubTitle>
+              </VListItemContent>
+            </VListItem>
           </VList>
         </VCard>
       </VFlex>

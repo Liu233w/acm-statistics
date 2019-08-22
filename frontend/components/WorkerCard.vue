@@ -1,11 +1,11 @@
 <template>
   <VCard>
-    <VToolbar card dense class="blue-grey lighten-5">
-      <VToolbarTitle :title="crawlerTitle">
+    <VAppBar flat dense class="blue-grey lighten-5">
+      <VAppBarTitle :title="crawlerTitle">
         {{ crawlerTitle }}
-      </VToolbarTitle>
+      </VAppBarTitle>
       <VSpacer />
-      <VToolbarItems>
+      <VAppBarItems>
         <VTooltip bottom v-show="workerNum >= 2">
           <VBtn icon
                 slot="activator"
@@ -59,8 +59,8 @@
             <span>重新爬取此处信息</span>
           </VTooltip>
         </Transition>
-      </VToolbarItems>
-    </VToolbar>
+      </VAppBarItems>
+    </VAppBar>
     <VContainer>
       <VLayout>
         <VFlex xs12>

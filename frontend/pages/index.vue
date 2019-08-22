@@ -1,9 +1,9 @@
 <template>
   <VApp light>
-    <VToolbar class="white">
-      <VToolbarTitle>
+    <VAppBar class="white">
+      <VAppBarTitle>
         {{ projectTitle }}
-      </VToolbarTitle>
+      </VAppBarTitle>
       <VSpacer />
       <VTooltip left>
         <VBtn icon slot="activator" href="https://github.com/Liu233w/acm-statistics" target="_blank">
@@ -13,7 +13,7 @@
         </VBtn>
         <span>Star me on Github!</span>
       </VTooltip>
-    </VToolbar>
+    </VAppBar>
     <VContent>
       <section>
         <VParallax :src="require('~/assets/img/frontpage/back7-brighten.jpg')" height="600">
@@ -23,7 +23,7 @@
             justify-center
             class="white--text"
           >
-            <img :src="require('~/assets/img/logo.png')" alt="Vuetify.js" height="190" class="mb-3">
+            <img :src="require('~/assets/img/logo.png')" alt="Vuetify.js" height="190" class="mb-4">
             <h2 class="black--text headline text-center font-weight-light">
               ACM-ICPC 协会
             </h2>
@@ -31,11 +31,11 @@
             <h1 class="black--text mb-2 display-1 text-center index-title font-weight-bold">
               欢迎使用 {{ projectTitle }}
             </h1>
-            <div class="black--text subheading mb-3 text-center index-title">
+            <div class="black--text subheading mb-4 text-center index-title">
               由 NWPU-ACM 技术组强力驱动
             </div>
             <VBtn
-              class="blue lighten-2 black--text mt-5"
+              class="blue lighten-2 black--text mt-12"
               dark
               large
               nuxt
@@ -51,10 +51,10 @@
         <VLayout
           column
           wrap
-          class="my-5"
+          class="my-12"
           align-center
         >
-          <VFlex xs12 sm4 class="my-3">
+          <VFlex xs12 sm4 class="my-4">
             <div class="text-center">
               <h2 class="headline">
                 全新查询系统，更加稳定
@@ -139,7 +139,7 @@
       <section>
         <VParallax :src="require('~/assets/img/frontpage/back4.jpg')" height="380">
           <VLayout column align-center justify-center>
-            <div class="headline white--text mb-3 text-center response-title">
+            <div class="headline white--text mb-4 text-center response-title">
               欢迎向我们提出意见以帮助本网站进步
             </div>
             <a :href="mailToGithubLink">
@@ -148,7 +148,7 @@
               </em>
             </a>
             <VBtn
-              class="blue lighten-2 mt-5"
+              class="blue lighten-2 mt-12"
               dark
               large
               href="https://github.com/Liu233w/acm-statistics/issues/new"
@@ -162,7 +162,7 @@
 
       <section>
         <VContainer grid-list-xl>
-          <VLayout wrap justify-center class="my-5">
+          <VLayout wrap justify-center class="my-12">
             <VFlex xs12 sm4>
               <VCard class="elevation-0 transparent" :flat="true">
                 <VCardTitle primary-title class="layout justify-center">
@@ -192,46 +192,46 @@
                   </div>
                 </VCardTitle>
                 <VList class="transparent">
-                  <VListTile href="https://jq.qq.com/?_wv=1027&k=5qgzfQc" target="_blank">
-                    <VListTileAction>
+                  <VListItem href="https://jq.qq.com/?_wv=1027&k=5qgzfQc" target="_blank">
+                    <VListItemAction>
                       <VIcon class="blue--text text--lighten-2">
                         fab fa-qq
                       </VIcon>
-                    </VListTileAction>
-                    <VListTileContent>
-                      <VListTileTitle>198820787</VListTileTitle>
-                    </VListTileContent>
-                  </VListTile>
-                  <VListTile @click="showAddress">
-                    <VListTileAction>
+                    </VListItemAction>
+                    <VListItemContent>
+                      <VListItemTitle>198820787</VListItemTitle>
+                    </VListItemContent>
+                  </VListItem>
+                  <VListItem @click="showAddress">
+                    <VListItemAction>
                       <VIcon class="blue--text text--lighten-2">
                         place
                       </VIcon>
-                    </VListTileAction>
-                    <VListTileContent>
-                      <VListTileTitle>陕西省西安市长安区西北工业大学长安校区计算机学院110室</VListTileTitle>
-                    </VListTileContent>
-                  </VListTile>
-                  <VListTile href="mailto:support@npuacm.info">
-                    <VListTileAction>
+                    </VListItemAction>
+                    <VListItemContent>
+                      <VListItemTitle>陕西省西安市长安区西北工业大学长安校区计算机学院110室</VListItemTitle>
+                    </VListItemContent>
+                  </VListItem>
+                  <VListItem href="mailto:support@npuacm.info">
+                    <VListItemAction>
                       <VIcon class="blue--text text--lighten-2">
                         email
                       </VIcon>
-                    </VListTileAction>
-                    <VListTileContent>
-                      <VListTileTitle>support@npuacm.info</VListTileTitle>
-                    </VListTileContent>
-                  </VListTile>
-                  <VListTile @click="dialog = !dialog">
-                    <VListTileAction>
+                    </VListItemAction>
+                    <VListItemContent>
+                      <VListItemTitle>support@npuacm.info</VListItemTitle>
+                    </VListItemContent>
+                  </VListItem>
+                  <VListItem @click="dialog = !dialog">
+                    <VListItemAction>
                       <VIcon class="blue--text text--lighten-2">
                         fab fa-weixin
                       </VIcon>
-                    </VListTileAction>
-                    <VListTileContent>
-                      <VListTileTitle>微信公众号</VListTileTitle>
-                    </VListTileContent>
-                  </VListTile>
+                    </VListItemAction>
+                    <VListItemContent>
+                      <VListItemTitle>微信公众号</VListItemTitle>
+                    </VListItemContent>
+                  </VListItem>
                 </VList>
               </VCard>
             </VFlex>
@@ -255,11 +255,11 @@
       </section>
 
       <VFooter class="blue darken-2">
-        <VBtn flat nuxt to="/about" class="white--text ml-3">
+        <VBtn text nuxt to="/about" class="white--text ml-4">
           &copy; 2018 - {{ buildYear }} NWPU-ACM 技术组
         </VBtn>
         <VSpacer />
-        <span class="white--text ml-3">
+        <span class="white--text ml-4">
           陕ICP备17008184号
         </span>
       </VFooter>

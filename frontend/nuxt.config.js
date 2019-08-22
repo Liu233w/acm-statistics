@@ -25,6 +25,7 @@ module.exports = {
     '~/plugins/analysis.js',
   ],
   css: [
+    '~/assets/style/app.scss',
   ],
   /*
   ** Customize the progress bar color
@@ -93,7 +94,6 @@ module.exports = {
   ],
   vuetify: {
     optionsPath: './vuetify.options.js',
-    customVariables: ['~/assets/style/variables.scss'],
   },
   watchers: {
     // 尽管这是文档里的默认值，但是不设置它的话并不会生效。估计这是一个bug
