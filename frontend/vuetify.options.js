@@ -3,7 +3,7 @@ import LRU from 'lru-cache'
 
 import '@fortawesome/fontawesome-free/css/all.css'
 
-import colors from 'vuetify/es5/util/colors'
+import colors from 'vuetify/lib/util/colors'
 
 export default {
   theme: {
