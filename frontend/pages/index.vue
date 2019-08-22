@@ -247,7 +247,7 @@
                 <img :src="require('~/assets/img/wechat.jpg')" alt="公众号二维码" style="height: 300px">
               </VCardText>
               <VCardActions>
-                <VBtn color="primary" flat @click.stop="dialog=false">
+                <VBtn color="primary" text @click.stop="dialog=false">
                   关闭
                 </VBtn>
               </VCardActions>
