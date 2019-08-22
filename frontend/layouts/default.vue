@@ -28,11 +28,18 @@
       <VAppBarTitle v-text="title" />
       <VSpacer />
       <VTooltip left>
-        <VBtn icon slot="activator" href="https://github.com/Liu233w/acm-statistics" target="_blank">
-          <VIcon medium>
-            fab fa-github
-          </VIcon>
-        </VBtn>
+        <template #activator="{ on }">
+          <VBtn
+            icon
+            v-on="on"
+            href="https://github.com/Liu233w/acm-statistics"
+            target="_blank"
+          >
+            <VIcon medium>
+              fab fa-github
+            </VIcon>
+          </VBtn>
+        </template>
         <span>Star me on Github!</span>
       </VTooltip>
     </VAppBar>
