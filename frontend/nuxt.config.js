@@ -1,5 +1,3 @@
-const nodeExternals = require('webpack-node-externals')
-const VuetifyLoaderPlugin = require('vuetify-loader/lib/plugin')
 const LodashModuleReplacementPlugin = require('lodash-webpack-plugin')
 // eslint-disable-next-line no-unused-vars
 const resolve = (dir) => require('path').join(__dirname, dir)
@@ -55,15 +53,7 @@ module.exports = {
           exclude: /(node_modules)/,
         })
       }
-      if (process.server) {
-        config.externals = [
-          nodeExternals({
-            whitelist: [/^vuetify/],
-          }),
-        ]
-      }
     },
-    transpile: [/^vuetify/],
     plugins: [
       // 参见 https://github.com/lodash/lodash-webpack-plugin 来引入需要的功能
       new LodashModuleReplacementPlugin({
@@ -72,7 +62,6 @@ module.exports = {
         collections: true,
         shorthands: true,
       }),
-      new VuetifyLoaderPlugin(),
     ],
     terser: {
       terserOptions: {
