@@ -1,6 +1,6 @@
 <template>
   <VContainer grid-list-md>
-    <VLayout row wrap>
+    <VLayout wrap>
       <VFlex xs12 sm5 md3>
         <VTextField
           v-model="username"
@@ -66,7 +66,7 @@
         </VChip>
       </VFlex>
     </VLayout>
-    <VLayout row>
+    <VLayout>
       <VFlex xs12 sm12 md6 lg4 xl3
              v-for="(column, idx) in workerLayout" :key="idx"
       >

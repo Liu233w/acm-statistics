@@ -1,6 +1,6 @@
 <template>
   <VContainer>
-    <VLayout row>
+    <VLayout>
       <VFlex xs12 sm6 offset-sm3>
         <VCard>
           <VToolbar color="light-blue" dark>
