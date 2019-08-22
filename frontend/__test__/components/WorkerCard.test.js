@@ -1,12 +1,10 @@
-import {shallowMount, createLocalVue, mount} from '@vue/test-utils'
+import { shallowMount, createLocalVue, mount } from '@vue/test-utils'
 import Vuex from 'vuex'
-import Vue from 'vue'
 import Vuetify from 'vuetify'
-
-Vue.use(Vuetify)
 
 const localVue = createLocalVue()
 localVue.use(Vuex)
+localVue.use(Vuetify)
 
 jest.mock('~/dynamic/crawlers', () => () => ({
   metas: {
@@ -17,15 +15,21 @@ jest.mock('~/dynamic/crawlers', () => () => ({
     },
   },
   crawlers: {
-    testCrawler: () => ({submissions: 0, pass: 0}),
+    testCrawler: () => ({ submissions: 0, pass: 0 }),
   },
-}), {virtual: true})
+}), { virtual: true })
 
-import {WORKER_STATUS} from '~/components/consts'
+import { WORKER_STATUS } from '~/components/consts'
 import WorkerCard from '~/components/WorkerCard.vue'
 import StatisticsStore from '~/store/-dynamic/statistics'
 
 describe('WorkerCard', () => {
+
+  let vuetify
+
+  beforeEach(() => {
+    vuetify = new Vuetify()
+  })
 
   it('能正确挂载', () => {
     const wrapper = shallowMount(WorkerCard, {
@@ -35,6 +39,7 @@ describe('WorkerCard', () => {
         },
       }),
       localVue,
+      vuetify,
       propsData: {
         index: 0,
       },
@@ -50,6 +55,7 @@ describe('WorkerCard', () => {
         },
       }),
       localVue,
+      vuetify,
       propsData: {
         index: 0,
       },
@@ -88,6 +94,7 @@ describe('WorkerCard', () => {
         },
       }),
       localVue,
+      vuetify,
       propsData: {
         index: 0,
       },
@@ -128,6 +135,7 @@ describe('WorkerCard', () => {
         },
       }),
       localVue,
+      vuetify,
       propsData: {
         index: 0,
       },
@@ -167,6 +175,7 @@ describe('WorkerCard', () => {
         },
       }),
       localVue,
+      vuetify,
       propsData: {
         index: 0,
       },
@@ -206,6 +215,7 @@ describe('WorkerCard', () => {
         },
       }),
       localVue,
+      vuetify,
       propsData: {
         index: 0,
       },
