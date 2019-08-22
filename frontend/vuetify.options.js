@@ -8,11 +8,10 @@ import colors from 'vuetify/es5/util/colors'
 export default {
   theme: {
     options: {
-      minifyTheme: function (val) {
-        if (process.env.NODE_ENV === 'production') {
-          val = _.replace(val, /[\s|\r\n|\r|\n]/g, '')
-        }
-        return val
+      minifyTheme: function (css) {
+        return process.env.NODE_ENV === 'production'
+          ? _.replace(css, /[\r\n|\r|\n]/g, '')
+          : css
       },
       themeCache: new LRU({
         max: 10,

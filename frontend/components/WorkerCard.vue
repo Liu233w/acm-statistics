@@ -1,12 +1,12 @@
 <template>
   <VCard>
     <VAppBar flat dense elevation="0" class="blue-grey lighten-5">
-      <VAppBarTitle :title="crawlerTitle">
+      <VToolbarTitle :title="crawlerTitle">
         {{ crawlerTitle }}
-      </VAppBarTitle>
+      </VToolbarTitle>
       <VSpacer />
-      <VAppBarItems>
-        <VTooltip bottom v-show="workerNum >= 2">
+      <VToolbarItems>
+        <VTooltip bottom v-if="workerNum >= 2">
           <template #activator="{ on }">
             <VBtn icon
                   v-on="on"
@@ -19,7 +19,7 @@
             移除此窗格
           </span>
         </VTooltip>
-        <VTooltip bottom v-show="myWorkerIdxOfCrawler == workerNum">
+        <VTooltip bottom v-if="myWorkerIdxOfCrawler == workerNum">
           <template #activator="{ on }">
             <VBtn icon
                   v-on="on"
@@ -32,7 +32,7 @@
             添加一个此 OJ 的窗格
           </span>
         </VTooltip>
-        <VTooltip bottom v-show="crawlerUrl">
+        <VTooltip bottom v-if="crawlerUrl">
           <template #activator="{ on }">
             <VBtn icon
                   v-on="on"
@@ -69,12 +69,12 @@
             <span>重新爬取此处信息</span>
           </VTooltip>
         </Transition>
-      </VAppBarItems>
+      </VToolbarItems>
     </VAppBar>
     <VContainer>
       <VLayout>
         <VFlex xs12>
-          <span class="grey--text" v-show="crawlerDescription">
+          <span class="grey--text" v-if="crawlerDescription">
             {{ crawlerDescription }}
           </span>
         </VFlex>
@@ -117,7 +117,7 @@
         </VLayout>
         <VLayout column xs12 v-else>
           <VFlex>
-            <span class="grey--text">
+            <span class="grey--text body-2">
               SOLVED:
             </span>
             <template v-if="solvedListStatus === 'none'">
@@ -135,7 +135,7 @@
             </VTooltip>
           </VFlex>
           <VFlex>
-            <span class="grey--text">
+            <span class="grey--text body-2">
               SUBMISSIONS:
             </span>
             {{ worker.submissions }}
@@ -159,13 +159,13 @@
         </VCardText>
         <!--在不打开对话框的时候就不渲染题目列表，防止额外的dom更新，以提升性能-->
         <VCardText v-else-if="solvedListDialog">
-          <VChip v-for="item in prettifiedSolvedList" :key="item">
+          <VChip v-for="item in prettifiedSolvedList" :key="item" class="ma-1">
             {{ item }}
           </VChip>
         </VCardText>
         <VDivider />
         <VCardActions>
-          <VBtn color="blue darken-1" flat @click="solvedListDialog = false">
+          <VBtn color="blue darken-1" text @click="solvedListDialog = false">
             Close
           </VBtn>
         </VCardActions>

@@ -25,7 +25,7 @@
     </VNavigationDrawer>
     <VAppBar fixed app clipped-left>
       <VAppBarNavIcon @click="drawer = !drawer" />
-      <VAppBarTitle v-text="title" />
+      <VToolbarTitle v-text="title" />
       <VSpacer />
       <VTooltip left>
         <template #activator="{ on }">
@@ -44,14 +44,12 @@
       </VTooltip>
     </VAppBar>
     <VContent>
-      <VContainer>
-        <Nuxt />
-      </VContainer>
+      <Nuxt />
     </VContent>
     <VFooter fixed app>
-      <span>&copy; 2018 - {{ buildYear }} NWPU-ACM 技术组</span>
+      <span class="body-2">&copy; 2018 - {{ buildYear }} NWPU-ACM 技术组</span>
       <VSpacer />
-      <span>陕ICP备17008184号</span>
+      <span class="body-2">陕ICP备17008184号</span>
     </VFooter>
   </VApp>
 </template>
