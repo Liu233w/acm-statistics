@@ -8,3 +8,11 @@ $heading-font-family: $body-font-family;
 }
 
 $font-size-root: 20px;
+
+// page transitions
+.page-enter-active, .page-leave-active {
+  transition: opacity .2s;
+}
+.page-enter, .page-leave-to {
+  opacity: 0;
+}

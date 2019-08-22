@@ -1,6 +1,6 @@
 <template>
   <VCard>
-    <VAppBar flat dense class="blue-grey lighten-5">
+    <VAppBar flat dense elevation="0" class="blue-grey lighten-5">
       <VAppBarTitle :title="crawlerTitle">
         {{ crawlerTitle }}
       </VAppBarTitle>
