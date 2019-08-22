@@ -15,6 +15,7 @@
               color="primary"
               :value="notWorkingRate"
               :height="3"
+              absolute
             />
           </template>
         </VTextField>
