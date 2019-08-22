@@ -6,7 +6,7 @@ describe('整体视觉测试', () => {
     cy.visit('/statistics')
 
     // 隐藏左边侧栏
-    cy.get('button i:contains("menu")').click({force: true})
+    cy.get('button i.mdi-menu').click({force: true})
   })
 
   it('能够正确渲染', () => {
@@ -40,10 +40,9 @@ describe('爬虫测试', () => {
   beforeEach(() => {
     cy.visit('/statistics')
     // 隐藏左边侧栏
-    cy.get('button i:contains("menu")').click({force: true})
+    cy.get('button i.mdi-menu').click({force: true})
     // 移除顶栏，以免阻挡截图
-    cy.get('nav').contains('NWPU-ACM 查询系统').parents('nav')
-      .invoke('hide')
+    cy.get('header:contains("NWPU-ACM 查询系统")').invoke('hide')
   })
 
   it('能够启动爬虫', () => {
@@ -53,11 +52,11 @@ describe('爬虫测试', () => {
       'fixture:poj_ok.txt')
       .as('poj_frontend')
 
-    cy.get('div[title="POJ"]').parents('.v-sheet').within(() => {
+    cy.get('div[title="POJ"]').parents('.worker-item').within(() => {
 
       snapshot('worker-idle')
 
-      cy.get('input[aria-label="Username"]').type('vjudge5').blur()
+      cy.get('div:contains("Username") input').type('vjudge5').blur()
       snapshot('worker-typed')
 
       cy.get('button').contains('refresh').click()
@@ -84,8 +83,8 @@ describe('爬虫测试', () => {
 
     cy.mockServer('oj/poj/backend_ok')
 
-    cy.get('div[title="POJ"]').parents('.v-sheet').within(() => {
-      cy.get('input[aria-label="Username"]').type('vjudge5')
+    cy.get('div[title="POJ"]').parents('.worker-item').within(() => {
+      cy.get('div:contains("Username") input').type('vjudge5')
       cy.get('button').contains('refresh').click()
 
       cy.wait('@poj_frontend')
@@ -106,9 +105,9 @@ describe('爬虫测试', () => {
       delay: 10000,
     }).as('poj_frontend')
 
-    cy.get('div[title="POJ"]').parents('.v-sheet').within(() => {
+    cy.get('div[title="POJ"]').parents('.worker-item').within(() => {
 
-      cy.get('input[aria-label="Username"]').type('vjudge5')
+      cy.get('div:contains("Username") input').type('vjudge5')
 
       cy.get('button').contains('refresh').click()
 
@@ -128,9 +127,9 @@ describe('爬虫测试', () => {
       'fixture:poj_notExist.txt')
       .as('poj_frontend')
 
-    cy.get('div[title="POJ"]').parents('.v-sheet').within(() => {
+    cy.get('div[title="POJ"]').parents('.worker-item').within(() => {
 
-      cy.get('input[aria-label="Username"]').type('Frkfe932fbcv09b')
+      cy.get('div:contains("Username") input').type('Frkfe932fbcv09b')
       cy.get('button').contains('refresh').click()
       cy.wait('@poj_frontend')
 
