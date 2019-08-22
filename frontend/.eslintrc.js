@@ -21,6 +21,7 @@ module.exports = {
     'vue',
     'lodash',
     'jest',
+    'vuetify',
   ],
   // add your custom rules here
   rules: {
@@ -37,5 +38,9 @@ module.exports = {
     'lodash/prefer-reject': 'off',
     // 强制使用 PascalCase
     'vue/component-name-in-template-casing': ['error', 'PascalCase'],
+    // 便于 vuetify 迁移
+    'vuetify/no-deprecated-classes': 'error',
+    'vuetify/grid-unknown-attributes': 'error',
+    'vuetify/no-legacy-grid': 'off',
   },
 }

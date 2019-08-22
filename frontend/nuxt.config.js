@@ -11,28 +11,25 @@ module.exports = {
   head: {
     title: 'NWPU-ACM 查询系统',
     meta: [
-      {charset: 'utf-8'},
-      {name: 'viewport', content: 'width=device-width, initial-scale=1'},
-      {hid: 'description', name: 'description', content: '西北工业大学ACM基地查题主页，提供国内各大OJ的查询题量、计算Rating的服务。'},
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { hid: 'description', name: 'description', content: '西北工业大学ACM基地查题主页，提供国内各大OJ的查询题量、计算Rating的服务。' },
     ],
     link: [
-      {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'},
-      {rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Material+Icons|Noto+Serif+SC:300,400,500,700'},
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Material+Icons|Noto+Serif+SC:300,400,500,700' },
     ],
   },
   plugins: [
-    '~/plugins/vuetify.js',
     '~/plugins/debug.js',
     '~/plugins/analysis.js',
-    '~/plugins/fontAwesome.js',
   ],
   css: [
-    '~/assets/style/app.styl',
   ],
   /*
   ** Customize the progress bar color
   */
-  loading: {color: '#3B8070'},
+  loading: { color: '#3B8070' },
   // 根据请求的浏览器版本决定babel的preset
   modern: 'server',
   /*
@@ -91,6 +88,13 @@ module.exports = {
       keys: ['VERSION_NUM', 'BUILD_TIME'],
     }],
   ],
+  buildModules: [
+    '@nuxtjs/vuetify',
+  ],
+  vuetify: {
+    optionsPath: './vuetify.options.js',
+    customVariables: ['~/assets/style/variables.scss'],
+  },
   watchers: {
     // 尽管这是文档里的默认值，但是不设置它的话并不会生效。估计这是一个bug
     webpack: {
