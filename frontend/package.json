@@ -27,13 +27,12 @@
     "stylus": "0.54.7",
     "stylus-loader": "3.0.2",
     "superagent": "5.1.0",
-    "virtual-module-webpack-plugin": "0.4.1",
-    "vuetify": "1.5.16",
-    "vuetify-loader": "1.3.0"
+    "virtual-module-webpack-plugin": "0.4.1"
   },
   "devDependencies": {
     "@babel/preset-env": "7.5.5",
     "@fortawesome/fontawesome-free": "5.10.2",
+    "@nuxtjs/vuetify": "^1.3.2",
     "@vue/test-utils": "1.0.0-beta.29",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "10.0.2",
@@ -51,6 +50,7 @@
     "eslint-plugin-promise": "4.2.1",
     "eslint-plugin-standard": "4.0.1",
     "eslint-plugin-vue": "5.2.3",
+    "eslint-plugin-vuetify": "^1.0.0-beta.3",
     "jest": "24.9.0",
     "jest-serializer-vue": "2.0.2",
     "ps-tree": "1.2.0",
