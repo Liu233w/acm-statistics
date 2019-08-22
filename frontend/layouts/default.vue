@@ -7,25 +7,25 @@
       app
     >
       <VList>
-        <VListTile
+        <VListItem
           nuxt
           :to="item.to"
           :key="i"
           v-for="(item, i) in items"
           exact
         >
-          <VListTileAction>
+          <VListItemAction>
             <VIcon v-html="item.icon" />
-          </VListTileAction>
-          <VListTileContent>
-            <VListTileTitle v-text="item.title" />
-          </VListTileContent>
-        </VListTile>
+          </VListItemAction>
+          <VListItemContent>
+            <VListItemTitle v-text="item.title" />
+          </VListItemContent>
+        </VListItem>
       </VList>
     </VNavigationDrawer>
-    <VToolbar fixed app clipped-left>
-      <VToolbarSideIcon @click="drawer = !drawer" />
-      <VToolbarTitle v-text="title" />
+    <VAppBar fixed app clipped-left>
+      <VAppBarNavIcon @click="drawer = !drawer" />
+      <VAppBarTitle v-text="title" />
       <VSpacer />
       <VTooltip left>
         <VBtn icon slot="activator" href="https://github.com/Liu233w/acm-statistics" target="_blank">
@@ -35,7 +35,7 @@
         </VBtn>
         <span>Star me on Github!</span>
       </VTooltip>
-    </VToolbar>
+    </VAppBar>
     <VContent>
       <VContainer>
         <Nuxt />
