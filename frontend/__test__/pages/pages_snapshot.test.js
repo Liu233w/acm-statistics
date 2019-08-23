@@ -1,4 +1,4 @@
-const {exec} = require('child_process')
+const { exec } = require('child_process')
 const _ = require('lodash')
 const superagent = require('superagent')
 const cheerio = require('cheerio')
@@ -7,6 +7,9 @@ const psTree = require('ps-tree')
 const basePath = 'http://localhost:3000'
 
 let childProcess = null
+
+let runningOut = ''
+let runningError = ''
 
 beforeAll(done => {
 
@@ -32,6 +35,16 @@ beforeAll(done => {
 
     console.log('start running nuxt...')
     childProcess = exec('npm start', execOption)
+
+    childProcess.stdout.on('data', out => {
+      runningOut += out
+      runningOut += '\n====================================\n'
+    })
+    childProcess.stderr.on('data', out => {
+      runningError += out
+      runningError += '\n====================================\n'
+    })
+
     setTimeout(done, 10000)
   })
 }, 600000) // 最多等待 10 分钟
@@ -81,18 +94,29 @@ const testPaths = [
 ]
 
 for (let path of testPaths) {
-  test(path, () => testPageByPath(path))
+  test(path, async () => await testPageByPath(path))
 }
 
-afterAll(() => {
+afterAll(done => {
   if (!childProcess) {
     return
   }
+
   console.log(`trying to kill process ${childProcess.pid}`)
   if (/^win/.test(process.platform)) {
-    exec(`taskkill /PID ${childProcess.pid} /T /F`)
+    exec(`taskkill /PID ${childProcess.pid} /T /F`, afterCallback)
   } else {
-    treeKill(childProcess.pid)
+    treeKill(childProcess.pid, null, afterCallback)
+  }
+
+  function afterCallback() {
+    if (runningOut) {
+      console.log(`running process out:\n${runningOut}`)
+    }
+    if (runningError) {
+      console.log(`running process error:\n${runningError}`)
+    }
+    done()
   }
 })
 
