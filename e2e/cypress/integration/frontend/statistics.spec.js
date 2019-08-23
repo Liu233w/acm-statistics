@@ -59,7 +59,7 @@ describe('爬虫测试', () => {
       cy.get('div:contains("Username") input').type('vjudge5').blur()
       snapshot('worker-typed')
 
-      cy.get('button').contains('refresh').click()
+      cy.get('button:contains("refresh")').click().blur()
       cy.wait('@poj_frontend')
 
       cy.contains('1968')
@@ -85,7 +85,7 @@ describe('爬虫测试', () => {
 
     cy.get('div[title="POJ"]').parents('.worker-item').within(() => {
       cy.get('div:contains("Username") input').type('vjudge5')
-      cy.get('button').contains('refresh').click()
+      cy.get('button:contains("refresh")').click().blur()
 
       cy.wait('@poj_frontend')
       cy.wait('@poj_backend')
@@ -109,12 +109,12 @@ describe('爬虫测试', () => {
 
       cy.get('div:contains("Username") input').type('vjudge5')
 
-      cy.get('button').contains('refresh').click()
+      cy.get('button:contains("refresh")').click().blur()
 
       cy.get('.v-progress-linear')
       snapshot('worker-working')
 
-      cy.get('button').contains('stop').click()
+      cy.get('button:contains("stop")').click().blur()
 
       snapshot('worker-after-stop')
     })
@@ -130,7 +130,7 @@ describe('爬虫测试', () => {
     cy.get('div[title="POJ"]').parents('.worker-item').within(() => {
 
       cy.get('div:contains("Username") input').type('Frkfe932fbcv09b')
-      cy.get('button').contains('refresh').click()
+      cy.get('button:contains("refresh")').click().blur()
       cy.wait('@poj_frontend')
 
       cy.contains('用户不存在')
