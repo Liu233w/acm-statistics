@@ -2,353 +2,233 @@
 
 exports[`WorkerCard 能正确渲染 1`] = `
 <div class="v-card v-sheet theme--light">
-  <nav class="blue-grey lighten-5 v-toolbar v-toolbar--card v-toolbar--dense theme--light" style="margin-top: 0px; padding-right: 0px; padding-left: 0px; transform: translateY(0px);">
+  <header class="blue-grey lighten-5 v-sheet v-sheet--tile theme--light elevation-0 v-toolbar v-toolbar--dense v-toolbar--flat v-app-bar" style="margin-top: 0px; transform: translateY(0px); left: 0px; right: 0px;">
     <div class="v-toolbar__content" style="height: 48px;">
       <div title="crawler title" class="v-toolbar__title">
         crawler title
       </div>
       <div class="spacer"></div>
-      <div class="v-toolbar__items"><span class="v-tooltip v-tooltip--bottom" style="display: none;"><div class="v-tooltip__content" style="left: 0px; max-width: auto; opacity: 0; top: 12px; z-index: 0; display: none;"> <span>
-          移除此窗格
-        </span></div><span><button type="button" class="v-btn v-btn--icon theme--light"><div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light">delete</i></div></button></span></span> <span class="v-tooltip v-tooltip--bottom"><div class="v-tooltip__content" style="left: 0px; max-width: auto; opacity: 0; top: 12px; z-index: 0; display: none;"> <span>
-          添加一个此 OJ 的窗格
-        </span>
-    </div><span><button type="button" class="v-btn v-btn--icon theme--light"><div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light">add_circle</i></div></button></span></span> <span class="v-tooltip v-tooltip--bottom"><div class="v-tooltip__content" style="left: 0px; max-width: auto; opacity: 0; top: 12px; z-index: 0; display: none;"> <span>
-          转到此OJ
-        </span>
-</div><span><button type="button" class="v-btn v-btn--icon theme--light"><div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light">link</i></div></button></span></span> <span class="v-tooltip v-tooltip--bottom"><div class="v-tooltip__content" style="left: 0px; max-width: auto; opacity: 0; top: 12px; z-index: 0; display: none;"> <span>重新爬取此处信息</span></div><span><button type="button" class="v-btn v-btn--icon theme--light"><div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light">refresh</i></div></button></span></span></div>
-</div>
-</nav>
-<div class="container">
-  <div class="layout row">
-    <div class="flex xs12"><span class="grey--text">
+      <div class="v-toolbar__items">
+        <!----> <span class="v-tooltip v-tooltip--bottom"><div class="v-tooltip__content" style="left: 0px; max-width: auto; opacity: 0; top: 12px; z-index: 0; display: none;"></div><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">add_circle</i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><div class="v-tooltip__content" style="left: 0px; max-width: auto; opacity: 0; top: 12px; z-index: 0; display: none;"></div><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">link</i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><div class="v-tooltip__content" style="left: 0px; max-width: auto; opacity: 0; top: 12px; z-index: 0; display: none;"></div><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">refresh</i></span></button></span></div>
+    </div>
+  </header>
+  <div class="container">
+    <div class="layout">
+      <div class="flex xs12"><span class="grey--text">
           crawler description
         </span></div>
-  </div>
-  <div class="layout row wrap">
-    <div class="flex xs12">
-      <div class="v-input v-text-field theme--light">
-        <div class="v-input__control">
-          <div class="v-input__slot">
-            <div class="v-text-field__slot"><label aria-hidden="true" class="v-label theme--light" style="left: 0px; position: absolute;">Username</label><input aria-label="Username" required="required" type="text"></div>
-            <div class="v-input__append-inner">
-              <div class="v-input__icon v-input__icon--"><i aria-hidden="true" class="v-icon v-icon--link material-icons theme--light"></i></div>
+    </div>
+    <div class="layout wrap">
+      <div class="flex xs12">
+        <div class="v-input theme--light v-text-field">
+          <div class="v-input__control">
+            <div class="v-input__slot">
+              <div class="v-text-field__slot"><label for="input-36" class="v-label theme--light" style="left: 0px; position: absolute;">Username</label><input required="required" id="input-36" type="text"></div>
+              <div class="v-input__append-inner">
+                <div class="v-input__icon v-input__icon--"><i role="button" class="v-icon notranslate v-icon--link material-icons theme--light"></i></div>
+              </div>
             </div>
-          </div>
-          <div class="v-text-field__details">
-            <div class="v-messages theme--light">
-              <div class="v-messages__wrapper"></div>
+            <div class="v-text-field__details">
+              <div class="v-messages theme--light"><span name="message-transition" tag="div" class="v-messages__wrapper"></span></div>
             </div>
           </div>
         </div>
       </div>
     </div>
+    <!---->
   </div>
-  <!---->
-</div>
-<div class="v-dialog__container" style="display: block;">
-  <div tabindex="-1" class="v-dialog__content" style="z-index: 0;">
-    <div class="v-dialog v-dialog--scrollable" style="max-width: 500px; display: none;">
-      <div class="v-card v-sheet theme--light" xs12="" md8="" lg6="">
-        <div class="v-card__title"><span class="headline">
-          用户  在 crawler title 通过的题目列表
-        </span></div>
-        <div class="v-card__text">
-          当前没有通过的题目
-        </div>
-        <hr class="v-divider theme--light">
-        <div class="v-card__actions"><button type="button" class="v-btn v-btn--flat theme--light blue--text text--darken-1">
-            <div class="v-btn__content">
-              Close
-            </div>
-          </button></div>
-      </div>
+  <div role="dialog" class="v-dialog__container" style="display: block;">
+    <div role="document" tabindex="0" class="v-dialog__content" style="z-index: 0;">
+      <div class="v-dialog v-dialog--scrollable" style="max-width: 500px; display: none;"></div>
     </div>
   </div>
-</div>
 </div>
 `;
 
 exports[`WorkerCard 能正确渲染用户名 1`] = `
 <div class="v-card v-sheet theme--light">
-  <nav class="blue-grey lighten-5 v-toolbar v-toolbar--card v-toolbar--dense theme--light" style="margin-top: 0px; padding-right: 0px; padding-left: 0px; transform: translateY(0px);">
+  <header class="blue-grey lighten-5 v-sheet v-sheet--tile theme--light elevation-0 v-toolbar v-toolbar--dense v-toolbar--flat v-app-bar" style="margin-top: 0px; transform: translateY(0px); left: 0px; right: 0px;">
     <div class="v-toolbar__content" style="height: 48px;">
       <div title="crawler title" class="v-toolbar__title">
         crawler title
       </div>
       <div class="spacer"></div>
-      <div class="v-toolbar__items"><span class="v-tooltip v-tooltip--bottom" style="display: none;"><div class="v-tooltip__content" style="left: 0px; max-width: auto; opacity: 0; top: 12px; z-index: 0; display: none;"> <span>
-          移除此窗格
-        </span></div><span><button type="button" class="v-btn v-btn--icon theme--light"><div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light">delete</i></div></button></span></span> <span class="v-tooltip v-tooltip--bottom"><div class="v-tooltip__content" style="left: 0px; max-width: auto; opacity: 0; top: 12px; z-index: 0; display: none;"> <span>
-          添加一个此 OJ 的窗格
-        </span>
-    </div><span><button type="button" class="v-btn v-btn--icon theme--light"><div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light">add_circle</i></div></button></span></span> <span class="v-tooltip v-tooltip--bottom"><div class="v-tooltip__content" style="left: 0px; max-width: auto; opacity: 0; top: 12px; z-index: 0; display: none;"> <span>
-          转到此OJ
-        </span>
-</div><span><button type="button" class="v-btn v-btn--icon theme--light"><div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light">link</i></div></button></span></span> <span class="v-tooltip v-tooltip--bottom"><div class="v-tooltip__content" style="left: 0px; max-width: auto; opacity: 0; top: 12px; z-index: 0; display: none;"> <span>重新爬取此处信息</span></div><span><button type="button" class="v-btn v-btn--icon theme--light"><div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light">refresh</i></div></button></span></span></div>
-</div>
-</nav>
-<div class="container">
-  <div class="layout row">
-    <div class="flex xs12"><span class="grey--text">
+      <div class="v-toolbar__items">
+        <!----> <span class="v-tooltip v-tooltip--bottom"><div class="v-tooltip__content" style="left: 0px; max-width: auto; opacity: 0; top: 12px; z-index: 0; display: none;"></div><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">add_circle</i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><div class="v-tooltip__content" style="left: 0px; max-width: auto; opacity: 0; top: 12px; z-index: 0; display: none;"></div><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">link</i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><div class="v-tooltip__content" style="left: 0px; max-width: auto; opacity: 0; top: 12px; z-index: 0; display: none;"></div><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">refresh</i></span></button></span></div>
+    </div>
+  </header>
+  <div class="container">
+    <div class="layout">
+      <div class="flex xs12"><span class="grey--text">
           crawler description
         </span></div>
-  </div>
-  <div class="layout row wrap">
-    <div class="flex xs12">
-      <div class="v-input v-text-field v-input--is-label-active v-input--is-dirty theme--light">
-        <div class="v-input__control">
-          <div class="v-input__slot">
-            <div class="v-text-field__slot"><label aria-hidden="true" class="v-label v-label--active theme--light" style="left: 0px; position: absolute;">Username</label><input aria-label="Username" required="required" type="text"></div>
-            <div class="v-input__append-inner">
-              <div class="v-input__icon v-input__icon--clear"><i aria-hidden="true" class="v-icon v-icon--link material-icons theme--light">clear</i></div>
+    </div>
+    <div class="layout wrap">
+      <div class="flex xs12">
+        <div class="v-input v-input--is-label-active v-input--is-dirty theme--light v-text-field">
+          <div class="v-input__control">
+            <div class="v-input__slot">
+              <div class="v-text-field__slot"><label for="input-63" class="v-label v-label--active theme--light" style="left: 0px; position: absolute;">Username</label><input required="required" id="input-63" type="text"></div>
+              <div class="v-input__append-inner">
+                <div class="v-input__icon v-input__icon--clear"><i role="button" class="v-icon notranslate v-icon--link material-icons theme--light">$vuetify.icons.clear</i></div>
+              </div>
             </div>
-          </div>
-          <div class="v-text-field__details">
-            <div class="v-messages theme--light">
-              <div class="v-messages__wrapper"></div>
+            <div class="v-text-field__details">
+              <div class="v-messages theme--light"><span name="message-transition" tag="div" class="v-messages__wrapper"></span></div>
             </div>
           </div>
         </div>
       </div>
     </div>
+    <!---->
   </div>
-  <!---->
-</div>
-<div class="v-dialog__container" style="display: block;">
-  <div tabindex="-1" class="v-dialog__content" style="z-index: 0;">
-    <div class="v-dialog v-dialog--scrollable" style="max-width: 500px; display: none;">
-      <div class="v-card v-sheet theme--light" xs12="" md8="" lg6="">
-        <div class="v-card__title"><span class="headline">
-          用户 test_crawler_username 在 crawler title 通过的题目列表
-        </span></div>
-        <div class="v-card__text">
-          当前爬虫无法获取通过的题目列表
-        </div>
-        <hr class="v-divider theme--light">
-        <div class="v-card__actions"><button type="button" class="v-btn v-btn--flat theme--light blue--text text--darken-1">
-            <div class="v-btn__content">
-              Close
-            </div>
-          </button></div>
-      </div>
+  <div role="dialog" class="v-dialog__container" style="display: block;">
+    <div role="document" tabindex="0" class="v-dialog__content" style="z-index: 0;">
+      <div class="v-dialog v-dialog--scrollable" style="max-width: 500px; display: none;"></div>
     </div>
   </div>
-</div>
 </div>
 `;
 
 exports[`WorkerCard 能正确渲染结果 1`] = `
 <div class="v-card v-sheet theme--light">
-  <nav class="blue-grey lighten-5 v-toolbar v-toolbar--card v-toolbar--dense theme--light" style="margin-top: 0px; padding-right: 0px; padding-left: 0px; transform: translateY(0px);">
+  <header class="blue-grey lighten-5 v-sheet v-sheet--tile theme--light elevation-0 v-toolbar v-toolbar--dense v-toolbar--flat v-app-bar" style="margin-top: 0px; transform: translateY(0px); left: 0px; right: 0px;">
     <div class="v-toolbar__content" style="height: 48px;">
       <div title="crawler title" class="v-toolbar__title">
         crawler title
       </div>
       <div class="spacer"></div>
-      <div class="v-toolbar__items"><span class="v-tooltip v-tooltip--bottom" style="display: none;"><div class="v-tooltip__content" style="left: 0px; max-width: auto; opacity: 0; top: 12px; z-index: 0; display: none;"> <span>
-          移除此窗格
-        </span></div><span><button type="button" class="v-btn v-btn--icon theme--light"><div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light">delete</i></div></button></span></span> <span class="v-tooltip v-tooltip--bottom"><div class="v-tooltip__content" style="left: 0px; max-width: auto; opacity: 0; top: 12px; z-index: 0; display: none;"> <span>
-          添加一个此 OJ 的窗格
-        </span>
-    </div><span><button type="button" class="v-btn v-btn--icon theme--light"><div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light">add_circle</i></div></button></span></span> <span class="v-tooltip v-tooltip--bottom"><div class="v-tooltip__content" style="left: 0px; max-width: auto; opacity: 0; top: 12px; z-index: 0; display: none;"> <span>
-          转到此OJ
-        </span>
-</div><span><button type="button" class="v-btn v-btn--icon theme--light"><div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light">link</i></div></button></span></span> <span class="v-tooltip v-tooltip--bottom"><div class="v-tooltip__content" style="left: 0px; max-width: auto; opacity: 0; top: 12px; z-index: 0; display: none;"> <span>重新爬取此处信息</span></div><span><button type="button" class="v-btn v-btn--icon theme--light"><div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light">refresh</i></div></button></span></span></div>
-</div>
-</nav>
-<div class="container">
-  <div class="layout row">
-    <div class="flex xs12"><span class="grey--text">
+      <div class="v-toolbar__items">
+        <!----> <span class="v-tooltip v-tooltip--bottom"><div class="v-tooltip__content" style="left: 0px; max-width: auto; opacity: 0; top: 12px; z-index: 0; display: none;"></div><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">add_circle</i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><div class="v-tooltip__content" style="left: 0px; max-width: auto; opacity: 0; top: 12px; z-index: 0; display: none;"></div><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">link</i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><div class="v-tooltip__content" style="left: 0px; max-width: auto; opacity: 0; top: 12px; z-index: 0; display: none;"></div><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">refresh</i></span></button></span></div>
+    </div>
+  </header>
+  <div class="container">
+    <div class="layout">
+      <div class="flex xs12"><span class="grey--text">
           crawler description
         </span></div>
-  </div>
-  <div class="layout row wrap">
-    <div class="flex xs12">
-      <div class="v-input v-text-field v-input--is-label-active v-input--is-dirty theme--light">
-        <div class="v-input__control">
-          <div class="v-input__slot">
-            <div class="v-text-field__slot"><label aria-hidden="true" class="v-label v-label--active theme--light" style="left: 0px; position: absolute;">Username</label><input aria-label="Username" required="required" type="text"></div>
-            <div class="v-input__append-inner">
-              <div class="v-input__icon v-input__icon--clear"><i aria-hidden="true" class="v-icon v-icon--link material-icons theme--light">clear</i></div>
+    </div>
+    <div class="layout wrap">
+      <div class="flex xs12">
+        <div class="v-input v-input--is-label-active v-input--is-dirty theme--light v-text-field">
+          <div class="v-input__control">
+            <div class="v-input__slot">
+              <div class="v-text-field__slot"><label for="input-119" class="v-label v-label--active theme--light" style="left: 0px; position: absolute;">Username</label><input required="required" id="input-119" type="text"></div>
+              <div class="v-input__append-inner">
+                <div class="v-input__icon v-input__icon--clear"><i role="button" class="v-icon notranslate v-icon--link material-icons theme--light">$vuetify.icons.clear</i></div>
+              </div>
             </div>
-          </div>
-          <div class="v-text-field__details">
-            <div class="v-messages theme--light">
-              <div class="v-messages__wrapper"></div>
+            <div class="v-text-field__details">
+              <div class="v-messages theme--light"><span name="message-transition" tag="div" class="v-messages__wrapper"></span></div>
             </div>
           </div>
         </div>
       </div>
     </div>
+    <!---->
   </div>
-  <!---->
-</div>
-<div class="v-dialog__container" style="display: block;">
-  <div tabindex="-1" class="v-dialog__content" style="z-index: 0;">
-    <div class="v-dialog v-dialog--scrollable" style="max-width: 500px; display: none;">
-      <div class="v-card v-sheet theme--light" xs12="" md8="" lg6="">
-        <div class="v-card__title"><span class="headline">
-          用户 test_crawler_username 在 crawler title 通过的题目列表
-        </span></div>
-        <div class="v-card__text">
-          当前爬虫无法获取通过的题目列表
-        </div>
-        <hr class="v-divider theme--light">
-        <div class="v-card__actions"><button type="button" class="v-btn v-btn--flat theme--light blue--text text--darken-1">
-            <div class="v-btn__content">
-              Close
-            </div>
-          </button></div>
-      </div>
+  <div role="dialog" class="v-dialog__container" style="display: block;">
+    <div role="document" tabindex="0" class="v-dialog__content" style="z-index: 0;">
+      <div class="v-dialog v-dialog--scrollable" style="max-width: 500px; display: none;"></div>
     </div>
   </div>
-</div>
 </div>
 `;
 
 exports[`WorkerCard 能正确渲染警告 1`] = `
 <div class="v-card v-sheet theme--light">
-  <nav class="blue-grey lighten-5 v-toolbar v-toolbar--card v-toolbar--dense theme--light" style="margin-top: 0px; padding-right: 0px; padding-left: 0px; transform: translateY(0px);">
+  <header class="blue-grey lighten-5 v-sheet v-sheet--tile theme--light elevation-0 v-toolbar v-toolbar--dense v-toolbar--flat v-app-bar" style="margin-top: 0px; transform: translateY(0px); left: 0px; right: 0px;">
     <div class="v-toolbar__content" style="height: 48px;">
       <div title="crawler title" class="v-toolbar__title">
         crawler title
       </div>
       <div class="spacer"></div>
-      <div class="v-toolbar__items"><span class="v-tooltip v-tooltip--bottom" style="display: none;"><div class="v-tooltip__content" style="left: 0px; max-width: auto; opacity: 0; top: 12px; z-index: 0; display: none;"> <span>
-          移除此窗格
-        </span></div><span><button type="button" class="v-btn v-btn--icon theme--light"><div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light">delete</i></div></button></span></span> <span class="v-tooltip v-tooltip--bottom"><div class="v-tooltip__content" style="left: 0px; max-width: auto; opacity: 0; top: 12px; z-index: 0; display: none;"> <span>
-          添加一个此 OJ 的窗格
-        </span>
-    </div><span><button type="button" class="v-btn v-btn--icon theme--light"><div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light">add_circle</i></div></button></span></span> <span class="v-tooltip v-tooltip--bottom"><div class="v-tooltip__content" style="left: 0px; max-width: auto; opacity: 0; top: 12px; z-index: 0; display: none;"> <span>
-          转到此OJ
-        </span>
-</div><span><button type="button" class="v-btn v-btn--icon theme--light"><div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light">link</i></div></button></span></span> <span class="v-tooltip v-tooltip--bottom"><div class="v-tooltip__content" style="left: 0px; max-width: auto; opacity: 0; top: 12px; z-index: 0; display: none;"> <span>重新爬取此处信息</span></div><span><button type="button" class="v-btn v-btn--icon theme--light"><div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light">refresh</i></div></button></span></span></div>
-</div>
-</nav>
-<div class="container">
-  <div class="layout row">
-    <div class="flex xs12"><span class="grey--text">
+      <div class="v-toolbar__items">
+        <!----> <span class="v-tooltip v-tooltip--bottom"><div class="v-tooltip__content" style="left: 0px; max-width: auto; opacity: 0; top: 12px; z-index: 0; display: none;"></div><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">add_circle</i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><div class="v-tooltip__content" style="left: 0px; max-width: auto; opacity: 0; top: 12px; z-index: 0; display: none;"></div><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">link</i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><div class="v-tooltip__content" style="left: 0px; max-width: auto; opacity: 0; top: 12px; z-index: 0; display: none;"></div><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">refresh</i></span></button></span></div>
+    </div>
+  </header>
+  <div class="container">
+    <div class="layout">
+      <div class="flex xs12"><span class="grey--text">
           crawler description
         </span></div>
-  </div>
-  <div class="layout row wrap">
-    <div class="flex xs12">
-      <div class="v-input v-text-field v-input--is-label-active v-input--is-dirty theme--light">
-        <div class="v-input__control">
-          <div class="v-input__slot">
-            <div class="v-text-field__slot"><label aria-hidden="true" class="v-label v-label--active theme--light" style="left: 0px; position: absolute;">Username</label><input aria-label="Username" required="required" type="text"></div>
-            <div class="v-input__append-inner">
-              <div class="v-input__icon v-input__icon--clear"><i aria-hidden="true" class="v-icon v-icon--link material-icons theme--light">clear</i></div>
+    </div>
+    <div class="layout wrap">
+      <div class="flex xs12">
+        <div class="v-input v-input--is-label-active v-input--is-dirty theme--light v-text-field">
+          <div class="v-input__control">
+            <div class="v-input__slot">
+              <div class="v-text-field__slot"><label for="input-90" class="v-label v-label--active theme--light" style="left: 0px; position: absolute;">Username</label><input required="required" id="input-90" type="text"></div>
+              <div class="v-input__append-inner">
+                <div class="v-input__icon v-input__icon--clear"><i role="button" class="v-icon notranslate v-icon--link material-icons theme--light">$vuetify.icons.clear</i></div>
+              </div>
             </div>
-          </div>
-          <div class="v-text-field__details">
-            <div class="v-messages theme--light">
-              <div class="v-messages__wrapper"></div>
+            <div class="v-text-field__details">
+              <div class="v-messages theme--light"><span name="message-transition" tag="div" class="v-messages__wrapper"></span></div>
             </div>
           </div>
         </div>
       </div>
     </div>
+    <div class="layout xs12">
+      <div class="flex align-self-start shrink"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light orange--text text--darken-2">warning</i></div>
+      <div class="flex align-self-start"><span>用户名以空格开头</span></div>
+    </div>
+    <div class="layout xs12">
+      <div class="flex align-self-start shrink"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light orange--text text--darken-2">warning</i></div>
+      <div class="flex align-self-start"><span>用户名含有空格，部分爬虫可能不支持</span></div>
+    </div>
+    <!---->
   </div>
-  <div class="layout row xs12">
-    <div class="flex align-self-start shrink"><i aria-hidden="true" class="v-icon material-icons theme--light orange--text text--darken-2">warning</i></div>
-    <div class="flex align-self-start"><span>用户名以空格开头</span></div>
-  </div>
-  <div class="layout row xs12">
-    <div class="flex align-self-start shrink"><i aria-hidden="true" class="v-icon material-icons theme--light orange--text text--darken-2">warning</i></div>
-    <div class="flex align-self-start"><span>用户名含有空格，部分爬虫可能不支持</span></div>
-  </div>
-  <!---->
-</div>
-<div class="v-dialog__container" style="display: block;">
-  <div tabindex="-1" class="v-dialog__content" style="z-index: 0;">
-    <div class="v-dialog v-dialog--scrollable" style="max-width: 500px; display: none;">
-      <div class="v-card v-sheet theme--light" xs12="" md8="" lg6="">
-        <div class="v-card__title"><span class="headline">
-          用户  username with space 在 crawler title 通过的题目列表
-        </span></div>
-        <div class="v-card__text">
-          当前爬虫无法获取通过的题目列表
-        </div>
-        <hr class="v-divider theme--light">
-        <div class="v-card__actions"><button type="button" class="v-btn v-btn--flat theme--light blue--text text--darken-1">
-            <div class="v-btn__content">
-              Close
-            </div>
-          </button></div>
-      </div>
+  <div role="dialog" class="v-dialog__container" style="display: block;">
+    <div role="document" tabindex="0" class="v-dialog__content" style="z-index: 0;">
+      <div class="v-dialog v-dialog--scrollable" style="max-width: 500px; display: none;"></div>
     </div>
   </div>
-</div>
 </div>
 `;
 
 exports[`WorkerCard 能正确渲染错误 1`] = `
 <div class="v-card v-sheet theme--light">
-  <nav class="blue-grey lighten-5 v-toolbar v-toolbar--card v-toolbar--dense theme--light" style="margin-top: 0px; padding-right: 0px; padding-left: 0px; transform: translateY(0px);">
+  <header class="blue-grey lighten-5 v-sheet v-sheet--tile theme--light elevation-0 v-toolbar v-toolbar--dense v-toolbar--flat v-app-bar" style="margin-top: 0px; transform: translateY(0px); left: 0px; right: 0px;">
     <div class="v-toolbar__content" style="height: 48px;">
       <div title="crawler title" class="v-toolbar__title">
         crawler title
       </div>
       <div class="spacer"></div>
-      <div class="v-toolbar__items"><span class="v-tooltip v-tooltip--bottom" style="display: none;"><div class="v-tooltip__content" style="left: 0px; max-width: auto; opacity: 0; top: 12px; z-index: 0; display: none;"> <span>
-          移除此窗格
-        </span></div><span><button type="button" class="v-btn v-btn--icon theme--light"><div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light">delete</i></div></button></span></span> <span class="v-tooltip v-tooltip--bottom"><div class="v-tooltip__content" style="left: 0px; max-width: auto; opacity: 0; top: 12px; z-index: 0; display: none;"> <span>
-          添加一个此 OJ 的窗格
-        </span>
-    </div><span><button type="button" class="v-btn v-btn--icon theme--light"><div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light">add_circle</i></div></button></span></span> <span class="v-tooltip v-tooltip--bottom"><div class="v-tooltip__content" style="left: 0px; max-width: auto; opacity: 0; top: 12px; z-index: 0; display: none;"> <span>
-          转到此OJ
-        </span>
-</div><span><button type="button" class="v-btn v-btn--icon theme--light"><div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light">link</i></div></button></span></span> <span class="v-tooltip v-tooltip--bottom"><div class="v-tooltip__content" style="left: 0px; max-width: auto; opacity: 0; top: 12px; z-index: 0; display: none;"> <span>重新爬取此处信息</span></div><span><button type="button" class="v-btn v-btn--icon theme--light"><div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--light">refresh</i></div></button></span></span></div>
-</div>
-</nav>
-<div class="container">
-  <div class="layout row">
-    <div class="flex xs12"><span class="grey--text">
+      <div class="v-toolbar__items">
+        <!----> <span class="v-tooltip v-tooltip--bottom"><div class="v-tooltip__content" style="left: 0px; max-width: auto; opacity: 0; top: 12px; z-index: 0; display: none;"></div><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">add_circle</i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><div class="v-tooltip__content" style="left: 0px; max-width: auto; opacity: 0; top: 12px; z-index: 0; display: none;"></div><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">link</i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><div class="v-tooltip__content" style="left: 0px; max-width: auto; opacity: 0; top: 12px; z-index: 0; display: none;"></div><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">refresh</i></span></button></span></div>
+    </div>
+  </header>
+  <div class="container">
+    <div class="layout">
+      <div class="flex xs12"><span class="grey--text">
           crawler description
         </span></div>
-  </div>
-  <div class="layout row wrap">
-    <div class="flex xs12">
-      <div class="v-input v-text-field v-input--is-label-active v-input--is-dirty theme--light">
-        <div class="v-input__control">
-          <div class="v-input__slot">
-            <div class="v-text-field__slot"><label aria-hidden="true" class="v-label v-label--active theme--light" style="left: 0px; position: absolute;">Username</label><input aria-label="Username" required="required" type="text"></div>
-            <div class="v-input__append-inner">
-              <div class="v-input__icon v-input__icon--clear"><i aria-hidden="true" class="v-icon v-icon--link material-icons theme--light">clear</i></div>
+    </div>
+    <div class="layout wrap">
+      <div class="flex xs12">
+        <div class="v-input v-input--is-label-active v-input--is-dirty theme--light v-text-field">
+          <div class="v-input__control">
+            <div class="v-input__slot">
+              <div class="v-text-field__slot"><label for="input-146" class="v-label v-label--active theme--light" style="left: 0px; position: absolute;">Username</label><input required="required" id="input-146" type="text"></div>
+              <div class="v-input__append-inner">
+                <div class="v-input__icon v-input__icon--clear"><i role="button" class="v-icon notranslate v-icon--link material-icons theme--light">$vuetify.icons.clear</i></div>
+              </div>
             </div>
-          </div>
-          <div class="v-text-field__details">
-            <div class="v-messages theme--light">
-              <div class="v-messages__wrapper"></div>
+            <div class="v-text-field__details">
+              <div class="v-messages theme--light"><span name="message-transition" tag="div" class="v-messages__wrapper"></span></div>
             </div>
           </div>
         </div>
       </div>
     </div>
+    <!---->
   </div>
-  <!---->
-</div>
-<div class="v-dialog__container" style="display: block;">
-  <div tabindex="-1" class="v-dialog__content" style="z-index: 0;">
-    <div class="v-dialog v-dialog--scrollable" style="max-width: 500px; display: none;">
-      <div class="v-card v-sheet theme--light" xs12="" md8="" lg6="">
-        <div class="v-card__title"><span class="headline">
-          用户 test_crawler_username 在 crawler title 通过的题目列表
-        </span></div>
-        <div class="v-card__text">
-          当前爬虫无法获取通过的题目列表
-        </div>
-        <hr class="v-divider theme--light">
-        <div class="v-card__actions"><button type="button" class="v-btn v-btn--flat theme--light blue--text text--darken-1">
-            <div class="v-btn__content">
-              Close
-            </div>
-          </button></div>
-      </div>
+  <div role="dialog" class="v-dialog__container" style="display: block;">
+    <div role="document" tabindex="0" class="v-dialog__content" style="z-index: 0;">
+      <div class="v-dialog v-dialog--scrollable" style="max-width: 500px; display: none;"></div>
     </div>
   </div>
-</div>
 </div>
 `;
