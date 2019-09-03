@@ -5,7 +5,7 @@
   },
   "dependencies": {
     "mockserver-client": "5.6.1",
-    "nodemon": "1.19.1",
+    "nodemon": "1.19.2",
     "wait-on": "3.3.0"
   }
 }
