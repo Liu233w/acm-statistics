@@ -22,9 +22,14 @@ build-http-mocks: .node-base
 		--build-arg NODE_BASE_IMAGE=$(NodeBaseTag)
 
 .base:
+ifeq ($(pull-e2e-base-image),)
 	docker build . \
 		-t $(E2eBaseTag) \
 		$(build-args)
+else
+	docker pull liu233w/acm-statistics-e2e-base
+	docker tag liu233w/acm-statistics-e2e-base $(E2eBaseTag)
+endif
 
 ci: .base
 	docker run --rm -t --ipc=host --network=host \

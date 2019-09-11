@@ -17,6 +17,7 @@ proxy 的方式实现，用来以侵入性最低的方式来实现mock。
 - 使用 `make open` 启动的本地项目会忽略视觉测试快照的不一致。`make open` 只是用在编写测试上的。
 - 使用 `make test` 在docker中运行全部E2E测试，包括视觉测试
 - 使用 `make update-snapshot` 更新本地的视觉测试快照
+- 添加开关 `pull-e2e-base-image=1` (比如 `make update-snapshot pull-e2e-base-image=1`) 可直接从 docker hub 拉取构建好的cypress镜像，否则将在本地构建。这样如果因为网络原因导致e2e镜像构建失败，使用此开关可以避免此问题。
 
 ## Mock Server
 - 项目使用了 mock-server 作为 proxy 来控制外部调用
