@@ -37,8 +37,8 @@ exports[`WorkerCard 能正确渲染 1`] = `
     </div>
     <!---->
   </div>
-  <div role="dialog" class="v-dialog__container" style="display: block;">
-    <div role="document" tabindex="0" class="v-dialog__content" style="z-index: 0;">
+  <div role="dialog" class="v-dialog__container">
+    <div role="document" class="v-dialog__content" style="z-index: 0;">
       <div class="v-dialog v-dialog--scrollable" style="max-width: 500px; display: none;"></div>
     </div>
   </div>
@@ -82,8 +82,8 @@ exports[`WorkerCard 能正确渲染用户名 1`] = `
     </div>
     <!---->
   </div>
-  <div role="dialog" class="v-dialog__container" style="display: block;">
-    <div role="document" tabindex="0" class="v-dialog__content" style="z-index: 0;">
+  <div role="dialog" class="v-dialog__container">
+    <div role="document" class="v-dialog__content" style="z-index: 0;">
       <div class="v-dialog v-dialog--scrollable" style="max-width: 500px; display: none;"></div>
     </div>
   </div>
@@ -127,8 +127,8 @@ exports[`WorkerCard 能正确渲染结果 1`] = `
     </div>
     <!---->
   </div>
-  <div role="dialog" class="v-dialog__container" style="display: block;">
-    <div role="document" tabindex="0" class="v-dialog__content" style="z-index: 0;">
+  <div role="dialog" class="v-dialog__container">
+    <div role="document" class="v-dialog__content" style="z-index: 0;">
       <div class="v-dialog v-dialog--scrollable" style="max-width: 500px; display: none;"></div>
     </div>
   </div>
@@ -180,8 +180,8 @@ exports[`WorkerCard 能正确渲染警告 1`] = `
     </div>
     <!---->
   </div>
-  <div role="dialog" class="v-dialog__container" style="display: block;">
-    <div role="document" tabindex="0" class="v-dialog__content" style="z-index: 0;">
+  <div role="dialog" class="v-dialog__container">
+    <div role="document" class="v-dialog__content" style="z-index: 0;">
       <div class="v-dialog v-dialog--scrollable" style="max-width: 500px; display: none;"></div>
     </div>
   </div>
@@ -225,8 +225,8 @@ exports[`WorkerCard 能正确渲染错误 1`] = `
     </div>
     <!---->
   </div>
-  <div role="dialog" class="v-dialog__container" style="display: block;">
-    <div role="document" tabindex="0" class="v-dialog__content" style="z-index: 0;">
+  <div role="dialog" class="v-dialog__container">
+    <div role="document" class="v-dialog__content" style="z-index: 0;">
       <div class="v-dialog v-dialog--scrollable" style="max-width: 500px; display: none;"></div>
     </div>
   </div>
