@@ -902,8 +902,8 @@ exports[`/ 1`] = `
                         </div>
                       </div>
                     </div>
-                    <div role="dialog" class="v-dialog__container" style="display:block;">
-                      <div role="document" tabindex="0" class="v-dialog__content" style="z-index:0;">
+                    <div role="dialog" class="v-dialog__container">
+                      <div role="document" class="v-dialog__content" style="z-index:0;">
                         <div class="v-dialog" style="max-width:500px;display:none;"></div>
                       </div>
                     </div>
@@ -2534,7 +2534,7 @@ exports[`/statistics 1`] = `
                       <div class="v-input theme--light v-text-field">
                         <div class="v-input__control">
                           <div class="v-input__slot">
-                            <div class="v-text-field__slot"><label for="input-75" class="v-label theme--light" style="left:0px;right:auto;position:absolute;">&#x7EDF;&#x4E00;&#x8BBE;&#x7F6E;&#x7528;&#x6237;&#x540D;</label><input required="required" id="input-75" type="text" value></div>
+                            <div class="v-text-field__slot"><label for="input-73" class="v-label theme--light" style="left:0px;right:auto;position:absolute;">&#x7EDF;&#x4E00;&#x8BBE;&#x7F6E;&#x7528;&#x6237;&#x540D;</label><input required="required" id="input-73" type="text" value></div>
                           </div>
                           <div class="v-text-field__details">
                             <div class="v-messages theme--light">
@@ -2551,7 +2551,7 @@ exports[`/statistics 1`] = `
           </span></button></span> <span class="v-tooltip v-tooltip--bottom"><div class="v-tooltip__content" style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"></div><button type="button" class="v-btn v-btn--contained theme--light v-size--default"><span class="v-btn__content">
             &#x4FDD;&#x5B58;&#x7528;&#x6237;&#x540D;
             </span></button></span></div>
-                    <div class="flex xs12 md4" style="display:none;"><span draggable="false" class="elevation-2 v-chip v-chip--label theme--light v-size--default grey lighten-3"><span class="v-chip__content"><span class="v-tooltip v-tooltip--bottom"><div class="v-tooltip__content" style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"></div><div class="v-input v-input--is-label-active v-input--is-dirty theme--light v-input--selection-controls v-input--switch accent--text"><div class="v-input__control"><div class="v-input__slot"><div class="v-input--selection-controls__input"><input aria-checked="true" id="input-88" role="switch" type="checkbox" aria-disabled="false" checked="checked"><div class="v-input--selection-controls__ripple accent--text"></div><div class="v-input--switch__track theme--light accent--text"></div><div class="v-input--switch__thumb theme--light accent--text"><!----></div></div></div><div class="v-messages theme--light accent--text"><div class="v-messages__wrapper"></div></div></div></div></span> <span class="title">
+                    <div class="flex xs12 md4" style="display:none;"><span draggable="false" class="elevation-2 v-chip v-chip--label theme--light v-size--default grey lighten-3"><span class="v-chip__content"><span class="v-tooltip v-tooltip--bottom"><div class="v-tooltip__content" style="left:0px;max-width:auto;opacity:0;top:12px;z-index:0;display:none;"></div><div class="v-input v-input--is-label-active v-input--is-dirty theme--light v-input--selection-controls v-input--switch accent--text"><div class="v-input__control"><div class="v-input__slot"><div class="v-input--selection-controls__input"><input aria-checked="true" id="input-86" role="switch" type="checkbox" aria-disabled="false" checked="checked"><div class="v-input--selection-controls__ripple accent--text"></div><div class="v-input--switch__track theme--light accent--text"></div><div class="v-input--switch__thumb theme--light accent--text"><!----></div></div></div><div class="v-messages theme--light accent--text"><div class="v-messages__wrapper"></div></div></div></div></span> <span class="title">
            &#x7684;&#x603B;&#x9898;&#x91CF;&#xFF1A; 0 / 0
         </span></span></span></div>
                   </div>
@@ -2574,7 +2574,7 @@ exports[`/statistics 1`] = `
                           <div class="v-input theme--light v-text-field">
                             <div class="v-input__control">
                               <div class="v-input__slot">
-                                <div class="v-text-field__slot"><label for="input-105" class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Username</label><input required="required" id="input-105" type="text" value></div>
+                                <div class="v-text-field__slot"><label for="input-103" class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Username</label><input required="required" id="input-103" type="text" value></div>
                                 <div class="v-input__append-inner">
                                   <div class="v-input__icon v-input__icon--"><i role="button" class="v-icon notranslate v-icon--link material-icons theme--light"></i></div>
                                 </div>
@@ -2590,8 +2590,8 @@ exports[`/statistics 1`] = `
                       </div>
                       <!---->
                     </div>
-                    <div role="dialog" class="v-dialog__container" style="display:block;">
-                      <div role="document" tabindex="0" class="v-dialog__content" style="z-index:0;">
+                    <div role="dialog" class="v-dialog__container">
+                      <div role="document" class="v-dialog__content" style="z-index:0;">
                         <div class="v-dialog v-dialog--scrollable" style="max-width:500px;display:none;"></div>
                       </div>
                     </div>
@@ -2621,7 +2621,7 @@ exports[`/statistics 1`] = `
                           <div class="v-input theme--light v-text-field">
                             <div class="v-input__control">
                               <div class="v-input__slot">
-                                <div class="v-text-field__slot"><label for="input-124" class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Username</label><input required="required" id="input-124" type="text" value></div>
+                                <div class="v-text-field__slot"><label for="input-122" class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Username</label><input required="required" id="input-122" type="text" value></div>
                                 <div class="v-input__append-inner">
                                   <div class="v-input__icon v-input__icon--"><i role="button" class="v-icon notranslate v-icon--link material-icons theme--light"></i></div>
                                 </div>
@@ -2637,8 +2637,8 @@ exports[`/statistics 1`] = `
                       </div>
                       <!---->
                     </div>
-                    <div role="dialog" class="v-dialog__container" style="display:block;">
-                      <div role="document" tabindex="0" class="v-dialog__content" style="z-index:0;">
+                    <div role="dialog" class="v-dialog__container">
+                      <div role="document" class="v-dialog__content" style="z-index:0;">
                         <div class="v-dialog v-dialog--scrollable" style="max-width:500px;display:none;"></div>
                       </div>
                     </div>
@@ -2668,7 +2668,7 @@ exports[`/statistics 1`] = `
                           <div class="v-input theme--light v-text-field">
                             <div class="v-input__control">
                               <div class="v-input__slot">
-                                <div class="v-text-field__slot"><label for="input-143" class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Username</label><input required="required" id="input-143" type="text" value></div>
+                                <div class="v-text-field__slot"><label for="input-141" class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Username</label><input required="required" id="input-141" type="text" value></div>
                                 <div class="v-input__append-inner">
                                   <div class="v-input__icon v-input__icon--"><i role="button" class="v-icon notranslate v-icon--link material-icons theme--light"></i></div>
                                 </div>
@@ -2684,8 +2684,8 @@ exports[`/statistics 1`] = `
                       </div>
                       <!---->
                     </div>
-                    <div role="dialog" class="v-dialog__container" style="display:block;">
-                      <div role="document" tabindex="0" class="v-dialog__content" style="z-index:0;">
+                    <div role="dialog" class="v-dialog__container">
+                      <div role="document" class="v-dialog__content" style="z-index:0;">
                         <div class="v-dialog v-dialog--scrollable" style="max-width:500px;display:none;"></div>
                       </div>
                     </div>
@@ -2711,7 +2711,7 @@ exports[`/statistics 1`] = `
                 <div class="v-input theme--light v-text-field">
                   <div class="v-input__control">
                     <div class="v-input__slot">
-                      <div class="v-text-field__slot"><label for="input-163" class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Username</label><input required="required" id="input-163" type="text" value></div>
+                      <div class="v-text-field__slot"><label for="input-161" class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Username</label><input required="required" id="input-161" type="text" value></div>
                       <div class="v-input__append-inner">
                         <div class="v-input__icon v-input__icon--"><i role="button" class="v-icon notranslate v-icon--link material-icons theme--light"></i></div>
                       </div>
@@ -2727,8 +2727,8 @@ exports[`/statistics 1`] = `
             </div>
             <!---->
           </div>
-          <div role="dialog" class="v-dialog__container" style="display:block;">
-            <div role="document" tabindex="0" class="v-dialog__content" style="z-index:0;">
+          <div role="dialog" class="v-dialog__container">
+            <div role="document" class="v-dialog__content" style="z-index:0;">
               <div class="v-dialog v-dialog--scrollable" style="max-width:500px;display:none;"></div>
             </div>
           </div>
@@ -2758,7 +2758,7 @@ exports[`/statistics 1`] = `
                 <div class="v-input theme--light v-text-field">
                   <div class="v-input__control">
                     <div class="v-input__slot">
-                      <div class="v-text-field__slot"><label for="input-182" class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Username</label><input required="required" id="input-182" type="text" value></div>
+                      <div class="v-text-field__slot"><label for="input-180" class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Username</label><input required="required" id="input-180" type="text" value></div>
                       <div class="v-input__append-inner">
                         <div class="v-input__icon v-input__icon--"><i role="button" class="v-icon notranslate v-icon--link material-icons theme--light"></i></div>
                       </div>
@@ -2774,8 +2774,8 @@ exports[`/statistics 1`] = `
             </div>
             <!---->
           </div>
-          <div role="dialog" class="v-dialog__container" style="display:block;">
-            <div role="document" tabindex="0" class="v-dialog__content" style="z-index:0;">
+          <div role="dialog" class="v-dialog__container">
+            <div role="document" class="v-dialog__content" style="z-index:0;">
               <div class="v-dialog v-dialog--scrollable" style="max-width:500px;display:none;"></div>
             </div>
           </div>
@@ -2805,7 +2805,7 @@ exports[`/statistics 1`] = `
                 <div class="v-input theme--light v-text-field">
                   <div class="v-input__control">
                     <div class="v-input__slot">
-                      <div class="v-text-field__slot"><label for="input-201" class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Username</label><input required="required" id="input-201" type="text" value></div>
+                      <div class="v-text-field__slot"><label for="input-199" class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Username</label><input required="required" id="input-199" type="text" value></div>
                       <div class="v-input__append-inner">
                         <div class="v-input__icon v-input__icon--"><i role="button" class="v-icon notranslate v-icon--link material-icons theme--light"></i></div>
                       </div>
@@ -2821,8 +2821,8 @@ exports[`/statistics 1`] = `
             </div>
             <!---->
           </div>
-          <div role="dialog" class="v-dialog__container" style="display:block;">
-            <div role="document" tabindex="0" class="v-dialog__content" style="z-index:0;">
+          <div role="dialog" class="v-dialog__container">
+            <div role="document" class="v-dialog__content" style="z-index:0;">
               <div class="v-dialog v-dialog--scrollable" style="max-width:500px;display:none;"></div>
             </div>
           </div>
@@ -2847,7 +2847,7 @@ exports[`/statistics 1`] = `
           <div class="v-input theme--light v-text-field">
             <div class="v-input__control">
               <div class="v-input__slot">
-                <div class="v-text-field__slot"><label for="input-225" class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Username</label><input required="required" id="input-225" type="text" value></div>
+                <div class="v-text-field__slot"><label for="input-223" class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Username</label><input required="required" id="input-223" type="text" value></div>
                 <div class="v-input__append-inner">
                   <div class="v-input__icon v-input__icon--"><i role="button" class="v-icon notranslate v-icon--link material-icons theme--light"></i></div>
                 </div>
@@ -2863,8 +2863,8 @@ exports[`/statistics 1`] = `
       </div>
       <!---->
     </div>
-    <div role="dialog" class="v-dialog__container" style="display:block;">
-      <div role="document" tabindex="0" class="v-dialog__content" style="z-index:0;">
+    <div role="dialog" class="v-dialog__container">
+      <div role="document" class="v-dialog__content" style="z-index:0;">
         <div class="v-dialog v-dialog--scrollable" style="max-width:500px;display:none;"></div>
       </div>
     </div>
@@ -2893,7 +2893,7 @@ exports[`/statistics 1`] = `
               <div class="v-input theme--light v-text-field">
                 <div class="v-input__control">
                   <div class="v-input__slot">
-                    <div class="v-text-field__slot"><label for="input-248" class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Username</label><input required="required" id="input-248" type="text" value></div>
+                    <div class="v-text-field__slot"><label for="input-246" class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Username</label><input required="required" id="input-246" type="text" value></div>
                     <div class="v-input__append-inner">
                       <div class="v-input__icon v-input__icon--"><i role="button" class="v-icon notranslate v-icon--link material-icons theme--light"></i></div>
                     </div>
@@ -2909,8 +2909,8 @@ exports[`/statistics 1`] = `
           </div>
           <!---->
         </div>
-        <div role="dialog" class="v-dialog__container" style="display:block;">
-          <div role="document" tabindex="0" class="v-dialog__content" style="z-index:0;">
+        <div role="dialog" class="v-dialog__container">
+          <div role="document" class="v-dialog__content" style="z-index:0;">
             <div class="v-dialog v-dialog--scrollable" style="max-width:500px;display:none;"></div>
           </div>
         </div>
