@@ -2,7 +2,7 @@
 
 exports[`WorkerCard 能正确渲染 1`] = `
 <div class="v-card v-sheet theme--light">
-  <header class="blue-grey lighten-5 v-sheet v-sheet--tile theme--light elevation-0 v-toolbar v-toolbar--dense v-toolbar--flat v-app-bar" style="margin-top: 0px; transform: translateY(0px); left: 0px; right: 0px;">
+  <header class="blue-grey lighten-5 v-sheet v-sheet--tile theme--light elevation-0 v-toolbar v-toolbar--dense v-toolbar--flat v-app-bar" style="height: 48px; margin-top: 0px; transform: translateY(0px); left: 0px; right: 0px;">
     <div class="v-toolbar__content" style="height: 48px;">
       <div title="crawler title" class="v-toolbar__title">
         crawler title
@@ -47,7 +47,7 @@ exports[`WorkerCard 能正确渲染 1`] = `
 
 exports[`WorkerCard 能正确渲染用户名 1`] = `
 <div class="v-card v-sheet theme--light">
-  <header class="blue-grey lighten-5 v-sheet v-sheet--tile theme--light elevation-0 v-toolbar v-toolbar--dense v-toolbar--flat v-app-bar" style="margin-top: 0px; transform: translateY(0px); left: 0px; right: 0px;">
+  <header class="blue-grey lighten-5 v-sheet v-sheet--tile theme--light elevation-0 v-toolbar v-toolbar--dense v-toolbar--flat v-app-bar" style="height: 48px; margin-top: 0px; transform: translateY(0px); left: 0px; right: 0px;">
     <div class="v-toolbar__content" style="height: 48px;">
       <div title="crawler title" class="v-toolbar__title">
         crawler title
@@ -92,7 +92,7 @@ exports[`WorkerCard 能正确渲染用户名 1`] = `
 
 exports[`WorkerCard 能正确渲染结果 1`] = `
 <div class="v-card v-sheet theme--light">
-  <header class="blue-grey lighten-5 v-sheet v-sheet--tile theme--light elevation-0 v-toolbar v-toolbar--dense v-toolbar--flat v-app-bar" style="margin-top: 0px; transform: translateY(0px); left: 0px; right: 0px;">
+  <header class="blue-grey lighten-5 v-sheet v-sheet--tile theme--light elevation-0 v-toolbar v-toolbar--dense v-toolbar--flat v-app-bar" style="height: 48px; margin-top: 0px; transform: translateY(0px); left: 0px; right: 0px;">
     <div class="v-toolbar__content" style="height: 48px;">
       <div title="crawler title" class="v-toolbar__title">
         crawler title
@@ -137,7 +137,7 @@ exports[`WorkerCard 能正确渲染结果 1`] = `
 
 exports[`WorkerCard 能正确渲染警告 1`] = `
 <div class="v-card v-sheet theme--light">
-  <header class="blue-grey lighten-5 v-sheet v-sheet--tile theme--light elevation-0 v-toolbar v-toolbar--dense v-toolbar--flat v-app-bar" style="margin-top: 0px; transform: translateY(0px); left: 0px; right: 0px;">
+  <header class="blue-grey lighten-5 v-sheet v-sheet--tile theme--light elevation-0 v-toolbar v-toolbar--dense v-toolbar--flat v-app-bar" style="height: 48px; margin-top: 0px; transform: translateY(0px); left: 0px; right: 0px;">
     <div class="v-toolbar__content" style="height: 48px;">
       <div title="crawler title" class="v-toolbar__title">
         crawler title
@@ -190,7 +190,7 @@ exports[`WorkerCard 能正确渲染警告 1`] = `
 
 exports[`WorkerCard 能正确渲染错误 1`] = `
 <div class="v-card v-sheet theme--light">
-  <header class="blue-grey lighten-5 v-sheet v-sheet--tile theme--light elevation-0 v-toolbar v-toolbar--dense v-toolbar--flat v-app-bar" style="margin-top: 0px; transform: translateY(0px); left: 0px; right: 0px;">
+  <header class="blue-grey lighten-5 v-sheet v-sheet--tile theme--light elevation-0 v-toolbar v-toolbar--dense v-toolbar--flat v-app-bar" style="height: 48px; margin-top: 0px; transform: translateY(0px); left: 0px; right: 0px;">
     <div class="v-toolbar__content" style="height: 48px;">
       <div title="crawler title" class="v-toolbar__title">
         crawler title
