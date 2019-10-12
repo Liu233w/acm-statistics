@@ -70,7 +70,7 @@ exports[`WorkerCard 能正确渲染用户名 1`] = `
             <div class="v-input__slot">
               <div class="v-text-field__slot"><label for="input-63" class="v-label v-label--active theme--light" style="left: 0px; position: absolute;">Username</label><input required="required" id="input-63" type="text"></div>
               <div class="v-input__append-inner">
-                <div class="v-input__icon v-input__icon--clear"><i role="button" class="v-icon notranslate v-icon--link material-icons theme--light">$vuetify.icons.clear</i></div>
+                <div class="v-input__icon v-input__icon--clear"><i role="button" class="v-icon notranslate v-icon--link material-icons theme--light">$clear</i></div>
               </div>
             </div>
             <div class="v-text-field__details">
@@ -115,7 +115,7 @@ exports[`WorkerCard 能正确渲染结果 1`] = `
             <div class="v-input__slot">
               <div class="v-text-field__slot"><label for="input-119" class="v-label v-label--active theme--light" style="left: 0px; position: absolute;">Username</label><input required="required" id="input-119" type="text"></div>
               <div class="v-input__append-inner">
-                <div class="v-input__icon v-input__icon--clear"><i role="button" class="v-icon notranslate v-icon--link material-icons theme--light">$vuetify.icons.clear</i></div>
+                <div class="v-input__icon v-input__icon--clear"><i role="button" class="v-icon notranslate v-icon--link material-icons theme--light">$clear</i></div>
               </div>
             </div>
             <div class="v-text-field__details">
@@ -160,7 +160,7 @@ exports[`WorkerCard 能正确渲染警告 1`] = `
             <div class="v-input__slot">
               <div class="v-text-field__slot"><label for="input-90" class="v-label v-label--active theme--light" style="left: 0px; position: absolute;">Username</label><input required="required" id="input-90" type="text"></div>
               <div class="v-input__append-inner">
-                <div class="v-input__icon v-input__icon--clear"><i role="button" class="v-icon notranslate v-icon--link material-icons theme--light">$vuetify.icons.clear</i></div>
+                <div class="v-input__icon v-input__icon--clear"><i role="button" class="v-icon notranslate v-icon--link material-icons theme--light">$clear</i></div>
               </div>
             </div>
             <div class="v-text-field__details">
@@ -213,7 +213,7 @@ exports[`WorkerCard 能正确渲染错误 1`] = `
             <div class="v-input__slot">
               <div class="v-text-field__slot"><label for="input-146" class="v-label v-label--active theme--light" style="left: 0px; position: absolute;">Username</label><input required="required" id="input-146" type="text"></div>
               <div class="v-input__append-inner">
-                <div class="v-input__icon v-input__icon--clear"><i role="button" class="v-icon notranslate v-icon--link material-icons theme--light">$vuetify.icons.clear</i></div>
+                <div class="v-input__icon v-input__icon--clear"><i role="button" class="v-icon notranslate v-icon--link material-icons theme--light">$clear</i></div>
               </div>
             </div>
             <div class="v-text-field__details">
