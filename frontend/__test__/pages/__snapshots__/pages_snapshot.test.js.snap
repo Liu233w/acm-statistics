@@ -875,7 +875,7 @@ exports[`/ 1`] = `
                               &#x8054;&#x7CFB;&#x6211;&#x4EEC;
                             </div>
                           </div>
-                          <div role="list" class="v-list transparent v-sheet v-sheet--tile theme--light"><a tabindex="0" href="https://jq.qq.com/?_wv=1027&amp;k=5qgzfQc" target="_blank" class="v-list-item v-list-item--link theme--light">
+                          <div role="list" class="v-list transparent v-sheet v-sheet--tile theme--light"><a tabindex="0" href="https://jq.qq.com/?_wv=1027&amp;k=5qgzfQc" target="_blank" role="listitem" class="v-list-item v-list-item--link theme--light">
                               <div class="v-list-item__action"><i aria-hidden="true" class="v-icon notranslate blue--text text--lighten-2 fab fa-qq theme--light"></i></div>
                               <div class="v-list-item__content">
                                 <div class="v-list-item__title">198820787</div>
@@ -886,7 +886,7 @@ exports[`/ 1`] = `
                               <div class="v-list-item__content">
                                 <div class="v-list-item__title">&#x9655;&#x897F;&#x7701;&#x897F;&#x5B89;&#x5E02;&#x957F;&#x5B89;&#x533A;&#x897F;&#x5317;&#x5DE5;&#x4E1A;&#x5927;&#x5B66;&#x957F;&#x5B89;&#x6821;&#x533A;&#x8BA1;&#x7B97;&#x673A;&#x5B66;&#x9662;110&#x5BA4;</div>
                               </div>
-                            </div> <a tabindex="0" href="mailto:support@npuacm.info" class="v-list-item v-list-item--link theme--light">
+                            </div> <a tabindex="0" href="mailto:support@npuacm.info" role="listitem" class="v-list-item v-list-item--link theme--light">
                               <div class="v-list-item__action"><i aria-hidden="true" class="v-icon notranslate blue--text text--lighten-2 material-icons theme--light">email</i></div>
                               <div class="v-list-item__content">
                                 <div class="v-list-item__title">support@npuacm.info</div>
@@ -1722,14 +1722,14 @@ exports[`/about 1`] = `
                               <div class="v-list-item__title">&#x6784;&#x5EFA;&#x65F6;&#x95F4;</div>
                               <vlistitemsubtitle>1/1/1970, 12:00:00 AM</vlistitemsubtitle>
                             </div>
-                          </div> <a tabindex="0" href="https://github.com/Liu233w/acm-statistics/tree/development" class="v-list-item v-list-item--link theme--light">
+                          </div> <a tabindex="0" href="https://github.com/Liu233w/acm-statistics/tree/development" role="listitem" class="v-list-item v-list-item--link theme--light">
                             <div class="v-list-item__content">
                               <div class="v-list-item__title">&#x5F53;&#x524D;&#x7248;&#x672C;&#x6E90;&#x4EE3;&#x7801;</div>
                               <vlistitemsubtitle>
                                 https://github.com/Liu233w/acm-statistics/tree/development
                               </vlistitemsubtitle>
                             </div>
-                          </a> <a tabindex="0" href="https://github.com/Liu233w/acm-statistics/commits/development" class="v-list-item v-list-item--link theme--light">
+                          </a> <a tabindex="0" href="https://github.com/Liu233w/acm-statistics/commits/development" role="listitem" class="v-list-item v-list-item--link theme--light">
                             <div class="v-list-item__content">
                               <div class="v-list-item__title">&#x6700;&#x8FD1;&#x66F4;&#x65B0;</div>
                               <vlistitemsubtitle>
