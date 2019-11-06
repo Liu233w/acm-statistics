@@ -1,4 +1,4 @@
-FROM cypress/base:12.12.0@sha256:db835ab4fd8623a25929edbdafdf1fe6e1b04fdf1298a1d2551fbba32e2d56d8
+FROM cypress/base:12.13.0@sha256:261915a13354ae73ea765c3d4a0cfa82b675e2206d8c55fe0acadfe782ace1be
 
 WORKDIR /e2e
 
