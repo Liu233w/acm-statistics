@@ -8,8 +8,8 @@ module.exports = async function (config, username) {
   }
 
   const uidRes = await request
-    .get('https://www.luogu.org/space/ajax_getuid')
-    .query({username: username})
+    .get('https://www.luogu.org/fe/api/user/search')
+    .query({keyword: username})
 
   if (!uidRes.ok) {
     throw new Error(`Server Response Error: ${uidRes.status}`)
@@ -17,41 +17,27 @@ module.exports = async function (config, username) {
 
   const uidJSON = JSON.parse(uidRes.text)
 
-  if (uidJSON.code === 404) {
+  if (uidJSON.users[0] == null) {
     throw new Error('用户不存在')
   }
 
-  const uid = uidJSON.more.uid
+  const uid = uidJSON.users[0].uid
   const res = await request
-    .get('https://www.luogu.org/space/show')
-    .query({uid: uid})
+    .get('https://www.luogu.org/user/' + uid)
 
   if (!res.ok) {
     throw new Error(`Server Response Error: ${res.status}`)
   }
 
-  const $ = cheerio.load(res.text)
-
   try {
-    const acList = []
-    $('.lg-article > [href^="/problemnew/show/"]').each(function (i, el) {
-      acList.push($(el).text().trim())
-    })
-    /**
-     * @type {string}
-     */
-    const submissionText = $('li:contains("提交") > span.lg-bignum-num').text()
-    let submissions
-    if (submissionText.includes('.')) {
-      // 对于含有 K 的数据，目前没法获取精确的数值
-      submissions = Math.floor(parseFloat(submissionText) * 1000)
-    } else {
-      submissions = parseInt(submissionText)
-    }
+
+    const userJson = JSON.parse(decodeURIComponent(res.text.match(/decodeURIComponent\("(.*?)"\)/i)[1]))
+    const solvedJson = userJson.currentData.passedProblems
+    const acList = solvedJson.map((p) => p.pid)
 
     return {
-      submissions: submissions,
-      solved: acList.length, //个人主页的计数好像不是实时更新，但是过了的题目好像是实时更新..
+      submissions: userJson.currentData.user.submittedProblemCount,
+      solved: userJson.currentData.user.passedProblemCount,
       solvedList: acList,
     }
   }
