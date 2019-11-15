@@ -1,5 +1,4 @@
 const request = require('superagent')
-const cheerio = require('cheerio')
 
 module.exports = async function (config, username) {
 
