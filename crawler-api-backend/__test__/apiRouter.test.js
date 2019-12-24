@@ -22,8 +22,8 @@ test('/api/crawlers/swagger.json swagger should match snapshot', async () => {
   expect(res.body).toMatchSnapshot()
 })
 
-test('/api/crawlers should return crawler list', done => {
-  request
+test('/api/crawlers should return crawler list', async () => {
+  await request
     .get('/api/crawlers')
     .expect(200, {
       error: false,
@@ -40,12 +40,12 @@ test('/api/crawlers should return crawler list', done => {
           title: 'CrawlerForServer',
         },
       },
-    }, done)
+    })
 })
 
 describe('/api/crawlers/:type/:username', () => {
-  it('在结果正确时应该返回题量', done => {
-    request
+  it('在结果正确时应该返回题量', async () => {
+    await request
       .get('/api/crawlers/crawler1/user')
       .expect(200, {
         error: false,
@@ -53,33 +53,33 @@ describe('/api/crawlers/:type/:username', () => {
           solved: 101,
           submissions: 230,
         },
-      }, done)
+      })
   })
 
-  it('在爬虫不存在时应该返回 400', done => {
-    request
+  it('在爬虫不存在时应该返回 400', async () => {
+    await request
       .get('/api/crawlers/notExist/user')
       .expect(400, {
         error: true,
         message: '不存在此OJ的爬虫',
-      }, done)
+      })
   })
 
-  it('在爬虫报错时应该返回错误结果', done => {
-    request
+  it('在爬虫报错时应该返回错误结果', async () => {
+    await request
       .get('/api/crawlers/crawler1/reject')
       .expect(400, {
         error: true,
         message: '用户不存在',
-      }, done)
+      })
   })
 })
 
-test('在访问不存在的资源时返回 404', done => {
-  request
+test('在访问不存在的资源时返回 404', async () => {
+  await request
     .get('/notExists')
     .expect(404, {
       error: true,
       message: '404 Not Found',
-    }, done)
+    })
 })
