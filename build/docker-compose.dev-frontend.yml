@@ -17,10 +17,6 @@ services:
     environment:
       - NODE_ENV=development
     command: sh -c "npm run dev"
-    labels:
-      # 不加上这一条就没法被 traefik 识别，暂时还不知道是怎么回事
-      # TODO: 修复这个问题
-      traefik.backend: frontend:3000
 
   crawler-api-backend:
     environment:
