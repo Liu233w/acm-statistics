@@ -1,11 +1,7 @@
-const rest = require('../lib/restClient')
-
 module.exports = {
   poj: {
-    backend_ok() {
-      // TODO: 等到 bug 修复之后重新改回 client
-      // 看起来是这里的问题： https://github.com/jamesdbloom/mockserver/issues/599
-      return rest({
+    backend_ok(client) {
+      return client.mockAnyResponse({
         httpRequest: {
           path: '/userstatus',
           queryStringParameters: {

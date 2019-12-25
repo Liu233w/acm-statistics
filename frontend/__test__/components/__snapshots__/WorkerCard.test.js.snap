@@ -29,7 +29,9 @@ exports[`WorkerCard 能正确渲染 1`] = `
               </div>
             </div>
             <div class="v-text-field__details">
-              <div class="v-messages theme--light"><span name="message-transition" tag="div" class="v-messages__wrapper"></span></div>
+              <div class="v-messages theme--light">
+                <div class="v-messages__wrapper"></div>
+              </div>
             </div>
           </div>
         </div>
@@ -74,7 +76,9 @@ exports[`WorkerCard 能正确渲染用户名 1`] = `
               </div>
             </div>
             <div class="v-text-field__details">
-              <div class="v-messages theme--light"><span name="message-transition" tag="div" class="v-messages__wrapper"></span></div>
+              <div class="v-messages theme--light">
+                <div class="v-messages__wrapper"></div>
+              </div>
             </div>
           </div>
         </div>
@@ -119,7 +123,9 @@ exports[`WorkerCard 能正确渲染结果 1`] = `
               </div>
             </div>
             <div class="v-text-field__details">
-              <div class="v-messages theme--light"><span name="message-transition" tag="div" class="v-messages__wrapper"></span></div>
+              <div class="v-messages theme--light">
+                <div class="v-messages__wrapper"></div>
+              </div>
             </div>
           </div>
         </div>
@@ -164,7 +170,9 @@ exports[`WorkerCard 能正确渲染警告 1`] = `
               </div>
             </div>
             <div class="v-text-field__details">
-              <div class="v-messages theme--light"><span name="message-transition" tag="div" class="v-messages__wrapper"></span></div>
+              <div class="v-messages theme--light">
+                <div class="v-messages__wrapper"></div>
+              </div>
             </div>
           </div>
         </div>
@@ -217,7 +225,9 @@ exports[`WorkerCard 能正确渲染错误 1`] = `
               </div>
             </div>
             <div class="v-text-field__details">
-              <div class="v-messages theme--light"><span name="message-transition" tag="div" class="v-messages__wrapper"></span></div>
+              <div class="v-messages theme--light">
+                <div class="v-messages__wrapper"></div>
+              </div>
             </div>
           </div>
         </div>
