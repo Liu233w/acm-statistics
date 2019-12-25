@@ -5,7 +5,7 @@ const metas = _.zipObject(
   crawlerNames,
   _.map(crawlerNames, str => ({
     title: str,
-  }))
+  })),
 )
 metas.withDescription = {
   title: 'with description',
