@@ -16,7 +16,7 @@
     "superagent-proxy": "^2.0.0"
   },
   "devDependencies": {
-    "axios": "0.19.1",
+    "axios": "0.19.2",
     "axios-mock-adapter": "1.17.0",
     "eslint": "6.8.0",
     "eslint-plugin-jest": "23.6.0",
