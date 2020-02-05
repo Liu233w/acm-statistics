@@ -32,7 +32,7 @@
   },
   "devDependencies": {
     "@babel/preset-env": "7.8.4",
-    "@fortawesome/fontawesome-free": "5.12.0",
+    "@fortawesome/fontawesome-free": "5.12.1",
     "@vue/test-utils": "1.0.0-beta.30",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "10.0.3",
