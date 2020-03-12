@@ -14,3 +14,7 @@ release.Dockerfile
 
 # make
 Makefile
+
+# vscode
+.vscode
+.ionide
