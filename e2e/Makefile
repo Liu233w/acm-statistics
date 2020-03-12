@@ -18,7 +18,7 @@ server:
 ## 等待server就位。
 wait-server:
 	docker run --rm -t --ipc=host --network=host \
-		willwill/wait-for-it localhost:1081
+		willwill/wait-for-it localhost:1081 -t 0
 
 build-http-mocks: .node-base
 	docker build ./http-mocks \
