@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "@nuxtjs/component-cache": "1.1.5",
-    "@nuxtjs/vuetify": "1.10.2",
+    "@nuxtjs/vuetify": "1.11.0",
     "axios": "0.19.2",
     "cheerio": "1.0.0-rc.3",
     "lodash": "4.17.15",
