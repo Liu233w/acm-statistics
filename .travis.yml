@@ -55,7 +55,7 @@ jobs:
         - npm install -g wait-on
       script:
         - cd e2e
-        - make server > /dev/null & wait-on tcp:localhost:1081
+        - make server > /dev/null & make wait-server
         - 'if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then make ci-no-record; fi'
         - 'if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then make ci; fi'
         - make run run-cmd="npm run lint"

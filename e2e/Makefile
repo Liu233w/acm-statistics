@@ -15,6 +15,11 @@ server: export BUILD_TIME = 0
 server:
 	cd ../build && $(MAKE) -f docker-compose.mk e2e-up
 
+## 等待server就位。
+wait-server:
+	docker run --rm -t --ipc=host --network=host \
+		willwill/wait-for-it localhost:1081
+
 build-http-mocks: .node-base
 	docker build ./http-mocks \
 		-t $(E2eMockConfigurerTag) \
