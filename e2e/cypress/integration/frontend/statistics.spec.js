@@ -11,6 +11,8 @@ describe('整体视觉测试', () => {
 
   it('能够正确渲染', () => {
     cy.viewport(1920, 1080)
+    // eslint-disable-next-line cypress/no-unnecessary-waiting
+    cy.wait(2000)
     snapshot()
   })
 
@@ -25,6 +27,8 @@ describe('整体视觉测试', () => {
 
       it(item.toString(), () => {
         cy.viewport(item)
+        // eslint-disable-next-line cypress/no-unnecessary-waiting
+        cy.wait(1000)
         snapshot()
       })
     })
@@ -136,10 +140,10 @@ describe('爬虫测试', () => {
 })
 
 function snapshot(name) {
-  // 让动画播完
-  // eslint-disable-next-line cypress/no-unnecessary-waiting
-  cy.wait(500)
   if (name) {
+    // 让动画播完
+    // eslint-disable-next-line cypress/no-unnecessary-waiting
+    cy.wait(500)
     cy.matchImageSnapshot(name, {
       capture: 'viewport',
     })
