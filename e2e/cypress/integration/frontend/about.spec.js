@@ -8,6 +8,7 @@ describe('整体视觉测试', () => {
 
   it('能够正确渲染', () => {
     cy.viewport(1920, 1080)
+    // 等待动画
     // eslint-disable-next-line cypress/no-unnecessary-waiting
     cy.wait(2000)
     cy.matchImageSnapshot()
