@@ -14,6 +14,7 @@ const vjudge = require('../crawlers/vjudge')
 const csu = require('../crawlers/csu')
 const loj = require('../crawlers/loj')
 const luogu = require('../crawlers/luogu')
+const nowcoder = require('../crawlers/nowcoder')
 
 const {readConfigs} = require('../lib/configReader')
 
@@ -298,6 +299,27 @@ describe('luogu', () => {
     checkRes(res)
     expect(res.submissions).toBeGreaterThan(1000)
   })
+})
+
+describe('nowcoder', () => {
+
+  test('test nowcoder - 用户不存在时抛出异常', async () => {
+    await expect(nowcoder(null, '11')).rejects.toThrow('用户不存在')
+  })
+
+  test('test nowcoder - 识别不是ID的用户名', async () => {
+    await expect(nowcoder(null, 'wwwlsmcom')).rejects.toThrow('牛客网的输入必须是用户ID（数字格式）')
+    await expect(nowcoder(null, '123wwwlsmcom')).rejects.toThrow('牛客网的输入必须是用户ID（数字格式）')
+    await expect(nowcoder(null, '123 wwwlsmcom')).rejects.toThrow('牛客网的输入必须是用户ID（数字格式）')
+    await expect(nowcoder(null, ' wwwlsmcom')).rejects.toThrow('牛客网的输入必须是用户ID（数字格式）')
+  })
+
+  test('test nowcoder', async () => {
+    const res = await nowcoder(null, '112946')
+    checkRes(res)
+    expect(res.solvedList).toContain('16632')
+  })
+
 })
 
 function checkRes(res) {
