@@ -3,7 +3,7 @@ name: Sonar Cloud Analysis
 on:
   push:
     branches:
-      - \*
+      - '**'
 
 jobs:
   sonarCloudTrigger:
