@@ -16,4 +16,7 @@
   "cSpell.words": [
     "vuetify"
   ],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
 }
