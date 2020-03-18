@@ -68,7 +68,6 @@ jobs:
           token: $SONAR_TOKEN
       script:
         - make commitlint-travis
-        - 'if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then sonar-scanner -Dsonar.projectKey=acm-statistics -Dsonar.organization=liu233w-github -Dsonar.sources=. -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$SONAR_TOKEN -Dsonar.exclusions=**/node_modules/**/*,backend; fi'
 
     - name: Deploy to DockerHub
       stage: deploy
