@@ -13,34 +13,52 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-    - uses: actions/checkout@v2
-      
-    - name: Show current running workflows' id
-      uses: maxkomarychev/octions/octions/issues/create-comment@master
-      with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-        issue_number: ${{ github.event.issue.number }}
-        body: |
-          Update E2E Snapshot Triggered!
-          Address: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+      - name: listen for PR Comments
+        uses: machine-learning-apps/actions-chatops@master
+        with:
+          TRIGGER_PHRASE: "/update-e2e-snapshot"
+        env: # you must supply GITHUB_TOKEN
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        id: prcomm
+        # This step clones the branch of the PR associated with the triggering phrase, but only if it is triggered.
 
-    - name: Try update snapshot
-      run: |
-        cd e2e
-        make server > /dev/null &
-        make wait-server
-        make update-snapshot
-        make test # 确保更新之后的测试通过
+      - name: clone branch of PR
+        if: steps.prcomm.outputs.BOOL_TRIGGERED == 'true'
+        uses: actions/checkout@master
+        with:
+          ref: ${{ steps.prcomm.outputs.BRANCH_NAME }}
+
+      - name: Show current running workflows' id
+        if: steps.prcomm.outputs.BOOL_TRIGGERED == 'true'
+        uses: maxkomarychev/octions/octions/issues/create-comment@master
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          issue_number: ${{ github.event.issue.number }}
+          body: |
+            Update E2E Snapshot Triggered!
+            Address: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+
+      - name: Try update snapshot
+        if: steps.prcomm.outputs.BOOL_TRIGGERED == 'true'
+        run: |
+          cd e2e
+          make server > /dev/null &
+          make wait-server
+          make update-snapshot
+          make test # 确保更新之后的测试通过
+          
+      - name: Commit result
+        if: steps.prcomm.outputs.BOOL_TRIGGERED == 'true'
+        run: |
+          git config --global user.name ${{ github.event.comment.user.login }}
+          git config --global user.email ${{ github.event.comment.user.login }}@github.fake
         
-    - name: Commit result
-      run: |
-        git config --global user.name ${{ github.event.comment.user.login }}
-        git config --global user.email ${{ github.event.comment.user.login }}@github.fake
-      
-        git commit -am 'test(e2e): update snapshot'
-        
-    - name: Push changes
-      uses: ad-m/github-push-action@master
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+          git add .
+          git commit -am 'test(e2e): update snapshot'
+          
+      - name: Push changes
+        if: steps.prcomm.outputs.BOOL_TRIGGERED == 'true'
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ steps.prcomm.outputs.BRANCH_NAME }}
