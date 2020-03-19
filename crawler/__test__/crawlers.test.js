@@ -15,6 +15,7 @@ const csu = require('../crawlers/csu')
 const loj = require('../crawlers/loj')
 const luogu = require('../crawlers/luogu')
 const nowcoder = require('../crawlers/nowcoder')
+const uestc = require('../crawlers/uestc')
 
 const {readConfigs} = require('../lib/configReader')
 
@@ -318,6 +319,31 @@ describe('nowcoder', () => {
     const res = await nowcoder(null, '112946')
     checkRes(res)
     expect(res.solvedList).toContain('16632')
+  })
+
+})
+
+describe('uestc', () => {
+
+  test('test uestc - 用户不存在时抛出异常', async () => {
+    await expect(uestc(null, notExistUsername)).rejects.toThrow('用户不存在')
+  })
+
+  test('test uestc - 能够正确识别带有空格的用户名', async () => {
+    await expect(uestc(null, ' ' + notExistUsername)).rejects.toThrow('用户不存在')
+  })
+
+  test('test uestc', async () => {
+    const res = await uestc(null, 'HeRaNO')
+    checkRes(res)
+    expect(res.solvedList).toContain('1490')
+
+    const newRes = await uestc(null, 'acm-statistics-test')
+    expect(newRes).toMatchObject({
+      submissions: 3,
+      solved: 1,
+      solvedList: ['1'],
+    })
   })
 
 })
