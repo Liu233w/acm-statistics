@@ -28,7 +28,8 @@ jobs:
     - name: Try update snapshot
       run: |
         cd e2e
-        make server & make wait-server
+        make server > /dev/null &
+        make wait-server
         make update-snapshot
         make test # 确保更新之后的测试通过
         
