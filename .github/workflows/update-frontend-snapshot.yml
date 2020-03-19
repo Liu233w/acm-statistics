@@ -1,4 +1,4 @@
-name: Update E2E Snapshot when comment on pr
+name: Update Frontend Snapshot when comment on pr
 
 on:
   issue_comment:
@@ -8,15 +8,13 @@ jobs:
   update-snapshot:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
-    
-    if: contains(github.event.comment.html_url, '/pull/') && contains(github.event.comment.body, '/update-e2e-snapshot')
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - name: listen for PR Comments
         uses: machine-learning-apps/actions-chatops@master
         with:
-          TRIGGER_PHRASE: "/update-e2e-snapshot"
+          TRIGGER_PHRASE: "/update-frontend-snapshot"
         env: # you must supply GITHUB_TOKEN
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         id: prcomm
@@ -35,15 +33,13 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           issue_number: ${{ github.event.issue.number }}
           body: |
-            Update E2E Snapshot Triggered!
+            Update Frontend Snapshot Triggered!
             Address: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
 
       - name: Try update snapshot
         if: steps.prcomm.outputs.BOOL_TRIGGERED == 'true'
         run: |
-          cd e2e
-          make server > /dev/null &
-          make wait-server
+          cd frontend
           make update-snapshot
           make test # 确保更新之后的测试通过
           
@@ -54,7 +50,7 @@ jobs:
           git config --global user.email ${{ github.event.comment.user.login }}@github.fake
         
           git add .
-          git commit -am 'test(e2e): update snapshot'
+          git commit -am 'test(frontend): update snapshot'
           
       - name: Push changes
         if: steps.prcomm.outputs.BOOL_TRIGGERED == 'true'
