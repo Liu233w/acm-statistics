@@ -1,0 +1,45 @@
+name: Update E2E Snapshot when comment on pr
+
+on:
+  issue_comment:
+    types: [created]
+    
+jobs:
+  update-snapshot:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    
+    if: contains(github.event.comment.html_url, '/pull/') && contains(github.event.comment.body, '/update-e2e-snapshot')
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+    - uses: actions/checkout@v2
+      
+    - name: Show current running workflows' id
+      uses: maxkomarychev/octions/octions/issues/create-comment@master
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        issue_number: ${{ github.event.issue.number }}
+        body: |
+          Update E2E Snapshot Triggered!
+          Address: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+
+    - name: Try update snapshot
+      run: |
+        cd e2e
+        make server & make wait-server
+        make update-snapshot
+        make test # 确保更新之后的测试通过
+        
+    - name: Commit result
+      run: |
+        git config --global user.name ${{ github.event.comment.user.login }}
+        git config --global user.email ${{ github.event.comment.user.login }}@github.fake
+      
+        git commit -am 'test(e2e): update snapshot'
+        
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
