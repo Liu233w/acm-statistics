@@ -51,11 +51,15 @@ jobs:
 
     - name: E2E
       stage: test
-      install:
-        - npm install -g wait-on
+      before_install:
+        - curl -L https://github.com/jerome-pouiller/reredirect/archive/v0.2.tar.gz | tar xvz -C /tmp
+        - sudo make -C /tmp/reredirect-0.2 install
       script:
         - cd e2e
-        - make server > /dev/null & make wait-server
+        - make server &
+        - SERVER_PID=$!
+        - make wait-server
+        - sudo reredirect -m /dev/null $SERVER_PID # not output runtime server log
         - 'if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then make ci-no-record; fi'
         - 'if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then make ci; fi'
         - make run run-cmd="npm run lint"
