@@ -53,12 +53,8 @@ jobs:
       stage: test
       script:
         - cd e2e
-        - make server > /dev/null &
-        - SERVER_PID=$!
-        - strace -p $SERVER_PID 2>&1 & # temporary output build log
-        - STRACE_PID=$!
+        - make server compose-args="--detach"
         - make wait-server
-        - kill $STRACE_PID # not output runtime server log
         - 'if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then make ci-no-record; fi'
         - 'if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then make ci; fi'
         - make run run-cmd="npm run lint"

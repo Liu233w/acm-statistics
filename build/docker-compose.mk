@@ -48,15 +48,15 @@ $(ImageToPush):
 	docker push $(ImageNameWithLatest)
 
 up: .build .env
-	docker-compose up
+	docker-compose up $(compose-args)
 
 # 为了进行e2e测试而启动的服务器，除了正常的代码外，还会启动 mock-server
 e2e-up: .build .env
 	$(MAKE) -C ../e2e build-http-mocks
-	docker-compose -f docker-compose.yml -f docker-compose.e2e.yml up
+	docker-compose -f docker-compose.yml -f docker-compose.e2e.yml up $(compose-args)
 
 .env:
 	cp template.env .env
 
 dev-frontend: .build-dev
-	docker-compose -f docker-compose.yml -f docker-compose.dev-frontend.yml up
+	docker-compose -f docker-compose.yml -f docker-compose.dev-frontend.yml up $(compose-args)
