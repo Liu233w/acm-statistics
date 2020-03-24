@@ -1,0 +1,19 @@
+# dependencies
+node_modules
+
+# logs
+npm-debug.log
+
+# codecov
+coverage
+
+# docker
+.dockerignore
+base.Dockerfile
+release.Dockerfile
+
+# make
+Makefile
+
+# 日志文件
+/logs/
