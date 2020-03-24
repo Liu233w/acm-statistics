@@ -1,0 +1,32 @@
+{
+  "name": "captcha-service",
+  "version": "1.0.0",
+  "description": "验证码微服务",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "lint": "eslint --ext .js --ignore-path .gitignore .",
+    "lintfix": "eslint --fix --ext .js --ignore-path .gitignore ."
+  },
+  "author": "Liu233w <wwwlsmcom@outlook.com>",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "koa": "^2.7.0",
+    "koa-bodyparser": "^4.3.0",
+    "koa-router": "^8.0.0",
+    "node-cache": "^5.1.0",
+    "svg-captcha": "^1.4.0",
+    "uuid": "^7.0.2"
+  },
+  "devDependencies": {
+    "eslint": "6.8.0",
+    "eslint-plugin-jest": "^23.8.2",
+    "jest": "^25.1.0",
+    "supertest": "^4.0.2"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "coverageDirectory": "./coverage/",
+    "collectCoverage": true
+  }
+}
