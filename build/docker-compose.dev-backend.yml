@@ -7,6 +7,7 @@ services:
     image: ${DOCKER_REGISTRY-}acm-statistics-backend
     build:
       context: ../backend
+      dockerfile: src/AcmStatisticsBackend.Web.Host/Dockerfile
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
     ports:
