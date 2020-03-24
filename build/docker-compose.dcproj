@@ -7,12 +7,13 @@
     <DockerLaunchAction>LaunchBrowser</DockerLaunchAction>
     <DockerServiceUrl>{Scheme}://localhost:{ServicePort}</DockerServiceUrl>
     <DockerServiceName>backend</DockerServiceName>
+    <AdditionalComposeFilePaths>docker-compose.dev-backend.yml</AdditionalComposeFilePaths>
   </PropertyGroup>
   <ItemGroup>
     <None Include="docker-compose.dev-backend.yml">
       <DependentUpon>docker-compose.yml</DependentUpon>
     </None>
     <None Include="docker-compose.yml" />
-    <None Include="../backend/.dockerignore" />
+    <None Include="..\backend\.dockerignore" />
   </ItemGroup>
 </Project>
