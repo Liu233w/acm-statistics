@@ -36,3 +36,8 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     command: -s "0 */30 * * * *" --cleanup
+
+  backend:
+    image: ${DOCKER_REGISTRY-}acm-statistics-backend
+    build:
+      context: ../backend
