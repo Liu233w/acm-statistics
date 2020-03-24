@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  acmstatisticsbackend.web.host:
+    image: ${DOCKER_REGISTRY-}acmstatisticsbackendwebhost
+    build:
+      context: .
+      dockerfile: src/AcmStatisticsBackend.Web.Host/Dockerfile
