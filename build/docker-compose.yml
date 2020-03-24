@@ -1,4 +1,4 @@
-version: '3'
+version: '3.4'
 
 services:
 
@@ -38,6 +38,4 @@ services:
     command: -s "0 */30 * * * *" --cleanup
 
   backend:
-    image: ${DOCKER_REGISTRY-}acm-statistics-backend
-    build:
-      context: ../backend
+    image: ${DOCKER_REPO}acm-statistics-backend${DOCKER_TAG}

@@ -1,7 +1,12 @@
+# 用于后端debug的覆盖文件
+
 version: '3.4'
 
 services:
   backend:
+    image: ${DOCKER_REGISTRY-}acm-statistics-backend
+    build:
+      context: ../backend
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
     ports:
