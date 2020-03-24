@@ -1,8 +1,8 @@
 using System.Linq;
-using Microsoft.EntityFrameworkCore;
 using Abp.Application.Editions;
 using Abp.Application.Features;
 using AcmStatisticsBackend.Editions;
+using Microsoft.EntityFrameworkCore;
 
 namespace AcmStatisticsBackend.EntityFrameworkCore.Seed.Host
 {

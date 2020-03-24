@@ -1,9 +1,9 @@
 ﻿using System;
-using Castle.Facilities.Logging;
 using Abp;
 using Abp.Castle.Logging.Log4Net;
 using Abp.Collections.Extensions;
 using Abp.Dependency;
+using Castle.Facilities.Logging;
 
 namespace AcmStatisticsBackend.Migrator
 {
@@ -19,15 +19,14 @@ namespace AcmStatisticsBackend.Migrator
             {
                 bootstrapper.IocManager.IocContainer
                     .AddFacility<LoggingFacility>(
-                        f => f.UseAbpLog4Net().WithConfig("log4net.config")
-                    );
+                        f => f.UseAbpLog4Net().WithConfig("log4net.config"));
 
                 bootstrapper.Initialize();
 
                 using (var migrateExecuter = bootstrapper.IocManager.ResolveAsDisposable<MultiTenantMigrateExecuter>())
                 {
                     var migrationSucceeded = migrateExecuter.Object.Run(_quietMode);
-                    
+
                     if (_quietMode)
                     {
                         // exit clean (with exit code 0) if migration is a success, otherwise exit with code 1

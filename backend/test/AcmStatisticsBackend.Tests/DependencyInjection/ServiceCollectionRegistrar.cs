@@ -1,11 +1,11 @@
 ﻿using System;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
-using Castle.MicroKernel.Registration;
-using Castle.Windsor.MsDependencyInjection;
 using Abp.Dependency;
 using AcmStatisticsBackend.EntityFrameworkCore;
 using AcmStatisticsBackend.Identity;
+using Castle.MicroKernel.Registration;
+using Castle.Windsor.MsDependencyInjection;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace AcmStatisticsBackend.Tests.DependencyInjection
 {
@@ -28,8 +28,7 @@ namespace AcmStatisticsBackend.Tests.DependencyInjection
                 Component
                     .For<DbContextOptions<AcmStatisticsBackendDbContext>>()
                     .Instance(builder.Options)
-                    .LifestyleSingleton()
-            );
+                    .LifestyleSingleton());
         }
     }
 }

@@ -1,5 +1,5 @@
-﻿using AutoMapper;
-using AcmStatisticsBackend.Authorization.Users;
+﻿using AcmStatisticsBackend.Authorization.Users;
+using AutoMapper;
 
 namespace AcmStatisticsBackend.Users.Dto
 {

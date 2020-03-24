@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
 using Abp;
 using Abp.Authorization.Users;
 using Abp.Events.Bus;
@@ -14,6 +13,7 @@ using AcmStatisticsBackend.EntityFrameworkCore;
 using AcmStatisticsBackend.EntityFrameworkCore.Seed.Host;
 using AcmStatisticsBackend.EntityFrameworkCore.Seed.Tenants;
 using AcmStatisticsBackend.MultiTenancy;
+using Microsoft.EntityFrameworkCore;
 
 namespace AcmStatisticsBackend.Tests
 {

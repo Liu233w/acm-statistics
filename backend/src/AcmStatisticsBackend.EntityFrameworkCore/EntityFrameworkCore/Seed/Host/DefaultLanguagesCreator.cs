@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using Microsoft.EntityFrameworkCore;
 using Abp.Localization;
 using Abp.MultiTenancy;
+using Microsoft.EntityFrameworkCore;
 
 namespace AcmStatisticsBackend.EntityFrameworkCore.Seed.Host
 {

@@ -1,21 +1,21 @@
 ﻿using System;
 using System.Linq;
 using System.Reflection;
+using Abp.AspNetCore;
+using Abp.AspNetCore.Mvc.Antiforgery;
+using Abp.AspNetCore.SignalR.Hubs;
+using Abp.Castle.Logging.Log4Net;
+using Abp.Dependency;
+using Abp.Extensions;
+using Abp.Json;
+using AcmStatisticsBackend.Configuration;
+using AcmStatisticsBackend.Identity;
+using Castle.Facilities.Logging;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using Castle.Facilities.Logging;
-using Abp.AspNetCore;
-using Abp.AspNetCore.Mvc.Antiforgery;
-using Abp.Castle.Logging.Log4Net;
-using Abp.Extensions;
-using AcmStatisticsBackend.Configuration;
-using AcmStatisticsBackend.Identity;
-using Abp.AspNetCore.SignalR.Hubs;
-using Abp.Dependency;
-using Abp.Json;
 using Microsoft.OpenApi.Models;
 using Newtonsoft.Json.Serialization;
 
@@ -34,21 +34,19 @@ namespace AcmStatisticsBackend.Web.Host.Startup
 
         public IServiceProvider ConfigureServices(IServiceCollection services)
         {
-            //MVC
+            // MVC
             services.AddControllersWithViews(
                 options =>
                 {
                     options.Filters.Add(new AbpAutoValidateAntiforgeryTokenAttribute());
-                }
-            ).AddNewtonsoftJson(options =>
+                })
+            .AddNewtonsoftJson(options =>
             {
                 options.SerializerSettings.ContractResolver = new AbpMvcContractResolver(IocManager.Instance)
                 {
                     NamingStrategy = new CamelCaseNamingStrategy()
                 };
             });
-
-
 
             IdentityRegistrar.Register(services);
             AuthConfigurer.Configure(services, _appConfiguration);
@@ -65,13 +63,10 @@ namespace AcmStatisticsBackend.Web.Host.Startup
                             _appConfiguration["App:CorsOrigins"]
                                 .Split(",", StringSplitOptions.RemoveEmptyEntries)
                                 .Select(o => o.RemovePostFix("/"))
-                                .ToArray()
-                        )
+                                .ToArray())
                         .AllowAnyHeader()
                         .AllowAnyMethod()
-                        .AllowCredentials()
-                )
-            );
+                        .AllowCredentials()));
 
             // Swagger - Enable this line and the related lines in Configure method to enable swagger UI
             services.AddSwaggerGen(options =>
@@ -93,12 +88,10 @@ namespace AcmStatisticsBackend.Web.Host.Startup
             return services.AddAbp<AcmStatisticsBackendWebHostModule>(
                 // Configure Log4Net logging
                 options => options.IocManager.IocContainer.AddFacility<LoggingFacility>(
-                    f => f.UseAbpLog4Net().WithConfig("log4net.config")
-                )
-            );
+                    f => f.UseAbpLog4Net().WithConfig("log4net.config")));
         }
 
-        public void Configure(IApplicationBuilder app,  ILoggerFactory loggerFactory)
+        public void Configure(IApplicationBuilder app, ILoggerFactory loggerFactory)
         {
             app.UseAbp(options => { options.UseAbpRequestLocalization = false; }); // Initializes ABP framework.
 
@@ -112,14 +105,13 @@ namespace AcmStatisticsBackend.Web.Host.Startup
 
             app.UseAbpRequestLocalization();
 
-          
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapHub<AbpCommonHub>("/signalr");
                 endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
                 endpoints.MapControllerRoute("defaultWithArea", "{area}/{controller=Home}/{action=Index}/{id?}");
             });
-          
+
             // Enable middleware to serve generated Swagger as a JSON endpoint
             app.UseSwagger();
             // Enable middleware to serve swagger-ui assets (HTML, JS, CSS etc.)

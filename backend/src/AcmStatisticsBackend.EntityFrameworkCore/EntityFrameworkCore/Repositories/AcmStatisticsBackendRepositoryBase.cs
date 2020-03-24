@@ -8,8 +8,8 @@ namespace AcmStatisticsBackend.EntityFrameworkCore.Repositories
     /// <summary>
     /// Base class for custom repositories of the application.
     /// </summary>
-    /// <typeparam name="TEntity">Entity type</typeparam>
-    /// <typeparam name="TPrimaryKey">Primary key type of the entity</typeparam>
+    /// <typeparam name="TEntity">Entity type.</typeparam>
+    /// <typeparam name="TPrimaryKey">Primary key type of the entity.</typeparam>
     public abstract class AcmStatisticsBackendRepositoryBase<TEntity, TPrimaryKey> : EfCoreRepositoryBase<AcmStatisticsBackendDbContext, TEntity, TPrimaryKey>
         where TEntity : class, IEntity<TPrimaryKey>
     {
@@ -25,7 +25,7 @@ namespace AcmStatisticsBackend.EntityFrameworkCore.Repositories
     /// Base class for custom repositories of the application.
     /// This is a shortcut of <see cref="AcmStatisticsBackendRepositoryBase{TEntity,TPrimaryKey}"/> for <see cref="int"/> primary key.
     /// </summary>
-    /// <typeparam name="TEntity">Entity type</typeparam>
+    /// <typeparam name="TEntity">Entity type.</typeparam>
     public abstract class AcmStatisticsBackendRepositoryBase<TEntity> : AcmStatisticsBackendRepositoryBase<TEntity, int>, IRepository<TEntity>
         where TEntity : class, IEntity<int>
     {

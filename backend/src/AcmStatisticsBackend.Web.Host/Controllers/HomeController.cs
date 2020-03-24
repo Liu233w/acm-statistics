@@ -1,11 +1,11 @@
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
 using Abp;
 using Abp.Extensions;
 using Abp.Notifications;
 using Abp.Timing;
 using Abp.Web.Security.AntiForgery;
 using AcmStatisticsBackend.Controllers;
+using Microsoft.AspNetCore.Mvc;
 
 namespace AcmStatisticsBackend.Web.Host.Controllers
 {
@@ -25,7 +25,7 @@ namespace AcmStatisticsBackend.Web.Host.Controllers
 
         /// <summary>
         /// This is a demo code to demonstrate sending notification to default tenant admin and host admin uers.
-        /// Don't use this code in production !!!
+        /// Don't use this code in production !!!.
         /// </summary>
         /// <param name="message"></param>
         /// <returns></returns>
@@ -43,8 +43,7 @@ namespace AcmStatisticsBackend.Web.Host.Controllers
                 "App.SimpleMessage",
                 new MessageNotificationData(message),
                 severity: NotificationSeverity.Info,
-                userIds: new[] { defaultTenantAdmin, hostAdmin }
-            );
+                userIds: new[] { defaultTenantAdmin, hostAdmin });
 
             return Content("Sent notification: " + message);
         }

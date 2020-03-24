@@ -1,6 +1,4 @@
 using System.Collections.Generic;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.Extensions.Logging;
 using Abp.Authorization;
 using Abp.Authorization.Roles;
 using Abp.Domain.Repositories;
@@ -9,6 +7,8 @@ using Abp.Organizations;
 using Abp.Runtime.Caching;
 using Abp.Zero.Configuration;
 using AcmStatisticsBackend.Authorization.Users;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.Logging;
 
 namespace AcmStatisticsBackend.Authorization.Roles
 {
@@ -35,8 +35,8 @@ namespace AcmStatisticsBackend.Authorization.Roles
                   cacheManager,
                   unitOfWorkManager,
                   roleManagementConfig,
-                organizationUnitRepository,
-                organizationUnitRoleRepository)
+                  organizationUnitRepository,
+                  organizationUnitRoleRepository)
         {
         }
     }

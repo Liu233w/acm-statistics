@@ -15,8 +15,8 @@ namespace AcmStatisticsBackend.MultiTenancy.Dto
 
         [Required]
         [StringLength(AbpTenantBase.MaxNameLength)]
-        public string Name { get; set; }        
-        
-        public bool IsActive {get; set;}
+        public string Name { get; set; }
+
+        public bool IsActive { get; set; }
     }
 }

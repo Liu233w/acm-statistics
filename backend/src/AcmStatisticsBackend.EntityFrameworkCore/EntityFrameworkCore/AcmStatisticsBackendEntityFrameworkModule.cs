@@ -7,7 +7,7 @@ using AcmStatisticsBackend.EntityFrameworkCore.Seed;
 namespace AcmStatisticsBackend.EntityFrameworkCore
 {
     [DependsOn(
-        typeof(AcmStatisticsBackendCoreModule), 
+        typeof(AcmStatisticsBackendCoreModule),
         typeof(AbpZeroCoreEntityFrameworkCoreModule))]
     public class AcmStatisticsBackendEntityFrameworkModule : AbpModule
     {

@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Text;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
-using Microsoft.IdentityModel.Tokens;
 using Abp.AspNetCore;
 using Abp.AspNetCore.Configuration;
 using Abp.AspNetCore.SignalR;
@@ -12,16 +9,18 @@ using Abp.Zero.Configuration;
 using AcmStatisticsBackend.Authentication.JwtBearer;
 using AcmStatisticsBackend.Configuration;
 using AcmStatisticsBackend.EntityFrameworkCore;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.ApplicationParts;
+using Microsoft.Extensions.Configuration;
+using Microsoft.IdentityModel.Tokens;
 
 namespace AcmStatisticsBackend
 {
     [DependsOn(
          typeof(AcmStatisticsBackendApplicationModule),
          typeof(AcmStatisticsBackendEntityFrameworkModule),
-         typeof(AbpAspNetCoreModule)
-        ,typeof(AbpAspNetCoreSignalRModule)
-     )]
+         typeof(AbpAspNetCoreModule),
+         typeof(AbpAspNetCoreSignalRModule))]
     public class AcmStatisticsBackendWebCoreModule : AbpModule
     {
         private readonly IWebHostEnvironment _env;
@@ -36,16 +35,14 @@ namespace AcmStatisticsBackend
         public override void PreInitialize()
         {
             Configuration.DefaultNameOrConnectionString = _appConfiguration.GetConnectionString(
-                AcmStatisticsBackendConsts.ConnectionStringName
-            );
+                AcmStatisticsBackendConsts.ConnectionStringName);
 
             // Use database for language management
             Configuration.Modules.Zero().LanguageManagement.EnableDbLocalization();
 
             Configuration.Modules.AbpAspNetCore()
                  .CreateControllersForAppServices(
-                     typeof(AcmStatisticsBackendApplicationModule).GetAssembly()
-                 );
+                     typeof(AcmStatisticsBackendApplicationModule).GetAssembly());
 
             ConfigureTokenAuth();
         }

@@ -1,8 +1,8 @@
 ﻿using System.Linq;
-using Microsoft.EntityFrameworkCore;
 using Abp.MultiTenancy;
 using AcmStatisticsBackend.Editions;
 using AcmStatisticsBackend.MultiTenancy;
+using Microsoft.EntityFrameworkCore;
 
 namespace AcmStatisticsBackend.EntityFrameworkCore.Seed.Tenants
 {

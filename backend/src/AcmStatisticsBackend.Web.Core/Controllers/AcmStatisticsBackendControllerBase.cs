@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Identity;
 
 namespace AcmStatisticsBackend.Controllers
 {
-    public abstract class AcmStatisticsBackendControllerBase: AbpController
+    public abstract class AcmStatisticsBackendControllerBase : AbpController
     {
         protected AcmStatisticsBackendControllerBase()
         {

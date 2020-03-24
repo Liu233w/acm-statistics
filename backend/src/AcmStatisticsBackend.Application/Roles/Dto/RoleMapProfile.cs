@@ -1,8 +1,8 @@
 using System.Linq;
-using AutoMapper;
 using Abp.Authorization;
 using Abp.Authorization.Roles;
 using AcmStatisticsBackend.Authorization.Roles;
+using AutoMapper;
 
 namespace AcmStatisticsBackend.Roles.Dto
 {

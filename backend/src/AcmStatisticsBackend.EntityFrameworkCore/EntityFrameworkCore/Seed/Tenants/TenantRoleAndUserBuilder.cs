@@ -1,7 +1,4 @@
 ﻿using System.Linq;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Options;
 using Abp.Authorization;
 using Abp.Authorization.Roles;
 using Abp.Authorization.Users;
@@ -9,6 +6,9 @@ using Abp.MultiTenancy;
 using AcmStatisticsBackend.Authorization;
 using AcmStatisticsBackend.Authorization.Roles;
 using AcmStatisticsBackend.Authorization.Users;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 
 namespace AcmStatisticsBackend.EntityFrameworkCore.Seed.Tenants
 {
@@ -62,8 +62,7 @@ namespace AcmStatisticsBackend.EntityFrameworkCore.Seed.Tenants
                         Name = permission.Name,
                         IsGranted = true,
                         RoleId = adminRole.Id
-                    })
-                );
+                    }));
                 _context.SaveChanges();
             }
 

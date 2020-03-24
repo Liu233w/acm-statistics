@@ -1,10 +1,10 @@
-﻿using Microsoft.AspNetCore.Identity;
-using Microsoft.Extensions.DependencyInjection;
-using AcmStatisticsBackend.Authorization;
+﻿using AcmStatisticsBackend.Authorization;
 using AcmStatisticsBackend.Authorization.Roles;
 using AcmStatisticsBackend.Authorization.Users;
 using AcmStatisticsBackend.Editions;
 using AcmStatisticsBackend.MultiTenancy;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace AcmStatisticsBackend.Identity
 {

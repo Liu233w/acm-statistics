@@ -1,7 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace AcmStatisticsBackend.Migrations
 {
