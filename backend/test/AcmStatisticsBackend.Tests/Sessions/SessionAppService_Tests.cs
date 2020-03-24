@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
+using AcmStatisticsBackend.Sessions;
 using Shouldly;
 using Xunit;
-using AcmStatisticsBackend.Sessions;
 
 namespace AcmStatisticsBackend.Tests.Sessions
 {

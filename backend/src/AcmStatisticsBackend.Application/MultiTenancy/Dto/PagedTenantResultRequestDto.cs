@@ -8,4 +8,3 @@ namespace AcmStatisticsBackend.MultiTenancy.Dto
         public bool? IsActive { get; set; }
     }
 }
-

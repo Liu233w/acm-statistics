@@ -110,8 +110,7 @@ namespace AcmStatisticsBackend.Users
             await SettingManager.ChangeSettingForUserAsync(
                 AbpSession.ToUserIdentifier(),
                 LocalizationSettingNames.DefaultLanguage,
-                input.LanguageName
-            );
+                input.LanguageName);
         }
 
         protected override User MapToEntity(CreateUserDto createInput)
@@ -174,6 +173,7 @@ namespace AcmStatisticsBackend.Users
             {
                 throw new UserFriendlyException("Please log in before attemping to change password.");
             }
+
             long userId = _abpSession.UserId.Value;
             var user = await _userManager.GetUserByIdAsync(userId);
             var loginAsync = await _logInManager.LoginAsync(user.UserName, input.CurrentPassword, shouldLockout: false);
@@ -181,10 +181,12 @@ namespace AcmStatisticsBackend.Users
             {
                 throw new UserFriendlyException("Your 'Existing Password' did not match the one on record.  Please try again or contact an administrator for assistance in resetting your password.");
             }
+
             if (!new Regex(AccountAppService.PasswordRegex).IsMatch(input.NewPassword))
             {
                 throw new UserFriendlyException("Passwords must be at least 8 characters, contain a lowercase, uppercase, and number.");
             }
+
             user.Password = _passwordHasher.HashPassword(user, input.NewPassword);
             CurrentUnitOfWork.SaveChanges();
             return true;
@@ -196,6 +198,7 @@ namespace AcmStatisticsBackend.Users
             {
                 throw new UserFriendlyException("Please log in before attemping to reset password.");
             }
+
             long currentUserId = _abpSession.UserId.Value;
             var currentUser = await _userManager.GetUserByIdAsync(currentUserId);
             var loginAsync = await _logInManager.LoginAsync(currentUser.UserName, input.AdminPassword, shouldLockout: false);
@@ -203,10 +206,12 @@ namespace AcmStatisticsBackend.Users
             {
                 throw new UserFriendlyException("Your 'Admin Password' did not match the one on record.  Please try again.");
             }
+
             if (currentUser.IsDeleted || !currentUser.IsActive)
             {
                 return false;
             }
+
             var roles = await _userManager.GetRolesAsync(currentUser);
             if (!roles.Contains(StaticRoleNames.Tenants.Admin))
             {
@@ -224,4 +229,3 @@ namespace AcmStatisticsBackend.Users
         }
     }
 }
-

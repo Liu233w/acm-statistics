@@ -23,6 +23,6 @@ namespace AcmStatisticsBackend.Authorization.Roles
         }
 
         [StringLength(MaxDescriptionLength)]
-        public string Description {get; set;}
+        public string Description { get; set; }
     }
 }

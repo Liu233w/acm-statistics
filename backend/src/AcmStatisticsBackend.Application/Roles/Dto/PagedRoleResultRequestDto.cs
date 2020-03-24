@@ -7,4 +7,3 @@ namespace AcmStatisticsBackend.Roles.Dto
         public string Keyword { get; set; }
     }
 }
-

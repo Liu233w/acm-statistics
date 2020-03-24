@@ -1,5 +1,4 @@
 using System.Linq;
-using Microsoft.EntityFrameworkCore;
 using Abp.Authorization;
 using Abp.Authorization.Roles;
 using Abp.Authorization.Users;
@@ -8,6 +7,7 @@ using AcmStatisticsBackend.Authorization;
 using AcmStatisticsBackend.Authorization.Roles;
 using AcmStatisticsBackend.Authorization.Users;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 
 namespace AcmStatisticsBackend.EntityFrameworkCore.Seed.Host
@@ -60,8 +60,7 @@ namespace AcmStatisticsBackend.EntityFrameworkCore.Seed.Host
                         Name = permission.Name,
                         IsGranted = true,
                         RoleId = adminRoleForHost.Id
-                    })
-                );
+                    }));
                 _context.SaveChanges();
             }
 

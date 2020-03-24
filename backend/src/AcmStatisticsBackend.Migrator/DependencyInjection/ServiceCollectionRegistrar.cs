@@ -1,7 +1,7 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using Castle.Windsor.MsDependencyInjection;
-using Abp.Dependency;
+﻿using Abp.Dependency;
 using AcmStatisticsBackend.Identity;
+using Castle.Windsor.MsDependencyInjection;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace AcmStatisticsBackend.Migrator.DependencyInjection
 {

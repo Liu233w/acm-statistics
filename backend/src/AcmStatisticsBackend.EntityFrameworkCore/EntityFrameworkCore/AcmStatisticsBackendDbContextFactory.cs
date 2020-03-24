@@ -1,8 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using AcmStatisticsBackend.Configuration;
+using AcmStatisticsBackend.Web;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.Extensions.Configuration;
-using AcmStatisticsBackend.Configuration;
-using AcmStatisticsBackend.Web;
 
 namespace AcmStatisticsBackend.EntityFrameworkCore
 {

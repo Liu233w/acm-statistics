@@ -5,7 +5,7 @@ using AcmStatisticsBackend.Authorization.Roles;
 
 namespace AcmStatisticsBackend.Roles.Dto
 {
-    public class RoleEditDto: EntityDto<int>
+    public class RoleEditDto : EntityDto<int>
     {
         [Required]
         [StringLength(AbpRoleBase.MaxNameLength)]

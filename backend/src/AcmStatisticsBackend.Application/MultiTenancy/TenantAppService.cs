@@ -120,4 +120,3 @@ namespace AcmStatisticsBackend.MultiTenancy
         }
     }
 }
-

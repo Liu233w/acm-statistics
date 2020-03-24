@@ -55,8 +55,7 @@ namespace AcmStatisticsBackend.Roles
                 .Roles
                 .WhereIf(
                     !input.Permission.IsNullOrWhiteSpace(),
-                    r => r.Permissions.Any(rp => rp.Name == input.Permission && rp.IsGranted)
-                )
+                    r => r.Permissions.Any(rp => rp.Name == input.Permission && rp.IsGranted))
                 .ToListAsync();
 
             return new ListResultDto<RoleListDto>(ObjectMapper.Map<List<RoleListDto>>(roles));
@@ -102,8 +101,7 @@ namespace AcmStatisticsBackend.Roles
             var permissions = PermissionManager.GetAllPermissions();
 
             return Task.FromResult(new ListResultDto<PermissionDto>(
-                ObjectMapper.Map<List<PermissionDto>>(permissions).OrderBy(p => p.DisplayName).ToList()
-            ));
+                ObjectMapper.Map<List<PermissionDto>>(permissions).OrderBy(p => p.DisplayName).ToList()));
         }
 
         protected override IQueryable<Role> CreateFilteredQuery(PagedRoleResultRequestDto input)
@@ -145,4 +143,3 @@ namespace AcmStatisticsBackend.Roles
         }
     }
 }
-

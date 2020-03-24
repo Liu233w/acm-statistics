@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Transactions;
-using Microsoft.EntityFrameworkCore;
 using Abp.Dependency;
 using Abp.Domain.Uow;
 using Abp.EntityFrameworkCore.Uow;
 using Abp.MultiTenancy;
 using AcmStatisticsBackend.EntityFrameworkCore.Seed.Host;
 using AcmStatisticsBackend.EntityFrameworkCore.Seed.Tenants;
+using Microsoft.EntityFrameworkCore;
 
 namespace AcmStatisticsBackend.EntityFrameworkCore.Seed
 {

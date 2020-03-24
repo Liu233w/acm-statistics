@@ -1,9 +1,9 @@
 ﻿using System.Linq;
-using Microsoft.EntityFrameworkCore;
 using Abp.Configuration;
 using Abp.Localization;
 using Abp.MultiTenancy;
 using Abp.Net.Mail;
+using Microsoft.EntityFrameworkCore;
 
 namespace AcmStatisticsBackend.EntityFrameworkCore.Seed.Host
 {

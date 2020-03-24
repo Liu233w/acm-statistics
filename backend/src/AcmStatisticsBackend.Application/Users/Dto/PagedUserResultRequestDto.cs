@@ -1,9 +1,9 @@
-﻿using Abp.Application.Services.Dto;
-using System;
+﻿using System;
+using Abp.Application.Services.Dto;
 
 namespace AcmStatisticsBackend.Users.Dto
 {
-    //custom PagedResultRequestDto
+    // custom PagedResultRequestDto
     public class PagedUserResultRequestDto : PagedResultRequestDto
     {
         public string Keyword { get; set; }

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Concurrent;
-using Microsoft.Extensions.Configuration;
 using Abp.Extensions;
 using Abp.Reflection.Extensions;
+using Microsoft.Extensions.Configuration;
 
 namespace AcmStatisticsBackend.Configuration
 {
@@ -19,8 +19,7 @@ namespace AcmStatisticsBackend.Configuration
             var cacheKey = path + "#" + environmentName + "#" + addUserSecrets;
             return _configurationCache.GetOrAdd(
                 cacheKey,
-                _ => BuildConfiguration(path, environmentName, addUserSecrets)
-            );
+                _ => BuildConfiguration(path, environmentName, addUserSecrets));
         }
 
         private static IConfigurationRoot BuildConfiguration(string path, string environmentName = null, bool addUserSecrets = false)

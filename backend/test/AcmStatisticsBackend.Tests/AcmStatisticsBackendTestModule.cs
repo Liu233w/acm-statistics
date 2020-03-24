@@ -1,24 +1,23 @@
 using System;
-using Castle.MicroKernel.Registration;
-using NSubstitute;
 using Abp.AutoMapper;
+using Abp.Configuration.Startup;
 using Abp.Dependency;
 using Abp.Modules;
-using Abp.Configuration.Startup;
 using Abp.Net.Mail;
 using Abp.TestBase;
 using Abp.Zero.Configuration;
 using Abp.Zero.EntityFrameworkCore;
 using AcmStatisticsBackend.EntityFrameworkCore;
 using AcmStatisticsBackend.Tests.DependencyInjection;
+using Castle.MicroKernel.Registration;
+using NSubstitute;
 
 namespace AcmStatisticsBackend.Tests
 {
     [DependsOn(
         typeof(AcmStatisticsBackendApplicationModule),
         typeof(AcmStatisticsBackendEntityFrameworkModule),
-        typeof(AbpTestBaseModule)
-        )]
+        typeof(AbpTestBaseModule))]
     public class AcmStatisticsBackendTestModule : AbpModule
     {
         public AcmStatisticsBackendTestModule(AcmStatisticsBackendEntityFrameworkModule abpProjectNameEntityFrameworkModule)
@@ -55,8 +54,7 @@ namespace AcmStatisticsBackend.Tests
             IocManager.IocContainer.Register(
                 Component.For<TService>()
                     .UsingFactoryMethod(() => Substitute.For<TService>())
-                    .LifestyleSingleton()
-            );
+                    .LifestyleSingleton());
         }
     }
 }

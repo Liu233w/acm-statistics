@@ -1,10 +1,10 @@
 ﻿using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
-using Shouldly;
-using Xunit;
 using Abp.Application.Services.Dto;
 using AcmStatisticsBackend.Users;
 using AcmStatisticsBackend.Users.Dto;
+using Microsoft.EntityFrameworkCore;
+using Shouldly;
+using Xunit;
 
 namespace AcmStatisticsBackend.Tests.Users
 {
@@ -21,7 +21,7 @@ namespace AcmStatisticsBackend.Tests.Users
         public async Task GetUsers_Test()
         {
             // Act
-            var output = await _userAppService.GetAllAsync(new PagedUserResultRequestDto{MaxResultCount=20, SkipCount=0} );
+            var output = await _userAppService.GetAllAsync(new PagedUserResultRequestDto { MaxResultCount = 20, SkipCount = 0 });
 
             // Assert
             output.Items.Count.ShouldBeGreaterThan(0);
