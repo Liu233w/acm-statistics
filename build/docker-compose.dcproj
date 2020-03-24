@@ -6,13 +6,13 @@
     <ProjectGuid>5ae26e44-7afe-4443-aa6e-f3fdf9519bfd</ProjectGuid>
     <DockerLaunchAction>LaunchBrowser</DockerLaunchAction>
     <DockerServiceUrl>{Scheme}://localhost:{ServicePort}</DockerServiceUrl>
-    <DockerServiceName>acmstatisticsbackend.web.host</DockerServiceName>
+    <DockerServiceName>backend</DockerServiceName>
   </PropertyGroup>
   <ItemGroup>
-    <None Include="docker-compose.override.yml">
+    <None Include="docker-compose.dev-backend.yml">
       <DependentUpon>docker-compose.yml</DependentUpon>
     </None>
     <None Include="docker-compose.yml" />
-    <None Include=".dockerignore" />
+    <None Include="../backend/.dockerignore" />
   </ItemGroup>
 </Project>
