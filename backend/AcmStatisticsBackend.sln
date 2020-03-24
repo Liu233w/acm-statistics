@@ -21,7 +21,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AcmStatisticsBackend.Web.Co
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AcmStatisticsBackend.EntityFrameworkCore", "src\AcmStatisticsBackend.EntityFrameworkCore\AcmStatisticsBackend.EntityFrameworkCore.csproj", "{E0580562-F8F2-4EBB-B07A-ABFC6F2C314F}"
 EndProject
-Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "../build/docker-compose", "../build/docker-compose.dcproj", "{5AE26E44-7AFE-4443-AA6E-F3FDF9519BFD}"
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "..\build\docker-compose.dcproj", "{5AE26E44-7AFE-4443-AA6E-F3FDF9519BFD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
