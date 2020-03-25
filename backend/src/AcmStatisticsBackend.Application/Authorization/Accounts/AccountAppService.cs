@@ -1,4 +1,5 @@
 using System.Threading.Tasks;
+using Abp.Application.Services;
 using Abp.Configuration;
 using Abp.Zero.Configuration;
 using AcmStatisticsBackend.Authorization.Accounts.Dto;
@@ -35,6 +36,7 @@ namespace AcmStatisticsBackend.Authorization.Accounts
             return new IsTenantAvailableOutput(TenantAvailabilityState.Available, tenant.Id);
         }
 
+        [RemoteService(false)] // TODO: 等到正式开放之后取消这一行
         public async Task<RegisterOutput> Register(RegisterInput input)
         {
             var user = await _userRegistrationManager.RegisterAsync(
