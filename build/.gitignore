@@ -3,3 +3,4 @@
 /bin
 /backend-db
 *.user
+/App_Data

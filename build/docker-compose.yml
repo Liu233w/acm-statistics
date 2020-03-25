@@ -41,6 +41,12 @@ services:
     image: ${DOCKER_REPO}acm-statistics-backend${DOCKER_TAG}
     environment:
       ConnectionStrings__Default: Server=db; port=3306; Database=acm_statistics; uid=root; pwd=${MYSQL_ROOT_PASSWORD}; Convert Zero Datetime=True
+    labels:
+      - traefik.http.routers.backend.rule=PathPrefix(`/api`)||PathPrefix(`/AntiForgery`)
+      - traefik.http.routers.backend.priority=18
+      - traefik.http.services.backend.loadbalancer.server.port=80
+    volumes:
+      - ./App_Data:/app/App_Data
 
   db:
     image: mysql:8
