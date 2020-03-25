@@ -39,3 +39,16 @@ services:
 
   backend:
     image: ${DOCKER_REPO}acm-statistics-backend${DOCKER_TAG}
+    environment:
+      ConnectionStrings__Default: Server=db; port=3306; Database=acm_statistics; uid=root; pwd=${MYSQL_ROOT_PASSWORD}; Convert Zero Datetime=True
+
+  db:
+    image: mysql:8
+    restart: always
+    environment:
+      MYSQL_DATABASE: acm_statistics
+      # Password for root access
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+    # Where our data will be persisted
+    volumes:
+      - ./backend-db:/var/lib/mysql
