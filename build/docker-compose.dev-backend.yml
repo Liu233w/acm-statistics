@@ -15,6 +15,16 @@ services:
     volumes:
       - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
 
+  db:
+    ports:
+      - 3306:3306
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+
   watchtower:
     # skip watchtower in development
     image: tianon/true:latest@sha256:009cce421096698832595ce039aa13fa44327d96beedb84282a69d3dbcf5a81b
