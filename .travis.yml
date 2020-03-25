@@ -59,6 +59,13 @@ jobs:
         - 'if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then make ci; fi'
         - make run run-cmd="npm run lint"
 
+    - name: Backend
+      stage: test
+      script:
+        - cd backend
+        - make run run-cmd="dotnet build" # smoke test and lint
+        - make test-ci
+
     - name: Root
       stage: test
       addons:
