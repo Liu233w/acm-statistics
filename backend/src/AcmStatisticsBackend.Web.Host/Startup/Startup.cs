@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using Abp.AspNetCore;
@@ -82,6 +83,11 @@ namespace AcmStatisticsBackend.Web.Host.Startup
                     In = ParameterLocation.Header,
                     Type = SecuritySchemeType.ApiKey
                 });
+
+                // Set the comments path for the swagger json and ui.
+                var basePath = AppDomain.CurrentDomain.BaseDirectory;
+                var docPath = Path.Combine(basePath, "AcmStatisticsBackend.Application.xml");
+                options.IncludeXmlComments(docPath);
             });
 
             // Configure Abp and Dependency Injection
@@ -116,14 +122,10 @@ namespace AcmStatisticsBackend.Web.Host.Startup
             });
 
             // Enable middleware to serve generated Swagger as a JSON endpoint
-            app.UseSwagger();
-            // Enable middleware to serve swagger-ui assets (HTML, JS, CSS etc.)
-            app.UseSwaggerUI(options =>
+            app.UseSwagger(opts =>
             {
-                options.SwaggerEndpoint(_appConfiguration["App:ServerRootAddress"].EnsureEndsWith('/') + "swagger/v1/swagger.json", "AcmStatisticsBackend API V1");
-                options.IndexStream = () => Assembly.GetExecutingAssembly()
-                    .GetManifestResourceStream("AcmStatisticsBackend.Web.Host.wwwroot.swagger.ui.index.html");
-            }); // URL: /swagger
+                opts.RouteTemplate = "api/backend/{documentName}/swagger.json";
+            });
         }
     }
 }
