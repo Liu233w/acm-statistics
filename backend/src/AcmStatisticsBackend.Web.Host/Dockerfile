@@ -20,6 +20,7 @@ FROM build AS publish
 RUN dotnet publish "AcmStatisticsBackend.Web.Host.csproj" -c Release -o /app/publish
 
 FROM base AS final
+RUN apt-get update && apt-get install -y wait-for-it
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "AcmStatisticsBackend.Web.Host.dll"]
+CMD wait-for-it db:3306 -t 0 && dotnet AcmStatisticsBackend.Web.Host.dll
