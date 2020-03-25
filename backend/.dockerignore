@@ -24,3 +24,6 @@
 LICENSE
 README.md
 **/App_Data
+
+# coverage file
+coverage.cobertura.xml

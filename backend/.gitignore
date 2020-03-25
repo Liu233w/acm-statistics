@@ -253,3 +253,6 @@ paket-files/
 
 # App_Data
 /src/AcmStatisticsBackend.Web.Host/App_Data/*
+
+# coverage file
+coverage.cobertura.xml
