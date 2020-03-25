@@ -63,7 +63,7 @@ cd ~/www/acm-statistics
 # 下载脚本、添加权限
 curl https://raw.githubusercontent.com/Liu233w/acm-statistics/master/tools/remote-docker-up.sh  -o run.sh
 chmod +x run.sh
-# 试运行脚本以生成配置文件，在显示 `.env file created, remember to edit it` 之后按 Ctrl+C 退出脚本
+# 试运行脚本以生成配置文件，在显示 `.env file created, remember to edit it` 之后会自动退出脚本
 ./run.sh
 # 编辑配置文件，按照上面的说明进行修改即可
 vim .env
@@ -74,6 +74,8 @@ vim .env
 设置成功之后即可使用单独的 `./run.sh` 来运行脚本，使用 systemd 或者其他工具均可。
 
 `./tools/acm-statistics.service` 里是一个 systemd 配置文件的参考。
+
+如果默认的 `template.env` 有更新，`run.sh` 会自动退出并提示您更新 `.env`。**脚本通过比较两个文件的行数来判断是否有更新，在编辑文件时请确保行数一致**
 
 ## 开源协议
 - 如无特殊声明，均为 GPL-3.0 协议

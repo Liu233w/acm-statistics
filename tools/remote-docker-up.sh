@@ -45,7 +45,17 @@ curl -L -o template.env \
 
 if ! [ -e .env ]; then
   cat template.env | sed 's/^DOCKER_REPO=$/DOCKER_REPO=liu233w\//' > .env
+  echo
+  echo =================================================
   echo .env file created, remember to edit it
+  echo =================================================
+  exit 0
+elif [[ $(wc -l .env | cut -f 1 -d ' ') != $(wc -l template.env | cut -f 1 -d ' ') ]]; then
+  echo
+  echo =================================================
+  echo There is an update of env.template, compare it with .env and update the file!
+  echo =================================================
+  exit -1
 fi
 
 fi
