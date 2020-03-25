@@ -30,7 +30,7 @@ namespace AcmStatisticsBackend.EntityFrameworkCore.Seed.Host
             AddSettingIfNotExists(EmailSettingNames.DefaultFromDisplayName, "mydomain.com mailer", tenantId);
 
             // Languages
-            AddSettingIfNotExists(LocalizationSettingNames.DefaultLanguage, "en", tenantId);
+            AddSettingIfNotExists(LocalizationSettingNames.DefaultLanguage, "zh-CN", tenantId);
         }
 
         private void AddSettingIfNotExists(string name, string value, int? tenantId = null)
