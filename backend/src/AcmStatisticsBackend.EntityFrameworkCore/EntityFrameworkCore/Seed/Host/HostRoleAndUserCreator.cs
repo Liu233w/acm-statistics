@@ -8,6 +8,7 @@ using AcmStatisticsBackend.Authorization.Roles;
 using AcmStatisticsBackend.Authorization.Users;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
 
 namespace AcmStatisticsBackend.EntityFrameworkCore.Seed.Host
@@ -15,10 +16,12 @@ namespace AcmStatisticsBackend.EntityFrameworkCore.Seed.Host
     public class HostRoleAndUserCreator
     {
         private readonly AcmStatisticsBackendDbContext _context;
+        private readonly IConfigurationRoot _configurationRoot;
 
-        public HostRoleAndUserCreator(AcmStatisticsBackendDbContext context)
+        public HostRoleAndUserCreator(AcmStatisticsBackendDbContext context, IConfigurationRoot configurationRoot)
         {
             _context = context;
+            _configurationRoot = configurationRoot;
         }
 
         public void Create()
@@ -80,7 +83,8 @@ namespace AcmStatisticsBackend.EntityFrameworkCore.Seed.Host
                     IsActive = true
                 };
 
-                user.Password = new PasswordHasher<User>(new OptionsWrapper<PasswordHasherOptions>(new PasswordHasherOptions())).HashPassword(user, "123qwe");
+                var adminPassword = _configurationRoot.GetValue<string>(AcmStatisticsBackendConsts.DefaultAdminPasswordName);
+                user.Password = new PasswordHasher<User>(new OptionsWrapper<PasswordHasherOptions>(new PasswordHasherOptions())).HashPassword(user, adminPassword);
                 user.SetNormalizedNames();
 
                 adminUserForHost = _context.Users.Add(user).Entity;
