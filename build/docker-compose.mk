@@ -8,7 +8,7 @@ RepoName = liu233w/
 # 使用 git commit hash 来表示镜像的tag
 CommitHash := $(shell git log -1 --pretty=%H)
 # 要发布的镜像变量名
-Images = FrontendTag CrawlerApiBackendTag
+Images = FrontendTag CrawlerApiBackendTag BackendTag
 
 # === inner ===
 # 内部使用的变量
@@ -27,10 +27,12 @@ $(ImageToTag) $(ImageToPush): ImageNameWithLatest = $(RepoName)$(Image):latest
 .build:
 	$(MAKE) -C ../crawler-api-backend build
 	$(MAKE) -C ../frontend build
+	$(MAKE) -C ../backend build
 
 # 为了开发而构建的目标
 .build-dev:
 	$(MAKE) -C ../crawler-api-backend build
+	$(MAKE) -C ../backend build
 # 前端直接映射本地的目录，不需要构建
 
 tag: .build $(ImageToTag)
