@@ -1,4 +1,4 @@
-﻿namespace AcmStatisticsBackend
+namespace AcmStatisticsBackend
 {
     public class AcmStatisticsBackendConsts
     {
@@ -8,6 +8,6 @@
 
         public const bool MultiTenancyEnabled = false;
 
-        public const string DefaultAdminPasswordName = "InitSettings:DefaultAdminPassword";
+        public const string DefaultAdminPasswordEnvironmentVariable = "BACKEND_ADMIN_DEFAULT_PASSWORD";
     }
 }

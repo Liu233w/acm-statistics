@@ -41,7 +41,7 @@ services:
     image: ${DOCKER_REPO}acm-statistics-backend${DOCKER_TAG}
     environment:
       ConnectionStrings__Default: Server=db; port=3306; Database=acm_statistics; uid=root; pwd=${MYSQL_ROOT_PASSWORD}; Convert Zero Datetime=True
-      InitSettings__DefaultAdminPassword: ${BACKEND_ADMIN_DEFAULT_PASSWORD}
+      BACKEND_ADMIN_DEFAULT_PASSWORD: ${BACKEND_ADMIN_DEFAULT_PASSWORD}
       Authentication__JwtBearer__SecurityKey: ${BACKEND_JWT_PRIVATE_KEY}
     labels:
       - traefik.http.routers.backend.rule=PathPrefix(`/api`)||PathPrefix(`/AntiForgery`)
