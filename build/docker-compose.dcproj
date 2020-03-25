@@ -4,7 +4,7 @@
     <ProjectVersion>2.1</ProjectVersion>
     <DockerTargetOS>Linux</DockerTargetOS>
     <ProjectGuid>5ae26e44-7afe-4443-aa6e-f3fdf9519bfd</ProjectGuid>
-    <DockerLaunchAction>LaunchBrowser</DockerLaunchAction>
+    <DockerLaunchAction>None</DockerLaunchAction>
     <DockerServiceUrl>{Scheme}://localhost:{ServicePort}</DockerServiceUrl>
     <DockerServiceName>backend</DockerServiceName>
     <AdditionalComposeFilePaths>docker-compose.dev-backend.yml</AdditionalComposeFilePaths>
