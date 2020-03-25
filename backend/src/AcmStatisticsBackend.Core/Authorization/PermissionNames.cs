@@ -2,6 +2,7 @@
 {
     public static class PermissionNames
     {
+#pragma warning disable SA1310 // Field names should not contain underscore
         public const string Pages_Tenants = "Pages.Tenants";
 
         public const string Pages_Users = "Pages.Users";

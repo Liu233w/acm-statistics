@@ -58,8 +58,8 @@ namespace AcmStatisticsBackend.Web.Host.Startup
                 options => options.AddPolicy(
                     _defaultCorsPolicyName,
                     builder => builder
+                        // App:CorsOrigins in appsettings.json can contain more than one address separated by comma.
                         .WithOrigins(
-                            // App:CorsOrigins in appsettings.json can contain more than one address separated by comma.
                             _appConfiguration["App:CorsOrigins"]
                                 .Split(",", StringSplitOptions.RemoveEmptyEntries)
                                 .Select(o => o.RemovePostFix("/"))
@@ -86,9 +86,12 @@ namespace AcmStatisticsBackend.Web.Host.Startup
 
             // Configure Abp and Dependency Injection
             return services.AddAbp<AcmStatisticsBackendWebHostModule>(
-                // Configure Log4Net logging
-                options => options.IocManager.IocContainer.AddFacility<LoggingFacility>(
-                    f => f.UseAbpLog4Net().WithConfig("log4net.config")));
+                options =>
+                {
+                    // Configure Log4Net logging
+                    options.IocManager.IocContainer.AddFacility<LoggingFacility>(
+                     f => f.UseAbpLog4Net().WithConfig("log4net.config"));
+                });
         }
 
         public void Configure(IApplicationBuilder app, ILoggerFactory loggerFactory)
