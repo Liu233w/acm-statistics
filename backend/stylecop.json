@@ -3,6 +3,9 @@
   "settings": {
     "orderingRules": {
       "usingDirectivesPlacement": "outsideNamespace"
+    },
+    "layoutRules": {
+      "newlineAtEndOfFile": "require"
     }
   }
 }
