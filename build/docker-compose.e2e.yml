@@ -1,6 +1,6 @@
 # fixture of build/docker-compose.yml
 
-version: '3'
+version: '3.4'
 
 services:
   frontend:

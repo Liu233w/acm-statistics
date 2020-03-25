@@ -1,4 +1,4 @@
-version: '3'
+version: '3.4'
 
 services:
   # 只有前端支持 hot reload，所以只改动前端
