@@ -28,6 +28,6 @@ clean:
 
 test-ci: .base
 	docker run --rm \
-		-v "$(CURDIR)/coverage:/var/project/coverage" \
+		-v "$(CURDIR)/test/AcmStatisticsBackend.Tests/TestResults:/src/test/AcmStatisticsBackend.Tests/TestResults" \
 		$(BackendBaseTag) \
-		dotnet test
+		dotnet test --collect:"XPlat Code Coverage"
