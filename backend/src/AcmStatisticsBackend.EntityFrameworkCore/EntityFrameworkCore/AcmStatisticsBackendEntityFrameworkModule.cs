@@ -45,15 +45,18 @@ namespace AcmStatisticsBackend.EntityFrameworkCore
 
         public override void PostInitialize()
         {
-            var dbContextProvider = IocManager.Resolve<IDbContextProvider<AcmStatisticsBackendDbContext>>();
-            var unitOfWorkManager = IocManager.Resolve<IUnitOfWorkManager>();
-
-            using (var unitOfWork = unitOfWorkManager.Begin())
+            if (!SkipDbContextRegistration)
             {
-                var context = dbContextProvider.GetDbContext(MultiTenancySides.Host);
-                // Removes actual connection as it has been enlisted in a non needed transaction for migration
-                context.Database.CloseConnection();
-                context.Database.Migrate();
+                var dbContextProvider = IocManager.Resolve<IDbContextProvider<AcmStatisticsBackendDbContext>>();
+                var unitOfWorkManager = IocManager.Resolve<IUnitOfWorkManager>();
+
+                using (var unitOfWork = unitOfWorkManager.Begin())
+                {
+                    var context = dbContextProvider.GetDbContext(MultiTenancySides.Host);
+                    // Removes actual connection as it has been enlisted in a non needed transaction for migration
+                    context.Database.CloseConnection();
+                    context.Database.Migrate();
+                }
             }
 
             if (!SkipDbSeed)
