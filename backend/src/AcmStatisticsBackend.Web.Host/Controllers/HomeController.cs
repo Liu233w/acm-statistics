@@ -27,8 +27,6 @@ namespace AcmStatisticsBackend.Web.Host.Controllers
         /// This is a demo code to demonstrate sending notification to default tenant admin and host admin uers.
         /// Don't use this code in production !!!.
         /// </summary>
-        /// <param name="message"></param>
-        /// <returns></returns>
         public async Task<ActionResult> TestNotification(string message = "")
         {
             if (message.IsNullOrEmpty())

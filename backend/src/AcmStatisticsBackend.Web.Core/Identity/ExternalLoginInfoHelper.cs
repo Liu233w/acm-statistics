@@ -7,7 +7,7 @@ namespace AcmStatisticsBackend.Identity
 {
     public class ExternalLoginInfoHelper
     {
-        public static (string name, string surname) GetNameAndSurnameFromClaims(List<Claim> claims)
+        public static (string Name, string Surname) GetNameAndSurnameFromClaims(List<Claim> claims)
         {
             string name = null;
             string surname = null;

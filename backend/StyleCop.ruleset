@@ -123,7 +123,6 @@
     <Rule Id="SA1121" Action="Error" />
     <Rule Id="SA1122" Action="None" />
     <Rule Id="SA1123" Action="Error" />
-    <Rule Id="SA1124" Action="Error" />
     <Rule Id="SA1125" Action="Error" />
     <Rule Id="SA1127" Action="None" />
     <Rule Id="SA1128" Action="None" />
@@ -213,11 +212,9 @@
     <Rule Id="SA1607" Action="Error" />
     <Rule Id="SA1608" Action="Error" />
     <Rule Id="SA1610" Action="Error" />
-    <Rule Id="SA1611" Action="Error" />
     <Rule Id="SA1612" Action="Error" />
     <Rule Id="SA1613" Action="Error" />
     <Rule Id="SA1614" Action="Error" />
-    <Rule Id="SA1615" Action="Error" />
     <Rule Id="SA1616" Action="Error" />
     <Rule Id="SA1617" Action="Error" />
     <Rule Id="SA1618" Action="Error" />
