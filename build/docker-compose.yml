@@ -48,6 +48,8 @@ services:
       - traefik.http.services.backend.loadbalancer.server.port=80
     volumes:
       - ./App_Data:/app/App_Data
+    depends_on:
+      - db
 
   db:
     image: mysql:8
