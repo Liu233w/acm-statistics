@@ -10,6 +10,8 @@ CrawlerApiBackendTag = $(CommonTagPrefix)-crawler-api-backend
 CrawlerApiBackendBaseTag = $(CommonTagPrefix)-crawler-api-backend-base
 E2eMockConfigurerTag = $(CommonTagPrefix)-e2e-mock-configurer
 E2eBaseTag = $(CommonTagPrefix)-e2e-base
+BackendTag = $(CommonTagPrefix)-backend
+BackendBaseTag = $(CommonTagPrefix)-backend-base
 
 CrawlerLibraryPath = /var/project
 
