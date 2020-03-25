@@ -8,11 +8,6 @@
     <GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Remove="Migrations\20180726102624_Upgrade_ABP_380.cs" />
-    <Compile Remove="Migrations\20180927062408_test.cs" />
-    <Compile Remove="Migrations\20190111071724_Upgraded_To_Abp_v4_1_0.cs" />
-  </ItemGroup>
-  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
