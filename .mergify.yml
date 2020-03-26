@@ -1,8 +1,7 @@
-﻿pull_request_rules:
+pull_request_rules:
   - name: automatic merge on CI success and tag
     conditions:
-      - status-success=continuous-integration/travis-ci/pr
-      - status-success=continuous-integration/travis-ci/push
+      - status-success=Travis CI - Pull Request
       - status-success=WIP
       - label=ready-to-be-merged
     actions:
