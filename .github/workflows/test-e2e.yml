@@ -1,0 +1,30 @@
+name: Test E2E
+
+on: [push, pull_request]
+
+jobs:
+  e2e-push:
+    name: E2E on push
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - run: |
+        cd e2e
+        make server compose-args="--detach"
+        make wait-server
+        make ci
+        make run run-cmd="npm run lint"
+
+  e2e-pr:
+    name: E2E on pull request
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - run: |
+        cd e2e
+        make server compose-args="--detach"
+        make wait-server
+        make ci-no-record
+        make run run-cmd="npm run lint"
