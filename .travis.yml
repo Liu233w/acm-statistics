@@ -28,8 +28,3 @@ jobs:
         - 'if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then make ci-no-record; fi'
         - 'if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then make ci; fi'
         - make run run-cmd="npm run lint"
-
-    - name: Root
-      stage: test
-      script:
-        - make commitlint-travis

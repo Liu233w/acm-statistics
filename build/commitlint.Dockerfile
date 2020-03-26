@@ -8,7 +8,6 @@ RUN git config --global user.name "Test Name"
 
 RUN npm install -g \
   @commitlint/cli \
-  @commitlint/config-conventional \
-  @commitlint/travis-cli
+  @commitlint/config-conventional
 
 WORKDIR /var/project

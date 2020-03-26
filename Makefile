@@ -52,13 +52,10 @@ test-ci:
 
 # === commitlint ===
 
-.PHONY: test-commit commitlint-travis
+.PHONY: test-commit
 
 test-commit:
 	cd ./build && $(MAKE) -f commitlint.mk test-commit
-
-commitlint-travis:
-	cd ./build && $(MAKE) -f commitlint.mk commitlint-travis
 
 # === publish image ===
 .PHONY: tag-and-push
