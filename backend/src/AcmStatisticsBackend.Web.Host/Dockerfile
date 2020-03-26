@@ -21,6 +21,7 @@ RUN dotnet publish "AcmStatisticsBackend.Web.Host.csproj" -c Release -o /app/pub
 
 FROM base AS final
 RUN apt-get update && apt-get install -y wait-for-it
+ENV WAIT_COMMAND true
 WORKDIR /app
 COPY --from=publish /app/publish .
-CMD wait-for-it db:3306 -t 0 && dotnet AcmStatisticsBackend.Web.Host.dll
+CMD $WAIT_COMMAND && dotnet AcmStatisticsBackend.Web.Host.dll
