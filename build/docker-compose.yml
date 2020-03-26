@@ -32,7 +32,7 @@ services:
       - traefik.http.services.crawler-api-backend.loadbalancer.server.port=12001
 
   watchtower:
-    image: v2tec/watchtower
+    image: v2tec/watchtower@sha256:4cb6299fe87dcbfe0f13dcc5a11bf44bd9628a4dae0035fecb8cc2b88ff0fc79
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     command: -s "0 */30 * * * *" --cleanup
@@ -54,7 +54,7 @@ services:
       - db
 
   db:
-    image: mysql:8
+    image: mysql:8@sha256:60adb98682fd8b89b3534624d3bce0b15df6a476f92ba102a2f54b2c353a1544
     restart: always
     environment:
       MYSQL_DATABASE: acm_statistics
