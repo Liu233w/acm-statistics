@@ -1,0 +1,13 @@
+name: Test Frontend
+
+on: [push, pull_request]
+
+jobs:
+  frontend:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - run: |
+        cd frontend
+        make run run-cmd="npm run lint" make-args="no-interactive no-tty"
+        make test-ci
