@@ -43,6 +43,7 @@ services:
       ConnectionStrings__Default: Server=db; port=3306; Database=acm_statistics; uid=root; pwd=${MYSQL_ROOT_PASSWORD}; Convert Zero Datetime=True
       BACKEND_ADMIN_DEFAULT_PASSWORD: ${BACKEND_ADMIN_DEFAULT_PASSWORD}
       Authentication__JwtBearer__SecurityKey: ${BACKEND_JWT_PRIVATE_KEY}
+      WAIT_COMMAND: wait-for-it db:3306 -t 0
     labels:
       - traefik.http.routers.backend.rule=PathPrefix(`/api`)||PathPrefix(`/AntiForgery`)
       - traefik.http.routers.backend.priority=18
