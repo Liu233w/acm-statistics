@@ -1,0 +1,17 @@
+name: Test Crawler
+
+on: [push, pull_request]
+
+jobs:
+
+  crawler:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - run: |
+        cd crawler
+        make run run-cmd="npm run lint" make-args="no-interactive no-tty"
+        make test-ci
+        # test to check if crawler is right, always pass
+        make test || echo "something wrong in the crawler"
+    - uses: codecov/codecov-action@v1

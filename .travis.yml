@@ -13,41 +13,11 @@ stages:
 services:
   - docker
 
-cache:
-  directories:
-    - $HOME/.sonar/cache
-    - $HOME/.m2
-    - ./e2e/node_modules
-    - $HOME/.npm
-    - $HOME/.cache/Cypress
-
 after_script:
   - bash <(curl -s https://codecov.io/bash)
 
 jobs:
   include:
-    - name: Frontend
-      stage: test
-      script:
-        - cd frontend
-        - make run run-cmd="npm run lint"
-        - make test-ci
-
-    - name: Crawler
-      stage: test
-      script:
-        - cd crawler
-        - make run run-cmd="npm run lint"
-        - make test-ci
-        # test to check if crawler is right, always pass
-        - make test || echo "something wrong in the crawler"
-
-    - name: Crawler Api Backend
-      stage: test
-      script:
-        - cd crawler-api-backend
-        - make run run-cmd="npm run lint"
-        - make test-ci
 
     - name: E2E
       stage: test
@@ -59,18 +29,7 @@ jobs:
         - 'if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then make ci; fi'
         - make run run-cmd="npm run lint"
 
-    - name: Backend
-      stage: test
-      script:
-        - cd backend
-        - make run run-cmd="dotnet build" # smoke test and lint
-        - make test-ci
-
     - name: Root
       stage: test
-      addons:
-        sonarcloud:
-          organization: "liu233w-github"
-          token: $SONAR_TOKEN
       script:
         - make commitlint-travis
