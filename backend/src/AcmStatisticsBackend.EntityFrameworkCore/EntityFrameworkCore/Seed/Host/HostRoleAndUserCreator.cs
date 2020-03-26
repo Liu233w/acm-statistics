@@ -1,4 +1,3 @@
-using System;
 using System.Linq;
 using Abp.Authorization;
 using Abp.Authorization.Roles;
@@ -7,6 +6,7 @@ using Abp.MultiTenancy;
 using AcmStatisticsBackend.Authorization;
 using AcmStatisticsBackend.Authorization.Roles;
 using AcmStatisticsBackend.Authorization.Users;
+using AcmStatisticsBackend.Configuration;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
@@ -81,7 +81,7 @@ namespace AcmStatisticsBackend.EntityFrameworkCore.Seed.Host
                     IsActive = true
                 };
 
-                var adminPassword = Environment.GetEnvironmentVariable(AcmStatisticsBackendConsts.DefaultAdminPasswordEnvironmentVariable);
+                var adminPassword = AppEnvironmentVariables.DefaultAdminPassword;
                 user.Password = new PasswordHasher<User>(new OptionsWrapper<PasswordHasherOptions>(new PasswordHasherOptions())).HashPassword(user, adminPassword);
                 user.SetNormalizedNames();
 

@@ -1,4 +1,3 @@
-using System;
 using System.Linq;
 using Abp.Authorization;
 using Abp.Authorization.Roles;
@@ -7,6 +6,7 @@ using Abp.MultiTenancy;
 using AcmStatisticsBackend.Authorization;
 using AcmStatisticsBackend.Authorization.Roles;
 using AcmStatisticsBackend.Authorization.Users;
+using AcmStatisticsBackend.Configuration;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
@@ -73,7 +73,7 @@ namespace AcmStatisticsBackend.EntityFrameworkCore.Seed.Tenants
             if (adminUser == null)
             {
                 adminUser = User.CreateTenantAdminUser(_tenantId, "admin@defaulttenant.com");
-                var adminPassword = Environment.GetEnvironmentVariable(AcmStatisticsBackendConsts.DefaultAdminPasswordEnvironmentVariable);
+                var adminPassword = AppEnvironmentVariables.DefaultAdminPassword;
                 adminUser.Password = new PasswordHasher<User>(new OptionsWrapper<PasswordHasherOptions>(new PasswordHasherOptions())).HashPassword(adminUser, adminPassword);
                 adminUser.IsEmailConfirmed = true;
                 adminUser.IsActive = true;
