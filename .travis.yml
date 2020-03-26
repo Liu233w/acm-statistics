@@ -74,9 +74,3 @@ jobs:
           token: $SONAR_TOKEN
       script:
         - make commitlint-travis
-
-    - name: Deploy to DockerHub
-      stage: deploy
-      script:
-        - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-        - make tag-and-push
