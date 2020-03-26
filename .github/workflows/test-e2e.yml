@@ -16,7 +16,7 @@ jobs:
         make server compose-args="--detach"
         make wait-server
         make ci
-        make run run-cmd="npm run lint"
+        make run run-cmd="npm run lint" make-args="no-interactive no-tty"
 
   e2e-pr:
     name: E2E on pull request
@@ -29,4 +29,4 @@ jobs:
         make server compose-args="--detach"
         make wait-server
         make ci-no-record
-        make run run-cmd="npm run lint"
+        make run run-cmd="npm run lint" make-args="no-interactive no-tty"
