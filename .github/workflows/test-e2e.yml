@@ -7,6 +7,8 @@ jobs:
     name: E2E on push
     if: github.event_name == 'push'
     runs-on: ubuntu-latest
+    env:
+      CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
     steps:
     - uses: actions/checkout@master
     - run: |
