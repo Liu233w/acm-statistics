@@ -2,12 +2,22 @@
 ===
 
 [![Powered by ZenHub](https://img.shields.io/badge/Powered_by-ZenHub-5e60ba.svg)](https://app.zenhub.com/workspace/o/liu233w/acm-statistics/boards?repos=125616473)
-[![Build Status](https://travis-ci.com/Liu233w/acm-statistics.svg?branch=master)](https://travis-ci.com/Liu233w/acm-statistics)
 [![Quality Gate](https://sonarcloud.io/api/project_badges/measure?project=acm-statistics&metric=alert_status)](https://sonarcloud.io/dashboard?id=acm-statistics)
 [![codecov](https://codecov.io/gh/Liu233w/acm-statistics/branch/master/graph/badge.svg)](https://codecov.io/gh/Liu233w/acm-statistics)
 [![Cypress.io](https://img.shields.io/badge/cypress.io-tests-green.svg)](https://dashboard.cypress.io/#/projects/4s32o7/runs)
 [![Renovate enabled](https://img.shields.io/badge/renovate-enabled-brightgreen.svg)](https://renovatebot.com/)
 [![Mergify Status](https://img.shields.io/badge/Mergify-enabled-green.svg)](https://mergify.io)
+[![Deliverybot enabled](https://img.shields.io/badge/Deliverybot-enabled-blue.svg)](https://app.deliverybot.dev/Liu233w/acm-statistics/branch/master)
+
+#### 构建状态
+
+|项目|状态|
+|:----|:----|
+|Frontend|![Test Frontend](https://github.com/Liu233w/acm-statistics/workflows/Test%20Frontend/badge.svg)|
+|Crawler|![Test Crawler](https://github.com/Liu233w/acm-statistics/workflows/Test%20Crawler/badge.svg)|
+|Crawler Api Backend|![Test Crawler Api Backend](https://github.com/Liu233w/acm-statistics/workflows/Test%20Crawler%20Api%20Backend/badge.svg)|
+|Backend|![Test Backend](https://github.com/Liu233w/acm-statistics/workflows/Test%20Backend/badge.svg)|
+|E2E|![Test E2E](https://github.com/Liu233w/acm-statistics/workflows/Test%20E2E/badge.svg)|
 
 #### 功能
 - 题量查询
