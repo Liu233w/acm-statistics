@@ -13,3 +13,6 @@
 *.PDF	 diff=astextplain
 *.rtf	 diff=astextplain
 *.RTF	 diff=astextplain
+
+# 忽略Migration文件
+/backend/src/AcmStatisticsBackend.EntityFrameworkCore/Migrations/* linguist-vendored
