@@ -1,0 +1,19 @@
+name: 检查爬虫可用性（不准确）
+
+on: 
+  schedule:
+  # 每天中午
+  - cron: 0 12 * * *
+
+jobs:
+
+  crawler-check:
+    runs-on: ubuntu-latest
+    env:
+      'ACM_STATISTICS_CRAWLER_ENV:crawlers:vjudge:crawler_login_user': ${{ secrets.VJUDGE_USERNAME }}
+      'ACM_STATISTICS_CRAWLER_ENV:crawlers:vjudge:crawler_login_password': ${{ secrets.VJUDGE_PASSWORD }}
+    steps:
+    - uses: actions/checkout@master
+    - run: |
+        cd crawler
+        make test || echo "something wrong in the crawler"
