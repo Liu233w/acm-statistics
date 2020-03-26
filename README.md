@@ -2,7 +2,7 @@
 ===
 
 [![Powered by ZenHub](https://img.shields.io/badge/Powered_by-ZenHub-5e60ba.svg)](https://app.zenhub.com/workspace/o/liu233w/acm-statistics/boards?repos=125616473)
-[![Build Status](https://travis-ci.org/Liu233w/acm-statistics.svg?branch=master)](https://travis-ci.org/Liu233w/acm-statistics)
+[![Build Status](https://travis-ci.com/Liu233w/acm-statistics.svg?branch=master)](https://travis-ci.com/Liu233w/acm-statistics)
 [![Quality Gate](https://sonarcloud.io/api/project_badges/measure?project=acm-statistics&metric=alert_status)](https://sonarcloud.io/dashboard?id=acm-statistics)
 [![codecov](https://codecov.io/gh/Liu233w/acm-statistics/branch/master/graph/badge.svg)](https://codecov.io/gh/Liu233w/acm-statistics)
 [![Cypress.io](https://img.shields.io/badge/cypress.io-tests-green.svg)](https://dashboard.cypress.io/#/projects/4s32o7/runs)
