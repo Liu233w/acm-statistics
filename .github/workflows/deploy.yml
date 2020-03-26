@@ -1,0 +1,35 @@
+name: 使用DeliveryBot进行部署
+
+on: ['deployment']
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: 'Checkout'
+      uses: 'actions/checkout@v1'
+
+    - name: 'Deployment pending'
+      uses: 'deliverybot/deployment-status@master'
+      with:
+        state: 'pending'
+        token: '${{ github.token }}'
+
+    - name: 'Deploy ${{ github.event.deployment.environment }}'
+      run: |
+        echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
+        make tag-and-push
+
+    - name: 'Deployment success'
+      if: success()
+      uses: 'deliverybot/deployment-status@master'
+      with:
+        state: 'success'
+        token: '${{ github.token }}'
+
+    - name: 'Deployment failure'
+      if: failure()
+      uses: 'deliverybot/deployment-status@master'
+      with:
+        state: 'failure'
+        token: '${{ github.token }}'
