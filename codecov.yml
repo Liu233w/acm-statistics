@@ -1,0 +1,3 @@
+ignore:
+  - backend/src/AcmStatisticsBackend.EntityFrameworkCore/Migrations/*
+  - backend/src/AcmStatisticsBackend.Migrator/**/*
