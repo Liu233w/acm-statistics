@@ -1,18 +1,9 @@
 pull_request_rules:
   - name: automatic merge on CI success and tag
     conditions:
-      - status-success=Travis CI - Pull Request
-      - status-success=WIP
       - label=ready-to-be-merged
     actions:
       merge:
         method: rebase
         # rebase_fallback: merge
         strict: smart
-        
-  - name: delete head branch after merge
-    conditions:
-      - head!=dev
-      - label!=dependencies 
-    actions:
-      delete_head_branch: {}
