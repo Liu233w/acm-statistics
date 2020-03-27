@@ -1,11 +1,11 @@
-name: Integration Test:
+name: Integration Test
 
 on: [push, pull_request]
 
 jobs:
 
   backend:
-    name: Test: Backend
+    name: Test Backend
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
@@ -17,7 +17,7 @@ jobs:
     - uses: codecov/codecov-action@v1
 
   crawler:
-    name: Test: Crawler
+    name: Test Crawler
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
@@ -28,7 +28,7 @@ jobs:
     - uses: codecov/codecov-action@v1
 
   crawler-api-backend:
-    name: Test: Crawler Api Backend
+    name: Test Crawler Api Backend
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
@@ -39,7 +39,7 @@ jobs:
     - uses: codecov/codecov-action@v1
 
   frontend:
-    name: Test: Frontend
+    name: Test Frontend
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
@@ -49,7 +49,7 @@ jobs:
         make test-ci
 
   commitlint:
-    name: Test: Commitlint
+    name: Commitlint
     runs-on: ubuntu-latest
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

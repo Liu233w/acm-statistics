@@ -7,7 +7,7 @@ on:
 
 jobs:
   sonarCloudTrigger:
-    name: Test: SonarCloud Trigger
+    name: SonarCloud Trigger
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
