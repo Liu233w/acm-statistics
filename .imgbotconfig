@@ -1,0 +1,5 @@
+{
+    "ignoredFiles": [
+        "e2e/*",
+    ]
+}
