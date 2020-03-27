@@ -36,6 +36,7 @@
 - crawler-api-backend: 题量查询后端，提供了查询API
 - e2e: 关于 e2e 测试相关的代码。
 - backend: 后端代码
+- captcha-service: 验证码微服务
 - build: 存储了 docker 和 make 相关的代码和配置文件，用于构建和部署
 - tools: 存储了部分脚本，各种用途都有
 
