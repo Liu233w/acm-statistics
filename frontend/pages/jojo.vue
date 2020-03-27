@@ -16,7 +16,7 @@
             :src="require('~/assets/img/dio.jpg')"
           />
           <h1 class="display-2 font-weight-bold mb-6">
-            你以为是 {{ url }}，其实是我DIO哒!!
+            你访问的不是 {{ url }}，是我DIO哒!!
           </h1>
         </v-col>
       </v-row>

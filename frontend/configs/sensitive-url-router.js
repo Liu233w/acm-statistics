@@ -35,6 +35,7 @@ const sensitiveRoutes = [
   '/theme/default/style.css',
   '/js/my.full.js',
   '/theme/zui/fonts/zenicon.eot',
+  '/README.md',
 ]
 
 module.exports = function (routes, resolve) {
