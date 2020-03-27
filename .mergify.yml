@@ -1,6 +1,9 @@
 pull_request_rules:
   - name: automatic merge on CI success and tag
     conditions:
+      - status-success=Integration Test
+      - status-success=Test E2E
+      - status-success=WIP
       - label=ready-to-be-merged
     actions:
       merge:
