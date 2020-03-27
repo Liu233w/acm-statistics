@@ -123,9 +123,6 @@ test-ci
 test-commit
 使用 commitlint 检查当前分支到 master 分支的 HEAD 为止的所有提交
 
-commitlint-travis
-用在 travis-ci 中的 commit message 测试
-
 tag-and-push
 给构建出的镜像打上标签并发布，默认使用的 namespace 为 'liu233w'。
 请参考 ./build/docker-compose.mk 来修改设置
