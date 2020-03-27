@@ -12,7 +12,7 @@ const router = new Router()
 const cache = new NodeCache()
 
 const CAPTCHA_AVAILABLE_TIME = process.env.CAPTCHA_AVAILABLE_TIME
-    ? process.env.CAPTCHA_AVAILABLE_TIME : 30 * 60 /* sec */
+    ? process.env.CAPTCHA_AVAILABLE_TIME : 5 * 60 /* sec */
 
 // 先把验证码存在项目中。如果遇到性能问题再上redis
 
