@@ -2,6 +2,8 @@ const LodashModuleReplacementPlugin = require('lodash-webpack-plugin')
 // eslint-disable-next-line no-unused-vars
 const resolve = (dir) => require('path').join(__dirname, dir)
 
+const sensitiveRouter = require('./configs/sensitive-url-router')
+
 module.exports = {
   /*
   ** Headers of the page
@@ -90,5 +92,8 @@ module.exports = {
       aggregateTimeout: 300,
       poll: 1000,
     },
+  },
+  router: {
+    extendRoutes: sensitiveRouter,
   },
 }
