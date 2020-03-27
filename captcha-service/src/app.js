@@ -16,7 +16,7 @@ const CAPTCHA_AVAILABLE_TIME = process.env.CAPTCHA_AVAILABLE_TIME
 
 // 先把验证码存在项目中。如果遇到性能问题再上redis
 
-router.post('/api/generate', async ctx => {
+router.post('/api/captcha-service/generate', async ctx => {
     const id = uuid()
     const captcha = svgCaptcha.create({
         size: 6,
@@ -31,7 +31,7 @@ router.post('/api/generate', async ctx => {
     })
 })
 
-router.post('/api/validate', async ctx => {
+router.post('/api/captcha-service/validate', async ctx => {
     const { id, text } = ctx.request.body
 
     const correct = cache.get(id)
