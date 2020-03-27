@@ -63,3 +63,11 @@ services:
     # Where our data will be persisted
     volumes:
       - ./backend-db:/var/lib/mysql
+
+  captcha-service:
+    image: ${DOCKER_REPO}acm-statistics-captcha-service${DOCKER_TAG}
+    labels:
+      # 只有获取验证码需要从外部访问api，其他部分不需要
+      - traefik.http.routers.captcha-service.rule=Path(`/api/captcha-service/generate`)
+      - traefik.http.services.captcha-service.loadbalancer.server.port=80
+

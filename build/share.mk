@@ -12,6 +12,8 @@ E2eMockConfigurerTag = $(CommonTagPrefix)-e2e-mock-configurer
 E2eBaseTag = $(CommonTagPrefix)-e2e-base
 BackendTag = $(CommonTagPrefix)-backend
 BackendBaseTag = $(CommonTagPrefix)-backend-base
+CaptchaServiceTag = $(CommonTagPrefix)-captcha-service
+CaptchaServiceBaseTag = $(CommonTagPrefix)-captcha-service-base
 
 CrawlerLibraryPath = /var/project
 

@@ -10,7 +10,7 @@ default: .short-help ;
 # use command like `make target=crawler test clean` to invoke `make -C crawler test clean`
 # support command like `make target="crawler frontend" build`
 
-TargetList = crawler frontend crawler-api-backend backend
+TargetList = crawler frontend crawler-api-backend backend captcha-service
 AllTarget := $(if $(target),$(target),$(TargetList))
 
 test:
