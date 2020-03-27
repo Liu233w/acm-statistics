@@ -1,4 +1,4 @@
-## makefile for crawler api backend
+## makefile for backend
 
 include ../build/share.mk
 
