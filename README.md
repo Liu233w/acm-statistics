@@ -11,13 +11,9 @@
 
 #### 构建状态
 
-|项目|状态|
-|:----|:----|
-|Frontend|![Test Frontend](https://github.com/Liu233w/acm-statistics/workflows/Test%20Frontend/badge.svg)|
-|Crawler|![Test Crawler](https://github.com/Liu233w/acm-statistics/workflows/Test%20Crawler/badge.svg)|
-|Crawler Api Backend|![Test Crawler Api Backend](https://github.com/Liu233w/acm-statistics/workflows/Test%20Crawler%20Api%20Backend/badge.svg)|
-|Backend|![Test Backend](https://github.com/Liu233w/acm-statistics/workflows/Test%20Backend/badge.svg)|
-|E2E|![Test E2E](https://github.com/Liu233w/acm-statistics/workflows/Test%20E2E/badge.svg)|
+![Integration Test](https://github.com/Liu233w/acm-statistics/workflows/Integration%20Test/badge.svg)
+![Test E2E](https://github.com/Liu233w/acm-statistics/workflows/Test%20E2E/badge.svg)
+
 
 #### 功能
 - 题量查询
