@@ -1,29 +1,17 @@
 // 在 require 的时候程序会直接 require 爬虫，如果在 beforeAll 里面 mock 的话就晚了
 jest.mock('crawler')
 
-const supertest = require('supertest')
-const app = require('../app')
-
-let server
-let request
-
-beforeAll(() => {
-  server = app.listen(12001)
-  request = supertest(server)
-})
-
-afterAll(() => {
-  server.close()
-})
+const request = require('supertest')
+const app = require('../app').callback()
 
 test('/api/crawlers/swagger.json swagger should match snapshot', async () => {
-  const res = await request.get('/api/crawlers/swagger.json')
+  const res = await request(app).get('/api/crawlers/swagger.json')
     .expect(200)
   expect(res.body).toMatchSnapshot()
 })
 
 test('/api/crawlers should return crawler list', async () => {
-  await request
+  await request(app)
     .get('/api/crawlers')
     .expect(200, {
       error: false,
@@ -45,7 +33,7 @@ test('/api/crawlers should return crawler list', async () => {
 
 describe('/api/crawlers/:type/:username', () => {
   it('在结果正确时应该返回题量', async () => {
-    await request
+    await request(app)
       .get('/api/crawlers/crawler1/user')
       .expect(200, {
         error: false,
@@ -57,7 +45,7 @@ describe('/api/crawlers/:type/:username', () => {
   })
 
   it('在爬虫不存在时应该返回 400', async () => {
-    await request
+    await request(app)
       .get('/api/crawlers/notExist/user')
       .expect(400, {
         error: true,
@@ -66,7 +54,7 @@ describe('/api/crawlers/:type/:username', () => {
   })
 
   it('在爬虫报错时应该返回错误结果', async () => {
-    await request
+    await request(app)
       .get('/api/crawlers/crawler1/reject')
       .expect(400, {
         error: true,
@@ -76,7 +64,7 @@ describe('/api/crawlers/:type/:username', () => {
 })
 
 test('在访问不存在的资源时返回 404', async () => {
-  await request
+  await request(app)
     .get('/notExists')
     .expect(404, {
       error: true,
