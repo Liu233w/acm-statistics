@@ -28,10 +28,10 @@ jobs:
 
       - name: Show current running workflows' id
         if: steps.prcomm.outputs.BOOL_TRIGGERED == 'true'
-        uses: maxkomarychev/octions/octions/issues/create-comment@master
+        uses: peter-evans/create-or-update-comment@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          issue_number: ${{ github.event.issue.number }}
+          issue-number: ${{ github.event.issue.number }}
           body: |
             Update Frontend Snapshot Triggered!
             Address: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
