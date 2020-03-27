@@ -4,7 +4,7 @@ on: [push, pull_request]
 
 jobs:
   e2e-push:
-    name: E2E on push
+    name: Test: E2E on push
     if: github.event_name == 'push'
     runs-on: ubuntu-latest
     env:
@@ -19,7 +19,7 @@ jobs:
         make run run-cmd="npm run lint" make-args="no-interactive no-tty"
 
   e2e-pr:
-    name: E2E on pull request
+    name: Test: E2E on pull request
     if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
     steps:
