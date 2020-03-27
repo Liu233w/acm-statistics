@@ -1,0 +1,60 @@
+name: Integration Test
+
+on: [push, pull_request]
+
+jobs:
+
+  backend:
+    name: Test Backend
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - run: |
+        cd backend
+        # smoke test and lint
+        make run run-cmd="dotnet build" make-args="no-interactive no-tty"
+        make test-ci
+    - uses: codecov/codecov-action@v1
+
+  crawler:
+    name: Test Crawler
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - run: |
+        cd crawler
+        make run run-cmd="npm run lint" make-args="no-interactive no-tty"
+        make test-ci
+    - uses: codecov/codecov-action@v1
+
+  crawler-api-backend:
+    name: Test Crawler Api Backend
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - run: |
+        cd crawler-api-backend
+        make run run-cmd="npm run lint" make-args="no-interactive no-tty"
+        make test-ci
+    - uses: codecov/codecov-action@v1
+
+  frontend:
+    name: Test Frontend
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - run: |
+        cd frontend
+        make run run-cmd="npm run lint" make-args="no-interactive no-tty"
+        make test-ci
+
+  commitlint:
+    name: Commitlint
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+    - uses: actions/checkout@master
+      with:
+        fetch-depth: 0
+    - uses: wagoid/commitlint-github-action@v1
