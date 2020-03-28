@@ -101,6 +101,8 @@ namespace AcmStatisticsBackend.Web.Host.Startup
 
         public void Configure(IApplicationBuilder app, ILoggerFactory loggerFactory)
         {
+            app.UseMiddleware<CookieAuthMiddleware>();
+
             app.UseAbp(options => { options.UseAbpRequestLocalization = false; }); // Initializes ABP framework.
 
             app.UseCors(_defaultCorsPolicyName); // Enable CORS!
