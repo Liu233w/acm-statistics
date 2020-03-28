@@ -37,7 +37,7 @@ namespace AcmStatisticsBackend.Authorization.Users
             AbpSession = NullAbpSession.Instance;
         }
 
-        public async Task<User> RegisterAsync(string name, string surname, string emailAddress, string userName, string plainPassword, bool isEmailConfirmed)
+        public async Task<User> RegisterAsync(string userName, string plainPassword)
         {
             CheckForTenant();
 
@@ -46,12 +46,9 @@ namespace AcmStatisticsBackend.Authorization.Users
             var user = new User
             {
                 TenantId = tenant.Id,
-                Name = name,
-                Surname = surname,
-                EmailAddress = emailAddress,
                 IsActive = true,
                 UserName = userName,
-                IsEmailConfirmed = isEmailConfirmed,
+                IsEmailConfirmed = false,
                 Roles = new List<UserRole>()
             };
 
