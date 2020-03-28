@@ -2,7 +2,7 @@
 using Abp.Auditing;
 using Abp.Authorization.Users;
 
-namespace AcmStatisticsBackend.Authorization.Accounts.Dto
+namespace AcmStatisticsBackend.Accounts.Dto
 {
     public class RegisterInput
     {
