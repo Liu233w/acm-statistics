@@ -1,8 +1,8 @@
 ﻿using System.Threading.Tasks;
 using Abp.Application.Services;
-using AcmStatisticsBackend.Authorization.Accounts.Dto;
+using AcmStatisticsBackend.Accounts.Dto;
 
-namespace AcmStatisticsBackend.Authorization.Accounts
+namespace AcmStatisticsBackend.Accounts
 {
     public interface IAccountAppService : IApplicationService
     {

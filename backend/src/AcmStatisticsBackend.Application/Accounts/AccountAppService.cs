@@ -1,10 +1,10 @@
 using System.Threading.Tasks;
 using Abp.UI;
-using AcmStatisticsBackend.Authorization.Accounts.Dto;
+using AcmStatisticsBackend.Accounts.Dto;
 using AcmStatisticsBackend.Authorization.Users;
 using AcmStatisticsBackend.ServiceClients;
 
-namespace AcmStatisticsBackend.Authorization.Accounts
+namespace AcmStatisticsBackend.Accounts
 {
     public class AccountAppService : AcmStatisticsBackendAppServiceBase, IAccountAppService
     {
