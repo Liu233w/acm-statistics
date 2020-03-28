@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.IO;
 using System.Linq;
 using Abp.AspNetCore;
@@ -44,7 +44,7 @@ namespace AcmStatisticsBackend.Web.Host.Startup
             {
                 options.SerializerSettings.ContractResolver = new AbpMvcContractResolver(IocManager.Instance)
                 {
-                    NamingStrategy = new CamelCaseNamingStrategy()
+                    NamingStrategy = new CamelCaseNamingStrategy(),
                 };
             });
 
@@ -80,7 +80,7 @@ namespace AcmStatisticsBackend.Web.Host.Startup
                     Description = "JWT Authorization header using the Bearer scheme. Example: \"Authorization: Bearer {token}\"",
                     Name = "Authorization",
                     In = ParameterLocation.Header,
-                    Type = SecuritySchemeType.ApiKey
+                    Type = SecuritySchemeType.ApiKey,
                 });
 
                 // Set the comments path for the swagger json and ui.

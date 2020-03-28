@@ -44,7 +44,7 @@ namespace AcmStatisticsBackend.EntityFrameworkCore.Seed.Host
             {
                 Name = featureName,
                 Value = isEnabled.ToString(),
-                EditionId = editionId
+                EditionId = editionId,
             });
             _context.SaveChanges();
         }

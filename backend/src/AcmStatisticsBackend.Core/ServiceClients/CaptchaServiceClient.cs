@@ -19,7 +19,7 @@ namespace AcmStatisticsBackend.ServiceClients
 
             var result = new CaptchaServiceValidateResult
             {
-                Correct = !response.error
+                Correct = !response.error,
             };
             if (response.error)
             {

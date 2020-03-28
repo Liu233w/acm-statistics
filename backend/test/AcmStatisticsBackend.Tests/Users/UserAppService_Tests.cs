@@ -1,4 +1,4 @@
-﻿using System.Threading.Tasks;
+using System.Threading.Tasks;
 using AcmStatisticsBackend.Users;
 using AcmStatisticsBackend.Users.Dto;
 using Microsoft.EntityFrameworkCore;
@@ -38,7 +38,7 @@ namespace AcmStatisticsBackend.Tests.Users
                     Name = "John",
                     Surname = "Nash",
                     Password = "123qwe",
-                    UserName = "john.nash"
+                    UserName = "john.nash",
                 });
 
             await UsingDbContextAsync(async context =>

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -50,7 +50,7 @@ namespace AcmStatisticsBackend.Authorization.Users
                 UserName = userName,
                 EmailAddress = "",
                 IsEmailConfirmed = false,
-                Roles = new List<UserRole>()
+                Roles = new List<UserRole>(),
             };
 
             user.SetNormalizedNames();
