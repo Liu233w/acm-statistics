@@ -10,6 +10,7 @@ using Abp.Extensions;
 using Abp.Json;
 using AcmStatisticsBackend.Configuration;
 using AcmStatisticsBackend.Identity;
+using AcmStatisticsBackend.Middleware;
 using Castle.Facilities.Logging;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
