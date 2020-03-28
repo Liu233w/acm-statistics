@@ -26,17 +26,23 @@ namespace AcmStatisticsBackend.EntityFrameworkCore.Seed.Tenants
 
         public void Create()
         {
-            CreateRolesAndUsers();
+            CreateAdminRoleAndUser();
+            CreateUserRole();
         }
 
-        private void CreateRolesAndUsers()
+        private void CreateAdminRoleAndUser()
         {
             // Admin role
 
-            var adminRole = _context.Roles.IgnoreQueryFilters().FirstOrDefault(r => r.TenantId == _tenantId && r.Name == StaticRoleNames.Tenants.Admin);
+            var adminRole = _context.Roles.IgnoreQueryFilters()
+                .FirstOrDefault(r => r.TenantId == _tenantId && r.Name == StaticRoleNames.Tenants.Admin);
             if (adminRole == null)
             {
-                adminRole = _context.Roles.Add(new Role(_tenantId, StaticRoleNames.Tenants.Admin, StaticRoleNames.Tenants.Admin) { IsStatic = true }).Entity;
+                adminRole = _context.Roles
+                    .Add(new Role(_tenantId, StaticRoleNames.Tenants.Admin, StaticRoleNames.Tenants.Admin)
+                    {
+                        IsStatic = true
+                    }).Entity;
                 _context.SaveChanges();
             }
 
@@ -69,12 +75,15 @@ namespace AcmStatisticsBackend.EntityFrameworkCore.Seed.Tenants
 
             // Admin user
 
-            var adminUser = _context.Users.IgnoreQueryFilters().FirstOrDefault(u => u.TenantId == _tenantId && u.UserName == AbpUserBase.AdminUserName);
+            var adminUser = _context.Users.IgnoreQueryFilters()
+                .FirstOrDefault(u => u.TenantId == _tenantId && u.UserName == AbpUserBase.AdminUserName);
             if (adminUser == null)
             {
                 adminUser = User.CreateTenantAdminUser(_tenantId, "admin@defaulttenant.com");
                 var adminPassword = AppEnvironmentVariables.DefaultAdminPassword;
-                adminUser.Password = new PasswordHasher<User>(new OptionsWrapper<PasswordHasherOptions>(new PasswordHasherOptions())).HashPassword(adminUser, adminPassword);
+                adminUser.Password =
+                    new PasswordHasher<User>(new OptionsWrapper<PasswordHasherOptions>(new PasswordHasherOptions()))
+                        .HashPassword(adminUser, adminPassword);
                 adminUser.IsEmailConfirmed = true;
                 adminUser.IsActive = true;
 
@@ -85,6 +94,25 @@ namespace AcmStatisticsBackend.EntityFrameworkCore.Seed.Tenants
                 _context.UserRoles.Add(new UserRole(_tenantId, adminUser.Id, adminRole.Id));
                 _context.SaveChanges();
             }
+        }
+
+        private void CreateUserRole()
+        {
+            // set User role as default role
+            var userRole = _context.Roles.IgnoreQueryFilters()
+                .FirstOrDefault(r => r.TenantId == _tenantId && r.Name == StaticRoleNames.Tenants.User);
+            if (userRole == null)
+            {
+                userRole = _context.Roles.Add(
+                    new Role(_tenantId, StaticRoleNames.Tenants.User, StaticRoleNames.Tenants.User)
+                    {
+                        IsStatic = true,
+                        IsDefault = true,
+                    }).Entity;
+                _context.SaveChanges();
+            }
+
+            // TODO: add user permissions if not exist
         }
     }
 }
