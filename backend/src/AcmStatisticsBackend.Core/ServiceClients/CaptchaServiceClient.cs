@@ -1,9 +1,10 @@
 using System.Threading.Tasks;
+using Abp.Dependency;
 using Flurl.Http;
 
 namespace AcmStatisticsBackend.ServiceClients
 {
-    public class CaptchaServiceClient : ICaptchaServiceClient
+    public class CaptchaServiceClient : ICaptchaServiceClient, ISingletonDependency
     {
         /// <inheritdoc cref="ICaptchaServiceClient.ValidateAsync"/>
         public async Task<CaptchaServiceValidateResult> ValidateAsync(string id, string text)
