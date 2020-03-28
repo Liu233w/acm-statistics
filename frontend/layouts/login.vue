@@ -21,7 +21,7 @@
 
 <style scoped>
   .background {
-    background-image: url('~/assets/img/login/background.jpg')
+    background-image: url('~assets/img/login/background.jpg')
   }
 
   .vertical-center {
