@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using Abp.Authorization.Users;
 using Abp.Extensions;
@@ -23,7 +23,7 @@ namespace AcmStatisticsBackend.Authorization.Users
                 Name = AdminUserName,
                 Surname = AdminUserName,
                 EmailAddress = emailAddress,
-                Roles = new List<UserRole>()
+                Roles = new List<UserRole>(),
             };
 
             user.SetNormalizedNames();

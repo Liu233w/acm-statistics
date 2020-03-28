@@ -60,7 +60,7 @@ namespace AcmStatisticsBackend.EntityFrameworkCore.Seed.Host
                         TenantId = null,
                         Name = permission.Name,
                         IsGranted = true,
-                        RoleId = adminRoleForHost.Id
+                        RoleId = adminRoleForHost.Id,
                     }));
                 _context.SaveChanges();
             }
@@ -78,7 +78,7 @@ namespace AcmStatisticsBackend.EntityFrameworkCore.Seed.Host
                     Surname = "admin",
                     EmailAddress = "admin@aspnetboilerplate.com",
                     IsEmailConfirmed = true,
-                    IsActive = true
+                    IsActive = true,
                 };
 
                 var adminPassword = AppEnvironmentVariables.DefaultAdminPassword;

@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Abp.Application.Services;
@@ -138,7 +138,7 @@ namespace AcmStatisticsBackend.Roles
             {
                 Role = roleEditDto,
                 Permissions = ObjectMapper.Map<List<FlatPermissionDto>>(permissions).OrderBy(p => p.DisplayName).ToList(),
-                GrantedPermissionNames = grantedPermissions.Select(p => p.Name).ToList()
+                GrantedPermissionNames = grantedPermissions.Select(p => p.Name).ToList(),
             };
         }
     }

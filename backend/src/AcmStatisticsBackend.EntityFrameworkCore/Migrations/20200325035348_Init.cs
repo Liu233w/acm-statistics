@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
@@ -28,7 +28,7 @@ namespace AcmStatisticsBackend.Migrations
                     Exception = table.Column<string>(maxLength: 2000, nullable: true),
                     ImpersonatorUserId = table.Column<long>(nullable: true),
                     ImpersonatorTenantId = table.Column<int>(nullable: true),
-                    CustomData = table.Column<string>(maxLength: 2000, nullable: true)
+                    CustomData = table.Column<string>(maxLength: 2000, nullable: true),
                 },
                 constraints: table =>
                 {
@@ -49,7 +49,7 @@ namespace AcmStatisticsBackend.Migrations
                     NextTryTime = table.Column<DateTime>(nullable: false),
                     LastTryTime = table.Column<DateTime>(nullable: true),
                     IsAbandoned = table.Column<bool>(nullable: false),
-                    Priority = table.Column<byte>(nullable: false)
+                    Priority = table.Column<byte>(nullable: false),
                 },
                 constraints: table =>
                 {
@@ -70,7 +70,7 @@ namespace AcmStatisticsBackend.Migrations
                     DeleterUserId = table.Column<long>(nullable: true),
                     DeletionTime = table.Column<DateTime>(nullable: true),
                     Name = table.Column<string>(maxLength: 32, nullable: false),
-                    DisplayName = table.Column<string>(maxLength: 64, nullable: false)
+                    DisplayName = table.Column<string>(maxLength: 64, nullable: false),
                 },
                 constraints: table =>
                 {
@@ -92,7 +92,7 @@ namespace AcmStatisticsBackend.Migrations
                     ImpersonatorUserId = table.Column<long>(nullable: true),
                     Reason = table.Column<string>(maxLength: 256, nullable: true),
                     TenantId = table.Column<int>(nullable: true),
-                    UserId = table.Column<long>(nullable: true)
+                    UserId = table.Column<long>(nullable: true),
                 },
                 constraints: table =>
                 {
@@ -116,7 +116,7 @@ namespace AcmStatisticsBackend.Migrations
                     Name = table.Column<string>(maxLength: 128, nullable: false),
                     DisplayName = table.Column<string>(maxLength: 64, nullable: false),
                     Icon = table.Column<string>(maxLength: 128, nullable: true),
-                    IsDisabled = table.Column<bool>(nullable: false)
+                    IsDisabled = table.Column<bool>(nullable: false),
                 },
                 constraints: table =>
                 {
@@ -137,7 +137,7 @@ namespace AcmStatisticsBackend.Migrations
                     LanguageName = table.Column<string>(maxLength: 128, nullable: false),
                     Source = table.Column<string>(maxLength: 128, nullable: false),
                     Key = table.Column<string>(maxLength: 256, nullable: false),
-                    Value = table.Column<string>(maxLength: 67108864, nullable: false)
+                    Value = table.Column<string>(maxLength: 67108864, nullable: false),
                 },
                 constraints: table =>
                 {
@@ -160,7 +160,7 @@ namespace AcmStatisticsBackend.Migrations
                     Severity = table.Column<byte>(nullable: false),
                     UserIds = table.Column<string>(maxLength: 131072, nullable: true),
                     ExcludedUserIds = table.Column<string>(maxLength: 131072, nullable: true),
-                    TenantIds = table.Column<string>(maxLength: 131072, nullable: true)
+                    TenantIds = table.Column<string>(maxLength: 131072, nullable: true),
                 },
                 constraints: table =>
                 {
@@ -179,7 +179,7 @@ namespace AcmStatisticsBackend.Migrations
                     NotificationName = table.Column<string>(maxLength: 96, nullable: true),
                     EntityTypeName = table.Column<string>(maxLength: 250, nullable: true),
                     EntityTypeAssemblyQualifiedName = table.Column<string>(maxLength: 512, nullable: true),
-                    EntityId = table.Column<string>(maxLength: 96, nullable: true)
+                    EntityId = table.Column<string>(maxLength: 96, nullable: true),
                 },
                 constraints: table =>
                 {
@@ -197,7 +197,7 @@ namespace AcmStatisticsBackend.Migrations
                     TenantId = table.Column<int>(nullable: true),
                     RoleId = table.Column<int>(nullable: false),
                     OrganizationUnitId = table.Column<long>(nullable: false),
-                    IsDeleted = table.Column<bool>(nullable: false)
+                    IsDeleted = table.Column<bool>(nullable: false),
                 },
                 constraints: table =>
                 {
@@ -220,7 +220,7 @@ namespace AcmStatisticsBackend.Migrations
                     TenantId = table.Column<int>(nullable: true),
                     ParentId = table.Column<long>(nullable: true),
                     Code = table.Column<string>(maxLength: 95, nullable: false),
-                    DisplayName = table.Column<string>(maxLength: 128, nullable: false)
+                    DisplayName = table.Column<string>(maxLength: 128, nullable: false),
                 },
                 constraints: table =>
                 {
@@ -247,7 +247,7 @@ namespace AcmStatisticsBackend.Migrations
                     EntityTypeName = table.Column<string>(maxLength: 250, nullable: true),
                     EntityTypeAssemblyQualifiedName = table.Column<string>(maxLength: 512, nullable: true),
                     EntityId = table.Column<string>(maxLength: 96, nullable: true),
-                    Severity = table.Column<byte>(nullable: false)
+                    Severity = table.Column<byte>(nullable: false),
                 },
                 constraints: table =>
                 {
@@ -271,7 +271,7 @@ namespace AcmStatisticsBackend.Migrations
                     UserId = table.Column<long>(nullable: false),
                     UserLinkId = table.Column<long>(nullable: true),
                     UserName = table.Column<string>(maxLength: 256, nullable: true),
-                    EmailAddress = table.Column<string>(maxLength: 256, nullable: true)
+                    EmailAddress = table.Column<string>(maxLength: 256, nullable: true),
                 },
                 constraints: table =>
                 {
@@ -292,7 +292,7 @@ namespace AcmStatisticsBackend.Migrations
                     ClientName = table.Column<string>(maxLength: 128, nullable: true),
                     BrowserInfo = table.Column<string>(maxLength: 512, nullable: true),
                     Result = table.Column<byte>(nullable: false),
-                    CreationTime = table.Column<DateTime>(nullable: false)
+                    CreationTime = table.Column<DateTime>(nullable: false),
                 },
                 constraints: table =>
                 {
@@ -308,7 +308,7 @@ namespace AcmStatisticsBackend.Migrations
                     UserId = table.Column<long>(nullable: false),
                     TenantNotificationId = table.Column<Guid>(nullable: false),
                     State = table.Column<int>(nullable: false),
-                    CreationTime = table.Column<DateTime>(nullable: false)
+                    CreationTime = table.Column<DateTime>(nullable: false),
                 },
                 constraints: table =>
                 {
@@ -326,7 +326,7 @@ namespace AcmStatisticsBackend.Migrations
                     TenantId = table.Column<int>(nullable: true),
                     UserId = table.Column<long>(nullable: false),
                     OrganizationUnitId = table.Column<long>(nullable: false),
-                    IsDeleted = table.Column<bool>(nullable: false)
+                    IsDeleted = table.Column<bool>(nullable: false),
                 },
                 constraints: table =>
                 {
@@ -366,7 +366,7 @@ namespace AcmStatisticsBackend.Migrations
                     IsActive = table.Column<bool>(nullable: false),
                     NormalizedUserName = table.Column<string>(maxLength: 256, nullable: false),
                     NormalizedEmailAddress = table.Column<string>(maxLength: 256, nullable: false),
-                    ConcurrencyStamp = table.Column<string>(maxLength: 128, nullable: true)
+                    ConcurrencyStamp = table.Column<string>(maxLength: 128, nullable: true),
                 },
                 constraints: table =>
                 {
@@ -401,7 +401,7 @@ namespace AcmStatisticsBackend.Migrations
                     CreationTime = table.Column<DateTime>(nullable: false),
                     TenantId = table.Column<int>(nullable: true),
                     IsDeleted = table.Column<bool>(nullable: false),
-                    DeletionTime = table.Column<DateTime>(nullable: true)
+                    DeletionTime = table.Column<DateTime>(nullable: true),
                 },
                 constraints: table =>
                 {
@@ -420,7 +420,7 @@ namespace AcmStatisticsBackend.Migrations
                     Secret = table.Column<string>(nullable: false),
                     IsActive = table.Column<bool>(nullable: false),
                     Webhooks = table.Column<string>(nullable: true),
-                    Headers = table.Column<string>(nullable: true)
+                    Headers = table.Column<string>(nullable: true),
                 },
                 constraints: table =>
                 {
@@ -439,7 +439,7 @@ namespace AcmStatisticsBackend.Migrations
                     Name = table.Column<string>(maxLength: 128, nullable: false),
                     Value = table.Column<string>(maxLength: 2000, nullable: false),
                     Discriminator = table.Column<string>(nullable: false),
-                    EditionId = table.Column<int>(nullable: true)
+                    EditionId = table.Column<int>(nullable: true),
                 },
                 constraints: table =>
                 {
@@ -463,7 +463,7 @@ namespace AcmStatisticsBackend.Migrations
                     EntityChangeSetId = table.Column<long>(nullable: false),
                     EntityId = table.Column<string>(maxLength: 48, nullable: true),
                     EntityTypeFullName = table.Column<string>(maxLength: 192, nullable: true),
-                    TenantId = table.Column<int>(nullable: true)
+                    TenantId = table.Column<int>(nullable: true),
                 },
                 constraints: table =>
                 {
@@ -496,7 +496,7 @@ namespace AcmStatisticsBackend.Migrations
                     IsDefault = table.Column<bool>(nullable: false),
                     NormalizedName = table.Column<string>(maxLength: 32, nullable: false),
                     ConcurrencyStamp = table.Column<string>(maxLength: 128, nullable: true),
-                    Description = table.Column<string>(maxLength: 5000, nullable: true)
+                    Description = table.Column<string>(maxLength: 5000, nullable: true),
                 },
                 constraints: table =>
                 {
@@ -534,7 +534,7 @@ namespace AcmStatisticsBackend.Migrations
                     TenantId = table.Column<int>(nullable: true),
                     UserId = table.Column<long>(nullable: true),
                     Name = table.Column<string>(maxLength: 256, nullable: false),
-                    Value = table.Column<string>(nullable: true)
+                    Value = table.Column<string>(nullable: true),
                 },
                 constraints: table =>
                 {
@@ -564,7 +564,7 @@ namespace AcmStatisticsBackend.Migrations
                     Name = table.Column<string>(maxLength: 128, nullable: false),
                     ConnectionString = table.Column<string>(maxLength: 1024, nullable: true),
                     IsActive = table.Column<bool>(nullable: false),
-                    EditionId = table.Column<int>(nullable: true)
+                    EditionId = table.Column<int>(nullable: true),
                 },
                 constraints: table =>
                 {
@@ -606,7 +606,7 @@ namespace AcmStatisticsBackend.Migrations
                     TenantId = table.Column<int>(nullable: true),
                     UserId = table.Column<long>(nullable: false),
                     ClaimType = table.Column<string>(maxLength: 256, nullable: true),
-                    ClaimValue = table.Column<string>(nullable: true)
+                    ClaimValue = table.Column<string>(nullable: true),
                 },
                 constraints: table =>
                 {
@@ -628,7 +628,7 @@ namespace AcmStatisticsBackend.Migrations
                     TenantId = table.Column<int>(nullable: true),
                     UserId = table.Column<long>(nullable: false),
                     LoginProvider = table.Column<string>(maxLength: 128, nullable: false),
-                    ProviderKey = table.Column<string>(maxLength: 256, nullable: false)
+                    ProviderKey = table.Column<string>(maxLength: 256, nullable: false),
                 },
                 constraints: table =>
                 {
@@ -651,7 +651,7 @@ namespace AcmStatisticsBackend.Migrations
                     CreatorUserId = table.Column<long>(nullable: true),
                     TenantId = table.Column<int>(nullable: true),
                     UserId = table.Column<long>(nullable: false),
-                    RoleId = table.Column<int>(nullable: false)
+                    RoleId = table.Column<int>(nullable: false),
                 },
                 constraints: table =>
                 {
@@ -675,7 +675,7 @@ namespace AcmStatisticsBackend.Migrations
                     LoginProvider = table.Column<string>(maxLength: 128, nullable: true),
                     Name = table.Column<string>(maxLength: 128, nullable: true),
                     Value = table.Column<string>(maxLength: 512, nullable: true),
-                    ExpireDate = table.Column<DateTime>(nullable: true)
+                    ExpireDate = table.Column<DateTime>(nullable: true),
                 },
                 constraints: table =>
                 {
@@ -699,7 +699,7 @@ namespace AcmStatisticsBackend.Migrations
                     ResponseStatusCode = table.Column<int>(nullable: true),
                     CreationTime = table.Column<DateTime>(nullable: false),
                     LastModificationTime = table.Column<DateTime>(nullable: true),
-                    TenantId = table.Column<int>(nullable: true)
+                    TenantId = table.Column<int>(nullable: true),
                 },
                 constraints: table =>
                 {
@@ -723,7 +723,7 @@ namespace AcmStatisticsBackend.Migrations
                     OriginalValue = table.Column<string>(maxLength: 512, nullable: true),
                     PropertyName = table.Column<string>(maxLength: 96, nullable: true),
                     PropertyTypeFullName = table.Column<string>(maxLength: 192, nullable: true),
-                    TenantId = table.Column<int>(nullable: true)
+                    TenantId = table.Column<int>(nullable: true),
                 },
                 constraints: table =>
                 {
@@ -749,7 +749,7 @@ namespace AcmStatisticsBackend.Migrations
                     IsGranted = table.Column<bool>(nullable: false),
                     Discriminator = table.Column<string>(nullable: false),
                     RoleId = table.Column<int>(nullable: true),
-                    UserId = table.Column<long>(nullable: true)
+                    UserId = table.Column<long>(nullable: true),
                 },
                 constraints: table =>
                 {
@@ -779,7 +779,7 @@ namespace AcmStatisticsBackend.Migrations
                     TenantId = table.Column<int>(nullable: true),
                     RoleId = table.Column<int>(nullable: false),
                     ClaimType = table.Column<string>(maxLength: 256, nullable: true),
-                    ClaimValue = table.Column<string>(nullable: true)
+                    ClaimValue = table.Column<string>(nullable: true),
                 },
                 constraints: table =>
                 {

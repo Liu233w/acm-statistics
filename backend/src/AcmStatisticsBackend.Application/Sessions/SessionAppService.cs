@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Abp.Auditing;
 using AcmStatisticsBackend.Sessions.Dto;
@@ -16,8 +16,8 @@ namespace AcmStatisticsBackend.Sessions
                 {
                     Version = AppVersionHelper.Version,
                     ReleaseDate = AppVersionHelper.ReleaseDate,
-                    Features = new Dictionary<string, bool>()
-                }
+                    Features = new Dictionary<string, bool>(),
+                },
             };
 
             if (AbpSession.TenantId.HasValue)

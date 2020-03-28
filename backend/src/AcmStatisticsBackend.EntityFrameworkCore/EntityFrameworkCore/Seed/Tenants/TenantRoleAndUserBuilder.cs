@@ -41,7 +41,7 @@ namespace AcmStatisticsBackend.EntityFrameworkCore.Seed.Tenants
                 adminRole = _context.Roles
                     .Add(new Role(_tenantId, StaticRoleNames.Tenants.Admin, StaticRoleNames.Tenants.Admin)
                     {
-                        IsStatic = true
+                        IsStatic = true,
                     }).Entity;
                 _context.SaveChanges();
             }
@@ -68,7 +68,7 @@ namespace AcmStatisticsBackend.EntityFrameworkCore.Seed.Tenants
                         TenantId = _tenantId,
                         Name = permission.Name,
                         IsGranted = true,
-                        RoleId = adminRole.Id
+                        RoleId = adminRole.Id,
                     }));
                 _context.SaveChanges();
             }
