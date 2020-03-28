@@ -20,7 +20,6 @@
     "@nuxtjs/axios": "^5.9.6",
     "@nuxtjs/component-cache": "1.1.5",
     "@nuxtjs/vuetify": "1.11.0",
-    "axios": "0.19.2",
     "cheerio": "1.0.0-rc.3",
     "lodash": "4.17.15",
     "lodash-webpack-plugin": "0.11.5",

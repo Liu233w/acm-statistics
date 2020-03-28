@@ -16,7 +16,6 @@ async function buildSources() {
   let crawlersModule = `
   /* eslint-disable */
   ${corsModule}
-  import axios from 'axios'
   export default () => {
     const metas = ${JSON.stringify(await readMetaConfigs())};
     const crawlers = {

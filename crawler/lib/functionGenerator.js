@@ -73,20 +73,20 @@ exports.generateBrowserCrawlerFunctions = async () => {
   // 生成从服务器端进行查询的代码
   const resolveServerQuery = (crawlerName) => _.trim(`
     new Promise((resolve, reject) => {
-      axios.get('/api/crawlers/${crawlerName}/'+username)
+      superagent.get('/api/crawlers/${crawlerName}/'+username)
         .then(response => {
           // console.log(response)
-          if (response.data.error) {
-            reject(new Error(response.data.message))
+          if (response.body.error) {
+            reject(new Error(response.body.message))
           } else {
-            resolve(response.data.data)
+            resolve(response.body.data)
           }
         })
         .catch(err => {
           // console.error(err)
-          if (err.response && err.response.data.message) {
+          if (err.response && err.response.body && err.response.body.message) {
             // 服务端的爬虫报的错
-            reject(new Error(err.response.data.message))
+            reject(new Error(err.response.body.message))
           } else {
             //网络错误或其他错误
             reject(err)
