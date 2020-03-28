@@ -20,6 +20,11 @@ namespace AcmStatisticsBackend.Authorization.Roles
                 new StaticRoleDefinition(
                     StaticRoleNames.Tenants.Admin,
                     MultiTenancySides.Tenant));
+
+            roleManagementConfig.StaticRoles.Add(
+                new StaticRoleDefinition(
+                    StaticRoleNames.Tenants.User,
+                    MultiTenancySides.Tenant));
         }
     }
 }
