@@ -20,7 +20,7 @@ namespace AcmStatisticsBackend.Authorization.Accounts.Dto
 
         [Required]
         public string CaptchaText { get; set; }
-        
+
         [Required]
         public string CaptchaId { get; set; }
     }
