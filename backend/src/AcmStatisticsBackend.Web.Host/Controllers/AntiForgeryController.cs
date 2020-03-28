@@ -1,8 +1,6 @@
-using System.Threading.Tasks;
 using Abp.Web.Security.AntiForgery;
 using AcmStatisticsBackend.Controllers;
 using Microsoft.AspNetCore.Antiforgery;
-using Microsoft.AspNetCore.Mvc;
 
 namespace AcmStatisticsBackend.Web.Host.Controllers
 {

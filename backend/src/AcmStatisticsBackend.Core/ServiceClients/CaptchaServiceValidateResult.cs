@@ -1,6 +1,3 @@
-using System.Diagnostics.CodeAnalysis;
-using JetBrains.Annotations;
-
 namespace AcmStatisticsBackend.ServiceClients
 {
     /// <summary>
