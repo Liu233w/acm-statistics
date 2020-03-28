@@ -1,9 +1,6 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using Abp.Auditing;
 using Abp.Authorization.Users;
-using Abp.Extensions;
-using AcmStatisticsBackend.Validation;
 
 namespace AcmStatisticsBackend.Authorization.Accounts.Dto
 {
