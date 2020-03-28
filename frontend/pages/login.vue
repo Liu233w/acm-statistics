@@ -6,6 +6,17 @@
       </div>
     </v-card-title>
     <v-container>
+      <v-row>
+        <v-alert
+          type="error"
+          v-model="errorMessage"
+          dismissible
+          transition="fade-transition"
+          class="mb-3"
+        >
+          {{ errorMessage }}
+        </v-alert>
+      </v-row>
       <v-layout>
         <v-flex>
           <v-form v-model="valid" lazy-validation>
@@ -24,9 +35,10 @@
               v-model="password"
               :rules="[rules.required]"
             />
+            <v-checkbox v-model="remember" label="保持登录" />
             <v-row>
               <v-col>
-                <v-btn color="info" block :disabled="!valid">
+                <v-btn color="info" block :disabled="!valid" @click="login">
                   登录
                 </v-btn>
               </v-col>
@@ -45,16 +57,35 @@
 
 <script>
 import rulesMixin from '~/components/rulesMixin'
+import getAbpErrorMessage from '~/components/utils'
 
 export default {
   layout: 'login',
   mixins: [rulesMixin],
   data() {
     return {
-      username: '',
+      username: this.$route.params.username || '',
       password: '',
+      remember: false,
       valid: false,
+      errorMessage: '',
     }
+  },
+  methods: {
+    async login() {
+      try {
+        this.$axios.post('/api/TokenAuth/Authenticate', {
+          userNameOrEmailAddress: this.username,
+          password: this.password,
+          rememberClient: this.remember,
+        })
+        await this.$store.dispatch('session/refreshUser')
+        this.$router.push('/')
+      } catch (err) {
+        const error = getAbpErrorMessage(err)
+        this.errorMessage = error.message + ': ' + error.details
+      }
+    },
   },
 }
 </script>
