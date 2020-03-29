@@ -9,7 +9,7 @@
       <v-row>
         <v-alert
           type="error"
-          v-model="errorMessage"
+          v-model="showError"
           dismissible
           transition="fade-transition"
           class="mb-3"
@@ -57,7 +57,7 @@
 
 <script>
 import rulesMixin from '~/components/rulesMixin'
-import getAbpErrorMessage from '~/components/utils'
+import { getAbpErrorMessage } from '~/components/utils'
 
 export default {
   layout: 'login',
@@ -69,12 +69,13 @@ export default {
       remember: false,
       valid: false,
       errorMessage: '',
+      showError: false,
     }
   },
   methods: {
     async login() {
       try {
-        this.$axios.post('/api/TokenAuth/Authenticate', {
+        await this.$axios.post('/api/TokenAuth/Authenticate', {
           userNameOrEmailAddress: this.username,
           password: this.password,
           rememberClient: this.remember,
@@ -82,8 +83,8 @@ export default {
         await this.$store.dispatch('session/refreshUser')
         this.$router.push('/')
       } catch (err) {
-        const error = getAbpErrorMessage(err)
-        this.errorMessage = error.message + ': ' + error.details
+        this.errorMessage = getAbpErrorMessage(err)
+        this.showError = true
       }
     },
   },

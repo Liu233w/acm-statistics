@@ -79,6 +79,7 @@ module.exports = {
     ['nuxt-env', {
       keys: ['VERSION_NUM', 'BUILD_TIME'],
     }],
+    '@nuxtjs/axios',
   ],
   buildModules: [
     '@nuxtjs/vuetify',

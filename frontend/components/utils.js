@@ -12,12 +12,12 @@ export function getDateFromTimestamp(timestamp) {
  * @param {Error} err axios抛出的异常
  */
 export function getAbpErrorMessage(err) {
+  console.log(err)
   if (!err.response.data) {
-    return {
-      message: '网络错误',
-      details: err.message,
-    }
+    console.error(err)
+    return '网络错误'
   } else {
-    return err.response.data.error
+    console.error(err.response.data.error)
+    return err.response.data.error.message
   }
 }
