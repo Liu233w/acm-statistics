@@ -48,7 +48,7 @@ namespace AcmStatisticsBackend.Authorization.Users
                 TenantId = tenant.Id,
                 IsActive = true,
                 UserName = userName,
-                EmailAddress = "",
+                EmailAddress = userName + AcmStatisticsBackendConsts.NoEmailSuffix,
                 IsEmailConfirmed = false,
                 Roles = new List<UserRole>(),
                 Name = "",
