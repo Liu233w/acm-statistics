@@ -80,7 +80,6 @@ module.exports = {
       keys: ['VERSION_NUM', 'BUILD_TIME'],
     }],
     '@nuxtjs/axios',
-    'cookie-universal-nuxt',
   ],
   buildModules: [
     '@nuxtjs/vuetify',

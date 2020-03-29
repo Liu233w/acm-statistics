@@ -13,7 +13,7 @@ export function getDateFromTimestamp(timestamp) {
  */
 export function getAbpErrorMessage(err) {
   console.log(err)
-  if (!err.response.data) {
+  if (!err.response || !err.response.data) {
     console.error(err)
     return '网络错误'
   } else {

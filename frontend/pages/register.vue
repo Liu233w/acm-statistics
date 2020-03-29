@@ -111,14 +111,14 @@ export default {
   methods: {
     async register() {
       try {
-        await this.$axios.post('/api/services/app/Account/Register', {
+        await this.$axios.$post('/api/services/app/Account/Register', {
           username: this.username,
           password: this.password,
           captchaText: this.captchaText,
           captchaId: this.captchaId,
         })
 
-        await this.$store.dispatch('/session/login', {
+        await this.$store.dispatch('session/login', {
           username: this.username,
           password: this.password,
           remember: false,
@@ -133,9 +133,9 @@ export default {
     async refreshCaptcha() {
       this.captchaText = ''
       try {
-        const res = await this.$axios.post('/api/captcha-service/generate')
-        this.captchaId = res.data.data.id
-        this.captchaSvg = res.data.data.captcha
+        const res = await this.$axios.$post('/api/captcha-service/generate')
+        this.captchaId = res.data.id
+        this.captchaSvg = res.data.captcha
       } catch (error) {
         this.errorMessage = error.message
         this.showError = true

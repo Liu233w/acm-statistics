@@ -75,7 +75,7 @@ export default {
   methods: {
     async login() {
       try {
-        await this.$store.dispatch('/session/login', {
+        await this.$store.dispatch('session/login', {
           username: this.username,
           password: this.password,
           remember: this.remember,

@@ -1,3 +1,5 @@
+import Cookies from 'js-cookie'
+
 export const state = () => ({
   login: false,
   username: '',
@@ -16,7 +18,7 @@ export const mutations = {
 
 export const actions = {
   async refreshUser({ commit }) {
-    const res = await this.$axios.get('/api/services/app/Session/GetCurrentLoginInformations')
+    const res = await this.$axios.$get('/api/services/app/Session/GetCurrentLoginInformations')
 
     if (res.result.user) {
       commit('setUser', { username: res.result.user.username })
@@ -27,19 +29,20 @@ export const actions = {
   async nuxtServerInit({ dispatch }) {
     await dispatch('refreshUser')
   },
-  async login({dispatch, $cookie, $axios}, {username, password, remember}) {
-    const res = await $axios.post('/api/TokenAuth/Authenticate', {
+  async login({dispatch}, {username, password, remember}) {
+    const res = await this.$axios.$post('/api/TokenAuth/Authenticate', {
       userNameOrEmailAddress: username,
       password: password,
       rememberClient: remember,
     })
 
-    $cookie.set('OAuthToken', res.data.result.accessToken)
+    window.aaa = this
+    Cookies.set('OAuthToken', res.result.accessToken)
 
     await dispatch('refreshUser')
   },
-  async logout({commit, $cookie}) {
-    $cookie.remove('OAuthToken')
+  async logout({commit}) {
+    Cookies.remove('OAuthToken')
     commit('removeUser')
   },
 }
