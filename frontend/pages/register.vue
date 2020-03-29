@@ -118,15 +118,11 @@ export default {
           captchaId: this.captchaId,
         })
 
-        const res = await this.$axios.post('/api/TokenAuth/Authenticate', {
-          userNameOrEmailAddress: this.username,
+        await this.$store.dispatch('/session/login', {
+          username: this.username,
           password: this.password,
-          rememberClient: this.remember,
+          remember: false,
         })
-
-        this.$cookie.set('OAuthToken', res.data.result.accessToken)
-
-        await this.$store.dispatch('session/refreshUser')
         this.$router.push('/')
 
       } catch (err) {
