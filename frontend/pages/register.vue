@@ -9,7 +9,7 @@
       <v-row>
         <v-alert
           type="error"
-          v-model="errorMessage"
+          v-model="showError"
           dismissible
           transition="fade-transition"
           class="mb-3"
@@ -65,7 +65,7 @@
             </v-row>
             <v-row>
               <v-col>
-                <v-btn color="info" block :disabled="!valid" @click="register">
+                <v-btn color="info" block :disabled="!valid && captchaText == ''" @click="register">
                   注册
                 </v-btn>
               </v-col>
@@ -84,7 +84,7 @@
 
 <script>
 import rulesMixin from '~/components/rulesMixin'
-import getAbpErrorMessage from '~/components/utils'
+import { getAbpErrorMessage } from '~/components/utils'
 
 export default {
   layout: 'login',
@@ -100,30 +100,36 @@ export default {
       captchaSvg: '',
       captchaText: '',
       errorMessage: '',
+      showError: false,
     }
   },
   methods: {
     async register() {
       try {
-        this.$axios.post('/api/services/app/Account/Register', {
+        await this.$axios.post('/api/services/app/Account/Register', {
           username: this.username,
           password: this.password,
           captchaText: this.captchaText,
           captchaId: this.captchaId,
         })
-        this.$router.push('/login?username=' + this.username)
+        this.$router.push({
+          url: '/login',
+          params: { username: this.username },
+        })
       } catch (err) {
-        const error = getAbpErrorMessage(err)
-        this.errorMessage = error.message + ': ' + error.details
+        this.errorMessage = getAbpErrorMessage(err)
+        this.showError = true
       }
     },
     async refreshCaptcha() {
+      this.captchaText = ''
       try {
         const res = await this.$axios.post('/api/captcha-service/generate')
-        this.captchaId = res.data.id
-        this.captchaSvg = res.data.captcha
+        this.captchaId = res.data.data.id
+        this.captchaSvg = res.data.data.captcha
       } catch (error) {
         this.errorMessage = error.message
+        this.showError = true
       }
     },
   },

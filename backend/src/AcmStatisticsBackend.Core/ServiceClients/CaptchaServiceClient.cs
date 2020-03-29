@@ -9,7 +9,8 @@ namespace AcmStatisticsBackend.ServiceClients
         /// <inheritdoc cref="ICaptchaServiceClient.ValidateAsync"/>
         public async Task<CaptchaServiceValidateResult> ValidateAsync(string id, string text)
         {
-            var response = await "http://captcha-service"
+            var response = await "http://captcha-service/api/captcha-service/validate"
+                .AllowHttpStatus("400")
                 .PostUrlEncodedAsync(new
                 {
                     id = id,
