@@ -65,7 +65,12 @@
             </v-row>
             <v-row>
               <v-col>
-                <v-btn color="info" block :disabled="!valid && captchaText == ''" @click="register">
+                <v-btn
+                  color="info"
+                  block
+                  :disabled="!valid && captchaText == ''"
+                  @click="register"
+                >
                   注册
                 </v-btn>
               </v-col>
@@ -112,10 +117,18 @@ export default {
           captchaText: this.captchaText,
           captchaId: this.captchaId,
         })
-        this.$router.push({
-          url: '/login',
-          params: { username: this.username },
+
+        const res = await this.$axios.post('/api/TokenAuth/Authenticate', {
+          userNameOrEmailAddress: this.username,
+          password: this.password,
+          rememberClient: this.remember,
         })
+
+        this.$cookie.set('OAuthToken', res.data.result.accessToken)
+
+        await this.$store.dispatch('session/refreshUser')
+        this.$router.push('/')
+
       } catch (err) {
         this.errorMessage = getAbpErrorMessage(err)
         this.showError = true
