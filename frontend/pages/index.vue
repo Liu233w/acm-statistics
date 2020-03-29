@@ -1,10 +1,9 @@
 <template>
   <VApp light>
     <VAppBar class="white">
-      <VToolbarTitle>
-        {{ projectTitle }}
-      </VToolbarTitle>
+      <VToolbarTitle>{{ projectTitle }}</VToolbarTitle>
       <VSpacer />
+      <UserStatus />
       <VTooltip left>
         <template #activator="{ on }">
           <VBtn icon v-on="on" href="https://github.com/Liu233w/acm-statistics" target="_blank">
@@ -19,18 +18,15 @@
     <VContent>
       <section>
         <VParallax :src="require('~/assets/img/frontpage/back7-brighten.jpg')" height="600">
-          <VLayout
-            column
-            align-center
-            justify-center
-            class="white--text"
-          >
+          <VLayout column align-center justify-center class="white--text">
             <img :src="require('~/assets/img/logo.png')" alt="Vuetify.js" height="190" class="mb-4">
             <h2 class="black--text headline text-center font-weight-light">
               ACM-ICPC 协会
             </h2>
             <div style="height: 50px" />
-            <h1 class="black--text mb-2 display-1 text-center index-title font-weight-bold">
+            <h1
+              class="black--text mb-2 display-1 text-center index-title font-weight-bold"
+            >
               欢迎使用 {{ projectTitle }}
             </h1>
             <div class="black--text subheading mb-4 text-center index-title">
@@ -50,20 +46,13 @@
       </section>
 
       <section>
-        <VLayout
-          column
-          wrap
-          class="my-12"
-          align-center
-        >
+        <VLayout column wrap class="my-12" align-center>
           <VFlex xs12 sm4 class="my-4">
             <div class="text-center">
               <h2 class="headline">
                 全新查询系统，更加稳定
               </h2>
-              <span class="subheading">
-                异步API + 浏览器端爬虫，速度加倍
-              </span>
+              <span class="subheading">异步API + 浏览器端爬虫，速度加倍</span>
             </div>
           </VFlex>
           <VFlex xs12>
@@ -84,9 +73,10 @@
                     <VCardText class="text-center">
                       我们提供了一个 restful api 来供您使用，您可以在任意的客户端、网站中调用此api来查询某用户在oj上的提交数/通过数。
                       访问我们的
-                      <a href="/swagger" target="_blank">
-                        api文档
-                      </a>以获取更多信息。
+                      <a
+                        href="/swagger"
+                        target="_blank"
+                      >api文档</a>以获取更多信息。
                     </VCardText>
                   </VCard>
                 </VFlex>
@@ -104,9 +94,7 @@
                     </VCardTitle>
                     <VCardText class="text-center">
                       访问我们的
-                      <a href="https://github.com/Liu233w/acm-statistics" target="_blank">
-                        项目地址
-                      </a>
+                      <a href="https://github.com/Liu233w/acm-statistics" target="_blank">项目地址</a>
                       以获取本网站的最新源代码，您可以在自己的服务器上部署本网站或者在自己的项目中使用我们的爬虫代码。
                       欢迎向我们提出问题建议、贡献代码或给我们点赞（Star），您的支持是我们前进的动力
                     </VCardText>
@@ -126,9 +114,7 @@
                     </VCardTitle>
                     <VCardText class="text-center">
                       旧版查询系统中的功能正在被移植到新版查询系统中，如果您需要旧版查询系统中的功能，请
-                      <a href="//npuacm.info/">
-                        单击此处返回旧版查询系统
-                      </a>
+                      <a href="//npuacm.info/">单击此处返回旧版查询系统</a>
                     </VCardText>
                   </VCard>
                 </VFlex>
@@ -145,9 +131,7 @@
               欢迎向我们提出意见以帮助本网站进步
             </div>
             <a :href="mailToGithubLink">
-              <em class="white--text response-title">
-                或者单击此处向本项目发送邮件
-              </em>
+              <em class="white--text response-title">或者单击此处向本项目发送邮件</em>
             </a>
             <VBtn
               class="blue lighten-2 mt-12"
@@ -178,10 +162,13 @@
                     欢迎各位有识之士加入。
                   </p>
                   <p id="busuanzi_container_site_pv" style="display: none;">
-                    本站总访问量: <span id="busuanzi_value_site_pv" />次<br>
+                    本站总访问量:
+                    <span id="busuanzi_value_site_pv" />次
+                    <br>
                   </p>
                   <p id="busuanzi_container_site_uv" style="display: none;">
-                    本站总访客数: <span id="busuanzi_value_site_uv" />次
+                    本站总访客数:
+                    <span id="busuanzi_value_site_uv" />次
                   </p>
                 </VCardText>
               </VCard>
@@ -257,45 +244,50 @@
       </section>
 
       <VFooter class="blue darken-2">
-        <NuxtLink to="/about" class="white--text ml-4 body-2">
+        <NuxtLink
+          to="/about"
+          class="white--text ml-4 body-2"
+        >
           &copy; 2018 - {{ buildYear }} NWPU-ACM 技术组
         </NuxtLink>
         <VSpacer />
-        <span class="white--text ml-4 body-2">
-          陕ICP备17008184号
-        </span>
+        <span class="white--text ml-4 body-2">陕ICP备17008184号</span>
       </VFooter>
     </VContent>
   </VApp>
 </template>
 
 <script>
-  import {PROJECT_TITLE} from '~/components/consts'
-  import {getDateFromTimestamp} from '~/components/utils'
+import { PROJECT_TITLE } from '~/components/consts'
+import { getDateFromTimestamp } from '~/components/utils'
+import UserStatus from '~/components/UserStatus'
 
-  export default {
-    layout: 'none',
-    data() {
-      return {
-        dialog: false,
-        projectTitle: PROJECT_TITLE,
-        buildYear: getDateFromTimestamp(this.$env.BUILD_TIME).getFullYear(),
-      }
+export default {
+  layout: 'none',
+  components: { UserStatus },
+  data() {
+    return {
+      dialog: false,
+      projectTitle: PROJECT_TITLE,
+      buildYear: getDateFromTimestamp(this.$env.BUILD_TIME).getFullYear(),
+    }
+  },
+  methods: {
+    showAddress() {
+      window.alert('陕西省西安市长安区西北工业大学长安校区计算机学院110室')
     },
-    methods: {
-      showAddress() {
-        window.alert('陕西省西安市长安区西北工业大学长安校区计算机学院110室')
-      },
+  },
+  computed: {
+    mailToGithubLink() {
+      const body = encodeURIComponent(
+        '请注意，您经此链接发送的所有信息都将被发送到' +
+          'https://github.com/Liu233w/acm-statistics/issues，任何人都有权限浏览其内容。',
+      )
+      return `mailto:acm-statistics@fire.fundersclub.com?body=${body}`
     },
-    computed: {
-      mailToGithubLink() {
-        const body = encodeURIComponent('请注意，您经此链接发送的所有信息都将被发送到' +
-          'https://github.com/Liu233w/acm-statistics/issues，任何人都有权限浏览其内容。')
-        return `mailto:acm-statistics@fire.fundersclub.com?body=${body}`
-      },
-    },
-  }
-  /*!
+  },
+}
+/*!
 Portions of this source file taken from vuetifyjs/parallax-starter <https://github.com/vuetifyjs/parallax-starter>
 
 The MIT License (MIT)
@@ -323,11 +315,11 @@ THE SOFTWARE.
 </script>
 
 <style scoped>
-  .index-title {
-    text-shadow: 1px 0 #ecf5ff, 0 1px #ecf5ff, 0 -1px #ecf5ff, -1px 0 #ecf5ff;
-  }
+.index-title {
+  text-shadow: 1px 0 #ecf5ff, 0 1px #ecf5ff, 0 -1px #ecf5ff, -1px 0 #ecf5ff;
+}
 
-  .response-title {
-    text-shadow: 1px 0 #000000, 0 1px #000000, 0 -1px #000000, -1px 0 #000000;
-  }
+.response-title {
+  text-shadow: 1px 0 #000000, 0 1px #000000, 0 -1px #000000, -1px 0 #000000;
+}
 </style>
