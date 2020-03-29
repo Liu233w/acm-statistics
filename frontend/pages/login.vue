@@ -64,7 +64,7 @@ export default {
   mixins: [rulesMixin],
   data() {
     return {
-      username: this.$route.params.username || '',
+      username: '',
       password: '',
       remember: false,
       valid: false,
@@ -75,11 +75,14 @@ export default {
   methods: {
     async login() {
       try {
-        await this.$axios.post('/api/TokenAuth/Authenticate', {
+        const res = await this.$axios.post('/api/TokenAuth/Authenticate', {
           userNameOrEmailAddress: this.username,
           password: this.password,
           rememberClient: this.remember,
         })
+
+        this.$cookie.set('OAuthToken', res.data.result.accessToken)
+
         await this.$store.dispatch('session/refreshUser')
         this.$router.push('/')
       } catch (err) {

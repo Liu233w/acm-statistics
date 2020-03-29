@@ -21,6 +21,7 @@
     "@nuxtjs/component-cache": "1.1.5",
     "@nuxtjs/vuetify": "1.11.0",
     "cheerio": "1.0.0-rc.3",
+    "cookie-universal-nuxt": "^2.1.3",
     "lodash": "4.17.15",
     "lodash-webpack-plugin": "0.11.5",
     "nuxt": "2.12.2",
