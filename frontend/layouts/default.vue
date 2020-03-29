@@ -27,6 +27,7 @@
       <VAppBarNavIcon @click="drawer = !drawer" />
       <VToolbarTitle v-text="title" />
       <VSpacer />
+      <UserStatus />
       <VTooltip left>
         <template #activator="{ on }">
           <VBtn
@@ -56,8 +57,12 @@
 
 <script>
   import {getDateFromTimestamp} from '~/components/utils'
+  import UserStatus from '~/components/UserStatus'
 
   export default {
+    components: {
+      UserStatus,
+    },
     data() {
       return {
         drawer: true,
