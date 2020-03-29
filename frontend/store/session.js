@@ -27,4 +27,19 @@ export const actions = {
   async nuxtServerInit({ dispatch }) {
     await dispatch('refreshUser')
   },
+  async login({dispatch, $cookie, $axios}, {username, password, remember}) {
+    const res = await $axios.post('/api/TokenAuth/Authenticate', {
+      userNameOrEmailAddress: username,
+      password: password,
+      rememberClient: remember,
+    })
+
+    $cookie.set('OAuthToken', res.data.result.accessToken)
+
+    await dispatch('refreshUser')
+  },
+  async logout({commit, $cookie}) {
+    $cookie.remove('OAuthToken')
+    commit('removeUser')
+  },
 }
