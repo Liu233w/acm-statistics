@@ -51,6 +51,8 @@ namespace AcmStatisticsBackend.Authorization.Users
                 EmailAddress = "",
                 IsEmailConfirmed = false,
                 Roles = new List<UserRole>(),
+                Name = "",
+                Surname = "",
             };
 
             user.SetNormalizedNames();
