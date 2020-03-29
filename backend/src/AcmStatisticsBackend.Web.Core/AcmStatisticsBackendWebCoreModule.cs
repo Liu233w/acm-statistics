@@ -1,8 +1,9 @@
-﻿using System;
+using System;
 using System.Text;
 using Abp.AspNetCore;
 using Abp.AspNetCore.Configuration;
 using Abp.AspNetCore.SignalR;
+using Abp.Configuration.Startup;
 using Abp.Modules;
 using Abp.Reflection.Extensions;
 using Abp.Zero.Configuration;
@@ -68,6 +69,7 @@ namespace AcmStatisticsBackend
         {
             IocManager.Resolve<ApplicationPartManager>()
                 .AddApplicationPartsIfNotAddedBefore(typeof(AcmStatisticsBackendWebCoreModule).Assembly);
+            Configuration.Modules.AbpWebCommon().SendAllExceptionsToClients = true;
         }
     }
 }
