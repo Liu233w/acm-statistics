@@ -13,7 +13,7 @@ describe('能够加载后端的swagger文件', () => {
 
   it('能够访问页面', () => {
     cy.get('#select').select('后端 API V1', {timeout: 10000})
-    cy.contains('AcmStatisticsBackend API', {timeout: 10000})
+    cy.contains('AcmStatisticsBackend API', {timeout: 60000})
   })
 
   it('可以正常登录', () => {

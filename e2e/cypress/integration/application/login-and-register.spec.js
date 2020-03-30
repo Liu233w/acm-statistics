@@ -7,7 +7,7 @@ describe('/login', () => {
     cy.contains('用户名').parent().type('admin')
     cy.contains('密码').parent().type('wrong-password')
     cy.get('button').contains('登录').click()
-    cy.contains('用户名或密码无效')
+    cy.contains('用户名或密码无效', { timeout: 60000 })
     cy.get('.text-center').matchImageSnapshot('login-failed')
   })
 
@@ -17,8 +17,9 @@ describe('/login', () => {
     cy.contains('密码').parent().type('123qwe')
     cy.contains('保持登录').click()
     cy.get('button').contains('登录').click()
+
+    cy.contains('admin', { timeout: 60000 })
     cy.location('pathname').should('eq', '/')
-    cy.contains('admin')
   })
 })
 
@@ -30,7 +31,7 @@ describe('/register', () => {
     cy.contains('再次输入密码').parent().type('123qwe')
     cy.contains('验证码').parent().type('wrong')
     cy.get('button').contains('注册').click()
-    cy.contains('验证码不正确')
+    cy.contains('验证码不正确', { timeout: 60000 })
     cy.get('.text-center').matchImageSnapshot('register-failed')
   })
 })
