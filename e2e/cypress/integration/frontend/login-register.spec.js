@@ -7,6 +7,7 @@ describe('/login', () => {
   })
 
   it('能够正确渲染', () => {
+    cy.viewport('macbook-15')
     cy.matchImageSnapshot()
   })
 
@@ -35,6 +36,7 @@ describe('/register', () => {
   })
 
   it('能够正确渲染', () => {
+    cy.viewport('macbook-15')
     cy.matchImageSnapshot()
   })
 
