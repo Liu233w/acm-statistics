@@ -21,7 +21,7 @@ export const actions = {
     const res = await this.$axios.$get('/api/services/app/Session/GetCurrentLoginInformations')
 
     if (res.result.user) {
-      commit('setUser', { username: res.result.user.username })
+      commit('setUser', { username: res.result.user.userName })
     } else {
       commit('removeUser')
     }

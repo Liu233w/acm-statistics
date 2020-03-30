@@ -1,8 +1,10 @@
 <template>
   <v-tooltip bottom>
     <template v-slot:activator="{ on }">
-      <v-btn outlined @click="clicked" v-on="on">
-        {{ title }}
+      <v-btn text @click="clicked" v-on="on">
+        <v-icon left v-show="!session.login">
+          fa fa-sign-in-alt
+        </v-icon> {{ title }}
       </v-btn>
     </template>
     {{ tooltip }}
@@ -16,7 +18,7 @@ export default {
       return this.$store.state.session
     },
     title() {
-      if (this.user) {
+      if (this.session.login) {
         return this.session.username
       } else {
         return '登录'
@@ -31,9 +33,10 @@ export default {
     },
   },
   methods: {
-    clicked() {
-      if (this.user) {
+    async clicked() {
+      if (this.session.login) {
         this.$store.dispatch('session/logout')
+        await this.$store.dispatch('session/refreshUser')
         this.$router.push('/')
       } else {
         this.$router.push('/login')
