@@ -50,7 +50,7 @@ namespace AcmStatisticsBackend.Tests.Accounts
             await UsingDbContextAsync(async ctx =>
             {
                 var user = await ctx.Users.FirstOrDefaultAsync(user => user.UserName == "testuser");
-                user.EmailAddress.ShouldBe("");
+                user.EmailAddress.ShouldBe("testuser@noemail.fake");
                 user.IsEmailConfirmed.ShouldBe(false);
             });
         }
