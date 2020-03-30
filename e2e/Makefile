@@ -15,10 +15,11 @@ server: export BUILD_TIME = 0
 server:
 	cd ../build && $(MAKE) -f docker-compose.mk e2e-up
 
-## 等待server就位。
+## 等待server就位。后端启动最慢，等它启动就差不多了
 wait-server:
 	docker run --rm -t --ipc=host --network=host \
-		willwill/wait-for-it localhost:1081 -t 0
+		jwilder/dockerize -timeout 5m \
+		-wait http://localhost:3000/api/services/app/Session/GetCurrentLoginInformations
 
 build-http-mocks: .node-base
 	docker build ./http-mocks \
