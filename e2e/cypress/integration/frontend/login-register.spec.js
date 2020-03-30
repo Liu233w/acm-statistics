@@ -1,4 +1,4 @@
-Cypress.config('baseUrl', 'http://reverse-proxy')
+Cypress.config('baseUrl', 'http://localhost:3000')
 
 describe('/login', () => {
 
