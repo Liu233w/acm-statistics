@@ -1,5 +1,5 @@
 <template>
-  <VContainer grid-list-md>
+  <VContainer grid-list-md v-resize="onResize">
     <VLayout wrap>
       <VFlex xs12 sm5 md3>
         <VTextField
@@ -127,7 +127,6 @@
     },
     mounted() {
       this.onResize()
-      window.addEventListener('resize', this.onResize, {passive: true})
       this.loadUsername()
     },
     data() {
