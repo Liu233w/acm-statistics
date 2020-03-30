@@ -16,13 +16,12 @@
     "superagent-proxy": "^2.0.0"
   },
   "devDependencies": {
-    "axios": "0.19.2",
-    "axios-mock-adapter": "1.18.1",
     "eslint": "6.8.0",
     "eslint-plugin-jest": "23.8.2",
     "eslint-plugin-lodash": "6.0.0",
     "jest": "25.2.4",
-    "memfs": "3.1.2"
+    "memfs": "3.1.2",
+    "nock": "^12.0.3"
   },
   "jest": {
     "testPathIgnorePatterns": [
