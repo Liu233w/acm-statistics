@@ -3,7 +3,13 @@ const Router = require('koa-router')
 const bodyParser = require('koa-bodyparser')
 const NodeCache = require('node-cache')
 const { v4: uuid } = require('uuid')
-const svgCaptcha = require('svg-captcha')
+let svgCaptcha = require('svg-captcha')
+
+if (process.env.E2E) {
+    // E2E 测试时把接口固定
+    // eslint-disable-next-line jest/no-mocks-import
+    svgCaptcha = require('../__mocks__/svg-captcha')
+}
 
 const restHelper = require('./restHelper')
 
