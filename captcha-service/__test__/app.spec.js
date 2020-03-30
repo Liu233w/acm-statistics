@@ -1,3 +1,4 @@
+/* eslint-disable jest/expect-expect */
 jest.mock('svg-captcha')
 
 const request = require('supertest')
@@ -11,7 +12,7 @@ describe('/api/captcha-service/generate', () => {
             error: false,
             data: {
                 id: expect.any(String),
-                captcha: '<svg/>',
+                captcha: '<svg xmlns="http://www.w3.org/2000/svg" width="150" height="50" viewBox="0,0,150,50" />',
             },
         })
     })
