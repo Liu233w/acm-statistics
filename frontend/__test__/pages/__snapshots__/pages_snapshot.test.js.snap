@@ -731,10 +731,9 @@ exports[`/ 1`] = `
           <div class="v-application--wrap">
             <header class="white v-sheet v-sheet--tile theme--light v-toolbar v-app-bar" style="height:64px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;">
               <div class="v-toolbar__content" style="height:64px;">
-                <div class="v-toolbar__title">
-                  NWPU-ACM &#x67E5;&#x8BE2;&#x7CFB;&#x7EDF;
-                </div>
-                <div class="spacer"></div> <span class="v-tooltip v-tooltip--left"><!----><a href="https://github.com/Liu233w/acm-statistics" target="_blank" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" medium class="v-icon notranslate fab fa-github theme--light"></i></span></a></span>
+                <div class="v-toolbar__title">NWPU-ACM &#x67E5;&#x8BE2;&#x7CFB;&#x7EDF;</div>
+                <div class="spacer"></div> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--text theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate v-icon--left fa fa fa fa-sign-in-alt theme--light"></i> &#x767B;&#x5F55;
+    </span></button></span> <span class="v-tooltip v-tooltip--left"><!----><a href="https://github.com/Liu233w/acm-statistics" target="_blank" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" medium class="v-icon notranslate fab fa-github theme--light"></i></span></a></span>
               </div>
             </header>
             <main class="v-content" style="padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px;">
@@ -766,9 +765,7 @@ exports[`/ 1`] = `
                       <div class="text-center">
                         <h2 class="headline">
                           &#x5168;&#x65B0;&#x67E5;&#x8BE2;&#x7CFB;&#x7EDF;&#xFF0C;&#x66F4;&#x52A0;&#x7A33;&#x5B9A;
-                        </h2> <span class="subheading">
-              &#x5F02;&#x6B65;API + &#x6D4F;&#x89C8;&#x5668;&#x7AEF;&#x722C;&#x866B;&#xFF0C;&#x901F;&#x5EA6;&#x52A0;&#x500D;
-            </span>
+                        </h2> <span class="subheading">&#x5F02;&#x6B65;API + &#x6D4F;&#x89C8;&#x5668;&#x7AEF;&#x722C;&#x866B;&#xFF0C;&#x901F;&#x5EA6;&#x52A0;&#x500D;</span>
                       </div>
                     </div>
                     <div class="flex xs12">
@@ -785,9 +782,7 @@ exports[`/ 1`] = `
                               <div class="v-card__text text-center">
                                 &#x6211;&#x4EEC;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E2A; restful api &#x6765;&#x4F9B;&#x60A8;&#x4F7F;&#x7528;&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x5728;&#x4EFB;&#x610F;&#x7684;&#x5BA2;&#x6237;&#x7AEF;&#x3001;&#x7F51;&#x7AD9;&#x4E2D;&#x8C03;&#x7528;&#x6B64;api&#x6765;&#x67E5;&#x8BE2;&#x67D0;&#x7528;&#x6237;&#x5728;oj&#x4E0A;&#x7684;&#x63D0;&#x4EA4;&#x6570;/&#x901A;&#x8FC7;&#x6570;&#x3002;
                                 &#x8BBF;&#x95EE;&#x6211;&#x4EEC;&#x7684;
-                                <a href="/swagger" target="_blank">
-                                  api&#x6587;&#x6863;
-                                </a>&#x4EE5;&#x83B7;&#x53D6;&#x66F4;&#x591A;&#x4FE1;&#x606F;&#x3002;
+                                <a href="/swagger" target="_blank">api&#x6587;&#x6863;</a>&#x4EE5;&#x83B7;&#x53D6;&#x66F4;&#x591A;&#x4FE1;&#x606F;&#x3002;
                               </div>
                             </div>
                           </div>
@@ -801,9 +796,7 @@ exports[`/ 1`] = `
                               </div>
                               <div class="v-card__text text-center">
                                 &#x8BBF;&#x95EE;&#x6211;&#x4EEC;&#x7684;
-                                <a href="https://github.com/Liu233w/acm-statistics" target="_blank">
-                                  &#x9879;&#x76EE;&#x5730;&#x5740;
-                                </a>
+                                <a href="https://github.com/Liu233w/acm-statistics" target="_blank">&#x9879;&#x76EE;&#x5730;&#x5740;</a>
                                 &#x4EE5;&#x83B7;&#x53D6;&#x672C;&#x7F51;&#x7AD9;&#x7684;&#x6700;&#x65B0;&#x6E90;&#x4EE3;&#x7801;&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x5728;&#x81EA;&#x5DF1;&#x7684;&#x670D;&#x52A1;&#x5668;&#x4E0A;&#x90E8;&#x7F72;&#x672C;&#x7F51;&#x7AD9;&#x6216;&#x8005;&#x5728;&#x81EA;&#x5DF1;&#x7684;&#x9879;&#x76EE;&#x4E2D;&#x4F7F;&#x7528;&#x6211;&#x4EEC;&#x7684;&#x722C;&#x866B;&#x4EE3;&#x7801;&#x3002;
                                 &#x6B22;&#x8FCE;&#x5411;&#x6211;&#x4EEC;&#x63D0;&#x51FA;&#x95EE;&#x9898;&#x5EFA;&#x8BAE;&#x3001;&#x8D21;&#x732E;&#x4EE3;&#x7801;&#x6216;&#x7ED9;&#x6211;&#x4EEC;&#x70B9;&#x8D5E;&#xFF08;Star&#xFF09;&#xFF0C;&#x60A8;&#x7684;&#x652F;&#x6301;&#x662F;&#x6211;&#x4EEC;&#x524D;&#x8FDB;&#x7684;&#x52A8;&#x529B;
                               </div>
@@ -819,9 +812,7 @@ exports[`/ 1`] = `
                               </div>
                               <div class="v-card__text text-center">
                                 &#x65E7;&#x7248;&#x67E5;&#x8BE2;&#x7CFB;&#x7EDF;&#x4E2D;&#x7684;&#x529F;&#x80FD;&#x6B63;&#x5728;&#x88AB;&#x79FB;&#x690D;&#x5230;&#x65B0;&#x7248;&#x67E5;&#x8BE2;&#x7CFB;&#x7EDF;&#x4E2D;&#xFF0C;&#x5982;&#x679C;&#x60A8;&#x9700;&#x8981;&#x65E7;&#x7248;&#x67E5;&#x8BE2;&#x7CFB;&#x7EDF;&#x4E2D;&#x7684;&#x529F;&#x80FD;&#xFF0C;&#x8BF7;
-                                <a href="//npuacm.info/">
-                                  &#x5355;&#x51FB;&#x6B64;&#x5904;&#x8FD4;&#x56DE;&#x65E7;&#x7248;&#x67E5;&#x8BE2;&#x7CFB;&#x7EDF;
-                                </a></div>
+                                <a href="//npuacm.info/">&#x5355;&#x51FB;&#x6B64;&#x5904;&#x8FD4;&#x56DE;&#x65E7;&#x7248;&#x67E5;&#x8BE2;&#x7CFB;&#x7EDF;</a></div>
                             </div>
                           </div>
                         </div>
@@ -836,9 +827,7 @@ exports[`/ 1`] = `
                       <div class="layout column align-center justify-center">
                         <div class="headline white--text mb-4 text-center response-title">
                           &#x6B22;&#x8FCE;&#x5411;&#x6211;&#x4EEC;&#x63D0;&#x51FA;&#x610F;&#x89C1;&#x4EE5;&#x5E2E;&#x52A9;&#x672C;&#x7F51;&#x7AD9;&#x8FDB;&#x6B65;
-                        </div> <a href="mailto:acm-statistics@fire.fundersclub.com?body=%E8%AF%B7%E6%B3%A8%E6%84%8F%EF%BC%8C%E6%82%A8%E7%BB%8F%E6%AD%A4%E9%93%BE%E6%8E%A5%E5%8F%91%E9%80%81%E7%9A%84%E6%89%80%E6%9C%89%E4%BF%A1%E6%81%AF%E9%83%BD%E5%B0%86%E8%A2%AB%E5%8F%91%E9%80%81%E5%88%B0https%3A%2F%2Fgithub.com%2FLiu233w%2Facm-statistics%2Fissues%EF%BC%8C%E4%BB%BB%E4%BD%95%E4%BA%BA%E9%83%BD%E6%9C%89%E6%9D%83%E9%99%90%E6%B5%8F%E8%A7%88%E5%85%B6%E5%86%85%E5%AE%B9%E3%80%82"><em class="white--text response-title">
-              &#x6216;&#x8005;&#x5355;&#x51FB;&#x6B64;&#x5904;&#x5411;&#x672C;&#x9879;&#x76EE;&#x53D1;&#x9001;&#x90AE;&#x4EF6;
-            </em></a> <a href="https://github.com/Liu233w/acm-statistics/issues/new" target="_blank" class="blue lighten-2 mt-12 v-btn v-btn--contained theme--dark v-size--large"><span class="v-btn__content">
+                        </div> <a href="mailto:acm-statistics@fire.fundersclub.com?body=%E8%AF%B7%E6%B3%A8%E6%84%8F%EF%BC%8C%E6%82%A8%E7%BB%8F%E6%AD%A4%E9%93%BE%E6%8E%A5%E5%8F%91%E9%80%81%E7%9A%84%E6%89%80%E6%9C%89%E4%BF%A1%E6%81%AF%E9%83%BD%E5%B0%86%E8%A2%AB%E5%8F%91%E9%80%81%E5%88%B0https%3A%2F%2Fgithub.com%2FLiu233w%2Facm-statistics%2Fissues%EF%BC%8C%E4%BB%BB%E4%BD%95%E4%BA%BA%E9%83%BD%E6%9C%89%E6%9D%83%E9%99%90%E6%B5%8F%E8%A7%88%E5%85%B6%E5%86%85%E5%AE%B9%E3%80%82"><em class="white--text response-title">&#x6216;&#x8005;&#x5355;&#x51FB;&#x6B64;&#x5904;&#x5411;&#x672C;&#x9879;&#x76EE;&#x53D1;&#x9001;&#x90AE;&#x4EF6;</em></a> <a href="https://github.com/Liu233w/acm-statistics/issues/new" target="_blank" class="blue lighten-2 mt-12 v-btn v-btn--contained theme--dark v-size--large"><span class="v-btn__content">
             Submit New Issue
           </span></a>
                       </div>
@@ -861,9 +850,12 @@ exports[`/ 1`] = `
                               &#x6B22;&#x8FCE;&#x5404;&#x4F4D;&#x6709;&#x8BC6;&#x4E4B;&#x58EB;&#x52A0;&#x5165;&#x3002;
                             </p>
                             <p id="busuanzi_container_site_pv" style="display:none;">
-                              &#x672C;&#x7AD9;&#x603B;&#x8BBF;&#x95EE;&#x91CF;: <span id="busuanzi_value_site_pv"></span>&#x6B21;<br></p>
+                              &#x672C;&#x7AD9;&#x603B;&#x8BBF;&#x95EE;&#x91CF;:
+                              <span id="busuanzi_value_site_pv"></span>&#x6B21;
+                              <br></p>
                             <p id="busuanzi_container_site_uv" style="display:none;">
-                              &#x672C;&#x7AD9;&#x603B;&#x8BBF;&#x5BA2;&#x6570;: <span id="busuanzi_value_site_uv"></span>&#x6B21;
+                              &#x672C;&#x7AD9;&#x603B;&#x8BBF;&#x5BA2;&#x6570;:
+                              <span id="busuanzi_value_site_uv"></span>&#x6B21;
                             </p>
                           </div>
                         </div>
@@ -910,9 +902,7 @@ exports[`/ 1`] = `
                 <footer class="v-footer blue darken-2 v-sheet v-sheet--tile theme--light"><a href="/about" class="white--text ml-4 body-2">
                     &#xA9; 2018 - 1970 NWPU-ACM &#x6280;&#x672F;&#x7EC4;
                   </a>
-                  <div class="spacer"></div> <span class="white--text ml-4 body-2">
-        &#x9655;ICP&#x5907;17008184&#x53F7;
-      </span>
+                  <div class="spacer"></div> <span class="white--text ml-4 body-2">&#x9655;ICP&#x5907;17008184&#x53F7;</span>
                 </footer>
               </div>
             </main>
@@ -921,21 +911,27 @@ exports[`/ 1`] = `
       </div>
     </div>
     <script>
-      window.__NUXT__ = {
-        layout: "none",
-        data: [{}],
-        fetch: [],
-        error: null,
-        state: {
-          sidebar: false
-        },
-        serverRendered: true,
-        routePath: "\\u002F",
-        env: {
-          VERSION_NUM: "development",
-          BUILD_TIME: "0"
+      window.__NUXT__ = (function(a) {
+        return {
+          layout: "none",
+          data: [{}],
+          fetch: [],
+          error: null,
+          state: {
+            sidebar: a,
+            session: {
+              login: a,
+              username: ""
+            }
+          },
+          serverRendered: true,
+          routePath: "\\u002F",
+          env: {
+            VERSION_NUM: "development",
+            BUILD_TIME: "0"
+          }
         }
-      };
+      }(false));
     </script>
 
 
@@ -1695,7 +1691,8 @@ exports[`/about 1`] = `
             <header class="v-sheet v-sheet--tile theme--light v-toolbar v-app-bar v-app-bar--clipped v-app-bar--fixed" style="height:64px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;">
               <div class="v-toolbar__content" style="height:64px;"><button type="button" class="v-app-bar__nav-icon v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-menu theme--light"></i></span></button>
                 <div class="v-toolbar__title">NWPU-ACM &#x67E5;&#x8BE2;&#x7CFB;&#x7EDF;</div>
-                <div class="spacer"></div> <span class="v-tooltip v-tooltip--left"><!----><a href="https://github.com/Liu233w/acm-statistics" target="_blank" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" medium class="v-icon notranslate fab fa-github theme--light"></i></span></a></span>
+                <div class="spacer"></div> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--text theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate v-icon--left fa fa fa fa-sign-in-alt theme--light"></i> &#x767B;&#x5F55;
+    </span></button></span> <span class="v-tooltip v-tooltip--left"><!----><a href="https://github.com/Liu233w/acm-statistics" target="_blank" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" medium class="v-icon notranslate fab fa-github theme--light"></i></span></a></span>
               </div>
             </header>
             <main class="v-content" style="padding-top:64px;padding-right:0px;padding-bottom:0px;padding-left:0px;">
@@ -1751,21 +1748,1751 @@ exports[`/about 1`] = `
       </div>
     </div>
     <script>
-      window.__NUXT__ = {
-        layout: "default",
-        data: [{}],
-        fetch: [],
-        error: null,
-        state: {
-          sidebar: false
-        },
-        serverRendered: true,
-        routePath: "\\u002Fabout",
-        env: {
-          VERSION_NUM: "development",
-          BUILD_TIME: "0"
+      window.__NUXT__ = (function(a) {
+        return {
+          layout: "default",
+          data: [{}],
+          fetch: [],
+          error: null,
+          state: {
+            sidebar: a,
+            session: {
+              login: a,
+              username: ""
+            }
+          },
+          serverRendered: true,
+          routePath: "\\u002Fabout",
+          env: {
+            VERSION_NUM: "development",
+            BUILD_TIME: "0"
+          }
         }
-      };
+      }(false));
+    </script>
+
+
+  </body>
+
+</html>
+`;
+
+exports[`/login 1`] = `
+<!DOCTYPE html>
+<html data-n-head-ssr>
+
+  <head>
+    <title>NWPU-ACM &#x67E5;&#x8BE2;&#x7CFB;&#x7EDF;</title>
+    <meta data-n-head="ssr" charset="utf-8">
+    <meta data-n-head="ssr" name="viewport" content="width=device-width, initial-scale=1">
+    <meta data-n-head="ssr" data-hid="description" name="description" content="&#x897F;&#x5317;&#x5DE5;&#x4E1A;&#x5927;&#x5B66;ACM&#x57FA;&#x5730;&#x67E5;&#x9898;&#x4E3B;&#x9875;&#xFF0C;&#x63D0;&#x4F9B;&#x56FD;&#x5185;&#x5404;&#x5927;OJ&#x7684;&#x67E5;&#x8BE2;&#x9898;&#x91CF;&#x3001;&#x8BA1;&#x7B97;Rating&#x7684;&#x670D;&#x52A1;&#x3002;">
+    <link data-n-head="ssr" rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link data-n-head="ssr" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons|Noto+Serif+SC:300,400,500,700">
+    <link data-n-head="ssr" rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&amp;display=swap">
+    <link data-n-head="ssr" rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@mdi/font@latest/css/materialdesignicons.min.css">
+    <style data-n-head="vuetify" type="text/css" id="vuetify-theme-stylesheet" nonce="undefined">
+      .v-application a {
+        color: #1976d2;
+      }
+
+      .v-application .primary {
+        background-color: #1976d2 !important;
+        border-color: #1976d2 !important;
+      }
+
+      .v-application .primary--text {
+        color: #1976d2 !important;
+        caret-color: #1976d2 !important;
+      }
+
+      .v-application .primary.lighten-5 {
+        background-color: #c7fdff !important;
+        border-color: #c7fdff !important;
+      }
+
+      .v-application .primary--text.text--lighten-5 {
+        color: #c7fdff !important;
+        caret-color: #c7fdff !important;
+      }
+
+      .v-application .primary.lighten-4 {
+        background-color: #a8e0ff !important;
+        border-color: #a8e0ff !important;
+      }
+
+      .v-application .primary--text.text--lighten-4 {
+        color: #a8e0ff !important;
+        caret-color: #a8e0ff !important;
+      }
+
+      .v-application .primary.lighten-3 {
+        background-color: #8ac5ff !important;
+        border-color: #8ac5ff !important;
+      }
+
+      .v-application .primary--text.text--lighten-3 {
+        color: #8ac5ff !important;
+        caret-color: #8ac5ff !important;
+      }
+
+      .v-application .primary.lighten-2 {
+        background-color: #6aaaff !important;
+        border-color: #6aaaff !important;
+      }
+
+      .v-application .primary--text.text--lighten-2 {
+        color: #6aaaff !important;
+        caret-color: #6aaaff !important;
+      }
+
+      .v-application .primary.lighten-1 {
+        background-color: #488fef !important;
+        border-color: #488fef !important;
+      }
+
+      .v-application .primary--text.text--lighten-1 {
+        color: #488fef !important;
+        caret-color: #488fef !important;
+      }
+
+      .v-application .primary.darken-1 {
+        background-color: #005eb6 !important;
+        border-color: #005eb6 !important;
+      }
+
+      .v-application .primary--text.text--darken-1 {
+        color: #005eb6 !important;
+        caret-color: #005eb6 !important;
+      }
+
+      .v-application .primary.darken-2 {
+        background-color: #00479b !important;
+        border-color: #00479b !important;
+      }
+
+      .v-application .primary--text.text--darken-2 {
+        color: #00479b !important;
+        caret-color: #00479b !important;
+      }
+
+      .v-application .primary.darken-3 {
+        background-color: #003180 !important;
+        border-color: #003180 !important;
+      }
+
+      .v-application .primary--text.text--darken-3 {
+        color: #003180 !important;
+        caret-color: #003180 !important;
+      }
+
+      .v-application .primary.darken-4 {
+        background-color: #001e67 !important;
+        border-color: #001e67 !important;
+      }
+
+      .v-application .primary--text.text--darken-4 {
+        color: #001e67 !important;
+        caret-color: #001e67 !important;
+      }
+
+      .v-application .secondary {
+        background-color: #bdbdbd !important;
+        border-color: #bdbdbd !important;
+      }
+
+      .v-application .secondary--text {
+        color: #bdbdbd !important;
+        caret-color: #bdbdbd !important;
+      }
+
+      .v-application .secondary.lighten-5 {
+        background-color: #ffffff !important;
+        border-color: #ffffff !important;
+      }
+
+      .v-application .secondary--text.text--lighten-5 {
+        color: #ffffff !important;
+        caret-color: #ffffff !important;
+      }
+
+      .v-application .secondary.lighten-4 {
+        background-color: #ffffff !important;
+        border-color: #ffffff !important;
+      }
+
+      .v-application .secondary--text.text--lighten-4 {
+        color: #ffffff !important;
+        caret-color: #ffffff !important;
+      }
+
+      .v-application .secondary.lighten-3 {
+        background-color: #ffffff !important;
+        border-color: #ffffff !important;
+      }
+
+      .v-application .secondary--text.text--lighten-3 {
+        color: #ffffff !important;
+        caret-color: #ffffff !important;
+      }
+
+      .v-application .secondary.lighten-2 {
+        background-color: #f5f5f5 !important;
+        border-color: #f5f5f5 !important;
+      }
+
+      .v-application .secondary--text.text--lighten-2 {
+        color: #f5f5f5 !important;
+        caret-color: #f5f5f5 !important;
+      }
+
+      .v-application .secondary.lighten-1 {
+        background-color: #d9d9d9 !important;
+        border-color: #d9d9d9 !important;
+      }
+
+      .v-application .secondary--text.text--lighten-1 {
+        color: #d9d9d9 !important;
+        caret-color: #d9d9d9 !important;
+      }
+
+      .v-application .secondary.darken-1 {
+        background-color: #a2a2a2 !important;
+        border-color: #a2a2a2 !important;
+      }
+
+      .v-application .secondary--text.text--darken-1 {
+        color: #a2a2a2 !important;
+        caret-color: #a2a2a2 !important;
+      }
+
+      .v-application .secondary.darken-2 {
+        background-color: #888888 !important;
+        border-color: #888888 !important;
+      }
+
+      .v-application .secondary--text.text--darken-2 {
+        color: #888888 !important;
+        caret-color: #888888 !important;
+      }
+
+      .v-application .secondary.darken-3 {
+        background-color: #6e6e6e !important;
+        border-color: #6e6e6e !important;
+      }
+
+      .v-application .secondary--text.text--darken-3 {
+        color: #6e6e6e !important;
+        caret-color: #6e6e6e !important;
+      }
+
+      .v-application .secondary.darken-4 {
+        background-color: #565656 !important;
+        border-color: #565656 !important;
+      }
+
+      .v-application .secondary--text.text--darken-4 {
+        color: #565656 !important;
+        caret-color: #565656 !important;
+      }
+
+      .v-application .accent {
+        background-color: #448aff !important;
+        border-color: #448aff !important;
+      }
+
+      .v-application .accent--text {
+        color: #448aff !important;
+        caret-color: #448aff !important;
+      }
+
+      .v-application .accent.lighten-5 {
+        background-color: #e8ffff !important;
+        border-color: #e8ffff !important;
+      }
+
+      .v-application .accent--text.text--lighten-5 {
+        color: #e8ffff !important;
+        caret-color: #e8ffff !important;
+      }
+
+      .v-application .accent.lighten-4 {
+        background-color: #c9f7ff !important;
+        border-color: #c9f7ff !important;
+      }
+
+      .v-application .accent--text.text--lighten-4 {
+        color: #c9f7ff !important;
+        caret-color: #c9f7ff !important;
+      }
+
+      .v-application .accent.lighten-3 {
+        background-color: #a9daff !important;
+        border-color: #a9daff !important;
+      }
+
+      .v-application .accent--text.text--lighten-3 {
+        color: #a9daff !important;
+        caret-color: #a9daff !important;
+      }
+
+      .v-application .accent.lighten-2 {
+        background-color: #8abfff !important;
+        border-color: #8abfff !important;
+      }
+
+      .v-application .accent--text.text--lighten-2 {
+        color: #8abfff !important;
+        caret-color: #8abfff !important;
+      }
+
+      .v-application .accent.lighten-1 {
+        background-color: #69a4ff !important;
+        border-color: #69a4ff !important;
+      }
+
+      .v-application .accent--text.text--lighten-1 {
+        color: #69a4ff !important;
+        caret-color: #69a4ff !important;
+      }
+
+      .v-application .accent.darken-1 {
+        background-color: #0171e2 !important;
+        border-color: #0171e2 !important;
+      }
+
+      .v-application .accent--text.text--darken-1 {
+        color: #0171e2 !important;
+        caret-color: #0171e2 !important;
+      }
+
+      .v-application .accent.darken-2 {
+        background-color: #0059c5 !important;
+        border-color: #0059c5 !important;
+      }
+
+      .v-application .accent--text.text--darken-2 {
+        color: #0059c5 !important;
+        caret-color: #0059c5 !important;
+      }
+
+      .v-application .accent.darken-3 {
+        background-color: #0042aa !important;
+        border-color: #0042aa !important;
+      }
+
+      .v-application .accent--text.text--darken-3 {
+        color: #0042aa !important;
+        caret-color: #0042aa !important;
+      }
+
+      .v-application .accent.darken-4 {
+        background-color: #002e8e !important;
+        border-color: #002e8e !important;
+      }
+
+      .v-application .accent--text.text--darken-4 {
+        color: #002e8e !important;
+        caret-color: #002e8e !important;
+      }
+
+      .v-application .error {
+        background-color: #d50000 !important;
+        border-color: #d50000 !important;
+      }
+
+      .v-application .error--text {
+        color: #d50000 !important;
+        caret-color: #d50000 !important;
+      }
+
+      .v-application .error.lighten-5 {
+        background-color: #ffb082 !important;
+        border-color: #ffb082 !important;
+      }
+
+      .v-application .error--text.text--lighten-5 {
+        color: #ffb082 !important;
+        caret-color: #ffb082 !important;
+      }
+
+      .v-application .error.lighten-4 {
+        background-color: #ff9268 !important;
+        border-color: #ff9268 !important;
+      }
+
+      .v-application .error--text.text--lighten-4 {
+        color: #ff9268 !important;
+        caret-color: #ff9268 !important;
+      }
+
+      .v-application .error.lighten-3 {
+        background-color: #ff754e !important;
+        border-color: #ff754e !important;
+      }
+
+      .v-application .error--text.text--lighten-3 {
+        color: #ff754e !important;
+        caret-color: #ff754e !important;
+      }
+
+      .v-application .error.lighten-2 {
+        background-color: #ff5736 !important;
+        border-color: #ff5736 !important;
+      }
+
+      .v-application .error--text.text--lighten-2 {
+        color: #ff5736 !important;
+        caret-color: #ff5736 !important;
+      }
+
+      .v-application .error.lighten-1 {
+        background-color: #f6361d !important;
+        border-color: #f6361d !important;
+      }
+
+      .v-application .error--text.text--lighten-1 {
+        color: #f6361d !important;
+        caret-color: #f6361d !important;
+      }
+
+      .v-application .error.darken-1 {
+        background-color: #b40000 !important;
+        border-color: #b40000 !important;
+      }
+
+      .v-application .error--text.text--darken-1 {
+        color: #b40000 !important;
+        caret-color: #b40000 !important;
+      }
+
+      .v-application .error.darken-2 {
+        background-color: #950000 !important;
+        border-color: #950000 !important;
+      }
+
+      .v-application .error--text.text--darken-2 {
+        color: #950000 !important;
+        caret-color: #950000 !important;
+      }
+
+      .v-application .error.darken-3 {
+        background-color: #770000 !important;
+        border-color: #770000 !important;
+      }
+
+      .v-application .error--text.text--darken-3 {
+        color: #770000 !important;
+        caret-color: #770000 !important;
+      }
+
+      .v-application .error.darken-4 {
+        background-color: #5c0000 !important;
+        border-color: #5c0000 !important;
+      }
+
+      .v-application .error--text.text--darken-4 {
+        color: #5c0000 !important;
+        caret-color: #5c0000 !important;
+      }
+
+      .v-application .info {
+        background-color: #42a5f5 !important;
+        border-color: #42a5f5 !important;
+      }
+
+      .v-application .info--text {
+        color: #42a5f5 !important;
+        caret-color: #42a5f5 !important;
+      }
+
+      .v-application .info.lighten-5 {
+        background-color: #e4ffff !important;
+        border-color: #e4ffff !important;
+      }
+
+      .v-application .info--text.text--lighten-5 {
+        color: #e4ffff !important;
+        caret-color: #e4ffff !important;
+      }
+
+      .v-application .info.lighten-4 {
+        background-color: #c5ffff !important;
+        border-color: #c5ffff !important;
+      }
+
+      .v-application .info--text.text--lighten-4 {
+        color: #c5ffff !important;
+        caret-color: #c5ffff !important;
+      }
+
+      .v-application .info.lighten-3 {
+        background-color: #a6f8ff !important;
+        border-color: #a6f8ff !important;
+      }
+
+      .v-application .info--text.text--lighten-3 {
+        color: #a6f8ff !important;
+        caret-color: #a6f8ff !important;
+      }
+
+      .v-application .info.lighten-2 {
+        background-color: #87dcff !important;
+        border-color: #87dcff !important;
+      }
+
+      .v-application .info--text.text--lighten-2 {
+        color: #87dcff !important;
+        caret-color: #87dcff !important;
+      }
+
+      .v-application .info.lighten-1 {
+        background-color: #66c0ff !important;
+        border-color: #66c0ff !important;
+      }
+
+      .v-application .info--text.text--lighten-1 {
+        color: #66c0ff !important;
+        caret-color: #66c0ff !important;
+      }
+
+      .v-application .info.darken-1 {
+        background-color: #018bd8 !important;
+        border-color: #018bd8 !important;
+      }
+
+      .v-application .info--text.text--darken-1 {
+        color: #018bd8 !important;
+        caret-color: #018bd8 !important;
+      }
+
+      .v-application .info.darken-2 {
+        background-color: #0072bc !important;
+        border-color: #0072bc !important;
+      }
+
+      .v-application .info--text.text--darken-2 {
+        color: #0072bc !important;
+        caret-color: #0072bc !important;
+      }
+
+      .v-application .info.darken-3 {
+        background-color: #0059a1 !important;
+        border-color: #0059a1 !important;
+      }
+
+      .v-application .info--text.text--darken-3 {
+        color: #0059a1 !important;
+        caret-color: #0059a1 !important;
+      }
+
+      .v-application .info.darken-4 {
+        background-color: #004286 !important;
+        border-color: #004286 !important;
+      }
+
+      .v-application .info--text.text--darken-4 {
+        color: #004286 !important;
+        caret-color: #004286 !important;
+      }
+
+      .v-application .success {
+        background-color: #81c784 !important;
+        border-color: #81c784 !important;
+      }
+
+      .v-application .success--text {
+        color: #81c784 !important;
+        caret-color: #81c784 !important;
+      }
+
+      .v-application .success.lighten-5 {
+        background-color: #ffffff !important;
+        border-color: #ffffff !important;
+      }
+
+      .v-application .success--text.text--lighten-5 {
+        color: #ffffff !important;
+        caret-color: #ffffff !important;
+      }
+
+      .v-application .success.lighten-4 {
+        background-color: #f1fff2 !important;
+        border-color: #f1fff2 !important;
+      }
+
+      .v-application .success--text.text--lighten-4 {
+        color: #f1fff2 !important;
+        caret-color: #f1fff2 !important;
+      }
+
+      .v-application .success.lighten-3 {
+        background-color: #d4ffd5 !important;
+        border-color: #d4ffd5 !important;
+      }
+
+      .v-application .success--text.text--lighten-3 {
+        color: #d4ffd5 !important;
+        caret-color: #d4ffd5 !important;
+      }
+
+      .v-application .success.lighten-2 {
+        background-color: #b8ffba !important;
+        border-color: #b8ffba !important;
+      }
+
+      .v-application .success--text.text--lighten-2 {
+        color: #b8ffba !important;
+        caret-color: #b8ffba !important;
+      }
+
+      .v-application .success.lighten-1 {
+        background-color: #9ce39e !important;
+        border-color: #9ce39e !important;
+      }
+
+      .v-application .success--text.text--lighten-1 {
+        color: #9ce39e !important;
+        caret-color: #9ce39e !important;
+      }
+
+      .v-application .success.darken-1 {
+        background-color: #66ab6a !important;
+        border-color: #66ab6a !important;
+      }
+
+      .v-application .success--text.text--darken-1 {
+        color: #66ab6a !important;
+        caret-color: #66ab6a !important;
+      }
+
+      .v-application .success.darken-2 {
+        background-color: #4c9152 !important;
+        border-color: #4c9152 !important;
+      }
+
+      .v-application .success--text.text--darken-2 {
+        color: #4c9152 !important;
+        caret-color: #4c9152 !important;
+      }
+
+      .v-application .success.darken-3 {
+        background-color: #31773a !important;
+        border-color: #31773a !important;
+      }
+
+      .v-application .success--text.text--darken-3 {
+        color: #31773a !important;
+        caret-color: #31773a !important;
+      }
+
+      .v-application .success.darken-4 {
+        background-color: #145d23 !important;
+        border-color: #145d23 !important;
+      }
+
+      .v-application .success--text.text--darken-4 {
+        color: #145d23 !important;
+        caret-color: #145d23 !important;
+      }
+
+      .v-application .warning {
+        background-color: #ffa000 !important;
+        border-color: #ffa000 !important;
+      }
+
+      .v-application .warning--text {
+        color: #ffa000 !important;
+        caret-color: #ffa000 !important;
+      }
+
+      .v-application .warning.lighten-5 {
+        background-color: #ffffa4 !important;
+        border-color: #ffffa4 !important;
+      }
+
+      .v-application .warning--text.text--lighten-5 {
+        color: #ffffa4 !important;
+        caret-color: #ffffa4 !important;
+      }
+
+      .v-application .warning.lighten-4 {
+        background-color: #ffff87 !important;
+        border-color: #ffff87 !important;
+      }
+
+      .v-application .warning--text.text--lighten-4 {
+        color: #ffff87 !important;
+        caret-color: #ffff87 !important;
+      }
+
+      .v-application .warning.lighten-3 {
+        background-color: #fff36b !important;
+        border-color: #fff36b !important;
+      }
+
+      .v-application .warning--text.text--lighten-3 {
+        color: #fff36b !important;
+        caret-color: #fff36b !important;
+      }
+
+      .v-application .warning.lighten-2 {
+        background-color: #ffd74e !important;
+        border-color: #ffd74e !important;
+      }
+
+      .v-application .warning--text.text--lighten-2 {
+        color: #ffd74e !important;
+        caret-color: #ffd74e !important;
+      }
+
+      .v-application .warning.lighten-1 {
+        background-color: #ffbb30 !important;
+        border-color: #ffbb30 !important;
+      }
+
+      .v-application .warning--text.text--lighten-1 {
+        color: #ffbb30 !important;
+        caret-color: #ffbb30 !important;
+      }
+
+      .v-application .warning.darken-1 {
+        background-color: #df8600 !important;
+        border-color: #df8600 !important;
+      }
+
+      .v-application .warning--text.text--darken-1 {
+        color: #df8600 !important;
+        caret-color: #df8600 !important;
+      }
+
+      .v-application .warning.darken-2 {
+        background-color: #c06c00 !important;
+        border-color: #c06c00 !important;
+      }
+
+      .v-application .warning--text.text--darken-2 {
+        color: #c06c00 !important;
+        caret-color: #c06c00 !important;
+      }
+
+      .v-application .warning.darken-3 {
+        background-color: #a15400 !important;
+        border-color: #a15400 !important;
+      }
+
+      .v-application .warning--text.text--darken-3 {
+        color: #a15400 !important;
+        caret-color: #a15400 !important;
+      }
+
+      .v-application .warning.darken-4 {
+        background-color: #843c00 !important;
+        border-color: #843c00 !important;
+      }
+
+      .v-application .warning--text.text--darken-4 {
+        color: #843c00 !important;
+        caret-color: #843c00 !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <script>(window.ActiveXObject||"ActiveXObject"in window)&&alert("本网站不支持IE或IE内核的浏览器，建议您使用火狐浏览器、谷歌浏览器或微软的Edge浏览器（Windows10自带）")</script>
+    <div id="__nuxt">
+      <!---->
+      <div id="__layout">
+        <div data-app="true" id="app" class="v-application v-application--is-ltr theme--light">
+          <div class="v-application--wrap">
+            <div class="container fill-height container--fluid">
+              <div class="row align-center justify-center">
+                <div class="spacer"></div>
+                <div class="flex xs3">
+                  <div class="background v-card v-sheet theme--light" style="height:500px;"></div>
+                </div>
+                <div class="flex grey lighten-4 md4 sm6 xs12 d-flex">
+                  <div class="spacer"></div>
+                  <div class="container text-center">
+                    <div class="v-card v-card--flat v-sheet theme--light">
+                      <div primary-title class="v-card__title">
+                        <div class="headline">
+                          &#x767B;&#x5F55;
+                        </div>
+                      </div>
+                      <div class="container">
+                        <div class="row">
+                          <div role="alert" class="v-alert mb-3 v-sheet theme--dark error" style="display:none;">
+                            <div class="v-alert__wrapper"><i aria-hidden="true" class="v-icon notranslate v-alert__icon mdi mdi-alert theme--dark"></i>
+                              <div class="v-alert__content">
+
+                              </div><button type="button" aria-label="Close" class="v-alert__dismissible v-btn v-btn--flat v-btn--icon v-btn--round theme--dark v-size--small"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-close-circle theme--dark"></i></span></button>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="layout">
+                          <div class="flex">
+                            <form novalidate="novalidate" class="v-form">
+                              <div class="v-input theme--light v-text-field">
+                                <div class="v-input__prepend-outer">
+                                  <div class="v-input__icon v-input__icon--prepend"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">person</i></div>
+                                </div>
+                                <div class="v-input__control">
+                                  <div class="v-input__slot">
+                                    <div class="v-text-field__slot"><label for="input-279" class="v-label theme--light" style="left:0px;right:auto;position:absolute;">&#x7528;&#x6237;&#x540D;</label><input required="required" id="input-279" type="text" value></div>
+                                  </div>
+                                  <div class="v-text-field__details">
+                                    <div class="v-messages theme--light">
+                                      <div class="v-messages__wrapper"></div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="v-input theme--light v-text-field">
+                                <div class="v-input__prepend-outer">
+                                  <div class="v-input__icon v-input__icon--prepend"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">lock</i></div>
+                                </div>
+                                <div class="v-input__control">
+                                  <div class="v-input__slot">
+                                    <div class="v-text-field__slot"><label for="input-283" class="v-label theme--light" style="left:0px;right:auto;position:absolute;">&#x5BC6;&#x7801;</label><input required="required" id="input-283" type="password" value></div>
+                                  </div>
+                                  <div class="v-text-field__details">
+                                    <div class="v-messages theme--light">
+                                      <div class="v-messages__wrapper"></div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="v-input theme--light v-input--selection-controls v-input--checkbox">
+                                <div class="v-input__control">
+                                  <div class="v-input__slot">
+                                    <div class="v-input--selection-controls__input"><i aria-hidden="true" class="v-icon notranslate mdi mdi-checkbox-blank-outline theme--light"></i><input aria-checked="false" id="input-287" role="checkbox" type="checkbox">
+                                      <div class="v-input--selection-controls__ripple primary--text"></div>
+                                    </div><label for="input-287" class="v-label theme--light" style="left:0px;right:auto;position:relative;">&#x4FDD;&#x6301;&#x767B;&#x5F55;</label>
+                                  </div>
+                                  <div class="v-messages theme--light">
+                                    <div class="v-messages__wrapper"></div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="col"><button type="button" disabled="disabled" class="v-btn v-btn--block v-btn--contained v-btn--disabled theme--light v-size--default"><span class="v-btn__content">
+                &#x767B;&#x5F55;
+              </span></button></div>
+                                <div class="col"><a href="/register" class="v-btn v-btn--block v-btn--contained v-btn--router theme--light v-size--default"><span class="v-btn__content">
+                &#x53BB;&#x6CE8;&#x518C;
+              </span></a></div>
+                              </div>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="spacer"></div>
+                </div>
+                <div class="spacer"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      window.__NUXT__ = (function(a) {
+        return {
+          layout: "login",
+          data: [{}],
+          fetch: [],
+          error: null,
+          state: {
+            sidebar: a,
+            session: {
+              login: a,
+              username: ""
+            }
+          },
+          serverRendered: true,
+          routePath: "\\u002Flogin",
+          env: {
+            VERSION_NUM: "development",
+            BUILD_TIME: "0"
+          }
+        }
+      }(false));
+    </script>
+
+
+  </body>
+
+</html>
+`;
+
+exports[`/register 1`] = `
+<!DOCTYPE html>
+<html data-n-head-ssr>
+
+  <head>
+    <title>NWPU-ACM &#x67E5;&#x8BE2;&#x7CFB;&#x7EDF;</title>
+    <meta data-n-head="ssr" charset="utf-8">
+    <meta data-n-head="ssr" name="viewport" content="width=device-width, initial-scale=1">
+    <meta data-n-head="ssr" data-hid="description" name="description" content="&#x897F;&#x5317;&#x5DE5;&#x4E1A;&#x5927;&#x5B66;ACM&#x57FA;&#x5730;&#x67E5;&#x9898;&#x4E3B;&#x9875;&#xFF0C;&#x63D0;&#x4F9B;&#x56FD;&#x5185;&#x5404;&#x5927;OJ&#x7684;&#x67E5;&#x8BE2;&#x9898;&#x91CF;&#x3001;&#x8BA1;&#x7B97;Rating&#x7684;&#x670D;&#x52A1;&#x3002;">
+    <link data-n-head="ssr" rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link data-n-head="ssr" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons|Noto+Serif+SC:300,400,500,700">
+    <link data-n-head="ssr" rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&amp;display=swap">
+    <link data-n-head="ssr" rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@mdi/font@latest/css/materialdesignicons.min.css">
+    <style data-n-head="vuetify" type="text/css" id="vuetify-theme-stylesheet" nonce="undefined">
+      .v-application a {
+        color: #1976d2;
+      }
+
+      .v-application .primary {
+        background-color: #1976d2 !important;
+        border-color: #1976d2 !important;
+      }
+
+      .v-application .primary--text {
+        color: #1976d2 !important;
+        caret-color: #1976d2 !important;
+      }
+
+      .v-application .primary.lighten-5 {
+        background-color: #c7fdff !important;
+        border-color: #c7fdff !important;
+      }
+
+      .v-application .primary--text.text--lighten-5 {
+        color: #c7fdff !important;
+        caret-color: #c7fdff !important;
+      }
+
+      .v-application .primary.lighten-4 {
+        background-color: #a8e0ff !important;
+        border-color: #a8e0ff !important;
+      }
+
+      .v-application .primary--text.text--lighten-4 {
+        color: #a8e0ff !important;
+        caret-color: #a8e0ff !important;
+      }
+
+      .v-application .primary.lighten-3 {
+        background-color: #8ac5ff !important;
+        border-color: #8ac5ff !important;
+      }
+
+      .v-application .primary--text.text--lighten-3 {
+        color: #8ac5ff !important;
+        caret-color: #8ac5ff !important;
+      }
+
+      .v-application .primary.lighten-2 {
+        background-color: #6aaaff !important;
+        border-color: #6aaaff !important;
+      }
+
+      .v-application .primary--text.text--lighten-2 {
+        color: #6aaaff !important;
+        caret-color: #6aaaff !important;
+      }
+
+      .v-application .primary.lighten-1 {
+        background-color: #488fef !important;
+        border-color: #488fef !important;
+      }
+
+      .v-application .primary--text.text--lighten-1 {
+        color: #488fef !important;
+        caret-color: #488fef !important;
+      }
+
+      .v-application .primary.darken-1 {
+        background-color: #005eb6 !important;
+        border-color: #005eb6 !important;
+      }
+
+      .v-application .primary--text.text--darken-1 {
+        color: #005eb6 !important;
+        caret-color: #005eb6 !important;
+      }
+
+      .v-application .primary.darken-2 {
+        background-color: #00479b !important;
+        border-color: #00479b !important;
+      }
+
+      .v-application .primary--text.text--darken-2 {
+        color: #00479b !important;
+        caret-color: #00479b !important;
+      }
+
+      .v-application .primary.darken-3 {
+        background-color: #003180 !important;
+        border-color: #003180 !important;
+      }
+
+      .v-application .primary--text.text--darken-3 {
+        color: #003180 !important;
+        caret-color: #003180 !important;
+      }
+
+      .v-application .primary.darken-4 {
+        background-color: #001e67 !important;
+        border-color: #001e67 !important;
+      }
+
+      .v-application .primary--text.text--darken-4 {
+        color: #001e67 !important;
+        caret-color: #001e67 !important;
+      }
+
+      .v-application .secondary {
+        background-color: #bdbdbd !important;
+        border-color: #bdbdbd !important;
+      }
+
+      .v-application .secondary--text {
+        color: #bdbdbd !important;
+        caret-color: #bdbdbd !important;
+      }
+
+      .v-application .secondary.lighten-5 {
+        background-color: #ffffff !important;
+        border-color: #ffffff !important;
+      }
+
+      .v-application .secondary--text.text--lighten-5 {
+        color: #ffffff !important;
+        caret-color: #ffffff !important;
+      }
+
+      .v-application .secondary.lighten-4 {
+        background-color: #ffffff !important;
+        border-color: #ffffff !important;
+      }
+
+      .v-application .secondary--text.text--lighten-4 {
+        color: #ffffff !important;
+        caret-color: #ffffff !important;
+      }
+
+      .v-application .secondary.lighten-3 {
+        background-color: #ffffff !important;
+        border-color: #ffffff !important;
+      }
+
+      .v-application .secondary--text.text--lighten-3 {
+        color: #ffffff !important;
+        caret-color: #ffffff !important;
+      }
+
+      .v-application .secondary.lighten-2 {
+        background-color: #f5f5f5 !important;
+        border-color: #f5f5f5 !important;
+      }
+
+      .v-application .secondary--text.text--lighten-2 {
+        color: #f5f5f5 !important;
+        caret-color: #f5f5f5 !important;
+      }
+
+      .v-application .secondary.lighten-1 {
+        background-color: #d9d9d9 !important;
+        border-color: #d9d9d9 !important;
+      }
+
+      .v-application .secondary--text.text--lighten-1 {
+        color: #d9d9d9 !important;
+        caret-color: #d9d9d9 !important;
+      }
+
+      .v-application .secondary.darken-1 {
+        background-color: #a2a2a2 !important;
+        border-color: #a2a2a2 !important;
+      }
+
+      .v-application .secondary--text.text--darken-1 {
+        color: #a2a2a2 !important;
+        caret-color: #a2a2a2 !important;
+      }
+
+      .v-application .secondary.darken-2 {
+        background-color: #888888 !important;
+        border-color: #888888 !important;
+      }
+
+      .v-application .secondary--text.text--darken-2 {
+        color: #888888 !important;
+        caret-color: #888888 !important;
+      }
+
+      .v-application .secondary.darken-3 {
+        background-color: #6e6e6e !important;
+        border-color: #6e6e6e !important;
+      }
+
+      .v-application .secondary--text.text--darken-3 {
+        color: #6e6e6e !important;
+        caret-color: #6e6e6e !important;
+      }
+
+      .v-application .secondary.darken-4 {
+        background-color: #565656 !important;
+        border-color: #565656 !important;
+      }
+
+      .v-application .secondary--text.text--darken-4 {
+        color: #565656 !important;
+        caret-color: #565656 !important;
+      }
+
+      .v-application .accent {
+        background-color: #448aff !important;
+        border-color: #448aff !important;
+      }
+
+      .v-application .accent--text {
+        color: #448aff !important;
+        caret-color: #448aff !important;
+      }
+
+      .v-application .accent.lighten-5 {
+        background-color: #e8ffff !important;
+        border-color: #e8ffff !important;
+      }
+
+      .v-application .accent--text.text--lighten-5 {
+        color: #e8ffff !important;
+        caret-color: #e8ffff !important;
+      }
+
+      .v-application .accent.lighten-4 {
+        background-color: #c9f7ff !important;
+        border-color: #c9f7ff !important;
+      }
+
+      .v-application .accent--text.text--lighten-4 {
+        color: #c9f7ff !important;
+        caret-color: #c9f7ff !important;
+      }
+
+      .v-application .accent.lighten-3 {
+        background-color: #a9daff !important;
+        border-color: #a9daff !important;
+      }
+
+      .v-application .accent--text.text--lighten-3 {
+        color: #a9daff !important;
+        caret-color: #a9daff !important;
+      }
+
+      .v-application .accent.lighten-2 {
+        background-color: #8abfff !important;
+        border-color: #8abfff !important;
+      }
+
+      .v-application .accent--text.text--lighten-2 {
+        color: #8abfff !important;
+        caret-color: #8abfff !important;
+      }
+
+      .v-application .accent.lighten-1 {
+        background-color: #69a4ff !important;
+        border-color: #69a4ff !important;
+      }
+
+      .v-application .accent--text.text--lighten-1 {
+        color: #69a4ff !important;
+        caret-color: #69a4ff !important;
+      }
+
+      .v-application .accent.darken-1 {
+        background-color: #0171e2 !important;
+        border-color: #0171e2 !important;
+      }
+
+      .v-application .accent--text.text--darken-1 {
+        color: #0171e2 !important;
+        caret-color: #0171e2 !important;
+      }
+
+      .v-application .accent.darken-2 {
+        background-color: #0059c5 !important;
+        border-color: #0059c5 !important;
+      }
+
+      .v-application .accent--text.text--darken-2 {
+        color: #0059c5 !important;
+        caret-color: #0059c5 !important;
+      }
+
+      .v-application .accent.darken-3 {
+        background-color: #0042aa !important;
+        border-color: #0042aa !important;
+      }
+
+      .v-application .accent--text.text--darken-3 {
+        color: #0042aa !important;
+        caret-color: #0042aa !important;
+      }
+
+      .v-application .accent.darken-4 {
+        background-color: #002e8e !important;
+        border-color: #002e8e !important;
+      }
+
+      .v-application .accent--text.text--darken-4 {
+        color: #002e8e !important;
+        caret-color: #002e8e !important;
+      }
+
+      .v-application .error {
+        background-color: #d50000 !important;
+        border-color: #d50000 !important;
+      }
+
+      .v-application .error--text {
+        color: #d50000 !important;
+        caret-color: #d50000 !important;
+      }
+
+      .v-application .error.lighten-5 {
+        background-color: #ffb082 !important;
+        border-color: #ffb082 !important;
+      }
+
+      .v-application .error--text.text--lighten-5 {
+        color: #ffb082 !important;
+        caret-color: #ffb082 !important;
+      }
+
+      .v-application .error.lighten-4 {
+        background-color: #ff9268 !important;
+        border-color: #ff9268 !important;
+      }
+
+      .v-application .error--text.text--lighten-4 {
+        color: #ff9268 !important;
+        caret-color: #ff9268 !important;
+      }
+
+      .v-application .error.lighten-3 {
+        background-color: #ff754e !important;
+        border-color: #ff754e !important;
+      }
+
+      .v-application .error--text.text--lighten-3 {
+        color: #ff754e !important;
+        caret-color: #ff754e !important;
+      }
+
+      .v-application .error.lighten-2 {
+        background-color: #ff5736 !important;
+        border-color: #ff5736 !important;
+      }
+
+      .v-application .error--text.text--lighten-2 {
+        color: #ff5736 !important;
+        caret-color: #ff5736 !important;
+      }
+
+      .v-application .error.lighten-1 {
+        background-color: #f6361d !important;
+        border-color: #f6361d !important;
+      }
+
+      .v-application .error--text.text--lighten-1 {
+        color: #f6361d !important;
+        caret-color: #f6361d !important;
+      }
+
+      .v-application .error.darken-1 {
+        background-color: #b40000 !important;
+        border-color: #b40000 !important;
+      }
+
+      .v-application .error--text.text--darken-1 {
+        color: #b40000 !important;
+        caret-color: #b40000 !important;
+      }
+
+      .v-application .error.darken-2 {
+        background-color: #950000 !important;
+        border-color: #950000 !important;
+      }
+
+      .v-application .error--text.text--darken-2 {
+        color: #950000 !important;
+        caret-color: #950000 !important;
+      }
+
+      .v-application .error.darken-3 {
+        background-color: #770000 !important;
+        border-color: #770000 !important;
+      }
+
+      .v-application .error--text.text--darken-3 {
+        color: #770000 !important;
+        caret-color: #770000 !important;
+      }
+
+      .v-application .error.darken-4 {
+        background-color: #5c0000 !important;
+        border-color: #5c0000 !important;
+      }
+
+      .v-application .error--text.text--darken-4 {
+        color: #5c0000 !important;
+        caret-color: #5c0000 !important;
+      }
+
+      .v-application .info {
+        background-color: #42a5f5 !important;
+        border-color: #42a5f5 !important;
+      }
+
+      .v-application .info--text {
+        color: #42a5f5 !important;
+        caret-color: #42a5f5 !important;
+      }
+
+      .v-application .info.lighten-5 {
+        background-color: #e4ffff !important;
+        border-color: #e4ffff !important;
+      }
+
+      .v-application .info--text.text--lighten-5 {
+        color: #e4ffff !important;
+        caret-color: #e4ffff !important;
+      }
+
+      .v-application .info.lighten-4 {
+        background-color: #c5ffff !important;
+        border-color: #c5ffff !important;
+      }
+
+      .v-application .info--text.text--lighten-4 {
+        color: #c5ffff !important;
+        caret-color: #c5ffff !important;
+      }
+
+      .v-application .info.lighten-3 {
+        background-color: #a6f8ff !important;
+        border-color: #a6f8ff !important;
+      }
+
+      .v-application .info--text.text--lighten-3 {
+        color: #a6f8ff !important;
+        caret-color: #a6f8ff !important;
+      }
+
+      .v-application .info.lighten-2 {
+        background-color: #87dcff !important;
+        border-color: #87dcff !important;
+      }
+
+      .v-application .info--text.text--lighten-2 {
+        color: #87dcff !important;
+        caret-color: #87dcff !important;
+      }
+
+      .v-application .info.lighten-1 {
+        background-color: #66c0ff !important;
+        border-color: #66c0ff !important;
+      }
+
+      .v-application .info--text.text--lighten-1 {
+        color: #66c0ff !important;
+        caret-color: #66c0ff !important;
+      }
+
+      .v-application .info.darken-1 {
+        background-color: #018bd8 !important;
+        border-color: #018bd8 !important;
+      }
+
+      .v-application .info--text.text--darken-1 {
+        color: #018bd8 !important;
+        caret-color: #018bd8 !important;
+      }
+
+      .v-application .info.darken-2 {
+        background-color: #0072bc !important;
+        border-color: #0072bc !important;
+      }
+
+      .v-application .info--text.text--darken-2 {
+        color: #0072bc !important;
+        caret-color: #0072bc !important;
+      }
+
+      .v-application .info.darken-3 {
+        background-color: #0059a1 !important;
+        border-color: #0059a1 !important;
+      }
+
+      .v-application .info--text.text--darken-3 {
+        color: #0059a1 !important;
+        caret-color: #0059a1 !important;
+      }
+
+      .v-application .info.darken-4 {
+        background-color: #004286 !important;
+        border-color: #004286 !important;
+      }
+
+      .v-application .info--text.text--darken-4 {
+        color: #004286 !important;
+        caret-color: #004286 !important;
+      }
+
+      .v-application .success {
+        background-color: #81c784 !important;
+        border-color: #81c784 !important;
+      }
+
+      .v-application .success--text {
+        color: #81c784 !important;
+        caret-color: #81c784 !important;
+      }
+
+      .v-application .success.lighten-5 {
+        background-color: #ffffff !important;
+        border-color: #ffffff !important;
+      }
+
+      .v-application .success--text.text--lighten-5 {
+        color: #ffffff !important;
+        caret-color: #ffffff !important;
+      }
+
+      .v-application .success.lighten-4 {
+        background-color: #f1fff2 !important;
+        border-color: #f1fff2 !important;
+      }
+
+      .v-application .success--text.text--lighten-4 {
+        color: #f1fff2 !important;
+        caret-color: #f1fff2 !important;
+      }
+
+      .v-application .success.lighten-3 {
+        background-color: #d4ffd5 !important;
+        border-color: #d4ffd5 !important;
+      }
+
+      .v-application .success--text.text--lighten-3 {
+        color: #d4ffd5 !important;
+        caret-color: #d4ffd5 !important;
+      }
+
+      .v-application .success.lighten-2 {
+        background-color: #b8ffba !important;
+        border-color: #b8ffba !important;
+      }
+
+      .v-application .success--text.text--lighten-2 {
+        color: #b8ffba !important;
+        caret-color: #b8ffba !important;
+      }
+
+      .v-application .success.lighten-1 {
+        background-color: #9ce39e !important;
+        border-color: #9ce39e !important;
+      }
+
+      .v-application .success--text.text--lighten-1 {
+        color: #9ce39e !important;
+        caret-color: #9ce39e !important;
+      }
+
+      .v-application .success.darken-1 {
+        background-color: #66ab6a !important;
+        border-color: #66ab6a !important;
+      }
+
+      .v-application .success--text.text--darken-1 {
+        color: #66ab6a !important;
+        caret-color: #66ab6a !important;
+      }
+
+      .v-application .success.darken-2 {
+        background-color: #4c9152 !important;
+        border-color: #4c9152 !important;
+      }
+
+      .v-application .success--text.text--darken-2 {
+        color: #4c9152 !important;
+        caret-color: #4c9152 !important;
+      }
+
+      .v-application .success.darken-3 {
+        background-color: #31773a !important;
+        border-color: #31773a !important;
+      }
+
+      .v-application .success--text.text--darken-3 {
+        color: #31773a !important;
+        caret-color: #31773a !important;
+      }
+
+      .v-application .success.darken-4 {
+        background-color: #145d23 !important;
+        border-color: #145d23 !important;
+      }
+
+      .v-application .success--text.text--darken-4 {
+        color: #145d23 !important;
+        caret-color: #145d23 !important;
+      }
+
+      .v-application .warning {
+        background-color: #ffa000 !important;
+        border-color: #ffa000 !important;
+      }
+
+      .v-application .warning--text {
+        color: #ffa000 !important;
+        caret-color: #ffa000 !important;
+      }
+
+      .v-application .warning.lighten-5 {
+        background-color: #ffffa4 !important;
+        border-color: #ffffa4 !important;
+      }
+
+      .v-application .warning--text.text--lighten-5 {
+        color: #ffffa4 !important;
+        caret-color: #ffffa4 !important;
+      }
+
+      .v-application .warning.lighten-4 {
+        background-color: #ffff87 !important;
+        border-color: #ffff87 !important;
+      }
+
+      .v-application .warning--text.text--lighten-4 {
+        color: #ffff87 !important;
+        caret-color: #ffff87 !important;
+      }
+
+      .v-application .warning.lighten-3 {
+        background-color: #fff36b !important;
+        border-color: #fff36b !important;
+      }
+
+      .v-application .warning--text.text--lighten-3 {
+        color: #fff36b !important;
+        caret-color: #fff36b !important;
+      }
+
+      .v-application .warning.lighten-2 {
+        background-color: #ffd74e !important;
+        border-color: #ffd74e !important;
+      }
+
+      .v-application .warning--text.text--lighten-2 {
+        color: #ffd74e !important;
+        caret-color: #ffd74e !important;
+      }
+
+      .v-application .warning.lighten-1 {
+        background-color: #ffbb30 !important;
+        border-color: #ffbb30 !important;
+      }
+
+      .v-application .warning--text.text--lighten-1 {
+        color: #ffbb30 !important;
+        caret-color: #ffbb30 !important;
+      }
+
+      .v-application .warning.darken-1 {
+        background-color: #df8600 !important;
+        border-color: #df8600 !important;
+      }
+
+      .v-application .warning--text.text--darken-1 {
+        color: #df8600 !important;
+        caret-color: #df8600 !important;
+      }
+
+      .v-application .warning.darken-2 {
+        background-color: #c06c00 !important;
+        border-color: #c06c00 !important;
+      }
+
+      .v-application .warning--text.text--darken-2 {
+        color: #c06c00 !important;
+        caret-color: #c06c00 !important;
+      }
+
+      .v-application .warning.darken-3 {
+        background-color: #a15400 !important;
+        border-color: #a15400 !important;
+      }
+
+      .v-application .warning--text.text--darken-3 {
+        color: #a15400 !important;
+        caret-color: #a15400 !important;
+      }
+
+      .v-application .warning.darken-4 {
+        background-color: #843c00 !important;
+        border-color: #843c00 !important;
+      }
+
+      .v-application .warning--text.text--darken-4 {
+        color: #843c00 !important;
+        caret-color: #843c00 !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <script>(window.ActiveXObject||"ActiveXObject"in window)&&alert("本网站不支持IE或IE内核的浏览器，建议您使用火狐浏览器、谷歌浏览器或微软的Edge浏览器（Windows10自带）")</script>
+    <div id="__nuxt">
+      <!---->
+      <div id="__layout">
+        <div data-app="true" id="app" class="v-application v-application--is-ltr theme--light">
+          <div class="v-application--wrap">
+            <div class="container fill-height container--fluid">
+              <div class="row align-center justify-center">
+                <div class="spacer"></div>
+                <div class="flex xs3">
+                  <div class="background v-card v-sheet theme--light" style="height:500px;"></div>
+                </div>
+                <div class="flex grey lighten-4 md4 sm6 xs12 d-flex">
+                  <div class="spacer"></div>
+                  <div class="container text-center">
+                    <div class="v-card v-card--flat v-sheet theme--light">
+                      <div primary-title class="v-card__title">
+                        <div class="headline">
+                          &#x6CE8;&#x518C;
+                        </div>
+                      </div>
+                      <div class="container">
+                        <div class="row">
+                          <div role="alert" class="v-alert mb-3 v-sheet theme--dark error" style="display:none;">
+                            <div class="v-alert__wrapper"><i aria-hidden="true" class="v-icon notranslate v-alert__icon mdi mdi-alert theme--dark"></i>
+                              <div class="v-alert__content">
+
+                              </div><button type="button" aria-label="Close" class="v-alert__dismissible v-btn v-btn--flat v-btn--icon v-btn--round theme--dark v-size--small"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-close-circle theme--dark"></i></span></button>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="layout">
+                          <div class="flex">
+                            <form novalidate="novalidate" class="v-form">
+                              <div class="v-input theme--light v-text-field">
+                                <div class="v-input__prepend-outer">
+                                  <div class="v-input__icon v-input__icon--prepend"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">person</i></div>
+                                </div>
+                                <div class="v-input__control">
+                                  <div class="v-input__slot">
+                                    <div class="v-text-field__slot"><label for="input-312" class="v-label theme--light" style="left:0px;right:auto;position:absolute;">&#x7528;&#x6237;&#x540D;</label><input required="required" id="input-312" type="text" value></div>
+                                  </div>
+                                  <div class="v-text-field__details">
+                                    <div class="v-messages theme--light">
+                                      <div class="v-messages__wrapper"></div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="v-input theme--light v-text-field">
+                                <div class="v-input__prepend-outer">
+                                  <div class="v-input__icon v-input__icon--prepend"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">lock</i></div>
+                                </div>
+                                <div class="v-input__control">
+                                  <div class="v-input__slot">
+                                    <div class="v-text-field__slot"><label for="input-316" class="v-label theme--light" style="left:0px;right:auto;position:absolute;">&#x5BC6;&#x7801;</label><input required="required" id="input-316" type="password" value></div>
+                                  </div>
+                                  <div class="v-text-field__details">
+                                    <div class="v-messages theme--light">
+                                      <div class="v-messages__wrapper"></div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="v-input theme--light v-text-field">
+                                <div class="v-input__prepend-outer">
+                                  <div class="v-input__icon v-input__icon--prepend"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">lock</i></div>
+                                </div>
+                                <div class="v-input__control">
+                                  <div class="v-input__slot">
+                                    <div class="v-text-field__slot"><label for="input-320" class="v-label theme--light" style="left:0px;right:auto;position:absolute;">&#x518D;&#x6B21;&#x8F93;&#x5165;&#x5BC6;&#x7801;</label><input required="required" id="input-320" type="password" value></div>
+                                  </div>
+                                  <div class="v-text-field__details">
+                                    <div class="v-messages theme--light">
+                                      <div class="v-messages__wrapper"></div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="col"><span></span></div>
+                                <div class="col">
+                                  <div class="v-input theme--light v-text-field">
+                                    <div class="v-input__prepend-outer">
+                                      <div class="v-input__icon v-input__icon--prepend"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">verified_user</i></div>
+                                    </div>
+                                    <div class="v-input__control">
+                                      <div class="v-input__slot">
+                                        <div class="v-text-field__slot"><label for="input-324" class="v-label theme--light" style="left:0px;right:auto;position:absolute;">&#x9A8C;&#x8BC1;&#x7801;</label><input required="required" id="input-324" type="text" value></div>
+                                        <div class="v-input__append-inner"><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">refresh</i></span></button></div>
+                                      </div>
+                                      <div class="v-text-field__details">
+                                        <div class="v-messages theme--light">
+                                          <div class="v-messages__wrapper"></div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="col"><button type="button" disabled="disabled" class="v-btn v-btn--block v-btn--contained v-btn--disabled theme--light v-size--default"><span class="v-btn__content">
+                &#x6CE8;&#x518C;
+              </span></button></div>
+                                <div class="col"><a href="/login" class="v-btn v-btn--block v-btn--contained v-btn--router theme--light v-size--default"><span class="v-btn__content">
+                &#x53BB;&#x767B;&#x5F55;
+              </span></a></div>
+                              </div>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="spacer"></div>
+                </div>
+                <div class="spacer"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      window.__NUXT__ = (function(a) {
+        return {
+          layout: "login",
+          data: [{}],
+          fetch: [],
+          error: null,
+          state: {
+            sidebar: a,
+            session: {
+              login: a,
+              username: ""
+            }
+          },
+          serverRendered: true,
+          routePath: "\\u002Fregister",
+          env: {
+            VERSION_NUM: "development",
+            BUILD_TIME: "0"
+          }
+        }
+      }(false));
     </script>
 
 
@@ -2525,7 +4252,8 @@ exports[`/statistics 1`] = `
             <header class="v-sheet v-sheet--tile theme--light v-toolbar v-app-bar v-app-bar--clipped v-app-bar--fixed" style="height:64px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;">
               <div class="v-toolbar__content" style="height:64px;"><button type="button" class="v-app-bar__nav-icon v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-menu theme--light"></i></span></button>
                 <div class="v-toolbar__title">NWPU-ACM &#x67E5;&#x8BE2;&#x7CFB;&#x7EDF;</div>
-                <div class="spacer"></div> <span class="v-tooltip v-tooltip--left"><!----><a href="https://github.com/Liu233w/acm-statistics" target="_blank" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" medium class="v-icon notranslate fab fa-github theme--light"></i></span></a></span>
+                <div class="spacer"></div> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--text theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate v-icon--left fa fa fa fa-sign-in-alt theme--light"></i> &#x767B;&#x5F55;
+    </span></button></span> <span class="v-tooltip v-tooltip--left"><!----><a href="https://github.com/Liu233w/acm-statistics" target="_blank" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" medium class="v-icon notranslate fab fa-github theme--light"></i></span></a></span>
               </div>
             </header>
             <main class="v-content" style="padding-top:64px;padding-right:0px;padding-bottom:0px;padding-left:0px;">
@@ -2536,7 +4264,7 @@ exports[`/statistics 1`] = `
                       <div class="v-input theme--light v-text-field">
                         <div class="v-input__control">
                           <div class="v-input__slot">
-                            <div class="v-text-field__slot"><label for="input-69" class="v-label theme--light" style="left:0px;right:auto;position:absolute;">&#x7EDF;&#x4E00;&#x8BBE;&#x7F6E;&#x7528;&#x6237;&#x540D;</label><input required="required" id="input-69" type="text" value></div>
+                            <div class="v-text-field__slot"><label for="input-77" class="v-label theme--light" style="left:0px;right:auto;position:absolute;">&#x7EDF;&#x4E00;&#x8BBE;&#x7F6E;&#x7528;&#x6237;&#x540D;</label><input required="required" id="input-77" type="text" value></div>
                           </div>
                           <div class="v-text-field__details">
                             <div class="v-messages theme--light">
@@ -2553,7 +4281,7 @@ exports[`/statistics 1`] = `
           </span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--contained theme--light v-size--default"><span class="v-btn__content">
             &#x4FDD;&#x5B58;&#x7528;&#x6237;&#x540D;
             </span></button></span></div>
-                    <div class="flex xs12 md4" style="display:none;"><span draggable="false" class="elevation-2 v-chip v-chip--label theme--light v-size--default grey lighten-3"><span class="v-chip__content"><span class="v-tooltip v-tooltip--bottom"><!----><div class="v-input v-input--is-label-active v-input--is-dirty theme--light v-input--selection-controls v-input--switch primary--text"><div class="v-input__control"><div class="v-input__slot"><div class="v-input--selection-controls__input"><input aria-checked="true" id="input-79" role="switch" type="checkbox" aria-disabled="false" checked="checked"><div class="v-input--selection-controls__ripple primary--text"></div><div class="v-input--switch__track theme--light primary--text"></div><div class="v-input--switch__thumb theme--light primary--text"><!----></div></div></div><div class="v-messages theme--light primary--text"><div class="v-messages__wrapper"></div></div></div></div></span> <span class="title">
+                    <div class="flex xs12 md4" style="display:none;"><span draggable="false" class="elevation-2 v-chip v-chip--label theme--light v-size--default grey lighten-3"><span class="v-chip__content"><span class="v-tooltip v-tooltip--bottom"><!----><div class="v-input v-input--is-label-active v-input--is-dirty theme--light v-input--selection-controls v-input--switch primary--text"><div class="v-input__control"><div class="v-input__slot"><div class="v-input--selection-controls__input"><input aria-checked="true" id="input-87" role="switch" type="checkbox" aria-disabled="false" checked="checked"><div class="v-input--selection-controls__ripple primary--text"></div><div class="v-input--switch__track theme--light primary--text"></div><div class="v-input--switch__thumb theme--light primary--text"><!----></div></div></div><div class="v-messages theme--light primary--text"><div class="v-messages__wrapper"></div></div></div></div></span> <span class="title">
            &#x7684;&#x603B;&#x9898;&#x91CF;&#xFF1A; 0 / 0
         </span></span></span></div>
                   </div>
@@ -2576,7 +4304,7 @@ exports[`/statistics 1`] = `
                           <div class="v-input theme--light v-text-field">
                             <div class="v-input__control">
                               <div class="v-input__slot">
-                                <div class="v-text-field__slot"><label for="input-94" class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Username</label><input required="required" id="input-94" type="text" value></div>
+                                <div class="v-text-field__slot"><label for="input-102" class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Username</label><input required="required" id="input-102" type="text" value></div>
                                 <div class="v-input__append-inner">
                                   <div class="v-input__icon v-input__icon--clear"><button disabled="disabled" type="button" aria-label="clear icon" class="v-icon notranslate v-icon--disabled v-icon--link mdi mdi-close theme--light"></button></div>
                                 </div>
@@ -2621,7 +4349,7 @@ exports[`/statistics 1`] = `
                           <div class="v-input theme--light v-text-field">
                             <div class="v-input__control">
                               <div class="v-input__slot">
-                                <div class="v-text-field__slot"><label for="input-109" class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Username</label><input required="required" id="input-109" type="text" value></div>
+                                <div class="v-text-field__slot"><label for="input-117" class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Username</label><input required="required" id="input-117" type="text" value></div>
                                 <div class="v-input__append-inner">
                                   <div class="v-input__icon v-input__icon--clear"><button disabled="disabled" type="button" aria-label="clear icon" class="v-icon notranslate v-icon--disabled v-icon--link mdi mdi-close theme--light"></button></div>
                                 </div>
@@ -2666,7 +4394,7 @@ exports[`/statistics 1`] = `
                           <div class="v-input theme--light v-text-field">
                             <div class="v-input__control">
                               <div class="v-input__slot">
-                                <div class="v-text-field__slot"><label for="input-124" class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Username</label><input required="required" id="input-124" type="text" value></div>
+                                <div class="v-text-field__slot"><label for="input-132" class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Username</label><input required="required" id="input-132" type="text" value></div>
                                 <div class="v-input__append-inner">
                                   <div class="v-input__icon v-input__icon--clear"><button disabled="disabled" type="button" aria-label="clear icon" class="v-icon notranslate v-icon--disabled v-icon--link mdi mdi-close theme--light"></button></div>
                                 </div>
@@ -2707,7 +4435,7 @@ exports[`/statistics 1`] = `
                 <div class="v-input theme--light v-text-field">
                   <div class="v-input__control">
                     <div class="v-input__slot">
-                      <div class="v-text-field__slot"><label for="input-140" class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Username</label><input required="required" id="input-140" type="text" value></div>
+                      <div class="v-text-field__slot"><label for="input-148" class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Username</label><input required="required" id="input-148" type="text" value></div>
                       <div class="v-input__append-inner">
                         <div class="v-input__icon v-input__icon--clear"><button disabled="disabled" type="button" aria-label="clear icon" class="v-icon notranslate v-icon--disabled v-icon--link mdi mdi-close theme--light"></button></div>
                       </div>
@@ -2752,7 +4480,7 @@ exports[`/statistics 1`] = `
                 <div class="v-input theme--light v-text-field">
                   <div class="v-input__control">
                     <div class="v-input__slot">
-                      <div class="v-text-field__slot"><label for="input-155" class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Username</label><input required="required" id="input-155" type="text" value></div>
+                      <div class="v-text-field__slot"><label for="input-163" class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Username</label><input required="required" id="input-163" type="text" value></div>
                       <div class="v-input__append-inner">
                         <div class="v-input__icon v-input__icon--clear"><button disabled="disabled" type="button" aria-label="clear icon" class="v-icon notranslate v-icon--disabled v-icon--link mdi mdi-close theme--light"></button></div>
                       </div>
@@ -2797,7 +4525,7 @@ exports[`/statistics 1`] = `
                 <div class="v-input theme--light v-text-field">
                   <div class="v-input__control">
                     <div class="v-input__slot">
-                      <div class="v-text-field__slot"><label for="input-170" class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Username</label><input required="required" id="input-170" type="text" value></div>
+                      <div class="v-text-field__slot"><label for="input-178" class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Username</label><input required="required" id="input-178" type="text" value></div>
                       <div class="v-input__append-inner">
                         <div class="v-input__icon v-input__icon--clear"><button disabled="disabled" type="button" aria-label="clear icon" class="v-icon notranslate v-icon--disabled v-icon--link mdi mdi-close theme--light"></button></div>
                       </div>
@@ -2837,7 +4565,7 @@ exports[`/statistics 1`] = `
           <div class="v-input theme--light v-text-field">
             <div class="v-input__control">
               <div class="v-input__slot">
-                <div class="v-text-field__slot"><label for="input-189" class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Username</label><input required="required" id="input-189" type="text" value></div>
+                <div class="v-text-field__slot"><label for="input-197" class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Username</label><input required="required" id="input-197" type="text" value></div>
                 <div class="v-input__append-inner">
                   <div class="v-input__icon v-input__icon--clear"><button disabled="disabled" type="button" aria-label="clear icon" class="v-icon notranslate v-icon--disabled v-icon--link mdi mdi-close theme--light"></button></div>
                 </div>
@@ -2881,7 +4609,7 @@ exports[`/statistics 1`] = `
               <div class="v-input theme--light v-text-field">
                 <div class="v-input__control">
                   <div class="v-input__slot">
-                    <div class="v-text-field__slot"><label for="input-207" class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Username</label><input required="required" id="input-207" type="text" value></div>
+                    <div class="v-text-field__slot"><label for="input-215" class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Username</label><input required="required" id="input-215" type="text" value></div>
                     <div class="v-input__append-inner">
                       <div class="v-input__icon v-input__icon--clear"><button disabled="disabled" type="button" aria-label="clear icon" class="v-icon notranslate v-icon--disabled v-icon--link mdi mdi-close theme--light"></button></div>
                     </div>
@@ -2914,14 +4642,18 @@ exports[`/statistics 1`] = `
     </div>
     </div>
     <script>
-      window.__NUXT__ = (function(a, b, c, d, e, f, g, h, i, j, k, l, m, n) {
+      window.__NUXT__ = (function(a, b, c, d, e, f, g, h, i, j, k, l, m, n, o) {
         return {
           layout: "default",
           data: [{}],
           fetch: [],
           error: c,
           state: {
-            sidebar: false,
+            sidebar: j,
+            session: {
+              login: j,
+              username: a
+            },
             statistics: {
               workers: [{
                 crawlerName: e,
@@ -2969,15 +4701,6 @@ exports[`/statistics 1`] = `
                 tokenKey: c,
                 solvedList: []
               }, {
-                crawlerName: j,
-                username: a,
-                status: d,
-                solved: b,
-                submissions: b,
-                errorMessage: a,
-                tokenKey: c,
-                solvedList: []
-              }, {
                 crawlerName: k,
                 username: a,
                 status: d,
@@ -2988,6 +4711,15 @@ exports[`/statistics 1`] = `
                 solvedList: []
               }, {
                 crawlerName: l,
+                username: a,
+                status: d,
+                solved: b,
+                submissions: b,
+                errorMessage: a,
+                tokenKey: c,
+                solvedList: []
+              }, {
+                crawlerName: m,
                 username: a,
                 status: d,
                 solved: b,
@@ -3020,32 +4752,32 @@ exports[`/statistics 1`] = `
                 withDescription: {
                   title: "with description",
                   description: "a description",
-                  name: j
+                  name: k
                 },
                 withUrl: {
                   title: "with url",
-                  url: m,
-                  name: k
+                  url: n,
+                  name: l
                 },
                 withAll: {
                   title: "with all",
                   description: "with all description and url",
-                  url: m,
-                  name: l
+                  url: n,
+                  name: m
                 }
               },
               mainUsername: a,
-              checkDuplicateAc: n
+              checkDuplicateAc: o
             }
           },
-          serverRendered: n,
+          serverRendered: o,
           routePath: "\\u002Fstatistics",
           env: {
             VERSION_NUM: "development",
             BUILD_TIME: "0"
           }
         }
-      }("", 0, null, "WAITING", "crawler0", "crawler1", "crawler2", "crawler3", "crawler4", "withDescription", "withUrl", "withAll", "http:\\u002F\\u002Ftest.aaa.com", true));
+      }("", 0, null, "WAITING", "crawler0", "crawler1", "crawler2", "crawler3", "crawler4", false, "withDescription", "withUrl", "withAll", "http:\\u002F\\u002Ftest.aaa.com", true));
     </script>
 
 
