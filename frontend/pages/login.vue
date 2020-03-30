@@ -19,7 +19,7 @@
       </v-row>
       <v-layout>
         <v-flex>
-          <v-form v-model="valid" lazy-validation>
+          <v-form v-model="valid">
             <v-text-field
               prepend-icon="person"
               label="用户名"
@@ -38,7 +38,13 @@
             <v-checkbox v-model="remember" label="保持登录" />
             <v-row>
               <v-col>
-                <v-btn color="info" block :disabled="!valid" @click="login">
+                <v-btn
+                  color="info"
+                  block
+                  :disabled="!valid"
+                  @click="login"
+                  :loading="loading"
+                >
                   登录
                 </v-btn>
               </v-col>
@@ -70,10 +76,12 @@ export default {
       valid: false,
       errorMessage: '',
       showError: false,
+      loading: false,
     }
   },
   methods: {
     async login() {
+      this.loading = true
       try {
         await this.$store.dispatch('session/login', {
           username: this.username,
@@ -85,6 +93,7 @@ export default {
         this.errorMessage = getAbpErrorMessage(err)
         this.showError = true
       }
+      this.loading = false
     },
   },
 }
