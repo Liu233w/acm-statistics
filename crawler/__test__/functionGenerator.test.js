@@ -1,9 +1,11 @@
 const path = require('path')
 const _ = require('lodash')
 
-const axios = require('axios')
-const MockAdapter = require('axios-mock-adapter')
-const axiosMock = new MockAdapter(axios, {delayResponse: 200})
+// used by eval()
+// eslint-disable-next-line no-unused-vars
+const superagent = require('superagent')
+
+const nock = require('nock')
 
 jest.mock('../lib/configReader')
 // fs-extra 引用了 fs，只要 mock fs 模块，fs-extra就不会使用fs对文件系统进行io了
@@ -24,7 +26,7 @@ describe('generateServerCrawlerFunctions', () => {
           config: config,
           username: username,
         }
-      }, {virtual: true})
+      }, { virtual: true })
     }
 
     const functionGenerator = require('../lib/functionGenerator')
@@ -135,40 +137,51 @@ describe('generateBrowserCrawlerFunctions', () => {
       submissions: 230,
     }
 
-    beforeAll(() => {
-      axiosMock.onGet(crawlerbaseUrl + resolvedUser)
-        .replyOnce(200, {
-          error: false,
-          data: resolvedData,
-        })
-      axiosMock.onGet(crawlerbaseUrl + rejectedUser)
-        .replyOnce(400, {
-          error: true,
-          message: crawlerErrorMessage,
-        })
-      axiosMock.onGet(crawlerbaseUrl + networkErrorUser)
-        .networkError()
-    })
-
     it('不会打包服务器端的函数', () => {
       expect(functionStrs.crawler_for_server).not.toContain(serverFunctionContent)
     })
 
     it('生成的函数在服务器端正常时能够正确返回', async () => {
+
+      const scope = nock('http://localhost')
+        .get(crawlerbaseUrl + resolvedUser)
+        .reply(200, {
+          error: false,
+          data: resolvedData,
+        })
+
       const res = await functions.crawler_for_server(resolvedUser)
       expect(res).toMatchObject(resolvedData)
+
+      scope.done()
     })
 
     it('生成的函数在服务器端返回错误时能够抛出异常，并包含正确的异常信息', async () => {
+
+      const scope = nock('http://localhost')
+        .get(crawlerbaseUrl + rejectedUser)
+        .reply(200, {
+          error: true,
+          message: crawlerErrorMessage,
+        })
+
       const promise = expect(functions.crawler_for_server(rejectedUser))
       await promise.rejects.toThrow(Error)
       await promise.rejects.toThrow(crawlerErrorMessage)
       // 等到下方的测试用例失败时，可以直接使用第二条语句。
+
+      scope.done()
     })
 
     it('生成的函数在网络错误时能够抛出异常，并且含有异常信息', async () => {
+      const scope = nock('http://localhost')
+        .get(crawlerbaseUrl + networkErrorUser)
+        .replyWithError('something awful happened')
+
       await expect(functions.crawler_for_server(networkErrorUser))
         .rejects.toThrow(/.+/)
+
+      scope.done()
     })
   })
 })
