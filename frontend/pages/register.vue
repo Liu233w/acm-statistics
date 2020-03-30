@@ -19,7 +19,7 @@
       </v-row>
       <v-layout>
         <v-flex>
-          <v-form v-model="valid" lazy-validation>
+          <v-form v-model="valid">
             <v-text-field
               prepend-icon="person"
               label="用户名"
@@ -70,6 +70,7 @@
                   block
                   :disabled="!valid && captchaText == ''"
                   @click="register"
+                  :loading="loading"
                 >
                   注册
                 </v-btn>
@@ -106,10 +107,12 @@ export default {
       captchaText: '',
       errorMessage: '',
       showError: false,
+      loading: false,
     }
   },
   methods: {
     async register() {
+      this.loading = true
       try {
         await this.$axios.$post('/api/services/app/Account/Register', {
           username: this.username,
@@ -129,6 +132,7 @@ export default {
         this.errorMessage = getAbpErrorMessage(err)
         this.showError = true
       }
+      this.loading = false
     },
     async refreshCaptcha() {
       this.captchaText = ''
