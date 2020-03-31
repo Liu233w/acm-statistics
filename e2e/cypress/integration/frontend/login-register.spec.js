@@ -36,6 +36,9 @@ describe('/register', () => {
   })
 
   it('能够正确渲染', () => {
+    // 如果运行太快，加载的指示条还没有消失
+    // eslint-disable-next-line cypress/no-unnecessary-waiting
+    cy.wait(1000)
     cy.viewport('macbook-15')
     cy.matchImageSnapshot()
   })
