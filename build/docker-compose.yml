@@ -54,7 +54,7 @@ services:
       - db
 
   db:
-    image: mysql:8@sha256:60adb98682fd8b89b3534624d3bce0b15df6a476f92ba102a2f54b2c353a1544
+    image: mysql:8@sha256:fc84f426da06035a0de61789b4241db47db006efdc356286b5e28f4ce4bd38e3
     restart: always
     environment:
       MYSQL_DATABASE: acm_statistics
