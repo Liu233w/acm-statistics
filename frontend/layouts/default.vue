@@ -1,19 +1,8 @@
 <template>
   <VApp>
-    <VNavigationDrawer
-      v-model="drawer"
-      clipped
-      fixed
-      app
-    >
+    <VNavigationDrawer v-model="drawer" clipped fixed app>
       <VList>
-        <VListItem
-          nuxt
-          :to="item.to"
-          :key="i"
-          v-for="(item, i) in items"
-          exact
-        >
+        <VListItem nuxt :to="item.to" :key="i" v-for="(item, i) in items" exact>
           <VListItemAction>
             <VIcon v-html="item.icon" />
           </VListItemAction>
@@ -35,6 +24,7 @@
             v-on="on"
             href="https://github.com/Liu233w/acm-statistics"
             target="_blank"
+            rel="noopener noreferrer"
           >
             <VIcon medium>
               fab fa-github
@@ -56,24 +46,24 @@
 </template>
 
 <script>
-  import {getDateFromTimestamp} from '~/components/utils'
-  import UserStatus from '~/components/UserStatus'
+import { getDateFromTimestamp } from '~/components/utils'
+import UserStatus from '~/components/UserStatus'
 
-  export default {
-    components: {
-      UserStatus,
-    },
-    data() {
-      return {
-        drawer: true,
-        items: [
-          {icon: 'home', title: '返回主页', to: '/'},
-          {icon: 'code', title: 'OJ题量统计', to: '/statistics'},
-          {icon: 'info', title: '关于', to: '/about'},
-        ],
-        title: 'NWPU-ACM 查询系统',
-        buildYear: getDateFromTimestamp(this.$env.BUILD_TIME).getFullYear(),
-      }
-    },
-  }
+export default {
+  components: {
+    UserStatus,
+  },
+  data() {
+    return {
+      drawer: true,
+      items: [
+        { icon: 'home', title: '返回主页', to: '/' },
+        { icon: 'code', title: 'OJ题量统计', to: '/statistics' },
+        { icon: 'info', title: '关于', to: '/about' },
+      ],
+      title: 'NWPU-ACM 查询系统',
+      buildYear: getDateFromTimestamp(this.$env.BUILD_TIME).getFullYear(),
+    }
+  },
+}
 </script>
