@@ -2,7 +2,6 @@ using System;
 using System.Text;
 using Abp.AspNetCore;
 using Abp.AspNetCore.Configuration;
-using Abp.AspNetCore.SignalR;
 using Abp.Configuration.Startup;
 using Abp.Modules;
 using Abp.Reflection.Extensions;
@@ -20,8 +19,7 @@ namespace AcmStatisticsBackend
     [DependsOn(
          typeof(AcmStatisticsBackendApplicationModule),
          typeof(AcmStatisticsBackendEntityFrameworkModule),
-         typeof(AbpAspNetCoreModule),
-         typeof(AbpAspNetCoreSignalRModule))]
+         typeof(AbpAspNetCoreModule))]
     public class AcmStatisticsBackendWebCoreModule : AbpModule
     {
         private readonly IWebHostEnvironment _env;
