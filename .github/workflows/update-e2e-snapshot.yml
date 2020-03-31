@@ -42,7 +42,7 @@ jobs:
         if: steps.prcomm.outputs.BOOL_TRIGGERED == 'true'
         run: |
           cd e2e
-          make server > /dev/null &
+          make server compose-args="--detach"
           make wait-server
           make update-snapshot
           make test # 确保更新之后的测试通过
