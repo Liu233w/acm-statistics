@@ -50,7 +50,6 @@ namespace AcmStatisticsBackend.Controllers
             return new AuthenticateResultModel
             {
                 AccessToken = accessToken,
-                EncryptedAccessToken = GetEncryptedAccessToken(accessToken),
                 ExpireInSeconds = (int)_configuration.Expiration.TotalSeconds,
                 UserId = loginResult.User.Id,
             };
@@ -111,11 +110,6 @@ namespace AcmStatisticsBackend.Controllers
             });
 
             return claims;
-        }
-
-        private string GetEncryptedAccessToken(string accessToken)
-        {
-            return SimpleStringCipher.Instance.Encrypt(accessToken, AppConsts.DefaultPassPhrase);
         }
     }
 }
