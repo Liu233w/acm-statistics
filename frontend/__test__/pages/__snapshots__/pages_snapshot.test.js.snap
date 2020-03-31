@@ -733,7 +733,7 @@ exports[`/ 1`] = `
               <div class="v-toolbar__content" style="height:64px;">
                 <div class="v-toolbar__title">NWPU-ACM &#x67E5;&#x8BE2;&#x7CFB;&#x7EDF;</div>
                 <div class="spacer"></div> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--text theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate v-icon--left fa fa fa fa-sign-in-alt theme--light"></i> &#x767B;&#x5F55;
-    </span></button></span> <span class="v-tooltip v-tooltip--left"><!----><a href="https://github.com/Liu233w/acm-statistics" target="_blank" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" medium class="v-icon notranslate fab fa-github theme--light"></i></span></a></span>
+    </span></button></span> <span class="v-tooltip v-tooltip--left"><!----><a href="https://github.com/Liu233w/acm-statistics" target="_blank" rel="noopener noreferrer" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" medium class="v-icon notranslate fab fa-github theme--light"></i></span></a></span>
               </div>
             </header>
             <main class="v-content" style="padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px;">
@@ -796,7 +796,7 @@ exports[`/ 1`] = `
                               </div>
                               <div class="v-card__text text-center">
                                 &#x8BBF;&#x95EE;&#x6211;&#x4EEC;&#x7684;
-                                <a href="https://github.com/Liu233w/acm-statistics" target="_blank">&#x9879;&#x76EE;&#x5730;&#x5740;</a>
+                                <a href="https://github.com/Liu233w/acm-statistics" target="_blank" rel="noopener noreferrer">&#x9879;&#x76EE;&#x5730;&#x5740;</a>
                                 &#x4EE5;&#x83B7;&#x53D6;&#x672C;&#x7F51;&#x7AD9;&#x7684;&#x6700;&#x65B0;&#x6E90;&#x4EE3;&#x7801;&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x5728;&#x81EA;&#x5DF1;&#x7684;&#x670D;&#x52A1;&#x5668;&#x4E0A;&#x90E8;&#x7F72;&#x672C;&#x7F51;&#x7AD9;&#x6216;&#x8005;&#x5728;&#x81EA;&#x5DF1;&#x7684;&#x9879;&#x76EE;&#x4E2D;&#x4F7F;&#x7528;&#x6211;&#x4EEC;&#x7684;&#x722C;&#x866B;&#x4EE3;&#x7801;&#x3002;
                                 &#x6B22;&#x8FCE;&#x5411;&#x6211;&#x4EEC;&#x63D0;&#x51FA;&#x95EE;&#x9898;&#x5EFA;&#x8BAE;&#x3001;&#x8D21;&#x732E;&#x4EE3;&#x7801;&#x6216;&#x7ED9;&#x6211;&#x4EEC;&#x70B9;&#x8D5E;&#xFF08;Star&#xFF09;&#xFF0C;&#x60A8;&#x7684;&#x652F;&#x6301;&#x662F;&#x6211;&#x4EEC;&#x524D;&#x8FDB;&#x7684;&#x52A8;&#x529B;
                               </div>
@@ -827,7 +827,7 @@ exports[`/ 1`] = `
                       <div class="layout column align-center justify-center">
                         <div class="headline white--text mb-4 text-center response-title">
                           &#x6B22;&#x8FCE;&#x5411;&#x6211;&#x4EEC;&#x63D0;&#x51FA;&#x610F;&#x89C1;&#x4EE5;&#x5E2E;&#x52A9;&#x672C;&#x7F51;&#x7AD9;&#x8FDB;&#x6B65;
-                        </div> <a href="mailto:acm-statistics@fire.fundersclub.com?body=%E8%AF%B7%E6%B3%A8%E6%84%8F%EF%BC%8C%E6%82%A8%E7%BB%8F%E6%AD%A4%E9%93%BE%E6%8E%A5%E5%8F%91%E9%80%81%E7%9A%84%E6%89%80%E6%9C%89%E4%BF%A1%E6%81%AF%E9%83%BD%E5%B0%86%E8%A2%AB%E5%8F%91%E9%80%81%E5%88%B0https%3A%2F%2Fgithub.com%2FLiu233w%2Facm-statistics%2Fissues%EF%BC%8C%E4%BB%BB%E4%BD%95%E4%BA%BA%E9%83%BD%E6%9C%89%E6%9D%83%E9%99%90%E6%B5%8F%E8%A7%88%E5%85%B6%E5%86%85%E5%AE%B9%E3%80%82"><em class="white--text response-title">&#x6216;&#x8005;&#x5355;&#x51FB;&#x6B64;&#x5904;&#x5411;&#x672C;&#x9879;&#x76EE;&#x53D1;&#x9001;&#x90AE;&#x4EF6;</em></a> <a href="https://github.com/Liu233w/acm-statistics/issues/new" target="_blank" class="blue lighten-2 mt-12 v-btn v-btn--contained theme--dark v-size--large"><span class="v-btn__content">
+                        </div> <a href="mailto:acm-statistics@fire.fundersclub.com?body=%E8%AF%B7%E6%B3%A8%E6%84%8F%EF%BC%8C%E6%82%A8%E7%BB%8F%E6%AD%A4%E9%93%BE%E6%8E%A5%E5%8F%91%E9%80%81%E7%9A%84%E6%89%80%E6%9C%89%E4%BF%A1%E6%81%AF%E9%83%BD%E5%B0%86%E8%A2%AB%E5%8F%91%E9%80%81%E5%88%B0https%3A%2F%2Fgithub.com%2FLiu233w%2Facm-statistics%2Fissues%EF%BC%8C%E4%BB%BB%E4%BD%95%E4%BA%BA%E9%83%BD%E6%9C%89%E6%9D%83%E9%99%90%E6%B5%8F%E8%A7%88%E5%85%B6%E5%86%85%E5%AE%B9%E3%80%82"><em class="white--text response-title">&#x6216;&#x8005;&#x5355;&#x51FB;&#x6B64;&#x5904;&#x5411;&#x672C;&#x9879;&#x76EE;&#x53D1;&#x9001;&#x90AE;&#x4EF6;</em></a> <a href="https://github.com/Liu233w/acm-statistics/issues/new" target="_blank" rel="noopener noreferrer" class="blue lighten-2 mt-12 v-btn v-btn--contained theme--dark v-size--large"><span class="v-btn__content">
             Submit New Issue
           </span></a>
                       </div>
@@ -867,7 +867,7 @@ exports[`/ 1`] = `
                               &#x8054;&#x7CFB;&#x6211;&#x4EEC;
                             </div>
                           </div>
-                          <div role="list" class="v-list transparent v-sheet v-sheet--tile theme--light"><a tabindex="0" href="https://jq.qq.com/?_wv=1027&amp;k=5qgzfQc" target="_blank" role="listitem" class="v-list-item v-list-item--link theme--light">
+                          <div role="list" class="v-list transparent v-sheet v-sheet--tile theme--light"><a tabindex="0" href="https://jq.qq.com/?_wv=1027&amp;k=5qgzfQc" target="_blank" rel="noopener noreferrer" role="listitem" class="v-list-item v-list-item--link theme--light">
                               <div class="v-list-item__action"><i aria-hidden="true" class="v-icon notranslate blue--text text--lighten-2 fab fa-qq theme--light"></i></div>
                               <div class="v-list-item__content">
                                 <div class="v-list-item__title">198820787</div>
@@ -1692,7 +1692,7 @@ exports[`/about 1`] = `
               <div class="v-toolbar__content" style="height:64px;"><button type="button" class="v-app-bar__nav-icon v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-menu theme--light"></i></span></button>
                 <div class="v-toolbar__title">NWPU-ACM &#x67E5;&#x8BE2;&#x7CFB;&#x7EDF;</div>
                 <div class="spacer"></div> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--text theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate v-icon--left fa fa fa fa-sign-in-alt theme--light"></i> &#x767B;&#x5F55;
-    </span></button></span> <span class="v-tooltip v-tooltip--left"><!----><a href="https://github.com/Liu233w/acm-statistics" target="_blank" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" medium class="v-icon notranslate fab fa-github theme--light"></i></span></a></span>
+    </span></button></span> <span class="v-tooltip v-tooltip--left"><!----><a href="https://github.com/Liu233w/acm-statistics" target="_blank" rel="noopener noreferrer" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" medium class="v-icon notranslate fab fa-github theme--light"></i></span></a></span>
               </div>
             </header>
             <main class="v-content" style="padding-top:64px;padding-right:0px;padding-bottom:0px;padding-left:0px;">
@@ -4253,7 +4253,7 @@ exports[`/statistics 1`] = `
               <div class="v-toolbar__content" style="height:64px;"><button type="button" class="v-app-bar__nav-icon v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-menu theme--light"></i></span></button>
                 <div class="v-toolbar__title">NWPU-ACM &#x67E5;&#x8BE2;&#x7CFB;&#x7EDF;</div>
                 <div class="spacer"></div> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--text theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate v-icon--left fa fa fa fa-sign-in-alt theme--light"></i> &#x767B;&#x5F55;
-    </span></button></span> <span class="v-tooltip v-tooltip--left"><!----><a href="https://github.com/Liu233w/acm-statistics" target="_blank" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" medium class="v-icon notranslate fab fa-github theme--light"></i></span></a></span>
+    </span></button></span> <span class="v-tooltip v-tooltip--left"><!----><a href="https://github.com/Liu233w/acm-statistics" target="_blank" rel="noopener noreferrer" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" medium class="v-icon notranslate fab fa-github theme--light"></i></span></a></span>
               </div>
             </header>
             <main class="v-content" style="padding-top:64px;padding-right:0px;padding-bottom:0px;padding-left:0px;">
