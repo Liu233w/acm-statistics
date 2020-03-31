@@ -6,7 +6,13 @@
       <UserStatus />
       <VTooltip left>
         <template #activator="{ on }">
-          <VBtn icon v-on="on" href="https://github.com/Liu233w/acm-statistics" target="_blank">
+          <VBtn
+            icon
+            v-on="on"
+            href="https://github.com/Liu233w/acm-statistics"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <VIcon medium>
               fab fa-github
             </VIcon>
@@ -94,7 +100,11 @@
                     </VCardTitle>
                     <VCardText class="text-center">
                       访问我们的
-                      <a href="https://github.com/Liu233w/acm-statistics" target="_blank">项目地址</a>
+                      <a
+                        href="https://github.com/Liu233w/acm-statistics"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >项目地址</a>
                       以获取本网站的最新源代码，您可以在自己的服务器上部署本网站或者在自己的项目中使用我们的爬虫代码。
                       欢迎向我们提出问题建议、贡献代码或给我们点赞（Star），您的支持是我们前进的动力
                     </VCardText>
@@ -139,6 +149,7 @@
               large
               href="https://github.com/Liu233w/acm-statistics/issues/new"
               target="_blank"
+              rel="noopener noreferrer"
             >
               Submit New Issue
             </VBtn>
@@ -181,7 +192,11 @@
                   </div>
                 </VCardTitle>
                 <VList class="transparent">
-                  <VListItem href="https://jq.qq.com/?_wv=1027&k=5qgzfQc" target="_blank">
+                  <VListItem
+                    href="https://jq.qq.com/?_wv=1027&k=5qgzfQc"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <VListItemAction>
                       <VIcon class="blue--text text--lighten-2">
                         fab fa-qq
