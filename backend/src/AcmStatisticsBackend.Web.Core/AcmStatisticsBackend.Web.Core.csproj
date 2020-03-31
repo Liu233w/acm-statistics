@@ -26,6 +26,5 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.2.1" />
     <PackageReference Include="Abp.AspNetCore" Version="5.4.0" />
     <PackageReference Include="Abp.ZeroCore" Version="5.4.0" />
-    <PackageReference Include="Abp.AspNetCore.SignalR" Version="5.4.0" />
   </ItemGroup>
 </Project>

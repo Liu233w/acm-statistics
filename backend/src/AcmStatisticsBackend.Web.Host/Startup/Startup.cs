@@ -3,7 +3,6 @@ using System.IO;
 using System.Linq;
 using Abp.AspNetCore;
 using Abp.AspNetCore.Mvc.Antiforgery;
-using Abp.AspNetCore.SignalR.Hubs;
 using Abp.Castle.Logging.Log4Net;
 using Abp.Dependency;
 using Abp.Extensions;
@@ -118,7 +117,6 @@ namespace AcmStatisticsBackend.Web.Host.Startup
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapHub<AbpCommonHub>("/signalr");
                 endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
                 endpoints.MapControllerRoute("defaultWithArea", "{area}/{controller=Home}/{action=Index}/{id?}");
             });
