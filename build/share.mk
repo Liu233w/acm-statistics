@@ -36,3 +36,13 @@ ifeq ($(filter t no-tty,$(make-args)),)
 override run-args := $(run-args) --tty
 endif
 
+# == detect system and set command ==
+ifdef OS # windows
+   RM = del /Q
+   CP = copy
+else
+   ifeq ($(shell uname), Linux)
+      RM = rm -f
+      CP = cp
+   endif
+endif

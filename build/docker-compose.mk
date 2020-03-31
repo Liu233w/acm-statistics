@@ -60,7 +60,7 @@ e2e-up: .build .env
 	docker-compose -f docker-compose.yml -f docker-compose.e2e.yml up $(compose-args)
 
 .env:
-	cp template.env .env
+	$(CP) template.env .env
 
 dev-frontend: .build-dev
 	docker-compose -f docker-compose.yml -f docker-compose.dev-frontend.yml up $(compose-args)
