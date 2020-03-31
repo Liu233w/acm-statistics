@@ -30,4 +30,4 @@ services:
     image: acm-statistics-e2e-mock-configurer
     volumes:
       # 防止node_module被挂载进来，只能把代码放在单独的文件夹里了
-      - ${PWD}/../e2e/http-mocks/src:/mocks/src
+      - ../e2e/http-mocks/src:/mocks/src
