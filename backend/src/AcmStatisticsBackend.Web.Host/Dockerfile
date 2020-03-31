@@ -4,7 +4,7 @@ FROM mcr.microsoft.com/dotnet/core/aspnet:3.1-buster-slim@sha256:6cd8c2fa42db146
 WORKDIR /app
 EXPOSE 80
 
-FROM mcr.microsoft.com/dotnet/core/sdk:3.1-buster@sha256:a888cb90efb5b1ddcb4d1a869ac64b1a5f067e172aa21066c70c7669b83185cd AS build
+FROM mcr.microsoft.com/dotnet/core/sdk:3.1-buster@sha256:ffdaf00ea1408bd71e169a90dbab34914c999674a81fcced8ed919f9a8797dda AS build
 WORKDIR /src
 COPY ["src/AcmStatisticsBackend.Web.Host/AcmStatisticsBackend.Web.Host.csproj", "src/AcmStatisticsBackend.Web.Host/"]
 COPY ["src/AcmStatisticsBackend.Web.Core/AcmStatisticsBackend.Web.Core.csproj", "src/AcmStatisticsBackend.Web.Core/"]
