@@ -6,6 +6,12 @@
     "group:recommended",
     "group:monorepos"
   ],
+  "packageRules": [
+    {
+      "groupName": "aspnetboilerplate",
+      "packagePatterns": ["^Abp\\.|^Abp$"],
+    },
+  ],
   "labels": ["dependencies"],
   "automerge": true,
   "dockerfile": {
