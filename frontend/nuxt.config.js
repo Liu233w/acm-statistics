@@ -79,7 +79,11 @@ module.exports = {
     ['nuxt-env', {
       keys: ['VERSION_NUM', 'BUILD_TIME'],
     }],
-    '@nuxtjs/axios',
+    ['@nuxtjs/axios', {
+      baseURL: 'http://reverse-proxy',
+      browserBaseURL: '/',
+      debug: true,
+    }],
   ],
   buildModules: [
     '@nuxtjs/vuetify',
