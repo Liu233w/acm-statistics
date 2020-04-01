@@ -3,6 +3,7 @@
     "config:base",
     "docker:enableMajor",
     "docker:pinDigests",
+    "group:recommended",
     "group:monorepos"
   ],
   "labels": ["dependencies"],
