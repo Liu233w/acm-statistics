@@ -11,7 +11,7 @@
 
 #### 构建状态
 
-![Integration Test](https://github.com/Liu233w/acm-statistics/workflows/Integration%20Test/badge.svg)
+![Unit Tests](https://github.com/Liu233w/acm-statistics/workflows/Unit%20Tests/badge.svg)
 ![Test E2E](https://github.com/Liu233w/acm-statistics/workflows/Test%20E2E/badge.svg)
 
 
