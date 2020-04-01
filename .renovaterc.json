@@ -9,8 +9,8 @@
   "packageRules": [
     {
       "groupName": "aspnetboilerplate",
-      "packagePatterns": ["^Abp\\.|^Abp$"],
-    },
+      "packagePatterns": ["^Abp\\.|^Abp$"]
+    }
   ],
   "labels": ["dependencies"],
   "automerge": true,
