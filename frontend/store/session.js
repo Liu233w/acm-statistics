@@ -33,7 +33,6 @@ export const actions = {
       rememberClient: remember,
     })
 
-    window.aaa = this
     const config = {}
     if (remember) {
       config.expires = 30
