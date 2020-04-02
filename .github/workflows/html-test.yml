@@ -1,0 +1,15 @@
+name: Html Snapshot Tests
+
+on: [push, pull_request]
+
+jobs:
+  html-snapshot-test:
+    name: Html Snapshot Test
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - run: |
+        cd e2e
+        make server compose-args="--detach"
+        make wait-server
+        make test-html-ci
