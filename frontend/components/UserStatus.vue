@@ -26,7 +26,7 @@ export default {
     },
     tooltip() {
       if (this.session.login) {
-        return '点我注销'
+        return '用户设置'
       } else {
         return '点我登录'
       }
@@ -35,9 +35,7 @@ export default {
   methods: {
     async clicked() {
       if (this.session.login) {
-        this.$store.dispatch('session/logout')
-        await this.$store.dispatch('session/refreshUser')
-        this.$router.push('/')
+        this.$router.push('/settings')
       } else {
         this.$router.push('/login')
       }
