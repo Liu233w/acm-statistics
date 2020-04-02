@@ -1,4 +1,4 @@
-name: Update Frontend Snapshot when comment on pr
+name: Update HTML Snapshot when comment on pr
 
 on:
   issue_comment:
@@ -14,7 +14,7 @@ jobs:
       - name: listen for PR Comments
         uses: machine-learning-apps/actions-chatops@master
         with:
-          TRIGGER_PHRASE: "/update-frontend-snapshot"
+          TRIGGER_PHRASE: "/update-html-snapshot"
         env: # you must supply GITHUB_TOKEN
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         id: prcomm
@@ -33,15 +33,17 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           issue-number: ${{ github.event.issue.number }}
           body: |
-            Update Frontend Snapshot Triggered!
+            Update HTML Snapshot Triggered!
             Address: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
 
       - name: Try update snapshot
         if: steps.prcomm.outputs.BOOL_TRIGGERED == 'true'
         run: |
-          cd frontend
-          make update-snapshot
-          make test # 确保更新之后的测试通过
+          cd e2e
+          make server compose-args="--detach"
+          make wait-server
+          make update-html-snapshot
+          make test-html-ci # 确保更新之后的测试通过
           
       - name: Commit result
         if: steps.prcomm.outputs.BOOL_TRIGGERED == 'true'
@@ -50,7 +52,7 @@ jobs:
           git config --global user.email ${{ github.event.comment.user.login }}@github.fake
         
           git add .
-          git commit -am 'test(frontend): update snapshot'
+          git commit -am 'test(e2e): update html snapshot'
           
       - name: Push changes
         if: steps.prcomm.outputs.BOOL_TRIGGERED == 'true'

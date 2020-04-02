@@ -9,10 +9,14 @@ module.exports = {
   extends: [
     'eslint:recommended',
     "plugin:cypress/recommended",
+    'plugin:jest/recommended',
+    'plugin:lodash/recommended',
   ],
   // required to lint *.vue files
   plugins: [
     'cypress',
+    'jest',
+    'lodash',
   ],
   // add your custom rules here
   rules: {
@@ -21,5 +25,11 @@ module.exports = {
     // 行末逗号：在多行中强制最后一项有逗号，单行中强制没有
     'comma-dangle': ['error', 'always-multiline'],
     'quotes': ['error', 'single'],
+    // 测试端不需要 tree-shaking
+    'lodash/import-scope': 'off',
+    // 这个方法的可读性太低了
+    'lodash/matches-prop-shorthand': 'off',
+    'lodash/prefer-reject': 'off',
+
   },
 }
