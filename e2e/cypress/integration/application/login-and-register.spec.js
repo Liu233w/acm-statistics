@@ -18,11 +18,25 @@ describe('/login', () => {
     cy.visit('/login')
     cy.contains('用户名').parent().type('admin')
     cy.contains('密码').parent().type('123qwe')
+    cy.get('button').contains('登录').click()
+
+    cy.contains('admin', { timeout: 60000 })
+    cy.location('pathname').should('eq', '/')
+  })
+
+  it('能够保持用户名', () => {
+    cy.visit('/login')
+    cy.contains('用户名').parent().type('admin')
+    cy.contains('密码').parent().type('123qwe')
     cy.contains('保持登录').click()
     cy.get('button').contains('登录').click()
 
     cy.contains('admin', { timeout: 60000 })
     cy.location('pathname').should('eq', '/')
+
+    cy.log('在刷新页面之后用户名还在')
+    cy.reload()
+    cy.contains('admin')
   })
 })
 
@@ -82,8 +96,18 @@ describe('注册登录流程', () => {
     cy.location('pathname').should('eq', '/')
 
     cy.log('注销')
+    
     cy.contains(newUsername).click()
+    cy.contains('注销')
+    cy.location('pathname').should('eq', '/settings')
+
+    cy.contains('注销').click()
+
+    cy.contains('登录', { timeout: 60000 })
     cy.location('pathname').should('eq', '/')
+
+    cy.log('在刷新页面之后用户名不会重新出现')
+    cy.reload()
     cy.contains('登录')
   })
 })
