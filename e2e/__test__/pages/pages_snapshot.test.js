@@ -4,8 +4,6 @@ const cheerio = require('cheerio')
 
 const basePath = 'http://localhost:3000'
 
-let childProcess = null
-
 async function testPageByPath(path) {
 
   const url = basePath + path
