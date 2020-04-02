@@ -93,6 +93,7 @@ const testPaths = [
   '/about',
   '/login',
   '/register',
+  '/settings',
 ]
 
 for (let path of testPaths) {
