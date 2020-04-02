@@ -32,22 +32,7 @@
       <VToolbarTitle v-text="title" />
       <VSpacer />
       <UserStatus />
-      <VTooltip left>
-        <template #activator="{ on }">
-          <VBtn
-            icon
-            v-on="on"
-            href="https://github.com/Liu233w/acm-statistics"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <VIcon medium>
-              fab fa-github
-            </VIcon>
-          </VBtn>
-        </template>
-        <span>Star me on Github!</span>
-      </VTooltip>
+      <GithubButton />
     </VAppBar>
     <VContent>
       <Nuxt />
@@ -67,10 +52,12 @@
 import _ from 'lodash'
 import { getDateFromTimestamp } from '~/components/utils'
 import UserStatus from '~/components/UserStatus'
+import GithubButton from '~/components/GithubButton'
 
 export default {
   components: {
     UserStatus,
+    GithubButton,
   },
   data() {
     return {
