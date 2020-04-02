@@ -1,4 +1,7 @@
 using System.Threading.Tasks;
+using Abp.Authorization;
+using Abp.IdentityFramework;
+using Abp.Runtime.Session;
 using Abp.UI;
 using AcmStatisticsBackend.Accounts.Dto;
 using AcmStatisticsBackend.Authorization.Users;
@@ -16,11 +19,17 @@ namespace AcmStatisticsBackend.Accounts
 
         private readonly ICaptchaServiceClient _captchaServiceClient;
 
+        private readonly UserManager _userManager;
+
+        private readonly IAbpSession _abpSession;
+
         public AccountAppService(
-            UserRegistrationManager userRegistrationManager, ICaptchaServiceClient captchaServiceClient)
+            UserRegistrationManager userRegistrationManager, ICaptchaServiceClient captchaServiceClient, UserManager userManager, IAbpSession abpSession)
         {
             _userRegistrationManager = userRegistrationManager;
             _captchaServiceClient = captchaServiceClient;
+            _userManager = userManager;
+            _abpSession = abpSession;
         }
 
         public async Task<RegisterOutput> Register(RegisterInput input)
@@ -39,6 +48,17 @@ namespace AcmStatisticsBackend.Accounts
             {
                 CanLogin = true,
             };
+        }
+
+        /// <summary>
+        /// É¾³ý±¾ÕË»§
+        /// </summary>
+        [AbpAuthorize]
+        public async Task SelfDelete()
+        {
+            var user = await _userManager.GetUserByIdAsync(_abpSession.GetUserId());
+            var identityResult = await _userManager.DeleteAsync(user);
+            identityResult.CheckErrors();
         }
     }
 }
