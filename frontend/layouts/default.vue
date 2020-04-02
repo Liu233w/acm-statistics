@@ -1,51 +1,51 @@
 <template>
-  <VApp>
-    <VNavigationDrawer
+  <v-app>
+    <v-navigation-drawer
       v-model="drawer"
       clipped
       fixed
       app
     >
-      <VList>
-        <VListItem
+      <v-list>
+        <v-list-item
           nuxt
           :to="item.to"
           :key="i"
           v-for="(item, i) in items"
           exact
         >
-          <VListItemAction>
-            <VIcon v-html="item.icon" />
-          </VListItemAction>
-          <VListItemContent>
-            <VListItemTitle v-text="item.title" />
-          </VListItemContent>
-        </VListItem>
-      </VList>
-    </VNavigationDrawer>
-    <VAppBar
+          <v-list-item-action>
+            <v-icon v-html="item.icon" />
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title v-text="item.title" />
+          </v-list-item-content>
+        </v-list-item>
+      </v-list>
+    </v-navigation-drawer>
+    <v-app-bar
       fixed
       app
       clipped-left
     >
-      <VAppBarNavIcon @click="drawer = !drawer" />
-      <VToolbarTitle v-text="title" />
-      <VSpacer />
-      <UserStatus />
-      <GithubButton />
-    </VAppBar>
-    <VContent>
-      <Nuxt />
-    </VContent>
-    <VFooter
+      <v-app-bar-nav-icon @click="drawer = !drawer" />
+      <v-toolbar-title v-text="title" />
+      <v-spacer />
+      <user-status />
+      <github-button />
+    </v-app-bar>
+    <v-content>
+      <nuxt />
+    </v-content>
+    <v-footer
       fixed
       app
     >
       <span class="body-2">&copy; 2018 - {{ buildYear }} NWPU-ACM 技术组</span>
-      <VSpacer />
+      <v-spacer />
       <span class="body-2">陕ICP备17008184号</span>
-    </VFooter>
-  </VApp>
+    </v-footer>
+  </v-app>
 </template>
 
 <script>

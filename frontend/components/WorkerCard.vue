@@ -1,87 +1,87 @@
 <template>
-  <VCard>
-    <VAppBar flat dense elevation="0" class="blue-grey lighten-5">
-      <VToolbarTitle :title="crawlerTitle">
+  <v-card>
+    <v-app-bar flat dense elevation="0" class="blue-grey lighten-5">
+      <v-toolbar-title :title="crawlerTitle">
         {{ crawlerTitle }}
-      </VToolbarTitle>
-      <VSpacer />
-      <VToolbarItems>
-        <VTooltip bottom v-if="workerNum >= 2">
+      </v-toolbar-title>
+      <v-spacer />
+      <v-toolbar-items>
+        <v-tooltip bottom v-if="workerNum >= 2">
           <template #activator="{ on }">
-            <VBtn icon
-                  v-on="on"
-                  @click="removeWorker"
+            <v-btn icon
+                   v-on="on"
+                   @click="removeWorker"
             >
-              <VIcon>delete</VIcon>
-            </VBtn>
+              <v-icon>delete</v-icon>
+            </v-btn>
           </template>
           <span>
             移除此窗格
           </span>
-        </VTooltip>
-        <VTooltip bottom v-if="myWorkerIdxOfCrawler == workerNum">
+        </v-tooltip>
+        <v-tooltip bottom v-if="myWorkerIdxOfCrawler == workerNum">
           <template #activator="{ on }">
-            <VBtn icon
-                  v-on="on"
-                  @click="addWorker"
+            <v-btn icon
+                   v-on="on"
+                   @click="addWorker"
             >
-              <VIcon>add_circle</VIcon>
-            </VBtn>
+              <v-icon>add_circle</v-icon>
+            </v-btn>
           </template>
           <span>
             添加一个此 OJ 的窗格
           </span>
-        </VTooltip>
-        <VTooltip bottom v-if="crawlerUrl">
+        </v-tooltip>
+        <v-tooltip bottom v-if="crawlerUrl">
           <template #activator="{ on }">
-            <VBtn icon
-                  v-on="on"
-                  @click="openOj"
+            <v-btn icon
+                   v-on="on"
+                   @click="openOj"
             >
-              <VIcon>link</VIcon>
-            </VBtn>
+              <v-icon>link</v-icon>
+            </v-btn>
           </template>
           <span>
             转到此OJ
           </span>
-        </VTooltip>
-        <Transition name="fade">
-          <VTooltip bottom v-if="worker.status === WORKER_STATUS.WORKING">
+        </v-tooltip>
+        <transition name="fade">
+          <v-tooltip bottom v-if="worker.status === WORKER_STATUS.WORKING">
             <template #activator="{ on }">
-              <VBtn icon
-                    v-on="on"
-                    @click="stopWorker"
+              <v-btn icon
+                     v-on="on"
+                     @click="stopWorker"
               >
-                <VIcon>stop</VIcon>
-              </VBtn>
+                <v-icon>stop</v-icon>
+              </v-btn>
             </template>
             <span>停止查询</span>
-          </VTooltip>
-          <VTooltip bottom v-else>
+          </v-tooltip>
+          <v-tooltip bottom v-else>
             <template #activator="{ on }">
-              <VBtn icon
-                    v-on="on"
-                    @click="startWorker"
+              <v-btn icon
+                     v-on="on"
+                     @click="startWorker"
               >
-                <VIcon>refresh</VIcon>
-              </VBtn>
+                <v-icon>refresh</v-icon>
+              </v-btn>
             </template>
             <span>重新爬取此处信息</span>
-          </VTooltip>
-        </Transition>
-      </VToolbarItems>
-    </VAppBar>
-    <VContainer>
-      <VLayout>
-        <VFlex xs12>
+          </v-tooltip>
+        </transition>
+      </v-toolbar-items>
+    </v-app-bar>
+    <v-container>
+      <v-layout>
+        <v-flex xs12>
           <span class="grey--text" v-if="crawlerDescription">
             {{ crawlerDescription }}
           </span>
-        </VFlex>
-      </VLayout>
-      <VLayout wrap>
-        <VFlex xs12>
-          <VTextField
+        </v-flex>
+      </v-layout>
+      <v-layout wrap>
+        <v-flex xs12>
+          <v-text-field
             v-model="username"
             label="Username"
             :disabled="worker.status === WORKER_STATUS.WORKING"
@@ -90,40 +90,40 @@
             :loading="worker.status === WORKER_STATUS.WORKING"
             clearable
           />
-        </VFlex>
-      </VLayout>
+        </v-flex>
+      </v-layout>
       <template v-if="warnings">
-        <VLayout xs12 v-for="item in warnings" :key="item">
-          <VFlex align-self-start shrink>
-            <VIcon color="orange darken-2">
+        <v-layout xs12 v-for="item in warnings" :key="item">
+          <v-flex align-self-start shrink>
+            <v-icon color="orange darken-2">
               warning
-            </VIcon>
-          </VFlex>
-          <VFlex align-self-start>
+            </v-icon>
+          </v-flex>
+          <v-flex align-self-start>
             <span>{{ item }}</span>
-          </VFlex>
-        </VLayout>
+          </v-flex>
+        </v-layout>
       </template>
       <template v-if="worker.status === WORKER_STATUS.DONE">
-        <VLayout xs12 v-if="worker.errorMessage">
-          <VFlex align-self-start shrink>
-            <VIcon color="red">
+        <v-layout xs12 v-if="worker.errorMessage">
+          <v-flex align-self-start shrink>
+            <v-icon color="red">
               error
-            </VIcon>
-          </VFlex>
-          <VFlex align-self-start>
+            </v-icon>
+          </v-flex>
+          <v-flex align-self-start>
             <span>{{ worker.errorMessage }}</span>
-          </VFlex>
-        </VLayout>
-        <VLayout column xs12 v-else>
-          <VFlex>
+          </v-flex>
+        </v-layout>
+        <v-layout column xs12 v-else>
+          <v-flex>
             <span class="grey--text body-2">
               SOLVED:
             </span>
             <template v-if="solvedListStatus === 'none'">
               {{ worker.solved }}
             </template>
-            <VTooltip bottom v-else>
+            <v-tooltip bottom v-else>
               <template #activator="tip">
                 <a v-on="tip.on"
                    @click="solvedListDialog = true"
@@ -132,46 +132,46 @@
                 </a>
               </template>
               <span>查看通过的题目列表</span>
-            </VTooltip>
-          </VFlex>
-          <VFlex>
+            </v-tooltip>
+          </v-flex>
+          <v-flex>
             <span class="grey--text body-2">
               SUBMISSIONS:
             </span>
             {{ worker.submissions }}
-          </VFlex>
-        </VLayout>
+          </v-flex>
+        </v-layout>
       </template>
-    </VContainer>
+    </v-container>
 
-    <VDialog v-model="solvedListDialog" max-width="500" scrollable>
-      <VCard xs12 md8 lg6>
-        <VCardTitle>
+    <v-dialog v-model="solvedListDialog" max-width="500" scrollable>
+      <v-card xs12 md8 lg6>
+        <v-card-title>
           <span class="headline">
             用户 {{ worker.username }} 在 {{ crawler.title }} 通过的题目列表
           </span>
-        </VCardTitle>
-        <VCardText v-if="solvedListStatus === 'empty'">
+        </v-card-title>
+        <v-card-text v-if="solvedListStatus === 'empty'">
           当前没有通过的题目
-        </VCardText>
-        <VCardText v-else-if="solvedListStatus === 'none'">
+        </v-card-text>
+        <v-card-text v-else-if="solvedListStatus === 'none'">
           当前爬虫无法获取通过的题目列表
-        </VCardText>
+        </v-card-text>
         <!--在不打开对话框的时候就不渲染题目列表，防止额外的dom更新，以提升性能-->
-        <VCardText v-else-if="solvedListDialog">
-          <VChip v-for="item in prettifiedSolvedList" :key="item" class="ma-1">
+        <v-card-text v-else-if="solvedListDialog">
+          <v-chip v-for="item in prettifiedSolvedList" :key="item" class="ma-1">
             {{ item }}
-          </VChip>
-        </VCardText>
-        <VDivider />
-        <VCardActions>
-          <VBtn color="blue darken-1" text @click="solvedListDialog = false">
+          </v-chip>
+        </v-card-text>
+        <v-divider />
+        <v-card-actions>
+          <v-btn color="blue darken-1" text @click="solvedListDialog = false">
             Close
-          </VBtn>
-        </VCardActions>
-      </VCard>
-    </VDialog>
-  </VCard>
+          </v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
+  </v-card>
 </template>
 
 <script>

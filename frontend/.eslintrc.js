@@ -37,7 +37,9 @@ module.exports = {
     'lodash/matches-prop-shorthand': 'off',
     'lodash/prefer-reject': 'off',
     // 强制使用 PascalCase
-    'vue/component-name-in-template-casing': ['error', 'PascalCase'],
+    'vue/component-name-in-template-casing': ['error', 'kebab-case', {
+      registeredComponentsOnly: false,
+    }],
     // 便于 vuetify 迁移
     'vuetify/no-deprecated-classes': 'error',
     'vuetify/grid-unknown-attributes': 'error',
