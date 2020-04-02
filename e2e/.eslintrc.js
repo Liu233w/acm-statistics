@@ -9,13 +9,11 @@ module.exports = {
   extends: [
     'eslint:recommended',
     "plugin:cypress/recommended",
-    'plugin:jest/recommended',
     'plugin:lodash/recommended',
   ],
   // required to lint *.vue files
   plugins: [
     'cypress',
-    'jest',
     'lodash',
   ],
   // add your custom rules here
@@ -30,6 +28,7 @@ module.exports = {
     // 这个方法的可读性太低了
     'lodash/matches-prop-shorthand': 'off',
     'lodash/prefer-reject': 'off',
-
+    // cypress 里用不了这个
+    'lodash/prefer-lodash-method': 'off',
   },
 }
