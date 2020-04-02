@@ -30,3 +30,9 @@
 Cypress.Commands.add('mockServer', path => {
   cy.request(`http://mock-configurer/${path}`)
 })
+
+Cypress.Commands.overwrite('matchImageSnapshot', (originalFn, maybeName, commandOptions) => {
+  // eslint-disable-next-line cypress/no-unnecessary-waiting
+  cy.wait(1000)
+  return originalFn(maybeName, commandOptions)
+})

@@ -28,9 +28,7 @@ describe('整体视觉测试', () => {
 
     // 移除顶栏，以免阻挡截图
     cy.get('header:contains("NWPU-ACM 查询系统")').invoke('hide')
-    
-    // eslint-disable-next-line cypress/no-unnecessary-waiting
-    cy.wait(2000)
+
     cy.matchImageSnapshot()
   })
 })
