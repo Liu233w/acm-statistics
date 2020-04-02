@@ -7,5 +7,7 @@ namespace AcmStatisticsBackend.Accounts
     public interface IAccountAppService : IApplicationService
     {
         Task<RegisterOutput> Register(RegisterInput input);
+
+        Task SelfDelete();
     }
 }
