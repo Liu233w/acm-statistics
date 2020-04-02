@@ -33,7 +33,6 @@ export default {
   },
   methods: {
     onResize() {
-      console.log('resize')
       const width = window.innerWidth
       if (width < 450) {
         this.show = false
