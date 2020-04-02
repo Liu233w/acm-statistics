@@ -7,3 +7,9 @@ export const mutations = {
     state.sidebar = !state.sidebar
   },
 }
+
+export const actions = {
+  async nuxtServerInit({ dispatch }) {
+    await dispatch('session/refreshUser')
+  },
+}
