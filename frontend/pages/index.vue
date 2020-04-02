@@ -4,35 +4,31 @@
       <VToolbarTitle>{{ projectTitle }}</VToolbarTitle>
       <VSpacer />
       <UserStatus />
-      <VTooltip left>
-        <template #activator="{ on }">
-          <VBtn
-            icon
-            v-on="on"
-            href="https://github.com/Liu233w/acm-statistics"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <VIcon medium>
-              fab fa-github
-            </VIcon>
-          </VBtn>
-        </template>
-        <span>Star me on Github!</span>
-      </VTooltip>
+      <GithubButton />
     </VAppBar>
     <VContent>
       <section>
-        <VParallax :src="require('~/assets/img/frontpage/back7-brighten.jpg')" height="600">
-          <VLayout column align-center justify-center class="white--text">
-            <img :src="require('~/assets/img/logo.png')" alt="Vuetify.js" height="190" class="mb-4">
+        <VParallax
+          :src="require('~/assets/img/frontpage/back7-brighten.jpg')"
+          height="600"
+        >
+          <VLayout
+            column
+            align-center
+            justify-center
+            class="white--text"
+          >
+            <img
+              :src="require('~/assets/img/logo.png')"
+              alt="Vuetify.js"
+              height="190"
+              class="mb-4"
+            >
             <h2 class="black--text headline text-center font-weight-light">
               ACM-ICPC 协会
             </h2>
             <div style="height: 50px" />
-            <h1
-              class="black--text mb-2 display-1 text-center index-title font-weight-bold"
-            >
+            <h1 class="black--text mb-2 display-1 text-center index-title font-weight-bold">
               欢迎使用 {{ projectTitle }}
             </h1>
             <div class="black--text subheading mb-4 text-center index-title">
@@ -52,8 +48,17 @@
       </section>
 
       <section>
-        <VLayout column wrap class="my-12" align-center>
-          <VFlex xs12 sm4 class="my-4">
+        <VLayout
+          column
+          wrap
+          class="my-12"
+          align-center
+        >
+          <VFlex
+            xs12
+            sm4
+            class="my-4"
+          >
             <div class="text-center">
               <h2 class="headline">
                 全新查询系统，更加稳定
@@ -64,14 +69,26 @@
           <VFlex xs12>
             <VContainer grid-list-xl>
               <VLayout wrap>
-                <VFlex xs12 md4>
-                  <VCard class="elevation-0 transparent" :flat="true">
+                <VFlex
+                  xs12
+                  md4
+                >
+                  <VCard
+                    class="elevation-0 transparent"
+                    :flat="true"
+                  >
                     <VCardText class="text-center">
-                      <VIcon x-large class="blue--text text--lighten-2">
+                      <VIcon
+                        x-large
+                        class="blue--text text--lighten-2"
+                      >
                         link
                       </VIcon>
                     </VCardText>
-                    <VCardTitle primary-title class="layout justify-center">
+                    <VCardTitle
+                      primary-title
+                      class="layout justify-center"
+                    >
                       <div class="headline text-center">
                         免费提供题量查询API
                       </div>
@@ -86,14 +103,26 @@
                     </VCardText>
                   </VCard>
                 </VFlex>
-                <VFlex xs12 md4>
-                  <VCard class="elevation-0 transparent" :flat="true">
+                <VFlex
+                  xs12
+                  md4
+                >
+                  <VCard
+                    class="elevation-0 transparent"
+                    :flat="true"
+                  >
                     <VCardText class="text-center">
-                      <VIcon x-large class="blue--text text--lighten-2">
+                      <VIcon
+                        x-large
+                        class="blue--text text--lighten-2"
+                      >
                         fab fa-github
                       </VIcon>
                     </VCardText>
-                    <VCardTitle primary-title class="layout justify-center">
+                    <VCardTitle
+                      primary-title
+                      class="layout justify-center"
+                    >
                       <div class="headline text-center">
                         完全开源
                       </div>
@@ -110,14 +139,26 @@
                     </VCardText>
                   </VCard>
                 </VFlex>
-                <VFlex xs12 md4>
-                  <VCard class="elevation-0 transparent" :flat="true">
+                <VFlex
+                  xs12
+                  md4
+                >
+                  <VCard
+                    class="elevation-0 transparent"
+                    :flat="true"
+                  >
                     <VCardText class="text-center">
-                      <VIcon x-large class="blue--text text--lighten-2">
+                      <VIcon
+                        x-large
+                        class="blue--text text--lighten-2"
+                      >
                         build
                       </VIcon>
                     </VCardText>
-                    <VCardTitle primary-title class="layout justify-center">
+                    <VCardTitle
+                      primary-title
+                      class="layout justify-center"
+                    >
                       <div class="headline text-center">
                         更多功能支持中
                       </div>
@@ -135,8 +176,15 @@
       </section>
 
       <section>
-        <VParallax :src="require('~/assets/img/frontpage/back4.jpg')" height="380">
-          <VLayout column align-center justify-center>
+        <VParallax
+          :src="require('~/assets/img/frontpage/back4.jpg')"
+          height="380"
+        >
+          <VLayout
+            column
+            align-center
+            justify-center
+          >
             <div class="headline white--text mb-4 text-center response-title">
               欢迎向我们提出意见以帮助本网站进步
             </div>
@@ -159,10 +207,23 @@
 
       <section>
         <VContainer grid-list-xl>
-          <VLayout wrap justify-center class="my-12">
-            <VFlex xs12 sm4>
-              <VCard class="elevation-0 transparent" :flat="true">
-                <VCardTitle primary-title class="layout justify-center">
+          <VLayout
+            wrap
+            justify-center
+            class="my-12"
+          >
+            <VFlex
+              xs12
+              sm4
+            >
+              <VCard
+                class="elevation-0 transparent"
+                :flat="true"
+              >
+                <VCardTitle
+                  primary-title
+                  class="layout justify-center"
+                >
                   <div class="headline">
                     关于我们
                   </div>
@@ -172,21 +233,37 @@
                     西北工业大学ACM协会技术组致力于为广大学生提供各类计算机、算法、计算机类竞赛方面的设施及服务。
                     欢迎各位有识之士加入。
                   </p>
-                  <p id="busuanzi_container_site_pv" style="display: none;">
+                  <p
+                    id="busuanzi_container_site_pv"
+                    style="display: none;"
+                  >
                     本站总访问量:
                     <span id="busuanzi_value_site_pv" />次
                     <br>
                   </p>
-                  <p id="busuanzi_container_site_uv" style="display: none;">
+                  <p
+                    id="busuanzi_container_site_uv"
+                    style="display: none;"
+                  >
                     本站总访客数:
                     <span id="busuanzi_value_site_uv" />次
                   </p>
                 </VCardText>
               </VCard>
             </VFlex>
-            <VFlex xs12 sm4 offset-sm1>
-              <VCard class="elevation-0 transparent" :flat="true">
-                <VCardTitle primary-title class="layout justify-center">
+            <VFlex
+              xs12
+              sm4
+              offset-sm1
+            >
+              <VCard
+                class="elevation-0 transparent"
+                :flat="true"
+              >
+                <VCardTitle
+                  primary-title
+                  class="layout justify-center"
+                >
                   <div class="headline">
                     联系我们
                   </div>
@@ -240,16 +317,27 @@
               </VCard>
             </VFlex>
           </VLayout>
-          <VDialog v-model="dialog" max-width="500px">
+          <VDialog
+            v-model="dialog"
+            max-width="500px"
+          >
             <VCard>
               <VCardTitle>
                 <span>微信公众号</span>
               </VCardTitle>
               <VCardText>
-                <img :src="require('~/assets/img/wechat.jpg')" alt="公众号二维码" style="height: 300px">
+                <img
+                  :src="require('~/assets/img/wechat.jpg')"
+                  alt="公众号二维码"
+                  style="height: 300px"
+                >
               </VCardText>
               <VCardActions>
-                <VBtn color="primary" text @click.stop="dialog=false">
+                <VBtn
+                  color="primary"
+                  text
+                  @click.stop="dialog=false"
+                >
                   关闭
                 </VBtn>
               </VCardActions>
@@ -276,10 +364,14 @@
 import { PROJECT_TITLE } from '~/components/consts'
 import { getDateFromTimestamp } from '~/components/utils'
 import UserStatus from '~/components/UserStatus'
+import GithubButton from '~/components/GithubButton'
 
 export default {
   layout: 'none',
-  components: { UserStatus },
+  components: {
+    UserStatus,
+    GithubButton,
+  },
   data() {
     return {
       dialog: false,
@@ -296,7 +388,7 @@ export default {
     mailToGithubLink() {
       const body = encodeURIComponent(
         '请注意，您经此链接发送的所有信息都将被发送到' +
-          'https://github.com/Liu233w/acm-statistics/issues，任何人都有权限浏览其内容。',
+        'https://github.com/Liu233w/acm-statistics/issues，任何人都有权限浏览其内容。',
       )
       return `mailto:acm-statistics@fire.fundersclub.com?body=${body}`
     },
