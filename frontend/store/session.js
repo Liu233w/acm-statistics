@@ -26,9 +26,6 @@ export const actions = {
       commit('removeUser')
     }
   },
-  async nuxtServerInit({ dispatch }) {
-    await dispatch('refreshUser')
-  },
   async login({dispatch}, {username, password, remember}) {
     const res = await this.$axios.$post('/api/TokenAuth/Authenticate', {
       userNameOrEmailAddress: username,
@@ -37,7 +34,11 @@ export const actions = {
     })
 
     window.aaa = this
-    Cookies.set('OAuthToken', res.result.accessToken)
+    const config = {}
+    if (remember) {
+      config.expires = 30
+    }
+    Cookies.set('OAuthToken', res.result.accessToken, config)
 
     await dispatch('refreshUser')
   },
