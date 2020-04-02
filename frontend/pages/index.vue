@@ -1,18 +1,18 @@
 <template>
-  <VApp light>
-    <VAppBar class="white">
-      <VToolbarTitle>{{ projectTitle }}</VToolbarTitle>
-      <VSpacer />
-      <UserStatus />
-      <GithubButton />
-    </VAppBar>
-    <VContent>
+  <v-app light>
+    <v-app-bar class="white">
+      <v-toolbar-title>{{ projectTitle }}</v-toolbar-title>
+      <v-spacer />
+      <user-status />
+      <github-button />
+    </v-app-bar>
+    <v-content>
       <section>
-        <VParallax
+        <v-parallax
           :src="require('~/assets/img/frontpage/back7-brighten.jpg')"
           height="600"
         >
-          <VLayout
+          <v-layout
             column
             align-center
             justify-center
@@ -34,7 +34,7 @@
             <div class="black--text subheading mb-4 text-center index-title">
               由 NWPU-ACM 技术组强力驱动
             </div>
-            <VBtn
+            <v-btn
               class="blue lighten-2 black--text mt-12"
               dark
               large
@@ -42,19 +42,19 @@
               to="/statistics"
             >
               进入 OJ 题量统计
-            </VBtn>
-          </VLayout>
-        </VParallax>
+            </v-btn>
+          </v-layout>
+        </v-parallax>
       </section>
 
       <section>
-        <VLayout
+        <v-layout
           column
           wrap
           class="my-12"
           align-center
         >
-          <VFlex
+          <v-flex
             xs12
             sm4
             class="my-4"
@@ -65,69 +65,69 @@
               </h2>
               <span class="subheading">异步API + 浏览器端爬虫，速度加倍</span>
             </div>
-          </VFlex>
-          <VFlex xs12>
-            <VContainer grid-list-xl>
-              <VLayout wrap>
-                <VFlex
+          </v-flex>
+          <v-flex xs12>
+            <v-container grid-list-xl>
+              <v-layout wrap>
+                <v-flex
                   xs12
                   md4
                 >
-                  <VCard
+                  <v-card
                     class="elevation-0 transparent"
                     :flat="true"
                   >
-                    <VCardText class="text-center">
-                      <VIcon
+                    <v-card-text class="text-center">
+                      <v-icon
                         x-large
                         class="blue--text text--lighten-2"
                       >
                         link
-                      </VIcon>
-                    </VCardText>
-                    <VCardTitle
+                      </v-icon>
+                    </v-card-text>
+                    <v-card-title
                       primary-title
                       class="layout justify-center"
                     >
                       <div class="headline text-center">
                         免费提供题量查询API
                       </div>
-                    </VCardTitle>
-                    <VCardText class="text-center">
+                    </v-card-title>
+                    <v-card-text class="text-center">
                       我们提供了一个 restful api 来供您使用，您可以在任意的客户端、网站中调用此api来查询某用户在oj上的提交数/通过数。
                       访问我们的
                       <a
                         href="/swagger"
                         target="_blank"
                       >api文档</a>以获取更多信息。
-                    </VCardText>
-                  </VCard>
-                </VFlex>
-                <VFlex
+                    </v-card-text>
+                  </v-card>
+                </v-flex>
+                <v-flex
                   xs12
                   md4
                 >
-                  <VCard
+                  <v-card
                     class="elevation-0 transparent"
                     :flat="true"
                   >
-                    <VCardText class="text-center">
-                      <VIcon
+                    <v-card-text class="text-center">
+                      <v-icon
                         x-large
                         class="blue--text text--lighten-2"
                       >
                         fab fa-github
-                      </VIcon>
-                    </VCardText>
-                    <VCardTitle
+                      </v-icon>
+                    </v-card-text>
+                    <v-card-title
                       primary-title
                       class="layout justify-center"
                     >
                       <div class="headline text-center">
                         完全开源
                       </div>
-                    </VCardTitle>
-                    <VCardText class="text-center">
+                    </v-card-title>
+                    <v-card-text class="text-center">
                       访问我们的
                       <a
                         href="https://github.com/Liu233w/acm-statistics"
@@ -136,51 +136,51 @@
                       >项目地址</a>
                       以获取本网站的最新源代码，您可以在自己的服务器上部署本网站或者在自己的项目中使用我们的爬虫代码。
                       欢迎向我们提出问题建议、贡献代码或给我们点赞（Star），您的支持是我们前进的动力
-                    </VCardText>
-                  </VCard>
-                </VFlex>
-                <VFlex
+                    </v-card-text>
+                  </v-card>
+                </v-flex>
+                <v-flex
                   xs12
                   md4
                 >
-                  <VCard
+                  <v-card
                     class="elevation-0 transparent"
                     :flat="true"
                   >
-                    <VCardText class="text-center">
-                      <VIcon
+                    <v-card-text class="text-center">
+                      <v-icon
                         x-large
                         class="blue--text text--lighten-2"
                       >
                         build
-                      </VIcon>
-                    </VCardText>
-                    <VCardTitle
+                      </v-icon>
+                    </v-card-text>
+                    <v-card-title
                       primary-title
                       class="layout justify-center"
                     >
                       <div class="headline text-center">
                         更多功能支持中
                       </div>
-                    </VCardTitle>
-                    <VCardText class="text-center">
+                    </v-card-title>
+                    <v-card-text class="text-center">
                       旧版查询系统中的功能正在被移植到新版查询系统中，如果您需要旧版查询系统中的功能，请
                       <a href="//npuacm.info/">单击此处返回旧版查询系统</a>
-                    </VCardText>
-                  </VCard>
-                </VFlex>
-              </VLayout>
-            </VContainer>
-          </VFlex>
-        </VLayout>
+                    </v-card-text>
+                  </v-card>
+                </v-flex>
+              </v-layout>
+            </v-container>
+          </v-flex>
+        </v-layout>
       </section>
 
       <section>
-        <VParallax
+        <v-parallax
           :src="require('~/assets/img/frontpage/back4.jpg')"
           height="380"
         >
-          <VLayout
+          <v-layout
             column
             align-center
             justify-center
@@ -191,7 +191,7 @@
             <a :href="mailToGithubLink">
               <em class="white--text response-title">或者单击此处向本项目发送邮件</em>
             </a>
-            <VBtn
+            <v-btn
               class="blue lighten-2 mt-12"
               dark
               large
@@ -200,35 +200,35 @@
               rel="noopener noreferrer"
             >
               Submit New Issue
-            </VBtn>
-          </VLayout>
-        </VParallax>
+            </v-btn>
+          </v-layout>
+        </v-parallax>
       </section>
 
       <section>
-        <VContainer grid-list-xl>
-          <VLayout
+        <v-container grid-list-xl>
+          <v-layout
             wrap
             justify-center
             class="my-12"
           >
-            <VFlex
+            <v-flex
               xs12
               sm4
             >
-              <VCard
+              <v-card
                 class="elevation-0 transparent"
                 :flat="true"
               >
-                <VCardTitle
+                <v-card-title
                   primary-title
                   class="layout justify-center"
                 >
                   <div class="headline">
                     关于我们
                   </div>
-                </VCardTitle>
-                <VCardText>
+                </v-card-title>
+                <v-card-text>
                   <p>
                     西北工业大学ACM协会技术组致力于为广大学生提供各类计算机、算法、计算机类竞赛方面的设施及服务。
                     欢迎各位有识之士加入。
@@ -248,116 +248,116 @@
                     本站总访客数:
                     <span id="busuanzi_value_site_uv" />次
                   </p>
-                </VCardText>
-              </VCard>
-            </VFlex>
-            <VFlex
+                </v-card-text>
+              </v-card>
+            </v-flex>
+            <v-flex
               xs12
               sm4
               offset-sm1
             >
-              <VCard
+              <v-card
                 class="elevation-0 transparent"
                 :flat="true"
               >
-                <VCardTitle
+                <v-card-title
                   primary-title
                   class="layout justify-center"
                 >
                   <div class="headline">
                     联系我们
                   </div>
-                </VCardTitle>
-                <VList class="transparent">
-                  <VListItem
+                </v-card-title>
+                <v-list class="transparent">
+                  <v-list-item
                     href="https://jq.qq.com/?_wv=1027&k=5qgzfQc"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <VListItemAction>
-                      <VIcon class="blue--text text--lighten-2">
+                    <v-list-item-action>
+                      <v-icon class="blue--text text--lighten-2">
                         fab fa-qq
-                      </VIcon>
-                    </VListItemAction>
-                    <VListItemContent>
-                      <VListItemTitle>198820787</VListItemTitle>
-                    </VListItemContent>
-                  </VListItem>
-                  <VListItem @click="showAddress">
-                    <VListItemAction>
-                      <VIcon class="blue--text text--lighten-2">
+                      </v-icon>
+                    </v-list-item-action>
+                    <v-list-item-content>
+                      <v-list-item-title>198820787</v-list-item-title>
+                    </v-list-item-content>
+                  </v-list-item>
+                  <v-list-item @click="showAddress">
+                    <v-list-item-action>
+                      <v-icon class="blue--text text--lighten-2">
                         place
-                      </VIcon>
-                    </VListItemAction>
-                    <VListItemContent>
-                      <VListItemTitle>陕西省西安市长安区西北工业大学长安校区计算机学院110室</VListItemTitle>
-                    </VListItemContent>
-                  </VListItem>
-                  <VListItem href="mailto:support@npuacm.info">
-                    <VListItemAction>
-                      <VIcon class="blue--text text--lighten-2">
+                      </v-icon>
+                    </v-list-item-action>
+                    <v-list-item-content>
+                      <v-list-item-title>陕西省西安市长安区西北工业大学长安校区计算机学院110室</v-list-item-title>
+                    </v-list-item-content>
+                  </v-list-item>
+                  <v-list-item href="mailto:support@npuacm.info">
+                    <v-list-item-action>
+                      <v-icon class="blue--text text--lighten-2">
                         email
-                      </VIcon>
-                    </VListItemAction>
-                    <VListItemContent>
-                      <VListItemTitle>support@npuacm.info</VListItemTitle>
-                    </VListItemContent>
-                  </VListItem>
-                  <VListItem @click="dialog = !dialog">
-                    <VListItemAction>
-                      <VIcon class="blue--text text--lighten-2">
+                      </v-icon>
+                    </v-list-item-action>
+                    <v-list-item-content>
+                      <v-list-item-title>support@npuacm.info</v-list-item-title>
+                    </v-list-item-content>
+                  </v-list-item>
+                  <v-list-item @click="dialog = !dialog">
+                    <v-list-item-action>
+                      <v-icon class="blue--text text--lighten-2">
                         fab fa-weixin
-                      </VIcon>
-                    </VListItemAction>
-                    <VListItemContent>
-                      <VListItemTitle>微信公众号</VListItemTitle>
-                    </VListItemContent>
-                  </VListItem>
-                </VList>
-              </VCard>
-            </VFlex>
-          </VLayout>
-          <VDialog
+                      </v-icon>
+                    </v-list-item-action>
+                    <v-list-item-content>
+                      <v-list-item-title>微信公众号</v-list-item-title>
+                    </v-list-item-content>
+                  </v-list-item>
+                </v-list>
+              </v-card>
+            </v-flex>
+          </v-layout>
+          <v-dialog
             v-model="dialog"
             max-width="500px"
           >
-            <VCard>
-              <VCardTitle>
+            <v-card>
+              <v-card-title>
                 <span>微信公众号</span>
-              </VCardTitle>
-              <VCardText>
+              </v-card-title>
+              <v-card-text>
                 <img
                   :src="require('~/assets/img/wechat.jpg')"
                   alt="公众号二维码"
                   style="height: 300px"
                 >
-              </VCardText>
-              <VCardActions>
-                <VBtn
+              </v-card-text>
+              <v-card-actions>
+                <v-btn
                   color="primary"
                   text
                   @click.stop="dialog=false"
                 >
                   关闭
-                </VBtn>
-              </VCardActions>
-            </VCard>
-          </VDialog>
-        </VContainer>
+                </v-btn>
+              </v-card-actions>
+            </v-card>
+          </v-dialog>
+        </v-container>
       </section>
 
-      <VFooter class="blue darken-2">
-        <NuxtLink
+      <v-footer class="blue darken-2">
+        <nuxt-link
           to="/about"
           class="white--text ml-4 body-2"
         >
           &copy; 2018 - {{ buildYear }} NWPU-ACM 技术组
-        </NuxtLink>
-        <VSpacer />
+        </nuxt-link>
+        <v-spacer />
         <span class="white--text ml-4 body-2">陕ICP备17008184号</span>
-      </VFooter>
-    </VContent>
-  </VApp>
+      </v-footer>
+    </v-content>
+  </v-app>
 </template>
 
 <script>

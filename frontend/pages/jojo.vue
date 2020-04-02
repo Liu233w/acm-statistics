@@ -1,5 +1,5 @@
 <template>
-  <VApp light>
+  <v-app light>
     <v-container class="fill-height">
       <v-row
         class="mt-n12"
@@ -21,7 +21,7 @@
         </v-col>
       </v-row>
     </v-container>
-  </VApp>
+  </v-app>
 </template>
 
 <script>

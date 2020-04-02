@@ -1,8 +1,8 @@
 <template>
-  <VContainer grid-list-md v-resize="onResize">
-    <VLayout wrap>
-      <VFlex xs12 sm5 md3>
-        <VTextField
+  <v-container grid-list-md v-resize="onResize">
+    <v-layout wrap>
+      <v-flex xs12 sm5 md3>
+        <v-text-field
           v-model="username"
           label="统一设置用户名"
           :disabled="isWorking"
@@ -11,38 +11,38 @@
           :loading="isWorking"
         >
           <template #progress>
-            <VProgressLinear
+            <v-progress-linear
               color="primary"
               :value="notWorkingRate"
               :height="3"
               absolute
             />
           </template>
-        </VTextField>
-      </VFlex>
-      <VFlex xs12 sm7 md5>
-        <VBtn class="primary" @click="runWorker" :disabled="isWorking">
+        </v-text-field>
+      </v-flex>
+      <v-flex xs12 sm7 md5>
+        <v-btn class="primary" @click="runWorker" :disabled="isWorking">
           开始查询
-        </VBtn>
-        <VTooltip bottom>
+        </v-btn>
+        <v-tooltip bottom>
           <template #activator="{ on }">
-            <VBtn
+            <v-btn
               class="error"
               v-on="on"
               @click="clearWorkers"
             >
               重置查询
-            </VBtn>
+            </v-btn>
           </template>
           清空用户名，重置查询状态
-        </VTooltip>
-        <VTooltip bottom>
+        </v-tooltip>
+        <v-tooltip bottom>
           <template #activator="{ on }">
-            <VBtn @click="saveUsername"
-                  v-on="on"
-                  :loading="savingUsername"
-                  :disable="savingUsername"
-                  :class="{ green: savingUsername }"
+            <v-btn @click="saveUsername"
+                   v-on="on"
+                   :loading="savingUsername"
+                   :disable="savingUsername"
+                   :class="{ green: savingUsername }"
             >
               保存用户名
               <template #loader>
@@ -50,36 +50,36 @@
                   保存成功
                 </span>
               </template>
-            </VBtn>
+            </v-btn>
           </template>
           将用户名保存到本地，下次打开页面的时候会自动填写
           <br>
           （使用“开始查询”按钮也会保存用户名）
-        </VTooltip>
-      </VFlex>
-      <VFlex xs12 md4 v-show="submissionsNum">
-        <VChip label color="grey lighten-3" class="elevation-2">
-          <VTooltip bottom>
+        </v-tooltip>
+      </v-flex>
+      <v-flex xs12 md4 v-show="submissionsNum">
+        <v-chip label color="grey lighten-3" class="elevation-2">
+          <v-tooltip bottom>
             <template #activator="{ on }">
-              <VSwitch
+              <v-switch
                 v-on="on"
                 v-model="checkDuplicateAc"
               />
             </template>
             <span>统计AC数时，是否移除重复的题目</span>
-          </VTooltip>
+          </v-tooltip>
           <span class="title">
             {{ summary }}
           </span>
-        </VChip>
-      </VFlex>
-    </VLayout>
-    <VLayout>
-      <VFlex xs12 sm12 md6 lg4 xl3
-             v-for="(column, idx) in workerLayout" :key="idx"
+        </v-chip>
+      </v-flex>
+    </v-layout>
+    <v-layout>
+      <v-flex xs12 sm12 md6 lg4 xl3
+              v-for="(column, idx) in workerLayout" :key="idx"
       >
-        <VLayout column>
-          <TransitionGroup
+        <v-layout column>
+          <transition-group
             name="workers-column"
             @before-leave="itemBeforeLeaveTransition"
           >
@@ -91,15 +91,15 @@
               :data-column-idx="idx"
               :data-column-item-idx="itemIdx"
             >
-              <WorkerCard
+              <worker-card
                 :index="item.index"
               />
             </div>
-          </TransitionGroup>
-        </VLayout>
-      </VFlex>
-    </VLayout>
-  </VContainer>
+          </transition-group>
+        </v-layout>
+      </v-flex>
+    </v-layout>
+  </v-container>
 </template>
 
 <script>
