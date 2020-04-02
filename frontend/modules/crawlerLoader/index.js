@@ -1,12 +1,4 @@
-let crawlerModule
-if (process.env.E2E) {
-  console.log('running project in e2e test, will mock crawlerModule')
-  crawlerModule = require('../../__test__/e2eMocks/crawler.js')
-} else {
-  crawlerModule = require('crawler')
-}
-
-const {readMetaConfigs, generateBrowserCrawlerFunctions} = crawlerModule
+const {readMetaConfigs, generateBrowserCrawlerFunctions} = require('crawler')
 const path = require('path')
 const fs = require('fs-extra')
 const VirtualModulePlugin = require('virtual-module-webpack-plugin')
