@@ -1,3 +1,5 @@
+import _ from 'lodash'
+
 /**
  * 从 linux 格式的 timestamp（精确到秒）生成 javascript 的 Date 格式的对象
  * @param {string} timestamp
@@ -12,12 +14,6 @@ export function getDateFromTimestamp(timestamp) {
  * @param {Error} err axios抛出的异常
  */
 export function getAbpErrorMessage(err) {
-  console.log(err)
-  if (!err.response || !err.response.data) {
-    console.error(err)
-    return '网络错误'
-  } else {
-    console.error(err.response.data.error)
-    return err.response.data.error.message
-  }
+  console.error(err)
+  return _.get(err, 'response.data.error', '网络错误')
 }
