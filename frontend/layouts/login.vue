@@ -6,7 +6,7 @@
         <v-flex xs3 v-show="showBackground">
           <v-card height="500px" class="background" />
         </v-flex>
-        <v-flex md4 sm6 xs12 d-flex class="grey lighten-4">
+        <v-flex lg4 md5 sm7 xs12 d-flex class="grey lighten-4">
           <v-spacer />
           <v-container class="text-center">
             <nuxt />
@@ -38,8 +38,8 @@ export default {
   methods: {
     onResize() {
       const width = window.innerWidth
-      if (width < 1264) {
-        this.showBackground = false // md
+      if (width < 900) {
+        this.showBackground = false // sm
       } else {
         this.showBackground = true // xl
       }
