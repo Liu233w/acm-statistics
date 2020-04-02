@@ -61,7 +61,7 @@ export default {
   },
   data() {
     return {
-      drawer: true,
+      drawer: null,
       title: 'NWPU-ACM 查询系统',
       buildYear: getDateFromTimestamp(this.$env.BUILD_TIME).getFullYear(),
     }

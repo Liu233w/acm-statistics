@@ -4,9 +4,6 @@ describe('整体视觉测试', () => {
 
   beforeEach(() => {
     cy.visit('/statistics')
-
-    // 隐藏左边侧栏
-    cy.get('button i.mdi-menu').click({force: true})
   })
 
   it('能够正确渲染', () => {
@@ -39,8 +36,6 @@ describe('爬虫测试', () => {
 
   beforeEach(() => {
     cy.visit('/statistics')
-    // 隐藏左边侧栏
-    cy.get('button i.mdi-menu').click({force: true})
     // 移除顶栏，以免阻挡截图
     cy.get('header:contains("NWPU-ACM 查询系统")').invoke('hide')
   })
