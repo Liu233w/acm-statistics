@@ -26,6 +26,9 @@ describe('整体视觉测试', () => {
     cy.visit('/settings')
     cy.viewport(1920, 1080)
 
+    // 移除顶栏，以免阻挡截图
+    cy.get('header:contains("NWPU-ACM 查询系统")').invoke('hide')
+    
     // eslint-disable-next-line cypress/no-unnecessary-waiting
     cy.wait(2000)
     cy.matchImageSnapshot()
