@@ -32,7 +32,11 @@ Cypress.Commands.add('mockServer', path => {
 })
 
 Cypress.Commands.overwrite('matchImageSnapshot', (originalFn, maybeName, commandOptions) => {
+  let waitTimeperiod = 1000
+  if (!maybeName) {
+    waitTimeperiod = 2000
+  }
   // eslint-disable-next-line cypress/no-unnecessary-waiting
-  cy.wait(1000)
+  cy.wait(waitTimeperiod)
   return originalFn(maybeName, commandOptions)
 })
