@@ -4,3 +4,4 @@
 /backend-db
 *.user
 /App_Data
+/db-backup
