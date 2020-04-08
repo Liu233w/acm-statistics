@@ -80,3 +80,20 @@ services:
       - traefik.http.middlewares.adminer-url-strip.stripprefix.prefixes=${ADMINER_URL}
       - traefik.http.routers.adminer.middlewares=adminer-url-strip@docker
       - traefik.http.services.adminer.loadbalancer.server.port=8080
+
+  db-backup:
+    image: databack/mysql-backup
+    restart: always
+    volumes:
+      - ./db-backup:/db
+    environment:
+      - DB_NAMES=acm_statistics
+      - DB_DUMP_TARGET=/db
+      - DB_USER=root
+      - DB_PASS=${MYSQL_ROOT_PASSWORD}
+      # - DB_DUMP_BEGIN=+2
+      # backup at 3:00 am
+      - DB_DUMP_CRON=0 3 * * *
+      - DB_SERVER=db
+      # 忽略两个日志表
+      - MYSQLDUMP_OPTS=--ignore-table=acm_statistics.AbpAuditLogs --ignore-table=acm_statistics.AbpUserLoginAttempts
