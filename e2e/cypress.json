@@ -1,4 +1,5 @@
 {
+  "numTestsKeptInMemory": 0,
   "reporter": "cypress-image-snapshot/reporter",
   "projectId": "4s32o7"
 }
