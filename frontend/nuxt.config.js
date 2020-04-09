@@ -100,5 +100,8 @@ module.exports = {
   },
   router: {
     extendRoutes: sensitiveRouter,
+    middleware: [
+      'auth',
+    ],
   },
 }
