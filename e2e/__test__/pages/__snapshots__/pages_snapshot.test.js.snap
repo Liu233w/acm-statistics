@@ -4275,6 +4275,11 @@ exports[`/settings 1`] = `
                     <div class="v-list-item__content">
                       <div class="v-list-item__title">OJ&#x9898;&#x91CF;&#x7EDF;&#x8BA1;</div>
                     </div>
+                  </a><a href="/settings" tabindex="0" class="v-list-item--active v-list-item v-list-item--link theme--light">
+                    <div class="v-list-item__action"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">settings</i></div>
+                    <div class="v-list-item__content">
+                      <div class="v-list-item__title">&#x7528;&#x6237;&#x8BBE;&#x7F6E;</div>
+                    </div>
                   </a><a href="/about" tabindex="0" class="v-list-item v-list-item--link theme--light">
                     <div class="v-list-item__action"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">info</i></div>
                     <div class="v-list-item__content">
@@ -4287,7 +4292,7 @@ exports[`/settings 1`] = `
             <header class="v-sheet v-sheet--tile theme--light v-toolbar v-app-bar v-app-bar--clipped v-app-bar--fixed" style="height:64px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;">
               <div class="v-toolbar__content" style="height:64px;"><button type="button" class="v-app-bar__nav-icon v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-menu theme--light"></i></span></button>
                 <div class="v-toolbar__title">NWPU-ACM &#x67E5;&#x8BE2;&#x7CFB;&#x7EDF;</div>
-                <div class="spacer"></div> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--text theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate v-icon--left fa fa fa fa-sign-in-alt theme--light"></i> &#x767B;&#x5F55;
+                <div class="spacer"></div> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--text theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate v-icon--left fa fa fa fa-sign-in-alt theme--light" style="display:none;"></i> admin
     </span></button></span> <span class="v-tooltip v-tooltip--left"><!----><a href="https://github.com/Liu233w/acm-statistics" target="_blank" rel="noopener noreferrer" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" medium class="v-icon notranslate fab fa-github theme--light"></i></span></a></span>
               </div>
             </header>
@@ -4345,20 +4350,20 @@ exports[`/settings 1`] = `
           fetch: [],
           error: null,
           state: {
-            sidebar: a,
+            sidebar: false,
             session: {
               login: a,
-              username: ""
+              username: "admin"
             }
           },
-          serverRendered: true,
+          serverRendered: a,
           routePath: "\\u002Fsettings",
           env: {
             VERSION_NUM: b,
             BUILD_TIME: b
           }
         }
-      }(false, "0"));
+      }(true, "0"));
     </script>
 
 

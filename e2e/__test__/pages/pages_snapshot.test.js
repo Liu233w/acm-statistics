@@ -4,12 +4,17 @@ const cheerio = require('cheerio')
 
 const basePath = 'http://localhost:3000'
 
-async function testPageByPath(path) {
+async function testPageByPath(path, authToken) {
 
   const url = basePath + path
   console.log(`request url at ${url}`)
 
-  const res = await superagent.get(url)
+  let request = superagent.get(url)
+  if (authToken) {
+    request = request.set('Cookie', ['OAuthToken=' + authToken])
+  }
+
+  const res = await request
   if (!res.ok) {
     console.log(`path ${path} does not have a 200 response, the response: `, res)
     throw Error(`path ${path} does not have a 200 response`)
@@ -58,9 +63,32 @@ const testPaths = [
   '/about',
   '/login',
   '/register',
-  '/settings',
 ]
 
 for (let path of testPaths) {
   test(path, async () => await testPageByPath(path))
+}
+
+
+let authToken
+
+// eslint-disable-next-line no-undef
+beforeAll(async () => {
+  // do login
+  const res = await superagent.post(basePath + '/api/TokenAuth/Authenticate')
+    .send({
+      userNameOrEmailAddress: 'admin',
+      password: '123qwe',
+      rememberClient: true,
+    })
+
+  authToken = res.body.result.accessToken
+})
+
+const testPathsRequireLogin = [
+  '/settings',
+]
+
+for (let path of testPathsRequireLogin) {
+  test(path, async () => await testPageByPath(path, authToken))
 }
