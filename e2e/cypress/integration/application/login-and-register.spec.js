@@ -8,8 +8,6 @@ describe('/login', () => {
     cy.contains('密码').parent().type('wrong-password')
     cy.get('button').contains('登录').click()
     cy.contains('用户名或密码无效', { timeout: 60000 })
-    // eslint-disable-next-line cypress/no-unnecessary-waiting
-    cy.wait(1000)
     cy.get('.text-center').matchImageSnapshot('login-failed')
   })
 
@@ -48,8 +46,6 @@ describe('/register', () => {
     cy.contains('验证码').parent().type('wrong')
     cy.get('button').contains('注册').click()
     cy.contains('验证码不正确', { timeout: 60000 })
-    // eslint-disable-next-line cypress/no-unnecessary-waiting
-    cy.wait(1000)
     cy.get('.text-center').matchImageSnapshot('register-failed')
   })
 })
