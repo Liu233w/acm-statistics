@@ -18,7 +18,7 @@ server:
 ## 等待server就位。后端启动最慢，等它启动就差不多了
 wait-server:
 	docker run --rm -t --ipc=host --network=host \
-		jwilder/dockerize -timeout 5m \
+		jwilder/dockerize -timeout 30m \
 		-wait http://localhost:3000/api/services/app/Session/GetCurrentLoginInformations
 
 build-http-mocks: .node-base
