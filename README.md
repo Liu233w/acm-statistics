@@ -80,6 +80,12 @@ vim .env
 
 如果默认的 `template.env` 有更新，`run.sh` 会自动退出并提示您更新 `.env`。**脚本通过比较两个文件的行数来判断是否有更新，在编辑文件时请确保行数一致**
 
+## 管理
+- 在 .env 文件中设定 adminer 的url，默认为 `/adminer`
+  - 可以查看并修改数据库
+  - 数据库名称为 acm_statistics，用户名为 root，密码在 .env 中设定
+- 数据库会在每天3:00am自动进行备份，保存在 `/db-backup` 中
+
 ## 开源协议
 - 如无特殊声明，均为 GPL-3.0 协议
 - crawler 模块中的 `crawlers` 目录中的文件为 BSD 2-Clause 协议
