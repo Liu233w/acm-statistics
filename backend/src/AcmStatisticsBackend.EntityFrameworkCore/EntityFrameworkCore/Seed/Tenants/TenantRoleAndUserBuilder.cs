@@ -112,7 +112,31 @@ namespace AcmStatisticsBackend.EntityFrameworkCore.Seed.Tenants
                 _context.SaveChanges();
             }
 
-            // TODO: add user permissions if not exist
+            GrantPermissionForRule(userRole, new[]
+            {
+                PermissionNames.Statistics_DefaultQuery,
+            });
+        }
+
+        private void GrantPermissionForRule(Role role, params string[] permissionNames)
+        {
+            var granted = _context.RolePermissions
+                .Where(item => item.TenantId == _tenantId && item.RoleId == role.Id)
+                .Select(item => item.Name);
+
+            var shouldGrant = permissionNames.Except(granted);
+            foreach (var name in shouldGrant)
+            {
+                _context.Permissions.Add(new RolePermissionSetting
+                {
+                    RoleId = role.Id,
+                    TenantId = _tenantId,
+                    IsGranted = true,
+                    Name = name,
+                });
+            }
+
+            _context.SaveChanges();
         }
     }
 }
