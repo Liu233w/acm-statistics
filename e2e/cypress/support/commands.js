@@ -40,3 +40,33 @@ Cypress.Commands.overwrite('matchImageSnapshot', (originalFn, maybeName, command
   cy.wait(waitTimeperiod)
   return originalFn(maybeName, commandOptions)
 })
+
+Cypress.Commands.add('registerAndGetUsername', () => {
+
+  cy.log('<<<<< 开始注册流程')
+
+  const username = 'user' + ('' + Math.random()).slice(2, 8).padEnd(6, '0')
+
+  cy.visit('/register')
+  cy.contains('验证码').parent().type('validate-text')
+  cy.contains('用户名').parent().type(username)
+  cy.contains('密码').parent().type('123qwe')
+  cy.contains('再次输入密码').parent().type('123qwe')
+  cy.get('button').contains('注册').click()
+
+  cy.location('pathname').should('eq', '/')
+  cy.log('>>>>> 结束注册流程')
+
+  return cy.wrap(username)
+})
+
+Cypress.Commands.add('login', username => {
+  cy.log('<<<<< 开始登录流程')
+  cy.visit('/login')
+  cy.contains('用户名').parent().type(username)
+  cy.contains('密码').parent().type('123qwe')
+  cy.get('button').contains('登录').click()
+
+  cy.location('pathname').should('eq', '/')
+  cy.log('>>>>> 结束登录流程')
+})
