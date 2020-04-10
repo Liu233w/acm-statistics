@@ -1,7 +1,14 @@
 <template>
-  <v-container grid-list-md v-resize="onResize">
+  <v-container
+    grid-list-md
+    v-resize="onResize"
+  >
     <v-layout wrap>
-      <v-flex xs12 sm5 md3>
+      <v-flex
+        xs12
+        sm5
+        md3
+      >
         <v-text-field
           v-model="username"
           label="统一设置用户名"
@@ -20,8 +27,16 @@
           </template>
         </v-text-field>
       </v-flex>
-      <v-flex xs12 sm7 md5>
-        <v-btn class="primary" @click="runWorker" :disabled="isWorking">
+      <v-flex
+        xs12
+        sm7
+        md5
+      >
+        <v-btn
+          class="primary"
+          @click="runWorker"
+          :disabled="isWorking"
+        >
           开始查询
         </v-btn>
         <v-tooltip bottom>
@@ -38,11 +53,12 @@
         </v-tooltip>
         <v-tooltip bottom>
           <template #activator="{ on }">
-            <v-btn @click="saveUsername"
-                   v-on="on"
-                   :loading="savingUsername"
-                   :disable="savingUsername"
-                   :class="{ green: savingUsername }"
+            <v-btn
+              @click="saveUsername"
+              v-on="on"
+              :loading="savingUsername"
+              :disable="savingUsername"
+              :class="{ green: savingUsername }"
             >
               保存用户名
               <template #loader>
@@ -57,8 +73,16 @@
           （使用“开始查询”按钮也会保存用户名）
         </v-tooltip>
       </v-flex>
-      <v-flex xs12 md4 v-show="submissionsNum">
-        <v-chip label color="grey lighten-3" class="elevation-2">
+      <v-flex
+        xs12
+        md4
+        v-show="submissionsNum"
+      >
+        <v-chip
+          label
+          color="grey lighten-3"
+          class="elevation-2"
+        >
           <v-tooltip bottom>
             <template #activator="{ on }">
               <v-switch
@@ -75,8 +99,14 @@
       </v-flex>
     </v-layout>
     <v-layout>
-      <v-flex xs12 sm12 md6 lg4 xl3
-              v-for="(column, idx) in workerLayout" :key="idx"
+      <v-flex
+        xs12
+        sm12
+        md6
+        lg4
+        xl3
+        v-for="(column, idx) in workerLayout"
+        :key="idx"
       >
         <v-layout column>
           <transition-group
@@ -91,9 +121,7 @@
               :data-column-idx="idx"
               :data-column-item-idx="itemIdx"
             >
-              <worker-card
-                :index="item.index"
-              />
+              <worker-card :index="item.index" />
             </div>
           </transition-group>
         </v-layout>
@@ -103,156 +131,157 @@
 </template>
 
 <script>
-  import {mapGetters} from 'vuex'
-  import _ from 'lodash'
+import { mapGetters } from 'vuex'
+import _ from 'lodash'
 
-  import WorkerCard from '~/components/WorkerCard'
-  import statisticsLayoutBuilder from '~/components/statisticsLayoutBuilder'
-  import Store from '~/store/-dynamic/statistics'
-  import {PROJECT_TITLE} from '~/components/consts'
+import WorkerCard from '~/components/WorkerCard'
+import statisticsLayoutBuilder from '~/components/statisticsLayoutBuilder'
+import Store from '~/store/-dynamic/statistics'
+import { PROJECT_TITLE } from '~/components/consts'
 
-  export default {
-    name: 'Statistics',
-    components: {
-      WorkerCard,
+export default {
+  name: 'Statistics',
+  components: {
+    WorkerCard,
+  },
+  head: {
+    title: `OJ 题量统计 - ${PROJECT_TITLE}`,
+  },
+  created() {
+    this.$store.registerModule('statistics', Store, { preserveState: false })
+  },
+  destroyed() {
+    this.$store.unregisterModule('statistics')
+  },
+  mounted() {
+    this.onResize()
+    this.loadUsername()
+  },
+  data() {
+    return {
+      // 一共有几列
+      columnCount: 3,
+      // 管理保存用户名按钮的动画
+      savingUsername: false,
+    }
+  },
+  computed: {
+    ...mapGetters('statistics', [
+      'solvedNum',
+      'submissionsNum',
+      'isWorking',
+      'notWorkingRate',
+      'workerIdxOfCrawler',
+    ]),
+    checkDuplicateAc: {
+      get() {
+        return this.$store.state.statistics.checkDuplicateAc
+      },
+      set(value) {
+        this.$store.dispatch('statistics/setCheckDuplicateAc', { value })
+      },
     },
-    head: {
-      title: `OJ 题量统计 - ${PROJECT_TITLE}`,
+    username: {
+      get() {
+        return this.$store.state.statistics.mainUsername
+      },
+      set: _.debounce(function (username) {
+        this.$store.dispatch('statistics/updateMainUsername', { username })
+      }, 300),
     },
-    created() {
-      this.$store.registerModule('statistics', Store, {preserveState: false})
+    workerLayout() {
+      const workers = this.$store.state.statistics.workers
+      return statisticsLayoutBuilder(workers, this.columnCount)
     },
-    destroyed() {
-      this.$store.unregisterModule('statistics')
+    maxItemPerColumn() {
+      return Math.ceil(this.$store.state.statistics.workers.length / this.columnCount)
     },
-    mounted() {
-      this.onResize()
-      this.loadUsername()
+    summary() {
+      return `${this.username} 的总题量： ${this.solvedNum} / ${this.submissionsNum}`
     },
-    data() {
-      return {
-        // 一共有几列
-        columnCount: 3,
-        // 管理保存用户名按钮的动画
-        savingUsername: false,
+  },
+  methods: {
+    runWorker() {
+      this.saveUsername()
+
+      this.$store.dispatch('statistics/startAll')
+    },
+    onResize() {
+      const width = window.innerWidth
+      if (width < 600) {
+        this.columnCount = 1 // xs
+      } else if (width < 960) {
+        this.columnCount = 1 // sm
+      } else if (width < 1264) {
+        this.columnCount = 2 // md
+      } else if (width < 1904) {
+        this.columnCount = 3 // lg
+      } else {
+        this.columnCount = 4 // xl
       }
     },
-    computed: {
-      ...mapGetters('statistics', [
-        'solvedNum',
-        'submissionsNum',
-        'isWorking',
-        'notWorkingRate',
-        'workerIdxOfCrawler',
-      ]),
-      checkDuplicateAc: {
-        get() {
-          return this.$store.state.statistics.checkDuplicateAc
-        },
-        set(value) {
-          this.$store.dispatch('statistics/setCheckDuplicateAc', {value})
-        },
-      },
-      username: {
-        get() {
-          return this.$store.state.statistics.mainUsername
-        },
-        set: _.debounce(function (username) {
-          this.$store.dispatch('statistics/updateMainUsername', {username})
-        }, 300),
-      },
-      workerLayout() {
-        const workers = this.$store.state.statistics.workers
-        return statisticsLayoutBuilder(workers, this.columnCount)
-      },
-      maxItemPerColumn() {
-        return Math.ceil(this.$store.state.statistics.workers.length / this.columnCount)
-      },
-      summary() {
-        return `${this.username} 的总题量： ${this.solvedNum} / ${this.submissionsNum}`
-      },
+    /**
+     * 将用户名的情况存储进 localStorage 里面
+     */
+    async saveUsername() {
+      this.savingUsername = true
+      // 至少等待2秒
+      await Promise.all([
+        this.$store.dispatch('statistics/saveUsernames'),
+        new Promise(resolve => setTimeout(resolve, 2000)),
+      ])
+      // 至少等待2秒
+      this.savingUsername = false
     },
-    methods: {
-      runWorker() {
-        this.saveUsername()
-
-        this.$store.dispatch('statistics/startAll')
-      },
-      onResize() {
-        const width = window.innerWidth
-        if (width < 600) {
-          this.columnCount = 1 // xs
-        } else if (width < 960) {
-          this.columnCount = 1 // sm
-        } else if (width < 1264) {
-          this.columnCount = 2 // md
-        } else if (width < 1904) {
-          this.columnCount = 3 // lg
-        } else {
-          this.columnCount = 4 // xl
-        }
-      },
-      /**
-       * 将用户名的情况存储进 localStorage 里面
-       */
-      saveUsername() {
-        this.$store.dispatch('statistics/saveUsernames')
-
-        this.savingUsername = true
-        // 播放2秒的保存动画
-        setTimeout(() => {
-          this.savingUsername = false
-        }, 2000)
-      },
-      /**
-       * 从 localStorage 读取用户名情况，输入进 worker 中
-       */
-      loadUsername() {
-        this.$store.dispatch('statistics/loadUsernames')
-      },
-      itemBeforeLeaveTransition(el) {
-        const columnIdx = Number.parseInt(el.dataset.columnIdx, 10)
-        const itemIdx = Number.parseInt(el.dataset.columnItemIdx, 10)
-
-        // 假如是每列的最后一个worker，说明要移动到下一列，动画化向下淡出
-        // 否则，说明是要删除本worker，向上淡出
-        if (itemIdx < this.workerLayout[columnIdx].length - 1) {
-          el.style.transform = 'translateY(-30px)'
-        } else {
-          el.style.transform = 'translateY(30px)'
-        }
-        // 最后一列单独判断，假如没有排满，即使是最后一个worker也向上淡出
-        if (columnIdx == this.columnCount - 1 && this.workerLayout[columnIdx].length < this.maxItemPerColumn) {
-          el.style.transform = 'translateY(-30px)'
-        }
-      },
-      clearWorkers() {
-        this.$store.dispatch('statistics/clearWorkers')
-      },
+    /**
+     * 从 localStorage 读取用户名情况，输入进 worker 中
+     */
+    loadUsername() {
+      this.$store.dispatch('statistics/loadUsernames')
     },
-  }
+    itemBeforeLeaveTransition(el) {
+      const columnIdx = Number.parseInt(el.dataset.columnIdx, 10)
+      const itemIdx = Number.parseInt(el.dataset.columnItemIdx, 10)
+
+      // 假如是每列的最后一个worker，说明要移动到下一列，动画化向下淡出
+      // 否则，说明是要删除本worker，向上淡出
+      if (itemIdx < this.workerLayout[columnIdx].length - 1) {
+        el.style.transform = 'translateY(-30px)'
+      } else {
+        el.style.transform = 'translateY(30px)'
+      }
+      // 最后一列单独判断，假如没有排满，即使是最后一个worker也向上淡出
+      if (columnIdx == this.columnCount - 1 && this.workerLayout[columnIdx].length < this.maxItemPerColumn) {
+        el.style.transform = 'translateY(-30px)'
+      }
+    },
+    clearWorkers() {
+      this.$store.dispatch('statistics/clearWorkers')
+    },
+  },
+}
 </script>
 
 <style scoped>
-  .workers-column-move {
-    transition: all 0.5s;
-  }
+.workers-column-move {
+  transition: all 0.5s;
+}
 
-  .workers-column-enter {
-    opacity: 0;
-    transform: translateY(-30px);
-  }
+.workers-column-enter {
+  opacity: 0;
+  transform: translateY(-30px);
+}
 
-  .workers-column-leave-to {
-    opacity: 0;
-    /*transform: translateY(30px);*/
-  }
+.workers-column-leave-to {
+  opacity: 0;
+  /*transform: translateY(30px);*/
+}
 
-  .workers-column-leave-active {
-    position: absolute;
-  }
+.workers-column-leave-active {
+  position: absolute;
+}
 
-  .worker-item {
-    transition: all 0.5s;
-  }
+.worker-item {
+  transition: all 0.5s;
+}
 </style>
