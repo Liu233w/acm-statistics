@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using Abp.Domain.Entities.Auditing;
 using AcmStatisticsBackend.Authorization.Users;
 
@@ -16,6 +17,8 @@ namespace AcmStatisticsBackend.Crawlers
         /// <summary>
         /// 主用户名
         /// </summary>
+        [Required]
+        [MinLength(0)]
         public string MainUsername { get; set; }
 
         /// <summary>
