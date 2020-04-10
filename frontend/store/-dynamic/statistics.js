@@ -1,4 +1,4 @@
-import {WORKER_STATUS} from '~/components/consts'
+import { WORKER_STATUS } from '~/components/consts'
 import getCrawlerData from '~/dynamic/crawlers'
 
 import _ from 'lodash'
@@ -48,10 +48,10 @@ export const MUTATION_TYPES = {
 }
 
 export const mutations = {
-  [MUTATION_TYPES.updateUsername](state, {index, username}) {
+  [MUTATION_TYPES.updateUsername](state, { index, username }) {
     updateUsername(state.workers[index], username)
   },
-  [MUTATION_TYPES.updateMainUsername](state, {username}) {
+  [MUTATION_TYPES.updateMainUsername](state, { username }) {
     state.mainUsername = username
     _.forEach(state.workers, (worker) => updateUsername(worker, username))
   },
@@ -62,7 +62,7 @@ export const mutations = {
    * @param main
    * @param subs
    */
-  [MUTATION_TYPES.updateUsernamesFromObject](state, {main, subs}) {
+  [MUTATION_TYPES.updateUsernamesFromObject](state, { main, subs }) {
     state.mainUsername = main
 
     /* subs: {
@@ -97,7 +97,7 @@ export const mutations = {
       }
     })
   },
-  [MUTATION_TYPES.setWorkerDone](state, {index, solved, submissions, solvedList}) {
+  [MUTATION_TYPES.setWorkerDone](state, { index, solved, submissions, solvedList }) {
     const worker = state.workers[index]
 
     worker.solved = solved
@@ -112,7 +112,7 @@ export const mutations = {
     }
     worker.status = WORKER_STATUS.DONE
   },
-  [MUTATION_TYPES.setWorkerError](state, {index, errorMessage}) {
+  [MUTATION_TYPES.setWorkerError](state, { index, errorMessage }) {
     const worker = state.workers[index]
 
     worker.errorMessage = errorMessage
@@ -121,7 +121,7 @@ export const mutations = {
   /**
    * 更新状态，准备启动 worker
    */
-  [MUTATION_TYPES.startWorker](state, {index, tokenKey}) {
+  [MUTATION_TYPES.startWorker](state, { index, tokenKey }) {
     const worker = state.workers[index]
 
     resetWorker(worker)
@@ -129,13 +129,13 @@ export const mutations = {
     worker.status = WORKER_STATUS.WORKING
     worker.tokenKey = tokenKey
   },
-  [MUTATION_TYPES.stopWorker](state, {index}) {
+  [MUTATION_TYPES.stopWorker](state, { index }) {
     const worker = state.workers[index]
 
     worker.status = WORKER_STATUS.WAITING
     worker.tokenKey = null
   },
-  [MUTATION_TYPES.addWorkerForCrawler](state, {crawlerName}) {
+  [MUTATION_TYPES.addWorkerForCrawler](state, { crawlerName }) {
     let insertIdx = _.findLastIndex(state.workers, _.matchesProperty('crawlerName', crawlerName))
     if (insertIdx === -1) {
       insertIdx = state.workers.length
@@ -153,14 +153,14 @@ export const mutations = {
 
     state.workers.splice(insertIdx, 0, worker)
   },
-  [MUTATION_TYPES.removeWorkerAtIndex](state, {index}) {
+  [MUTATION_TYPES.removeWorkerAtIndex](state, { index }) {
     state.workers.splice(index, 1)
   },
   [MUTATION_TYPES.clearWorkers](state) {
     state.workers = initWorkers(state.crawlers)
     state.mainUsername = ''
   },
-  [MUTATION_TYPES.setCheckDuplicateAc](state, {value}) {
+  [MUTATION_TYPES.setCheckDuplicateAc](state, { value }) {
     state.checkDuplicateAc = value
   },
 }
@@ -180,7 +180,7 @@ export const getters = {
    * @param nullSolvedListWorkers
    * @return {Object.<String, String>} key 是 crawler name， value 是 title
    */
-  nullSolvedListCrawlers(state, {nullSolvedListWorkers}) {
+  nullSolvedListCrawlers(state, { nullSolvedListWorkers }) {
     const res = {}
     for (let item of nullSolvedListWorkers) {
       res[item.crawlerName] = state.crawlers[item.crawlerName].title
@@ -193,7 +193,7 @@ export const getters = {
    * @param nullSolvedListWorkers
    * @returns {number}
    */
-  solvedNum(state, {nullSolvedListWorkers}) {
+  solvedNum(state, { nullSolvedListWorkers }) {
 
     if (state.checkDuplicateAc) {
 
@@ -271,26 +271,35 @@ export const getters = {
 }
 
 export const actions = {
-  loadUsernames({commit}) {
-    const username = JSON.parse(window.localStorage.getItem('username-v2'))
+  async loadUsernames({ commit, rootState }) {
+    let username
+    if (rootState.session.login) {
+      username = await this.$axios.$get('/api/services/app/DefaultQuery/GetDefaultQueries')
+    } else {
+      username = JSON.parse(window.localStorage.getItem('username-v2'))
+    }
     if (username) {
       commit(MUTATION_TYPES.updateUsernamesFromObject, username)
     }
   },
-  saveUsernames({state}) {
+  async saveUsernames({ state, rootState }) {
     const username = getUsernameObjectFromState(state)
-    window.localStorage.setItem('username-v2', JSON.stringify(username))
+    if (rootState.session.login) {
+      await this.$axios.$post('/api/services/app/DefaultQuery/SetDefaultQueries', username)
+    } else {
+      window.localStorage.setItem('username-v2', JSON.stringify(username))
+    }
   },
-  updateUsername({commit}, {index, username}) {
-    commit(MUTATION_TYPES.updateUsername, {index, username})
+  updateUsername({ commit }, { index, username }) {
+    commit(MUTATION_TYPES.updateUsername, { index, username })
   },
-  updateMainUsername({commit}, {username}) {
-    commit(MUTATION_TYPES.updateMainUsername, {username})
+  updateMainUsername({ commit }, { username }) {
+    commit(MUTATION_TYPES.updateMainUsername, { username })
   },
   /**
    * 启动一个 worker
    */
-  async startOne({state, commit}, {index}) {
+  async startOne({ state, commit }, { index }) {
 
     const worker = state.workers[index]
     if (!worker.username) {
@@ -298,7 +307,7 @@ export const actions = {
     }
 
     const tokenKey = Math.random()
-    commit(MUTATION_TYPES.startWorker, {index, tokenKey})
+    commit(MUTATION_TYPES.startWorker, { index, tokenKey })
 
     try {
       const res = await crawlerFunctions[worker.crawlerName](worker.username)
@@ -306,31 +315,31 @@ export const actions = {
         console.log('done but stopped')
         return
       }
-      commit(MUTATION_TYPES.setWorkerDone, {index, ...res})
+      commit(MUTATION_TYPES.setWorkerDone, { index, ...res })
     } catch (err) {
       if (state.workers[index].tokenKey !== tokenKey) {
         console.log('done but stopped')
         return
       }
-      commit(MUTATION_TYPES.setWorkerError, {index, errorMessage: err.message})
+      commit(MUTATION_TYPES.setWorkerError, { index, errorMessage: err.message })
     }
   },
-  startAll({state, dispatch}) {
+  startAll({ state, dispatch }) {
     return Promise.all(_.map(
       _.range(state.workers.length),
-      index => dispatch('startOne', {index})))
+      index => dispatch('startOne', { index })))
   },
-  stopOne({commit}, {index}) {
-    commit(MUTATION_TYPES.stopWorker, {index})
+  stopOne({ commit }, { index }) {
+    commit(MUTATION_TYPES.stopWorker, { index })
   },
-  addWorkerForCrawler({state, commit}, {crawlerName}) {
+  addWorkerForCrawler({ state, commit }, { crawlerName }) {
     if (state.crawlers[crawlerName]) {
-      commit(MUTATION_TYPES.addWorkerForCrawler, {crawlerName})
+      commit(MUTATION_TYPES.addWorkerForCrawler, { crawlerName })
     } else {
       throw new Error('爬虫不存在')
     }
   },
-  removeWorkerAtIndex({state, commit, getters}, {index}) {
+  removeWorkerAtIndex({ state, commit, getters }, { index }) {
     if (index < 0 || index >= state.workers.length) {
       throw new Error('该位置不存在')
     }
@@ -341,13 +350,13 @@ export const actions = {
       throw new Error('不能移除最后一个 worker，您可以将用户名置为空以跳过查询')
     }
 
-    commit(MUTATION_TYPES.removeWorkerAtIndex, {index})
+    commit(MUTATION_TYPES.removeWorkerAtIndex, { index })
   },
-  clearWorkers({commit}) {
+  clearWorkers({ commit }) {
     commit(MUTATION_TYPES.clearWorkers)
   },
-  setCheckDuplicateAc({commit}, {value}) {
-    commit(MUTATION_TYPES.setCheckDuplicateAc, {value})
+  setCheckDuplicateAc({ commit }, { value }) {
+    commit(MUTATION_TYPES.setCheckDuplicateAc, { value })
   },
 }
 
