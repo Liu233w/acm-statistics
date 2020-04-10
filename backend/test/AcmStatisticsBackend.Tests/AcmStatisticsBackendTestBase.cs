@@ -19,8 +19,12 @@ namespace AcmStatisticsBackend.Tests
 {
     public abstract class AcmStatisticsBackendTestBase : AbpIntegratedTestBase<AcmStatisticsBackendTestModule>
     {
+        private readonly UserRegistrationManager _userRegistrationManager;
+
         protected AcmStatisticsBackendTestBase()
         {
+            _userRegistrationManager = Resolve<UserRegistrationManager>();
+
             void NormalizeDbContext(AcmStatisticsBackendDbContext context)
             {
                 context.EntityChangeEventHelper = NullEntityChangeEventHelper.Instance;
