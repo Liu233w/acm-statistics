@@ -68,7 +68,7 @@
               </template>
             </v-btn>
           </template>
-          将用户名保存到本地，下次打开页面的时候会自动填写
+          将用户名保存到{{ $store.state.session.login ? '服务器' : '本地' }}，下次打开页面的时候会自动填写
           <br>
           （使用“开始查询”按钮也会保存用户名）
         </v-tooltip>

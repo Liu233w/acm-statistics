@@ -274,7 +274,11 @@ export const actions = {
   async loadUsernames({ commit, rootState }) {
     let username
     if (rootState.session.login) {
-      username = await this.$axios.$get('/api/services/app/DefaultQuery/GetDefaultQueries')
+      const res = await this.$axios.$get('/api/services/app/DefaultQuery/GetDefaultQueries')
+      username = {
+        main: res.result.mainUsername,
+        subs: res.result.usernamesInCrawlers,
+      }
     } else {
       username = JSON.parse(window.localStorage.getItem('username-v2'))
     }
@@ -285,7 +289,10 @@ export const actions = {
   async saveUsernames({ state, rootState }) {
     const username = getUsernameObjectFromState(state)
     if (rootState.session.login) {
-      await this.$axios.$post('/api/services/app/DefaultQuery/SetDefaultQueries', username)
+      await this.$axios.$post('/api/services/app/DefaultQuery/SetDefaultQueries', {
+        mainUsername: username.main,
+        usernamesInCrawlers: username.subs,
+      })
     } else {
       window.localStorage.setItem('username-v2', JSON.stringify(username))
     }
