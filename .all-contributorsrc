@@ -77,6 +77,15 @@
       "contributions": [
         "bug"
       ]
+    },
+    {
+      "login": "kidozh",
+      "name": "Kido Zhang",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/11661760?v=4",
+      "profile": "https://kidozh.com",
+      "contributions": [
+        "infra"
+      ]
     }
   ],
   "contributorsPerLine": 7,
