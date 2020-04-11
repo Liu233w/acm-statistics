@@ -1,4 +1,7 @@
 新版 NWPU-ACM 查询系统
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 ===
 
 [![Powered by ZenHub](https://img.shields.io/badge/Powered_by-ZenHub-5e60ba.svg)](https://app.zenhub.com/workspace/o/liu233w/acm-statistics/boards?repos=125616473)
@@ -97,3 +100,22 @@ vim .env
     （[中文版](http://www.ruanyifeng.com/blog/2016/01/commit_message_change_log.html)）
 - 您可以使用 [cz-cli](https://github.com/commitizen/cz-cli) 来辅助提交 commit
 
+
+## Contributors ✨
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/flylai"><img src="https://avatars2.githubusercontent.com/u/9880740?v=4" width="100px;" alt=""/><br /><sub><b>flylai</b></sub></a><br /><a href="https://github.com/Liu233w/acm-statistics/commits?author=flylai" title="Code">💻</a></td>
+  </tr>
+</table>
+
+<!-- markdownlint-enable -->
+<!-- prettier-ignore-end -->
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
