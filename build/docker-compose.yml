@@ -84,6 +84,7 @@ services:
   db-backup:
     image: databack/mysql-backup@sha256:44b41cf721a28ad01e6482e753cad80e888b3e6e38aea00e4b3885fc088bd4f4
     restart: always
+    user: "${DB_BACKUP_UID}"
     volumes:
       - ./db-backup:/db
     environment:
