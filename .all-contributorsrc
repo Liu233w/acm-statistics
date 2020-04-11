@@ -11,7 +11,35 @@
       "avatar_url": "https://avatars2.githubusercontent.com/u/9880740?v=4",
       "profile": "https://github.com/flylai",
       "contributions": [
-        "code"
+        "code",
+        "bug"
+      ]
+    },
+    {
+      "login": "fzu-h4cky",
+      "name": "fzu-h4cky",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/36151020?v=4",
+      "profile": "https://github.com/fzu-h4cky",
+      "contributions": [
+        "bug"
+      ]
+    },
+    {
+      "login": "2512821228",
+      "name": "Zhao",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/11994295?v=4",
+      "profile": "http://zhao.wtf",
+      "contributions": [
+        "bug"
+      ]
+    },
+    {
+      "login": "cometeme",
+      "name": "Adelard Collins",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/22635759?v=4",
+      "profile": "https://www.cometeme.tech",
+      "contributions": [
+        "bug"
       ]
     }
   ],
@@ -20,5 +48,6 @@
   "projectOwner": "Liu233w",
   "repoType": "github",
   "repoHost": "https://github.com",
-  "skipCi": true
+  "skipCi": true,
+  "commitConvention": "none"
 }
