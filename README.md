@@ -9,7 +9,7 @@
 [![Mergify Status](https://img.shields.io/badge/Mergify-enabled-green.svg)](https://mergify.io)
 [![Deliverybot enabled](https://img.shields.io/badge/Deliverybot-enabled-blue.svg)](https://app.deliverybot.dev/Liu233w/acm-statistics/branch/master)
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-6-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-7-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 #### 构建状态
@@ -116,6 +116,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://www.cometeme.tech"><img src="https://avatars0.githubusercontent.com/u/22635759?v=4" width="100px;" alt=""/><br /><sub><b>Adelard Collins</b></sub></a><br /><a href="https://github.com/Liu233w/acm-statistics/issues?q=author%3Acometeme" title="Bug reports">🐛</a></td>
     <td align="center"><a href="https://github.com/ctuu"><img src="https://avatars3.githubusercontent.com/u/22322656?v=4" width="100px;" alt=""/><br /><sub><b>ct</b></sub></a><br /><a href="https://github.com/Liu233w/acm-statistics/issues?q=author%3Actuu" title="Bug reports">🐛</a></td>
     <td align="center"><a href="https://github.com/Geekxiong"><img src="https://avatars3.githubusercontent.com/u/25352156?v=4" width="100px;" alt=""/><br /><sub><b>Geekxiong</b></sub></a><br /><a href="#ideas-Geekxiong" title="Ideas, Planning, & Feedback">🤔</a></td>
+    <td align="center"><a href="https://github.com/settings/profile"><img src="https://avatars2.githubusercontent.com/u/39403985?v=4" width="100px;" alt=""/><br /><sub><b>Halorv</b></sub></a><br /><a href="#ideas-Halorv" title="Ideas, Planning, & Feedback">🤔</a></td>
   </tr>
 </table>
 
