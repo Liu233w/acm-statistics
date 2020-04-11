@@ -39,10 +39,12 @@ endif
 # == detect system and set command ==
 ifdef OS # windows
    RM = del /Q
+   RMR = rmdir /s /q
    CP = copy
 else
    ifeq ($(shell uname), Linux)
       RM = rm -f
+      RMR = rm -rf
       CP = cp
    endif
 endif
