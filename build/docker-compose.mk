@@ -55,8 +55,10 @@ up: .build .env
 	docker-compose up $(compose-args)
 
 # 为了进行e2e测试而启动的服务器，除了正常的代码外，还会启动 mock-server
+# 移除原先的数据库
 e2e-up: .build .env
 	$(MAKE) -C ../e2e build-http-mocks
+	$(RMR) db-backend
 	docker-compose -f docker-compose.yml -f docker-compose.e2e.yml up $(compose-args)
 
 .env:
