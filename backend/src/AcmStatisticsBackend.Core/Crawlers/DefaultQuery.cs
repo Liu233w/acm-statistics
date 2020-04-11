@@ -10,7 +10,8 @@ namespace AcmStatisticsBackend.Crawlers
     /// </summary>
     public class DefaultQuery : FullAuditedEntity<long, User>
     {
-        public User User { get; set; }
+        [Required]
+        public virtual User User { get; set; }
 
         public long UserId { get; set; }
 
@@ -24,6 +25,7 @@ namespace AcmStatisticsBackend.Crawlers
         /// <summary>
         /// 在各个爬虫上的用户名。key为爬虫名称，value为一个用户名的列表，表示在该爬虫上的所有用户名。
         /// </summary>
+        [Required]
         public Dictionary<string, List<string>> UsernamesInCrawlers { get; set; }
     }
 }
