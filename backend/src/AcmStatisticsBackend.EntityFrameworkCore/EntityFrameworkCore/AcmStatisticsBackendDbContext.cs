@@ -16,6 +16,12 @@ namespace AcmStatisticsBackend.EntityFrameworkCore
 
         public DbSet<DefaultQuery> DefaultQueries { get; set; }
 
+        public DbSet<OjCrawler> OjCrawlers { get; set; }
+
+        public DbSet<AcHistory> AcHistories { get; set; }
+
+        public DbSet<AcWorkerHistory> AcWorkerHistories { get; set; }
+
         public AcmStatisticsBackendDbContext(DbContextOptions<AcmStatisticsBackendDbContext> options)
             : base(options)
         {
