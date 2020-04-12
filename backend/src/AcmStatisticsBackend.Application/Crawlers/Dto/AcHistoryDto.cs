@@ -1,24 +1,17 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using Abp.Domain.Entities;
-using Abp.Domain.Entities.Auditing;
-using AcmStatisticsBackend.Authorization.Users;
+using Abp.AutoMapper;
 
-namespace AcmStatisticsBackend.Crawlers
+namespace AcmStatisticsBackend.Crawlers.Dto
 {
-    /// <summary>
-    /// 一次查询历史记录
-    /// </summary>
-    public class AcHistory : Entity<long>, IHasCreationTime
+    [AutoMap(typeof(AcHistory))]
+    public class AcHistoryDto
     {
+        public long Id { get; set; }
+
         [Required]
         public DateTime CreationTime { get; set; }
-
-        /// <summary>
-        /// 跟此记录关联的用户
-        /// </summary>
-        public virtual User User { get; set; }
 
         public long UserId { get; set; }
 
@@ -38,11 +31,5 @@ namespace AcmStatisticsBackend.Crawlers
         /// 用户的总通过数，已经移除了 vjudge 中重复的题目
         /// </summary>
         public int Solved { get; set; }
-
-        /// <summary>
-        /// 包含在本次查询记录中的，每个爬虫的查询记录
-        /// </summary>
-        [Required]
-        public virtual ICollection<AcWorkerHistory> AcWorkerHistories { get; set; }
     }
 }
