@@ -31,12 +31,12 @@ namespace AcmStatisticsBackend.Crawlers
             var entity = ObjectMapper.Map<DefaultQuery>(dto);
 
             // 移除空的用户名
-            foreach (var (crawlerName, userNames) in entity.UsernamesInCrawlers.Object)
+            foreach (var (crawlerName, userNames) in entity.UsernamesInCrawlers)
             {
                 userNames.RemoveAll(s => s.IsNullOrEmpty());
                 if (userNames.Count == 0)
                 {
-                    entity.UsernamesInCrawlers.Object.Remove(crawlerName);
+                    entity.UsernamesInCrawlers.Remove(crawlerName);
                 }
             }
 

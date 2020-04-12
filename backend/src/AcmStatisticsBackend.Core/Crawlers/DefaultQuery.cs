@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using Abp.Domain.Entities.Auditing;
 using AcmStatisticsBackend.Authorization.Users;
@@ -27,6 +26,6 @@ namespace AcmStatisticsBackend.Crawlers
         /// 在各个爬虫上的用户名。key为爬虫名称，value为一个用户名的列表，表示在该爬虫上的所有用户名。
         /// </summary>
         [Required]
-        public JsonObject<Dictionary<string, List<string>>> UsernamesInCrawlers { get; set; }
+        public Dictionary<string, List<string>> UsernamesInCrawlers { get; set; }
     }
 }

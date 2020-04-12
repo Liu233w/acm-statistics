@@ -19,6 +19,5 @@
     <PackageReference Include="Abp.ZeroCore.EntityFrameworkCore" Version="5.5.0" />
     <PackageReference Include="Castle.Windsor.MsDependencyInjection" Version="3.3.1" />
     <PackageReference Include="Flurl.Http" Version="2.4.2" />
-    <PackageReference Include="Pomelo.JsonObject" Version="2.2.1" />
   </ItemGroup>
 </Project>
