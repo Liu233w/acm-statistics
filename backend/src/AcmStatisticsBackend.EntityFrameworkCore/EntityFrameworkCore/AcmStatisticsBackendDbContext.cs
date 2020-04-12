@@ -26,5 +26,15 @@ namespace AcmStatisticsBackend.EntityFrameworkCore
             : base(options)
         {
         }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<DefaultQuery>()
+                .Property(e => e.UsernamesInCrawlers)
+                .HasConversion(
+                    v => JsonConvert.SerializeObject(v),
+                    v => JsonConvert.DeserializeObject<Dictionary<string, List<string>>>(v));
+        }
     }
 }

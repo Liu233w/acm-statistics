@@ -1534,7 +1534,7 @@ namespace AcmStatisticsBackend.Migrations
 
                     b.Property<string>("SolvedListJson")
                         .IsRequired()
-                        .HasColumnType("json");
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<int>("Submission")
                         .HasColumnType("int");
@@ -1588,7 +1588,7 @@ namespace AcmStatisticsBackend.Migrations
 
                     b.Property<string>("UsernamesInCrawlers")
                         .IsRequired()
-                        .HasColumnType("json");
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.HasKey("Id");
 
