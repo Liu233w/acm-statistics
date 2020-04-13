@@ -10,5 +10,7 @@
         public const string Pages_Roles = "Pages.Roles";
 
         public const string Statistics_DefaultQuery = "Statistics.DefaultQuery";
+
+        public const string AcHistory_Histories = "AcHistory.Histories";
     }
 }
