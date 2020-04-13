@@ -20,12 +20,10 @@ namespace AcmStatisticsBackend.Crawlers
         public long AcHistoryId { get; set; }
 
         /// <summary>
-        /// 关联的爬虫信息，可以从中获取爬虫的标题等数据
+        /// 爬虫名称。前端可以根据元数据从此名称获取爬虫标题。
         /// </summary>
         [Required]
-        public virtual OjCrawler OjCrawler { get; set; }
-
-        public int OjCrawlerId { get; set; }
+        public string CrawlerName { get; set; }
 
         /// <summary>
         /// 用户用来查询的用户名

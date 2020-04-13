@@ -6,14 +6,12 @@ using Abp.AutoMapper;
 namespace AcmStatisticsBackend.Crawlers.Dto
 {
     [AutoMap(typeof(AcHistory))]
-    public class AcHistoryDto
+    public class GetAcHistoryOutput
     {
         public long Id { get; set; }
 
         [Required]
         public DateTime CreationTime { get; set; }
-
-        public long UserId { get; set; }
 
         /// <summary>
         /// 查询历史记录中的主用户名，可以为空字符串。

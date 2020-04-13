@@ -7,9 +7,7 @@ namespace AcmStatisticsBackend.Crawlers.Dto
     [AutoMap(typeof(AcWorkerHistory))]
     public class AcWorkerHistoryDto
     {
-        public string OjCrawlerName { get; set; }
-
-        public string OjCrawlerTitle { get; set; }
+        public string CrawlerName { get; set; }
 
         /// <summary>
         /// 用户用来查询的用户名
