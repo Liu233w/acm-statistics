@@ -41,11 +41,13 @@ namespace AcmStatisticsBackend.Crawlers
         /// <summary>
         /// 提交数
         /// </summary>
+        [Range(0, int.MaxValue)]
         public int Submission { get; set; }
 
         /// <summary>
         /// 通过数
         /// </summary>
+        [Range(0, int.MaxValue)]
         public int Solved { get; set; }
 
         /// <summary>

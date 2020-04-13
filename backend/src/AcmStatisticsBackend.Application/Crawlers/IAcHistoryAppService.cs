@@ -15,7 +15,7 @@ namespace AcmStatisticsBackend.Crawlers
         ///
         /// 如果在同一天内有另一个查询，将删除旧的查询。
         /// </summary>
-        Task SaveOrReplaceAcHistory(AcHistoryDto dto);
+        Task SaveOrReplaceAcHistory(SaveOrReplaceAcHistoryInput input);
 
         /// <summary>
         /// 删除历史记录
@@ -25,7 +25,7 @@ namespace AcmStatisticsBackend.Crawlers
         /// <summary>
         /// 获取当前用户的AC历史记录列表，从新到旧排序。
         /// </summary>
-        Task<PagedResultDto<AcHistoryDto>> GetAcHistory(GetAcHistoryInput input);
+        Task<PagedResultDto<GetAcHistoryOutput>> GetAcHistory(PagedResultRequestDto input);
 
         /// <summary>
         /// 获取属于某一个 <see cref="AcHistory"/> 的所有 <see cref="AcWorkerHistory"/>

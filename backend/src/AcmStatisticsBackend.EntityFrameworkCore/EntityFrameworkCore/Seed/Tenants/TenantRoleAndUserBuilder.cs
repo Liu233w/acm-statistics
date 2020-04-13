@@ -115,6 +115,7 @@ namespace AcmStatisticsBackend.EntityFrameworkCore.Seed.Tenants
             GrantPermissionForRule(userRole, new[]
             {
                 PermissionNames.Statistics_DefaultQuery,
+                PermissionNames.AcHistory_Histories,
             });
         }
 
