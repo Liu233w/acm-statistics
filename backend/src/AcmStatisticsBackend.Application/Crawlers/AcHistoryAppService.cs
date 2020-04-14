@@ -19,9 +19,13 @@ namespace AcmStatisticsBackend.Crawlers
     {
         private readonly IRepository<AcHistory, long> _acHistoryRepository;
 
-        public AcHistoryAppService(IRepository<AcHistory, long> acHistoryRepository)
+        private readonly IRepository<AcWorkerHistory, long> _acWorkerHistoryRepository;
+
+        public AcHistoryAppService(IRepository<AcHistory, long> acHistoryRepository,
+            IRepository<AcWorkerHistory, long> acWorkerHistoryRepository)
         {
             _acHistoryRepository = acHistoryRepository;
+            _acWorkerHistoryRepository = acWorkerHistoryRepository;
         }
 
         /// <inheritdoc cref="IAcHistoryAppService.SaveOrReplaceAcHistory"/>
@@ -31,11 +35,11 @@ namespace AcmStatisticsBackend.Crawlers
             // TODO: 目前是UTC时间。可以改成用户的时区。
             var latestItem = await _acHistoryRepository.GetAll()
                 .Where(e => e.UserId == AbpSession.UserId.Value)
-                .OrderBy(e => e.CreationTime)
+                .OrderByDescending(e => e.CreationTime)
                 .FirstOrDefaultAsync();
             if (latestItem != null && latestItem.CreationTime.Date == Clock.Now.Date)
             {
-                await _acHistoryRepository.DeleteAsync(latestItem);
+                await DoDeleteHistory(latestItem);
             }
 
             // 添加新记录
@@ -52,8 +56,7 @@ namespace AcmStatisticsBackend.Crawlers
             if (input.Id.HasValue)
             {
                 var entity = await GetAuthorizedEntity(input.Id.Value);
-                // 关联的 AcWorkerHistory 会自动删除
-                await _acHistoryRepository.DeleteAsync(entity);
+                await DoDeleteHistory(entity);
             }
 
             if (input.Ids != null)
@@ -61,8 +64,7 @@ namespace AcmStatisticsBackend.Crawlers
                 foreach (var id in input.Ids)
                 {
                     var entity = await GetAuthorizedEntity(id);
-                    // 关联的 AcWorkerHistory 会自动删除
-                    await _acHistoryRepository.DeleteAsync(entity);
+                    await DoDeleteHistory(entity);
                 }
             }
         }
@@ -72,7 +74,7 @@ namespace AcmStatisticsBackend.Crawlers
         {
             var list = await _acHistoryRepository.GetAll()
                 .Where(e => e.UserId == AbpSession.UserId.Value)
-                .OrderBy(e => e.CreationTime)
+                .OrderByDescending(e => e.CreationTime)
                 .PageBy(input)
                 .ToListAsync();
 
@@ -84,7 +86,12 @@ namespace AcmStatisticsBackend.Crawlers
         public async Task<ListResultDto<AcWorkerHistoryDto>> GetAcWorkerHistory(GetAcWorkerHistoryInput input)
         {
             var entity = await GetAuthorizedEntity(input.AcHistoryId);
-            var list = ObjectMapper.Map<List<AcWorkerHistoryDto>>(entity.AcWorkerHistories);
+            // 目前abp的测试还不支持 LazyLoading，尽管实际程序里可以用，这里还是得手动加载
+            // TODO: 等到abp更新之后看看这里还支不支持
+            var entityList = await _acWorkerHistoryRepository.GetAll()
+                .Where(e => e.AcHistoryId == entity.Id)
+                .ToListAsync();
+            var list = ObjectMapper.Map<List<AcWorkerHistoryDto>>(entityList);
             return new ListResultDto<AcWorkerHistoryDto>(list);
         }
 
@@ -103,6 +110,17 @@ namespace AcmStatisticsBackend.Crawlers
             }
 
             return acHistory;
+        }
+
+        /// <summary>
+        /// 移除 AcHistory 和与其关联的 AcWorkerHistory，不检查用户是否有权限访问这个Entity
+        /// </summary>
+        private async Task DoDeleteHistory(AcHistory entity)
+        {
+            // 虽然MySql有Cascade删除，但是InMemoryDB还不支持这个。为了测试方便，这里手动删除一下。
+            // TODO: 等到 https://github.com/dotnet/efcore/issues/3924 修复之后就把这里去掉
+            await _acWorkerHistoryRepository.DeleteAsync(e => e.AcHistoryId == entity.Id);
+            await _acHistoryRepository.DeleteAsync(entity);
         }
     }
 }

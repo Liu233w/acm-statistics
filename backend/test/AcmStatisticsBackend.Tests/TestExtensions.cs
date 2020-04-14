@@ -8,7 +8,8 @@ namespace AcmStatisticsBackend.Tests
         /// <summary>
         /// 将左右两个对象转换成 json 再比较
         /// </summary>
-        public static void ShouldEqualInJson(this object left, object right)
+        /// <typeparam name="T">两对象的类型</typeparam>
+        public static void ShouldEqualInJson<T>(this T left, T right)
         {
             left.ShouldNotBeNull();
             left.ToJsonString(indented: true).ShouldBe(right.ToJsonString(indented: true));
