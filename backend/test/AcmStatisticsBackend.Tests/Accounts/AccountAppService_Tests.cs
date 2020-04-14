@@ -96,10 +96,12 @@ namespace AcmStatisticsBackend.Tests.Accounts
                 CaptchaId = "a",
                 CaptchaText = "a",
             });
+            long origUserId = 0;
             await UsingDbContextAsync(1, async ctx =>
             {
                 var user = await ctx.Users.FirstAsync(a => a.UserName == "user1");
                 user.ShouldNotBeNull();
+                origUserId = user.Id;
             });
 
             // act
@@ -107,11 +109,10 @@ namespace AcmStatisticsBackend.Tests.Accounts
             await _accountAppService.SelfDelete();
 
             // test
-            User origUser = null;
             await UsingDbContextAsync(1, async ctx =>
             {
-                origUser = await ctx.Users.FirstOrDefaultAsync(a => a.UserName == "user1");
-                origUser.IsDeleted.ShouldBe(true);
+                var origUser = await ctx.Users.FirstOrDefaultAsync(a => a.UserName == "user1");
+                origUser.ShouldBeNull();
             });
 
             // 能够注册相同的用户名（和邮箱）
@@ -126,7 +127,7 @@ namespace AcmStatisticsBackend.Tests.Accounts
             {
                 var user = await ctx.Users.FirstAsync(a => a.UserName == "user1" && !a.IsDeleted);
                 user.ShouldNotBeNull();
-                user.Id.ShouldNotBe(origUser.Id);
+                user.Id.ShouldNotBe(origUserId);
             });
         }
     }
