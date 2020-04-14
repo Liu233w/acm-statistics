@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AcmStatisticsBackend.Migrations
 {
     [DbContext(typeof(AcmStatisticsBackendDbContext))]
-    [Migration("20200411125950_AddAcHistory")]
+    [Migration("20200414102908_AddAcHistory")]
     partial class AddAcHistory
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -1522,19 +1522,20 @@ namespace AcmStatisticsBackend.Migrations
                     b.Property<long>("AcHistoryId")
                         .HasColumnType("bigint");
 
+                    b.Property<string>("CrawlerName")
+                        .IsRequired()
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
                     b.Property<string>("ErrorMessage")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<bool>("HasSolvedList")
                         .HasColumnType("tinyint(1)");
 
-                    b.Property<int>("OjCrawlerId")
-                        .HasColumnType("int");
-
                     b.Property<int>("Solved")
                         .HasColumnType("int");
 
-                    b.Property<string>("SolvedListJson")
+                    b.Property<string>("SolvedList")
                         .IsRequired()
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
@@ -1548,8 +1549,6 @@ namespace AcmStatisticsBackend.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("AcHistoryId");
-
-                    b.HasIndex("OjCrawlerId");
 
                     b.ToTable("AcWorkerHistories");
                 });
@@ -1603,25 +1602,6 @@ namespace AcmStatisticsBackend.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("DefaultQueries");
-                });
-
-            modelBuilder.Entity("AcmStatisticsBackend.Crawlers.OjCrawler", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    b.Property<string>("CrawlerName")
-                        .IsRequired()
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
-
-                    b.Property<string>("Title")
-                        .IsRequired()
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("OjCrawlers");
                 });
 
             modelBuilder.Entity("AcmStatisticsBackend.MultiTenancy.Tenant", b =>
@@ -1896,12 +1876,6 @@ namespace AcmStatisticsBackend.Migrations
                     b.HasOne("AcmStatisticsBackend.Crawlers.AcHistory", "AcHistory")
                         .WithMany("AcWorkerHistories")
                         .HasForeignKey("AcHistoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("AcmStatisticsBackend.Crawlers.OjCrawler", "OjCrawler")
-                        .WithMany()
-                        .HasForeignKey("OjCrawlerId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
