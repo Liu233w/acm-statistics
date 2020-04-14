@@ -24,7 +24,8 @@ namespace AcmStatisticsBackend.Accounts
         private readonly IAbpSession _abpSession;
 
         public AccountAppService(
-            UserRegistrationManager userRegistrationManager, ICaptchaServiceClient captchaServiceClient, UserManager userManager, IAbpSession abpSession)
+            UserRegistrationManager userRegistrationManager, ICaptchaServiceClient captchaServiceClient,
+            UserManager userManager, IAbpSession abpSession)
         {
             _userRegistrationManager = userRegistrationManager;
             _captchaServiceClient = captchaServiceClient;
@@ -51,7 +52,7 @@ namespace AcmStatisticsBackend.Accounts
         }
 
         /// <summary>
-        /// É¾³ý±¾ÕË»§
+        /// åˆ é™¤æœ¬è´¦æˆ·
         /// </summary>
         [AbpAuthorize]
         public async Task SelfDelete()
