@@ -1,4 +1,6 @@
-﻿namespace AcmStatisticsBackend.Crawlers.Dto
+﻿using System.Diagnostics.CodeAnalysis;
+
+namespace AcmStatisticsBackend.Crawlers.Dto
 {
     public class DeleteAcHistoryInput
     {
@@ -10,6 +12,7 @@
         /// <summary>
         /// 删除一系列历史记录
         /// </summary>
+        [MaybeNull]
         public long[] Ids { get; set; }
     }
 }
