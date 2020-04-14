@@ -28,11 +28,17 @@ namespace AcmStatisticsBackend.EntityFrameworkCore
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+
             modelBuilder.Entity<DefaultQuery>()
                 .Property(e => e.UsernamesInCrawlers)
                 .HasConversion(
                     v => JsonConvert.SerializeObject(v),
                     v => JsonConvert.DeserializeObject<Dictionary<string, List<string>>>(v));
+
+            modelBuilder.Entity<AcWorkerHistory>()
+                .Property(e => e.SolvedList)
+                .HasConversion(v => JsonConvert.SerializeObject(v),
+                    v => JsonConvert.DeserializeObject<string[]>(v));
         }
     }
 }

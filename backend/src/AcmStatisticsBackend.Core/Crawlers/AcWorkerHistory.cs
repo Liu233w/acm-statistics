@@ -56,31 +56,11 @@ namespace AcmStatisticsBackend.Crawlers
         public bool HasSolvedList { get; set; }
 
         /// <summary>
-        /// 用户通过的题目列表，用json形式存储。是一个字符串列表。
+        /// 用户通过的题目列表。
         ///
         /// 如果 <see cref="HasSolvedList"/> 为false，返回一个空的列表。
         /// </summary>
         [Required]
-        public string SolvedListJson { get; set; }
-
-        /// <summary>
-        /// 从 <see cref="SolvedListJson"/> 中获取通过题目列表。
-        ///
-        /// 如果 <see cref="HasSolvedList"/> 为false，返回一个空的列表。
-        /// </summary>
-        /// <returns>对象形式的列表，每一项是题目编号，不包含爬虫名称</returns>
-        public ICollection<string> GetSolvedList()
-        {
-            return JsonConvert.DeserializeObject<ICollection<string>>(SolvedListJson);
-        }
-
-        /// <summary>
-        /// 将对象格式的题目列表转换成json格式并保存。
-        /// </summary>
-        /// <param name="solvedList">对象格式的题目列表，每一项是题目编号，不包含爬虫名称</param>
-        public void SetSolvedList(ICollection<string> solvedList)
-        {
-            SolvedListJson = JsonConvert.SerializeObject(solvedList);
-        }
+        public string[] SolvedList { get; set; }
     }
 }
