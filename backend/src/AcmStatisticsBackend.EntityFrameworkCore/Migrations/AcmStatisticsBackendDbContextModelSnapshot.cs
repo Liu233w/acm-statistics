@@ -1533,7 +1533,7 @@ namespace AcmStatisticsBackend.Migrations
                     b.Property<int>("Solved")
                         .HasColumnType("int");
 
-                    b.Property<string>("SolvedListJson")
+                    b.Property<string>("SolvedList")
                         .IsRequired()
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 

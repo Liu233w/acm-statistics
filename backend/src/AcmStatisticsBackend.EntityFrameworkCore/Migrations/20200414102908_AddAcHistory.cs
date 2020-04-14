@@ -40,33 +40,19 @@ namespace AcmStatisticsBackend.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "OjCrawlers",
-                columns: table => new
-                {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    CrawlerName = table.Column<string>(nullable: false),
-                    Title = table.Column<string>(nullable: false),
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_OjCrawlers", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "AcWorkerHistories",
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     AcHistoryId = table.Column<long>(nullable: false),
-                    OjCrawlerId = table.Column<int>(nullable: false),
+                    CrawlerName = table.Column<string>(nullable: false),
                     Username = table.Column<string>(nullable: false),
                     ErrorMessage = table.Column<string>(nullable: true),
                     Submission = table.Column<int>(nullable: false),
                     Solved = table.Column<int>(nullable: false),
                     HasSolvedList = table.Column<bool>(nullable: false),
-                    SolvedListJson = table.Column<string>(nullable: false),
+                    SolvedList = table.Column<string>(nullable: false),
                 },
                 constraints: table =>
                 {
@@ -75,12 +61,6 @@ namespace AcmStatisticsBackend.Migrations
                         name: "FK_AcWorkerHistories_AcHistories_AcHistoryId",
                         column: x => x.AcHistoryId,
                         principalTable: "AcHistories",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_AcWorkerHistories_OjCrawlers_OjCrawlerId",
-                        column: x => x.OjCrawlerId,
-                        principalTable: "OjCrawlers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -94,11 +74,6 @@ namespace AcmStatisticsBackend.Migrations
                 name: "IX_AcWorkerHistories_AcHistoryId",
                 table: "AcWorkerHistories",
                 column: "AcHistoryId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_AcWorkerHistories_OjCrawlerId",
-                table: "AcWorkerHistories",
-                column: "OjCrawlerId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -108,9 +83,6 @@ namespace AcmStatisticsBackend.Migrations
 
             migrationBuilder.DropTable(
                 name: "AcHistories");
-
-            migrationBuilder.DropTable(
-                name: "OjCrawlers");
 
             migrationBuilder.AlterColumn<string>(
                 name: "UsernamesInCrawlers",
