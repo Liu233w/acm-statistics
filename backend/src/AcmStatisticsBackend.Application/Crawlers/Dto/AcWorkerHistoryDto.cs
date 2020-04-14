@@ -1,12 +1,17 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Diagnostics.CodeAnalysis;
 using Abp.AutoMapper;
+using Abp.Runtime.Validation;
 
 namespace AcmStatisticsBackend.Crawlers.Dto
 {
     [AutoMap(typeof(AcWorkerHistory))]
-    public class AcWorkerHistoryDto
+    public class AcWorkerHistoryDto : ICustomValidate
     {
+        /// <summary>
+        /// 爬虫名称。前端可以根据元数据从此名称获取爬虫标题。
+        /// </summary>
+        [Required]
         public string CrawlerName { get; set; }
 
         /// <summary>
@@ -44,7 +49,14 @@ namespace AcmStatisticsBackend.Crawlers.Dto
         ///
         /// 如果 <see cref="HasSolvedList"/> 为false，返回一个空的列表。
         /// </summary>
-        [Required]
         public string[] SolvedList { get; set; }
+
+        public void AddValidationErrors(CustomValidationContext context)
+        {
+            if (ErrorMessage == null && HasSolvedList && SolvedList == null)
+            {
+                context.Results.Add(new ValidationResult("当 HasSolvedList 为 true 时，SolvedList 不能为 null"));
+            }
+        }
     }
 }

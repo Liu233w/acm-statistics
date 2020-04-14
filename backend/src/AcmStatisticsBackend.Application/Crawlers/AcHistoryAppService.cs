@@ -33,7 +33,7 @@ namespace AcmStatisticsBackend.Crawlers
                 .Where(e => e.UserId == AbpSession.UserId.Value)
                 .OrderBy(e => e.CreationTime)
                 .FirstOrDefaultAsync();
-            if (latestItem.CreationTime.Date == Clock.Now.Date)
+            if (latestItem != null && latestItem.CreationTime.Date == Clock.Now.Date)
             {
                 await _acHistoryRepository.DeleteAsync(latestItem);
             }
@@ -56,11 +56,14 @@ namespace AcmStatisticsBackend.Crawlers
                 await _acHistoryRepository.DeleteAsync(entity);
             }
 
-            foreach (var id in input.Ids)
+            if (input.Ids != null)
             {
-                var entity = await GetAuthorizedEntity(id);
-                // 关联的 AcWorkerHistory 会自动删除
-                await _acHistoryRepository.DeleteAsync(entity);
+                foreach (var id in input.Ids)
+                {
+                    var entity = await GetAuthorizedEntity(id);
+                    // 关联的 AcWorkerHistory 会自动删除
+                    await _acHistoryRepository.DeleteAsync(entity);
+                }
             }
         }
 
