@@ -16,6 +16,7 @@ const loj = require('../crawlers/loj')
 const luogu = require('../crawlers/luogu')
 const nowcoder = require('../crawlers/nowcoder')
 const uestc = require('../crawlers/uestc')
+const atcoder = require('../crawlers/atcoder')
 
 const { readConfigs } = require('../lib/configReader')
 
@@ -344,6 +345,24 @@ describe('uestc', () => {
       solved: 1,
       solvedList: ['1'],
     })
+  })
+
+})
+
+describe('atcoder', () => {
+
+  test('test atcoder - 用户不存在时抛出异常', async () => {
+    await expect(atcoder(null, notExistUsername)).rejects.toThrow('用户不存在')
+  })
+
+  test('test atcoder - 能够正确识别带有空格的用户名', async () => {
+    await expect(atcoder(null, ' ' + notExistUsername)).rejects.toThrow('用户不存在')
+  })
+
+  test('test atcoder', async () => {
+    const res = await atcoder(null, 'wata')
+    checkRes(res)
+    expect(res.solvedList).toContain('judge_update_202004_b')
   })
 
 })

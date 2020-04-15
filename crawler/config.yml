@@ -14,6 +14,7 @@ crawler_order:
   - luogu
   - nowcoder
   - uestc
+  - atcoder
   - vjudge
 
 crawlers:
@@ -92,6 +93,13 @@ crawlers:
       title: Lutece (UESTC)
       description:
       url: https://acm.uestc.edu.cn/home
+  atcoder:
+    meta:
+      title: AtCoder
+      description: |
+        API provided by kenkoooo (https://github.com/kenkoooo/AtCoderProblems).
+        It may take a while for the api to update user statistics.
+      url: https://atcoder.jp
   vjudge:
     meta:
       title: VJudge
