@@ -17,11 +17,11 @@ const luogu = require('../crawlers/luogu')
 const nowcoder = require('../crawlers/nowcoder')
 const uestc = require('../crawlers/uestc')
 
-const {readConfigs} = require('../lib/configReader')
+const { readConfigs } = require('../lib/configReader')
 
 jest.setTimeout(10000) // 最多10秒
 
-const notExistUsername = 'fmV84ZCQ3hwu'
+const notExistUsername = 'fmv84zcq3hwu'
 const username = 'vjudge5'
 
 // 另外，感谢 @leoloveacm, @2013300262 同学提供测试帐号
