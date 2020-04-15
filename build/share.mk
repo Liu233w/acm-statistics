@@ -41,10 +41,12 @@ ifdef OS # windows
    RM = del /Q
    RMR = rmdir /s /q
    CP = copy
+   MKDIR = md
 else
    ifeq ($(shell uname), Linux)
       RM = rm -f
       RMR = rm -rf
       CP = cp
+      MKDIR = mkdir
    endif
 endif

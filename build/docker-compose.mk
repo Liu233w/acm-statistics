@@ -58,7 +58,8 @@ up: .build .env
 # 移除原先的数据库
 e2e-up: .build .env
 	$(MAKE) -C ../e2e build-http-mocks
-	$(RMR) db-backend
+	$(RMR) backend-db || echo remove failed
+	$(MKDIR) backend-db
 	docker-compose -f docker-compose.yml -f docker-compose.e2e.yml up $(compose-args)
 
 .env:
