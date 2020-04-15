@@ -71,10 +71,12 @@ function resolveSolvedList(acSet) {
     'timus',
     'csu',
     // 'hust',
+    'atcoder',
   ])
   // 可以用来映射的 crawler name
   const ojMap = {
     '': 'NO_NAME',
+    'LibreOJ': 'loj',
   }
 
   const res = []

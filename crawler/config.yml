@@ -75,7 +75,7 @@ crawlers:
       url: http://acm.csu.edu.cn/
   loj:
     meta:
-      title: LOJ
+      title: LibreOJ
       description:
       url: https://loj.ac/
   luogu:
