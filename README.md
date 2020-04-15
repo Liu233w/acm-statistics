@@ -9,7 +9,7 @@
 [![Mergify Status](https://img.shields.io/badge/Mergify-enabled-green.svg)](https://mergify.io)
 [![Deliverybot enabled](https://img.shields.io/badge/Deliverybot-enabled-blue.svg)](https://app.deliverybot.dev/Liu233w/acm-statistics/branch/master)
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-9-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-10-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 #### 构建状态
@@ -121,6 +121,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   <tr>
     <td align="center"><a href="https://github.com/bodhisatan"><img src="https://avatars0.githubusercontent.com/u/35862184?v=4" width="100px;" alt=""/><br /><sub><b>Bodhisatan_Yao</b></sub></a><br /><a href="https://github.com/Liu233w/acm-statistics/issues?q=author%3Abodhisatan" title="Bug reports">🐛</a></td>
     <td align="center"><a href="https://kidozh.com"><img src="https://avatars3.githubusercontent.com/u/11661760?v=4" width="100px;" alt=""/><br /><sub><b>Kido Zhang</b></sub></a><br /><a href="#infra-kidozh" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
+    <td align="center"><a href="https://github.com/Meulsama"><img src="https://avatars1.githubusercontent.com/u/55663936?v=4" width="100px;" alt=""/><br /><sub><b>Meulsama</b></sub></a><br /><a href="#ideas-Meulsama" title="Ideas, Planning, & Feedback">🤔</a></td>
   </tr>
 </table>
 
