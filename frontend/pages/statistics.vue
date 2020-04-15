@@ -83,15 +83,6 @@
           color="grey lighten-3"
           class="elevation-2"
         >
-          <v-tooltip bottom>
-            <template #activator="{ on }">
-              <v-switch
-                v-on="on"
-                v-model="checkDuplicateAc"
-              />
-            </template>
-            <span>统计AC数时，是否移除重复的题目</span>
-          </v-tooltip>
           <span class="title">
             {{ summary }}
           </span>
@@ -173,14 +164,6 @@ export default {
       'notWorkingRate',
       'workerIdxOfCrawler',
     ]),
-    checkDuplicateAc: {
-      get() {
-        return this.$store.state.statistics.checkDuplicateAc
-      },
-      set(value) {
-        this.$store.dispatch('statistics/setCheckDuplicateAc', { value })
-      },
-    },
     username: {
       get() {
         return this.$store.state.statistics.mainUsername

@@ -28,8 +28,6 @@ export function state() {
     workers,
     crawlers,
     mainUsername: '',
-    // 多个worker有重复的ac时，移除掉重复的。
-    checkDuplicateAc: true,
   }
 }
 
@@ -44,7 +42,6 @@ export const MUTATION_TYPES = {
   addWorkerForCrawler: 'addWorkerForCrawler',
   removeWorkerAtIndex: 'removeWorkerAtIndex',
   clearWorkers: 'clearWorkers',
-  setCheckDuplicateAc: 'setCheckDuplicateAc',
 }
 
 export const mutations = {
@@ -160,9 +157,6 @@ export const mutations = {
     state.workers = initWorkers(state.crawlers)
     state.mainUsername = ''
   },
-  [MUTATION_TYPES.setCheckDuplicateAc](state, { value }) {
-    state.checkDuplicateAc = value
-  },
 }
 
 export const getters = {
@@ -195,26 +189,20 @@ export const getters = {
    */
   solvedNum(state, { nullSolvedListWorkers }) {
 
-    if (state.checkDuplicateAc) {
+    const nullSolvedListWorkerSolvedNum = _.sumBy(nullSolvedListWorkers, 'solved')
 
-      const nullSolvedListWorkerSolvedNum = _.sumBy(nullSolvedListWorkers, 'solved')
-
-      const acSet = new Set()
-      for (let worker of state.workers) {
-        if (worker.solvedList) {
-          if (state.crawlers[worker.crawlerName].virtual_judge) {
-            pushSet(acSet, worker.solvedList)
-          } else {
-            pushSet(acSet, addProblemPrefix(worker.solvedList, worker.crawlerName))
-          }
+    const acSet = new Set()
+    for (let worker of state.workers) {
+      if (worker.solvedList) {
+        if (state.crawlers[worker.crawlerName].virtual_judge) {
+          pushSet(acSet, worker.solvedList)
+        } else {
+          pushSet(acSet, addProblemPrefix(worker.solvedList, worker.crawlerName))
         }
       }
-
-      return acSet.size + nullSolvedListWorkerSolvedNum
-
-    } else {
-      return _.sumBy(state.workers, 'solved')
     }
+
+    return acSet.size + nullSolvedListWorkerSolvedNum
   },
   /**
    * 总体 submissions 数量
@@ -361,9 +349,6 @@ export const actions = {
   },
   clearWorkers({ commit }) {
     commit(MUTATION_TYPES.clearWorkers)
-  },
-  setCheckDuplicateAc({ commit }, { value }) {
-    commit(MUTATION_TYPES.setCheckDuplicateAc, { value })
   },
 }
 
