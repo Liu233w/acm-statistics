@@ -25,6 +25,10 @@ module.exports = async function (config, username) {
 
   const $ = cheerio.load(res.text)
 
+  if ($('#user-profile-left').length == 0) {
+    throw new Error('用户不存在')
+  }
+
   try {
     return {
       submissions: Number($('dt:contains("Solutions submitted") + dd').text().trim()),
