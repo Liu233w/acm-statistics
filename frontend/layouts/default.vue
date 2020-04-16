@@ -70,14 +70,14 @@ export default {
     items() {
       return _.filter(
         [
-          { icon: 'home', title: '返回主页', to: '/' },
-          { icon: 'code', title: 'OJ题量统计', to: '/statistics' },
+          { icon: 'home', title: 'Homepage', to: '/' },
+          { icon: 'code', title: 'AC Statistics', to: '/statistics' },
           ifTrue(this.$store.state.session.login, {
             icon: 'settings',
-            title: '用户设置',
+            title: 'Settings',
             to: '/settings',
           }),
-          { icon: 'info', title: '关于', to: '/about' },
+          { icon: 'info', title: 'About', to: '/about' },
         ],
         item => item !== null,
       )

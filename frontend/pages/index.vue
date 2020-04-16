@@ -41,7 +41,7 @@
               nuxt
               to="/statistics"
             >
-              进入 OJ 题量统计
+              Enter AC Statistics
             </v-btn>
           </v-layout>
         </v-parallax>

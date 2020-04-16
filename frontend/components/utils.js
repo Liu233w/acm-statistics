@@ -15,5 +15,5 @@ export function getDateFromTimestamp(timestamp) {
  */
 export function getAbpErrorMessage(err) {
   console.error(err)
-  return _.get(err, 'response.data.error.message', '网络错误')
+  return _.get(err, 'response.data.error.message', 'Network Error')
 }

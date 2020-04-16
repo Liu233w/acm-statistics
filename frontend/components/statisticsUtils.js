@@ -12,11 +12,11 @@ export function warningHelper(worker, crawlerMeta, {nullSolvedListCrawlers, work
   const warnings = []
 
   if (_.startsWith(worker.username, ' ')) {
-    warnings.push('用户名以空格开头')
+    warnings.push('Your username begins with a space.')
   }
 
   if (_.includes(worker.username, ' ')) {
-    warnings.push('用户名含有空格，部分爬虫可能不支持')
+    warnings.push('Your username includes space, which may not be supported by some crawlers.')
   }
 
   if (crawlerMeta.virtual_judge && worker.solvedList) {
@@ -27,7 +27,7 @@ export function warningHelper(worker, crawlerMeta, {nullSolvedListCrawlers, work
 
     for (let item of allCrawlerNames) {
       if (item in nullSolvedListCrawlers) {
-        warnings.push(`爬虫 ${nullSolvedListCrawlers[item]} 无法返回题目列表，因此它的结果和本爬虫的结果可能会重复计算`)
+        warnings.push(`Crawler ${nullSolvedListCrawlers[item]} did not return AC problem list, its result may overlap with this crawler's`)
       }
     }
   }
@@ -36,13 +36,13 @@ export function warningHelper(worker, crawlerMeta, {nullSolvedListCrawlers, work
     && worker.solvedList === null
     && workerNumberOfCrawler[worker.crawlerName] >= 2) {
 
-    warnings.push('本爬虫无法返回题目列表，因此多个账户的通过题目可能会被重复计算')
+    warnings.push('This crawler did not return AC problem list, so the same problem in different OJs can be recognized as different problems.')
   }
 
   if (!_.isNil(worker.solvedList)
     && worker.solvedList.length !== worker.solved) {
-    warnings.push(`本爬虫获取到的通过数为 ${worker.solved}，但是通过的题目列表有 ${worker.solvedList.length}` +
-      ' 道题目，这可能是一个爬虫的错误。')
+    warnings.push(`The AC number of this crawler is ${worker.solved}, however, there are ${worker.solvedList.length}` +
+      ' problems in the AC list, which can be an error of the crawler.')
   }
 
   return warnings

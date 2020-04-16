@@ -2,7 +2,7 @@
   <v-card flat>
     <v-card-title primary-title>
       <div class="headline">
-        登录
+        Login
       </div>
     </v-card-title>
     <v-container>
@@ -22,20 +22,20 @@
           <v-form v-model="valid">
             <v-text-field
               prepend-icon="person"
-              label="用户名"
+              label="Username"
               required
               v-model="username"
               :rules="[rules.required]"
             />
             <v-text-field
               prepend-icon="lock"
-              label="密码"
+              label="Password"
               required
               type="password"
               v-model="password"
               :rules="[rules.required]"
             />
-            <v-checkbox v-model="remember" label="保持登录" />
+            <v-checkbox v-model="remember" label="Remember me" />
             <v-row>
               <v-col>
                 <v-btn
@@ -45,12 +45,12 @@
                   @click="login"
                   :loading="loading"
                 >
-                  登录
+                  login
                 </v-btn>
               </v-col>
               <v-col>
                 <v-btn block to="/register">
-                  去注册
+                  enter register page
                 </v-btn>
               </v-col>
             </v-row>

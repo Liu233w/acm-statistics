@@ -2,7 +2,7 @@
   <v-card flat>
     <v-card-title primary-title>
       <div class="headline">
-        注册
+        Register
       </div>
     </v-card-title>
     <v-container>
@@ -22,14 +22,14 @@
           <v-form v-model="valid">
             <v-text-field
               prepend-icon="person"
-              label="用户名"
+              label="Username"
               v-model="username"
               required
               :rules="[rules.required]"
             />
             <v-text-field
               prepend-icon="lock"
-              label="密码"
+              label="Password"
               type="password"
               v-model="password"
               required
@@ -37,11 +37,11 @@
             />
             <v-text-field
               prepend-icon="lock"
-              label="再次输入密码"
+              label="Confirm password"
               type="password"
               v-model="pwdRepeat"
               required
-              :rules="[rules.required, () => password === pwdRepeat || '两次密码必须相同']"
+              :rules="[rules.required, () => password === pwdRepeat || 'Password must match']"
             />
             <v-row>
               <v-col>
@@ -50,7 +50,7 @@
               <v-col>
                 <v-text-field
                   prepend-icon="verified_user"
-                  label="验证码"
+                  label="Captcha"
                   v-model="captchaText"
                   required
                   :rules="[rules.required]"
@@ -72,12 +72,12 @@
                   @click="register"
                   :loading="loading"
                 >
-                  注册
+                  register
                 </v-btn>
               </v-col>
               <v-col>
                 <v-btn block to="/login">
-                  去登录
+                  enter login page
                 </v-btn>
               </v-col>
             </v-row>

@@ -16,7 +16,7 @@
             </v-btn>
           </template>
           <span>
-            移除此窗格
+            Remove this worker
           </span>
         </v-tooltip>
         <v-tooltip bottom v-if="myWorkerIdxOfCrawler == workerNum">
@@ -29,7 +29,7 @@
             </v-btn>
           </template>
           <span>
-            添加一个此 OJ 的窗格
+            Add a new worker for the crawler
           </span>
         </v-tooltip>
         <v-tooltip bottom v-if="crawlerUrl">
@@ -42,7 +42,7 @@
             </v-btn>
           </template>
           <span>
-            转到此OJ
+            Enter OJ website
           </span>
         </v-tooltip>
         <transition name="fade">
@@ -55,7 +55,7 @@
                 <v-icon>stop</v-icon>
               </v-btn>
             </template>
-            <span>停止查询</span>
+            <span>Cancel query</span>
           </v-tooltip>
           <v-tooltip bottom v-else>
             <template #activator="{ on }">
@@ -66,7 +66,7 @@
                 <v-icon>refresh</v-icon>
               </v-btn>
             </template>
-            <span>重新爬取此处信息</span>
+            <span>Re-query</span>
           </v-tooltip>
         </transition>
       </v-toolbar-items>
@@ -131,7 +131,7 @@
                   {{ worker.solved }}
                 </a>
               </template>
-              <span>查看通过的题目列表</span>
+              <span>Open AC problem list</span>
             </v-tooltip>
           </v-flex>
           <v-flex>
@@ -148,14 +148,14 @@
       <v-card xs12 md8 lg6>
         <v-card-title>
           <span class="headline">
-            用户 {{ worker.username }} 在 {{ crawler.title }} 通过的题目列表
+            AC problem list of {{ worker.username }} in {{ crawler.title }}
           </span>
         </v-card-title>
         <v-card-text v-if="solvedListStatus === 'empty'">
-          当前没有通过的题目
+          There are no AC problems.
         </v-card-text>
         <v-card-text v-else-if="solvedListStatus === 'none'">
-          当前爬虫无法获取通过的题目列表
+          AC problem list is not supported by the crawler.
         </v-card-text>
         <!--在不打开对话框的时候就不渲染题目列表，防止额外的dom更新，以提升性能-->
         <v-card-text v-else-if="solvedListDialog">
