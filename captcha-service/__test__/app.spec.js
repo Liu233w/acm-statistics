@@ -52,7 +52,7 @@ describe('/api/captcha-service/validate', () => {
             .send({ id, text: 'incorrect' })
             .expect(400, {
                 error: true,
-                message: '验证码不正确',
+                message: 'Incorrect captcha',
             })
     })
 
@@ -67,7 +67,7 @@ describe('/api/captcha-service/validate', () => {
             .send({ id, text: 'validate-text' })
             .expect(400, {
                 error: true,
-                message: '请刷新验证码',
+                message: 'Please refresh captcha',
             })
     })
 })

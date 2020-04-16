@@ -44,12 +44,12 @@ router.post('/api/captcha-service/validate', async ctx => {
     cache.del(id)
 
     if (!correct) {
-        ctx.error('请刷新验证码')
+        ctx.error('Please refresh captcha')
         return
     }
 
     if (correct.toLowerCase() !== text.toLowerCase()) {
-        ctx.error('验证码不正确')
+        ctx.error('Incorrect captcha')
         return
     }
 
