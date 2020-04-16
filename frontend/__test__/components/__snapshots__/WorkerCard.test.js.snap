@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`WorkerCard 能正确渲染 1`] = `
+exports[`WorkerCard can be rendered correctly 1`] = `
 <div class="v-card v-sheet theme--light">
   <header class="blue-grey lighten-5 v-sheet v-sheet--tile theme--light elevation-0 v-toolbar v-toolbar--dense v-toolbar--flat v-app-bar" style="height: 48px; margin-top: 0px; transform: translateY(0px); left: 0px; right: 0px;">
     <div class="v-toolbar__content" style="height: 48px;">
@@ -45,7 +45,7 @@ exports[`WorkerCard 能正确渲染 1`] = `
 </div>
 `;
 
-exports[`WorkerCard 能正确渲染用户名 1`] = `
+exports[`WorkerCard can render error correctly 1`] = `
 <div class="v-card v-sheet theme--light">
   <header class="blue-grey lighten-5 v-sheet v-sheet--tile theme--light elevation-0 v-toolbar v-toolbar--dense v-toolbar--flat v-app-bar" style="height: 48px; margin-top: 0px; transform: translateY(0px); left: 0px; right: 0px;">
     <div class="v-toolbar__content" style="height: 48px;">
@@ -68,7 +68,7 @@ exports[`WorkerCard 能正确渲染用户名 1`] = `
         <div class="v-input v-input--is-label-active v-input--is-dirty theme--light v-text-field">
           <div class="v-input__control">
             <div class="v-input__slot">
-              <div class="v-text-field__slot"><label for="input-55" class="v-label v-label--active theme--light" style="left: 0px; position: absolute;">Username</label><input required="required" id="input-55" type="text"></div>
+              <div class="v-text-field__slot"><label for="input-123" class="v-label v-label--active theme--light" style="left: 0px; position: absolute;">Username</label><input required="required" id="input-123" type="text"></div>
               <div class="v-input__append-inner">
                 <div class="v-input__icon v-input__icon--clear"><button type="button" aria-label="clear icon" class="v-icon notranslate v-icon--link material-icons theme--light">$clear</button></div>
               </div>
@@ -90,7 +90,7 @@ exports[`WorkerCard 能正确渲染用户名 1`] = `
 </div>
 `;
 
-exports[`WorkerCard 能正确渲染结果 1`] = `
+exports[`WorkerCard can render result correctly 1`] = `
 <div class="v-card v-sheet theme--light">
   <header class="blue-grey lighten-5 v-sheet v-sheet--tile theme--light elevation-0 v-toolbar v-toolbar--dense v-toolbar--flat v-app-bar" style="height: 48px; margin-top: 0px; transform: translateY(0px); left: 0px; right: 0px;">
     <div class="v-toolbar__content" style="height: 48px;">
@@ -135,7 +135,52 @@ exports[`WorkerCard 能正确渲染结果 1`] = `
 </div>
 `;
 
-exports[`WorkerCard 能正确渲染警告 1`] = `
+exports[`WorkerCard can render username correctly 1`] = `
+<div class="v-card v-sheet theme--light">
+  <header class="blue-grey lighten-5 v-sheet v-sheet--tile theme--light elevation-0 v-toolbar v-toolbar--dense v-toolbar--flat v-app-bar" style="height: 48px; margin-top: 0px; transform: translateY(0px); left: 0px; right: 0px;">
+    <div class="v-toolbar__content" style="height: 48px;">
+      <div title="crawler title" class="v-toolbar__title">
+        crawler title
+      </div>
+      <div class="spacer"></div>
+      <div class="v-toolbar__items">
+        <!----> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">add_circle</i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">link</i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">refresh</i></span></button></span></div>
+    </div>
+  </header>
+  <div class="container">
+    <div class="layout">
+      <div class="flex xs12"><span class="grey--text">
+          crawler description
+        </span></div>
+    </div>
+    <div class="layout wrap">
+      <div class="flex xs12">
+        <div class="v-input v-input--is-label-active v-input--is-dirty theme--light v-text-field">
+          <div class="v-input__control">
+            <div class="v-input__slot">
+              <div class="v-text-field__slot"><label for="input-55" class="v-label v-label--active theme--light" style="left: 0px; position: absolute;">Username</label><input required="required" id="input-55" type="text"></div>
+              <div class="v-input__append-inner">
+                <div class="v-input__icon v-input__icon--clear"><button type="button" aria-label="clear icon" class="v-icon notranslate v-icon--link material-icons theme--light">$clear</button></div>
+              </div>
+            </div>
+            <div class="v-text-field__details">
+              <div class="v-messages theme--light">
+                <div class="v-messages__wrapper"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!---->
+  </div>
+  <div role="dialog" class="v-dialog__container">
+    <!---->
+  </div>
+</div>
+`;
+
+exports[`WorkerCard can render warning correctly 1`] = `
 <div class="v-card v-sheet theme--light">
   <header class="blue-grey lighten-5 v-sheet v-sheet--tile theme--light elevation-0 v-toolbar v-toolbar--dense v-toolbar--flat v-app-bar" style="height: 48px; margin-top: 0px; transform: translateY(0px); left: 0px; right: 0px;">
     <div class="v-toolbar__content" style="height: 48px;">
@@ -174,56 +219,11 @@ exports[`WorkerCard 能正确渲染警告 1`] = `
     </div>
     <div class="layout xs12">
       <div class="flex align-self-start shrink"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light orange--text text--darken-2">warning</i></div>
-      <div class="flex align-self-start"><span>用户名以空格开头</span></div>
+      <div class="flex align-self-start"><span>Your username begins with a space.</span></div>
     </div>
     <div class="layout xs12">
       <div class="flex align-self-start shrink"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light orange--text text--darken-2">warning</i></div>
-      <div class="flex align-self-start"><span>用户名含有空格，部分爬虫可能不支持</span></div>
-    </div>
-    <!---->
-  </div>
-  <div role="dialog" class="v-dialog__container">
-    <!---->
-  </div>
-</div>
-`;
-
-exports[`WorkerCard 能正确渲染错误 1`] = `
-<div class="v-card v-sheet theme--light">
-  <header class="blue-grey lighten-5 v-sheet v-sheet--tile theme--light elevation-0 v-toolbar v-toolbar--dense v-toolbar--flat v-app-bar" style="height: 48px; margin-top: 0px; transform: translateY(0px); left: 0px; right: 0px;">
-    <div class="v-toolbar__content" style="height: 48px;">
-      <div title="crawler title" class="v-toolbar__title">
-        crawler title
-      </div>
-      <div class="spacer"></div>
-      <div class="v-toolbar__items">
-        <!----> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">add_circle</i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">link</i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">refresh</i></span></button></span></div>
-    </div>
-  </header>
-  <div class="container">
-    <div class="layout">
-      <div class="flex xs12"><span class="grey--text">
-          crawler description
-        </span></div>
-    </div>
-    <div class="layout wrap">
-      <div class="flex xs12">
-        <div class="v-input v-input--is-label-active v-input--is-dirty theme--light v-text-field">
-          <div class="v-input__control">
-            <div class="v-input__slot">
-              <div class="v-text-field__slot"><label for="input-123" class="v-label v-label--active theme--light" style="left: 0px; position: absolute;">Username</label><input required="required" id="input-123" type="text"></div>
-              <div class="v-input__append-inner">
-                <div class="v-input__icon v-input__icon--clear"><button type="button" aria-label="clear icon" class="v-icon notranslate v-icon--link material-icons theme--light">$clear</button></div>
-              </div>
-            </div>
-            <div class="v-text-field__details">
-              <div class="v-messages theme--light">
-                <div class="v-messages__wrapper"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <div class="flex align-self-start"><span>Your username includes space, which may not be supported by some crawlers.</span></div>
     </div>
     <!---->
   </div>
