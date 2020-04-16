@@ -3,7 +3,7 @@ const request = require('superagent')
 module.exports = async function (config, username) {
 
   if (!username) {
-    throw new Error('请输入用户名')
+    throw new Error('Please enter username')
   }
 
   const input = {
@@ -18,7 +18,7 @@ module.exports = async function (config, username) {
   const data = res.body.data.userProfilePublicProfile
 
   if (!data) {
-    throw new Error('用户不存在')
+    throw new Error('The user does not exist')
   }
 
   return {

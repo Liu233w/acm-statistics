@@ -3,6 +3,10 @@ const cheerio = require('cheerio')
 
 module.exports = async function (config, username) {
 
+  if (!username) {
+    throw new Error('Please enter username')
+  }
+
   const idRes = await request
     .get('http://acm.timus.ru/search.aspx')
     .query({ Str: username })
@@ -10,7 +14,7 @@ module.exports = async function (config, username) {
   const id$ = cheerio.load(idRes.text)
   const name = id$('td.name').filter((i, el) => id$(el).text() === username)
   if (name.length === 0) {
-    throw new Error('用户不存在')
+    throw new Error('The user does not exist')
   }
 
   const res = await request
@@ -21,7 +25,7 @@ module.exports = async function (config, username) {
   try {
     solved = Number($('td.author_stats_name:contains("Problems solved") + td').text().match(/\d+/g)[0])
   } catch (e) {
-    throw new Error('无法解析数据')
+    throw new Error('Error while parsing')
   }
 
   const submissionPageUri = $('a').filter((i, el) => $(el).text() === 'Recent submissions')

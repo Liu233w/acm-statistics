@@ -4,7 +4,7 @@ const cheerio = require('cheerio')
 module.exports = async function (config, username) {
 
   if (!username) {
-    throw new Error('请输入用户名')
+    throw new Error('Please enter username')
   }
 
   let res = null
@@ -13,7 +13,7 @@ module.exports = async function (config, username) {
       .get('http://www.spoj.com/users/' + username)
   } catch (e) {
     if (e.message === 'Not Found') {
-      throw new Error('用户不存在')
+      throw new Error('The user does not exist')
     } else {
       throw e
     }
@@ -26,7 +26,7 @@ module.exports = async function (config, username) {
   const $ = cheerio.load(res.text)
 
   if ($('#user-profile-left').length == 0) {
-    throw new Error('用户不存在')
+    throw new Error('The user does not exist')
   }
 
   try {
@@ -40,6 +40,6 @@ module.exports = async function (config, username) {
         .filter(item => item.length > 0),
     }
   } catch (e) {
-    throw new Error('无法解析数据')
+    throw new Error('Error while parsing')
   }
 }
