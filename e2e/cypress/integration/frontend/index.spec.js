@@ -31,7 +31,7 @@ describe('parallax test', () => {
     })
   })
 
-  describe('first parallax', () => {
+  describe('second parallax', () => {
     it('can render correctly', () => {
       cy.get('.v-parallax').eq(1).matchImageSnapshot()
     })
@@ -49,7 +49,7 @@ describe('other parts', () => {
     cy.url().should('be', '/statistics')
   })
 
-  it('wechat diaglog', () => {
+  it('wechat dialog', () => {
     cy.contains('div[role="listitem"]', '微信公众号').click()
     cy.get('.v-dialog.v-dialog--active').within(() => {
       cy.contains('微信公众号')

@@ -732,7 +732,7 @@ exports[`/ 1`] = `
             <header class="white v-sheet v-sheet--tile theme--light v-toolbar v-app-bar" style="height:64px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;">
               <div class="v-toolbar__content" style="height:64px;">
                 <div class="v-toolbar__title">NWPU-ACM &#x67E5;&#x8BE2;&#x7CFB;&#x7EDF;</div>
-                <div class="spacer"></div> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--text theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate v-icon--left fa fa fa fa-sign-in-alt theme--light"></i> &#x767B;&#x5F55;
+                <div class="spacer"></div> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--text theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate v-icon--left fa fa fa fa-sign-in-alt theme--light"></i> login
     </span></button></span> <span class="v-tooltip v-tooltip--left"><!----><a href="https://github.com/Liu233w/acm-statistics" target="_blank" rel="noopener noreferrer" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" medium class="v-icon notranslate fab fa-github theme--light"></i></span></a></span>
               </div>
             </header>
@@ -753,7 +753,7 @@ exports[`/ 1`] = `
                         <div class="black--text subheading mb-4 text-center index-title">
                           &#x7531; NWPU-ACM &#x6280;&#x672F;&#x7EC4;&#x5F3A;&#x529B;&#x9A71;&#x52A8;
                         </div> <a href="/statistics" class="blue lighten-2 black--text mt-12 v-btn v-btn--contained v-btn--router theme--dark v-size--large"><span class="v-btn__content">
-            &#x8FDB;&#x5165; OJ &#x9898;&#x91CF;&#x7EDF;&#x8BA1;
+            Enter AC Statistics
           </span></a>
                       </div>
                     </div>
@@ -1674,17 +1674,17 @@ exports[`/about 1`] = `
                 <div class="v-list v-sheet v-sheet--tile theme--light"><a href="/" tabindex="0" class="v-list-item v-list-item--link theme--light">
                     <div class="v-list-item__action"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">home</i></div>
                     <div class="v-list-item__content">
-                      <div class="v-list-item__title">&#x8FD4;&#x56DE;&#x4E3B;&#x9875;</div>
+                      <div class="v-list-item__title">Homepage</div>
                     </div>
                   </a><a href="/statistics" tabindex="0" class="v-list-item v-list-item--link theme--light">
                     <div class="v-list-item__action"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">code</i></div>
                     <div class="v-list-item__content">
-                      <div class="v-list-item__title">OJ&#x9898;&#x91CF;&#x7EDF;&#x8BA1;</div>
+                      <div class="v-list-item__title">AC Statistics</div>
                     </div>
                   </a><a href="/about" tabindex="0" class="v-list-item--active v-list-item v-list-item--link theme--light">
                     <div class="v-list-item__action"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">info</i></div>
                     <div class="v-list-item__content">
-                      <div class="v-list-item__title">&#x5173;&#x4E8E;</div>
+                      <div class="v-list-item__title">About</div>
                     </div>
                   </a></div>
               </div>
@@ -1693,7 +1693,7 @@ exports[`/about 1`] = `
             <header class="v-sheet v-sheet--tile theme--light v-toolbar v-app-bar v-app-bar--clipped v-app-bar--fixed" style="height:64px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;">
               <div class="v-toolbar__content" style="height:64px;"><button type="button" class="v-app-bar__nav-icon v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-menu theme--light"></i></span></button>
                 <div class="v-toolbar__title">NWPU-ACM &#x67E5;&#x8BE2;&#x7CFB;&#x7EDF;</div>
-                <div class="spacer"></div> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--text theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate v-icon--left fa fa fa fa-sign-in-alt theme--light"></i> &#x767B;&#x5F55;
+                <div class="spacer"></div> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--text theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate v-icon--left fa fa fa fa-sign-in-alt theme--light"></i> login
     </span></button></span> <span class="v-tooltip v-tooltip--left"><!----><a href="https://github.com/Liu233w/acm-statistics" target="_blank" rel="noopener noreferrer" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" medium class="v-icon notranslate fab fa-github theme--light"></i></span></a></span>
               </div>
             </header>
@@ -2547,7 +2547,7 @@ exports[`/login 1`] = `
                     <div class="v-card v-card--flat v-sheet theme--light">
                       <div primary-title class="v-card__title">
                         <div class="headline">
-                          &#x767B;&#x5F55;
+                          Login
                         </div>
                       </div>
                       <div class="container">
@@ -2569,7 +2569,7 @@ exports[`/login 1`] = `
                                 </div>
                                 <div class="v-input__control">
                                   <div class="v-input__slot">
-                                    <div class="v-text-field__slot"><label class="v-label theme--light" style="left:0px;right:auto;position:absolute;">&#x7528;&#x6237;&#x540D;</label><input required="required" type="text" value></div>
+                                    <div class="v-text-field__slot"><label class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Username</label><input required="required" type="text" value></div>
                                   </div>
                                   <div class="v-text-field__details">
                                     <div class="v-messages theme--light">
@@ -2584,7 +2584,7 @@ exports[`/login 1`] = `
                                 </div>
                                 <div class="v-input__control">
                                   <div class="v-input__slot">
-                                    <div class="v-text-field__slot"><label class="v-label theme--light" style="left:0px;right:auto;position:absolute;">&#x5BC6;&#x7801;</label><input required="required" type="password" value></div>
+                                    <div class="v-text-field__slot"><label class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Password</label><input required="required" type="password" value></div>
                                   </div>
                                   <div class="v-text-field__details">
                                     <div class="v-messages theme--light">
@@ -2598,7 +2598,7 @@ exports[`/login 1`] = `
                                   <div class="v-input__slot">
                                     <div class="v-input--selection-controls__input"><i aria-hidden="true" class="v-icon notranslate mdi mdi-checkbox-blank-outline theme--light"></i><input aria-checked="false" role="checkbox" type="checkbox">
                                       <div class="v-input--selection-controls__ripple primary--text"></div>
-                                    </div><label class="v-label theme--light" style="left:0px;right:auto;position:relative;">&#x4FDD;&#x6301;&#x767B;&#x5F55;</label>
+                                    </div><label class="v-label theme--light" style="left:0px;right:auto;position:relative;">Remember me</label>
                                   </div>
                                   <div class="v-messages theme--light">
                                     <div class="v-messages__wrapper"></div>
@@ -2607,10 +2607,10 @@ exports[`/login 1`] = `
                               </div>
                               <div class="row">
                                 <div class="col"><button type="button" disabled="disabled" class="v-btn v-btn--block v-btn--contained v-btn--disabled theme--light v-size--default"><span class="v-btn__content">
-                &#x767B;&#x5F55;
+                login
               </span></button></div>
                                 <div class="col"><a href="/register" class="v-btn v-btn--block v-btn--contained v-btn--router theme--light v-size--default"><span class="v-btn__content">
-                &#x53BB;&#x6CE8;&#x518C;
+                enter register page
               </span></a></div>
                               </div>
                             </form>
@@ -3399,7 +3399,7 @@ exports[`/register 1`] = `
                     <div class="v-card v-card--flat v-sheet theme--light">
                       <div primary-title class="v-card__title">
                         <div class="headline">
-                          &#x6CE8;&#x518C;
+                          Register
                         </div>
                       </div>
                       <div class="container">
@@ -3421,7 +3421,7 @@ exports[`/register 1`] = `
                                 </div>
                                 <div class="v-input__control">
                                   <div class="v-input__slot">
-                                    <div class="v-text-field__slot"><label class="v-label theme--light" style="left:0px;right:auto;position:absolute;">&#x7528;&#x6237;&#x540D;</label><input required="required" type="text" value></div>
+                                    <div class="v-text-field__slot"><label class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Username</label><input required="required" type="text" value></div>
                                   </div>
                                   <div class="v-text-field__details">
                                     <div class="v-messages theme--light">
@@ -3436,7 +3436,7 @@ exports[`/register 1`] = `
                                 </div>
                                 <div class="v-input__control">
                                   <div class="v-input__slot">
-                                    <div class="v-text-field__slot"><label class="v-label theme--light" style="left:0px;right:auto;position:absolute;">&#x5BC6;&#x7801;</label><input required="required" type="password" value></div>
+                                    <div class="v-text-field__slot"><label class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Password</label><input required="required" type="password" value></div>
                                   </div>
                                   <div class="v-text-field__details">
                                     <div class="v-messages theme--light">
@@ -3451,7 +3451,7 @@ exports[`/register 1`] = `
                                 </div>
                                 <div class="v-input__control">
                                   <div class="v-input__slot">
-                                    <div class="v-text-field__slot"><label class="v-label theme--light" style="left:0px;right:auto;position:absolute;">&#x518D;&#x6B21;&#x8F93;&#x5165;&#x5BC6;&#x7801;</label><input required="required" type="password" value></div>
+                                    <div class="v-text-field__slot"><label class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Confirm password</label><input required="required" type="password" value></div>
                                   </div>
                                   <div class="v-text-field__details">
                                     <div class="v-messages theme--light">
@@ -3469,7 +3469,7 @@ exports[`/register 1`] = `
                                     </div>
                                     <div class="v-input__control">
                                       <div class="v-input__slot">
-                                        <div class="v-text-field__slot"><label class="v-label theme--light" style="left:0px;right:auto;position:absolute;">&#x9A8C;&#x8BC1;&#x7801;</label><input required="required" type="text" value></div>
+                                        <div class="v-text-field__slot"><label class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Captcha</label><input required="required" type="text" value></div>
                                         <div class="v-input__append-inner"><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">refresh</i></span></button></div>
                                       </div>
                                       <div class="v-text-field__details">
@@ -3483,10 +3483,10 @@ exports[`/register 1`] = `
                               </div>
                               <div class="row">
                                 <div class="col"><button type="button" disabled="disabled" class="v-btn v-btn--block v-btn--contained v-btn--disabled theme--light v-size--default"><span class="v-btn__content">
-                &#x6CE8;&#x518C;
+                register
               </span></button></div>
                                 <div class="col"><a href="/login" class="v-btn v-btn--block v-btn--contained v-btn--router theme--light v-size--default"><span class="v-btn__content">
-                &#x53BB;&#x767B;&#x5F55;
+                enter login page
               </span></a></div>
                               </div>
                             </form>
@@ -4268,22 +4268,22 @@ exports[`/settings 1`] = `
                 <div class="v-list v-sheet v-sheet--tile theme--light"><a href="/" tabindex="0" class="v-list-item v-list-item--link theme--light">
                     <div class="v-list-item__action"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">home</i></div>
                     <div class="v-list-item__content">
-                      <div class="v-list-item__title">&#x8FD4;&#x56DE;&#x4E3B;&#x9875;</div>
+                      <div class="v-list-item__title">Homepage</div>
                     </div>
                   </a><a href="/statistics" tabindex="0" class="v-list-item v-list-item--link theme--light">
                     <div class="v-list-item__action"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">code</i></div>
                     <div class="v-list-item__content">
-                      <div class="v-list-item__title">OJ&#x9898;&#x91CF;&#x7EDF;&#x8BA1;</div>
+                      <div class="v-list-item__title">AC Statistics</div>
                     </div>
                   </a><a href="/settings" tabindex="0" class="v-list-item--active v-list-item v-list-item--link theme--light">
                     <div class="v-list-item__action"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">settings</i></div>
                     <div class="v-list-item__content">
-                      <div class="v-list-item__title">&#x7528;&#x6237;&#x8BBE;&#x7F6E;</div>
+                      <div class="v-list-item__title">Settings</div>
                     </div>
                   </a><a href="/about" tabindex="0" class="v-list-item v-list-item--link theme--light">
                     <div class="v-list-item__action"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">info</i></div>
                     <div class="v-list-item__content">
-                      <div class="v-list-item__title">&#x5173;&#x4E8E;</div>
+                      <div class="v-list-item__title">About</div>
                     </div>
                   </a></div>
               </div>
@@ -4304,26 +4304,23 @@ exports[`/settings 1`] = `
                       <div class="v-card v-sheet theme--light">
                         <header class="v-sheet v-sheet--tile theme--dark v-toolbar v-app-bar light-blue" style="height:64px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;">
                           <div class="v-toolbar__content" style="height:64px;">
-                            <div class="v-toolbar__title">&#x7528;&#x6237;&#x8BBE;&#x7F6E;</div>
+                            <div class="v-toolbar__title">Settings</div>
                             <div class="spacer"></div>
                           </div>
                         </header>
                         <div role="list" class="v-list v-sheet v-sheet--tile theme--light v-list--subheader v-list--three-line">
-                          <div class="v-subheader theme--light">&#x5E10;&#x53F7;&#x52A8;&#x4F5C;</div>
+                          <div class="v-subheader theme--light">Accounts</div>
                           <div tabindex="0" role="listitem" class="v-list-item v-list-item--link theme--light">
                             <div class="v-list-item__content">
-                              <div class="v-list-item__title">&#x6CE8;&#x9500;&#xFF08;&#x767B;&#x51FA;&#xFF09;</div>
-                              <div class="v-list-item__subtitle">&#x9000;&#x51FA;&#x672C;&#x5E10;&#x53F7;</div>
+                              <div class="v-list-item__title">Sign out</div>
+                              <div class="v-list-item__subtitle">Logout of this computer</div>
                             </div>
                           </div>
-                        </div>
-                        <hr role="separator" aria-orientation="horizontal" class="v-divider theme--light">
-                        <div role="list" class="v-list v-sheet v-sheet--tile theme--light v-list--subheader v-list--three-line">
-                          <div class="v-subheader theme--light">&#x5E10;&#x53F7;&#x8BBE;&#x7F6E;</div>
+                          <hr role="separator" aria-orientation="horizontal" class="v-divider theme--light">
                           <div tabindex="0" role="listitem" class="v-list-item v-list-item--active v-list-item--link theme--light red--text">
                             <div class="v-list-item__content">
-                              <div class="v-list-item__title">&#x5220;&#x9664;&#x5E10;&#x53F7;</div>
-                              <div class="v-list-item__subtitle">&#x5220;&#x9664;&#x672C;&#x5E10;&#x53F7;&#x548C;&#x4E0E;&#x5176;&#x5173;&#x8054;&#x7684;&#x90AE;&#x7BB1;</div>
+                              <div class="v-list-item__title">Delete Account</div>
+                              <div class="v-list-item__subtitle">Delete this account and all data related to it</div>
                             </div>
                           </div>
                         </div>
@@ -4377,7 +4374,7 @@ exports[`/statistics 1`] = `
 <html data-n-head-ssr>
 
   <head>
-    <title>OJ &#x9898;&#x91CF;&#x7EDF;&#x8BA1; - NWPU-ACM &#x67E5;&#x8BE2;&#x7CFB;&#x7EDF;</title>
+    <title>AC Statistics - NWPU-ACM &#x67E5;&#x8BE2;&#x7CFB;&#x7EDF;</title>
     <meta data-n-head="ssr" charset="utf-8">
     <meta data-n-head="ssr" name="viewport" content="width=device-width, initial-scale=1">
     <meta data-n-head="ssr" data-hid="description" name="description" content="&#x897F;&#x5317;&#x5DE5;&#x4E1A;&#x5927;&#x5B66;ACM&#x57FA;&#x5730;&#x67E5;&#x9898;&#x4E3B;&#x9875;&#xFF0C;&#x63D0;&#x4F9B;&#x56FD;&#x5185;&#x5404;&#x5927;OJ&#x7684;&#x67E5;&#x8BE2;&#x9898;&#x91CF;&#x3001;&#x8BA1;&#x7B97;Rating&#x7684;&#x670D;&#x52A1;&#x3002;">
@@ -5106,17 +5103,17 @@ exports[`/statistics 1`] = `
                 <div class="v-list v-sheet v-sheet--tile theme--light"><a href="/" tabindex="0" class="v-list-item v-list-item--link theme--light">
                     <div class="v-list-item__action"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">home</i></div>
                     <div class="v-list-item__content">
-                      <div class="v-list-item__title">&#x8FD4;&#x56DE;&#x4E3B;&#x9875;</div>
+                      <div class="v-list-item__title">Homepage</div>
                     </div>
                   </a><a href="/statistics" tabindex="0" class="v-list-item--active v-list-item v-list-item--link theme--light">
                     <div class="v-list-item__action"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">code</i></div>
                     <div class="v-list-item__content">
-                      <div class="v-list-item__title">OJ&#x9898;&#x91CF;&#x7EDF;&#x8BA1;</div>
+                      <div class="v-list-item__title">AC Statistics</div>
                     </div>
                   </a><a href="/about" tabindex="0" class="v-list-item v-list-item--link theme--light">
                     <div class="v-list-item__action"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">info</i></div>
                     <div class="v-list-item__content">
-                      <div class="v-list-item__title">&#x5173;&#x4E8E;</div>
+                      <div class="v-list-item__title">About</div>
                     </div>
                   </a></div>
               </div>
@@ -5125,7 +5122,7 @@ exports[`/statistics 1`] = `
             <header class="v-sheet v-sheet--tile theme--light v-toolbar v-app-bar v-app-bar--clipped v-app-bar--fixed" style="height:64px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;">
               <div class="v-toolbar__content" style="height:64px;"><button type="button" class="v-app-bar__nav-icon v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-menu theme--light"></i></span></button>
                 <div class="v-toolbar__title">NWPU-ACM &#x67E5;&#x8BE2;&#x7CFB;&#x7EDF;</div>
-                <div class="spacer"></div> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--text theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate v-icon--left fa fa fa fa-sign-in-alt theme--light"></i> &#x767B;&#x5F55;
+                <div class="spacer"></div> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--text theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate v-icon--left fa fa fa fa-sign-in-alt theme--light"></i> login
     </span></button></span> <span class="v-tooltip v-tooltip--left"><!----><a href="https://github.com/Liu233w/acm-statistics" target="_blank" rel="noopener noreferrer" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" medium class="v-icon notranslate fab fa-github theme--light"></i></span></a></span>
               </div>
             </header>
@@ -5137,7 +5134,7 @@ exports[`/statistics 1`] = `
                       <div class="v-input theme--light v-text-field">
                         <div class="v-input__control">
                           <div class="v-input__slot">
-                            <div class="v-text-field__slot"><label class="v-label theme--light" style="left:0px;right:auto;position:absolute;">&#x7EDF;&#x4E00;&#x8BBE;&#x7F6E;&#x7528;&#x6237;&#x540D;</label><input required="required" type="text" value></div>
+                            <div class="v-text-field__slot"><label class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Set all usernames</label><input required="required" type="text" value></div>
                           </div>
                           <div class="v-text-field__details">
                             <div class="v-messages theme--light">
@@ -5148,14 +5145,14 @@ exports[`/statistics 1`] = `
                       </div>
                     </div>
                     <div class="flex xs12 sm7 md5"><button type="button" class="primary v-btn v-btn--contained theme--light v-size--default"><span class="v-btn__content">
-        &#x5F00;&#x59CB;&#x67E5;&#x8BE2;
+        query
       </span></button> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="error v-btn v-btn--contained theme--light v-size--default"><span class="v-btn__content">
-            &#x91CD;&#x7F6E;&#x67E5;&#x8BE2;
+            reset
           </span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--contained theme--light v-size--default"><span class="v-btn__content">
-            &#x4FDD;&#x5B58;&#x7528;&#x6237;&#x540D;
+            save username
             </span></button></span></div>
                     <div class="flex xs12 md4" style="display:none;"><span draggable="false" class="elevation-2 v-chip v-chip--label theme--light v-size--default grey lighten-3"><span class="v-chip__content"><span class="title">
-           &#x7684;&#x603B;&#x9898;&#x91CF;&#xFF1A; 0 / 0
+           - 0 / 0
         </span></span></span></div>
                   </div>
                   <div class="layout">
