@@ -11,7 +11,7 @@
       >
         <v-text-field
           v-model="username"
-          label="统一设置用户名"
+          label="Set all usernames"
           :disabled="isWorking"
           required
           @keyup.enter="runWorker"
@@ -37,7 +37,7 @@
           @click="runWorker"
           :disabled="isWorking"
         >
-          开始查询
+          query
         </v-btn>
         <v-tooltip bottom>
           <template #activator="{ on }">
@@ -46,10 +46,10 @@
               v-on="on"
               @click="clearWorkers"
             >
-              重置查询
+              reset
             </v-btn>
           </template>
-          清空用户名，重置查询状态
+          Clear usernames and reset all worker status
         </v-tooltip>
         <v-tooltip bottom>
           <template #activator="{ on }">
@@ -60,17 +60,17 @@
               :disable="savingUsername"
               :class="{ green: savingUsername }"
             >
-              保存用户名
+              save username
               <template #loader>
                 <span>
-                  保存成功
+                  Success!
                 </span>
               </template>
             </v-btn>
           </template>
-          将用户名保存到{{ $store.state.session.login ? '服务器' : '本地' }}，下次打开页面的时候会自动填写
+          Save usernames to {{ $store.state.session.login ? 'server' : 'your browser' }} to restore them when opening the page.
           <br>
-          （使用“开始查询”按钮也会保存用户名）
+          (Using QUERY button can also save usernames.)
         </v-tooltip>
       </v-flex>
       <v-flex
@@ -136,7 +136,7 @@ export default {
     WorkerCard,
   },
   head: {
-    title: `OJ 题量统计 - ${PROJECT_TITLE}`,
+    title: `AC Statistics - ${PROJECT_TITLE}`,
   },
   created() {
     this.$store.registerModule('statistics', Store, { preserveState: false })
@@ -180,7 +180,7 @@ export default {
       return Math.ceil(this.$store.state.statistics.workers.length / this.columnCount)
     },
     summary() {
-      return `${this.username} 的总题量： ${this.solvedNum} / ${this.submissionsNum}`
+      return `${this.username} - ${this.solvedNum} / ${this.submissionsNum}`
     },
   },
   methods: {

@@ -21,14 +21,14 @@ export default {
       if (this.session.login) {
         return this.session.username
       } else {
-        return '登录'
+        return 'login'
       }
     },
     tooltip() {
       if (this.session.login) {
-        return '用户设置'
+        return 'Enter settings'
       } else {
-        return '点我登录'
+        return 'Click to login'
       }
     },
   },

@@ -11,35 +11,29 @@
             color="light-blue"
             dark
           >
-            <v-toolbar-title>用户设置</v-toolbar-title>
+            <v-toolbar-title>Settings</v-toolbar-title>
             <v-spacer />
           </v-app-bar>
           <v-list
             subheader
             three-line
           >
-            <v-subheader>帐号动作</v-subheader>
+            <v-subheader>Accounts</v-subheader>
             <v-list-item @click="logout">
               <v-list-item-content>
-                <v-list-item-title>注销（登出）</v-list-item-title>
-                <v-list-item-subtitle>退出本帐号</v-list-item-subtitle>
+                <v-list-item-title>Sign out</v-list-item-title>
+                <v-list-item-subtitle>Logout of this computer</v-list-item-subtitle>
               </v-list-item-content>
             </v-list-item>
-          </v-list>
-          <v-divider />
-          <v-list
-            subheader
-            three-line
-          >
-            <v-subheader>帐号设置</v-subheader>
+            <v-divider />
             <v-list-item
               input-value="true"
               color="red"
               @click="deleteDialog = true"
             >
               <v-list-item-content>
-                <v-list-item-title>删除帐号</v-list-item-title>
-                <v-list-item-subtitle>删除本帐号和与其关联的邮箱</v-list-item-subtitle>
+                <v-list-item-title>Delete Account</v-list-item-title>
+                <v-list-item-subtitle>Delete this account and all data related to it</v-list-item-subtitle>
               </v-list-item-content>
             </v-list-item>
           </v-list>
@@ -53,10 +47,10 @@
     >
       <v-card>
         <v-card-title class="headline">
-          您确定要删除本帐号吗？
+          Are you sure you want to delete this account?
         </v-card-title>
         <v-card-text>
-          删除之后，您将不再收到题量统计邮件。之前统计的数据都会丢失。
+          After deletion, all data related to it (including query history and analyzes) will be lost.
         </v-card-text>
         <v-card-actions>
           <v-spacer />
@@ -65,14 +59,14 @@
             text
             @click="deleteDialog = false"
           >
-            取消
+            Cancel
           </v-btn>
           <v-btn
             color="red darken-1"
             text
             @click="deleteAccount"
           >
-            删除
+            Confirm
           </v-btn>
         </v-card-actions>
       </v-card>
