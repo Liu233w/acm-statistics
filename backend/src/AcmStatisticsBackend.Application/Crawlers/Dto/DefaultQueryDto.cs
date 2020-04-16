@@ -29,7 +29,7 @@ namespace AcmStatisticsBackend.Crawlers.Dto
             {
                 if (usernamesInCrawler.Value == null)
                 {
-                    context.Results.Add(new ValidationResult("UsernamesInCrawlers 中的项目不能为null"));
+                    context.Results.Add(new ValidationResult("Items in UsernamesInCrawlers should not be null."));
                 }
             }
         }

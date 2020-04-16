@@ -106,7 +106,7 @@ namespace AcmStatisticsBackend.Crawlers
             var acHistory = await _acHistoryRepository.GetAsync(id);
             if (acHistory.UserId != AbpSession.UserId)
             {
-                throw new AbpAuthorizationException("您没有权限处理此数据");
+                throw new AbpAuthorizationException("You do not have permissions to delete the entity.");
             }
 
             return acHistory;
