@@ -55,7 +55,7 @@ namespace AcmStatisticsBackend.Crawlers.Dto
         {
             if (ErrorMessage == null && HasSolvedList && SolvedList == null)
             {
-                context.Results.Add(new ValidationResult("当 HasSolvedList 为 true 时，SolvedList 不能为 null"));
+                context.Results.Add(new ValidationResult("SolvedList should not be null when HasSolvedList is true."));
             }
         }
     }
