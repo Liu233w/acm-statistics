@@ -331,18 +331,18 @@ export const actions = {
     if (state.crawlers[crawlerName]) {
       commit(MUTATION_TYPES.addWorkerForCrawler, { crawlerName })
     } else {
-      throw new Error('爬虫不存在')
+      throw new Error('Crawler does not exist')
     }
   },
   removeWorkerAtIndex({ state, commit, getters }, { index }) {
     if (index < 0 || index >= state.workers.length) {
-      throw new Error('该位置不存在')
+      throw new Error('Position does not exist')
     }
 
     const crawlerName = state.workers[index].crawlerName
 
     if (getters.workerNumberOfCrawler[crawlerName] <= 1) {
-      throw new Error('不能移除最后一个 worker，您可以将用户名置为空以跳过查询')
+      throw new Error('Cannot remove the last worker, you can set username to empty to skip this query.')
     }
 
     commit(MUTATION_TYPES.removeWorkerAtIndex, { index })

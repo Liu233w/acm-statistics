@@ -1,7 +1,7 @@
 import {warningHelper, mapVirtualJudgeProblemTitle} from '~/components/statisticsUtils'
 
 describe('warningHelper', () => {
-  it('在正确时不会生成警告', () => {
+  it('does not generate warning when it is correct', () => {
     const worker = {
       username: 'user1',
       status: 'WORKING',
@@ -18,7 +18,7 @@ describe('warningHelper', () => {
     expect(warningHelper(worker, {}, {})).toMatchObject([])
   })
 
-  it('能够生成用户名以空格开头的警告', () => {
+  it('can generate warning with username that beginning with space', () => {
     const worker = {
       username: ' user1',
       status: 'WORKING',
@@ -31,12 +31,12 @@ describe('warningHelper', () => {
     }
 
     expect(warningHelper(worker, {}, {})).toMatchObject([
-      '用户名以空格开头',
-      '用户名含有空格，部分爬虫可能不支持',
+      'Your username begins with a space.',
+      'Your username includes space, which may not be supported by some crawlers.',
     ])
   })
 
-  it('能够生成用户名带有空格的警告', () => {
+  it('can generate warning that username contains space', () => {
     const worker = {
       username: 'user 1',
       status: 'WORKING',
@@ -49,11 +49,11 @@ describe('warningHelper', () => {
     }
 
     expect(warningHelper(worker, {}, {})).toMatchObject([
-      '用户名含有空格，部分爬虫可能不支持',
+      'Your username includes space, which may not be supported by some crawlers.',
     ])
   })
 
-  it('能够警告 vjudge 的题目列表可能有重复', () => {
+  it('can warn that there are collapses with ac list of vjudge and other workers', () => {
 
     const worker = {
       solvedList: [
@@ -78,12 +78,12 @@ describe('warningHelper', () => {
     const res = warningHelper(worker, crawlerMeta, getters)
 
     expect(res).toMatchObject([
-      '爬虫 a title 无法返回题目列表，因此它的结果和本爬虫的结果可能会重复计算',
-      '爬虫 b title 无法返回题目列表，因此它的结果和本爬虫的结果可能会重复计算',
+      'Crawler a title did not return AC problem list, its result may overlap with this crawler\'s',
+      'Crawler b title did not return AC problem list, its result may overlap with this crawler\'s',
     ])
   })
 
-  it('能够警告多 worker 的爬虫的题目列表可能会有重复', () => {
+  it('can warn that multiple worker crawler can have redundant problems', () => {
 
     const worker = {
       solvedList: null,
@@ -102,11 +102,11 @@ describe('warningHelper', () => {
     const res = warningHelper(worker, crawlerMeta, getters)
 
     expect(res).toMatchObject([
-      '本爬虫无法返回题目列表，因此多个账户的通过题目可能会被重复计算',
+      'This crawler did not return AC problem list, so the same problem in different OJs can be recognized as different problems.',
     ])
   })
 
-  it('在爬虫返回的solved和solvedList.length不一致时显示警告', () => {
+  it('can warn when solved and solvedList.length is not equal', () => {
 
     const worker = {
       solved: 2,
@@ -116,13 +116,13 @@ describe('warningHelper', () => {
     const res = warningHelper(worker, {}, {})
 
     expect(res).toMatchObject([
-      '本爬虫获取到的通过数为 2，但是通过的题目列表有 1 道题目，这可能是一个爬虫的错误。',
+      'The AC number of this crawler is 2, however, there are 1 problems in the AC list, which can be an error of the crawler.',
     ])
   })
 })
 
 describe('mapVirtualJudgeProblemTitle', () => {
-  it('能够正常运行', () => {
+  it('can work correctly', () => {
 
     const solvedList = [
       'aa-001',

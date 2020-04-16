@@ -1,5 +1,5 @@
 import StoreContextSimulator from '../StoreContextSimulator'
-import {MUTATION_TYPES} from '../../store/-dynamic/statistics'
+import { MUTATION_TYPES } from '../../store/-dynamic/statistics'
 
 jest.mock('~/dynamic/crawlers', () => function () {
   return {
@@ -16,9 +16,9 @@ jest.mock('~/dynamic/crawlers', () => function () {
     },
     crawlers: {
       // eslint-disable-next-line no-unused-vars
-      cr1: username => Promise.resolve({submissions: 10, solved: 5, solvedList: ['1001', '1002']}),
+      cr1: username => Promise.resolve({ submissions: 10, solved: 5, solvedList: ['1001', '1002'] }),
       // eslint-disable-next-line no-unused-vars
-      cr2: (username) => Promise.reject(new Error('用户不存在')),
+      cr2: (username) => Promise.reject(new Error('The user does not exist')),
       // eslint-disable-next-line no-unused-vars
       cr3: (username) => {
         return new Promise(resolve =>
@@ -30,12 +30,12 @@ jest.mock('~/dynamic/crawlers', () => function () {
       },
     },
   }
-}, {virtual: true})
+}, { virtual: true })
 
 const store = require('../../store/-dynamic/statistics')
 
 describe('state', () => {
-  it('能够正确生成 state', () => {
+  it('can generate state correctly', () => {
     const state = store.state()
     expect(state).toMatchObject({
       mainUsername: '',
@@ -90,7 +90,7 @@ describe('state', () => {
 describe('mutations', () => {
 
   describe('updateUsername', () => {
-    it('在更改用户名时能够重设其他信息', () => {
+    it('can reset data when username changed', () => {
       const state = {
         workers: [
           {
@@ -107,7 +107,7 @@ describe('mutations', () => {
         ],
       }
 
-      store.mutations.updateUsername(state, {index: 0, username: 'user2'})
+      store.mutations.updateUsername(state, { index: 0, username: 'user2' })
 
       expect(state).toMatchObject({
         workers: [
@@ -126,7 +126,7 @@ describe('mutations', () => {
       })
     })
 
-    it('在用户名为 null 时能够重设为空字符串', () => {
+    it('can change username to empty string when it is set to null', () => {
       const state = {
         workers: [
           {
@@ -142,7 +142,7 @@ describe('mutations', () => {
         ],
       }
 
-      store.mutations.updateUsername(state, {index: 0, username: null})
+      store.mutations.updateUsername(state, { index: 0, username: null })
 
       expect(state).toMatchObject({
         workers: [
@@ -163,7 +163,7 @@ describe('mutations', () => {
   })
 
   describe('updateMainUsername', () => {
-    it('能够同时每个worker的用户名', () => {
+    it('can update every workers\'s username', () => {
       const state = {
         mainUsername: 'mainUser',
         workers: [
@@ -192,7 +192,7 @@ describe('mutations', () => {
         ],
       }
 
-      store.mutations.updateMainUsername(state, {username: 'main2'})
+      store.mutations.updateMainUsername(state, { username: 'main2' })
 
       expect(state).toMatchObject({
         mainUsername: 'main2',
@@ -277,7 +277,7 @@ describe('mutations', () => {
       }
     })
 
-    it('能够正确更新数据', () => {
+    it('can update data correctly', () => {
       store.mutations.updateUsernamesFromObject(startState, {
         main: 'main2',
         subs: {
@@ -326,7 +326,7 @@ describe('mutations', () => {
       })
     })
 
-    it('在某个 worker 不存在时能够将多出来的设置为 mainUsername', () => {
+    it('can set username to mainUsername when its data do not exist', () => {
       store.mutations.updateUsernamesFromObject(startState, {
         main: 'main2',
         subs: {
@@ -363,7 +363,7 @@ describe('mutations', () => {
       })
     })
 
-    it('在某个 crawler 不存在时不会添加多余的worker', () => {
+    it('does not add redundant worker when certain data do not exist', () => {
       store.mutations.updateUsernamesFromObject(startState, {
         main: 'main2',
         subs: {
@@ -402,7 +402,7 @@ describe('mutations', () => {
       })
     })
 
-    it('在某些用户名为空时能够正确生成 worker', () => {
+    it('can generate worker correctly when certain username is empty string', () => {
       store.mutations.updateUsernamesFromObject(startState, {
         main: 'main2',
         subs: {
@@ -453,7 +453,7 @@ describe('mutations', () => {
   })
 
   describe('stopWorker', () => {
-    it('应该重设tokenKey和status', () => {
+    it('should reset tokenKey and status', () => {
       const state = {
         crawlers: {
           cr1: {
@@ -475,7 +475,7 @@ describe('mutations', () => {
         ],
       }
 
-      store.mutations.stopWorker(state, {index: 0})
+      store.mutations.stopWorker(state, { index: 0 })
 
       expect(state).toMatchObject({
         crawlers: {
@@ -502,7 +502,7 @@ describe('mutations', () => {
 
   describe('addWorkerForCrawler', () => {
 
-    it('在其他的 worker 不存在时能够将 worker 添加到末尾', () => {
+    it('should add worker to the end when other worker does not exist', () => {
       const state = {
         crawlers: {
           cr1: {
@@ -527,7 +527,7 @@ describe('mutations', () => {
         ],
       }
 
-      store.mutations.addWorkerForCrawler(state, {crawlerName: 'cr1'})
+      store.mutations.addWorkerForCrawler(state, { crawlerName: 'cr1' })
 
       expect(state).toMatchObject({
         crawlers: {
@@ -565,7 +565,7 @@ describe('mutations', () => {
       })
     })
 
-    it('在其他的 worker 存在时能够将 worker 添加到其后面', () => {
+    it('should add new worker after existing one with same crawler', () => {
       const state = {
         crawlers: {
           cr1: {
@@ -601,7 +601,7 @@ describe('mutations', () => {
         ],
       }
 
-      store.mutations.addWorkerForCrawler(state, {crawlerName: 'cr1'})
+      store.mutations.addWorkerForCrawler(state, { crawlerName: 'cr1' })
 
       expect(state).toMatchObject({
         crawlers: {
@@ -653,7 +653,7 @@ describe('mutations', () => {
   })
 
   describe('clearWorkers', () => {
-    it('能够重设 workers', () => {
+    it('can reset workers', () => {
       const state = {
         mainUsername: 'wwwwww',
         crawlers: {
@@ -714,7 +714,7 @@ describe('getters', () => {
 
   describe('solvedNum', () => {
 
-    it('能够统计普通的 worker', () => {
+    it('can collect data of ordinary workers', () => {
       const state = {
         workers: [
           {
@@ -740,12 +740,12 @@ describe('getters', () => {
       }
       const nullSolvedListWorkers = store.getters.nullSolvedListWorkers(state)
 
-      const res = store.getters.solvedNum(state, {nullSolvedListWorkers})
+      const res = store.getters.solvedNum(state, { nullSolvedListWorkers })
 
       expect(res).toBe(7)
     })
 
-    it('能够统计带列表的 worker', () => {
+    it('can collect data of workers with list', () => {
       const state = {
         workers: [
           {
@@ -771,12 +771,12 @@ describe('getters', () => {
       }
       const nullSolvedListWorkers = store.getters.nullSolvedListWorkers(state)
 
-      const res = store.getters.solvedNum(state, {nullSolvedListWorkers})
+      const res = store.getters.solvedNum(state, { nullSolvedListWorkers })
 
       expect(res).toBe(3)
     })
 
-    it('能够统计混合型的 worker', () => {
+    it('can collect data of workers with mixed type', () => {
       const state = {
         workers: [
           {
@@ -802,12 +802,12 @@ describe('getters', () => {
       }
       const nullSolvedListWorkers = store.getters.nullSolvedListWorkers(state)
 
-      const res = store.getters.solvedNum(state, {nullSolvedListWorkers})
+      const res = store.getters.solvedNum(state, { nullSolvedListWorkers })
 
       expect(res).toBe(7)
     })
 
-    it('能够统计 virtual_judge 的 worker', () => {
+    it('can collect data of virtual_judge workers', () => {
       const state = {
         workers: [
           {
@@ -830,7 +830,7 @@ describe('getters', () => {
             solvedList: ['cr1-1001', 'cr1-1002', 'cr2-1002', 'cr2-1003', 'NN-1001'],
             crawlerName: 'cr3',
           },
-          { // 重复名称
+          { // redundant name
             solved: 1,
             solvedList: ['cr1-1001'],
             crawlerName: 'cr4',
@@ -847,7 +847,7 @@ describe('getters', () => {
       }
       const nullSolvedListWorkers = store.getters.nullSolvedListWorkers(state)
 
-      const res = store.getters.solvedNum(state, {nullSolvedListWorkers})
+      const res = store.getters.solvedNum(state, { nullSolvedListWorkers })
 
       expect(res).toBe(11)
     })
@@ -855,39 +855,39 @@ describe('getters', () => {
 
   describe('notWorkingRate', () => {
 
-    it('能够正常运作', () => {
+    it('can work correctly', () => {
       const state = {
         workers: [
-          {status: 'DONE'},
-          {status: 'WORKING'},
-          {status: 'WAITING'},
-          {status: 'DONE'},
+          { status: 'DONE' },
+          { status: 'WORKING' },
+          { status: 'WAITING' },
+          { status: 'DONE' },
         ],
       }
 
       expect(store.getters.notWorkingRate(state)).toBe(75)
     })
 
-    it('能够得到 0', () => {
+    it('can get 0', () => {
       const state = {
         workers: [
-          {status: 'WORKING'},
-          {status: 'WORKING'},
-          {status: 'WORKING'},
-          {status: 'WORKING'},
+          { status: 'WORKING' },
+          { status: 'WORKING' },
+          { status: 'WORKING' },
+          { status: 'WORKING' },
         ],
       }
 
       expect(store.getters.notWorkingRate(state)).toBe(0)
     })
 
-    it('能够得到 100', () => {
+    it('can get 100', () => {
       const state = {
         workers: [
-          {status: 'DONE'},
-          {status: 'DONE'},
-          {status: 'DONE'},
-          {status: 'DONE'},
+          { status: 'DONE' },
+          { status: 'DONE' },
+          { status: 'DONE' },
+          { status: 'DONE' },
         ],
       }
 
@@ -898,7 +898,7 @@ describe('getters', () => {
 
   describe('workerNumberOfCrawler', () => {
 
-    it('能够获取爬虫的worker数量', () => {
+    it('can get worker count of certain crawler', () => {
 
       const state = {
         workers: [
@@ -927,7 +927,7 @@ describe('getters', () => {
   })
 
   describe('workerIdxOfCrawler', () => {
-    it('能够获取到 worker 的序号', () => {
+    it('can get worker index', () => {
       const state = {
         workers: [
           {
@@ -955,7 +955,7 @@ describe('getters', () => {
   })
 
   describe('nullSolvedListCrawlers', () => {
-    it('能够得到正确的结果', () => {
+    it('can get correct result', () => {
 
       const state = {
         crawlers: {
@@ -986,7 +986,7 @@ describe('getters', () => {
       }
       const nullSolvedListWorkers = store.getters.nullSolvedListWorkers(state)
 
-      const res = store.getters.nullSolvedListCrawlers(state, {nullSolvedListWorkers})
+      const res = store.getters.nullSolvedListCrawlers(state, { nullSolvedListWorkers })
 
       expect(res).toMatchObject({
         cr1: 'cr1 title',
@@ -1000,7 +1000,7 @@ describe('helper functions', () => {
 
   describe('getUsernameObjectFromState', () => {
 
-    it('能够正确生成数据', () => {
+    it('can generate data correctly', () => {
 
       const state = {
         mainUsername: 'mainUser',
@@ -1059,7 +1059,7 @@ describe('helper functions', () => {
       })
     })
 
-    it('在某些 username 为空时能够正确生成', () => {
+    it('can generate data correctly with empty username', () => {
 
       const state = {
         mainUsername: 'mainUser',
@@ -1121,14 +1121,14 @@ describe('helper functions', () => {
   })
 
   describe('addProblemPrefix', () => {
-    it('能够得到正确的结果', () => {
+    it('can get correct result', () => {
       const res = store.addProblemPrefix(['1001', '1002'], 'A')
       expect(res).toMatchObject(['A-1001', 'A-1002'])
     })
   })
 
   describe('pushSet', () => {
-    it('能够得到正确的结果', () => {
+    it('can get correct result', () => {
       const set = new Set([1, 2])
       store.pushSet(set, [2, 3])
       expect(set).toMatchObject(new Set([1, 2, 3]))
@@ -1140,11 +1140,11 @@ describe('actions', () => {
 
   describe('startOne', () => {
 
-    it('能够正常运行', async () => {
+    it('can be executed correctly', async () => {
       const state = {
         crawlers: {
           cr1: {
-            // mock 在文件开头 ({submissions: 10, solved: 5, solvedList: ['1001','1002']}),
+            // mock at file beginning ({submissions: 10, solved: 5, solvedList: ['1001','1002']}),
             name: 'cr1',
           },
         },
@@ -1162,9 +1162,9 @@ describe('actions', () => {
           },
         ],
       }
-      const actionTester = new StoreContextSimulator(state, {mutations: store.mutations})
+      const actionTester = new StoreContextSimulator(state, { mutations: store.mutations })
 
-      await store.actions.startOne({state, commit: actionTester.getCommiter()}, {index: 0})
+      await store.actions.startOne({ state, commit: actionTester.getCommiter() }, { index: 0 })
 
       const history = actionTester.getCommitHistory()
       expect(history).toHaveLength(2)
@@ -1191,7 +1191,7 @@ describe('actions', () => {
       })
     })
 
-    it('在爬虫没有返回题目列表时能够正常运行', async () => {
+    it('can work correctly when crawler does not return ac list', async () => {
       const state = {
         crawlers: {
           cr3: {
@@ -1212,9 +1212,9 @@ describe('actions', () => {
           },
         ],
       }
-      const actionTester = new StoreContextSimulator(state, {mutations: store.mutations})
+      const actionTester = new StoreContextSimulator(state, { mutations: store.mutations })
 
-      await store.actions.startOne({state, commit: actionTester.getCommiter()}, {index: 0})
+      await store.actions.startOne({ state, commit: actionTester.getCommiter() }, { index: 0 })
 
       const history = actionTester.getCommitHistory()
       expect(history).toHaveLength(2)
@@ -1241,7 +1241,7 @@ describe('actions', () => {
       })
     })
 
-    it('在爬虫抛出异常时能正确设置状态', async () => {
+    it('can set status when crawler throw error', async () => {
       const state = {
         crawlers: {
           cr2: {
@@ -1262,9 +1262,9 @@ describe('actions', () => {
           },
         ],
       }
-      const actionTester = new StoreContextSimulator(state, {mutations: store.mutations})
+      const actionTester = new StoreContextSimulator(state, { mutations: store.mutations })
 
-      await store.actions.startOne({state, commit: actionTester.getCommiter()}, {index: 0})
+      await store.actions.startOne({ state, commit: actionTester.getCommiter() }, { index: 0 })
 
       const history = actionTester.getCommitHistory()
       expect(history).toHaveLength(2)
@@ -1282,7 +1282,7 @@ describe('actions', () => {
             submissions: 0,
             solved: 0,
             solvedList: [],
-            errorMessage: '用户不存在',
+            errorMessage: 'The user does not exist',
             tokenKey: expect.any(Number),
             crawlerName: 'cr2',
             key: 0.6666666,
@@ -1291,7 +1291,7 @@ describe('actions', () => {
       })
     })
 
-    it('在 tokenKey 改变时不会提交结果', async () => {
+    it('will not submit result when tokenKey has been changed', async () => {
 
       const state = {
         crawlers: {
@@ -1313,18 +1313,18 @@ describe('actions', () => {
           },
         ],
       }
-      const actionTester = new StoreContextSimulator(state, {mutations: store.mutations})
+      const actionTester = new StoreContextSimulator(state, { mutations: store.mutations })
 
-      // 执行当前帧
-      const promise = store.actions.startOne({state, commit: actionTester.getCommiter()}, {index: 0})
+      // Execute current frame
+      const promise = store.actions.startOne({ state, commit: actionTester.getCommiter() }, { index: 0 })
 
-      // 在开始查询之前tokenKey 被设置
+      // tokenKey should be set before query
       expect(state.workers[0].tokenKey).toBeTruthy()
 
-      // 重设 tokenKey
+      // reset tokenKey
       state.workers[0].tokenKey = null
 
-      // 开始执行查询
+      // start query
       await promise
 
       const history = actionTester.getCommitHistory()
@@ -1339,7 +1339,7 @@ describe('actions', () => {
         workers: [
           {
             username: 'user1',
-            // 禁止执行了，不会更新 state
+            // state is not updated due to query cancellation
             status: 'WORKING',
             submissions: 0,
             solved: 0,
@@ -1354,7 +1354,7 @@ describe('actions', () => {
 
     })
 
-    it('在用户名为空时不进行查询', async () => {
+    it('does not query when username is empty', async () => {
 
       const state = {
         crawlers: {
@@ -1376,10 +1376,10 @@ describe('actions', () => {
           },
         ],
       }
-      const actionTester = new StoreContextSimulator(state, {mutations: store.mutations})
+      const actionTester = new StoreContextSimulator(state, { mutations: store.mutations })
 
-      // 执行当前帧
-      await store.actions.startOne({state, commit: actionTester.getCommiter()}, {index: 0})
+      // Execute current frame
+      await store.actions.startOne({ state, commit: actionTester.getCommiter() }, { index: 0 })
 
       const history = actionTester.getCommitHistory()
       expect(history).toHaveLength(0)
@@ -1409,7 +1409,7 @@ describe('actions', () => {
 
   describe('addWorkerForCrawler', () => {
 
-    it('能够正确添加 Worker', () => {
+    it('can add worker correctly', () => {
       const state = {
         crawlers: {
           cr1: {
@@ -1421,19 +1421,19 @@ describe('actions', () => {
       const actionTester = new StoreContextSimulator()
 
       store.actions.addWorkerForCrawler(
-        {state, commit: actionTester.getCommiter()},
-        {crawlerName: 'cr1'})
+        { state, commit: actionTester.getCommiter() },
+        { crawlerName: 'cr1' })
 
       const history = actionTester.getCommitHistory()
       expect(history).toHaveLength(1)
 
       expect(history[0]).toMatchObject({
         type: 'addWorkerForCrawler',
-        payload: {crawlerName: 'cr1'},
+        payload: { crawlerName: 'cr1' },
       })
     })
 
-    it('在 crawler 不存在时能够抛出异常', () => {
+    it('can throw when crawler does not exist', () => {
       const state = {
         crawlers: {},
       }
@@ -1442,11 +1442,11 @@ describe('actions', () => {
 
       const action = () => {
         store.actions.addWorkerForCrawler(
-          {state, commit: actionTester.getCommiter()},
-          {crawlerName: 'cr1'})
+          { state, commit: actionTester.getCommiter() },
+          { crawlerName: 'cr1' })
       }
 
-      expect(action).toThrow('爬虫不存在')
+      expect(action).toThrow('Crawler does not exist')
 
       const history = actionTester.getCommitHistory()
       expect(history).toHaveLength(0)
@@ -1454,7 +1454,7 @@ describe('actions', () => {
   })
 
   describe('removeWorkerAtIndex', () => {
-    it('能够移除 worker', () => {
+    it('can remove worker', () => {
       const state = {
         workers: [
           {
@@ -1467,11 +1467,11 @@ describe('actions', () => {
           },
         ],
       }
-      const actionTester = new StoreContextSimulator(state, {mutations: store.mutations, getters: store.getters})
+      const actionTester = new StoreContextSimulator(state, { mutations: store.mutations, getters: store.getters })
 
       store.actions.removeWorkerAtIndex(
-        {state, commit: actionTester.getCommiter(), getters: actionTester.getGetters()},
-        {index: 0})
+        { state, commit: actionTester.getCommiter(), getters: actionTester.getGetters() },
+        { index: 0 })
 
       expect(actionTester.getCommitHistory()).toHaveLength(1)
       expect(state).toMatchObject({

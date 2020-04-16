@@ -1,7 +1,7 @@
 import statisticsLayoutBuilder from '~/components/statisticsLayoutBuilder'
 
 describe('statisticsLayoutBuilder', () => {
-  it('能够正确获得 worker 信息 1', () => {
+  it('can get worker information 1', () => {
     const result = statisticsLayoutBuilder([
       {crawlerName: 'c1', key: 0.1},
       {crawlerName: 'c1', key: 0.2},
@@ -71,7 +71,7 @@ describe('statisticsLayoutBuilder', () => {
     ])
   })
 
-  it('能够正确获得 worker 信息 2', () => {
+  it('can get worker information 2', () => {
     const result = statisticsLayoutBuilder([
       {crawlerName: 'c1', key: 0.01},
       {crawlerName: 'c1', key: 0.02},
@@ -178,7 +178,7 @@ describe('statisticsLayoutBuilder', () => {
     ])
   })
 
-  it('能够正确获得 worker 信息 3', () => {
+  it('can get worker information 3', () => {
     const result = statisticsLayoutBuilder([
       {crawlerName: 'c1', key: 0.1},
       {crawlerName: 'c1', key: 0.1},

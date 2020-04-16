@@ -31,7 +31,7 @@ describe('WorkerCard', () => {
     vuetify = new Vuetify()
   })
 
-  it('能正确挂载', () => {
+  it('can be mounted correctly', () => {
     const wrapper = shallowMount(WorkerCard, {
       store: new Vuex.Store({
         modules: {
@@ -47,7 +47,7 @@ describe('WorkerCard', () => {
     expect(wrapper.isVueInstance()).toBeTruthy()
   })
 
-  it('能正确渲染', () => {
+  it('can be rendered correctly', () => {
     const wrapper = mount(WorkerCard, {
       store: new Vuex.Store({
         modules: {
@@ -63,7 +63,7 @@ describe('WorkerCard', () => {
     expect(wrapper.html()).toMatchSnapshot()
   })
 
-  it('能正确渲染用户名', () => {
+  it('can render username correctly', () => {
 
     const wrapper = mount(WorkerCard, {
       store: new Vuex.Store({
@@ -104,7 +104,7 @@ describe('WorkerCard', () => {
     expect(wrapper.html()).toMatchSnapshot()
   })
 
-  it('能正确渲染警告', () => {
+  it('can render warning correctly', () => {
 
     const wrapper = mount(WorkerCard, {
       store: new Vuex.Store({
@@ -144,7 +144,7 @@ describe('WorkerCard', () => {
     expect(wrapper.html()).toMatchSnapshot()
   })
 
-  it('能正确渲染结果', () => {
+  it('can render result correctly', () => {
 
     const wrapper = mount(WorkerCard, {
       store: new Vuex.Store({
@@ -184,7 +184,7 @@ describe('WorkerCard', () => {
     expect(wrapper.html()).toMatchSnapshot()
   })
 
-  it('能正确渲染错误', () => {
+  it('can render error correctly', () => {
 
     const wrapper = mount(WorkerCard, {
       store: new Vuex.Store({
