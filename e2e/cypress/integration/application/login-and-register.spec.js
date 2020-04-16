@@ -2,106 +2,106 @@ Cypress.config('baseUrl', 'http://localhost:3000')
 
 describe('/login', () => {
 
-  it('能检测出登录错误', () => {
+  it('can show login error', () => {
     cy.visit('/login')
-    cy.contains('用户名').parent().type('admin')
-    cy.contains('密码').parent().type('wrong-password')
-    cy.get('button').contains('登录').click()
-    cy.contains('用户名或密码无效', { timeout: 60000 })
+    cy.contains('Username').parent().type('admin')
+    cy.contains('Password').parent().type('wrong-password')
+    cy.get('button').contains('login').click()
+    cy.contains('Invalid user name or password', { timeout: 60000 })
     cy.get('.text-center').matchImageSnapshot('login-failed')
   })
 
-  it('登录成功流程', () => {
+  it('can successfully login', () => {
     cy.visit('/login')
-    cy.contains('用户名').parent().type('admin')
-    cy.contains('密码').parent().type('123qwe')
-    cy.get('button').contains('登录').click()
+    cy.contains('Username').parent().type('admin')
+    cy.contains('Password').parent().type('123qwe')
+    cy.get('button').contains('login').click()
 
     cy.contains('admin', { timeout: 60000 })
     cy.location('pathname').should('eq', '/')
   })
 
-  it('能够保持用户名', () => {
+  it('can keep user session', () => {
     cy.visit('/login')
-    cy.contains('用户名').parent().type('admin')
-    cy.contains('密码').parent().type('123qwe')
-    cy.contains('保持登录').click()
-    cy.get('button').contains('登录').click()
+    cy.contains('Username').parent().type('admin')
+    cy.contains('Password').parent().type('123qwe')
+    cy.contains('Remember me').click()
+    cy.get('button').contains('login').click()
 
     cy.contains('admin', { timeout: 60000 })
     cy.location('pathname').should('eq', '/')
 
-    cy.log('在刷新页面之后用户名还在')
+    cy.log('Username still exists after refresh page')
     cy.reload()
     cy.contains('admin')
   })
 })
 
 describe('/register', () => {
-  it('能够显示验证码错误', () => {
+  it('can show captcha error', () => {
     cy.visit('/register')
-    cy.contains('用户名').parent().type('user')
-    cy.contains('密码').parent().type('123qwe')
-    cy.contains('再次输入密码').parent().type('123qwe')
-    cy.contains('验证码').parent().type('wrong')
-    cy.get('button').contains('注册').click()
-    cy.contains('验证码不正确', { timeout: 60000 })
+    cy.contains('Username').parent().type('user')
+    cy.contains('Password').parent().type('123qwe')
+    cy.contains('Confirm password').parent().type('123qwe')
+    cy.contains('Captcha').parent().type('wrong')
+    cy.get('button').contains('register').click()
+    cy.contains('Incorrect captcha', { timeout: 60000 })
     cy.get('.text-center').matchImageSnapshot('register-failed')
   })
 })
 
-describe('注册登录流程', () => {
+describe('Register then login', () => {
 
   const newUsername = 'user' + ('' + Math.random()).split('.')[1]
 
-  it('从主页开始注册新用户', () => {
-    cy.log('从主页登录')
+  it('can register new user starting from homepage', () => {
+    cy.log('visit login page from homepage')
     cy.visit('/')
-    cy.contains('登录').click()
+    cy.contains('login').click()
     cy.location('pathname').should('eq', '/login')
 
-    cy.log('进入注册页面')
-    cy.contains('去注册').click()
+    cy.log('visit register page')
+    cy.contains('enter register page').click()
     cy.location('pathname').should('eq', '/register')
 
-    cy.log('填写注册信息')
-    // 先等待验证码（刷新dom）
-    cy.contains('验证码').parent().type('validate-text')
-    cy.contains('用户名').parent().type(newUsername)
-    cy.contains('密码').parent().type('123qwe')
-    cy.contains('再次输入密码').parent().type('123qwe')
-    cy.get('button').contains('注册').click()
+    cy.log('fill user information')
+    // wait dom to refresh (wait captcha)
+    cy.contains('Captcha').parent().type('validate-text')
+    cy.contains('Username').parent().type(newUsername)
+    cy.contains('Password').parent().type('123qwe')
+    cy.contains('Confirm password').parent().type('123qwe')
+    cy.get('button').contains('register').click()
     cy.location('pathname').should('eq', '/')
 
-    cy.log('回到主页')
+    cy.log('should back to homepage')
     cy.contains(newUsername)
   })
 
-  it('从主页开始登录并注销', () => {
-    cy.log('从主页登录')
+  it('login from homepage then logout', () => {
+    cy.log('login from homepage')
     cy.visit('/')
-    cy.contains('登录').click()
+    cy.contains('login').click()
     cy.location('pathname').should('eq', '/login')
 
-    cy.log('输入用户名和密码')
-    cy.contains('用户名').parent().type(newUsername)
-    cy.contains('密码').parent().type('123qwe')
-    cy.get('button').contains('登录').click()
+    cy.log('enter username and password')
+    cy.contains('Username').parent().type(newUsername)
+    cy.contains('Password').parent().type('123qwe')
+    cy.get('button').contains('login').click()
     cy.location('pathname').should('eq', '/')
 
-    cy.log('注销')
+    cy.log('logout')
 
     cy.contains(newUsername).click()
-    cy.contains('注销')
+    cy.contains('Logout')
     cy.location('pathname').should('eq', '/settings')
 
-    cy.contains('注销').click()
+    cy.contains('Logout').click()
 
-    cy.contains('登录', { timeout: 60000 })
+    cy.contains('login', { timeout: 60000 })
     cy.location('pathname').should('eq', '/')
 
-    cy.log('在刷新页面之后用户名不会重新出现')
+    cy.log('username does not exist after refresh page')
     cy.reload()
-    cy.contains('登录')
+    cy.contains('login')
   })
 })

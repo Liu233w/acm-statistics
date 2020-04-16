@@ -1,12 +1,12 @@
 Cypress.config('baseUrl', 'http://localhost:3000')
 
-describe('整体视觉测试', () => {
+describe('overall', () => {
 
   beforeEach(() => {
     cy.visit('/about')
   })
 
-  it('能够正确渲染', () => {
+  it('can render correctly', () => {
     cy.viewport(1920, 1080)
     cy.matchImageSnapshot()
   })
