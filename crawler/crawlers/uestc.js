@@ -3,7 +3,7 @@ const request = require('superagent')
 module.exports = async function (config, username) {
 
   if (!username) {
-    throw new Error('请输入用户名')
+    throw new Error('Please enter username')
   }
 
   const res = await request
@@ -37,7 +37,7 @@ module.exports = async function (config, username) {
   }
 
   if (res.body.errors) {
-    throw new Error('用户不存在')
+    throw new Error('The user does not exist')
   }
 
   try {
@@ -55,6 +55,6 @@ module.exports = async function (config, username) {
     }
   }
   catch (e) {
-    throw new Error('无法解析数据')
+    throw new Error('Error while parsing')
   }
 }

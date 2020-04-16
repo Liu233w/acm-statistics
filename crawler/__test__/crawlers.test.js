@@ -30,11 +30,11 @@ const username = 'vjudge5'
 describe('poj', () => {
 
   test('test poj - 用户不存在时抛出异常', async () => {
-    await expect(poj(null, notExistUsername)).rejects.toThrow('用户不存在')
+    await expect(poj(null, notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
   test('test poj - 能够正确识别带有空格的用户名', async () => {
-    await expect(poj(null, ' ' + notExistUsername)).rejects.toThrow('用户不存在')
+    await expect(poj(null, ' ' + notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
   test('test poj', async () => {
@@ -52,11 +52,11 @@ describe('hdu', () => {
   }
 
   test('test hdu - 用户不存在时抛出异常', async () => {
-    await expect(hdu(config, notExistUsername)).rejects.toThrow('用户不存在')
+    await expect(hdu(config, notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
   test('test hdu - 能够正确识别带有空格的用户名', async () => {
-    await expect(hdu(config, ' ' + notExistUsername)).rejects.toThrow('用户不存在')
+    await expect(hdu(config, ' ' + notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
   test('test hdu', async () => {
@@ -70,11 +70,11 @@ describe('hdu', () => {
 describe('zoj', () => {
 
   test('test zoj - 用户不存在时抛出异常', async () => {
-    await expect(zoj(null, notExistUsername)).rejects.toThrow('用户不存在')
+    await expect(zoj(null, notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
   test('test zoj - 能够正确识别带有空格的用户名', async () => {
-    await expect(zoj(null, ' ' + notExistUsername)).rejects.toThrow('用户不存在')
+    await expect(zoj(null, ' ' + notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
   test('test zoj', async () => {
@@ -88,11 +88,11 @@ describe('zoj', () => {
 describe('dashiye', () => {
 
   test('test dashiye - 用户不存在时抛出异常', async () => {
-    await expect(dashiye(null, notExistUsername)).rejects.toThrow('用户不存在')
+    await expect(dashiye(null, notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
   test('test dashiye - 能够正确识别带有空格的用户名', async () => {
-    await expect(dashiye(null, ' ' + notExistUsername)).rejects.toThrow('用户不存在')
+    await expect(dashiye(null, ' ' + notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
   test('test dashiye', async () => {
@@ -106,7 +106,7 @@ describe('dashiye', () => {
 describe('codeforces', () => {
 
   test('test codeforces - 用户不存在时抛出异常', async () => {
-    await expect(codeforces(null, notExistUsername)).rejects.toThrow('用户不存在')
+    await expect(codeforces(null, notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
   test('test codeforces - 能够正确识别带有空格的用户名', async () => {
@@ -127,7 +127,7 @@ describe('codeforces', () => {
 describe('uva', () => {
 
   test('test uva - 用户不存在时抛出异常', async () => {
-    await expect(uva(null, notExistUsername)).rejects.toThrow('用户不存在')
+    await expect(uva(null, notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
   test('test uva', async () => {
@@ -141,7 +141,7 @@ describe('uva', () => {
 describe('fzu', () => {
 
   test('test fzu - 用户不存在时抛出异常', async () => {
-    await expect(fzu(null, notExistUsername)).rejects.toThrow('用户不存在')
+    await expect(fzu(null, notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
   test('test fzu', async () => {
@@ -155,11 +155,11 @@ describe('fzu', () => {
 describe('spoj', () => {
 
   test('test spoj - 用户不存在时抛出异常', async () => {
-    await expect(spoj(null, notExistUsername)).rejects.toThrow('用户不存在')
+    await expect(spoj(null, notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
   test('test spoj - 能够正确识别带有空格的用户名', async () => {
-    await expect(spoj(null, ' ' + notExistUsername)).rejects.toThrow('用户不存在')
+    await expect(spoj(null, ' ' + notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
   test('test spoj', async () => {
@@ -173,11 +173,11 @@ describe('spoj', () => {
 describe('timus', () => {
 
   test('test timus - 用户不存在时抛出异常', async () => {
-    await expect(timus(null, notExistUsername)).rejects.toThrow('用户不存在')
+    await expect(timus(null, notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
   test('test timus - 能够正确识别带有空格的用户名', async () => {
-    await expect(timus(null, ' ' + notExistUsername)).rejects.toThrow('用户不存在')
+    await expect(timus(null, ' ' + notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
   test('test timus', async () => {
@@ -192,11 +192,11 @@ describe('timus', () => {
 describe('leetcode_cn', () => {
 
   test('test leetcode_cn - 用户不存在时抛出异常', async () => {
-    await expect(leetcode_cn(null, notExistUsername)).rejects.toThrow('用户不存在')
+    await expect(leetcode_cn(null, notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
   test('test leetcode_cn - 能够正确识别带有空格的用户名', async () => {
-    await expect(leetcode_cn(null, ' ' + notExistUsername)).rejects.toThrow('用户不存在')
+    await expect(leetcode_cn(null, ' ' + notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
   test('test leetcode_cn', async () => {
@@ -209,11 +209,11 @@ describe('leetcode_cn', () => {
 describe('csu', () => {
 
   test('test csu - 用户不存在时抛出异常', async () => {
-    await expect(csu(null, notExistUsername)).rejects.toThrow('用户不存在')
+    await expect(csu(null, notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
   test('test csu - 能够正确识别带有空格的用户名', async () => {
-    await expect(csu(null, ' ' + notExistUsername)).rejects.toThrow('用户不存在')
+    await expect(csu(null, ' ' + notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
   test('test csu', async () => {
@@ -247,11 +247,11 @@ describe('vjudge', () => {
   })
 
   test('test vjudge - 用户不存在时抛出异常', async () => {
-    await expect(vjudge(vjConfig, notExistUsername)).rejects.toThrow('用户不存在')
+    await expect(vjudge(vjConfig, notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
   test('test vjudge - 能够正确识别带有空格的用户名', async () => {
-    await expect(vjudge(vjConfig, ' ' + notExistUsername)).rejects.toThrow('用户不存在')
+    await expect(vjudge(vjConfig, ' ' + notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
   test('test vjudge', async () => {
@@ -264,11 +264,11 @@ describe('vjudge', () => {
 describe('loj', () => {
 
   test('test loj - 用户不存在时抛出异常', async () => {
-    await expect(loj(null, notExistUsername)).rejects.toThrow('用户不存在')
+    await expect(loj(null, notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
   test('test loj - 能够正确识别带有空格的用户名', async () => {
-    await expect(loj(null, ' ' + notExistUsername)).rejects.toThrow('用户不存在')
+    await expect(loj(null, ' ' + notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
   test('test loj', async () => {
@@ -282,11 +282,11 @@ describe('loj', () => {
 describe('luogu', () => {
 
   test('test luogu - 用户不存在时抛出异常', async () => {
-    await expect(luogu(null, notExistUsername)).rejects.toThrow('用户不存在')
+    await expect(luogu(null, notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
   test('test luogu - 能够正确识别带有空格的用户名', async () => {
-    await expect(luogu(null, ' ' + notExistUsername)).rejects.toThrow('用户不存在')
+    await expect(luogu(null, ' ' + notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
   test('test luogu', async () => {
@@ -306,7 +306,7 @@ describe('luogu', () => {
 describe('nowcoder', () => {
 
   test('test nowcoder - 用户不存在时抛出异常', async () => {
-    await expect(nowcoder(null, '11')).rejects.toThrow('用户不存在')
+    await expect(nowcoder(null, '11')).rejects.toThrow('The user does not exist')
   })
 
   test('test nowcoder - 识别不是ID的用户名', async () => {
@@ -327,11 +327,11 @@ describe('nowcoder', () => {
 describe('uestc', () => {
 
   test('test uestc - 用户不存在时抛出异常', async () => {
-    await expect(uestc(null, notExistUsername)).rejects.toThrow('用户不存在')
+    await expect(uestc(null, notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
   test('test uestc - 能够正确识别带有空格的用户名', async () => {
-    await expect(uestc(null, ' ' + notExistUsername)).rejects.toThrow('用户不存在')
+    await expect(uestc(null, ' ' + notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
   test('test uestc', async () => {
@@ -352,11 +352,11 @@ describe('uestc', () => {
 describe('atcoder', () => {
 
   test('test atcoder - 用户不存在时抛出异常', async () => {
-    await expect(atcoder(null, notExistUsername)).rejects.toThrow('用户不存在')
+    await expect(atcoder(null, notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
   test('test atcoder - 能够正确识别带有空格的用户名', async () => {
-    await expect(atcoder(null, ' ' + notExistUsername)).rejects.toThrow('用户不存在')
+    await expect(atcoder(null, ' ' + notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
   test('test atcoder', async () => {

@@ -4,7 +4,7 @@ const cheerio = require('cheerio')
 module.exports = async function (config, username) {
 
   if (!username) {
-    throw new Error('请输入用户名')
+    throw new Error('Please enter username')
   }
 
   const res = await request
@@ -19,7 +19,7 @@ module.exports = async function (config, username) {
 
   const data = $('font[color=red]').text()
   if (data === 'No such user.') {
-    throw new Error('用户不存在')
+    throw new Error('The user does not exist')
   }
 
   try {
@@ -35,6 +35,6 @@ module.exports = async function (config, username) {
       solvedList,
     }
   } catch (e) {
-    throw new Error('无法解析数据')
+    throw new Error('Error while parsing')
   }
 }

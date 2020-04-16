@@ -39,7 +39,7 @@ module.exports = async function (config, username) {
     const $ = cheerio.load(res.text)
 
     if ($('.null-tip').text().trim() === '用户不存在') {
-      throw new Error('用户不存在')
+      throw new Error('The user does not exist')
     }
 
     try {
@@ -64,7 +64,7 @@ module.exports = async function (config, username) {
         .forEach(solvedList.add, solvedList)
 
     } catch (e) {
-      throw new Error('无法解析数据')
+      throw new Error('Error while parsing')
     }
 
     page += 1

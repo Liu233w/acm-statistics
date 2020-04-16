@@ -2,6 +2,10 @@ const request = require('superagent')
 
 module.exports = async function (config, username) {
 
+  if (!username) {
+    throw new Error('Please enter username')
+  }
+
   const acSet = new Set()
   const submissions = await queryForNumber(username, 1, acSet)
 
@@ -41,7 +45,7 @@ async function queryForNumber(username, pageCount, acSet) {
       // 有 response 且以 json 的格式相应
       const comment = e.response.body.comment
       if (/handle: User with handle .* not found/.test(comment)) {
-        throw new Error('用户不存在')
+        throw new Error('The user does not exist')
       } else {
         throw new Error(comment)
       }

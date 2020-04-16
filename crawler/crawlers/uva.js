@@ -6,10 +6,14 @@ const request = require('superagent')
  */
 module.exports = async function (config, username) {
 
+  if (!username) {
+    throw new Error('Please enter username')
+  }
+
   const uidRes = await request.get('https://uhunt.onlinejudge.org/api/uname2uid/' + username)
 
   if (uidRes.body === 0) {
-    throw new Error('用户不存在')
+    throw new Error('The user does not exist')
   }
 
   const res = await request

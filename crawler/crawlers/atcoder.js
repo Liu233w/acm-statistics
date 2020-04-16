@@ -3,7 +3,7 @@ const request = require('superagent')
 module.exports = async function (config, username) {
 
   if (!username) {
-    throw new Error('请输入用户名')
+    throw new Error('Please enter username')
   }
 
   // request atcoder to detect if user exists, to reduce throughput of kenkoooo's api
@@ -12,7 +12,7 @@ module.exports = async function (config, username) {
       .get('https://atcoder.jp/users/' + username)
   } catch (e) {
     if (e.message === 'Not Found') {
-      throw new Error('用户不存在')
+      throw new Error('The user does not exist')
     } else {
       throw e
     }

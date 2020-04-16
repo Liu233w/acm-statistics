@@ -18,6 +18,10 @@ const hostName = 'vjudge.net'
  */
 module.exports = async function (config, username) {
 
+  if (!username) {
+    throw new Error('Please enter username')
+  }
+
   // console.log(config)
 
   const agent = request.agent()
@@ -32,15 +36,15 @@ module.exports = async function (config, username) {
         'password': config.crawler_login_password,
       })
   } catch (err) {
-    const error = new Error('vjudge 爬虫登录失败')
+    const error = new Error('vjudge login failed')
     error.innerError = err
     throw error
   }
   if (loginStatus.text !== 'success') {
-    throw new Error('vjudge 爬虫登录失败')
+    throw new Error('vjudge login failed')
   }
 
-  console.log('vjudge 登陆成功')
+  // console.log('vjudge login success')
 
   const acSet = new Set()
   const submissions = await queryForNumber(agent, username, null, acSet)
@@ -130,7 +134,7 @@ async function queryForNumber(agent, username, maxId, acSet) {
 
   // 处理结果 /////////////////////////////////////////////////////////////
   if (res.body.error && /User .* does not exist/.test(res.body.error)) {
-    throw new Error('用户不存在')
+    throw new Error('The user does not exist')
   }
 
   const problemArray = res.body.data
