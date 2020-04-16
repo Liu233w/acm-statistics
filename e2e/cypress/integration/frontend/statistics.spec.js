@@ -1,42 +1,31 @@
 Cypress.config('baseUrl', 'http://localhost:3000')
 
-describe('整体视觉测试', () => {
+describe('overall', () => {
 
   beforeEach(() => {
     cy.visit('/statistics')
   })
 
-  it('能够正确渲染', () => {
+  it('can render correctly in 1080p', () => {
     cy.viewport(1920, 1080)
     snapshot()
   })
 
-  describe('能够在不同尺寸的手持设备下正确渲染', () => {
-    [
-      'ipad-2',
-      'ipad-mini',
-      'iphone-6+',
-      'iphone-6',
-      'iphone-5',
-    ].forEach(item => {
-
-      it(item.toString(), () => {
-        cy.viewport(item)
-        snapshot()
-      })
-    })
+  it('can render correctly', () => {
+    snapshot()
   })
+
 })
 
-describe('爬虫测试', () => {
+describe('crawler test', () => {
 
   beforeEach(() => {
     cy.visit('/statistics')
-    // 移除顶栏，以免阻挡截图
+    // remove top bar to prevent blocking content
     cy.get('header:contains("NWPU-ACM 查询系统")').invoke('hide')
   })
 
-  it('能够启动爬虫', () => {
+  it('can start a worker', () => {
 
     cy.server()
     cy.route('https://cors-anywhere.herokuapp.com/http://poj.org/userstatus?user_id=vjudge5',
@@ -59,11 +48,11 @@ describe('爬虫测试', () => {
     })
   })
 
-  // TODO: cypress 还没法模拟跨域错误
-  it('在前端爬虫错误时可以请求后端爬虫', () => {
+  // TODO: cypress cannot simulate cross-origin error
+  it('can request crawler-api-backend when get network error', () => {
 
-    // 看起来xhr还没走proxy，没法跟 proxy server 合到一起
-    // TODO: 等 cypress 更新之后尝试使用 proxy server
+    // it seems that xhr does not go through proxy, cannot use proxy server to simulate the response.
+    // TODO: use proxy server after cypress update
     cy.server()
     cy.route({
       url: 'https://cors-anywhere.herokuapp.com/http://poj.org/userstatus?user_id=vjudge5',
@@ -87,7 +76,7 @@ describe('爬虫测试', () => {
     })
   })
 
-  it('可以停止正在进行的请求', () => {
+  it('can stop running query', () => {
 
     cy.server()
     cy.route({
@@ -111,7 +100,7 @@ describe('爬虫测试', () => {
     })
   })
 
-  it('可以显示异常', () => {
+  it('can show crawler errors', () => {
 
     cy.server()
     cy.route('https://cors-anywhere.herokuapp.com/http://poj.org/userstatus?user_id=Frkfe932fbcv09b',
@@ -124,7 +113,7 @@ describe('爬虫测试', () => {
       cy.get('button:contains("refresh")').click()
       cy.wait('@poj_frontend')
 
-      cy.contains('用户不存在')
+      cy.contains('The user does not exist')
       snapshot('worker-error')
     })
   })
