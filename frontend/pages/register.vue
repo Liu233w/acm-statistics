@@ -33,7 +33,7 @@
               type="password"
               v-model="password"
               required
-              :rules="[rules.required]"
+              :rules="[rules.required, rules.password]"
             />
             <v-text-field
               prepend-icon="lock"
