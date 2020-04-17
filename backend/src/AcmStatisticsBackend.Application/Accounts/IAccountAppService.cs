@@ -8,6 +8,14 @@ namespace AcmStatisticsBackend.Accounts
     {
         Task<RegisterOutput> Register(RegisterInput input);
 
+        /// <summary>
+        /// Delete this account
+        /// </summary>
         Task SelfDelete();
+
+        /// <summary>
+        /// Change password of current user
+        /// </summary>
+        Task ChangePassword(ChangePasswordInput input);
     }
 }
