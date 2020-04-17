@@ -78,15 +78,117 @@
         md4
         v-show="submissionsNum"
       >
-        <v-chip
-          label
-          color="grey lighten-3"
-          class="elevation-2"
+        <v-dialog
+          v-model="dialog"
+          fullscreen
+          hide-overlay
+          transition="dialog-bottom-transition"
         >
-          <span class="title">
-            {{ summary }}
-          </span>
-        </v-chip>
+          <template v-slot:activator="{ on: { click } }">
+            <v-tooltip buttom>
+              <template #activator="{ on }">
+                <v-chip
+                  label
+                  color="grey lighten-3"
+                  class="elevation-2"
+                  v-on="on"
+                  @click="click"
+                >
+                  <span class="title">
+                    {{ summary }}
+                  </span>
+                </v-chip>
+              </template>
+              Click to open summary panel
+            </v-tooltip>
+          </template>
+          <v-card>
+            <v-toolbar
+              dark
+              color="primary"
+            >
+              <v-btn
+                icon
+                dark
+                @click="dialog = false"
+              >
+                <v-icon>mdi-close</v-icon>
+              </v-btn>
+              <v-toolbar-title>Summary</v-toolbar-title>
+              <v-spacer />
+              <v-toolbar-items>
+                <v-tooltip>
+                  <template #activator="{ on }">
+                    <v-btn
+                      dark
+                      text
+                      v-on="on"
+                      @click="printPage"
+                    >
+                      Print Page
+                    </v-btn>
+                  </template>
+                  Print current page (select "print to pdf" to save a pdf copy)
+                </v-tooltip>
+              </v-toolbar-items>
+            </v-toolbar>
+            <v-container>
+              <v-row justify="center">
+                <v-spacer />
+                <v-col>
+                  <v-list
+                    two-line
+                    subheader
+                  >
+                    <v-list-item>
+                      <v-list-item-content>
+                        <v-list-item-title>Main Username</v-list-item-title>
+                        <v-list-item-subtitle>{{ username }}</v-list-item-subtitle>
+                      </v-list-item-content>
+                    </v-list-item>
+                    <v-list-item>
+                      <v-list-item-content>
+                        <v-list-item-title>{{ summary }}</v-list-item-title>
+                      </v-list-item-content>
+                    </v-list-item>
+                  </v-list>
+                  <v-simple-table>
+                    <template v-slot:default>
+                      <thead>
+                        <tr>
+                          <th class="text-left">
+                            Crawler
+                          </th>
+                          <th class="text-left">
+                            Username
+                          </th>
+                          <th class="text-left">
+                            Solved
+                          </th>
+                          <th class="text-left">
+                            Submission
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr
+                          v-for="item in workerSummaryList"
+                          :key="`${item.crawler}-${item.username}`"
+                        >
+                          <td>{{ item.crawler }}</td>
+                          <td>{{ item.username }}</td>
+                          <td>{{ item.solved }}</td>
+                          <td>{{ item.submissions }}</td>
+                        </tr>
+                      </tbody>
+                    </template>
+                  </v-simple-table>
+                </v-col>
+                <v-spacer />
+              </v-row>
+            </v-container>
+          </v-card>
+        </v-dialog>
       </v-flex>
     </v-layout>
     <v-layout>
@@ -128,7 +230,7 @@ import _ from 'lodash'
 import WorkerCard from '~/components/WorkerCard'
 import statisticsLayoutBuilder from '~/components/statisticsLayoutBuilder'
 import Store from '~/store/-dynamic/statistics'
-import { PROJECT_TITLE } from '~/components/consts'
+import { PROJECT_TITLE, WORKER_STATUS } from '~/components/consts'
 
 export default {
   name: 'Statistics',
@@ -154,6 +256,8 @@ export default {
       columnCount: 3,
       // 管理保存用户名按钮的动画
       savingUsername: false,
+      // summary dialog
+      dialog: false,
     }
   },
   computed: {
@@ -180,7 +284,17 @@ export default {
       return Math.ceil(this.$store.state.statistics.workers.length / this.columnCount)
     },
     summary() {
-      return `${this.username} - ${this.solvedNum} / ${this.submissionsNum}`
+      return `SOLVED: ${this.solvedNum} / SUBMISSION: ${this.submissionsNum}`
+    },
+    workerSummaryList() {
+      const doneWorkers = _.filter(this.$store.state.statistics.workers,
+        worker => worker.username && worker.status === WORKER_STATUS.DONE && !worker.errorMessage)
+      return _.map(doneWorkers, item => ({
+        crawler: this.$store.state.statistics.crawlers[item.crawlerName].name,
+        username: item.username,
+        solved: item.solved,
+        submissions: item.submissions,
+      }))
     },
   },
   methods: {
@@ -240,6 +354,9 @@ export default {
     },
     clearWorkers() {
       this.$store.dispatch('statistics/clearWorkers')
+    },
+    printPage() {
+      window.print()
     },
   },
 }
