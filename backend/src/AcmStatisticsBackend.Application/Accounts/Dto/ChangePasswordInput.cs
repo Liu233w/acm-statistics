@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace AcmStatisticsBackend.Users.Dto
+namespace AcmStatisticsBackend.Accounts.Dto
 {
-    public class ChangePasswordDto
+    public class ChangePasswordInput
     {
         [Required]
         public string CurrentPassword { get; set; }
