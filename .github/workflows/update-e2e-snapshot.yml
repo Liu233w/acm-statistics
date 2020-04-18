@@ -45,7 +45,7 @@ jobs:
           make server compose-args="--detach"
           make wait-server
           make update-snapshot
-          make test # 确保更新之后的测试通过
+          make test # ensure test pass after update
           
       - name: Commit result
         if: steps.prcomm.outputs.BOOL_TRIGGERED == 'true'
@@ -60,5 +60,6 @@ jobs:
         if: steps.prcomm.outputs.BOOL_TRIGGERED == 'true'
         uses: ad-m/github-push-action@master
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          # use my own token instead of GITHUB_TOKEN to trigger future workflows
+          github_token: ${{ secrets.WORKFLOW_TOKEN }}
           branch: ${{ steps.prcomm.outputs.BRANCH_NAME }}
