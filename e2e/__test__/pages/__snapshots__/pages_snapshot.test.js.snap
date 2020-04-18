@@ -4298,32 +4298,94 @@ exports[`/settings 1`] = `
             </header>
             <main class="v-content" style="padding-top:64px;padding-right:0px;padding-bottom:0px;padding-left:0px;">
               <div class="v-content__wrap">
-                <div class="container">
-                  <div class="layout">
-                    <div class="flex xs12 sm6 offset-sm3">
+                <div class="container container--fluid">
+                  <div class="row">
+                    <div class="col">
                       <div class="v-card v-sheet theme--light">
-                        <header class="v-sheet v-sheet--tile theme--dark v-toolbar v-app-bar light-blue" style="height:64px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;">
-                          <div class="v-toolbar__content" style="height:64px;">
-                            <div class="v-toolbar__title">Settings</div>
-                            <div class="spacer"></div>
-                          </div>
-                        </header>
-                        <div role="list" class="v-list v-sheet v-sheet--tile theme--light v-list--subheader v-list--three-line">
-                          <div class="v-subheader theme--light">Accounts</div>
-                          <div tabindex="0" role="listitem" class="v-list-item v-list-item--link theme--light">
-                            <div class="v-list-item__content">
-                              <div class="v-list-item__title">Sign out</div>
-                              <div class="v-list-item__subtitle">Logout of this computer</div>
-                            </div>
-                          </div>
-                          <hr role="separator" aria-orientation="horizontal" class="v-divider theme--light">
-                          <div tabindex="0" role="listitem" class="v-list-item v-list-item--active v-list-item--link theme--light red--text">
-                            <div class="v-list-item__content">
-                              <div class="v-list-item__title">Delete Account</div>
-                              <div class="v-list-item__subtitle">Delete this account and all data related to it</div>
-                            </div>
-                          </div>
+                        <div class="v-card__title">Sign out</div>
+                        <div class="v-card__text">
+                          Logout of this computer.
                         </div>
+                        <div class="v-card__actions"><button type="button" class="v-btn v-btn--flat v-btn--text theme--light v-size--default"><span class="v-btn__content">
+            sign out
+          </span></button></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col">
+                      <div class="v-card v-sheet theme--light">
+                        <div class="v-card__title">Change Password</div>
+                        <div class="v-card__text">
+                          <form novalidate="novalidate" class="v-form">
+                            <div class="v-input theme--light v-text-field">
+                              <div class="v-input__prepend-outer">
+                                <div class="v-input__icon v-input__icon--prepend"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">lock</i></div>
+                              </div>
+                              <div class="v-input__control">
+                                <div class="v-input__slot">
+                                  <div class="v-text-field__slot"><label class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Current Password</label><input required="required" type="password" value></div>
+                                </div>
+                                <div class="v-text-field__details">
+                                  <div class="v-messages theme--light">
+                                    <div class="v-messages__wrapper"></div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="v-input theme--light v-text-field">
+                              <div class="v-input__prepend-outer">
+                                <div class="v-input__icon v-input__icon--prepend"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">lock</i></div>
+                              </div>
+                              <div class="v-input__control">
+                                <div class="v-input__slot">
+                                  <div class="v-text-field__slot"><label class="v-label theme--light" style="left:0px;right:auto;position:absolute;">New Password</label><input required="required" type="password" value></div>
+                                </div>
+                                <div class="v-text-field__details">
+                                  <div class="v-messages theme--light">
+                                    <div class="v-messages__wrapper"></div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="v-input theme--light v-text-field">
+                              <div class="v-input__prepend-outer">
+                                <div class="v-input__icon v-input__icon--prepend"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">lock</i></div>
+                              </div>
+                              <div class="v-input__control">
+                                <div class="v-input__slot">
+                                  <div class="v-text-field__slot"><label class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Confirm Password</label><input required="required" type="password" value></div>
+                                </div>
+                                <div class="v-text-field__details">
+                                  <div class="v-messages theme--light">
+                                    <div class="v-messages__wrapper"></div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </form>
+                        </div>
+                        <div class="v-card__actions"><button type="button" disabled="disabled" class="v-btn v-btn--disabled v-btn--flat v-btn--text theme--light v-size--default"><span class="v-btn__content">
+            submit
+          </span></button></div>
+                        <div class="v-overlay v-overlay--absolute theme--dark" style="z-index:5;">
+                          <div class="v-overlay__scrim" style="opacity:0;background-color:#212121;border-color:#212121;"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col">
+                      <div class="v-card v-sheet theme--light">
+                        <div class="v-card__title red--text">
+                          Delete Account
+                        </div>
+                        <div class="v-card__text">
+                          Delete this account and all data related to it.
+                        </div>
+                        <div class="v-card__actions"><button type="button" class="v-btn v-btn--flat v-btn--text theme--light v-size--default red--text"><span class="v-btn__content">
+            delete
+          </span></button></div>
                       </div>
                     </div>
                   </div>
