@@ -42,7 +42,7 @@
               />
               <v-text-field
                 prepend-icon="lock"
-                label="Confirm password"
+                label="Confirm Password"
                 type="password"
                 v-model="pwdRepeat"
                 required
