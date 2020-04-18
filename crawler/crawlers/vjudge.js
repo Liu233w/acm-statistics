@@ -82,6 +82,8 @@ function resolveSolvedList(acSet) {
   const ojMap = {
     '': 'NO_NAME',
     'LibreOJ': 'loj',
+    'URAL': 'timus',
+    'HYSBZ': 'dashiye',
   }
 
   const res = []
