@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Abp.Authorization;
 using Abp.MultiTenancy;
@@ -6,6 +7,8 @@ using AcmStatisticsBackend.Accounts;
 using AcmStatisticsBackend.Accounts.Dto;
 using AcmStatisticsBackend.Authorization;
 using AcmStatisticsBackend.Authorization.Users;
+using AcmStatisticsBackend.Crawlers;
+using AcmStatisticsBackend.Crawlers.Dto;
 using AcmStatisticsBackend.ServiceClients;
 using Microsoft.EntityFrameworkCore;
 using Shouldly;
@@ -82,7 +85,6 @@ namespace AcmStatisticsBackend.Tests.Accounts
             error.Message.ShouldBe("an error message");
         }
 
-        // TODO: 等到以后有邮箱选项的时候，记得测试这里会不会冲突
         [Fact]
         public async Task SelfDelete_能够正确删除用户()
         {
@@ -130,6 +132,60 @@ namespace AcmStatisticsBackend.Tests.Accounts
                 var user = await ctx.Users.FirstAsync(a => a.UserName == "user1" && !a.IsDeleted);
                 user.ShouldNotBeNull();
                 user.Id.ShouldNotBe(origUser.Id);
+            });
+        }
+
+        [Fact]
+        public async Task SelfDelete_ShouldDeleteRelatedEntities()
+        {
+            // arrange
+            _captchaServiceClient.Return = new CaptchaServiceValidateResult
+            {
+                Correct = true,
+                ErrorMessage = null,
+            };
+            await _accountAppService.Register(new RegisterInput
+            {
+                UserName = "user1",
+                Password = "StrongPassword",
+                CaptchaId = "a",
+                CaptchaText = "a",
+            });
+            LoginAsTenant(AbpTenantBase.DefaultTenantName, "user1");
+            await Resolve<IDefaultQueryAppService>().SetDefaultQueries(new DefaultQueryDto
+            {
+                MainUsername = "1234",
+                UsernamesInCrawlers = new Dictionary<string, List<string>>
+                {
+                    { "c1", new List<string> { "u1" } },
+                },
+            });
+            await Resolve<IAcHistoryAppService>().SaveOrReplaceAcHistory(new SaveOrReplaceAcHistoryInput
+            {
+                Solved = 1,
+                Submission = 1,
+                MainUsername = "m",
+                AcWorkerHistories = new List<AcWorkerHistoryDto>
+                {
+                    new AcWorkerHistoryDto
+                    {
+                        Solved = 1,
+                        Submission = 1,
+                        Username = "aaa",
+                        CrawlerName = "c1",
+                        HasSolvedList = false,
+                    },
+                },
+            });
+
+            // act
+            await _accountAppService.SelfDelete();
+
+            // test
+            await UsingDbContextAsync(1, async ctx =>
+            {
+                (await ctx.DefaultQueries.CountAsync()).ShouldBe(0);
+                (await ctx.AcHistories.CountAsync()).ShouldBe(0);
             });
         }
 
