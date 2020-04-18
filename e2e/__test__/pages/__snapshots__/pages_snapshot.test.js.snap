@@ -5308,8 +5308,8 @@ exports[`/statistics 1`] = `
                   <div class="v-card v-sheet theme--light">
                     <header class="blue-grey lighten-5 v-sheet v-sheet--tile theme--light elevation-0 v-toolbar v-toolbar--dense v-toolbar--flat v-app-bar" style="height:48px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;">
                       <div class="v-toolbar__content" style="height:48px;">
-                        <div title="&#x5927;&#x89C6;&#x91CE;&#x5728;&#x7EBF;&#x6D4B;&#x8BC4;" class="v-toolbar__title">
-                          &#x5927;&#x89C6;&#x91CE;&#x5728;&#x7EBF;&#x6D4B;&#x8BC4;
+                        <div title="&#x5927;&#x89C6;&#x91CE;&#x5728;&#x7EBF;&#x6D4B;&#x8BC4; (HYSBZ)" class="v-toolbar__title">
+                          &#x5927;&#x89C6;&#x91CE;&#x5728;&#x7EBF;&#x6D4B;&#x8BC4; (HYSBZ)
                         </div>
                         <div class="spacer"></div>
                         <div class="v-toolbar__items">
@@ -5524,8 +5524,8 @@ exports[`/statistics 1`] = `
         <div class="v-card v-sheet theme--light">
           <header class="blue-grey lighten-5 v-sheet v-sheet--tile theme--light elevation-0 v-toolbar v-toolbar--dense v-toolbar--flat v-app-bar" style="height:48px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;">
             <div class="v-toolbar__content" style="height:48px;">
-              <div title="Timus" class="v-toolbar__title">
-                Timus
+              <div title="Timus (URAL)" class="v-toolbar__title">
+                Timus (URAL)
               </div>
               <div class="spacer"></div>
               <div class="v-toolbar__items">
@@ -5874,6 +5874,94 @@ It may take a while for the api to update user statistics.
       <div class="v-card v-sheet theme--light">
         <header class="blue-grey lighten-5 v-sheet v-sheet--tile theme--light elevation-0 v-toolbar v-toolbar--dense v-toolbar--flat v-app-bar" style="height:48px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;">
           <div class="v-toolbar__content" style="height:48px;">
+            <div title="AIZU" class="v-toolbar__title">
+              AIZU
+            </div>
+            <div class="spacer"></div>
+            <div class="v-toolbar__items">
+              <!----> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">add_circle</i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">link</i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">refresh</i></span></button></span></div>
+          </div>
+        </header>
+        <div class="container">
+          <div class="layout">
+            <div class="flex xs12">
+              <!---->
+            </div>
+          </div>
+          <div class="layout wrap">
+            <div class="flex xs12">
+              <div class="v-input theme--light v-text-field">
+                <div class="v-input__control">
+                  <div class="v-input__slot">
+                    <div class="v-text-field__slot"><label class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Username</label><input required="required" type="text" value></div>
+                    <div class="v-input__append-inner">
+                      <div class="v-input__icon v-input__icon--clear"><button disabled="disabled" type="button" aria-label="clear icon" class="v-icon notranslate v-icon--disabled v-icon--link mdi mdi-close theme--light"></button></div>
+                    </div>
+                  </div>
+                  <div class="v-text-field__details">
+                    <div class="v-messages theme--light">
+                      <div class="v-messages__wrapper"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!---->
+        </div>
+        <div role="dialog" class="v-dialog__container">
+          <!---->
+        </div>
+      </div>
+    </div>
+    <div data-column-idx="2" data-column-item-idx="4" class="flex worker-item" style="z-index:996;">
+      <div class="v-card v-sheet theme--light">
+        <header class="blue-grey lighten-5 v-sheet v-sheet--tile theme--light elevation-0 v-toolbar v-toolbar--dense v-toolbar--flat v-app-bar" style="height:48px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;">
+          <div class="v-toolbar__content" style="height:48px;">
+            <div title="CodeChef" class="v-toolbar__title">
+              CodeChef
+            </div>
+            <div class="spacer"></div>
+            <div class="v-toolbar__items">
+              <!----> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">add_circle</i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">link</i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">refresh</i></span></button></span></div>
+          </div>
+        </header>
+        <div class="container">
+          <div class="layout">
+            <div class="flex xs12">
+              <!---->
+            </div>
+          </div>
+          <div class="layout wrap">
+            <div class="flex xs12">
+              <div class="v-input theme--light v-text-field">
+                <div class="v-input__control">
+                  <div class="v-input__slot">
+                    <div class="v-text-field__slot"><label class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Username</label><input required="required" type="text" value></div>
+                    <div class="v-input__append-inner">
+                      <div class="v-input__icon v-input__icon--clear"><button disabled="disabled" type="button" aria-label="clear icon" class="v-icon notranslate v-icon--disabled v-icon--link mdi mdi-close theme--light"></button></div>
+                    </div>
+                  </div>
+                  <div class="v-text-field__details">
+                    <div class="v-messages theme--light">
+                      <div class="v-messages__wrapper"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!---->
+        </div>
+        <div role="dialog" class="v-dialog__container">
+          <!---->
+        </div>
+      </div>
+    </div>
+    <div data-column-idx="2" data-column-item-idx="5" class="flex worker-item" style="z-index:995;">
+      <div class="v-card v-sheet theme--light">
+        <header class="blue-grey lighten-5 v-sheet v-sheet--tile theme--light elevation-0 v-toolbar v-toolbar--dense v-toolbar--flat v-app-bar" style="height:48px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;">
+          <div class="v-toolbar__content" style="height:48px;">
             <div title="VJudge" class="v-toolbar__title">
               VJudge
             </div>
@@ -5926,7 +6014,7 @@ It may take a while for the api to update user statistics.
     </div>
     </div>
     <script>
-      window.__NUXT__ = (function(a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w) {
+      window.__NUXT__ = (function(a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y) {
         return {
           layout: "default",
           data: [{}],
@@ -6083,6 +6171,24 @@ It may take a while for the api to update user statistics.
                 errorMessage: a,
                 tokenKey: c,
                 solvedList: []
+              }, {
+                crawlerName: v,
+                username: a,
+                status: d,
+                solved: b,
+                submissions: b,
+                errorMessage: a,
+                tokenKey: c,
+                solvedList: []
+              }, {
+                crawlerName: w,
+                username: a,
+                status: d,
+                solved: b,
+                submissions: b,
+                errorMessage: a,
+                tokenKey: c,
+                solvedList: []
               }],
               crawlers: {
                 poj: {
@@ -6098,7 +6204,7 @@ It may take a while for the api to update user statistics.
                   name: g
                 },
                 dashiye: {
-                  title: "大视野在线测评",
+                  title: "大视野在线测评 (HYSBZ)",
                   description: c,
                   url: "http:\\u002F\\u002Fwww.lydsy.com\\u002FJudgeOnline\\u002F",
                   name: h
@@ -6128,7 +6234,7 @@ It may take a while for the api to update user statistics.
                   name: l
                 },
                 timus: {
-                  title: "Timus",
+                  title: "Timus (URAL)",
                   description: c,
                   url: "http:\\u002F\\u002Facm.timus.ru\\u002F",
                   name: m
@@ -6175,25 +6281,37 @@ It may take a while for the api to update user statistics.
                   url: "https:\\u002F\\u002Fatcoder.jp",
                   name: t
                 },
+                aizu: {
+                  title: "AIZU",
+                  description: c,
+                  url: "http:\\u002F\\u002Fjudge.u-aizu.ac.jp\\u002Fonlinejudge\\u002Findex.jsp",
+                  name: u
+                },
+                codechef: {
+                  title: "CodeChef",
+                  description: c,
+                  url: "https:\\u002F\\u002Fwww.codechef.com\\u002F",
+                  name: v
+                },
                 vjudge: {
                   title: "VJudge",
                   description: "virtual judge，这个OJ的题量是单独计算的",
                   url: "https:\\u002F\\u002Fvjudge.net\\u002F",
-                  virtual_judge: v,
-                  name: u
+                  virtual_judge: x,
+                  name: w
                 }
               },
               mainUsername: a
             }
           },
-          serverRendered: v,
+          serverRendered: x,
           routePath: "\\u002Fstatistics",
           env: {
-            VERSION_NUM: w,
-            BUILD_TIME: w
+            VERSION_NUM: y,
+            BUILD_TIME: y
           }
         }
-      }("", 0, null, "WAITING", false, "poj", "hdu", "dashiye", "codeforces", "uva", "fzu", "spoj", "timus", "leetcode_cn", "csu", "loj", "luogu", "nowcoder", "uestc", "atcoder", "vjudge", true, "0"));
+      }("", 0, null, "WAITING", false, "poj", "hdu", "dashiye", "codeforces", "uva", "fzu", "spoj", "timus", "leetcode_cn", "csu", "loj", "luogu", "nowcoder", "uestc", "atcoder", "aizu", "codechef", "vjudge", true, "0"));
     </script>
 
 
