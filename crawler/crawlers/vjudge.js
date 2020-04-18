@@ -76,6 +76,7 @@ function resolveSolvedList(acSet) {
     'csu',
     // 'hust',
     'atcoder',
+    'aizu',
   ])
   // 可以用来映射的 crawler name
   const ojMap = {
