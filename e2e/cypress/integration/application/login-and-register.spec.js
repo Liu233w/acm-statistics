@@ -95,7 +95,7 @@ describe('Register then login', () => {
     cy.contains('Logout')
     cy.location('pathname').should('eq', '/settings')
 
-    cy.contains('Logout').click()
+    cy.get('button:contains("sign out")').click()
 
     cy.contains('login', { timeout: 60000 })
     cy.location('pathname').should('eq', '/')
