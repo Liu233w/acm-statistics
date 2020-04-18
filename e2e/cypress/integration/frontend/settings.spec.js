@@ -23,3 +23,45 @@ describe('overall', () => {
     cy.matchImageSnapshot()
   })
 })
+
+describe('change password', () => {
+  it('can report error when password is wrong', () => {
+    cy.visit('/settings')
+    cy.contains('Change Password').parent().within(() => {
+      cy.contains('Current Password').parent().type('wrong')
+      cy.contains('New Password').parent().type('1234QWer')
+      cy.contains('Confirm Password').parent().type('1234QWer')
+      cy.contains('submit').click()
+      cy.matchImageSnapshot()
+    })
+  })
+
+  it('can work correctly', () => {
+    cy.visit('/settings')
+    cy.contains('Change Password').parent().within(() => {
+      cy.contains('Current Password').parent().type('1234Qwer')
+      cy.contains('New Password').parent().type('1234QWer')
+      cy.contains('Confirm Password').parent().type('1234QWer')
+      cy.contains('submit').click()
+      cy.contains('Success!')
+      cy.matchImageSnapshot()
+    })
+
+    cy.log('re-login to test new password')
+    cy.get('button:contains("sign out")').click()
+    cy.url().should('be', '/')
+    cy.login(username, '1234QWer')
+  })
+})
+
+describe('delete account', () => {
+  it('shoule work correctly', () => {
+    cy.visit('/settings')
+    cy.get('button:contains("delete")').click()
+    cy.get('.v-dialog').within(() => {
+      cy.matchImageSnapshot()
+      cy.get('button:contains("Confirm")').click()
+    })
+    cy.url().should('be', '/')
+  })
+})
