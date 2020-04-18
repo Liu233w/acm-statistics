@@ -17,6 +17,7 @@ const luogu = require('../crawlers/luogu')
 const nowcoder = require('../crawlers/nowcoder')
 const uestc = require('../crawlers/uestc')
 const atcoder = require('../crawlers/atcoder')
+const aizu = require('../crawlers/aizu')
 
 const { readConfigs } = require('../lib/configReader')
 
@@ -363,6 +364,24 @@ describe('atcoder', () => {
     const res = await atcoder(null, 'wata')
     checkRes(res)
     expect(res.solvedList).toContain('judge_update_202004_b')
+  })
+
+})
+
+describe('aizu', () => {
+
+  test('test aizu - 用户不存在时抛出异常', async () => {
+    await expect(aizu(null, notExistUsername)).rejects.toThrow('The user does not exist')
+  })
+
+  test('test aizu - 能够正确识别带有空格的用户名', async () => {
+    await expect(aizu(null, ' ' + notExistUsername)).rejects.toThrow('The user does not exist')
+  })
+
+  test('test aizu', async () => {
+    const res = await aizu(null, username)
+    checkRes(res)
+    expect(res.solvedList).toContain('ALDS1_3_C')
   })
 
 })
