@@ -15,6 +15,8 @@ crawler_order:
   - nowcoder
   - uestc
   - atcoder
+  - aizu
+  - codechef
   - vjudge
 
 crawlers:
