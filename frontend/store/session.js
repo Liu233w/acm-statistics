@@ -18,15 +18,19 @@ export const mutations = {
 
 export const actions = {
   async refreshUser({ commit }) {
-    const res = await this.$axios.$get('/api/services/app/Session/GetCurrentLoginInformations')
+    try {
+      const res = await this.$axios.$get('/api/services/app/Session/GetCurrentLoginInformations')
 
-    if (res.result.user) {
-      commit('setUser', { username: res.result.user.userName })
-    } else {
-      commit('removeUser')
+      if (res.result.user) {
+        commit('setUser', { username: res.result.user.userName })
+      } else {
+        commit('removeUser')
+      }
+    } catch (err) {
+      Cookies.remove('OAuthToken')
     }
   },
-  async login({dispatch}, {username, password, remember}) {
+  async login({ dispatch }, { username, password, remember }) {
     const res = await this.$axios.$post('/api/TokenAuth/Authenticate', {
       userNameOrEmailAddress: username,
       password: password,
@@ -41,7 +45,7 @@ export const actions = {
 
     await dispatch('refreshUser')
   },
-  async logout({commit}) {
+  async logout({ commit }) {
     Cookies.remove('OAuthToken')
     commit('removeUser')
   },
