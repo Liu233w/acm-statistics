@@ -18,6 +18,7 @@ const nowcoder = require('../crawlers/nowcoder')
 const uestc = require('../crawlers/uestc')
 const atcoder = require('../crawlers/atcoder')
 const aizu = require('../crawlers/aizu')
+const codechef = require('../crawlers/codechef')
 
 const { readConfigs } = require('../lib/configReader')
 
@@ -382,6 +383,25 @@ describe('aizu', () => {
     const res = await aizu(null, username)
     checkRes(res)
     expect(res.solvedList).toContain('ALDS1_3_C')
+  })
+
+})
+
+describe('codechef', () => {
+
+  test('test codechef - 用户不存在时抛出异常', async () => {
+    await expect(codechef(null, notExistUsername)).rejects.toThrow('The user does not exist')
+  })
+
+  test('test codechef - 能够正确识别带有空格的用户名', async () => {
+    await expect(codechef(null, ' ' + notExistUsername)).rejects.toThrow('The user does not exist')
+  })
+
+  test('test codechef', async () => {
+    // don't know why, but in vjudge2 - vjudge5, solvedList does not match solved count
+    const res = await codechef(null, 'vjudge')
+    checkRes(res)
+    expect(res.solvedList).toContain('CHEFBM')
   })
 
 })
