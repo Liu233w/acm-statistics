@@ -41,8 +41,8 @@ describe('/register', () => {
   it('can show captcha error', () => {
     cy.visit('/register')
     cy.contains('Username').parent().type('user')
-    cy.contains('Password').parent().type('123qwe')
-    cy.contains('Confirm password').parent().type('123qwe')
+    cy.contains('Password').parent().type('1234Qwer')
+    cy.contains('Confirm password').parent().type('1234Qwer')
     cy.contains('Captcha').parent().type('wrong')
     cy.get('button').contains('register').click()
     cy.contains('Incorrect captcha', { timeout: 60000 })
@@ -68,8 +68,8 @@ describe('Register then login', () => {
     // wait dom to refresh (wait captcha)
     cy.contains('Captcha').parent().type('validate-text')
     cy.contains('Username').parent().type(newUsername)
-    cy.contains('Password').parent().type('123qwe')
-    cy.contains('Confirm password').parent().type('123qwe')
+    cy.contains('Password').parent().type('1234Qwer')
+    cy.contains('Confirm password').parent().type('1234Qwer')
     cy.get('button').contains('register').click()
     cy.location('pathname').should('eq', '/')
 
@@ -85,7 +85,7 @@ describe('Register then login', () => {
 
     cy.log('enter username and password')
     cy.contains('Username').parent().type(newUsername)
-    cy.contains('Password').parent().type('123qwe')
+    cy.contains('Password').parent().type('1234Qwer')
     cy.get('button').contains('login').click()
     cy.location('pathname').should('eq', '/')
 
