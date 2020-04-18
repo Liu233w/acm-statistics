@@ -105,6 +105,11 @@ crawlers:
       title: AIZU
       description:
       url: http://judge.u-aizu.ac.jp/onlinejudge/index.jsp
+  codechef:
+    meta:
+      title: CodeChef
+      description:
+      url: https://www.codechef.com/
   vjudge:
     meta:
       title: VJudge
