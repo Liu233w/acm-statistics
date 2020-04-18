@@ -35,7 +35,7 @@ crawlers:
       url: http://acm.zju.edu.cn/onlinejudge/
   dashiye:
     meta:
-      title: 大视野在线测评
+      title: 大视野在线测评 (HYSBZ)
       description:
       url: http://www.lydsy.com/JudgeOnline/
   codeforces:
@@ -60,7 +60,7 @@ crawlers:
       url: http://www.spoj.com/
   timus:
     meta:
-      title: Timus
+      title: Timus (URAL)
       description:
       url: http://acm.timus.ru/
   leetcode_cn:
