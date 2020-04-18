@@ -1,13 +1,9 @@
-using System.Threading;
-using System.Threading.Tasks;
-using Abp;
 using Abp.Authorization.Users;
 using Abp.Domain.Repositories;
 using Abp.Domain.Uow;
 using Abp.Linq;
 using Abp.Organizations;
 using AcmStatisticsBackend.Authorization.Roles;
-using Microsoft.AspNetCore.Identity;
 
 namespace AcmStatisticsBackend.Authorization.Users
 {
@@ -36,29 +32,6 @@ namespace AcmStatisticsBackend.Authorization.Users
                 userOrganizationUnitRepository,
                 organizationUnitRoleRepository)
         {
-        }
-
-        public override async Task<IdentityResult> DeleteAsync(User user, CancellationToken cancellationToken = default)
-        {
-            cancellationToken.ThrowIfCancellationRequested();
-
-            Check.NotNull(user, nameof(user));
-
-            await UserRepository.HardDeleteAsync(user);
-
-            try
-            {
-                await SaveChangesAsync(cancellationToken);
-            }
-            catch (AbpDbConcurrencyException ex)
-            {
-                Logger.Warn(ex.ToString(), ex);
-                return IdentityResult.Failed(ErrorDescriber.ConcurrencyFailure());
-            }
-
-            await SaveChangesAsync(cancellationToken);
-
-            return IdentityResult.Success;
         }
     }
 }
