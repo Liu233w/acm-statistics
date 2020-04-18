@@ -50,8 +50,8 @@ Cypress.Commands.add('registerAndGetUsername', () => {
   cy.visit('/register')
   cy.contains('Captcha').parent().type('validate-text')
   cy.contains('Username').parent().type(username)
-  cy.contains('Password').parent().type('123qwe')
-  cy.contains('Confirm password').parent().type('123qwe')
+  cy.contains('Password').parent().type('1234Qwer')
+  cy.contains('Confirm password').parent().type('1234Qwer')
   cy.get('button').contains('register').click()
 
   cy.location('pathname').should('eq', '/')
@@ -60,11 +60,18 @@ Cypress.Commands.add('registerAndGetUsername', () => {
   return cy.wrap(username)
 })
 
-Cypress.Commands.add('login', username => {
+Cypress.Commands.add('login', (username, password) => {
+  if (!password) {
+    if (username === 'admin') {
+      password = '123qwe'
+    } else {
+      password = '1234Qwer'
+    }
+  }
   cy.log('<<<<< Start login')
   cy.visit('/login')
   cy.contains('Username').parent().type(username)
-  cy.contains('Password').parent().type('123qwe')
+  cy.contains('Password').parent().type(password)
   cy.get('button').contains('login').click()
 
   cy.location('pathname').should('eq', '/')
