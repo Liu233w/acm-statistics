@@ -186,6 +186,7 @@ namespace AcmStatisticsBackend.Tests.Accounts
             {
                 (await ctx.DefaultQueries.CountAsync()).ShouldBe(0);
                 (await ctx.QueryHistories.CountAsync()).ShouldBe(0);
+                (await ctx.QueryWorkerHistories.CountAsync()).ShouldBe(0);
             });
         }
 
