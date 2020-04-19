@@ -5,20 +5,14 @@ namespace AcmStatisticsBackend.EntityFrameworkCore
 {
     public static class AcmStatisticsBackendDbContextConfigurer
     {
-        public static void Configure(DbContextOptionsBuilder<AcmStatisticsBackendDbContext> builder,
-            string connectionString)
+        public static void Configure(DbContextOptionsBuilder<AcmStatisticsBackendDbContext> builder, string connectionString)
         {
-            builder
-                .UseLazyLoadingProxies()
-                .UseMySql(connectionString);
+            builder.UseMySql(connectionString);
         }
 
-        public static void Configure(DbContextOptionsBuilder<AcmStatisticsBackendDbContext> builder,
-            DbConnection connection)
+        public static void Configure(DbContextOptionsBuilder<AcmStatisticsBackendDbContext> builder, DbConnection connection)
         {
-            builder
-                .UseLazyLoadingProxies()
-                .UseMySql(connection);
+            builder.UseMySql(connection);
         }
     }
 }

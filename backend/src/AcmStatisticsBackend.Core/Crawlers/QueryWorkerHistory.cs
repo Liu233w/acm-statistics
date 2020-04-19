@@ -15,7 +15,7 @@ namespace AcmStatisticsBackend.Crawlers
         /// 关联的 AcHistory
         /// </summary>
         [Required]
-        public virtual QueryHistory QueryHistory { get; set; }
+        public QueryHistory QueryHistory { get; set; }
 
         public long QueryHistoryId { get; set; }
 
