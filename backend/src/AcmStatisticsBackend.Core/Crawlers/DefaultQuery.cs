@@ -11,7 +11,7 @@ namespace AcmStatisticsBackend.Crawlers
     public class DefaultQuery : FullAuditedEntity<long, User>
     {
         [Required]
-        public virtual User User { get; set; }
+        public User User { get; set; }
 
         public long UserId { get; set; }
 

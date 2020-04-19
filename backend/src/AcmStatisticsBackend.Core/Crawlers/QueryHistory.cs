@@ -18,7 +18,7 @@ namespace AcmStatisticsBackend.Crawlers
         /// <summary>
         /// 跟此记录关联的用户
         /// </summary>
-        public virtual User User { get; set; }
+        public User User { get; set; }
 
         public long UserId { get; set; }
 
@@ -45,6 +45,6 @@ namespace AcmStatisticsBackend.Crawlers
         /// 包含在本次查询记录中的，每个爬虫的查询记录
         /// </summary>
         [Required]
-        public virtual ICollection<QueryWorkerHistory> QueryWorkerHistories { get; set; }
+        public ICollection<QueryWorkerHistory> QueryWorkerHistories { get; set; }
     }
 }

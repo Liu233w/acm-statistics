@@ -86,8 +86,6 @@ namespace AcmStatisticsBackend.Crawlers
         public async Task<ListResultDto<QueryWorkerHistoryDto>> GetQueryWorkerHistories(GetAcWorkerHistoryInput input)
         {
             var entity = await GetAuthorizedEntity(input.QueryHistoryId);
-            // 目前abp的测试还不支持 LazyLoading，尽管实际程序里可以用，这里还是得手动加载
-            // TODO: 等到abp更新之后看看这里还支不支持
             var entityList = await _acWorkerHistoryRepository.GetAll()
                 .Where(e => e.QueryHistoryId == entity.Id)
                 .ToListAsync();
