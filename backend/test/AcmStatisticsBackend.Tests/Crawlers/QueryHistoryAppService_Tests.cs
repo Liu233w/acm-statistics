@@ -12,35 +12,35 @@ using Xunit;
 
 namespace AcmStatisticsBackend.Tests.Crawlers
 {
-    public class AcHistoryAppService_Tests : AcmStatisticsBackendTestBase
+    public class QueryHistoryAppService_Tests : AcmStatisticsBackendTestBase
     {
-        private readonly IAcHistoryAppService _acHistoryAppService;
+        private readonly IQueryHistoryAppService _queryHistoryAppService;
 
         private readonly TestClockProvider _testClockProvider;
 
-        public AcHistoryAppService_Tests()
+        public QueryHistoryAppService_Tests()
         {
-            _acHistoryAppService = Resolve<AcHistoryAppService>();
+            _queryHistoryAppService = Resolve<QueryHistoryAppService>();
             _testClockProvider = new TestClockProvider();
             Clock.Provider = _testClockProvider;
         }
 
         [Fact]
-        public async Task SaveOrReplaceAcHistory_能够存储记录()
+        public async Task SaveOrReplaceQueryHistory_CanSaveRecord()
         {
             // arrange
             LoginAsDefaultTenantAdmin();
             _testClockProvider.Now = new DateTime(2020, 4, 1, 10, 0, 0);
 
             // act
-            await _acHistoryAppService.SaveOrReplaceAcHistory(new SaveOrReplaceAcHistoryInput
+            await _queryHistoryAppService.SaveOrReplaceQueryHistory(new SaveOrReplaceQueryHistoryInput
             {
                 Solved = 3,
                 Submission = 20,
                 MainUsername = "mainUser",
-                AcWorkerHistories = new List<AcWorkerHistoryDto>
+                QueryWorkerHistories = new List<QueryWorkerHistoryDto>
                 {
-                    new AcWorkerHistoryDto
+                    new QueryWorkerHistoryDto
                     {
                         Username = "u1",
                         CrawlerName = "c1",
@@ -55,7 +55,7 @@ namespace AcmStatisticsBackend.Tests.Crawlers
                             "p3",
                         },
                     },
-                    new AcWorkerHistoryDto
+                    new QueryWorkerHistoryDto
                     {
                         Username = "u2",
                         CrawlerName = "c2",
@@ -67,8 +67,8 @@ namespace AcmStatisticsBackend.Tests.Crawlers
             // assert
             await UsingDbContextAsync(async ctx =>
             {
-                (await ctx.AcHistories.CountAsync()).ShouldBe(1);
-                var acHistory = await ctx.AcHistories.FirstAsync();
+                (await ctx.QueryHistories.CountAsync()).ShouldBe(1);
+                var acHistory = await ctx.QueryHistories.FirstAsync();
                 acHistory.Solved.ShouldBe(3);
                 acHistory.Submission.ShouldBe(20);
                 Debug.Assert(AbpSession.UserId != null, "AbpSession.UserId != null");
@@ -76,15 +76,15 @@ namespace AcmStatisticsBackend.Tests.Crawlers
                 acHistory.CreationTime.ShouldBe(new DateTime(2020, 4, 1, 10, 0, 0));
                 acHistory.MainUsername.ShouldBe("mainUser");
 
-                (await ctx.AcWorkerHistories.CountAsync()).ShouldBe(2);
-                var list = await ctx.AcWorkerHistories.ToListAsync();
+                (await ctx.QueryWorkerHistories.CountAsync()).ShouldBe(2);
+                var list = await ctx.QueryWorkerHistories.ToListAsync();
                 list[0].WithIn(it =>
                 {
                     it.Solved.ShouldBe(3);
                     it.Submission.ShouldBe(20);
                     it.Username.ShouldBe("u1");
                     it.CrawlerName.ShouldBe("c1");
-                    it.AcHistoryId.ShouldBe(acHistory.Id);
+                    it.QueryHistoryId.ShouldBe(acHistory.Id);
                     it.ErrorMessage.ShouldBe(null);
                     it.HasSolvedList.ShouldBe(true);
                     it.SolvedList.ShouldBe(new string[]
@@ -105,21 +105,21 @@ namespace AcmStatisticsBackend.Tests.Crawlers
         }
 
         [Fact]
-        public async Task SaveOrReplaceAcHistory_能够顶掉同一天的记录()
+        public async Task SaveOrReplaceQueryHistory_CanReplaceRecordOfTheSameDay()
         {
             // arrange
             LoginAsDefaultTenantAdmin();
 
             // act
             _testClockProvider.Now = new DateTime(2020, 4, 1, 10, 0, 0);
-            await _acHistoryAppService.SaveOrReplaceAcHistory(new SaveOrReplaceAcHistoryInput
+            await _queryHistoryAppService.SaveOrReplaceQueryHistory(new SaveOrReplaceQueryHistoryInput
             {
                 Solved = 1,
                 Submission = 10,
                 MainUsername = "u1",
-                AcWorkerHistories = new List<AcWorkerHistoryDto>
+                QueryWorkerHistories = new List<QueryWorkerHistoryDto>
                 {
-                    new AcWorkerHistoryDto
+                    new QueryWorkerHistoryDto
                     {
                         CrawlerName = "c1",
                         Username = "u1",
@@ -132,14 +132,14 @@ namespace AcmStatisticsBackend.Tests.Crawlers
 
             // 第二次存储
             _testClockProvider.Now = new DateTime(2020, 4, 1, 20, 0, 0);
-            await _acHistoryAppService.SaveOrReplaceAcHistory(new SaveOrReplaceAcHistoryInput
+            await _queryHistoryAppService.SaveOrReplaceQueryHistory(new SaveOrReplaceQueryHistoryInput
             {
                 Solved = 5,
                 Submission = 10,
                 MainUsername = "u1",
-                AcWorkerHistories = new List<AcWorkerHistoryDto>
+                QueryWorkerHistories = new List<QueryWorkerHistoryDto>
                 {
-                    new AcWorkerHistoryDto
+                    new QueryWorkerHistoryDto
                     {
                         CrawlerName = "c1",
                         Username = "u1",
@@ -153,33 +153,33 @@ namespace AcmStatisticsBackend.Tests.Crawlers
             // assert
             await UsingDbContextAsync(async ctx =>
             {
-                (await ctx.AcHistories.CountAsync()).ShouldBe(1);
-                var history = await ctx.AcHistories.FirstAsync();
+                (await ctx.QueryHistories.CountAsync()).ShouldBe(1);
+                var history = await ctx.QueryHistories.FirstAsync();
                 history.Solved.ShouldBe(5);
 
-                (await ctx.AcWorkerHistories.CountAsync()).ShouldBe(1);
-                var workerHistory = await ctx.AcWorkerHistories.FirstAsync();
-                workerHistory.AcHistoryId.ShouldBe(history.Id);
+                (await ctx.QueryWorkerHistories.CountAsync()).ShouldBe(1);
+                var workerHistory = await ctx.QueryWorkerHistories.FirstAsync();
+                workerHistory.QueryHistoryId.ShouldBe(history.Id);
                 workerHistory.Solved.ShouldBe(5);
             });
         }
 
         [Fact]
-        public async Task SaveOrReplaceAcHistory_能够保留不同天的记录()
+        public async Task SaveOrReplaceAcHistory_ShouldKeepRecordsOfDifferentDays()
         {
             // arrange
             LoginAsDefaultTenantAdmin();
 
             // act
             _testClockProvider.Now = new DateTime(2020, 4, 1, 10, 0, 0);
-            await _acHistoryAppService.SaveOrReplaceAcHistory(new SaveOrReplaceAcHistoryInput
+            await _queryHistoryAppService.SaveOrReplaceQueryHistory(new SaveOrReplaceQueryHistoryInput
             {
                 Solved = 1,
                 Submission = 10,
                 MainUsername = "u1",
-                AcWorkerHistories = new List<AcWorkerHistoryDto>
+                QueryWorkerHistories = new List<QueryWorkerHistoryDto>
                 {
-                    new AcWorkerHistoryDto
+                    new QueryWorkerHistoryDto
                     {
                         CrawlerName = "c1",
                         Username = "u1",
@@ -192,14 +192,14 @@ namespace AcmStatisticsBackend.Tests.Crawlers
 
             // 第二次存储
             _testClockProvider.Now = new DateTime(2020, 4, 2, 10, 0, 0);
-            await _acHistoryAppService.SaveOrReplaceAcHistory(new SaveOrReplaceAcHistoryInput
+            await _queryHistoryAppService.SaveOrReplaceQueryHistory(new SaveOrReplaceQueryHistoryInput
             {
                 Solved = 5,
                 Submission = 10,
                 MainUsername = "u1",
-                AcWorkerHistories = new List<AcWorkerHistoryDto>
+                QueryWorkerHistories = new List<QueryWorkerHistoryDto>
                 {
-                    new AcWorkerHistoryDto
+                    new QueryWorkerHistoryDto
                     {
                         CrawlerName = "c1",
                         Username = "u1",
@@ -213,25 +213,25 @@ namespace AcmStatisticsBackend.Tests.Crawlers
             // assert
             await UsingDbContextAsync(async ctx =>
             {
-                (await ctx.AcHistories.CountAsync()).ShouldBe(2);
-                (await ctx.AcWorkerHistories.CountAsync()).ShouldBe(2);
+                (await ctx.QueryHistories.CountAsync()).ShouldBe(2);
+                (await ctx.QueryWorkerHistories.CountAsync()).ShouldBe(2);
             });
         }
 
         [Fact]
-        public async Task DeleteAcHistory_能够移除AcHistory和AcWorkerHistory()
+        public async Task DeleteAcHistory_ShouldRemoveAcHistoryAndAcWorkerHistoryAtTheSameTime()
         {
             // arrange
             LoginAsDefaultTenantAdmin();
             _testClockProvider.Now = new DateTime(2020, 4, 1, 10, 0, 0);
-            await _acHistoryAppService.SaveOrReplaceAcHistory(new SaveOrReplaceAcHistoryInput
+            await _queryHistoryAppService.SaveOrReplaceQueryHistory(new SaveOrReplaceQueryHistoryInput
             {
                 Solved = 1,
                 Submission = 10,
                 MainUsername = "u1",
-                AcWorkerHistories = new List<AcWorkerHistoryDto>
+                QueryWorkerHistories = new List<QueryWorkerHistoryDto>
                 {
-                    new AcWorkerHistoryDto
+                    new QueryWorkerHistoryDto
                     {
                         CrawlerName = "c1",
                         Username = "u1",
@@ -243,7 +243,7 @@ namespace AcmStatisticsBackend.Tests.Crawlers
             });
 
             // act
-            await _acHistoryAppService.DeleteAcHistory(new DeleteAcHistoryInput
+            await _queryHistoryAppService.DeleteQueryHistory(new DeleteQueryHistoryInput
             {
                 Id = 1,
             });
@@ -251,20 +251,20 @@ namespace AcmStatisticsBackend.Tests.Crawlers
             // assert
             await UsingDbContextAsync(async ctx =>
             {
-                (await ctx.AcHistories.CountAsync()).ShouldBe(0);
-                (await ctx.AcWorkerHistories.CountAsync()).ShouldBe(0);
+                (await ctx.QueryHistories.CountAsync()).ShouldBe(0);
+                (await ctx.QueryWorkerHistories.CountAsync()).ShouldBe(0);
             });
         }
 
         [Fact]
-        public async Task GetAcHistory_能够正确获取数据()
+        public async Task GetAcHistory_ShouldWorkCorrectly()
         {
             // arrange
             LoginAsDefaultTenantAdmin();
             await UsingDbContextAsync(async ctx =>
             {
                 Debug.Assert(AbpSession.UserId != null, "AbpSession.UserId != null");
-                await ctx.AcHistories.AddAsync(new AcHistory
+                await ctx.QueryHistories.AddAsync(new QueryHistory
                 {
                     Solved = 1,
                     Submission = 10,
@@ -275,7 +275,7 @@ namespace AcmStatisticsBackend.Tests.Crawlers
             });
 
             // act
-            var result = await _acHistoryAppService.GetAcHistory(new PagedResultRequestDto
+            var result = await _queryHistoryAppService.GetQueryHistories(new PagedResultRequestDto
             {
                 SkipCount = 0,
                 MaxResultCount = 5,
@@ -293,16 +293,16 @@ namespace AcmStatisticsBackend.Tests.Crawlers
         }
 
         [Fact]
-        public async Task GetAcHistory_能够按照正确顺序获取数据()
+        public async Task GetAcHistory_ShouldReturnHistoriesInCorrectOrder()
         {
             // arrange
             LoginAsDefaultTenantAdmin();
             await UsingDbContextAsync(async ctx =>
             {
                 Debug.Assert(AbpSession.UserId != null, "AbpSession.UserId != null");
-                await ctx.AcHistories.AddRangeAsync(new[]
+                await ctx.QueryHistories.AddRangeAsync(new[]
                 {
-                    new AcHistory
+                    new QueryHistory
                     {
                         Solved = 1,
                         Submission = 10,
@@ -310,7 +310,7 @@ namespace AcmStatisticsBackend.Tests.Crawlers
                         CreationTime = new DateTime(2020, 4, 1, 10, 0, 0),
                         UserId = AbpSession.UserId.Value,
                     },
-                    new AcHistory
+                    new QueryHistory
                     {
                         Solved = 2,
                         Submission = 11,
@@ -322,7 +322,7 @@ namespace AcmStatisticsBackend.Tests.Crawlers
             });
 
             // act
-            var result = await _acHistoryAppService.GetAcHistory(new PagedResultRequestDto
+            var result = await _queryHistoryAppService.GetQueryHistories(new PagedResultRequestDto
             {
                 SkipCount = 0,
                 MaxResultCount = 5,
@@ -347,19 +347,19 @@ namespace AcmStatisticsBackend.Tests.Crawlers
         }
 
         [Fact]
-        public async Task GetAcWorkerHistory_能够获取正确记录()
+        public async Task GetAcWorkerHistory_ShouldWorkCorrectly()
         {
             // arrange
             LoginAsDefaultTenantAdmin();
             _testClockProvider.Now = new DateTime(2020, 4, 1, 10, 0, 0);
-            await _acHistoryAppService.SaveOrReplaceAcHistory(new SaveOrReplaceAcHistoryInput
+            await _queryHistoryAppService.SaveOrReplaceQueryHistory(new SaveOrReplaceQueryHistoryInput
             {
                 Solved = 3,
                 Submission = 20,
                 MainUsername = "mainUser",
-                AcWorkerHistories = new List<AcWorkerHistoryDto>
+                QueryWorkerHistories = new List<QueryWorkerHistoryDto>
                 {
-                    new AcWorkerHistoryDto
+                    new QueryWorkerHistoryDto
                     {
                         Username = "u1",
                         CrawlerName = "c1",
@@ -374,7 +374,7 @@ namespace AcmStatisticsBackend.Tests.Crawlers
                             "p3",
                         },
                     },
-                    new AcWorkerHistoryDto
+                    new QueryWorkerHistoryDto
                     {
                         Username = "u2",
                         CrawlerName = "c2",
@@ -383,13 +383,13 @@ namespace AcmStatisticsBackend.Tests.Crawlers
                 },
             });
 
-            var historyResponse = await _acHistoryAppService.GetAcHistory(new PagedResultRequestDto());
+            var historyResponse = await _queryHistoryAppService.GetQueryHistories(new PagedResultRequestDto());
             var historyId = historyResponse.Items[0].Id;
 
             // act
-            var list = await _acHistoryAppService.GetAcWorkerHistory(new GetAcWorkerHistoryInput
+            var list = await _queryHistoryAppService.GetQueryWorkerHistories(new GetAcWorkerHistoryInput
             {
-                AcHistoryId = historyId,
+                QueryHistoryId = historyId,
             });
 
             // assert

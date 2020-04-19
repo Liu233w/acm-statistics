@@ -5,9 +5,14 @@ using Abp.AutoMapper;
 
 namespace AcmStatisticsBackend.Crawlers.Dto
 {
-    [AutoMapTo(typeof(AcHistory))]
-    public class SaveOrReplaceAcHistoryInput
+    [AutoMap(typeof(QueryHistory))]
+    public class GetQueryHistoryOutput
     {
+        public long Id { get; set; }
+
+        [Required]
+        public DateTime CreationTime { get; set; }
+
         /// <summary>
         /// 查询历史记录中的主用户名，可以为空字符串。
         /// </summary>
@@ -26,7 +31,5 @@ namespace AcmStatisticsBackend.Crawlers.Dto
         /// </summary>
         [Range(0, int.MaxValue)]
         public int Solved { get; set; }
-
-        public ICollection<AcWorkerHistoryDto> AcWorkerHistories { get; set; }
     }
 }

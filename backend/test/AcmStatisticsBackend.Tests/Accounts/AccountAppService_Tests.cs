@@ -160,14 +160,14 @@ namespace AcmStatisticsBackend.Tests.Accounts
                     { "c1", new List<string> { "u1" } },
                 },
             });
-            await Resolve<IAcHistoryAppService>().SaveOrReplaceAcHistory(new SaveOrReplaceAcHistoryInput
+            await Resolve<IQueryHistoryAppService>().SaveOrReplaceQueryHistory(new SaveOrReplaceQueryHistoryInput
             {
                 Solved = 1,
                 Submission = 1,
                 MainUsername = "m",
-                AcWorkerHistories = new List<AcWorkerHistoryDto>
+                QueryWorkerHistories = new List<QueryWorkerHistoryDto>
                 {
-                    new AcWorkerHistoryDto
+                    new QueryWorkerHistoryDto
                     {
                         Solved = 1,
                         Submission = 1,
@@ -185,7 +185,7 @@ namespace AcmStatisticsBackend.Tests.Accounts
             await UsingDbContextAsync(1, async ctx =>
             {
                 (await ctx.DefaultQueries.CountAsync()).ShouldBe(0);
-                (await ctx.AcHistories.CountAsync()).ShouldBe(0);
+                (await ctx.QueryHistories.CountAsync()).ShouldBe(0);
             });
         }
 

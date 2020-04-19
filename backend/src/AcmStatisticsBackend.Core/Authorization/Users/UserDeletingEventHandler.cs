@@ -11,10 +11,10 @@ namespace AcmStatisticsBackend.Authorization.Users
     public class UserDeletingEventHandler : IAsyncEventHandler<EntityDeletingEventData<User>>, ITransientDependency
     {
         private readonly IRepository<DefaultQuery, long> _defaultQueryRepository;
-        private readonly IRepository<AcHistory, long> _acHistoryRepository;
+        private readonly IRepository<QueryHistory, long> _acHistoryRepository;
 
         public UserDeletingEventHandler(IRepository<DefaultQuery, long> defaultQueryRepository,
-            IRepository<AcHistory, long> acHistoryRepository)
+            IRepository<QueryHistory, long> acHistoryRepository)
         {
             _defaultQueryRepository = defaultQueryRepository;
             _acHistoryRepository = acHistoryRepository;

@@ -16,9 +16,9 @@ namespace AcmStatisticsBackend.EntityFrameworkCore
 
         public DbSet<DefaultQuery> DefaultQueries { get; set; }
 
-        public DbSet<AcHistory> AcHistories { get; set; }
+        public DbSet<QueryHistory> QueryHistories { get; set; }
 
-        public DbSet<AcWorkerHistory> AcWorkerHistories { get; set; }
+        public DbSet<QueryWorkerHistory> QueryWorkerHistories { get; set; }
 
         public AcmStatisticsBackendDbContext(DbContextOptions<AcmStatisticsBackendDbContext> options)
             : base(options)
@@ -35,7 +35,7 @@ namespace AcmStatisticsBackend.EntityFrameworkCore
                     v => JsonConvert.SerializeObject(v),
                     v => JsonConvert.DeserializeObject<Dictionary<string, List<string>>>(v));
 
-            modelBuilder.Entity<AcWorkerHistory>()
+            modelBuilder.Entity<QueryWorkerHistory>()
                 .Property(e => e.SolvedList)
                 .HasConversion(v => JsonConvert.SerializeObject(v),
                     v => JsonConvert.DeserializeObject<string[]>(v));

@@ -9,15 +9,15 @@ namespace AcmStatisticsBackend.Crawlers
     /// <summary>
     /// 用户在单个爬虫上的一次历史记录
     /// </summary>
-    public class AcWorkerHistory : Entity<long>
+    public class QueryWorkerHistory : Entity<long>
     {
         /// <summary>
         /// 关联的 AcHistory
         /// </summary>
         [Required]
-        public virtual AcHistory AcHistory { get; set; }
+        public virtual QueryHistory QueryHistory { get; set; }
 
-        public long AcHistoryId { get; set; }
+        public long QueryHistoryId { get; set; }
 
         /// <summary>
         /// 爬虫名称。前端可以根据元数据从此名称获取爬虫标题。

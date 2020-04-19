@@ -2,7 +2,7 @@
 
 namespace AcmStatisticsBackend.Crawlers.Dto
 {
-    public class DeleteAcHistoryInput
+    public class DeleteQueryHistoryInput
     {
         /// <summary>
         /// 根据ID来删除历史记录
