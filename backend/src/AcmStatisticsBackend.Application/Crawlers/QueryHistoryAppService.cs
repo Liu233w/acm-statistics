@@ -115,9 +115,6 @@ namespace AcmStatisticsBackend.Crawlers
         /// </summary>
         private async Task DoDeleteHistory(QueryHistory entity)
         {
-            // 虽然MySql有Cascade删除，但是InMemoryDB还不支持这个。为了测试方便，这里手动删除一下。
-            // TODO: 等到 https://github.com/dotnet/efcore/issues/3924 修复之后就把这里去掉
-            await _acWorkerHistoryRepository.DeleteAsync(e => e.QueryHistoryId == entity.Id);
             await _acHistoryRepository.DeleteAsync(entity);
         }
     }

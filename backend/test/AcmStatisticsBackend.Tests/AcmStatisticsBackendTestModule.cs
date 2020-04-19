@@ -13,9 +13,6 @@ using Castle.MicroKernel.Registration;
 using NSubstitute;
 using Xunit;
 
-// Some tests relate to Clock, which may cause error on parallelism.
-[assembly: CollectionBehavior(DisableTestParallelization = true)]
-
 namespace AcmStatisticsBackend.Tests
 {
     [DependsOn(
