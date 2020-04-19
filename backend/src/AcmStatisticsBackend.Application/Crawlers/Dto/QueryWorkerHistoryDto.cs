@@ -5,8 +5,8 @@ using Abp.Runtime.Validation;
 
 namespace AcmStatisticsBackend.Crawlers.Dto
 {
-    [AutoMap(typeof(AcWorkerHistory))]
-    public class AcWorkerHistoryDto : ICustomValidate
+    [AutoMap(typeof(QueryWorkerHistory))]
+    public class QueryWorkerHistoryDto : ICustomValidate
     {
         /// <summary>
         /// 爬虫名称。前端可以根据元数据从此名称获取爬虫标题。

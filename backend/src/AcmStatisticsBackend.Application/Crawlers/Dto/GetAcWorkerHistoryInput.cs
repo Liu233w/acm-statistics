@@ -5,6 +5,6 @@ namespace AcmStatisticsBackend.Crawlers.Dto
     public class GetAcWorkerHistoryInput
     {
         [Range(0, long.MaxValue)]
-        public long AcHistoryId { get; set; }
+        public long QueryHistoryId { get; set; }
     }
 }

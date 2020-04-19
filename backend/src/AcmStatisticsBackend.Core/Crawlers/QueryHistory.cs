@@ -10,7 +10,7 @@ namespace AcmStatisticsBackend.Crawlers
     /// <summary>
     /// 一次查询历史记录
     /// </summary>
-    public class AcHistory : Entity<long>, IHasCreationTime
+    public class QueryHistory : Entity<long>, IHasCreationTime
     {
         [Required]
         public DateTime CreationTime { get; set; }
@@ -45,6 +45,6 @@ namespace AcmStatisticsBackend.Crawlers
         /// 包含在本次查询记录中的，每个爬虫的查询记录
         /// </summary>
         [Required]
-        public virtual ICollection<AcWorkerHistory> AcWorkerHistories { get; set; }
+        public virtual ICollection<QueryWorkerHistory> QueryWorkerHistories { get; set; }
     }
 }

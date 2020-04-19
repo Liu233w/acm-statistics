@@ -13,23 +13,23 @@ using Microsoft.EntityFrameworkCore;
 
 namespace AcmStatisticsBackend.Crawlers
 {
-    /// <inheritdoc cref="IAcHistoryAppService"/>
+    /// <inheritdoc cref="IQueryHistoryAppService"/>
     [AbpAuthorize(PermissionNames.AcHistory_Histories)]
-    public class AcHistoryAppService : AcmStatisticsBackendAppServiceBase, IAcHistoryAppService
+    public class QueryHistoryAppService : AcmStatisticsBackendAppServiceBase, IQueryHistoryAppService
     {
-        private readonly IRepository<AcHistory, long> _acHistoryRepository;
+        private readonly IRepository<QueryHistory, long> _acHistoryRepository;
 
-        private readonly IRepository<AcWorkerHistory, long> _acWorkerHistoryRepository;
+        private readonly IRepository<QueryWorkerHistory, long> _acWorkerHistoryRepository;
 
-        public AcHistoryAppService(IRepository<AcHistory, long> acHistoryRepository,
-            IRepository<AcWorkerHistory, long> acWorkerHistoryRepository)
+        public QueryHistoryAppService(IRepository<QueryHistory, long> acHistoryRepository,
+            IRepository<QueryWorkerHistory, long> acWorkerHistoryRepository)
         {
             _acHistoryRepository = acHistoryRepository;
             _acWorkerHistoryRepository = acWorkerHistoryRepository;
         }
 
-        /// <inheritdoc cref="IAcHistoryAppService.SaveOrReplaceAcHistory"/>
-        public async Task SaveOrReplaceAcHistory(SaveOrReplaceAcHistoryInput input)
+        /// <inheritdoc cref="IQueryHistoryAppService.SaveOrReplaceQueryHistory"/>
+        public async Task SaveOrReplaceQueryHistory(SaveOrReplaceQueryHistoryInput input)
         {
             // 移除同一天的记录
             // TODO: 目前是UTC时间。可以改成用户的时区。
@@ -43,15 +43,15 @@ namespace AcmStatisticsBackend.Crawlers
             }
 
             // 添加新记录
-            var acHistory = ObjectMapper.Map<AcHistory>(input);
+            var acHistory = ObjectMapper.Map<QueryHistory>(input);
             Debug.Assert(AbpSession.UserId != null, "AbpSession.UserId != null");
             acHistory.UserId = AbpSession.UserId.Value;
             // 会自动添加关联的 AcWorkerHistory
             await _acHistoryRepository.InsertAsync(acHistory);
         }
 
-        /// <inheritdoc cref="IAcHistoryAppService.DeleteAcHistory"/>
-        public async Task DeleteAcHistory(DeleteAcHistoryInput input)
+        /// <inheritdoc cref="IQueryHistoryAppService.DeleteQueryHistory"/>
+        public async Task DeleteQueryHistory(DeleteQueryHistoryInput input)
         {
             if (input.Id.HasValue)
             {
@@ -69,8 +69,8 @@ namespace AcmStatisticsBackend.Crawlers
             }
         }
 
-        /// <inheritdoc cref="IAcHistoryAppService.GetAcHistory"/>
-        public async Task<PagedResultDto<GetAcHistoryOutput>> GetAcHistory(PagedResultRequestDto input)
+        /// <inheritdoc cref="IQueryHistoryAppService.GetQueryHistories"/>
+        public async Task<PagedResultDto<GetQueryHistoryOutput>> GetQueryHistories(PagedResultRequestDto input)
         {
             var list = await _acHistoryRepository.GetAll()
                 .Where(e => e.UserId == AbpSession.UserId.Value)
@@ -78,21 +78,21 @@ namespace AcmStatisticsBackend.Crawlers
                 .PageBy(input)
                 .ToListAsync();
 
-            var resultList = ObjectMapper.Map<List<GetAcHistoryOutput>>(list);
-            return new PagedResultDto<GetAcHistoryOutput>(resultList.Count, resultList);
+            var resultList = ObjectMapper.Map<List<GetQueryHistoryOutput>>(list);
+            return new PagedResultDto<GetQueryHistoryOutput>(resultList.Count, resultList);
         }
 
-        /// <inheritdoc cref="IAcHistoryAppService.GetAcWorkerHistory"/>
-        public async Task<ListResultDto<AcWorkerHistoryDto>> GetAcWorkerHistory(GetAcWorkerHistoryInput input)
+        /// <inheritdoc cref="IQueryHistoryAppService.GetQueryWorkerHistories"/>
+        public async Task<ListResultDto<QueryWorkerHistoryDto>> GetQueryWorkerHistories(GetAcWorkerHistoryInput input)
         {
-            var entity = await GetAuthorizedEntity(input.AcHistoryId);
+            var entity = await GetAuthorizedEntity(input.QueryHistoryId);
             // 目前abp的测试还不支持 LazyLoading，尽管实际程序里可以用，这里还是得手动加载
             // TODO: 等到abp更新之后看看这里还支不支持
             var entityList = await _acWorkerHistoryRepository.GetAll()
-                .Where(e => e.AcHistoryId == entity.Id)
+                .Where(e => e.QueryHistoryId == entity.Id)
                 .ToListAsync();
-            var list = ObjectMapper.Map<List<AcWorkerHistoryDto>>(entityList);
-            return new ListResultDto<AcWorkerHistoryDto>(list);
+            var list = ObjectMapper.Map<List<QueryWorkerHistoryDto>>(entityList);
+            return new ListResultDto<QueryWorkerHistoryDto>(list);
         }
 
         /// <summary>
@@ -101,7 +101,7 @@ namespace AcmStatisticsBackend.Crawlers
         /// <param name="id">AcHistory的ID</param>
         /// <returns>AcHistory</returns>
         /// <exception cref="AbpAuthorizationException">如果该对象不是由此用户创建，抛出异常</exception>
-        private async Task<AcHistory> GetAuthorizedEntity(long id)
+        private async Task<QueryHistory> GetAuthorizedEntity(long id)
         {
             var acHistory = await _acHistoryRepository.GetAsync(id);
             if (acHistory.UserId != AbpSession.UserId)
@@ -115,11 +115,11 @@ namespace AcmStatisticsBackend.Crawlers
         /// <summary>
         /// 移除 AcHistory 和与其关联的 AcWorkerHistory，不检查用户是否有权限访问这个Entity
         /// </summary>
-        private async Task DoDeleteHistory(AcHistory entity)
+        private async Task DoDeleteHistory(QueryHistory entity)
         {
             // 虽然MySql有Cascade删除，但是InMemoryDB还不支持这个。为了测试方便，这里手动删除一下。
             // TODO: 等到 https://github.com/dotnet/efcore/issues/3924 修复之后就把这里去掉
-            await _acWorkerHistoryRepository.DeleteAsync(e => e.AcHistoryId == entity.Id);
+            await _acWorkerHistoryRepository.DeleteAsync(e => e.QueryHistoryId == entity.Id);
             await _acHistoryRepository.DeleteAsync(entity);
         }
     }
