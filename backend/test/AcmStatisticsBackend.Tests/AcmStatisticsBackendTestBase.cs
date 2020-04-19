@@ -37,6 +37,8 @@ namespace AcmStatisticsBackend.Tests
             UsingDbContext(context =>
             {
                 NormalizeDbContext(context);
+                context.Database.EnsureCreated();
+
                 new InitialHostDbBuilder(context).Create();
                 new DefaultTenantBuilder(context).Create();
             });
