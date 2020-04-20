@@ -183,6 +183,7 @@
                       </tbody>
                     </template>
                   </v-simple-table>
+                  <bar-chart :chart-data="chartData" />
                 </v-col>
                 <v-spacer />
               </v-row>
@@ -232,10 +233,13 @@ import statisticsLayoutBuilder from '~/components/statisticsLayoutBuilder'
 import Store from '~/store/-dynamic/statistics'
 import { PROJECT_TITLE, WORKER_STATUS } from '~/components/consts'
 
+import BarChart from '~/components/BarChart'
+
 export default {
   name: 'Statistics',
   components: {
     WorkerCard,
+    BarChart,
   },
   head: {
     title: `AC Statistics - ${PROJECT_TITLE}`,
@@ -295,6 +299,25 @@ export default {
         solved: item.solved,
         submissions: item.submissions,
       }))
+    },
+    chartData() {
+      const solvedList = _.map(this.workerSummaryList, 'solved')
+      const submissionsList = _.map(this.workerSummaryList, 'submissions')
+      return {
+        labels: _.map(this.workerSummaryList, 'crawler'),
+        datasets: [
+          {
+            label: 'solved',
+            data: solvedList,
+            backgroundColor: '#6699ff',
+          },
+          {
+            label: 'submissions',
+            data: submissionsList,
+            backgroundColor: '#3d3d5c',
+          },
+        ],
+      }
     },
   },
   methods: {
