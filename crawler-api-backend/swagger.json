@@ -120,6 +120,14 @@
           "items": {
             "type": "string"
           }
+        },
+        "submissionsByCrawlerName": {
+          "type": "object",
+          "default": null,
+          "description": "If the crawler is virtual_judge, this field contains its submission count divided by crawler name.",
+          "additionalProperties": {
+            "type": "number"
+          }
         }
       }
     },
