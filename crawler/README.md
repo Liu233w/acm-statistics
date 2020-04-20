@@ -28,6 +28,9 @@
 - solvedList: {Array<String>|undefined|null} - 用户通过的题目列表，为 null 或 undefined 表示该爬虫目前无法统计题目列表。
     对于普通的爬虫（非 virtual judge），可以是如下的格式： "1001" 或者 "301-A" 之类的字符串，不需要附加爬虫名称。
     对于 virtual judge 爬虫，请参考下方的文档。
+- submissionsByCrawlerName: {Object.{string, number}} - Submissions in each oj, only exists when the crawler is a virtual_judge crawler
+    Key is the name of crawler. If crawler does not exists in config, the name defined by virtual_judge.
+    Value is the submission count of the OJ.
 
 ### 配置文件
 

@@ -47,23 +47,26 @@ module.exports = async function (config, username) {
   // console.log('vjudge login success')
 
   const acSet = new Set()
-  const submissions = await queryForNumber(agent, username, null, acSet)
+  const submissionsByCrawlerName = {}
+  const submissions = await queryForNumber(agent, username, null, acSet, submissionsByCrawlerName)
 
   return {
     solved: acSet.size,
     submissions: submissions,
-    solvedList: resolveSolvedList(acSet),
+    solvedList: [...acSet],
+    submissionsByCrawlerName,
   }
 }
 
 /**
- * 从 acSet 获得指定格式的 solvedList
- * @param {Set<String>} acSet
- * @return {String[]}
+ * take a oj name in virtual judge and map its name to crawler name
+ * 
+ * if name cannot be mapped, return original name
+ * @param {string} nameInVjudge 
  */
-function resolveSolvedList(acSet) {
+function mapOjName(nameInVjudge) {
 
-  // 可以简单地通过大小写转换来变成 crawler name 的 oj
+  // oj that can map its name to crawler name by changing into lower case
   const simpleMapOj = new Set([
     'codeforces',
     'uva',
@@ -79,7 +82,7 @@ function resolveSolvedList(acSet) {
     'aizu',
     'codechef',
   ])
-  // 可以用来映射的 crawler name
+  // crawler name map
   const ojMap = {
     '': 'NO_NAME',
     'LibreOJ': 'loj',
@@ -87,21 +90,13 @@ function resolveSolvedList(acSet) {
     'HYSBZ': 'dashiye',
   }
 
-  const res = []
-
-  for (let item of acSet) {
-    // 对于部分能识别的oj，将大写字母换成小写就是 crawler name 了
-    const [oj, problem] = item.split('-', 2)
-    if (simpleMapOj.has(oj.toLowerCase())) {
-      res.push(`${oj.toLowerCase()}-${problem}`)
-    } else if (oj in ojMap) {
-      res.push(`${ojMap[oj]}-${problem}`)
-    } else {
-      res.push(item)
-    }
+  if (simpleMapOj.has(nameInVjudge.toLowerCase())) {
+    return nameInVjudge.toLowerCase()
+  } else if (nameInVjudge in ojMap) {
+    return ojMap[nameInVjudge]
+  } else {
+    return nameInVjudge
   }
-
-  return res
 }
 
 const MAX_PAGE_SIZE = 500
@@ -111,10 +106,11 @@ const MAX_PAGE_SIZE = 500
  * @param agent
  * @param username
  * @param maxId
- * @param acSet {Set<{String}>} - ac的题目列表，会修改此对象
+ * @param {Set<{String}>} acSet The problem list that accepted, function will change this object
+ * @param {Object.{string, number}} submissionsByCrawlerName submissions in each oj, function will change this object
  * @returns {Promise<Number>}
  */
-async function queryForNumber(agent, username, maxId, acSet) {
+async function queryForNumber(agent, username, maxId, acSet, submissionsByCrawlerName) {
 
   // 发起请求 /////////////////////////////////////////////////////////////
   const queryObject = {
@@ -156,8 +152,14 @@ async function queryForNumber(agent, username, maxId, acSet) {
   }
 
   problemArray.forEach(function (element) {
+    const crawlerName = mapOjName(element[2])
+    if (!submissionsByCrawlerName[crawlerName]) {
+      submissionsByCrawlerName[crawlerName] = 1
+    } else {
+      submissionsByCrawlerName[crawlerName] += 1
+    }
     if (element[4] === 'AC') {
-      const title = element[2] + '-' + element[3]
+      const title = crawlerName + '-' + element[3]
       acSet.add(title)
     }
   })
@@ -181,7 +183,7 @@ async function queryForNumber(agent, username, maxId, acSet) {
     // 已经读完
     return total
   } else {
-    const ret = await queryForNumber(agent, username, newMaxId, acSet)
+    const ret = await queryForNumber(agent, username, newMaxId, acSet, submissionsByCrawlerName)
     return ret + total
   }
 }
