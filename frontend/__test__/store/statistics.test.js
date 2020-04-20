@@ -842,14 +842,16 @@ describe('getters', () => {
           cr3: {
             virtual_judge: true,
           },
-          cr4: {},
+          cr4: {
+            virtual_judge: true,
+          },
         },
       }
       const nullSolvedListWorkers = store.getters.nullSolvedListWorkers(state)
 
       const res = store.getters.solvedNum(state, { nullSolvedListWorkers })
 
-      expect(res).toBe(11)
+      expect(res).toBe(10)
     })
   })
 
