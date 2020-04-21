@@ -173,7 +173,7 @@
                       <tbody>
                         <tr
                           v-for="item in workerSummaryList"
-                          :key="`${item.crawler}-${item.username}`"
+                          :key="`${item.crawler}`"
                         >
                           <td>{{ item.crawler }}</td>
                           <td>{{ item.username }}</td>
