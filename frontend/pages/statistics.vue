@@ -134,21 +134,21 @@
             </v-toolbar>
             <v-container>
               <v-row justify="center">
-                <v-spacer />
                 <v-col>
-                  <v-list
-                    two-line
-                    subheader
-                  >
-                    <v-list-item>
+                  <v-list>
+                    <v-list-item v-if="username">
                       <v-list-item-content>
-                        <v-list-item-title>Main Username</v-list-item-title>
-                        <v-list-item-subtitle>{{ username }}</v-list-item-subtitle>
+                        <v-list-item-title><b>Main username:</b> {{ username }}</v-list-item-title>
                       </v-list-item-content>
                     </v-list-item>
                     <v-list-item>
                       <v-list-item-content>
                         <v-list-item-title>{{ summary }}</v-list-item-title>
+                      </v-list-item-content>
+                    </v-list-item>
+                    <v-list-item>
+                      <v-list-item-content>
+                        <v-list-item-title><b>Generated at</b> {{ updateDate }}</v-list-item-title>
                       </v-list-item-content>
                     </v-list-item>
                   </v-list>
@@ -183,9 +183,27 @@
                       </tbody>
                     </template>
                   </v-simple-table>
-                  <bar-chart :chart-data="chartData" />
+                  <bar-chart
+                    :chart-data="chartData"
+                    style="height: 300px"
+                  />
+                  <v-list dense>
+                    <v-subheader
+                      v-if="summaryForCrawler.warnings.length > 0"
+                      class="red--text"
+                    >
+                      WARNINGS
+                    </v-subheader>
+                    <v-list-item
+                      v-for="item in summaryForCrawler.warnings"
+                      :key="item"
+                    >
+                      <v-list-item-content>
+                        {{ item }}
+                      </v-list-item-content>
+                    </v-list-item>
+                  </v-list>
                 </v-col>
-                <v-spacer />
               </v-row>
             </v-container>
           </v-card>
@@ -231,7 +249,7 @@ import _ from 'lodash'
 import WorkerCard from '~/components/WorkerCard'
 import statisticsLayoutBuilder from '~/components/statisticsLayoutBuilder'
 import Store from '~/store/-dynamic/statistics'
-import { PROJECT_TITLE, WORKER_STATUS } from '~/components/consts'
+import { PROJECT_TITLE } from '~/components/consts'
 
 import BarChart from '~/components/BarChart'
 
@@ -262,6 +280,7 @@ export default {
       savingUsername: false,
       // summary dialog
       dialog: false,
+      updateDate: new Date(),
     }
   },
   computed: {
@@ -271,6 +290,7 @@ export default {
       'isWorking',
       'notWorkingRate',
       'workerIdxOfCrawler',
+      'summaryForCrawler',
     ]),
     username: {
       get() {
@@ -291,14 +311,24 @@ export default {
       return `SOLVED: ${this.solvedNum} / SUBMISSION: ${this.submissionsNum}`
     },
     workerSummaryList() {
-      const doneWorkers = _.filter(this.$store.state.statistics.workers,
-        worker => worker.username && worker.status === WORKER_STATUS.DONE && !worker.errorMessage)
-      return _.map(doneWorkers, item => ({
-        crawler: this.$store.state.statistics.crawlers[item.crawlerName].name,
-        username: item.username,
-        solved: item.solved,
-        submissions: item.submissions,
-      }))
+      // module not loaded
+      if (!this.summaryForCrawler) {
+        return []
+      }
+
+      const res = []
+      for (const crawlerName in this.summaryForCrawler.summaries) {
+        const summary = this.summaryForCrawler.summaries[crawlerName]
+        if (summary.usernames.size > 0) {
+          res.push({
+            crawler: summary.crawlerTitle,
+            username: [...summary.usernames].join(', '),
+            solved: summary.solvedSet.size,
+            submissions: summary.submissions,
+          })
+        }
+      }
+      return res
     },
     chartData() {
       const solvedList = _.map(this.workerSummaryList, 'solved')
@@ -318,6 +348,11 @@ export default {
           },
         ],
       }
+    },
+  },
+  watch: {
+    notWorkingRate() {
+      this.updateDate = new Date()
     },
   },
   methods: {

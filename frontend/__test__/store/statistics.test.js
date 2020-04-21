@@ -1,6 +1,8 @@
 import StoreContextSimulator from '../StoreContextSimulator'
 import { MUTATION_TYPES } from '../../store/-dynamic/statistics'
 
+import { WORKER_STATUS } from '../../components/consts'
+
 jest.mock('~/dynamic/crawlers', () => function () {
   return {
     metas: {
@@ -993,6 +995,247 @@ describe('getters', () => {
       expect(res).toMatchObject({
         cr1: 'cr1 title',
         cr3: 'cr3 title',
+      })
+    })
+  })
+
+  // TODO: test warnings, test submission numbers
+  describe('summaryForCrawler', () => {
+
+    it('should skip workers with no solvedList', () => {
+      const state = {
+        workers: [
+          {
+            username: 'u1',
+            solved: 1,
+            solvedList: null,
+            submissions: 3,
+            crawlerName: 'cr1',
+            status: WORKER_STATUS.DONE,
+          },
+          {
+            username: 'u2',
+            solved: 2,
+            solvedList: null,
+            submissions: 5,
+            crawlerName: 'cr1',
+            status: WORKER_STATUS.DONE,
+          },
+          {
+            username: 'u3',
+            solved: 4,
+            solvedList: null,
+            submissions: 10,
+            crawlerName: 'cr2',
+            status: WORKER_STATUS.DONE,
+          },
+        ],
+        crawlers: {
+          cr1: {
+            title: 'Cr1',
+          },
+          cr2: {
+            title: 'Cr2',
+          },
+        },
+      }
+
+      const res = store.getters.summaryForCrawler(state)
+
+      expect(res).toMatchObject({
+        cr1: {
+          crawlerTitle: 'Cr1',
+          usernames: new Set(),
+          solvedSet: new Set(),
+        },
+        cr2: {
+          crawlerTitle: 'Cr2',
+          usernames: new Set(),
+          solvedSet: new Set(),
+        },
+      })
+    })
+
+    it('can collect data of workers with list', () => {
+      const state = {
+        workers: [
+          {
+            username: 'u1',
+            solved: 1,
+            solvedList: ['1001'],
+            crawlerName: 'cr1',
+            status: WORKER_STATUS.DONE,
+          },
+          {
+            username: 'u2',
+            solved: 2,
+            solvedList: ['1001', '1002'],
+            crawlerName: 'cr2',
+            status: WORKER_STATUS.DONE,
+          },
+          {
+            username: 'u3',
+            solved: 1,
+            solvedList: ['1001'],
+            crawlerName: 'cr2',
+            status: WORKER_STATUS.DONE,
+          },
+        ],
+        crawlers: {
+          cr1: {
+            title: 'Cr1',
+          },
+          cr2: {
+            title: 'Cr2',
+          },
+        },
+      }
+      const res = store.getters.summaryForCrawler(state)
+
+      expect(res).toMatchObject({
+        cr1: {
+          crawlerTitle: 'Cr1',
+          usernames: new Set(['u1']),
+          solvedSet: new Set(['1001']),
+        },
+        cr2: {
+          crawlerTitle: 'Cr2',
+          usernames: new Set(['u2', 'u3']),
+          solvedSet: new Set(['1001', '1002']),
+        },
+      })
+    })
+
+    it('can collect data of workers with mixed type', () => {
+      const state = {
+        workers: [
+          {
+            username: 'u1',
+            solved: 1,
+            solvedList: ['1001'],
+            crawlerName: 'cr1',
+            status: WORKER_STATUS.DONE,
+          },
+          {
+            username: 'u2',
+            solved: 4,
+            solvedList: null,
+            crawlerName: 'cr1',
+            status: WORKER_STATUS.DONE,
+          },
+          {
+            username: 'u3',
+            solved: 2,
+            solvedList: ['1001', '1002'],
+            crawlerName: 'cr2',
+            status: WORKER_STATUS.DONE,
+          },
+        ],
+        crawlers: {
+          cr1: {
+            title: 'Cr1',
+          },
+          cr2: {
+            title: 'Cr2',
+          },
+        },
+      }
+      const res = store.getters.summaryForCrawler(state)
+
+      expect(res).toMatchObject({
+        cr1: {
+          crawlerTitle: 'Cr1',
+          usernames: new Set(['u1']),
+          solvedSet: new Set(['1001']),
+        },
+        cr2: {
+          crawlerTitle: 'Cr2',
+          usernames: new Set(['u3']),
+          solvedSet: new Set(['1001', '1002']),
+        },
+      })
+    })
+
+    it('can collect data of virtual_judge workers', () => {
+      const state = {
+        workers: [
+          {
+            username: 'u1',
+            solved: 1,
+            solvedList: ['1001'],
+            crawlerName: 'cr1',
+            status: WORKER_STATUS.DONE,
+          },
+          {
+            username: 'u2',
+            solved: 4,
+            solvedList: null,
+            crawlerName: 'cr1',
+            status: WORKER_STATUS.DONE,
+          },
+          {
+            username: 'u3',
+            solved: 2,
+            solvedList: ['1001', '1002'],
+            crawlerName: 'cr2',
+            status: WORKER_STATUS.DONE,
+          },
+          {
+            username: 'u4',
+            solved: 5,
+            solvedList: ['cr1-1001', 'cr1-1002', 'cr2-1002', 'cr2-1003', 'NN-1001'],
+            crawlerName: 'cr3',
+            status: WORKER_STATUS.DONE,
+          },
+          { // redundant name
+            username: 'u5',
+            solved: 1,
+            solvedList: ['cr1-1001'],
+            crawlerName: 'cr4',
+            status: WORKER_STATUS.DONE,
+          },
+        ],
+        crawlers: {
+          cr1: {
+            title: 'Cr1',
+          },
+          cr2: {
+            title: 'Cr2',
+          },
+          cr3: {
+            title: 'Cr3',
+            virtual_judge: true,
+          },
+          cr4: {
+            title: 'Cr4',
+            virtual_judge: true,
+          },
+        },
+      }
+
+      const res = store.getters.summaryForCrawler(state)
+
+      expect(res).toMatchObject({
+        cr1: {
+          crawlerTitle: 'Cr1',
+          usernames: new Set(['u1', '[u4 in Cr3]', '[u5 in Cr4]']),
+          solvedSet: new Set(['1001', '1002']),
+        },
+        cr2: {
+          crawlerTitle: 'Cr2',
+          usernames: new Set(['u3', '[u4 in Cr3]']),
+          solvedSet: new Set(['1001', '1002', '1003']),
+        },
+        cr3: {
+          crawlerTitle: 'Cr3(Not Merged)',
+          usernames: new Set(['u4']),
+          solvedSet: new Set(['NN-1001']),
+        },
+        cr4: {
+          crawlerTitle: 'Cr4(Not Merged)',
+          usernames: new Set(['u5']),
+          solvedSet: new Set(),
+        },
       })
     })
   })
