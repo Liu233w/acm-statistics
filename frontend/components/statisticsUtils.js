@@ -41,8 +41,8 @@ export function warningHelper(worker, crawlerMeta, {nullSolvedListCrawlers, work
 
   if (!_.isNil(worker.solvedList)
     && worker.solvedList.length !== worker.solved) {
-    warnings.push(`The AC number of this crawler is ${worker.solved}, however, there are ${worker.solvedList.length}` +
-      ' problems in the AC list, which can be an error of the crawler.')
+    warnings.push(`The solved number of this crawler is ${worker.solved}, however, there are ${worker.solvedList.length}` +
+      ' problems in the solved list, which can be an error of the crawler.')
   }
 
   return warnings
