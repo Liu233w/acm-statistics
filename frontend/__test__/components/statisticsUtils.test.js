@@ -116,7 +116,7 @@ describe('warningHelper', () => {
     const res = warningHelper(worker, {}, {})
 
     expect(res).toMatchObject([
-      'The AC number of this crawler is 2, however, there are 1 problems in the AC list, which can be an error of the crawler.',
+      'The solved number of this crawler is 2, however, there are 1 problems in the solved list, which can be an error of the crawler.',
     ])
   })
 })
