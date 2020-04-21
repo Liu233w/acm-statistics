@@ -94,7 +94,7 @@ export const mutations = {
       }
     })
   },
-  [MUTATION_TYPES.setWorkerDone](state, { index, solved, submissions, solvedList }) {
+  [MUTATION_TYPES.setWorkerDone](state, { index, solved, submissions, solvedList, submissionsByCrawlerName }) {
     const worker = state.workers[index]
 
     worker.solved = solved
@@ -106,6 +106,9 @@ export const mutations = {
       worker.solvedList = Object.freeze(solvedList)
     } else {
       worker.solvedList = null
+    }
+    if (submissionsByCrawlerName) {
+      worker.submissionsByCrawlerName = submissionsByCrawlerName
     }
     worker.status = WORKER_STATUS.DONE
   },
@@ -371,6 +374,7 @@ function resetWorker(worker) {
   worker.errorMessage = ''
   worker.tokenKey = null
   worker.solvedList = []
+  worker.submissionsByCrawlerName = undefined
 
   if (!worker.key) {
     worker.key = Math.random()
