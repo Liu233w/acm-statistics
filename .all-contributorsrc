@@ -18,6 +18,16 @@
       ]
     },
     {
+      "login": "kidozh",
+      "name": "Kido Zhang",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/11661760?v=4",
+      "profile": "https://kidozh.com",
+      "contributions": [
+        "infra",
+        "ideas"
+      ]
+    },
+    {
       "login": "flylai",
       "name": "flylai",
       "avatar_url": "https://avatars2.githubusercontent.com/u/9880740?v=4",
@@ -91,15 +101,6 @@
       ]
     },
     {
-      "login": "kidozh",
-      "name": "Kido Zhang",
-      "avatar_url": "https://avatars3.githubusercontent.com/u/11661760?v=4",
-      "profile": "https://kidozh.com",
-      "contributions": [
-        "infra"
-      ]
-    },
-    {
       "login": "Meulsama",
       "name": "Meulsama",
       "avatar_url": "https://avatars1.githubusercontent.com/u/55663936?v=4",
@@ -110,6 +111,8 @@
     }
   ],
   "contributorsPerLine": 7,
+  "contributorTemplate": "<img src=\"<%= contributor.avatar_url %>\" width=\"<%= options.imageSize %>px;\" alt=\"\"/><br /><sub><a href=\"<%= contributor.profile %>\"><b><%= contributor.name %></b></a><a href=\"https://github.com/<%= contributor.login %>\">🔗</a></sub><br /><%= contributions %>",
+  "contributorsSortAlphabetically": true,
   "projectName": "acm-statistics",
   "projectOwner": "Liu233w",
   "repoType": "github",
