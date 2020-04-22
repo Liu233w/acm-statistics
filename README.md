@@ -9,7 +9,7 @@
 [![Mergify Status](https://img.shields.io/badge/Mergify-enabled-green.svg)](https://mergify.io)
 [![Deliverybot enabled](https://img.shields.io/badge/Deliverybot-enabled-blue.svg)](https://app.deliverybot.dev/Liu233w/acm-statistics/branch/master)
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-10-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-11-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 #### 构建状态
@@ -110,15 +110,16 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- markdownlint-disable -->
 <table>
   <tr>
+    <td align="center"><a href="https://liu233w.github.io"><img src="https://avatars2.githubusercontent.com/u/16333687?v=4" width="100px;" alt=""/><br /><sub><b>Liu233w</b></sub></a><br /><a href="https://github.com/Liu233w/acm-statistics/commits?author=Liu233w" title="Code">💻</a> <a href="#ideas-Liu233w" title="Ideas, Planning, & Feedback">🤔</a> <a href="#infra-Liu233w" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://github.com/Liu233w/acm-statistics/commits?author=Liu233w" title="Tests">⚠️</a></td>
     <td align="center"><a href="https://github.com/flylai"><img src="https://avatars2.githubusercontent.com/u/9880740?v=4" width="100px;" alt=""/><br /><sub><b>flylai</b></sub></a><br /><a href="https://github.com/Liu233w/acm-statistics/commits?author=flylai" title="Code">💻</a> <a href="https://github.com/Liu233w/acm-statistics/issues?q=author%3Aflylai" title="Bug reports">🐛</a></td>
     <td align="center"><a href="https://github.com/fzu-h4cky"><img src="https://avatars3.githubusercontent.com/u/36151020?v=4" width="100px;" alt=""/><br /><sub><b>fzu-h4cky</b></sub></a><br /><a href="https://github.com/Liu233w/acm-statistics/issues?q=author%3Afzu-h4cky" title="Bug reports">🐛</a></td>
     <td align="center"><a href="http://zhao.wtf"><img src="https://avatars1.githubusercontent.com/u/11994295?v=4" width="100px;" alt=""/><br /><sub><b>Zhao</b></sub></a><br /><a href="https://github.com/Liu233w/acm-statistics/issues?q=author%3A2512821228" title="Bug reports">🐛</a></td>
     <td align="center"><a href="https://www.cometeme.tech"><img src="https://avatars0.githubusercontent.com/u/22635759?v=4" width="100px;" alt=""/><br /><sub><b>Adelard Collins</b></sub></a><br /><a href="https://github.com/Liu233w/acm-statistics/issues?q=author%3Acometeme" title="Bug reports">🐛</a></td>
     <td align="center"><a href="https://github.com/ctuu"><img src="https://avatars3.githubusercontent.com/u/22322656?v=4" width="100px;" alt=""/><br /><sub><b>ct</b></sub></a><br /><a href="https://github.com/Liu233w/acm-statistics/issues?q=author%3Actuu" title="Bug reports">🐛</a></td>
     <td align="center"><a href="https://github.com/Geekxiong"><img src="https://avatars3.githubusercontent.com/u/25352156?v=4" width="100px;" alt=""/><br /><sub><b>Geekxiong</b></sub></a><br /><a href="#ideas-Geekxiong" title="Ideas, Planning, & Feedback">🤔</a></td>
-    <td align="center"><a href="https://github.com/settings/profile"><img src="https://avatars2.githubusercontent.com/u/39403985?v=4" width="100px;" alt=""/><br /><sub><b>Halorv</b></sub></a><br /><a href="#ideas-Halorv" title="Ideas, Planning, & Feedback">🤔</a></td>
   </tr>
   <tr>
+    <td align="center"><a href="https://github.com/settings/profile"><img src="https://avatars2.githubusercontent.com/u/39403985?v=4" width="100px;" alt=""/><br /><sub><b>Halorv</b></sub></a><br /><a href="#ideas-Halorv" title="Ideas, Planning, & Feedback">🤔</a></td>
     <td align="center"><a href="https://github.com/bodhisatan"><img src="https://avatars0.githubusercontent.com/u/35862184?v=4" width="100px;" alt=""/><br /><sub><b>Bodhisatan_Yao</b></sub></a><br /><a href="https://github.com/Liu233w/acm-statistics/issues?q=author%3Abodhisatan" title="Bug reports">🐛</a></td>
     <td align="center"><a href="https://kidozh.com"><img src="https://avatars3.githubusercontent.com/u/11661760?v=4" width="100px;" alt=""/><br /><sub><b>Kido Zhang</b></sub></a><br /><a href="#infra-kidozh" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
     <td align="center"><a href="https://github.com/Meulsama"><img src="https://avatars1.githubusercontent.com/u/55663936?v=4" width="100px;" alt=""/><br /><sub><b>Meulsama</b></sub></a><br /><a href="#ideas-Meulsama" title="Ideas, Planning, & Feedback">🤔</a></td>

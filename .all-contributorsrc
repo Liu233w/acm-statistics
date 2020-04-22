@@ -6,6 +6,18 @@
   "commit": false,
   "contributors": [
     {
+      "login": "Liu233w",
+      "name": "Liu233w",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/16333687?v=4",
+      "profile": "https://liu233w.github.io",
+      "contributions": [
+        "code",
+        "ideas",
+        "infra",
+        "test"
+      ]
+    },
+    {
       "login": "flylai",
       "name": "flylai",
       "avatar_url": "https://avatars2.githubusercontent.com/u/9880740?v=4",
