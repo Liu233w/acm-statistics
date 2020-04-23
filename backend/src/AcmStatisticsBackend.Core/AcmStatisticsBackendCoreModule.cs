@@ -1,4 +1,5 @@
-﻿using Abp.Modules;
+﻿using Abp.Dependency;
+using Abp.Modules;
 using Abp.Reflection.Extensions;
 using Abp.Timing;
 using Abp.Zero;
@@ -9,6 +10,7 @@ using AcmStatisticsBackend.Configuration;
 using AcmStatisticsBackend.Localization;
 using AcmStatisticsBackend.MultiTenancy;
 using AcmStatisticsBackend.Timing;
+using Castle.MicroKernel.Registration;
 
 namespace AcmStatisticsBackend
 {
@@ -18,6 +20,10 @@ namespace AcmStatisticsBackend
         public override void PreInitialize()
         {
             Clock.Provider = ClockProviders.Utc;
+            IocManager.IocContainer.Register(
+                Component.For<IClockProvider>()
+                    .Instance(ClockProviders.Utc)
+                    .LifestyleSingleton());
 
             Configuration.Auditing.IsEnabledForAnonymousUsers = true;
 

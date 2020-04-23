@@ -20,9 +20,11 @@ namespace AcmStatisticsBackend.Tests.Crawlers
 
         public QueryHistoryAppService_Tests()
         {
-            _queryHistoryAppService = Resolve<QueryHistoryAppService>();
             _testClockProvider = new TestClockProvider();
-            Clock.Provider = _testClockProvider;
+            _queryHistoryAppService = Resolve<QueryHistoryAppService>(new
+            {
+                clockProvider = _testClockProvider,
+            });
         }
 
         [Fact]
