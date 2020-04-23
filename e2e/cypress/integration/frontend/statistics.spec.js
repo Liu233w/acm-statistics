@@ -173,10 +173,17 @@ describe('summary', () => {
       cy.contains('704')
     })
 
-    cy.contains('SOLVED: 192 / SUBMISSION: 780').click()
+    cy.contains('SUMMARY').click()
 
     cy.get('.v-dialog--fullscreen').within(() => {
+
+      // hide generate time
+      cy.get('b:contains("Generated at")')
+      .parent()
+      .invoke('attr', 'style', 'background-color: black')
+
       snapshot('summary-upper')
+
       cy.contains('does not have solved list').scrollIntoView()
       snapshot('summary-lower')
     })

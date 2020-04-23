@@ -5215,7 +5215,7 @@ exports[`/statistics 1`] = `
             </span></button></span></div>
                     <div class="flex xs12 md4" style="display:none;">
                       <div role="dialog" class="v-dialog__container"><span buttom class="v-tooltip"><!----><span draggable="false" class="elevation-2 v-chip v-chip--clickable v-chip--label theme--light v-size--default grey lighten-3"><span class="v-chip__content"><span class="title">
-                  SOLVED: 0 / SUBMISSION: 0
+                  SUMMARY
                 </span></span></span></span>
                         <!---->
                       </div>
@@ -6014,29 +6014,20 @@ It may take a while for the api to update user statistics.
     </div>
     </div>
     <script>
-      window.__NUXT__ = (function(a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y) {
+      window.__NUXT__ = (function(a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z) {
         return {
           layout: "default",
           data: [{}],
           fetch: [],
           error: c,
           state: {
-            sidebar: e,
+            sidebar: f,
             session: {
-              login: e,
+              login: f,
               username: a
             },
             statistics: {
               workers: [{
-                crawlerName: f,
-                username: a,
-                status: d,
-                solved: b,
-                submissions: b,
-                errorMessage: a,
-                tokenKey: c,
-                solvedList: []
-              }, {
                 crawlerName: g,
                 username: a,
                 status: d,
@@ -6044,7 +6035,8 @@ It may take a while for the api to update user statistics.
                 submissions: b,
                 errorMessage: a,
                 tokenKey: c,
-                solvedList: []
+                solvedList: [],
+                submissionsByCrawlerName: e
               }, {
                 crawlerName: h,
                 username: a,
@@ -6053,7 +6045,8 @@ It may take a while for the api to update user statistics.
                 submissions: b,
                 errorMessage: a,
                 tokenKey: c,
-                solvedList: []
+                solvedList: [],
+                submissionsByCrawlerName: e
               }, {
                 crawlerName: i,
                 username: a,
@@ -6062,7 +6055,8 @@ It may take a while for the api to update user statistics.
                 submissions: b,
                 errorMessage: a,
                 tokenKey: c,
-                solvedList: []
+                solvedList: [],
+                submissionsByCrawlerName: e
               }, {
                 crawlerName: j,
                 username: a,
@@ -6071,7 +6065,8 @@ It may take a while for the api to update user statistics.
                 submissions: b,
                 errorMessage: a,
                 tokenKey: c,
-                solvedList: []
+                solvedList: [],
+                submissionsByCrawlerName: e
               }, {
                 crawlerName: k,
                 username: a,
@@ -6080,7 +6075,8 @@ It may take a while for the api to update user statistics.
                 submissions: b,
                 errorMessage: a,
                 tokenKey: c,
-                solvedList: []
+                solvedList: [],
+                submissionsByCrawlerName: e
               }, {
                 crawlerName: l,
                 username: a,
@@ -6089,7 +6085,8 @@ It may take a while for the api to update user statistics.
                 submissions: b,
                 errorMessage: a,
                 tokenKey: c,
-                solvedList: []
+                solvedList: [],
+                submissionsByCrawlerName: e
               }, {
                 crawlerName: m,
                 username: a,
@@ -6098,7 +6095,8 @@ It may take a while for the api to update user statistics.
                 submissions: b,
                 errorMessage: a,
                 tokenKey: c,
-                solvedList: []
+                solvedList: [],
+                submissionsByCrawlerName: e
               }, {
                 crawlerName: n,
                 username: a,
@@ -6107,7 +6105,8 @@ It may take a while for the api to update user statistics.
                 submissions: b,
                 errorMessage: a,
                 tokenKey: c,
-                solvedList: []
+                solvedList: [],
+                submissionsByCrawlerName: e
               }, {
                 crawlerName: o,
                 username: a,
@@ -6116,7 +6115,8 @@ It may take a while for the api to update user statistics.
                 submissions: b,
                 errorMessage: a,
                 tokenKey: c,
-                solvedList: []
+                solvedList: [],
+                submissionsByCrawlerName: e
               }, {
                 crawlerName: p,
                 username: a,
@@ -6125,7 +6125,8 @@ It may take a while for the api to update user statistics.
                 submissions: b,
                 errorMessage: a,
                 tokenKey: c,
-                solvedList: []
+                solvedList: [],
+                submissionsByCrawlerName: e
               }, {
                 crawlerName: q,
                 username: a,
@@ -6134,7 +6135,8 @@ It may take a while for the api to update user statistics.
                 submissions: b,
                 errorMessage: a,
                 tokenKey: c,
-                solvedList: []
+                solvedList: [],
+                submissionsByCrawlerName: e
               }, {
                 crawlerName: r,
                 username: a,
@@ -6143,7 +6145,8 @@ It may take a while for the api to update user statistics.
                 submissions: b,
                 errorMessage: a,
                 tokenKey: c,
-                solvedList: []
+                solvedList: [],
+                submissionsByCrawlerName: e
               }, {
                 crawlerName: s,
                 username: a,
@@ -6152,7 +6155,8 @@ It may take a while for the api to update user statistics.
                 submissions: b,
                 errorMessage: a,
                 tokenKey: c,
-                solvedList: []
+                solvedList: [],
+                submissionsByCrawlerName: e
               }, {
                 crawlerName: t,
                 username: a,
@@ -6161,7 +6165,8 @@ It may take a while for the api to update user statistics.
                 submissions: b,
                 errorMessage: a,
                 tokenKey: c,
-                solvedList: []
+                solvedList: [],
+                submissionsByCrawlerName: e
               }, {
                 crawlerName: u,
                 username: a,
@@ -6170,7 +6175,8 @@ It may take a while for the api to update user statistics.
                 submissions: b,
                 errorMessage: a,
                 tokenKey: c,
-                solvedList: []
+                solvedList: [],
+                submissionsByCrawlerName: e
               }, {
                 crawlerName: v,
                 username: a,
@@ -6179,7 +6185,8 @@ It may take a while for the api to update user statistics.
                 submissions: b,
                 errorMessage: a,
                 tokenKey: c,
-                solvedList: []
+                solvedList: [],
+                submissionsByCrawlerName: e
               }, {
                 crawlerName: w,
                 username: a,
@@ -6188,130 +6195,141 @@ It may take a while for the api to update user statistics.
                 submissions: b,
                 errorMessage: a,
                 tokenKey: c,
-                solvedList: []
+                solvedList: [],
+                submissionsByCrawlerName: e
+              }, {
+                crawlerName: x,
+                username: a,
+                status: d,
+                solved: b,
+                submissions: b,
+                errorMessage: a,
+                tokenKey: c,
+                solvedList: [],
+                submissionsByCrawlerName: e
               }],
               crawlers: {
                 poj: {
                   title: "POJ",
                   description: c,
                   url: "http:\\u002F\\u002Fpoj.org\\u002F",
-                  name: f
+                  name: g
                 },
                 hdu: {
                   title: "HDU",
                   description: c,
                   url: "http:\\u002F\\u002Facm.hdu.edu.cn\\u002F",
-                  name: g
+                  name: h
                 },
                 dashiye: {
                   title: "大视野在线测评 (HYSBZ)",
                   description: c,
                   url: "http:\\u002F\\u002Fwww.lydsy.com\\u002FJudgeOnline\\u002F",
-                  name: h
+                  name: i
                 },
                 codeforces: {
                   title: "CodeForces",
                   description: c,
                   url: "http:\\u002F\\u002Fcodeforces.com\\u002F",
-                  name: i
+                  name: j
                 },
                 uva: {
                   title: "UVA",
                   description: c,
                   url: "https:\\u002F\\u002Fuva.onlinejudge.org\\u002F",
-                  name: j
+                  name: k
                 },
                 fzu: {
                   title: "FZU",
                   description: c,
                   url: "http:\\u002F\\u002Facm.fzu.edu.cn\\u002Findex.php",
-                  name: k
+                  name: l
                 },
                 spoj: {
                   title: "SPOJ",
                   description: c,
                   url: "http:\\u002F\\u002Fwww.spoj.com\\u002F",
-                  name: l
+                  name: m
                 },
                 timus: {
                   title: "Timus (URAL)",
                   description: c,
                   url: "http:\\u002F\\u002Facm.timus.ru\\u002F",
-                  name: m
+                  name: n
                 },
                 leetcode_cn: {
                   title: "LeetCode（中国）",
                   description: c,
                   url: "https:\\u002F\\u002Fleetcode-cn.com",
-                  name: n
+                  name: o
                 },
                 csu: {
                   title: "CSU",
                   description: c,
                   url: "http:\\u002F\\u002Facm.csu.edu.cn\\u002F",
-                  name: o
+                  name: p
                 },
                 loj: {
                   title: "LibreOJ",
                   description: c,
                   url: "https:\\u002F\\u002Floj.ac\\u002F",
-                  name: p
+                  name: q
                 },
                 luogu: {
                   title: "洛谷",
                   description: c,
                   url: "https:\\u002F\\u002Fluogu.org\\u002F",
-                  name: q
+                  name: r
                 },
                 nowcoder: {
                   title: "牛客OJ",
                   description: "目前只支持输入用户ID（在你的AC列表的URL中）",
                   url: "https:\\u002F\\u002Fac.nowcoder.com\\u002Facm\\u002Fhome",
-                  name: r
+                  name: s
                 },
                 uestc: {
                   title: "Lutece (UESTC)",
                   description: c,
                   url: "https:\\u002F\\u002Facm.uestc.edu.cn\\u002Fhome",
-                  name: s
+                  name: t
                 },
                 atcoder: {
                   title: "AtCoder",
                   description: "API provided by kenkoooo (https:\\u002F\\u002Fgithub.com\\u002Fkenkoooo\\u002FAtCoderProblems).\\nIt may take a while for the api to update user statistics.\\n",
                   url: "https:\\u002F\\u002Fatcoder.jp",
-                  name: t
+                  name: u
                 },
                 aizu: {
                   title: "AIZU",
                   description: c,
                   url: "http:\\u002F\\u002Fjudge.u-aizu.ac.jp\\u002Fonlinejudge\\u002Findex.jsp",
-                  name: u
+                  name: v
                 },
                 codechef: {
                   title: "CodeChef",
                   description: c,
                   url: "https:\\u002F\\u002Fwww.codechef.com\\u002F",
-                  name: v
+                  name: w
                 },
                 vjudge: {
                   title: "VJudge",
                   description: "virtual judge，这个OJ的题量是单独计算的",
                   url: "https:\\u002F\\u002Fvjudge.net\\u002F",
-                  virtual_judge: x,
-                  name: w
+                  virtual_judge: y,
+                  name: x
                 }
               },
               mainUsername: a
             }
           },
-          serverRendered: x,
+          serverRendered: y,
           routePath: "\\u002Fstatistics",
           env: {
-            VERSION_NUM: y,
-            BUILD_TIME: y
+            VERSION_NUM: z,
+            BUILD_TIME: z
           }
         }
-      }("", 0, null, "WAITING", false, "poj", "hdu", "dashiye", "codeforces", "uva", "fzu", "spoj", "timus", "leetcode_cn", "csu", "loj", "luogu", "nowcoder", "uestc", "atcoder", "aizu", "codechef", "vjudge", true, "0"));
+      }("", 0, null, "WAITING", void 0, false, "poj", "hdu", "dashiye", "codeforces", "uva", "fzu", "spoj", "timus", "leetcode_cn", "csu", "loj", "luogu", "nowcoder", "uestc", "atcoder", "aizu", "codechef", "vjudge", true, "0"));
     </script>
 
 
