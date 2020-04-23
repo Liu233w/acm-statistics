@@ -2,17 +2,18 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics.CodeAnalysis;
 using Abp.Domain.Entities;
+using JetBrains.Annotations;
 using Newtonsoft.Json;
 
 namespace AcmStatisticsBackend.Crawlers
 {
     /// <summary>
-    /// 用户在单个爬虫上的一次历史记录
+    /// Query history in a certain crawler
     /// </summary>
     public class QueryWorkerHistory : Entity<long>
     {
         /// <summary>
-        /// 关联的 AcHistory
+        /// AcHistory the entity related to
         /// </summary>
         [Required]
         public QueryHistory QueryHistory { get; set; }
@@ -20,47 +21,59 @@ namespace AcmStatisticsBackend.Crawlers
         public long QueryHistoryId { get; set; }
 
         /// <summary>
-        /// 爬虫名称。前端可以根据元数据从此名称获取爬虫标题。
+        /// The name of the crawler. Frontend can get its title by this field.
         /// </summary>
         [Required]
         public string CrawlerName { get; set; }
 
         /// <summary>
-        /// 用户用来查询的用户名
+        /// The username used to query this crawler.
         /// </summary>
         [Required]
         public string Username { get; set; }
 
         /// <summary>
-        /// 爬虫的错误信息。如果不为null，表示本次查询失败，这时 <see cref="Submission"/> 和
-        /// <see cref="Solved"/> 都为0。
+        /// Error message of the crawler. If it's not null, current query is failed, and
+        /// <see cref="Submission"/> and <see cref="Solved"/> are all 0.
         /// </summary>
         [MaybeNull]
         public string ErrorMessage { get; set; }
 
         /// <summary>
-        /// 提交数
+        /// Submission count.
         /// </summary>
         [Range(0, int.MaxValue)]
         public int Submission { get; set; }
 
         /// <summary>
-        /// 通过数
+        /// Solved count.
         /// </summary>
         [Range(0, int.MaxValue)]
         public int Solved { get; set; }
 
         /// <summary>
-        /// 本记录是否包含通过题目列表。
+        /// Whether this record has a list of problem ids that user solved.
         /// </summary>
         public bool HasSolvedList { get; set; }
 
         /// <summary>
-        /// 用户通过的题目列表。
+        /// The list of problem ids that user solved.
         ///
-        /// 如果 <see cref="HasSolvedList"/> 为false，返回一个空的列表。
+        /// If <see cref="HasSolvedList"/> is false, an empty list is returned.
         /// </summary>
         [Required]
         public string[] SolvedList { get; set; }
+
+        /// <summary>
+        /// Whether current crawler is virtual judge.
+        /// </summary>
+        public bool IsVirtualJudge { get; set; }
+
+        /// <summary>
+        /// If <see cref="IsVirtualJudge"/> is false, this field is empty.
+        /// Otherwise, this field contains submissions count in each crawler.
+        /// </summary>
+        [Required]
+        public Dictionary<string, int> SubmissionsByCrawlerName { get; set; }
     }
 }

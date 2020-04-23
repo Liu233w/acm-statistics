@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Diagnostics.CodeAnalysis;
 using Abp.AutoMapper;
 using Abp.Runtime.Validation;
@@ -8,48 +9,37 @@ namespace AcmStatisticsBackend.Crawlers.Dto
     [AutoMap(typeof(QueryWorkerHistory))]
     public class QueryWorkerHistoryDto : ICustomValidate
     {
-        /// <summary>
-        /// 爬虫名称。前端可以根据元数据从此名称获取爬虫标题。
-        /// </summary>
+        /// <inheritdoc cref="QueryWorkerHistory.CrawlerName"/>
         [Required]
         public string CrawlerName { get; set; }
 
-        /// <summary>
-        /// 用户用来查询的用户名
-        /// </summary>
+        /// <inheritdoc cref="QueryWorkerHistory.Username"/>
         [Required]
         public string Username { get; set; }
 
-        /// <summary>
-        /// 爬虫的错误信息。如果不为null，表示本次查询失败，这时 <see cref="Submission"/> 和
-        /// <see cref="Solved"/> 都为0。
-        /// </summary>
+        /// <inheritdoc cref="QueryWorkerHistory.ErrorMessage"/>
         [MaybeNull]
         public string ErrorMessage { get; set; }
 
-        /// <summary>
-        /// 提交数
-        /// </summary>
+        /// <inheritdoc cref="QueryWorkerHistory.Submission"/>
         [Range(0, int.MaxValue)]
         public int Submission { get; set; }
 
-        /// <summary>
-        /// 通过数
-        /// </summary>
+        /// <inheritdoc cref="QueryWorkerHistory.Solved"/>
         [Range(0, int.MaxValue)]
         public int Solved { get; set; }
 
-        /// <summary>
-        /// 本记录是否包含通过题目列表。
-        /// </summary>
+        /// <inheritdoc cref="QueryWorkerHistory.HasSolvedList"/>
         public bool HasSolvedList { get; set; }
 
-        /// <summary>
-        /// 用户通过的题目列表
-        ///
-        /// 如果 <see cref="HasSolvedList"/> 为false，返回一个空的列表。
-        /// </summary>
+        /// <inheritdoc cref="QueryWorkerHistory.SolvedList"/>
         public string[] SolvedList { get; set; }
+
+        /// <inheritdoc cref="QueryWorkerHistory.IsVirtualJudge"/>
+        public bool IsVirtualJudge { get; set; } = false;
+
+        /// <inheritdoc cref="QueryWorkerHistory.SubmissionsByCrawlerName"/>
+        public Dictionary<string, int> SubmissionsByCrawlerName { get; set; } = new Dictionary<string, int>();
 
         public void AddValidationErrors(CustomValidationContext context)
         {

@@ -13,22 +13,16 @@ namespace AcmStatisticsBackend.Crawlers.Dto
         [Required]
         public DateTime CreationTime { get; set; }
 
-        /// <summary>
-        /// 查询历史记录中的主用户名，可以为空字符串。
-        /// </summary>
+        /// <inheritdoc cref="QueryHistory.MainUsername"/>
         [Required]
         [MinLength(0)]
         public string MainUsername { get; set; }
 
-        /// <summary>
-        /// 用户的总提交数
-        /// </summary>
+        /// <inheritdoc cref="QueryHistory.Submission"/>
         [Range(0, int.MaxValue)]
         public int Submission { get; set; }
 
-        /// <summary>
-        /// 用户的总通过数，已经移除了 vjudge 中重复的题目
-        /// </summary>
+        /// <inheritdoc cref="QueryHistory.Solved"/>
         [Range(0, int.MaxValue)]
         public int Solved { get; set; }
     }
