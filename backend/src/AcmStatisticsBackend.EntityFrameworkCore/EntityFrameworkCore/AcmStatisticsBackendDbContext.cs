@@ -39,6 +39,11 @@ namespace AcmStatisticsBackend.EntityFrameworkCore
                 .Property(e => e.SolvedList)
                 .HasConversion(v => JsonConvert.SerializeObject(v),
                     v => JsonConvert.DeserializeObject<string[]>(v));
+
+            modelBuilder.Entity<QueryWorkerHistory>()
+                .Property(e => e.SubmissionsByCrawlerName)
+                .HasConversion(v => JsonConvert.SerializeObject(v),
+                    v => JsonConvert.DeserializeObject<Dictionary<string, int>>(v));
         }
     }
 }

@@ -421,6 +421,109 @@ namespace AcmStatisticsBackend.Tests.Crawlers
                 it.SolvedList.ShouldEqualInJson(new string[0]);
             });
         }
+
+        [Fact]
+        public async Task It_CanSaveAndGetRecordWithSubmissions()
+        {
+            // arrange
+            LoginAsDefaultTenantAdmin();
+            _testClockProvider.Now = new DateTime(2020, 4, 1, 10, 0, 0);
+
+            // act
+            await _queryHistoryAppService.SaveOrReplaceQueryHistory(new SaveOrReplaceQueryHistoryInput
+            {
+                Solved = 4,
+                Submission = 20,
+                MainUsername = "mainUser",
+                QueryWorkerHistories = new List<QueryWorkerHistoryDto>
+                {
+                    new QueryWorkerHistoryDto
+                    {
+                        Username = "u1",
+                        CrawlerName = "c1",
+                        Solved = 3,
+                        Submission = 10,
+                        ErrorMessage = null,
+                        HasSolvedList = true,
+                        SolvedList = new[]
+                        {
+                            "p1",
+                            "p2",
+                            "p3",
+                        },
+                    },
+                    new QueryWorkerHistoryDto
+                    {
+                        Username = "u2",
+                        CrawlerName = "c2",
+                        Solved = 3,
+                        Submission = 10,
+                        HasSolvedList = true,
+                        SolvedList = new[]
+                        {
+                            "c1-p1",
+                            "c1-p5",
+                            "NO_NAME-1001",
+                        },
+                        IsVirtualJudge = true,
+                        SubmissionsByCrawlerName = new Dictionary<string, int>
+                        {
+                            { "c1", 5 },
+                            { "NO_NAME", 5 },
+                        },
+                    },
+                },
+            });
+
+            // assert
+            await UsingDbContextAsync(async ctx =>
+            {
+                (await ctx.QueryHistories.CountAsync()).ShouldBe(1);
+                var acHistory = await ctx.QueryHistories.FirstAsync();
+                acHistory.Solved.ShouldBe(4);
+                acHistory.Submission.ShouldBe(20);
+                Debug.Assert(AbpSession.UserId != null, "AbpSession.UserId != null");
+                acHistory.UserId.ShouldBe(AbpSession.UserId.Value);
+                acHistory.CreationTime.ShouldBe(new DateTime(2020, 4, 1, 10, 0, 0));
+                acHistory.MainUsername.ShouldBe("mainUser");
+
+                (await ctx.QueryWorkerHistories.CountAsync()).ShouldBe(2);
+                var list = await ctx.QueryWorkerHistories.ToListAsync();
+                list[0].WithIn(it =>
+                {
+                    it.Solved.ShouldBe(3);
+                    it.Submission.ShouldBe(10);
+                    it.Username.ShouldBe("u1");
+                    it.CrawlerName.ShouldBe("c1");
+                    it.QueryHistoryId.ShouldBe(acHistory.Id);
+                    it.ErrorMessage.ShouldBe(null);
+                    it.HasSolvedList.ShouldBe(true);
+                    it.SolvedList.ShouldBe(new string[]
+                    {
+                        "p1",
+                        "p2",
+                        "p3",
+                    });
+                });
+                list[1].WithIn(it =>
+                {
+                    it.Solved.ShouldBe(3);
+                    it.HasSolvedList.ShouldBe(true);
+                    it.SolvedList.ShouldBe(new string[]
+                    {
+                        "c1-p1",
+                        "c1-p5",
+                        "NO_NAME-1001",
+                    });
+                    it.IsVirtualJudge.ShouldBe(true);
+                    it.SubmissionsByCrawlerName.ShouldEqualInJson(new Dictionary<string, int>
+                    {
+                        { "c1", 5 },
+                        { "NO_NAME", 5 },
+                    });
+                });
+            });
+        }
     }
 
     internal class TestClockProvider : IClockProvider
