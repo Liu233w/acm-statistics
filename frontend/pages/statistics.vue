@@ -95,7 +95,7 @@
                   @click="click"
                 >
                   <span class="title">
-                    {{ summary }}
+                    {{ notWorkingRate >= 100 ? 'SUMMARY' : summary }}
                   </span>
                 </v-chip>
               </template>
@@ -280,7 +280,6 @@ export default {
       savingUsername: false,
       // summary dialog
       dialog: false,
-      updateDate: new Date(),
     }
   },
   computed: {
@@ -349,10 +348,12 @@ export default {
         ],
       }
     },
-  },
-  watch: {
-    notWorkingRate() {
-      this.updateDate = new Date()
+    updateDate() {
+      if (this.notWorkingRate >= 100) {
+        return new Date()
+      } else {
+        return null
+      }
     },
   },
   methods: {
