@@ -31,11 +31,11 @@ const username = 'vjudge5'
 
 describe('poj', () => {
 
-  test('test poj - 用户不存在时抛出异常', async () => {
+  test('test poj - should throw when user does not exist', async () => {
     await expect(poj(null, notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
-  test('test poj - 能够正确识别带有空格的用户名', async () => {
+  test('test poj - can recognize username with space', async () => {
     await expect(poj(null, ' ' + notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
@@ -53,11 +53,11 @@ describe('hdu', () => {
     env: 'server',
   }
 
-  test('test hdu - 用户不存在时抛出异常', async () => {
+  test('test hdu - should throw when user does not exist', async () => {
     await expect(hdu(config, notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
-  test('test hdu - 能够正确识别带有空格的用户名', async () => {
+  test('test hdu - can recognize username with space', async () => {
     await expect(hdu(config, ' ' + notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
@@ -71,11 +71,11 @@ describe('hdu', () => {
 
 describe('zoj', () => {
 
-  test('test zoj - 用户不存在时抛出异常', async () => {
+  test('test zoj - should throw when user does not exist', async () => {
     await expect(zoj(null, notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
-  test('test zoj - 能够正确识别带有空格的用户名', async () => {
+  test('test zoj - can recognize username with space', async () => {
     await expect(zoj(null, ' ' + notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
@@ -89,11 +89,11 @@ describe('zoj', () => {
 
 describe('dashiye', () => {
 
-  test('test dashiye - 用户不存在时抛出异常', async () => {
+  test('test dashiye - should throw when user does not exist', async () => {
     await expect(dashiye(null, notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
-  test('test dashiye - 能够正确识别带有空格的用户名', async () => {
+  test('test dashiye - can recognize username with space', async () => {
     await expect(dashiye(null, ' ' + notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
@@ -107,11 +107,11 @@ describe('dashiye', () => {
 
 describe('codeforces', () => {
 
-  test('test codeforces - 用户不存在时抛出异常', async () => {
+  test('test codeforces - should throw when user does not exist', async () => {
     await expect(codeforces(null, notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
-  test('test codeforces - 能够正确识别带有空格的用户名', async () => {
+  test('test codeforces - can recognize username with space', async () => {
     await expect(codeforces(null, ' ' + notExistUsername)).rejects.toThrow('handle: Field should contain only Latin letters, digits, underscore or dash characters')
   })
 
@@ -128,7 +128,7 @@ describe('codeforces', () => {
 
 describe('uva', () => {
 
-  test('test uva - 用户不存在时抛出异常', async () => {
+  test('test uva - should throw when user does not exist', async () => {
     await expect(uva(null, notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
@@ -142,7 +142,7 @@ describe('uva', () => {
 
 describe('fzu', () => {
 
-  test('test fzu - 用户不存在时抛出异常', async () => {
+  test('test fzu - should throw when user does not exist', async () => {
     await expect(fzu(null, notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
@@ -156,11 +156,11 @@ describe('fzu', () => {
 
 describe('spoj', () => {
 
-  test('test spoj - 用户不存在时抛出异常', async () => {
+  test('test spoj - should throw when user does not exist', async () => {
     await expect(spoj(null, notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
-  test('test spoj - 能够正确识别带有空格的用户名', async () => {
+  test('test spoj - can recognize username with space', async () => {
     await expect(spoj(null, ' ' + notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
@@ -174,11 +174,11 @@ describe('spoj', () => {
 
 describe('timus', () => {
 
-  test('test timus - 用户不存在时抛出异常', async () => {
+  test('test timus - should throw when user does not exist', async () => {
     await expect(timus(null, notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
-  test('test timus - 能够正确识别带有空格的用户名', async () => {
+  test('test timus - can recognize username with space', async () => {
     await expect(timus(null, ' ' + notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
@@ -193,11 +193,11 @@ describe('timus', () => {
 
 describe('leetcode_cn', () => {
 
-  test('test leetcode_cn - 用户不存在时抛出异常', async () => {
+  test('test leetcode_cn - should throw when user does not exist', async () => {
     await expect(leetcode_cn(null, notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
-  test('test leetcode_cn - 能够正确识别带有空格的用户名', async () => {
+  test('test leetcode_cn - can recognize username with space', async () => {
     await expect(leetcode_cn(null, ' ' + notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
@@ -210,11 +210,11 @@ describe('leetcode_cn', () => {
 
 describe('csu', () => {
 
-  test('test csu - 用户不存在时抛出异常', async () => {
+  test('test csu - should throw when user does not exist', async () => {
     await expect(csu(null, notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
-  test('test csu - 能够正确识别带有空格的用户名', async () => {
+  test('test csu - can recognize username with space', async () => {
     await expect(csu(null, ' ' + notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
@@ -248,11 +248,11 @@ describe('vjudge', () => {
     // console.log(vjConfig)
   })
 
-  test('test vjudge - 用户不存在时抛出异常', async () => {
+  test('test vjudge - should throw when user does not exist', async () => {
     await expect(vjudge(vjConfig, notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
-  test('test vjudge - 能够正确识别带有空格的用户名', async () => {
+  test('test vjudge - can recognize username with space', async () => {
     await expect(vjudge(vjConfig, ' ' + notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
@@ -267,11 +267,11 @@ describe('vjudge', () => {
 
 describe('loj', () => {
 
-  test('test loj - 用户不存在时抛出异常', async () => {
+  test('test loj - should throw when user does not exist', async () => {
     await expect(loj(null, notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
-  test('test loj - 能够正确识别带有空格的用户名', async () => {
+  test('test loj - can recognize username with space', async () => {
     await expect(loj(null, ' ' + notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
@@ -285,11 +285,11 @@ describe('loj', () => {
 
 describe('luogu', () => {
 
-  test('test luogu - 用户不存在时抛出异常', async () => {
+  test('test luogu - should throw when user does not exist', async () => {
     await expect(luogu(null, notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
-  test('test luogu - 能够正确识别带有空格的用户名', async () => {
+  test('test luogu - can recognize username with space', async () => {
     await expect(luogu(null, ' ' + notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
@@ -309,7 +309,7 @@ describe('luogu', () => {
 
 describe('nowcoder', () => {
 
-  test('test nowcoder - 用户不存在时抛出异常', async () => {
+  test('test nowcoder - should throw when user does not exist', async () => {
     await expect(nowcoder(null, '11')).rejects.toThrow('The user does not exist')
   })
 
@@ -330,11 +330,11 @@ describe('nowcoder', () => {
 
 describe('uestc', () => {
 
-  test('test uestc - 用户不存在时抛出异常', async () => {
+  test('test uestc - should throw when user does not exist', async () => {
     await expect(uestc(null, notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
-  test('test uestc - 能够正确识别带有空格的用户名', async () => {
+  test('test uestc - can recognize username with space', async () => {
     await expect(uestc(null, ' ' + notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
@@ -355,11 +355,11 @@ describe('uestc', () => {
 
 describe('atcoder', () => {
 
-  test('test atcoder - 用户不存在时抛出异常', async () => {
+  test('test atcoder - should throw when user does not exist', async () => {
     await expect(atcoder(null, notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
-  test('test atcoder - 能够正确识别带有空格的用户名', async () => {
+  test('test atcoder - can recognize username with space', async () => {
     await expect(atcoder(null, ' ' + notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
@@ -373,11 +373,11 @@ describe('atcoder', () => {
 
 describe('aizu', () => {
 
-  test('test aizu - 用户不存在时抛出异常', async () => {
+  test('test aizu - should throw when user does not exist', async () => {
     await expect(aizu(null, notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
-  test('test aizu - 能够正确识别带有空格的用户名', async () => {
+  test('test aizu - can recognize username with space', async () => {
     await expect(aizu(null, ' ' + notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
@@ -391,11 +391,11 @@ describe('aizu', () => {
 
 describe('codechef', () => {
 
-  test('test codechef - 用户不存在时抛出异常', async () => {
+  test('test codechef - should throw when user does not exist', async () => {
     await expect(codechef(null, notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
-  test('test codechef - 能够正确识别带有空格的用户名', async () => {
+  test('test codechef - can recognize username with space', async () => {
     await expect(codechef(null, ' ' + notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
