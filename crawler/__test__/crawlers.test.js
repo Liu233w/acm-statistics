@@ -403,7 +403,7 @@ describe('codechef', () => {
     // don't know why, but in vjudge2 - vjudge5, solvedList does not match solved count
     const res = await codechef(null, 'vjudge')
     checkRes(res)
-    expect(res.solvedList).toContain('CHEFBM')
+    expect(res.solvedList).toContain('KGOOD')
   })
 
 })

@@ -13,12 +13,11 @@ module.exports = async function (config, username) {
     throw new Error(`Server Response Error: ${res.status}`)
   }
 
-  if (res.req.path === '/') {
-    // redirected to /
+  const $ = cheerio.load(res.text)
+  if ($('a[href="/"]:contains("Home")').length === 0) {
+    // not in user profile page
     throw new Error('The user does not exist')
   }
-
-  const $ = cheerio.load(res.text)
 
   try {
     const solvedText = $('h5:contains("Fully Solved")').text().match(/\((\d+)\)/)[1]
@@ -28,10 +27,12 @@ module.exports = async function (config, username) {
     })
 
     const submissionText = $('script:contains("Highcharts.chart")').html().replace(/\s/gi, '')
-    const submitMatchArray = submissionText.match(/{name:'solutions_partially_accepted',y:(\d+),color:colorForSections\['solutions_partially_accepted'\]},{name:'compile_error',y:(\d+),color:colorForSections\['compile_error'\]},{name:'runtime_error',y:(\d+),color:colorForSections\['runtime_error'\]},{name:'time_limit_exceeded',y:(\d+),color:colorForSections\['time_limit_exceeded'\]},{name:'wrong_answers',y:(\d+),color:colorForSections\['wrong_answers'\]},{name:'solutions_accepted',y:(\d+),color:colorForSections\['solutions_accepted'\],sliced:false,selected:true},\]/)
-    const submissions = submitMatchArray
-      .slice(1, submitMatchArray.length)
-      .reduce((sum, a) => sum + parseInt(a), 0)
+    const matchObjectText = submissionText.match(/data:\[(.*),\]/)[1]
+    const submitMatchIterator = matchObjectText.matchAll(/y:(\d+)/g)
+    let submissions = 0
+    for (const a of submitMatchIterator) {
+      submissions += parseInt(a[1])
+    }
 
     return {
       solved: parseInt(solvedText),
