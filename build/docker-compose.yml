@@ -8,6 +8,9 @@ services:
       - "--api.insecure=true"
       - "--providers.docker=true"
       - "--entrypoints.web.address=:80"
+      - "--accesslog=true"
+      # An outside reverse proxy is used, so we can just trust all forward headers
+      - "--entryPoints.web.forwardedHeaders.insecure"
     ports:
       - ${EXPOSE_PORT}:80
       - ${TRAEFIK_PORT}:8080 # The Web UI (enabled by --api)
