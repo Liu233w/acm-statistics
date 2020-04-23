@@ -119,6 +119,70 @@ describe('crawler test', () => {
   })
 })
 
+describe('summary', () => {
+
+  beforeEach(() => {
+    cy.visit('/statistics')
+    // remove top bar to prevent blocking content
+    cy.get('header:contains("NWPU-ACM 查询系统")').invoke('hide')
+
+    cy.server()
+    cy.route('https://cors-anywhere.herokuapp.com/http://acm.hdu.edu.cn/userstatus.php?user=wwwlsmcom',
+      'fixture:summary_hdu.txt')
+      .as('summary_hdu')
+    cy.route('/api/crawlers/vjudge/wwwlsmcom',
+      'fixture:summary_vjudge.txt')
+      .as('summary_vjudge')
+    cy.route('post', 'https://cors-anywhere.herokuapp.com/https://leetcode-cn.com/graphql',
+      'fixture:summary_leetcode.txt')
+      .as('summary_leetcode')
+  })
+
+  it('should generate summary', () => {
+
+    cy.get('div[title="HDU"]').parents('.worker-item').within(() => {
+
+      cy.get('div:contains("Username") input').type('wwwlsmcom')
+
+      cy.get('button:contains("refresh")').click()
+      cy.wait('@summary_hdu')
+
+      cy.contains('34')
+      cy.contains('72')
+    })
+
+    cy.get('div[title="LeetCode（中国）"]').parents('.worker-item').within(() => {
+
+      cy.get('div:contains("Username") input').type('wwwlsmcom')
+
+      cy.get('button:contains("refresh")').click()
+      cy.wait('@summary_leetcode')
+
+      cy.contains('2')
+      cy.contains('4')
+    })
+
+    cy.get('div[title="VJudge"]').parents('.worker-item').within(() => {
+
+      cy.get('div:contains("Username") input').type('wwwlsmcom')
+
+      cy.get('button:contains("refresh")').click()
+      cy.wait('@summary_vjudge')
+
+      cy.contains('161')
+      cy.contains('704')
+    })
+
+    cy.contains('SOLVED: 192 / SUBMISSION: 780').click()
+
+    cy.get('.v-dialog--fullscreen').within(() => {
+      snapshot('summary-upper')
+      cy.contains('does not have solved list').scrollIntoView()
+      snapshot('summary-lower')
+    })
+  })
+})
+
 function snapshot(name) {
   if (name) {
     cy.matchImageSnapshot(name, {
