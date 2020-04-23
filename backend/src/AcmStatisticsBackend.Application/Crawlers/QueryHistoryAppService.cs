@@ -18,14 +18,15 @@ namespace AcmStatisticsBackend.Crawlers
     public class QueryHistoryAppService : AcmStatisticsBackendAppServiceBase, IQueryHistoryAppService
     {
         private readonly IRepository<QueryHistory, long> _acHistoryRepository;
-
         private readonly IRepository<QueryWorkerHistory, long> _acWorkerHistoryRepository;
+        private readonly IClockProvider _clockProvider;
 
         public QueryHistoryAppService(IRepository<QueryHistory, long> acHistoryRepository,
-            IRepository<QueryWorkerHistory, long> acWorkerHistoryRepository)
+            IRepository<QueryWorkerHistory, long> acWorkerHistoryRepository, IClockProvider clockProvider)
         {
             _acHistoryRepository = acHistoryRepository;
             _acWorkerHistoryRepository = acWorkerHistoryRepository;
+            _clockProvider = clockProvider;
         }
 
         /// <inheritdoc cref="IQueryHistoryAppService.SaveOrReplaceQueryHistory"/>
@@ -37,7 +38,7 @@ namespace AcmStatisticsBackend.Crawlers
                 .Where(e => e.UserId == AbpSession.UserId.Value)
                 .OrderByDescending(e => e.CreationTime)
                 .FirstOrDefaultAsync();
-            if (latestItem != null && latestItem.CreationTime.Date == Clock.Now.Date)
+            if (latestItem != null && latestItem.CreationTime.Date == _clockProvider.Now.Date)
             {
                 await DoDeleteHistory(latestItem);
             }
@@ -46,6 +47,7 @@ namespace AcmStatisticsBackend.Crawlers
             var acHistory = ObjectMapper.Map<QueryHistory>(input);
             Debug.Assert(AbpSession.UserId != null, "AbpSession.UserId != null");
             acHistory.UserId = AbpSession.UserId.Value;
+            acHistory.CreationTime = _clockProvider.Now;
             // 会自动添加关联的 AcWorkerHistory
             await _acHistoryRepository.InsertAsync(acHistory);
         }

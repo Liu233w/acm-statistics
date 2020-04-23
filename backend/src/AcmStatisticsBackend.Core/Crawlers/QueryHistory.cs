@@ -10,7 +10,7 @@ namespace AcmStatisticsBackend.Crawlers
     /// <summary>
     /// 一次查询历史记录
     /// </summary>
-    public class QueryHistory : Entity<long>, IHasCreationTime
+    public class QueryHistory : Entity<long>
     {
         [Required]
         public DateTime CreationTime { get; set; }
