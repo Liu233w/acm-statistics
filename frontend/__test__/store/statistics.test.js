@@ -1000,7 +1000,7 @@ describe('getters', () => {
   })
 
   // TODO: test warnings, test submission numbers
-  describe('summaryForCrawler', () => {
+  describe.skip('summaryForCrawler', () => {
 
     it('should skip workers with no solvedList', () => {
       const state = {
