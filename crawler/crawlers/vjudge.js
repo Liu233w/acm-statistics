@@ -88,6 +88,8 @@ function mapOjName(nameInVjudge) {
     'LibreOJ': 'loj',
     'URAL': 'timus',
     'HYSBZ': 'dashiye',
+    // it looks like a typo of vjudge
+    'EIJudge': 'eljudge',
   }
 
   if (simpleMapOj.has(nameInVjudge.toLowerCase())) {

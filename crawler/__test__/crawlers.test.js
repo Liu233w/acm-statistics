@@ -19,6 +19,7 @@ const uestc = require('../crawlers/uestc')
 const atcoder = require('../crawlers/atcoder')
 const aizu = require('../crawlers/aizu')
 const codechef = require('../crawlers/codechef')
+const eljudge = require('../crawlers/eljudge')
 
 const { readConfigs } = require('../lib/configReader')
 
@@ -404,6 +405,24 @@ describe('codechef', () => {
     const res = await codechef(null, 'vjudge')
     checkRes(res)
     expect(res.solvedList).toContain('KGOOD')
+  })
+
+})
+
+describe('eljudge', () => {
+
+  test('test eljudge - should throw when user does not exist', async () => {
+    await expect(eljudge(null, notExistUsername)).rejects.toThrow('The user does not exist')
+  })
+
+  test('test eljudge - can recognize username with space', async () => {
+    await expect(eljudge(null, ' ' + notExistUsername)).rejects.toThrow('The user does not exist')
+  })
+
+  test('test eljudge', async () => {
+    const res = await eljudge(null, 'vjudge5')
+    checkRes(res)
+    expect(res.solvedList).toContain('000')
   })
 
 })
