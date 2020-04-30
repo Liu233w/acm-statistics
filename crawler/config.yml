@@ -17,6 +17,7 @@ crawler_order:
   - atcoder
   - aizu
   - codechef
+  - eljudge
   - vjudge
 
 crawlers:
@@ -112,6 +113,11 @@ crawlers:
       title: CodeChef
       description:
       url: https://www.codechef.com/
+  eljudge:
+    meta:
+      title: El Judge
+      description:
+      url: http://acm.mipt.ru
   vjudge:
     meta:
       title: VJudge
