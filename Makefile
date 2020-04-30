@@ -10,7 +10,7 @@ default: .short-help ;
 # use command like `make target=crawler test clean` to invoke `make -C crawler test clean`
 # support command like `make target="crawler frontend" build`
 
-TargetList = crawler frontend crawler-api-backend backend captcha-service
+TargetList = crawler frontend crawler-api-backend backend captcha-service e2e
 AllTarget := $(if $(target),$(target),$(TargetList))
 
 test:
@@ -32,6 +32,8 @@ run:
   done
 
 clean:
+	# remove all stopped containers
+	docker rm $(shell docker ps -a -q)
 	for dir in $(AllTarget); do \
   	$(MAKE) -C $$dir clean; \
   done

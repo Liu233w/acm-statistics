@@ -71,6 +71,9 @@ update-snapshot: .base
 	 	$(E2eBaseTag) \
 		npm test -- --env updateSnapshots=true
 
+clean:
+	docker image rm $(E2eBaseTag) $(E2eMockConfigurerTag); true
+
 # ===== 使用 jest 对html进行快照 ===========
 test-html: .base
 	docker run --rm -t --ipc=host --network=host \
