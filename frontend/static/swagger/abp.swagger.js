@@ -55,7 +55,7 @@ var abp = abp || {};
                     var result = responseJSON.result;
                     var expireDate = new Date(Date.now() + (result.expireInSeconds * 1000));
                     abp.auth.setToken(result.accessToken, expireDate);
-                    callback();   
+                    callback();
                 } else {
                     alert('Login failed !');
                 }
@@ -71,7 +71,7 @@ var abp = abp || {};
                 { usernameOrEmailAddress: usernameOrEmailAddress, password: password }
             )
         );
-    };
+    }
 
     abp.swagger.login = function (callback) {
         //Get TenantId first
@@ -84,7 +84,7 @@ var abp = abp || {};
                     var responseJSON = JSON.parse(xhrTenancyName.responseText);
                     var result = responseJSON.result;
                     if (result.state === 1) { // Tenant exists and active.
-                        loginUserInternal(result.tenantId, callback); // Login for tenant    
+                        loginUserInternal(result.tenantId, callback); // Login for tenant
                     } else {
                         alert('There is no such tenant or tenant is not active !');
                     }

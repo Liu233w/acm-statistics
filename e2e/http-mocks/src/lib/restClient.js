@@ -13,15 +13,15 @@ module.exports = json => new Promise((resolve, reject) => {
   }
   const req = http.request('http://mock-proxy:1080/mockserver/expectation', reqCfg, resp => {
 
-    let data = ''
+    let streamData = ''
     // A chunk of data has been recieved.
     resp.on('data', (chunk) => {
-      data += chunk
+      streamData += chunk
     })
 
     // The whole response has been received. Print out the result.
     resp.on('end', () => {
-      resolve(data)
+      resolve(streamData)
     })
 
   }).on('error', reject)

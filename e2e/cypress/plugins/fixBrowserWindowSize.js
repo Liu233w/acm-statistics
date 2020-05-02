@@ -3,7 +3,7 @@ from https://github.com/cypress-io/cypress/issues/495#issuecomment-472723434
  */
 
 module.exports = (on) => {
-  on('before:browser:launch', (browser = {}, options) => {
+  on('before:browser:launch', (browser = {}, options = { args: [] }) => {
 
     const args = options.args
 
