@@ -178,7 +178,7 @@ describe('summary', () => {
     cy.get('.v-dialog--fullscreen').within(() => {
 
       // hide generate time
-      cy.get('b:contains("Generated at")')
+      cy.get('strong:contains("Generated at")')
       .parent()
       .invoke('attr', 'style', 'background-color: black')
 
