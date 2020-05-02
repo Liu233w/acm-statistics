@@ -138,7 +138,7 @@
                   <v-list>
                     <v-list-item v-if="username">
                       <v-list-item-content>
-                        <v-list-item-title><b>Main username:</b> {{ username }}</v-list-item-title>
+                        <v-list-item-title><strong>Main username:</strong> {{ username }}</v-list-item-title>
                       </v-list-item-content>
                     </v-list-item>
                     <v-list-item>
@@ -148,7 +148,7 @@
                     </v-list-item>
                     <v-list-item>
                       <v-list-item-content>
-                        <v-list-item-title><b>Generated at</b> {{ updateDate }}</v-list-item-title>
+                        <v-list-item-title><strong>Generated at</strong> {{ updateDate }}</v-list-item-title>
                       </v-list-item-content>
                     </v-list-item>
                   </v-list>
@@ -156,16 +156,16 @@
                     <template v-slot:default>
                       <thead>
                         <tr>
-                          <th class="text-left">
+                          <th class="text-left" scope="col">
                             Crawler
                           </th>
-                          <th class="text-left">
+                          <th class="text-left" scope="col">
                             Username
                           </th>
-                          <th class="text-left">
+                          <th class="text-left" scope="col">
                             Solved
                           </th>
-                          <th class="text-left">
+                          <th class="text-left" scope="col">
                             Submission
                           </th>
                         </tr>
@@ -175,7 +175,7 @@
                           v-for="item in workerSummaryList"
                           :key="`${item.crawler}`"
                         >
-                          <td>{{ item.crawler }}</td>
+                          <td scope="row">{{ item.crawler }}</td>
                           <td>{{ item.username }}</td>
                           <td>{{ item.solved }}</td>
                           <td>{{ item.submissions }}</td>
