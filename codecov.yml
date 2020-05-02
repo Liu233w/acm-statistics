@@ -1,3 +1,5 @@
 ignore:
-  - backend/src/AcmStatisticsBackend.EntityFrameworkCore/Migrations/*
+  - backend/src/AcmStatisticsBackend.EntityFrameworkCore/**/*
   - backend/src/AcmStatisticsBackend.Migrator/**/*
+  - backend/src/AcmStatisticsBackend.Web.Core/**/*
+  - backend/src/AcmStatisticsBackend.Web.Host/**/*
