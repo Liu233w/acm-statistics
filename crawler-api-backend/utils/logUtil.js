@@ -55,7 +55,7 @@ logUtil.logResponse = function (ctx, resTime) {
 
 //格式化响应日志
 const formatRes = (ctx, resTime) => {
-  var logText = new String()
+  var logText = ''
 
   //响应日志开始
   logText += '\n' + '*************** response log start ***************' + '\n'
