@@ -37,18 +37,17 @@ override run-args := $(run-args) --tty
 endif
 
 # == detect system and set command ==
-ifdef OS # windows
-   RM = del /Q
-   RMR = rmdir /s /q
-   CP = copy
-   MKDIR = md
-else
-   ifeq ($(shell uname), Linux)
-      RM = rm -f
-      RMR = rm -rf
-      CP = cp
-      MKDIR = mkdir
-   endif
+ifeq ($(findstring cmd.exe,$(SHELL)),cmd.exe)
+    # cmd shell
+    RM = del /Q
+    RMR = rmdir /s /q
+    CP = copy
+    MKDIR = md
+else # Linux or cygwin/msys
+    RM = rm -f
+    RMR = rm -rf
+    CP = cp
+    MKDIR = mkdir
 endif
 
 # === consts ==
