@@ -47,6 +47,7 @@ jobs:
         cd frontend
         make run run-cmd="npm run lint" make-args="no-interactive no-tty"
         make test-ci
+    - uses: codecov/codecov-action@v1
         
   captcha-service:
     name: Test Captcha Service
@@ -57,6 +58,7 @@ jobs:
         cd captcha-service
         make run run-cmd="npm run lint" make-args="no-interactive no-tty"
         make test-ci
+    - uses: codecov/codecov-action@v1
 
   commitlint:
     name: Commitlint
