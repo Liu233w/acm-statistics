@@ -7,7 +7,7 @@ module.exports = async function (config, username) {
   }
 
   const uidRes = await request
-    .get('https://www.luogu.org/fe/api/user/search')
+    .get('https://www.luogu.com.cn/fe/api/user/search')
     .query({keyword: username})
 
   if (!uidRes.ok) {
@@ -22,7 +22,7 @@ module.exports = async function (config, username) {
 
   const uid = uidJSON.users[0].uid
   const res = await request
-    .get('https://www.luogu.org/user/' + uid)
+    .get('https://www.luogu.com.cn/user/' + uid)
 
   if (!res.ok) {
     throw new Error(`Server Response Error: ${res.status}`)
