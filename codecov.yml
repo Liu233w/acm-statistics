@@ -3,3 +3,4 @@ ignore:
   - backend/src/AcmStatisticsBackend.Migrator/**/*
   - backend/src/AcmStatisticsBackend.Web.Core/**/*
   - backend/src/AcmStatisticsBackend.Web.Host/**/*
+  - backend/src/**/Dto/**/*
