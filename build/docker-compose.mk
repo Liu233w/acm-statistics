@@ -52,6 +52,8 @@ $(ImageToPush):
 	docker push $(ImageNameWithLatest)
 
 up: .build .env
+	$(RMR) backend-db || echo remove failed
+	$(MKDIR) backend-db
 	docker-compose up $(compose-args)
 
 # 为了进行e2e测试而启动的服务器，除了正常的代码外，还会启动 mock-server
