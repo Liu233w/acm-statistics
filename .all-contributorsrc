@@ -108,6 +108,15 @@
       "contributions": [
         "ideas"
       ]
+    },
+    {
+      "login": "UserUnknownX",
+      "name": "Michael Xiang",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/50655871?v=4",
+      "profile": "https://github.com/UserUnknownX",
+      "contributions": [
+        "bug"
+      ]
     }
   ],
   "contributorsPerLine": 7,
