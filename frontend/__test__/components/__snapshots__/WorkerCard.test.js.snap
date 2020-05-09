@@ -9,7 +9,9 @@ exports[`WorkerCard can be rendered correctly 1`] = `
       </div>
       <div class="spacer"></div>
       <div class="v-toolbar__items">
-        <!----> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">add_circle</i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">link</i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">refresh</i></span></button></span></div>
+        <!----> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">add_circle</i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">link</i></span></button></span>
+        <transition-stub name="fade"><span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">refresh</i></span></button></span></transition-stub>
+      </div>
     </div>
   </header>
   <div class="container">
@@ -30,7 +32,7 @@ exports[`WorkerCard can be rendered correctly 1`] = `
             </div>
             <div class="v-text-field__details">
               <div class="v-messages theme--light">
-                <div class="v-messages__wrapper"></div>
+                <transition-group-stub tag="div" name="message-transition" class="v-messages__wrapper"></transition-group-stub>
               </div>
             </div>
           </div>
@@ -54,7 +56,9 @@ exports[`WorkerCard can render error correctly 1`] = `
       </div>
       <div class="spacer"></div>
       <div class="v-toolbar__items">
-        <!----> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">add_circle</i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">link</i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">refresh</i></span></button></span></div>
+        <!----> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">add_circle</i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">link</i></span></button></span>
+        <transition-stub name="fade"><span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">refresh</i></span></button></span></transition-stub>
+      </div>
     </div>
   </header>
   <div class="container">
@@ -75,7 +79,7 @@ exports[`WorkerCard can render error correctly 1`] = `
             </div>
             <div class="v-text-field__details">
               <div class="v-messages theme--light">
-                <div class="v-messages__wrapper"></div>
+                <transition-group-stub tag="div" name="message-transition" class="v-messages__wrapper"></transition-group-stub>
               </div>
             </div>
           </div>
@@ -99,7 +103,9 @@ exports[`WorkerCard can render result correctly 1`] = `
       </div>
       <div class="spacer"></div>
       <div class="v-toolbar__items">
-        <!----> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">add_circle</i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">link</i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">refresh</i></span></button></span></div>
+        <!----> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">add_circle</i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">link</i></span></button></span>
+        <transition-stub name="fade"><span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">refresh</i></span></button></span></transition-stub>
+      </div>
     </div>
   </header>
   <div class="container">
@@ -120,7 +126,7 @@ exports[`WorkerCard can render result correctly 1`] = `
             </div>
             <div class="v-text-field__details">
               <div class="v-messages theme--light">
-                <div class="v-messages__wrapper"></div>
+                <transition-group-stub tag="div" name="message-transition" class="v-messages__wrapper"></transition-group-stub>
               </div>
             </div>
           </div>
@@ -144,7 +150,9 @@ exports[`WorkerCard can render username correctly 1`] = `
       </div>
       <div class="spacer"></div>
       <div class="v-toolbar__items">
-        <!----> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">add_circle</i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">link</i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">refresh</i></span></button></span></div>
+        <!----> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">add_circle</i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">link</i></span></button></span>
+        <transition-stub name="fade"><span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">refresh</i></span></button></span></transition-stub>
+      </div>
     </div>
   </header>
   <div class="container">
@@ -165,7 +173,7 @@ exports[`WorkerCard can render username correctly 1`] = `
             </div>
             <div class="v-text-field__details">
               <div class="v-messages theme--light">
-                <div class="v-messages__wrapper"></div>
+                <transition-group-stub tag="div" name="message-transition" class="v-messages__wrapper"></transition-group-stub>
               </div>
             </div>
           </div>
@@ -189,7 +197,9 @@ exports[`WorkerCard can render warning correctly 1`] = `
       </div>
       <div class="spacer"></div>
       <div class="v-toolbar__items">
-        <!----> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">add_circle</i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">link</i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">refresh</i></span></button></span></div>
+        <!----> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">add_circle</i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">link</i></span></button></span>
+        <transition-stub name="fade"><span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">refresh</i></span></button></span></transition-stub>
+      </div>
     </div>
   </header>
   <div class="container">
@@ -210,7 +220,7 @@ exports[`WorkerCard can render warning correctly 1`] = `
             </div>
             <div class="v-text-field__details">
               <div class="v-messages theme--light">
-                <div class="v-messages__wrapper"></div>
+                <transition-group-stub tag="div" name="message-transition" class="v-messages__wrapper"></transition-group-stub>
               </div>
             </div>
           </div>
