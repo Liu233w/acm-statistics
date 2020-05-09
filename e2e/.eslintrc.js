@@ -4,11 +4,11 @@ module.exports = {
     browser: false,
     node: true,
     es6: true,
-    "cypress/globals": true,
+    'cypress/globals': true,
   },
   extends: [
     'eslint:recommended',
-    "plugin:cypress/recommended",
+    'plugin:cypress/recommended',
     'plugin:lodash/recommended',
   ],
   // required to lint *.vue files

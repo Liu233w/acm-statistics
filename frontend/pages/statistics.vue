@@ -175,7 +175,9 @@
                           v-for="item in workerSummaryList"
                           :key="`${item.crawler}`"
                         >
-                          <td scope="row">{{ item.crawler }}</td>
+                          <td scope="row">
+                            {{ item.crawler }}
+                          </td>
                           <td>{{ item.username }}</td>
                           <td>{{ item.solved }}</td>
                           <td>{{ item.submissions }}</td>
