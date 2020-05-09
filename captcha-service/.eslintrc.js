@@ -4,7 +4,7 @@ module.exports = {
     browser: false,
     node: true,
     es6: true,
-    "jest/globals": true,
+    'jest/globals': true,
   },
   parserOptions: {
     parser: 'babel-eslint',
@@ -12,7 +12,7 @@ module.exports = {
   },
   extends: [
     'eslint:recommended',
-    "plugin:jest/recommended",
+    'plugin:jest/recommended',
   ],
   // required to lint *.vue files
   plugins: [
