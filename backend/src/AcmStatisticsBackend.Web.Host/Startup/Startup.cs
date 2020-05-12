@@ -13,7 +13,6 @@ using AcmStatisticsBackend.Middleware;
 using Castle.Facilities.Logging;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -101,11 +100,6 @@ namespace AcmStatisticsBackend.Web.Host.Startup
         public void Configure(IApplicationBuilder app, ILoggerFactory loggerFactory)
         {
             app.UseMiddleware<CookieAuthMiddleware>();
-
-            app.UseForwardedHeaders(new ForwardedHeadersOptions
-            {
-                ForwardedHeaders = ForwardedHeaders.All,
-            });
 
             app.UseAbp(options => { options.UseAbpRequestLocalization = false; }); // Initializes ABP framework.
 
