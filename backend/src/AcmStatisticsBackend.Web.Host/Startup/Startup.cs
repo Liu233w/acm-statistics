@@ -13,6 +13,7 @@ using AcmStatisticsBackend.Middleware;
 using Castle.Facilities.Logging;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -36,17 +37,14 @@ namespace AcmStatisticsBackend.Web.Host.Startup
         {
             // MVC
             services.AddControllersWithViews(
-                options =>
+                    options => { options.Filters.Add(new AbpAutoValidateAntiforgeryTokenAttribute()); })
+                .AddNewtonsoftJson(options =>
                 {
-                    options.Filters.Add(new AbpAutoValidateAntiforgeryTokenAttribute());
-                })
-            .AddNewtonsoftJson(options =>
-            {
-                options.SerializerSettings.ContractResolver = new AbpMvcContractResolver(IocManager.Instance)
-                {
-                    NamingStrategy = new CamelCaseNamingStrategy(),
-                };
-            });
+                    options.SerializerSettings.ContractResolver = new AbpMvcContractResolver(IocManager.Instance)
+                    {
+                        NamingStrategy = new CamelCaseNamingStrategy(),
+                    };
+                });
 
             IdentityRegistrar.Register(services);
             AuthConfigurer.Configure(services, _appConfiguration);
@@ -77,7 +75,8 @@ namespace AcmStatisticsBackend.Web.Host.Startup
                 // Define the BearerAuth scheme that's in use
                 options.AddSecurityDefinition("bearerAuth", new OpenApiSecurityScheme()
                 {
-                    Description = "JWT Authorization header using the Bearer scheme. Example: \"Authorization: Bearer {token}\"",
+                    Description =
+                        "JWT Authorization header using the Bearer scheme. Example: \"Authorization: Bearer {token}\"",
                     Name = "Authorization",
                     In = ParameterLocation.Header,
                     Type = SecuritySchemeType.ApiKey,
@@ -95,13 +94,18 @@ namespace AcmStatisticsBackend.Web.Host.Startup
                 {
                     // Configure Log4Net logging
                     options.IocManager.IocContainer.AddFacility<LoggingFacility>(
-                     f => f.UseAbpLog4Net().WithConfig("log4net.config"));
+                        f => f.UseAbpLog4Net().WithConfig("log4net.config"));
                 });
         }
 
         public void Configure(IApplicationBuilder app, ILoggerFactory loggerFactory)
         {
             app.UseMiddleware<CookieAuthMiddleware>();
+
+            app.UseForwardedHeaders(new ForwardedHeadersOptions
+            {
+                ForwardedHeaders = ForwardedHeaders.All,
+            });
 
             app.UseAbp(options => { options.UseAbpRequestLocalization = false; }); // Initializes ABP framework.
 
@@ -122,10 +126,7 @@ namespace AcmStatisticsBackend.Web.Host.Startup
             });
 
             // Enable middleware to serve generated Swagger as a JSON endpoint
-            app.UseSwagger(opts =>
-            {
-                opts.RouteTemplate = "api/backend/{documentName}/swagger.json";
-            });
+            app.UseSwagger(opts => { opts.RouteTemplate = "api/backend/{documentName}/swagger.json"; });
         }
     }
 }
