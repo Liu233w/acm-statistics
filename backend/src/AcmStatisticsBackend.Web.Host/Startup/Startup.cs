@@ -87,6 +87,9 @@ namespace AcmStatisticsBackend.Web.Host.Startup
                 options.IncludeXmlComments(docPath);
             });
 
+            // Configure X-Forwarded-For
+            services.Configure<ForwardedHeadersOptions>(options => { options.ForwardLimit = null; });
+
             // Configure Abp and Dependency Injection
             return services.AddAbp<AcmStatisticsBackendWebHostModule>(
                 options =>
