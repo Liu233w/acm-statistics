@@ -5,7 +5,7 @@
 [![Quality Gate](https://sonarcloud.io/api/project_badges/measure?project=acm-statistics&metric=alert_status)](https://sonarcloud.io/dashboard?id=acm-statistics)
 [![codecov](https://codecov.io/gh/Liu233w/acm-statistics/branch/master/graph/badge.svg)](https://codecov.io/gh/Liu233w/acm-statistics)
 [![Cypress.io](https://img.shields.io/badge/cypress.io-tests-green.svg)](https://dashboard.cypress.io/#/projects/4s32o7/runs)
-[![Renovate enabled](https://img.shields.io/badge/renovate-enabled-brightgreen.svg)](https://renovatebot.com/)
+[![Renovate enabled](https://img.shields.io/badge/renovate-enabled-brightgreen.svg)](https://app.renovatebot.com/dashboard#github/Liu233w/acm-statistics)
 [![Mergify Status](https://img.shields.io/badge/Mergify-enabled-green.svg)](https://mergify.io)
 [![Deliverybot enabled](https://img.shields.io/badge/Deliverybot-enabled-blue.svg)](https://app.deliverybot.dev/Liu233w/acm-statistics/branch/master)
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
