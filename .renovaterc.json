@@ -10,6 +10,12 @@
     {
       "groupName": "aspnetboilerplate",
       "packagePatterns": ["^Abp\\.|^Abp$"]
+    },
+    {
+      "groupName": "entityframework",
+      "packagePatterns": [
+        "^Microsoft\\.EntityFrameworkCore"
+      ]
     }
   ],
   "labels": ["dependencies"],
