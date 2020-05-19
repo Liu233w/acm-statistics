@@ -5440,8 +5440,8 @@ exports[`/statistics 1`] = `
                   <div class="v-card v-sheet theme--light">
                     <header class="blue-grey lighten-5 v-sheet v-sheet--tile theme--light elevation-0 v-toolbar v-toolbar--dense v-toolbar--flat v-app-bar" style="height:48px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;">
                       <div class="v-toolbar__content" style="height:48px;">
-                        <div title="FZU" class="v-toolbar__title">
-                          FZU
+                        <div title="ICPC Live Archive" class="v-toolbar__title">
+                          ICPC Live Archive
                         </div>
                         <div class="spacer"></div>
                         <div class="v-toolbar__items">
@@ -5484,8 +5484,8 @@ exports[`/statistics 1`] = `
                   <div class="v-card v-sheet theme--light">
                     <header class="blue-grey lighten-5 v-sheet v-sheet--tile theme--light elevation-0 v-toolbar v-toolbar--dense v-toolbar--flat v-app-bar" style="height:48px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;">
                       <div class="v-toolbar__content" style="height:48px;">
-                        <div title="SPOJ" class="v-toolbar__title">
-                          SPOJ
+                        <div title="FZU" class="v-toolbar__title">
+                          FZU
                         </div>
                         <div class="spacer"></div>
                         <div class="v-toolbar__items">
@@ -5527,8 +5527,8 @@ exports[`/statistics 1`] = `
               </div>
           </div>
           <div class="flex xs12 sm12 md6 lg4 xl3">
-            <div class="layout column"><span><div data-column-idx="1" data-column-item-idx="0" class="flex worker-item" style="z-index:1000;"><div class="v-card v-sheet theme--light"><header class="blue-grey lighten-5 v-sheet v-sheet--tile theme--light elevation-0 v-toolbar v-toolbar--dense v-toolbar--flat v-app-bar" style="height:48px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;"><div class="v-toolbar__content" style="height:48px;"><div title="Timus (URAL)" class="v-toolbar__title">
-      Timus (URAL)
+            <div class="layout column"><span><div data-column-idx="1" data-column-item-idx="0" class="flex worker-item" style="z-index:1000;"><div class="v-card v-sheet theme--light"><header class="blue-grey lighten-5 v-sheet v-sheet--tile theme--light elevation-0 v-toolbar v-toolbar--dense v-toolbar--flat v-app-bar" style="height:48px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;"><div class="v-toolbar__content" style="height:48px;"><div title="SPOJ" class="v-toolbar__title">
+      SPOJ
     </div> <div class="spacer"></div> <div class="v-toolbar__items"><!----> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">add_circle</i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">link</i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">refresh</i></span></button></span></div>
           </div>
           </header>
@@ -5565,6 +5565,50 @@ exports[`/statistics 1`] = `
         </div>
       </div>
       <div data-column-idx="1" data-column-item-idx="1" class="flex worker-item" style="z-index:999;">
+        <div class="v-card v-sheet theme--light">
+          <header class="blue-grey lighten-5 v-sheet v-sheet--tile theme--light elevation-0 v-toolbar v-toolbar--dense v-toolbar--flat v-app-bar" style="height:48px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;">
+            <div class="v-toolbar__content" style="height:48px;">
+              <div title="Timus (URAL)" class="v-toolbar__title">
+                Timus (URAL)
+              </div>
+              <div class="spacer"></div>
+              <div class="v-toolbar__items">
+                <!----> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">add_circle</i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">link</i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">refresh</i></span></button></span></div>
+            </div>
+          </header>
+          <div class="container">
+            <div class="layout">
+              <div class="flex xs12">
+                <!---->
+              </div>
+            </div>
+            <div class="layout wrap">
+              <div class="flex xs12">
+                <div class="v-input theme--light v-text-field">
+                  <div class="v-input__control">
+                    <div class="v-input__slot">
+                      <div class="v-text-field__slot"><label class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Username</label><input required="required" type="text" value></div>
+                      <div class="v-input__append-inner">
+                        <div class="v-input__icon v-input__icon--clear"><button disabled="disabled" type="button" aria-label="clear icon" class="v-icon notranslate v-icon--disabled v-icon--link mdi mdi-close theme--light"></button></div>
+                      </div>
+                    </div>
+                    <div class="v-text-field__details">
+                      <div class="v-messages theme--light">
+                        <div class="v-messages__wrapper"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!---->
+          </div>
+          <div role="dialog" class="v-dialog__container">
+            <!---->
+          </div>
+        </div>
+      </div>
+      <div data-column-idx="1" data-column-item-idx="2" class="flex worker-item" style="z-index:998;">
         <div class="v-card v-sheet theme--light">
           <header class="blue-grey lighten-5 v-sheet v-sheet--tile theme--light elevation-0 v-toolbar v-toolbar--dense v-toolbar--flat v-app-bar" style="height:48px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;">
             <div class="v-toolbar__content" style="height:48px;">
@@ -5608,7 +5652,7 @@ exports[`/statistics 1`] = `
           </div>
         </div>
       </div>
-      <div data-column-idx="1" data-column-item-idx="2" class="flex worker-item" style="z-index:998;">
+      <div data-column-idx="1" data-column-item-idx="3" class="flex worker-item" style="z-index:997;">
         <div class="v-card v-sheet theme--light">
           <header class="blue-grey lighten-5 v-sheet v-sheet--tile theme--light elevation-0 v-toolbar v-toolbar--dense v-toolbar--flat v-app-bar" style="height:48px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;">
             <div class="v-toolbar__content" style="height:48px;">
@@ -5652,7 +5696,7 @@ exports[`/statistics 1`] = `
           </div>
         </div>
       </div>
-      <div data-column-idx="1" data-column-item-idx="3" class="flex worker-item" style="z-index:997;">
+      <div data-column-idx="1" data-column-item-idx="4" class="flex worker-item" style="z-index:996;">
         <div class="v-card v-sheet theme--light">
           <header class="blue-grey lighten-5 v-sheet v-sheet--tile theme--light elevation-0 v-toolbar v-toolbar--dense v-toolbar--flat v-app-bar" style="height:48px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;">
             <div class="v-toolbar__content" style="height:48px;">
@@ -5696,7 +5740,7 @@ exports[`/statistics 1`] = `
           </div>
         </div>
       </div>
-      <div data-column-idx="1" data-column-item-idx="4" class="flex worker-item" style="z-index:996;">
+      <div data-column-idx="1" data-column-item-idx="5" class="flex worker-item" style="z-index:995;">
         <div class="v-card v-sheet theme--light">
           <header class="blue-grey lighten-5 v-sheet v-sheet--tile theme--light elevation-0 v-toolbar v-toolbar--dense v-toolbar--flat v-app-bar" style="height:48px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;">
             <div class="v-toolbar__content" style="height:48px;">
@@ -5740,7 +5784,7 @@ exports[`/statistics 1`] = `
           </div>
         </div>
       </div>
-      <div data-column-idx="1" data-column-item-idx="5" class="flex worker-item" style="z-index:995;">
+      <div data-column-idx="1" data-column-item-idx="6" class="flex worker-item" style="z-index:994;">
         <div class="v-card v-sheet theme--light">
           <header class="blue-grey lighten-5 v-sheet v-sheet--tile theme--light elevation-0 v-toolbar v-toolbar--dense v-toolbar--flat v-app-bar" style="height:48px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;">
             <div class="v-toolbar__content" style="height:48px;">
@@ -5783,66 +5827,20 @@ exports[`/statistics 1`] = `
             <!---->
           </div>
         </div>
-      </div>
-      <div data-column-idx="1" data-column-item-idx="6" class="flex worker-item" style="z-index:994;">
-        <div class="v-card v-sheet theme--light">
-          <header class="blue-grey lighten-5 v-sheet v-sheet--tile theme--light elevation-0 v-toolbar v-toolbar--dense v-toolbar--flat v-app-bar" style="height:48px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;">
-            <div class="v-toolbar__content" style="height:48px;">
-              <div title="Lutece (UESTC)" class="v-toolbar__title">
-                Lutece (UESTC)
-              </div>
-              <div class="spacer"></div>
-              <div class="v-toolbar__items">
-                <!----> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">add_circle</i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">link</i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">refresh</i></span></button></span></div>
-            </div>
-          </header>
-          <div class="container">
-            <div class="layout">
-              <div class="flex xs12">
-                <!---->
-              </div>
-            </div>
-            <div class="layout wrap">
-              <div class="flex xs12">
-                <div class="v-input theme--light v-text-field">
-                  <div class="v-input__control">
-                    <div class="v-input__slot">
-                      <div class="v-text-field__slot"><label class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Username</label><input required="required" type="text" value></div>
-                      <div class="v-input__append-inner">
-                        <div class="v-input__icon v-input__icon--clear"><button disabled="disabled" type="button" aria-label="clear icon" class="v-icon notranslate v-icon--disabled v-icon--link mdi mdi-close theme--light"></button></div>
-                      </div>
-                    </div>
-                    <div class="v-text-field__details">
-                      <div class="v-messages theme--light">
-                        <div class="v-messages__wrapper"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!---->
-          </div>
-          <div role="dialog" class="v-dialog__container">
-            <!---->
-          </div>
-        </div>
       </div></span>
     </div>
     </div>
     <div class="flex xs12 sm12 md6 lg4 xl3">
-      <div class="layout column"><span><div data-column-idx="2" data-column-item-idx="0" class="flex worker-item" style="z-index:1000;"><div class="v-card v-sheet theme--light"><header class="blue-grey lighten-5 v-sheet v-sheet--tile theme--light elevation-0 v-toolbar v-toolbar--dense v-toolbar--flat v-app-bar" style="height:48px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;"><div class="v-toolbar__content" style="height:48px;"><div title="AtCoder" class="v-toolbar__title">
-      AtCoder
+      <div class="layout column"><span><div data-column-idx="2" data-column-item-idx="0" class="flex worker-item" style="z-index:1000;"><div class="v-card v-sheet theme--light"><header class="blue-grey lighten-5 v-sheet v-sheet--tile theme--light elevation-0 v-toolbar v-toolbar--dense v-toolbar--flat v-app-bar" style="height:48px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;"><div class="v-toolbar__content" style="height:48px;"><div title="Lutece (UESTC)" class="v-toolbar__title">
+      Lutece (UESTC)
     </div> <div class="spacer"></div> <div class="v-toolbar__items"><!----> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">add_circle</i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">link</i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">refresh</i></span></button></span></div>
     </div>
     </header>
     <div class="container">
       <div class="layout">
-        <div class="flex xs12"><span class="grey--text">
-          API provided by kenkoooo (https://github.com/kenkoooo/AtCoderProblems).
-It may take a while for the api to update user statistics.
-
-        </span></div>
+        <div class="flex xs12">
+          <!---->
+        </div>
       </div>
       <div class="layout wrap">
         <div class="flex xs12">
@@ -5871,6 +5869,52 @@ It may take a while for the api to update user statistics.
     </div>
     </div>
     <div data-column-idx="2" data-column-item-idx="1" class="flex worker-item" style="z-index:999;">
+      <div class="v-card v-sheet theme--light">
+        <header class="blue-grey lighten-5 v-sheet v-sheet--tile theme--light elevation-0 v-toolbar v-toolbar--dense v-toolbar--flat v-app-bar" style="height:48px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;">
+          <div class="v-toolbar__content" style="height:48px;">
+            <div title="AtCoder" class="v-toolbar__title">
+              AtCoder
+            </div>
+            <div class="spacer"></div>
+            <div class="v-toolbar__items">
+              <!----> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">add_circle</i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">link</i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">refresh</i></span></button></span></div>
+          </div>
+        </header>
+        <div class="container">
+          <div class="layout">
+            <div class="flex xs12"><span class="grey--text">
+          API provided by kenkoooo (https://github.com/kenkoooo/AtCoderProblems).
+It may take a while for the api to update user statistics.
+
+        </span></div>
+          </div>
+          <div class="layout wrap">
+            <div class="flex xs12">
+              <div class="v-input theme--light v-text-field">
+                <div class="v-input__control">
+                  <div class="v-input__slot">
+                    <div class="v-text-field__slot"><label class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Username</label><input required="required" type="text" value></div>
+                    <div class="v-input__append-inner">
+                      <div class="v-input__icon v-input__icon--clear"><button disabled="disabled" type="button" aria-label="clear icon" class="v-icon notranslate v-icon--disabled v-icon--link mdi mdi-close theme--light"></button></div>
+                    </div>
+                  </div>
+                  <div class="v-text-field__details">
+                    <div class="v-messages theme--light">
+                      <div class="v-messages__wrapper"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!---->
+        </div>
+        <div role="dialog" class="v-dialog__container">
+          <!---->
+        </div>
+      </div>
+    </div>
+    <div data-column-idx="2" data-column-item-idx="2" class="flex worker-item" style="z-index:998;">
       <div class="v-card v-sheet theme--light">
         <header class="blue-grey lighten-5 v-sheet v-sheet--tile theme--light elevation-0 v-toolbar v-toolbar--dense v-toolbar--flat v-app-bar" style="height:48px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;">
           <div class="v-toolbar__content" style="height:48px;">
@@ -5914,7 +5958,7 @@ It may take a while for the api to update user statistics.
         </div>
       </div>
     </div>
-    <div data-column-idx="2" data-column-item-idx="2" class="flex worker-item" style="z-index:998;">
+    <div data-column-idx="2" data-column-item-idx="3" class="flex worker-item" style="z-index:997;">
       <div class="v-card v-sheet theme--light">
         <header class="blue-grey lighten-5 v-sheet v-sheet--tile theme--light elevation-0 v-toolbar v-toolbar--dense v-toolbar--flat v-app-bar" style="height:48px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;">
           <div class="v-toolbar__content" style="height:48px;">
@@ -5958,7 +6002,7 @@ It may take a while for the api to update user statistics.
         </div>
       </div>
     </div>
-    <div data-column-idx="2" data-column-item-idx="3" class="flex worker-item" style="z-index:997;">
+    <div data-column-idx="2" data-column-item-idx="4" class="flex worker-item" style="z-index:996;">
       <div class="v-card v-sheet theme--light">
         <header class="blue-grey lighten-5 v-sheet v-sheet--tile theme--light elevation-0 v-toolbar v-toolbar--dense v-toolbar--flat v-app-bar" style="height:48px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;">
           <div class="v-toolbar__content" style="height:48px;">
@@ -6002,7 +6046,7 @@ It may take a while for the api to update user statistics.
         </div>
       </div>
     </div>
-    <div data-column-idx="2" data-column-item-idx="4" class="flex worker-item" style="z-index:996;">
+    <div data-column-idx="2" data-column-item-idx="5" class="flex worker-item" style="z-index:995;">
       <div class="v-card v-sheet theme--light">
         <header class="blue-grey lighten-5 v-sheet v-sheet--tile theme--light elevation-0 v-toolbar v-toolbar--dense v-toolbar--flat v-app-bar" style="height:48px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;">
           <div class="v-toolbar__content" style="height:48px;">
@@ -6058,7 +6102,7 @@ It may take a while for the api to update user statistics.
     </div>
     </div>
     <script>
-      window.__NUXT__ = (function(a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z, A) {
+      window.__NUXT__ = (function(a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z, A, B) {
         return {
           layout: "default",
           data: [{}],
@@ -6261,6 +6305,16 @@ It may take a while for the api to update user statistics.
                 tokenKey: c,
                 solvedList: [],
                 submissionsByCrawlerName: e
+              }, {
+                crawlerName: z,
+                username: a,
+                status: d,
+                solved: b,
+                submissions: b,
+                errorMessage: a,
+                tokenKey: c,
+                solvedList: [],
+                submissionsByCrawlerName: e
               }],
               crawlers: {
                 poj: {
@@ -6293,103 +6347,109 @@ It may take a while for the api to update user statistics.
                   url: "https:\\u002F\\u002Fuva.onlinejudge.org\\u002F",
                   name: k
                 },
+                uvalive: {
+                  title: "ICPC Live Archive",
+                  description: c,
+                  url: "https:\\u002F\\u002Ficpcarchive.ecs.baylor.edu\\u002Findex.php",
+                  name: l
+                },
                 fzu: {
                   title: "FZU",
                   description: c,
                   url: "http:\\u002F\\u002Facm.fzu.edu.cn\\u002Findex.php",
-                  name: l
+                  name: m
                 },
                 spoj: {
                   title: "SPOJ",
                   description: c,
                   url: "http:\\u002F\\u002Fwww.spoj.com\\u002F",
-                  name: m
+                  name: n
                 },
                 timus: {
                   title: "Timus (URAL)",
                   description: c,
                   url: "http:\\u002F\\u002Facm.timus.ru\\u002F",
-                  name: n
+                  name: o
                 },
                 leetcode_cn: {
                   title: "LeetCode（中国）",
                   description: c,
                   url: "https:\\u002F\\u002Fleetcode-cn.com",
-                  name: o
+                  name: p
                 },
                 csu: {
                   title: "CSU",
                   description: c,
                   url: "http:\\u002F\\u002Facm.csu.edu.cn\\u002F",
-                  name: p
+                  name: q
                 },
                 loj: {
                   title: "LibreOJ",
                   description: c,
                   url: "https:\\u002F\\u002Floj.ac\\u002F",
-                  name: q
+                  name: r
                 },
                 luogu: {
                   title: "洛谷",
                   description: c,
                   url: "https:\\u002F\\u002Fluogu.org\\u002F",
-                  name: r
+                  name: s
                 },
                 nowcoder: {
                   title: "牛客OJ",
                   description: "目前只支持输入用户ID（在你的AC列表的URL中）",
                   url: "https:\\u002F\\u002Fac.nowcoder.com\\u002Facm\\u002Fhome",
-                  name: s
+                  name: t
                 },
                 uestc: {
                   title: "Lutece (UESTC)",
                   description: c,
                   url: "https:\\u002F\\u002Facm.uestc.edu.cn\\u002Fhome",
-                  name: t
+                  name: u
                 },
                 atcoder: {
                   title: "AtCoder",
                   description: "API provided by kenkoooo (https:\\u002F\\u002Fgithub.com\\u002Fkenkoooo\\u002FAtCoderProblems).\\nIt may take a while for the api to update user statistics.\\n",
                   url: "https:\\u002F\\u002Fatcoder.jp",
-                  name: u
+                  name: v
                 },
                 aizu: {
                   title: "AIZU",
                   description: c,
                   url: "http:\\u002F\\u002Fjudge.u-aizu.ac.jp\\u002Fonlinejudge\\u002Findex.jsp",
-                  name: v
+                  name: w
                 },
                 codechef: {
                   title: "CodeChef",
                   description: c,
                   url: "https:\\u002F\\u002Fwww.codechef.com\\u002F",
-                  name: w
+                  name: x
                 },
                 eljudge: {
                   title: "El Judge",
                   description: c,
                   url: "http:\\u002F\\u002Facm.mipt.ru",
-                  name: x
+                  name: y
                 },
                 vjudge: {
                   title: "VJudge",
                   description: "virtual judge，这个OJ的题量是单独计算的",
                   url: "https:\\u002F\\u002Fvjudge.net\\u002F",
-                  virtual_judge: z,
-                  name: y
+                  virtual_judge: A,
+                  name: z
                 }
               },
               mainUsername: a
             }
           },
-          serverRendered: z,
+          serverRendered: A,
           routePath: "\\u002Fstatistics",
           env: {
-            VERSION_NUM: A,
-            BUILD_TIME: A
+            VERSION_NUM: B,
+            BUILD_TIME: B
           }
         }
-      }("", 0, null, "WAITING", void 0, false, "poj", "hdu", "dashiye", "codeforces", "uva", "fzu", "spoj", "timus", "leetcode_cn", "csu", "loj", "luogu", "nowcoder", "uestc", "atcoder", "aizu", "codechef", "eljudge", "vjudge", true, "0"));
+      }("", 0, null, "WAITING", void 0, false, "poj", "hdu", "dashiye", "codeforces", "uva", "uvalive", "fzu", "spoj", "timus", "leetcode_cn", "csu", "loj", "luogu", "nowcoder", "uestc", "atcoder", "aizu", "codechef", "eljudge", "vjudge", true, "0"));
     </script>
 
 
