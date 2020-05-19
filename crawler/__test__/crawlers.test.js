@@ -137,7 +137,7 @@ describe('uva', () => {
   test('test uva', async () => {
     const res = await uva(null, 'leoloveacm')
     checkRes(res)
-    expect(res.solvedList).toContain('4141')
+    expect(res.solvedList).toContain('1395')
   })
 
 })
