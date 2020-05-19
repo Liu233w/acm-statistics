@@ -6,6 +6,7 @@ const zoj = require('../crawlers/zoj')
 const dashiye = require('../crawlers/dashiye')
 const codeforces = require('../crawlers/codeforces')
 const uva = require('../crawlers/uva')
+const uvalive = require('../crawlers/uvalive')
 const fzu = require('../crawlers/fzu')
 const spoj = require('../crawlers/spoj')
 const timus = require('../crawlers/timus')
@@ -137,6 +138,27 @@ describe('uva', () => {
     const res = await uva(null, 'leoloveacm')
     checkRes(res)
     expect(res.solvedList).toContain('4141')
+  })
+
+})
+
+describe('uvalive', () => {
+
+  test('test uvalive - should throw when user does not exist', async () => {
+    await expect(uvalive(null, notExistUsername)).rejects.toThrow('The user does not exist')
+  })
+
+  test('test uvalive', async () => {
+    const res = await uvalive(null, 'npuacm')
+    checkRes(res)
+    expect(res).toMatchObject({
+      solved: 2,
+      submissions: 3,
+      solvedList: [
+        '4445',
+        '3198',
+      ],
+    })
   })
 
 })
