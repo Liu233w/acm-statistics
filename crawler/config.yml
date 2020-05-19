@@ -5,6 +5,7 @@ crawler_order:
   - dashiye
   - codeforces
   - uva
+  - uvalive
   - fzu
   - spoj
   - timus
@@ -51,6 +52,11 @@ crawlers:
       title: UVA
       description:
       url: https://uva.onlinejudge.org/
+  uvalive:
+    meta:
+      title: ICPC Live Archive
+      description:
+      url: https://icpcarchive.ecs.baylor.edu/index.php
   fzu:
     meta:
       title: FZU

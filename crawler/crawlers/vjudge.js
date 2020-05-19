@@ -70,6 +70,7 @@ function mapOjName(nameInVjudge) {
   const simpleMapOj = new Set([
     'codeforces',
     'uva',
+    'uvalive',
     'poj',
     'hdu',
     'zoj',
