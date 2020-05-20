@@ -5,6 +5,7 @@ using AcmStatisticsBackend.Authorization.Roles;
 using AcmStatisticsBackend.Authorization.Users;
 using AcmStatisticsBackend.Crawlers;
 using AcmStatisticsBackend.MultiTenancy;
+using AcmStatisticsBackend.Settings;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 
@@ -19,6 +20,8 @@ namespace AcmStatisticsBackend.EntityFrameworkCore
         public DbSet<QueryHistory> QueryHistories { get; set; }
 
         public DbSet<QueryWorkerHistory> QueryWorkerHistories { get; set; }
+
+        public DbSet<UserSettingAttribute> UserSettingAttributes { get; set; }
 
         public AcmStatisticsBackendDbContext(DbContextOptions<AcmStatisticsBackendDbContext> options)
             : base(options)

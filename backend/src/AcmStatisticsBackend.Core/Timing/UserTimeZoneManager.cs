@@ -4,16 +4,20 @@ using Abp;
 using Abp.Configuration;
 using Abp.Dependency;
 using Abp.Timing;
+using Abp.Timing.Timezone;
+using TimeZoneConverter;
 
 namespace AcmStatisticsBackend.Timing
 {
     public class UserTimeZoneManager : ITransientDependency
     {
         private readonly ISettingManager _settingManager;
+        private readonly ITimeZoneConverter _timeZoneConverter;
 
-        public UserTimeZoneManager(ISettingManager settingManager)
+        public UserTimeZoneManager(ISettingManager settingManager, ITimeZoneConverter timeZoneConverter)
         {
             _settingManager = settingManager;
+            _timeZoneConverter = timeZoneConverter;
         }
 
         /// <summary>
