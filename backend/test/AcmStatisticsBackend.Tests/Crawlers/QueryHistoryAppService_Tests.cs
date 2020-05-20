@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Threading.Tasks;
 using Abp.Application.Services.Dto;
-using Abp.Timing;
 using AcmStatisticsBackend.Crawlers;
 using AcmStatisticsBackend.Crawlers.Dto;
 using Microsoft.EntityFrameworkCore;
@@ -524,19 +523,5 @@ namespace AcmStatisticsBackend.Tests.Crawlers
                 });
             });
         }
-    }
-
-    internal class TestClockProvider : IClockProvider
-    {
-        public DateTime Normalize(DateTime dateTime)
-        {
-            return ClockProviders.Utc.Normalize(dateTime);
-        }
-
-        public DateTime Now { get; set; }
-
-        public DateTimeKind Kind => DateTimeKind.Utc;
-
-        public bool SupportsMultipleTimezone => true;
     }
 }
