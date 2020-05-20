@@ -155,17 +155,7 @@ namespace AcmStatisticsBackend.Tests
 
         protected void LoginAsHost(string userName)
         {
-            AbpSession.TenantId = null;
-
-            var user =
-                UsingDbContext(
-                    context =>
-                        context.Users.FirstOrDefault(u => u.TenantId == AbpSession.TenantId && u.UserName == userName));
-            if (user == null)
-            {
-                throw new Exception("There is no user: " + userName + " for host.");
-            }
-
+            var user = GetHostUser(userName);
             AbpSession.UserId = user.Id;
         }
 
@@ -193,6 +183,8 @@ namespace AcmStatisticsBackend.Tests
 
         #endregion
 
+        #region GetUser
+
         /// <summary>
         /// Gets current user if <see cref="IAbpSession.UserId"/> is not null.
         /// Throws exception if it's null.
@@ -212,5 +204,29 @@ namespace AcmStatisticsBackend.Tests
             var tenantId = AbpSession.GetTenantId();
             return await UsingDbContext(context => context.Tenants.SingleAsync(t => t.Id == tenantId));
         }
+
+        protected User GetHostUser(string userName)
+        {
+            AbpSession.TenantId = null;
+
+            var user =
+                UsingDbContext(
+                    context =>
+                        context.Users.FirstOrDefault(u =>
+                            u.TenantId == AbpSession.TenantId && u.UserName == userName));
+            if (user == null)
+            {
+                throw new Exception("There is no user: " + userName + " for host.");
+            }
+
+            return user;
+        }
+
+        protected User GetHostAdmin()
+        {
+            return GetHostUser(AbpUserBase.AdminUserName);
+        }
+
+        #endregion
     }
 }
