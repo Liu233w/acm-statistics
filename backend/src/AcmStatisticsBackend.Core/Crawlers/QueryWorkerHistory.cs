@@ -2,8 +2,6 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics.CodeAnalysis;
 using Abp.Domain.Entities;
-using JetBrains.Annotations;
-using Newtonsoft.Json;
 
 namespace AcmStatisticsBackend.Crawlers
 {

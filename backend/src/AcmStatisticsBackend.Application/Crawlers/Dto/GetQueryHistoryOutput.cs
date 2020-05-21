@@ -13,16 +13,22 @@ namespace AcmStatisticsBackend.Crawlers.Dto
         [Required]
         public DateTime CreationTime { get; set; }
 
-        /// <inheritdoc cref="QueryHistory.MainUsername"/>
+        /// <summary>
+        /// Main username of query history, can be empty
+        /// </summary>
         [Required]
         [MinLength(0)]
         public string MainUsername { get; set; }
 
-        /// <inheritdoc cref="QueryHistory.Submission"/>
+        /// <summary>
+        /// Total submission count
+        /// </summary>
         [Range(0, int.MaxValue)]
         public int Submission { get; set; }
 
-        /// <inheritdoc cref="QueryHistory.Solved"/>
+        /// <summary>
+        /// Total solved count, redundant problems (including problems in virtual_judge) are removed.
+        /// </summary>
         [Range(0, int.MaxValue)]
         public int Solved { get; set; }
     }
