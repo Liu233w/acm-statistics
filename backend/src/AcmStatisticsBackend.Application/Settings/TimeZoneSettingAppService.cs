@@ -1,7 +1,7 @@
-﻿using System;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
+using Abp;
 using Abp.Authorization;
+using Abp.Configuration;
 using Abp.Domain.Repositories;
 using Abp.Runtime.Session;
 using Abp.Timing;
@@ -12,21 +12,21 @@ using AcmStatisticsBackend.Timing;
 namespace AcmStatisticsBackend.Settings
 {
     [AbpAuthorize]
-    public class SettingAppService : AcmStatisticsBackendAppServiceBase, ISettingAppService
+    public class TimeZoneSettingAppService : AcmStatisticsBackendAppServiceBase, ITimeZoneSettingAppService
     {
         private readonly IClockProvider _clockProvider;
-        private readonly UserTimeZoneManager _userTimeZoneManager;
+        private readonly ISettingManager _settingManager;
 
         private readonly IRepository<UserSettingAttribute, long> _userSettingAttributeRepository;
 
-        public SettingAppService(
+        public TimeZoneSettingAppService(
             IClockProvider clockProvider,
-            UserTimeZoneManager userTimeZoneManager,
-            IRepository<UserSettingAttribute, long> userSettingAttributeRepository)
+            IRepository<UserSettingAttribute, long> userSettingAttributeRepository,
+            ISettingManager settingManager)
         {
             _clockProvider = clockProvider;
-            _userTimeZoneManager = userTimeZoneManager;
             _userSettingAttributeRepository = userSettingAttributeRepository;
+            _settingManager = settingManager;
         }
 
         /// <inheritdoc />
@@ -34,8 +34,8 @@ namespace AcmStatisticsBackend.Settings
         {
             return new UserTimeZoneDto
             {
-                TimeZone = await _userTimeZoneManager.GetTimeZoneNameOfUserAsync(
-                    AbpSession.ToUserIdentifier()),
+                TimeZone = await _settingManager.GetSettingValueForUserAsync(
+                    TimingSettingNames.TimeZone, AbpSession.ToUserIdentifier()),
             };
         }
 
@@ -50,7 +50,10 @@ namespace AcmStatisticsBackend.Settings
                 throw new UserFriendlyException("Please wait 24 hours to set time zone again!");
             }
 
-            await _userTimeZoneManager.SetTimeZoneOfUserAsync(AbpSession.ToUserIdentifier(), dto.TimeZone);
+            await _settingManager.ChangeSettingForUserAsync(
+                AbpSession.ToUserIdentifier(),
+                TimingSettingNames.TimeZone,
+                dto.TimeZone);
             settings.LastTimeZoneChangedTime = _clockProvider.Now;
         }
 

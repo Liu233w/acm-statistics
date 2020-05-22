@@ -1,7 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 using Abp.Runtime.Validation;
-using AcmStatisticsBackend.Timing;
 
 namespace AcmStatisticsBackend.Settings.Dto
 {

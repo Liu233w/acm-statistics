@@ -3,7 +3,7 @@ using AcmStatisticsBackend.Settings.Dto;
 
 namespace AcmStatisticsBackend.Settings
 {
-    public interface ISettingAppService
+    public interface ITimeZoneSettingAppService
     {
         /// <summary>
         /// Get time zone of current user.
