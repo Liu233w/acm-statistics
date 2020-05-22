@@ -30,7 +30,7 @@ namespace AcmStatisticsBackend.Migrations
                     CreationTime = table.Column<DateTime>(nullable: false),
                     CreatorUserId = table.Column<long>(nullable: true),
                     LastModificationTime = table.Column<DateTime>(nullable: true),
-                    LastModifierUserId = table.Column<long>(nullable: true)
+                    LastModifierUserId = table.Column<long>(nullable: true),
                 },
                 constraints: table =>
                 {
