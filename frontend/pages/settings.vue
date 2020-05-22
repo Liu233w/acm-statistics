@@ -21,6 +21,33 @@
     <v-row>
       <v-col>
         <v-card>
+          <v-card-title>Change time zone</v-card-title>
+          <v-card-text>
+            <p>You can change your time zone every 24 hours.</p>
+            <v-select
+              v-model="timeZone"
+              :items="timeZoneList"
+              label="Time Zone"
+            />
+          </v-card-text>
+          <v-card-actions>
+            <v-btn
+              @click="saveTimeZone"
+              text
+            >
+              save
+            </v-btn>
+          </v-card-actions>
+          <result-overlay
+            :value="timeZoneMessage"
+            @click="timeZoneMessage = null"
+          />
+        </v-card>
+      </v-col>
+    </v-row>
+    <v-row>
+      <v-col>
+        <v-card>
           <v-card-title>Change Password</v-card-title>
           <v-card-text>
             <v-form v-model="valid">
@@ -61,18 +88,10 @@
               submit
             </v-btn>
           </v-card-actions>
-          <v-overlay
-            :absolute="true"
+          <result-overlay
             :value="changePwdMessage"
-          >
-            <v-chip
-              :color="changePwdMessage.color"
-              v-if="changePwdMessage"
-              @click="changePwdMessage = null"
-            >
-              {{ changePwdMessage.message }}
-            </v-chip>
-          </v-overlay>
+            @click="changePwdMessage = null"
+          />
         </v-card>
       </v-col>
     </v-row>
@@ -134,9 +153,12 @@
 <script>
 import rulesMixin from '~/components/rulesMixin'
 import { getAbpErrorMessage } from '~/components/utils'
+import { TIMEZONE_LIST } from '~/components/consts'
+import ResultOverlay from '~/components/ResultOverlay'
 
 export default {
   mixins: [rulesMixin],
+  components: [ResultOverlay],
   data() {
     return {
       deleteDialog: false,
@@ -146,6 +168,20 @@ export default {
       valid: false,
       loading: false,
       changePwdMessage: null,
+      timeZoneList: TIMEZONE_LIST,
+      timeZone: null,
+      timeZoneMessage: null,
+    }
+  },
+  async fetch() {
+    try {
+      const res = await this.$axios.$get('/api/services/app/TimeZoneSetting/GetUserTimeZone')
+      this.timeZone = res.timeZone
+    } catch (err) {
+      this.timeZoneMessage = {
+        color: 'error',
+        message: getAbpErrorMessage(err),
+      }
     }
   },
   methods: {
@@ -160,6 +196,7 @@ export default {
       this.$router.push('/')
     },
     async changePassword() {
+      this.changePwdMessage = null
       try {
         await this.$axios.$post('/api/services/app/Account/ChangePassword', {
           currentPassword: this.currentPwd,
@@ -172,6 +209,23 @@ export default {
       } catch (err) {
 
         this.changePwdMessage = {
+          color: 'error',
+          message: getAbpErrorMessage(err),
+        }
+      }
+    },
+    async saveTimeZone() {
+      this.timeZoneMessage = null
+      try {
+        await this.$axios.$post('/api/services/app/TimeZoneSetting/SetUserTimeZone', {
+          timeZone: this.timeZone,
+        })
+        this.timeZoneMessage = {
+          color: 'success',
+          message: 'Success!',
+        }
+      } catch (err) {
+        this.timeZoneMessage = {
           color: 'error',
           message: getAbpErrorMessage(err),
         }
