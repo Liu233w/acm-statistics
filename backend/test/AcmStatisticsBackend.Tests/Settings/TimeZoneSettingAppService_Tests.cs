@@ -121,5 +121,22 @@ namespace AcmStatisticsBackend.Tests.Settings
             var timeZoneOfUser = await _timeZoneSettingAppService.GetUserTimeZone();
             timeZoneOfUser.TimeZone.ShouldBe("Dateline Standard Time");
         }
+
+        [Fact]
+        public async Task SetUserTimeZone_WhenInputWithNonWindowsIds_ShouldThrow()
+        {
+            // arrange
+            LoginAsHostAdmin();
+
+            // act
+            var task = _timeZoneSettingAppService.SetUserTimeZone(new UserTimeZoneDto
+            {
+                // Iana time zone id
+                TimeZone = "America/Santiago",
+            });
+
+            // assert
+            await task.ShouldThrowAsync<AbpValidationException>();
+        }
     }
 }

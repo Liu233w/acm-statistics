@@ -1,6 +1,6 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using Abp.Runtime.Validation;
+using TimeZoneConverter;
 
 namespace AcmStatisticsBackend.Settings.Dto
 {
@@ -16,11 +16,7 @@ namespace AcmStatisticsBackend.Settings.Dto
 
         public void AddValidationErrors(CustomValidationContext context)
         {
-            try
-            {
-                TimeZoneInfo.FindSystemTimeZoneById(TimeZone);
-            }
-            catch (TimeZoneNotFoundException)
+            if (!TZConvert.KnownWindowsTimeZoneIds.Contains(TimeZone))
             {
                 context.Results.Add(new ValidationResult("TimeZone must be valid!"));
             }
