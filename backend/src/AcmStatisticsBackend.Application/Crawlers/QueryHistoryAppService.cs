@@ -7,6 +7,7 @@ using Abp.Authorization;
 using Abp.Domain.Repositories;
 using Abp.Linq.Extensions;
 using Abp.Timing;
+using Abp.Timing.Timezone;
 using AcmStatisticsBackend.Authorization;
 using AcmStatisticsBackend.Crawlers.Dto;
 using Microsoft.EntityFrameworkCore;
@@ -20,27 +21,42 @@ namespace AcmStatisticsBackend.Crawlers
         private readonly IRepository<QueryHistory, long> _acHistoryRepository;
         private readonly IRepository<QueryWorkerHistory, long> _acWorkerHistoryRepository;
         private readonly IClockProvider _clockProvider;
+        private readonly ITimeZoneConverter _timeZoneConverter;
 
-        public QueryHistoryAppService(IRepository<QueryHistory, long> acHistoryRepository,
-            IRepository<QueryWorkerHistory, long> acWorkerHistoryRepository, IClockProvider clockProvider)
+        public QueryHistoryAppService(
+            IRepository<QueryHistory, long> acHistoryRepository,
+            IRepository<QueryWorkerHistory, long> acWorkerHistoryRepository,
+            IClockProvider clockProvider,
+            ITimeZoneConverter timeZoneConverter)
         {
             _acHistoryRepository = acHistoryRepository;
             _acWorkerHistoryRepository = acWorkerHistoryRepository;
             _clockProvider = clockProvider;
+            _timeZoneConverter = timeZoneConverter;
         }
 
         /// <inheritdoc cref="IQueryHistoryAppService.SaveOrReplaceQueryHistory"/>
         public async Task SaveOrReplaceQueryHistory(SaveOrReplaceQueryHistoryInput input)
         {
             // 移除同一天的记录
-            // TODO: 目前是UTC时间。可以改成用户的时区。
             var latestItem = await _acHistoryRepository.GetAll()
                 .Where(e => e.UserId == AbpSession.UserId.Value)
                 .OrderByDescending(e => e.CreationTime)
                 .FirstOrDefaultAsync();
-            if (latestItem != null && latestItem.CreationTime.Date == _clockProvider.Now.Date)
+            if (latestItem != null)
             {
-                await DoDeleteHistory(latestItem);
+                Debug.Assert(AbpSession.UserId != null, "AbpSession.UserId != null");
+                var currentLocalTime = _timeZoneConverter.Convert(
+                    _clockProvider.Now, AbpSession.TenantId, AbpSession.UserId.Value);
+                var latestItemCreationTimeLocal = _timeZoneConverter.Convert(
+                    latestItem.CreationTime, AbpSession.TenantId, AbpSession.UserId.Value);
+
+                Debug.Assert(currentLocalTime != null, nameof(currentLocalTime) + " != null");
+                Debug.Assert(latestItemCreationTimeLocal != null, nameof(latestItemCreationTimeLocal) + " != null");
+                if (latestItemCreationTimeLocal.Value.Date == currentLocalTime.Value.Date)
+                {
+                    await DoDeleteHistory(latestItem);
+                }
             }
 
             // 添加新记录
