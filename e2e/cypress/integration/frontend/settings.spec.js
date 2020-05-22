@@ -65,3 +65,30 @@ describe('delete account', () => {
     cy.url().should('be', '/')
   })
 })
+
+describe('change time zone', () => {
+  before(() => {
+    cy.server()
+    cy.route('POST', '/api/services/app/TimeZoneSetting/SetUserTimeZone').as('set-time-zone')
+  })
+
+  it('should work correctly', () => {
+    cy.visit('/settings')
+
+    cy.contains('Change time zone').parent().within(() => {
+      cy.get('.v-select').click()
+      cy.root().parents('html')
+        .contains('(GMT+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna')
+        .click()
+      cy.contains('save').click()
+    })
+
+    cy.wait('@set-time-zone')
+
+    cy.reload()
+    // hide header
+    cy.get('header').invoke('hide')
+
+    cy.contains('Change time zone').parent().matchImageSnapshot()
+  })
+})
