@@ -158,7 +158,7 @@ import ResultOverlay from '~/components/ResultOverlay'
 
 export default {
   mixins: [rulesMixin],
-  components: [ResultOverlay],
+  components: { ResultOverlay },
   data() {
     return {
       deleteDialog: false,
@@ -176,7 +176,7 @@ export default {
   async fetch() {
     try {
       const res = await this.$axios.$get('/api/services/app/TimeZoneSetting/GetUserTimeZone')
-      this.timeZone = res.timeZone
+      this.timeZone = res.result.timeZone
     } catch (err) {
       this.timeZoneMessage = {
         color: 'error',
