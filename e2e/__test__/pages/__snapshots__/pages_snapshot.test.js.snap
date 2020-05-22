@@ -4298,7 +4298,7 @@ exports[`/settings 1`] = `
             </header>
             <main class="v-content" style="padding-top:64px;padding-right:0px;padding-bottom:0px;padding-left:0px;">
               <div class="v-content__wrap">
-                <div class="container container--fluid">
+                <div data-fetch-key="0" class="container container--fluid">
                   <div class="row">
                     <div class="col">
                       <div class="v-card v-sheet theme--light">
@@ -4309,6 +4309,44 @@ exports[`/settings 1`] = `
                         <div class="v-card__actions"><button type="button" class="v-btn v-btn--flat v-btn--text theme--light v-size--default"><span class="v-btn__content">
             sign out
           </span></button></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col">
+                      <div class="v-card v-sheet theme--light">
+                        <div class="v-card__title">Change time zone</div>
+                        <div class="v-card__text">
+                          <p>You can change your time zone every 24 hours.</p>
+                          <div class="v-input v-input--is-label-active v-input--is-dirty theme--light v-text-field v-select">
+                            <div class="v-input__control">
+                              <div role="button" aria-haspopup="listbox" aria-expanded="false" aria-owns="list-11914" class="v-input__slot">
+                                <div class="v-select__slot"><label class="v-label v-label--active theme--light" style="left:0px;right:auto;position:absolute;">Time Zone</label>
+                                  <div class="v-select__selections">
+                                    <div class="v-select__selection v-select__selection--comma">(GMT) UTC</div><input readonly="readonly" type="text" aria-readonly="false" autocomplete="off">
+                                  </div>
+                                  <div class="v-input__append-inner">
+                                    <div class="v-input__icon v-input__icon--append"><i aria-hidden="true" class="v-icon notranslate mdi mdi-menu-down theme--light"></i></div>
+                                  </div><input type="hidden" value="UTC">
+                                </div>
+                                <div class="v-menu">
+                                  <!---->
+                                </div>
+                              </div>
+                              <div class="v-text-field__details">
+                                <div class="v-messages theme--light">
+                                  <div class="v-messages__wrapper"></div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="v-card__actions"><button type="button" class="v-btn v-btn--flat v-btn--text theme--light v-size--default"><span class="v-btn__content">
+            save
+          </span></button></div>
+                        <div class="v-overlay v-overlay--absolute theme--dark" style="z-index:5;">
+                          <div class="v-overlay__scrim" style="opacity:0;background-color:#212121;border-color:#212121;"></div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -4402,27 +4440,310 @@ exports[`/settings 1`] = `
       </div>
     </div>
     <script>
-      window.__NUXT__ = (function(a, b) {
+      window.__NUXT__ = (function(a, b, c, d, e, f) {
         return {
           layout: "default",
           data: [{}],
-          fetch: [],
-          error: null,
+          fetch: [{
+            deleteDialog: a,
+            currentPwd: b,
+            newPwd: b,
+            pwdRepeat: b,
+            valid: c,
+            loading: a,
+            changePwdMessage: d,
+            timeZoneList: [{
+              value: e,
+              text: "(GMT) UTC"
+            }, {
+              value: "Morocco Standard Time",
+              text: "(GMT) Casablanca"
+            }, {
+              value: "GMT Standard Time",
+              text: "(GMT) Greenwich Mean Time : Dublin, Edinburgh, Lisbon, London"
+            }, {
+              value: "Greenwich Standard Time",
+              text: "(GMT) Monrovia, Reykjavik"
+            }, {
+              value: "W. Europe Standard Time",
+              text: "(GMT+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna"
+            }, {
+              value: "Central Europe Standard Time",
+              text: "(GMT+01:00) Belgrade, Bratislava, Budapest, Ljubljana, Prague"
+            }, {
+              value: "Romance Standard Time",
+              text: "(GMT+01:00) Brussels, Copenhagen, Madrid, Paris"
+            }, {
+              value: "Central European Standard Time",
+              text: "(GMT+01:00) Sarajevo, Skopje, Warsaw, Zagreb"
+            }, {
+              value: "W. Central Africa Standard Time",
+              text: "(GMT+01:00) West Central Africa"
+            }, {
+              value: "Jordan Standard Time",
+              text: "(GMT+02:00) Amman"
+            }, {
+              value: "GTB Standard Time",
+              text: "(GMT+02:00) Athens, Bucharest, Istanbul"
+            }, {
+              value: "Middle East Standard Time",
+              text: "(GMT+02:00) Beirut"
+            }, {
+              value: "Egypt Standard Time",
+              text: "(GMT+02:00) Cairo"
+            }, {
+              value: "South Africa Standard Time",
+              text: "(GMT+02:00) Harare, Pretoria"
+            }, {
+              value: "FLE Standard Time",
+              text: "(GMT+02:00) Helsinki, Kyiv, Riga, Sofia, Tallinn, Vilnius"
+            }, {
+              value: "Israel Standard Time",
+              text: "(GMT+02:00) Jerusalem"
+            }, {
+              value: "E. Europe Standard Time",
+              text: "(GMT+02:00) Minsk"
+            }, {
+              value: "Namibia Standard Time",
+              text: "(GMT+02:00) Windhoek"
+            }, {
+              value: "Arabic Standard Time",
+              text: "(GMT+03:00) Baghdad"
+            }, {
+              value: "Arab Standard Time",
+              text: "(GMT+03:00) Kuwait, Riyadh"
+            }, {
+              value: "Russian Standard Time",
+              text: "(GMT+03:00) Moscow, St. Petersburg, Volgograd"
+            }, {
+              value: "E. Africa Standard Time",
+              text: "(GMT+03:00) Nairobi"
+            }, {
+              value: "Georgian Standard Time",
+              text: "(GMT+03:00) Tbilisi"
+            }, {
+              value: "Iran Standard Time",
+              text: "(GMT+03:30) Tehran"
+            }, {
+              value: "Arabian Standard Time",
+              text: "(GMT+04:00) Abu Dhabi, Muscat"
+            }, {
+              value: "Azerbaijan Standard Time",
+              text: "(GMT+04:00) Baku"
+            }, {
+              value: "Mauritius Standard Time",
+              text: "(GMT+04:00) Port Louis"
+            }, {
+              value: "Caucasus Standard Time",
+              text: "(GMT+04:00) Yerevan"
+            }, {
+              value: "Afghanistan Standard Time",
+              text: "(GMT+04:30) Kabul"
+            }, {
+              value: "Ekaterinburg Standard Time",
+              text: "(GMT+05:00) Ekaterinburg"
+            }, {
+              value: "Pakistan Standard Time",
+              text: "(GMT+05:00) Islamabad, Karachi"
+            }, {
+              value: "West Asia Standard Time",
+              text: "(GMT+05:00) Tashkent"
+            }, {
+              value: "India Standard Time",
+              text: "(GMT+05:30) Chennai, Kolkata, Mumbai, New Delhi"
+            }, {
+              value: "Sri Lanka Standard Time",
+              text: "(GMT+05:30) Sri Jayawardenepura"
+            }, {
+              value: "Nepal Standard Time",
+              text: "(GMT+05:45) Kathmandu"
+            }, {
+              value: "N. Central Asia Standard Time",
+              text: "(GMT+06:00) Almaty, Novosibirsk"
+            }, {
+              value: "Central Asia Standard Time",
+              text: "(GMT+06:00) Astana, Dhaka"
+            }, {
+              value: "Myanmar Standard Time",
+              text: "(GMT+06:30) Yangon (Rangoon)"
+            }, {
+              value: "SE Asia Standard Time",
+              text: "(GMT+07:00) Bangkok, Hanoi, Jakarta"
+            }, {
+              value: "North Asia Standard Time",
+              text: "(GMT+07:00) Krasnoyarsk"
+            }, {
+              value: "China Standard Time",
+              text: "(GMT+08:00) Beijing, Chongqing, Hong Kong, Urumqi"
+            }, {
+              value: "North Asia East Standard Time",
+              text: "(GMT+08:00) Irkutsk, Ulaan Bataar"
+            }, {
+              value: "Singapore Standard Time",
+              text: "(GMT+08:00) Kuala Lumpur, Singapore"
+            }, {
+              value: "W. Australia Standard Time",
+              text: "(GMT+08:00) Perth"
+            }, {
+              value: "Taipei Standard Time",
+              text: "(GMT+08:00) Taipei"
+            }, {
+              value: "Tokyo Standard Time",
+              text: "(GMT+09:00) Osaka, Sapporo, Tokyo"
+            }, {
+              value: "Korea Standard Time",
+              text: "(GMT+09:00) Seoul"
+            }, {
+              value: "Yakutsk Standard Time",
+              text: "(GMT+09:00) Yakutsk"
+            }, {
+              value: "Cen. Australia Standard Time",
+              text: "(GMT+09:30) Adelaide"
+            }, {
+              value: "AUS Central Standard Time",
+              text: "(GMT+09:30) Darwin"
+            }, {
+              value: "E. Australia Standard Time",
+              text: "(GMT+10:00) Brisbane"
+            }, {
+              value: "AUS Eastern Standard Time",
+              text: "(GMT+10:00) Canberra, Melbourne, Sydney"
+            }, {
+              value: "West Pacific Standard Time",
+              text: "(GMT+10:00) Guam, Port Moresby"
+            }, {
+              value: "Tasmania Standard Time",
+              text: "(GMT+10:00) Hobart"
+            }, {
+              value: "Vladivostok Standard Time",
+              text: "(GMT+10:00) Vladivostok"
+            }, {
+              value: "Central Pacific Standard Time",
+              text: "(GMT+11:00) Magadan, Solomon Is., New Caledonia"
+            }, {
+              value: "New Zealand Standard Time",
+              text: "(GMT+12:00) Auckland, Wellington"
+            }, {
+              value: "Fiji Standard Time",
+              text: "(GMT+12:00) Fiji, Kamchatka, Marshall Is."
+            }, {
+              value: "Tonga Standard Time",
+              text: "(GMT+13:00) Nuku'alofa"
+            }, {
+              value: "Azores Standard Time",
+              text: "(GMT-01:00) Azores"
+            }, {
+              value: "Cape Verde Standard Time",
+              text: "(GMT-01:00) Cape Verde Is."
+            }, {
+              value: "Mid-Atlantic Standard Time",
+              text: "(GMT-02:00) Mid-Atlantic"
+            }, {
+              value: "E. South America Standard Time",
+              text: "(GMT-03:00) Brasilia"
+            }, {
+              value: "Argentina Standard Time",
+              text: "(GMT-03:00) Buenos Aires"
+            }, {
+              value: "SA Eastern Standard Time",
+              text: "(GMT-03:00) Georgetown"
+            }, {
+              value: "Greenland Standard Time",
+              text: "(GMT-03:00) Greenland"
+            }, {
+              value: "Montevideo Standard Time",
+              text: "(GMT-03:00) Montevideo"
+            }, {
+              value: "Newfoundland Standard Time",
+              text: "(GMT-03:30) Newfoundland"
+            }, {
+              value: "Atlantic Standard Time",
+              text: "(GMT-04:00) Atlantic Time (Canada)"
+            }, {
+              value: "SA Western Standard Time",
+              text: "(GMT-04:00) La Paz"
+            }, {
+              value: "Central Brazilian Standard Time",
+              text: "(GMT-04:00) Manaus"
+            }, {
+              value: "Pacific SA Standard Time",
+              text: "(GMT-04:00) Santiago"
+            }, {
+              value: "Venezuela Standard Time",
+              text: "(GMT-04:30) Caracas"
+            }, {
+              value: "SA Pacific Standard Time",
+              text: "(GMT-05:00) Bogota, Lima, Quito, Rio Branco"
+            }, {
+              value: "Eastern Standard Time",
+              text: "(GMT-05:00) Eastern Time (US & Canada)"
+            }, {
+              value: "US Eastern Standard Time",
+              text: "(GMT-05:00) Indiana (East)"
+            }, {
+              value: "Central America Standard Time",
+              text: "(GMT-06:00) Central America"
+            }, {
+              value: "Central Standard Time",
+              text: "(GMT-06:00) Central Time (US & Canada)"
+            }, {
+              value: "Central Standard Time (Mexico)",
+              text: "(GMT-06:00) Guadalajara, Mexico City, Monterrey"
+            }, {
+              value: "Canada Central Standard Time",
+              text: "(GMT-06:00) Saskatchewan"
+            }, {
+              value: "US Mountain Standard Time",
+              text: "(GMT-07:00) Arizona"
+            }, {
+              value: "Mountain Standard Time (Mexico)",
+              text: "(GMT-07:00) Chihuahua, La Paz, Mazatlan"
+            }, {
+              value: "Mountain Standard Time",
+              text: "(GMT-07:00) Mountain Time (US & Canada)"
+            }, {
+              value: "Pacific Standard Time",
+              text: "(GMT-08:00) Pacific Time (US & Canada)"
+            }, {
+              value: "Pacific Standard Time (Mexico)",
+              text: "(GMT-08:00) Tijuana, Baja California"
+            }, {
+              value: "Alaskan Standard Time",
+              text: "(GMT-09:00) Alaska"
+            }, {
+              value: "Hawaiian Standard Time",
+              text: "(GMT-10:00) Hawaii"
+            }, {
+              value: "Samoa Standard Time",
+              text: "(GMT-11:00) Midway Island, Samoa"
+            }, {
+              value: "Dateline Standard Time",
+              text: "(GMT-12:00) International Date Line West"
+            }],
+            timeZone: e,
+            timeZoneMessage: d,
+            rules: {
+              required: {},
+              email: {},
+              password: {}
+            }
+          }],
+          error: d,
           state: {
-            sidebar: false,
+            sidebar: a,
             session: {
-              login: a,
+              login: c,
               username: "admin"
             }
           },
-          serverRendered: a,
+          serverRendered: c,
           routePath: "\\u002Fsettings",
           env: {
-            VERSION_NUM: b,
-            BUILD_TIME: b
+            VERSION_NUM: f,
+            BUILD_TIME: f
           }
         }
-      }(true, "0"));
+      }(false, "", true, null, "UTC", "0"));
     </script>
 
 
