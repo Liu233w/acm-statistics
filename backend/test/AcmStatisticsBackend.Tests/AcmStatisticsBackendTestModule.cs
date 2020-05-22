@@ -21,10 +21,15 @@ namespace AcmStatisticsBackend.Tests
         typeof(AbpTestBaseModule))]
     public class AcmStatisticsBackendTestModule : AbpModule
     {
-        public AcmStatisticsBackendTestModule(AcmStatisticsBackendEntityFrameworkModule abpProjectNameEntityFrameworkModule)
+        private readonly ServiceCollectionRegistrar _registrar;
+
+        public AcmStatisticsBackendTestModule(
+            AcmStatisticsBackendEntityFrameworkModule abpProjectNameEntityFrameworkModule)
         {
             abpProjectNameEntityFrameworkModule.SkipDbContextRegistration = true;
             abpProjectNameEntityFrameworkModule.SkipDbSeed = true;
+
+            _registrar = new ServiceCollectionRegistrar();
         }
 
         public override void PreInitialize()
@@ -47,7 +52,13 @@ namespace AcmStatisticsBackend.Tests
 
         public override void Initialize()
         {
-            ServiceCollectionRegistrar.Register(IocManager);
+            _registrar.Register(IocManager);
+        }
+
+        public override void Shutdown()
+        {
+            _registrar.Dispose();
+            base.Shutdown();
         }
 
         private void RegisterFakeService<TService>() where TService : class

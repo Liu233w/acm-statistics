@@ -10,9 +10,11 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace AcmStatisticsBackend.Tests.DependencyInjection
 {
-    public static class ServiceCollectionRegistrar
+    public class ServiceCollectionRegistrar : IDisposable
     {
-        public static void Register(IIocManager iocManager)
+        private SqliteConnection _connection;
+
+        public void Register(IIocManager iocManager)
         {
             var services = new ServiceCollection();
 
@@ -23,17 +25,22 @@ namespace AcmStatisticsBackend.Tests.DependencyInjection
             var serviceProvider = WindsorRegistrationHelper.CreateServiceProvider(iocManager.IocContainer, services);
 
             // In-memory database only exists while the connection is open
-            var connection = new SqliteConnection("DataSource=:memory:");
-            connection.Open();
+            _connection = new SqliteConnection("DataSource=:memory:");
+            _connection.Open();
 
             var builder = new DbContextOptionsBuilder<AcmStatisticsBackendDbContext>();
-            builder.UseSqlite(connection).UseInternalServiceProvider(serviceProvider);
+            builder.UseSqlite(_connection).UseInternalServiceProvider(serviceProvider);
 
             iocManager.IocContainer.Register(
                 Component
                     .For<DbContextOptions<AcmStatisticsBackendDbContext>>()
                     .Instance(builder.Options)
                     .LifestyleSingleton());
+        }
+
+        public void Dispose()
+        {
+            _connection?.Dispose();
         }
     }
 }
