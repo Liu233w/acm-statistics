@@ -16,6 +16,9 @@
       ]
     }
   ],
+  "ignorePresets": [
+    ":ignoreModulesAndTests"
+  ],
   "labels": ["dependencies"],
   "automerge": true,
   "dockerfile": {
