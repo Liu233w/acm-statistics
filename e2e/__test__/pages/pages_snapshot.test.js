@@ -45,6 +45,16 @@ async function testPageByPath(path, authToken) {
     }
   })
 
+  // remove aria-owns="list-XXX"
+  $('*').each((i, el) => {
+    for (let key in $(el).attr()) {
+      const value = $(el).attr(key)
+      if (_.startsWith(value, 'list-') && key === 'aria-owns') {
+        $(el).removeAttr(key)
+      }
+    }
+  })
+
   // 将 css 中的id属性去掉
   $('style').each((i, el) => {
     $(el).html(_.replace($(el).html(), /\[data-v-.*?\]/g, ''))
