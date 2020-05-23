@@ -67,12 +67,10 @@ describe('delete account', () => {
 })
 
 describe('change time zone', () => {
-  before(() => {
+  it('should work correctly', () => {
     cy.server()
     cy.route('POST', '/api/services/app/TimeZoneSetting/SetUserTimeZone').as('set-time-zone')
-  })
 
-  it('should work correctly', () => {
     cy.visit('/settings')
 
     cy.contains('Change time zone').parent().within(() => {
