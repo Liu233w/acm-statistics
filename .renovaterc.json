@@ -2,9 +2,7 @@
   "extends": [
     "config:base",
     "docker:enableMajor",
-    "docker:pinDigests",
-    "group:recommended",
-    "group:monorepos"
+    "docker:pinDigests"
   ],
   "packageRules": [
     {
