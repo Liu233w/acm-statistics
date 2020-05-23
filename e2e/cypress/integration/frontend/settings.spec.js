@@ -54,18 +54,6 @@ describe('change password', () => {
   })
 })
 
-describe('delete account', () => {
-  it('shoule work correctly', () => {
-    cy.visit('/settings')
-    cy.get('button:contains("delete")').click()
-    cy.get('.v-dialog').within(() => {
-      cy.matchImageSnapshot()
-      cy.get('button:contains("Confirm")').click()
-    })
-    cy.url().should('be', '/')
-  })
-})
-
 describe('change time zone', () => {
   before(() => {
     cy.server()
@@ -90,5 +78,17 @@ describe('change time zone', () => {
     cy.get('header').invoke('hide')
 
     cy.contains('Change time zone').parent().matchImageSnapshot()
+  })
+})
+
+describe('delete account', () => {
+  it('shoule work correctly', () => {
+    cy.visit('/settings')
+    cy.get('button:contains("delete")').click()
+    cy.get('.v-dialog').within(() => {
+      cy.matchImageSnapshot()
+      cy.get('button:contains("Confirm")').click()
+    })
+    cy.url().should('be', '/')
   })
 })
