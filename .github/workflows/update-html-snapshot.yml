@@ -40,8 +40,10 @@ jobs:
         if: steps.prcomm.outputs.BOOL_TRIGGERED == 'true'
         run: |
           cd e2e
+          echo ::group::build
           make server compose-args="--detach"
           make wait-server
+          echo ::endgroup::build
           make update-html-snapshot
           make test-html-ci # ensure test pass after update
           

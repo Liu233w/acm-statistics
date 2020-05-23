@@ -10,6 +10,8 @@ jobs:
     - uses: actions/checkout@master
     - run: |
         cd e2e
+        echo ::group::build
         make server compose-args="--detach"
         make wait-server
+        echo ::endgroup::build
         make test-html-ci

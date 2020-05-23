@@ -13,8 +13,10 @@ jobs:
     - uses: actions/checkout@master
     - run: |
         cd e2e
+        echo ::group::build
         make server compose-args="--detach"
         make wait-server
+        echo ::endgroup::build
         make ci
         make run run-cmd="npm run lint" make-args="no-interactive no-tty"
 
@@ -26,8 +28,10 @@ jobs:
     - uses: actions/checkout@master
     - run: |
         cd e2e
+        echo ::group::build
         make server compose-args="--detach"
         make wait-server
+        echo ::endgroup::build
         make ci-no-record
         make run run-cmd="npm run lint" make-args="no-interactive no-tty"
     - uses: actions/upload-artifact@v1
