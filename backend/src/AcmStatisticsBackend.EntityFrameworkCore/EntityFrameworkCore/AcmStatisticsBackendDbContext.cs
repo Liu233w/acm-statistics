@@ -60,6 +60,9 @@ namespace AcmStatisticsBackend.EntityFrameworkCore
                 .HasForeignKey<QuerySummary>(e => e.QueryHistoryId)
                 .OnDelete(DeleteBehavior.Cascade);
 
+            modelBuilder.Entity<QueryHistory>()
+                .HasIndex(e => e.QuerySummaryId);
+
             modelBuilder.Entity<QuerySummary>()
                 .Property(e => e.SummaryWarnings)
                 .HasConversion(v => JsonConvert.SerializeObject(v),
