@@ -11,7 +11,7 @@ namespace AcmStatisticsBackend.Crawlers
     public class QueryWorkerHistory : Entity<long>
     {
         /// <summary>
-        /// AcHistory the entity related to
+        /// QueryHistory the entity related to
         /// </summary>
         [Required]
         public QueryHistory QueryHistory { get; set; }
@@ -72,6 +72,6 @@ namespace AcmStatisticsBackend.Crawlers
         /// Otherwise, this field contains submissions count in each crawler.
         /// </summary>
         [Required]
-        public Dictionary<string, int> SubmissionsByCrawlerName { get; set; }
+        public IDictionary<string, int> SubmissionsByCrawlerName { get; set; }
     }
 }
