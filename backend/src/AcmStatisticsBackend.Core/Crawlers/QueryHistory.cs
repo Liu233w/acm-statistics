@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using Abp.Domain.Entities;
-using Abp.Domain.Entities.Auditing;
 using AcmStatisticsBackend.Authorization.Users;
 
 namespace AcmStatisticsBackend.Crawlers
@@ -46,5 +45,14 @@ namespace AcmStatisticsBackend.Crawlers
         /// </summary>
         [Required]
         public ICollection<QueryWorkerHistory> QueryWorkerHistories { get; set; }
+
+        /// <summary>
+        /// The summary of this query history.
+        ///
+        /// Can be empty if summary is not generated.
+        /// </summary>
+        public QuerySummary QuerySummary { get; set; }
+
+        public long? QuerySummaryId { get; set; }
     }
 }

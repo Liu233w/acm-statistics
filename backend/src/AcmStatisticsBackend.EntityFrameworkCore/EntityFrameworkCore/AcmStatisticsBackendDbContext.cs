@@ -23,6 +23,12 @@ namespace AcmStatisticsBackend.EntityFrameworkCore
 
         public DbSet<UserSettingAttribute> UserSettingAttributes { get; set; }
 
+        public DbSet<QuerySummary> QuerySummaries { get; set; }
+
+        public DbSet<QueryCrawlerSummary> QueryCrawlerSummaries { get; set; }
+
+        public DbSet<UsernameInCrawler> UsernameInCrawler { get; set; }
+
         public AcmStatisticsBackendDbContext(DbContextOptions<AcmStatisticsBackendDbContext> options)
             : base(options)
         {
@@ -47,6 +53,11 @@ namespace AcmStatisticsBackend.EntityFrameworkCore
                 .Property(e => e.SubmissionsByCrawlerName)
                 .HasConversion(v => JsonConvert.SerializeObject(v),
                     v => JsonConvert.DeserializeObject<Dictionary<string, int>>(v));
+
+            modelBuilder.Entity<QuerySummary>()
+                .Property(e => e.SummaryWarnings)
+                .HasConversion(v => JsonConvert.SerializeObject(v),
+                    v => JsonConvert.DeserializeObject<List<string>>(v));
         }
     }
 }
