@@ -26,6 +26,8 @@ namespace AcmStatisticsBackend.Tests.Crawlers
                     UserId = GetHostAdmin().Id,
                     QuerySummary = new QuerySummary
                     {
+                        Solved = 0,
+                        Submission = 0,
                         QueryCrawlerSummaries = new List<QueryCrawlerSummary>
                         {
                             new QueryCrawlerSummary
@@ -48,8 +50,6 @@ namespace AcmStatisticsBackend.Tests.Crawlers
                             "A Warning",
                         },
                     },
-                    Solved = 0,
-                    Submission = 0,
                     MainUsername = "a_user",
                     QueryWorkerHistories = new List<QueryWorkerHistory>(),
                 });

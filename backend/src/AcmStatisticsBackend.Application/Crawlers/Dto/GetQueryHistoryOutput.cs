@@ -19,17 +19,5 @@ namespace AcmStatisticsBackend.Crawlers.Dto
         [Required]
         [MinLength(0)]
         public string MainUsername { get; set; }
-
-        /// <summary>
-        /// Total submission count
-        /// </summary>
-        [Range(0, int.MaxValue)]
-        public int Submission { get; set; }
-
-        /// <summary>
-        /// Total solved count, redundant problems (including problems in virtual_judge) are removed.
-        /// </summary>
-        [Range(0, int.MaxValue)]
-        public int Solved { get; set; }
     }
 }

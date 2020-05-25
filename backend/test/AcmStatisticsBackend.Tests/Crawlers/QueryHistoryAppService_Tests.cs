@@ -36,8 +36,6 @@ namespace AcmStatisticsBackend.Tests.Crawlers
             // act
             await _queryHistoryAppService.SaveOrReplaceQueryHistory(new SaveOrReplaceQueryHistoryInput
             {
-                Solved = 3,
-                Submission = 20,
                 MainUsername = "mainUser",
                 QueryWorkerHistories = new List<QueryWorkerHistoryDto>
                 {
@@ -70,8 +68,6 @@ namespace AcmStatisticsBackend.Tests.Crawlers
             {
                 (await ctx.QueryHistories.CountAsync()).ShouldBe(1);
                 var acHistory = await ctx.QueryHistories.FirstAsync();
-                acHistory.Solved.ShouldBe(3);
-                acHistory.Submission.ShouldBe(20);
                 Debug.Assert(AbpSession.UserId != null, "AbpSession.UserId != null");
                 acHistory.UserId.ShouldBe(AbpSession.UserId.Value);
                 acHistory.CreationTime.ShouldBe(new DateTime(2020, 4, 1, 10, 0, 0));
@@ -115,8 +111,6 @@ namespace AcmStatisticsBackend.Tests.Crawlers
             _testClockProvider.Now = new DateTime(2020, 4, 1, 10, 0, 0);
             await _queryHistoryAppService.SaveOrReplaceQueryHistory(new SaveOrReplaceQueryHistoryInput
             {
-                Solved = 1,
-                Submission = 10,
                 MainUsername = "u1",
                 QueryWorkerHistories = new List<QueryWorkerHistoryDto>
                 {
@@ -135,8 +129,6 @@ namespace AcmStatisticsBackend.Tests.Crawlers
             _testClockProvider.Now = new DateTime(2020, 4, 1, 20, 0, 0);
             await _queryHistoryAppService.SaveOrReplaceQueryHistory(new SaveOrReplaceQueryHistoryInput
             {
-                Solved = 5,
-                Submission = 10,
                 MainUsername = "u1",
                 QueryWorkerHistories = new List<QueryWorkerHistoryDto>
                 {
@@ -156,7 +148,6 @@ namespace AcmStatisticsBackend.Tests.Crawlers
             {
                 (await ctx.QueryHistories.CountAsync()).ShouldBe(1);
                 var history = await ctx.QueryHistories.FirstAsync();
-                history.Solved.ShouldBe(5);
 
                 (await ctx.QueryWorkerHistories.CountAsync()).ShouldBe(1);
                 var workerHistory = await ctx.QueryWorkerHistories.FirstAsync();
@@ -175,8 +166,6 @@ namespace AcmStatisticsBackend.Tests.Crawlers
             _testClockProvider.Now = new DateTime(2020, 4, 1, 10, 0, 0);
             await _queryHistoryAppService.SaveOrReplaceQueryHistory(new SaveOrReplaceQueryHistoryInput
             {
-                Solved = 1,
-                Submission = 10,
                 MainUsername = "u1",
                 QueryWorkerHistories = new List<QueryWorkerHistoryDto>
                 {
@@ -195,8 +184,6 @@ namespace AcmStatisticsBackend.Tests.Crawlers
             _testClockProvider.Now = new DateTime(2020, 4, 2, 10, 0, 0);
             await _queryHistoryAppService.SaveOrReplaceQueryHistory(new SaveOrReplaceQueryHistoryInput
             {
-                Solved = 5,
-                Submission = 10,
                 MainUsername = "u1",
                 QueryWorkerHistories = new List<QueryWorkerHistoryDto>
                 {
@@ -227,8 +214,6 @@ namespace AcmStatisticsBackend.Tests.Crawlers
             _testClockProvider.Now = new DateTime(2020, 4, 1, 10, 0, 0);
             await _queryHistoryAppService.SaveOrReplaceQueryHistory(new SaveOrReplaceQueryHistoryInput
             {
-                Solved = 1,
-                Submission = 10,
                 MainUsername = "u1",
                 QueryWorkerHistories = new List<QueryWorkerHistoryDto>
                 {
@@ -267,8 +252,6 @@ namespace AcmStatisticsBackend.Tests.Crawlers
                 Debug.Assert(AbpSession.UserId != null, "AbpSession.UserId != null");
                 await ctx.QueryHistories.AddAsync(new QueryHistory
                 {
-                    Solved = 1,
-                    Submission = 10,
                     MainUsername = "u1",
                     CreationTime = new DateTime(2020, 4, 1, 10, 0, 0),
                     UserId = AbpSession.UserId.Value,
@@ -286,8 +269,6 @@ namespace AcmStatisticsBackend.Tests.Crawlers
             result.TotalCount.ShouldBe(1);
             result.Items[0].WithIn(it =>
             {
-                it.Solved.ShouldBe(1);
-                it.Submission.ShouldBe(10);
                 it.MainUsername.ShouldBe("u1");
                 it.CreationTime.ShouldBe(new DateTime(2020, 4, 1, 10, 0, 0));
             });
@@ -305,16 +286,12 @@ namespace AcmStatisticsBackend.Tests.Crawlers
                 {
                     new QueryHistory
                     {
-                        Solved = 1,
-                        Submission = 10,
                         MainUsername = "u1",
                         CreationTime = new DateTime(2020, 4, 1, 10, 0, 0),
                         UserId = AbpSession.UserId.Value,
                     },
                     new QueryHistory
                     {
-                        Solved = 2,
-                        Submission = 11,
                         MainUsername = "u1",
                         CreationTime = new DateTime(2020, 4, 2, 10, 0, 0),
                         UserId = AbpSession.UserId.Value,
@@ -333,15 +310,11 @@ namespace AcmStatisticsBackend.Tests.Crawlers
             result.TotalCount.ShouldBe(2);
             result.Items[0].WithIn(it =>
             {
-                it.Solved.ShouldBe(2);
-                it.Submission.ShouldBe(11);
                 it.MainUsername.ShouldBe("u1");
                 it.CreationTime.ShouldBe(new DateTime(2020, 4, 2, 10, 0, 0));
             });
             result.Items[1].WithIn(it =>
             {
-                it.Solved.ShouldBe(1);
-                it.Submission.ShouldBe(10);
                 it.MainUsername.ShouldBe("u1");
                 it.CreationTime.ShouldBe(new DateTime(2020, 4, 1, 10, 0, 0));
             });
@@ -355,8 +328,6 @@ namespace AcmStatisticsBackend.Tests.Crawlers
             _testClockProvider.Now = new DateTime(2020, 4, 1, 10, 0, 0);
             await _queryHistoryAppService.SaveOrReplaceQueryHistory(new SaveOrReplaceQueryHistoryInput
             {
-                Solved = 3,
-                Submission = 20,
                 MainUsername = "mainUser",
                 QueryWorkerHistories = new List<QueryWorkerHistoryDto>
                 {
@@ -431,8 +402,6 @@ namespace AcmStatisticsBackend.Tests.Crawlers
             // act
             await _queryHistoryAppService.SaveOrReplaceQueryHistory(new SaveOrReplaceQueryHistoryInput
             {
-                Solved = 4,
-                Submission = 20,
                 MainUsername = "mainUser",
                 QueryWorkerHistories = new List<QueryWorkerHistoryDto>
                 {
@@ -479,8 +448,6 @@ namespace AcmStatisticsBackend.Tests.Crawlers
             {
                 (await ctx.QueryHistories.CountAsync()).ShouldBe(1);
                 var acHistory = await ctx.QueryHistories.FirstAsync();
-                acHistory.Solved.ShouldBe(4);
-                acHistory.Submission.ShouldBe(20);
                 Debug.Assert(AbpSession.UserId != null, "AbpSession.UserId != null");
                 acHistory.UserId.ShouldBe(AbpSession.UserId.Value);
                 acHistory.CreationTime.ShouldBe(new DateTime(2020, 4, 1, 10, 0, 0));

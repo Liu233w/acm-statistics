@@ -36,5 +36,7 @@ namespace AcmStatisticsBackend.Crawlers
         /// Usernames used in this crawler
         /// </summary>
         public ICollection<UsernameInCrawler> Usernames { get; set; }
+
+        public bool IsVirtualJudge { get; set; }
     }
 }
