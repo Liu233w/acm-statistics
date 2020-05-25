@@ -29,22 +29,18 @@ namespace AcmStatisticsBackend.Crawlers
         public string MainUsername { get; set; }
 
         /// <summary>
-        /// Total submission count
-        /// </summary>
-        [Range(0, int.MaxValue)]
-        public int Submission { get; set; }
-
-        /// <summary>
-        /// Total solved count, redundant problems (including problems in virtual_judge) are removed.
-        /// </summary>
-        [Range(0, int.MaxValue)]
-        public int Solved { get; set; }
-
-        /// <summary>
         /// Query history of each crawler.
         /// </summary>
         [Required]
         public ICollection<QueryWorkerHistory> QueryWorkerHistories { get; set; }
+
+        /// <summary>
+        /// Is data source reliable (solved/submission are really from certain username)
+        ///
+        /// When get the history from user directly, it should be false;
+        /// when get it from crawler-api-backend, it should be true.
+        /// </summary>
+        public bool IsReliableSource { get; set; } = false;
 
         /// <summary>
         /// The summary of this query history.

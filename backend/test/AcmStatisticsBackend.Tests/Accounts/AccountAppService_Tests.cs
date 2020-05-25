@@ -162,8 +162,6 @@ namespace AcmStatisticsBackend.Tests.Accounts
             });
             await Resolve<IQueryHistoryAppService>().SaveOrReplaceQueryHistory(new SaveOrReplaceQueryHistoryInput
             {
-                Solved = 1,
-                Submission = 1,
                 MainUsername = "m",
                 QueryWorkerHistories = new List<QueryWorkerHistoryDto>
                 {
