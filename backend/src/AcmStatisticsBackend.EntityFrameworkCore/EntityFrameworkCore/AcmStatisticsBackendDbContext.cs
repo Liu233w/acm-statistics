@@ -66,7 +66,7 @@ namespace AcmStatisticsBackend.EntityFrameworkCore
             modelBuilder.Entity<QuerySummary>()
                 .Property(e => e.SummaryWarnings)
                 .HasConversion(v => JsonConvert.SerializeObject(v),
-                    v => JsonConvert.DeserializeObject<List<string>>(v));
+                    v => JsonConvert.DeserializeObject<List<SummaryWarning>>(v));
         }
     }
 }
