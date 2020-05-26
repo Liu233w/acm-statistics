@@ -5,9 +5,6 @@
     "version": "1.0.0",
     "title": "crawler-api-backend"
   },
-  "schemes": [
-    "http"
-  ],
   "paths": {
     "/api/crawlers/": {
       "get": {
