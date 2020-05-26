@@ -24,7 +24,7 @@ namespace AcmStatisticsBackend.Crawlers
         /// Warnings in summary generation.
         /// </summary>
         [Required]
-        public ICollection<string> SummaryWarnings { get; set; }
+        public ICollection<SummaryWarning> SummaryWarnings { get; set; }
 
         /// <summary>
         /// Total submission count
