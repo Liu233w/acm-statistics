@@ -11,5 +11,11 @@ namespace OHunt.Web.Data
         }
 
         public DbSet<Submission> Submission { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Submission>()
+                .HasIndex(e => e.OjName);
+        }
     }
 }
