@@ -8,5 +8,10 @@ namespace OHunt.Web.Models
     {
         [Key]
         public long Id { get; set; }
+
+        [Required]
+        [MinLength(1)]
+        [MaxLength(10)]
+        public string OjName { get; set; }
     }
 }
