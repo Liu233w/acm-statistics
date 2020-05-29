@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using Abp.UI;
 using AcmStatisticsBackend.Crawlers;
 using AcmStatisticsBackend.ServiceClients;
-using Shouldly;
+using FluentAssertions;
 using Xunit;
 
 namespace AcmStatisticsBackend.Tests.Crawlers
@@ -60,6 +58,7 @@ namespace AcmStatisticsBackend.Tests.Crawlers
             {
                 new QueryWorkerHistory
                 {
+                    CrawlerName = "cr1",
                     Solved = 1,
                     Submission = 3,
                     Username = "u1",
@@ -67,6 +66,7 @@ namespace AcmStatisticsBackend.Tests.Crawlers
                 },
                 new QueryWorkerHistory
                 {
+                    CrawlerName = "cr2",
                     Solved = 2,
                     Submission = 5,
                     Username = "u2",
@@ -80,23 +80,23 @@ namespace AcmStatisticsBackend.Tests.Crawlers
                 histories);
 
             // assert
-            result.Solved.ShouldBe(7);
-            result.Submission.ShouldBe(18);
-            result.SummaryWarnings.ShouldEqualInJson(new List<SummaryWarning>
+            result.Solved.Should().Be(3);
+            result.Submission.Should().Be(8);
+            result.SummaryWarnings.Should().BeEquivalentTo(new List<SummaryWarning>
             {
-                new SummaryWarning("c1",
+                new SummaryWarning("cr1",
                     "This crawler does not have a solved list and " +
                     "its result will be directly added to summary."),
-                new SummaryWarning("c2",
+                new SummaryWarning("cr2",
                     "This crawler does not have a solved list and " +
                     "its result will be directly added to summary."),
             });
 
-            result.QueryCrawlerSummaries.ShouldEqualInJson(new List<QueryCrawlerSummary>
+            result.QueryCrawlerSummaries.Should().BeEquivalentTo(new List<QueryCrawlerSummary>
             {
                 new QueryCrawlerSummary
                 {
-                    CrawlerName = "c1",
+                    CrawlerName = "cr1",
                     IsVirtualJudge = false,
                     Solved = 1,
                     Submission = 3,
@@ -111,7 +111,7 @@ namespace AcmStatisticsBackend.Tests.Crawlers
                 },
                 new QueryCrawlerSummary
                 {
-                    CrawlerName = "c2",
+                    CrawlerName = "cr2",
                     IsVirtualJudge = false,
                     Solved = 2,
                     Submission = 5,
@@ -134,7 +134,7 @@ namespace AcmStatisticsBackend.Tests.Crawlers
             {
                 new QueryWorkerHistory
                 {
-                    CrawlerName = "c3",
+                    CrawlerName = "cr3",
                     Solved = 3,
                     Submission = 10,
                     IsVirtualJudge = true,
@@ -142,9 +142,10 @@ namespace AcmStatisticsBackend.Tests.Crawlers
                 },
             };
 
-            var call = new Func<QuerySummary>(() =>
-                SummaryGenerator.Generate(_crawlerMeta, histories));
-            call.ShouldThrow<UserFriendlyException>();
+            FluentActions.Invoking(() =>
+                    SummaryGenerator.Generate(_crawlerMeta, histories))
+                .Should().Throw<UserFriendlyException>()
+                .WithMessage("Virtual judge Cr3 should have a solved list.");
         }
 
         [Fact]
@@ -154,7 +155,7 @@ namespace AcmStatisticsBackend.Tests.Crawlers
             {
                 new QueryWorkerHistory
                 {
-                    CrawlerName = "c3",
+                    CrawlerName = "cr3",
                     Solved = 1,
                     Submission = 10,
                     IsVirtualJudge = false,
@@ -166,9 +167,37 @@ namespace AcmStatisticsBackend.Tests.Crawlers
                 },
             };
 
-            var call = new Func<QuerySummary>(() =>
-                SummaryGenerator.Generate(_crawlerMeta, histories));
-            call.ShouldThrow<UserFriendlyException>();
+            FluentActions.Invoking(() =>
+                    SummaryGenerator.Generate(_crawlerMeta, histories))
+                .Should().Throw<UserFriendlyException>()
+                .WithMessage("According to crawler meta, " +
+                             "the type of crawler Cr3 should be a virtual judge.");
+
+            var histories2 = new[]
+            {
+                new QueryWorkerHistory
+                {
+                    CrawlerName = "cr1",
+                    Solved = 1,
+                    Submission = 10,
+                    IsVirtualJudge = true,
+                    HasSolvedList = true,
+                    SolvedList = new[]
+                    {
+                        "cr2-1001",
+                    },
+                    SubmissionsByCrawlerName = new Dictionary<string, int>
+                    {
+                        { "cr2", 10 },
+                    },
+                },
+            };
+
+            FluentActions.Invoking(() =>
+                    SummaryGenerator.Generate(_crawlerMeta, histories))
+                .Should().Throw<UserFriendlyException>()
+                .WithMessage("According to crawler meta, " +
+                             "the type of crawler Cr1 should not be a virtual judge.");
         }
     }
 }

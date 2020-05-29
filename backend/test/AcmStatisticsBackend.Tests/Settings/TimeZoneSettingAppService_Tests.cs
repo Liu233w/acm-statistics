@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Abp.Runtime.Validation;
-using Abp.Timing;
 using Abp.UI;
 using AcmStatisticsBackend.Settings;
 using AcmStatisticsBackend.Settings.Dto;
-using AcmStatisticsBackend.Timing;
-using Shouldly;
+using FluentAssertions;
 using Xunit;
 
 namespace AcmStatisticsBackend.Tests.Settings
@@ -39,7 +37,7 @@ namespace AcmStatisticsBackend.Tests.Settings
             var result = await _timeZoneSettingAppService.GetUserTimeZone();
 
             // assert
-            result.ShouldEqualInJson(new UserTimeZoneDto
+            result.Should().BeEquivalentTo(new UserTimeZoneDto
             {
                 TimeZone = "US Eastern Standard Time",
             });
@@ -55,7 +53,7 @@ namespace AcmStatisticsBackend.Tests.Settings
             var result = await _timeZoneSettingAppService.GetUserTimeZone();
 
             // assert
-            result.ShouldEqualInJson(new UserTimeZoneDto
+            result.Should().BeEquivalentTo(new UserTimeZoneDto
             {
                 TimeZone = "UTC",
             });
@@ -69,7 +67,7 @@ namespace AcmStatisticsBackend.Tests.Settings
             await _timeZoneSettingAppService.SetUserTimeZone(new UserTimeZoneDto
             {
                 TimeZone = "BlaBla",
-            }).ShouldThrowAsync<AbpValidationException>();
+            }).ShouldThrow<AbpValidationException>();
         }
 
         [Fact]
@@ -86,7 +84,7 @@ namespace AcmStatisticsBackend.Tests.Settings
 
             // assert
             var timeZoneOfUser = await _timeZoneSettingAppService.GetUserTimeZone();
-            timeZoneOfUser.TimeZone.ShouldBe("US Eastern Standard Time");
+            timeZoneOfUser.TimeZone.Should().Be("US Eastern Standard Time");
         }
 
         [Fact]
@@ -107,7 +105,7 @@ namespace AcmStatisticsBackend.Tests.Settings
             await _timeZoneSettingAppService.SetUserTimeZone(new UserTimeZoneDto
             {
                 TimeZone = "Dateline Standard Time",
-            }).ShouldThrowAsync<UserFriendlyException>();
+            }).ShouldThrow<UserFriendlyException>();
 
             // UTC: 00:00 April 2; Local: 01:00 April 2
             _clockProvider.Now = _clockProvider.Now.AddHours(1);
@@ -119,7 +117,7 @@ namespace AcmStatisticsBackend.Tests.Settings
             });
 
             var timeZoneOfUser = await _timeZoneSettingAppService.GetUserTimeZone();
-            timeZoneOfUser.TimeZone.ShouldBe("Dateline Standard Time");
+            timeZoneOfUser.TimeZone.Should().Be("Dateline Standard Time");
         }
 
         [Fact]
@@ -136,7 +134,7 @@ namespace AcmStatisticsBackend.Tests.Settings
             });
 
             // assert
-            await task.ShouldThrowAsync<AbpValidationException>();
+            await task.ShouldThrow<AbpValidationException>();
         }
     }
 }

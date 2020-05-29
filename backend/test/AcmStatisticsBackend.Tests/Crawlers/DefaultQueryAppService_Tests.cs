@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using AcmStatisticsBackend.Crawlers;
 using AcmStatisticsBackend.Crawlers.Dto;
-using Shouldly;
+using FluentAssertions;
 using Xunit;
 
 namespace AcmStatisticsBackend.Tests.Crawlers
@@ -33,7 +33,7 @@ namespace AcmStatisticsBackend.Tests.Crawlers
             var result = await _appService.GetDefaultQueries();
 
             // assert
-            result.ShouldEqualInJson(new DefaultQueryDto
+            result.Should().BeEquivalentTo(new DefaultQueryDto
             {
                 MainUsername = "mainUsername",
                 UsernamesInCrawlers = new Dictionary<string, List<string>>
@@ -56,7 +56,7 @@ namespace AcmStatisticsBackend.Tests.Crawlers
             var result = await _appService.GetDefaultQueries();
 
             // assert
-            result.ShouldEqualInJson(new DefaultQueryDto
+            result.Should().BeEquivalentTo(new DefaultQueryDto
             {
                 MainUsername = "",
                 UsernamesInCrawlers = new Dictionary<string, List<string>>(),
@@ -83,7 +83,7 @@ namespace AcmStatisticsBackend.Tests.Crawlers
             var result = await _appService.GetDefaultQueries();
 
             // assert
-            result.ShouldEqualInJson(new DefaultQueryDto
+            result.Should().BeEquivalentTo(new DefaultQueryDto
             {
                 MainUsername = "",
                 UsernamesInCrawlers = new Dictionary<string, List<string>>
@@ -102,7 +102,7 @@ namespace AcmStatisticsBackend.Tests.Crawlers
             var result = await _appService.GetDefaultQueries();
 
             // assert
-            result.ShouldEqualInJson(new DefaultQueryDto
+            result.Should().BeEquivalentTo(new DefaultQueryDto
             {
                 MainUsername = "",
                 UsernamesInCrawlers = new Dictionary<string, List<string>>(),

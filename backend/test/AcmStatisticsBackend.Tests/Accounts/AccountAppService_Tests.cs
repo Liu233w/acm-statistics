@@ -10,8 +10,8 @@ using AcmStatisticsBackend.Authorization.Users;
 using AcmStatisticsBackend.Crawlers;
 using AcmStatisticsBackend.Crawlers.Dto;
 using AcmStatisticsBackend.ServiceClients;
+using FluentAssertions;
 using Microsoft.EntityFrameworkCore;
-using Shouldly;
 using Xunit;
 
 namespace AcmStatisticsBackend.Tests.Accounts
@@ -52,13 +52,13 @@ namespace AcmStatisticsBackend.Tests.Accounts
             });
 
             // assert
-            result.CanLogin.ShouldBe(true);
+            result.CanLogin.Should().BeTrue();
 
             await UsingDbContextAsync(async ctx =>
             {
                 var user = await ctx.Users.FirstOrDefaultAsync(user => user.UserName == "testuser");
-                user.EmailAddress.ShouldBe("testuser@noemail.fake");
-                user.IsEmailConfirmed.ShouldBe(false);
+                user.EmailAddress.Should().Be("testuser@noemail.fake");
+                user.IsEmailConfirmed.Should().BeFalse();
             });
         }
 
@@ -73,16 +73,15 @@ namespace AcmStatisticsBackend.Tests.Accounts
             };
 
             // act
-            var error = await _accountAppService.Register(new RegisterInput
-            {
-                UserName = "testuser",
-                Password = "StrongPassword",
-                CaptchaId = "aaaaa",
-                CaptchaText = "fdafdsf",
-            }).ShouldThrowAsync<UserFriendlyException>();
-
-            // assert
-            error.Message.ShouldBe("an error message");
+            await _accountAppService.Register(new RegisterInput
+                {
+                    UserName = "testuser",
+                    Password = "StrongPassword",
+                    CaptchaId = "aaaaa",
+                    CaptchaText = "fdafdsf",
+                }).ShouldThrow<UserFriendlyException>()
+                // assert
+                .WithMessage("an error message");
         }
 
         [Fact]
@@ -104,7 +103,7 @@ namespace AcmStatisticsBackend.Tests.Accounts
             await UsingDbContextAsync(1, async ctx =>
             {
                 var user = await ctx.Users.FirstAsync(a => a.UserName == "user1");
-                user.ShouldNotBeNull();
+                user.Should().NotBeNull();
             });
 
             // act
@@ -116,7 +115,7 @@ namespace AcmStatisticsBackend.Tests.Accounts
             await UsingDbContextAsync(1, async ctx =>
             {
                 origUser = await ctx.Users.FirstOrDefaultAsync(a => a.UserName == "user1");
-                origUser.IsDeleted.ShouldBe(true);
+                origUser.IsDeleted.Should().BeTrue();
             });
 
             // 能够注册相同的用户名（和邮箱）
@@ -130,8 +129,8 @@ namespace AcmStatisticsBackend.Tests.Accounts
             await UsingDbContextAsync(1, async ctx =>
             {
                 var user = await ctx.Users.FirstAsync(a => a.UserName == "user1" && !a.IsDeleted);
-                user.ShouldNotBeNull();
-                user.Id.ShouldNotBe(origUser.Id);
+                user.Should().NotBeNull();
+                user.Id.Should().NotBe(origUser.Id);
             });
         }
 
@@ -182,9 +181,9 @@ namespace AcmStatisticsBackend.Tests.Accounts
             // test
             await UsingDbContextAsync(1, async ctx =>
             {
-                (await ctx.DefaultQueries.CountAsync()).ShouldBe(0);
-                (await ctx.QueryHistories.CountAsync()).ShouldBe(0);
-                (await ctx.QueryWorkerHistories.CountAsync()).ShouldBe(0);
+                (await ctx.DefaultQueries.CountAsync()).Should().Be(0);
+                (await ctx.QueryHistories.CountAsync()).Should().Be(0);
+                (await ctx.QueryWorkerHistories.CountAsync()).Should().Be(0);
             });
         }
 
@@ -205,7 +204,7 @@ namespace AcmStatisticsBackend.Tests.Accounts
                 CaptchaText = "a",
             });
             var result = await _logInManager.LoginAsync("user1", "password1", AbpTenantBase.DefaultTenantName);
-            result.Result.ShouldBe(AbpLoginResultType.Success);
+            result.Result.Should().Be(AbpLoginResultType.Success);
 
             // act
             LoginAsTenant(AbpTenantBase.DefaultTenantName, "user1");
@@ -217,9 +216,9 @@ namespace AcmStatisticsBackend.Tests.Accounts
 
             // assert
             (await _logInManager.LoginAsync("user1", "password2", AbpTenantBase.DefaultTenantName))
-                .Result.ShouldBe(AbpLoginResultType.Success);
+                .Result.Should().Be(AbpLoginResultType.Success);
             (await _logInManager.LoginAsync("user1", "password1", AbpTenantBase.DefaultTenantName))
-                .Result.ShouldBe(AbpLoginResultType.InvalidPassword);
+                .Result.Should().Be(AbpLoginResultType.InvalidPassword);
         }
     }
 }
