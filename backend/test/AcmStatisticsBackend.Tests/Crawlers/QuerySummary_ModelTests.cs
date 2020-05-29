@@ -2,8 +2,8 @@
 using System.Threading.Tasks;
 using Abp.Domain.Repositories;
 using AcmStatisticsBackend.Crawlers;
+using FluentAssertions;
 using Microsoft.EntityFrameworkCore;
-using Shouldly;
 using Xunit;
 
 namespace AcmStatisticsBackend.Tests.Crawlers
@@ -54,9 +54,9 @@ namespace AcmStatisticsBackend.Tests.Crawlers
                     QueryWorkerHistories = new List<QueryWorkerHistory>(),
                 });
 
-                (await c.QueryHistories.CountAsync()).ShouldBe(1);
-                (await c.QuerySummaries.CountAsync()).ShouldBe(1);
-                (await c.UsernameInCrawler.CountAsync()).ShouldBe(1);
+                (await c.QueryHistories.CountAsync()).Should().Be(1);
+                (await c.QuerySummaries.CountAsync()).Should().Be(1);
+                (await c.UsernameInCrawler.CountAsync()).Should().Be(1);
             });
         }
 
@@ -76,12 +76,12 @@ namespace AcmStatisticsBackend.Tests.Crawlers
             // assert
             await UsingDbContextAsync(async c =>
             {
-                (await c.QueryHistories.CountAsync()).ShouldBe(1);
-                (await c.QuerySummaries.CountAsync()).ShouldBe(0);
-                (await c.UsernameInCrawler.CountAsync()).ShouldBe(0);
+                (await c.QueryHistories.CountAsync()).Should().Be(1);
+                (await c.QuerySummaries.CountAsync()).Should().Be(0);
+                (await c.UsernameInCrawler.CountAsync()).Should().Be(0);
 
                 var history = await c.QueryHistories.FirstAsync();
-                history.QuerySummaryId.ShouldBeNull();
+                history.QuerySummaryId.Should().BeNull();
             });
         }
 
@@ -101,9 +101,9 @@ namespace AcmStatisticsBackend.Tests.Crawlers
             // assert
             await UsingDbContextAsync(async c =>
             {
-                (await c.QueryHistories.CountAsync()).ShouldBe(0);
-                (await c.QuerySummaries.CountAsync()).ShouldBe(0);
-                (await c.UsernameInCrawler.CountAsync()).ShouldBe(0);
+                (await c.QueryHistories.CountAsync()).Should().Be(0);
+                (await c.QuerySummaries.CountAsync()).Should().Be(0);
+                (await c.UsernameInCrawler.CountAsync()).Should().Be(0);
             });
         }
     }

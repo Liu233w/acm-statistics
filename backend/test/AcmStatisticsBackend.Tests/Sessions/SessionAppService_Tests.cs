@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 using AcmStatisticsBackend.Sessions;
-using Shouldly;
+using FluentAssertions;
 using Xunit;
 
 namespace AcmStatisticsBackend.Tests.Sessions
@@ -24,11 +24,11 @@ namespace AcmStatisticsBackend.Tests.Sessions
             var currentUser = await GetCurrentUserAsync();
             var currentTenant = await GetCurrentTenantAsync();
 
-            output.User.ShouldNotBe(null);
-            output.User.Name.ShouldBe(currentUser.Name);
+            output.User.Should().NotBe(null);
+            output.User.Name.Should().Be(currentUser.Name);
 
-            output.Tenant.ShouldNotBe(null);
-            output.Tenant.Name.ShouldBe(currentTenant.Name);
+            output.Tenant.Should().NotBe(null);
+            output.Tenant.Name.Should().Be(currentTenant.Name);
         }
     }
 }

@@ -19,8 +19,8 @@ namespace AcmStatisticsBackend.Crawlers
         /// </summary>
         [Pure]
         public static QuerySummary Generate(
-            IEnumerable<CrawlerMetaItem> crawlerMeta,
-            IEnumerable<QueryWorkerHistory> workerHistories)
+            IReadOnlyCollection<CrawlerMetaItem> crawlerMeta,
+            IReadOnlyCollection<QueryWorkerHistory> workerHistories)
         {
             ResolveSummaryData(crawlerMeta, workerHistories,
                 out var summaries,
@@ -59,8 +59,8 @@ namespace AcmStatisticsBackend.Crawlers
         }
 
         private static void ResolveSummaryData(
-            IEnumerable<CrawlerMetaItem> crawlerMeta,
-            IEnumerable<QueryWorkerHistory> workerHistories,
+            IReadOnlyCollection<CrawlerMetaItem> crawlerMeta,
+            IReadOnlyCollection<QueryWorkerHistory> workerHistories,
             out Dictionary<string, CrawlerSummaryData> summaries,
             out List<SummaryWarning> warnings,
             out List<QueryWorkerHistory> directlyAddSolvedWorkerList)
@@ -105,7 +105,7 @@ namespace AcmStatisticsBackend.Crawlers
 
         private static void EnsureCrawlerExists(
             IReadOnlyDictionary<string, CrawlerSummaryData> summaries,
-            IEnumerable<CrawlerMetaItem> crawlerMeta)
+            IReadOnlyCollection<CrawlerMetaItem> crawlerMeta)
         {
             foreach (var item in crawlerMeta)
             {
@@ -160,7 +160,7 @@ namespace AcmStatisticsBackend.Crawlers
         }
 
         private static Dictionary<string, CrawlerSummaryData> InitSummaries(
-            IEnumerable<CrawlerMetaItem> crawlerMeta)
+            IReadOnlyCollection<CrawlerMetaItem> crawlerMeta)
         {
             return crawlerMeta
                 .ToDictionary(

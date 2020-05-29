@@ -5,8 +5,8 @@ using System.Threading.Tasks;
 using Abp.Application.Services.Dto;
 using AcmStatisticsBackend.Crawlers;
 using AcmStatisticsBackend.Crawlers.Dto;
+using FluentAssertions;
 using Microsoft.EntityFrameworkCore;
-using Shouldly;
 using Xunit;
 
 namespace AcmStatisticsBackend.Tests.Crawlers
@@ -66,25 +66,25 @@ namespace AcmStatisticsBackend.Tests.Crawlers
             // assert
             await UsingDbContextAsync(async ctx =>
             {
-                (await ctx.QueryHistories.CountAsync()).ShouldBe(1);
+                (await ctx.QueryHistories.CountAsync()).Should().Be(1);
                 var acHistory = await ctx.QueryHistories.FirstAsync();
                 Debug.Assert(AbpSession.UserId != null, "AbpSession.UserId != null");
-                acHistory.UserId.ShouldBe(AbpSession.UserId.Value);
-                acHistory.CreationTime.ShouldBe(new DateTime(2020, 4, 1, 10, 0, 0));
-                acHistory.MainUsername.ShouldBe("mainUser");
+                acHistory.UserId.Should().Be(AbpSession.UserId.Value);
+                acHistory.CreationTime.Should().Be(new DateTime(2020, 4, 1, 10, 0, 0));
+                acHistory.MainUsername.Should().Be("mainUser");
 
-                (await ctx.QueryWorkerHistories.CountAsync()).ShouldBe(2);
+                (await ctx.QueryWorkerHistories.CountAsync()).Should().Be(2);
                 var list = await ctx.QueryWorkerHistories.ToListAsync();
                 list[0].WithIn(it =>
                 {
-                    it.Solved.ShouldBe(3);
-                    it.Submission.ShouldBe(20);
-                    it.Username.ShouldBe("u1");
-                    it.CrawlerName.ShouldBe("c1");
-                    it.QueryHistoryId.ShouldBe(acHistory.Id);
-                    it.ErrorMessage.ShouldBe(null);
-                    it.HasSolvedList.ShouldBe(true);
-                    it.SolvedList.ShouldBe(new string[]
+                    it.Solved.Should().Be(3);
+                    it.Submission.Should().Be(20);
+                    it.Username.Should().Be("u1");
+                    it.CrawlerName.Should().Be("c1");
+                    it.QueryHistoryId.Should().Be(acHistory.Id);
+                    it.ErrorMessage.Should().Be(null);
+                    it.HasSolvedList.Should().Be(true);
+                    it.SolvedList.Should().BeEquivalentTo(new[]
                     {
                         "p1",
                         "p2",
@@ -93,10 +93,10 @@ namespace AcmStatisticsBackend.Tests.Crawlers
                 });
                 list[1].WithIn(it =>
                 {
-                    it.Solved.ShouldBe(0);
-                    it.HasSolvedList.ShouldBe(false);
-                    it.SolvedList.ShouldBe(new string[0]);
-                    it.ErrorMessage.ShouldBe("Cannot find username");
+                    it.Solved.Should().Be(0);
+                    it.HasSolvedList.Should().BeFalse();
+                    it.SolvedList.Should().BeEquivalentTo(new string[0]);
+                    it.ErrorMessage.Should().Be("Cannot find username");
                 });
             });
         }
@@ -146,13 +146,13 @@ namespace AcmStatisticsBackend.Tests.Crawlers
             // assert
             await UsingDbContextAsync(async ctx =>
             {
-                (await ctx.QueryHistories.CountAsync()).ShouldBe(1);
+                (await ctx.QueryHistories.CountAsync()).Should().Be(1);
                 var history = await ctx.QueryHistories.FirstAsync();
 
-                (await ctx.QueryWorkerHistories.CountAsync()).ShouldBe(1);
+                (await ctx.QueryWorkerHistories.CountAsync()).Should().Be(1);
                 var workerHistory = await ctx.QueryWorkerHistories.FirstAsync();
-                workerHistory.QueryHistoryId.ShouldBe(history.Id);
-                workerHistory.Solved.ShouldBe(5);
+                workerHistory.QueryHistoryId.Should().Be(history.Id);
+                workerHistory.Solved.Should().Be(5);
             });
         }
 
@@ -201,8 +201,8 @@ namespace AcmStatisticsBackend.Tests.Crawlers
             // assert
             await UsingDbContextAsync(async ctx =>
             {
-                (await ctx.QueryHistories.CountAsync()).ShouldBe(2);
-                (await ctx.QueryWorkerHistories.CountAsync()).ShouldBe(2);
+                (await ctx.QueryHistories.CountAsync()).Should().Be(2);
+                (await ctx.QueryWorkerHistories.CountAsync()).Should().Be(2);
             });
         }
 
@@ -237,8 +237,8 @@ namespace AcmStatisticsBackend.Tests.Crawlers
             // assert
             await UsingDbContextAsync(async ctx =>
             {
-                (await ctx.QueryHistories.CountAsync()).ShouldBe(0);
-                (await ctx.QueryWorkerHistories.CountAsync()).ShouldBe(0);
+                (await ctx.QueryHistories.CountAsync()).Should().Be(0);
+                (await ctx.QueryWorkerHistories.CountAsync()).Should().Be(0);
             });
         }
 
@@ -266,11 +266,11 @@ namespace AcmStatisticsBackend.Tests.Crawlers
             });
 
             // assert
-            result.TotalCount.ShouldBe(1);
+            result.TotalCount.Should().Be(1);
             result.Items[0].WithIn(it =>
             {
-                it.MainUsername.ShouldBe("u1");
-                it.CreationTime.ShouldBe(new DateTime(2020, 4, 1, 10, 0, 0));
+                it.MainUsername.Should().Be("u1");
+                it.CreationTime.Should().Be(new DateTime(2020, 4, 1, 10, 0, 0));
             });
         }
 
@@ -307,16 +307,16 @@ namespace AcmStatisticsBackend.Tests.Crawlers
             });
 
             // assert
-            result.TotalCount.ShouldBe(2);
+            result.TotalCount.Should().Be(2);
             result.Items[0].WithIn(it =>
             {
-                it.MainUsername.ShouldBe("u1");
-                it.CreationTime.ShouldBe(new DateTime(2020, 4, 2, 10, 0, 0));
+                it.MainUsername.Should().Be("u1");
+                it.CreationTime.Should().Be(new DateTime(2020, 4, 2, 10, 0, 0));
             });
             result.Items[1].WithIn(it =>
             {
-                it.MainUsername.ShouldBe("u1");
-                it.CreationTime.ShouldBe(new DateTime(2020, 4, 1, 10, 0, 0));
+                it.MainUsername.Should().Be("u1");
+                it.CreationTime.Should().Be(new DateTime(2020, 4, 1, 10, 0, 0));
             });
         }
 
@@ -365,16 +365,16 @@ namespace AcmStatisticsBackend.Tests.Crawlers
             });
 
             // assert
-            list.Items.Count.ShouldBe(2);
+            list.Items.Count.Should().Be(2);
             list.Items[0].WithIn(it =>
             {
-                it.Solved.ShouldBe(3);
-                it.Submission.ShouldBe(20);
-                it.Username.ShouldBe("u1");
-                it.CrawlerName.ShouldBe("c1");
-                it.ErrorMessage.ShouldBeNull();
-                it.HasSolvedList.ShouldBe(true);
-                it.SolvedList.ShouldEqualInJson(new string[]
+                it.Solved.Should().Be(3);
+                it.Submission.Should().Be(20);
+                it.Username.Should().Be("u1");
+                it.CrawlerName.Should().Be("c1");
+                it.ErrorMessage.Should().BeNull();
+                it.HasSolvedList.Should().Be(true);
+                it.SolvedList.Should().BeEquivalentTo(new string[]
                 {
                     "p1",
                     "p2",
@@ -383,12 +383,12 @@ namespace AcmStatisticsBackend.Tests.Crawlers
             });
             list.Items[1].WithIn(it =>
             {
-                it.Solved.ShouldBe(0);
-                it.Username.ShouldBe("u2");
-                it.CrawlerName.ShouldBe("c2");
-                it.ErrorMessage.ShouldBe("Cannot find username");
-                it.HasSolvedList.ShouldBe(false);
-                it.SolvedList.ShouldEqualInJson(new string[0]);
+                it.Solved.Should().Be(0);
+                it.Username.Should().Be("u2");
+                it.CrawlerName.Should().Be("c2");
+                it.ErrorMessage.Should().Be("Cannot find username");
+                it.HasSolvedList.Should().Be(false);
+                it.SolvedList.Should().BeEquivalentTo(new string[0]);
             });
         }
 
@@ -446,25 +446,25 @@ namespace AcmStatisticsBackend.Tests.Crawlers
             // assert
             await UsingDbContextAsync(async ctx =>
             {
-                (await ctx.QueryHistories.CountAsync()).ShouldBe(1);
+                (await ctx.QueryHistories.CountAsync()).Should().Be(1);
                 var acHistory = await ctx.QueryHistories.FirstAsync();
                 Debug.Assert(AbpSession.UserId != null, "AbpSession.UserId != null");
-                acHistory.UserId.ShouldBe(AbpSession.UserId.Value);
-                acHistory.CreationTime.ShouldBe(new DateTime(2020, 4, 1, 10, 0, 0));
-                acHistory.MainUsername.ShouldBe("mainUser");
+                acHistory.UserId.Should().Be(AbpSession.UserId.Value);
+                acHistory.CreationTime.Should().Be(new DateTime(2020, 4, 1, 10, 0, 0));
+                acHistory.MainUsername.Should().Be("mainUser");
 
-                (await ctx.QueryWorkerHistories.CountAsync()).ShouldBe(2);
+                (await ctx.QueryWorkerHistories.CountAsync()).Should().Be(2);
                 var list = await ctx.QueryWorkerHistories.ToListAsync();
                 list[0].WithIn(it =>
                 {
-                    it.Solved.ShouldBe(3);
-                    it.Submission.ShouldBe(10);
-                    it.Username.ShouldBe("u1");
-                    it.CrawlerName.ShouldBe("c1");
-                    it.QueryHistoryId.ShouldBe(acHistory.Id);
-                    it.ErrorMessage.ShouldBe(null);
-                    it.HasSolvedList.ShouldBe(true);
-                    it.SolvedList.ShouldBe(new string[]
+                    it.Solved.Should().Be(3);
+                    it.Submission.Should().Be(10);
+                    it.Username.Should().Be("u1");
+                    it.CrawlerName.Should().Be("c1");
+                    it.QueryHistoryId.Should().Be(acHistory.Id);
+                    it.ErrorMessage.Should().Be(null);
+                    it.HasSolvedList.Should().Be(true);
+                    it.SolvedList.Should().BeEquivalentTo(new string[]
                     {
                         "p1",
                         "p2",
@@ -473,16 +473,16 @@ namespace AcmStatisticsBackend.Tests.Crawlers
                 });
                 list[1].WithIn(it =>
                 {
-                    it.Solved.ShouldBe(3);
-                    it.HasSolvedList.ShouldBe(true);
-                    it.SolvedList.ShouldBe(new string[]
+                    it.Solved.Should().Be(3);
+                    it.HasSolvedList.Should().Be(true);
+                    it.SolvedList.Should().BeEquivalentTo(new string[]
                     {
                         "c1-p1",
                         "c1-p5",
                         "NO_NAME-1001",
                     });
-                    it.IsVirtualJudge.ShouldBe(true);
-                    it.SubmissionsByCrawlerName.ShouldEqualInJson(new Dictionary<string, int>
+                    it.IsVirtualJudge.Should().Be(true);
+                    it.SubmissionsByCrawlerName.Should().BeEquivalentTo(new Dictionary<string, int>
                     {
                         { "c1", 5 },
                         { "NO_NAME", 5 },
