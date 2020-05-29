@@ -9,6 +9,6 @@ namespace AcmStatisticsBackend.ServiceClients
         /// <summary>
         /// Get the meta data of crawlers
         /// </summary>
-        Task<IImmutableList<CrawlerMetaItem>> GetCrawlerMeta();
+        Task<IReadOnlyCollection<CrawlerMetaItem>> GetCrawlerMeta();
     }
 }

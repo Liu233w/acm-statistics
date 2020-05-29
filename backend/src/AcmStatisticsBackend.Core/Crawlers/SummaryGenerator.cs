@@ -1,8 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Diagnostics.Contracts;
-using Abp.Dependency;
+using System.Linq;
 using Abp.UI;
+using AcmStatisticsBackend.ServiceClients;
 
 namespace AcmStatisticsBackend.Crawlers
 {
@@ -18,95 +18,170 @@ namespace AcmStatisticsBackend.Crawlers
         /// It will not modify the parameter.
         /// </summary>
         [Pure]
-        public static QuerySummary Generate(QueryHistory history)
+        public static QuerySummary Generate(
+            IEnumerable<CrawlerMetaItem> crawlerMeta,
+            IEnumerable<QueryWorkerHistory> workerHistories)
         {
-            var warnings = new List<SummaryWarning>();
-            var nameToCrawlerSummary = new Dictionary<string, CrawlerSummaryData>();
-            var directlyAddWorker = new List<QueryWorkerHistory>();
+            ResolveSummaryData(crawlerMeta, workerHistories,
+                out var summaries,
+                out var warnings,
+                out var directlyAddSolvedWorkerList);
 
-            // init virtual judges and other summary
-            foreach (var workerHistory in history.QueryWorkerHistories)
+            var summaryDict = summaries.ToDictionary(
+                p => p.Key,
+                p => new QueryCrawlerSummary
+                {
+                    CrawlerName = p.Value.CrawlerName,
+                    Solved = p.Value.SolvedSet.Count,
+                    Submission = p.Value.Submissions,
+                    Usernames = p.Value.Usernames,
+                    IsVirtualJudge = p.Value.IsVirtualJudge,
+                });
+
+            foreach (var worker in directlyAddSolvedWorkerList)
             {
-                if (nameToCrawlerSummary.TryGetValue(workerHistory.CrawlerName, out var summary))
-                {
-                    EnsureVirtualJudgeIdentical(summary, workerHistory);
-                    continue;
-                }
-
-                var newSummary = new CrawlerSummaryData
-                {
-                    CrawlerName = workerHistory.CrawlerName,
-                    IsVirtualJudge = workerHistory.IsVirtualJudge,
-                };
-                nameToCrawlerSummary.Add(workerHistory.CrawlerName, newSummary);
+                var summary = summaryDict[worker.CrawlerName];
+                summary.Solved += worker.Solved;
             }
 
-            foreach (var workerHistory in history.QueryWorkerHistories)
+            var summaryList = summaryDict
+                .Select(p => p.Value)
+                .Where(a => a.Usernames.Count > 0)
+                .ToList();
+
+            return new QuerySummary
             {
-                if (!workerHistory.HasSolvedList)
+                QueryCrawlerSummaries = summaryList,
+                SummaryWarnings = warnings,
+                Solved = summaryList.Sum(a => a.Solved),
+                Submission = summaryList.Sum(a => a.Submission),
+            };
+        }
+
+        private static void ResolveSummaryData(
+            IEnumerable<CrawlerMetaItem> crawlerMeta,
+            IEnumerable<QueryWorkerHistory> workerHistories,
+            out Dictionary<string, CrawlerSummaryData> summaries,
+            out List<SummaryWarning> warnings,
+            out List<QueryWorkerHistory> directlyAddSolvedWorkerList)
+        {
+            summaries = InitSummaries(crawlerMeta);
+            warnings = new List<SummaryWarning>();
+            directlyAddSolvedWorkerList = new List<QueryWorkerHistory>();
+
+            EnsureCrawlerExists(summaries, crawlerMeta);
+
+            foreach (var worker in workerHistories)
+            {
+                var summary = summaries[worker.CrawlerName];
+                summary.Usernames.Add(new UsernameInCrawler
+                {
+                    Username = worker.Username,
+                    FromCrawlerName = null,
+                });
+                summary.Submissions += worker.Submission;
+
+                if (!worker.HasSolvedList)
                 {
                     warnings.Add(new SummaryWarning(
-                        workerHistory.CrawlerName,
+                        worker.CrawlerName,
                         "This crawler does not have a solved list and " +
                         "its result will be directly added to summary."));
-                    directlyAddWorker.Add(workerHistory);
+                    directlyAddSolvedWorkerList.Add(worker);
                     continue;
                 }
 
-                if (workerHistory.IsVirtualJudge)
+                if (worker.IsVirtualJudge)
                 {
-                    var vjSummary = nameToCrawlerSummary[workerHistory.CrawlerName];
-                    foreach (var problem in workerHistory.SolvedList)
-                    {
-                        problem.Split('-').Deconstruct(
-                            out var problemCrawlerName,
-                            out var problemId);
-                    }
+                    HandleVirtualJudgeProblems(worker, summary, summaries);
+                    HandleVirtualJudgeSubmissions(worker, summary, summaries);
                 }
-
-                var summary = GetOrAddSummaryData(nameToCrawlerSummary, workerHistory.CrawlerName);
-                summary.Usernames.Add(new UsernameInCrawler())
+                else
+                {
+                    summary.SolvedSet = worker.SolvedList.ToHashSet();
+                }
             }
-
-            throw new NotImplementedException();
         }
 
-        private static CrawlerSummaryData GetOrAddSummaryData(
-            IDictionary<string, CrawlerSummaryData> nameToCrawlerSummary,
-            string crawlerName)
+        private static void EnsureCrawlerExists(
+            IReadOnlyDictionary<string, CrawlerSummaryData> summaries,
+            IEnumerable<CrawlerMetaItem> crawlerMeta)
         {
-            if (nameToCrawlerSummary.TryGetValue(crawlerName, out var summary))
+            foreach (var item in crawlerMeta)
             {
-                return summary;
+                if (!summaries.ContainsKey(item.CrawlerName))
+                {
+                    throw new UserFriendlyException(
+                        $"The meta data of crawler `{item.CrawlerName}` does not exist");
+                }
             }
-
-            var newSummary = new CrawlerSummaryData
-            {
-                CrawlerName = crawlerName,
-                IsVirtualJudge = false,
-            };
-            nameToCrawlerSummary.Add(crawlerName, newSummary);
-            return newSummary;
         }
 
-        private static void EnsureVirtualJudgeIdentical(
-            CrawlerSummaryData crawlerSummaryData,
-            QueryWorkerHistory workerHistory)
+        private static void HandleVirtualJudgeProblems(
+            QueryWorkerHistory worker,
+            CrawlerSummaryData vjSummary,
+            IReadOnlyDictionary<string, CrawlerSummaryData> summaries)
         {
-            if (crawlerSummaryData.IsVirtualJudge != workerHistory.IsVirtualJudge)
+            foreach (var problem in worker.SolvedList)
             {
-                throw new UserFriendlyException(
-                    $"The type of crawler {crawlerSummaryData.CrawlerName} is not identical!",
-                    "Their IsVirtualJudge field should be identical.");
+                var (problemCrawlerName, problemId)
+                    = problem.Split('-');
+
+                if (summaries.TryGetValue(problemCrawlerName,
+                    out var problemCrawlerSummary))
+                {
+                    problemCrawlerSummary.Usernames.Add(new UsernameInCrawler
+                    {
+                        Username = worker.Username,
+                        FromCrawlerName = worker.CrawlerName,
+                    });
+                    problemCrawlerSummary.SolvedSet.Add(problemId);
+                }
+                else
+                {
+                    vjSummary.SolvedSet.Add(problem);
+                }
             }
         }
 
+        private static void HandleVirtualJudgeSubmissions(
+            QueryWorkerHistory worker,
+            CrawlerSummaryData vjSummary,
+            IReadOnlyDictionary<string, CrawlerSummaryData> summaries)
+        {
+            foreach (var (crawler, submissions) in worker.SubmissionsByCrawlerName)
+            {
+                if (summaries.TryGetValue(crawler, out var crawlerSummary))
+                {
+                    crawlerSummary.Submissions += submissions;
+                    vjSummary.Submissions -= submissions;
+                }
+            }
+        }
+
+        private static Dictionary<string, CrawlerSummaryData> InitSummaries(
+            IEnumerable<CrawlerMetaItem> crawlerMeta)
+        {
+            return crawlerMeta
+                .ToDictionary(
+                    crawlerMetaItem => crawlerMetaItem.CrawlerName,
+                    crawlerMetaItem => new CrawlerSummaryData
+                    {
+                        CrawlerName = crawlerMetaItem.CrawlerName,
+                        IsVirtualJudge = crawlerMetaItem.IsVirtualJudge,
+                    });
+        }
+
+        /// <summary>
+        /// Data structure to use inside the algorithm
+        /// </summary>
         private class CrawlerSummaryData
         {
             public string CrawlerName { get; set; }
             public bool IsVirtualJudge { get; set; }
             public HashSet<UsernameInCrawler> Usernames { get; set; } = new HashSet<UsernameInCrawler>();
-            public HashSet<string> Problems { get; set; } = new HashSet<string>();
+            public HashSet<string> SolvedSet { get; set; } = new HashSet<string>();
+            public int Submissions { get; set; } = 0;
         }
     }
 }
