@@ -105,7 +105,6 @@ namespace AcmStatisticsBackend.Tests.Crawlers
                         new UsernameInCrawler
                         {
                             Username = "u1",
-                            FromCrawlerName = "",
                         },
                     },
                 },
@@ -120,7 +119,6 @@ namespace AcmStatisticsBackend.Tests.Crawlers
                         new UsernameInCrawler
                         {
                             Username = "u2",
-                            FromCrawlerName = "",
                         },
                     },
                 },
@@ -194,10 +192,32 @@ namespace AcmStatisticsBackend.Tests.Crawlers
             };
 
             FluentActions.Invoking(() =>
-                    SummaryGenerator.Generate(_crawlerMeta, histories))
+                    SummaryGenerator.Generate(_crawlerMeta, histories2))
                 .Should().Throw<UserFriendlyException>()
                 .WithMessage("According to crawler meta, " +
                              "the type of crawler Cr1 should not be a virtual judge.");
+        }
+
+        [Fact]
+        public void WhenWorkerDoesNotExistInMeta_ShouldThrow()
+        {
+            var histories = new[]
+            {
+                new QueryWorkerHistory
+                {
+                    Submission = 1,
+                    Solved = 1,
+                    Username = "u5",
+                    CrawlerName = "cr5",
+                    IsVirtualJudge = false,
+                    HasSolvedList = false,
+                },
+            };
+
+            FluentActions.Invoking(() =>
+                    SummaryGenerator.Generate(_crawlerMeta, histories))
+                .Should().Throw<UserFriendlyException>()
+                .WithMessage("Crawler cr5 does not exist in crawler meta.");
         }
     }
 }
