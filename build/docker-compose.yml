@@ -37,7 +37,7 @@ services:
       - ACM_STATISTICS_CRAWLER_ENV:crawlers:vjudge:crawler_login_password="${VJUDGE_PASSWORD}"
     labels:
       - traefik.http.routers.crawler-api-backend.rule=PathPrefix(`/api/crawlers/`)
-      - traefik.http.services.crawler-api-backend.loadbalancer.server.port=12001
+      - traefik.http.services.crawler-api-backend.loadbalancer.server.port=80
 
   watchtower:
     image: v2tec/watchtower@sha256:4cb6299fe87dcbfe0f13dcc5a11bf44bd9628a4dae0035fecb8cc2b88ff0fc79
