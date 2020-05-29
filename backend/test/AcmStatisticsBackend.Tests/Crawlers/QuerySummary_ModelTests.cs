@@ -45,9 +45,9 @@ namespace AcmStatisticsBackend.Tests.Crawlers
                                 CrawlerName = "crawler",
                             },
                         },
-                        SummaryWarnings = new List<string>
+                        SummaryWarnings = new List<SummaryWarning>
                         {
-                            "A Warning",
+                            new SummaryWarning("c1", "a warning"),
                         },
                     },
                     MainUsername = "a_user",

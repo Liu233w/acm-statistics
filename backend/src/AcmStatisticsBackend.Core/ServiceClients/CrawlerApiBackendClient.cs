@@ -9,9 +9,9 @@ namespace AcmStatisticsBackend.ServiceClients
 {
     public class CrawlerApiBackendClient : ICrawlerApiBackendClient, ISingletonDependency
     {
-        private IImmutableList<CrawlerMetaItem> _cachedMeta = null;
+        private IReadOnlyCollection<CrawlerMetaItem> _cachedMeta = null;
 
-        public async Task<IImmutableList<CrawlerMetaItem>> GetCrawlerMeta()
+        public async Task<IReadOnlyCollection<CrawlerMetaItem>> GetCrawlerMeta()
         {
             if (_cachedMeta == null)
             {
@@ -27,7 +27,7 @@ namespace AcmStatisticsBackend.ServiceClients
                         Url = pair.Value.url,
                         IsVirtualJudge = pair.Value.virtual_judge == true,
                     })
-                    .ToImmutableList();
+                    .ToList();
             }
 
             return _cachedMeta;
