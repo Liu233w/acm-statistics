@@ -23,6 +23,7 @@ module.exports = {
   plugins: [
     '~/plugins/debug.js',
     '~/plugins/analysis.js',
+    '~/plugins/ad.js',
   ],
   css: [
     '~/assets/style/app.scss',
