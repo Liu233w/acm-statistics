@@ -27,6 +27,15 @@ namespace AcmStatisticsBackend.Crawlers
                 out var warnings,
                 out var directlyAddSolvedWorkerList);
 
+            foreach (var worker in directlyAddSolvedWorkerList)
+            {
+                var summary = summaries[worker.CrawlerName];
+                summary.Usernames.Add(new UsernameInCrawler
+                {
+                    Username = worker.Username,
+                });
+            }
+
             var summaryDict = summaries.ToDictionary(
                 p => p.Key,
                 p => new QueryCrawlerSummary
@@ -34,7 +43,7 @@ namespace AcmStatisticsBackend.Crawlers
                     CrawlerName = p.Value.CrawlerName,
                     Solved = p.Value.SolvedSet.Count,
                     Submission = p.Value.Submissions,
-                    Usernames = p.Value.Usernames,
+                    Usernames = p.Value.Usernames.ToList(),
                     IsVirtualJudge = p.Value.IsVirtualJudge,
                 });
 
@@ -42,11 +51,13 @@ namespace AcmStatisticsBackend.Crawlers
             {
                 var summary = summaryDict[worker.CrawlerName];
                 summary.Solved += worker.Solved;
+                summary.Submission += worker.Submission;
             }
 
             var summaryList = summaryDict
                 .Select(p => p.Value)
-                .Where(a => a.Usernames.Count > 0)
+                .Where(a => a.Usernames.Count > 0
+                            && (a.Submission > 0 || a.Solved > 0))
                 .ToList();
 
             return new QuerySummary
@@ -79,7 +90,6 @@ namespace AcmStatisticsBackend.Crawlers
                     Username = worker.Username,
                     FromCrawlerName = null,
                 });
-                summary.Submissions += worker.Submission;
 
                 if (!worker.HasSolvedList)
                 {
@@ -93,12 +103,20 @@ namespace AcmStatisticsBackend.Crawlers
 
                 if (worker.IsVirtualJudge)
                 {
+                    if (worker.SubmissionsByCrawlerName.Values.Sum() != worker.Submission)
+                    {
+                        warnings.Add(new SummaryWarning(worker.CrawlerName,
+                            "submissionByCrawler field of this crawler does not match its submission field, " +
+                            "and only results in submissionByCrawler are used."));
+                    }
+
                     HandleVirtualJudgeProblems(worker, summary, summaries);
                     HandleVirtualJudgeSubmissions(worker, summary, summaries);
                 }
                 else
                 {
-                    summary.SolvedSet = worker.SolvedList.ToHashSet();
+                    summary.Submissions += worker.Submission;
+                    summary.SolvedSet.UnionWith(worker.SolvedList);
                 }
             }
         }
@@ -199,7 +217,16 @@ namespace AcmStatisticsBackend.Crawlers
                 if (summaries.TryGetValue(crawler, out var crawlerSummary))
                 {
                     crawlerSummary.Submissions += submissions;
-                    vjSummary.Submissions -= submissions;
+
+                    crawlerSummary.Usernames.Add(new UsernameInCrawler
+                    {
+                        Username = worker.Username,
+                        FromCrawlerName = worker.CrawlerName,
+                    });
+                }
+                else
+                {
+                    vjSummary.Submissions += submissions;
                 }
             }
         }
@@ -224,9 +251,38 @@ namespace AcmStatisticsBackend.Crawlers
         {
             public string CrawlerName { get; set; }
             public bool IsVirtualJudge { get; set; }
-            public HashSet<UsernameInCrawler> Usernames { get; set; } = new HashSet<UsernameInCrawler>();
-            public HashSet<string> SolvedSet { get; set; } = new HashSet<string>();
-            public int Submissions { get; set; } = 0;
+            public HashSet<UsernameInCrawler> Usernames { get; }
+            public HashSet<string> SolvedSet { get; } = new HashSet<string>();
+            public int Submissions { get; set; }
+
+            public CrawlerSummaryData()
+            {
+                Usernames = new HashSet<UsernameInCrawler>(new UsernameInCrawlerEqualityComparer());
+            }
+        }
+
+        private class UsernameInCrawlerEqualityComparer : IEqualityComparer<UsernameInCrawler>
+        {
+            public bool Equals(UsernameInCrawler x, UsernameInCrawler y)
+            {
+                if (x == null && y == null)
+                {
+                    return true;
+                }
+
+                if (x == null || y == null)
+                {
+                    return false;
+                }
+
+                return x.Username == y.Username && x.FromCrawlerName == y.FromCrawlerName;
+            }
+
+            public int GetHashCode(UsernameInCrawler obj)
+            {
+                return $"{obj.FromCrawlerName ?? string.Empty}/{obj.Username ?? string.Empty}"
+                    .GetHashCode();
+            }
         }
     }
 }

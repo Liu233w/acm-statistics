@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Diagnostics;
 using Abp.Domain.Entities;
 
 namespace AcmStatisticsBackend.Crawlers
@@ -6,6 +7,7 @@ namespace AcmStatisticsBackend.Crawlers
     /// <summary>
     /// An username in a certain crawler.
     /// </summary>
+    [DebuggerDisplay("FromCrawlerName = {FromCrawlerName}, Username = {Username}")]
     public class UsernameInCrawler : Entity<long>
     {
         /// <summary>

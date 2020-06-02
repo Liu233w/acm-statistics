@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Abp.UI;
 using AcmStatisticsBackend.Crawlers;
 using AcmStatisticsBackend.ServiceClients;
@@ -275,8 +274,24 @@ namespace AcmStatisticsBackend.Tests.Crawlers
             });
         }
 
-        [Fact]
-        public void DifferentWorkerOfTheSameCrawler_ShouldMergeTheirSolvedList()
+        [Theory]
+        [InlineData(
+            new[] { "1001", },
+            new[] { "1001", "1002", },
+            2)]
+        [InlineData(
+            new[] { "1001", "1005", },
+            new[] { "1001", "1002", },
+            3)]
+        [InlineData(
+            new[] { "1003", "1005", },
+            new[] { "1001", "1002", },
+            4)]
+        [InlineData(
+            new[] { "1001", "1002", },
+            new[] { "1001", "1002", },
+            2)]
+        public void DifferentWorkerOfTheSameCrawler_ShouldMergeTheirSolvedList(string[] set1, string[] set2, int solved)
         {
             // arrange
             var histories = new[]
@@ -284,27 +299,20 @@ namespace AcmStatisticsBackend.Tests.Crawlers
                 new QueryWorkerHistory
                 {
                     CrawlerName = "cr1",
-                    Solved = 1,
-                    Submission = 3,
+                    Solved = set1.Length,
+                    Submission = 20,
                     Username = "u1",
                     HasSolvedList = true,
-                    SolvedList = new[]
-                    {
-                        "1001",
-                    },
+                    SolvedList = set1,
                 },
                 new QueryWorkerHistory
                 {
                     CrawlerName = "cr1",
-                    Solved = 2,
-                    Submission = 5,
+                    Solved = set2.Length,
+                    Submission = 30,
                     Username = "u2",
                     HasSolvedList = true,
-                    SolvedList = new[]
-                    {
-                        "1001",
-                        "1002",
-                    },
+                    SolvedList = set2,
                 },
             };
 
@@ -314,8 +322,8 @@ namespace AcmStatisticsBackend.Tests.Crawlers
                 histories);
 
             // assert
-            result.Solved.Should().Be(2);
-            result.Submission.Should().Be(8);
+            result.Solved.Should().Be(solved);
+            result.Submission.Should().Be(50);
             result.SummaryWarnings.Should().HaveCount(0);
 
             result.QueryCrawlerSummaries.Should().BeEquivalentTo(new List<QueryCrawlerSummary>
@@ -324,8 +332,8 @@ namespace AcmStatisticsBackend.Tests.Crawlers
                 {
                     CrawlerName = "cr1",
                     IsVirtualJudge = false,
-                    Solved = 2,
-                    Submission = 8,
+                    Solved = solved,
+                    Submission = 50,
                     Usernames = new List<UsernameInCrawler>
                     {
                         new UsernameInCrawler
@@ -572,7 +580,7 @@ namespace AcmStatisticsBackend.Tests.Crawlers
         }
 
         [Fact]
-        public void WhenSolvedNotMatchSolvedList_ShouldGenerateWarning_AndUseResultOfSolvedList()
+        public void WhenSolvedNotMatchSolvedList_ShouldUseResultOfSolvedList()
         {
             // arrange
             var histories = new[]
@@ -599,12 +607,13 @@ namespace AcmStatisticsBackend.Tests.Crawlers
             // assert
             result.Solved.Should().Be(1);
             result.Submission.Should().Be(3);
-            result.SummaryWarnings.Should().BeEquivalentTo(new List<SummaryWarning>
-            {
-                new SummaryWarning("cr1",
-                    "The solved number of this crawler is 2, however, there are 1" +
-                    " problems in the solved list, which can be an error of the crawler."),
-            });
+            // result.SummaryWarnings.Should().BeEquivalentTo(new List<SummaryWarning>
+            // {
+            //     new SummaryWarning("cr1",
+            //         "The solved number of this crawler is 2, however, there are 1" +
+            //         " problems in the solved list, which can be an error of the crawler."),
+            // });
+            result.SummaryWarnings.Should().HaveCount(0);
 
             result.QueryCrawlerSummaries.Should().BeEquivalentTo(new List<QueryCrawlerSummary>
             {
@@ -626,7 +635,7 @@ namespace AcmStatisticsBackend.Tests.Crawlers
         }
 
         [Fact]
-        public void VirtualJudge_WhenSolvedNotMatchSolvedList_ShouldGenerateWarning_AndUseResultOfSolvedList()
+        public void VirtualJudge_WhenSolvedNotMatchSolvedList_ShouldUseResultOfSolvedList()
         {
             // arrange
             var histories = new[]
@@ -636,7 +645,7 @@ namespace AcmStatisticsBackend.Tests.Crawlers
                     CrawlerName = "cr3",
                     IsVirtualJudge = true,
                     Solved = 2,
-                    Submission = 3,
+                    Submission = 5,
                     Username = "u1",
                     HasSolvedList = true,
                     SolvedList = new[]
@@ -659,12 +668,13 @@ namespace AcmStatisticsBackend.Tests.Crawlers
             // assert
             result.Solved.Should().Be(1);
             result.Submission.Should().Be(5);
-            result.SummaryWarnings.Should().BeEquivalentTo(new List<SummaryWarning>
-            {
-                new SummaryWarning("cr3",
-                    "The solved number of this crawler is 2, however, there are 1" +
-                    " problems in the solved list, which can be an error of the crawler."),
-            });
+            // result.SummaryWarnings.Should().BeEquivalentTo(new List<SummaryWarning>
+            // {
+            //     new SummaryWarning("cr3",
+            //         "The solved number of this crawler is 2, however, there are 1" +
+            //         " problems in the solved list. Only "),
+            // });
+            result.SummaryWarnings.Should().HaveCount(0);
 
             result.QueryCrawlerSummaries.Should().BeEquivalentTo(new List<QueryCrawlerSummary>
             {
@@ -828,7 +838,7 @@ namespace AcmStatisticsBackend.Tests.Crawlers
                 new QueryCrawlerSummary
                 {
                     CrawlerName = "cr3",
-                    IsVirtualJudge = false,
+                    IsVirtualJudge = true,
                     Solved = 1,
                     Submission = 10,
                     Usernames = new List<UsernameInCrawler>
@@ -842,6 +852,117 @@ namespace AcmStatisticsBackend.Tests.Crawlers
             });
         }
 
-        // TODO: remove IsVirtualJudge in QueryWorkerHistory; check SolvedList and SubmissionByCrawlerName by crawler meta
+        [Fact]
+        public void VirtualJudge_WhenSubmissionByCrawlerIsNotInCrawlerMeta_ShouldAddToVirtualJudge()
+        {
+            // arrange
+            var histories = new[]
+            {
+                new QueryWorkerHistory
+                {
+                    CrawlerName = "cr3",
+                    IsVirtualJudge = true,
+                    Solved = 1,
+                    Submission = 10,
+                    Username = "u1",
+                    HasSolvedList = true,
+                    SolvedList = new[]
+                    {
+                        "NN-1001",
+                    },
+                    SubmissionsByCrawlerName = new Dictionary<string, int>
+                    {
+                        { "NN", 10 },
+                    },
+                },
+            };
+
+            // act
+            var result = SummaryGenerator.Generate(
+                _crawlerMeta,
+                histories);
+
+            // assert
+            result.Solved.Should().Be(1);
+            result.Submission.Should().Be(10);
+            result.SummaryWarnings.Should().HaveCount(0);
+
+            result.QueryCrawlerSummaries.Should().BeEquivalentTo(new List<QueryCrawlerSummary>
+            {
+                new QueryCrawlerSummary
+                {
+                    CrawlerName = "cr3",
+                    IsVirtualJudge = true,
+                    Solved = 1,
+                    Submission = 10,
+                    Usernames = new List<UsernameInCrawler>
+                    {
+                        new UsernameInCrawler
+                        {
+                            Username = "u1",
+                        },
+                    },
+                },
+            });
+        }
+
+        [Fact]
+        public void
+            VirtualJudge_WhenSubmissionNotMatchSubmissionByCrawler_ShouldGenerateWarning_AndUseSubmissionByCrawler()
+        {
+            // arrange
+            var histories = new[]
+            {
+                new QueryWorkerHistory
+                {
+                    CrawlerName = "cr3",
+                    IsVirtualJudge = true,
+                    Solved = 0,
+                    Submission = 1,
+                    Username = "u1",
+                    HasSolvedList = true,
+                    SolvedList = new string[]
+                    {
+                    },
+                    SubmissionsByCrawlerName = new Dictionary<string, int>
+                    {
+                        { "NN", 10 },
+                    },
+                },
+            };
+
+            // act
+            var result = SummaryGenerator.Generate(
+                _crawlerMeta,
+                histories);
+
+            // assert
+            result.Solved.Should().Be(0);
+            result.Submission.Should().Be(10);
+            result.SummaryWarnings.Should().BeEquivalentTo(new List<SummaryWarning>
+            {
+                new SummaryWarning("cr3",
+                    "submissionByCrawler field of this crawler does not match its submission field, " +
+                    "and only results in submissionByCrawler are used."),
+            });
+
+            result.QueryCrawlerSummaries.Should().BeEquivalentTo(new List<QueryCrawlerSummary>
+            {
+                new QueryCrawlerSummary
+                {
+                    CrawlerName = "cr3",
+                    IsVirtualJudge = true,
+                    Solved = 0,
+                    Submission = 10,
+                    Usernames = new List<UsernameInCrawler>
+                    {
+                        new UsernameInCrawler
+                        {
+                            Username = "u1",
+                        },
+                    },
+                },
+            });
+        }
     }
 }
