@@ -147,17 +147,22 @@ namespace AcmStatisticsBackend.Tests.Crawlers
                 .WithMessage("Virtual judge Cr3 should have a solved list.");
         }
 
-        [Fact]
-        public void WhenWorkerNotMatchCrawlerMeta_ShouldThrow()
+        [Theory]
+        [InlineData("cr3", false, "According to crawler meta, the type of crawler Cr3 should be a virtual judge.")]
+        [InlineData("cr1", true, "According to crawler meta, the type of crawler Cr1 should not be a virtual judge.")]
+        public void WhenWorkerNotMatchCrawlerMeta_ShouldThrow(
+            string crawlerName,
+            bool isVirtualJudge,
+            string exceptionMessage)
         {
             var histories = new[]
             {
                 new QueryWorkerHistory
                 {
-                    CrawlerName = "cr3",
+                    CrawlerName = crawlerName,
                     Solved = 1,
                     Submission = 10,
-                    IsVirtualJudge = false,
+                    IsVirtualJudge = isVirtualJudge,
                     HasSolvedList = true,
                     SolvedList = new[]
                     {
@@ -169,34 +174,7 @@ namespace AcmStatisticsBackend.Tests.Crawlers
             FluentActions.Invoking(() =>
                     SummaryGenerator.Generate(_crawlerMeta, histories))
                 .Should().Throw<UserFriendlyException>()
-                .WithMessage("According to crawler meta, " +
-                             "the type of crawler Cr3 should be a virtual judge.");
-
-            var histories2 = new[]
-            {
-                new QueryWorkerHistory
-                {
-                    CrawlerName = "cr1",
-                    Solved = 1,
-                    Submission = 10,
-                    IsVirtualJudge = true,
-                    HasSolvedList = true,
-                    SolvedList = new[]
-                    {
-                        "cr2-1001",
-                    },
-                    SubmissionsByCrawlerName = new Dictionary<string, int>
-                    {
-                        { "cr2", 10 },
-                    },
-                },
-            };
-
-            FluentActions.Invoking(() =>
-                    SummaryGenerator.Generate(_crawlerMeta, histories2))
-                .Should().Throw<UserFriendlyException>()
-                .WithMessage("According to crawler meta, " +
-                             "the type of crawler Cr1 should not be a virtual judge.");
+                .WithMessage(exceptionMessage);
         }
 
         [Fact]
@@ -218,7 +196,7 @@ namespace AcmStatisticsBackend.Tests.Crawlers
             FluentActions.Invoking(() =>
                     SummaryGenerator.Generate(_crawlerMeta, histories))
                 .Should().Throw<UserFriendlyException>()
-                .WithMessage("Crawler cr5 does not exist in crawler meta.");
+                .WithMessage("The meta data of crawler cr5 does not exist.");
         }
 
         [Fact]
@@ -356,7 +334,7 @@ namespace AcmStatisticsBackend.Tests.Crawlers
                         },
                         new UsernameInCrawler
                         {
-                            Username = "u3",
+                            Username = "u2",
                         },
                     },
                 },
@@ -415,36 +393,6 @@ namespace AcmStatisticsBackend.Tests.Crawlers
         }
 
         [Fact]
-        public void WhenWorkerCrawlerDoesNotExistInCrawlerMeta_ShouldThrow()
-        {
-            // arrange
-            var histories = new[]
-            {
-                new QueryWorkerHistory
-                {
-                    CrawlerName = "cr6",
-                    Solved = 1,
-                    Submission = 3,
-                    Username = "u1",
-                    HasSolvedList = true,
-                    SolvedList = new[]
-                    {
-                        "1001",
-                    },
-                },
-            };
-
-            // act
-            var call = FluentActions.Invoking(() => SummaryGenerator.Generate(
-                _crawlerMeta,
-                histories));
-
-            // assert
-            call.Should().Throw<UserFriendlyException>()
-                .WithMessage("The meta data of crawler cr6 does not exist!");
-        }
-
-        [Fact]
         public void WorkerCrawlerExistsInVirtualJudge_WhenBothHaveSolvedList_ShouldMergeResult()
         {
             // arrange
@@ -465,6 +413,7 @@ namespace AcmStatisticsBackend.Tests.Crawlers
                 new QueryWorkerHistory
                 {
                     CrawlerName = "cr3",
+                    IsVirtualJudge = true,
                     Solved = 3,
                     Submission = 15,
                     Username = "u2",
@@ -549,6 +498,7 @@ namespace AcmStatisticsBackend.Tests.Crawlers
                 new QueryWorkerHistory
                 {
                     CrawlerName = "cr3",
+                    IsVirtualJudge = true,
                     Solved = 3,
                     Submission = 15,
                     Username = "u2",
@@ -684,6 +634,7 @@ namespace AcmStatisticsBackend.Tests.Crawlers
                 new QueryWorkerHistory
                 {
                     CrawlerName = "cr3",
+                    IsVirtualJudge = true,
                     Solved = 2,
                     Submission = 3,
                     Username = "u1",
@@ -759,6 +710,7 @@ namespace AcmStatisticsBackend.Tests.Crawlers
                 new QueryWorkerHistory
                 {
                     CrawlerName = "cr3",
+                    IsVirtualJudge = true,
                     Solved = 1,
                     Submission = 15,
                     Username = "u1",
@@ -829,6 +781,7 @@ namespace AcmStatisticsBackend.Tests.Crawlers
                 new QueryWorkerHistory
                 {
                     CrawlerName = "cr3",
+                    IsVirtualJudge = true,
                     Solved = 1,
                     Submission = 15,
                     Username = "u1",
@@ -888,5 +841,7 @@ namespace AcmStatisticsBackend.Tests.Crawlers
                 },
             });
         }
+
+        // TODO: remove IsVirtualJudge in QueryWorkerHistory; check SolvedList and SubmissionByCrawlerName by crawler meta
     }
 }
