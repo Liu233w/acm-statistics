@@ -69,7 +69,7 @@ namespace AcmStatisticsBackend.Crawlers
             warnings = new List<SummaryWarning>();
             directlyAddSolvedWorkerList = new List<QueryWorkerHistory>();
 
-            EnsureCrawlerExists(summaries, crawlerMeta);
+            EnsureCrawlerType(crawlerMeta, summaries, workerHistories);
 
             foreach (var worker in workerHistories)
             {
@@ -103,18 +103,63 @@ namespace AcmStatisticsBackend.Crawlers
             }
         }
 
-        private static void EnsureCrawlerExists(
+        private static void EnsureCrawlerType(
+            IReadOnlyCollection<CrawlerMetaItem> crawlerMeta,
             IReadOnlyDictionary<string, CrawlerSummaryData> summaries,
-            IReadOnlyCollection<CrawlerMetaItem> crawlerMeta)
+            IReadOnlyCollection<QueryWorkerHistory> workerHistories)
         {
-            foreach (var item in crawlerMeta)
+            var workerHasSolvedList = new Dictionary<string, bool>();
+
+            foreach (var history in workerHistories)
             {
-                if (!summaries.ContainsKey(item.CrawlerName))
+                if (workerHasSolvedList.TryGetValue(history.CrawlerName, out var hasSolvedList))
+                {
+                    if (hasSolvedList != history.HasSolvedList)
+                    {
+                        var title = GetCrawlerTitle(crawlerMeta, history);
+                        throw new UserFriendlyException($"All workers of crawler {title} must have solved list!");
+                    }
+                }
+                else
+                {
+                    workerHasSolvedList.Add(history.CrawlerName, history.HasSolvedList);
+                }
+
+                if (!summaries.TryGetValue(history.CrawlerName, out var summary))
                 {
                     throw new UserFriendlyException(
-                        $"The meta data of crawler `{item.CrawlerName}` does not exist");
+                        $"The meta data of crawler {history.CrawlerName} does not exist.");
+                }
+
+                if (summary.IsVirtualJudge != history.IsVirtualJudge)
+                {
+                    var title = GetCrawlerTitle(crawlerMeta, history);
+                    if (summary.IsVirtualJudge)
+                    {
+                        throw new UserFriendlyException(
+                            $"According to crawler meta, the type of crawler {title} should be a virtual judge.");
+                    }
+                    else
+                    {
+                        throw new UserFriendlyException(
+                            $"According to crawler meta, the type of crawler {title} should not be a virtual judge.");
+                    }
+                }
+
+                if (history.IsVirtualJudge && !history.HasSolvedList)
+                {
+                    var title = GetCrawlerTitle(crawlerMeta, history);
+                    throw new UserFriendlyException($"Virtual judge {title} should have a solved list.");
                 }
             }
+        }
+
+        private static string GetCrawlerTitle(
+            IReadOnlyCollection<CrawlerMetaItem> crawlerMeta,
+            QueryWorkerHistory history)
+        {
+            var meta = crawlerMeta.First(item => item.CrawlerName == history.CrawlerName);
+            return meta.CrawlerTitle;
         }
 
         private static void HandleVirtualJudgeProblems(
