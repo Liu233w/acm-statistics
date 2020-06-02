@@ -63,7 +63,7 @@ namespace AcmStatisticsBackend.Crawlers
         public string[] SolvedList { get; set; }
 
         /// <summary>
-        /// Whether current crawler is virtual judge.
+        /// Whether current crawler is virtual judge when the history is submitted.
         /// </summary>
         public bool IsVirtualJudge { get; set; }
 
