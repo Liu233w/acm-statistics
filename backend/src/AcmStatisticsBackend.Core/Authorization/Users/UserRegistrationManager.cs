@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Abp.Authorization.Users;
 using Abp.Domain.Services;
+using Abp.Domain.Uow;
 using Abp.IdentityFramework;
 using Abp.Runtime.Session;
 using Abp.UI;
@@ -37,7 +38,8 @@ namespace AcmStatisticsBackend.Authorization.Users
             AbpSession = NullAbpSession.Instance;
         }
 
-        public async Task<User> RegisterAsync(string userName, string plainPassword)
+        [UnitOfWork]
+        public virtual async Task<User> RegisterAsync(string userName, string plainPassword)
         {
             CheckForTenant();
 

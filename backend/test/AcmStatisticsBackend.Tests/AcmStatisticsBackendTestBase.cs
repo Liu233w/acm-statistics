@@ -149,6 +149,11 @@ namespace AcmStatisticsBackend.Tests
             LoginAsTenant(AbpTenantBase.DefaultTenantName, AbpUserBase.AdminUserName);
         }
 
+        protected void LoginAsDefaultTenant(string userName)
+        {
+            LoginAsTenant(AbpTenantBase.DefaultTenantName, userName);
+        }
+
         protected void LoginAsHost(string userName)
         {
             var user = GetHostUser(userName);
