@@ -135,58 +135,6 @@ namespace AcmStatisticsBackend.Tests.Accounts
         }
 
         [Fact]
-        public async Task SelfDelete_ShouldDeleteRelatedEntities()
-        {
-            // arrange
-            _captchaServiceClient.Return = new CaptchaServiceValidateResult
-            {
-                Correct = true,
-                ErrorMessage = null,
-            };
-            await _accountAppService.Register(new RegisterInput
-            {
-                UserName = "user1",
-                Password = "StrongPassword",
-                CaptchaId = "a",
-                CaptchaText = "a",
-            });
-            LoginAsTenant(AbpTenantBase.DefaultTenantName, "user1");
-            await Resolve<IDefaultQueryAppService>().SetDefaultQueries(new DefaultQueryDto
-            {
-                MainUsername = "1234",
-                UsernamesInCrawlers = new Dictionary<string, List<string>>
-                {
-                    { "c1", new List<string> { "u1" } },
-                },
-            });
-            await Resolve<IQueryHistoryAppService>().SaveOrReplaceQueryHistory(new SaveOrReplaceQueryHistoryInput
-            {
-                MainUsername = "m",
-                QueryWorkerHistories = new List<QueryWorkerHistoryDto>
-                {
-                    new QueryWorkerHistoryDto
-                    {
-                        Solved = 1,
-                        Submission = 1,
-                        Username = "aaa",
-                        CrawlerName = "c1",
-                    },
-                },
-            });
-
-            // act
-            await _accountAppService.SelfDelete();
-
-            // test
-            await UsingDbContextAsync(1, async ctx =>
-            {
-                (await ctx.DefaultQueries.CountAsync()).Should().Be(0);
-                (await ctx.QueryHistories.CountAsync()).Should().Be(0);
-                (await ctx.QueryWorkerHistories.CountAsync()).Should().Be(0);
-            });
-        }
-
-        [Fact]
         public async Task ChangePassword_CanWorkCorrectly()
         {
             // arrange

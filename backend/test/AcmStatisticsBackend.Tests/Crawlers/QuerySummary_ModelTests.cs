@@ -2,6 +2,8 @@
 using System.Linq;
 using System.Threading.Tasks;
 using Abp.Domain.Repositories;
+using Abp.TestBase;
+using AcmStatisticsBackend.Authorization.Users;
 using AcmStatisticsBackend.Crawlers;
 using FluentAssertions;
 using Xunit;
@@ -11,13 +13,16 @@ namespace AcmStatisticsBackend.Tests.Crawlers
     public class QuerySummary_ModelTests : AcmStatisticsBackendTestBase
     {
         private readonly IRepository<QueryHistory, long> _queryHistoryRepository;
-
         private readonly IRepository<QuerySummary, long> _querySummaryRepository;
+        private readonly UserManager _userManager;
+        private UserRegistrationManager _userRegistrationManager;
 
         public QuerySummary_ModelTests()
         {
             _queryHistoryRepository = Resolve<IRepository<QueryHistory, long>>();
             _querySummaryRepository = Resolve<IRepository<QuerySummary, long>>();
+            _userManager = Resolve<UserManager>();
+            _userRegistrationManager = Resolve<UserRegistrationManager>();
         }
 
         private async Task InsertDataByQueryHistory()
@@ -70,7 +75,7 @@ namespace AcmStatisticsBackend.Tests.Crawlers
             });
         }
 
-        private async Task InsertDataByQuerySummary()
+        private async Task InsertDataByQuerySummary(long? userId = null)
         {
             await UsingDbContextAsync(async c =>
             {
@@ -78,7 +83,7 @@ namespace AcmStatisticsBackend.Tests.Crawlers
                 {
                     QueryHistory = new QueryHistory
                     {
-                        UserId = GetHostAdmin().Id,
+                        UserId = userId ?? GetHostAdmin().Id,
                         MainUsername = "a_user",
                         QueryWorkerHistories = new List<QueryWorkerHistory>()
                         {
@@ -171,6 +176,7 @@ namespace AcmStatisticsBackend.Tests.Crawlers
             // assert
             UsingDbContext(c =>
             {
+                c.QueryWorkerHistories.Should().HaveCount(1);
                 c.QueryHistories.Should().HaveCount(1);
                 c.QuerySummaries.Should().HaveCount(0);
                 c.UsernameInCrawler.Should().HaveCount(0);
@@ -193,6 +199,31 @@ namespace AcmStatisticsBackend.Tests.Crawlers
             // assert
             UsingDbContext(c =>
             {
+                c.QueryWorkerHistories.Should().HaveCount(0);
+                c.QueryHistories.Should().HaveCount(0);
+                c.QuerySummaries.Should().HaveCount(0);
+                c.UsernameInCrawler.Should().HaveCount(0);
+            });
+        }
+
+        [Fact]
+        public async Task WhenDeletingUser_ShouldDeleteHistoriesAndSummaries()
+        {
+            // arrange
+            var user = await UsingDbContextAsync(async c =>
+                await _userRegistrationManager.RegisterAsync(
+                    "user1", "123qwe"));
+            await InsertDataByQuerySummary(user.Id);
+
+            LoginAsDefaultTenant("user1");
+
+            // act
+            await UsingDbContextAsync(async c => { await _userManager.DeleteAsync(user); });
+
+            // assert
+            UsingDbContext(c =>
+            {
+                c.QueryWorkerHistories.Should().HaveCount(0);
                 c.QueryHistories.Should().HaveCount(0);
                 c.QuerySummaries.Should().HaveCount(0);
                 c.UsernameInCrawler.Should().HaveCount(0);
