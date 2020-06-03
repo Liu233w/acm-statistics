@@ -96,7 +96,7 @@ namespace AcmStatisticsBackend.Crawlers
                     FromCrawlerName = null,
                 });
 
-                if (!worker.HasSolvedList)
+                if (worker.SolvedList == null)
                 {
                     warnings.Add(new SummaryWarning(
                         worker.CrawlerName,
@@ -137,7 +137,7 @@ namespace AcmStatisticsBackend.Crawlers
             {
                 if (workerHasSolvedList.TryGetValue(history.CrawlerName, out var hasSolvedList))
                 {
-                    if (hasSolvedList != history.HasSolvedList)
+                    if (hasSolvedList != (history.SolvedList != null))
                     {
                         var title = GetCrawlerTitle(crawlerMeta, history);
                         throw new UserFriendlyException($"All workers of crawler {title} must have solved list!");
@@ -145,7 +145,7 @@ namespace AcmStatisticsBackend.Crawlers
                 }
                 else
                 {
-                    workerHasSolvedList.Add(history.CrawlerName, history.HasSolvedList);
+                    workerHasSolvedList.Add(history.CrawlerName, history.SolvedList != null);
                 }
 
                 if (!summaries.TryGetValue(history.CrawlerName, out var summary))
@@ -169,7 +169,7 @@ namespace AcmStatisticsBackend.Crawlers
                     }
                 }
 
-                if (history.IsVirtualJudge && !history.HasSolvedList)
+                if (history.IsVirtualJudge && history.SolvedList == null)
                 {
                     var title = GetCrawlerTitle(crawlerMeta, history);
                     throw new UserFriendlyException($"Virtual judge {title} should have a solved list.");

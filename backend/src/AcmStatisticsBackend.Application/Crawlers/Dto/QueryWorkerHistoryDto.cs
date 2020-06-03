@@ -2,12 +2,11 @@
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics.CodeAnalysis;
 using Abp.AutoMapper;
-using Abp.Runtime.Validation;
 
 namespace AcmStatisticsBackend.Crawlers.Dto
 {
     [AutoMap(typeof(QueryWorkerHistory))]
-    public class QueryWorkerHistoryDto : ICustomValidate
+    public class QueryWorkerHistoryDto
     {
         /// <summary>
         /// The name of the crawler. Frontend can get its title by this field.
@@ -41,34 +40,23 @@ namespace AcmStatisticsBackend.Crawlers.Dto
         public int Solved { get; set; }
 
         /// <summary>
-        /// Whether this record has a list of problem ids that user solved.
-        /// </summary>
-        public bool HasSolvedList { get; set; }
-
-        /// <summary>
         /// The list of problem ids that user solved.
         ///
-        /// If <see cref="HasSolvedList"/> is false, an empty list is returned.
+        /// Can be null if crawler does not support it.
         /// </summary>
+        [MaybeNull]
         public string[] SolvedList { get; set; }
 
         /// <summary>
         /// Whether current crawler is virtual judge.
         /// </summary>
-        public bool IsVirtualJudge { get; set; } = false;
+        public bool IsVirtualJudge { get; set; }
 
         /// <summary>
-        /// If <see cref="IsVirtualJudge"/> is false, this field is empty.
+        /// If <see cref="IsVirtualJudge"/> is false, this field is null.
         /// Otherwise, this field contains submissions count in each crawler.
         /// </summary>
+        [MaybeNull]
         public Dictionary<string, int> SubmissionsByCrawlerName { get; set; } = new Dictionary<string, int>();
-
-        public void AddValidationErrors(CustomValidationContext context)
-        {
-            if (ErrorMessage == null && HasSolvedList && SolvedList == null)
-            {
-                context.Results.Add(new ValidationResult("SolvedList should not be null when HasSolvedList is true."));
-            }
-        }
     }
 }

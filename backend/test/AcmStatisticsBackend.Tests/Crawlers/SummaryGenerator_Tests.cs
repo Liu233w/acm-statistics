@@ -62,7 +62,6 @@ namespace AcmStatisticsBackend.Tests.Crawlers
                     Solved = 1,
                     Submission = 3,
                     Username = "u1",
-                    HasSolvedList = false,
                 },
                 new QueryWorkerHistory
                 {
@@ -70,7 +69,6 @@ namespace AcmStatisticsBackend.Tests.Crawlers
                     Solved = 2,
                     Submission = 5,
                     Username = "u2",
-                    HasSolvedList = false,
                 },
             };
 
@@ -136,7 +134,6 @@ namespace AcmStatisticsBackend.Tests.Crawlers
                     Solved = 3,
                     Submission = 10,
                     IsVirtualJudge = true,
-                    HasSolvedList = false,
                 },
             };
 
@@ -162,7 +159,6 @@ namespace AcmStatisticsBackend.Tests.Crawlers
                     Solved = 1,
                     Submission = 10,
                     IsVirtualJudge = isVirtualJudge,
-                    HasSolvedList = true,
                     SolvedList = new[]
                     {
                         "moj-1001",
@@ -188,7 +184,6 @@ namespace AcmStatisticsBackend.Tests.Crawlers
                     Username = "u5",
                     CrawlerName = "cr5",
                     IsVirtualJudge = false,
-                    HasSolvedList = false,
                 },
             };
 
@@ -210,7 +205,6 @@ namespace AcmStatisticsBackend.Tests.Crawlers
                     Solved = 1,
                     Submission = 3,
                     Username = "u1",
-                    HasSolvedList = true,
                     SolvedList = new[]
                     {
                         "1001",
@@ -222,7 +216,6 @@ namespace AcmStatisticsBackend.Tests.Crawlers
                     Solved = 2,
                     Submission = 5,
                     Username = "u2",
-                    HasSolvedList = true,
                     SolvedList = new[]
                     {
                         "1001",
@@ -302,7 +295,6 @@ namespace AcmStatisticsBackend.Tests.Crawlers
                     Solved = set1.Length,
                     Submission = 20,
                     Username = "u1",
-                    HasSolvedList = true,
                     SolvedList = set1,
                 },
                 new QueryWorkerHistory
@@ -311,7 +303,6 @@ namespace AcmStatisticsBackend.Tests.Crawlers
                     Solved = set2.Length,
                     Submission = 30,
                     Username = "u2",
-                    HasSolvedList = true,
                     SolvedList = set2,
                 },
             };
@@ -361,7 +352,6 @@ namespace AcmStatisticsBackend.Tests.Crawlers
                     Solved = 1,
                     Submission = 3,
                     Username = "u1",
-                    HasSolvedList = true,
                     SolvedList = new[]
                     {
                         "1001",
@@ -373,7 +363,6 @@ namespace AcmStatisticsBackend.Tests.Crawlers
                     Solved = 2,
                     Submission = 5,
                     Username = "u2",
-                    HasSolvedList = true,
                     SolvedList = new[]
                     {
                         "1001",
@@ -386,7 +375,6 @@ namespace AcmStatisticsBackend.Tests.Crawlers
                     Solved = 10,
                     Submission = 10,
                     Username = "u3",
-                    HasSolvedList = false,
                 },
             };
 
@@ -412,7 +400,6 @@ namespace AcmStatisticsBackend.Tests.Crawlers
                     Solved = 1,
                     Submission = 3,
                     Username = "u1",
-                    HasSolvedList = true,
                     SolvedList = new[]
                     {
                         "1001",
@@ -425,7 +412,6 @@ namespace AcmStatisticsBackend.Tests.Crawlers
                     Solved = 3,
                     Submission = 15,
                     Username = "u2",
-                    HasSolvedList = true,
                     SolvedList = new[]
                     {
                         "cr1-1001",
@@ -501,7 +487,6 @@ namespace AcmStatisticsBackend.Tests.Crawlers
                     Solved = 1,
                     Submission = 3,
                     Username = "u1",
-                    HasSolvedList = false,
                 },
                 new QueryWorkerHistory
                 {
@@ -510,7 +495,6 @@ namespace AcmStatisticsBackend.Tests.Crawlers
                     Solved = 3,
                     Submission = 15,
                     Username = "u2",
-                    HasSolvedList = true,
                     SolvedList = new[]
                     {
                         "cr1-1001",
@@ -591,7 +575,6 @@ namespace AcmStatisticsBackend.Tests.Crawlers
                     Solved = 2,
                     Submission = 3,
                     Username = "u1",
-                    HasSolvedList = true,
                     SolvedList = new[]
                     {
                         "1001",
@@ -647,7 +630,6 @@ namespace AcmStatisticsBackend.Tests.Crawlers
                     Solved = 2,
                     Submission = 5,
                     Username = "u1",
-                    HasSolvedList = true,
                     SolvedList = new[]
                     {
                         "cr1-1001",
@@ -724,7 +706,6 @@ namespace AcmStatisticsBackend.Tests.Crawlers
                     Solved = 1,
                     Submission = 15,
                     Username = "u1",
-                    HasSolvedList = true,
                     SolvedList = new[]
                     {
                         "cr1-1001",
@@ -795,7 +776,6 @@ namespace AcmStatisticsBackend.Tests.Crawlers
                     Solved = 1,
                     Submission = 15,
                     Username = "u1",
-                    HasSolvedList = true,
                     SolvedList = new[]
                     {
                         "NN-1001",
@@ -865,7 +845,6 @@ namespace AcmStatisticsBackend.Tests.Crawlers
                     Solved = 1,
                     Submission = 10,
                     Username = "u1",
-                    HasSolvedList = true,
                     SolvedList = new[]
                     {
                         "NN-1001",
@@ -920,7 +899,6 @@ namespace AcmStatisticsBackend.Tests.Crawlers
                     Solved = 0,
                     Submission = 1,
                     Username = "u1",
-                    HasSolvedList = true,
                     SolvedList = new string[]
                     {
                     },
@@ -977,7 +955,6 @@ namespace AcmStatisticsBackend.Tests.Crawlers
                     Solved = 1,
                     Submission = 3,
                     Username = "u1",
-                    HasSolvedList = true,
                     SolvedList = new[]
                     {
                         "1001",

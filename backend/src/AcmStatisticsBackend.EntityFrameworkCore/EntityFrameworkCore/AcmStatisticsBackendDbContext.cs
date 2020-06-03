@@ -55,13 +55,10 @@ namespace AcmStatisticsBackend.EntityFrameworkCore
                     v => JsonConvert.DeserializeObject<Dictionary<string, int>>(v));
 
             modelBuilder.Entity<QueryHistory>()
-                .HasOne(e => e.QuerySummary)
+                .HasOne<QuerySummary>()
                 .WithOne(e => e.QueryHistory)
                 .HasForeignKey<QuerySummary>(e => e.QueryHistoryId)
                 .OnDelete(DeleteBehavior.Cascade);
-
-            modelBuilder.Entity<QueryHistory>()
-                .HasIndex(e => e.QuerySummaryId);
 
             modelBuilder.Entity<QuerySummary>()
                 .Property(e => e.SummaryWarnings)

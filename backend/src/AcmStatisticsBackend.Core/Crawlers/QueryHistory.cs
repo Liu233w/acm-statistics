@@ -40,15 +40,6 @@ namespace AcmStatisticsBackend.Crawlers
         /// When get the history from user directly, it should be false;
         /// when get it from crawler-api-backend, it should be true.
         /// </summary>
-        public bool IsReliableSource { get; set; } = false;
-
-        /// <summary>
-        /// The summary of this query history.
-        ///
-        /// Can be empty if summary is not generated.
-        /// </summary>
-        public QuerySummary QuerySummary { get; set; }
-
-        public long? QuerySummaryId { get; set; }
+        public bool IsReliableSource { get; set; }
     }
 }

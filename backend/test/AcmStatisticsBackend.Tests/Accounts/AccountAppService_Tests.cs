@@ -170,7 +170,6 @@ namespace AcmStatisticsBackend.Tests.Accounts
                         Submission = 1,
                         Username = "aaa",
                         CrawlerName = "c1",
-                        HasSolvedList = false,
                     },
                 },
             });
