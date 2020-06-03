@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Abp.Domain.Repositories;
 using AcmStatisticsBackend.Crawlers;
 using FluentAssertions;
-using Microsoft.EntityFrameworkCore;
 using Xunit;
 
 namespace AcmStatisticsBackend.Tests.Crawlers
@@ -12,76 +12,168 @@ namespace AcmStatisticsBackend.Tests.Crawlers
     {
         private readonly IRepository<QueryHistory, long> _queryHistoryRepository;
 
+        private readonly IRepository<QuerySummary, long> _querySummaryRepository;
+
         public QuerySummary_ModelTests()
         {
             _queryHistoryRepository = Resolve<IRepository<QueryHistory, long>>();
+            _querySummaryRepository = Resolve<IRepository<QuerySummary, long>>();
         }
 
-        private async Task InsertData()
+        private async Task InsertDataByQueryHistory()
         {
             await UsingDbContextAsync(async c =>
             {
-                await _queryHistoryRepository.InsertAsync(new QueryHistory
+                var history = await _queryHistoryRepository.InsertAsync(new QueryHistory
                 {
                     UserId = GetHostAdmin().Id,
-                    QuerySummary = new QuerySummary
+                    MainUsername = "a_user",
+                    QueryWorkerHistories = new List<QueryWorkerHistory>
                     {
-                        Solved = 0,
-                        Submission = 0,
-                        QueryCrawlerSummaries = new List<QueryCrawlerSummary>
+                        new QueryWorkerHistory
                         {
-                            new QueryCrawlerSummary
+                            Solved = 3,
+                            Submission = 10,
+                            Username = "u1",
+                            CrawlerName = "crawler",
+                        },
+                    },
+                });
+
+                await _querySummaryRepository.InsertAsync(new QuerySummary
+                {
+                    QueryHistoryId = history.Id,
+                    Solved = 0,
+                    Submission = 0,
+                    QueryCrawlerSummaries = new List<QueryCrawlerSummary>
+                    {
+                        new QueryCrawlerSummary
+                        {
+                            Solved = 0,
+                            Submission = 0,
+                            Usernames = new List<UsernameInCrawler>
                             {
-                                Solved = 0,
-                                Submission = 0,
-                                Usernames = new List<UsernameInCrawler>
+                                new UsernameInCrawler
                                 {
-                                    new UsernameInCrawler
-                                    {
-                                        Username = "a_user",
-                                        FromCrawlerName = "",
-                                    },
+                                    Username = "a_user",
+                                    FromCrawlerName = "",
                                 },
+                            },
+                            CrawlerName = "crawler",
+                        },
+                    },
+                    SummaryWarnings = new List<SummaryWarning>
+                    {
+                        new SummaryWarning("c1", "a warning"),
+                    },
+                });
+            });
+        }
+
+        private async Task InsertDataByQuerySummary()
+        {
+            await UsingDbContextAsync(async c =>
+            {
+                await _querySummaryRepository.InsertAsync(new QuerySummary
+                {
+                    QueryHistory = new QueryHistory
+                    {
+                        UserId = GetHostAdmin().Id,
+                        MainUsername = "a_user",
+                        QueryWorkerHistories = new List<QueryWorkerHistory>()
+                        {
+                            new QueryWorkerHistory
+                            {
+                                Solved = 3,
+                                Submission = 10,
+                                Username = "u1",
                                 CrawlerName = "crawler",
                             },
                         },
-                        SummaryWarnings = new List<SummaryWarning>
+                    },
+                    Solved = 0,
+                    Submission = 0,
+                    QueryCrawlerSummaries = new List<QueryCrawlerSummary>
+                    {
+                        new QueryCrawlerSummary
                         {
-                            new SummaryWarning("c1", "a warning"),
+                            Solved = 0,
+                            Submission = 0,
+                            Usernames = new List<UsernameInCrawler>
+                            {
+                                new UsernameInCrawler
+                                {
+                                    Username = "a_user",
+                                    FromCrawlerName = "",
+                                },
+                            },
+                            CrawlerName = "crawler",
                         },
                     },
-                    MainUsername = "a_user",
-                    QueryWorkerHistories = new List<QueryWorkerHistory>(),
+                    SummaryWarnings = new List<SummaryWarning>
+                    {
+                        new SummaryWarning("c1", "a warning"),
+                    },
                 });
+            });
+        }
 
-                (await c.QueryHistories.CountAsync()).Should().Be(1);
-                (await c.QuerySummaries.CountAsync()).Should().Be(1);
-                (await c.UsernameInCrawler.CountAsync()).Should().Be(1);
+        [Theory]
+        [InlineData("insert QueryHistory first")]
+        [InlineData("insert QuerySummary directly")]
+        public async Task AfterInsertion_ShouldSetForeignKey(string strategy)
+        {
+            // act
+            if (strategy.Contains("QueryHistory"))
+            {
+                await InsertDataByQueryHistory();
+            }
+            else
+            {
+                await InsertDataByQuerySummary();
+            }
+
+            // test
+            UsingDbContext(c =>
+            {
+                c.QueryHistories.Should().HaveCount(1);
+                c.QueryWorkerHistories.Should().HaveCount(1);
+                c.QuerySummaries.Should().HaveCount(1);
+                c.UsernameInCrawler.Should().HaveCount(1);
+
+                var queryHistory = c.QueryHistories.Single();
+                var querySummary = c.QuerySummaries.Single();
+                var queryCrawlerSummary = c.QueryCrawlerSummaries.Single();
+                var queryWorkerHistory = c.QueryWorkerHistories.Single();
+
+                querySummary.QueryHistoryId.Should().Be(queryHistory.Id);
+                queryCrawlerSummary.QuerySummaryId.Should().Be(querySummary.Id);
+                queryWorkerHistory.QueryHistoryId.Should().Be(queryHistory.Id);
+
+                queryWorkerHistory.SolvedList.Should().BeNull();
+                queryWorkerHistory.SubmissionsByCrawlerName.Should().BeNull();
             });
         }
 
         [Fact]
-        public async Task WhenDeleteQuerySummary_ShouldSetFieldInQueryHistoryToNull()
+        public async Task WhenDeleteQuerySummary_ShouldNotDeleteQueryHistory()
         {
             // arrange
-            await InsertData();
+            await InsertDataByQuerySummary();
 
             // act
-            await UsingDbContextAsync(async c =>
+            UsingDbContext(c =>
             {
-                var summary = await c.QuerySummaries.FirstAsync();
+                var summary = c.QuerySummaries.Single();
                 c.QuerySummaries.Remove(summary);
             });
 
             // assert
-            await UsingDbContextAsync(async c =>
+            UsingDbContext(c =>
             {
-                (await c.QueryHistories.CountAsync()).Should().Be(1);
-                (await c.QuerySummaries.CountAsync()).Should().Be(0);
-                (await c.UsernameInCrawler.CountAsync()).Should().Be(0);
-
-                var history = await c.QueryHistories.FirstAsync();
-                history.QuerySummaryId.Should().BeNull();
+                c.QueryHistories.Should().HaveCount(1);
+                c.QuerySummaries.Should().HaveCount(0);
+                c.UsernameInCrawler.Should().HaveCount(0);
             });
         }
 
@@ -89,21 +181,21 @@ namespace AcmStatisticsBackend.Tests.Crawlers
         public async Task WhenDeleteQueryHistory_ShouldDeleteQuerySummary()
         {
             // arrange
-            await InsertData();
+            await InsertDataByQuerySummary();
 
             // act
-            await UsingDbContextAsync(async c =>
+            UsingDbContext(c =>
             {
-                var history = await c.QueryHistories.FirstAsync();
+                var history = c.QueryHistories.Single();
                 c.QueryHistories.Remove(history);
             });
 
             // assert
-            await UsingDbContextAsync(async c =>
+            UsingDbContext(c =>
             {
-                (await c.QueryHistories.CountAsync()).Should().Be(0);
-                (await c.QuerySummaries.CountAsync()).Should().Be(0);
-                (await c.UsernameInCrawler.CountAsync()).Should().Be(0);
+                c.QueryHistories.Should().HaveCount(0);
+                c.QuerySummaries.Should().HaveCount(0);
+                c.UsernameInCrawler.Should().HaveCount(0);
             });
         }
     }

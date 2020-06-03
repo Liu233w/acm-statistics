@@ -50,16 +50,11 @@ namespace AcmStatisticsBackend.Crawlers
         public int Solved { get; set; }
 
         /// <summary>
-        /// Whether this record has a list of problem ids that user solved.
-        /// </summary>
-        public bool HasSolvedList { get; set; }
-
-        /// <summary>
         /// The list of problem ids that user solved.
         ///
-        /// If <see cref="HasSolvedList"/> is false, an empty list is returned.
+        /// Can be null if crawler does not support it.
         /// </summary>
-        [Required]
+        [MaybeNull]
         public string[] SolvedList { get; set; }
 
         /// <summary>
@@ -68,10 +63,10 @@ namespace AcmStatisticsBackend.Crawlers
         public bool IsVirtualJudge { get; set; }
 
         /// <summary>
-        /// If <see cref="IsVirtualJudge"/> is false, this field is empty.
+        /// If <see cref="IsVirtualJudge"/> is false, this field is null.
         /// Otherwise, this field contains submissions count in each crawler.
         /// </summary>
-        [Required]
+        [MaybeNull]
         public IDictionary<string, int> SubmissionsByCrawlerName { get; set; }
     }
 }
