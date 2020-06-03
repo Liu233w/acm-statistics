@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Diagnostics.Contracts;
 using System.Linq;
+using Abp.Extensions;
 using Abp.UI;
 using AcmStatisticsBackend.ServiceClients;
 
@@ -22,7 +23,11 @@ namespace AcmStatisticsBackend.Crawlers
             IReadOnlyCollection<CrawlerMetaItem> crawlerMeta,
             IReadOnlyCollection<QueryWorkerHistory> workerHistories)
         {
-            ResolveSummaryData(crawlerMeta, workerHistories,
+            var histories = workerHistories
+                .Where(item => item.ErrorMessage.IsNullOrEmpty())
+                .ToList();
+
+            ResolveSummaryData(crawlerMeta, histories,
                 out var summaries,
                 out var warnings,
                 out var directlyAddSolvedWorkerList);

@@ -964,5 +964,62 @@ namespace AcmStatisticsBackend.Tests.Crawlers
                 },
             });
         }
+
+        [Fact]
+        public void WhenInputErrorWorker_ShouldIgnore()
+        {
+            // arrange
+            var histories = new[]
+            {
+                new QueryWorkerHistory
+                {
+                    CrawlerName = "cr1",
+                    Solved = 1,
+                    Submission = 3,
+                    Username = "u1",
+                    HasSolvedList = true,
+                    SolvedList = new[]
+                    {
+                        "1001",
+                    },
+                },
+                new QueryWorkerHistory
+                {
+                    CrawlerName = "cr3",
+                    IsVirtualJudge = true,
+                    Username = "u2",
+                    ErrorMessage = "An error occured",
+                },
+            };
+
+            // act
+            var result = SummaryGenerator.Generate(
+                _crawlerMeta,
+                histories);
+
+            // assert
+            // assert
+            result.Solved.Should().Be(1);
+            result.Submission.Should().Be(3);
+            result.SummaryWarnings.Should().BeEmpty();
+
+            result.QueryCrawlerSummaries.Should().BeEquivalentTo(new List<QueryCrawlerSummary>
+            {
+                new QueryCrawlerSummary
+                {
+                    CrawlerName = "cr1",
+                    IsVirtualJudge = false,
+                    Solved = 1,
+                    Submission = 3,
+                    Usernames = new List<UsernameInCrawler>
+                    {
+                        new UsernameInCrawler
+                        {
+                            Username = "u1",
+                        },
+                    },
+                },
+            });
+        }
     }
 }
