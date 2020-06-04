@@ -16,6 +16,11 @@ namespace AcmStatisticsBackend.Crawlers.Dto
         public DateTime GenerateTime { get; set; }
 
         /// <summary>
+        /// Main username, can be null or empty
+        /// </summary>
+        public string MainUsername { get; set; }
+
+        /// <summary>
         /// Query summaries of each crawler.
         /// </summary>
         [Required]

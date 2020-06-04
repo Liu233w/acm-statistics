@@ -631,6 +631,7 @@ namespace AcmStatisticsBackend.Tests.Crawlers
             {
                 QueryHistoryId = saveOrReplaceQueryHistoryOutput.QueryHistoryId,
                 GenerateTime = _testClockProvider.Now,
+                MainUsername = "mainUser",
                 Solved = 3,
                 Submission = 20,
                 SummaryWarnings = new List<SummaryWarning>(),
