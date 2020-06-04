@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using Abp.AutoMapper;
 
@@ -8,6 +9,11 @@ namespace AcmStatisticsBackend.Crawlers.Dto
     public class QuerySummaryDto
     {
         public long QueryHistoryId { get; set; }
+
+        /// <summary>
+        /// When the summary is generated
+        /// </summary>
+        public DateTime GenerateTime { get; set; }
 
         /// <summary>
         /// Query summaries of each crawler.

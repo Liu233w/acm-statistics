@@ -1,7 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Diagnostics.Contracts;
 using System.Linq;
+using Abp.Dependency;
 using Abp.Extensions;
+using Abp.Timing;
 using Abp.UI;
 using AcmStatisticsBackend.ServiceClients;
 
@@ -10,8 +12,15 @@ namespace AcmStatisticsBackend.Crawlers
     /// <summary>
     /// Generate summarise from <see cref="QueryHistory"/>
     /// </summary>
-    public static class SummaryGenerator
+    public class SummaryGenerator : ISingletonDependency
     {
+        private readonly IClockProvider _clockProvider;
+
+        public SummaryGenerator(IClockProvider clockProvider)
+        {
+            _clockProvider = clockProvider;
+        }
+
         /// <summary>
         /// Generate summary from <see cref="QueryHistory"/>.
         /// <see cref="QueryHistory.QueryWorkerHistories"/> should already be loaded.
@@ -19,7 +28,7 @@ namespace AcmStatisticsBackend.Crawlers
         /// It will not modify the parameter.
         /// </summary>
         [Pure]
-        public static QuerySummary Generate(
+        public QuerySummary Generate(
             IReadOnlyCollection<CrawlerMetaItem> crawlerMeta,
             IReadOnlyCollection<QueryWorkerHistory> workerHistories)
         {
@@ -71,6 +80,7 @@ namespace AcmStatisticsBackend.Crawlers
                 SummaryWarnings = warnings,
                 Solved = summaryList.Sum(a => a.Solved),
                 Submission = summaryList.Sum(a => a.Submission),
+                GenerateTime = _clockProvider.Now,
             };
         }
 
