@@ -2,11 +2,13 @@
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics.CodeAnalysis;
 using Abp.AutoMapper;
+using Abp.Runtime.Validation;
+using Castle.Core.Internal;
 
 namespace AcmStatisticsBackend.Crawlers.Dto
 {
     [AutoMap(typeof(QueryWorkerHistory))]
-    public class QueryWorkerHistoryDto
+    public class QueryWorkerHistoryDto : ICustomValidate
     {
         /// <summary>
         /// The name of the crawler. Frontend can get its title by this field.
@@ -57,6 +59,34 @@ namespace AcmStatisticsBackend.Crawlers.Dto
         /// Otherwise, this field contains submissions count in each crawler.
         /// </summary>
         [MaybeNull]
-        public Dictionary<string, int> SubmissionsByCrawlerName { get; set; } = new Dictionary<string, int>();
+        public Dictionary<string, int> SubmissionsByCrawlerName { get; set; }
+
+        public void AddValidationErrors(CustomValidationContext context)
+        {
+            if (!ErrorMessage.IsNullOrEmpty())
+            {
+                return;
+            }
+
+            if (IsVirtualJudge)
+            {
+                if (SolvedList == null || SubmissionsByCrawlerName == null)
+                {
+                    context.Results.Add(
+                        new ValidationResult(
+                            "These fields should not be null when crawler is virtual judge",
+                            new[] { nameof(SolvedList), nameof(SubmissionsByCrawlerName) }));
+                }
+            }
+            else
+            {
+                if (SubmissionsByCrawlerName != null)
+                {
+                    context.Results.Add(new ValidationResult(
+                        "This field should bu null when crawler is not virtual judge",
+                        new[] { nameof(SubmissionsByCrawlerName) }));
+                }
+            }
+        }
     }
 }

@@ -10,6 +10,7 @@ using Abp.Timing;
 using Abp.Timing.Timezone;
 using AcmStatisticsBackend.Authorization;
 using AcmStatisticsBackend.Crawlers.Dto;
+using AcmStatisticsBackend.ServiceClients;
 using Microsoft.EntityFrameworkCore;
 
 namespace AcmStatisticsBackend.Crawlers
@@ -20,25 +21,64 @@ namespace AcmStatisticsBackend.Crawlers
     {
         private readonly IRepository<QueryHistory, long> _acHistoryRepository;
         private readonly IRepository<QueryWorkerHistory, long> _acWorkerHistoryRepository;
+        private readonly IRepository<QuerySummary, long> _querySummaryRepository;
         private readonly IClockProvider _clockProvider;
         private readonly ITimeZoneConverter _timeZoneConverter;
+        private readonly ICrawlerApiBackendClient _crawlerApiBackendClient;
 
         public QueryHistoryAppService(
             IRepository<QueryHistory, long> acHistoryRepository,
             IRepository<QueryWorkerHistory, long> acWorkerHistoryRepository,
             IClockProvider clockProvider,
-            ITimeZoneConverter timeZoneConverter)
+            ITimeZoneConverter timeZoneConverter,
+            ICrawlerApiBackendClient crawlerApiBackendClient,
+            IRepository<QuerySummary, long> querySummaryRepository)
         {
             _acHistoryRepository = acHistoryRepository;
             _acWorkerHistoryRepository = acWorkerHistoryRepository;
             _clockProvider = clockProvider;
             _timeZoneConverter = timeZoneConverter;
+            _crawlerApiBackendClient = crawlerApiBackendClient;
+            _querySummaryRepository = querySummaryRepository;
         }
 
         /// <inheritdoc cref="IQueryHistoryAppService.SaveOrReplaceQueryHistory"/>
         public async Task SaveOrReplaceQueryHistory(SaveOrReplaceQueryHistoryInput input)
         {
-            // 移除同一天的记录
+            await RemoveHistoryToday();
+
+            // 添加新记录
+            var acHistory = ObjectMapper.Map<QueryHistory>(input);
+
+            // AutoMapper will change empty array to null. The code below is used to restore them
+            foreach (var (entity, dto) in acHistory.QueryWorkerHistories.Zip(input.QueryWorkerHistories))
+            {
+                if (dto.SolvedList == null)
+                {
+                    entity.SolvedList = null;
+                }
+
+                if (dto.SubmissionsByCrawlerName == null)
+                {
+                    entity.SubmissionsByCrawlerName = null;
+                }
+            }
+
+            Debug.Assert(AbpSession.UserId != null, "AbpSession.UserId != null");
+            acHistory.UserId = AbpSession.UserId.Value;
+            acHistory.CreationTime = _clockProvider.Now;
+            acHistory.IsReliableSource = false;
+
+            var crawlerMeta = await _crawlerApiBackendClient.GetCrawlerMeta();
+            var querySummary = SummaryGenerator.Generate(crawlerMeta, acHistory.QueryWorkerHistories.AsReadOnly());
+
+            // 会自动添加关联的 AcWorkerHistory
+            querySummary.QueryHistory = acHistory;
+            await _querySummaryRepository.InsertAsync(querySummary);
+        }
+
+        private async Task RemoveHistoryToday()
+        {
             var latestItem = await _acHistoryRepository.GetAll()
                 .Where(e => e.UserId == AbpSession.UserId.Value)
                 .OrderByDescending(e => e.CreationTime)
@@ -58,14 +98,6 @@ namespace AcmStatisticsBackend.Crawlers
                     await DoDeleteHistory(latestItem);
                 }
             }
-
-            // 添加新记录
-            var acHistory = ObjectMapper.Map<QueryHistory>(input);
-            Debug.Assert(AbpSession.UserId != null, "AbpSession.UserId != null");
-            acHistory.UserId = AbpSession.UserId.Value;
-            acHistory.CreationTime = _clockProvider.Now;
-            // 会自动添加关联的 AcWorkerHistory
-            await _acHistoryRepository.InsertAsync(acHistory);
         }
 
         /// <inheritdoc cref="IQueryHistoryAppService.DeleteQueryHistory"/>
@@ -103,11 +135,26 @@ namespace AcmStatisticsBackend.Crawlers
         /// <inheritdoc cref="IQueryHistoryAppService.GetQueryWorkerHistories"/>
         public async Task<ListResultDto<QueryWorkerHistoryDto>> GetQueryWorkerHistories(GetAcWorkerHistoryInput input)
         {
-            var entity = await GetAuthorizedEntity(input.QueryHistoryId);
+            var queryHistory = await GetAuthorizedEntity(input.QueryHistoryId);
             var entityList = await _acWorkerHistoryRepository.GetAll()
-                .Where(e => e.QueryHistoryId == entity.Id)
+                .Where(e => e.QueryHistoryId == queryHistory.Id)
                 .ToListAsync();
             var list = ObjectMapper.Map<List<QueryWorkerHistoryDto>>(entityList);
+
+            // AutoMapper will change empty array to null. The code below is used to restore them
+            foreach (var (dto, entity) in list.Zip(entityList))
+            {
+                if (entity.SolvedList == null)
+                {
+                    dto.SolvedList = null;
+                }
+
+                if (entity.SubmissionsByCrawlerName == null)
+                {
+                    dto.SubmissionsByCrawlerName = null;
+                }
+            }
+
             return new ListResultDto<QueryWorkerHistoryDto>(list);
         }
 
