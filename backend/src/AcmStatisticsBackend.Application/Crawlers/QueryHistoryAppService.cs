@@ -8,6 +8,7 @@ using Abp.Domain.Repositories;
 using Abp.Linq.Extensions;
 using Abp.Timing;
 using Abp.Timing.Timezone;
+using Abp.UI;
 using AcmStatisticsBackend.Authorization;
 using AcmStatisticsBackend.Crawlers.Dto;
 using AcmStatisticsBackend.ServiceClients;
@@ -22,6 +23,7 @@ namespace AcmStatisticsBackend.Crawlers
         private readonly IRepository<QueryHistory, long> _acHistoryRepository;
         private readonly IRepository<QueryWorkerHistory, long> _acWorkerHistoryRepository;
         private readonly IRepository<QuerySummary, long> _querySummaryRepository;
+        private readonly IRepository<QueryCrawlerSummary, long> _queryCrawlerSummaryRepository;
         private readonly IClockProvider _clockProvider;
         private readonly ITimeZoneConverter _timeZoneConverter;
         private readonly ICrawlerApiBackendClient _crawlerApiBackendClient;
@@ -32,7 +34,8 @@ namespace AcmStatisticsBackend.Crawlers
             IClockProvider clockProvider,
             ITimeZoneConverter timeZoneConverter,
             ICrawlerApiBackendClient crawlerApiBackendClient,
-            IRepository<QuerySummary, long> querySummaryRepository)
+            IRepository<QuerySummary, long> querySummaryRepository,
+            IRepository<QueryCrawlerSummary, long> queryCrawlerSummaryRepository)
         {
             _acHistoryRepository = acHistoryRepository;
             _acWorkerHistoryRepository = acWorkerHistoryRepository;
@@ -40,6 +43,7 @@ namespace AcmStatisticsBackend.Crawlers
             _timeZoneConverter = timeZoneConverter;
             _crawlerApiBackendClient = crawlerApiBackendClient;
             _querySummaryRepository = querySummaryRepository;
+            _queryCrawlerSummaryRepository = queryCrawlerSummaryRepository;
         }
 
         /// <inheritdoc cref="IQueryHistoryAppService.SaveOrReplaceQueryHistory"/>
@@ -165,6 +169,31 @@ namespace AcmStatisticsBackend.Crawlers
             return new ListResultDto<QueryWorkerHistoryDto>(list);
         }
 
+        /// <inheritdoc cref="IQueryHistoryAppService.GetQuerySummary" />
+        public async Task<QuerySummaryDto> GetQuerySummary(GetQuerySummaryInput input)
+        {
+            var history = await GetAuthorizedEntity(input.QueryHistoryId);
+
+            var summary = await _querySummaryRepository.FirstOrDefaultAsync(
+                e => e.QueryHistoryId == history.Id);
+
+            if (summary == null)
+            {
+                throw new UserFriendlyException("This query history does not have summary");
+            }
+
+            var queryCrawlerSummary = await _queryCrawlerSummaryRepository.GetAllIncluding(
+                    e => e.Usernames)
+                .Where(e => e.QuerySummaryId == summary.Id)
+                .ToListAsync();
+
+            var querySummaryDto = ObjectMapper.Map<QuerySummaryDto>(summary);
+            querySummaryDto.QueryCrawlerSummaries =
+                ObjectMapper.Map<ICollection<QueryCrawlerSummaryDto>>(queryCrawlerSummary);
+
+            return querySummaryDto;
+        }
+
         /// <summary>
         /// 根据ID获取对象，并检查权限。
         /// </summary>
@@ -176,7 +205,7 @@ namespace AcmStatisticsBackend.Crawlers
             var acHistory = await _acHistoryRepository.GetAsync(id);
             if (acHistory.UserId != AbpSession.UserId)
             {
-                throw new AbpAuthorizationException("You do not have permissions to delete the entity.");
+                throw new AbpAuthorizationException("You do not have permissions to visit the entity.");
             }
 
             return acHistory;
