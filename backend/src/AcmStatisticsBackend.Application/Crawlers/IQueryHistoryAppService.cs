@@ -15,7 +15,8 @@ namespace AcmStatisticsBackend.Crawlers
         ///
         /// If there is another record in the same day, the old one is replaced.
         /// </summary>
-        Task SaveOrReplaceQueryHistory(SaveOrReplaceQueryHistoryInput input);
+        /// <returns>The new query history id</returns>
+        Task<SaveOrReplaceQueryHistoryOutput> SaveOrReplaceQueryHistory(SaveOrReplaceQueryHistoryInput input);
 
         /// <summary>
         /// Delete a query history

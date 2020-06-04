@@ -77,7 +77,7 @@ namespace AcmStatisticsBackend.Tests.Crawlers
             _testClockProvider.Now = new DateTime(2020, 4, 1, 10, 0, 0);
 
             // act
-            await _queryHistoryAppService.SaveOrReplaceQueryHistory(new SaveOrReplaceQueryHistoryInput
+            var result = await _queryHistoryAppService.SaveOrReplaceQueryHistory(new SaveOrReplaceQueryHistoryInput
             {
                 MainUsername = "mainUser",
                 QueryWorkerHistories = new List<QueryWorkerHistoryDto>
@@ -139,6 +139,8 @@ namespace AcmStatisticsBackend.Tests.Crawlers
                     it.ErrorMessage.Should().Be("Cannot find username");
                 });
             });
+
+            result.QueryHistoryId.Should().Be(1);
         }
 
         [Fact]
@@ -166,7 +168,7 @@ namespace AcmStatisticsBackend.Tests.Crawlers
 
             // 第二次存储
             _testClockProvider.Now = new DateTime(2020, 4, 1, 20, 0, 0);
-            await _queryHistoryAppService.SaveOrReplaceQueryHistory(new SaveOrReplaceQueryHistoryInput
+            var result = await _queryHistoryAppService.SaveOrReplaceQueryHistory(new SaveOrReplaceQueryHistoryInput
             {
                 MainUsername = "u1",
                 QueryWorkerHistories = new List<QueryWorkerHistoryDto>
@@ -192,6 +194,8 @@ namespace AcmStatisticsBackend.Tests.Crawlers
                 workerHistory.QueryHistoryId.Should().Be(history.Id);
                 workerHistory.Solved.Should().Be(5);
             });
+
+            result.QueryHistoryId.Should().Be(2);
         }
 
         [Fact]
@@ -219,7 +223,7 @@ namespace AcmStatisticsBackend.Tests.Crawlers
 
             // 第二次存储
             _testClockProvider.Now = new DateTime(2020, 4, 2, 10, 0, 0);
-            await _queryHistoryAppService.SaveOrReplaceQueryHistory(new SaveOrReplaceQueryHistoryInput
+            var result = await _queryHistoryAppService.SaveOrReplaceQueryHistory(new SaveOrReplaceQueryHistoryInput
             {
                 MainUsername = "u1",
                 QueryWorkerHistories = new List<QueryWorkerHistoryDto>
@@ -240,6 +244,8 @@ namespace AcmStatisticsBackend.Tests.Crawlers
                 ctx.QueryHistories.Should().HaveCount(2);
                 ctx.QueryWorkerHistories.Should().HaveCount(2);
             });
+
+            result.QueryHistoryId.Should().Be(2);
         }
 
         [Fact]
