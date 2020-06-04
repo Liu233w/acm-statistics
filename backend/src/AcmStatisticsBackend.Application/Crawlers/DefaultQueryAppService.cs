@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System.Diagnostics;
+using System.Threading.Tasks;
 using Abp.Authorization;
 using Abp.Domain.Repositories;
 using Abp.Extensions;
@@ -30,16 +31,7 @@ namespace AcmStatisticsBackend.Crawlers
         {
             var entity = ObjectMapper.Map<DefaultQuery>(dto);
 
-            // 移除空的用户名
-            foreach (var (crawlerName, userNames) in entity.UsernamesInCrawlers)
-            {
-                userNames.RemoveAll(s => s.IsNullOrEmpty());
-                if (userNames.Count == 0)
-                {
-                    entity.UsernamesInCrawlers.Remove(crawlerName);
-                }
-            }
-
+            Debug.Assert(AbpSession.UserId != null, "AbpSession.UserId != null");
             var userId = AbpSession.UserId.Value;
             var existEntity = await _defaultQueryRepository.FirstOrDefaultAsync(e => e.UserId == userId);
             if (existEntity == null)
