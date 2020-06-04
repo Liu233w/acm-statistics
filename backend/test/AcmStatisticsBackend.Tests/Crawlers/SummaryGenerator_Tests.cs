@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Abp.UI;
 using AcmStatisticsBackend.Crawlers;
 using AcmStatisticsBackend.ServiceClients;
@@ -7,12 +8,18 @@ using Xunit;
 
 namespace AcmStatisticsBackend.Tests.Crawlers
 {
-    public class SummaryGenerator_Tests : AcmStatisticsBackendTestBase
+    public class SummaryGenerator_Tests
     {
         private readonly CrawlerMetaItem[] _crawlerMeta;
+        private readonly SummaryGenerator _summaryGenerator;
 
         public SummaryGenerator_Tests()
         {
+            var testClockProvider = new TestClockProvider();
+            testClockProvider.Now = new DateTime(2020, 4, 1);
+
+            _summaryGenerator = new SummaryGenerator(testClockProvider);
+
             _crawlerMeta = new[]
             {
                 new CrawlerMetaItem
@@ -51,6 +58,30 @@ namespace AcmStatisticsBackend.Tests.Crawlers
         }
 
         [Fact]
+        public void It_ShouldHaveGenerateTime()
+        {
+            // arrange
+            var histories = new[]
+            {
+                new QueryWorkerHistory
+                {
+                    CrawlerName = "cr1",
+                    Solved = 1,
+                    Submission = 3,
+                    Username = "u1",
+                },
+            };
+
+            // act
+            var result = _summaryGenerator.Generate(
+                _crawlerMeta,
+                histories);
+
+            // assert
+            result.GenerateTime.Should().Be(new DateTime(2020, 4, 1));
+        }
+
+        [Fact]
         public void WithoutSolvedList_ShouldGenerateWarning()
         {
             // arrange
@@ -73,7 +104,7 @@ namespace AcmStatisticsBackend.Tests.Crawlers
             };
 
             // act
-            var result = SummaryGenerator.Generate(
+            var result = _summaryGenerator.Generate(
                 _crawlerMeta,
                 histories);
 
@@ -138,7 +169,7 @@ namespace AcmStatisticsBackend.Tests.Crawlers
             };
 
             FluentActions.Invoking(() =>
-                    SummaryGenerator.Generate(_crawlerMeta, histories))
+                    _summaryGenerator.Generate(_crawlerMeta, histories))
                 .Should().Throw<UserFriendlyException>()
                 .WithMessage("Virtual judge Cr3 should have a solved list.");
         }
@@ -167,7 +198,7 @@ namespace AcmStatisticsBackend.Tests.Crawlers
             };
 
             FluentActions.Invoking(() =>
-                    SummaryGenerator.Generate(_crawlerMeta, histories))
+                    _summaryGenerator.Generate(_crawlerMeta, histories))
                 .Should().Throw<UserFriendlyException>()
                 .WithMessage(exceptionMessage);
         }
@@ -188,7 +219,7 @@ namespace AcmStatisticsBackend.Tests.Crawlers
             };
 
             FluentActions.Invoking(() =>
-                    SummaryGenerator.Generate(_crawlerMeta, histories))
+                    _summaryGenerator.Generate(_crawlerMeta, histories))
                 .Should().Throw<UserFriendlyException>()
                 .WithMessage("The meta data of crawler cr5 does not exist.");
         }
@@ -225,7 +256,7 @@ namespace AcmStatisticsBackend.Tests.Crawlers
             };
 
             // act
-            var result = SummaryGenerator.Generate(
+            var result = _summaryGenerator.Generate(
                 _crawlerMeta,
                 histories);
 
@@ -308,7 +339,7 @@ namespace AcmStatisticsBackend.Tests.Crawlers
             };
 
             // act
-            var result = SummaryGenerator.Generate(
+            var result = _summaryGenerator.Generate(
                 _crawlerMeta,
                 histories);
 
@@ -379,7 +410,7 @@ namespace AcmStatisticsBackend.Tests.Crawlers
             };
 
             // act
-            var call = FluentActions.Invoking(() => SummaryGenerator.Generate(
+            var call = FluentActions.Invoking(() => _summaryGenerator.Generate(
                 _crawlerMeta,
                 histories));
 
@@ -427,7 +458,7 @@ namespace AcmStatisticsBackend.Tests.Crawlers
             };
 
             // act
-            var result = SummaryGenerator.Generate(
+            var result = _summaryGenerator.Generate(
                 _crawlerMeta,
                 histories);
 
@@ -510,7 +541,7 @@ namespace AcmStatisticsBackend.Tests.Crawlers
             };
 
             // act
-            var result = SummaryGenerator.Generate(
+            var result = _summaryGenerator.Generate(
                 _crawlerMeta,
                 histories);
 
@@ -583,7 +614,7 @@ namespace AcmStatisticsBackend.Tests.Crawlers
             };
 
             // act
-            var result = SummaryGenerator.Generate(
+            var result = _summaryGenerator.Generate(
                 _crawlerMeta,
                 histories);
 
@@ -643,7 +674,7 @@ namespace AcmStatisticsBackend.Tests.Crawlers
             };
 
             // act
-            var result = SummaryGenerator.Generate(
+            var result = _summaryGenerator.Generate(
                 _crawlerMeta,
                 histories);
 
@@ -719,7 +750,7 @@ namespace AcmStatisticsBackend.Tests.Crawlers
             };
 
             // act
-            var result = SummaryGenerator.Generate(
+            var result = _summaryGenerator.Generate(
                 _crawlerMeta,
                 histories);
 
@@ -789,7 +820,7 @@ namespace AcmStatisticsBackend.Tests.Crawlers
             };
 
             // act
-            var result = SummaryGenerator.Generate(
+            var result = _summaryGenerator.Generate(
                 _crawlerMeta,
                 histories);
 
@@ -857,7 +888,7 @@ namespace AcmStatisticsBackend.Tests.Crawlers
             };
 
             // act
-            var result = SummaryGenerator.Generate(
+            var result = _summaryGenerator.Generate(
                 _crawlerMeta,
                 histories);
 
@@ -910,7 +941,7 @@ namespace AcmStatisticsBackend.Tests.Crawlers
             };
 
             // act
-            var result = SummaryGenerator.Generate(
+            var result = _summaryGenerator.Generate(
                 _crawlerMeta,
                 histories);
 
@@ -970,7 +1001,7 @@ namespace AcmStatisticsBackend.Tests.Crawlers
             };
 
             // act
-            var result = SummaryGenerator.Generate(
+            var result = _summaryGenerator.Generate(
                 _crawlerMeta,
                 histories);
 

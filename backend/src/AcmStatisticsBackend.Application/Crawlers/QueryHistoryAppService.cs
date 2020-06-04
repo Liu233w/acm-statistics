@@ -27,6 +27,7 @@ namespace AcmStatisticsBackend.Crawlers
         private readonly IClockProvider _clockProvider;
         private readonly ITimeZoneConverter _timeZoneConverter;
         private readonly ICrawlerApiBackendClient _crawlerApiBackendClient;
+        private readonly SummaryGenerator _summaryGenerator;
 
         public QueryHistoryAppService(
             IRepository<QueryHistory, long> acHistoryRepository,
@@ -35,7 +36,8 @@ namespace AcmStatisticsBackend.Crawlers
             ITimeZoneConverter timeZoneConverter,
             ICrawlerApiBackendClient crawlerApiBackendClient,
             IRepository<QuerySummary, long> querySummaryRepository,
-            IRepository<QueryCrawlerSummary, long> queryCrawlerSummaryRepository)
+            IRepository<QueryCrawlerSummary, long> queryCrawlerSummaryRepository,
+            SummaryGenerator summaryGenerator)
         {
             _acHistoryRepository = acHistoryRepository;
             _acWorkerHistoryRepository = acWorkerHistoryRepository;
@@ -44,6 +46,7 @@ namespace AcmStatisticsBackend.Crawlers
             _crawlerApiBackendClient = crawlerApiBackendClient;
             _querySummaryRepository = querySummaryRepository;
             _queryCrawlerSummaryRepository = queryCrawlerSummaryRepository;
+            _summaryGenerator = summaryGenerator;
         }
 
         /// <inheritdoc cref="IQueryHistoryAppService.SaveOrReplaceQueryHistory"/>
@@ -75,7 +78,9 @@ namespace AcmStatisticsBackend.Crawlers
             acHistory.IsReliableSource = false;
 
             var crawlerMeta = await _crawlerApiBackendClient.GetCrawlerMeta();
-            var querySummary = SummaryGenerator.Generate(crawlerMeta, acHistory.QueryWorkerHistories.AsReadOnly());
+            var querySummary = _summaryGenerator.Generate(
+                crawlerMeta,
+                acHistory.QueryWorkerHistories.AsReadOnly());
 
             var historyId = await _acHistoryRepository.InsertAndGetIdAsync(acHistory);
 

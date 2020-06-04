@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Abp.Application.Services.Dto;
+using Abp.Timing;
 using Abp.UI;
 using AcmStatisticsBackend.Crawlers;
 using AcmStatisticsBackend.Crawlers.Dto;
@@ -17,23 +18,26 @@ namespace AcmStatisticsBackend.Tests.Crawlers
 {
     public class QueryHistoryAppService_Tests : AcmStatisticsBackendTestBase
     {
-        private readonly IQueryHistoryAppService _queryHistoryAppService;
+        private IQueryHistoryAppService _queryHistoryAppService;
 
-        private readonly TestClockProvider _testClockProvider;
+        private TestClockProvider _testClockProvider;
 
-        private readonly TestCrawlerApiBackendClient _testCrawlerApiBackendClient;
-
-        public QueryHistoryAppService_Tests()
+        protected override void PreInitialize()
         {
-            _testClockProvider = new TestClockProvider();
-            _testCrawlerApiBackendClient = new TestCrawlerApiBackendClient();
+            LocalIocManager.Register<IClockProvider, TestClockProvider>();
+        }
+
+        protected override void PostInitialize()
+        {
+            _testClockProvider = Resolve<IClockProvider>() as TestClockProvider;
+
+            var testCrawlerApiBackendClient = new TestCrawlerApiBackendClient();
             _queryHistoryAppService = Resolve<QueryHistoryAppService>(new
             {
-                clockProvider = _testClockProvider,
-                crawlerApiBackendClient = _testCrawlerApiBackendClient,
+                crawlerApiBackendClient = testCrawlerApiBackendClient,
             });
 
-            _testCrawlerApiBackendClient.CrawlerMeta = new List<CrawlerMetaItem>
+            testCrawlerApiBackendClient.CrawlerMeta = new List<CrawlerMetaItem>
             {
                 new CrawlerMetaItem
                 {
@@ -626,6 +630,7 @@ namespace AcmStatisticsBackend.Tests.Crawlers
             result.Should().BeEquivalentTo(new QuerySummaryDto
             {
                 QueryHistoryId = saveOrReplaceQueryHistoryOutput.QueryHistoryId,
+                GenerateTime = _testClockProvider.Now,
                 Solved = 3,
                 Submission = 20,
                 SummaryWarnings = new List<SummaryWarning>(),
