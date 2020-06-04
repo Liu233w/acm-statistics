@@ -14,7 +14,7 @@ namespace AcmStatisticsBackend.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "3.1.4")
+                .HasAnnotation("ProductVersion", "3.1.3")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
             modelBuilder.Entity("Abp.Application.Editions.Edition", b =>
@@ -1532,32 +1532,6 @@ namespace AcmStatisticsBackend.Migrations
                     b.ToTable("DefaultQueries");
                 });
 
-            modelBuilder.Entity("AcmStatisticsBackend.Crawlers.QueryCrawlerSummary", b =>
-                {
-                    b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
-
-                    b.Property<string>("CrawlerName")
-                        .IsRequired()
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
-
-                    b.Property<long>("QuerySummaryId")
-                        .HasColumnType("bigint");
-
-                    b.Property<int>("Solved")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Submission")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("QuerySummaryId");
-
-                    b.ToTable("QueryCrawlerSummaries");
-                });
-
             modelBuilder.Entity("AcmStatisticsBackend.Crawlers.QueryHistory", b =>
                 {
                     b.Property<long>("Id")
@@ -1571,9 +1545,6 @@ namespace AcmStatisticsBackend.Migrations
                         .IsRequired()
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
-                    b.Property<long?>("QuerySummaryId")
-                        .HasColumnType("bigint");
-
                     b.Property<int>("Solved")
                         .HasColumnType("int");
 
@@ -1585,32 +1556,9 @@ namespace AcmStatisticsBackend.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("QuerySummaryId");
-
                     b.HasIndex("UserId");
 
                     b.ToTable("QueryHistories");
-                });
-
-            modelBuilder.Entity("AcmStatisticsBackend.Crawlers.QuerySummary", b =>
-                {
-                    b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
-
-                    b.Property<long>("QueryHistoryId")
-                        .HasColumnType("bigint");
-
-                    b.Property<string>("SummaryWarnings")
-                        .IsRequired()
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("QueryHistoryId")
-                        .IsUnique();
-
-                    b.ToTable("QuerySummaries");
                 });
 
             modelBuilder.Entity("AcmStatisticsBackend.Crawlers.QueryWorkerHistory", b =>
@@ -1658,29 +1606,6 @@ namespace AcmStatisticsBackend.Migrations
                     b.HasIndex("QueryHistoryId");
 
                     b.ToTable("QueryWorkerHistories");
-                });
-
-            modelBuilder.Entity("AcmStatisticsBackend.Crawlers.UsernameInCrawler", b =>
-                {
-                    b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
-
-                    b.Property<string>("FromCrawlerName")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
-
-                    b.Property<long>("QueryCrawlerSummaryId")
-                        .HasColumnType("bigint");
-
-                    b.Property<string>("Username")
-                        .IsRequired()
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("QueryCrawlerSummaryId");
-
-                    b.ToTable("UsernameInCrawler");
                 });
 
             modelBuilder.Entity("AcmStatisticsBackend.MultiTenancy.Tenant", b =>
@@ -1997,15 +1922,6 @@ namespace AcmStatisticsBackend.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("AcmStatisticsBackend.Crawlers.QueryCrawlerSummary", b =>
-                {
-                    b.HasOne("AcmStatisticsBackend.Crawlers.QuerySummary", "QuerySummary")
-                        .WithMany("QueryCrawlerSummaries")
-                        .HasForeignKey("QuerySummaryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("AcmStatisticsBackend.Crawlers.QueryHistory", b =>
                 {
                     b.HasOne("AcmStatisticsBackend.Authorization.Users.User", "User")
@@ -2015,29 +1931,11 @@ namespace AcmStatisticsBackend.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("AcmStatisticsBackend.Crawlers.QuerySummary", b =>
-                {
-                    b.HasOne("AcmStatisticsBackend.Crawlers.QueryHistory", "QueryHistory")
-                        .WithOne("QuerySummary")
-                        .HasForeignKey("AcmStatisticsBackend.Crawlers.QuerySummary", "QueryHistoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("AcmStatisticsBackend.Crawlers.QueryWorkerHistory", b =>
                 {
                     b.HasOne("AcmStatisticsBackend.Crawlers.QueryHistory", "QueryHistory")
                         .WithMany("QueryWorkerHistories")
                         .HasForeignKey("QueryHistoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("AcmStatisticsBackend.Crawlers.UsernameInCrawler", b =>
-                {
-                    b.HasOne("AcmStatisticsBackend.Crawlers.QueryCrawlerSummary", "QueryCrawlerSummary")
-                        .WithMany("Usernames")
-                        .HasForeignKey("QueryCrawlerSummaryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
