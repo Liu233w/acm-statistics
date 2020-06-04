@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace AcmStatisticsBackend
 {
@@ -49,6 +51,26 @@ namespace AcmStatisticsBackend
         {
             t0 = items.Length > 0 ? items[0] : default;
             t1 = items.Length > 1 ? items[1] : default;
+        }
+
+        // from https://stackoverflow.com/a/34362585
+        public static IReadOnlyCollection<T> AsReadOnly<T>(this ICollection<T> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+
+            return source as IReadOnlyCollection<T> ?? new ReadOnlyCollectionAdapter<T>(source);
+        }
+
+        private sealed class ReadOnlyCollectionAdapter<T> : IReadOnlyCollection<T>
+        {
+            private readonly ICollection<T> _source;
+            public ReadOnlyCollectionAdapter(ICollection<T> source) => this._source = source;
+            public int Count => _source.Count;
+            public IEnumerator<T> GetEnumerator() => _source.GetEnumerator();
+            IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
         }
     }
 }
