@@ -30,13 +30,6 @@ $(ImageToTag) $(ImageToPush): ImageNameWithLatest = $(RepoName)$(Image):latest
 	$(MAKE) -C ../backend build
 	$(MAKE) -C ../captcha-service build
 
-# 为了开发而构建的目标
-.build-dev:
-	$(MAKE) -C ../crawler-api-backend build
-	$(MAKE) -C ../backend build
-	$(MAKE) -C ../captcha-service build
-# 前端直接映射本地的目录，不需要构建
-
 tag: .build $(ImageToTag)
 
 push: tag $(ImageToPush)
@@ -67,5 +60,5 @@ e2e-up: .build .env
 .env:
 	$(CP) template.env .env
 
-dev-frontend: .build-dev
+dev-frontend: .build
 	docker-compose -f docker-compose.yml -f docker-compose.dev-frontend.yml up $(compose-args)
