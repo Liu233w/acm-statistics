@@ -78,138 +78,22 @@
         md4
         v-show="submissionsNum"
       >
-        <v-dialog
-          v-model="dialog"
-          fullscreen
-          hide-overlay
-          transition="dialog-bottom-transition"
-        >
-          <template v-slot:activator="{ on: { click } }">
-            <v-tooltip buttom>
-              <template #activator="{ on }">
-                <v-chip
-                  label
-                  color="grey lighten-3"
-                  class="elevation-2"
-                  v-on="on"
-                  @click="click"
-                >
-                  <span class="title">
-                    {{ notWorkingRate >= 100 ? 'SUMMARY' : summary }}
-                  </span>
-                </v-chip>
-              </template>
-              Click to open summary panel
-            </v-tooltip>
-          </template>
-          <v-card>
-            <v-toolbar
-              dark
-              color="primary"
+        <v-tooltip buttom>
+          <template #activator="{ on }">
+            <v-chip
+              label
+              color="grey lighten-3"
+              class="elevation-2"
+              v-on="on"
+              @click.stop="openDialog"
             >
-              <v-btn
-                icon
-                dark
-                @click="dialog = false"
-              >
-                <v-icon>mdi-close</v-icon>
-              </v-btn>
-              <v-toolbar-title>Summary</v-toolbar-title>
-              <v-spacer />
-              <v-toolbar-items>
-                <v-tooltip>
-                  <template #activator="{ on }">
-                    <v-btn
-                      dark
-                      text
-                      v-on="on"
-                      @click="printPage"
-                    >
-                      Print Page
-                    </v-btn>
-                  </template>
-                  Print current page (select "print to pdf" to save a pdf copy)
-                </v-tooltip>
-              </v-toolbar-items>
-            </v-toolbar>
-            <v-container>
-              <v-row justify="center">
-                <v-col>
-                  <v-list>
-                    <v-list-item v-if="username">
-                      <v-list-item-content>
-                        <v-list-item-title><strong>Main username:</strong> {{ username }}</v-list-item-title>
-                      </v-list-item-content>
-                    </v-list-item>
-                    <v-list-item>
-                      <v-list-item-content>
-                        <v-list-item-title>{{ summary }}</v-list-item-title>
-                      </v-list-item-content>
-                    </v-list-item>
-                    <v-list-item>
-                      <v-list-item-content>
-                        <v-list-item-title><strong>Generated at</strong> {{ updateDate }}</v-list-item-title>
-                      </v-list-item-content>
-                    </v-list-item>
-                  </v-list>
-                  <v-simple-table>
-                    <template v-slot:default>
-                      <thead>
-                        <tr>
-                          <th class="text-left" scope="col">
-                            Crawler
-                          </th>
-                          <th class="text-left" scope="col">
-                            Username
-                          </th>
-                          <th class="text-left" scope="col">
-                            Solved
-                          </th>
-                          <th class="text-left" scope="col">
-                            Submission
-                          </th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr
-                          v-for="item in workerSummaryList"
-                          :key="`${item.crawler}`"
-                        >
-                          <td scope="row">
-                            {{ item.crawler }}
-                          </td>
-                          <td>{{ item.username }}</td>
-                          <td>{{ item.solved }}</td>
-                          <td>{{ item.submissions }}</td>
-                        </tr>
-                      </tbody>
-                    </template>
-                  </v-simple-table>
-                  <bar-chart
-                    :chart-data="chartData"
-                    style="height: 300px"
-                  />
-                  <v-list dense>
-                    <v-subheader
-                      v-if="summaryForCrawler.warnings.length > 0"
-                      class="red--text"
-                    >
-                      WARNINGS
-                    </v-subheader>
-                    <v-list-item
-                      v-for="item in summaryForCrawler.warnings"
-                      :key="item"
-                    >
-                      <v-list-item-content>
-                        {{ item }}
-                      </v-list-item-content>
-                    </v-list-item>
-                  </v-list>
-                </v-col>
-              </v-row>
-            </v-container>
-          </v-card>
-        </v-dialog>
+              <span class="title">
+                SOLVED: {{ solvedNum }} / SUBMISSION: {{ submissionsNum }}
+              </span>
+            </v-chip>
+          </template>
+          Click to open summary panel after query finishing.
+        </v-tooltip>
       </v-flex>
     </v-layout>
     <v-layout>
@@ -241,6 +125,167 @@
         </v-layout>
       </v-flex>
     </v-layout>
+    <v-dialog
+      v-model="dialog"
+      fullscreen
+      hide-overlay
+      transition="dialog-bottom-transition"
+    >
+      <v-card>
+        <v-toolbar
+          dark
+          color="primary"
+        >
+          <v-btn
+            icon
+            dark
+            @click="dialog = false"
+          >
+            <v-icon>mdi-close</v-icon>
+          </v-btn>
+          <v-toolbar-title>Summary</v-toolbar-title>
+          <v-spacer />
+          <v-toolbar-items>
+            <v-tooltip>
+              <template #activator="{ on }">
+                <v-btn
+                  dark
+                  text
+                  v-on="on"
+                  @click="printPage"
+                >
+                  Print Page
+                </v-btn>
+              </template>
+              Print current page (select "print to pdf" to save a pdf copy)
+            </v-tooltip>
+          </v-toolbar-items>
+        </v-toolbar>
+        <v-card-text
+          v-if="!$store.state.session.login"
+          class="text-center"
+        >
+          <p class="title text--primary mt-5">
+            Please <nuxt-link to="/login">
+              login
+            </nuxt-link> to view your summary!
+          </p>
+        </v-card-text>
+        <v-card-text
+          v-else-if="summaryError"
+          class="text-center"
+        >
+          <p class="title error--text mt-5">
+            {{ summaryError }}
+          </p>
+        </v-card-text>
+        <v-card-text
+          v-else-if="summary == null"
+          class="text-center"
+        >
+          <v-progress-circular
+            :size="100"
+            color="primary"
+            indeterminate
+            class="mt-10"
+          />
+        </v-card-text>
+        <v-container v-else>
+          <v-row justify="center">
+            <v-col>
+              <v-list>
+                <v-list-item v-if="summary.mainUsername">
+                  <v-list-item-content>
+                    <v-list-item-title><strong>Main username:</strong> {{ summary.mainUsername }}</v-list-item-title>
+                  </v-list-item-content>
+                </v-list-item>
+                <v-list-item>
+                  <v-list-item-content>
+                    <v-list-item-title><strong>SOLVED:</strong> {{ summary.solved }}</v-list-item-title>
+                  </v-list-item-content>
+                </v-list-item>
+                <v-list-item>
+                  <v-list-item-content>
+                    <v-list-item-title><strong>SUBMISSION:</strong> {{ summary.submission }}</v-list-item-title>
+                  </v-list-item-content>
+                </v-list-item>
+                <v-list-item>
+                  <v-list-item-content>
+                    <v-list-item-title><strong>Generated at</strong> {{ summary.generateTime }}</v-list-item-title>
+                  </v-list-item-content>
+                </v-list-item>
+              </v-list>
+              <v-simple-table>
+                <template v-slot:default>
+                  <thead>
+                    <tr>
+                      <th
+                        class="text-left"
+                        scope="col"
+                      >
+                        Crawler
+                      </th>
+                      <th
+                        class="text-left"
+                        scope="col"
+                      >
+                        Username
+                      </th>
+                      <th
+                        class="text-left"
+                        scope="col"
+                      >
+                        Solved
+                      </th>
+                      <th
+                        class="text-left"
+                        scope="col"
+                      >
+                        Submission
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr
+                      v-for="item in workerSummaryList"
+                      :key="`${item.crawler}`"
+                    >
+                      <td scope="row">
+                        {{ item.crawler }}
+                      </td>
+                      <td>{{ item.username }}</td>
+                      <td>{{ item.solved }}</td>
+                      <td>{{ item.submissions }}</td>
+                    </tr>
+                  </tbody>
+                </template>
+              </v-simple-table>
+              <bar-chart
+                :chart-data="chartData"
+                style="height: 300px"
+              />
+              <v-list dense>
+                <v-subheader
+                  v-if="summary.summaryWarnings.length > 0"
+                  class="red--text"
+                >
+                  WARNINGS
+                </v-subheader>
+                <v-list-item
+                  v-for="item in summary.summaryWarnings"
+                  :key="item"
+                >
+                  <v-list-item-content>
+                    {{ $store.state.statistics.crawlers[item.crawlerName].title }}:
+                    {{ item.content }}
+                  </v-list-item-content>
+                </v-list-item>
+              </v-list>
+            </v-col>
+          </v-row>
+        </v-container>
+      </v-card>
+    </v-dialog>
   </v-container>
 </template>
 
@@ -252,6 +297,7 @@ import WorkerCard from '~/components/WorkerCard'
 import statisticsLayoutBuilder from '~/components/statisticsLayoutBuilder'
 import Store from '~/store/-dynamic/statistics'
 import { PROJECT_TITLE } from '~/components/consts'
+import { getAbpErrorMessage } from '~/components/utils'
 
 import BarChart from '~/components/BarChart'
 
@@ -273,6 +319,12 @@ export default {
   mounted() {
     this.onResize()
     this.loadUsername()
+    this.$store.subscribeAction(action => {
+      if (_.startsWith(action.type, 'statistics/')) {
+        this.summary = null
+        this.summaryError = null
+      }
+    })
   },
   data() {
     return {
@@ -282,6 +334,8 @@ export default {
       savingUsername: false,
       // summary dialog
       dialog: false,
+      summary: null,
+      summaryError: null,
     }
   },
   computed: {
@@ -291,7 +345,6 @@ export default {
       'isWorking',
       'notWorkingRate',
       'workerIdxOfCrawler',
-      'summaryForCrawler',
     ]),
     username: {
       get() {
@@ -308,26 +361,29 @@ export default {
     maxItemPerColumn() {
       return Math.ceil(this.$store.state.statistics.workers.length / this.columnCount)
     },
-    summary() {
-      return `SOLVED: ${this.solvedNum} / SUBMISSION: ${this.submissionsNum}`
-    },
     workerSummaryList() {
       // module not loaded
-      if (!this.summaryForCrawler) {
+      if (!this.summary) {
         return []
       }
 
+      const crawlers = this.$store.state.statistics.crawlers
+
       const res = []
-      for (const crawlerName in this.summaryForCrawler.summaries) {
-        const summary = this.summaryForCrawler.summaries[crawlerName]
-        if (summary.usernames.size > 0) {
-          res.push({
-            crawler: summary.crawlerTitle,
-            username: [...summary.usernames].join(', '),
-            solved: summary.solvedSet.size,
-            submissions: summary.submissions,
-          })
-        }
+      for (const summary of this.summary.queryCrawlerSummaries) {
+        const usernames = _.map(item => {
+          if (item.fromCrawlerName) {
+            return `[${item.username} in ${crawlers[item.fromCrawlerName].title}]`
+          } else {
+            return item.username
+          }
+        })
+        res.push({
+          crawler: crawlers[summary.crawlerName].title,
+          username: usernames.join(', '),
+          solved: summary.solved,
+          submissions: summary.submission,
+        })
       }
       return res
     },
@@ -415,6 +471,43 @@ export default {
     },
     clearWorkers() {
       this.$store.dispatch('statistics/clearWorkers')
+    },
+    async openDialog() {
+      if (this.notWorkingRate < 100) {
+        return
+      }
+
+      this.dialog = true
+      if (this.summary == null && this.summaryError == null) {
+        try {
+          const saveResult = await this.$axios.$post('/api/services/app/QueryHistory/SaveOrReplaceQueryHistory', {
+            mainUsername: this.username,
+            queryWorkerHistories:
+              _.map(worker => {
+                const crawler = this.$store.state.statistics.crawlers[worker.crawlerName]
+                const history = {
+                  crawlerName: worker.crawlerName,
+                  username: worker.username,
+                  errorMessage: worker.errorMessage || undefined,
+                  submission: worker.submissions,
+                  solved: worker.solved,
+                  solvedList: worker.solvedList,
+                  submissionsByCrawlerName: worker.submissionsByCrawlerName,
+                  isVirtualJudge: crawler.virtual_judge || false,
+                }
+                console.log('history', history)
+                console.log('worker', worker)
+                return history
+              }, this.$store.state.statistics.workers),
+          })
+
+          this.summary = await this.$axios.$get('/api/services/app/QueryHistory/GetQuerySummary', {
+            queryHistoryId: saveResult.queryHistoryId,
+          })
+        } catch (err) {
+          this.summaryError = getAbpErrorMessage(err)
+        }
+      }
     },
     printPage() {
       window.print()
