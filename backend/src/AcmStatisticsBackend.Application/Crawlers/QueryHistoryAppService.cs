@@ -43,7 +43,8 @@ namespace AcmStatisticsBackend.Crawlers
         }
 
         /// <inheritdoc cref="IQueryHistoryAppService.SaveOrReplaceQueryHistory"/>
-        public async Task SaveOrReplaceQueryHistory(SaveOrReplaceQueryHistoryInput input)
+        public async Task<SaveOrReplaceQueryHistoryOutput> SaveOrReplaceQueryHistory(
+            SaveOrReplaceQueryHistoryInput input)
         {
             await RemoveHistoryToday();
 
@@ -72,9 +73,15 @@ namespace AcmStatisticsBackend.Crawlers
             var crawlerMeta = await _crawlerApiBackendClient.GetCrawlerMeta();
             var querySummary = SummaryGenerator.Generate(crawlerMeta, acHistory.QueryWorkerHistories.AsReadOnly());
 
-            // 会自动添加关联的 AcWorkerHistory
-            querySummary.QueryHistory = acHistory;
+            var historyId = await _acHistoryRepository.InsertAndGetIdAsync(acHistory);
+
+            querySummary.QueryHistoryId = historyId;
             await _querySummaryRepository.InsertAsync(querySummary);
+
+            return new SaveOrReplaceQueryHistoryOutput
+            {
+                QueryHistoryId = historyId,
+            };
         }
 
         private async Task RemoveHistoryToday()
