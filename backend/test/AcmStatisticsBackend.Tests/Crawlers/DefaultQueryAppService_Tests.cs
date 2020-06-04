@@ -17,7 +17,7 @@ namespace AcmStatisticsBackend.Tests.Crawlers
         }
 
         [Fact]
-        public async Task 能够正确获取存储的记录()
+        public async Task GetDefaultQueries_ShouldWorkCorrectly()
         {
             // act
             await _appService.SetDefaultQueries(new DefaultQueryDto
@@ -45,7 +45,7 @@ namespace AcmStatisticsBackend.Tests.Crawlers
         }
 
         [Fact]
-        public async Task 能存储空的主用户名()
+        public async Task SetDefaultQueries_ShouldWorkCorrectly()
         {
             // act
             await _appService.SetDefaultQueries(new DefaultQueryDto
@@ -64,39 +64,7 @@ namespace AcmStatisticsBackend.Tests.Crawlers
         }
 
         [Fact]
-        public async Task 能去除空的爬虫用户名()
-        {
-            // act
-            await _appService.SetDefaultQueries(new DefaultQueryDto
-            {
-                MainUsername = "",
-                UsernamesInCrawlers = new Dictionary<string, List<string>>
-                {
-                    { "crawler1", new List<string> { "username1", "username2" } },
-                    { "crawler2", new List<string> { "" } },
-                    { "crawler3", new List<string>() },
-                    { "crawler4", new List<string> { "username1", "" } },
-                    { "crawler5", new List<string> { "username1", null } },
-                },
-            });
-
-            var result = await _appService.GetDefaultQueries();
-
-            // assert
-            result.Should().BeEquivalentTo(new DefaultQueryDto
-            {
-                MainUsername = "",
-                UsernamesInCrawlers = new Dictionary<string, List<string>>
-                {
-                    { "crawler1", new List<string> { "username1", "username2" } },
-                    { "crawler4", new List<string> { "username1" } },
-                    { "crawler5", new List<string> { "username1" } },
-                },
-            });
-        }
-
-        [Fact]
-        public async Task 没有记录时返回一个空结果()
+        public async Task GetDefaultQueries_WhenNoRecord_ReturnResultWithEmptyParameters()
         {
             // act
             var result = await _appService.GetDefaultQueries();
