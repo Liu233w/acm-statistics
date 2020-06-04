@@ -195,6 +195,7 @@ namespace AcmStatisticsBackend.Crawlers
             var querySummaryDto = ObjectMapper.Map<QuerySummaryDto>(summary);
             querySummaryDto.QueryCrawlerSummaries =
                 ObjectMapper.Map<ICollection<QueryCrawlerSummaryDto>>(queryCrawlerSummary);
+            querySummaryDto.MainUsername = history.MainUsername;
 
             return querySummaryDto;
         }
