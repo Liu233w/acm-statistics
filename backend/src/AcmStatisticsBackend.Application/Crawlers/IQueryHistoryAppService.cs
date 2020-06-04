@@ -32,5 +32,11 @@ namespace AcmStatisticsBackend.Crawlers
         /// Get all <see cref="QueryWorkerHistory"/> that belong to certain <see cref="QueryHistory"/>.
         /// </summary>
         Task<ListResultDto<QueryWorkerHistoryDto>> GetQueryWorkerHistories(GetAcWorkerHistoryInput input);
+
+        /// <summary>
+        /// Get query summary of certain query history
+        /// </summary>
+        /// <param name="input">input the id of query history</param>
+        Task<QuerySummaryDto> GetQuerySummary(GetQuerySummaryInput input);
     }
 }

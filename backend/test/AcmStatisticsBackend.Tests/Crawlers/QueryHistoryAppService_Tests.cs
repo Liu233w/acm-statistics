@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Abp.Application.Services.Dto;
+using Abp.UI;
 using AcmStatisticsBackend.Crawlers;
 using AcmStatisticsBackend.Crawlers.Dto;
 using AcmStatisticsBackend.ServiceClients;
@@ -578,6 +579,106 @@ namespace AcmStatisticsBackend.Tests.Crawlers
                     });
                 });
             });
+        }
+
+        [Fact]
+        public async Task GetQuerySummary_ShouldWorkCorrectly()
+        {
+            // arrange
+            LoginAsDefaultTenantAdmin();
+            _testClockProvider.Now = new DateTime(2020, 4, 1, 10, 0, 0);
+            var saveOrReplaceQueryHistoryOutput = await _queryHistoryAppService.SaveOrReplaceQueryHistory(
+                new SaveOrReplaceQueryHistoryInput
+                {
+                    MainUsername = "mainUser",
+                    QueryWorkerHistories = new List<QueryWorkerHistoryDto>
+                    {
+                        new QueryWorkerHistoryDto
+                        {
+                            Username = "u1",
+                            CrawlerName = "c1",
+                            Solved = 3,
+                            Submission = 20,
+                            ErrorMessage = null,
+                            SolvedList = new[]
+                            {
+                                "p1",
+                                "p2",
+                                "p3",
+                            },
+                        },
+                        new QueryWorkerHistoryDto
+                        {
+                            Username = "u2",
+                            CrawlerName = "c2",
+                            ErrorMessage = "Cannot find username",
+                        },
+                    },
+                });
+
+            // act
+            var result = await _queryHistoryAppService.GetQuerySummary(new GetQuerySummaryInput
+            {
+                QueryHistoryId = saveOrReplaceQueryHistoryOutput.QueryHistoryId,
+            });
+
+            // assert
+            result.Should().BeEquivalentTo(new QuerySummaryDto
+            {
+                QueryHistoryId = saveOrReplaceQueryHistoryOutput.QueryHistoryId,
+                Solved = 3,
+                Submission = 20,
+                SummaryWarnings = new List<SummaryWarning>(),
+                QueryCrawlerSummaries = new List<QueryCrawlerSummaryDto>
+                {
+                    new QueryCrawlerSummaryDto
+                    {
+                        CrawlerName = "c1",
+                        Usernames = new List<UsernameInCrawlerDto>
+                        {
+                            new UsernameInCrawlerDto
+                            {
+                                Username = "u1",
+                            },
+                        },
+                        Solved = 3,
+                        Submission = 20,
+                        IsVirtualJudge = false,
+                    },
+                },
+            });
+        }
+
+        [Fact]
+        public async Task GetQuerySummary_WhenSummaryNotExist_ShouldThrow()
+        {
+            // arrange
+            LoginAsDefaultTenantAdmin();
+            var user = await GetCurrentUserAsync();
+
+            var id = UsingDbContext(c =>
+            {
+                var entity = new QueryHistory
+                {
+                    UserId = user.Id,
+                    CreationTime = DateTime.Now,
+                    MainUsername = "aaa",
+                    IsReliableSource = false,
+                };
+                c.QueryHistories.Add(entity);
+                c.SaveChanges();
+                return entity.Id;
+            });
+
+            // act
+            var task = _queryHistoryAppService.GetQuerySummary(new GetQuerySummaryInput
+            {
+                QueryHistoryId = id,
+            });
+
+            // assert
+            await task.ShouldThrow<UserFriendlyException>()
+                .WithMessage("This query history does not have summary");
         }
     }
 }
