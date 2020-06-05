@@ -90,7 +90,7 @@ vim .env
 - 数据库会在每天3:00am自动进行备份，保存在 `/db-backup` 中
 
 ## 开源协议
-- 如无特殊声明，均为 GPL-3.0 协议
+- 如无特殊声明，均为 AGPL-3.0 协议
 - crawler 模块中的 `crawlers` 目录中的文件为 BSD 2-Clause 协议
 
 ## 贡献代码
