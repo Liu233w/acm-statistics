@@ -8,16 +8,15 @@ namespace AcmStatisticsBackend.Crawlers.Dto
     [AutoMap(typeof(QueryHistory))]
     public class GetQueryHistoryOutput
     {
+        [Range(1, long.MaxValue)]
         public long Id { get; set; }
 
         [Required]
         public DateTime CreationTime { get; set; }
 
         /// <summary>
-        /// Main username of query history, can be empty
+        /// Main username of query history, can be null or empty
         /// </summary>
-        [Required]
-        [MinLength(0)]
         public string MainUsername { get; set; }
     }
 }

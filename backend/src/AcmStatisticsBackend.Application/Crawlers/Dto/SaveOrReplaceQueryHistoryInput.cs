@@ -8,10 +8,8 @@ namespace AcmStatisticsBackend.Crawlers.Dto
     public class SaveOrReplaceQueryHistoryInput
     {
         /// <summary>
-        /// Main username of query history, can be empty
+        /// Main username of query history, can be null or empty
         /// </summary>
-        [Required]
-        [MinLength(0)]
         public string MainUsername { get; set; }
 
         /// <summary>
