@@ -119,13 +119,17 @@ describe('crawler test', () => {
   })
 })
 
-describe('summary', () => {
+describe.only('summary', () => {
+
+  let username
+  before(() => {
+    cy.registerAndGetUsername().then(u => {
+      username = u
+    })
+    cy.clearCookies()
+  })
 
   beforeEach(() => {
-    cy.visit('/statistics')
-    // remove top bar to prevent blocking content
-    cy.get('header:contains("NWPU-ACM 查询系统")').invoke('hide')
-
     cy.server()
     cy.route('https://cors-anywhere.herokuapp.com/http://acm.hdu.edu.cn/userstatus.php?user=wwwlsmcom',
       'fixture:summary_hdu.txt')
@@ -138,7 +142,34 @@ describe('summary', () => {
       .as('summary_leetcode')
   })
 
+  it('should ask user to login if not', () => {
+    visit()
+
+    cy.get('div[title="HDU"]').parents('.worker-item').within(() => {
+
+      cy.get('div:contains("Username") input').type('wwwlsmcom')
+
+      cy.get('button:contains("refresh")').click()
+      cy.wait('@summary_hdu')
+
+      cy.contains('34')
+      cy.contains('72')
+    })
+
+    cy.contains('/ SUBMISSION').click()
+
+    cy.contains('Please login')
+
+    snapshot()
+  })
+
   it('should generate summary', () => {
+    cy.login(username)
+    visit()
+
+    // wait dom refresh
+    // eslint-disable-next-line cypress/no-unnecessary-waiting
+    cy.wait(1000)
 
     cy.get('div[title="HDU"]').parents('.worker-item').within(() => {
 
@@ -173,18 +204,18 @@ describe('summary', () => {
       cy.contains('704')
     })
 
-    cy.contains('SUMMARY').click()
+    cy.contains('SOLVED: 192 / SUBMISSION').click()
 
     cy.get('.v-dialog--fullscreen').within(() => {
 
       // hide generate time
       cy.get('strong:contains("Generated at")')
-      .parent()
-      .invoke('attr', 'style', 'background-color: black')
+        .parent()
+        .invoke('attr', 'style', 'background-color: black')
 
       snapshot('summary-upper')
 
-      cy.contains('does not have solved list').scrollIntoView()
+      cy.contains('does not have a solved list').scrollIntoView()
       snapshot('summary-lower')
     })
   })
@@ -200,4 +231,10 @@ function snapshot(name) {
       capture: 'viewport',
     })
   }
+}
+
+function visit() {
+  cy.visit('/statistics')
+  // remove top bar to prevent blocking content
+  cy.get('header:contains("NWPU-ACM 查询系统")').invoke('hide')
 }
