@@ -5534,13 +5534,9 @@ exports[`/statistics 1`] = `
           </span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--contained theme--light v-size--default"><span class="v-btn__content">
             save username
             </span></button></span></div>
-                    <div class="flex xs12 md4" style="display:none;">
-                      <div role="dialog" class="v-dialog__container"><span buttom class="v-tooltip"><!----><span draggable="false" class="elevation-2 v-chip v-chip--clickable v-chip--label theme--light v-size--default grey lighten-3"><span class="v-chip__content"><span class="title">
-                  SUMMARY
-                </span></span></span></span>
-                        <!---->
-                      </div>
-                    </div>
+                    <div class="flex xs12 md4" style="display:none;"><span buttom class="v-tooltip"><!----><span draggable="false" class="elevation-2 v-chip v-chip--clickable v-chip--label theme--light v-size--default grey lighten-3"><span class="v-chip__content"><span class="title">
+              SOLVED: 0 / SUBMISSION: 0
+            </span></span></span></span></div>
                   </div>
                   <div class="layout">
                     <div class="flex xs12 sm12 md6 lg4 xl3">
@@ -6412,6 +6408,9 @@ It may take a while for the api to update user statistics.
       </div>
     </div></span></div>
     </div>
+    </div>
+    <div role="dialog" class="v-dialog__container">
+      <!---->
     </div>
     </div>
     </div>
