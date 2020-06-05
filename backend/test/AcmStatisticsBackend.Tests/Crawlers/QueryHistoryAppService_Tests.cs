@@ -119,6 +119,7 @@ namespace AcmStatisticsBackend.Tests.Crawlers
                 acHistory.UserId.Should().Be(AbpSession.UserId.Value);
                 acHistory.CreationTime.Should().Be(new DateTime(2020, 4, 1, 10, 0, 0));
                 acHistory.MainUsername.Should().Be("mainUser");
+                acHistory.IsReliableSource.Should().BeFalse();
 
                 ctx.QueryWorkerHistories.Should().HaveCount(2);
                 var list = ctx.QueryWorkerHistories.ToList();
@@ -261,7 +262,7 @@ namespace AcmStatisticsBackend.Tests.Crawlers
             _testClockProvider.Now = new DateTime(2020, 4, 1, 10, 0, 0);
 
             // act
-            await _queryHistoryAppService.SaveOrReplaceQueryHistory(new SaveOrReplaceQueryHistoryInput
+            var result = await _queryHistoryAppService.SaveOrReplaceQueryHistory(new SaveOrReplaceQueryHistoryInput
             {
                 MainUsername = "mainUser",
                 QueryWorkerHistories = new List<QueryWorkerHistoryDto>
@@ -298,6 +299,7 @@ namespace AcmStatisticsBackend.Tests.Crawlers
                 {
                     it.Solved.Should().Be(3);
                     it.Submission.Should().Be(20);
+                    it.QueryHistoryId.Should().Be(result.QueryHistoryId);
                 });
 
                 ctx.QueryCrawlerSummaries.Should().HaveCount(1);

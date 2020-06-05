@@ -4,7 +4,7 @@ namespace AcmStatisticsBackend.Crawlers.Dto
 {
     public class GetAcWorkerHistoryInput
     {
-        [Range(0, long.MaxValue)]
+        [Range(1, long.MaxValue)]
         public long QueryHistoryId { get; set; }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
@@ -53,8 +54,6 @@ namespace AcmStatisticsBackend.Crawlers
         public async Task<SaveOrReplaceQueryHistoryOutput> SaveOrReplaceQueryHistory(
             SaveOrReplaceQueryHistoryInput input)
         {
-            await RemoveHistoryToday();
-
             // 添加新记录
             var acHistory = ObjectMapper.Map<QueryHistory>(input);
 
@@ -82,6 +81,8 @@ namespace AcmStatisticsBackend.Crawlers
                 crawlerMeta,
                 acHistory.QueryWorkerHistories.AsReadOnly());
 
+            await RemoveLatestHistoryTheSameDayOf(acHistory.CreationTime);
+
             var historyId = await _acHistoryRepository.InsertAndGetIdAsync(acHistory);
 
             querySummary.QueryHistoryId = historyId;
@@ -93,7 +94,7 @@ namespace AcmStatisticsBackend.Crawlers
             };
         }
 
-        private async Task RemoveHistoryToday()
+        private async Task RemoveLatestHistoryTheSameDayOf(DateTime day)
         {
             var latestItem = await _acHistoryRepository.GetAll()
                 .Where(e => e.UserId == AbpSession.UserId.Value)
@@ -103,7 +104,7 @@ namespace AcmStatisticsBackend.Crawlers
             {
                 Debug.Assert(AbpSession.UserId != null, "AbpSession.UserId != null");
                 var currentLocalTime = _timeZoneConverter.Convert(
-                    _clockProvider.Now, AbpSession.TenantId, AbpSession.UserId.Value);
+                    day, AbpSession.TenantId, AbpSession.UserId.Value);
                 var latestItemCreationTimeLocal = _timeZoneConverter.Convert(
                     latestItem.CreationTime, AbpSession.TenantId, AbpSession.UserId.Value);
 

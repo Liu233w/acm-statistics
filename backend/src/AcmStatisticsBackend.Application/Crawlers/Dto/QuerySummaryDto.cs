@@ -8,6 +8,7 @@ namespace AcmStatisticsBackend.Crawlers.Dto
     [AutoMap(typeof(QuerySummary))]
     public class QuerySummaryDto
     {
+        [Range(1, long.MaxValue)]
         public long QueryHistoryId { get; set; }
 
         /// <summary>
