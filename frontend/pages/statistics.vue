@@ -211,7 +211,7 @@
                 </v-list-item>
                 <v-list-item>
                   <v-list-item-content>
-                    <v-list-item-title><strong>Generated at</strong> {{ summary.generateTime }}</v-list-item-title>
+                    <v-list-item-title><strong>Generated at</strong> {{ new Date(summary.generateTime) }}</v-list-item-title>
                   </v-list-item-content>
                 </v-list-item>
               </v-list>
@@ -296,7 +296,7 @@ import _ from 'lodash'
 import WorkerCard from '~/components/WorkerCard'
 import statisticsLayoutBuilder from '~/components/statisticsLayoutBuilder'
 import Store from '~/store/-dynamic/statistics'
-import { PROJECT_TITLE } from '~/components/consts'
+import { PROJECT_TITLE, WORKER_STATUS } from '~/components/consts'
 import { getAbpErrorMessage } from '~/components/utils'
 
 import BarChart from '~/components/BarChart'
@@ -371,15 +371,16 @@ export default {
 
       const res = []
       for (const summary of this.summary.queryCrawlerSummaries) {
-        const usernames = _.map(item => {
+        const usernames = _.map(summary.usernames, item => {
           if (item.fromCrawlerName) {
             return `[${item.username} in ${crawlers[item.fromCrawlerName].title}]`
           } else {
             return item.username
           }
         })
+        const isVirtualJudge = crawlers[summary.crawlerName].virtual_judge
         res.push({
-          crawler: crawlers[summary.crawlerName].title,
+          crawler: crawlers[summary.crawlerName].title + (isVirtualJudge ? ' (Not Merged)' : ''),
           username: usernames.join(', '),
           solved: summary.solved,
           submissions: summary.submission,
@@ -479,31 +480,34 @@ export default {
 
       this.dialog = true
       if (this.summary == null && this.summaryError == null) {
+        const doneWorkers = _.filter(this.$store.state.statistics.workers,
+          worker => worker.status === WORKER_STATUS.DONE)
         try {
           const saveResult = await this.$axios.$post('/api/services/app/QueryHistory/SaveOrReplaceQueryHistory', {
             mainUsername: this.username,
             queryWorkerHistories:
-              _.map(worker => {
+              _.map(doneWorkers, worker => {
                 const crawler = this.$store.state.statistics.crawlers[worker.crawlerName]
+                const hasErrorMessage = !_.isNil(worker.errorMessage) && worker.errorMessage !== ''
                 const history = {
                   crawlerName: worker.crawlerName,
                   username: worker.username,
-                  errorMessage: worker.errorMessage || undefined,
+                  errorMessage: hasErrorMessage ? worker.errorMessage : null,
                   submission: worker.submissions,
                   solved: worker.solved,
-                  solvedList: worker.solvedList,
+                  solvedList: hasErrorMessage ? null : worker.solvedList,
                   submissionsByCrawlerName: worker.submissionsByCrawlerName,
                   isVirtualJudge: crawler.virtual_judge || false,
                 }
-                console.log('history', history)
-                console.log('worker', worker)
                 return history
-              }, this.$store.state.statistics.workers),
+              }),
           })
-
-          this.summary = await this.$axios.$get('/api/services/app/QueryHistory/GetQuerySummary', {
-            queryHistoryId: saveResult.queryHistoryId,
+          const summaryResult = await this.$axios.$get('/api/services/app/QueryHistory/GetQuerySummary', {
+            params: {
+              queryHistoryId: saveResult.result.queryHistoryId,
+            },
           })
+          this.summary = summaryResult.result
         } catch (err) {
           this.summaryError = getAbpErrorMessage(err)
         }

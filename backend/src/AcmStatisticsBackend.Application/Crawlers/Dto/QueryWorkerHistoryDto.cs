@@ -65,6 +65,14 @@ namespace AcmStatisticsBackend.Crawlers.Dto
         {
             if (!ErrorMessage.IsNullOrEmpty())
             {
+                if (SolvedList != null || SubmissionsByCrawlerName != null)
+                {
+                    context.Results.Add(
+                        new ValidationResult(
+                            "These fields must be null when error message exists",
+                            new[] { nameof(SolvedList), nameof(SubmissionsByCrawlerName) }));
+                }
+
                 return;
             }
 
