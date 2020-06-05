@@ -1,8 +1,6 @@
 import StoreContextSimulator from '../StoreContextSimulator'
 import { MUTATION_TYPES } from '../../store/-dynamic/statistics'
 
-import { WORKER_STATUS } from '../../components/consts'
-
 jest.mock('~/dynamic/crawlers', () => function () {
   return {
     metas: {
