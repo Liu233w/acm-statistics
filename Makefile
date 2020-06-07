@@ -82,6 +82,9 @@ show-image-size:
 shell:
 	cd build && $(MAKE) -f shell.mk shell
 
+headers:
+	docker run -it --rm -v "$(CURDIR):/src" liu233w/auto-file-header
+
 # === help ===
 
 .PHONY: help
