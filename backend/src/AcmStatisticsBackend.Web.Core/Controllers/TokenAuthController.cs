@@ -45,12 +45,16 @@ namespace AcmStatisticsBackend.Controllers
                 model.Password,
                 GetTenancyNameOrNull());
 
-            var accessToken = CreateAccessToken(CreateJwtClaims(loginResult.Identity));
+            var expiration = model.RememberClient
+                ? TimeSpan.FromDays(30)
+                : _configuration.Expiration;
+            var accessToken = CreateAccessToken(
+                CreateJwtClaims(loginResult.Identity), expiration);
 
             return new AuthenticateResultModel
             {
                 AccessToken = accessToken,
-                ExpireInSeconds = (int)_configuration.Expiration.TotalSeconds,
+                ExpireInSeconds = (int)expiration.TotalSeconds,
                 UserId = loginResult.User.Id,
             };
         }
@@ -65,8 +69,10 @@ namespace AcmStatisticsBackend.Controllers
             return _tenantCache.GetOrNull(AbpSession.TenantId.Value)?.TenancyName;
         }
 
-        private async Task<AbpLoginResult<Tenant, User>> GetLoginResultAsync(string usernameOrEmailAddress,
-            string password, string tenancyName)
+        private async Task<AbpLoginResult<Tenant, User>> GetLoginResultAsync(
+            string usernameOrEmailAddress,
+            string password,
+            string tenancyName)
         {
             var loginResult = await _logInManager.LoginAsync(usernameOrEmailAddress, password, tenancyName);
 
