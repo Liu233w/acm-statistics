@@ -45,7 +45,7 @@
     "eslint-config-standard": "14.1.1",
     "eslint-loader": "4.0.2",
     "eslint-plugin-html": "6.0.2",
-    "eslint-plugin-import": "2.21.0",
+    "eslint-plugin-import": "2.21.1",
     "eslint-plugin-jest": "23.13.2",
     "eslint-plugin-lodash": "7.1.0",
     "eslint-plugin-node": "11.1.0",
