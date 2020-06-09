@@ -19,13 +19,18 @@
       </v-row>
       <v-layout>
         <v-flex>
-          <v-form v-model="valid">
+          <v-form
+            v-model="valid"
+            @submit.prevent="login"
+          >
             <v-text-field
               prepend-icon="person"
               label="Username"
               required
               v-model="username"
               :rules="[rules.required]"
+              aria-autocomplete="username"
+              autocomplete="username"
             />
             <v-text-field
               prepend-icon="lock"
@@ -34,22 +39,30 @@
               type="password"
               v-model="password"
               :rules="[rules.required]"
+              aria-autocomplete="current-password"
+              autocomplete="current-password"
             />
-            <v-checkbox v-model="remember" label="Remember me" />
+            <v-checkbox
+              v-model="remember"
+              label="Remember me"
+            />
             <v-row>
               <v-col>
                 <v-btn
+                  type="submit"
                   color="info"
                   block
                   :disabled="!valid"
-                  @click="login"
                   :loading="loading"
                 >
                   login
                 </v-btn>
               </v-col>
               <v-col>
-                <v-btn block to="/register">
+                <v-btn
+                  block
+                  to="/register"
+                >
                   enter register page
                 </v-btn>
               </v-col>
@@ -94,6 +107,7 @@ export default {
         this.showError = true
       }
       this.loading = false
+      return false
     },
   },
 }

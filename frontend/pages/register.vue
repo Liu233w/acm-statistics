@@ -19,13 +19,17 @@
       </v-row>
       <v-layout>
         <v-flex>
-          <v-form v-model="valid">
+          <v-form
+            v-model="valid"
+            @submit.prevent="register"
+          >
             <v-text-field
               prepend-icon="person"
               label="Username"
               v-model="username"
               required
               :rules="[rules.required]"
+              name="username"
             />
             <v-text-field
               prepend-icon="lock"
@@ -34,6 +38,7 @@
               v-model="password"
               required
               :rules="[rules.required, rules.password]"
+              name="password"
             />
             <v-text-field
               prepend-icon="lock"
@@ -56,7 +61,10 @@
                   :rules="[rules.required]"
                 >
                   <template v-slot:append>
-                    <v-btn icon @click="refreshCaptcha">
+                    <v-btn
+                      icon
+                      @click="refreshCaptcha"
+                    >
                       <v-icon>refresh</v-icon>
                     </v-btn>
                   </template>
@@ -66,17 +74,20 @@
             <v-row>
               <v-col>
                 <v-btn
+                  type="submit"
                   color="info"
                   block
                   :disabled="!valid && captchaText == ''"
-                  @click="register"
                   :loading="loading"
                 >
                   register
                 </v-btn>
               </v-col>
               <v-col>
-                <v-btn block to="/login">
+                <v-btn
+                  block
+                  to="/login"
+                >
                   enter login page
                 </v-btn>
               </v-col>
@@ -126,6 +137,9 @@ export default {
           password: this.password,
           remember: false,
         })
+
+        this.$refs['form'].submit(e => e.preventDefault())
+
         this.$router.push('/')
 
       } catch (err) {
