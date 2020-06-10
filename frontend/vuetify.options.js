@@ -10,7 +10,7 @@ export default {
     options: {
       minifyTheme: function (css) {
         return process.env.NODE_ENV === 'production'
-          ? _.replace(css, /[\r\n|\r|\n]/g, '')
+          ? _.replace(css, /\r\n|\r|\n/g, '')
           : css
       },
       themeCache: new LRU({
