@@ -43,7 +43,7 @@ namespace AcmStatisticsBackend.Accounts
                 throw new UserFriendlyException(captchaResult.ErrorMessage);
             }
 
-            var user = await _userRegistrationManager.RegisterAsync(
+            await _userRegistrationManager.RegisterAsync(
                 input.UserName,
                 input.Password);
 
