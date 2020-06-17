@@ -124,6 +124,11 @@ crawlers:
       title: El Judge
       description:
       url: http://acm.mipt.ru
+  bnu:
+    meta:
+      title: BNUOJ
+      description:
+      url: http://www.bnuoj.com
   vjudge:
     meta:
       title: VJudge
