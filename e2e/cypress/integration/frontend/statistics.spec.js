@@ -119,7 +119,7 @@ describe('crawler test', () => {
   })
 })
 
-describe.only('summary', () => {
+describe('summary', () => {
 
   let username
   before(() => {
@@ -169,7 +169,7 @@ describe.only('summary', () => {
 
     // wait dom refresh
     // eslint-disable-next-line cypress/no-unnecessary-waiting
-    cy.wait(1000)
+    cy.wait(2000)
 
     cy.get('div[title="HDU"]').parents('.worker-item').within(() => {
 
