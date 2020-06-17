@@ -19,6 +19,7 @@ crawler_order:
   - aizu
   - codechef
   - eljudge
+  - bnu
   - vjudge
 
 crawlers:
