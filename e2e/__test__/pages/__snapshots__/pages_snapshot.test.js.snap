@@ -6367,6 +6367,50 @@ It may take a while for the api to update user statistics.
       <div class="v-card v-sheet theme--light">
         <header class="blue-grey lighten-5 v-sheet v-sheet--tile theme--light elevation-0 v-toolbar v-toolbar--dense v-toolbar--flat v-app-bar" style="height:48px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;">
           <div class="v-toolbar__content" style="height:48px;">
+            <div title="BNUOJ" class="v-toolbar__title">
+              BNUOJ
+            </div>
+            <div class="spacer"></div>
+            <div class="v-toolbar__items">
+              <!----> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">add_circle</i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">link</i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">refresh</i></span></button></span></div>
+          </div>
+        </header>
+        <div class="container">
+          <div class="layout">
+            <div class="flex xs12">
+              <!---->
+            </div>
+          </div>
+          <div class="layout wrap">
+            <div class="flex xs12">
+              <div class="v-input theme--light v-text-field">
+                <div class="v-input__control">
+                  <div class="v-input__slot">
+                    <div class="v-text-field__slot"><label class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Username</label><input required="required" type="text" value></div>
+                    <div class="v-input__append-inner">
+                      <div class="v-input__icon v-input__icon--clear"><button disabled="disabled" type="button" aria-label="clear icon" class="v-icon notranslate v-icon--disabled v-icon--link mdi mdi-close theme--light"></button></div>
+                    </div>
+                  </div>
+                  <div class="v-text-field__details">
+                    <div class="v-messages theme--light">
+                      <div class="v-messages__wrapper"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!---->
+        </div>
+        <div role="dialog" class="v-dialog__container">
+          <!---->
+        </div>
+      </div>
+    </div>
+    <div data-column-idx="2" data-column-item-idx="6" class="flex worker-item" style="z-index:994;">
+      <div class="v-card v-sheet theme--light">
+        <header class="blue-grey lighten-5 v-sheet v-sheet--tile theme--light elevation-0 v-toolbar v-toolbar--dense v-toolbar--flat v-app-bar" style="height:48px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;">
+          <div class="v-toolbar__content" style="height:48px;">
             <div title="VJudge" class="v-toolbar__title">
               VJudge
             </div>
@@ -6422,7 +6466,7 @@ It may take a while for the api to update user statistics.
     </div>
     </div>
     <script>
-      window.__NUXT__ = (function(a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z, A, B) {
+      window.__NUXT__ = (function(a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z, A, B, C) {
         return {
           layout: "default",
           data: [{}],
@@ -6635,6 +6679,16 @@ It may take a while for the api to update user statistics.
                 tokenKey: c,
                 solvedList: [],
                 submissionsByCrawlerName: e
+              }, {
+                crawlerName: A,
+                username: a,
+                status: d,
+                solved: b,
+                submissions: b,
+                errorMessage: a,
+                tokenKey: c,
+                solvedList: [],
+                submissionsByCrawlerName: e
               }],
               crawlers: {
                 poj: {
@@ -6751,25 +6805,31 @@ It may take a while for the api to update user statistics.
                   url: "http:\\u002F\\u002Facm.mipt.ru",
                   name: y
                 },
+                bnu: {
+                  title: "BNUOJ",
+                  description: c,
+                  url: "http:\\u002F\\u002Fwww.bnuoj.com",
+                  name: z
+                },
                 vjudge: {
                   title: "VJudge",
                   description: "virtual judge，这个OJ的题量是单独计算的",
                   url: "https:\\u002F\\u002Fvjudge.net\\u002F",
-                  virtual_judge: A,
-                  name: z
+                  virtual_judge: B,
+                  name: A
                 }
               },
               mainUsername: a
             }
           },
-          serverRendered: A,
+          serverRendered: B,
           routePath: "\\u002Fstatistics",
           env: {
-            VERSION_NUM: B,
-            BUILD_TIME: B
+            VERSION_NUM: C,
+            BUILD_TIME: C
           }
         }
-      }("", 0, null, "WAITING", void 0, false, "poj", "hdu", "dashiye", "codeforces", "uva", "uvalive", "fzu", "spoj", "timus", "leetcode_cn", "csu", "loj", "luogu", "nowcoder", "uestc", "atcoder", "aizu", "codechef", "eljudge", "vjudge", true, "0"));
+      }("", 0, null, "WAITING", void 0, false, "poj", "hdu", "dashiye", "codeforces", "uva", "uvalive", "fzu", "spoj", "timus", "leetcode_cn", "csu", "loj", "luogu", "nowcoder", "uestc", "atcoder", "aizu", "codechef", "eljudge", "bnu", "vjudge", true, "0"));
     </script>
 
 
