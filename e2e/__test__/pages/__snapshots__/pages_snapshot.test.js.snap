@@ -718,6 +718,7 @@ exports[`/ 1`] = `
         caret-color: #843c00 !important;
       }
     </style>
+    <script data-n-head="ssr" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" data-ad-client="ca-pub-9846042020379030" async></script>
   </head>
 
   <body>
@@ -1659,6 +1660,7 @@ exports[`/about 1`] = `
         caret-color: #843c00 !important;
       }
     </style>
+    <script data-n-head="ssr" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" data-ad-client="ca-pub-9846042020379030" async></script>
   </head>
 
   <body>
@@ -2526,6 +2528,7 @@ exports[`/login 1`] = `
         caret-color: #843c00 !important;
       }
     </style>
+    <script data-n-head="ssr" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" data-ad-client="ca-pub-9846042020379030" async></script>
   </head>
 
   <body>
@@ -3379,6 +3382,7 @@ exports[`/register 1`] = `
         caret-color: #843c00 !important;
       }
     </style>
+    <script data-n-head="ssr" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" data-ad-client="ca-pub-9846042020379030" async></script>
   </head>
 
   <body>
@@ -4256,6 +4260,7 @@ exports[`/settings 1`] = `
         caret-color: #843c00 !important;
       }
     </style>
+    <script data-n-head="ssr" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" data-ad-client="ca-pub-9846042020379030" async></script>
   </head>
 
   <body>
@@ -5475,6 +5480,7 @@ exports[`/statistics 1`] = `
         caret-color: #843c00 !important;
       }
     </style>
+    <script data-n-head="ssr" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" data-ad-client="ca-pub-9846042020379030" async></script>
   </head>
 
   <body>
