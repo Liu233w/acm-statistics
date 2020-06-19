@@ -153,11 +153,12 @@
                   text
                   v-on="on"
                   @click="printPage"
+                  :loading="printingPage"
                 >
-                  Print Page
+                  Export image
                 </v-btn>
               </template>
-              Print current page (select "print to pdf" to save a pdf copy)
+              Export the summary report as an image
             </v-tooltip>
           </v-toolbar-items>
         </v-toolbar>
@@ -292,6 +293,7 @@
 <script>
 import { mapGetters } from 'vuex'
 import _ from 'lodash'
+import htmlToImage from 'html-to-image'
 
 import WorkerCard from '~/components/WorkerCard'
 import statisticsLayoutBuilder from '~/components/statisticsLayoutBuilder'
@@ -336,6 +338,7 @@ export default {
       dialog: false,
       summary: null,
       summaryError: null,
+      printingPage: false,
     }
   },
   computed: {
@@ -513,8 +516,22 @@ export default {
         }
       }
     },
-    printPage() {
-      window.print()
+    async printPage() {
+      this.printingPage = true
+      try {
+        const summary = document.querySelector('.v-dialog')
+          .querySelector('.v-card')
+        const link = document.createElement('a')
+        link.download = 'summary.jpg'
+        link.href = await htmlToImage.toJpeg(summary, {
+          quality: 0.8,
+          backgroundColor: 'white',
+        })
+        link.click()
+      } catch (err) {
+        this.summaryError = err.message
+      }
+      this.printingPage = false
     },
   },
 }
