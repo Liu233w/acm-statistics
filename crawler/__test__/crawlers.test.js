@@ -152,14 +152,12 @@ describe('uvalive', () => {
   test('test uvalive', async () => {
     const res = await uvalive(null, 'npuacm')
     checkRes(res)
-    expect(res).toMatchObject({
-      solved: 2,
-      submissions: 3,
-      solvedList: [
-        '4445',
-        '3198',
-      ],
-    })
+    expect(res.solved).toBe(2)
+    expect(res.submissions).toBe(3)
+    expect(new Set(res.solvedList)).toMatchObject(new Set([
+      '4445',
+      '3198',
+    ]))
   })
 
 })
