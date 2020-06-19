@@ -16,6 +16,16 @@ export default function ({ app }) {
     app.router.afterEach(() => {
       addScriptTag('//tajs.qq.com/stats?sId=65546290')
       addScriptTag('//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js')
+      addScriptTag('//www.googletagmanager.com/gtag/js?id=UA-170122487-1')
+      activeGtag()
     })
   }
+}
+
+function activeGtag() {
+  window.dataLayer = window.dataLayer || []
+  function gtag() { window.dataLayer.push(arguments) }
+  gtag('js', new Date())
+
+  gtag('config', 'UA-170122487-1')
 }
