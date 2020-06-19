@@ -740,9 +740,9 @@ exports[`/ 1`] = `
               <div class="v-content__wrap">
                 <section>
                   <div class="v-parallax" style="height:600px;">
-                    <div class="v-parallax__image-container"><img src="/_nuxt/img/e5adb12.jpg" alt class="v-parallax__image" style="display:block;opacity:0;transform:translate(-50%, 0px);"></div>
+                    <div class="v-parallax__image-container"><img src="/_nuxt/img/back7-brighten.e5adb12.jpg" alt class="v-parallax__image" style="display:block;opacity:0;transform:translate(-50%, 0px);"></div>
                     <div class="v-parallax__content">
-                      <div class="layout white--text column align-center justify-center"><img src="/_nuxt/img/db320b9.png" alt="Vuetify.js" height="190" class="mb-4">
+                      <div class="layout white--text column align-center justify-center"><img src="/_nuxt/img/logo.db320b9.png" alt="Vuetify.js" height="190" class="mb-4">
                         <h2 class="black--text headline text-center font-weight-light">
                           ACM-ICPC &#x534F;&#x4F1A;
                         </h2>
@@ -822,7 +822,7 @@ exports[`/ 1`] = `
                 </section>
                 <section>
                   <div class="v-parallax" style="height:380px;">
-                    <div class="v-parallax__image-container"><img src="/_nuxt/img/ac176e5.jpg" alt class="v-parallax__image" style="display:block;opacity:0;transform:translate(-50%, 0px);"></div>
+                    <div class="v-parallax__image-container"><img src="/_nuxt/img/back4.ac176e5.jpg" alt class="v-parallax__image" style="display:block;opacity:0;transform:translate(-50%, 0px);"></div>
                     <div class="v-parallax__content">
                       <div class="layout column align-center justify-center">
                         <div class="headline white--text mb-4 text-center response-title">
@@ -926,6 +926,7 @@ exports[`/ 1`] = `
           },
           serverRendered: true,
           routePath: "\\u002F",
+          config: {},
           env: {
             VERSION_NUM: b,
             BUILD_TIME: b
@@ -1681,7 +1682,7 @@ exports[`/about 1`] = `
                     <div class="v-list-item__content">
                       <div class="v-list-item__title">AC Statistics</div>
                     </div>
-                  </a><a href="/about" tabindex="0" class="v-list-item--active v-list-item v-list-item--link theme--light">
+                  </a><a href="/about" aria-current="page" tabindex="0" class="v-list-item--active v-list-item v-list-item--link theme--light">
                     <div class="v-list-item__action"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">info</i></div>
                     <div class="v-list-item__content">
                       <div class="v-list-item__title">About</div>
@@ -1792,6 +1793,7 @@ exports[`/about 1`] = `
           },
           serverRendered: true,
           routePath: "\\u002Fabout",
+          config: {},
           env: {
             VERSION_NUM: b,
             BUILD_TIME: b
@@ -2644,6 +2646,7 @@ exports[`/login 1`] = `
           },
           serverRendered: true,
           routePath: "\\u002Flogin",
+          config: {},
           env: {
             VERSION_NUM: b,
             BUILD_TIME: b
@@ -3520,6 +3523,7 @@ exports[`/register 1`] = `
           },
           serverRendered: true,
           routePath: "\\u002Fregister",
+          config: {},
           env: {
             VERSION_NUM: b,
             BUILD_TIME: b
@@ -4275,7 +4279,7 @@ exports[`/settings 1`] = `
                     <div class="v-list-item__content">
                       <div class="v-list-item__title">AC Statistics</div>
                     </div>
-                  </a><a href="/settings" tabindex="0" class="v-list-item--active v-list-item v-list-item--link theme--light">
+                  </a><a href="/settings" aria-current="page" tabindex="0" class="v-list-item--active v-list-item v-list-item--link theme--light">
                     <div class="v-list-item__action"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">settings</i></div>
                     <div class="v-list-item__content">
                       <div class="v-list-item__title">Settings</div>
@@ -4738,6 +4742,7 @@ exports[`/settings 1`] = `
           },
           serverRendered: c,
           routePath: "\\u002Fsettings",
+          config: {},
           env: {
             VERSION_NUM: f,
             BUILD_TIME: f
@@ -5488,7 +5493,7 @@ exports[`/statistics 1`] = `
                     <div class="v-list-item__content">
                       <div class="v-list-item__title">Homepage</div>
                     </div>
-                  </a><a href="/statistics" tabindex="0" class="v-list-item--active v-list-item v-list-item--link theme--light">
+                  </a><a href="/statistics" aria-current="page" tabindex="0" class="v-list-item--active v-list-item v-list-item--link theme--light">
                     <div class="v-list-item__action"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">code</i></div>
                     <div class="v-list-item__content">
                       <div class="v-list-item__title">AC Statistics</div>
@@ -6824,6 +6829,7 @@ It may take a while for the api to update user statistics.
           },
           serverRendered: B,
           routePath: "\\u002Fstatistics",
+          config: {},
           env: {
             VERSION_NUM: C,
             BUILD_TIME: C
