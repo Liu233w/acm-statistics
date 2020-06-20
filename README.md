@@ -9,7 +9,7 @@
 [![Mergify Status](https://img.shields.io/badge/Mergify-enabled-green.svg)](https://mergify.io)
 [![Deliverybot enabled](https://img.shields.io/badge/Deliverybot-enabled-blue.svg)](https://app.deliverybot.dev/Liu233w/acm-statistics/branch/master)
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-12-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-13-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 #### 构建状态
@@ -124,6 +124,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><img src="https://avatars0.githubusercontent.com/u/35862184?v=4" width="100px;" alt=""/><br /><sub><a href="https://github.com/bodhisatan"><b>Bodhisatan_Yao</b></a><a href="https://github.com/bodhisatan">🔗</a></sub><br /><a href="https://github.com/Liu233w/acm-statistics/issues?q=author%3Abodhisatan" title="Bug reports">🐛</a></td>
     <td align="center"><img src="https://avatars1.githubusercontent.com/u/55663936?v=4" width="100px;" alt=""/><br /><sub><a href="https://github.com/Meulsama"><b>Meulsama</b></a><a href="https://github.com/Meulsama">🔗</a></sub><br /><a href="#ideas-Meulsama" title="Ideas, Planning, & Feedback">🤔</a></td>
     <td align="center"><img src="https://avatars3.githubusercontent.com/u/50655871?v=4" width="100px;" alt=""/><br /><sub><a href="https://github.com/UserUnknownX"><b>Michael Xiang</b></a><a href="https://github.com/UserUnknownX">🔗</a></sub><br /><a href="https://github.com/Liu233w/acm-statistics/issues?q=author%3AUserUnknownX" title="Bug reports">🐛</a></td>
+    <td align="center"><img src="https://avatars2.githubusercontent.com/u/43291744?v=4" width="100px;" alt=""/><br /><sub><a href="https://github.com/zby0327"><b>zby</b></a><a href="https://github.com/zby0327">🔗</a></sub><br /><a href="#ideas-zby0327" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/Liu233w/acm-statistics/issues?q=author%3Azby0327" title="Bug reports">🐛</a></td>
   </tr>
 </table>
 
