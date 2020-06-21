@@ -20,6 +20,7 @@ crawler_order:
   - codechef
   - eljudge
   - bnu
+  - codewars
   - vjudge
 
 crawlers:
@@ -131,6 +132,13 @@ crawlers:
       title: BNUOJ
       description:
       url: http://www.bnuoj.com
+  codewars:
+    meta:
+      title: Codewars
+      description: |
+        Currently it does not have submission number.
+        Username is case sensitive.
+      url: https://www.codewars.com
   vjudge:
     meta:
       title: VJudge
