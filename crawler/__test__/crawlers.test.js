@@ -22,6 +22,7 @@ const aizu = require('../crawlers/aizu')
 const codechef = require('../crawlers/codechef')
 const eljudge = require('../crawlers/eljudge')
 const bnu = require('../crawlers/bnu')
+const codewars = require('../crawlers/codewars')
 
 const { readConfigs } = require('../lib/configReader')
 
@@ -462,6 +463,31 @@ describe('bnu', () => {
     const res = await bnu(null, '51isoft')
     checkRes(res)
     expect(res.solvedList).toBeNull()
+  })
+
+})
+
+describe('codewars', () => {
+
+  test('test codewars - should throw when user does not exist', async () => {
+    await expect(codewars(null, notExistUsername)).rejects.toThrow('The user does not exist')
+  })
+
+  test('test codewars - can recognize username with space', async () => {
+    await expect(codewars(null, ' ' + notExistUsername)).rejects.toThrow('The user does not exist')
+  })
+
+  test('test codewars', async () => {
+    const res = await codewars(null, 'Liu233w')
+
+    expect(typeof res.solved).toBe('number')
+    expect(typeof res.submissions).toBe('number')
+
+    expect(res.solved).toBeGreaterThan(0)
+    expect(res.submissions).toBe(res.solved)
+
+    expect(res.solvedList.length).toBe(res.solved)
+    expect(res.solvedList).toContain('equal-sides-of-an-array')
   })
 
 })
