@@ -52,6 +52,8 @@ jobs:
       - name: Commit result
         if: steps.prcomm.outputs.BOOL_TRIGGERED == 'true'
         run: |
+          git pull
+          
           git config --global user.name ${{ github.event.comment.user.login }}
           git config --global user.email ${{ github.event.comment.user.login }}@github.fake
         
