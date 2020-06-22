@@ -23,6 +23,7 @@ const codechef = require('../crawlers/codechef')
 const eljudge = require('../crawlers/eljudge')
 const bnu = require('../crawlers/bnu')
 const codewars = require('../crawlers/codewars')
+const uoj = require('../crawlers/uoj')
 
 const { readConfigs } = require('../lib/configReader')
 
@@ -488,6 +489,25 @@ describe('codewars', () => {
 
     expect(res.solvedList.length).toBe(res.solved)
     expect(res.solvedList).toContain('equal-sides-of-an-array')
+  })
+
+})
+
+describe('uoj', () => {
+
+  test('test uoj - should throw when user does not exist', async () => {
+    await expect(uoj(null, notExistUsername)).rejects.toThrow('The user does not exist')
+  })
+
+  test('test uoj - can recognize username with space', async () => {
+    await expect(uoj(null, ' ' + notExistUsername)).rejects.toThrow('The user does not exist')
+  })
+
+  test('test uoj', async () => {
+    // it is an administration account, so I guess it's fine
+    const res = await uoj(null, 'matthew99')
+    checkRes(res)
+    expect(res.solvedList).toContain('30')
   })
 
 })

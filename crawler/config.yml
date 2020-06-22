@@ -21,6 +21,7 @@ crawler_order:
   - eljudge
   - bnu
   - codewars
+  - uoj
   - vjudge
 
 crawlers:
@@ -139,6 +140,11 @@ crawlers:
         Currently it does not have submission number.
         Username is case sensitive.
       url: https://www.codewars.com
+  uoj:
+    meta:
+      title: UOJ
+      description:
+      url: http://uoj.ac/
   vjudge:
     meta:
       title: VJudge
