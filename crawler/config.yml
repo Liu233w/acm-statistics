@@ -50,7 +50,6 @@ crawlers:
       title: CodeForces
       description:
       url: http://codeforces.com/
-    server_only: true
   uva:
     meta:
       title: UVA
