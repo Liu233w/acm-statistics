@@ -41,7 +41,7 @@ async function queryForNumber(username, pageCount, acSet) {
       .query(queryObject)
   } catch (e) {
 
-    if (e.response && e.response.body.status) {// 有 response 一定有 body
+    if (e.response && e.response.body && e.response.body.status) {
       // 有 response 且以 json 的格式相应
       const comment = e.response.body.comment
       if (/handle: User with handle .* not found/.test(comment)) {
@@ -49,8 +49,6 @@ async function queryForNumber(username, pageCount, acSet) {
       } else {
         throw new Error(comment)
       }
-    } else if (e.response) {
-      throw new Error(e.response.body)
     } else {
       throw e
     }
