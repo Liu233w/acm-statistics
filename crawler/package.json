@@ -17,7 +17,7 @@
   },
   "devDependencies": {
     "eslint": "7.3.1",
-    "eslint-plugin-jest": "23.17.0",
+    "eslint-plugin-jest": "23.17.1",
     "eslint-plugin-lodash": "7.1.0",
     "jest": "26.0.1",
     "memfs": "3.2.0",
