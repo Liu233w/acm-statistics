@@ -125,7 +125,7 @@ describe('codeforces', () => {
     checkRes(res)
 
     expect(new Set(res.solvedList)).toMatchObject(new Set([
-      '754-B', '165-E', '492-E', '338-D', '333-A', '703-A', '540-C', '680-B', '680-A', '676-A', '450-B', '667-A', '667-C',
+      '754B', '165E', '492E', '338D', '333A', '703A', '540C', '680B', '680A', '676A', '450B', '667A', '667C',
     ]))
   })
 
