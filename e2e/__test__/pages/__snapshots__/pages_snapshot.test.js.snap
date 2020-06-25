@@ -5690,9 +5690,9 @@ exports[`/statistics 1`] = `
                     </header>
                     <div class="container">
                       <div class="layout">
-                        <div class="flex xs12">
-                          <!---->
-                        </div>
+                        <div class="flex xs12"><span class="grey--text">
+          Including CodeForces::Gym
+        </span></div>
                       </div>
                       <div class="layout wrap">
                         <div class="flex xs12">
@@ -6832,7 +6832,7 @@ Username is case sensitive.
                 },
                 codeforces: {
                   title: "CodeForces",
-                  description: c,
+                  description: "Including CodeForces::Gym",
                   url: "http:\\u002F\\u002Fcodeforces.com\\u002F",
                   name: j
                 },
