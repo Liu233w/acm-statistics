@@ -48,7 +48,7 @@ crawlers:
   codeforces:
     meta:
       title: CodeForces
-      description:
+      description: Including CodeForces::Gym
       url: http://codeforces.com/
   uva:
     meta:

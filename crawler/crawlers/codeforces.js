@@ -64,7 +64,7 @@ async function queryForNumber(username, pageCount, acSet) {
   problemArray.forEach(function (element) {
     if (element.verdict === 'OK') {
       const problem = element.problem
-      const title = problem.contestId + '-' + problem.index
+      const title = problem.contestId + problem.index
       acSet.add(title)
     }
   })
