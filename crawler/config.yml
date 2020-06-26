@@ -78,7 +78,7 @@ crawlers:
       url: http://acm.timus.ru/
   leetcode_cn:
     meta:
-      title: LeetCode（中国）
+      title: LeetCode_CN
       description:
       url: https://leetcode-cn.com
   csu:
