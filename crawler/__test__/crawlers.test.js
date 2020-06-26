@@ -104,7 +104,7 @@ describe('dashiye', () => {
   })
 
   test('test dashiye', async () => {
-    const res = await dashiye(null, username)
+    const res = await dashiye(null, 'root')
     checkRes(res)
     expect(res.solvedList).toContain('1001')
   })
