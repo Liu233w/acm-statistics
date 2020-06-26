@@ -138,6 +138,10 @@ describe('uva', () => {
     await expect(uva(null, notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
+  test('test uva - can recognize username with space', async () => {
+    await expect(uva(null, ' ' + notExistUsername)).rejects.toThrow('The user does not exist')
+  })
+
   test('test uva', async () => {
     const res = await uva(null, 'leoloveacm')
     checkRes(res)
@@ -150,6 +154,10 @@ describe('uvalive', () => {
 
   test('test uvalive - should throw when user does not exist', async () => {
     await expect(uvalive(null, notExistUsername)).rejects.toThrow('The user does not exist')
+  })
+
+  test('test uvalive - can recognize username with space', async () => {
+    await expect(uvalive(null, ' ' + notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
   test('test uvalive', async () => {
@@ -169,6 +177,11 @@ describe('fzu', () => {
 
   test('test fzu - should throw when user does not exist', async () => {
     await expect(fzu(null, notExistUsername)).rejects.toThrow('The user does not exist')
+  })
+
+  test('test fzu - can recognize username with space', async () => {
+    await expect(fzu(null, ' ' + notExistUsername))
+      .rejects.toThrow('The crawler does not support username with spaces')
   })
 
   test('test fzu', async () => {
@@ -521,7 +534,7 @@ describe('nbut', () => {
 
   test('test nbut - can recognize username with space', async () => {
     await expect(nbut(null, ' ' + notExistUsername))
-      .rejects.toThrow('The crawler does not support username with space')
+      .rejects.toThrow('The crawler does not support username with spaces')
   })
 
   test('test nbut', async () => {
