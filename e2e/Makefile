@@ -71,6 +71,8 @@ update-snapshot: .base
 	 	$(E2eBaseTag) \
 		npm test -- --env updateSnapshots=true
 
+upd: .base wait-server update-snapshot test update-html-snapshot
+
 clean:
 	docker image rm $(E2eBaseTag) $(E2eMockConfigurerTag); true
 
