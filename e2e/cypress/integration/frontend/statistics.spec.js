@@ -182,7 +182,7 @@ describe('summary', () => {
       cy.contains('72')
     })
 
-    cy.get('div[title="LeetCode（中国）"]').parents('.worker-item').within(() => {
+    cy.get('div[title="LeetCode_CN"]').parents('.worker-item').within(() => {
 
       cy.get('div:contains("Username") input').type('wwwlsmcom')
 
