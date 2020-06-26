@@ -17,7 +17,7 @@ module.exports = async function (config, username) {
 
   const $ = cheerio.load(res.text)
 
-  if ($('body').text().endsWith('No such User!')) {
+  if ($('body').text().trim().endsWith('No such User!')) {
     throw new Error('The user does not exist')
   }
 
