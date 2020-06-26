@@ -24,6 +24,7 @@ const eljudge = require('../crawlers/eljudge')
 const bnu = require('../crawlers/bnu')
 const codewars = require('../crawlers/codewars')
 const uoj = require('../crawlers/uoj')
+const nbut = require('../crawlers/nbut')
 
 const { readConfigs } = require('../lib/configReader')
 
@@ -508,6 +509,26 @@ describe('uoj', () => {
     const res = await uoj(null, 'matthew99')
     checkRes(res)
     expect(res.solvedList).toContain('30')
+  })
+
+})
+
+describe('nbut', () => {
+
+  test('test nbut - should throw when user does not exist', async () => {
+    await expect(nbut(null, notExistUsername)).rejects.toThrow('The user does not exist')
+  })
+
+  test('test nbut - can recognize username with space', async () => {
+    await expect(nbut(null, ' ' + notExistUsername))
+      .rejects.toThrow('The crawler does not support username with space')
+  })
+
+  test('test nbut', async () => {
+    // it is an administration account, so I guess it's fine
+    const res = await nbut(null, username)
+    checkRes(res)
+    expect(res.solvedList).toContain('1010')
   })
 
 })

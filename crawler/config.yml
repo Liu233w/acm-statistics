@@ -22,6 +22,7 @@ crawler_order:
   - bnu
   - codewars
   - uoj
+  - nbut
   - vjudge
 
 crawlers:
@@ -144,6 +145,11 @@ crawlers:
       title: UOJ
       description:
       url: http://uoj.ac/
+  nbut:
+    meta:
+      title: 宁波工程学院在线评测系统(NBUT)
+      description:
+      url: https://ac.2333.moe/
   vjudge:
     meta:
       title: VJudge
