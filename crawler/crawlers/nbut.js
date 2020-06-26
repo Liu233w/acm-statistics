@@ -8,7 +8,7 @@ module.exports = async function (config, username) {
   }
 
   if (/\s/.test(username)) {
-    throw new Error('The crawler does not support username with space')
+    throw new Error('The crawler does not support username with spaces')
   }
 
   const submissionPage = await request

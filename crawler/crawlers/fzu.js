@@ -7,6 +7,10 @@ module.exports = async function (config, username) {
     throw new Error('Please enter username')
   }
 
+  if (/\s/.test(username)) {
+    throw new Error('The crawler does not support username with spaces')
+  }
+
   const res = await request
     .get('http://acm.fzu.edu.cn/user.php')
     .query({uname: username})
