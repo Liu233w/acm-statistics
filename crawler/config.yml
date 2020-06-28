@@ -43,7 +43,7 @@ crawlers:
       url: http://acm.zju.edu.cn/onlinejudge/
   dashiye:
     meta:
-      title: 大视野在线测评 (HYSBZ)
+      title: HYSBZ
       description:
       url: http://www.lydsy.com/JudgeOnline/
   codeforces:
@@ -147,7 +147,7 @@ crawlers:
       url: http://uoj.ac/
   nbut:
     meta:
-      title: 宁波工程学院在线评测系统(NBUT)
+      title: NBUT
       description:
       url: https://ac.2333.moe/
   vjudge:
