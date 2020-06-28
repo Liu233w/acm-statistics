@@ -5636,8 +5636,8 @@ exports[`/statistics 1`] = `
                   <div class="v-card v-sheet theme--light">
                     <header class="blue-grey lighten-5 v-sheet v-sheet--tile theme--light elevation-0 v-toolbar v-toolbar--dense v-toolbar--flat v-app-bar" style="height:48px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;">
                       <div class="v-toolbar__content" style="height:48px;">
-                        <div title="&#x5927;&#x89C6;&#x91CE;&#x5728;&#x7EBF;&#x6D4B;&#x8BC4; (HYSBZ)" class="v-toolbar__title">
-                          &#x5927;&#x89C6;&#x91CE;&#x5728;&#x7EBF;&#x6D4B;&#x8BC4; (HYSBZ)
+                        <div title="HYSBZ" class="v-toolbar__title">
+                          HYSBZ
                         </div>
                         <div class="spacer"></div>
                         <div class="v-toolbar__items">
@@ -6512,8 +6512,8 @@ Username is case sensitive.
       <div class="v-card v-sheet theme--light">
         <header class="blue-grey lighten-5 v-sheet v-sheet--tile theme--light elevation-0 v-toolbar v-toolbar--dense v-toolbar--flat v-app-bar" style="height:48px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;">
           <div class="v-toolbar__content" style="height:48px;">
-            <div title="&#x5B81;&#x6CE2;&#x5DE5;&#x7A0B;&#x5B66;&#x9662;&#x5728;&#x7EBF;&#x8BC4;&#x6D4B;&#x7CFB;&#x7EDF;(NBUT)" class="v-toolbar__title">
-              &#x5B81;&#x6CE2;&#x5DE5;&#x7A0B;&#x5B66;&#x9662;&#x5728;&#x7EBF;&#x8BC4;&#x6D4B;&#x7CFB;&#x7EDF;(NBUT)
+            <div title="NBUT" class="v-toolbar__title">
+              NBUT
             </div>
             <div class="spacer"></div>
             <div class="v-toolbar__items">
@@ -6879,7 +6879,7 @@ Username is case sensitive.
                   name: h
                 },
                 dashiye: {
-                  title: "大视野在线测评 (HYSBZ)",
+                  title: "HYSBZ",
                   description: c,
                   url: "http:\\u002F\\u002Fwww.lydsy.com\\u002FJudgeOnline\\u002F",
                   name: i
@@ -6999,7 +6999,7 @@ Username is case sensitive.
                   name: B
                 },
                 nbut: {
-                  title: "宁波工程学院在线评测系统(NBUT)",
+                  title: "NBUT",
                   description: c,
                   url: "https:\\u002F\\u002Fac.2333.moe\\u002F",
                   name: C
