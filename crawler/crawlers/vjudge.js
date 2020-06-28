@@ -82,6 +82,7 @@ function mapOjName(nameInVjudge) {
     'atcoder',
     'aizu',
     'codechef',
+    'nbut',
   ])
   // crawler name map
   const ojMap = {
