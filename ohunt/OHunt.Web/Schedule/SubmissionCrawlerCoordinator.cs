@@ -17,14 +17,18 @@ namespace OHunt.Web.Schedule
         private readonly SubmissionInserter _inserter;
         private readonly IServiceProvider _serviceProvider;
 
-        public SubmissionCrawlerCoordinator(SubmissionInserter inserter, IServiceProvider serviceProvider)
+        public SubmissionCrawlerCoordinator(
+            SubmissionInserter inserter,
+            IServiceProvider serviceProvider)
         {
             _inserter = inserter;
             _serviceProvider = serviceProvider;
         }
 
-        public async Task Work(ISubmissionCrawler crawler, OnlineJudge oj)
+        public async Task WorkAsync(ISubmissionCrawler crawler)
         {
+            var oj = crawler.OnlineJudge;
+
             long? latestSubmissionId;
             using (var scope = _serviceProvider.CreateScope())
             {
@@ -43,7 +47,7 @@ namespace OHunt.Web.Schedule
                 });
 
             var crawlerTask = crawler.Work(latestSubmissionId, submissionBuffer);
-            var inserterTask = _inserter.Work(submissionBuffer);
+            var inserterTask = _inserter.WorkAsync(submissionBuffer);
 
             await Task.WhenAll(crawlerTask, inserterTask);
         }
