@@ -8,7 +8,7 @@ using OHunt.Web.Data;
 namespace OHunt.Web.Migrations
 {
     [DbContext(typeof(OHuntWebContext))]
-    [Migration("20200527083648_Init")]
+    [Migration("20200701054200_Init")]
     partial class Init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -20,11 +20,13 @@ namespace OHunt.Web.Migrations
 
             modelBuilder.Entity("OHunt.Web.Models.Submission", b =>
                 {
-                    b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
+                    b.Property<long>("SubmissionId")
                         .HasColumnType("bigint");
 
-                    b.HasKey("Id");
+                    b.Property<int>("OnlineJudgeId")
+                        .HasColumnType("int");
+
+                    b.HasKey("SubmissionId", "OnlineJudgeId");
 
                     b.ToTable("submissions");
                 });
