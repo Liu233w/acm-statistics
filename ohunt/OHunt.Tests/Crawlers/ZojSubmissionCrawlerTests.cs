@@ -1,6 +1,7 @@
-using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Threading.Tasks.Dataflow;
+using Microsoft.Extensions.Logging;
+using Moq;
 using OHunt.Web.Crawlers;
 using OHunt.Web.Models;
 using Snapshooter.Xunit;
@@ -10,10 +11,13 @@ namespace OHunt.Tests.Crawlers
 {
     public class ZojSubmissionCrawlerTests
     {
+        private readonly ILogger<ZojSubmissionCrawler> _loggerMock =
+            Mock.Of<ILogger<ZojSubmissionCrawler>>();
+
         [Fact]
         public async Task It_ShouldGetCorrectResult()
         {
-            var crawler = new ZojSubmissionCrawler();
+            var crawler = new ZojSubmissionCrawler(_loggerMock);
 
             var submissionBuffer
                 = new BufferBlock<Submission>(new DataflowBlockOptions

@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Reflection;
 using System.Threading.Tasks;
 using System.Threading.Tasks.Dataflow;
 using Microsoft.EntityFrameworkCore;
@@ -24,10 +21,6 @@ namespace OHunt.Web.Schedule
 
         private const string FieldSeparator = "\t";
         private const string LineSeparator = "\n";
-
-        private static readonly List<PropertyInfo> Properties =
-            (from property in typeof(Submission).GetProperties()
-                select property).ToList();
 
         private readonly IServiceProvider _serviceProvider;
         private readonly ILogger<SubmissionInserter> _logger;
@@ -57,7 +50,7 @@ namespace OHunt.Web.Schedule
                     var submission = await source.ReceiveAsync();
                     await writer.WriteLineAsync(string.Join(
                         FieldSeparator,
-                        Properties.Select(p => p.GetValue(submission)?.ToString() ?? "")));
+                        submission.GetValues()));
                 }
 
                 await Insert(tempFile);
@@ -80,9 +73,10 @@ namespace OHunt.Web.Schedule
                 LineTerminator = LineSeparator,
                 TableName = "submissions",
             };
-            loader.Columns.AddRange(Properties.Select(p => p.Name));
+            loader.Columns.AddRange(Submission.GetHeaders());
 
-            await loader.LoadAsync();
+            var inserted = await loader.LoadAsync();
+            _logger.LogTrace("{0} rows inserted", inserted);
         }
     }
 }

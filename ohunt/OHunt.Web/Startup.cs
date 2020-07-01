@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using Flurl.Http;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -6,6 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNet.OData.Extensions;
+using OHunt.Web.Crawlers;
 using OHunt.Web.Database;
 using OHunt.Web.Errors;
 using OHunt.Web.Schedule;
@@ -36,9 +38,12 @@ namespace OHunt.Web
                 .AddHostedService<ScheduleCrawlerService>()
                 .AddSingleton<SubmissionCrawlerCoordinator>()
                 .AddSingleton<SubmissionInserter>()
+                .AddSingleton<ZojSubmissionCrawler>()
                 ;
-            
-            FlurlHttp.Configure(settings => settings.HttpClientFactory = new PollyHttpClientFactory());
+
+            // FlurlHttp.Configure(settings => settings.HttpClientFactory = new PollyHttpClientFactory());
+
+            services.AddLogging();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
