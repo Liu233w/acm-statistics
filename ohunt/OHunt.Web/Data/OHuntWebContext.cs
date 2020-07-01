@@ -5,7 +5,7 @@ namespace OHunt.Web.Data
 {
     public class OHuntWebContext : DbContext
     {
-        public OHuntWebContext (DbContextOptions<OHuntWebContext> options)
+        public OHuntWebContext(DbContextOptions<OHuntWebContext> options)
             : base(options)
         {
         }
@@ -15,7 +15,7 @@ namespace OHunt.Web.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Submission>()
-                .HasIndex(e => e.OjName);
+                .HasKey(submission => new { submission.SubmissionId, submission.OnlineJudgeId });
         }
     }
 }

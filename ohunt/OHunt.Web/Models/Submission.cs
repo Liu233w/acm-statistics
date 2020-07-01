@@ -6,12 +6,20 @@ namespace OHunt.Web.Models
     [Table("submissions")]
     public class Submission
     {
+        /// <summary>
+        /// The id of the submission. It should be unique per oj.
+        ///
+        /// It is used to identify submissions, so newer submission
+        /// should have larger id.
+        /// </summary>
         [Key]
-        public long Id { get; set; }
+        public long SubmissionId { get; set; }
 
+        /// <summary>
+        /// The id of OJs.
+        /// </summary>
         [Required]
-        [MinLength(1)]
-        [MaxLength(10)]
-        public string OjName { get; set; }
+        [Key]
+        public OnlineJudge OnlineJudgeId { get; set; }
     }
 }

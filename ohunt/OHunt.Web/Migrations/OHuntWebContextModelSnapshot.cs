@@ -18,18 +18,13 @@ namespace OHunt.Web.Migrations
 
             modelBuilder.Entity("OHunt.Web.Models.Submission", b =>
                 {
-                    b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
+                    b.Property<long>("SubmissionId")
                         .HasColumnType("bigint");
 
-                    b.Property<string>("OjName")
-                        .IsRequired()
-                        .HasColumnType("varchar(10) CHARACTER SET utf8mb4")
-                        .HasMaxLength(10);
+                    b.Property<int>("OnlineJudgeId")
+                        .HasColumnType("int");
 
-                    b.HasKey("Id");
-
-                    b.HasIndex("OjName");
+                    b.HasKey("SubmissionId", "OnlineJudgeId");
 
                     b.ToTable("submissions");
                 });

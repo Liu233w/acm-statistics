@@ -1,8 +1,10 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNet.OData;
 using Microsoft.AspNetCore.Mvc;
 using OHunt.Web.Data;
+using OHunt.Web.Errors;
 using OHunt.Web.Models;
 
 namespace OHunt.Web.Controllers
@@ -31,12 +33,24 @@ namespace OHunt.Web.Controllers
 
         // GET: api/submissions/oj/{zoj}
         [HttpGet]
-        [EnableQuery(PageSize=500)]
+        [EnableQuery(PageSize = 500)]
         [Route("oj/{oj}")]
         public IQueryable<Submission> GetSubmissions(string oj)
         {
+            if (!Enum.TryParse<OnlineJudge>(oj.ToUpper(), out var ojEnum))
+            {
+                throw new HttpResponseException
+                {
+                    Status = 400,
+                    Value = new
+                    {
+                        Message = "Unrecognisable OJ name",
+                    },
+                };
+            }
+
             return _context.Submission
-                .Where(e => e.OjName == oj);
+                .Where(e => e.OnlineJudgeId == ojEnum);
         }
     }
 }
