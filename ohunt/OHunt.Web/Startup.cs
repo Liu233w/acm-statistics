@@ -6,6 +6,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using OHunt.Web.Data;
 using Microsoft.AspNet.OData.Extensions;
+using OHunt.Web.Errors;
 
 namespace OHunt.Web
 {
@@ -21,10 +22,10 @@ namespace OHunt.Web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
+            services.AddControllers(opt => { opt.Filters.Add(new HttpResponseExceptionFilter()); });
 
             services.AddDbContextPool<OHuntWebContext>(options =>
-                    options.UseMySql(Configuration.GetConnectionString("Default")));
+                options.UseMySql(Configuration.GetConnectionString("Default")));
 
             services.AddOData();
         }
