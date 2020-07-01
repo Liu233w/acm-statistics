@@ -15,7 +15,7 @@ namespace OHunt.Web.Controllers
     {
         private readonly OHuntWebContext _context;
 
-        private static readonly List<string> SUPPORTED_OJ
+        private static readonly List<string> SupportedOj
             = new List<string> { "zoj" };
 
         public SubmissionsController(OHuntWebContext context)
@@ -28,7 +28,15 @@ namespace OHunt.Web.Controllers
         [Route("list")]
         public ICollection<string> GetSupportOj()
         {
-            return SUPPORTED_OJ;
+            return SupportedOj;
+        }
+
+        // Get: api/submissions/status-names
+        [HttpGet]
+        [Route("status-names")]
+        public string[] GetStatus()
+        {
+            return Enum.GetNames(typeof(RunResult));
         }
 
         // GET: api/submissions/oj/{zoj}

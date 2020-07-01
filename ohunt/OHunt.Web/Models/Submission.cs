@@ -1,3 +1,4 @@
+using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -22,5 +23,21 @@ namespace OHunt.Web.Models
         [Required]
         [Key]
         public OnlineJudge OnlineJudgeId { get; set; }
+
+        [Required]
+        [MinLength(1)]
+        [MaxLength(75)]
+        public string UserName { get; set; }
+
+        [Required]
+        public RunResult Status { get; set; }
+
+        [Required]
+        [MinLength(1)]
+        [MaxLength(25)]
+        public string ProblemLabel { get; set; }
+
+        [Required]
+        public DateTime Time { get; set; }
     }
 }
