@@ -1,3 +1,4 @@
+using Flurl.Http;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -8,6 +9,7 @@ using Microsoft.AspNet.OData.Extensions;
 using OHunt.Web.Database;
 using OHunt.Web.Errors;
 using OHunt.Web.Schedule;
+using OHunt.Web.Utils;
 
 namespace OHunt.Web
 {
@@ -35,6 +37,8 @@ namespace OHunt.Web
                 .AddSingleton<SubmissionCrawlerCoordinator>()
                 .AddSingleton<SubmissionInserter>()
                 ;
+            
+            FlurlHttp.Configure(settings => settings.HttpClientFactory = new PollyHttpClientFactory());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Threading.Tasks.Dataflow;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using MySql.Data.MySqlClient;
 using OHunt.Web.Database;
 using OHunt.Web.Models;
@@ -29,10 +30,14 @@ namespace OHunt.Web.Schedule
                 select property).ToList();
 
         private readonly IServiceProvider _serviceProvider;
+        private readonly ILogger<SubmissionInserter> _logger;
 
-        public SubmissionInserter(IServiceProvider serviceProvider)
+        public SubmissionInserter(
+            IServiceProvider serviceProvider,
+            ILogger<SubmissionInserter> logger)
         {
             _serviceProvider = serviceProvider;
+            _logger = logger;
         }
 
         public async Task WorkAsync(ISourceBlock<Submission> source)
@@ -40,6 +45,7 @@ namespace OHunt.Web.Schedule
             while (await source.OutputAvailableAsync())
             {
                 using var tempFile = new TempFile();
+                _logger.LogTrace("Temp file created {0}", tempFile.Path);
                 await using var writer = new StreamWriter(tempFile.Path)
                 {
                     NewLine = LineSeparator,
@@ -60,6 +66,7 @@ namespace OHunt.Web.Schedule
 
         private async Task Insert(TempFile tempFile)
         {
+            _logger.LogTrace("Try to save file {0} to database", tempFile.Path);
             using var scope = _serviceProvider.CreateScope();
             var context = scope.ServiceProvider.GetRequiredService<OHuntWebContext>();
 

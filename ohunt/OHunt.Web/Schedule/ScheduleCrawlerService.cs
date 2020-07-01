@@ -53,8 +53,15 @@ namespace OHunt.Web.Schedule
                 return;
             }
 
-            Task.WaitAll(
-                _coordinator.WorkAsync(_zojSubmissionCrawler));
+            try
+            {
+                Task.WaitAll(
+                    _coordinator.WorkAsync(_zojSubmissionCrawler));
+            }
+            catch (Exception e)
+            {
+                _logger.LogError(e, "Exception when running worker");
+            }
 
             _logger.LogTrace("All crawler finished");
             _isRunning = 0;

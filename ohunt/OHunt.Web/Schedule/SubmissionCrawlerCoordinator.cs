@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using System.Threading.Tasks.Dataflow;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using OHunt.Web.Crawlers;
 using OHunt.Web.Database;
 using OHunt.Web.Models;
@@ -16,13 +17,16 @@ namespace OHunt.Web.Schedule
 
         private readonly SubmissionInserter _inserter;
         private readonly IServiceProvider _serviceProvider;
+        private readonly ILogger<SubmissionCrawlerCoordinator> _logger;
 
         public SubmissionCrawlerCoordinator(
             SubmissionInserter inserter,
-            IServiceProvider serviceProvider)
+            IServiceProvider serviceProvider,
+            ILogger<SubmissionCrawlerCoordinator> logger)
         {
             _inserter = inserter;
             _serviceProvider = serviceProvider;
+            _logger = logger;
         }
 
         public async Task WorkAsync(ISubmissionCrawler crawler)
@@ -49,7 +53,14 @@ namespace OHunt.Web.Schedule
             var crawlerTask = crawler.Work(latestSubmissionId, submissionBuffer);
             var inserterTask = _inserter.WorkAsync(submissionBuffer);
 
-            await Task.WhenAll(crawlerTask, inserterTask);
+            try
+            {
+                await Task.WhenAll(crawlerTask, inserterTask);
+            }
+            catch (Exception e)
+            {
+                _logger.LogError(e, "Exception when crawling");
+            }
         }
     }
 }
