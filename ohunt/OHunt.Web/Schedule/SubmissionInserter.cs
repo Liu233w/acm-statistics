@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Threading.Tasks.Dataflow;
 using Microsoft.EntityFrameworkCore;
@@ -19,9 +21,6 @@ namespace OHunt.Web.Schedule
     {
         private const int MaxRecordCount = 10000;
 
-        private const string FieldSeparator = "\t";
-        private const string LineSeparator = "\n";
-
         private readonly IServiceProvider _serviceProvider;
         private readonly ILogger<SubmissionInserter> _logger;
 
@@ -35,47 +34,34 @@ namespace OHunt.Web.Schedule
 
         public async Task WorkAsync(ISourceBlock<Submission> source)
         {
+            var submissions = new Submission[MaxRecordCount];
+
             while (await source.OutputAvailableAsync())
             {
-                using var tempFile = new TempFile();
-                _logger.LogTrace("Temp file created {0}", tempFile.Path);
-                await using var writer = new StreamWriter(tempFile.Path)
-                {
-                    NewLine = LineSeparator,
-                };
-                for (var i = 0;
+                var i = 0;
+                for (;
                     i < MaxRecordCount && await source.OutputAvailableAsync();
                     i++)
                 {
-                    var submission = await source.ReceiveAsync();
-                    await writer.WriteLineAsync(string.Join(
-                        FieldSeparator,
-                        submission.GetValues()));
+                    submissions[i] = await source.ReceiveAsync();
                 }
 
-                await Insert(tempFile);
+                await Insert(submissions.Take(i));
             }
         }
 
-        private async Task Insert(TempFile tempFile)
+        private async Task Insert(IEnumerable<Submission> submissions)
         {
-            _logger.LogTrace("Try to save file {0} to database", tempFile.Path);
+            _logger.LogTrace("Try to insert records to database");
             using var scope = _serviceProvider.CreateScope();
             var context = scope.ServiceProvider.GetRequiredService<OHuntWebContext>();
+            context.ChangeTracker.AutoDetectChangesEnabled = false;
 
-            var loader = new MySqlBulkLoader(
-                context.Database.GetDbConnection() as MySqlConnection
-                ?? throw new Exception("Current database is not mysql"))
-            {
-                Local = true,
-                FileName = tempFile.Path,
-                FieldTerminator = FieldSeparator,
-                LineTerminator = LineSeparator,
-                TableName = "submissions",
-            };
-            loader.Columns.AddRange(Submission.GetHeaders());
+            await context.Submission.AddRangeAsync(submissions);
 
-            var inserted = await loader.LoadAsync();
+            context.ChangeTracker.DetectChanges();
+            var inserted = await context.SaveChangesAsync();
+
             _logger.LogTrace("{0} rows inserted", inserted);
         }
     }
