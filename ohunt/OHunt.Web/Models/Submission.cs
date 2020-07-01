@@ -39,31 +39,5 @@ namespace OHunt.Web.Models
 
         [Required]
         public DateTime Time { get; set; }
-
-        public static string[] GetHeaders()
-        {
-            return new[]
-            {
-                nameof(SubmissionId),
-                nameof(OnlineJudgeId),
-                nameof(ProblemLabel),
-                nameof(Status),
-                nameof(Time),
-                nameof(UserName),
-            };
-        }
-
-        public string[] GetValues()
-        {
-            return new string[]
-            {
-                SubmissionId.ToString(),
-                ((int) OnlineJudgeId).ToString(),
-                ProblemLabel,
-                ((int) Status).ToString(),
-                Time.ToUniversalTime().ToString("yyyy-MM-dd HH:mm:ss"),
-                UserName,
-            };
-        }
     }
 }
