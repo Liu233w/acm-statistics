@@ -35,7 +35,7 @@ namespace OHunt.Web.Schedule
             _serviceProvider = serviceProvider;
         }
 
-        public async Task Work(ISourceBlock<Submission> source)
+        public async Task WorkAsync(ISourceBlock<Submission> source)
         {
             while (await source.OutputAvailableAsync())
             {
