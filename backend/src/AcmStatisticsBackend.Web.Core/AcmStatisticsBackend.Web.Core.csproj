@@ -24,7 +24,7 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.5" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.5.1" />
-    <PackageReference Include="Abp.AspNetCore" Version="5.9.0" />
-    <PackageReference Include="Abp.ZeroCore" Version="5.9.0" />
+    <PackageReference Include="Abp.AspNetCore" Version="5.10.1" />
+    <PackageReference Include="Abp.ZeroCore" Version="5.10.1" />
   </ItemGroup>
 </Project>
