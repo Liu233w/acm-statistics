@@ -4,15 +4,23 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
+using System.Threading.Tasks.Dataflow;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 using MySql.Data.MySqlClient;
+using OHunt.Web.Database;
 using OHunt.Web.Models;
 using OHunt.Web.Utils;
 
-namespace OHunt.Web.Database
+namespace OHunt.Web.Schedule
 {
-    public static class DatabaseExtensions
+    /// <summary>
+    /// Act as a consumer that reads Submission records and write them to the database.
+    /// </summary>
+    public class SubmissionInserter
     {
+        private const int MaxRecordCount = 10000;
+
         private const string FieldSeparator = "\t";
         private const string LineSeparator = "\n";
 
@@ -20,22 +28,40 @@ namespace OHunt.Web.Database
             (from property in typeof(Submission).GetProperties()
                 select property).ToList();
 
-        public static async Task InsertSubmissionsAsync(
-            this OHuntWebContext context,
-            IEnumerable<Submission> submissions)
-        {
-            using var tempFile = new TempFile();
+        private readonly IServiceProvider _serviceProvider;
 
-            await using (var writer = new StreamWriter(tempFile.Path))
+        public SubmissionInserter(IServiceProvider serviceProvider)
+        {
+            _serviceProvider = serviceProvider;
+        }
+
+        public async Task Work(ISourceBlock<Submission> source)
+        {
+            while (await source.OutputAvailableAsync())
             {
-                writer.NewLine = LineSeparator;
-                foreach (var submission in submissions)
+                using var tempFile = new TempFile();
+                await using var writer = new StreamWriter(tempFile.Path)
                 {
+                    NewLine = LineSeparator,
+                };
+                for (var i = 0;
+                    i < MaxRecordCount && await source.OutputAvailableAsync();
+                    i++)
+                {
+                    var submission = await source.ReceiveAsync();
                     await writer.WriteLineAsync(string.Join(
                         FieldSeparator,
                         Properties.Select(p => p.GetValue(submission)?.ToString() ?? "")));
                 }
+
+                await Insert(tempFile);
             }
+        }
+
+        private async Task Insert(TempFile tempFile)
+        {
+            using var scope = _serviceProvider.CreateScope();
+            var context = scope.ServiceProvider.GetRequiredService<OHuntWebContext>();
 
             var loader = new MySqlBulkLoader(
                 context.Database.GetDbConnection() as MySqlConnection
