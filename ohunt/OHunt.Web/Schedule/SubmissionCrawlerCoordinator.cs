@@ -50,12 +50,14 @@ namespace OHunt.Web.Schedule
                     EnsureOrdered = false,
                 });
 
+            _logger.LogTrace("Work on {0}, latestSubmissionId {1}", oj.ToString(), latestSubmissionId);
+
             var crawlerTask = crawler.Work(latestSubmissionId, submissionBuffer);
             var inserterTask = _inserter.WorkAsync(submissionBuffer);
 
             try
             {
-                await Task.WhenAll(crawlerTask, inserterTask);
+                await Task.WhenAll(crawlerTask, inserterTask, submissionBuffer.Completion);
             }
             catch (Exception e)
             {

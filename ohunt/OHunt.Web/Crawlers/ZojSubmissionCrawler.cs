@@ -1,9 +1,11 @@
 using System;
+using System.Diagnostics;
 using System.Text.Json;
 using System.Threading.Tasks;
 using System.Threading.Tasks.Dataflow;
 using Flurl;
 using Flurl.Http;
+using Microsoft.Extensions.Logging;
 using OHunt.Web.Models;
 using OHunt.Web.Utils;
 
@@ -11,8 +13,11 @@ namespace OHunt.Web.Crawlers
 {
     public class ZojSubmissionCrawler : CrawlerBase, ISubmissionCrawler
     {
-        public ZojSubmissionCrawler()
+        private readonly ILogger<ZojSubmissionCrawler> _logger;
+        
+        public ZojSubmissionCrawler(ILogger<ZojSubmissionCrawler> logger)
         {
+            _logger = logger;
             RequestInterval = TimeSpan.FromMilliseconds(100);
         }
 
@@ -31,6 +36,7 @@ namespace OHunt.Web.Crawlers
             {
                 var request = url.SetQueryParam("after", id)
                     .WithHeader("Accept", "application/json;charset=UTF-8");
+                _logger.LogTrace("Requesting url {0}", request.Url);
                 var json = await GetJson(request);
                 root = json.RootElement;
 
@@ -44,7 +50,7 @@ namespace OHunt.Web.Crawlers
                         id = idStr;
                     }
 
-                    target.Post(new Submission
+                    await target.SendAsync(new Submission
                     {
                         OnlineJudgeId = OnlineJudge,
                         SubmissionId = long.Parse(idStr),

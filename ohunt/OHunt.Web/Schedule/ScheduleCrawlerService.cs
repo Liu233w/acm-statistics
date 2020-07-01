@@ -14,33 +14,40 @@ namespace OHunt.Web.Schedule
         private Timer? _timer;
         private readonly SubmissionCrawlerCoordinator _coordinator;
 
-        private readonly ZojSubmissionCrawler _zojSubmissionCrawler
-            = new ZojSubmissionCrawler();
+        private readonly ZojSubmissionCrawler _zojSubmissionCrawler;
 
         private volatile int _isRunning = 0;
 
         public ScheduleCrawlerService(
             ILogger<ScheduleCrawlerService> logger,
-            SubmissionCrawlerCoordinator coordinator)
+            SubmissionCrawlerCoordinator coordinator,
+            ZojSubmissionCrawler zojSubmissionCrawler)
         {
             _logger = logger;
             _coordinator = coordinator;
+            _zojSubmissionCrawler = zojSubmissionCrawler;
         }
 
-        public async Task StartAsync(CancellationToken cancellationToken)
+        public Task StartAsync(CancellationToken cancellationToken)
         {
             _timer = new Timer(DoWork, null, TimeSpan.Zero,
                 TimeSpan.FromHours(0.5));
+
+            return Task.CompletedTask;
         }
 
-        public async Task StopAsync(CancellationToken cancellationToken)
+        public Task StopAsync(CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            _logger.LogInformation("Timed Hosted Service is stopping.");
+
+            _timer?.Change(Timeout.Infinite, 0);
+
+            return Task.CompletedTask;
         }
 
         public void Dispose()
         {
-            throw new NotImplementedException();
+            _timer?.Dispose();
         }
 
         private void DoWork(object? state)
