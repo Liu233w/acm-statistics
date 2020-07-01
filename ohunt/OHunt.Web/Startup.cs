@@ -4,8 +4,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
-using OHunt.Web.Data;
 using Microsoft.AspNet.OData.Extensions;
+using OHunt.Web.Database;
 using OHunt.Web.Errors;
 
 namespace OHunt.Web
