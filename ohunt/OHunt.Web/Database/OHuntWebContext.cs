@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using OHunt.Web.Models;
 
-namespace OHunt.Web.Data
+namespace OHunt.Web.Database
 {
     public class OHuntWebContext : DbContext
     {
