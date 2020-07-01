@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNet.OData;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using OHunt.Web.Database;
 using OHunt.Web.Errors;
 using OHunt.Web.Models;
@@ -14,13 +15,17 @@ namespace OHunt.Web.Controllers
     public class SubmissionsController : ControllerBase
     {
         private readonly OHuntWebContext _context;
+        private readonly ILogger<SubmissionsController> _logger;
 
         private static readonly List<string> SupportedOj
             = new List<string> { "zoj" };
 
-        public SubmissionsController(OHuntWebContext context)
+        public SubmissionsController(
+            OHuntWebContext context,
+            ILogger<SubmissionsController> logger)
         {
             _context = context;
+            _logger = logger;
         }
 
         // GET: api/submissions/list
@@ -45,7 +50,7 @@ namespace OHunt.Web.Controllers
         [Route("oj/{oj}")]
         public IQueryable<Submission> GetSubmissions(string oj)
         {
-            if (!Enum.TryParse<OnlineJudge>(oj.ToUpper(), out var ojEnum))
+            if (!Enum.TryParse<OnlineJudge>(oj, true, out var ojEnum))
             {
                 throw new HttpResponseException
                 {
