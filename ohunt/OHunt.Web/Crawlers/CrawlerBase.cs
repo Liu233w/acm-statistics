@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Text.Json;
 using System.Threading.Tasks;
 using AngleSharp;
@@ -31,7 +32,7 @@ namespace OHunt.Web.Crawlers
             return document;
         }
 
-        protected async Task<JsonDocument> GetJson(Url url)
+        protected async Task<JsonDocument> GetJson(IFlurlRequest request)
         {
             var delta = DateTime.Now - _lastRequestTime;
             if (delta < RequestInterval)
@@ -39,9 +40,15 @@ namespace OHunt.Web.Crawlers
                 await Task.Delay(delta);
             }
 
-            var result = await url.GetStreamAsync();
+            var result = await request.GetStreamAsync();
             _lastRequestTime = DateTime.Now;
+
             return await JsonDocument.ParseAsync(result);
+        }
+
+        protected Task<JsonDocument> GetJson(Url url)
+        {
+            return GetJson(new FlurlRequest(url));
         }
     }
 }

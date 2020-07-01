@@ -3,6 +3,7 @@ using System.Text.Json;
 using System.Threading.Tasks;
 using System.Threading.Tasks.Dataflow;
 using Flurl;
+using Flurl.Http;
 using OHunt.Web.Models;
 using OHunt.Web.Utils;
 
@@ -28,7 +29,9 @@ namespace OHunt.Web.Crawlers
             JsonElement root;
             do
             {
-                var json = await GetJson(url.SetQueryParam("after", id));
+                var request = url.SetQueryParam("after", id)
+                    .WithHeader("Accept", "application/json;charset=UTF-8");
+                var json = await GetJson(request);
                 root = json.RootElement;
 
                 id = string.Empty;
@@ -57,6 +60,8 @@ namespace OHunt.Web.Crawlers
                     });
                 }
             } while (root.GetProperty("hasAfter").GetBoolean());
+
+            target.Complete();
         }
 
         private static RunResult ParseStatus(string status)
