@@ -13,6 +13,7 @@ namespace OHunt.Web.Models
         /// should have larger id.
         /// </summary>
         [Key]
+        [Range(1, long.MaxValue)]
         public long SubmissionId { get; set; }
 
         /// <summary>
