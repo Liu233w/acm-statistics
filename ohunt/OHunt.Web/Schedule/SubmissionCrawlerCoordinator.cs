@@ -25,14 +25,14 @@ namespace OHunt.Web.Schedule
 
         public async Task Work(ISubmissionCrawler crawler, OnlineJudge oj)
         {
-            long latestSubmissionId;
+            long? latestSubmissionId;
             using (var scope = _serviceProvider.CreateScope())
             {
                 var context = scope.ServiceProvider.GetRequiredService<OHuntWebContext>();
                 latestSubmissionId = (await context.Submission
                     .Where(e => e.OnlineJudgeId == oj)
                     .OrderByDescending(e => e.SubmissionId)
-                    .FirstOrDefaultAsync())?.SubmissionId ?? 0;
+                    .FirstOrDefaultAsync())?.SubmissionId;
             }
 
             var submissionBuffer
