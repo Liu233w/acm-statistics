@@ -16,18 +16,21 @@ namespace OHunt.Web.Schedule
     {
         private const int BufferCapacity = 1000;
 
-        private readonly SubmissionInserter _inserter;
+        private readonly DatabaseInserter<Submission> _submissionInserter;
+        private readonly DatabaseInserter<CrawlerError> _errorInserter;
         private readonly IServiceProvider _serviceProvider;
         private readonly ILogger<SubmissionCrawlerCoordinator> _logger;
 
         public SubmissionCrawlerCoordinator(
-            SubmissionInserter inserter,
+            DatabaseInserter<Submission> submissionInserter,
             IServiceProvider serviceProvider,
-            ILogger<SubmissionCrawlerCoordinator> logger)
+            ILogger<SubmissionCrawlerCoordinator> logger,
+            DatabaseInserter<CrawlerError> errorInserter)
         {
-            _inserter = inserter;
+            _submissionInserter = submissionInserter;
             _serviceProvider = serviceProvider;
             _logger = logger;
+            _errorInserter = errorInserter;
         }
 
         public async Task WorkAsync(ISubmissionCrawler crawler)
@@ -50,18 +53,26 @@ namespace OHunt.Web.Schedule
                     BoundedCapacity = BufferCapacity,
                     EnsureOrdered = false,
                 });
+            var errorBuffer
+                = new BufferBlock<CrawlerError>(new DataflowBlockOptions
+                {
+                    BoundedCapacity = BufferCapacity,
+                    EnsureOrdered = false,
+                });
 
             _logger.LogTrace("Work on {0}, latestSubmissionId {1}", oj.ToString(), latestSubmissionId);
 
             var source = new CancellationTokenSource();
 
-            var crawlerTask = crawler.WorkAsync(latestSubmissionId, submissionBuffer);
-            var inserterTask = _inserter.WorkAsync(submissionBuffer, source.Token);
+            var crawlerTask = crawler.WorkAsync(latestSubmissionId, submissionBuffer, errorBuffer);
+            var submissionInserterTask = _submissionInserter.WorkAsync(submissionBuffer, source.Token);
+            var errorInserterTask = _errorInserter.WorkAsync(errorBuffer, source.Token);
 
             try
             {
                 await crawlerTask;
-                await inserterTask;
+                await submissionInserterTask;
+                await errorInserterTask;
             }
             catch (Exception e)
             {

@@ -8,6 +8,7 @@ using Microsoft.AspNet.OData.Extensions;
 using OHunt.Web.Crawlers;
 using OHunt.Web.Database;
 using OHunt.Web.Errors;
+using OHunt.Web.Models;
 using OHunt.Web.Schedule;
 
 namespace OHunt.Web
@@ -33,7 +34,8 @@ namespace OHunt.Web
 
             services
                 .AddSingleton<SubmissionCrawlerCoordinator>()
-                .AddSingleton<SubmissionInserter>()
+                .AddSingleton<DatabaseInserter<Submission>>()
+                .AddSingleton<DatabaseInserter<CrawlerError>>()
                 .AddSingleton<ZojSubmissionCrawler>()
                 ;
 
