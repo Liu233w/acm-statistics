@@ -9,6 +9,7 @@ using Xunit;
 
 namespace OHunt.Tests.Crawlers
 {
+    [Trait("Category", "WithNetwork")]
     public class ZojSubmissionCrawlerTests
     {
         private readonly ILogger<ZojSubmissionCrawler> _loggerMock =

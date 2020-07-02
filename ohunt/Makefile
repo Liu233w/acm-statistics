@@ -30,4 +30,4 @@ test-ci: .base
 	docker run --rm \
 		-v "$(CURDIR)/OHunt.Tests/TestResults:/src/OHunt.Tests/TestResults" \
 		$(OHuntBaseTag) \
-		dotnet test --collect:"XPlat Code Coverage"
+		dotnet test --collect:"XPlat Code Coverage" --filter "Category\!=WithNetwork"
