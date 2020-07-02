@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Text.Json;
+using System.Threading;
 using System.Threading.Tasks;
 using AngleSharp;
 using AngleSharp.Dom;
@@ -18,37 +19,43 @@ namespace OHunt.Web.Crawlers
         protected IBrowsingContext Context { get; }
             = BrowsingContext.New(Configuration.Default);
 
-        protected async Task<IDocument> GetDocument(Url url)
+        protected async Task<IDocument> GetDocument(
+            Url url,
+            CancellationToken cancellationToken)
         {
             var delta = DateTime.Now - _lastRequestTime;
             if (delta < RequestInterval)
             {
-                await Task.Delay(delta);
+                await Task.Delay(delta, cancellationToken);
             }
 
-            var document = await Context.OpenAsync(url);
+            var document = await Context.OpenAsync(url, cancellation: cancellationToken);
             _lastRequestTime = DateTime.Now;
 
             return document;
         }
 
-        protected async Task<JsonDocument> GetJson(IFlurlRequest request)
+        protected async Task<JsonDocument> GetJson(
+            IFlurlRequest request,
+            CancellationToken cancellationToken)
         {
             var delta = DateTime.Now - _lastRequestTime;
             if (delta < RequestInterval)
             {
-                await Task.Delay(delta);
+                await Task.Delay(delta, cancellationToken);
             }
 
-            var result = await request.GetStreamAsync();
+            var result = await request.GetStreamAsync(cancellationToken);
             _lastRequestTime = DateTime.Now;
 
-            return await JsonDocument.ParseAsync(result);
+            return await JsonDocument.ParseAsync(result, cancellationToken: cancellationToken);
         }
 
-        protected Task<JsonDocument> GetJson(Url url)
+        protected Task<JsonDocument> GetJson(
+            Url url,
+            CancellationToken cancellationToken)
         {
-            return GetJson(new FlurlRequest(url));
+            return GetJson(new FlurlRequest(url), cancellationToken);
         }
     }
 }

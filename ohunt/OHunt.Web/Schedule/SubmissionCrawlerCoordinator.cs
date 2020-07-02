@@ -33,7 +33,9 @@ namespace OHunt.Web.Schedule
             _errorInserter = errorInserter;
         }
 
-        public async Task WorkAsync(ISubmissionCrawler crawler)
+        public async Task WorkAsync(
+            ISubmissionCrawler crawler,
+            CancellationToken cancellationToken)
         {
             var oj = crawler.OnlineJudge;
 
@@ -44,7 +46,7 @@ namespace OHunt.Web.Schedule
                 latestSubmissionId = (await context.Submission
                     .Where(e => e.OnlineJudgeId == oj)
                     .OrderByDescending(e => e.SubmissionId)
-                    .FirstOrDefaultAsync())?.SubmissionId;
+                    .FirstOrDefaultAsync(cancellationToken: cancellationToken))?.SubmissionId;
             }
 
             var submissionBuffer
@@ -62,11 +64,16 @@ namespace OHunt.Web.Schedule
 
             _logger.LogTrace("Work on {0}, latestSubmissionId {1}", oj.ToString(), latestSubmissionId);
 
-            var source = new CancellationTokenSource();
+            var inserterCancel = new CancellationTokenSource();
+            var crawlerCancel = new CancellationTokenSource();
 
-            var crawlerTask = crawler.WorkAsync(latestSubmissionId, submissionBuffer, errorBuffer);
-            var submissionInserterTask = _submissionInserter.WorkAsync(submissionBuffer, source.Token);
-            var errorInserterTask = _errorInserter.WorkAsync(errorBuffer, source.Token);
+            // cancel crawler, it may trigger crawler to submit a Complete
+            // or it just throws, the catch below cancels the inserter
+            cancellationToken.Register(() => { crawlerCancel.Cancel(); });
+
+            var crawlerTask = crawler.WorkAsync(latestSubmissionId, submissionBuffer, errorBuffer, crawlerCancel.Token);
+            var submissionInserterTask = _submissionInserter.WorkAsync(submissionBuffer, inserterCancel.Token);
+            var errorInserterTask = _errorInserter.WorkAsync(errorBuffer, inserterCancel.Token);
 
             try
             {
@@ -76,7 +83,7 @@ namespace OHunt.Web.Schedule
             }
             catch (Exception e)
             {
-                source.Cancel();
+                inserterCancel.Cancel();
                 _logger.LogError(e, "Exception when crawling");
             }
         }
