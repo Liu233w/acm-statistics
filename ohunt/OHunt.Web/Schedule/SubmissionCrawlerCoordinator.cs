@@ -55,7 +55,7 @@ namespace OHunt.Web.Schedule
 
             var source = new CancellationTokenSource();
 
-            var crawlerTask = crawler.Work(latestSubmissionId, submissionBuffer);
+            var crawlerTask = crawler.WorkAsync(latestSubmissionId, submissionBuffer);
             var inserterTask = _inserter.WorkAsync(submissionBuffer, source.Token);
 
             try
