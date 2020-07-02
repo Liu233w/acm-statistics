@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Net;
 using System.Text.Json;
 using System.Threading.Tasks;
@@ -26,11 +27,14 @@ namespace OHunt.Web.Crawlers
 
         public OnlineJudge OnlineJudge => OnlineJudge.ZOJ;
 
-        public async Task WorkAsync(long? lastSubmissionId, ITargetBlock<Submission> target)
+        public async Task WorkAsync(
+            long? lastSubmissionId,
+            ITargetBlock<Submission> target,
+            ITargetBlock<CrawlerError> errors)
         {
             try
             {
-                await DoWork(lastSubmissionId, target);
+                await DoWork(lastSubmissionId, target, errors);
             }
             catch (Exception e)
             {
@@ -38,10 +42,14 @@ namespace OHunt.Web.Crawlers
                 // so we can just save crawled results.
                 _logger.LogError(e, "Error occured when crawling zoj, lastSubmissionId {0}", lastSubmissionId);
                 target.Complete();
+                errors.Complete();
             }
         }
 
-        private async Task DoWork(long? lastSubmissionId, ITargetBlock<Submission> target)
+        private async Task DoWork(
+            long? lastSubmissionId,
+            ITargetBlock<Submission> target,
+            ITargetBlock<CrawlerError> errors)
         {
             var after = lastSubmissionId ?? 1;
 
@@ -52,13 +60,13 @@ namespace OHunt.Web.Crawlers
 
                 if (root.TryGetProperty("error", out _))
                 {
-                    after = await TrySkipErrorSubmission(after, target);
+                    after = await TrySkipErrorSubmission(after, target, errors);
                 }
                 else
                 {
                     after = await ParseSubmissions(
                         root.GetProperty("submissions").EnumerateArray(),
-                        target);
+                        target, errors);
                     if (!root.GetProperty("hasAfter").GetBoolean())
                     {
                         break;
@@ -67,6 +75,7 @@ namespace OHunt.Web.Crawlers
             }
 
             target.Complete();
+            errors.Complete();
         }
 
         private async Task<JsonDocument> Request(long after, long? before = null)
@@ -89,13 +98,17 @@ namespace OHunt.Web.Crawlers
         /// <example>
         /// {"error":{"code":"UNKNOWN","message":"Unknown Error"}}
         /// </example>
-        ///
+        /// 
         /// Try to skip certain submission that shows the error.
         /// </summary>
         /// <param name="oldAfter">the after parameter that shows the error</param>
         /// <param name="target"></param>
+        /// <param name="errors"></param>
         /// <returns>the new after to resume crawling</returns>
-        private async Task<long> TrySkipErrorSubmission(long oldAfter, ITargetBlock<Submission> target)
+        private async Task<long> TrySkipErrorSubmission(
+            long oldAfter,
+            ITargetBlock<Submission> target,
+            ITargetBlock<CrawlerError> errors)
         {
             // use a binary search to quickly find the error submission
             _logger.LogTrace("Try to skip error record");
@@ -119,7 +132,7 @@ namespace OHunt.Web.Crawlers
                 {
                     after = await ParseSubmissions(
                         root.GetProperty("submissions").EnumerateArray(),
-                        target);
+                        target, errors);
                 }
             }
 
@@ -132,7 +145,10 @@ namespace OHunt.Web.Crawlers
         /// <summary>
         /// Parse the json array of submission, return the biggest id number
         /// </summary>
-        private async Task<long> ParseSubmissions(JsonElement.ArrayEnumerator array, ITargetBlock<Submission> target)
+        private async Task<long> ParseSubmissions(
+            JsonElement.ArrayEnumerator array,
+            ITargetBlock<Submission> target,
+            ITargetBlock<CrawlerError> errors)
         {
             long maxId = 0;
             foreach (var submission in array)
@@ -146,20 +162,33 @@ namespace OHunt.Web.Crawlers
                 var id = long.Parse(idStr);
                 maxId = Math.Max(id, maxId);
 
-                await target.SendAsync(new Submission
+                try
                 {
-                    OnlineJudgeId = OnlineJudge,
-                    SubmissionId = id,
-                    UserName = submission.GetProperty("user")
-                        .GetProperty("user")
-                        .GetProperty("nickname")
-                        .GetString(),
-                    Status = ParseStatus(submission.GetProperty("status").GetString()),
-                    ProblemLabel = submission.GetProperty("problemSetProblem")
-                        .GetProperty("label")
-                        .GetString(),
-                    Time = DateTime.Parse(submission.GetProperty("submitAt").GetString()),
-                });
+                    await target.SendAsync(new Submission
+                    {
+                        OnlineJudgeId = OnlineJudge,
+                        SubmissionId = id,
+                        UserName = submission.GetProperty("user")
+                            .GetProperty("user")
+                            .GetProperty("nickname")
+                            .GetString(),
+                        Status = ParseStatus(submission.GetProperty("status").GetString()),
+                        ProblemLabel = submission.GetProperty("problemSetProblem")
+                            .GetProperty("label")
+                            .GetString(),
+                        Time = DateTime.Parse(submission.GetProperty("submitAt").GetString()),
+                    });
+                }
+                catch (KeyNotFoundException e)
+                {
+                    await errors.SendAsync(new CrawlerError
+                    {
+                        Crawler = nameof(ZojSubmissionCrawler),
+                        Message = e.Message,
+                        Time = DateTime.Now,
+                        Data = submission.GetRawText(),
+                    });
+                }
             }
 
             return maxId;

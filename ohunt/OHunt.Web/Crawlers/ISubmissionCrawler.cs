@@ -19,6 +19,10 @@ namespace OHunt.Web.Crawlers
         /// </summary>
         /// <param name="lastSubmissionId">the submission id of the last crawler result</param>
         /// <param name="target">to post the submissions</param>
-        Task WorkAsync(long? lastSubmissionId, ITargetBlock<Submission> target);
+        /// <param name="errors">to post the error messages</param>
+        Task WorkAsync(
+            long? lastSubmissionId,
+            ITargetBlock<Submission> target,
+            ITargetBlock<CrawlerError> errors);
     }
 }
