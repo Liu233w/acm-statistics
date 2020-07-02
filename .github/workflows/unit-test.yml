@@ -60,6 +60,18 @@ jobs:
         make test-ci
     - uses: codecov/codecov-action@v1
 
+  ohunt:
+    name: Test OHunt
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - run: |
+        cd ohunt
+        # smoke test and lint
+        make run run-cmd="dotnet build" make-args="no-interactive no-tty"
+        make test-ci
+    - uses: codecov/codecov-action@v1
+
   commitlint:
     name: Commitlint
     runs-on: ubuntu-latest
