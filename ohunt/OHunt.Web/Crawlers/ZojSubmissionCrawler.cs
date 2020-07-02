@@ -1,5 +1,4 @@
 using System;
-using System.Diagnostics;
 using System.Net;
 using System.Text.Json;
 using System.Threading.Tasks;
@@ -14,6 +13,9 @@ namespace OHunt.Web.Crawlers
 {
     public class ZojSubmissionCrawler : CrawlerBase, ISubmissionCrawler
     {
+        private static Url BaseUrl => "https://zoj.pintia.cn/api/problem-sets/91827364500/submissions"
+            .SetQueryParam("show_all", "true");
+
         private readonly ILogger<ZojSubmissionCrawler> _logger;
 
         public ZojSubmissionCrawler(ILogger<ZojSubmissionCrawler> logger)
@@ -41,36 +43,45 @@ namespace OHunt.Web.Crawlers
 
         private async Task DoWork(long? lastSubmissionId, ITargetBlock<Submission> target)
         {
-            var url = "https://zoj.pintia.cn/api/problem-sets/91827364500/submissions"
-                .SetQueryParam("exam_id", "1278261888050192384")
-                .SetQueryParam("show_all", "true");
+            var after = lastSubmissionId ?? 1;
 
-            var id = lastSubmissionId ?? 1;
-
-            JsonElement root;
-            do
+            while (true)
             {
-                var request = url.SetQueryParam("after", id)
-                    .WithHeader("Accept", "application/json;charset=UTF-8")
-                    .AllowHttpStatus(HttpStatusCode.InternalServerError);
-                _logger.LogTrace("Requesting url {0}", request.Url);
+                using var json = await Request(after);
+                var root = json.RootElement;
 
-                var json = await GetJson(request);
-                root = json.RootElement;
-
-                id = 0;
-
-                foreach (var submission in root.GetProperty("submissions").EnumerateArray())
+                if (root.TryGetProperty("error", out _))
                 {
-                    var idStr = await ParseOneSubmission(submission, target);
-                    if (id == 0)
+                    after = await TrySkipErrorSubmission(after, target);
+                }
+                else
+                {
+                    after = await ParseSubmissions(
+                        root.GetProperty("submissions").EnumerateArray(),
+                        target);
+                    if (!root.GetProperty("hasAfter").GetBoolean())
                     {
-                        id = long.Parse(idStr);
+                        break;
                     }
                 }
-            } while (root.GetProperty("hasAfter").GetBoolean());
+            }
 
             target.Complete();
+        }
+
+        private async Task<JsonDocument> Request(long after, long? before = null)
+        {
+            var request = BaseUrl.SetQueryParam("after", after)
+                .WithHeader("Accept", "application/json;charset=UTF-8")
+                .AllowHttpStatus(HttpStatusCode.InternalServerError);
+            if (before != null)
+            {
+                request = request.SetQueryParam("before", before);
+            }
+
+            _logger.LogTrace("Requesting url {0}", request.Url);
+
+            return await GetJson(request);
         }
 
         /// <summary>
@@ -84,34 +95,69 @@ namespace OHunt.Web.Crawlers
         /// <param name="oldAfter">the after parameter that shows the error</param>
         /// <param name="target"></param>
         /// <returns>the new after to resume crawling</returns>
-        private Task<long> TrySkipErrorSubmission(long oldAfter, ITargetBlock<Submission> target)
+        private async Task<long> TrySkipErrorSubmission(long oldAfter, ITargetBlock<Submission> target)
         {
             // use a binary search to quickly find the error submission
-            long newAfter = oldAfter + 100;
+            _logger.LogTrace("Try to skip error record");
 
-            throw new NotImplementedException();
+            // [50]  50 => 25 [25] 50 => [25] 50 => [12] 13 50
+
+            long after = oldAfter;
+            int length = 100;
+            while (length > 1 && after <= oldAfter + 100)
+            {
+                // it request item between (after, before)
+                // items that have id equal to `after` or `before` are excluded
+                using var json = await Request(after, after + length);
+                var root = json.RootElement;
+
+                if (root.TryGetProperty("error", out _))
+                {
+                    length /= 2;
+                }
+                else
+                {
+                    after = await ParseSubmissions(
+                        root.GetProperty("submissions").EnumerateArray(),
+                        target);
+                }
+            }
+
+            var newAfter = after + length;
+            _logger.LogWarning("Submissions that has id between {0} and {1} (endpoint included) are skipped",
+                after + 1, newAfter);
+            return newAfter;
         }
 
-        private async Task<string> ParseOneSubmission(JsonElement submission, ITargetBlock<Submission> target)
+        /// <summary>
+        /// Parse the json array of submission, return the biggest id number
+        /// </summary>
+        private async Task<long> ParseSubmissions(JsonElement.ArrayEnumerator array, ITargetBlock<Submission> target)
         {
-            var idStr = submission.GetProperty("id").GetString();
-
-            await target.SendAsync(new Submission
+            long maxId = 0;
+            foreach (var submission in array)
             {
-                OnlineJudgeId = OnlineJudge,
-                SubmissionId = long.Parse(idStr),
-                UserName = submission.GetProperty("user")
-                    .GetProperty("user")
-                    .GetProperty("nickname")
-                    .GetString(),
-                Status = ParseStatus(submission.GetProperty("status").GetString()),
-                ProblemLabel = submission.GetProperty("problemSetProblem")
-                    .GetProperty("label")
-                    .GetString(),
-                Time = DateTime.Parse(submission.GetProperty("submitAt").GetString()),
-            });
+                var idStr = submission.GetProperty("id").GetString();
+                var id = long.Parse(idStr);
+                maxId = Math.Max(id, maxId);
 
-            return idStr;
+                await target.SendAsync(new Submission
+                {
+                    OnlineJudgeId = OnlineJudge,
+                    SubmissionId = id,
+                    UserName = submission.GetProperty("user")
+                        .GetProperty("user")
+                        .GetProperty("nickname")
+                        .GetString(),
+                    Status = ParseStatus(submission.GetProperty("status").GetString()),
+                    ProblemLabel = submission.GetProperty("problemSetProblem")
+                        .GetProperty("label")
+                        .GetString(),
+                    Time = DateTime.Parse(submission.GetProperty("submitAt").GetString()),
+                });
+            }
+
+            return maxId;
         }
 
         private static RunResult ParseStatus(string status)

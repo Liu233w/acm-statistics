@@ -59,7 +59,7 @@ namespace OHunt.Web.Schedule
             context.ChangeTracker.DetectChanges();
             var inserted = await context.SaveChangesAsync();
 
-            _logger.LogTrace("{0} rows inserted", inserted);
+            _logger.LogInformation("{0} rows inserted", inserted);
         }
     }
 }
