@@ -28,9 +28,9 @@ namespace OHunt.Web.Controllers
             _logger = logger;
         }
 
-        // GET: api/submissions/list
+        // GET: api/submissions/oj
         [HttpGet]
-        [Route("list")]
+        [Route("oj")]
         public ICollection<string> GetSupportOj()
         {
             return SupportedOj;
