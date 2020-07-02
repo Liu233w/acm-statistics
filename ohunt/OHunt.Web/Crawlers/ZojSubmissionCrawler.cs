@@ -36,7 +36,7 @@ namespace OHunt.Web.Crawlers
             {
                 // error in crawling won't break existing records
                 // so we can just save crawled results.
-                _logger.LogError(e, "Error occured when crawling zoj");
+                _logger.LogError(e, "Error occured when crawling zoj, lastSubmissionId {0}", lastSubmissionId);
                 target.Complete();
             }
         }
@@ -137,6 +137,11 @@ namespace OHunt.Web.Crawlers
             long maxId = 0;
             foreach (var submission in array)
             {
+                if (submission.GetProperty("problemType").GetString() != "PROGRAMMING")
+                {
+                    continue;
+                }
+
                 var idStr = submission.GetProperty("id").GetString();
                 var id = long.Parse(idStr);
                 maxId = Math.Max(id, maxId);
