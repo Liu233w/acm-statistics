@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Text.Json;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Threading.Tasks.Dataflow;
 using Flurl;
@@ -30,11 +31,19 @@ namespace OHunt.Web.Crawlers
         public async Task WorkAsync(
             long? lastSubmissionId,
             ITargetBlock<Submission> target,
-            ITargetBlock<CrawlerError> errors)
+            ITargetBlock<CrawlerError> errors,
+            CancellationToken cancellationToken)
         {
             try
             {
-                await DoWork(lastSubmissionId, target, errors);
+                await DoWork(lastSubmissionId, target, errors, cancellationToken);
+            }
+            catch (OperationCanceledException e)
+            {
+                // save current result
+                _logger.LogInformation("Crawler cancelled");
+                target.Complete();
+                errors.Complete();
             }
             catch (Exception e)
             {
@@ -49,18 +58,19 @@ namespace OHunt.Web.Crawlers
         private async Task DoWork(
             long? lastSubmissionId,
             ITargetBlock<Submission> target,
-            ITargetBlock<CrawlerError> errors)
+            ITargetBlock<CrawlerError> errors,
+            CancellationToken cancellationToken)
         {
             var after = lastSubmissionId ?? 1;
 
             while (true)
             {
-                using var json = await Request(after);
+                using var json = await Request(after, cancellationToken);
                 var root = json.RootElement;
 
                 if (root.TryGetProperty("error", out _))
                 {
-                    after = await TrySkipErrorSubmission(after, target, errors);
+                    after = await TrySkipErrorSubmission(after, target, errors, cancellationToken);
                 }
                 else
                 {
@@ -78,8 +88,12 @@ namespace OHunt.Web.Crawlers
             errors.Complete();
         }
 
-        private async Task<JsonDocument> Request(long after, long? before = null)
+        private async Task<JsonDocument> Request(
+            long after,
+            CancellationToken cancellationToken,
+            long? before = null)
         {
+            cancellationToken.ThrowIfCancellationRequested();
             var request = BaseUrl.SetQueryParam("after", after)
                 .WithHeader("Accept", "application/json;charset=UTF-8")
                 .AllowHttpStatus(HttpStatusCode.InternalServerError);
@@ -90,7 +104,7 @@ namespace OHunt.Web.Crawlers
 
             _logger.LogTrace("Requesting url {0}", request.Url);
 
-            return await GetJson(request);
+            return await GetJson(request, cancellationToken);
         }
 
         /// <summary>
@@ -104,11 +118,13 @@ namespace OHunt.Web.Crawlers
         /// <param name="oldAfter">the after parameter that shows the error</param>
         /// <param name="target"></param>
         /// <param name="errors"></param>
+        /// <param name="cancellationToken"></param>
         /// <returns>the new after to resume crawling</returns>
         private async Task<long> TrySkipErrorSubmission(
             long oldAfter,
             ITargetBlock<Submission> target,
-            ITargetBlock<CrawlerError> errors)
+            ITargetBlock<CrawlerError> errors,
+            CancellationToken cancellationToken)
         {
             // use a binary search to quickly find the error submission
             _logger.LogTrace("Try to skip error record");
@@ -121,7 +137,7 @@ namespace OHunt.Web.Crawlers
             {
                 // it request item between (after, before)
                 // items that have id equal to `after` or `before` are excluded
-                using var json = await Request(after, after + length);
+                using var json = await Request(after, cancellationToken, after + length);
                 var root = json.RootElement;
 
                 if (root.TryGetProperty("error", out _))
@@ -155,6 +171,13 @@ namespace OHunt.Web.Crawlers
             {
                 if (submission.GetProperty("problemType").GetString() != "PROGRAMMING")
                 {
+                    await errors.SendAsync(new CrawlerError
+                    {
+                        Crawler = nameof(ZojSubmissionCrawler),
+                        Message = "problemType is not PROGRAMMING",
+                        Time = DateTime.Now,
+                        Data = submission.GetRawText(),
+                    });
                     continue;
                 }
 

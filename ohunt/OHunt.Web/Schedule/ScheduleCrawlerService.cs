@@ -17,6 +17,9 @@ namespace OHunt.Web.Schedule
         private readonly ZojSubmissionCrawler _zojSubmissionCrawler;
 
         private volatile int _isRunning = 0;
+        private volatile Task[]? _runningTask = null;
+
+        private volatile CancellationTokenSource _tokenSource = new CancellationTokenSource();
 
         public ScheduleCrawlerService(
             ILogger<ScheduleCrawlerService> logger,
@@ -41,8 +44,11 @@ namespace OHunt.Web.Schedule
             _logger.LogInformation("Timed Hosted Service is stopping.");
 
             _timer?.Change(Timeout.Infinite, 0);
+            _tokenSource.Cancel();
 
-            return Task.CompletedTask;
+            return _runningTask != null
+                ? Task.WhenAll(_runningTask)
+                : Task.CompletedTask;
         }
 
         public void Dispose()
@@ -60,10 +66,13 @@ namespace OHunt.Web.Schedule
                 return;
             }
 
+            _runningTask = new[]
+            {
+                _coordinator.WorkAsync(_zojSubmissionCrawler, _tokenSource.Token),
+            };
             try
             {
-                Task.WaitAll(
-                    _coordinator.WorkAsync(_zojSubmissionCrawler));
+                Task.WaitAll(_runningTask);
             }
             catch (Exception e)
             {

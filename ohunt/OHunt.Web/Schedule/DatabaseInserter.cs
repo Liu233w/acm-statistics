@@ -45,7 +45,7 @@ namespace OHunt.Web.Schedule
             {
                 var i = 0;
                 for (;
-                    i < DefaultBufferSize && await source.OutputAvailableAsync(c);
+                    i < bufferSize && await source.OutputAvailableAsync(c);
                     i++)
                 {
                     buffer[i] = await source.ReceiveAsync(c);

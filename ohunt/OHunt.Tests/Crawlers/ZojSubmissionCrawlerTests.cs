@@ -1,3 +1,4 @@
+using System.Threading;
 using System.Threading.Tasks;
 using System.Threading.Tasks.Dataflow;
 using Microsoft.Extensions.Logging;
@@ -27,7 +28,8 @@ namespace OHunt.Tests.Crawlers
                 });
 
 #pragma warning disable 4014
-            crawler.WorkAsync(null, submissionBuffer);
+            crawler.WorkAsync(null, submissionBuffer,
+                Mock.Of<ITargetBlock<CrawlerError>>(), new CancellationToken());
 #pragma warning restore 4014
 
             const int bufferLength = 110;
