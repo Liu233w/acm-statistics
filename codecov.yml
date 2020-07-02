@@ -4,4 +4,4 @@ ignore:
   - backend/src/AcmStatisticsBackend.Web.Core/**/*
   - backend/src/AcmStatisticsBackend.Web.Host/**/*
   - backend/src/**/Dto/**/*
-  - ohunt/OHunt.Web/Migrations/**/*
+  - ohunt/OHunt.Web/Migrations/*
