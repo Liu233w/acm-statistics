@@ -26,7 +26,7 @@ namespace OHunt.Tests.Crawlers
                 });
 
 #pragma warning disable 4014
-            crawler.Work(null, submissionBuffer);
+            crawler.WorkAsync(null, submissionBuffer);
 #pragma warning restore 4014
 
             const int bufferLength = 110;
