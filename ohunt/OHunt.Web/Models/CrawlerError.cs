@@ -11,7 +11,7 @@ namespace OHunt.Web.Models
     public class CrawlerError
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public long Id { get; set; }
 
         /// <summary>
