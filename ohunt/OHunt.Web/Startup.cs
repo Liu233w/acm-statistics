@@ -1,5 +1,3 @@
-using System.Diagnostics;
-using Flurl.Http;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -11,7 +9,6 @@ using OHunt.Web.Crawlers;
 using OHunt.Web.Database;
 using OHunt.Web.Errors;
 using OHunt.Web.Schedule;
-using OHunt.Web.Utils;
 
 namespace OHunt.Web
 {
@@ -39,8 +36,6 @@ namespace OHunt.Web
                 .AddSingleton<SubmissionInserter>()
                 .AddSingleton<ZojSubmissionCrawler>()
                 ;
-
-            // FlurlHttp.Configure(settings => settings.HttpClientFactory = new PollyHttpClientFactory());
 
             services.AddLogging();
 
