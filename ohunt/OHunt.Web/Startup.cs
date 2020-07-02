@@ -35,7 +35,6 @@ namespace OHunt.Web
             services.AddOData();
 
             services
-                .AddHostedService<ScheduleCrawlerService>()
                 .AddSingleton<SubmissionCrawlerCoordinator>()
                 .AddSingleton<SubmissionInserter>()
                 .AddSingleton<ZojSubmissionCrawler>()
@@ -44,6 +43,11 @@ namespace OHunt.Web
             // FlurlHttp.Configure(settings => settings.HttpClientFactory = new PollyHttpClientFactory());
 
             services.AddLogging();
+
+            if (Configuration["DisableCrawlerWorker"] != "all")
+            {
+                services.AddHostedService<ScheduleCrawlerService>();
+            }
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -55,8 +59,6 @@ namespace OHunt.Web
             {
                 app.UseDeveloperExceptionPage();
             }
-
-            app.UseHttpsRedirection();
 
             app.UseRouting();
 
