@@ -1,16 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Threading.Tasks.Dataflow;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using MySql.Data.MySqlClient;
 using OHunt.Web.Database;
 using OHunt.Web.Models;
-using OHunt.Web.Utils;
 
 namespace OHunt.Web.Schedule
 {
@@ -32,18 +29,18 @@ namespace OHunt.Web.Schedule
             _logger = logger;
         }
 
-        public async Task WorkAsync(ISourceBlock<Submission> source)
+        public async Task WorkAsync(ISourceBlock<Submission> source, CancellationToken c)
         {
             var submissions = new Submission[MaxRecordCount];
 
-            while (await source.OutputAvailableAsync())
+            while (await source.OutputAvailableAsync(c))
             {
                 var i = 0;
                 for (;
-                    i < MaxRecordCount && await source.OutputAvailableAsync();
+                    i < MaxRecordCount && await source.OutputAvailableAsync(c);
                     i++)
                 {
-                    submissions[i] = await source.ReceiveAsync();
+                    submissions[i] = await source.ReceiveAsync(c);
                 }
 
                 await Insert(submissions.Take(i));

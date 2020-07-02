@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Threading.Tasks.Dataflow;
 using Microsoft.EntityFrameworkCore;
@@ -52,15 +53,19 @@ namespace OHunt.Web.Schedule
 
             _logger.LogTrace("Work on {0}, latestSubmissionId {1}", oj.ToString(), latestSubmissionId);
 
+            var source = new CancellationTokenSource();
+
             var crawlerTask = crawler.Work(latestSubmissionId, submissionBuffer);
-            var inserterTask = _inserter.WorkAsync(submissionBuffer);
+            var inserterTask = _inserter.WorkAsync(submissionBuffer, source.Token);
 
             try
             {
-                await Task.WhenAll(crawlerTask, inserterTask, submissionBuffer.Completion);
+                await crawlerTask;
+                await inserterTask;
             }
             catch (Exception e)
             {
+                source.Cancel();
                 _logger.LogError(e, "Exception when crawling");
             }
         }
