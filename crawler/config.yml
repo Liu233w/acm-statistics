@@ -23,6 +23,7 @@ crawler_order:
   - codewars
   - uoj
   - nbut
+  - nod
   - vjudge
 
 crawlers:
@@ -150,6 +151,11 @@ crawlers:
       title: NBUT
       description:
       url: https://ac.2333.moe/
+  nod:
+    meta:
+      title: 51Nod
+      description: Please use your nickname (displayed in your home page)
+      url: https://www.51nod.com
   vjudge:
     meta:
       title: VJudge
