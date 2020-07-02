@@ -8,7 +8,7 @@ RepoName = liu233w/
 # 使用 git commit hash 来表示镜像的tag
 CommitHash := $(shell git log -1 --pretty=%H)
 # 要发布的镜像变量名
-Images = FrontendTag CrawlerApiBackendTag BackendTag CaptchaServiceTag
+Images = FrontendTag CrawlerApiBackendTag BackendTag CaptchaServiceTag OHuntTag
 
 # === inner ===
 # 内部使用的变量
@@ -29,6 +29,7 @@ $(ImageToTag) $(ImageToPush): ImageNameWithLatest = $(RepoName)$(Image):latest
 	$(MAKE) -C ../frontend build
 	$(MAKE) -C ../backend build
 	$(MAKE) -C ../captcha-service build
+	$(MAKE) -C ../ohunt build
 
 tag: .build $(ImageToTag)
 

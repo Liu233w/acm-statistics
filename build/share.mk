@@ -14,6 +14,8 @@ BackendTag = $(CommonTagPrefix)-backend
 BackendBaseTag = $(CommonTagPrefix)-backend-base
 CaptchaServiceTag = $(CommonTagPrefix)-captcha-service
 CaptchaServiceBaseTag = $(CommonTagPrefix)-captcha-service-base
+OHuntTag = $(CommonTagPrefix)-ohunt
+OHuntBaseTag = $(CommonTagPrefix)-ohunt-base
 
 CrawlerLibraryPath = /var/project
 
