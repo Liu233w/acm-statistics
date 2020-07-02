@@ -14,6 +14,7 @@ namespace OHunt.Web
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
+                    // default settings
                     webBuilder.UseStartup<Startup>();
                 });
     }
