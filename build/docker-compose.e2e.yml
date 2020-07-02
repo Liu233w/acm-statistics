@@ -31,3 +31,7 @@ services:
     volumes:
       # 防止node_module被挂载进来，只能把代码放在单独的文件夹里了
       - ../e2e/http-mocks/src:/mocks/src
+
+  ohunt:
+    environment:
+      DisableCrawlerWorker: all

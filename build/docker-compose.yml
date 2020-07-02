@@ -110,3 +110,14 @@ services:
       - MYSQLDUMP_OPTS=--ignore-table=acm_statistics.AbpAuditLogs --ignore-table=acm_statistics.AbpUserLoginAttempts
     depends_on:
       - db
+
+  ohunt:
+    image: ${DOCKER_REPO}acm-statistics-ohunt${DOCKER_TAG}
+    environment:
+      ConnectionStrings__Default: Server=db; port=3306; Database=ohunt; uid=root; pwd=${MYSQL_ROOT_PASSWORD}; Convert Zero Datetime=True
+      WAIT_COMMAND: wait-for-it db:3306 -t 0
+    labels:
+      - traefik.http.routers.backend.rule=PathPrefix(`/api/submissions`)
+      - traefik.http.services.backend.loadbalancer.server.port=5000
+    depends_on:
+      - db
