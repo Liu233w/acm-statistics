@@ -16,6 +16,11 @@ namespace OHunt.Web.Database
         {
             modelBuilder.Entity<Submission>()
                 .HasKey(submission => new { submission.SubmissionId, submission.OnlineJudgeId });
+
+            modelBuilder.Entity<Submission>()
+                .HasIndex(e => e.UserName);
+            modelBuilder.Entity<Submission>()
+                .HasIndex(e => e.Status);
         }
     }
 }
