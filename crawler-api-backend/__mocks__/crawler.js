@@ -20,7 +20,7 @@ module.exports = {
 
     const crawlerFunc = username => {
       if (username === 'reject') {
-        throw new Error('用户不存在')
+        throw new Error('The user does not exist')
       } else {
         return {
           solved: 101,
