@@ -16,3 +16,4 @@
 
 # 忽略Migration文件
 /backend/src/AcmStatisticsBackend.EntityFrameworkCore/Migrations/* linguist-vendored
+/ohunt/OHunt.Web/Migrations/* linguist-vendored
