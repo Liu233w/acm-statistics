@@ -25,6 +25,8 @@ describe('generateServerCrawlerFunctions', () => {
         return {
           config: config,
           username: username,
+          solved: 0,
+          submissions: username === 'wrong format' ? NaN : 0,
         }
       }, { virtual: true })
     }
@@ -56,6 +58,11 @@ describe('generateServerCrawlerFunctions', () => {
     const ret = await functions.crawler1('username1')
     expect(ret.config.env).toBe('server')
   })
+
+  it('should throw when crawler return wrong format results', async () => {
+    await expect(functions.crawler1('wrong format'))
+      .rejects.toThrow('The crawler returned wrong format result. It can be a bug in crawler.')
+  })
 })
 
 describe('generateBrowserCrawlerFunctions', () => {
@@ -86,6 +93,8 @@ describe('generateBrowserCrawlerFunctions', () => {
           return {
             config: config,
             username: username,
+            solved: 0,
+            submissions: username === 'wrong format' ? NaN : 0,
           }
         }`)
     }
@@ -109,6 +118,11 @@ describe('generateBrowserCrawlerFunctions', () => {
   it('能将用户名传入函数', async () => {
     const ret = await functions.crawler1('username1')
     expect(ret.username).toBe('username1')
+  })
+
+  it('should throw when crawler return wrong format results', async () => {
+    await expect(functions.crawler1('wrong format'))
+      .rejects.toThrow('The crawler returned wrong format result. It can be a bug in crawler.')
   })
 
   describe('在浏览器和服务器同时使用的配置下', () => {

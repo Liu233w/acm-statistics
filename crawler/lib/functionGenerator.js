@@ -26,6 +26,32 @@ const join = require('path').join
  */
 
 /**
+ * Wrap the result from crawler to make sure it has right format
+ * @param {string} promiseExpression the string of express that evaluate to the promise
+ * of the result
+ * @returns {string} 
+ */
+exports.crawlerWrapper = promiseExpression => {
+  return `${promiseExpression}
+    .then(res => {
+      ${checkNumberFormat('res.solved')}
+      ${checkNumberFormat('res.submissions')}
+      if (res.solvedList !== null && res.solvedList !== undefined 
+        && !(res.solvedList instanceof Array)) {
+        throw new Error('The crawler returned wrong format result. It can be a bug in crawler.')
+      }
+      return res
+    })`
+
+  function checkNumberFormat(field) {
+    return `
+      if (!Number.isInteger(${field}) || ${field} < 0) {
+        throw new Error('The crawler returned wrong format result. It can be a bug in crawler.')
+      }`
+  }
+}
+
+/**
  * 为服务器端返回爬虫函数，会从config.yml读取信息，并返回一个对象
  *
  * @returns {Promise<Object.<string, ServerCrawlerFunction>>}
@@ -42,8 +68,9 @@ exports.generateServerCrawlerFunctions = async () => {
       env: 'server',
     }
     _.assign(crawlerConfig, item)
+    // eslint-disable-next-line no-unused-vars
     const crawlerFunc = require(`../crawlers/${item.name}.js`)
-    ret[item.name] = username => crawlerFunc(crawlerConfig, username)
+    ret[item.name] = eval(`username => ${exports.crawlerWrapper('crawlerFunc(crawlerConfig, username)')}`)
   }
 
   return ret
@@ -118,7 +145,7 @@ exports.generateBrowserCrawlerFunctions = async () => {
         (username) => {
           let module = {exports: {}}
           ;(function(module, exports) { ${crawlerFuncStr} })(module, module.exports)
-          return module.exports(${JSON.stringify(crawlerConfig)}, username)
+          return ${exports.crawlerWrapper(`module.exports(${JSON.stringify(crawlerConfig)}, username)`)}
             .catch(err => {
               if (err.response || err.url) {
                 // 有response字段说明这是由 superagent 抛出的异常
