@@ -32,7 +32,7 @@ test('/api/crawlers should return crawler list', async () => {
 })
 
 describe('/api/crawlers/:type/:username', () => {
-  it('在结果正确时应该返回题量', async () => {
+  it('should work correctly', async () => {
     await request(app)
       .get('/api/crawlers/crawler1/user')
       .expect(200, {
@@ -44,26 +44,26 @@ describe('/api/crawlers/:type/:username', () => {
       })
   })
 
-  it('在爬虫不存在时应该返回 400', async () => {
+  it('should return 400 when crawler does not exist', async () => {
     await request(app)
       .get('/api/crawlers/notExist/user')
       .expect(400, {
         error: true,
-        message: '不存在此OJ的爬虫',
+        message: 'Crawler of the oj does not exist',
       })
   })
 
-  it('在爬虫报错时应该返回错误结果', async () => {
+  it('should return error when crawler return error', async () => {
     await request(app)
       .get('/api/crawlers/crawler1/reject')
       .expect(400, {
         error: true,
-        message: '用户不存在',
+        message: 'The user does not exist',
       })
   })
 })
 
-test('在访问不存在的资源时返回 404', async () => {
+test('should return 404 when visiting url that does not exist', async () => {
   await request(app)
     .get('/notExists')
     .expect(404, {

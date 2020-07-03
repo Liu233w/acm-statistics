@@ -24,7 +24,7 @@ router.get('/api/crawlers/:type/:username', async (ctx) => {
   const ojFunc = crawlers[ctx.params.type]
 
   if (!_.isFunction(ojFunc)) {
-    throw new Error('不存在此OJ的爬虫')
+    throw new Error('Crawler of the oj does not exist')
   }
 
   ctx.rest(await ojFunc(ctx.params.username))
