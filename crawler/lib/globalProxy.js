@@ -16,3 +16,15 @@ if (process.env.http_proxy) {
   }
 }
 
+// redirect OHunt request (only work on crawler-api-backend)
+const superagent = require('superagent')
+const _ = require('lodash')
+
+const getFunc = superagent.get
+superagent.get = url => {
+  if (_.startsWith(url, '/api/ohunt')) {
+    return getFunc('http://ohunt' + url)
+  } else {
+    return getFunc(url)
+  }
+}
