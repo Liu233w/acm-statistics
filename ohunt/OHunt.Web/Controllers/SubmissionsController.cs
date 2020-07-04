@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNet.OData;
+using Microsoft.AspNet.OData.Routing;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using OHunt.Web.Database;
@@ -10,15 +11,11 @@ using OHunt.Web.Models;
 
 namespace OHunt.Web.Controllers
 {
-    [Route("api/submissions")]
-    [ApiController]
-    public class SubmissionsController : ControllerBase
+    [ODataRoutePrefix("submissions")]
+    public class SubmissionsController : ODataController
     {
         private readonly OHuntWebContext _context;
         private readonly ILogger<SubmissionsController> _logger;
-
-        private static readonly List<string> SupportedOj
-            = new List<string> { "zoj" };
 
         public SubmissionsController(
             OHuntWebContext context,
@@ -28,27 +25,9 @@ namespace OHunt.Web.Controllers
             _logger = logger;
         }
 
-        // GET: api/submissions/oj
-        [HttpGet]
-        [Route("oj")]
-        public ICollection<string> GetSupportOj()
-        {
-            return SupportedOj;
-        }
-
-        // Get: api/submissions/status-names
-        [HttpGet]
-        [Route("status-names")]
-        public string[] GetStatus()
-        {
-            return Enum.GetNames(typeof(RunResult));
-        }
-
-        // GET: api/submissions/oj/{zoj}
-        [HttpGet]
+        // GET: api/ohunt/submissions?oj=zoj&$filter=.....
         [EnableQuery(PageSize = 500)]
-        [Route("oj/{oj}")]
-        public IQueryable<Submission> GetSubmissions(string oj)
+        public IQueryable<Submission> Get([FromODataUri] string oj)
         {
             if (!Enum.TryParse<OnlineJudge>(oj, true, out var ojEnum))
             {
@@ -57,7 +36,10 @@ namespace OHunt.Web.Controllers
                     Status = 400,
                     Value = new
                     {
+                        Error = true,
                         Message = "Unrecognisable OJ name",
+                        Detail = "Please use url like /api/ohunt/submissions?oj=zoj to request",
+                        SupportedOj = Enum.GetNames(typeof(OnlineJudge)),
                     },
                 };
             }

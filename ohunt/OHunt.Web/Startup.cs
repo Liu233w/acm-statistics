@@ -1,3 +1,5 @@
+using System.Text;
+using Microsoft.AspNet.OData.Builder;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -5,6 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNet.OData.Extensions;
+using Microsoft.OData.Edm;
 using OHunt.Web.Crawlers;
 using OHunt.Web.Database;
 using OHunt.Web.Errors;
@@ -61,10 +64,29 @@ namespace OHunt.Web
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllers();
+                // endpoints.MapControllers();
                 endpoints.EnableDependencyInjection();
                 endpoints.Select().OrderBy().Filter().Count();
+                endpoints.MapODataRoute("odata", "api/ohunt", GetEdmModel());
             });
+
+            app.Use(async (ctx, next) =>
+            {
+                await next();
+                if (ctx.Response.StatusCode == 404)
+                {
+                    await ctx.Response.Body.WriteAsync(
+                        Encoding.ASCII.GetBytes("404 Not Found"));
+                }
+            });
+        }
+
+        private static IEdmModel GetEdmModel()
+        {
+            var odataBuilder = new ODataConventionModelBuilder();
+            odataBuilder.EntitySet<Submission>("Submissions");
+
+            return odataBuilder.GetEdmModel();
         }
 
         private static void UpdateDatabase(IApplicationBuilder app)
