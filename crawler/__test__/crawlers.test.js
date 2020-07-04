@@ -87,10 +87,11 @@ describe('zoj', () => {
   })
 
   test('test zoj', async () => {
-    const res = await zoj(null, username)
+    const res = await zoj(null, 'IamRobot')
     checkRes(res)
     expect(res.solvedList).toContain('1001')
-  })
+    // so it is really slow...
+  }, 30000)
 
 })
 

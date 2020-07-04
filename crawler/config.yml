@@ -1,7 +1,7 @@
 crawler_order:
   - poj
   - hdu
-  # - zoj
+  - zoj
   - dashiye
   - codeforces
   - uva
@@ -40,8 +40,8 @@ crawlers:
   zoj:
     meta:
       title: ZOJ
-      description:
-      url: http://acm.zju.edu.cn/onlinejudge/
+      description: Only nickname is supported
+      url: https://zoj.pintia.cn/
   dashiye:
     meta:
       title: HYSBZ
