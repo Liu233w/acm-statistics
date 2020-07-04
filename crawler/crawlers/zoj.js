@@ -1,5 +1,4 @@
 const request = require('superagent')
-const cheerio = require('cheerio')
 
 module.exports = async function (config, username) {
 
@@ -7,32 +6,46 @@ module.exports = async function (config, username) {
     throw new Error('Please enter username')
   }
 
-  const res = await request
-    .get('http://acm.zju.edu.cn/onlinejudge/showUserStatus.do')
-    .query({handle: username})
+  const submissionRes = await request
+    .get('https://new.npuacm.info/api/ohunt/submissions')
+    .query({
+      oj: 'zoj',
+      $filter: `UserName eq '${username}'`,
+      $count: true,
+      $top: 0,
+    })
 
-  if (!res.ok) {
-    throw new Error(`Server Response Error: ${res.status}`)
-  }
+  const submissions = submissionRes.body['@odata.count']
 
-  const $ = cheerio.load(res.text)
-
-  const data = $('font[color=red]').text()
-  if (data === 'No such user.') {
+  if (submissions === 0) {
     throw new Error('The user does not exist')
   }
 
   try {
-    const num = data.split('/')
+    const solvedSet = new Set()
 
-    const solvedList = $('div:has(b:contains("Solved Problems")) > a')
-      .map((i, elem) => $(elem).text().trim())
-      .get()
+    let skip = 0
+    let solvedRes
+    do {
+      solvedRes = await request
+        .get('https://new.npuacm.info/api/ohunt/submissions')
+        .query({
+          oj: 'zoj',
+          $filter: `UserName eq '${username}' and Status eq 'Accepted'`,
+          $skip: skip,
+          $select: 'ProblemLabel',
+        })
+      solvedRes.body.value.forEach(item => {
+        solvedSet.add(item.ProblemLabel)
+      })
+
+      skip += 500
+    } while (solvedRes.body['@odata.nextLink'])
 
     return {
-      solved: Number(num[0]),
-      submissions: Number(num[1]),
-      solvedList,
+      solved: solvedSet.size,
+      submissions,
+      solvedList: [...solvedSet],
     }
   } catch (e) {
     throw new Error('Error while parsing')
