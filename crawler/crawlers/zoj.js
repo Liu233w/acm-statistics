@@ -7,7 +7,7 @@ module.exports = async function (config, username) {
   }
 
   const submissionRes = await request
-    .get('https://new.npuacm.info/api/ohunt/submissions')
+    .get('/api/ohunt/submissions')
     .query({
       oj: 'zoj',
       $filter: `UserName eq '${username}'`,
@@ -28,7 +28,7 @@ module.exports = async function (config, username) {
     let solvedRes
     do {
       solvedRes = await request
-        .get('https://new.npuacm.info/api/ohunt/submissions')
+        .get('/api/ohunt/submissions')
         .query({
           oj: 'zoj',
           $filter: `UserName eq '${username}' and Status eq 'Accepted'`,
