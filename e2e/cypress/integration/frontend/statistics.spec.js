@@ -6,11 +6,6 @@ describe('overall', () => {
     cy.visit('/statistics')
   })
 
-  it('can render correctly in 1080p', () => {
-    cy.viewport(1920, 1080)
-    snapshot()
-  })
-
   it('can render correctly', () => {
     snapshot()
   })
