@@ -69,28 +69,18 @@ export default {
   },
   computed: {
     items() {
+      const logined = this.$store.state.session.login
       return _.filter(
         [
           { icon: 'home', title: 'Homepage', to: '/' },
           { icon: 'code', title: 'AC Statistics', to: '/statistics' },
-          ifTrue(this.$store.state.session.login, {
-            icon: 'settings',
-            title: 'Settings',
-            to: '/settings',
-          }),
+          { icon: 'history', title: 'History', to: '/history', needLogin: true },
+          { icon: 'settings', title: 'Settings', to: '/settings', needLogin: true },
           { icon: 'info', title: 'About', to: '/about' },
         ],
-        item => item !== null,
+        item => !item.needLogin || logined,
       )
     },
   },
-}
-
-function ifTrue(condition, item) {
-  if (condition) {
-    return item
-  } else {
-    return null
-  }
 }
 </script>
