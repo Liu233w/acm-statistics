@@ -15,7 +15,6 @@ describe('overall', () => {
   it('can render correctly', () => {
 
     cy.visit('/settings')
-    cy.viewport(1920, 1080)
 
     // hide account username
     cy.get(`button:contains("${username}")`)
