@@ -14,7 +14,6 @@ using AcmStatisticsBackend.Authorization;
 using AcmStatisticsBackend.Crawlers.Dto;
 using AcmStatisticsBackend.ServiceClients;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Internal;
 
 namespace AcmStatisticsBackend.Crawlers
 {
@@ -140,14 +139,20 @@ namespace AcmStatisticsBackend.Crawlers
         /// <inheritdoc cref="IQueryHistoryAppService.GetQueryHistories"/>
         public async Task<PagedResultDto<GetQueryHistoryOutput>> GetQueryHistories(PagedResultRequestDto input)
         {
-            var list = await _acHistoryRepository.GetAll()
-                .Where(e => e.UserId == AbpSession.UserId.Value)
+            var list = await QueryHistoriesOfCurrentUser()
                 .OrderByDescending(e => e.CreationTime)
                 .PageBy(input)
                 .ToListAsync();
+            var count = await QueryHistoriesOfCurrentUser().CountAsync();
 
             var resultList = ObjectMapper.Map<List<GetQueryHistoryOutput>>(list);
-            return new PagedResultDto<GetQueryHistoryOutput>(resultList.Count, resultList);
+            return new PagedResultDto<GetQueryHistoryOutput>(count, resultList);
+        }
+
+        private IQueryable<QueryHistory> QueryHistoriesOfCurrentUser()
+        {
+            return _acHistoryRepository.GetAll()
+                .Where(e => e.UserId == AbpSession.UserId.Value);
         }
 
         /// <inheritdoc cref="IQueryHistoryAppService.GetQueryWorkerHistories"/>
@@ -206,8 +211,7 @@ namespace AcmStatisticsBackend.Crawlers
         public async Task<PagedResultDto<GetQueryHistoryAndSummaryOutput>> GetQueryHistoriesAndSummaries(
             PagedResultRequestDto input)
         {
-            var list = await (from h in _acHistoryRepository.GetAll()
-                    .Where(e => e.UserId == AbpSession.UserId.Value)
+            var list = await (from h in QueryHistoriesOfCurrentUser()
                     .OrderByDescending(e => e.CreationTime)
                     .PageBy(input)
                 join s in _querySummaryRepository.GetAll()
@@ -221,8 +225,9 @@ namespace AcmStatisticsBackend.Crawlers
                     Solved = s.Solved == 0 && s.Submission == 0 ? null as int? : s.Solved,
                     Submission = s.Solved == 0 && s.Submission == 0 ? null as int? : s.Submission,
                 }).ToListAsync();
+            var count = await QueryHistoriesOfCurrentUser().CountAsync();
 
-            return new PagedResultDto<GetQueryHistoryAndSummaryOutput>(list.Count, list);
+            return new PagedResultDto<GetQueryHistoryAndSummaryOutput>(count, list);
         }
 
         /// <summary>
