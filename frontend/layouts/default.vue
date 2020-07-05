@@ -38,8 +38,9 @@
       <nuxt />
     </v-content>
     <v-footer
-      fixed
       app
+      inset
+      absolute
     >
       <span class="body-2">&copy; 2018 - {{ buildYear }} NWPU-ACM 技术组</span>
       <v-spacer />
