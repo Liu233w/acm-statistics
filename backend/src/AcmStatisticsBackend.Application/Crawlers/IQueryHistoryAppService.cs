@@ -38,5 +38,12 @@ namespace AcmStatisticsBackend.Crawlers
         /// </summary>
         /// <param name="input">input the id of query history</param>
         Task<QuerySummaryDto> GetQuerySummary(GetQuerySummaryInput input);
+
+        /// <summary>
+        /// Get a list of current user's query history, sorted from newest to oldest.
+        /// The submission and solved number are also included.
+        /// </summary>
+        Task<PagedResultDto<GetQueryHistoryAndSummaryOutput>>
+            GetQueryHistoriesAndSummaries(PagedResultRequestDto input);
     }
 }
