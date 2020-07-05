@@ -14,6 +14,7 @@ using AcmStatisticsBackend.Authorization;
 using AcmStatisticsBackend.Crawlers.Dto;
 using AcmStatisticsBackend.ServiceClients;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Internal;
 
 namespace AcmStatisticsBackend.Crawlers
 {
@@ -199,6 +200,29 @@ namespace AcmStatisticsBackend.Crawlers
             querySummaryDto.MainUsername = history.MainUsername;
 
             return querySummaryDto;
+        }
+
+        /// <inheritdoc cref="IQueryHistoryAppService.GetQueryHistoriesAndSummaries" />
+        public async Task<PagedResultDto<GetQueryHistoryAndSummaryOutput>> GetQueryHistoriesAndSummaries(
+            PagedResultRequestDto input)
+        {
+            var list = await (from h in _acHistoryRepository.GetAll()
+                    .Where(e => e.UserId == AbpSession.UserId.Value)
+                    .OrderByDescending(e => e.CreationTime)
+                    .PageBy(input)
+                join s in _querySummaryRepository.GetAll()
+                    on h.Id equals s.QueryHistoryId into grouping
+                from s in grouping.DefaultIfEmpty()
+                select new GetQueryHistoryAndSummaryOutput
+                {
+                    HistoryId = h.Id,
+                    SummaryId = s.Id,
+                    CreationTime = h.CreationTime,
+                    Solved = s.Solved == 0 && s.Submission == 0 ? null as int? : s.Solved,
+                    Submission = s.Solved == 0 && s.Submission == 0 ? null as int? : s.Submission,
+                }).ToListAsync();
+
+            return new PagedResultDto<GetQueryHistoryAndSummaryOutput>(list.Count, list);
         }
 
         /// <summary>

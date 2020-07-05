@@ -688,5 +688,69 @@ namespace AcmStatisticsBackend.Tests.Crawlers
             await task.ShouldThrow<UserFriendlyException>()
                 .WithMessage("This query history does not have summary");
         }
+
+        [Fact]
+        public async Task GetQueryHistoriesAndSummaries_ShouldWorkCorrectly()
+        {
+            // arrange
+            LoginAsDefaultTenantAdmin();
+            await UsingDbContextAsync(async ctx =>
+            {
+                Debug.Assert(AbpSession.UserId != null, "AbpSession.UserId != null");
+                var histories = new[]
+                {
+                    new QueryHistory
+                    {
+                        MainUsername = "u1",
+                        CreationTime = new DateTime(2020, 4, 1, 10, 0, 0),
+                        UserId = AbpSession.UserId.Value,
+                    },
+                    // correct order
+                    new QueryHistory
+                    {
+                        MainUsername = "u1",
+                        CreationTime = new DateTime(2020, 4, 2, 10, 0, 0),
+                        UserId = AbpSession.UserId.Value,
+                    },
+                };
+                await ctx.QueryHistories.AddRangeAsync(histories);
+                await ctx.SaveChangesAsync();
+                await ctx.QuerySummaries.AddRangeAsync(new[]
+                {
+                    // test join summary
+                    new QuerySummary
+                    {
+                        QueryHistoryId = histories[0].Id,
+                        Solved = 10,
+                        Submission = 20,
+                        GenerateTime = new DateTime(2020, 4, 3, 10, 0, 0),
+                        SummaryWarnings = new List<SummaryWarning>(),
+                    },
+                    // test left join (the second history should be outputted)
+                });
+            });
+
+            // act
+            var result = await _queryHistoryAppService.GetQueryHistoriesAndSummaries(new PagedResultRequestDto
+            {
+                SkipCount = 0,
+                MaxResultCount = 5,
+            });
+
+            // assert
+            result.TotalCount.Should().Be(2);
+            result.Items[0].WithIn(it =>
+            {
+                it.CreationTime.Should().Be(new DateTime(2020, 4, 2, 10, 0, 0));
+                it.Solved.Should().BeNull();
+                it.Submission.Should().BeNull();
+            });
+            result.Items[1].WithIn(it =>
+            {
+                it.CreationTime.Should().Be(new DateTime(2020, 4, 1, 10, 0, 0));
+                it.Solved.Should().Be(10);
+                it.Submission.Should().Be(20);
+            });
+        }
     }
 }
