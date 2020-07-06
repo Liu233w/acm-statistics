@@ -125,175 +125,12 @@
         </v-layout>
       </v-flex>
     </v-layout>
-    <v-dialog
-      v-model="dialog"
-      fullscreen
-      hide-overlay
-      transition="dialog-bottom-transition"
-    >
-      <v-card>
-        <v-toolbar
-          dark
-          color="primary"
-        >
-          <v-btn
-            icon
-            dark
-            @click="dialog = false"
-          >
-            <v-icon>mdi-close</v-icon>
-          </v-btn>
-          <v-toolbar-title>Summary</v-toolbar-title>
-          <v-spacer />
-          <v-toolbar-items>
-            <v-tooltip>
-              <template #activator="{ on }">
-                <v-btn
-                  dark
-                  text
-                  v-on="on"
-                  @click="printPage"
-                  :loading="printingPage"
-                >
-                  Export image
-                </v-btn>
-              </template>
-              Export the summary report as an image
-            </v-tooltip>
-          </v-toolbar-items>
-        </v-toolbar>
-        <v-card-text
-          v-if="!$store.state.session.login"
-          class="text-center"
-        >
-          <p class="title text--primary mt-5">
-            Please <nuxt-link to="/login">
-              login
-            </nuxt-link> to view your summary!
-          </p>
-        </v-card-text>
-        <v-card-text
-          v-else-if="summaryError"
-          class="text-center"
-        >
-          <p class="title error--text mt-5">
-            {{ summaryError }}
-          </p>
-        </v-card-text>
-        <v-card-text
-          v-else-if="summary == null"
-          class="text-center"
-        >
-          <v-progress-circular
-            :size="100"
-            color="primary"
-            indeterminate
-            class="mt-10"
-          />
-        </v-card-text>
-        <v-container v-else>
-          <v-row justify="center">
-            <v-col>
-              <v-list>
-                <v-list-item v-if="summary.mainUsername">
-                  <v-list-item-content>
-                    <v-list-item-title><strong>Main username:</strong> {{ summary.mainUsername }}</v-list-item-title>
-                  </v-list-item-content>
-                </v-list-item>
-                <v-list-item>
-                  <v-list-item-content>
-                    <v-list-item-title><strong>SOLVED:</strong> {{ summary.solved }}</v-list-item-title>
-                  </v-list-item-content>
-                </v-list-item>
-                <v-list-item>
-                  <v-list-item-content>
-                    <v-list-item-title><strong>SUBMISSION:</strong> {{ summary.submission }}</v-list-item-title>
-                  </v-list-item-content>
-                </v-list-item>
-                <v-list-item>
-                  <v-list-item-content>
-                    <v-list-item-title><strong>Generated at</strong> {{ new Date(summary.generateTime) }}</v-list-item-title>
-                  </v-list-item-content>
-                </v-list-item>
-              </v-list>
-              <v-simple-table>
-                <template v-slot:default>
-                  <thead>
-                    <tr>
-                      <th
-                        class="text-left"
-                        scope="col"
-                      >
-                        Crawler
-                      </th>
-                      <th
-                        class="text-left"
-                        scope="col"
-                      >
-                        Username
-                      </th>
-                      <th
-                        class="text-left"
-                        scope="col"
-                      >
-                        Solved
-                      </th>
-                      <th
-                        class="text-left"
-                        scope="col"
-                      >
-                        Submission
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr
-                      v-for="item in workerSummaryList"
-                      :key="`${item.crawler}`"
-                    >
-                      <td scope="row">
-                        {{ item.crawler }}
-                      </td>
-                      <td>{{ item.username }}</td>
-                      <td>{{ item.solved }}</td>
-                      <td>{{ item.submissions }}</td>
-                    </tr>
-                  </tbody>
-                </template>
-              </v-simple-table>
-              <bar-chart
-                :chart-data="chartData"
-                style="height: 300px"
-              />
-              <v-list dense>
-                <v-subheader
-                  v-if="summary.summaryWarnings.length > 0"
-                  class="red--text"
-                >
-                  WARNINGS
-                </v-subheader>
-                <v-list-item
-                  v-for="item in summary.summaryWarnings"
-                  :key="item"
-                >
-                  <v-list-item-content>
-                    {{ $store.state.statistics.crawlers[item.crawlerName].title }}:
-                    {{ item.content }}
-                  </v-list-item-content>
-                </v-list-item>
-              </v-list>
-            </v-col>
-          </v-row>
-        </v-container>
-      </v-card>
-    </v-dialog>
   </v-container>
 </template>
 
 <script>
 import { mapGetters } from 'vuex'
 import _ from 'lodash'
-import htmlToImage from 'html-to-image'
 
 import WorkerCard from '~/components/WorkerCard'
 import statisticsLayoutBuilder from '~/components/statisticsLayoutBuilder'
@@ -301,13 +138,10 @@ import Store from '~/store/-dynamic/statistics'
 import { PROJECT_TITLE, WORKER_STATUS } from '~/components/consts'
 import { getAbpErrorMessage } from '~/components/utils'
 
-import BarChart from '~/components/BarChart'
-
 export default {
   name: 'Statistics',
   components: {
     WorkerCard,
-    BarChart,
   },
   inject: ['changeLayoutConfig'],
   head: {
@@ -338,11 +172,6 @@ export default {
       columnCount: 3,
       // 管理保存用户名按钮的动画
       savingUsername: false,
-      // summary dialog
-      dialog: false,
-      summary: null,
-      summaryError: null,
-      printingPage: false,
     }
   },
   computed: {
@@ -367,52 +196,6 @@ export default {
     },
     maxItemPerColumn() {
       return Math.ceil(this.$store.state.statistics.workers.length / this.columnCount)
-    },
-    workerSummaryList() {
-      // module not loaded
-      if (!this.summary) {
-        return []
-      }
-
-      const crawlers = this.$store.state.statistics.crawlers
-
-      const res = []
-      for (const summary of this.summary.queryCrawlerSummaries) {
-        const usernames = _.map(summary.usernames, item => {
-          if (item.fromCrawlerName) {
-            return `[${item.username} in ${crawlers[item.fromCrawlerName].title}]`
-          } else {
-            return item.username
-          }
-        })
-        const isVirtualJudge = crawlers[summary.crawlerName].virtual_judge
-        res.push({
-          crawler: crawlers[summary.crawlerName].title + (isVirtualJudge ? ' (Not Merged)' : ''),
-          username: usernames.join(', '),
-          solved: summary.solved,
-          submissions: summary.submission,
-        })
-      }
-      return res
-    },
-    chartData() {
-      const solvedList = _.map(this.workerSummaryList, 'solved')
-      const submissionsList = _.map(this.workerSummaryList, 'submissions')
-      return {
-        labels: _.map(this.workerSummaryList, 'crawler'),
-        datasets: [
-          {
-            label: 'solved',
-            data: solvedList,
-            backgroundColor: '#6699ff',
-          },
-          {
-            label: 'submissions',
-            data: submissionsList,
-            backgroundColor: '#3d3d5c',
-          },
-        ],
-      }
     },
     updateDate() {
       if (this.notWorkingRate >= 100) {
@@ -509,33 +292,11 @@ export default {
                 return history
               }),
           })
-          const summaryResult = await this.$axios.$get('/api/services/app/QueryHistory/GetQuerySummary', {
-            params: {
-              queryHistoryId: saveResult.result.queryHistoryId,
-            },
-          })
-          this.summary = summaryResult.result
+          this.$router.push('/history/' + saveResult.result.queryHistoryId)
         } catch (err) {
           this.summaryError = getAbpErrorMessage(err)
         }
       }
-    },
-    async printPage() {
-      this.printingPage = true
-      try {
-        const summary = document.querySelector('.v-dialog')
-          .querySelector('.v-card')
-        const link = document.createElement('a')
-        link.download = 'summary.jpg'
-        link.href = await htmlToImage.toJpeg(summary, {
-          quality: 0.8,
-          backgroundColor: 'white',
-        })
-        link.click()
-      } catch (err) {
-        this.summaryError = err.message
-      }
-      this.printingPage = false
     },
   },
 }
