@@ -27,10 +27,21 @@
       absolute
     >
       <v-app-bar-nav-icon @click="drawer = !drawer" />
+      <component :is="topBarBeforeTitle" />
       <v-toolbar-title v-text="title" />
-      <component :is="topBarLeft" />
+      <v-divider
+        v-if="topBarAfterTitle"
+        inset
+        vertical
+      />
+      <component :is="topBarAfterTitle" />
       <v-spacer />
-      <component :is="topBarRight" />
+      <component :is="topBarBeforeUserName" />
+      <v-divider
+        v-if="topBarBeforeUserName"
+        inset
+        vertical
+      />
       <user-status />
       <github-button />
     </v-app-bar>
@@ -71,8 +82,9 @@ export default {
       drawer: null,
       title: PROJECT_TITLE,
       buildYear: getDateFromTimestamp(this.$env.BUILD_TIME).getFullYear(),
-      topBarLeft: null,
-      topBarRight: null,
+      topBarBeforeTitle: null,
+      topBarAfterTitle: null,
+      topBarBeforeUserName: null,
     }
   },
   watch: {
@@ -98,8 +110,9 @@ export default {
   methods: {
     changeLayoutConfig(config = {}) {
       this.title = config.title || PROJECT_TITLE
-      this.topBarLeft = config.topBarLeft || null
-      this.topBarRight = config.topBarRight || null
+      this.topBarBeforeTitle = config.topBarBeforeTitle || null
+      this.topBarAfterTitle = config.topBarAfterTitle || null
+      this.topBarBeforeUserName = config.topBarBeforeUserName || null
     },
   },
 }

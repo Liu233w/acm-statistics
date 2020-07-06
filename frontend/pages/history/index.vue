@@ -7,7 +7,18 @@
       {{ errorMessage }}
     </v-banner>
     <template v-else>
+      <v-banner>
+        Only the latest history per day is saved. You may change your time zone in settings.
+        <v-btn
+          text
+          color="primary"
+          to="/settings"
+        >
+          go settings
+        </v-btn>
+      </v-banner>
       <v-data-table
+        class="mt-4"
         disable-filtering
         disable-sort
         v-model="selected"
