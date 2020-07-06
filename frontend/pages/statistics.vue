@@ -309,6 +309,7 @@ export default {
     WorkerCard,
     BarChart,
   },
+  inject: ['changeLayoutConfig'],
   head: {
     title: `Statistics - ${PROJECT_TITLE}`,
   },
@@ -319,7 +320,7 @@ export default {
     this.$store.unregisterModule('statistics')
   },
   mounted() {
-    this.$nuxt.$emit('default-layout-page-change', {
+    this.changeLayoutConfig({
       title: 'Statistics',
     })
     this.onResize()

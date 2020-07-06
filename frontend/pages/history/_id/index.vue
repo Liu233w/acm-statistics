@@ -130,9 +130,10 @@ export default {
   head: {
     title: `History - ${PROJECT_TITLE}`,
   },
+  inject: ['changeLayoutConfig'],
   mounted() {
     const dateFormatter = new Intl.DateTimeFormat()
-    this.$nuxt.$emit('default-layout-page-change', {
+    this.changeLayoutConfig({
       title: `History - ${dateFormatter.format(this.summary.generateTime)}`,
     })
   },

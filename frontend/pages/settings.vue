@@ -159,8 +159,9 @@ import ResultOverlay from '~/components/ResultOverlay'
 export default {
   mixins: [rulesMixin],
   components: { ResultOverlay },
+  inject: ['changeLayoutConfig'],
   mounted() {
-    this.$nuxt.$emit('default-layout-page-change', {
+    this.changeLayoutConfig({
       title: 'Settings',
     })
   },

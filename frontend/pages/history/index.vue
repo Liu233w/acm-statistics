@@ -40,11 +40,12 @@ export default {
   components: {
     LineChart,
   },
+  inject: ['changeLayoutConfig'],
   head: {
     title: `History - ${PROJECT_TITLE}`,
   },
   mounted() {
-    this.$nuxt.$emit('default-layout-page-change', {
+    this.changeLayoutConfig({
       title: 'History',
     })
   },
