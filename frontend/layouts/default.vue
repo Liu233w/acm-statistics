@@ -61,6 +61,11 @@ export default {
     UserStatus,
     GithubButton,
   },
+  provide() {
+    return {
+      changeLayoutConfig: this.changeLayoutConfig,
+    }
+  },
   data() {
     return {
       drawer: null,
@@ -72,14 +77,8 @@ export default {
   },
   watch: {
     $route() {
-      this.onPageSwitch()
+      this.changeLayoutConfig()
     },
-  },
-  created() {
-    this.$nuxt.$on('default-layout-page-change', this.onPageSwitch)
-  },
-  destroyed() {
-    this.$nuxt.$off('default-layout-page-change', this.onPageSwitch)
   },
   computed: {
     items() {
@@ -97,7 +96,7 @@ export default {
     },
   },
   methods: {
-    onPageSwitch(config = {}) {
+    changeLayoutConfig(config = {}) {
       this.title = config.title || PROJECT_TITLE
       this.topBarLeft = config.topBarLeft || null
       this.topBarRight = config.topBarRight || null

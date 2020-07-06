@@ -86,6 +86,7 @@ import { PROJECT_TITLE } from '~/components/consts'
 import { getDateFromTimestamp } from '../components/utils'
 
 export default {
+  inject: ['changeLayoutConfig'],
   data() {
     return {
       buildTime: getDateFromTimestamp(this.$env.BUILD_TIME).toLocaleString(),
@@ -95,7 +96,7 @@ export default {
     title: `关于 - ${PROJECT_TITLE}`,
   },
   mounted() {
-    this.$nuxt.$emit('default-layout-page-change', {
+    this.changeLayoutConfig({
       title: 'About',
     })
   },
