@@ -20,6 +20,14 @@
         :page.sync="page"
         item-key="historyId"
       >
+        <template v-slot:top>
+          <v-btn
+            :disabled="selected.length === 0"
+            @click="deleteSelected"
+          >
+            delete selected
+          </v-btn>
+        </template>
         <template v-slot:item.actions="{ item }">
           <v-btn
             icon
@@ -158,6 +166,16 @@ export default {
       try {
         await this.$axios.$post('/api/services/app/QueryHistory/DeleteQueryHistory', {
           id,
+        })
+        await this.loadPage()
+      } catch (err) {
+        alert(getAbpErrorMessage(err))
+      }
+    },
+    async deleteSelected() {
+      try {
+        await this.$axios.$post('/api/services/app/QueryHistory/DeleteQueryHistory', {
+          ids: _.map(this.selected, 'historyId'),
         })
         await this.loadPage()
       } catch (err) {
