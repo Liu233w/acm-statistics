@@ -73,23 +73,19 @@ export default {
       const dates = _.map(this.items, a => dateFormatter.format(a.creationTime))
       const solved = _.map(this.items, 'solved')
       const submissions = _.map(this.items, 'submission')
-      console.log(this.items)
-      console.log(dates)
-      console.log(solved)
-      console.log(submissions)
       return {
-        labels: dates,
+        labels: _.reverse(dates),
         datasets: [
           {
             label: 'Solved',
             backgroundColor: '#6699ff',
-            data: solved,
+            data: _.reverse(solved),
             filled: '-1',
           },
           {
             label: 'Submissions',
             backgroundColor: '#3d3d5c',
-            data: submissions,
+            data: _.reverse(submissions),
             filled: '-1',
           },
         ],
