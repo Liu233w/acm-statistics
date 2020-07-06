@@ -136,25 +136,6 @@ export default {
   },
   methods: {
     async loadPage() {
-      // this.serverItemsLength = this.itemsPerPage
-      // const items = []
-      // for (let i = 0; i < this.itemsPerPage; ++i) {
-      //   const ac = Math.round(Math.random() * 1000)
-      //   const nac = Math.round(Math.random() * 1000)
-      //   items.push({
-      //     historyId: 11 - i,
-      //     creationTime: (() => {
-      //       const d = new Date()
-      //       d.setDate(d.getDate() - i)
-      //       return d
-      //     })(),
-      //     solved: ac,
-      //     submission: ac + nac,
-      //   })
-      // }
-      // this.items = items
-      // this.loading = false
-
       this.loading = true
       try {
         const res = await this.$axios
