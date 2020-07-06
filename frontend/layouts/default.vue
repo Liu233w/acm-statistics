@@ -28,9 +28,9 @@
     >
       <v-app-bar-nav-icon @click="drawer = !drawer" />
       <v-toolbar-title v-text="title" />
-      <template :is="topBarLeft" />
+      <component :is="topBarLeft" />
       <v-spacer />
-      <template :is="topBarRight" />
+      <component :is="topBarRight" />
       <user-status />
       <github-button />
     </v-app-bar>

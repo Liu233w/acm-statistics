@@ -19,7 +19,26 @@
         :server-items-length="serverItemsLength"
         :page.sync="page"
         item-key="historyId"
-      />
+      >
+        <template v-slot:item.actions="{ item }">
+          <v-btn
+            icon
+            :to="'/history/'+item.historyId"
+          >
+            <v-icon>
+              mdi-eye
+            </v-icon>
+          </v-btn>
+          <v-btn
+            icon
+            @click="deleteOne(item.historyId)"
+          >
+            <v-icon>
+              mdi-delete
+            </v-icon>
+          </v-btn>
+        </template>
+      </v-data-table>
       <line-chart
         :chart-data="chartData"
         :options="chartOptions"
@@ -58,6 +77,7 @@ export default {
         { text: 'Query date', value: 'creationTime' },
         { text: 'Solved', value: 'solved' },
         { text: 'Submissions', value: 'submission' },
+        { text: 'Actions', value: 'actions' },
       ],
       selected: [],
       itemsPerPage: 10,
@@ -151,6 +171,16 @@ export default {
         this.loading = false
       } catch (err) {
         this.errorMessage = getAbpErrorMessage(err)
+      }
+    },
+    async deleteOne(id) {
+      try {
+        await this.$axios.$post('/api/services/app/QueryHistory/DeleteQueryHistory', {
+          id,
+        })
+        await this.loadPage()
+      } catch (err) {
+        alert(getAbpErrorMessage(err))
       }
     },
   },
