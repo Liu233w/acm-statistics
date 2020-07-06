@@ -105,7 +105,7 @@
               :key="item"
             >
               <v-list-item-content>
-                {{ $store.state.statistics.crawlers[item.crawlerName].title }}:
+                {{ crawlers[item.crawlerName].title }}:
                 {{ item.content }}
               </v-list-item-content>
             </v-list-item>
