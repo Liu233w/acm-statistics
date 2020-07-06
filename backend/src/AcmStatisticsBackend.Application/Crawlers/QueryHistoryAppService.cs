@@ -13,6 +13,7 @@ using Abp.UI;
 using AcmStatisticsBackend.Authorization;
 using AcmStatisticsBackend.Crawlers.Dto;
 using AcmStatisticsBackend.ServiceClients;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace AcmStatisticsBackend.Crawlers
@@ -118,6 +119,7 @@ namespace AcmStatisticsBackend.Crawlers
         }
 
         /// <inheritdoc cref="IQueryHistoryAppService.DeleteQueryHistory"/>
+        [HttpPost]
         public async Task DeleteQueryHistory(DeleteQueryHistoryInput input)
         {
             if (input.Id.HasValue)
