@@ -1,118 +1,115 @@
 <template>
-  <v-container id="history-summary">
-    <v-card-text
-      v-if="summaryError"
-      class="text-center"
-    >
-      <p class="title error--text mt-5">
-        {{ summaryError }}
-      </p>
-    </v-card-text>
-    <v-card-text
-      v-else-if="summary === null"
-      class="text-center"
-    >
-      <v-progress-circular
-        :size="100"
-        color="primary"
-        indeterminate
-        class="mt-10"
-      />
-    </v-card-text>
-    <v-container v-else>
-      <v-row justify="center">
-        <v-col>
-          <v-list>
-            <v-list-item v-if="summary.mainUsername">
-              <v-list-item-content>
-                <v-list-item-title><strong>Main username:</strong> {{ summary.mainUsername }}</v-list-item-title>
-              </v-list-item-content>
-            </v-list-item>
-            <v-list-item>
-              <v-list-item-content>
-                <v-list-item-title><strong>SOLVED:</strong> {{ summary.solved }}</v-list-item-title>
-              </v-list-item-content>
-            </v-list-item>
-            <v-list-item>
-              <v-list-item-content>
-                <v-list-item-title><strong>SUBMISSION:</strong> {{ summary.submission }}</v-list-item-title>
-              </v-list-item-content>
-            </v-list-item>
-            <v-list-item>
-              <v-list-item-content>
-                <v-list-item-title><strong>Generated at</strong> {{ summary.generateTime }}</v-list-item-title>
-              </v-list-item-content>
-            </v-list-item>
-          </v-list>
-          <v-simple-table>
-            <template v-slot:default>
-              <thead>
-                <tr>
-                  <th
-                    class="text-left"
-                    scope="col"
-                  >
-                    Crawler
-                  </th>
-                  <th
-                    class="text-left"
-                    scope="col"
-                  >
-                    Username
-                  </th>
-                  <th
-                    class="text-left"
-                    scope="col"
-                  >
-                    Solved
-                  </th>
-                  <th
-                    class="text-left"
-                    scope="col"
-                  >
-                    Submission
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr
-                  v-for="item in workerSummaryList"
-                  :key="`${item.crawler}`"
-                >
-                  <td scope="row">
-                    {{ item.crawler }}
-                  </td>
-                  <td>{{ item.username }}</td>
-                  <td>{{ item.solved }}</td>
-                  <td>{{ item.submissions }}</td>
-                </tr>
-              </tbody>
-            </template>
-          </v-simple-table>
-          <bar-chart
-            :chart-data="chartData"
-            style="height: 300px"
-          />
-          <v-list dense>
-            <v-subheader
-              v-if="summary.summaryWarnings.length > 0"
-              class="red--text"
+  <v-card-text
+    v-if="summaryError"
+    class="text-center"
+  >
+    <p class="title error--text mt-5">
+      {{ summaryError }}
+    </p>
+  </v-card-text>
+  <v-card-text
+    v-else-if="summary === null"
+    class="text-center"
+  >
+    <v-progress-circular
+      :size="100"
+      color="primary"
+      indeterminate
+      class="mt-10"
+    />
+  </v-card-text>
+  <v-container
+    v-else
+    id="history-summary"
+  >
+    <v-list>
+      <v-list-item v-if="summary.mainUsername">
+        <v-list-item-content>
+          <v-list-item-title><strong>Main username:</strong> {{ summary.mainUsername }}</v-list-item-title>
+        </v-list-item-content>
+      </v-list-item>
+      <v-list-item>
+        <v-list-item-content>
+          <v-list-item-title><strong>SOLVED:</strong> {{ summary.solved }}</v-list-item-title>
+        </v-list-item-content>
+      </v-list-item>
+      <v-list-item>
+        <v-list-item-content>
+          <v-list-item-title><strong>SUBMISSION:</strong> {{ summary.submission }}</v-list-item-title>
+        </v-list-item-content>
+      </v-list-item>
+      <v-list-item>
+        <v-list-item-content>
+          <v-list-item-title><strong>Generated at</strong> {{ summary.generateTime }}</v-list-item-title>
+        </v-list-item-content>
+      </v-list-item>
+    </v-list>
+    <v-simple-table>
+      <template v-slot:default>
+        <thead>
+          <tr>
+            <th
+              class="text-left"
+              scope="col"
             >
-              WARNINGS
-            </v-subheader>
-            <v-list-item
-              v-for="item in summary.summaryWarnings"
-              :key="item"
+              Crawler
+            </th>
+            <th
+              class="text-left"
+              scope="col"
             >
-              <v-list-item-content>
-                {{ crawlers[item.crawlerName].title }}:
-                {{ item.content }}
-              </v-list-item-content>
-            </v-list-item>
-          </v-list>
-        </v-col>
-      </v-row>
-    </v-container>
+              Username
+            </th>
+            <th
+              class="text-left"
+              scope="col"
+            >
+              Solved
+            </th>
+            <th
+              class="text-left"
+              scope="col"
+            >
+              Submission
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            v-for="item in workerSummaryList"
+            :key="`${item.crawler}`"
+          >
+            <td scope="row">
+              {{ item.crawler }}
+            </td>
+            <td>{{ item.username }}</td>
+            <td>{{ item.solved }}</td>
+            <td>{{ item.submissions }}</td>
+          </tr>
+        </tbody>
+      </template>
+    </v-simple-table>
+    <bar-chart
+      :chart-data="chartData"
+      style="height: 300px"
+    />
+    <v-list dense>
+      <v-subheader
+        v-if="summary.summaryWarnings.length > 0"
+        class="red--text"
+      >
+        WARNINGS
+      </v-subheader>
+      <v-list-item
+        v-for="item in summary.summaryWarnings"
+        :key="item"
+      >
+        <v-list-item-content>
+          {{ crawlers[item.crawlerName].title }}:
+          {{ item.content }}
+        </v-list-item-content>
+      </v-list-item>
+    </v-list>
   </v-container>
 </template>
 
@@ -123,7 +120,8 @@ import { getAbpErrorMessage } from '~/components/utils'
 import BarChart from '~/components/BarChart'
 import { PROJECT_TITLE } from '~/components/consts'
 
-import TopBarRight from './-TopBarRight'
+import HistoryToolbar from './-HistoryToolbar'
+import GoHistoryPage from './-GoHistoryPage'
 
 export default {
   components: {
@@ -150,7 +148,8 @@ export default {
       const dateFormatter = new Intl.DateTimeFormat()
       this.changeLayoutConfig({
         title: `Summary - ${dateFormatter.format(this.summary.generateTime)}`,
-        topBarRight: TopBarRight,
+        topBarBeforeUserName: HistoryToolbar,
+        topBarBeforeTitle: GoHistoryPage,
       })
     },
   },
