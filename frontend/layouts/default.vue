@@ -2,7 +2,6 @@
   <v-app>
     <v-navigation-drawer
       v-model="drawer"
-      clipped
       fixed
       app
     >
@@ -24,13 +23,14 @@
       </v-list>
     </v-navigation-drawer>
     <v-app-bar
-      fixed
       app
-      clipped-left
+      absolute
     >
       <v-app-bar-nav-icon @click="drawer = !drawer" />
       <v-toolbar-title v-text="title" />
+      <template :is="topBarLeft" />
       <v-spacer />
+      <template :is="topBarRight" />
       <user-status />
       <github-button />
     </v-app-bar>
@@ -54,6 +54,7 @@ import _ from 'lodash'
 import { getDateFromTimestamp } from '~/components/utils'
 import UserStatus from '~/components/UserStatus'
 import GithubButton from '~/components/GithubButton'
+import { PROJECT_TITLE } from '~/components/consts'
 
 export default {
   components: {
@@ -63,9 +64,22 @@ export default {
   data() {
     return {
       drawer: null,
-      title: 'NWPU-ACM 查询系统',
+      title: PROJECT_TITLE,
       buildYear: getDateFromTimestamp(this.$env.BUILD_TIME).getFullYear(),
+      topBarLeft: null,
+      topBarRight: null,
     }
+  },
+  watch: {
+    $route() {
+      this.onPageSwitch()
+    },
+  },
+  created() {
+    this.$nuxt.$on('default-layout-page-change', this.onPageSwitch)
+  },
+  destroyed() {
+    this.$nuxt.$off('default-layout-page-change', this.onPageSwitch)
   },
   computed: {
     items() {
@@ -73,13 +87,20 @@ export default {
       return _.filter(
         [
           { icon: 'home', title: 'Homepage', to: '/' },
-          { icon: 'code', title: 'AC Statistics', to: '/statistics' },
+          { icon: 'code', title: 'Statistics', to: '/statistics' },
           { icon: 'history', title: 'History', to: '/history', needLogin: true },
           { icon: 'settings', title: 'Settings', to: '/settings', needLogin: true },
           { icon: 'info', title: 'About', to: '/about' },
         ],
         item => !item.needLogin || logined,
       )
+    },
+  },
+  methods: {
+    onPageSwitch(config = {}) {
+      this.title = config.title || PROJECT_TITLE
+      this.topBarLeft = config.topBarLeft || null
+      this.topBarRight = config.topBarRight || null
     },
   },
 }

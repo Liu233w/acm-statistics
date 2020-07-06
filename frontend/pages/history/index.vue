@@ -30,13 +30,23 @@
 </template>
 
 <script>
+import _ from 'lodash'
+
 import { getAbpErrorMessage } from '~/components/utils'
 import LineChart from '~/components/LineChart'
-import _ from 'lodash'
+import { PROJECT_TITLE } from '~/components/consts'
 
 export default {
   components: {
     LineChart,
+  },
+  head: {
+    title: `History - ${PROJECT_TITLE}`,
+  },
+  mounted() {
+    this.$nuxt.$emit('default-layout-page-change', {
+      title: 'History',
+    })
   },
   data() {
     return {
@@ -69,7 +79,7 @@ export default {
   },
   computed: {
     chartData() {
-      const dateFormatter = new Intl.DateTimeFormat('en', { year: 'numeric', month: '2-digit', day: '2-digit' })
+      const dateFormatter = new Intl.DateTimeFormat()
       const dates = _.map(this.items, a => dateFormatter.format(a.creationTime))
       const solved = _.map(this.items, 'solved')
       const submissions = _.map(this.items, 'submission')

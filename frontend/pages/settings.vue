@@ -153,12 +153,20 @@
 <script>
 import rulesMixin from '~/components/rulesMixin'
 import { getAbpErrorMessage } from '~/components/utils'
-import { TIMEZONE_LIST } from '~/components/consts'
+import { TIMEZONE_LIST, PROJECT_TITLE } from '~/components/consts'
 import ResultOverlay from '~/components/ResultOverlay'
 
 export default {
   mixins: [rulesMixin],
   components: { ResultOverlay },
+  mounted() {
+    this.$nuxt.$emit('default-layout-page-change', {
+      title: 'Settings',
+    })
+  },
+  head: {
+    title: `Settings - ${PROJECT_TITLE}`,
+  },
   data() {
     return {
       deleteDialog: false,
