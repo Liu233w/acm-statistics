@@ -94,5 +94,10 @@ export default {
   head: {
     title: `关于 - ${PROJECT_TITLE}`,
   },
+  mounted() {
+    this.$nuxt.$emit('default-layout-page-change', {
+      title: 'About',
+    })
+  },
 }
 </script>

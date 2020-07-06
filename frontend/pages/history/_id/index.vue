@@ -40,7 +40,7 @@
             </v-list-item>
             <v-list-item>
               <v-list-item-content>
-                <v-list-item-title><strong>Generated at</strong> {{ new Date(summary.generateTime) }}</v-list-item-title>
+                <v-list-item-title><strong>Generated at</strong> {{ summary.generateTime }}</v-list-item-title>
               </v-list-item-content>
             </v-list-item>
           </v-list>
@@ -121,10 +121,20 @@ import _ from 'lodash'
 
 import { getAbpErrorMessage } from '~/components/utils'
 import BarChart from '~/components/BarChart'
+import { PROJECT_TITLE } from '~/components/consts'
 
 export default {
   components: {
     BarChart,
+  },
+  head: {
+    title: `History - ${PROJECT_TITLE}`,
+  },
+  mounted() {
+    const dateFormatter = new Intl.DateTimeFormat()
+    this.$nuxt.$emit('default-layout-page-change', {
+      title: `History - ${dateFormatter.format(this.summary.generateTime)}`,
+    })
   },
   data() {
     return {
@@ -192,6 +202,8 @@ export default {
         },
       })
       this.summary = summaryResult.result
+
+      this.summary.generateTime = new Date(this.summary.generateTime)
     } catch (err) {
       this.summaryError = getAbpErrorMessage(err)
     }

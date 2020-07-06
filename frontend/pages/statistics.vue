@@ -310,7 +310,7 @@ export default {
     BarChart,
   },
   head: {
-    title: `AC Statistics - ${PROJECT_TITLE}`,
+    title: `Statistics - ${PROJECT_TITLE}`,
   },
   created() {
     this.$store.registerModule('statistics', Store, { preserveState: false })
@@ -319,6 +319,9 @@ export default {
     this.$store.unregisterModule('statistics')
   },
   mounted() {
+    this.$nuxt.$emit('default-layout-page-change', {
+      title: 'Statistics',
+    })
     this.onResize()
     this.loadUsername()
     this.$store.subscribeAction(action => {
