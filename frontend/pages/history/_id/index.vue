@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <v-container id="history-summary">
     <v-card-text
       v-if="summaryError"
       class="text-center"
@@ -9,7 +9,7 @@
       </p>
     </v-card-text>
     <v-card-text
-      v-else-if="summary == null"
+      v-else-if="summary === null"
       class="text-center"
     >
       <v-progress-circular
@@ -123,6 +123,8 @@ import { getAbpErrorMessage } from '~/components/utils'
 import BarChart from '~/components/BarChart'
 import { PROJECT_TITLE } from '~/components/consts'
 
+import TopBarRight from './-TopBarRight'
+
 export default {
   components: {
     BarChart,
@@ -132,9 +134,8 @@ export default {
   },
   inject: ['changeLayoutConfig'],
   mounted() {
-    const dateFormatter = new Intl.DateTimeFormat()
     this.changeLayoutConfig({
-      title: `History - ${dateFormatter.format(this.summary.generateTime)}`,
+      title: 'Summary - Loading...',
     })
   },
   data() {
@@ -143,6 +144,15 @@ export default {
       summaryError: null,
       crawlers: {},
     }
+  },
+  watch: {
+    summary() {
+      const dateFormatter = new Intl.DateTimeFormat()
+      this.changeLayoutConfig({
+        title: `Summary - ${dateFormatter.format(this.summary.generateTime)}`,
+        topBarRight: TopBarRight,
+      })
+    },
   },
   computed: {
     workerSummaryList() {
@@ -194,14 +204,14 @@ export default {
 
     try {
 
-      const crawlers = await this.$axios.$get('/api/crawlers')
-      this.crawlers = crawlers.data
-
+      const crawlersTask = this.$axios.$get('/api/crawlers')
       const summaryResult = await this.$axios.$get('/api/services/app/QueryHistory/GetQuerySummary', {
         params: {
           queryHistoryId: this.$route.params.id,
         },
       })
+
+      this.crawlers = (await crawlersTask).data
       this.summary = summaryResult.result
 
       this.summary.generateTime = new Date(this.summary.generateTime)
