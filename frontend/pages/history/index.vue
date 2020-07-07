@@ -33,6 +33,7 @@
       >
         <template v-slot:top>
           <v-btn
+            color="error"
             :disabled="selected.length === 0"
             @click="deleteSelected"
           >
@@ -180,7 +181,7 @@ export default {
         })
         await this.loadPage()
       } catch (err) {
-        alert(getAbpErrorMessage(err))
+        this.$store.commit('message/addError', getAbpErrorMessage(err))
       }
     },
     async deleteSelected() {
@@ -190,7 +191,7 @@ export default {
         })
         await this.loadPage()
       } catch (err) {
-        alert(getAbpErrorMessage(err))
+        this.$store.commit('message/addError', getAbpErrorMessage(err))
       }
     },
   },
