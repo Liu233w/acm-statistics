@@ -27,21 +27,37 @@
       absolute
     >
       <v-app-bar-nav-icon @click="drawer = !drawer" />
-      <component :is="topBarBeforeTitle" />
+      <v-slide-x-transition>
+        <div v-if="topBarBeforeTitle">
+          <component :is="topBarBeforeTitle" />
+        </div>
+      </v-slide-x-transition>
       <v-toolbar-title v-text="title" />
-      <v-divider
-        v-if="topBarAfterTitle"
-        inset
-        vertical
-      />
-      <component :is="topBarAfterTitle" />
+      <v-slide-x-transition>
+        <v-divider
+          v-if="topBarAfterTitle"
+          inset
+          vertical
+        />
+      </v-slide-x-transition>
+      <v-slide-x-transition>
+        <div v-if="topBarAfterTitle">
+          <component :is="topBarAfterTitle" />
+        </div>
+      </v-slide-x-transition>
       <v-spacer />
-      <component :is="topBarBeforeUserName" />
-      <v-divider
-        v-if="topBarBeforeUserName"
-        inset
-        vertical
-      />
+      <v-slide-x-transition>
+        <div v-if="topBarBeforeUserName">
+          <component :is="topBarBeforeUserName" />
+        </div>
+      </v-slide-x-transition>
+      <v-slide-x-transition>
+        <v-divider
+          v-if="topBarBeforeUserName"
+          inset
+          vertical
+        />
+      </v-slide-x-transition>
       <user-status />
       <github-button />
     </v-app-bar>
