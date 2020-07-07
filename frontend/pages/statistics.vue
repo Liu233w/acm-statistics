@@ -304,7 +304,7 @@ export default {
         })
         this.$router.push('/history/' + saveResult.result.queryHistoryId)
       } catch (err) {
-        alert(getAbpErrorMessage(err))
+        this.$store.commit('message/addError', getAbpErrorMessage(err))
       }
     },
   },

@@ -57,20 +57,24 @@
       <v-spacer />
       <span class="body-2">陕ICP备17008184号</span>
     </v-footer>
+    <message-panel />
   </v-app>
 </template>
 
 <script>
 import _ from 'lodash'
+
 import { getDateFromTimestamp } from '~/components/utils'
 import UserStatus from '~/components/UserStatus'
 import GithubButton from '~/components/GithubButton'
 import { PROJECT_TITLE } from '~/components/consts'
+import MessagePanel from '~/components/MessagePanel'
 
 export default {
   components: {
     UserStatus,
     GithubButton,
+    MessagePanel,
   },
   provide() {
     return {

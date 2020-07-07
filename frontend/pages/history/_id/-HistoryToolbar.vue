@@ -36,7 +36,7 @@ export default {
         })
         link.click()
       } catch (err) {
-        alert(err.message)
+        this.$store.commit('message/addError', err.message)
       }
       this.loading = false
     },
