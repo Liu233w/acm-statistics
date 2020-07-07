@@ -1,5 +1,7 @@
 import _ from 'lodash'
 
+export const namespaced = true
+
 export const state = () => ({
   list: [],
 })
