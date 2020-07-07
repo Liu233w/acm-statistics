@@ -1,16 +1,25 @@
 <template>
   <v-card>
-    <v-app-bar flat dense elevation="0" class="blue-grey lighten-5">
+    <v-app-bar
+      flat
+      dense
+      elevation="0"
+      class="blue-grey lighten-5"
+    >
       <v-toolbar-title :title="crawlerTitle">
         {{ crawlerTitle }}
       </v-toolbar-title>
       <v-spacer />
       <v-toolbar-items>
-        <v-tooltip bottom v-if="workerNum >= 2">
+        <v-tooltip
+          bottom
+          v-if="workerNum >= 2"
+        >
           <template #activator="{ on }">
-            <v-btn icon
-                   v-on="on"
-                   @click="removeWorker"
+            <v-btn
+              icon
+              v-on="on"
+              @click="removeWorker"
             >
               <v-icon>mdi-delete-outline</v-icon>
             </v-btn>
@@ -19,11 +28,15 @@
             Remove this worker
           </span>
         </v-tooltip>
-        <v-tooltip bottom v-if="myWorkerIdxOfCrawler == workerNum">
+        <v-tooltip
+          bottom
+          v-if="myWorkerIdxOfCrawler == workerNum"
+        >
           <template #activator="{ on }">
-            <v-btn icon
-                   v-on="on"
-                   @click="addWorker"
+            <v-btn
+              icon
+              v-on="on"
+              @click="addWorker"
             >
               <v-icon>mdi-plus-circle-outline</v-icon>
             </v-btn>
@@ -32,11 +45,15 @@
             Add a new worker for the crawler
           </span>
         </v-tooltip>
-        <v-tooltip bottom v-if="crawlerUrl">
+        <v-tooltip
+          bottom
+          v-if="crawlerUrl"
+        >
           <template #activator="{ on }">
-            <v-btn icon
-                   v-on="on"
-                   @click="openOj"
+            <v-btn
+              icon
+              v-on="on"
+              @click="openOj"
             >
               <v-icon>mdi-open-in-new</v-icon>
             </v-btn>
@@ -46,22 +63,30 @@
           </span>
         </v-tooltip>
         <transition name="fade">
-          <v-tooltip bottom v-if="worker.status === WORKER_STATUS.WORKING">
+          <v-tooltip
+            bottom
+            v-if="worker.status === WORKER_STATUS.WORKING"
+          >
             <template #activator="{ on }">
-              <v-btn icon
-                     v-on="on"
-                     @click="stopWorker"
+              <v-btn
+                icon
+                v-on="on"
+                @click="stopWorker"
               >
                 <v-icon>stop</v-icon>
               </v-btn>
             </template>
             <span>Cancel query</span>
           </v-tooltip>
-          <v-tooltip bottom v-else>
+          <v-tooltip
+            bottom
+            v-else
+          >
             <template #activator="{ on }">
-              <v-btn icon
-                     v-on="on"
-                     @click="startWorker"
+              <v-btn
+                icon
+                v-on="on"
+                @click="startWorker"
               >
                 <v-icon>refresh</v-icon>
               </v-btn>
@@ -74,7 +99,10 @@
     <v-container>
       <v-layout>
         <v-flex xs12>
-          <span class="grey--text" v-if="crawlerDescription">
+          <span
+            class="grey--text"
+            v-if="crawlerDescription"
+          >
             {{ crawlerDescription }}
           </span>
         </v-flex>
@@ -93,8 +121,15 @@
         </v-flex>
       </v-layout>
       <template v-if="warnings">
-        <v-layout xs12 v-for="item in warnings" :key="item">
-          <v-flex align-self-start shrink>
+        <v-layout
+          xs12
+          v-for="item in warnings"
+          :key="item"
+        >
+          <v-flex
+            align-self-start
+            shrink
+          >
             <v-icon color="orange darken-2">
               warning
             </v-icon>
@@ -105,8 +140,14 @@
         </v-layout>
       </template>
       <template v-if="worker.status === WORKER_STATUS.DONE">
-        <v-layout xs12 v-if="worker.errorMessage">
-          <v-flex align-self-start shrink>
+        <v-layout
+          xs12
+          v-if="worker.errorMessage"
+        >
+          <v-flex
+            align-self-start
+            shrink
+          >
             <v-icon color="red">
               error
             </v-icon>
@@ -115,7 +156,11 @@
             <span>{{ worker.errorMessage }}</span>
           </v-flex>
         </v-layout>
-        <v-layout column xs12 v-else>
+        <v-layout
+          column
+          xs12
+          v-else
+        >
           <v-flex>
             <span class="grey--text body-2">
               SOLVED:
@@ -123,10 +168,14 @@
             <template v-if="solvedListStatus === 'none'">
               {{ worker.solved }}
             </template>
-            <v-tooltip bottom v-else>
+            <v-tooltip
+              bottom
+              v-else
+            >
               <template #activator="tip">
-                <a v-on="tip.on"
-                   @click="solvedListDialog = true"
+                <a
+                  v-on="tip.on"
+                  @click="solvedListDialog = true"
                 >
                   {{ worker.solved }}
                 </a>
@@ -144,8 +193,16 @@
       </template>
     </v-container>
 
-    <v-dialog v-model="solvedListDialog" max-width="500" scrollable>
-      <v-card xs12 md8 lg6>
+    <v-dialog
+      v-model="solvedListDialog"
+      max-width="500"
+      scrollable
+    >
+      <v-card
+        xs12
+        md8
+        lg6
+      >
         <v-card-title>
           <span class="headline">
             AC problem list of {{ worker.username }} in {{ crawler.title }}
@@ -159,13 +216,21 @@
         </v-card-text>
         <!--在不打开对话框的时候就不渲染题目列表，防止额外的dom更新，以提升性能-->
         <v-card-text v-else-if="solvedListDialog">
-          <v-chip v-for="item in prettifiedSolvedList" :key="item" class="ma-1">
+          <v-chip
+            v-for="item in prettifiedSolvedList"
+            :key="item"
+            class="ma-1"
+          >
             {{ item }}
           </v-chip>
         </v-card-text>
         <v-divider />
         <v-card-actions>
-          <v-btn color="blue darken-1" text @click="solvedListDialog = false">
+          <v-btn
+            color="blue darken-1"
+            text
+            @click="solvedListDialog = false"
+          >
             Close
           </v-btn>
         </v-card-actions>
@@ -175,132 +240,133 @@
 </template>
 
 <script>
-  import {WORKER_STATUS} from '~/components/consts'
-  import {warningHelper, mapVirtualJudgeProblemTitle} from '~/components/statisticsUtils'
+import { WORKER_STATUS } from '~/components/consts'
+import { warningHelper, mapVirtualJudgeProblemTitle } from '~/components/statisticsUtils'
 
-  import {mapGetters} from 'vuex'
-  import _ from 'lodash'
+import { mapGetters } from 'vuex'
+import _ from 'lodash'
 
-  export default {
-    name: 'CrawlerCard',
-    props: {
-      index: {
-        type: Number,
-        required: true,
-      },
+export default {
+  name: 'CrawlerCard',
+  props: {
+    index: {
+      type: Number,
+      required: true,
     },
-    data() {
-      return {
-        WORKER_STATUS: WORKER_STATUS,
-        solvedListDialog: false,
-      }
+  },
+  data() {
+    return {
+      WORKER_STATUS: WORKER_STATUS,
+      solvedListDialog: false,
+    }
+  },
+  methods: {
+    openOj() {
+      window.open(this.crawlerUrl)
     },
-    methods: {
-      openOj() {
-        window.open(this.crawlerUrl)
-      },
-      startWorker() {
-        this.$store.dispatch('statistics/startOne', {index: this.index})
-      },
-      stopWorker() {
-        this.$store.dispatch('statistics/stopOne', {index: this.index})
-      },
-      addWorker() {
-        this.$store.dispatch('statistics/addWorkerForCrawler', {crawlerName: this.crawlerName})
-      },
-      removeWorker() {
-        this.$store.dispatch('statistics/removeWorkerAtIndex', {index: this.index})
-      },
+    startWorker() {
+      this.$store.dispatch('statistics/startOne', { index: this.index })
     },
-    computed: {
-      ...mapGetters('statistics', [
-        'workerNumberOfCrawler',
-        'workerIdxOfCrawler',
-        'nullSolvedListCrawlers',
-      ]),
-      worker() {
-        return this.$store.state.statistics.workers[this.index]
+    stopWorker() {
+      this.$store.dispatch('statistics/stopOne', { index: this.index })
+    },
+    addWorker() {
+      this.$store.dispatch('statistics/addWorkerForCrawler', { crawlerName: this.crawlerName })
+    },
+    removeWorker() {
+      this.$store.dispatch('statistics/removeWorkerAtIndex', { index: this.index })
+    },
+  },
+  computed: {
+    ...mapGetters('statistics', [
+      'workerNumberOfCrawler',
+      'workerIdxOfCrawler',
+      'nullSolvedListCrawlers',
+    ]),
+    worker() {
+      return this.$store.state.statistics.workers[this.index]
+    },
+    crawlerName() {
+      return this.worker.crawlerName
+    },
+    crawler() {
+      return this.$store.state.statistics.crawlers[this.crawlerName]
+    },
+    crawlerTitle() {
+      return this.crawler.title
+    },
+    crawlerDescription() {
+      return this.crawler.description
+    },
+    crawlerUrl() {
+      return this.crawler.url
+    },
+    username: {
+      get() {
+        return this.worker.username
       },
-      crawlerName() {
-        return this.worker.crawlerName
-      },
-      crawler() {
-        return this.$store.state.statistics.crawlers[this.crawlerName]
-      },
-      crawlerTitle() {
-        return this.crawler.title
-      },
-      crawlerDescription() {
-        return this.crawler.description
-      },
-      crawlerUrl() {
-        return this.crawler.url
-      },
-      username: {
-        get() {
-          return this.worker.username
-        },
-        set(username) {
-          this.$store.dispatch('statistics/updateUsername', {
-            index: this.index,
-            username,
-          })
-        },
-      },
-      workerNum() {
-        return this.workerNumberOfCrawler[this.crawlerName]
-      },
-      myWorkerIdxOfCrawler() {
-        return this.workerIdxOfCrawler[this.index]
-      },
-      warnings() {
-        return warningHelper(this.worker, this.crawler, {
-          nullSolvedListCrawlers: this.nullSolvedListCrawlers,
-          workerNumberOfCrawler: this.workerNumberOfCrawler,
+      set(username) {
+        this.$store.dispatch('statistics/updateUsername', {
+          index: this.index,
+          username,
         })
       },
-      solvedListStatus() {
-        if (_.isArray(this.worker.solvedList)) {
-          if (this.worker.solvedList.length > 0) {
-            return 'list'
-          } else {
-            return 'empty'
-          }
-        } else {
-          return 'none'
-        }
-      },
-      prettifiedSolvedList() {
-
-        if (this.worker.solvedList == null) {
-          return null
-        }
-
-        let res
-        if (this.crawler.virtual_judge) {
-          res = mapVirtualJudgeProblemTitle(
-            this.worker.solvedList,
-            this.$store.state.statistics.crawlers)
-        } else {
-          res = _.map(this.worker.solvedList, item => `${this.crawler.title}-${item}`)
-        }
-
-        // 冻结列表，这样 vue 就不会给列表中的每个元素创建proxy了，可以显著提升性能
-        // 来自 https://vuejs.org/v2/guide/instance.html#Data-and-Methods
-        // 和 https://vuedose.tips/tips/improve-performance-on-large-lists-in-vue-js/
-        return Object.freeze(res)
-      },
     },
-  }
+    workerNum() {
+      return this.workerNumberOfCrawler[this.crawlerName]
+    },
+    myWorkerIdxOfCrawler() {
+      return this.workerIdxOfCrawler[this.index]
+    },
+    warnings() {
+      return warningHelper(this.worker, this.crawler, {
+        nullSolvedListCrawlers: this.nullSolvedListCrawlers,
+        workerNumberOfCrawler: this.workerNumberOfCrawler,
+      })
+    },
+    solvedListStatus() {
+      if (_.isArray(this.worker.solvedList)) {
+        if (this.worker.solvedList.length > 0) {
+          return 'list'
+        } else {
+          return 'empty'
+        }
+      } else {
+        return 'none'
+      }
+    },
+    prettifiedSolvedList() {
+
+      if (this.worker.solvedList == null) {
+        return null
+      }
+
+      let res
+      if (this.crawler.virtual_judge) {
+        res = mapVirtualJudgeProblemTitle(
+          this.worker.solvedList,
+          this.$store.state.statistics.crawlers)
+      } else {
+        res = _.map(this.worker.solvedList, item => `${this.crawler.title}-${item}`)
+      }
+
+      // 冻结列表，这样 vue 就不会给列表中的每个元素创建proxy了，可以显著提升性能
+      // 来自 https://vuejs.org/v2/guide/instance.html#Data-and-Methods
+      // 和 https://vuedose.tips/tips/improve-performance-on-large-lists-in-vue-js/
+      return Object.freeze(res)
+    },
+  },
+}
 </script>
 
 <style scoped>
-  .fade-enter-active, .fade-leave-active {
-    transition: opacity .5s;
-  }
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
 
-  .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */
-  {
-    opacity: 0;
-  }
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */
+ {
+  opacity: 0;
+}
 </style>
