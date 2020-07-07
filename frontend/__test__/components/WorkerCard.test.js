@@ -44,7 +44,7 @@ describe('WorkerCard', () => {
         index: 0,
       },
     })
-    expect(wrapper.isVueInstance()).toBeTruthy()
+    expect(wrapper.vm).toBeTruthy()
   })
 
   it('can be rendered correctly', () => {
