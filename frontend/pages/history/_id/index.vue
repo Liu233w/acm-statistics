@@ -1,12 +1,10 @@
 <template>
-  <v-card-text
+  <v-alert
     v-if="summaryError"
-    class="text-center"
+    type="error"
   >
-    <p class="title error--text mt-5">
-      {{ summaryError }}
-    </p>
-  </v-card-text>
+    {{ summaryError }}
+  </v-alert>
   <v-card-text
     v-else-if="summary === null"
     class="text-center"
