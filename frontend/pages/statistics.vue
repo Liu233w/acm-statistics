@@ -4,99 +4,106 @@
     v-resize="onResize"
   >
     <v-layout wrap>
-      <v-flex
-        xs12
-        sm5
-        md3
+      <v-text-field
+        v-model="username"
+        label="Set all usernames"
+        :disabled="isWorking"
+        required
+        @keyup.enter="runWorker"
+        :loading="isWorking"
       >
-        <v-text-field
-          v-model="username"
-          label="Set all usernames"
-          :disabled="isWorking"
-          required
-          @keyup.enter="runWorker"
-          :loading="isWorking"
-        >
-          <template #progress>
-            <v-progress-linear
-              color="primary"
-              :value="notWorkingRate"
-              :height="3"
-              absolute
-            />
-          </template>
-        </v-text-field>
-      </v-flex>
-      <v-flex
-        xs12
-        sm7
-        md5
+        <template #progress>
+          <v-progress-linear
+            color="primary"
+            :value="notWorkingRate"
+            :height="3"
+            absolute
+          />
+        </template>
+      </v-text-field>
+      <v-btn
+        class="ma-1 primary"
+        @click="runWorker"
+        :disabled="isWorking"
       >
-        <v-btn
-          class="primary"
-          @click="runWorker"
-          :disabled="isWorking"
-        >
-          query
-        </v-btn>
-        <v-tooltip bottom>
-          <template #activator="{ on }">
-            <v-btn
-              class="error"
-              v-on="on"
-              @click="clearWorkers"
-            >
-              reset
-            </v-btn>
-          </template>
-          Clear usernames and reset all worker status
-        </v-tooltip>
-        <v-tooltip bottom>
-          <template #activator="{ on }">
-            <v-btn
-              @click="saveUsername"
-              v-on="on"
-              :loading="savingUsername"
-              :disable="savingUsername"
-              :class="{ green: savingUsername }"
-            >
-              save username
-              <template #loader>
-                <span>
-                  Success!
-                </span>
-              </template>
-            </v-btn>
-          </template>
-          Save usernames to {{ $store.state.session.login ? 'server' : 'your browser' }} to restore them when opening the page.
-          <br>
-          (Using QUERY button can also save usernames.)
-        </v-tooltip>
-      </v-flex>
-      <v-flex
-        xs12
-        md4
-        v-show="submissionsNum"
-      >
-        <v-tooltip buttom>
-          <template #activator="{ on }">
-            <v-chip
-              label
-              color="grey lighten-3"
-              class="elevation-2"
-              v-on="on"
-              @click.stop="openDialog"
-            >
-              <span class="title">
-                SOLVED: {{ solvedNum }} / SUBMISSION: {{ submissionsNum }}
+        query
+      </v-btn>
+      <v-tooltip bottom>
+        <template #activator="{ on }">
+          <v-btn
+            class="ma-1 error"
+            v-on="on"
+            @click="clearWorkers"
+          >
+            reset
+          </v-btn>
+        </template>
+        Clear usernames and reset all worker status
+      </v-tooltip>
+      <v-tooltip bottom>
+        <template #activator="{ on }">
+          <v-btn
+            @click="saveUsername"
+            v-on="on"
+            :loading="savingUsername"
+            :disable="savingUsername"
+            :class="{ green: savingUsername, 'ma-1': true }"
+          >
+            save username
+            <template #loader>
+              <span>
+                Success!
               </span>
-            </v-chip>
-          </template>
-          Click to open summary panel after query finishing.
-        </v-tooltip>
-      </v-flex>
+            </template>
+          </v-btn>
+        </template>
+        Save usernames to {{ login ? 'server' : 'your browser' }} to restore them when opening the page.
+        <br>
+        (Using QUERY button can also save usernames.)
+      </v-tooltip>
+      <v-spacer />
+      <v-tooltip
+        v-if="submissionsNum"
+        buttom
+      >
+        <template #activator="{ on }">
+          <v-chip
+            label
+            color="grey lighten-3"
+            class="ma-1 elevation-2"
+            v-on="on"
+            @click.stop="openDialog"
+          >
+            <v-icon
+              v-if="notWorkingRate >= 100"
+              class="mr-1"
+            >
+              mdi-file-chart
+            </v-icon>
+            <span class="title">
+              SOLVED: {{ solvedNum }} / SUBMISSION: {{ submissionsNum }}
+            </span>
+          </v-chip>
+        </template>
+        <template v-if="login">
+          Click to view summary after query finishing.
+        </template>
+        <template v-else>
+          Login to view summary.
+        </template>
+      </v-tooltip>
     </v-layout>
-    <v-layout>
+    <v-layout v-if="loading">
+      <v-spacer />
+      <v-progress-circular
+        :size="100"
+        color="primary"
+        indeterminate
+        class="mt-10"
+      />
+      <v-spacer />
+    </v-layout>
+    <v-layout v-else>
       <v-flex
         xs12
         sm12
@@ -129,7 +136,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters, mapState } from 'vuex'
 import _ from 'lodash'
 
 import WorkerCard from '~/components/WorkerCard'
@@ -153,18 +160,19 @@ export default {
   destroyed() {
     this.$store.unregisterModule('statistics')
   },
-  mounted() {
+  async mounted() {
     this.changeLayoutConfig({
       title: 'Statistics',
     })
     this.onResize()
-    this.loadUsername()
     this.$store.subscribeAction(action => {
       if (_.startsWith(action.type, 'statistics/')) {
         this.summary = null
         this.summaryError = null
       }
     })
+    await this.loadUsername()
+    this.loading = false
   },
   data() {
     return {
@@ -172,6 +180,7 @@ export default {
       columnCount: 3,
       // 管理保存用户名按钮的动画
       savingUsername: false,
+      loading: true,
     }
   },
   computed: {
@@ -181,6 +190,9 @@ export default {
       'isWorking',
       'notWorkingRate',
       'workerIdxOfCrawler',
+    ]),
+    ...mapState('session', [
+      'login',
     ]),
     username: {
       get() {
@@ -242,7 +254,7 @@ export default {
      * 从 localStorage 读取用户名情况，输入进 worker 中
      */
     loadUsername() {
-      this.$store.dispatch('statistics/loadUsernames')
+      return this.$store.dispatch('statistics/loadUsernames')
     },
     itemBeforeLeaveTransition(el) {
       const columnIdx = Number.parseInt(el.dataset.columnIdx, 10)
@@ -264,38 +276,35 @@ export default {
       this.$store.dispatch('statistics/clearWorkers')
     },
     async openDialog() {
-      if (this.notWorkingRate < 100) {
+      if (this.notWorkingRate < 100 || !this.login) {
         return
       }
 
-      this.dialog = true
-      if (this.summary == null && this.summaryError == null) {
-        const doneWorkers = _.filter(this.$store.state.statistics.workers,
-          worker => worker.status === WORKER_STATUS.DONE)
-        try {
-          const saveResult = await this.$axios.$post('/api/services/app/QueryHistory/SaveOrReplaceQueryHistory', {
-            mainUsername: this.username,
-            queryWorkerHistories:
-              _.map(doneWorkers, worker => {
-                const crawler = this.$store.state.statistics.crawlers[worker.crawlerName]
-                const hasErrorMessage = !_.isNil(worker.errorMessage) && worker.errorMessage !== ''
-                const history = {
-                  crawlerName: worker.crawlerName,
-                  username: worker.username,
-                  errorMessage: hasErrorMessage ? worker.errorMessage : null,
-                  submission: worker.submissions,
-                  solved: worker.solved,
-                  solvedList: hasErrorMessage ? null : worker.solvedList,
-                  submissionsByCrawlerName: worker.submissionsByCrawlerName,
-                  isVirtualJudge: crawler.virtual_judge || false,
-                }
-                return history
-              }),
-          })
-          this.$router.push('/history/' + saveResult.result.queryHistoryId)
-        } catch (err) {
-          this.summaryError = getAbpErrorMessage(err)
-        }
+      const doneWorkers = _.filter(this.$store.state.statistics.workers,
+        worker => worker.status === WORKER_STATUS.DONE)
+      try {
+        const saveResult = await this.$axios.$post('/api/services/app/QueryHistory/SaveOrReplaceQueryHistory', {
+          mainUsername: this.username,
+          queryWorkerHistories:
+            _.map(doneWorkers, worker => {
+              const crawler = this.$store.state.statistics.crawlers[worker.crawlerName]
+              const hasErrorMessage = !_.isNil(worker.errorMessage) && worker.errorMessage !== ''
+              const history = {
+                crawlerName: worker.crawlerName,
+                username: worker.username,
+                errorMessage: hasErrorMessage ? worker.errorMessage : null,
+                submission: worker.submissions,
+                solved: worker.solved,
+                solvedList: hasErrorMessage ? null : worker.solvedList,
+                submissionsByCrawlerName: worker.submissionsByCrawlerName,
+                isVirtualJudge: crawler.virtual_judge || false,
+              }
+              return history
+            }),
+        })
+        this.$router.push('/history/' + saveResult.result.queryHistoryId)
+      } catch (err) {
+        alert(getAbpErrorMessage(err))
       }
     },
   },

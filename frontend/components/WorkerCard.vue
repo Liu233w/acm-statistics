@@ -12,7 +12,7 @@
                    v-on="on"
                    @click="removeWorker"
             >
-              <v-icon>delete</v-icon>
+              <v-icon>mdi-delete-outline</v-icon>
             </v-btn>
           </template>
           <span>
@@ -25,7 +25,7 @@
                    v-on="on"
                    @click="addWorker"
             >
-              <v-icon>add_circle</v-icon>
+              <v-icon>mdi-plus-circle-outline</v-icon>
             </v-btn>
           </template>
           <span>
@@ -38,7 +38,7 @@
                    v-on="on"
                    @click="openOj"
             >
-              <v-icon>link</v-icon>
+              <v-icon>mdi-open-in-new</v-icon>
             </v-btn>
           </template>
           <span>
