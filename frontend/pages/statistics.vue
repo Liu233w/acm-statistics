@@ -143,7 +143,6 @@ import { PROJECT_TITLE, WORKER_STATUS } from '~/components/consts'
 import { getAbpErrorMessage } from '~/components/utils'
 
 export default {
-  name: 'Statistics',
   components: {
     WorkerCard,
     ResizeObserver,
@@ -156,6 +155,9 @@ export default {
     this.$store.registerModule('statistics', Store, { preserveState: false })
   },
   destroyed() {
+    if (this.unSubscribeFunc) {
+      this.unSubscribeFunc()
+    }
     this.$store.unregisterModule('statistics')
   },
   async mounted() {
@@ -166,13 +168,19 @@ export default {
     await this.loadUsername()
     this.loading = false
 
-    this.$store.subscribeAction(action => {
-      if (_.startsWith(action.type, 'statistics/')) {
+    this.unSubscribeFunc = this.$store.subscribeAction(action => {
+      if (_.includes([
+        'statistics/clearWorkers',
+        'statistics/addWorkerForCrawler',
+        'statistics/removeWorkerAtIndex',
+      ], action.type)) {
         this.repositionWorkers()
       }
     })
 
     this.onResize()
+    await this.$nextTick()
+    this.repositionWorkers()
   },
   data() {
     return {
@@ -185,6 +193,7 @@ export default {
       transitionNumber: 0,
       layoutHeight: 0,
       workerPosition: {},
+      unSubscribeFunc: null,
     }
   },
   computed: {
@@ -271,7 +280,11 @@ export default {
 
           this.workerPosition[key] = { x, y }
           ++this.transitionNumber
-          gsap.to(el, this.workerPosition[key])
+          gsap.to(el, {
+            x,
+            y,
+            overwrite: true,
+          })
             .then(() => --this.transitionNumber)
         }
         maxHeight = Math.max(maxHeight, offset)
