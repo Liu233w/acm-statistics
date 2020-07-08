@@ -24,7 +24,7 @@
     "cheerio": "1.0.0-rc.3",
     "html-to-image": "0.1.1",
     "js-cookie": "2.2.1",
-    "lodash": "4.17.15",
+    "lodash": "4.17.19",
     "nuxt": "2.13.3",
     "nuxt-env": "0.1.0",
     "stylus": "0.54.7",
