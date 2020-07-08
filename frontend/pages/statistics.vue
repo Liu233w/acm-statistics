@@ -106,15 +106,17 @@
     <v-layout
       v-else
       ref="layout"
+      :style="{height: layoutHeight+'px'}"
     >
       <template v-for="column in workerLayout">
         <v-flex
-          v-for="item in column"
+          v-for="(item, i) in column"
           :key="item.key"
           :ref="'worker-'+item.key"
           :style="{
             position: 'absolute',
             width: columnWidth+'px',
+            'z-index': (i===0||i===column.length-1 ? 50 : 10),
           }"
         >
           <worker-card :index="item.index" />
@@ -175,6 +177,8 @@ export default {
       savingUsername: false,
       loading: true,
       transitionNumber: 0,
+      layoutHeight: 0,
+      workerPosition: {},
     }
   },
   computed: {
@@ -218,10 +222,7 @@ export default {
       }
     },
     async repositionWorkers() {
-      if (this.transitionNumber > 0) {
-        return
-      }
-      // wait for element to be available
+      // wait for elements to be available
       let ready
       do {
         await this.$nextTick()
@@ -240,20 +241,37 @@ export default {
         }
       } while (!ready)
 
+      if (this.transitionNumber > 0) {
+        return
+      }
+
+      let maxHeight = 0
+
       for (const colIdx in this.workerLayout) {
         const col = this.workerLayout[colIdx]
         let offset = 0
         for (const worker of col) {
-          ++this.transitionNumber
           const key = worker.key
           const el = this.$refs['worker-' + key]
-          gsap.to(el, {
-            x: colIdx * this.columnWidth,
-            y: offset,
-          }).then(() => --this.transitionNumber)
+
+          const x = colIdx * this.columnWidth
+          const y = offset
           offset += el[0].offsetHeight
+
+          const prevPosition = this.workerPosition[key]
+          if (prevPosition && prevPosition.x === x && prevPosition.y === y) {
+            continue
+          }
+
+          this.workerPosition[key] = { x, y }
+          ++this.transitionNumber
+          gsap.to(el, this.workerPosition[key])
+            .then(() => --this.transitionNumber)
         }
+        maxHeight = Math.max(maxHeight, offset)
       }
+
+      this.layoutHeight = maxHeight
     },
     runWorker() {
       this.saveUsername()
@@ -275,7 +293,10 @@ export default {
       }
       await this.$nextTick()
       this.updateLayoutSize()
-      this.repositionWorkers()
+      // wait for resize animation
+      setTimeout(() => {
+        this.repositionWorkers()
+      }, 500)
     },
     /**
      * 将用户名的情况存储进 localStorage 里面
