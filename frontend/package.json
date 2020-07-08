@@ -32,7 +32,8 @@
     "stylus-loader": "3.0.2",
     "superagent": "5.3.1",
     "virtual-module-webpack-plugin": "0.4.1",
-    "vue-chartjs": "3.5.0"
+    "vue-chartjs": "3.5.0",
+    "vue-resize": "^0.5.0"
   },
   "devDependencies": {
     "@babel/preset-env": "7.10.4",
