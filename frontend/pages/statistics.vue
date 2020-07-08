@@ -122,8 +122,8 @@
           <worker-card
             :index="item.index"
             :ref="'worker-'+item.key"
+            @update-height="height=>onResizeWorker(height,item)"
           />
-          <resize-observer @notify="payload=>onResizeWorker(payload,item)" />
         </v-flex>
       </template>
     </v-layout>
@@ -133,7 +133,6 @@
 <script>
 import { mapGetters, mapState } from 'vuex'
 import _ from 'lodash'
-import { ResizeObserver } from 'vue-resize'
 
 import WorkerCard from '~/components/WorkerCard'
 import statisticsLayoutBuilder from '~/components/statisticsLayoutBuilder'
@@ -144,7 +143,6 @@ import { getAbpErrorMessage } from '~/components/utils'
 export default {
   components: {
     WorkerCard,
-    ResizeObserver,
   },
   inject: ['changeLayoutConfig'],
   head: {
@@ -241,9 +239,9 @@ export default {
         this.columnWidth = this.$refs.layout.clientWidth / this.columnCount
       }
     },
-    onResizeWorker(payload, worker) {
-      console.log(payload)
-      this.$set(this.workerHeight, worker.key, payload.height)
+    onResizeWorker(height, worker) {
+      console.log(height)
+      this.$set(this.workerHeight, worker.key, height)
     },
     async repositionWorkers() {
       await this.$nextTick()
