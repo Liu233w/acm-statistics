@@ -103,34 +103,23 @@
       />
       <v-spacer />
     </v-layout>
-    <v-layout v-else>
-      <v-flex
-        xs12
-        sm12
-        md6
-        lg4
-        xl3
-        v-for="(column, idx) in workerLayout"
-        :key="idx"
-      >
-        <v-layout column>
-          <transition-group
-            name="workers-column"
-            @before-leave="itemBeforeLeaveTransition"
-          >
-            <div
-              v-for="(item, itemIdx) in column"
-              :key="item.key"
-              :style="{'z-index': 1000 - itemIdx}"
-              class="flex worker-item"
-              :data-column-idx="idx"
-              :data-column-item-idx="itemIdx"
-            >
-              <worker-card :index="item.index" />
-            </div>
-          </transition-group>
-        </v-layout>
-      </v-flex>
+    <v-layout
+      v-else
+      ref="layout"
+    >
+      <template v-for="column in workerLayout">
+        <v-flex
+          v-for="item in column"
+          :key="item.key"
+          :ref="'worker-'+item.key"
+          :style="{
+            position: 'absolute',
+            width: columnWidth+'px',
+          }"
+        >
+          <worker-card :index="item.index" />
+        </v-flex>
+      </template>
     </v-layout>
   </v-container>
 </template>
@@ -138,6 +127,7 @@
 <script>
 import { mapGetters, mapState } from 'vuex'
 import _ from 'lodash'
+import gsap from 'gsap'
 
 import WorkerCard from '~/components/WorkerCard'
 import statisticsLayoutBuilder from '~/components/statisticsLayoutBuilder'
@@ -164,23 +154,27 @@ export default {
     this.changeLayoutConfig({
       title: 'Statistics',
     })
-    this.onResize()
-    this.$store.subscribeAction(action => {
-      if (_.startsWith(action.type, 'statistics/')) {
-        this.summary = null
-        this.summaryError = null
-      }
-    })
+
     await this.loadUsername()
     this.loading = false
+
+    this.$store.subscribeAction(action => {
+      if (_.startsWith(action.type, 'statistics/')) {
+        this.repositionWorkers()
+      }
+    })
+
+    this.onResize()
   },
   data() {
     return {
       // 一共有几列
       columnCount: 3,
+      columnWidth: 0,
       // 管理保存用户名按钮的动画
       savingUsername: false,
       loading: true,
+      transitionNumber: 0,
     }
   },
   computed: {
@@ -218,12 +212,55 @@ export default {
     },
   },
   methods: {
+    updateLayoutSize() {
+      if (this.$refs.layout) {
+        this.columnWidth = this.$refs.layout.clientWidth / this.columnCount
+      }
+    },
+    async repositionWorkers() {
+      if (this.transitionNumber > 0) {
+        return
+      }
+      // wait for element to be available
+      let ready
+      do {
+        await this.$nextTick()
+        ready = true
+        for (const col of this.workerLayout) {
+          for (const worker of col) {
+            const key = worker.key
+            const el = this.$refs['worker-' + key]
+            if (!el || el.length === 0) {
+              ready = false
+            }
+          }
+          if (!ready) {
+            break
+          }
+        }
+      } while (!ready)
+
+      for (const colIdx in this.workerLayout) {
+        const col = this.workerLayout[colIdx]
+        let offset = 0
+        for (const worker of col) {
+          ++this.transitionNumber
+          const key = worker.key
+          const el = this.$refs['worker-' + key]
+          gsap.to(el, {
+            x: colIdx * this.columnWidth,
+            y: offset,
+          }).then(() => --this.transitionNumber)
+          offset += el[0].offsetHeight
+        }
+      }
+    },
     runWorker() {
       this.saveUsername()
 
       this.$store.dispatch('statistics/startAll')
     },
-    onResize() {
+    async onResize() {
       const width = window.innerWidth
       if (width < 600) {
         this.columnCount = 1 // xs
@@ -236,6 +273,9 @@ export default {
       } else {
         this.columnCount = 4 // xl
       }
+      await this.$nextTick()
+      this.updateLayoutSize()
+      this.repositionWorkers()
     },
     /**
      * 将用户名的情况存储进 localStorage 里面
@@ -255,22 +295,6 @@ export default {
      */
     loadUsername() {
       return this.$store.dispatch('statistics/loadUsernames')
-    },
-    itemBeforeLeaveTransition(el) {
-      const columnIdx = Number.parseInt(el.dataset.columnIdx, 10)
-      const itemIdx = Number.parseInt(el.dataset.columnItemIdx, 10)
-
-      // 假如是每列的最后一个worker，说明要移动到下一列，动画化向下淡出
-      // 否则，说明是要删除本worker，向上淡出
-      if (itemIdx < this.workerLayout[columnIdx].length - 1) {
-        el.style.transform = 'translateY(-30px)'
-      } else {
-        el.style.transform = 'translateY(30px)'
-      }
-      // 最后一列单独判断，假如没有排满，即使是最后一个worker也向上淡出
-      if (columnIdx == this.columnCount - 1 && this.workerLayout[columnIdx].length < this.maxItemPerColumn) {
-        el.style.transform = 'translateY(-30px)'
-      }
     },
     clearWorkers() {
       this.$store.dispatch('statistics/clearWorkers')
@@ -312,25 +336,4 @@ export default {
 </script>
 
 <style scoped>
-.workers-column-move {
-  transition: all 0.5s;
-}
-
-.workers-column-enter {
-  opacity: 0;
-  transform: translateY(-30px);
-}
-
-.workers-column-leave-to {
-  opacity: 0;
-  /*transform: translateY(30px);*/
-}
-
-.workers-column-leave-active {
-  position: absolute;
-}
-
-.worker-item {
-  transition: all 0.5s;
-}
 </style>
