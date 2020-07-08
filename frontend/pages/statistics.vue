@@ -108,20 +108,23 @@
       ref="layout"
       :style="{height: layoutHeight+'px'}"
     >
-      <template v-for="column in workerLayout">
-        <v-flex
-          v-for="(item, i) in column"
-          :key="item.key"
-          :ref="'worker-'+item.key"
-          :style="{
-            position: 'absolute',
-            width: columnWidth+'px',
-            'z-index': (i===0||i===column.length-1 ? 50 : 10),
-          }"
-        >
-          <worker-card :index="item.index" />
-        </v-flex>
-      </template>
+      <v-fade-transition group>
+        <template v-for="column in workerLayout">
+          <v-flex
+            v-for="(item, i) in column"
+            :key="item.key"
+            :ref="'worker-'+item.key"
+            :style="{
+              position: 'absolute',
+              width: columnWidth+'px',
+              'z-index': (i===0||i===column.length-1 ? 50 : 10),
+            }"
+          >
+            <worker-card :index="item.index" />
+            <resize-observer @notify="repositionWorkers" />
+          </v-flex>
+        </template>
+      </v-fade-transition>
     </v-layout>
   </v-container>
 </template>
@@ -130,6 +133,8 @@
 import { mapGetters, mapState } from 'vuex'
 import _ from 'lodash'
 import gsap from 'gsap'
+import 'vue-resize/dist/vue-resize.css'
+import { ResizeObserver } from 'vue-resize'
 
 import WorkerCard from '~/components/WorkerCard'
 import statisticsLayoutBuilder from '~/components/statisticsLayoutBuilder'
@@ -141,6 +146,7 @@ export default {
   name: 'Statistics',
   components: {
     WorkerCard,
+    ResizeObserver,
   },
   inject: ['changeLayoutConfig'],
   head: {
