@@ -108,23 +108,24 @@
       ref="layout"
       :style="{height: layoutHeight+'px'}"
     >
-      <v-fade-transition group>
-        <template v-for="column in workerLayout">
-          <v-flex
-            v-for="(item, i) in column"
-            :key="item.key"
+      <template v-for="column in workerLayout">
+        <v-flex
+          v-for="(item, i) in column"
+          :key="item.key"
+          :style="{
+            position: 'absolute',
+            width: columnWidth+'px',
+            'z-index': (i===0||i===column.length-1 ? 2 : 1),
+            transform: workerTransform[item.key] || '',
+          }"
+        >
+          <worker-card
+            :index="item.index"
             :ref="'worker-'+item.key"
-            :style="{
-              position: 'absolute',
-              width: columnWidth+'px',
-              'z-index': (i===0||i===column.length-1 ? 50 : 10),
-            }"
-          >
-            <worker-card :index="item.index" />
-            <resize-observer @notify="repositionWorkers" />
-          </v-flex>
-        </template>
-      </v-fade-transition>
+          />
+          <resize-observer @notify="payload=>onResizeWorker(payload,item)" />
+        </v-flex>
+      </template>
     </v-layout>
   </v-container>
 </template>
@@ -132,8 +133,6 @@
 <script>
 import { mapGetters, mapState } from 'vuex'
 import _ from 'lodash'
-import gsap from 'gsap'
-import 'vue-resize/dist/vue-resize.css'
 import { ResizeObserver } from 'vue-resize'
 
 import WorkerCard from '~/components/WorkerCard'
@@ -179,8 +178,6 @@ export default {
     })
 
     this.onResize()
-    await this.$nextTick()
-    this.repositionWorkers()
   },
   data() {
     return {
@@ -190,9 +187,9 @@ export default {
       // 管理保存用户名按钮的动画
       savingUsername: false,
       loading: true,
-      transitionNumber: 0,
       layoutHeight: 0,
-      workerPosition: {},
+      workerTransform: {},
+      workerHeight: {},
       unSubscribeFunc: null,
     }
   },
@@ -230,36 +227,26 @@ export default {
       }
     },
   },
+  watch: {
+    workerHeight: {
+      handler() {
+        this.repositionWorkers()
+      },
+      deep: true,
+    },
+  },
   methods: {
     updateLayoutSize() {
       if (this.$refs.layout) {
         this.columnWidth = this.$refs.layout.clientWidth / this.columnCount
       }
     },
+    onResizeWorker(payload, worker) {
+      console.log(payload)
+      this.$set(this.workerHeight, worker.key, payload.height)
+    },
     async repositionWorkers() {
-      // wait for elements to be available
-      let ready
-      do {
-        await this.$nextTick()
-        ready = true
-        for (const col of this.workerLayout) {
-          for (const worker of col) {
-            const key = worker.key
-            const el = this.$refs['worker-' + key]
-            if (!el || el.length === 0) {
-              ready = false
-            }
-          }
-          if (!ready) {
-            break
-          }
-        }
-      } while (!ready)
-
-      if (this.transitionNumber > 0) {
-        return
-      }
-
+      await this.$nextTick()
       let maxHeight = 0
 
       for (const colIdx in this.workerLayout) {
@@ -267,25 +254,12 @@ export default {
         let offset = 0
         for (const worker of col) {
           const key = worker.key
-          const el = this.$refs['worker-' + key]
 
           const x = colIdx * this.columnWidth
           const y = offset
-          offset += el[0].offsetHeight
+          this.$set(this.workerTransform, key, `translate(${x}px,${y}px)`)
 
-          const prevPosition = this.workerPosition[key]
-          if (prevPosition && prevPosition.x === x && prevPosition.y === y) {
-            continue
-          }
-
-          this.workerPosition[key] = { x, y }
-          ++this.transitionNumber
-          gsap.to(el, {
-            x,
-            y,
-            overwrite: true,
-          })
-            .then(() => --this.transitionNumber)
+          offset += this.workerHeight[key] || 0
         }
         maxHeight = Math.max(maxHeight, offset)
       }
@@ -312,10 +286,7 @@ export default {
       }
       await this.$nextTick()
       this.updateLayoutSize()
-      // wait for resize animation
-      setTimeout(() => {
-        this.repositionWorkers()
-      }, 500)
+      this.repositionWorkers()
     },
     /**
      * 将用户名的情况存储进 localStorage 里面
