@@ -113,11 +113,11 @@
           v-for="(item, i) in column"
           :key="item.key"
           :style="{
-            position: 'absolute',
             width: columnWidth+'px',
             'z-index': (i===0||i===column.length-1 ? 2 : 1),
             transform: workerTransform[item.key] || '',
           }"
+          class="worker"
         >
           <worker-card
             :index="item.index"
@@ -257,7 +257,7 @@ export default {
           const y = offset
           this.$set(this.workerTransform, key, `translate(${x}px,${y}px)`)
 
-          offset += this.workerHeight[key] || 0
+          offset += (this.workerHeight[key] || 0) + 8
         }
         maxHeight = Math.max(maxHeight, offset)
       }
@@ -345,4 +345,8 @@ export default {
 </script>
 
 <style scoped>
+.worker {
+  position: absolute;
+  transition: ease-in-out 300ms;
+}
 </style>

@@ -22,7 +22,6 @@
     "@nuxtjs/vuetify": "1.11.2",
     "chart.js": "2.9.3",
     "cheerio": "1.0.0-rc.3",
-    "gsap": "^3.3.4",
     "html-to-image": "0.1.1",
     "js-cookie": "2.2.1",
     "lodash": "4.17.19",
@@ -32,8 +31,7 @@
     "stylus-loader": "3.0.2",
     "superagent": "5.3.1",
     "virtual-module-webpack-plugin": "0.4.1",
-    "vue-chartjs": "3.5.0",
-    "vue-resize": "^0.5.0"
+    "vue-chartjs": "3.5.0"
   },
   "devDependencies": {
     "@babel/preset-env": "7.10.4",

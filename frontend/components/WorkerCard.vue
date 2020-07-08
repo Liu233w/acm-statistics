@@ -193,8 +193,6 @@
       </template>
     </v-container>
 
-    <resize-observer @notify="onResizeWorker" />
-
     <v-dialog
       v-model="solvedListDialog"
       max-width="500"
@@ -244,7 +242,6 @@
 <script>
 import { mapGetters } from 'vuex'
 import _ from 'lodash'
-import { ResizeObserver } from 'vue-resize'
 
 import { WORKER_STATUS } from '~/components/consts'
 import { warningHelper, mapVirtualJudgeProblemTitle } from '~/components/statisticsUtils'
@@ -257,9 +254,6 @@ export default {
       required: true,
     },
   },
-  components: {
-    ResizeObserver,
-  },
   data() {
     return {
       WORKER_STATUS: WORKER_STATUS,
@@ -267,9 +261,12 @@ export default {
       updatingHeight: false,
     }
   },
-  // mounted() {
-  //   this.updateHeight()
-  // },
+  mounted() {
+    // only next tick is not enough
+    setTimeout(() => {
+      this.updateHeight()
+    }, 500)
+  },
   methods: {
     openOj() {
       window.open(this.crawlerUrl)
@@ -286,9 +283,6 @@ export default {
     removeWorker() {
       this.$store.dispatch('statistics/removeWorkerAtIndex', { index: this.index })
     },
-    onResizeWorker(payload) {
-      this.$emit('update-height', payload.height)
-    },
     async updateHeight() {
       if (this.updatingHeight) {
         return
@@ -299,17 +293,17 @@ export default {
       this.updatingHeight = false
     },
   },
-  // watch: {
-  //   warnings() {
-  //     this.updateHeight()
-  //   },
-  //   worker: {
-  //     handler() {
-  //       this.updateHeight()
-  //     },
-  //     deep: true,
-  //   },
-  // },
+  watch: {
+    warnings() {
+      this.updateHeight()
+    },
+    worker: {
+      handler() {
+        this.updateHeight()
+      },
+      deep: true,
+    },
+  },
   computed: {
     ...mapGetters('statistics', [
       'workerNumberOfCrawler',
