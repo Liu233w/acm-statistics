@@ -1,5 +1,5 @@
 <template>
-  <v-card style="position: relative">
+  <v-card>
     <v-app-bar
       flat
       dense

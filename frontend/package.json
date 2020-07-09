@@ -41,7 +41,6 @@
     "babel-eslint": "10.1.0",
     "babel-jest": "26.1.0",
     "babel-plugin-lodash": "3.3.4",
-    "babel-plugin-transform-es2015-modules-commonjs": "6.26.2",
     "eslint": "7.4.0",
     "eslint-config-standard": "14.1.1",
     "eslint-loader": "4.0.2",
@@ -59,15 +58,6 @@
     "vue-jest": "3.0.6"
   },
   "jest": {
-    "globals": {
-      "vue-jest": {
-        "babelConfig": {
-          "presets": [
-            "@babel/preset-env"
-          ]
-        }
-      }
-    },
     "moduleFileExtensions": [
       "js",
       "json",
@@ -77,12 +67,11 @@
       "jest-serializer-vue"
     ],
     "transform": {
-      "^.+\\.js$": "<rootDir>/__test__/jest.transform.js",
+      "^.+\\.js$": "<rootDir>/node_modules/babel-jest",
       ".*\\.(vue)$": "vue-jest"
     },
     "transformIgnorePatterns": [
-      "/node_modules/",
-      "<rootDir>/__test__/pages/pages_snapshot.test.js"
+      "/node_modules/"
     ],
     "moduleNameMapper": {
       "~(?!/dynamic)(.*)$": "<rootDir>/$1"
