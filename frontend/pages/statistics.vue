@@ -152,9 +152,6 @@ export default {
     this.$store.registerModule('statistics', Store, { preserveState: false })
   },
   destroyed() {
-    if (this.unSubscribeFunc) {
-      this.unSubscribeFunc()
-    }
     this.$store.unregisterModule('statistics')
   },
   async mounted() {
@@ -164,17 +161,6 @@ export default {
 
     await this.loadUsername()
     this.loading = false
-
-    this.unSubscribeFunc = this.$store.subscribeAction(action => {
-      if (_.includes([
-        'statistics/clearWorkers',
-        'statistics/addWorkerForCrawler',
-        'statistics/removeWorkerAtIndex',
-      ], action.type)) {
-        this.repositionWorkers()
-      }
-    })
-
     this.onResize()
   },
   data() {
@@ -188,7 +174,6 @@ export default {
       layoutHeight: 0,
       workerTransform: {},
       workerHeight: {},
-      unSubscribeFunc: null,
     }
   },
   computed: {
@@ -240,7 +225,6 @@ export default {
       }
     },
     onResizeWorker(height, worker) {
-      console.log(height)
       this.$set(this.workerHeight, worker.key, height)
     },
     async repositionWorkers() {

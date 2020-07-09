@@ -246,6 +246,13 @@ import _ from 'lodash'
 import { WORKER_STATUS } from '~/components/consts'
 import { warningHelper, mapVirtualJudgeProblemTitle } from '~/components/statisticsUtils'
 
+// from https://stackoverflow.com/a/39538518
+function delay(t, v) {
+  return new Promise(function (resolve) {
+    setTimeout(resolve.bind(null, v), t)
+  })
+}
+
 export default {
   name: 'CrawlerCard',
   props: {
@@ -261,11 +268,16 @@ export default {
       updatingHeight: false,
     }
   },
-  mounted() {
-    // only next tick is not enough
-    setTimeout(() => {
-      this.updateHeight()
-    }, 500)
+  async mounted() {
+    // don't know why, but when init, the offsetHeight may be larger
+    // than real height
+    do {
+      await delay(100)
+    } while (this.$el.offsetHeight >= 500)
+    this.updateHeight()
+  },
+  destroyed() {
+    this.$emit('update-height', 0)
   },
   methods: {
     openOj() {
