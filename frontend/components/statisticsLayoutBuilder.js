@@ -16,26 +16,6 @@ export default function (workers, columnNum) {
   const layout = new Array(columnNum)
 
   let i = 0
-  let lastCrawlerName = null
-  let workerIdxOfCrawler = 0
-
-  const getNextWorkerInfo = () => {
-
-    const worker = workers[i]
-    if (worker.crawlerName !== lastCrawlerName) {
-      lastCrawlerName = worker.crawlerName
-      workerIdxOfCrawler = 0
-    }
-    ++workerIdxOfCrawler
-
-    return {
-      index: i,
-      // 序号，从 1 开始
-      workerIdxOfCrawler: workerIdxOfCrawler,
-      crawlerName: worker.crawlerName,
-      key: worker.key,
-    }
-  }
 
   // 填充除了最后一列之外的其他列
   for (let column = 0; column < columnNum - 1; ++column) {
@@ -43,7 +23,7 @@ export default function (workers, columnNum) {
     // 填充一列（这时候即使遍历完所有除了最后一列之外的列，也不可能用完 worker）
     layout[column] = new Array(maxItemNumberInColumn)
     for (let j = 0; j < maxItemNumberInColumn; ++j) {
-      layout[column][j] = getNextWorkerInfo()
+      layout[column][j] = i
       ++i
     }
   }
@@ -51,7 +31,7 @@ export default function (workers, columnNum) {
   // 填充剩余的 worker （此时worker数量一定小于总体的列数）
   layout[columnNum - 1] = []
   for (; i < length; ++i) {
-    layout[columnNum - 1].push(getNextWorkerInfo())
+    layout[columnNum - 1].push(i)
   }
 
   return layout

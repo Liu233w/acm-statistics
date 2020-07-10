@@ -72,7 +72,7 @@
             color="grey lighten-3"
             class="ma-1 elevation-2"
             v-on="on"
-            @click.stop="openDialog"
+            @click.stop="openSummary"
           >
             <v-icon
               v-if="notWorkingRate >= 100"
@@ -108,24 +108,21 @@
       ref="layout"
       :style="{height: layoutHeight+'px'}"
     >
-      <template v-for="column in workerLayout">
-        <v-flex
-          v-for="(item, i) in column"
-          :key="item.key"
-          :style="{
-            width: columnWidth+'px',
-            'z-index': (i===0||i===column.length-1 ? 2 : 1),
-            transform: workerTransform[item.key] || '',
-          }"
-          class="worker"
-        >
-          <worker-card
-            :index="item.index"
-            :ref="'worker-'+item.key"
-            @update-height="height=>onResizeWorker(height,item)"
-          />
-        </v-flex>
-      </template>
+      <v-flex
+        v-for="(item,i) in workers"
+        :key="item.key"
+        :style="{
+          width: columnWidth+'px',
+          transform: workerTransform[item.key] || '',
+        }"
+        class="worker"
+      >
+        <worker-card
+          :index="i"
+          :ref="'worker-'+item.key"
+          @update-height="height=>onResizeWorker(height,item)"
+        />
+      </v-flex>
     </v-layout>
   </v-container>
 </template>
@@ -195,19 +192,8 @@ export default {
         this.$store.dispatch('statistics/updateMainUsername', { username })
       }, 300),
     },
-    workerLayout() {
-      const workers = this.$store.state.statistics.workers
-      return statisticsLayoutBuilder(workers, this.columnCount)
-    },
-    maxItemPerColumn() {
-      return Math.ceil(this.$store.state.statistics.workers.length / this.columnCount)
-    },
-    updateDate() {
-      if (this.notWorkingRate >= 100) {
-        return new Date()
-      } else {
-        return null
-      }
+    workers() {
+      return this.$store.state.statistics.workers
     },
   },
   watch: {
@@ -229,13 +215,15 @@ export default {
     },
     async repositionWorkers() {
       await this.$nextTick()
-      let maxHeight = 0
 
-      for (const colIdx in this.workerLayout) {
-        const col = this.workerLayout[colIdx]
+      let maxHeight = 0
+      const layout = statisticsLayoutBuilder(this.workers, this.columnCount)
+
+      for (const colIdx in layout) {
+        const col = layout[colIdx]
         let offset = 0
-        for (const worker of col) {
-          const key = worker.key
+        for (const workerIdx of col) {
+          const key = this.workers[workerIdx].key
 
           const x = colIdx * this.columnWidth
           const y = offset
@@ -258,7 +246,7 @@ export default {
       if (width < 600) {
         this.columnCount = 1 // xs
       } else if (width < 960) {
-        this.columnCount = 1 // sm
+        this.columnCount = 2 // sm
       } else if (width < 1264) {
         this.columnCount = 2 // md
       } else if (width < 1904) {
@@ -292,12 +280,12 @@ export default {
     clearWorkers() {
       this.$store.dispatch('statistics/clearWorkers')
     },
-    async openDialog() {
+    async openSummary() {
       if (this.notWorkingRate < 100 || !this.login) {
         return
       }
 
-      const doneWorkers = _.filter(this.$store.state.statistics.workers,
+      const doneWorkers = _.filter(this.workers,
         worker => worker.status === WORKER_STATUS.DONE)
       try {
         const saveResult = await this.$axios.$post('/api/services/app/QueryHistory/SaveOrReplaceQueryHistory', {
