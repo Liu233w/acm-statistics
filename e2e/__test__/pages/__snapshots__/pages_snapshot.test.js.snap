@@ -920,6 +920,9 @@ exports[`/ 1`] = `
           error: null,
           state: {
             sidebar: a,
+            message: {
+              list: []
+            },
             session: {
               login: a,
               username: ""
@@ -1672,7 +1675,7 @@ exports[`/about 1`] = `
       <div id="__layout">
         <div data-app="true" id="app" class="v-application v-application--is-ltr theme--light">
           <div class="v-application--wrap">
-            <nav class="v-navigation-drawer v-navigation-drawer--clipped v-navigation-drawer--close v-navigation-drawer--fixed v-navigation-drawer--is-mobile theme--light" style="height:100vh;top:0px;transform:translateX(-100%);width:256px;">
+            <nav class="v-navigation-drawer v-navigation-drawer--close v-navigation-drawer--fixed v-navigation-drawer--is-mobile theme--light" style="height:100vh;top:0px;transform:translateX(-100%);width:256px;">
               <div class="v-navigation-drawer__content">
                 <div class="v-list v-sheet v-sheet--tile theme--light"><a href="/" tabindex="0" class="v-list-item v-list-item--link theme--light">
                     <div class="v-list-item__action"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">home</i></div>
@@ -1682,7 +1685,7 @@ exports[`/about 1`] = `
                   </a><a href="/statistics" tabindex="0" class="v-list-item v-list-item--link theme--light">
                     <div class="v-list-item__action"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">code</i></div>
                     <div class="v-list-item__content">
-                      <div class="v-list-item__title">AC Statistics</div>
+                      <div class="v-list-item__title">Statistics</div>
                     </div>
                   </a><a href="/about" aria-current="page" tabindex="0" class="v-list-item--active v-list-item v-list-item--link theme--light">
                     <div class="v-list-item__action"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">info</i></div>
@@ -1693,10 +1696,15 @@ exports[`/about 1`] = `
               </div>
               <div class="v-navigation-drawer__border"></div>
             </nav>
-            <header class="v-sheet v-sheet--tile theme--light v-toolbar v-app-bar v-app-bar--clipped v-app-bar--fixed" style="height:64px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;">
+            <header class="v-sheet v-sheet--tile theme--light v-toolbar v-toolbar--absolute v-app-bar" style="height:64px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;">
               <div class="v-toolbar__content" style="height:64px;"><button type="button" class="v-app-bar__nav-icon v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-menu theme--light"></i></span></button>
+                <!---->
                 <div class="v-toolbar__title">NWPU-ACM &#x67E5;&#x8BE2;&#x7CFB;&#x7EDF;</div>
-                <div class="spacer"></div> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--text theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate v-icon--left fa fa fa fa-sign-in-alt theme--light"></i> login
+                <!---->
+                <!---->
+                <div class="spacer"></div>
+                <!---->
+                <!----> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--text theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate v-icon--left fa fa fa fa-sign-in-alt theme--light"></i> login
     </span></button></span> <span class="v-tooltip v-tooltip--left"><!----><a href="https://github.com/Liu233w/acm-statistics" target="_blank" rel="noopener noreferrer" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" medium class="v-icon notranslate fab fa-github theme--light"></i></span></a></span>
               </div>
             </header>
@@ -1775,6 +1783,10 @@ exports[`/about 1`] = `
             </main>
             <footer class="v-footer v-sheet v-sheet--tile theme--light v-footer--absolute v-footer--inset" style="left:0px;right:0px;bottom:0px;"><span class="body-2">&#xA9; 2018 - 1970 NWPU-ACM &#x6280;&#x672F;&#x7EC4;</span>
               <div class="spacer"></div> <span class="body-2">&#x9655;ICP&#x5907;17008184&#x53F7;</span></footer>
+            <div class="message-panel v-card v-sheet theme--light" style="display:none;">
+              <v-list class="pa-0"></v-list>
+              <!---->
+            </div>
           </div>
         </div>
       </div>
@@ -1788,6 +1800,9 @@ exports[`/about 1`] = `
           error: null,
           state: {
             sidebar: a,
+            message: {
+              list: []
+            },
             session: {
               login: a,
               username: ""
@@ -1802,6 +1817,1959 @@ exports[`/about 1`] = `
           }
         }
       }(false, "0"));
+    </script>
+
+
+  </body>
+
+</html>
+`;
+
+exports[`/history 1`] = `
+<!DOCTYPE html>
+<html data-n-head-ssr>
+
+  <head>
+    <title>History - NWPU-ACM &#x67E5;&#x8BE2;&#x7CFB;&#x7EDF;</title>
+    <meta data-n-head="ssr" charset="utf-8">
+    <meta data-n-head="ssr" name="viewport" content="width=device-width, initial-scale=1">
+    <meta data-n-head="ssr" data-hid="description" name="description" content="&#x897F;&#x5317;&#x5DE5;&#x4E1A;&#x5927;&#x5B66;ACM&#x57FA;&#x5730;&#x67E5;&#x9898;&#x4E3B;&#x9875;&#xFF0C;&#x63D0;&#x4F9B;&#x56FD;&#x5185;&#x5404;&#x5927;OJ&#x7684;&#x67E5;&#x8BE2;&#x9898;&#x91CF;&#x3001;&#x8BA1;&#x7B97;Rating&#x7684;&#x670D;&#x52A1;&#x3002;">
+    <link data-n-head="ssr" rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link data-n-head="ssr" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons|Noto+Serif+SC:300,400,500,700">
+    <link data-n-head="ssr" rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&amp;display=swap">
+    <link data-n-head="ssr" rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@mdi/font@latest/css/materialdesignicons.min.css">
+    <style data-n-head="vuetify" type="text/css" id="vuetify-theme-stylesheet" nonce="undefined">
+      .v-application a {
+        color: #1976d2;
+      }
+
+      .v-application .primary {
+        background-color: #1976d2 !important;
+        border-color: #1976d2 !important;
+      }
+
+      .v-application .primary--text {
+        color: #1976d2 !important;
+        caret-color: #1976d2 !important;
+      }
+
+      .v-application .primary.lighten-5 {
+        background-color: #c7fdff !important;
+        border-color: #c7fdff !important;
+      }
+
+      .v-application .primary--text.text--lighten-5 {
+        color: #c7fdff !important;
+        caret-color: #c7fdff !important;
+      }
+
+      .v-application .primary.lighten-4 {
+        background-color: #a8e0ff !important;
+        border-color: #a8e0ff !important;
+      }
+
+      .v-application .primary--text.text--lighten-4 {
+        color: #a8e0ff !important;
+        caret-color: #a8e0ff !important;
+      }
+
+      .v-application .primary.lighten-3 {
+        background-color: #8ac5ff !important;
+        border-color: #8ac5ff !important;
+      }
+
+      .v-application .primary--text.text--lighten-3 {
+        color: #8ac5ff !important;
+        caret-color: #8ac5ff !important;
+      }
+
+      .v-application .primary.lighten-2 {
+        background-color: #6aaaff !important;
+        border-color: #6aaaff !important;
+      }
+
+      .v-application .primary--text.text--lighten-2 {
+        color: #6aaaff !important;
+        caret-color: #6aaaff !important;
+      }
+
+      .v-application .primary.lighten-1 {
+        background-color: #488fef !important;
+        border-color: #488fef !important;
+      }
+
+      .v-application .primary--text.text--lighten-1 {
+        color: #488fef !important;
+        caret-color: #488fef !important;
+      }
+
+      .v-application .primary.darken-1 {
+        background-color: #005eb6 !important;
+        border-color: #005eb6 !important;
+      }
+
+      .v-application .primary--text.text--darken-1 {
+        color: #005eb6 !important;
+        caret-color: #005eb6 !important;
+      }
+
+      .v-application .primary.darken-2 {
+        background-color: #00479b !important;
+        border-color: #00479b !important;
+      }
+
+      .v-application .primary--text.text--darken-2 {
+        color: #00479b !important;
+        caret-color: #00479b !important;
+      }
+
+      .v-application .primary.darken-3 {
+        background-color: #003180 !important;
+        border-color: #003180 !important;
+      }
+
+      .v-application .primary--text.text--darken-3 {
+        color: #003180 !important;
+        caret-color: #003180 !important;
+      }
+
+      .v-application .primary.darken-4 {
+        background-color: #001e67 !important;
+        border-color: #001e67 !important;
+      }
+
+      .v-application .primary--text.text--darken-4 {
+        color: #001e67 !important;
+        caret-color: #001e67 !important;
+      }
+
+      .v-application .secondary {
+        background-color: #bdbdbd !important;
+        border-color: #bdbdbd !important;
+      }
+
+      .v-application .secondary--text {
+        color: #bdbdbd !important;
+        caret-color: #bdbdbd !important;
+      }
+
+      .v-application .secondary.lighten-5 {
+        background-color: #ffffff !important;
+        border-color: #ffffff !important;
+      }
+
+      .v-application .secondary--text.text--lighten-5 {
+        color: #ffffff !important;
+        caret-color: #ffffff !important;
+      }
+
+      .v-application .secondary.lighten-4 {
+        background-color: #ffffff !important;
+        border-color: #ffffff !important;
+      }
+
+      .v-application .secondary--text.text--lighten-4 {
+        color: #ffffff !important;
+        caret-color: #ffffff !important;
+      }
+
+      .v-application .secondary.lighten-3 {
+        background-color: #ffffff !important;
+        border-color: #ffffff !important;
+      }
+
+      .v-application .secondary--text.text--lighten-3 {
+        color: #ffffff !important;
+        caret-color: #ffffff !important;
+      }
+
+      .v-application .secondary.lighten-2 {
+        background-color: #f5f5f5 !important;
+        border-color: #f5f5f5 !important;
+      }
+
+      .v-application .secondary--text.text--lighten-2 {
+        color: #f5f5f5 !important;
+        caret-color: #f5f5f5 !important;
+      }
+
+      .v-application .secondary.lighten-1 {
+        background-color: #d9d9d9 !important;
+        border-color: #d9d9d9 !important;
+      }
+
+      .v-application .secondary--text.text--lighten-1 {
+        color: #d9d9d9 !important;
+        caret-color: #d9d9d9 !important;
+      }
+
+      .v-application .secondary.darken-1 {
+        background-color: #a2a2a2 !important;
+        border-color: #a2a2a2 !important;
+      }
+
+      .v-application .secondary--text.text--darken-1 {
+        color: #a2a2a2 !important;
+        caret-color: #a2a2a2 !important;
+      }
+
+      .v-application .secondary.darken-2 {
+        background-color: #888888 !important;
+        border-color: #888888 !important;
+      }
+
+      .v-application .secondary--text.text--darken-2 {
+        color: #888888 !important;
+        caret-color: #888888 !important;
+      }
+
+      .v-application .secondary.darken-3 {
+        background-color: #6e6e6e !important;
+        border-color: #6e6e6e !important;
+      }
+
+      .v-application .secondary--text.text--darken-3 {
+        color: #6e6e6e !important;
+        caret-color: #6e6e6e !important;
+      }
+
+      .v-application .secondary.darken-4 {
+        background-color: #565656 !important;
+        border-color: #565656 !important;
+      }
+
+      .v-application .secondary--text.text--darken-4 {
+        color: #565656 !important;
+        caret-color: #565656 !important;
+      }
+
+      .v-application .accent {
+        background-color: #448aff !important;
+        border-color: #448aff !important;
+      }
+
+      .v-application .accent--text {
+        color: #448aff !important;
+        caret-color: #448aff !important;
+      }
+
+      .v-application .accent.lighten-5 {
+        background-color: #e8ffff !important;
+        border-color: #e8ffff !important;
+      }
+
+      .v-application .accent--text.text--lighten-5 {
+        color: #e8ffff !important;
+        caret-color: #e8ffff !important;
+      }
+
+      .v-application .accent.lighten-4 {
+        background-color: #c9f7ff !important;
+        border-color: #c9f7ff !important;
+      }
+
+      .v-application .accent--text.text--lighten-4 {
+        color: #c9f7ff !important;
+        caret-color: #c9f7ff !important;
+      }
+
+      .v-application .accent.lighten-3 {
+        background-color: #a9daff !important;
+        border-color: #a9daff !important;
+      }
+
+      .v-application .accent--text.text--lighten-3 {
+        color: #a9daff !important;
+        caret-color: #a9daff !important;
+      }
+
+      .v-application .accent.lighten-2 {
+        background-color: #8abfff !important;
+        border-color: #8abfff !important;
+      }
+
+      .v-application .accent--text.text--lighten-2 {
+        color: #8abfff !important;
+        caret-color: #8abfff !important;
+      }
+
+      .v-application .accent.lighten-1 {
+        background-color: #69a4ff !important;
+        border-color: #69a4ff !important;
+      }
+
+      .v-application .accent--text.text--lighten-1 {
+        color: #69a4ff !important;
+        caret-color: #69a4ff !important;
+      }
+
+      .v-application .accent.darken-1 {
+        background-color: #0171e2 !important;
+        border-color: #0171e2 !important;
+      }
+
+      .v-application .accent--text.text--darken-1 {
+        color: #0171e2 !important;
+        caret-color: #0171e2 !important;
+      }
+
+      .v-application .accent.darken-2 {
+        background-color: #0059c5 !important;
+        border-color: #0059c5 !important;
+      }
+
+      .v-application .accent--text.text--darken-2 {
+        color: #0059c5 !important;
+        caret-color: #0059c5 !important;
+      }
+
+      .v-application .accent.darken-3 {
+        background-color: #0042aa !important;
+        border-color: #0042aa !important;
+      }
+
+      .v-application .accent--text.text--darken-3 {
+        color: #0042aa !important;
+        caret-color: #0042aa !important;
+      }
+
+      .v-application .accent.darken-4 {
+        background-color: #002e8e !important;
+        border-color: #002e8e !important;
+      }
+
+      .v-application .accent--text.text--darken-4 {
+        color: #002e8e !important;
+        caret-color: #002e8e !important;
+      }
+
+      .v-application .error {
+        background-color: #d50000 !important;
+        border-color: #d50000 !important;
+      }
+
+      .v-application .error--text {
+        color: #d50000 !important;
+        caret-color: #d50000 !important;
+      }
+
+      .v-application .error.lighten-5 {
+        background-color: #ffb082 !important;
+        border-color: #ffb082 !important;
+      }
+
+      .v-application .error--text.text--lighten-5 {
+        color: #ffb082 !important;
+        caret-color: #ffb082 !important;
+      }
+
+      .v-application .error.lighten-4 {
+        background-color: #ff9268 !important;
+        border-color: #ff9268 !important;
+      }
+
+      .v-application .error--text.text--lighten-4 {
+        color: #ff9268 !important;
+        caret-color: #ff9268 !important;
+      }
+
+      .v-application .error.lighten-3 {
+        background-color: #ff754e !important;
+        border-color: #ff754e !important;
+      }
+
+      .v-application .error--text.text--lighten-3 {
+        color: #ff754e !important;
+        caret-color: #ff754e !important;
+      }
+
+      .v-application .error.lighten-2 {
+        background-color: #ff5736 !important;
+        border-color: #ff5736 !important;
+      }
+
+      .v-application .error--text.text--lighten-2 {
+        color: #ff5736 !important;
+        caret-color: #ff5736 !important;
+      }
+
+      .v-application .error.lighten-1 {
+        background-color: #f6361d !important;
+        border-color: #f6361d !important;
+      }
+
+      .v-application .error--text.text--lighten-1 {
+        color: #f6361d !important;
+        caret-color: #f6361d !important;
+      }
+
+      .v-application .error.darken-1 {
+        background-color: #b40000 !important;
+        border-color: #b40000 !important;
+      }
+
+      .v-application .error--text.text--darken-1 {
+        color: #b40000 !important;
+        caret-color: #b40000 !important;
+      }
+
+      .v-application .error.darken-2 {
+        background-color: #950000 !important;
+        border-color: #950000 !important;
+      }
+
+      .v-application .error--text.text--darken-2 {
+        color: #950000 !important;
+        caret-color: #950000 !important;
+      }
+
+      .v-application .error.darken-3 {
+        background-color: #770000 !important;
+        border-color: #770000 !important;
+      }
+
+      .v-application .error--text.text--darken-3 {
+        color: #770000 !important;
+        caret-color: #770000 !important;
+      }
+
+      .v-application .error.darken-4 {
+        background-color: #5c0000 !important;
+        border-color: #5c0000 !important;
+      }
+
+      .v-application .error--text.text--darken-4 {
+        color: #5c0000 !important;
+        caret-color: #5c0000 !important;
+      }
+
+      .v-application .info {
+        background-color: #42a5f5 !important;
+        border-color: #42a5f5 !important;
+      }
+
+      .v-application .info--text {
+        color: #42a5f5 !important;
+        caret-color: #42a5f5 !important;
+      }
+
+      .v-application .info.lighten-5 {
+        background-color: #e4ffff !important;
+        border-color: #e4ffff !important;
+      }
+
+      .v-application .info--text.text--lighten-5 {
+        color: #e4ffff !important;
+        caret-color: #e4ffff !important;
+      }
+
+      .v-application .info.lighten-4 {
+        background-color: #c5ffff !important;
+        border-color: #c5ffff !important;
+      }
+
+      .v-application .info--text.text--lighten-4 {
+        color: #c5ffff !important;
+        caret-color: #c5ffff !important;
+      }
+
+      .v-application .info.lighten-3 {
+        background-color: #a6f8ff !important;
+        border-color: #a6f8ff !important;
+      }
+
+      .v-application .info--text.text--lighten-3 {
+        color: #a6f8ff !important;
+        caret-color: #a6f8ff !important;
+      }
+
+      .v-application .info.lighten-2 {
+        background-color: #87dcff !important;
+        border-color: #87dcff !important;
+      }
+
+      .v-application .info--text.text--lighten-2 {
+        color: #87dcff !important;
+        caret-color: #87dcff !important;
+      }
+
+      .v-application .info.lighten-1 {
+        background-color: #66c0ff !important;
+        border-color: #66c0ff !important;
+      }
+
+      .v-application .info--text.text--lighten-1 {
+        color: #66c0ff !important;
+        caret-color: #66c0ff !important;
+      }
+
+      .v-application .info.darken-1 {
+        background-color: #018bd8 !important;
+        border-color: #018bd8 !important;
+      }
+
+      .v-application .info--text.text--darken-1 {
+        color: #018bd8 !important;
+        caret-color: #018bd8 !important;
+      }
+
+      .v-application .info.darken-2 {
+        background-color: #0072bc !important;
+        border-color: #0072bc !important;
+      }
+
+      .v-application .info--text.text--darken-2 {
+        color: #0072bc !important;
+        caret-color: #0072bc !important;
+      }
+
+      .v-application .info.darken-3 {
+        background-color: #0059a1 !important;
+        border-color: #0059a1 !important;
+      }
+
+      .v-application .info--text.text--darken-3 {
+        color: #0059a1 !important;
+        caret-color: #0059a1 !important;
+      }
+
+      .v-application .info.darken-4 {
+        background-color: #004286 !important;
+        border-color: #004286 !important;
+      }
+
+      .v-application .info--text.text--darken-4 {
+        color: #004286 !important;
+        caret-color: #004286 !important;
+      }
+
+      .v-application .success {
+        background-color: #81c784 !important;
+        border-color: #81c784 !important;
+      }
+
+      .v-application .success--text {
+        color: #81c784 !important;
+        caret-color: #81c784 !important;
+      }
+
+      .v-application .success.lighten-5 {
+        background-color: #ffffff !important;
+        border-color: #ffffff !important;
+      }
+
+      .v-application .success--text.text--lighten-5 {
+        color: #ffffff !important;
+        caret-color: #ffffff !important;
+      }
+
+      .v-application .success.lighten-4 {
+        background-color: #f1fff2 !important;
+        border-color: #f1fff2 !important;
+      }
+
+      .v-application .success--text.text--lighten-4 {
+        color: #f1fff2 !important;
+        caret-color: #f1fff2 !important;
+      }
+
+      .v-application .success.lighten-3 {
+        background-color: #d4ffd5 !important;
+        border-color: #d4ffd5 !important;
+      }
+
+      .v-application .success--text.text--lighten-3 {
+        color: #d4ffd5 !important;
+        caret-color: #d4ffd5 !important;
+      }
+
+      .v-application .success.lighten-2 {
+        background-color: #b8ffba !important;
+        border-color: #b8ffba !important;
+      }
+
+      .v-application .success--text.text--lighten-2 {
+        color: #b8ffba !important;
+        caret-color: #b8ffba !important;
+      }
+
+      .v-application .success.lighten-1 {
+        background-color: #9ce39e !important;
+        border-color: #9ce39e !important;
+      }
+
+      .v-application .success--text.text--lighten-1 {
+        color: #9ce39e !important;
+        caret-color: #9ce39e !important;
+      }
+
+      .v-application .success.darken-1 {
+        background-color: #66ab6a !important;
+        border-color: #66ab6a !important;
+      }
+
+      .v-application .success--text.text--darken-1 {
+        color: #66ab6a !important;
+        caret-color: #66ab6a !important;
+      }
+
+      .v-application .success.darken-2 {
+        background-color: #4c9152 !important;
+        border-color: #4c9152 !important;
+      }
+
+      .v-application .success--text.text--darken-2 {
+        color: #4c9152 !important;
+        caret-color: #4c9152 !important;
+      }
+
+      .v-application .success.darken-3 {
+        background-color: #31773a !important;
+        border-color: #31773a !important;
+      }
+
+      .v-application .success--text.text--darken-3 {
+        color: #31773a !important;
+        caret-color: #31773a !important;
+      }
+
+      .v-application .success.darken-4 {
+        background-color: #145d23 !important;
+        border-color: #145d23 !important;
+      }
+
+      .v-application .success--text.text--darken-4 {
+        color: #145d23 !important;
+        caret-color: #145d23 !important;
+      }
+
+      .v-application .warning {
+        background-color: #ffa000 !important;
+        border-color: #ffa000 !important;
+      }
+
+      .v-application .warning--text {
+        color: #ffa000 !important;
+        caret-color: #ffa000 !important;
+      }
+
+      .v-application .warning.lighten-5 {
+        background-color: #ffffa4 !important;
+        border-color: #ffffa4 !important;
+      }
+
+      .v-application .warning--text.text--lighten-5 {
+        color: #ffffa4 !important;
+        caret-color: #ffffa4 !important;
+      }
+
+      .v-application .warning.lighten-4 {
+        background-color: #ffff87 !important;
+        border-color: #ffff87 !important;
+      }
+
+      .v-application .warning--text.text--lighten-4 {
+        color: #ffff87 !important;
+        caret-color: #ffff87 !important;
+      }
+
+      .v-application .warning.lighten-3 {
+        background-color: #fff36b !important;
+        border-color: #fff36b !important;
+      }
+
+      .v-application .warning--text.text--lighten-3 {
+        color: #fff36b !important;
+        caret-color: #fff36b !important;
+      }
+
+      .v-application .warning.lighten-2 {
+        background-color: #ffd74e !important;
+        border-color: #ffd74e !important;
+      }
+
+      .v-application .warning--text.text--lighten-2 {
+        color: #ffd74e !important;
+        caret-color: #ffd74e !important;
+      }
+
+      .v-application .warning.lighten-1 {
+        background-color: #ffbb30 !important;
+        border-color: #ffbb30 !important;
+      }
+
+      .v-application .warning--text.text--lighten-1 {
+        color: #ffbb30 !important;
+        caret-color: #ffbb30 !important;
+      }
+
+      .v-application .warning.darken-1 {
+        background-color: #df8600 !important;
+        border-color: #df8600 !important;
+      }
+
+      .v-application .warning--text.text--darken-1 {
+        color: #df8600 !important;
+        caret-color: #df8600 !important;
+      }
+
+      .v-application .warning.darken-2 {
+        background-color: #c06c00 !important;
+        border-color: #c06c00 !important;
+      }
+
+      .v-application .warning--text.text--darken-2 {
+        color: #c06c00 !important;
+        caret-color: #c06c00 !important;
+      }
+
+      .v-application .warning.darken-3 {
+        background-color: #a15400 !important;
+        border-color: #a15400 !important;
+      }
+
+      .v-application .warning--text.text--darken-3 {
+        color: #a15400 !important;
+        caret-color: #a15400 !important;
+      }
+
+      .v-application .warning.darken-4 {
+        background-color: #843c00 !important;
+        border-color: #843c00 !important;
+      }
+
+      .v-application .warning--text.text--darken-4 {
+        color: #843c00 !important;
+        caret-color: #843c00 !important;
+      }
+    </style>
+    <script data-n-head="ssr" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" data-ad-client="ca-pub-9846042020379030" async></script>
+  </head>
+
+  <body>
+    <script>
+      (window.ActiveXObject || "ActiveXObject" in window) && alert("本网站不支持IE或IE内核的浏览器，建议您使用火狐浏览器、谷歌浏览器或微软的Edge浏览器（Windows10自带）")
+    </script>
+    <div id="__nuxt">
+      <!---->
+      <div id="__layout">
+        <div data-app="true" id="app" class="v-application v-application--is-ltr theme--light">
+          <div class="v-application--wrap">
+            <nav class="v-navigation-drawer v-navigation-drawer--close v-navigation-drawer--fixed v-navigation-drawer--is-mobile theme--light" style="height:100vh;top:0px;transform:translateX(-100%);width:256px;">
+              <div class="v-navigation-drawer__content">
+                <div class="v-list v-sheet v-sheet--tile theme--light"><a href="/" tabindex="0" class="v-list-item v-list-item--link theme--light">
+                    <div class="v-list-item__action"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">home</i></div>
+                    <div class="v-list-item__content">
+                      <div class="v-list-item__title">Homepage</div>
+                    </div>
+                  </a><a href="/statistics" tabindex="0" class="v-list-item v-list-item--link theme--light">
+                    <div class="v-list-item__action"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">code</i></div>
+                    <div class="v-list-item__content">
+                      <div class="v-list-item__title">Statistics</div>
+                    </div>
+                  </a><a href="/history" aria-current="page" tabindex="0" class="v-list-item--active v-list-item v-list-item--link theme--light">
+                    <div class="v-list-item__action"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">history</i></div>
+                    <div class="v-list-item__content">
+                      <div class="v-list-item__title">History</div>
+                    </div>
+                  </a><a href="/settings" tabindex="0" class="v-list-item v-list-item--link theme--light">
+                    <div class="v-list-item__action"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">settings</i></div>
+                    <div class="v-list-item__content">
+                      <div class="v-list-item__title">Settings</div>
+                    </div>
+                  </a><a href="/about" tabindex="0" class="v-list-item v-list-item--link theme--light">
+                    <div class="v-list-item__action"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">info</i></div>
+                    <div class="v-list-item__content">
+                      <div class="v-list-item__title">About</div>
+                    </div>
+                  </a></div>
+              </div>
+              <div class="v-navigation-drawer__border"></div>
+            </nav>
+            <header class="v-sheet v-sheet--tile theme--light v-toolbar v-toolbar--absolute v-app-bar" style="height:64px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;">
+              <div class="v-toolbar__content" style="height:64px;"><button type="button" class="v-app-bar__nav-icon v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-menu theme--light"></i></span></button>
+                <!---->
+                <div class="v-toolbar__title">NWPU-ACM &#x67E5;&#x8BE2;&#x7CFB;&#x7EDF;</div>
+                <!---->
+                <!---->
+                <div class="spacer"></div>
+                <!---->
+                <!----> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--text theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate v-icon--left fa fa fa fa-sign-in-alt theme--light" style="display:none;"></i> admin
+    </span></button></span> <span class="v-tooltip v-tooltip--left"><!----><a href="https://github.com/Liu233w/acm-statistics" target="_blank" rel="noopener noreferrer" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" medium class="v-icon notranslate fab fa-github theme--light"></i></span></a></span>
+              </div>
+            </header>
+            <main class="v-content" style="padding-top:64px;padding-right:0px;padding-bottom:0px;padding-left:0px;">
+              <div class="v-content__wrap">
+                <div data-fetch-key="0" class="container container--fluid">
+                  <div class="v-banner v-sheet v-sheet--tile theme--light v-banner--is-mobile">
+                    <div class="v-banner__wrapper">
+                      <div class="v-banner__content">
+                        <div class="v-banner__text">
+                          Only the latest history per day is saved. You may change your time zone in settings.
+                          <a href="/settings" class="v-btn v-btn--flat v-btn--router v-btn--text theme--light v-size--default primary--text"><span class="v-btn__content">
+        go settings
+      </span></a></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="v-data-table mt-4 theme--light"><button type="button" disabled="disabled" class="v-btn v-btn--contained v-btn--disabled theme--light v-size--default"><span class="v-btn__content">
+          delete selected
+        </span></button>
+                    <div class="v-data-table__wrapper">
+                      <table>
+                        <colgroup>
+                          <col>
+                          <col>
+                          <col>
+                          <col>
+                          <col>
+                          <col>
+                        </colgroup>
+                        <thead class="v-data-table-header">
+                          <tr>
+                            <th role="columnheader" scope="col" aria-label class="text-start" style="width:1px;min-width:1px;">
+                              <div class="v-data-table__checkbox v-simple-checkbox">
+                                <div class="v-input--selection-controls__ripple"></div><i aria-hidden="true" class="v-icon notranslate mdi mdi-checkbox-blank-outline theme--light"></i>
+                              </div>
+                            </th>
+                            <th role="columnheader" scope="col" aria-label="Id" class="text-start"><span>Id</span></th>
+                            <th role="columnheader" scope="col" aria-label="Query date" class="text-start"><span>Query date</span></th>
+                            <th role="columnheader" scope="col" aria-label="Solved" class="text-start"><span>Solved</span></th>
+                            <th role="columnheader" scope="col" aria-label="Submissions" class="text-start"><span>Submissions</span></th>
+                            <th role="columnheader" scope="col" aria-label="Actions" class="text-start"><span>Actions</span></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td class="text-start">
+                              <div class="v-data-table__checkbox v-simple-checkbox">
+                                <div class="v-input--selection-controls__ripple"></div><i aria-hidden="true" class="v-icon notranslate mdi mdi-checkbox-blank-outline theme--light"></i>
+                              </div>
+                            </td>
+                            <td class="text-start">[[replaced history id]]</td>
+                            <td class="text-start">[[replaced date]]</td>
+                            <td class="text-start">192</td>
+                            <td class="text-start">780</td>
+                            <td class="text-start"><a href="/history/[[replaced history id]]" class="v-btn v-btn--flat v-btn--icon v-btn--round v-btn--router theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-eye theme--light"></i></span></a> <button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-delete theme--light"></i></span></button></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <div class="v-data-footer">
+                      <div class="v-data-footer__select">Rows per page:<div class="v-input v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light v-text-field v-select">
+                          <div class="v-input__control">
+                            <div role="button" aria-haspopup="listbox" aria-expanded="false" class="v-input__slot">
+                              <div class="v-select__slot">
+                                <div class="v-select__selections">
+                                  <div class="v-select__selection v-select__selection--comma">10</div><input aria-label="$vuetify.dataTable.itemsPerPageText" readonly="readonly" type="text" aria-readonly="false" autocomplete="off">
+                                </div>
+                                <div class="v-input__append-inner">
+                                  <div class="v-input__icon v-input__icon--append"><i aria-hidden="true" class="v-icon notranslate mdi mdi-menu-down theme--light"></i></div>
+                                </div><input type="hidden" value="10">
+                              </div>
+                              <div class="v-menu">
+                                <!---->
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="v-data-footer__pagination">1-1 of 1</div>
+                      <div class="v-data-footer__icons-before"><button type="button" disabled="disabled" aria-label="Previous page" class="v-btn v-btn--disabled v-btn--flat v-btn--icon v-btn--round v-btn--text theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-chevron-left theme--light"></i></span></button></div>
+                      <div class="v-data-footer__icons-after"><button type="button" disabled="disabled" aria-label="Next page" class="v-btn v-btn--disabled v-btn--flat v-btn--icon v-btn--round v-btn--text theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-chevron-right theme--light"></i></span></button></div>
+                    </div>
+                  </div>
+                  <div style="height:300px;"><canvas id="line-chart" width="400" height="400"></canvas></div>
+                </div>
+              </div>
+            </main>
+            <footer class="v-footer v-sheet v-sheet--tile theme--light v-footer--absolute v-footer--inset" style="left:0px;right:0px;bottom:0px;"><span class="body-2">&#xA9; 2018 - 1970 NWPU-ACM &#x6280;&#x672F;&#x7EC4;</span>
+              <div class="spacer"></div> <span class="body-2">&#x9655;ICP&#x5907;17008184&#x53F7;</span></footer>
+            <div class="message-panel v-card v-sheet theme--light" style="display:none;">
+              <v-list class="pa-0"></v-list>
+              <!---->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      window.__NUXT__ = (function(a, b, c, d, e, f) {
+        return {
+          layout: "default",
+          data: [{}],
+          fetch: [{
+            items: [{
+              historyId: c,
+              summaryId: c,
+              creationTime: new Date([
+                [replaced date digit]
+              ]),
+              submission: 780,
+              solved: 192
+            }],
+            loading: a,
+            headers: [{
+              text: "Id",
+              value: "historyId",
+              align: "start"
+            }, {
+              text: "Query date",
+              value: "creationTime"
+            }, {
+              text: "Solved",
+              value: "solved"
+            }, {
+              text: "Submissions",
+              value: "submission"
+            }, {
+              text: "Actions",
+              value: "actions"
+            }],
+            selected: [],
+            itemsPerPage: 10,
+            serverItemsLength: d,
+            page: d,
+            errorMessage: e,
+            chartOptions: {
+              responsive: b,
+              maintainAspectRatio: a,
+              tooltips: {
+                mode: "index",
+                intersect: a
+              },
+              hover: {
+                mode: "nearest",
+                intersect: b
+              }
+            }
+          }],
+          error: e,
+          state: {
+            sidebar: a,
+            message: {
+              list: []
+            },
+            session: {
+              login: b,
+              username: "admin"
+            }
+          },
+          serverRendered: b,
+          routePath: "\\u002Fhistory",
+          config: {},
+          env: {
+            VERSION_NUM: f,
+            BUILD_TIME: f
+          }
+        }
+      }(false, true, [
+        [replaced history id]
+      ], 1, null, "0"));
+    </script>
+
+
+  </body>
+
+</html>
+`;
+
+exports[`/history/{historyId} 1`] = `
+<!DOCTYPE html>
+<html data-n-head-ssr>
+
+  <head>
+    <title>History - NWPU-ACM &#x67E5;&#x8BE2;&#x7CFB;&#x7EDF;</title>
+    <meta data-n-head="ssr" charset="utf-8">
+    <meta data-n-head="ssr" name="viewport" content="width=device-width, initial-scale=1">
+    <meta data-n-head="ssr" data-hid="description" name="description" content="&#x897F;&#x5317;&#x5DE5;&#x4E1A;&#x5927;&#x5B66;ACM&#x57FA;&#x5730;&#x67E5;&#x9898;&#x4E3B;&#x9875;&#xFF0C;&#x63D0;&#x4F9B;&#x56FD;&#x5185;&#x5404;&#x5927;OJ&#x7684;&#x67E5;&#x8BE2;&#x9898;&#x91CF;&#x3001;&#x8BA1;&#x7B97;Rating&#x7684;&#x670D;&#x52A1;&#x3002;">
+    <link data-n-head="ssr" rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link data-n-head="ssr" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons|Noto+Serif+SC:300,400,500,700">
+    <link data-n-head="ssr" rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&amp;display=swap">
+    <link data-n-head="ssr" rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@mdi/font@latest/css/materialdesignicons.min.css">
+    <style data-n-head="vuetify" type="text/css" id="vuetify-theme-stylesheet" nonce="undefined">
+      .v-application a {
+        color: #1976d2;
+      }
+
+      .v-application .primary {
+        background-color: #1976d2 !important;
+        border-color: #1976d2 !important;
+      }
+
+      .v-application .primary--text {
+        color: #1976d2 !important;
+        caret-color: #1976d2 !important;
+      }
+
+      .v-application .primary.lighten-5 {
+        background-color: #c7fdff !important;
+        border-color: #c7fdff !important;
+      }
+
+      .v-application .primary--text.text--lighten-5 {
+        color: #c7fdff !important;
+        caret-color: #c7fdff !important;
+      }
+
+      .v-application .primary.lighten-4 {
+        background-color: #a8e0ff !important;
+        border-color: #a8e0ff !important;
+      }
+
+      .v-application .primary--text.text--lighten-4 {
+        color: #a8e0ff !important;
+        caret-color: #a8e0ff !important;
+      }
+
+      .v-application .primary.lighten-3 {
+        background-color: #8ac5ff !important;
+        border-color: #8ac5ff !important;
+      }
+
+      .v-application .primary--text.text--lighten-3 {
+        color: #8ac5ff !important;
+        caret-color: #8ac5ff !important;
+      }
+
+      .v-application .primary.lighten-2 {
+        background-color: #6aaaff !important;
+        border-color: #6aaaff !important;
+      }
+
+      .v-application .primary--text.text--lighten-2 {
+        color: #6aaaff !important;
+        caret-color: #6aaaff !important;
+      }
+
+      .v-application .primary.lighten-1 {
+        background-color: #488fef !important;
+        border-color: #488fef !important;
+      }
+
+      .v-application .primary--text.text--lighten-1 {
+        color: #488fef !important;
+        caret-color: #488fef !important;
+      }
+
+      .v-application .primary.darken-1 {
+        background-color: #005eb6 !important;
+        border-color: #005eb6 !important;
+      }
+
+      .v-application .primary--text.text--darken-1 {
+        color: #005eb6 !important;
+        caret-color: #005eb6 !important;
+      }
+
+      .v-application .primary.darken-2 {
+        background-color: #00479b !important;
+        border-color: #00479b !important;
+      }
+
+      .v-application .primary--text.text--darken-2 {
+        color: #00479b !important;
+        caret-color: #00479b !important;
+      }
+
+      .v-application .primary.darken-3 {
+        background-color: #003180 !important;
+        border-color: #003180 !important;
+      }
+
+      .v-application .primary--text.text--darken-3 {
+        color: #003180 !important;
+        caret-color: #003180 !important;
+      }
+
+      .v-application .primary.darken-4 {
+        background-color: #001e67 !important;
+        border-color: #001e67 !important;
+      }
+
+      .v-application .primary--text.text--darken-4 {
+        color: #001e67 !important;
+        caret-color: #001e67 !important;
+      }
+
+      .v-application .secondary {
+        background-color: #bdbdbd !important;
+        border-color: #bdbdbd !important;
+      }
+
+      .v-application .secondary--text {
+        color: #bdbdbd !important;
+        caret-color: #bdbdbd !important;
+      }
+
+      .v-application .secondary.lighten-5 {
+        background-color: #ffffff !important;
+        border-color: #ffffff !important;
+      }
+
+      .v-application .secondary--text.text--lighten-5 {
+        color: #ffffff !important;
+        caret-color: #ffffff !important;
+      }
+
+      .v-application .secondary.lighten-4 {
+        background-color: #ffffff !important;
+        border-color: #ffffff !important;
+      }
+
+      .v-application .secondary--text.text--lighten-4 {
+        color: #ffffff !important;
+        caret-color: #ffffff !important;
+      }
+
+      .v-application .secondary.lighten-3 {
+        background-color: #ffffff !important;
+        border-color: #ffffff !important;
+      }
+
+      .v-application .secondary--text.text--lighten-3 {
+        color: #ffffff !important;
+        caret-color: #ffffff !important;
+      }
+
+      .v-application .secondary.lighten-2 {
+        background-color: #f5f5f5 !important;
+        border-color: #f5f5f5 !important;
+      }
+
+      .v-application .secondary--text.text--lighten-2 {
+        color: #f5f5f5 !important;
+        caret-color: #f5f5f5 !important;
+      }
+
+      .v-application .secondary.lighten-1 {
+        background-color: #d9d9d9 !important;
+        border-color: #d9d9d9 !important;
+      }
+
+      .v-application .secondary--text.text--lighten-1 {
+        color: #d9d9d9 !important;
+        caret-color: #d9d9d9 !important;
+      }
+
+      .v-application .secondary.darken-1 {
+        background-color: #a2a2a2 !important;
+        border-color: #a2a2a2 !important;
+      }
+
+      .v-application .secondary--text.text--darken-1 {
+        color: #a2a2a2 !important;
+        caret-color: #a2a2a2 !important;
+      }
+
+      .v-application .secondary.darken-2 {
+        background-color: #888888 !important;
+        border-color: #888888 !important;
+      }
+
+      .v-application .secondary--text.text--darken-2 {
+        color: #888888 !important;
+        caret-color: #888888 !important;
+      }
+
+      .v-application .secondary.darken-3 {
+        background-color: #6e6e6e !important;
+        border-color: #6e6e6e !important;
+      }
+
+      .v-application .secondary--text.text--darken-3 {
+        color: #6e6e6e !important;
+        caret-color: #6e6e6e !important;
+      }
+
+      .v-application .secondary.darken-4 {
+        background-color: #565656 !important;
+        border-color: #565656 !important;
+      }
+
+      .v-application .secondary--text.text--darken-4 {
+        color: #565656 !important;
+        caret-color: #565656 !important;
+      }
+
+      .v-application .accent {
+        background-color: #448aff !important;
+        border-color: #448aff !important;
+      }
+
+      .v-application .accent--text {
+        color: #448aff !important;
+        caret-color: #448aff !important;
+      }
+
+      .v-application .accent.lighten-5 {
+        background-color: #e8ffff !important;
+        border-color: #e8ffff !important;
+      }
+
+      .v-application .accent--text.text--lighten-5 {
+        color: #e8ffff !important;
+        caret-color: #e8ffff !important;
+      }
+
+      .v-application .accent.lighten-4 {
+        background-color: #c9f7ff !important;
+        border-color: #c9f7ff !important;
+      }
+
+      .v-application .accent--text.text--lighten-4 {
+        color: #c9f7ff !important;
+        caret-color: #c9f7ff !important;
+      }
+
+      .v-application .accent.lighten-3 {
+        background-color: #a9daff !important;
+        border-color: #a9daff !important;
+      }
+
+      .v-application .accent--text.text--lighten-3 {
+        color: #a9daff !important;
+        caret-color: #a9daff !important;
+      }
+
+      .v-application .accent.lighten-2 {
+        background-color: #8abfff !important;
+        border-color: #8abfff !important;
+      }
+
+      .v-application .accent--text.text--lighten-2 {
+        color: #8abfff !important;
+        caret-color: #8abfff !important;
+      }
+
+      .v-application .accent.lighten-1 {
+        background-color: #69a4ff !important;
+        border-color: #69a4ff !important;
+      }
+
+      .v-application .accent--text.text--lighten-1 {
+        color: #69a4ff !important;
+        caret-color: #69a4ff !important;
+      }
+
+      .v-application .accent.darken-1 {
+        background-color: #0171e2 !important;
+        border-color: #0171e2 !important;
+      }
+
+      .v-application .accent--text.text--darken-1 {
+        color: #0171e2 !important;
+        caret-color: #0171e2 !important;
+      }
+
+      .v-application .accent.darken-2 {
+        background-color: #0059c5 !important;
+        border-color: #0059c5 !important;
+      }
+
+      .v-application .accent--text.text--darken-2 {
+        color: #0059c5 !important;
+        caret-color: #0059c5 !important;
+      }
+
+      .v-application .accent.darken-3 {
+        background-color: #0042aa !important;
+        border-color: #0042aa !important;
+      }
+
+      .v-application .accent--text.text--darken-3 {
+        color: #0042aa !important;
+        caret-color: #0042aa !important;
+      }
+
+      .v-application .accent.darken-4 {
+        background-color: #002e8e !important;
+        border-color: #002e8e !important;
+      }
+
+      .v-application .accent--text.text--darken-4 {
+        color: #002e8e !important;
+        caret-color: #002e8e !important;
+      }
+
+      .v-application .error {
+        background-color: #d50000 !important;
+        border-color: #d50000 !important;
+      }
+
+      .v-application .error--text {
+        color: #d50000 !important;
+        caret-color: #d50000 !important;
+      }
+
+      .v-application .error.lighten-5 {
+        background-color: #ffb082 !important;
+        border-color: #ffb082 !important;
+      }
+
+      .v-application .error--text.text--lighten-5 {
+        color: #ffb082 !important;
+        caret-color: #ffb082 !important;
+      }
+
+      .v-application .error.lighten-4 {
+        background-color: #ff9268 !important;
+        border-color: #ff9268 !important;
+      }
+
+      .v-application .error--text.text--lighten-4 {
+        color: #ff9268 !important;
+        caret-color: #ff9268 !important;
+      }
+
+      .v-application .error.lighten-3 {
+        background-color: #ff754e !important;
+        border-color: #ff754e !important;
+      }
+
+      .v-application .error--text.text--lighten-3 {
+        color: #ff754e !important;
+        caret-color: #ff754e !important;
+      }
+
+      .v-application .error.lighten-2 {
+        background-color: #ff5736 !important;
+        border-color: #ff5736 !important;
+      }
+
+      .v-application .error--text.text--lighten-2 {
+        color: #ff5736 !important;
+        caret-color: #ff5736 !important;
+      }
+
+      .v-application .error.lighten-1 {
+        background-color: #f6361d !important;
+        border-color: #f6361d !important;
+      }
+
+      .v-application .error--text.text--lighten-1 {
+        color: #f6361d !important;
+        caret-color: #f6361d !important;
+      }
+
+      .v-application .error.darken-1 {
+        background-color: #b40000 !important;
+        border-color: #b40000 !important;
+      }
+
+      .v-application .error--text.text--darken-1 {
+        color: #b40000 !important;
+        caret-color: #b40000 !important;
+      }
+
+      .v-application .error.darken-2 {
+        background-color: #950000 !important;
+        border-color: #950000 !important;
+      }
+
+      .v-application .error--text.text--darken-2 {
+        color: #950000 !important;
+        caret-color: #950000 !important;
+      }
+
+      .v-application .error.darken-3 {
+        background-color: #770000 !important;
+        border-color: #770000 !important;
+      }
+
+      .v-application .error--text.text--darken-3 {
+        color: #770000 !important;
+        caret-color: #770000 !important;
+      }
+
+      .v-application .error.darken-4 {
+        background-color: #5c0000 !important;
+        border-color: #5c0000 !important;
+      }
+
+      .v-application .error--text.text--darken-4 {
+        color: #5c0000 !important;
+        caret-color: #5c0000 !important;
+      }
+
+      .v-application .info {
+        background-color: #42a5f5 !important;
+        border-color: #42a5f5 !important;
+      }
+
+      .v-application .info--text {
+        color: #42a5f5 !important;
+        caret-color: #42a5f5 !important;
+      }
+
+      .v-application .info.lighten-5 {
+        background-color: #e4ffff !important;
+        border-color: #e4ffff !important;
+      }
+
+      .v-application .info--text.text--lighten-5 {
+        color: #e4ffff !important;
+        caret-color: #e4ffff !important;
+      }
+
+      .v-application .info.lighten-4 {
+        background-color: #c5ffff !important;
+        border-color: #c5ffff !important;
+      }
+
+      .v-application .info--text.text--lighten-4 {
+        color: #c5ffff !important;
+        caret-color: #c5ffff !important;
+      }
+
+      .v-application .info.lighten-3 {
+        background-color: #a6f8ff !important;
+        border-color: #a6f8ff !important;
+      }
+
+      .v-application .info--text.text--lighten-3 {
+        color: #a6f8ff !important;
+        caret-color: #a6f8ff !important;
+      }
+
+      .v-application .info.lighten-2 {
+        background-color: #87dcff !important;
+        border-color: #87dcff !important;
+      }
+
+      .v-application .info--text.text--lighten-2 {
+        color: #87dcff !important;
+        caret-color: #87dcff !important;
+      }
+
+      .v-application .info.lighten-1 {
+        background-color: #66c0ff !important;
+        border-color: #66c0ff !important;
+      }
+
+      .v-application .info--text.text--lighten-1 {
+        color: #66c0ff !important;
+        caret-color: #66c0ff !important;
+      }
+
+      .v-application .info.darken-1 {
+        background-color: #018bd8 !important;
+        border-color: #018bd8 !important;
+      }
+
+      .v-application .info--text.text--darken-1 {
+        color: #018bd8 !important;
+        caret-color: #018bd8 !important;
+      }
+
+      .v-application .info.darken-2 {
+        background-color: #0072bc !important;
+        border-color: #0072bc !important;
+      }
+
+      .v-application .info--text.text--darken-2 {
+        color: #0072bc !important;
+        caret-color: #0072bc !important;
+      }
+
+      .v-application .info.darken-3 {
+        background-color: #0059a1 !important;
+        border-color: #0059a1 !important;
+      }
+
+      .v-application .info--text.text--darken-3 {
+        color: #0059a1 !important;
+        caret-color: #0059a1 !important;
+      }
+
+      .v-application .info.darken-4 {
+        background-color: #004286 !important;
+        border-color: #004286 !important;
+      }
+
+      .v-application .info--text.text--darken-4 {
+        color: #004286 !important;
+        caret-color: #004286 !important;
+      }
+
+      .v-application .success {
+        background-color: #81c784 !important;
+        border-color: #81c784 !important;
+      }
+
+      .v-application .success--text {
+        color: #81c784 !important;
+        caret-color: #81c784 !important;
+      }
+
+      .v-application .success.lighten-5 {
+        background-color: #ffffff !important;
+        border-color: #ffffff !important;
+      }
+
+      .v-application .success--text.text--lighten-5 {
+        color: #ffffff !important;
+        caret-color: #ffffff !important;
+      }
+
+      .v-application .success.lighten-4 {
+        background-color: #f1fff2 !important;
+        border-color: #f1fff2 !important;
+      }
+
+      .v-application .success--text.text--lighten-4 {
+        color: #f1fff2 !important;
+        caret-color: #f1fff2 !important;
+      }
+
+      .v-application .success.lighten-3 {
+        background-color: #d4ffd5 !important;
+        border-color: #d4ffd5 !important;
+      }
+
+      .v-application .success--text.text--lighten-3 {
+        color: #d4ffd5 !important;
+        caret-color: #d4ffd5 !important;
+      }
+
+      .v-application .success.lighten-2 {
+        background-color: #b8ffba !important;
+        border-color: #b8ffba !important;
+      }
+
+      .v-application .success--text.text--lighten-2 {
+        color: #b8ffba !important;
+        caret-color: #b8ffba !important;
+      }
+
+      .v-application .success.lighten-1 {
+        background-color: #9ce39e !important;
+        border-color: #9ce39e !important;
+      }
+
+      .v-application .success--text.text--lighten-1 {
+        color: #9ce39e !important;
+        caret-color: #9ce39e !important;
+      }
+
+      .v-application .success.darken-1 {
+        background-color: #66ab6a !important;
+        border-color: #66ab6a !important;
+      }
+
+      .v-application .success--text.text--darken-1 {
+        color: #66ab6a !important;
+        caret-color: #66ab6a !important;
+      }
+
+      .v-application .success.darken-2 {
+        background-color: #4c9152 !important;
+        border-color: #4c9152 !important;
+      }
+
+      .v-application .success--text.text--darken-2 {
+        color: #4c9152 !important;
+        caret-color: #4c9152 !important;
+      }
+
+      .v-application .success.darken-3 {
+        background-color: #31773a !important;
+        border-color: #31773a !important;
+      }
+
+      .v-application .success--text.text--darken-3 {
+        color: #31773a !important;
+        caret-color: #31773a !important;
+      }
+
+      .v-application .success.darken-4 {
+        background-color: #145d23 !important;
+        border-color: #145d23 !important;
+      }
+
+      .v-application .success--text.text--darken-4 {
+        color: #145d23 !important;
+        caret-color: #145d23 !important;
+      }
+
+      .v-application .warning {
+        background-color: #ffa000 !important;
+        border-color: #ffa000 !important;
+      }
+
+      .v-application .warning--text {
+        color: #ffa000 !important;
+        caret-color: #ffa000 !important;
+      }
+
+      .v-application .warning.lighten-5 {
+        background-color: #ffffa4 !important;
+        border-color: #ffffa4 !important;
+      }
+
+      .v-application .warning--text.text--lighten-5 {
+        color: #ffffa4 !important;
+        caret-color: #ffffa4 !important;
+      }
+
+      .v-application .warning.lighten-4 {
+        background-color: #ffff87 !important;
+        border-color: #ffff87 !important;
+      }
+
+      .v-application .warning--text.text--lighten-4 {
+        color: #ffff87 !important;
+        caret-color: #ffff87 !important;
+      }
+
+      .v-application .warning.lighten-3 {
+        background-color: #fff36b !important;
+        border-color: #fff36b !important;
+      }
+
+      .v-application .warning--text.text--lighten-3 {
+        color: #fff36b !important;
+        caret-color: #fff36b !important;
+      }
+
+      .v-application .warning.lighten-2 {
+        background-color: #ffd74e !important;
+        border-color: #ffd74e !important;
+      }
+
+      .v-application .warning--text.text--lighten-2 {
+        color: #ffd74e !important;
+        caret-color: #ffd74e !important;
+      }
+
+      .v-application .warning.lighten-1 {
+        background-color: #ffbb30 !important;
+        border-color: #ffbb30 !important;
+      }
+
+      .v-application .warning--text.text--lighten-1 {
+        color: #ffbb30 !important;
+        caret-color: #ffbb30 !important;
+      }
+
+      .v-application .warning.darken-1 {
+        background-color: #df8600 !important;
+        border-color: #df8600 !important;
+      }
+
+      .v-application .warning--text.text--darken-1 {
+        color: #df8600 !important;
+        caret-color: #df8600 !important;
+      }
+
+      .v-application .warning.darken-2 {
+        background-color: #c06c00 !important;
+        border-color: #c06c00 !important;
+      }
+
+      .v-application .warning--text.text--darken-2 {
+        color: #c06c00 !important;
+        caret-color: #c06c00 !important;
+      }
+
+      .v-application .warning.darken-3 {
+        background-color: #a15400 !important;
+        border-color: #a15400 !important;
+      }
+
+      .v-application .warning--text.text--darken-3 {
+        color: #a15400 !important;
+        caret-color: #a15400 !important;
+      }
+
+      .v-application .warning.darken-4 {
+        background-color: #843c00 !important;
+        border-color: #843c00 !important;
+      }
+
+      .v-application .warning--text.text--darken-4 {
+        color: #843c00 !important;
+        caret-color: #843c00 !important;
+      }
+    </style>
+    <script data-n-head="ssr" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" data-ad-client="ca-pub-9846042020379030" async></script>
+  </head>
+
+  <body>
+    <script>
+      (window.ActiveXObject || "ActiveXObject" in window) && alert("本网站不支持IE或IE内核的浏览器，建议您使用火狐浏览器、谷歌浏览器或微软的Edge浏览器（Windows10自带）")
+    </script>
+    <div id="__nuxt">[[replaced date]]</div>
+    <script>
+      window.__NUXT__ = (function(a, b, c, d, e, f, g, h, i, j, k) {
+        return {
+          layout: "default",
+          data: [{}],
+          fetch: [{
+            summary: {
+              queryHistoryId: [
+                [replaced history id]
+              ],
+              generateTime: new Date([
+                [replaced date digit]
+              ]),
+              mainUsername: "",
+              queryCrawlerSummaries: [{
+                crawlerName: "hdu",
+                submission: 385,
+                solved: 108,
+                usernames: [{
+                  fromCrawlerName: a,
+                  username: b
+                }, {
+                  fromCrawlerName: d,
+                  username: b
+                }],
+                isVirtualJudge: c
+              }, {
+                crawlerName: "poj",
+                submission: 325,
+                solved: 59,
+                usernames: [{
+                  fromCrawlerName: d,
+                  username: b
+                }],
+                isVirtualJudge: c
+              }, {
+                crawlerName: "dashiye",
+                submission: g,
+                solved: 0,
+                usernames: [{
+                  fromCrawlerName: d,
+                  username: b
+                }],
+                isVirtualJudge: c
+              }, {
+                crawlerName: "codeforces",
+                submission: 15,
+                solved: h,
+                usernames: [{
+                  fromCrawlerName: d,
+                  username: b
+                }],
+                isVirtualJudge: c
+              }, {
+                crawlerName: "uva",
+                submission: 28,
+                solved: 11,
+                usernames: [{
+                  fromCrawlerName: d,
+                  username: b
+                }],
+                isVirtualJudge: c
+              }, {
+                crawlerName: "fzu",
+                submission: g,
+                solved: i,
+                usernames: [{
+                  fromCrawlerName: d,
+                  username: b
+                }],
+                isVirtualJudge: c
+              }, {
+                crawlerName: "timus",
+                submission: h,
+                solved: e,
+                usernames: [{
+                  fromCrawlerName: d,
+                  username: b
+                }],
+                isVirtualJudge: c
+              }, {
+                crawlerName: j,
+                submission: 4,
+                solved: e,
+                usernames: [{
+                  fromCrawlerName: a,
+                  username: b
+                }],
+                isVirtualJudge: c
+              }, {
+                crawlerName: "codechef",
+                submission: g,
+                solved: i,
+                usernames: [{
+                  fromCrawlerName: d,
+                  username: b
+                }],
+                isVirtualJudge: c
+              }, {
+                crawlerName: d,
+                submission: e,
+                solved: e,
+                usernames: [{
+                  fromCrawlerName: a,
+                  username: b
+                }],
+                isVirtualJudge: f
+              }],
+              summaryWarnings: [{
+                crawlerName: j,
+                content: "This crawler does not have a solved list and its result will be directly added to summary."
+              }],
+              submission: 780,
+              solved: 192
+            },
+            summaryError: a,
+            crawlers: {
+              poj: {
+                title: "POJ",
+                description: a,
+                url: "http:\\u002F\\u002Fpoj.org\\u002F"
+              },
+              hdu: {
+                title: "HDU",
+                description: a,
+                url: "http:\\u002F\\u002Facm.hdu.edu.cn\\u002F"
+              },
+              zoj: {
+                title: "ZOJ",
+                description: "Only nickname is supported",
+                url: "https:\\u002F\\u002Fzoj.pintia.cn\\u002F"
+              },
+              dashiye: {
+                title: "HYSBZ",
+                description: a,
+                url: "http:\\u002F\\u002Fwww.lydsy.com\\u002FJudgeOnline\\u002F"
+              },
+              codeforces: {
+                title: "CodeForces",
+                description: "Including CodeForces::Gym",
+                url: "http:\\u002F\\u002Fcodeforces.com\\u002F"
+              },
+              uva: {
+                title: "UVA",
+                description: a,
+                url: "https:\\u002F\\u002Fuva.onlinejudge.org\\u002F"
+              },
+              uvalive: {
+                title: "ICPC Live Archive",
+                description: a,
+                url: "https:\\u002F\\u002Ficpcarchive.ecs.baylor.edu\\u002Findex.php"
+              },
+              fzu: {
+                title: "FZU",
+                description: a,
+                url: "http:\\u002F\\u002Facm.fzu.edu.cn\\u002Findex.php"
+              },
+              spoj: {
+                title: "SPOJ",
+                description: a,
+                url: "http:\\u002F\\u002Fwww.spoj.com\\u002F"
+              },
+              timus: {
+                title: "Timus (URAL)",
+                description: a,
+                url: "http:\\u002F\\u002Facm.timus.ru\\u002F"
+              },
+              leetcode_cn: {
+                title: "LeetCode_CN",
+                description: a,
+                url: "https:\\u002F\\u002Fleetcode-cn.com"
+              },
+              csu: {
+                title: "CSU",
+                description: a,
+                url: "http:\\u002F\\u002Facm.csu.edu.cn\\u002F"
+              },
+              loj: {
+                title: "LibreOJ",
+                description: a,
+                url: "https:\\u002F\\u002Floj.ac\\u002F"
+              },
+              luogu: {
+                title: "洛谷",
+                description: a,
+                url: "https:\\u002F\\u002Fluogu.org\\u002F"
+              },
+              nowcoder: {
+                title: "牛客OJ",
+                description: "目前只支持输入用户ID（在你的AC列表的URL中）",
+                url: "https:\\u002F\\u002Fac.nowcoder.com\\u002Facm\\u002Fhome"
+              },
+              uestc: {
+                title: "Lutece (UESTC)",
+                description: a,
+                url: "https:\\u002F\\u002Facm.uestc.edu.cn\\u002Fhome"
+              },
+              atcoder: {
+                title: "AtCoder",
+                description: "API provided by kenkoooo (https:\\u002F\\u002Fgithub.com\\u002Fkenkoooo\\u002FAtCoderProblems).\\nIt may take a while for the api to update user statistics.\\n",
+                url: "https:\\u002F\\u002Fatcoder.jp"
+              },
+              aizu: {
+                title: "AIZU",
+                description: a,
+                url: "http:\\u002F\\u002Fjudge.u-aizu.ac.jp\\u002Fonlinejudge\\u002Findex.jsp"
+              },
+              codechef: {
+                title: "CodeChef",
+                description: a,
+                url: "https:\\u002F\\u002Fwww.codechef.com\\u002F"
+              },
+              eljudge: {
+                title: "El Judge",
+                description: a,
+                url: "http:\\u002F\\u002Facm.mipt.ru"
+              },
+              bnu: {
+                title: "BNUOJ",
+                description: a,
+                url: "http:\\u002F\\u002Fwww.bnuoj.com"
+              },
+              codewars: {
+                title: "Codewars",
+                description: "Currently it does not have submission number.\\nUsername is case sensitive.\\n",
+                url: "https:\\u002F\\u002Fwww.codewars.com"
+              },
+              uoj: {
+                title: "UOJ",
+                description: a,
+                url: "http:\\u002F\\u002Fuoj.ac\\u002F"
+              },
+              nbut: {
+                title: "NBUT",
+                description: a,
+                url: "https:\\u002F\\u002Fac.2333.moe\\u002F"
+              },
+              nod: {
+                title: "51Nod",
+                description: "Please use your nickname (displayed in your home page)",
+                url: "https:\\u002F\\u002Fwww.51nod.com"
+              },
+              vjudge: {
+                title: "VJudge",
+                description: "virtual judge，这个OJ的题量是单独计算的",
+                url: "https:\\u002F\\u002Fvjudge.net\\u002F",
+                virtual_judge: f
+              }
+            }
+          }],
+          error: a,
+          state: {
+            sidebar: c,
+            message: {
+              list: []
+            },
+            session: {
+              login: f,
+              username: "admin"
+            }
+          },
+          serverRendered: f,
+          routePath: "\\u002Fhistory\\u002F[[replaced history id]]",
+          config: {},
+          env: {
+            VERSION_NUM: k,
+            BUILD_TIME: k
+          }
+        }
+      }(null, "wwwlsmcom", false, "vjudge", 2, true, 5, 6, 1, "leetcode_cn", "0"));
     </script>
 
 
@@ -2642,6 +4610,9 @@ exports[`/login 1`] = `
           error: null,
           state: {
             sidebar: a,
+            message: {
+              list: []
+            },
             session: {
               login: a,
               username: ""
@@ -3520,6 +5491,9 @@ exports[`/register 1`] = `
           error: null,
           state: {
             sidebar: a,
+            message: {
+              list: []
+            },
             session: {
               login: a,
               username: ""
@@ -3547,7 +5521,7 @@ exports[`/settings 1`] = `
 <html data-n-head-ssr>
 
   <head>
-    <title>NWPU-ACM &#x67E5;&#x8BE2;&#x7CFB;&#x7EDF;</title>
+    <title>Settings - NWPU-ACM &#x67E5;&#x8BE2;&#x7CFB;&#x7EDF;</title>
     <meta data-n-head="ssr" charset="utf-8">
     <meta data-n-head="ssr" name="viewport" content="width=device-width, initial-scale=1">
     <meta data-n-head="ssr" data-hid="description" name="description" content="&#x897F;&#x5317;&#x5DE5;&#x4E1A;&#x5927;&#x5B66;ACM&#x57FA;&#x5730;&#x67E5;&#x9898;&#x4E3B;&#x9875;&#xFF0C;&#x63D0;&#x4F9B;&#x56FD;&#x5185;&#x5404;&#x5927;OJ&#x7684;&#x67E5;&#x8BE2;&#x9898;&#x91CF;&#x3001;&#x8BA1;&#x7B97;Rating&#x7684;&#x670D;&#x52A1;&#x3002;">
@@ -4272,7 +6246,7 @@ exports[`/settings 1`] = `
       <div id="__layout">
         <div data-app="true" id="app" class="v-application v-application--is-ltr theme--light">
           <div class="v-application--wrap">
-            <nav class="v-navigation-drawer v-navigation-drawer--clipped v-navigation-drawer--close v-navigation-drawer--fixed v-navigation-drawer--is-mobile theme--light" style="height:100vh;top:0px;transform:translateX(-100%);width:256px;">
+            <nav class="v-navigation-drawer v-navigation-drawer--close v-navigation-drawer--fixed v-navigation-drawer--is-mobile theme--light" style="height:100vh;top:0px;transform:translateX(-100%);width:256px;">
               <div class="v-navigation-drawer__content">
                 <div class="v-list v-sheet v-sheet--tile theme--light"><a href="/" tabindex="0" class="v-list-item v-list-item--link theme--light">
                     <div class="v-list-item__action"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">home</i></div>
@@ -4282,7 +6256,12 @@ exports[`/settings 1`] = `
                   </a><a href="/statistics" tabindex="0" class="v-list-item v-list-item--link theme--light">
                     <div class="v-list-item__action"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">code</i></div>
                     <div class="v-list-item__content">
-                      <div class="v-list-item__title">AC Statistics</div>
+                      <div class="v-list-item__title">Statistics</div>
+                    </div>
+                  </a><a href="/history" tabindex="0" class="v-list-item v-list-item--link theme--light">
+                    <div class="v-list-item__action"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">history</i></div>
+                    <div class="v-list-item__content">
+                      <div class="v-list-item__title">History</div>
                     </div>
                   </a><a href="/settings" aria-current="page" tabindex="0" class="v-list-item--active v-list-item v-list-item--link theme--light">
                     <div class="v-list-item__action"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">settings</i></div>
@@ -4298,10 +6277,15 @@ exports[`/settings 1`] = `
               </div>
               <div class="v-navigation-drawer__border"></div>
             </nav>
-            <header class="v-sheet v-sheet--tile theme--light v-toolbar v-app-bar v-app-bar--clipped v-app-bar--fixed" style="height:64px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;">
+            <header class="v-sheet v-sheet--tile theme--light v-toolbar v-toolbar--absolute v-app-bar" style="height:64px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;">
               <div class="v-toolbar__content" style="height:64px;"><button type="button" class="v-app-bar__nav-icon v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-menu theme--light"></i></span></button>
+                <!---->
                 <div class="v-toolbar__title">NWPU-ACM &#x67E5;&#x8BE2;&#x7CFB;&#x7EDF;</div>
-                <div class="spacer"></div> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--text theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate v-icon--left fa fa fa fa-sign-in-alt theme--light" style="display:none;"></i> admin
+                <!---->
+                <!---->
+                <div class="spacer"></div>
+                <!---->
+                <!----> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--text theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate v-icon--left fa fa fa fa-sign-in-alt theme--light" style="display:none;"></i> admin
     </span></button></span> <span class="v-tooltip v-tooltip--left"><!----><a href="https://github.com/Liu233w/acm-statistics" target="_blank" rel="noopener noreferrer" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" medium class="v-icon notranslate fab fa-github theme--light"></i></span></a></span>
               </div>
             </header>
@@ -4444,6 +6428,10 @@ exports[`/settings 1`] = `
             </main>
             <footer class="v-footer v-sheet v-sheet--tile theme--light v-footer--absolute v-footer--inset" style="left:0px;right:0px;bottom:0px;"><span class="body-2">&#xA9; 2018 - 1970 NWPU-ACM &#x6280;&#x672F;&#x7EC4;</span>
               <div class="spacer"></div> <span class="body-2">&#x9655;ICP&#x5907;17008184&#x53F7;</span></footer>
+            <div class="message-panel v-card v-sheet theme--light" style="display:none;">
+              <v-list class="pa-0"></v-list>
+              <!---->
+            </div>
           </div>
         </div>
       </div>
@@ -4740,6 +6728,9 @@ exports[`/settings 1`] = `
           error: d,
           state: {
             sidebar: a,
+            message: {
+              list: []
+            },
             session: {
               login: c,
               username: "admin"
@@ -4767,7 +6758,7 @@ exports[`/statistics 1`] = `
 <html data-n-head-ssr>
 
   <head>
-    <title>AC Statistics - NWPU-ACM &#x67E5;&#x8BE2;&#x7CFB;&#x7EDF;</title>
+    <title>Statistics - NWPU-ACM &#x67E5;&#x8BE2;&#x7CFB;&#x7EDF;</title>
     <meta data-n-head="ssr" charset="utf-8">
     <meta data-n-head="ssr" name="viewport" content="width=device-width, initial-scale=1">
     <meta data-n-head="ssr" data-hid="description" name="description" content="&#x897F;&#x5317;&#x5DE5;&#x4E1A;&#x5927;&#x5B66;ACM&#x57FA;&#x5730;&#x67E5;&#x9898;&#x4E3B;&#x9875;&#xFF0C;&#x63D0;&#x4F9B;&#x56FD;&#x5185;&#x5404;&#x5927;OJ&#x7684;&#x67E5;&#x8BE2;&#x9898;&#x91CF;&#x3001;&#x8BA1;&#x7B97;Rating&#x7684;&#x670D;&#x52A1;&#x3002;">
@@ -5492,7 +7483,7 @@ exports[`/statistics 1`] = `
       <div id="__layout">
         <div data-app="true" id="app" class="v-application v-application--is-ltr theme--light">
           <div class="v-application--wrap">
-            <nav class="v-navigation-drawer v-navigation-drawer--clipped v-navigation-drawer--close v-navigation-drawer--fixed v-navigation-drawer--is-mobile theme--light" style="height:100vh;top:0px;transform:translateX(-100%);width:256px;">
+            <nav class="v-navigation-drawer v-navigation-drawer--close v-navigation-drawer--fixed v-navigation-drawer--is-mobile theme--light" style="height:100vh;top:0px;transform:translateX(-100%);width:256px;">
               <div class="v-navigation-drawer__content">
                 <div class="v-list v-sheet v-sheet--tile theme--light"><a href="/" tabindex="0" class="v-list-item v-list-item--link theme--light">
                     <div class="v-list-item__action"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">home</i></div>
@@ -5502,7 +7493,7 @@ exports[`/statistics 1`] = `
                   </a><a href="/statistics" aria-current="page" tabindex="0" class="v-list-item--active v-list-item v-list-item--link theme--light">
                     <div class="v-list-item__action"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">code</i></div>
                     <div class="v-list-item__content">
-                      <div class="v-list-item__title">AC Statistics</div>
+                      <div class="v-list-item__title">Statistics</div>
                     </div>
                   </a><a href="/about" tabindex="0" class="v-list-item v-list-item--link theme--light">
                     <div class="v-list-item__action"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">info</i></div>
@@ -5513,10 +7504,15 @@ exports[`/statistics 1`] = `
               </div>
               <div class="v-navigation-drawer__border"></div>
             </nav>
-            <header class="v-sheet v-sheet--tile theme--light v-toolbar v-app-bar v-app-bar--clipped v-app-bar--fixed" style="height:64px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;">
+            <header class="v-sheet v-sheet--tile theme--light v-toolbar v-toolbar--absolute v-app-bar" style="height:64px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;">
               <div class="v-toolbar__content" style="height:64px;"><button type="button" class="v-app-bar__nav-icon v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-menu theme--light"></i></span></button>
+                <!---->
                 <div class="v-toolbar__title">NWPU-ACM &#x67E5;&#x8BE2;&#x7CFB;&#x7EDF;</div>
-                <div class="spacer"></div> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--text theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate v-icon--left fa fa fa fa-sign-in-alt theme--light"></i> login
+                <!---->
+                <!---->
+                <div class="spacer"></div>
+                <!---->
+                <!----> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--text theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate v-icon--left fa fa fa fa-sign-in-alt theme--light"></i> login
     </span></button></span> <span class="v-tooltip v-tooltip--left"><!----><a href="https://github.com/Liu233w/acm-statistics" target="_blank" rel="noopener noreferrer" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" medium class="v-icon notranslate fab fa-github theme--light"></i></span></a></span>
               </div>
             </header>
@@ -5524,1179 +7520,47 @@ exports[`/statistics 1`] = `
               <div class="v-content__wrap">
                 <div class="container grid-list-md">
                   <div class="layout wrap">
-                    <div class="flex xs12 sm5 md3">
-                      <div class="v-input theme--light v-text-field">
-                        <div class="v-input__control">
-                          <div class="v-input__slot">
-                            <div class="v-text-field__slot"><label class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Set all usernames</label><input required="required" type="text" value></div>
-                          </div>
-                          <div class="v-text-field__details">
-                            <div class="v-messages theme--light">
-                              <div class="v-messages__wrapper"></div>
-                            </div>
+                    <div class="v-input theme--light v-text-field">
+                      <div class="v-input__control">
+                        <div class="v-input__slot">
+                          <div class="v-text-field__slot"><label class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Set all usernames</label><input required="required" type="text" value></div>
+                        </div>
+                        <div class="v-text-field__details">
+                          <div class="v-messages theme--light">
+                            <div class="v-messages__wrapper"></div>
                           </div>
                         </div>
                       </div>
-                    </div>
-                    <div class="flex xs12 sm7 md5"><button type="button" class="primary v-btn v-btn--contained theme--light v-size--default"><span class="v-btn__content">
-        query
-      </span></button> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="error v-btn v-btn--contained theme--light v-size--default"><span class="v-btn__content">
-            reset
-          </span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--contained theme--light v-size--default"><span class="v-btn__content">
-            save username
-            </span></button></span></div>
-                    <div class="flex xs12 md4" style="display:none;"><span buttom class="v-tooltip"><!----><span draggable="false" class="elevation-2 v-chip v-chip--clickable v-chip--label theme--light v-size--default grey lighten-3"><span class="v-chip__content"><span class="title">
-              SOLVED: 0 / SUBMISSION: 0
-            </span></span></span></span></div>
+                    </div> <button type="button" class="ma-1 primary v-btn v-btn--contained theme--light v-size--default"><span class="v-btn__content">
+      query
+    </span></button> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="ma-1 error v-btn v-btn--contained theme--light v-size--default"><span class="v-btn__content">
+          reset
+        </span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--contained theme--light v-size--default ma-1"><span class="v-btn__content">
+          save username
+          </span></button></span>
+                    <div class="spacer"></div>
+                    <!---->
                   </div>
                   <div class="layout">
-                    <div class="flex xs12 sm12 md6 lg4 xl3">
-                      <div class="layout column"><span><div data-column-idx="0" data-column-item-idx="0" class="flex worker-item" style="z-index:1000;"><div class="v-card v-sheet theme--light"><header class="blue-grey lighten-5 v-sheet v-sheet--tile theme--light elevation-0 v-toolbar v-toolbar--dense v-toolbar--flat v-app-bar" style="height:48px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;"><div class="v-toolbar__content" style="height:48px;"><div title="POJ" class="v-toolbar__title">
-      POJ
-    </div> <div class="spacer"></div> <div class="v-toolbar__items"><!----> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">add_circle</i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">link</i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">refresh</i></span></button></span></div>
+                    <div class="spacer"></div>
+                    <div role="progressbar" aria-valuemin="0" aria-valuemax="100" class="v-progress-circular mt-10 v-progress-circular--indeterminate primary--text" style="height:100px;width:100px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="20.833333333333336 20.833333333333336 41.66666666666667 41.66666666666667" style="transform:rotate(0deg);">
+                        <circle fill="transparent" cx="41.66666666666667" cy="41.66666666666667" r="20" stroke-width="1.666666666666667" stroke-dasharray="125.664" stroke-dashoffset="125.66370614359172px" class="v-progress-circular__overlay" /></svg>
+                      <div class="v-progress-circular__info"></div>
                     </div>
-                    </header>
-                    <div class="container">
-                      <div class="layout">
-                        <div class="flex xs12">
-                          <!---->
-                        </div>
-                      </div>
-                      <div class="layout wrap">
-                        <div class="flex xs12">
-                          <div class="v-input theme--light v-text-field">
-                            <div class="v-input__control">
-                              <div class="v-input__slot">
-                                <div class="v-text-field__slot"><label class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Username</label><input required="required" type="text" value></div>
-                                <div class="v-input__append-inner">
-                                  <div class="v-input__icon v-input__icon--clear"><button disabled="disabled" type="button" aria-label="clear icon" class="v-icon notranslate v-icon--disabled v-icon--link mdi mdi-close theme--light"></button></div>
-                                </div>
-                              </div>
-                              <div class="v-text-field__details">
-                                <div class="v-messages theme--light">
-                                  <div class="v-messages__wrapper"></div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <!---->
-                    </div>
-                    <div role="dialog" class="v-dialog__container">
-                      <!---->
-                    </div>
-                  </div>
-                </div>
-                <div data-column-idx="0" data-column-item-idx="1" class="flex worker-item" style="z-index:999;">
-                  <div class="v-card v-sheet theme--light">
-                    <header class="blue-grey lighten-5 v-sheet v-sheet--tile theme--light elevation-0 v-toolbar v-toolbar--dense v-toolbar--flat v-app-bar" style="height:48px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;">
-                      <div class="v-toolbar__content" style="height:48px;">
-                        <div title="HDU" class="v-toolbar__title">
-                          HDU
-                        </div>
-                        <div class="spacer"></div>
-                        <div class="v-toolbar__items">
-                          <!----> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">add_circle</i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">link</i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">refresh</i></span></button></span></div>
-                      </div>
-                    </header>
-                    <div class="container">
-                      <div class="layout">
-                        <div class="flex xs12">
-                          <!---->
-                        </div>
-                      </div>
-                      <div class="layout wrap">
-                        <div class="flex xs12">
-                          <div class="v-input theme--light v-text-field">
-                            <div class="v-input__control">
-                              <div class="v-input__slot">
-                                <div class="v-text-field__slot"><label class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Username</label><input required="required" type="text" value></div>
-                                <div class="v-input__append-inner">
-                                  <div class="v-input__icon v-input__icon--clear"><button disabled="disabled" type="button" aria-label="clear icon" class="v-icon notranslate v-icon--disabled v-icon--link mdi mdi-close theme--light"></button></div>
-                                </div>
-                              </div>
-                              <div class="v-text-field__details">
-                                <div class="v-messages theme--light">
-                                  <div class="v-messages__wrapper"></div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <!---->
-                    </div>
-                    <div role="dialog" class="v-dialog__container">
-                      <!---->
-                    </div>
-                  </div>
-                </div>
-                <div data-column-idx="0" data-column-item-idx="2" class="flex worker-item" style="z-index:998;">
-                  <div class="v-card v-sheet theme--light">
-                    <header class="blue-grey lighten-5 v-sheet v-sheet--tile theme--light elevation-0 v-toolbar v-toolbar--dense v-toolbar--flat v-app-bar" style="height:48px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;">
-                      <div class="v-toolbar__content" style="height:48px;">
-                        <div title="ZOJ" class="v-toolbar__title">
-                          ZOJ
-                        </div>
-                        <div class="spacer"></div>
-                        <div class="v-toolbar__items">
-                          <!----> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">add_circle</i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">link</i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">refresh</i></span></button></span></div>
-                      </div>
-                    </header>
-                    <div class="container">
-                      <div class="layout">
-                        <div class="flex xs12"><span class="grey--text">
-          Only nickname is supported
-        </span></div>
-                      </div>
-                      <div class="layout wrap">
-                        <div class="flex xs12">
-                          <div class="v-input theme--light v-text-field">
-                            <div class="v-input__control">
-                              <div class="v-input__slot">
-                                <div class="v-text-field__slot"><label class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Username</label><input required="required" type="text" value></div>
-                                <div class="v-input__append-inner">
-                                  <div class="v-input__icon v-input__icon--clear"><button disabled="disabled" type="button" aria-label="clear icon" class="v-icon notranslate v-icon--disabled v-icon--link mdi mdi-close theme--light"></button></div>
-                                </div>
-                              </div>
-                              <div class="v-text-field__details">
-                                <div class="v-messages theme--light">
-                                  <div class="v-messages__wrapper"></div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <!---->
-                    </div>
-                    <div role="dialog" class="v-dialog__container">
-                      <!---->
-                    </div>
-                  </div>
-                </div>
-                <div data-column-idx="0" data-column-item-idx="3" class="flex worker-item" style="z-index:997;">
-                  <div class="v-card v-sheet theme--light">
-                    <header class="blue-grey lighten-5 v-sheet v-sheet--tile theme--light elevation-0 v-toolbar v-toolbar--dense v-toolbar--flat v-app-bar" style="height:48px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;">
-                      <div class="v-toolbar__content" style="height:48px;">
-                        <div title="HYSBZ" class="v-toolbar__title">
-                          HYSBZ
-                        </div>
-                        <div class="spacer"></div>
-                        <div class="v-toolbar__items">
-                          <!----> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">add_circle</i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">link</i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">refresh</i></span></button></span></div>
-                      </div>
-                    </header>
-                    <div class="container">
-                      <div class="layout">
-                        <div class="flex xs12">
-                          <!---->
-                        </div>
-                      </div>
-                      <div class="layout wrap">
-                        <div class="flex xs12">
-                          <div class="v-input theme--light v-text-field">
-                            <div class="v-input__control">
-                              <div class="v-input__slot">
-                                <div class="v-text-field__slot"><label class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Username</label><input required="required" type="text" value></div>
-                                <div class="v-input__append-inner">
-                                  <div class="v-input__icon v-input__icon--clear"><button disabled="disabled" type="button" aria-label="clear icon" class="v-icon notranslate v-icon--disabled v-icon--link mdi mdi-close theme--light"></button></div>
-                                </div>
-                              </div>
-                              <div class="v-text-field__details">
-                                <div class="v-messages theme--light">
-                                  <div class="v-messages__wrapper"></div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <!---->
-                    </div>
-                    <div role="dialog" class="v-dialog__container">
-                      <!---->
-                    </div>
-                  </div>
-                </div>
-                <div data-column-idx="0" data-column-item-idx="4" class="flex worker-item" style="z-index:996;">
-                  <div class="v-card v-sheet theme--light">
-                    <header class="blue-grey lighten-5 v-sheet v-sheet--tile theme--light elevation-0 v-toolbar v-toolbar--dense v-toolbar--flat v-app-bar" style="height:48px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;">
-                      <div class="v-toolbar__content" style="height:48px;">
-                        <div title="CodeForces" class="v-toolbar__title">
-                          CodeForces
-                        </div>
-                        <div class="spacer"></div>
-                        <div class="v-toolbar__items">
-                          <!----> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">add_circle</i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">link</i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">refresh</i></span></button></span></div>
-                      </div>
-                    </header>
-                    <div class="container">
-                      <div class="layout">
-                        <div class="flex xs12"><span class="grey--text">
-          Including CodeForces::Gym
-        </span></div>
-                      </div>
-                      <div class="layout wrap">
-                        <div class="flex xs12">
-                          <div class="v-input theme--light v-text-field">
-                            <div class="v-input__control">
-                              <div class="v-input__slot">
-                                <div class="v-text-field__slot"><label class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Username</label><input required="required" type="text" value></div>
-                                <div class="v-input__append-inner">
-                                  <div class="v-input__icon v-input__icon--clear"><button disabled="disabled" type="button" aria-label="clear icon" class="v-icon notranslate v-icon--disabled v-icon--link mdi mdi-close theme--light"></button></div>
-                                </div>
-                              </div>
-                              <div class="v-text-field__details">
-                                <div class="v-messages theme--light">
-                                  <div class="v-messages__wrapper"></div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <!---->
-                    </div>
-                    <div role="dialog" class="v-dialog__container">
-                      <!---->
-                    </div>
-                  </div>
-                </div>
-                <div data-column-idx="0" data-column-item-idx="5" class="flex worker-item" style="z-index:995;">
-                  <div class="v-card v-sheet theme--light">
-                    <header class="blue-grey lighten-5 v-sheet v-sheet--tile theme--light elevation-0 v-toolbar v-toolbar--dense v-toolbar--flat v-app-bar" style="height:48px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;">
-                      <div class="v-toolbar__content" style="height:48px;">
-                        <div title="UVA" class="v-toolbar__title">
-                          UVA
-                        </div>
-                        <div class="spacer"></div>
-                        <div class="v-toolbar__items">
-                          <!----> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">add_circle</i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">link</i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">refresh</i></span></button></span></div>
-                      </div>
-                    </header>
-                    <div class="container">
-                      <div class="layout">
-                        <div class="flex xs12">
-                          <!---->
-                        </div>
-                      </div>
-                      <div class="layout wrap">
-                        <div class="flex xs12">
-                          <div class="v-input theme--light v-text-field">
-                            <div class="v-input__control">
-                              <div class="v-input__slot">
-                                <div class="v-text-field__slot"><label class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Username</label><input required="required" type="text" value></div>
-                                <div class="v-input__append-inner">
-                                  <div class="v-input__icon v-input__icon--clear"><button disabled="disabled" type="button" aria-label="clear icon" class="v-icon notranslate v-icon--disabled v-icon--link mdi mdi-close theme--light"></button></div>
-                                </div>
-                              </div>
-                              <div class="v-text-field__details">
-                                <div class="v-messages theme--light">
-                                  <div class="v-messages__wrapper"></div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <!---->
-                    </div>
-                    <div role="dialog" class="v-dialog__container">
-                      <!---->
-                    </div>
-                  </div>
-                </div>
-                <div data-column-idx="0" data-column-item-idx="6" class="flex worker-item" style="z-index:994;">
-                  <div class="v-card v-sheet theme--light">
-                    <header class="blue-grey lighten-5 v-sheet v-sheet--tile theme--light elevation-0 v-toolbar v-toolbar--dense v-toolbar--flat v-app-bar" style="height:48px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;">
-                      <div class="v-toolbar__content" style="height:48px;">
-                        <div title="ICPC Live Archive" class="v-toolbar__title">
-                          ICPC Live Archive
-                        </div>
-                        <div class="spacer"></div>
-                        <div class="v-toolbar__items">
-                          <!----> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">add_circle</i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">link</i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">refresh</i></span></button></span></div>
-                      </div>
-                    </header>
-                    <div class="container">
-                      <div class="layout">
-                        <div class="flex xs12">
-                          <!---->
-                        </div>
-                      </div>
-                      <div class="layout wrap">
-                        <div class="flex xs12">
-                          <div class="v-input theme--light v-text-field">
-                            <div class="v-input__control">
-                              <div class="v-input__slot">
-                                <div class="v-text-field__slot"><label class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Username</label><input required="required" type="text" value></div>
-                                <div class="v-input__append-inner">
-                                  <div class="v-input__icon v-input__icon--clear"><button disabled="disabled" type="button" aria-label="clear icon" class="v-icon notranslate v-icon--disabled v-icon--link mdi mdi-close theme--light"></button></div>
-                                </div>
-                              </div>
-                              <div class="v-text-field__details">
-                                <div class="v-messages theme--light">
-                                  <div class="v-messages__wrapper"></div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <!---->
-                    </div>
-                    <div role="dialog" class="v-dialog__container">
-                      <!---->
-                    </div>
-                  </div>
-                </div>
-                <div data-column-idx="0" data-column-item-idx="7" class="flex worker-item" style="z-index:993;">
-                  <div class="v-card v-sheet theme--light">
-                    <header class="blue-grey lighten-5 v-sheet v-sheet--tile theme--light elevation-0 v-toolbar v-toolbar--dense v-toolbar--flat v-app-bar" style="height:48px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;">
-                      <div class="v-toolbar__content" style="height:48px;">
-                        <div title="FZU" class="v-toolbar__title">
-                          FZU
-                        </div>
-                        <div class="spacer"></div>
-                        <div class="v-toolbar__items">
-                          <!----> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">add_circle</i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">link</i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">refresh</i></span></button></span></div>
-                      </div>
-                    </header>
-                    <div class="container">
-                      <div class="layout">
-                        <div class="flex xs12">
-                          <!---->
-                        </div>
-                      </div>
-                      <div class="layout wrap">
-                        <div class="flex xs12">
-                          <div class="v-input theme--light v-text-field">
-                            <div class="v-input__control">
-                              <div class="v-input__slot">
-                                <div class="v-text-field__slot"><label class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Username</label><input required="required" type="text" value></div>
-                                <div class="v-input__append-inner">
-                                  <div class="v-input__icon v-input__icon--clear"><button disabled="disabled" type="button" aria-label="clear icon" class="v-icon notranslate v-icon--disabled v-icon--link mdi mdi-close theme--light"></button></div>
-                                </div>
-                              </div>
-                              <div class="v-text-field__details">
-                                <div class="v-messages theme--light">
-                                  <div class="v-messages__wrapper"></div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <!---->
-                    </div>
-                    <div role="dialog" class="v-dialog__container">
-                      <!---->
-                    </div>
-                  </div>
-                </div>
-                <div data-column-idx="0" data-column-item-idx="8" class="flex worker-item" style="z-index:992;">
-                  <div class="v-card v-sheet theme--light">
-                    <header class="blue-grey lighten-5 v-sheet v-sheet--tile theme--light elevation-0 v-toolbar v-toolbar--dense v-toolbar--flat v-app-bar" style="height:48px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;">
-                      <div class="v-toolbar__content" style="height:48px;">
-                        <div title="SPOJ" class="v-toolbar__title">
-                          SPOJ
-                        </div>
-                        <div class="spacer"></div>
-                        <div class="v-toolbar__items">
-                          <!----> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">add_circle</i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">link</i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">refresh</i></span></button></span></div>
-                      </div>
-                    </header>
-                    <div class="container">
-                      <div class="layout">
-                        <div class="flex xs12">
-                          <!---->
-                        </div>
-                      </div>
-                      <div class="layout wrap">
-                        <div class="flex xs12">
-                          <div class="v-input theme--light v-text-field">
-                            <div class="v-input__control">
-                              <div class="v-input__slot">
-                                <div class="v-text-field__slot"><label class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Username</label><input required="required" type="text" value></div>
-                                <div class="v-input__append-inner">
-                                  <div class="v-input__icon v-input__icon--clear"><button disabled="disabled" type="button" aria-label="clear icon" class="v-icon notranslate v-icon--disabled v-icon--link mdi mdi-close theme--light"></button></div>
-                                </div>
-                              </div>
-                              <div class="v-text-field__details">
-                                <div class="v-messages theme--light">
-                                  <div class="v-messages__wrapper"></div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <!---->
-                    </div>
-                    <div role="dialog" class="v-dialog__container">
-                      <!---->
-                    </div>
-                  </div>
-                </div></span>
-              </div>
-          </div>
-          <div class="flex xs12 sm12 md6 lg4 xl3">
-            <div class="layout column"><span><div data-column-idx="1" data-column-item-idx="0" class="flex worker-item" style="z-index:1000;"><div class="v-card v-sheet theme--light"><header class="blue-grey lighten-5 v-sheet v-sheet--tile theme--light elevation-0 v-toolbar v-toolbar--dense v-toolbar--flat v-app-bar" style="height:48px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;"><div class="v-toolbar__content" style="height:48px;"><div title="Timus (URAL)" class="v-toolbar__title">
-      Timus (URAL)
-    </div> <div class="spacer"></div> <div class="v-toolbar__items"><!----> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">add_circle</i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">link</i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">refresh</i></span></button></span></div>
-          </div>
-          </header>
-          <div class="container">
-            <div class="layout">
-              <div class="flex xs12">
-                <!---->
-              </div>
-            </div>
-            <div class="layout wrap">
-              <div class="flex xs12">
-                <div class="v-input theme--light v-text-field">
-                  <div class="v-input__control">
-                    <div class="v-input__slot">
-                      <div class="v-text-field__slot"><label class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Username</label><input required="required" type="text" value></div>
-                      <div class="v-input__append-inner">
-                        <div class="v-input__icon v-input__icon--clear"><button disabled="disabled" type="button" aria-label="clear icon" class="v-icon notranslate v-icon--disabled v-icon--link mdi mdi-close theme--light"></button></div>
-                      </div>
-                    </div>
-                    <div class="v-text-field__details">
-                      <div class="v-messages theme--light">
-                        <div class="v-messages__wrapper"></div>
-                      </div>
-                    </div>
+                    <div class="spacer"></div>
                   </div>
                 </div>
               </div>
-            </div>
-            <!---->
-          </div>
-          <div role="dialog" class="v-dialog__container">
-            <!---->
-          </div>
-        </div>
-      </div>
-      <div data-column-idx="1" data-column-item-idx="1" class="flex worker-item" style="z-index:999;">
-        <div class="v-card v-sheet theme--light">
-          <header class="blue-grey lighten-5 v-sheet v-sheet--tile theme--light elevation-0 v-toolbar v-toolbar--dense v-toolbar--flat v-app-bar" style="height:48px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;">
-            <div class="v-toolbar__content" style="height:48px;">
-              <div title="LeetCode_CN" class="v-toolbar__title">
-                LeetCode_CN
-              </div>
-              <div class="spacer"></div>
-              <div class="v-toolbar__items">
-                <!----> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">add_circle</i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">link</i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">refresh</i></span></button></span></div>
-            </div>
-          </header>
-          <div class="container">
-            <div class="layout">
-              <div class="flex xs12">
-                <!---->
-              </div>
-            </div>
-            <div class="layout wrap">
-              <div class="flex xs12">
-                <div class="v-input theme--light v-text-field">
-                  <div class="v-input__control">
-                    <div class="v-input__slot">
-                      <div class="v-text-field__slot"><label class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Username</label><input required="required" type="text" value></div>
-                      <div class="v-input__append-inner">
-                        <div class="v-input__icon v-input__icon--clear"><button disabled="disabled" type="button" aria-label="clear icon" class="v-icon notranslate v-icon--disabled v-icon--link mdi mdi-close theme--light"></button></div>
-                      </div>
-                    </div>
-                    <div class="v-text-field__details">
-                      <div class="v-messages theme--light">
-                        <div class="v-messages__wrapper"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!---->
-          </div>
-          <div role="dialog" class="v-dialog__container">
-            <!---->
-          </div>
-        </div>
-      </div>
-      <div data-column-idx="1" data-column-item-idx="2" class="flex worker-item" style="z-index:998;">
-        <div class="v-card v-sheet theme--light">
-          <header class="blue-grey lighten-5 v-sheet v-sheet--tile theme--light elevation-0 v-toolbar v-toolbar--dense v-toolbar--flat v-app-bar" style="height:48px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;">
-            <div class="v-toolbar__content" style="height:48px;">
-              <div title="CSU" class="v-toolbar__title">
-                CSU
-              </div>
-              <div class="spacer"></div>
-              <div class="v-toolbar__items">
-                <!----> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">add_circle</i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">link</i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">refresh</i></span></button></span></div>
-            </div>
-          </header>
-          <div class="container">
-            <div class="layout">
-              <div class="flex xs12">
-                <!---->
-              </div>
-            </div>
-            <div class="layout wrap">
-              <div class="flex xs12">
-                <div class="v-input theme--light v-text-field">
-                  <div class="v-input__control">
-                    <div class="v-input__slot">
-                      <div class="v-text-field__slot"><label class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Username</label><input required="required" type="text" value></div>
-                      <div class="v-input__append-inner">
-                        <div class="v-input__icon v-input__icon--clear"><button disabled="disabled" type="button" aria-label="clear icon" class="v-icon notranslate v-icon--disabled v-icon--link mdi mdi-close theme--light"></button></div>
-                      </div>
-                    </div>
-                    <div class="v-text-field__details">
-                      <div class="v-messages theme--light">
-                        <div class="v-messages__wrapper"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!---->
-          </div>
-          <div role="dialog" class="v-dialog__container">
-            <!---->
-          </div>
-        </div>
-      </div>
-      <div data-column-idx="1" data-column-item-idx="3" class="flex worker-item" style="z-index:997;">
-        <div class="v-card v-sheet theme--light">
-          <header class="blue-grey lighten-5 v-sheet v-sheet--tile theme--light elevation-0 v-toolbar v-toolbar--dense v-toolbar--flat v-app-bar" style="height:48px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;">
-            <div class="v-toolbar__content" style="height:48px;">
-              <div title="LibreOJ" class="v-toolbar__title">
-                LibreOJ
-              </div>
-              <div class="spacer"></div>
-              <div class="v-toolbar__items">
-                <!----> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">add_circle</i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">link</i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">refresh</i></span></button></span></div>
-            </div>
-          </header>
-          <div class="container">
-            <div class="layout">
-              <div class="flex xs12">
-                <!---->
-              </div>
-            </div>
-            <div class="layout wrap">
-              <div class="flex xs12">
-                <div class="v-input theme--light v-text-field">
-                  <div class="v-input__control">
-                    <div class="v-input__slot">
-                      <div class="v-text-field__slot"><label class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Username</label><input required="required" type="text" value></div>
-                      <div class="v-input__append-inner">
-                        <div class="v-input__icon v-input__icon--clear"><button disabled="disabled" type="button" aria-label="clear icon" class="v-icon notranslate v-icon--disabled v-icon--link mdi mdi-close theme--light"></button></div>
-                      </div>
-                    </div>
-                    <div class="v-text-field__details">
-                      <div class="v-messages theme--light">
-                        <div class="v-messages__wrapper"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!---->
-          </div>
-          <div role="dialog" class="v-dialog__container">
-            <!---->
-          </div>
-        </div>
-      </div>
-      <div data-column-idx="1" data-column-item-idx="4" class="flex worker-item" style="z-index:996;">
-        <div class="v-card v-sheet theme--light">
-          <header class="blue-grey lighten-5 v-sheet v-sheet--tile theme--light elevation-0 v-toolbar v-toolbar--dense v-toolbar--flat v-app-bar" style="height:48px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;">
-            <div class="v-toolbar__content" style="height:48px;">
-              <div title="&#x6D1B;&#x8C37;" class="v-toolbar__title">
-                &#x6D1B;&#x8C37;
-              </div>
-              <div class="spacer"></div>
-              <div class="v-toolbar__items">
-                <!----> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">add_circle</i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">link</i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">refresh</i></span></button></span></div>
-            </div>
-          </header>
-          <div class="container">
-            <div class="layout">
-              <div class="flex xs12">
-                <!---->
-              </div>
-            </div>
-            <div class="layout wrap">
-              <div class="flex xs12">
-                <div class="v-input theme--light v-text-field">
-                  <div class="v-input__control">
-                    <div class="v-input__slot">
-                      <div class="v-text-field__slot"><label class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Username</label><input required="required" type="text" value></div>
-                      <div class="v-input__append-inner">
-                        <div class="v-input__icon v-input__icon--clear"><button disabled="disabled" type="button" aria-label="clear icon" class="v-icon notranslate v-icon--disabled v-icon--link mdi mdi-close theme--light"></button></div>
-                      </div>
-                    </div>
-                    <div class="v-text-field__details">
-                      <div class="v-messages theme--light">
-                        <div class="v-messages__wrapper"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!---->
-          </div>
-          <div role="dialog" class="v-dialog__container">
-            <!---->
-          </div>
-        </div>
-      </div>
-      <div data-column-idx="1" data-column-item-idx="5" class="flex worker-item" style="z-index:995;">
-        <div class="v-card v-sheet theme--light">
-          <header class="blue-grey lighten-5 v-sheet v-sheet--tile theme--light elevation-0 v-toolbar v-toolbar--dense v-toolbar--flat v-app-bar" style="height:48px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;">
-            <div class="v-toolbar__content" style="height:48px;">
-              <div title="&#x725B;&#x5BA2;OJ" class="v-toolbar__title">
-                &#x725B;&#x5BA2;OJ
-              </div>
-              <div class="spacer"></div>
-              <div class="v-toolbar__items">
-                <!----> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">add_circle</i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">link</i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">refresh</i></span></button></span></div>
-            </div>
-          </header>
-          <div class="container">
-            <div class="layout">
-              <div class="flex xs12"><span class="grey--text">
-          &#x76EE;&#x524D;&#x53EA;&#x652F;&#x6301;&#x8F93;&#x5165;&#x7528;&#x6237;ID&#xFF08;&#x5728;&#x4F60;&#x7684;AC&#x5217;&#x8868;&#x7684;URL&#x4E2D;&#xFF09;
-        </span></div>
-            </div>
-            <div class="layout wrap">
-              <div class="flex xs12">
-                <div class="v-input theme--light v-text-field">
-                  <div class="v-input__control">
-                    <div class="v-input__slot">
-                      <div class="v-text-field__slot"><label class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Username</label><input required="required" type="text" value></div>
-                      <div class="v-input__append-inner">
-                        <div class="v-input__icon v-input__icon--clear"><button disabled="disabled" type="button" aria-label="clear icon" class="v-icon notranslate v-icon--disabled v-icon--link mdi mdi-close theme--light"></button></div>
-                      </div>
-                    </div>
-                    <div class="v-text-field__details">
-                      <div class="v-messages theme--light">
-                        <div class="v-messages__wrapper"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!---->
-          </div>
-          <div role="dialog" class="v-dialog__container">
-            <!---->
-          </div>
-        </div>
-      </div>
-      <div data-column-idx="1" data-column-item-idx="6" class="flex worker-item" style="z-index:994;">
-        <div class="v-card v-sheet theme--light">
-          <header class="blue-grey lighten-5 v-sheet v-sheet--tile theme--light elevation-0 v-toolbar v-toolbar--dense v-toolbar--flat v-app-bar" style="height:48px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;">
-            <div class="v-toolbar__content" style="height:48px;">
-              <div title="Lutece (UESTC)" class="v-toolbar__title">
-                Lutece (UESTC)
-              </div>
-              <div class="spacer"></div>
-              <div class="v-toolbar__items">
-                <!----> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">add_circle</i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">link</i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">refresh</i></span></button></span></div>
-            </div>
-          </header>
-          <div class="container">
-            <div class="layout">
-              <div class="flex xs12">
-                <!---->
-              </div>
-            </div>
-            <div class="layout wrap">
-              <div class="flex xs12">
-                <div class="v-input theme--light v-text-field">
-                  <div class="v-input__control">
-                    <div class="v-input__slot">
-                      <div class="v-text-field__slot"><label class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Username</label><input required="required" type="text" value></div>
-                      <div class="v-input__append-inner">
-                        <div class="v-input__icon v-input__icon--clear"><button disabled="disabled" type="button" aria-label="clear icon" class="v-icon notranslate v-icon--disabled v-icon--link mdi mdi-close theme--light"></button></div>
-                      </div>
-                    </div>
-                    <div class="v-text-field__details">
-                      <div class="v-messages theme--light">
-                        <div class="v-messages__wrapper"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!---->
-          </div>
-          <div role="dialog" class="v-dialog__container">
-            <!---->
-          </div>
-        </div>
-      </div>
-      <div data-column-idx="1" data-column-item-idx="7" class="flex worker-item" style="z-index:993;">
-        <div class="v-card v-sheet theme--light">
-          <header class="blue-grey lighten-5 v-sheet v-sheet--tile theme--light elevation-0 v-toolbar v-toolbar--dense v-toolbar--flat v-app-bar" style="height:48px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;">
-            <div class="v-toolbar__content" style="height:48px;">
-              <div title="AtCoder" class="v-toolbar__title">
-                AtCoder
-              </div>
-              <div class="spacer"></div>
-              <div class="v-toolbar__items">
-                <!----> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">add_circle</i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">link</i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">refresh</i></span></button></span></div>
-            </div>
-          </header>
-          <div class="container">
-            <div class="layout">
-              <div class="flex xs12"><span class="grey--text">
-          API provided by kenkoooo (https://github.com/kenkoooo/AtCoderProblems).
-It may take a while for the api to update user statistics.
-
-        </span></div>
-            </div>
-            <div class="layout wrap">
-              <div class="flex xs12">
-                <div class="v-input theme--light v-text-field">
-                  <div class="v-input__control">
-                    <div class="v-input__slot">
-                      <div class="v-text-field__slot"><label class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Username</label><input required="required" type="text" value></div>
-                      <div class="v-input__append-inner">
-                        <div class="v-input__icon v-input__icon--clear"><button disabled="disabled" type="button" aria-label="clear icon" class="v-icon notranslate v-icon--disabled v-icon--link mdi mdi-close theme--light"></button></div>
-                      </div>
-                    </div>
-                    <div class="v-text-field__details">
-                      <div class="v-messages theme--light">
-                        <div class="v-messages__wrapper"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!---->
-          </div>
-          <div role="dialog" class="v-dialog__container">
-            <!---->
-          </div>
-        </div>
-      </div>
-      <div data-column-idx="1" data-column-item-idx="8" class="flex worker-item" style="z-index:992;">
-        <div class="v-card v-sheet theme--light">
-          <header class="blue-grey lighten-5 v-sheet v-sheet--tile theme--light elevation-0 v-toolbar v-toolbar--dense v-toolbar--flat v-app-bar" style="height:48px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;">
-            <div class="v-toolbar__content" style="height:48px;">
-              <div title="AIZU" class="v-toolbar__title">
-                AIZU
-              </div>
-              <div class="spacer"></div>
-              <div class="v-toolbar__items">
-                <!----> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">add_circle</i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">link</i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">refresh</i></span></button></span></div>
-            </div>
-          </header>
-          <div class="container">
-            <div class="layout">
-              <div class="flex xs12">
-                <!---->
-              </div>
-            </div>
-            <div class="layout wrap">
-              <div class="flex xs12">
-                <div class="v-input theme--light v-text-field">
-                  <div class="v-input__control">
-                    <div class="v-input__slot">
-                      <div class="v-text-field__slot"><label class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Username</label><input required="required" type="text" value></div>
-                      <div class="v-input__append-inner">
-                        <div class="v-input__icon v-input__icon--clear"><button disabled="disabled" type="button" aria-label="clear icon" class="v-icon notranslate v-icon--disabled v-icon--link mdi mdi-close theme--light"></button></div>
-                      </div>
-                    </div>
-                    <div class="v-text-field__details">
-                      <div class="v-messages theme--light">
-                        <div class="v-messages__wrapper"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!---->
-          </div>
-          <div role="dialog" class="v-dialog__container">
-            <!---->
-          </div>
-        </div>
-      </div></span>
-    </div>
-    </div>
-    <div class="flex xs12 sm12 md6 lg4 xl3">
-      <div class="layout column"><span><div data-column-idx="2" data-column-item-idx="0" class="flex worker-item" style="z-index:1000;"><div class="v-card v-sheet theme--light"><header class="blue-grey lighten-5 v-sheet v-sheet--tile theme--light elevation-0 v-toolbar v-toolbar--dense v-toolbar--flat v-app-bar" style="height:48px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;"><div class="v-toolbar__content" style="height:48px;"><div title="CodeChef" class="v-toolbar__title">
-      CodeChef
-    </div> <div class="spacer"></div> <div class="v-toolbar__items"><!----> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">add_circle</i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">link</i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">refresh</i></span></button></span></div>
-    </div>
-    </header>
-    <div class="container">
-      <div class="layout">
-        <div class="flex xs12">
-          <!---->
-        </div>
-      </div>
-      <div class="layout wrap">
-        <div class="flex xs12">
-          <div class="v-input theme--light v-text-field">
-            <div class="v-input__control">
-              <div class="v-input__slot">
-                <div class="v-text-field__slot"><label class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Username</label><input required="required" type="text" value></div>
-                <div class="v-input__append-inner">
-                  <div class="v-input__icon v-input__icon--clear"><button disabled="disabled" type="button" aria-label="clear icon" class="v-icon notranslate v-icon--disabled v-icon--link mdi mdi-close theme--light"></button></div>
-                </div>
-              </div>
-              <div class="v-text-field__details">
-                <div class="v-messages theme--light">
-                  <div class="v-messages__wrapper"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!---->
-    </div>
-    <div role="dialog" class="v-dialog__container">
-      <!---->
-    </div>
-    </div>
-    </div>
-    <div data-column-idx="2" data-column-item-idx="1" class="flex worker-item" style="z-index:999;">
-      <div class="v-card v-sheet theme--light">
-        <header class="blue-grey lighten-5 v-sheet v-sheet--tile theme--light elevation-0 v-toolbar v-toolbar--dense v-toolbar--flat v-app-bar" style="height:48px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;">
-          <div class="v-toolbar__content" style="height:48px;">
-            <div title="El Judge" class="v-toolbar__title">
-              El Judge
-            </div>
-            <div class="spacer"></div>
-            <div class="v-toolbar__items">
-              <!----> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">add_circle</i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">link</i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">refresh</i></span></button></span></div>
-          </div>
-        </header>
-        <div class="container">
-          <div class="layout">
-            <div class="flex xs12">
+            </main>
+            <footer class="v-footer v-sheet v-sheet--tile theme--light v-footer--absolute v-footer--inset" style="left:0px;right:0px;bottom:0px;"><span class="body-2">&#xA9; 2018 - 1970 NWPU-ACM &#x6280;&#x672F;&#x7EC4;</span>
+              <div class="spacer"></div> <span class="body-2">&#x9655;ICP&#x5907;17008184&#x53F7;</span></footer>
+            <div class="message-panel v-card v-sheet theme--light" style="display:none;">
+              <v-list class="pa-0"></v-list>
               <!---->
             </div>
           </div>
-          <div class="layout wrap">
-            <div class="flex xs12">
-              <div class="v-input theme--light v-text-field">
-                <div class="v-input__control">
-                  <div class="v-input__slot">
-                    <div class="v-text-field__slot"><label class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Username</label><input required="required" type="text" value></div>
-                    <div class="v-input__append-inner">
-                      <div class="v-input__icon v-input__icon--clear"><button disabled="disabled" type="button" aria-label="clear icon" class="v-icon notranslate v-icon--disabled v-icon--link mdi mdi-close theme--light"></button></div>
-                    </div>
-                  </div>
-                  <div class="v-text-field__details">
-                    <div class="v-messages theme--light">
-                      <div class="v-messages__wrapper"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!---->
-        </div>
-        <div role="dialog" class="v-dialog__container">
-          <!---->
         </div>
       </div>
-    </div>
-    <div data-column-idx="2" data-column-item-idx="2" class="flex worker-item" style="z-index:998;">
-      <div class="v-card v-sheet theme--light">
-        <header class="blue-grey lighten-5 v-sheet v-sheet--tile theme--light elevation-0 v-toolbar v-toolbar--dense v-toolbar--flat v-app-bar" style="height:48px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;">
-          <div class="v-toolbar__content" style="height:48px;">
-            <div title="BNUOJ" class="v-toolbar__title">
-              BNUOJ
-            </div>
-            <div class="spacer"></div>
-            <div class="v-toolbar__items">
-              <!----> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">add_circle</i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">link</i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">refresh</i></span></button></span></div>
-          </div>
-        </header>
-        <div class="container">
-          <div class="layout">
-            <div class="flex xs12">
-              <!---->
-            </div>
-          </div>
-          <div class="layout wrap">
-            <div class="flex xs12">
-              <div class="v-input theme--light v-text-field">
-                <div class="v-input__control">
-                  <div class="v-input__slot">
-                    <div class="v-text-field__slot"><label class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Username</label><input required="required" type="text" value></div>
-                    <div class="v-input__append-inner">
-                      <div class="v-input__icon v-input__icon--clear"><button disabled="disabled" type="button" aria-label="clear icon" class="v-icon notranslate v-icon--disabled v-icon--link mdi mdi-close theme--light"></button></div>
-                    </div>
-                  </div>
-                  <div class="v-text-field__details">
-                    <div class="v-messages theme--light">
-                      <div class="v-messages__wrapper"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!---->
-        </div>
-        <div role="dialog" class="v-dialog__container">
-          <!---->
-        </div>
-      </div>
-    </div>
-    <div data-column-idx="2" data-column-item-idx="3" class="flex worker-item" style="z-index:997;">
-      <div class="v-card v-sheet theme--light">
-        <header class="blue-grey lighten-5 v-sheet v-sheet--tile theme--light elevation-0 v-toolbar v-toolbar--dense v-toolbar--flat v-app-bar" style="height:48px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;">
-          <div class="v-toolbar__content" style="height:48px;">
-            <div title="Codewars" class="v-toolbar__title">
-              Codewars
-            </div>
-            <div class="spacer"></div>
-            <div class="v-toolbar__items">
-              <!----> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">add_circle</i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">link</i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">refresh</i></span></button></span></div>
-          </div>
-        </header>
-        <div class="container">
-          <div class="layout">
-            <div class="flex xs12"><span class="grey--text">
-          Currently it does not have submission number.
-Username is case sensitive.
-
-        </span></div>
-          </div>
-          <div class="layout wrap">
-            <div class="flex xs12">
-              <div class="v-input theme--light v-text-field">
-                <div class="v-input__control">
-                  <div class="v-input__slot">
-                    <div class="v-text-field__slot"><label class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Username</label><input required="required" type="text" value></div>
-                    <div class="v-input__append-inner">
-                      <div class="v-input__icon v-input__icon--clear"><button disabled="disabled" type="button" aria-label="clear icon" class="v-icon notranslate v-icon--disabled v-icon--link mdi mdi-close theme--light"></button></div>
-                    </div>
-                  </div>
-                  <div class="v-text-field__details">
-                    <div class="v-messages theme--light">
-                      <div class="v-messages__wrapper"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!---->
-        </div>
-        <div role="dialog" class="v-dialog__container">
-          <!---->
-        </div>
-      </div>
-    </div>
-    <div data-column-idx="2" data-column-item-idx="4" class="flex worker-item" style="z-index:996;">
-      <div class="v-card v-sheet theme--light">
-        <header class="blue-grey lighten-5 v-sheet v-sheet--tile theme--light elevation-0 v-toolbar v-toolbar--dense v-toolbar--flat v-app-bar" style="height:48px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;">
-          <div class="v-toolbar__content" style="height:48px;">
-            <div title="UOJ" class="v-toolbar__title">
-              UOJ
-            </div>
-            <div class="spacer"></div>
-            <div class="v-toolbar__items">
-              <!----> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">add_circle</i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">link</i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">refresh</i></span></button></span></div>
-          </div>
-        </header>
-        <div class="container">
-          <div class="layout">
-            <div class="flex xs12">
-              <!---->
-            </div>
-          </div>
-          <div class="layout wrap">
-            <div class="flex xs12">
-              <div class="v-input theme--light v-text-field">
-                <div class="v-input__control">
-                  <div class="v-input__slot">
-                    <div class="v-text-field__slot"><label class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Username</label><input required="required" type="text" value></div>
-                    <div class="v-input__append-inner">
-                      <div class="v-input__icon v-input__icon--clear"><button disabled="disabled" type="button" aria-label="clear icon" class="v-icon notranslate v-icon--disabled v-icon--link mdi mdi-close theme--light"></button></div>
-                    </div>
-                  </div>
-                  <div class="v-text-field__details">
-                    <div class="v-messages theme--light">
-                      <div class="v-messages__wrapper"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!---->
-        </div>
-        <div role="dialog" class="v-dialog__container">
-          <!---->
-        </div>
-      </div>
-    </div>
-    <div data-column-idx="2" data-column-item-idx="5" class="flex worker-item" style="z-index:995;">
-      <div class="v-card v-sheet theme--light">
-        <header class="blue-grey lighten-5 v-sheet v-sheet--tile theme--light elevation-0 v-toolbar v-toolbar--dense v-toolbar--flat v-app-bar" style="height:48px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;">
-          <div class="v-toolbar__content" style="height:48px;">
-            <div title="NBUT" class="v-toolbar__title">
-              NBUT
-            </div>
-            <div class="spacer"></div>
-            <div class="v-toolbar__items">
-              <!----> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">add_circle</i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">link</i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">refresh</i></span></button></span></div>
-          </div>
-        </header>
-        <div class="container">
-          <div class="layout">
-            <div class="flex xs12">
-              <!---->
-            </div>
-          </div>
-          <div class="layout wrap">
-            <div class="flex xs12">
-              <div class="v-input theme--light v-text-field">
-                <div class="v-input__control">
-                  <div class="v-input__slot">
-                    <div class="v-text-field__slot"><label class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Username</label><input required="required" type="text" value></div>
-                    <div class="v-input__append-inner">
-                      <div class="v-input__icon v-input__icon--clear"><button disabled="disabled" type="button" aria-label="clear icon" class="v-icon notranslate v-icon--disabled v-icon--link mdi mdi-close theme--light"></button></div>
-                    </div>
-                  </div>
-                  <div class="v-text-field__details">
-                    <div class="v-messages theme--light">
-                      <div class="v-messages__wrapper"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!---->
-        </div>
-        <div role="dialog" class="v-dialog__container">
-          <!---->
-        </div>
-      </div>
-    </div>
-    <div data-column-idx="2" data-column-item-idx="6" class="flex worker-item" style="z-index:994;">
-      <div class="v-card v-sheet theme--light">
-        <header class="blue-grey lighten-5 v-sheet v-sheet--tile theme--light elevation-0 v-toolbar v-toolbar--dense v-toolbar--flat v-app-bar" style="height:48px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;">
-          <div class="v-toolbar__content" style="height:48px;">
-            <div title="51Nod" class="v-toolbar__title">
-              51Nod
-            </div>
-            <div class="spacer"></div>
-            <div class="v-toolbar__items">
-              <!----> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">add_circle</i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">link</i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">refresh</i></span></button></span></div>
-          </div>
-        </header>
-        <div class="container">
-          <div class="layout">
-            <div class="flex xs12"><span class="grey--text">
-          Please use your nickname (displayed in your home page)
-        </span></div>
-          </div>
-          <div class="layout wrap">
-            <div class="flex xs12">
-              <div class="v-input theme--light v-text-field">
-                <div class="v-input__control">
-                  <div class="v-input__slot">
-                    <div class="v-text-field__slot"><label class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Username</label><input required="required" type="text" value></div>
-                    <div class="v-input__append-inner">
-                      <div class="v-input__icon v-input__icon--clear"><button disabled="disabled" type="button" aria-label="clear icon" class="v-icon notranslate v-icon--disabled v-icon--link mdi mdi-close theme--light"></button></div>
-                    </div>
-                  </div>
-                  <div class="v-text-field__details">
-                    <div class="v-messages theme--light">
-                      <div class="v-messages__wrapper"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!---->
-        </div>
-        <div role="dialog" class="v-dialog__container">
-          <!---->
-        </div>
-      </div>
-    </div>
-    <div data-column-idx="2" data-column-item-idx="7" class="flex worker-item" style="z-index:993;">
-      <div class="v-card v-sheet theme--light">
-        <header class="blue-grey lighten-5 v-sheet v-sheet--tile theme--light elevation-0 v-toolbar v-toolbar--dense v-toolbar--flat v-app-bar" style="height:48px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;">
-          <div class="v-toolbar__content" style="height:48px;">
-            <div title="VJudge" class="v-toolbar__title">
-              VJudge
-            </div>
-            <div class="spacer"></div>
-            <div class="v-toolbar__items">
-              <!----> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">add_circle</i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">link</i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">refresh</i></span></button></span></div>
-          </div>
-        </header>
-        <div class="container">
-          <div class="layout">
-            <div class="flex xs12"><span class="grey--text">
-          virtual judge&#xFF0C;&#x8FD9;&#x4E2A;OJ&#x7684;&#x9898;&#x91CF;&#x662F;&#x5355;&#x72EC;&#x8BA1;&#x7B97;&#x7684;
-        </span></div>
-          </div>
-          <div class="layout wrap">
-            <div class="flex xs12">
-              <div class="v-input theme--light v-text-field">
-                <div class="v-input__control">
-                  <div class="v-input__slot">
-                    <div class="v-text-field__slot"><label class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Username</label><input required="required" type="text" value></div>
-                    <div class="v-input__append-inner">
-                      <div class="v-input__icon v-input__icon--clear"><button disabled="disabled" type="button" aria-label="clear icon" class="v-icon notranslate v-icon--disabled v-icon--link mdi mdi-close theme--light"></button></div>
-                    </div>
-                  </div>
-                  <div class="v-text-field__details">
-                    <div class="v-messages theme--light">
-                      <div class="v-messages__wrapper"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!---->
-        </div>
-        <div role="dialog" class="v-dialog__container">
-          <!---->
-        </div>
-      </div>
-    </div></span></div>
-    </div>
-    </div>
-    <div role="dialog" class="v-dialog__container">
-      <!---->
-    </div>
-    </div>
-    </div>
-    </main>
-    <footer class="v-footer v-sheet v-sheet--tile theme--light v-footer--absolute v-footer--inset" style="left:0px;right:0px;bottom:0px;"><span class="body-2">&#xA9; 2018 - 1970 NWPU-ACM &#x6280;&#x672F;&#x7EC4;</span>
-      <div class="spacer"></div> <span class="body-2">&#x9655;ICP&#x5907;17008184&#x53F7;</span></footer>
-    </div>
-    </div>
-    </div>
     </div>
     <script>
       window.__NUXT__ = (function(a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z, A, B, C, D, E, F, G, H) {
@@ -6707,6 +7571,9 @@ Username is case sensitive.
           error: c,
           state: {
             sidebar: f,
+            message: {
+              list: []
+            },
             session: {
               login: f,
               username: a
