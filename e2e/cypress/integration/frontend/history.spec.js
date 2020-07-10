@@ -55,16 +55,13 @@ before(() => {
     cy.contains('161')
     cy.contains('704')
   })
+
+  cy.contains('SOLVED: 192 / SUBMISSION', { matchCase: false }).click()
 })
 
 describe('summary page', () => {
 
   it('should render correctly', () => {
-
-    cy.location('pathname').should('eq', '/statistics')
-    cy.contains('SOLVED: 192 / SUBMISSION').click()
-
-    cy.log('------ TEST ------')
     // wait for page loading
     cy.contains('export image', { matchCase: false })
 
