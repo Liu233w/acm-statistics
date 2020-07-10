@@ -3,7 +3,7 @@ version: '3.4'
 services:
 
   reverse-proxy:
-    image: traefik:2.2.2@sha256:0d8e650b451da465c8d5a47685a6b57b0c7d16207d37252fbc02086ffe61ca41
+    image: traefik:2.2.4@sha256:cc787df94ad97b555b43614b289cbd1d27b6941ae8ab7b491ea865d9108f5ad6
     command:
       - "--api.insecure=true"
       - "--providers.docker=true"
