@@ -57,25 +57,32 @@ before(() => {
   })
 
   cy.contains('SOLVED: 192 / SUBMISSION', { matchCase: false }).click()
+
+  // wait for page loading
+  cy.contains('export image', { matchCase: false })
+
+  cy.location('pathname')
+    .then(s => {
+      summaryUrl = s
+      console.log('url', s)
+      return s.startsWith('/history/')
+    })
+    .should('be.true')
+
+  cy.clearCookies()
 })
 
 describe('summary page', () => {
 
   it('should render correctly', () => {
-    // wait for page loading
-    cy.contains('export image', { matchCase: false })
-
-    cy.location('pathname')
-      .then(s => {
-        summaryUrl = s
-        console.log('url', s)
-        return s.startsWith('/history/')
-      })
-      .should('be.true')
+    cy.login(username)
+    cy.visit(summaryUrl)
 
     // hide generate time
     cy.get('strong:contains("Generated at")')
       .parent()
+      .invoke('attr', 'style', 'background-color: black')
+    cy.get('.v-toolbar__title')
       .invoke('attr', 'style', 'background-color: black')
     // hide account username
     cy.get(`button:contains("${username}")`)
@@ -91,6 +98,9 @@ describe('history page', () => {
     cy.login(username)
     cy.visit('/history')
 
+    // hide id
+    cy.get('tbody td.text-start:nth-child(2)')
+      .invoke('attr', 'style', 'background-color: black')
     // hide generate time
     cy.get('tbody td.text-start:nth-child(3)')
       .invoke('attr', 'style', 'background-color: black')
@@ -169,6 +179,9 @@ describe('history page', () => {
         cy.get(`tbody tr:nth-child(${i}) td:nth-child(1) > div`).click()
       }
 
+      // hide account username
+      cy.get(`button:contains("${username}")`)
+        .invoke('attr', 'style', 'background-color: black')
       cy.matchImageSnapshot()
 
       cy.route('POST', '/api/services/app/QueryHistory/DeleteQueryHistory',
