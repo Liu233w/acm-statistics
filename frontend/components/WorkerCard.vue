@@ -62,7 +62,7 @@
             Enter OJ website
           </span>
         </v-tooltip>
-        <transition name="fade">
+        <v-fade-transition>
           <v-tooltip
             bottom
             v-if="worker.status === WORKER_STATUS.WORKING"
@@ -93,7 +93,7 @@
             </template>
             <span>Re-query</span>
           </v-tooltip>
-        </transition>
+        </v-fade-transition>
       </v-toolbar-items>
     </v-app-bar>
     <v-container>
@@ -266,6 +266,7 @@ export default {
       WORKER_STATUS: WORKER_STATUS,
       solvedListDialog: false,
       updatingHeight: false,
+      previousHeight: null,
     }
   },
   async mounted() {
@@ -301,7 +302,11 @@ export default {
       }
       this.updatingHeight = true
       await this.$nextTick()
-      this.$emit('update-height', this.$el.offsetHeight)
+      const currentHeight = this.$el.offsetHeight
+      if (currentHeight !== this.previousHeight) {
+        this.$emit('update-height', currentHeight)
+        this.previousHeight = currentHeight
+      }
       this.updatingHeight = false
     },
   },
@@ -309,11 +314,8 @@ export default {
     warnings() {
       this.updateHeight()
     },
-    worker: {
-      handler() {
-        this.updateHeight()
-      },
-      deep: true,
+    workerStatus() {
+      this.updateHeight()
     },
   },
   computed: {
@@ -394,18 +396,10 @@ export default {
       // 和 https://vuedose.tips/tips/improve-performance-on-large-lists-in-vue-js/
       return Object.freeze(res)
     },
+    // only used in watch
+    workerStatus() {
+      return this.worker.status
+    },
   },
 }
 </script>
-
-<style scoped>
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.5s;
-}
-
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */
- {
-  opacity: 0;
-}
-</style>
