@@ -6,7 +6,8 @@
     "lintfix": "eslint --fix --ext .js .gitignore .",
     "test": "cypress run",
     "start": "cypress open",
-    "test-html": "jest __test__/"
+    "test-html": "jest __test__/",
+    "cypress-install": "cypress install"
   },
   "dependencies": {
     "cheerio": "1.0.0-rc.3",
