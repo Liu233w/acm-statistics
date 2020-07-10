@@ -1,0 +1,81 @@
+{
+  "result": {
+    "totalCount": 60,
+    "items": [{
+        "historyId": 10,
+        "summaryId": 10,
+        "creationTime": "2020-04-10T08:00:00Z",
+        "submission": 100,
+        "solved": 10
+      },
+      {
+        "historyId": 9,
+        "summaryId": 9,
+        "creationTime": "2020-04-09T08:00:00Z",
+        "submission": 90,
+        "solved": 9
+      },
+      {
+        "historyId": 8,
+        "summaryId": 8,
+        "creationTime": "2020-04-08T08:00:00Z",
+        "submission": 80,
+        "solved": 8
+      },
+      {
+        "historyId": 7,
+        "summaryId": 7,
+        "creationTime": "2020-04-07T08:00:00Z",
+        "submission": 70,
+        "solved": 7
+      },
+      {
+        "historyId": 6,
+        "summaryId": 6,
+        "creationTime": "2020-04-06T08:00:00Z",
+        "submission": 60,
+        "solved": 6
+      },
+      {
+        "historyId": 5,
+        "summaryId": 5,
+        "creationTime": "2020-04-05T08:00:00Z",
+        "submission": 50,
+        "solved": 5
+      },
+      {
+        "historyId": 4,
+        "summaryId": 4,
+        "creationTime": "2020-04-04T08:00:00Z",
+        "submission": 40,
+        "solved": 4
+      },
+      {
+        "historyId": 3,
+        "summaryId": 3,
+        "creationTime": "2020-04-03T08:00:00Z",
+        "submission": 30,
+        "solved": 3
+      },
+      {
+        "historyId": 2,
+        "summaryId": 2,
+        "creationTime": "2020-04-02T08:00:00Z",
+        "submission": 20,
+        "solved": 2
+      },
+      {
+        "historyId": 1,
+        "summaryId": 1,
+        "creationTime": "2020-04-01T08:00:00Z",
+        "submission": 10,
+        "solved": 1
+      }
+    ]
+  },
+  "targetUrl": null,
+  "success": true,
+  "error": null,
+  "unAuthorizedRequest": false,
+  "__abp": true
+}

@@ -16,8 +16,6 @@ describe('crawler test', () => {
 
   beforeEach(() => {
     cy.visit('/statistics')
-    // remove top bar to prevent blocking content
-    cy.get('header:contains("NWPU-ACM 查询系统")').invoke('hide')
   })
 
   it('can start a worker', () => {
@@ -27,7 +25,7 @@ describe('crawler test', () => {
       'fixture:poj_ok.txt')
       .as('poj_frontend')
 
-    cy.get('div[title="POJ"]').parents('.worker-item').within(() => {
+    cy.get('div[title="POJ"]').parents('.worker').within(() => {
 
       snapshot('worker-idle')
 
@@ -58,7 +56,7 @@ describe('crawler test', () => {
 
     cy.mockServer('oj/poj/backend_ok')
 
-    cy.get('div[title="POJ"]').parents('.worker-item').within(() => {
+    cy.get('div[title="POJ"]').parents('.worker').within(() => {
       cy.get('div:contains("Username") input').type('vjudge5')
       cy.get('button:contains("refresh")').click()
 
@@ -80,7 +78,7 @@ describe('crawler test', () => {
       delay: 10000,
     }).as('poj_frontend')
 
-    cy.get('div[title="POJ"]').parents('.worker-item').within(() => {
+    cy.get('div[title="POJ"]').parents('.worker').within(() => {
 
       cy.get('div:contains("Username") input').type('vjudge5')
 
@@ -102,7 +100,7 @@ describe('crawler test', () => {
       'fixture:poj_notExist.txt')
       .as('poj_frontend')
 
-    cy.get('div[title="POJ"]').parents('.worker-item').within(() => {
+    cy.get('div[title="POJ"]').parents('.worker').within(() => {
 
       cy.get('div:contains("Username") input').type('Frkfe932fbcv09b')
       cy.get('button:contains("refresh")').click()
@@ -110,108 +108,6 @@ describe('crawler test', () => {
 
       cy.contains('The user does not exist')
       snapshot('worker-error')
-    })
-  })
-})
-
-describe('summary', () => {
-
-  let username
-  before(() => {
-    cy.registerAndGetUsername().then(u => {
-      username = u
-    })
-    cy.clearCookies()
-  })
-
-  beforeEach(() => {
-    cy.server()
-    cy.route('https://cors-anywhere.herokuapp.com/http://acm.hdu.edu.cn/userstatus.php?user=wwwlsmcom',
-      'fixture:summary_hdu.txt')
-      .as('summary_hdu')
-    cy.route('/api/crawlers/vjudge/wwwlsmcom',
-      'fixture:summary_vjudge.txt')
-      .as('summary_vjudge')
-    cy.route('post', 'https://cors-anywhere.herokuapp.com/https://leetcode-cn.com/graphql',
-      'fixture:summary_leetcode.txt')
-      .as('summary_leetcode')
-  })
-
-  it('should ask user to login if not', () => {
-    visit()
-
-    cy.get('div[title="HDU"]').parents('.worker-item').within(() => {
-
-      cy.get('div:contains("Username") input').type('wwwlsmcom')
-
-      cy.get('button:contains("refresh")').click()
-      cy.wait('@summary_hdu')
-
-      cy.contains('34')
-      cy.contains('72')
-    })
-
-    cy.contains('/ SUBMISSION').click()
-
-    cy.contains('Please login')
-
-    snapshot()
-  })
-
-  it('should generate summary', () => {
-    cy.login(username)
-    visit()
-
-    // wait dom refresh
-    // eslint-disable-next-line cypress/no-unnecessary-waiting
-    cy.wait(2000)
-
-    cy.get('div[title="HDU"]').parents('.worker-item').within(() => {
-
-      cy.get('div:contains("Username") input').type('wwwlsmcom')
-
-      cy.get('button:contains("refresh")').click()
-      cy.wait('@summary_hdu')
-
-      cy.contains('34')
-      cy.contains('72')
-    })
-
-    cy.get('div[title="LeetCode_CN"]').parents('.worker-item').within(() => {
-
-      cy.get('div:contains("Username") input').type('wwwlsmcom')
-
-      cy.get('button:contains("refresh")').click()
-      cy.wait('@summary_leetcode')
-
-      cy.contains('2')
-      cy.contains('4')
-    })
-
-    cy.get('div[title="VJudge"]').parents('.worker-item').within(() => {
-
-      cy.get('div:contains("Username") input').type('wwwlsmcom')
-
-      cy.get('button:contains("refresh")').click()
-      cy.wait('@summary_vjudge')
-
-      cy.contains('161')
-      cy.contains('704')
-    })
-
-    cy.contains('SOLVED: 192 / SUBMISSION').click()
-
-    cy.get('.v-dialog--fullscreen').within(() => {
-
-      // hide generate time
-      cy.get('strong:contains("Generated at")')
-        .parent()
-        .invoke('attr', 'style', 'background-color: black')
-
-      snapshot('summary-upper')
-
-      cy.contains('does not have a solved list').scrollIntoView()
-      snapshot('summary-lower')
     })
   })
 })
@@ -226,10 +122,4 @@ function snapshot(name) {
       capture: 'viewport',
     })
   }
-}
-
-function visit() {
-  cy.visit('/statistics')
-  // remove top bar to prevent blocking content
-  cy.get('header:contains("NWPU-ACM 查询系统")').invoke('hide')
 }
