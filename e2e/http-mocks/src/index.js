@@ -1,5 +1,5 @@
 const http = require('http')
-const {join} = require('path')
+const { join } = require('path')
 const wait = require('wait-on')
 const mock = require('./lib/mock')
 const preActivation = require('./preActivation')
@@ -25,14 +25,14 @@ const server = http.createServer(async (req, res) => {
     const response = await mock(func)
     console.log(response)
 
-    res.writeHead(200, {'Content-Type': 'text/text'})
+    res.writeHead(200, { 'Content-Type': 'text/text' })
     res.write(`mock ${req.url} successfully created`)
     res.end()
 
   } catch (e) {
     console.error(e)
 
-    res.writeHead(500, {'Content-Type': 'text/text'})
+    res.writeHead(500, { 'Content-Type': 'text/text' })
     res.write(`mock ${req.url} yield following error message: ${e.message}`)
     res.end()
   }
@@ -47,6 +47,9 @@ const server = http.createServer(async (req, res) => {
 function findInPath(obj, path) {
 
   const findIn = path.substr(1).split('/')
+  if (findIn[0] === 'mock-configurer') {
+    findIn.shift()
+  }
   console.log('find in array', findIn)
 
   let current = obj

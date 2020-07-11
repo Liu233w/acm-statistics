@@ -2646,11 +2646,119 @@ exports[`/history 1`] = `
                                 <div class="v-input--selection-controls__ripple"></div><i aria-hidden="true" class="v-icon notranslate mdi mdi-checkbox-blank-outline theme--light"></i>
                               </div>
                             </td>
-                            <td class="text-start">[[replaced history id]]</td>
-                            <td class="text-start">[[replaced date]]</td>
-                            <td class="text-start">192</td>
-                            <td class="text-start">780</td>
-                            <td class="text-start"><a href="/history/[[replaced history id]]" class="v-btn v-btn--flat v-btn--icon v-btn--round v-btn--router theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-eye theme--light"></i></span></a> <button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-delete theme--light"></i></span></button></td>
+                            <td class="text-start">10</td>
+                            <td class="text-start">Fri Apr 10 2020 08:00:00 GMT+0000 (Coordinated Universal Time)</td>
+                            <td class="text-start">10</td>
+                            <td class="text-start">100</td>
+                            <td class="text-start"><a href="/history/10" class="v-btn v-btn--flat v-btn--icon v-btn--round v-btn--router theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-eye theme--light"></i></span></a> <button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-delete theme--light"></i></span></button></td>
+                          </tr>
+                          <tr>
+                            <td class="text-start">
+                              <div class="v-data-table__checkbox v-simple-checkbox">
+                                <div class="v-input--selection-controls__ripple"></div><i aria-hidden="true" class="v-icon notranslate mdi mdi-checkbox-blank-outline theme--light"></i>
+                              </div>
+                            </td>
+                            <td class="text-start">9</td>
+                            <td class="text-start">Thu Apr 09 2020 08:00:00 GMT+0000 (Coordinated Universal Time)</td>
+                            <td class="text-start">9</td>
+                            <td class="text-start">90</td>
+                            <td class="text-start"><a href="/history/9" class="v-btn v-btn--flat v-btn--icon v-btn--round v-btn--router theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-eye theme--light"></i></span></a> <button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-delete theme--light"></i></span></button></td>
+                          </tr>
+                          <tr>
+                            <td class="text-start">
+                              <div class="v-data-table__checkbox v-simple-checkbox">
+                                <div class="v-input--selection-controls__ripple"></div><i aria-hidden="true" class="v-icon notranslate mdi mdi-checkbox-blank-outline theme--light"></i>
+                              </div>
+                            </td>
+                            <td class="text-start">8</td>
+                            <td class="text-start">Wed Apr 08 2020 08:00:00 GMT+0000 (Coordinated Universal Time)</td>
+                            <td class="text-start">8</td>
+                            <td class="text-start">80</td>
+                            <td class="text-start"><a href="/history/8" class="v-btn v-btn--flat v-btn--icon v-btn--round v-btn--router theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-eye theme--light"></i></span></a> <button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-delete theme--light"></i></span></button></td>
+                          </tr>
+                          <tr>
+                            <td class="text-start">
+                              <div class="v-data-table__checkbox v-simple-checkbox">
+                                <div class="v-input--selection-controls__ripple"></div><i aria-hidden="true" class="v-icon notranslate mdi mdi-checkbox-blank-outline theme--light"></i>
+                              </div>
+                            </td>
+                            <td class="text-start">7</td>
+                            <td class="text-start">Tue Apr 07 2020 08:00:00 GMT+0000 (Coordinated Universal Time)</td>
+                            <td class="text-start">7</td>
+                            <td class="text-start">70</td>
+                            <td class="text-start"><a href="/history/7" class="v-btn v-btn--flat v-btn--icon v-btn--round v-btn--router theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-eye theme--light"></i></span></a> <button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-delete theme--light"></i></span></button></td>
+                          </tr>
+                          <tr>
+                            <td class="text-start">
+                              <div class="v-data-table__checkbox v-simple-checkbox">
+                                <div class="v-input--selection-controls__ripple"></div><i aria-hidden="true" class="v-icon notranslate mdi mdi-checkbox-blank-outline theme--light"></i>
+                              </div>
+                            </td>
+                            <td class="text-start">6</td>
+                            <td class="text-start">Mon Apr 06 2020 08:00:00 GMT+0000 (Coordinated Universal Time)</td>
+                            <td class="text-start">6</td>
+                            <td class="text-start">60</td>
+                            <td class="text-start"><a href="/history/6" class="v-btn v-btn--flat v-btn--icon v-btn--round v-btn--router theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-eye theme--light"></i></span></a> <button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-delete theme--light"></i></span></button></td>
+                          </tr>
+                          <tr>
+                            <td class="text-start">
+                              <div class="v-data-table__checkbox v-simple-checkbox">
+                                <div class="v-input--selection-controls__ripple"></div><i aria-hidden="true" class="v-icon notranslate mdi mdi-checkbox-blank-outline theme--light"></i>
+                              </div>
+                            </td>
+                            <td class="text-start">5</td>
+                            <td class="text-start">Sun Apr 05 2020 08:00:00 GMT+0000 (Coordinated Universal Time)</td>
+                            <td class="text-start">5</td>
+                            <td class="text-start">50</td>
+                            <td class="text-start"><a href="/history/5" class="v-btn v-btn--flat v-btn--icon v-btn--round v-btn--router theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-eye theme--light"></i></span></a> <button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-delete theme--light"></i></span></button></td>
+                          </tr>
+                          <tr>
+                            <td class="text-start">
+                              <div class="v-data-table__checkbox v-simple-checkbox">
+                                <div class="v-input--selection-controls__ripple"></div><i aria-hidden="true" class="v-icon notranslate mdi mdi-checkbox-blank-outline theme--light"></i>
+                              </div>
+                            </td>
+                            <td class="text-start">4</td>
+                            <td class="text-start">Sat Apr 04 2020 08:00:00 GMT+0000 (Coordinated Universal Time)</td>
+                            <td class="text-start">4</td>
+                            <td class="text-start">40</td>
+                            <td class="text-start"><a href="/history/4" class="v-btn v-btn--flat v-btn--icon v-btn--round v-btn--router theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-eye theme--light"></i></span></a> <button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-delete theme--light"></i></span></button></td>
+                          </tr>
+                          <tr>
+                            <td class="text-start">
+                              <div class="v-data-table__checkbox v-simple-checkbox">
+                                <div class="v-input--selection-controls__ripple"></div><i aria-hidden="true" class="v-icon notranslate mdi mdi-checkbox-blank-outline theme--light"></i>
+                              </div>
+                            </td>
+                            <td class="text-start">3</td>
+                            <td class="text-start">Fri Apr 03 2020 08:00:00 GMT+0000 (Coordinated Universal Time)</td>
+                            <td class="text-start">3</td>
+                            <td class="text-start">30</td>
+                            <td class="text-start"><a href="/history/3" class="v-btn v-btn--flat v-btn--icon v-btn--round v-btn--router theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-eye theme--light"></i></span></a> <button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-delete theme--light"></i></span></button></td>
+                          </tr>
+                          <tr>
+                            <td class="text-start">
+                              <div class="v-data-table__checkbox v-simple-checkbox">
+                                <div class="v-input--selection-controls__ripple"></div><i aria-hidden="true" class="v-icon notranslate mdi mdi-checkbox-blank-outline theme--light"></i>
+                              </div>
+                            </td>
+                            <td class="text-start">2</td>
+                            <td class="text-start">Thu Apr 02 2020 08:00:00 GMT+0000 (Coordinated Universal Time)</td>
+                            <td class="text-start">2</td>
+                            <td class="text-start">20</td>
+                            <td class="text-start"><a href="/history/2" class="v-btn v-btn--flat v-btn--icon v-btn--round v-btn--router theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-eye theme--light"></i></span></a> <button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-delete theme--light"></i></span></button></td>
+                          </tr>
+                          <tr>
+                            <td class="text-start">
+                              <div class="v-data-table__checkbox v-simple-checkbox">
+                                <div class="v-input--selection-controls__ripple"></div><i aria-hidden="true" class="v-icon notranslate mdi mdi-checkbox-blank-outline theme--light"></i>
+                              </div>
+                            </td>
+                            <td class="text-start">1</td>
+                            <td class="text-start">Wed Apr 01 2020 08:00:00 GMT+0000 (Coordinated Universal Time)</td>
+                            <td class="text-start">1</td>
+                            <td class="text-start">10</td>
+                            <td class="text-start"><a href="/history/1" class="v-btn v-btn--flat v-btn--icon v-btn--round v-btn--router theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-eye theme--light"></i></span></a> <button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-delete theme--light"></i></span></button></td>
                           </tr>
                         </tbody>
                       </table>
@@ -2674,9 +2782,9 @@ exports[`/history 1`] = `
                           </div>
                         </div>
                       </div>
-                      <div class="v-data-footer__pagination">1-1 of 1</div>
+                      <div class="v-data-footer__pagination">1-10 of 60</div>
                       <div class="v-data-footer__icons-before"><button type="button" disabled="disabled" aria-label="Previous page" class="v-btn v-btn--disabled v-btn--flat v-btn--icon v-btn--round v-btn--text theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-chevron-left theme--light"></i></span></button></div>
-                      <div class="v-data-footer__icons-after"><button type="button" disabled="disabled" aria-label="Next page" class="v-btn v-btn--disabled v-btn--flat v-btn--icon v-btn--round v-btn--text theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-chevron-right theme--light"></i></span></button></div>
+                      <div class="v-data-footer__icons-after"><button type="button" aria-label="Next page" class="v-btn v-btn--flat v-btn--icon v-btn--round v-btn--text theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-chevron-right theme--light"></i></span></button></div>
                     </div>
                   </div>
                   <div style="height:300px;"><canvas id="line-chart" width="400" height="400"></canvas></div>
@@ -2694,21 +2802,73 @@ exports[`/history 1`] = `
       </div>
     </div>
     <script>
-      window.__NUXT__ = (function(a, b, c, d, e, f) {
+      window.__NUXT__ = (function(a, b, c, d, e, f, g, h, i, j, k, l, m, n, o) {
         return {
           layout: "default",
           data: [{}],
           fetch: [{
             items: [{
-              historyId: c,
-              summaryId: c,
-              creationTime: new Date([
-                [replaced date digit]
-              ]),
-              submission: 780,
-              solved: 192
+              historyId: a,
+              summaryId: a,
+              creationTime: new Date(1586505600000),
+              submission: 100,
+              solved: a
+            }, {
+              historyId: e,
+              summaryId: e,
+              creationTime: new Date(1586419200000),
+              submission: 90,
+              solved: e
+            }, {
+              historyId: f,
+              summaryId: f,
+              creationTime: new Date(1586332800000),
+              submission: 80,
+              solved: f
+            }, {
+              historyId: g,
+              summaryId: g,
+              creationTime: new Date(1586246400000),
+              submission: 70,
+              solved: g
+            }, {
+              historyId: h,
+              summaryId: h,
+              creationTime: new Date(1586160000000),
+              submission: m,
+              solved: h
+            }, {
+              historyId: i,
+              summaryId: i,
+              creationTime: new Date(1586073600000),
+              submission: 50,
+              solved: i
+            }, {
+              historyId: j,
+              summaryId: j,
+              creationTime: new Date(1585987200000),
+              submission: 40,
+              solved: j
+            }, {
+              historyId: k,
+              summaryId: k,
+              creationTime: new Date(1585900800000),
+              submission: 30,
+              solved: k
+            }, {
+              historyId: l,
+              summaryId: l,
+              creationTime: new Date(1585814400000),
+              submission: 20,
+              solved: l
+            }, {
+              historyId: b,
+              summaryId: b,
+              creationTime: new Date(1585728000000),
+              submission: a,
+              solved: b
             }],
-            loading: a,
+            loading: c,
             headers: [{
               text: "Id",
               value: "historyId",
@@ -2727,45 +2887,43 @@ exports[`/history 1`] = `
               value: "actions"
             }],
             selected: [],
-            itemsPerPage: 10,
-            serverItemsLength: d,
-            page: d,
-            errorMessage: e,
+            itemsPerPage: a,
+            serverItemsLength: m,
+            page: b,
+            errorMessage: n,
             chartOptions: {
-              responsive: b,
-              maintainAspectRatio: a,
+              responsive: d,
+              maintainAspectRatio: c,
               tooltips: {
                 mode: "index",
-                intersect: a
+                intersect: c
               },
               hover: {
                 mode: "nearest",
-                intersect: b
+                intersect: d
               }
             }
           }],
-          error: e,
+          error: n,
           state: {
-            sidebar: a,
+            sidebar: c,
             message: {
               list: []
             },
             session: {
-              login: b,
+              login: d,
               username: "admin"
             }
           },
-          serverRendered: b,
-          routePath: "\\u002Fhistory",
+          serverRendered: d,
+          routePath: "\\u002Fhistory\\u002F",
           config: {},
           env: {
-            VERSION_NUM: f,
-            BUILD_TIME: f
+            VERSION_NUM: o,
+            BUILD_TIME: o
           }
         }
-      }(false, true, [
-        [replaced history id]
-      ], 1, null, "0"));
+      }(10, 1, false, true, 9, 8, 7, 6, 5, 4, 3, 2, 60, null, "0"));
     </script>
 
 
@@ -3499,55 +3657,275 @@ exports[`/history/{historyId} 1`] = `
     <script>
       (window.ActiveXObject || "ActiveXObject" in window) && alert("本网站不支持IE或IE内核的浏览器，建议您使用火狐浏览器、谷歌浏览器或微软的Edge浏览器（Windows10自带）")
     </script>
-    <div id="__nuxt">[[replaced date]]</div>
+    <div id="__nuxt">
+      <!---->
+      <div id="__layout">
+        <div data-app="true" id="app" class="v-application v-application--is-ltr theme--light">
+          <div class="v-application--wrap">
+            <nav class="v-navigation-drawer v-navigation-drawer--close v-navigation-drawer--fixed v-navigation-drawer--is-mobile theme--light" style="height:100vh;top:0px;transform:translateX(-100%);width:256px;">
+              <div class="v-navigation-drawer__content">
+                <div class="v-list v-sheet v-sheet--tile theme--light"><a href="/" tabindex="0" class="v-list-item v-list-item--link theme--light">
+                    <div class="v-list-item__action"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">home</i></div>
+                    <div class="v-list-item__content">
+                      <div class="v-list-item__title">Homepage</div>
+                    </div>
+                  </a><a href="/statistics" tabindex="0" class="v-list-item v-list-item--link theme--light">
+                    <div class="v-list-item__action"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">code</i></div>
+                    <div class="v-list-item__content">
+                      <div class="v-list-item__title">Statistics</div>
+                    </div>
+                  </a><a href="/history" tabindex="0" class="v-list-item v-list-item--link theme--light">
+                    <div class="v-list-item__action"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">history</i></div>
+                    <div class="v-list-item__content">
+                      <div class="v-list-item__title">History</div>
+                    </div>
+                  </a><a href="/settings" tabindex="0" class="v-list-item v-list-item--link theme--light">
+                    <div class="v-list-item__action"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">settings</i></div>
+                    <div class="v-list-item__content">
+                      <div class="v-list-item__title">Settings</div>
+                    </div>
+                  </a><a href="/about" tabindex="0" class="v-list-item v-list-item--link theme--light">
+                    <div class="v-list-item__action"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">info</i></div>
+                    <div class="v-list-item__content">
+                      <div class="v-list-item__title">About</div>
+                    </div>
+                  </a></div>
+              </div>
+              <div class="v-navigation-drawer__border"></div>
+            </nav>
+            <header class="v-sheet v-sheet--tile theme--light v-toolbar v-toolbar--absolute v-app-bar" style="height:64px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;">
+              <div class="v-toolbar__content" style="height:64px;"><button type="button" class="v-app-bar__nav-icon v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-menu theme--light"></i></span></button>
+                <!---->
+                <div class="v-toolbar__title">NWPU-ACM &#x67E5;&#x8BE2;&#x7CFB;&#x7EDF;</div>
+                <!---->
+                <!---->
+                <div class="spacer"></div>
+                <!---->
+                <!----> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--text theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate v-icon--left fa fa fa fa-sign-in-alt theme--light" style="display:none;"></i> admin
+    </span></button></span> <span class="v-tooltip v-tooltip--left"><!----><a href="https://github.com/Liu233w/acm-statistics" target="_blank" rel="noopener noreferrer" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" medium class="v-icon notranslate fab fa-github theme--light"></i></span></a></span>
+              </div>
+            </header>
+            <main class="v-content" style="padding-top:64px;padding-right:0px;padding-bottom:0px;padding-left:0px;">
+              <div class="v-content__wrap">
+                <div data-fetch-key="0" id="history-summary" class="container">
+                  <div role="list" class="v-list v-sheet v-sheet--tile theme--light">
+                    <div tabindex="-1" role="listitem" class="v-list-item theme--light">
+                      <div class="v-list-item__content">
+                        <div class="v-list-item__title"><strong>Main username:</strong> wwwlsmcom</div>
+                      </div>
+                    </div>
+                    <div tabindex="-1" role="listitem" class="v-list-item theme--light">
+                      <div class="v-list-item__content">
+                        <div class="v-list-item__title"><strong>SOLVED:</strong> 193</div>
+                      </div>
+                    </div>
+                    <div tabindex="-1" role="listitem" class="v-list-item theme--light">
+                      <div class="v-list-item__content">
+                        <div class="v-list-item__title"><strong>SUBMISSION:</strong> 785</div>
+                      </div>
+                    </div>
+                    <div tabindex="-1" role="listitem" class="v-list-item theme--light">
+                      <div class="v-list-item__content">
+                        <div class="v-list-item__title"><strong>Generated at</strong> Sat Jul 11 2020 04:15:22 GMT+0000 (Coordinated Universal Time)</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="v-data-table theme--light">
+                    <div class="v-data-table__wrapper">
+                      <table>
+                        <thead>
+                          <tr>
+                            <th scope="col" class="text-left">
+                              Crawler
+                            </th>
+                            <th scope="col" class="text-left">
+                              Username
+                            </th>
+                            <th scope="col" class="text-left">
+                              Solved
+                            </th>
+                            <th scope="col" class="text-left">
+                              Submission
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td scope="row">
+                              VJudge (Not Merged)
+                            </td>
+                            <td>wwwlsmcom</td>
+                            <td>1</td>
+                            <td>1</td>
+                          </tr>
+                          <tr>
+                            <td scope="row">
+                              CodeChef
+                            </td>
+                            <td>[wwwlsmcom in VJudge]</td>
+                            <td>1</td>
+                            <td>5</td>
+                          </tr>
+                          <tr>
+                            <td scope="row">
+                              LeetCode_CN
+                            </td>
+                            <td>wwwlsmcom</td>
+                            <td>3</td>
+                            <td>9</td>
+                          </tr>
+                          <tr>
+                            <td scope="row">
+                              Timus (URAL)
+                            </td>
+                            <td>[wwwlsmcom in VJudge]</td>
+                            <td>2</td>
+                            <td>6</td>
+                          </tr>
+                          <tr>
+                            <td scope="row">
+                              FZU
+                            </td>
+                            <td>[wwwlsmcom in VJudge]</td>
+                            <td>1</td>
+                            <td>5</td>
+                          </tr>
+                          <tr>
+                            <td scope="row">
+                              ICPC Live Archive
+                            </td>
+                            <td>[wwwlsmcom in VJudge]</td>
+                            <td>1</td>
+                            <td>1</td>
+                          </tr>
+                          <tr>
+                            <td scope="row">
+                              UVA
+                            </td>
+                            <td>[wwwlsmcom in VJudge]</td>
+                            <td>11</td>
+                            <td>28</td>
+                          </tr>
+                          <tr>
+                            <td scope="row">
+                              CodeForces
+                            </td>
+                            <td>[wwwlsmcom in VJudge]</td>
+                            <td>6</td>
+                            <td>15</td>
+                          </tr>
+                          <tr>
+                            <td scope="row">
+                              HYSBZ
+                            </td>
+                            <td>[wwwlsmcom in VJudge]</td>
+                            <td>0</td>
+                            <td>5</td>
+                          </tr>
+                          <tr>
+                            <td scope="row">
+                              HDU
+                            </td>
+                            <td>[wwwlsmcom in VJudge], wwwlsmcom</td>
+                            <td>108</td>
+                            <td>385</td>
+                          </tr>
+                          <tr>
+                            <td scope="row">
+                              POJ
+                            </td>
+                            <td>[wwwlsmcom in VJudge]</td>
+                            <td>59</td>
+                            <td>325</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  <div style="height:300px;"><canvas id="bar-chart" width="400" height="400"></canvas></div>
+                  <div role="list" class="v-list v-sheet v-sheet--tile theme--light v-list--dense">
+                    <div class="v-subheader red--text theme--light">
+                      WARNINGS
+                    </div>
+                    <div tabindex="-1" role="listitem" class="v-list-item theme--light">
+                      <div class="v-list-item__content">
+                        LeetCode_CN:
+                        This crawler does not have a solved list and its result will be directly added to summary.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </main>
+            <footer class="v-footer v-sheet v-sheet--tile theme--light v-footer--absolute v-footer--inset" style="left:0px;right:0px;bottom:0px;"><span class="body-2">&#xA9; 2018 - 1970 NWPU-ACM &#x6280;&#x672F;&#x7EC4;</span>
+              <div class="spacer"></div> <span class="body-2">&#x9655;ICP&#x5907;17008184&#x53F7;</span></footer>
+            <div class="message-panel v-card v-sheet theme--light" style="display:none;">
+              <v-list class="pa-0"></v-list>
+              <!---->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <script>
-      window.__NUXT__ = (function(a, b, c, d, e, f, g, h, i, j, k) {
+      window.__NUXT__ = (function(a, b, c, d, e, f, g, h, i, j) {
         return {
           layout: "default",
           data: [{}],
           fetch: [{
             summary: {
-              queryHistoryId: [
-                [replaced history id]
-              ],
-              generateTime: new Date([
-                [replaced date digit]
-              ]),
-              mainUsername: "",
+              queryHistoryId: e,
+              generateTime: new Date(1594440922010),
+              mainUsername: b,
               queryCrawlerSummaries: [{
-                crawlerName: "hdu",
-                submission: 385,
-                solved: 108,
+                crawlerName: d,
+                submission: e,
+                solved: e,
                 usernames: [{
                   fromCrawlerName: a,
                   username: b
-                }, {
-                  fromCrawlerName: d,
-                  username: b
                 }],
-                isVirtualJudge: c
+                isVirtualJudge: f
               }, {
-                crawlerName: "poj",
-                submission: 325,
-                solved: 59,
-                usernames: [{
-                  fromCrawlerName: d,
-                  username: b
-                }],
-                isVirtualJudge: c
-              }, {
-                crawlerName: "dashiye",
+                crawlerName: "codechef",
                 submission: g,
-                solved: 0,
+                solved: e,
                 usernames: [{
                   fromCrawlerName: d,
                   username: b
                 }],
                 isVirtualJudge: c
               }, {
-                crawlerName: "codeforces",
-                submission: 15,
-                solved: h,
+                crawlerName: h,
+                submission: 9,
+                solved: 3,
+                usernames: [{
+                  fromCrawlerName: a,
+                  username: b
+                }],
+                isVirtualJudge: c
+              }, {
+                crawlerName: "timus",
+                submission: i,
+                solved: 2,
+                usernames: [{
+                  fromCrawlerName: d,
+                  username: b
+                }],
+                isVirtualJudge: c
+              }, {
+                crawlerName: "fzu",
+                submission: g,
+                solved: e,
+                usernames: [{
+                  fromCrawlerName: d,
+                  username: b
+                }],
+                isVirtualJudge: c
+              }, {
+                crawlerName: "uvalive",
+                submission: e,
+                solved: e,
                 usernames: [{
                   fromCrawlerName: d,
                   username: b
@@ -3563,8 +3941,8 @@ exports[`/history/{historyId} 1`] = `
                 }],
                 isVirtualJudge: c
               }, {
-                crawlerName: "fzu",
-                submission: g,
+                crawlerName: "codeforces",
+                submission: 15,
                 solved: i,
                 usernames: [{
                   fromCrawlerName: d,
@@ -3572,48 +3950,42 @@ exports[`/history/{historyId} 1`] = `
                 }],
                 isVirtualJudge: c
               }, {
-                crawlerName: "timus",
-                submission: h,
-                solved: e,
-                usernames: [{
-                  fromCrawlerName: d,
-                  username: b
-                }],
-                isVirtualJudge: c
-              }, {
-                crawlerName: j,
-                submission: 4,
-                solved: e,
-                usernames: [{
-                  fromCrawlerName: a,
-                  username: b
-                }],
-                isVirtualJudge: c
-              }, {
-                crawlerName: "codechef",
+                crawlerName: "dashiye",
                 submission: g,
-                solved: i,
+                solved: 0,
                 usernames: [{
                   fromCrawlerName: d,
                   username: b
                 }],
                 isVirtualJudge: c
               }, {
-                crawlerName: d,
-                submission: e,
-                solved: e,
+                crawlerName: "hdu",
+                submission: 385,
+                solved: 108,
                 usernames: [{
+                  fromCrawlerName: d,
+                  username: b
+                }, {
                   fromCrawlerName: a,
                   username: b
                 }],
-                isVirtualJudge: f
+                isVirtualJudge: c
+              }, {
+                crawlerName: "poj",
+                submission: 325,
+                solved: 59,
+                usernames: [{
+                  fromCrawlerName: d,
+                  username: b
+                }],
+                isVirtualJudge: c
               }],
               summaryWarnings: [{
-                crawlerName: j,
+                crawlerName: h,
                 content: "This crawler does not have a solved list and its result will be directly added to summary."
               }],
-              submission: 780,
-              solved: 192
+              submission: 785,
+              solved: 193
             },
             summaryError: a,
             crawlers: {
@@ -3762,14 +4134,14 @@ exports[`/history/{historyId} 1`] = `
             }
           },
           serverRendered: f,
-          routePath: "\\u002Fhistory\\u002F[[replaced history id]]",
+          routePath: "\\u002Fhistory\\u002F1",
           config: {},
           env: {
-            VERSION_NUM: k,
-            BUILD_TIME: k
+            VERSION_NUM: j,
+            BUILD_TIME: j
           }
         }
-      }(null, "wwwlsmcom", false, "vjudge", 2, true, 5, 6, 1, "leetcode_cn", "0"));
+      }(null, "wwwlsmcom", false, "vjudge", 1, true, 5, "leetcode_cn", 6, "0"));
     </script>
 
 
