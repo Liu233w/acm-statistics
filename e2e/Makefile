@@ -69,25 +69,9 @@ update-snapshot: .base
 	docker run --rm -t --ipc=host --network=host \
 		-v "$(CURDIR)/cypress:/e2e/cypress" \
 	 	$(E2eBaseTag) \
-		npm test -- --env updateSnapshots=true
+		npm test -- --env updateSnapshots=true SNAPSHOT_UPDATE=1
 
-upd: .base wait-server update-snapshot test update-html-snapshot
+upd: .base wait-server update-snapshot test
 
 clean:
 	docker image rm $(E2eBaseTag) $(E2eMockConfigurerTag); true
-
-# ===== 使用 jest 对html进行快照 ===========
-test-html: .base
-	docker run --rm -t --ipc=host --network=host \
-	$(E2eBaseTag) npm run test-html
-
-# 更新快照
-update-html-snapshot: .base
-	docker run --rm -t --ipc=host --network=host \
-		-v "$(CURDIR)/__test__:/e2e/__test__" \
-		$(E2eBaseTag) npm run test-html -- -u
-
-test-html-ci: .base
-	docker run --rm --ipc=host --network=host \
-		$(E2eBaseTag) \
-		npm run test-html -- --colors --ci
