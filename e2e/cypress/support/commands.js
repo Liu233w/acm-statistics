@@ -41,6 +41,51 @@ Cypress.Commands.overwrite('matchImageSnapshot', (originalFn, maybeName, command
   return originalFn(maybeName, commandOptions)
 })
 
+Cypress.Commands.overwrite('snapshot', (originalFn) => {
+  Cypress.$('link[href^="/_nuxt/"]').remove()
+  Cypress.$('script[src^="/_nuxt/"]').remove()
+
+  // 移除 data-v- 开头的属性和 data-vue-ssr-id 属性
+  Cypress.$('*').each((i, el) => {
+    Cypress.$(el).removeAttr('data-vue-ssr-id')
+    for (let key in Cypress.$(el).attr()) {
+      // eslint-disable-next-line lodash/prefer-lodash-method
+      if (key.startsWith('data-v-')) {
+        Cypress.$(el).removeAttr(key)
+      }
+    }
+  })
+
+  // 移除 id="input-XXXX" 和 for="input-XXXX" 属性
+  Cypress.$('*').each((i, el) => {
+    for (let key in Cypress.$(el).attr()) {
+      const value = Cypress.$(el).attr(key)
+      if (Cypress._.startsWith(value, 'input-') && Cypress._.includes(['for', 'id'], key)) {
+        Cypress.$(el).removeAttr(key)
+      }
+    }
+  })
+
+  // remove aria-owns="list-XXX"
+  Cypress.$('*').each((i, el) => {
+    for (let key in Cypress.$(el).attr()) {
+      const value = Cypress.$(el).attr(key)
+      if (Cypress._.startsWith(value, 'list-') && key === 'aria-owns') {
+        Cypress.$(el).removeAttr(key)
+      }
+    }
+  })
+
+  // 将 css 中的id属性去掉
+  Cypress.$('style').each((i, el) => {
+    Cypress.$(el).html(Cypress._.replace(Cypress.$(el).html(), /\[data-v-.*?\]/g, ''))
+  })
+
+  // 移除随机数
+  const storeEl = Cypress.$(Cypress._.filter(Cypress.$('script'), el => /window\.__NUXT__/.test(Cypress.$(el).html())))
+  storeEl.html(Cypress._.replace(storeEl.html(), /,key:\.\d*/g, ''))
+})
+
 Cypress.Commands.add('registerAndGetUsername', () => {
 
   cy.log('<<<<< Start register')
