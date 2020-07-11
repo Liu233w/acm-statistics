@@ -1,8 +1,6 @@
 import _ from 'lodash'
 import LRU from 'lru-cache'
 
-import '@fortawesome/fontawesome-free/css/all.css'
-
 import colors from 'vuetify/es5/util/colors'
 
 export default {
@@ -29,8 +27,5 @@ export default {
         success: colors.green.lighten2,
       },
     },
-  },
-  icons: {
-    iconfont: 'fa',
   },
 }

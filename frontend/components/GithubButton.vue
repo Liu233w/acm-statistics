@@ -13,7 +13,7 @@
         v-show="show"
       >
         <v-icon medium>
-          fab fa-github
+          mdi-github
         </v-icon>
       </v-btn>
     </template>
