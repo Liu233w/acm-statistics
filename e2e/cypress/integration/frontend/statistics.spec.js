@@ -7,6 +7,8 @@ describe('overall', () => {
   })
 
   it('can render correctly', () => {
+    // reset workers to make heights correct
+    cy.contains('reset', { matchCase: false }).click()
     snapshot()
   })
 
