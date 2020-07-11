@@ -1,6 +1,6 @@
 # fixture of build/docker-compose.yml
 
-version: '3.4'
+version: "3.4"
 
 services:
   frontend:
@@ -18,7 +18,7 @@ services:
   watchtower:
     # skip watchtower in development
     image: tianon/true:latest@sha256:009cce421096698832595ce039aa13fa44327d96beedb84282a69d3dbcf5a81b
-    command: ''
+    command: ""
 
   mock-proxy:
     image: jamesdbloom/mockserver:mockserver-5.5.1@sha256:50c5208622435c32e8ac1b3cc29f91fb70a87608dd3b8bc9364e1950d55341f9
@@ -31,6 +31,9 @@ services:
     volumes:
       # 防止node_module被挂载进来，只能把代码放在单独的文件夹里了
       - ../e2e/http-mocks/src:/mocks/src
+    labels:
+      - traefik.http.routers.mock-configurer.rule=PathPrefix(`/mock-configurer`)
+      - traefik.http.services.mock-configurer.loadbalancer.server.port=80
 
   ohunt:
     environment:
