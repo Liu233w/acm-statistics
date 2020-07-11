@@ -3,7 +3,7 @@
     <template v-slot:activator="{ on }">
       <v-btn text @click="clicked" v-on="on">
         <v-icon left v-show="!session.login">
-          fa fa-sign-in-alt
+          mdi-login
         </v-icon> {{ title }}
       </v-btn>
     </template>

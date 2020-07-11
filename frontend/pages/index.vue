@@ -116,7 +116,7 @@
                         x-large
                         class="blue--text text--lighten-2"
                       >
-                        fab fa-github
+                        mdi-github
                       </v-icon>
                     </v-card-text>
                     <v-card-title
@@ -276,7 +276,7 @@
                   >
                     <v-list-item-action>
                       <v-icon class="blue--text text--lighten-2">
-                        fab fa-qq
+                        mdi-qqchat
                       </v-icon>
                     </v-list-item-action>
                     <v-list-item-content>
@@ -306,7 +306,7 @@
                   <v-list-item @click="dialog = !dialog">
                     <v-list-item-action>
                       <v-icon class="blue--text text--lighten-2">
-                        fab fa-weixin
+                        mdi-wechat
                       </v-icon>
                     </v-list-item-action>
                     <v-list-item-content>
