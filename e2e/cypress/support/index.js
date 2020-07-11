@@ -13,10 +13,8 @@
 // https://on.cypress.io/configuration
 // ***********************************************************
 
-import { addMatchImageSnapshotCommand } from 'cypress-image-snapshot/command'
-addMatchImageSnapshotCommand()
+import {addMatchImageSnapshotCommand} from 'cypress-image-snapshot/command'
 
-// html snapshot
-require('@cypress/snapshot').register()
+addMatchImageSnapshotCommand()
 
 require('./commands')
