@@ -116,7 +116,7 @@ namespace AcmStatisticsBackend.EntityFrameworkCore.Seed.Tenants
             {
                 PermissionNames.Statistics_DefaultQuery,
                 PermissionNames.AcHistory_Histories,
-                PermissionNames.Settings_All,
+                PermissionNames.Settings_Update,
             });
         }
 
