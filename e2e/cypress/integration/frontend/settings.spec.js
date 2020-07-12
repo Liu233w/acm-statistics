@@ -56,7 +56,7 @@ describe('change password', () => {
 describe('change time zone', () => {
   before(() => {
     cy.server()
-    cy.route('POST', '/api/services/app/TimeZoneSetting/SetUserTimeZone').as('set-time-zone')
+    cy.route('POST', '/api/services/app/UserConfig/SetUserTimeZone').as('set-time-zone')
   })
 
   it('should work correctly', () => {

@@ -35,6 +35,18 @@ describe('/login', () => {
     cy.reload()
     cy.contains('admin')
   })
+
+  it('should go to previous page after login', () => {
+    cy.visit('/about')
+
+    cy.contains('login', { matchCase: false }).click()
+
+    cy.contains('Username').parent().type('admin')
+    cy.contains('Password').parent().type('123qwe')
+    cy.get('button').contains('login').click()
+
+    cy.location('pathname').should('eq', '/about')
+  })
 })
 
 describe('/register', () => {
