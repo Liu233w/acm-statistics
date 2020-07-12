@@ -15,7 +15,7 @@ namespace AcmStatisticsBackend.Authorization
 
             context.CreatePermission(PermissionNames.Statistics_DefaultQuery, F("Default query username"));
             context.CreatePermission(PermissionNames.AcHistory_Histories, F("Query history"));
-            context.CreatePermission(PermissionNames.Settings_All, F("Change settings"));
+            context.CreatePermission(PermissionNames.Settings_Update, F("Change user's own settings"));
         }
 
         private static ILocalizableString L(string name)

@@ -13,6 +13,6 @@
 
         public const string AcHistory_Histories = "AcHistory.Histories";
 
-        public const string Settings_All = "Settings.All";
+        public const string Settings_Update = "Settings.Update";
     }
 }

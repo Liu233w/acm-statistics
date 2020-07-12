@@ -57,7 +57,7 @@ namespace AcmStatisticsBackend.Settings
         }
 
         /// <inheritdoc/>
-        [AbpAuthorize(PermissionNames.Settings_All)]
+        [AbpAuthorize(PermissionNames.Settings_Update)]
         public async Task UpdateAutoSaveHistory(UpdateAutoSaveHistoryInput input)
         {
             await SettingManager.ChangeSettingForUserAsync(
@@ -67,7 +67,7 @@ namespace AcmStatisticsBackend.Settings
         }
 
         /// <inheritdoc />
-        [AbpAuthorize(PermissionNames.Settings_All)]
+        [AbpAuthorize(PermissionNames.Settings_Update)]
         public async Task SetUserTimeZone(UserTimeZoneDto dto)
         {
             var settings = await GetOrCreateUserSettingAttribute();
