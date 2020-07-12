@@ -17,5 +17,10 @@ namespace AcmStatisticsBackend.Settings
         /// Update config about whether the history should be auto-saved
         /// </summary>
         Task UpdateAutoSaveHistory(UpdateAutoSaveHistoryInput input);
+
+        /// <summary>
+        /// Set time zone of current user.
+        /// </summary>
+        Task SetUserTimeZone(UserTimeZoneDto dto);
     }
 }
