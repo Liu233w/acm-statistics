@@ -3,24 +3,33 @@
     grid-list-md
     v-resize="onResize"
   >
-    <v-layout wrap>
-      <v-text-field
-        v-model="username"
-        label="Set all usernames"
-        :disabled="isWorking"
-        required
-        @keyup.enter="runWorker"
-        :loading="isWorking"
+    <v-row
+      wrap
+      no-gutters
+    >
+      <v-col
+        :md="3"
+        class="pt-0 pb-0"
       >
-        <template #progress>
-          <v-progress-linear
-            color="primary"
-            :value="notWorkingRate"
-            :height="3"
-            absolute
-          />
-        </template>
-      </v-text-field>
+        <v-text-field
+          v-model="username"
+          label="Set all usernames"
+          :disabled="isWorking"
+          required
+          @keyup.enter="runWorker"
+          :loading="isWorking"
+          style="min-width: 240px"
+        >
+          <template #progress>
+            <v-progress-linear
+              color="primary"
+              :value="notWorkingRate"
+              :height="3"
+              absolute
+            />
+          </template>
+        </v-text-field>
+      </v-col>
       <v-btn
         class="ma-1 primary"
         @click="runWorker"
@@ -39,6 +48,19 @@
           </v-btn>
         </template>
         Clear usernames and reset all worker status
+      </v-tooltip>
+      <v-tooltip bottom>
+        <template #activator="{ on }">
+          <v-btn
+            class="ma-1"
+            v-on="on"
+            @click="loadUsername"
+            :disabled="loading"
+          >
+            reload
+          </v-btn>
+        </template>
+        Load saved usernames from {{ login ? 'server' : 'your browser' }}
       </v-tooltip>
       <v-tooltip bottom>
         <template #activator="{ on }">
@@ -92,8 +114,8 @@
           Login to view summary.
         </template>
       </v-tooltip>
-    </v-layout>
-    <v-layout v-if="loading">
+    </v-row>
+    <v-row v-if="loading">
       <v-spacer />
       <v-progress-circular
         :size="100"
@@ -102,13 +124,13 @@
         class="mt-10"
       />
       <v-spacer />
-    </v-layout>
-    <v-layout
+    </v-row>
+    <v-row
       v-else
       ref="layout"
       :style="{height: layoutHeight+'px'}"
     >
-      <v-flex
+      <div
         v-for="(item,i) in workers"
         :key="item.key"
         :style="{
@@ -122,8 +144,8 @@
           :ref="'worker-'+item.key"
           @update-height="height=>onResizeWorker(height,item)"
         />
-      </v-flex>
-    </v-layout>
+      </div>
+    </v-row>
   </v-container>
 </template>
 
@@ -135,7 +157,7 @@ import WorkerCard from '~/components/WorkerCard'
 import statisticsLayoutBuilder from '~/components/statisticsLayoutBuilder'
 import Store from '~/store/-dynamic/statistics'
 import { PROJECT_TITLE, WORKER_STATUS } from '~/components/consts'
-import { getAbpErrorMessage } from '~/components/utils'
+import { getAbpErrorMessage, delay } from '~/components/utils'
 
 export default {
   components: {
@@ -145,19 +167,19 @@ export default {
   head: {
     title: `Statistics - ${PROJECT_TITLE}`,
   },
-  created() {
-    this.$store.registerModule('statistics', Store, { preserveState: false })
-  },
-  destroyed() {
-    this.$store.unregisterModule('statistics')
+  async created() {
+    if (!this.$store.hasModule('statistics')) {
+      this.$store.registerModule('statistics', Store, { preserveState: false })
+      await this.loadUsername()
+    } else {
+      this.loading = false
+    }
   },
   async mounted() {
     this.changeLayoutConfig({
       title: 'Statistics',
     })
 
-    await this.loadUsername()
-    this.loading = false
     this.onResize()
   },
   data() {
@@ -205,10 +227,11 @@ export default {
     },
   },
   methods: {
-    updateLayoutSize() {
-      if (this.$refs.layout) {
-        this.columnWidth = this.$refs.layout.clientWidth / this.columnCount
+    async updateLayoutSize() {
+      while (!this.$refs.layout) {
+        await delay(50)
       }
+      this.columnWidth = this.$refs.layout.clientWidth / this.columnCount
     },
     onResizeWorker(height, worker) {
       this.$set(this.workerHeight, worker.key, height)
@@ -274,8 +297,10 @@ export default {
     /**
      * 从 localStorage 读取用户名情况，输入进 worker 中
      */
-    loadUsername() {
-      return this.$store.dispatch('statistics/loadUsernames')
+    async loadUsername() {
+      this.loading = true
+      await this.$store.dispatch('statistics/loadUsernames')
+      this.loading = false
     },
     clearWorkers() {
       this.$store.dispatch('statistics/clearWorkers')
@@ -320,5 +345,7 @@ export default {
 .worker {
   position: absolute;
   transition: ease-in-out 300ms;
+  padding-left: 4px;
+  padding-right: 4px;
 }
 </style>
