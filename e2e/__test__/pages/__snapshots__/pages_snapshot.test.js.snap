@@ -925,7 +925,8 @@ exports[`/ 1`] = `
             },
             session: {
               login: a,
-              username: ""
+              username: "",
+              settings: {}
             }
           },
           serverRendered: true,
@@ -1805,7 +1806,8 @@ exports[`/about 1`] = `
             },
             session: {
               login: a,
-              username: ""
+              username: "",
+              settings: {}
             }
           },
           serverRendered: true,
@@ -2802,73 +2804,73 @@ exports[`/history 1`] = `
       </div>
     </div>
     <script>
-      window.__NUXT__ = (function(a, b, c, d, e, f, g, h, i, j, k, l, m, n, o) {
+      window.__NUXT__ = (function(a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q) {
         return {
           layout: "default",
           data: [{}],
           fetch: [{
             items: [{
-              historyId: a,
-              summaryId: a,
+              historyId: b,
+              summaryId: b,
               creationTime: new Date(1586505600000),
               submission: 100,
-              solved: a
-            }, {
-              historyId: e,
-              summaryId: e,
-              creationTime: new Date(1586419200000),
-              submission: 90,
-              solved: e
-            }, {
-              historyId: f,
-              summaryId: f,
-              creationTime: new Date(1586332800000),
-              submission: 80,
-              solved: f
+              solved: b
             }, {
               historyId: g,
               summaryId: g,
-              creationTime: new Date(1586246400000),
-              submission: 70,
+              creationTime: new Date(1586419200000),
+              submission: 90,
               solved: g
             }, {
               historyId: h,
               summaryId: h,
-              creationTime: new Date(1586160000000),
-              submission: m,
+              creationTime: new Date(1586332800000),
+              submission: 80,
               solved: h
             }, {
               historyId: i,
               summaryId: i,
-              creationTime: new Date(1586073600000),
-              submission: 50,
+              creationTime: new Date(1586246400000),
+              submission: 70,
               solved: i
             }, {
               historyId: j,
               summaryId: j,
-              creationTime: new Date(1585987200000),
-              submission: 40,
+              creationTime: new Date(1586160000000),
+              submission: o,
               solved: j
             }, {
               historyId: k,
               summaryId: k,
-              creationTime: new Date(1585900800000),
-              submission: 30,
+              creationTime: new Date(1586073600000),
+              submission: 50,
               solved: k
             }, {
               historyId: l,
               summaryId: l,
-              creationTime: new Date(1585814400000),
-              submission: 20,
+              creationTime: new Date(1585987200000),
+              submission: 40,
               solved: l
             }, {
-              historyId: b,
-              summaryId: b,
+              historyId: m,
+              summaryId: m,
+              creationTime: new Date(1585900800000),
+              submission: 30,
+              solved: m
+            }, {
+              historyId: n,
+              summaryId: n,
+              creationTime: new Date(1585814400000),
+              submission: 20,
+              solved: n
+            }, {
+              historyId: d,
+              summaryId: d,
               creationTime: new Date(1585728000000),
-              submission: a,
-              solved: b
+              submission: b,
+              solved: d
             }],
-            loading: c,
+            loading: e,
             headers: [{
               text: "Id",
               value: "historyId",
@@ -2887,43 +2889,64 @@ exports[`/history 1`] = `
               value: "actions"
             }],
             selected: [],
-            itemsPerPage: a,
-            serverItemsLength: m,
-            page: b,
-            errorMessage: n,
+            itemsPerPage: b,
+            serverItemsLength: o,
+            page: d,
+            errorMessage: p,
             chartOptions: {
-              responsive: d,
-              maintainAspectRatio: c,
+              responsive: f,
+              maintainAspectRatio: e,
               tooltips: {
                 mode: "index",
-                intersect: c
+                intersect: e
               },
               hover: {
                 mode: "nearest",
-                intersect: d
+                intersect: f
               }
             }
           }],
-          error: n,
+          error: p,
           state: {
-            sidebar: c,
+            sidebar: e,
             message: {
               list: []
             },
             session: {
-              login: d,
-              username: "admin"
+              login: f,
+              username: "admin",
+              settings: {
+                "Abp.Localization.DefaultLanguageName": "en",
+                "Abp.Notifications.ReceiveNotifications": a,
+                "Abp.Timing.TimeZone": "UTC",
+                "Abp.Zero.UserManagement.IsEmailConfirmationRequiredForLogin": c,
+                "Abp.Zero.OrganizationUnits.MaxUserMembershipCount": "2147483647",
+                "Abp.Zero.UserManagement.TwoFactorLogin.IsEnabled": a,
+                "Abp.Zero.UserManagement.TwoFactorLogin.IsRememberBrowserEnabled": a,
+                "Abp.Zero.UserManagement.TwoFactorLogin.IsEmailProviderEnabled": a,
+                "Abp.Zero.UserManagement.TwoFactorLogin.IsSmsProviderEnabled": a,
+                "Abp.Zero.UserManagement.UserLockOut.IsEnabled": a,
+                "Abp.Zero.UserManagement.UserLockOut.MaxFailedAccessAttemptsBeforeLockout": "5",
+                "Abp.Zero.UserManagement.UserLockOut.DefaultAccountLockoutSeconds": "300",
+                "Abp.Zero.UserManagement.PasswordComplexity.RequireDigit": c,
+                "Abp.Zero.UserManagement.PasswordComplexity.RequireLowercase": c,
+                "Abp.Zero.UserManagement.PasswordComplexity.RequireNonAlphanumeric": c,
+                "Abp.Zero.UserManagement.PasswordComplexity.RequireUppercase": c,
+                "Abp.Zero.UserManagement.PasswordComplexity.RequiredLength": "3",
+                "App.UiTheme": "red",
+                "App.AutoSaveHistory": a
+              }
             }
           },
-          serverRendered: d,
+          serverRendered: f,
           routePath: "\\u002Fhistory\\u002F",
           config: {},
           env: {
-            VERSION_NUM: o,
-            BUILD_TIME: o
+            VERSION_NUM: q,
+            BUILD_TIME: q
           }
         }
-      }(10, 1, false, true, 9, 8, 7, 6, 5, 4, 3, 2, 60, null, "0"));
+      }("true", 10, "false", 1, false, true, 9, 8, 7, 6, 5, 4, 3, 2, 60, null, "0"));
     </script>
 
 
@@ -3868,7 +3891,7 @@ exports[`/history/{historyId} 1`] = `
       </div>
     </div>
     <script>
-      window.__NUXT__ = (function(a, b, c, d, e, f, g, h, i, j) {
+      window.__NUXT__ = (function(a, b, c, d, e, f, g, h, i, j, k, l) {
         return {
           layout: "default",
           data: [{}],
@@ -3885,10 +3908,10 @@ exports[`/history/{historyId} 1`] = `
                   fromCrawlerName: a,
                   username: b
                 }],
-                isVirtualJudge: f
+                isVirtualJudge: h
               }, {
                 crawlerName: "codechef",
-                submission: g,
+                submission: i,
                 solved: e,
                 usernames: [{
                   fromCrawlerName: d,
@@ -3896,7 +3919,7 @@ exports[`/history/{historyId} 1`] = `
                 }],
                 isVirtualJudge: c
               }, {
-                crawlerName: h,
+                crawlerName: j,
                 submission: 9,
                 solved: 3,
                 usernames: [{
@@ -3906,7 +3929,7 @@ exports[`/history/{historyId} 1`] = `
                 isVirtualJudge: c
               }, {
                 crawlerName: "timus",
-                submission: i,
+                submission: k,
                 solved: 2,
                 usernames: [{
                   fromCrawlerName: d,
@@ -3915,7 +3938,7 @@ exports[`/history/{historyId} 1`] = `
                 isVirtualJudge: c
               }, {
                 crawlerName: "fzu",
-                submission: g,
+                submission: i,
                 solved: e,
                 usernames: [{
                   fromCrawlerName: d,
@@ -3943,7 +3966,7 @@ exports[`/history/{historyId} 1`] = `
               }, {
                 crawlerName: "codeforces",
                 submission: 15,
-                solved: i,
+                solved: k,
                 usernames: [{
                   fromCrawlerName: d,
                   username: b
@@ -3951,7 +3974,7 @@ exports[`/history/{historyId} 1`] = `
                 isVirtualJudge: c
               }, {
                 crawlerName: "dashiye",
-                submission: g,
+                submission: i,
                 solved: 0,
                 usernames: [{
                   fromCrawlerName: d,
@@ -3981,7 +4004,7 @@ exports[`/history/{historyId} 1`] = `
                 isVirtualJudge: c
               }],
               summaryWarnings: [{
-                crawlerName: h,
+                crawlerName: j,
                 content: "This crawler does not have a solved list and its result will be directly added to summary."
               }],
               submission: 785,
@@ -4118,7 +4141,7 @@ exports[`/history/{historyId} 1`] = `
                 title: "VJudge",
                 description: "virtual judge，这个OJ的题量是单独计算的",
                 url: "https:\\u002F\\u002Fvjudge.net\\u002F",
-                virtual_judge: f
+                virtual_judge: h
               }
             }
           }],
@@ -4129,19 +4152,40 @@ exports[`/history/{historyId} 1`] = `
               list: []
             },
             session: {
-              login: f,
-              username: "admin"
+              login: h,
+              username: "admin",
+              settings: {
+                "Abp.Localization.DefaultLanguageName": "en",
+                "Abp.Notifications.ReceiveNotifications": f,
+                "Abp.Timing.TimeZone": "UTC",
+                "Abp.Zero.UserManagement.IsEmailConfirmationRequiredForLogin": g,
+                "Abp.Zero.OrganizationUnits.MaxUserMembershipCount": "2147483647",
+                "Abp.Zero.UserManagement.TwoFactorLogin.IsEnabled": f,
+                "Abp.Zero.UserManagement.TwoFactorLogin.IsRememberBrowserEnabled": f,
+                "Abp.Zero.UserManagement.TwoFactorLogin.IsEmailProviderEnabled": f,
+                "Abp.Zero.UserManagement.TwoFactorLogin.IsSmsProviderEnabled": f,
+                "Abp.Zero.UserManagement.UserLockOut.IsEnabled": f,
+                "Abp.Zero.UserManagement.UserLockOut.MaxFailedAccessAttemptsBeforeLockout": "5",
+                "Abp.Zero.UserManagement.UserLockOut.DefaultAccountLockoutSeconds": "300",
+                "Abp.Zero.UserManagement.PasswordComplexity.RequireDigit": g,
+                "Abp.Zero.UserManagement.PasswordComplexity.RequireLowercase": g,
+                "Abp.Zero.UserManagement.PasswordComplexity.RequireNonAlphanumeric": g,
+                "Abp.Zero.UserManagement.PasswordComplexity.RequireUppercase": g,
+                "Abp.Zero.UserManagement.PasswordComplexity.RequiredLength": "3",
+                "App.UiTheme": "red",
+                "App.AutoSaveHistory": f
+              }
             }
           },
-          serverRendered: f,
+          serverRendered: h,
           routePath: "\\u002Fhistory\\u002F1",
           config: {},
           env: {
-            VERSION_NUM: j,
-            BUILD_TIME: j
+            VERSION_NUM: l,
+            BUILD_TIME: l
           }
         }
-      }(null, "wwwlsmcom", false, "vjudge", 1, true, 5, "leetcode_cn", 6, "0"));
+      }(null, "wwwlsmcom", false, "vjudge", 1, "true", "false", true, 5, "leetcode_cn", 6, "0"));
     </script>
 
 
@@ -4954,9 +4998,9 @@ exports[`/login 1`] = `
                                 <div class="col"><button type="button" disabled="disabled" class="v-btn v-btn--block v-btn--contained v-btn--disabled theme--light v-size--default"><span class="v-btn__content">
                 login
               </span></button></div>
-                                <div class="col"><a href="/register" class="v-btn v-btn--block v-btn--contained v-btn--router theme--light v-size--default"><span class="v-btn__content">
+                                <div class="col"><button type="button" class="v-btn v-btn--block v-btn--contained theme--light v-size--default"><span class="v-btn__content">
                 enter register page
-              </span></a></div>
+              </span></button></div>
                               </div>
                             </form>
                           </div>
@@ -4987,7 +5031,8 @@ exports[`/login 1`] = `
             },
             session: {
               login: a,
-              username: ""
+              username: "",
+              settings: {}
             }
           },
           serverRendered: true,
@@ -5835,9 +5880,9 @@ exports[`/register 1`] = `
                                 <div class="col"><button type="button" disabled="disabled" class="v-btn v-btn--block v-btn--contained v-btn--disabled theme--light v-size--default"><span class="v-btn__content">
                 register
               </span></button></div>
-                                <div class="col"><a href="/login" class="v-btn v-btn--block v-btn--contained v-btn--router theme--light v-size--default"><span class="v-btn__content">
+                                <div class="col"><button type="button" class="v-btn v-btn--block v-btn--contained theme--light v-size--default"><span class="v-btn__content">
                 enter login page
-              </span></a></div>
+              </span></button></div>
                               </div>
                             </form>
                           </div>
@@ -5868,7 +5913,8 @@ exports[`/register 1`] = `
             },
             session: {
               login: a,
-              username: ""
+              username: "",
+              settings: {}
             }
           },
           serverRendered: true,
@@ -6663,7 +6709,7 @@ exports[`/settings 1`] = `
             </header>
             <main class="v-content" style="padding-top:64px;padding-right:0px;padding-bottom:0px;padding-left:0px;">
               <div class="v-content__wrap">
-                <div data-fetch-key="0" class="container container--fluid">
+                <div class="container container--fluid">
                   <div class="row">
                     <div class="col">
                       <div class="v-card v-sheet theme--light">
@@ -6809,314 +6855,52 @@ exports[`/settings 1`] = `
       </div>
     </div>
     <script>
-      window.__NUXT__ = (function(a, b, c, d, e, f) {
+      window.__NUXT__ = (function(a, b, c, d) {
         return {
           layout: "default",
           data: [{}],
-          fetch: [{
-            deleteDialog: a,
-            currentPwd: b,
-            newPwd: b,
-            pwdRepeat: b,
-            valid: c,
-            loading: a,
-            changePwdMessage: d,
-            timeZoneList: [{
-              value: e,
-              text: "(GMT) UTC"
-            }, {
-              value: "Morocco Standard Time",
-              text: "(GMT) Casablanca"
-            }, {
-              value: "GMT Standard Time",
-              text: "(GMT) Greenwich Mean Time : Dublin, Edinburgh, Lisbon, London"
-            }, {
-              value: "Greenwich Standard Time",
-              text: "(GMT) Monrovia, Reykjavik"
-            }, {
-              value: "W. Europe Standard Time",
-              text: "(GMT+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna"
-            }, {
-              value: "Central Europe Standard Time",
-              text: "(GMT+01:00) Belgrade, Bratislava, Budapest, Ljubljana, Prague"
-            }, {
-              value: "Romance Standard Time",
-              text: "(GMT+01:00) Brussels, Copenhagen, Madrid, Paris"
-            }, {
-              value: "Central European Standard Time",
-              text: "(GMT+01:00) Sarajevo, Skopje, Warsaw, Zagreb"
-            }, {
-              value: "W. Central Africa Standard Time",
-              text: "(GMT+01:00) West Central Africa"
-            }, {
-              value: "Jordan Standard Time",
-              text: "(GMT+02:00) Amman"
-            }, {
-              value: "GTB Standard Time",
-              text: "(GMT+02:00) Athens, Bucharest, Istanbul"
-            }, {
-              value: "Middle East Standard Time",
-              text: "(GMT+02:00) Beirut"
-            }, {
-              value: "Egypt Standard Time",
-              text: "(GMT+02:00) Cairo"
-            }, {
-              value: "South Africa Standard Time",
-              text: "(GMT+02:00) Harare, Pretoria"
-            }, {
-              value: "FLE Standard Time",
-              text: "(GMT+02:00) Helsinki, Kyiv, Riga, Sofia, Tallinn, Vilnius"
-            }, {
-              value: "Israel Standard Time",
-              text: "(GMT+02:00) Jerusalem"
-            }, {
-              value: "E. Europe Standard Time",
-              text: "(GMT+02:00) Minsk"
-            }, {
-              value: "Namibia Standard Time",
-              text: "(GMT+02:00) Windhoek"
-            }, {
-              value: "Arabic Standard Time",
-              text: "(GMT+03:00) Baghdad"
-            }, {
-              value: "Arab Standard Time",
-              text: "(GMT+03:00) Kuwait, Riyadh"
-            }, {
-              value: "Russian Standard Time",
-              text: "(GMT+03:00) Moscow, St. Petersburg, Volgograd"
-            }, {
-              value: "E. Africa Standard Time",
-              text: "(GMT+03:00) Nairobi"
-            }, {
-              value: "Georgian Standard Time",
-              text: "(GMT+03:00) Tbilisi"
-            }, {
-              value: "Iran Standard Time",
-              text: "(GMT+03:30) Tehran"
-            }, {
-              value: "Arabian Standard Time",
-              text: "(GMT+04:00) Abu Dhabi, Muscat"
-            }, {
-              value: "Azerbaijan Standard Time",
-              text: "(GMT+04:00) Baku"
-            }, {
-              value: "Mauritius Standard Time",
-              text: "(GMT+04:00) Port Louis"
-            }, {
-              value: "Caucasus Standard Time",
-              text: "(GMT+04:00) Yerevan"
-            }, {
-              value: "Afghanistan Standard Time",
-              text: "(GMT+04:30) Kabul"
-            }, {
-              value: "Ekaterinburg Standard Time",
-              text: "(GMT+05:00) Ekaterinburg"
-            }, {
-              value: "Pakistan Standard Time",
-              text: "(GMT+05:00) Islamabad, Karachi"
-            }, {
-              value: "West Asia Standard Time",
-              text: "(GMT+05:00) Tashkent"
-            }, {
-              value: "India Standard Time",
-              text: "(GMT+05:30) Chennai, Kolkata, Mumbai, New Delhi"
-            }, {
-              value: "Sri Lanka Standard Time",
-              text: "(GMT+05:30) Sri Jayawardenepura"
-            }, {
-              value: "Nepal Standard Time",
-              text: "(GMT+05:45) Kathmandu"
-            }, {
-              value: "N. Central Asia Standard Time",
-              text: "(GMT+06:00) Almaty, Novosibirsk"
-            }, {
-              value: "Central Asia Standard Time",
-              text: "(GMT+06:00) Astana, Dhaka"
-            }, {
-              value: "Myanmar Standard Time",
-              text: "(GMT+06:30) Yangon (Rangoon)"
-            }, {
-              value: "SE Asia Standard Time",
-              text: "(GMT+07:00) Bangkok, Hanoi, Jakarta"
-            }, {
-              value: "North Asia Standard Time",
-              text: "(GMT+07:00) Krasnoyarsk"
-            }, {
-              value: "China Standard Time",
-              text: "(GMT+08:00) Beijing, Chongqing, Hong Kong, Urumqi"
-            }, {
-              value: "North Asia East Standard Time",
-              text: "(GMT+08:00) Irkutsk, Ulaan Bataar"
-            }, {
-              value: "Singapore Standard Time",
-              text: "(GMT+08:00) Kuala Lumpur, Singapore"
-            }, {
-              value: "W. Australia Standard Time",
-              text: "(GMT+08:00) Perth"
-            }, {
-              value: "Taipei Standard Time",
-              text: "(GMT+08:00) Taipei"
-            }, {
-              value: "Tokyo Standard Time",
-              text: "(GMT+09:00) Osaka, Sapporo, Tokyo"
-            }, {
-              value: "Korea Standard Time",
-              text: "(GMT+09:00) Seoul"
-            }, {
-              value: "Yakutsk Standard Time",
-              text: "(GMT+09:00) Yakutsk"
-            }, {
-              value: "Cen. Australia Standard Time",
-              text: "(GMT+09:30) Adelaide"
-            }, {
-              value: "AUS Central Standard Time",
-              text: "(GMT+09:30) Darwin"
-            }, {
-              value: "E. Australia Standard Time",
-              text: "(GMT+10:00) Brisbane"
-            }, {
-              value: "AUS Eastern Standard Time",
-              text: "(GMT+10:00) Canberra, Melbourne, Sydney"
-            }, {
-              value: "West Pacific Standard Time",
-              text: "(GMT+10:00) Guam, Port Moresby"
-            }, {
-              value: "Tasmania Standard Time",
-              text: "(GMT+10:00) Hobart"
-            }, {
-              value: "Vladivostok Standard Time",
-              text: "(GMT+10:00) Vladivostok"
-            }, {
-              value: "Central Pacific Standard Time",
-              text: "(GMT+11:00) Magadan, Solomon Is., New Caledonia"
-            }, {
-              value: "New Zealand Standard Time",
-              text: "(GMT+12:00) Auckland, Wellington"
-            }, {
-              value: "Fiji Standard Time",
-              text: "(GMT+12:00) Fiji, Kamchatka, Marshall Is."
-            }, {
-              value: "Tonga Standard Time",
-              text: "(GMT+13:00) Nuku'alofa"
-            }, {
-              value: "Azores Standard Time",
-              text: "(GMT-01:00) Azores"
-            }, {
-              value: "Cape Verde Standard Time",
-              text: "(GMT-01:00) Cape Verde Is."
-            }, {
-              value: "Mid-Atlantic Standard Time",
-              text: "(GMT-02:00) Mid-Atlantic"
-            }, {
-              value: "E. South America Standard Time",
-              text: "(GMT-03:00) Brasilia"
-            }, {
-              value: "Argentina Standard Time",
-              text: "(GMT-03:00) Buenos Aires"
-            }, {
-              value: "SA Eastern Standard Time",
-              text: "(GMT-03:00) Georgetown"
-            }, {
-              value: "Greenland Standard Time",
-              text: "(GMT-03:00) Greenland"
-            }, {
-              value: "Montevideo Standard Time",
-              text: "(GMT-03:00) Montevideo"
-            }, {
-              value: "Newfoundland Standard Time",
-              text: "(GMT-03:30) Newfoundland"
-            }, {
-              value: "Atlantic Standard Time",
-              text: "(GMT-04:00) Atlantic Time (Canada)"
-            }, {
-              value: "SA Western Standard Time",
-              text: "(GMT-04:00) La Paz"
-            }, {
-              value: "Central Brazilian Standard Time",
-              text: "(GMT-04:00) Manaus"
-            }, {
-              value: "Pacific SA Standard Time",
-              text: "(GMT-04:00) Santiago"
-            }, {
-              value: "Venezuela Standard Time",
-              text: "(GMT-04:30) Caracas"
-            }, {
-              value: "SA Pacific Standard Time",
-              text: "(GMT-05:00) Bogota, Lima, Quito, Rio Branco"
-            }, {
-              value: "Eastern Standard Time",
-              text: "(GMT-05:00) Eastern Time (US & Canada)"
-            }, {
-              value: "US Eastern Standard Time",
-              text: "(GMT-05:00) Indiana (East)"
-            }, {
-              value: "Central America Standard Time",
-              text: "(GMT-06:00) Central America"
-            }, {
-              value: "Central Standard Time",
-              text: "(GMT-06:00) Central Time (US & Canada)"
-            }, {
-              value: "Central Standard Time (Mexico)",
-              text: "(GMT-06:00) Guadalajara, Mexico City, Monterrey"
-            }, {
-              value: "Canada Central Standard Time",
-              text: "(GMT-06:00) Saskatchewan"
-            }, {
-              value: "US Mountain Standard Time",
-              text: "(GMT-07:00) Arizona"
-            }, {
-              value: "Mountain Standard Time (Mexico)",
-              text: "(GMT-07:00) Chihuahua, La Paz, Mazatlan"
-            }, {
-              value: "Mountain Standard Time",
-              text: "(GMT-07:00) Mountain Time (US & Canada)"
-            }, {
-              value: "Pacific Standard Time",
-              text: "(GMT-08:00) Pacific Time (US & Canada)"
-            }, {
-              value: "Pacific Standard Time (Mexico)",
-              text: "(GMT-08:00) Tijuana, Baja California"
-            }, {
-              value: "Alaskan Standard Time",
-              text: "(GMT-09:00) Alaska"
-            }, {
-              value: "Hawaiian Standard Time",
-              text: "(GMT-10:00) Hawaii"
-            }, {
-              value: "Samoa Standard Time",
-              text: "(GMT-11:00) Midway Island, Samoa"
-            }, {
-              value: "Dateline Standard Time",
-              text: "(GMT-12:00) International Date Line West"
-            }],
-            timeZone: e,
-            timeZoneMessage: d,
-            rules: {
-              required: {},
-              email: {},
-              password: {}
-            }
-          }],
-          error: d,
+          fetch: [],
+          error: null,
           state: {
-            sidebar: a,
+            sidebar: false,
             message: {
               list: []
             },
             session: {
               login: c,
-              username: "admin"
+              username: "admin",
+              settings: {
+                "Abp.Localization.DefaultLanguageName": "en",
+                "Abp.Notifications.ReceiveNotifications": a,
+                "Abp.Timing.TimeZone": "UTC",
+                "Abp.Zero.UserManagement.IsEmailConfirmationRequiredForLogin": b,
+                "Abp.Zero.OrganizationUnits.MaxUserMembershipCount": "2147483647",
+                "Abp.Zero.UserManagement.TwoFactorLogin.IsEnabled": a,
+                "Abp.Zero.UserManagement.TwoFactorLogin.IsRememberBrowserEnabled": a,
+                "Abp.Zero.UserManagement.TwoFactorLogin.IsEmailProviderEnabled": a,
+                "Abp.Zero.UserManagement.TwoFactorLogin.IsSmsProviderEnabled": a,
+                "Abp.Zero.UserManagement.UserLockOut.IsEnabled": a,
+                "Abp.Zero.UserManagement.UserLockOut.MaxFailedAccessAttemptsBeforeLockout": "5",
+                "Abp.Zero.UserManagement.UserLockOut.DefaultAccountLockoutSeconds": "300",
+                "Abp.Zero.UserManagement.PasswordComplexity.RequireDigit": b,
+                "Abp.Zero.UserManagement.PasswordComplexity.RequireLowercase": b,
+                "Abp.Zero.UserManagement.PasswordComplexity.RequireNonAlphanumeric": b,
+                "Abp.Zero.UserManagement.PasswordComplexity.RequireUppercase": b,
+                "Abp.Zero.UserManagement.PasswordComplexity.RequiredLength": "3",
+                "App.UiTheme": "red",
+                "App.AutoSaveHistory": a
+              }
             }
           },
           serverRendered: c,
           routePath: "\\u002Fsettings",
           config: {},
           env: {
-            VERSION_NUM: f,
-            BUILD_TIME: f
+            VERSION_NUM: d,
+            BUILD_TIME: d
           }
         }
-      }(false, "", true, null, "UTC", "0"));
+      }("true", "false", true, "0"));
     </script>
 
 
@@ -7891,15 +7675,17 @@ exports[`/statistics 1`] = `
             <main class="v-content" style="padding-top:64px;padding-right:0px;padding-bottom:0px;padding-left:0px;">
               <div class="v-content__wrap">
                 <div class="container grid-list-md">
-                  <div class="layout wrap">
-                    <div class="v-input theme--light v-text-field">
-                      <div class="v-input__control">
-                        <div class="v-input__slot">
-                          <div class="v-text-field__slot"><label class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Set all usernames</label><input required="required" type="text" value></div>
-                        </div>
-                        <div class="v-text-field__details">
-                          <div class="v-messages theme--light">
-                            <div class="v-messages__wrapper"></div>
+                  <div wrap class="row no-gutters">
+                    <div class="pt-0 pb-0 col-md-3 col">
+                      <div class="v-input theme--light v-text-field" style="min-width:240px;">
+                        <div class="v-input__control">
+                          <div class="v-input__slot">
+                            <div class="v-text-field__slot"><label class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Set all usernames</label><input required="required" type="text" value></div>
+                          </div>
+                          <div class="v-text-field__details">
+                            <div class="v-messages theme--light">
+                              <div class="v-messages__wrapper"></div>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -7907,13 +7693,15 @@ exports[`/statistics 1`] = `
       query
     </span></button> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="ma-1 error v-btn v-btn--contained theme--light v-size--default"><span class="v-btn__content">
           reset
+        </span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" disabled="disabled" class="ma-1 v-btn v-btn--contained v-btn--disabled theme--light v-size--default"><span class="v-btn__content">
+          reload
         </span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--contained theme--light v-size--default ma-1"><span class="v-btn__content">
           save username
           </span></button></span>
                     <div class="spacer"></div>
                     <!---->
                   </div>
-                  <div class="layout">
+                  <div class="row">
                     <div class="spacer"></div>
                     <div role="progressbar" aria-valuemin="0" aria-valuemax="100" class="v-progress-circular mt-10 v-progress-circular--indeterminate primary--text" style="height:100px;width:100px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="20.833333333333336 20.833333333333336 41.66666666666667 41.66666666666667" style="transform:rotate(0deg);">
                         <circle fill="transparent" cx="41.66666666666667" cy="41.66666666666667" r="20" stroke-width="1.666666666666667" stroke-dasharray="125.664" stroke-dashoffset="125.66370614359172px" class="v-progress-circular__overlay" /></svg>
@@ -7948,7 +7736,8 @@ exports[`/statistics 1`] = `
             },
             session: {
               login: f,
-              username: a
+              username: a,
+              settings: {}
             },
             statistics: {
               workers: [{
