@@ -182,16 +182,8 @@ export default {
       timeZoneMessage: null,
     }
   },
-  async fetch() {
-    try {
-      const res = await this.$axios.$get('/api/services/app/TimeZoneSetting/GetUserTimeZone')
-      this.timeZone = res.result.timeZone
-    } catch (err) {
-      this.timeZoneMessage = {
-        color: 'error',
-        message: getAbpErrorMessage(err),
-      }
-    }
+  created() {
+    this.timeZone = this.$store.state.session.settings['Abp.Timing.TimeZone']
   },
   methods: {
     async logout() {
@@ -226,9 +218,10 @@ export default {
     async saveTimeZone() {
       this.timeZoneMessage = null
       try {
-        await this.$axios.$post('/api/services/app/TimeZoneSetting/SetUserTimeZone', {
+        await this.$axios.$post('/api/services/app/UserConfig/SetUserTimeZone', {
           timeZone: this.timeZone,
         })
+        await this.$store.dispatch('/session/refreshSettings')
         this.timeZoneMessage = {
           color: 'success',
           message: 'Success!',
