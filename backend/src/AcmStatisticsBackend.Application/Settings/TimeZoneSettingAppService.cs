@@ -5,6 +5,7 @@ using Abp.Domain.Repositories;
 using Abp.Runtime.Session;
 using Abp.Timing;
 using Abp.UI;
+using AcmStatisticsBackend.Authorization;
 using AcmStatisticsBackend.Settings.Dto;
 
 namespace AcmStatisticsBackend.Settings
@@ -38,6 +39,7 @@ namespace AcmStatisticsBackend.Settings
         }
 
         /// <inheritdoc />
+        [AbpAuthorize(PermissionNames.Settings_All)]
         public async Task SetUserTimeZone(UserTimeZoneDto dto)
         {
             var settings = await GetOrCreateUserSettingAttribute();
