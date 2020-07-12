@@ -245,13 +245,7 @@ import _ from 'lodash'
 
 import { WORKER_STATUS } from '~/components/consts'
 import { warningHelper, mapVirtualJudgeProblemTitle } from '~/components/statisticsUtils'
-
-// from https://stackoverflow.com/a/39538518
-function delay(t, v) {
-  return new Promise(function (resolve) {
-    setTimeout(resolve.bind(null, v), t)
-  })
-}
+import { delay } from '~/components/utils'
 
 export default {
   name: 'CrawlerCard',
@@ -265,7 +259,6 @@ export default {
     return {
       WORKER_STATUS: WORKER_STATUS,
       solvedListDialog: false,
-      updatingHeight: false,
       previousHeight: null,
     }
   },
@@ -297,17 +290,12 @@ export default {
       this.$store.dispatch('statistics/removeWorkerAtIndex', { index: this.index })
     },
     async updateHeight() {
-      if (this.updatingHeight) {
-        return
-      }
-      this.updatingHeight = true
       await this.$nextTick()
       const currentHeight = this.$el.offsetHeight
       if (currentHeight !== this.previousHeight) {
         this.$emit('update-height', currentHeight)
         this.previousHeight = currentHeight
       }
-      this.updatingHeight = false
     },
   },
   watch: {

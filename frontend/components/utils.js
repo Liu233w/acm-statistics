@@ -17,3 +17,11 @@ export function getAbpErrorMessage(err) {
   console.error(err)
   return _.get(err, 'response.data.error.message', 'Network Error')
 }
+
+// from https://stackoverflow.com/a/39538518
+export function delay(t, v) {
+  return new Promise(function (resolve) {
+    setTimeout(resolve.bind(null, v), t)
+  })
+}
+
