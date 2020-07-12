@@ -13,13 +13,19 @@ namespace AcmStatisticsBackend.Authorization
             context.CreatePermission(PermissionNames.Pages_Tenants, L("Tenants"),
                 multiTenancySides: MultiTenancySides.Host);
 
-            context.CreatePermission(PermissionNames.Statistics_DefaultQuery, new FixedLocalizableString("默认用户名"));
-            context.CreatePermission(PermissionNames.AcHistory_Histories, new FixedLocalizableString("查询历史"));
+            context.CreatePermission(PermissionNames.Statistics_DefaultQuery, F("Default query username"));
+            context.CreatePermission(PermissionNames.AcHistory_Histories, F("Query history"));
+            context.CreatePermission(PermissionNames.Settings_All, F("Change settings"));
         }
 
         private static ILocalizableString L(string name)
         {
             return new LocalizableString(name, AcmStatisticsBackendConsts.LocalizationSourceName);
+        }
+
+        private static ILocalizableString F(string content)
+        {
+            return new FixedLocalizableString(content);
         }
     }
 }

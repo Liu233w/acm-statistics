@@ -12,5 +12,7 @@
         public const string Statistics_DefaultQuery = "Statistics.DefaultQuery";
 
         public const string AcHistory_Histories = "AcHistory.Histories";
+
+        public const string Settings_All = "Settings.All";
     }
 }
