@@ -162,8 +162,3 @@ crawlers:
       description: virtual judge，这个OJ的题量是单独计算的
       url: https://vjudge.net/
       virtual_judge: true
-    # 只运行在服务器上，不运行在浏览器上
-    server_only: true
-    # vjudge 有一个api接口，需要用任意的用户名和密码来接入才能访问
-    crawler_login_user: 用户名
-    crawler_login_password: 密码
