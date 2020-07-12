@@ -12,7 +12,6 @@
     "lint": "eslint --ext .js,.vue .",
     "lintfix": "eslint --fix --ext .js,.vue .",
     "analyze": "nuxt build --analyze",
-    "bundle-size": "bundlesize",
     "test": "jest __test__/",
     "snapshot": "jest __test__/ --watch",
     "postinstall": "node -e \"var s='../crawler',d='./node_modules/crawler',fs=require('fs'), r=require('path').resolve;fs.exists(d,function(e){e||fs.symlinkSync(r(s),r(d),'junction')});\""
@@ -41,7 +40,6 @@
     "babel-eslint": "10.1.0",
     "babel-jest": "26.1.0",
     "babel-plugin-lodash": "3.3.4",
-    "bundlesize": "^0.18.0",
     "eslint": "7.4.0",
     "eslint-config-standard": "14.1.1",
     "eslint-loader": "4.0.2",
