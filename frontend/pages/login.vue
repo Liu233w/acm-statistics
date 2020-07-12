@@ -35,7 +35,10 @@
               v-model="password"
               :rules="[rules.required]"
             />
-            <v-checkbox v-model="remember" label="Remember me" />
+            <v-checkbox
+              v-model="remember"
+              label="Remember me"
+            />
             <v-row>
               <v-col>
                 <v-btn
@@ -49,7 +52,10 @@
                 </v-btn>
               </v-col>
               <v-col>
-                <v-btn block to="/register">
+                <v-btn
+                  block
+                  @click="goRegister"
+                >
                   enter register page
                 </v-btn>
               </v-col>
@@ -88,12 +94,26 @@ export default {
           password: this.password,
           remember: this.remember,
         })
-        this.$router.push('/')
+
+        const redirect = this.$route.query.redirect
+        if (redirect) {
+          this.$router.push(redirect)
+        } else {
+          this.$router.push('/')
+        }
       } catch (err) {
         this.errorMessage = getAbpErrorMessage(err)
         this.showError = true
       }
       this.loading = false
+    },
+    goRegister() {
+      this.$router.push({
+        path: '/register',
+        query: {
+          redirect: this.$route.query.redirect,
+        },
+      })
     },
   },
 }

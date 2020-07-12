@@ -1,8 +1,15 @@
 <template>
   <v-tooltip bottom>
     <template v-slot:activator="{ on }">
-      <v-btn text @click="clicked" v-on="on">
-        <v-icon left v-show="!session.login">
+      <v-btn
+        text
+        @click="clicked"
+        v-on="on"
+      >
+        <v-icon
+          left
+          v-show="!session.login"
+        >
           mdi-login
         </v-icon> {{ title }}
       </v-btn>
@@ -37,7 +44,12 @@ export default {
       if (this.session.login) {
         this.$router.push('/settings')
       } else {
-        this.$router.push('/login')
+        this.$router.push({
+          path: '/login',
+          query: {
+            redirect: this.$route.path,
+          },
+        })
       }
     },
   },
