@@ -193,6 +193,7 @@ export default {
       layoutHeight: 0,
       workerTransform: {},
       workerHeight: {},
+      lastSavedQueryId: null,
     }
   },
   computed: {
@@ -224,6 +225,15 @@ export default {
         this.repositionWorkers()
       },
       deep: true,
+    },
+    async isWorking(val) {
+      if (this.$store.state.session.settings['App.AutoSaveHistory']) {
+        if (val) {
+          this.lastSavedQueryId = null
+        } else {
+          this.lastSavedQueryId = await this.saveHistory()
+        }
+      }
     },
   },
   methods: {
@@ -305,13 +315,14 @@ export default {
     clearWorkers() {
       this.$store.dispatch('statistics/clearWorkers')
     },
-    async openSummary() {
-      if (this.notWorkingRate < 100 || !this.login) {
-        return
-      }
+    async saveHistory() {
 
       const doneWorkers = _.filter(this.workers,
         worker => worker.status === WORKER_STATUS.DONE)
+      if (doneWorkers.length === 0) {
+        return null
+      }
+
       try {
         const saveResult = await this.$axios.$post('/api/services/app/QueryHistory/SaveOrReplaceQueryHistory', {
           mainUsername: this.username,
@@ -332,9 +343,21 @@ export default {
               return history
             }),
         })
-        this.$router.push('/history/' + saveResult.result.queryHistoryId)
+        return saveResult.result.queryHistoryId
       } catch (err) {
         this.$store.commit('message/addError', getAbpErrorMessage(err))
+      }
+    },
+    async openSummary() {
+      if (this.notWorkingRate < 100 || !this.login || !this.lastSavedQueryId) {
+        return
+      }
+      if (this.$store.state.session.settings['App.AutoSaveHistory']) {
+        if (this.lastSavedQueryId) {
+          this.$router.push('/history/' + this.lastSavedQueryId)
+        }
+      } else {
+        this.$router.push('/history/' + await this.saveHistory())
       }
     },
   },
