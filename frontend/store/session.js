@@ -63,6 +63,6 @@ export const actions = {
   },
   async refreshSettings({ commit }) {
     const res = await this.$axios.$get('/api/services/app/UserConfig/GetUserSettings')
-    commit('updateSettings', res.result)
+    commit('updateSettings', res.result.values)
   },
 }
