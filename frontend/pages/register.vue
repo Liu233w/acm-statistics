@@ -56,7 +56,10 @@
                   :rules="[rules.required]"
                 >
                   <template v-slot:append>
-                    <v-btn icon @click="refreshCaptcha">
+                    <v-btn
+                      icon
+                      @click="refreshCaptcha"
+                    >
                       <v-icon>refresh</v-icon>
                     </v-btn>
                   </template>
@@ -76,7 +79,10 @@
                 </v-btn>
               </v-col>
               <v-col>
-                <v-btn block to="/login">
+                <v-btn
+                  block
+                  @click="goLogin"
+                >
                   enter login page
                 </v-btn>
               </v-col>
@@ -126,7 +132,13 @@ export default {
           password: this.password,
           remember: false,
         })
-        this.$router.push('/')
+
+        const redirect = this.$route.query.redirect
+        if (redirect) {
+          this.$router.push(redirect)
+        } else {
+          this.$router.push('/')
+        }
 
       } catch (err) {
         this.errorMessage = getAbpErrorMessage(err)
@@ -144,6 +156,14 @@ export default {
         this.errorMessage = error.message
         this.showError = true
       }
+    },
+    goLogin() {
+      this.$router.push({
+        path: '/login',
+        query: {
+          redirect: this.$route.query.redirect,
+        },
+      })
     },
   },
   async mounted() {
