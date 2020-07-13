@@ -159,6 +159,9 @@ import Store from '~/store/-dynamic/statistics'
 import { PROJECT_TITLE, WORKER_STATUS } from '~/components/consts'
 import { getAbpErrorMessage, delay } from '~/components/utils'
 
+// keep it when url change
+let globalLastSavedQueryId = null
+
 export default {
   components: {
     WorkerCard,
@@ -173,6 +176,10 @@ export default {
       await this.loadUsername()
     } else {
       this.loading = false
+    }
+
+    if (globalLastSavedQueryId) {
+      this.lastSavedQueryId = globalLastSavedQueryId
     }
   },
   async mounted() {
@@ -227,13 +234,16 @@ export default {
       deep: true,
     },
     async isWorking(val) {
-      if (this.$store.state.session.settings['App.AutoSaveHistory']) {
+      if (this.$store.state.session.settings['App.AutoSaveHistory'] === 'true') {
         if (val) {
           this.lastSavedQueryId = null
         } else {
           this.lastSavedQueryId = await this.saveHistory()
         }
       }
+    },
+    lastSavedQueryId(val) {
+      globalLastSavedQueryId = val
     },
   },
   methods: {
@@ -349,16 +359,14 @@ export default {
       }
     },
     async openSummary() {
-      if (this.notWorkingRate < 100 || !this.login || !this.lastSavedQueryId) {
+      if (this.notWorkingRate < 100 || !this.login) {
         return
       }
-      if (this.$store.state.session.settings['App.AutoSaveHistory']) {
-        if (this.lastSavedQueryId) {
-          this.$router.push('/history/' + this.lastSavedQueryId)
-        }
-      } else {
-        this.$router.push('/history/' + await this.saveHistory())
+
+      if (!this.lastSavedQueryId) {
+        this.lastSavedQueryId = await this.saveHistory()
       }
+      this.$router.push('/history/' + this.lastSavedQueryId)
     },
   },
 }
