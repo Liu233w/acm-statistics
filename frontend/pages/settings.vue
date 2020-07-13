@@ -21,6 +21,39 @@
     <v-row>
       <v-col>
         <v-card>
+          <v-card-title>Auto save query history</v-card-title>
+          <v-card-text>
+            <v-radio-group v-model="autoSaveHistory">
+              <v-radio
+                value="true"
+                label="Save history after finishing query"
+              />
+              <v-radio
+                value="false"
+                label="Only save history when click view summary button"
+              />
+            </v-radio-group>
+          </v-card-text>
+          <v-card-actions>
+            <v-btn
+              @click="updateAutoSaveHistoryConfig"
+              :loading="autoSaveHistory === null"
+              :disabled="autoSaveHistory === settings['App.AutoSaveHistory']"
+              text
+            >
+              save
+            </v-btn>
+          </v-card-actions>
+          <result-overlay
+            :value="timeZoneMessage"
+            @click="timeZoneMessage = null"
+          />
+        </v-card>
+      </v-col>
+    </v-row>
+    <v-row>
+      <v-col>
+        <v-card>
           <v-card-title>Change time zone</v-card-title>
           <v-card-text>
             <p>You can change your time zone every 24 hours.</p>
@@ -151,6 +184,8 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 import rulesMixin from '~/components/rulesMixin'
 import { getAbpErrorMessage } from '~/components/utils'
 import { TIMEZONE_LIST, PROJECT_TITLE } from '~/components/consts'
@@ -168,6 +203,11 @@ export default {
   head: {
     title: `Settings - ${PROJECT_TITLE}`,
   },
+  computed: {
+    ...mapState('session', [
+      'settings',
+    ]),
+  },
   data() {
     return {
       deleteDialog: false,
@@ -180,10 +220,12 @@ export default {
       timeZoneList: TIMEZONE_LIST,
       timeZone: null,
       timeZoneMessage: null,
+      autoSaveHistory: null,
     }
   },
   created() {
-    this.timeZone = this.$store.state.session.settings['Abp.Timing.TimeZone']
+    this.timeZone = this.settings['Abp.Timing.TimeZone']
+    this.autoSaveHistory = this.settings['App.AutoSaveHistory']
   },
   methods: {
     async logout() {
@@ -231,6 +273,19 @@ export default {
           color: 'error',
           message: getAbpErrorMessage(err),
         }
+      }
+    },
+    async updateAutoSaveHistoryConfig() {
+      const config = this.autoSaveHistory
+      this.autoSaveHistory = null
+      try {
+        await this.$axios.put('/api/services/app/UserConfig/UpdateAutoSaveHistory', {
+          autoSaveHistory: config === 'true',
+        })
+        await this.$store.dispatch('session/refreshSettings')
+        this.autoSaveHistory = this.settings['App.AutoSaveHistory']
+      } catch (err) {
+        this.$store.commit('message/addError', getAbpErrorMessage(err))
       }
     },
   },
