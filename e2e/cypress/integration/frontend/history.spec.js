@@ -107,6 +107,9 @@ describe('history page', () => {
     // hide account username
     cy.get(`button:contains("${username}")`)
       .invoke('attr', 'style', 'background-color: black')
+    // hide chart
+    cy.get('canvas#line-chart')
+      .invoke('remove')
 
     cy.matchImageSnapshot()
   })
