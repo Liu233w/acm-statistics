@@ -67,3 +67,17 @@ jobs:
           # use my own token instead of GITHUB_TOKEN to trigger future workflows
           github_token: ${{ secrets.WORKFLOW_TOKEN }}
           branch: ${{ steps.prcomm.outputs.BRANCH_NAME }}
+
+      - name: Upload artifact if failed
+        uses: actions/upload-artifact@v1
+        if: failure() && steps.prcomm.outputs.BOOL_TRIGGERED == 'true'
+        with:
+          name: e2e-snapshots
+          path: e2e/cypress/snapshots
+
+      - name: Upload artifact if failed
+        uses: actions/upload-artifact@v1
+        if: failure() && steps.prcomm.outputs.BOOL_TRIGGERED == 'true'
+        with:
+          name: e2e-videos
+          path: e2e/cypress/videos
