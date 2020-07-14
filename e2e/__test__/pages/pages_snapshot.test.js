@@ -36,7 +36,7 @@ async function testPageByPath(path, authToken) {
     }
   })
 
-  // 移除 id="input-XXXX" 和 for="input-XXXX" 属性
+  // remove id="input-XXXX" and for="input-XXXX"
   $('*').each((i, el) => {
     for (let key in $(el).attr()) {
       const value = $(el).attr(key)
@@ -64,6 +64,26 @@ async function testPageByPath(path, authToken) {
   // 移除随机数
   const storeEl = $(_.filter($('script'), el => /window\.__NUXT__/.test($(el).html())))
   storeEl.html(_.replace(storeEl.html(), /,key:\.\d*/g, ''))
+
+  // remove name="radio-XXX"
+  $('*').each((i, el) => {
+    for (let key in $(el).attr()) {
+      const value = $(el).attr(key)
+      if (_.startsWith(value, 'radio-') && key === 'name') {
+        $(el).removeAttr(key)
+      }
+    }
+  })
+
+  // remove aria-labelledby="input-XXX"
+  $('*').each((i, el) => {
+    for (let key in $(el).attr()) {
+      const value = $(el).attr(key)
+      if (_.startsWith(value, 'input-') && key === 'aria-labelledby') {
+        $(el).removeAttr(key)
+      }
+    }
+  })
 
   expect($.html()).toMatchSnapshot()
 }
