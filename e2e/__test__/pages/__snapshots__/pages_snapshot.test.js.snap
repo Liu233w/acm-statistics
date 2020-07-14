@@ -6726,6 +6726,42 @@ exports[`/settings 1`] = `
                   <div class="row">
                     <div class="col">
                       <div class="v-card v-sheet theme--light">
+                        <div class="v-card__title">Auto save query history</div>
+                        <div class="v-card__text">
+                          <div class="v-input v-input--is-label-active v-input--is-dirty theme--light v-input--selection-controls v-input--radio-group v-input--radio-group--column">
+                            <div class="v-input__control">
+                              <div class="v-input__slot" style="height:auto;">
+                                <div role="radiogroup" class="v-input--radio-group__input">
+                                  <div class="v-radio theme--light v-item--active">
+                                    <div class="v-input--selection-controls__input"><i aria-hidden="true" class="v-icon notranslate mdi mdi-radiobox-marked theme--light primary--text"></i><input aria-checked="true" role="radio" type="radio" value="true" checked="checked">
+                                      <div class="v-input--selection-controls__ripple primary--text"></div>
+                                    </div><label class="v-label theme--light" style="left:0px;right:auto;position:relative;">Save history after finishing query</label>
+                                  </div>
+                                  <div class="v-radio theme--light">
+                                    <div class="v-input--selection-controls__input"><i aria-hidden="true" class="v-icon notranslate mdi mdi-radiobox-blank theme--light"></i><input aria-checked="false" role="radio" type="radio" value="false">
+                                      <div class="v-input--selection-controls__ripple primary--text"></div>
+                                    </div><label class="v-label theme--light" style="left:0px;right:auto;position:relative;">Only save history when click view summary button</label>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="v-messages theme--light">
+                                <div class="v-messages__wrapper"></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="v-card__actions"><button type="button" disabled="disabled" class="v-btn v-btn--disabled v-btn--flat v-btn--text theme--light v-size--default"><span class="v-btn__content">
+            save
+          </span></button></div>
+                        <div class="v-overlay v-overlay--absolute theme--dark" style="z-index:5;">
+                          <div class="v-overlay__scrim" style="opacity:0;background-color:#212121;border-color:#212121;"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col">
+                      <div class="v-card v-sheet theme--light">
                         <div class="v-card__title">Change time zone</div>
                         <div class="v-card__text">
                           <p>You can change your time zone every 24 hours.</p>
