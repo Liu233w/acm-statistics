@@ -181,6 +181,23 @@ export default {
     if (globalLastSavedQueryId) {
       this.lastSavedQueryId = globalLastSavedQueryId
     }
+
+    // registered module should not use watch in component
+    // use the watch method below instead
+    this.watchFunc = this.$store.watch(() => this.isWorking, async val => {
+      if (this.$store.state.session.settings['App.AutoSaveHistory'] === 'true') {
+        if (val) {
+          this.lastSavedQueryId = null
+        } else {
+          this.lastSavedQueryId = await this.saveHistory()
+        }
+      }
+    })
+  },
+  destroyed() {
+    if (this.watchFunc) {
+      this.watchFunc()
+    }
   },
   async mounted() {
     this.changeLayoutConfig({
@@ -201,6 +218,7 @@ export default {
       workerTransform: {},
       workerHeight: {},
       lastSavedQueryId: null,
+      watchFunc: null,
     }
   },
   computed: {
@@ -232,15 +250,6 @@ export default {
         this.repositionWorkers()
       },
       deep: true,
-    },
-    async isWorking(val) {
-      if (this.$store.state.session.settings['App.AutoSaveHistory'] === 'true') {
-        if (val) {
-          this.lastSavedQueryId = null
-        } else {
-          this.lastSavedQueryId = await this.saveHistory()
-        }
-      }
     },
     lastSavedQueryId(val) {
       globalLastSavedQueryId = val
