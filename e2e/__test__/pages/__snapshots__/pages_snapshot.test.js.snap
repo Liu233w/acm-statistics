@@ -6753,9 +6753,6 @@ exports[`/settings 1`] = `
                         <div class="v-card__actions"><button type="button" disabled="disabled" class="v-btn v-btn--disabled v-btn--flat v-btn--text theme--light v-size--default"><span class="v-btn__content">
             save
           </span></button></div>
-                        <div class="v-overlay v-overlay--absolute theme--dark" style="z-index:5;">
-                          <div class="v-overlay__scrim" style="opacity:0;background-color:#212121;border-color:#212121;"></div>
-                        </div>
                       </div>
                     </div>
                   </div>
