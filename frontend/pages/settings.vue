@@ -44,10 +44,6 @@
               save
             </v-btn>
           </v-card-actions>
-          <result-overlay
-            :value="timeZoneMessage"
-            @click="timeZoneMessage = null"
-          />
         </v-card>
       </v-col>
     </v-row>
