@@ -94,24 +94,15 @@ describe('summary page', () => {
 
 describe('history page', () => {
 
-  it('should render correctly', () => {
+  it('should show history correctly', () => {
+    // it already has one record
     cy.login(username)
     cy.visit('/history')
 
-    // hide id
-    cy.get('tbody td.text-start:nth-child(2)')
-      .invoke('attr', 'style', 'background-color: black')
-    // hide generate time
-    cy.get('tbody td.text-start:nth-child(3)')
-      .invoke('attr', 'style', 'background-color: black')
-    // hide account username
-    cy.get(`button:contains("${username}")`)
-      .invoke('attr', 'style', 'background-color: black')
-    // hide chart
-    cy.get('canvas#line-chart')
-      .invoke('remove')
-
-    cy.matchImageSnapshot()
+    cy.get('tbody tr').within(() => {
+      cy.contains('192')
+      cy.contains('780')
+    })
   })
 
   describe('when click view', () => {
