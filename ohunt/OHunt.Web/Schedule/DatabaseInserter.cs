@@ -59,7 +59,7 @@ namespace OHunt.Web.Schedule
         {
             _logger.LogTrace("Try to insert records to database");
             using var scope = _serviceProvider.CreateScope();
-            var context = scope.ServiceProvider.GetRequiredService<OHuntWebContext>();
+            var context = scope.ServiceProvider.GetRequiredService<OHuntDbContext>();
             context.ChangeTracker.AutoDetectChangesEnabled = false;
 
             await context.Set<TEntity>().AddRangeAsync(submissions);

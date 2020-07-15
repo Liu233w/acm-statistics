@@ -8,7 +8,7 @@ using OHunt.Web.Database;
 
 namespace OHunt.Web.Migrations
 {
-    [DbContext(typeof(OHuntWebContext))]
+    [DbContext(typeof(OHuntDbContext))]
     [Migration("20200702060356_AddIndex")]
     partial class AddIndex
     {

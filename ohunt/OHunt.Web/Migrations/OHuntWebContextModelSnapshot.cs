@@ -7,7 +7,7 @@ using OHunt.Web.Database;
 
 namespace OHunt.Web.Migrations
 {
-    [DbContext(typeof(OHuntWebContext))]
+    [DbContext(typeof(OHuntDbContext))]
     partial class OHuntWebContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
