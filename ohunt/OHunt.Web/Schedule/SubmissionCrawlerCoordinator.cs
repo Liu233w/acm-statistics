@@ -42,7 +42,7 @@ namespace OHunt.Web.Schedule
             long? latestSubmissionId;
             using (var scope = _serviceProvider.CreateScope())
             {
-                var context = scope.ServiceProvider.GetRequiredService<OHuntWebContext>();
+                var context = scope.ServiceProvider.GetRequiredService<OHuntDbContext>();
                 latestSubmissionId = (await context.Submission
                     .Where(e => e.OnlineJudgeId == oj)
                     .OrderByDescending(e => e.SubmissionId)

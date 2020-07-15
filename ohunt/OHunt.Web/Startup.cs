@@ -30,7 +30,7 @@ namespace OHunt.Web
         {
             services.AddControllers(opt => { opt.Filters.Add(new HttpResponseExceptionFilter()); });
 
-            services.AddDbContextPool<OHuntWebContext>(options =>
+            services.AddDbContextPool<OHuntDbContext>(options =>
                 options.UseMySql(Configuration.GetConnectionString("Default")));
 
             services.AddOData();
@@ -95,7 +95,7 @@ namespace OHunt.Web
                 .GetRequiredService<IServiceScopeFactory>()
                 .CreateScope();
             using var context = serviceScope.ServiceProvider
-                .GetService<OHuntWebContext>();
+                .GetService<OHuntDbContext>();
             context.Database.Migrate();
         }
     }

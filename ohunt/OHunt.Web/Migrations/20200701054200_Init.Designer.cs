@@ -7,7 +7,7 @@ using OHunt.Web.Database;
 
 namespace OHunt.Web.Migrations
 {
-    [DbContext(typeof(OHuntWebContext))]
+    [DbContext(typeof(OHuntDbContext))]
     [Migration("20200701054200_Init")]
     partial class Init
     {

@@ -3,9 +3,9 @@ using OHunt.Web.Models;
 
 namespace OHunt.Web.Database
 {
-    public class OHuntWebContext : DbContext
+    public class OHuntDbContext : DbContext
     {
-        public OHuntWebContext(DbContextOptions<OHuntWebContext> options)
+        public OHuntDbContext(DbContextOptions<OHuntDbContext> options)
             : base(options)
         {
         }

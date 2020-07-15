@@ -14,11 +14,11 @@ namespace OHunt.Web.Controllers
     [ODataRoutePrefix("submissions")]
     public class SubmissionsController : ODataController
     {
-        private readonly OHuntWebContext _context;
+        private readonly OHuntDbContext _context;
         private readonly ILogger<SubmissionsController> _logger;
 
         public SubmissionsController(
-            OHuntWebContext context,
+            OHuntDbContext context,
             ILogger<SubmissionsController> logger)
         {
             _context = context;
