@@ -35,6 +35,8 @@ namespace OHunt.Web
 
             services.AddOData();
 
+            services.AddSingleton<IDbBuilder, OHuntDbBuilder>();
+
             services
                 .AddSingleton<SubmissionCrawlerCoordinator>()
                 .AddSingleton<DatabaseInserter<Submission>>()
@@ -53,7 +55,9 @@ namespace OHunt.Web
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            UpdateDatabase(app);
+            app.ApplicationServices
+                .GetService<IDbBuilder>()
+                .BuildDatabase(app);
 
             if (env.IsDevelopment())
             {
@@ -87,16 +91,6 @@ namespace OHunt.Web
             odataBuilder.EntitySet<Submission>("Submissions");
 
             return odataBuilder.GetEdmModel();
-        }
-
-        private static void UpdateDatabase(IApplicationBuilder app)
-        {
-            using var serviceScope = app.ApplicationServices
-                .GetRequiredService<IServiceScopeFactory>()
-                .CreateScope();
-            using var context = serviceScope.ServiceProvider
-                .GetService<OHuntDbContext>();
-            context.Database.Migrate();
         }
     }
 }
