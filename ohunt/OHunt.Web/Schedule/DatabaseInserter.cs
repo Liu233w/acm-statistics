@@ -4,10 +4,13 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Threading.Tasks.Dataflow;
+using AngleSharp.Common;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 using OHunt.Web.Database;
+using OHunt.Web.Options;
 
 namespace OHunt.Web.Schedule
 {
@@ -17,26 +20,24 @@ namespace OHunt.Web.Schedule
     public class DatabaseInserter<TEntity>
         where TEntity : class
     {
-        private const int DefaultBufferSize = 10000;
-
         private readonly IServiceProvider _serviceProvider;
         private readonly ILogger<DatabaseInserter<TEntity>> _logger;
-        private readonly IConfiguration _configuration;
+        private readonly IOptions<DatabaseInserterOptions> _options;
 
         public DatabaseInserter(
             IServiceProvider serviceProvider,
             ILogger<DatabaseInserter<TEntity>> logger,
-            IConfiguration configuration)
+            IOptions<DatabaseInserterOptions> options)
         {
             _serviceProvider = serviceProvider;
             _logger = logger;
-            _configuration = configuration;
+            _options = options;
         }
 
         public async Task WorkAsync(ISourceBlock<TEntity> source, CancellationToken c)
         {
-            var bufferSize = _configuration.GetSection("DatabaseInserterBufferSize")
-                .GetValue(typeof(TEntity).Name, DefaultBufferSize);
+            var bufferSize = _options
+                .Value.BufferSize.GetOrDefault(typeof(TEntity).Name, _options.Value.DefaultBufferSize);
             var buffer = new TEntity[bufferSize];
 
             _logger.LogInformation("Start working, buffer size: {0}", bufferSize);
