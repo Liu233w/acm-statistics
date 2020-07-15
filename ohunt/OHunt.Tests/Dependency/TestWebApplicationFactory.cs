@@ -28,10 +28,14 @@ namespace OHunt.Tests.Dependency
                 }
 
                 // Add db context using an in-memory database for testing.
+                var serviceProvider = new ServiceCollection()
+                    .AddEntityFrameworkInMemoryDatabase()
+                    .BuildServiceProvider();
                 services.AddDbContext<OHuntDbContext>(options =>
                 {
                     options.UseInMemoryDatabase("InMemoryDbForTesting");
-                });
+                    options.UseInternalServiceProvider(serviceProvider);
+                }, ServiceLifetime.Singleton);
 
                 // remove ScheduleCrawlerService
                 var service = services.SingleOrDefault(
