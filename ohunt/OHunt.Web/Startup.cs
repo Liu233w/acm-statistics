@@ -12,6 +12,7 @@ using OHunt.Web.Crawlers;
 using OHunt.Web.Database;
 using OHunt.Web.Errors;
 using OHunt.Web.Models;
+using OHunt.Web.Options;
 using OHunt.Web.Schedule;
 
 namespace OHunt.Web
@@ -50,6 +51,8 @@ namespace OHunt.Web
             {
                 services.AddHostedService<ScheduleCrawlerService>();
             }
+
+            services.Configure<DatabaseInserterOptions>(Configuration.GetSection("DatabaseInserter"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
