@@ -1,0 +1,46 @@
+{
+  "result": {
+    "totalCount": 60,
+    "items": [{
+        "historyId": 10,
+        "summaryId": 10,
+        "creationTime": "2020-04-10T08:00:00Z",
+        "submission": 100,
+        "solved": 10
+      },
+      {
+        "historyId": 9,
+        "summaryId": 9,
+        "creationTime": "2020-04-09T08:00:00Z",
+        "submission": 90,
+        "solved": 9
+      },
+      {
+        "historyId": 8,
+        "summaryId": 8,
+        "creationTime": "2020-04-08T08:00:00Z",
+        "submission": 80,
+        "solved": 8
+      },
+      {
+        "historyId": 7,
+        "summaryId": 7,
+        "creationTime": "2020-04-07T08:00:00Z",
+        "submission": 70,
+        "solved": 7
+      },
+      {
+        "historyId": 6,
+        "summaryId": 6,
+        "creationTime": "2020-04-06T08:00:00Z",
+        "submission": 60,
+        "solved": 6
+      }
+    ]
+  },
+  "targetUrl": null,
+  "success": true,
+  "error": null,
+  "unAuthorizedRequest": false,
+  "__abp": true
+}
