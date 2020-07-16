@@ -124,7 +124,7 @@ describe('history page', () => {
 
     before(() => {
       cy.server()
-      cy.route('/api/services/app/QueryHistory/GetQueryHistoriesAndSummaries')
+      cy.route('/api/services/app/QueryHistory/GetQueryHistoriesAndSummaries?maxResultCount=10&skipCount=0')
         .as('get-list')
     })
 
@@ -150,21 +150,43 @@ describe('history page', () => {
       cy.visit('/about')
 
       cy.server()
-      cy.route('/api/services/app/QueryHistory/GetQueryHistoriesAndSummaries',
+      cy.route('/api/services/app/QueryHistory/GetQueryHistoriesAndSummaries?maxResultCount=10&skipCount=0',
         'fixture:history_list.json')
         .as('get-list')
+      cy.route('/api/services/app/QueryHistory/GetQueryHistoriesAndSummaries?maxResultCount=10&skipCount=10',
+        'fixture:history_list-skip10.json')
+        .as('get-list-2')
+      cy.route('/api/services/app/QueryHistory/GetQueryHistoriesAndSummaries?maxResultCount=5&skipCount=0',
+        'fixture:history_list-max5.json')
+        .as('get-list-3')
 
       cy.get('i.mdi-menu').parents('button').click()
       cy.contains('history', { matchCase: false }).click()
       cy.wait('@get-list')
-    })
 
-    it('should render correctly', () => {
       // hide account username
       cy.get(`button:contains("${username}")`)
         .invoke('attr', 'style', 'background-color: black')
+    })
 
+    it('should render correctly', () => {
       cy.matchImageSnapshot()
+    })
+
+    it('can go to next page', () => {
+      cy.get('i.mdi-chevron-right').parents('button').click()
+      cy.wait('@get-list-2')
+      cy.get('table').matchImageSnapshot()
+    })
+
+    it('can set page size', () => {
+      cy.get('div[aria-haspopup="listbox"]').click()
+      cy.get('div[role="listbox"]')
+        .contains('5')
+        .parents('div[role="option"]')
+        .click()
+      cy.wait('@get-list-3')
+      cy.get('table').matchImageSnapshot()
     })
 
     it('can delete multiple items correctly', () => {
@@ -173,9 +195,6 @@ describe('history page', () => {
         cy.get(`tbody tr:nth-child(${i}) td:nth-child(1) > div`).click()
       }
 
-      // hide account username
-      cy.get(`button:contains("${username}")`)
-        .invoke('attr', 'style', 'background-color: black')
       cy.matchImageSnapshot()
 
       cy.route('POST', '/api/services/app/QueryHistory/DeleteQueryHistory',
