@@ -160,8 +160,10 @@ export default {
       try {
         const res = await this.$axios
           .$get('/api/services/app/QueryHistory/GetQueryHistoriesAndSummaries', {
-            maxResultCount: this.itemsPerPage,
-            skipCount: (this.page - 1) * this.itemsPerPage,
+            params: {
+              maxResultCount: this.itemsPerPage,
+              skipCount: (this.page - 1) * this.itemsPerPage,
+            },
           })
         this.serverItemsLength = res.result.totalCount
         this.items = res.result.items
