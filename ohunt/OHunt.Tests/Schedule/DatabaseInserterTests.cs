@@ -83,6 +83,10 @@ namespace OHunt.Tests.Schedule
                 });
             }
 
+            // inserter does not insert in single core devices (CI)
+            // use the code to do so
+            await Task.Delay(TimeSpan.FromSeconds(1));
+
             // assert
             WithDb(ctx =>
             {
