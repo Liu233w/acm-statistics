@@ -71,21 +71,22 @@ namespace OHunt.Web.Schedule
             // or it just throws, the catch below cancels the inserter
             cancellationToken.Register(() => { crawlerCancel.Cancel(); });
 
-            var crawlerTask = crawler.WorkAsync(latestSubmissionId, submissionBuffer, errorBuffer, crawlerCancel.Token);
-            var submissionInserterTask = _submissionInserter.WorkAsync(submissionBuffer, inserterCancel.Token);
-            var errorInserterTask = _errorInserter.WorkAsync(errorBuffer, inserterCancel.Token);
-
-            try
-            {
-                await crawlerTask;
-                await submissionInserterTask;
-                await errorInserterTask;
-            }
-            catch (Exception e)
-            {
-                inserterCancel.Cancel();
-                _logger.LogError(e, "Exception when crawling");
-            }
+            throw new NotImplementedException();
+            // var crawlerTask = crawler.WorkAsync(latestSubmissionId, submissionBuffer, errorBuffer, crawlerCancel.Token);
+            // var submissionInserterTask = _submissionInserter.WorkAsync(submissionBuffer, inserterCancel.Token);
+            // var errorInserterTask = _errorInserter.WorkAsync(errorBuffer, inserterCancel.Token);
+            //
+            // try
+            // {
+            //     await crawlerTask;
+            //     await submissionInserterTask;
+            //     await errorInserterTask;
+            // }
+            // catch (Exception e)
+            // {
+            //     inserterCancel.Cancel();
+            //     _logger.LogError(e, "Exception when crawling");
+            // }
         }
     }
 }

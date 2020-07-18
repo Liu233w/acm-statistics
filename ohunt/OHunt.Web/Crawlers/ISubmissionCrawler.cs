@@ -19,13 +19,11 @@ namespace OHunt.Web.Crawlers
         /// A producer to produce submission info asynchronously 
         /// </summary>
         /// <param name="lastSubmissionId">the submission id of the last crawler result</param>
-        /// <param name="target">to post the submissions</param>
-        /// <param name="errors">to post the error messages</param>
+        /// <param name="pipeline">the pipeline to send results and errors</param>
         /// <param name="cancellationToken">The token to cancel crawling</param>
         Task WorkAsync(
             long? lastSubmissionId,
-            ITargetBlock<Submission> target,
-            ITargetBlock<CrawlerError> errors,
+            ITargetBlock<CrawlerMessage> pipeline,
             CancellationToken cancellationToken);
     }
 }

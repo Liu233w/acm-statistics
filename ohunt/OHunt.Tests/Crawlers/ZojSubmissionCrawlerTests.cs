@@ -1,6 +1,7 @@
 using System.Threading;
 using System.Threading.Tasks;
 using System.Threading.Tasks.Dataflow;
+using FluentAssertions;
 using Microsoft.Extensions.Logging;
 using Moq;
 using OHunt.Web.Crawlers;
@@ -21,15 +22,14 @@ namespace OHunt.Tests.Crawlers
         {
             var crawler = new ZojSubmissionCrawler(_loggerMock);
 
-            var submissionBuffer
-                = new BufferBlock<Submission>(new DataflowBlockOptions
+            var messages
+                = new BufferBlock<CrawlerMessage>(new DataflowBlockOptions
                 {
                     EnsureOrdered = true,
                 });
 
 #pragma warning disable 4014
-            crawler.WorkAsync(null, submissionBuffer,
-                Mock.Of<ITargetBlock<CrawlerError>>(), new CancellationToken());
+            crawler.WorkAsync(null, messages, new CancellationToken());
 #pragma warning restore 4014
 
             const int bufferLength = 110;
@@ -37,7 +37,10 @@ namespace OHunt.Tests.Crawlers
             var list = new Submission[bufferLength];
             for (var i = 0; i < bufferLength; i++)
             {
-                list[i] = await submissionBuffer.ReceiveAsync();
+                var message = await messages.ReceiveAsync();
+                message.CrawlerError.Should().BeNull();
+                message.IsCheckPoint.Should().BeTrue();
+                list[i] = message.Submission;
             }
 
             Snapshot.Match(list);
