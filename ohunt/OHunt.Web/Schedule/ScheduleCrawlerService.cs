@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using OHunt.Web.Crawlers;
+using OHunt.Web.Dataflow;
 using OHunt.Web.Models;
 
 namespace OHunt.Web.Schedule

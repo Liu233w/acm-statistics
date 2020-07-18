@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using OHunt.Tests.Dependency;
 using OHunt.Web;
+using OHunt.Web.Dataflow;
 using OHunt.Web.Models;
 using OHunt.Web.Options;
 using OHunt.Web.Schedule;
