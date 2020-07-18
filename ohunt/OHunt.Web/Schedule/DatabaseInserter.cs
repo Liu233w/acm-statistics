@@ -42,25 +42,17 @@ namespace OHunt.Web.Schedule
 
             _logger.LogInformation("Start working, buffer size: {0}", bufferSize);
 
-            var i = 0;
-            try
+            while (await source.OutputAvailableAsync(c))
             {
-                while (await source.OutputAvailableAsync(c))
+                var i = 0;
+                for (;
+                    i < bufferSize && await source.OutputAvailableAsync(c);
+                    i++)
                 {
                     buffer[i] = await source.ReceiveAsync(c);
-                    if (++i >= bufferSize)
-                    {
-                        await Insert(buffer.Take(i));
-                        i = 0;
-                    }
                 }
-            }
-            finally
-            {
-                if (i > 0)
-                {
-                    await Insert(buffer.Take(i));
-                }
+
+                await Insert(buffer.Take(i));
             }
         }
 
