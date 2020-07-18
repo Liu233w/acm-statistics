@@ -96,7 +96,7 @@ crawlers:
     meta:
       title: 洛谷
       description:
-      url: https://luogu.org/
+      url: https://www.luogu.com.cn/
   nowcoder:
     meta:
       title: 牛客OJ
