@@ -13,7 +13,7 @@
     "cheerio": "1.0.0-rc.3",
     "cypress": "4.10.0",
     "cypress-image-snapshot": "3.1.1",
-    "eslint": "7.4.0",
+    "eslint": "7.5.0",
     "eslint-plugin-cypress": "2.11.1",
     "eslint-plugin-lodash": "7.1.0",
     "jest": "26.1.0",
