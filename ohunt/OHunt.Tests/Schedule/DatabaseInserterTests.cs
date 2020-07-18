@@ -33,11 +33,9 @@ namespace OHunt.Tests.Schedule
         }
 
         [Fact]
-        public async Task WhenStreamComplete_ItShouldInsertRecords()
+        public async Task WhenPipelineComplete_ItShouldInsertRecords()
         {
             // arrange
-            var bufferBlock = new BufferBlock<Submission>();
-            var task = _inserter.WorkAsync(bufferBlock, CancellationToken.None);
             var submission = new Submission
             {
                 Status = RunResult.Accepted,
@@ -49,9 +47,12 @@ namespace OHunt.Tests.Schedule
             };
 
             // act
-            await bufferBlock.SendAsync(submission);
-            bufferBlock.Complete();
-            await task;
+            await _inserter.SendAsync(new DatabaseInserterMessage<Submission>
+            {
+                Entity = submission,
+            });
+            _inserter.Complete();
+            await _inserter.Completion;
 
             // assert
             WithDb(ctx =>
@@ -64,28 +65,22 @@ namespace OHunt.Tests.Schedule
         [Fact]
         public async Task WhenEnoughRecordsSent_ItShouldInsertRecords()
         {
-            // arrange
-            var bufferBlock = new BufferBlock<Submission>();
-            var cancel = new CancellationTokenSource();
-            var task = _inserter.WorkAsync(bufferBlock, cancel.Token);
-
             // act
             for (int i = 0; i < 15; i++)
             {
-                await bufferBlock.SendAsync(new Submission
+                await _inserter.SendAsync(new DatabaseInserterMessage<Submission>
                 {
-                    Status = RunResult.Accepted,
-                    Time = new DateTime(2020, 4, 1),
-                    ProblemLabel = "1001",
-                    UserName = "user1",
-                    OnlineJudgeId = OnlineJudge.ZOJ,
-                    SubmissionId = 1 + i,
+                    Entity = new Submission
+                    {
+                        Status = RunResult.Accepted,
+                        Time = new DateTime(2020, 4, 1),
+                        ProblemLabel = "1001",
+                        UserName = "user1",
+                        OnlineJudgeId = OnlineJudge.ZOJ,
+                        SubmissionId = 1 + i,
+                    }
                 });
             }
-
-            // inserter does not insert in single core devices (CI)
-            // use the code to do so
-            await Task.Delay(TimeSpan.FromSeconds(1));
 
             // assert
             WithDb(ctx =>
@@ -95,10 +90,34 @@ namespace OHunt.Tests.Schedule
                     .Should()
                     .BeEquivalentTo(Enumerable.Range(1, 10).Select(i => (long) i));
             });
+        }
 
-            // clean up
-            cancel.Cancel();
-            await task.ShouldResult().ThrowAsync<TaskCanceledException>();
+        [Fact]
+        public async Task WhenForceInsertIsTrue_ItShouldInsertRecords()
+        {
+            // arrange
+            var submission = new Submission
+            {
+                Status = RunResult.Accepted,
+                Time = new DateTime(2020, 4, 1),
+                ProblemLabel = "1001",
+                UserName = "user1",
+                OnlineJudgeId = OnlineJudge.ZOJ,
+                SubmissionId = 1000000,
+            };
+
+            // act
+            await _inserter.SendAsync(new DatabaseInserterMessage<Submission>
+            {
+                Entity = submission,
+                ForceInsert = true,
+            });
+
+            // wait for ActionBlock executing
+            await Task.Delay(TimeSpan.FromSeconds(1));
+
+            // assert
+            WithDb(ctx => { ctx.Submission.Count().Should().Be(1); });
         }
     }
 }
