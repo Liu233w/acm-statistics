@@ -30,35 +30,7 @@ namespace OHunt.Web.Crawlers
 
         public async Task WorkAsync(
             long? lastSubmissionId,
-            ITargetBlock<Submission> target,
-            ITargetBlock<CrawlerError> errors,
-            CancellationToken cancellationToken)
-        {
-            try
-            {
-                await DoWork(lastSubmissionId, target, errors, cancellationToken);
-            }
-            catch (OperationCanceledException e)
-            {
-                // save current result
-                _logger.LogInformation("Crawler cancelled");
-                target.Complete();
-                errors.Complete();
-            }
-            catch (Exception e)
-            {
-                // error in crawling won't break existing records
-                // so we can just save crawled results.
-                _logger.LogError(e, "Error occured when crawling zoj, lastSubmissionId {0}", lastSubmissionId);
-                target.Complete();
-                errors.Complete();
-            }
-        }
-
-        private async Task DoWork(
-            long? lastSubmissionId,
-            ITargetBlock<Submission> target,
-            ITargetBlock<CrawlerError> errors,
+            ITargetBlock<CrawlerMessage> pipeline,
             CancellationToken cancellationToken)
         {
             var after = lastSubmissionId ?? 1;
@@ -70,22 +42,19 @@ namespace OHunt.Web.Crawlers
 
                 if (root.TryGetProperty("error", out _))
                 {
-                    after = await TrySkipErrorSubmission(after, target, errors, cancellationToken);
+                    after = await TrySkipErrorSubmission(after, pipeline, cancellationToken);
                 }
                 else
                 {
                     after = await ParseSubmissions(
                         root.GetProperty("submissions").EnumerateArray(),
-                        target, errors);
+                        pipeline);
                     if (!root.GetProperty("hasAfter").GetBoolean())
                     {
                         break;
                     }
                 }
             }
-
-            target.Complete();
-            errors.Complete();
         }
 
         private async Task<JsonDocument> Request(
@@ -116,14 +85,12 @@ namespace OHunt.Web.Crawlers
         /// Try to skip certain submission that shows the error.
         /// </summary>
         /// <param name="oldAfter">the after parameter that shows the error</param>
-        /// <param name="target"></param>
-        /// <param name="errors"></param>
+        /// <param name="pipeline"></param>
         /// <param name="cancellationToken"></param>
         /// <returns>the new after to resume crawling</returns>
         private async Task<long> TrySkipErrorSubmission(
             long oldAfter,
-            ITargetBlock<Submission> target,
-            ITargetBlock<CrawlerError> errors,
+            ITargetBlock<CrawlerMessage> pipeline,
             CancellationToken cancellationToken)
         {
             // use a binary search to quickly find the error submission
@@ -147,8 +114,7 @@ namespace OHunt.Web.Crawlers
                 else
                 {
                     after = await ParseSubmissions(
-                        root.GetProperty("submissions").EnumerateArray(),
-                        target, errors);
+                        root.GetProperty("submissions").EnumerateArray(), pipeline);
                 }
             }
 
@@ -163,21 +129,16 @@ namespace OHunt.Web.Crawlers
         /// </summary>
         private async Task<long> ParseSubmissions(
             JsonElement.ArrayEnumerator array,
-            ITargetBlock<Submission> target,
-            ITargetBlock<CrawlerError> errors)
+            ITargetBlock<CrawlerMessage> pipeline)
         {
             long maxId = 0;
             foreach (var submission in array)
             {
                 if (submission.GetProperty("problemType").GetString() != "PROGRAMMING")
                 {
-                    await errors.SendAsync(new CrawlerError
-                    {
-                        Crawler = nameof(ZojSubmissionCrawler),
-                        Message = "problemType is not PROGRAMMING",
-                        Time = DateTime.Now,
-                        Data = submission.GetRawText(),
-                    });
+                    await pipeline.SendAsync(ErrorMessage(
+                        "problemType is not PROGRAMMING",
+                        submission.GetRawText()));
                     continue;
                 }
 
@@ -187,30 +148,29 @@ namespace OHunt.Web.Crawlers
 
                 try
                 {
-                    await target.SendAsync(new Submission
+                    await pipeline.SendAsync(new CrawlerMessage
                     {
-                        OnlineJudgeId = OnlineJudge,
-                        SubmissionId = id,
-                        UserName = submission.GetProperty("user")
-                            .GetProperty("user")
-                            .GetProperty("nickname")
-                            .GetString(),
-                        Status = ParseStatus(submission.GetProperty("status").GetString()),
-                        ProblemLabel = submission.GetProperty("problemSetProblem")
-                            .GetProperty("label")
-                            .GetString(),
-                        Time = DateTime.Parse(submission.GetProperty("submitAt").GetString()),
+                        Submission = new Submission
+                        {
+                            OnlineJudgeId = OnlineJudge,
+                            SubmissionId = id,
+                            UserName = submission.GetProperty("user")
+                                .GetProperty("user")
+                                .GetProperty("nickname")
+                                .GetString(),
+                            Status = ParseStatus(submission.GetProperty("status").GetString()),
+                            ProblemLabel = submission.GetProperty("problemSetProblem")
+                                .GetProperty("label")
+                                .GetString(),
+                            Time = DateTime.Parse(submission.GetProperty("submitAt").GetString()),
+                        },
+                        IsCheckPoint = true,
                     });
                 }
                 catch (KeyNotFoundException e)
                 {
-                    await errors.SendAsync(new CrawlerError
-                    {
-                        Crawler = nameof(ZojSubmissionCrawler),
-                        Message = e.Message,
-                        Time = DateTime.Now,
-                        Data = submission.GetRawText(),
-                    });
+                    await pipeline.SendAsync(ErrorMessage(
+                        e.Message, submission.GetRawText()));
                 }
             }
 
@@ -233,6 +193,21 @@ namespace OHunt.Web.Crawlers
             {
                 return RunResult.UnknownError;
             }
+        }
+
+        private static CrawlerMessage ErrorMessage(string message, string data)
+        {
+            return new CrawlerMessage
+            {
+                CrawlerError = new CrawlerError
+                {
+                    Crawler = nameof(ZojSubmissionCrawler),
+                    Message = message,
+                    Time = DateTime.Now,
+                    Data = data,
+                },
+                IsCheckPoint = true,
+            };
         }
     }
 }

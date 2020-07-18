@@ -66,9 +66,9 @@ namespace OHunt.Web.Schedule
                 return;
             }
 
-            _runningTask = new[]
+            _runningTask = new Task[]
             {
-                _coordinator.WorkAsync(_zojSubmissionCrawler, _tokenSource.Token),
+                // _coordinator.WorkAsync(_zojSubmissionCrawler, _tokenSource.Token),
             };
             try
             {

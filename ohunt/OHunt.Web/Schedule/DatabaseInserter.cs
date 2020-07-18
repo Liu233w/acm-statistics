@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Threading.Tasks.Dataflow;
 using AngleSharp.Common;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
@@ -22,7 +20,10 @@ namespace OHunt.Web.Schedule
     {
         private readonly IServiceProvider _serviceProvider;
         private readonly ILogger<DatabaseInserter<TEntity>> _logger;
-        private readonly IOptions<DatabaseInserterOptions> _options;
+        private readonly TEntity[] _buffer;
+        private readonly int _bufferSize;
+
+        private int _idx = 0;
 
         public DatabaseInserter(
             IServiceProvider serviceProvider,
@@ -31,28 +32,39 @@ namespace OHunt.Web.Schedule
         {
             _serviceProvider = serviceProvider;
             _logger = logger;
-            _options = options;
+
+            Target
+                = new ActionBlock<DatabaseInserterMessage<TEntity>>(OnReceive, new ExecutionDataflowBlockOptions
+                {
+                    BoundedCapacity = 0,
+                    EnsureOrdered = false,
+                    MaxDegreeOfParallelism = 1,
+                });
+
+            _bufferSize = options
+                .Value.BufferSize.GetOrDefault(typeof(TEntity).Name, options.Value.DefaultBufferSize);
+            _buffer = new TEntity[_bufferSize];
+
+            _logger.LogInformation("Initialized, buffer size: {0}", _bufferSize);
         }
 
-        public async Task WorkAsync(ISourceBlock<TEntity> source, CancellationToken c)
+        /// <summary>
+        /// The block that connected to the inserter
+        /// </summary>
+        public ActionBlock<DatabaseInserterMessage<TEntity>> Target { get; }
+
+        private async Task OnReceive(DatabaseInserterMessage<TEntity> message)
         {
-            var bufferSize = _options
-                .Value.BufferSize.GetOrDefault(typeof(TEntity).Name, _options.Value.DefaultBufferSize);
-            var buffer = new TEntity[bufferSize];
-
-            _logger.LogInformation("Start working, buffer size: {0}", bufferSize);
-
-            while (await source.OutputAvailableAsync(c))
+            if (message.Entity != null)
             {
-                var i = 0;
-                for (;
-                    i < bufferSize && await source.OutputAvailableAsync(c);
-                    i++)
-                {
-                    buffer[i] = await source.ReceiveAsync(c);
-                }
+                _buffer[_idx] = message.Entity;
+                ++_idx;
+            }
 
-                await Insert(buffer.Take(i));
+            if (_idx >= _bufferSize || message.ForceInsert)
+            {
+                await Insert(_buffer.Take(_idx));
+                _idx = 0;
             }
         }
 
