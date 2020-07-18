@@ -1,4 +1,4 @@
-namespace OHunt.Web.Schedule
+namespace OHunt.Web.Dataflow
 {
     /// <summary>
     /// A message sent to database inserter

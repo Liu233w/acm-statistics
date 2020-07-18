@@ -9,8 +9,9 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using OHunt.Web.Database;
 using OHunt.Web.Options;
+using OHunt.Web.Schedule;
 
-namespace OHunt.Web.Schedule
+namespace OHunt.Web.Dataflow
 {
     /// <summary>
     /// An action block to buffer inputs and batch insert them to database

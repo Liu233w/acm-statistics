@@ -10,7 +10,7 @@ using OHunt.Web.Crawlers;
 using OHunt.Web.Database;
 using OHunt.Web.Models;
 
-namespace OHunt.Web.Schedule
+namespace OHunt.Web.Dataflow
 {
     public class SubmissionCrawlerCoordinator
     {
