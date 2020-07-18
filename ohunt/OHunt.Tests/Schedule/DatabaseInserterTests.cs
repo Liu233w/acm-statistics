@@ -36,7 +36,8 @@ namespace OHunt.Tests.Schedule
         public async Task WhenStreamComplete_ItShouldInsertRecords()
         {
             // arrange
-            var target = _inserter.Target;
+            var bufferBlock = new BufferBlock<Submission>();
+            var task = _inserter.WorkAsync(bufferBlock, CancellationToken.None);
             var submission = new Submission
             {
                 Status = RunResult.Accepted,
@@ -48,12 +49,9 @@ namespace OHunt.Tests.Schedule
             };
 
             // act
-            await target.SendAsync(submission);
-            target.Complete();
-
-            // inserter does not insert in single core devices (CI)
-            // use the code to do so
-            await Task.Delay(TimeSpan.FromSeconds(1));
+            await bufferBlock.SendAsync(submission);
+            bufferBlock.Complete();
+            await task;
 
             // assert
             WithDb(ctx =>
@@ -67,12 +65,14 @@ namespace OHunt.Tests.Schedule
         public async Task WhenEnoughRecordsSent_ItShouldInsertRecords()
         {
             // arrange
-            var target = _inserter.Target;
+            var bufferBlock = new BufferBlock<Submission>();
+            var cancel = new CancellationTokenSource();
+            var task = _inserter.WorkAsync(bufferBlock, cancel.Token);
 
             // act
             for (int i = 0; i < 15; i++)
             {
-                await target.SendAsync(new Submission
+                await bufferBlock.SendAsync(new Submission
                 {
                     Status = RunResult.Accepted,
                     Time = new DateTime(2020, 4, 1),
@@ -82,6 +82,10 @@ namespace OHunt.Tests.Schedule
                     SubmissionId = 1 + i,
                 });
             }
+
+            // inserter does not insert in single core devices (CI)
+            // use the code to do so
+            await Task.Delay(TimeSpan.FromSeconds(1));
 
             // assert
             WithDb(ctx =>
@@ -91,38 +95,10 @@ namespace OHunt.Tests.Schedule
                     .Should()
                     .BeEquivalentTo(Enumerable.Range(1, 10).Select(i => (long) i));
             });
-        }
 
-        [Fact]
-        public async Task WhenWaitEnoughTime_ItShouldInsertRecords()
-        {
-            // arrange
-            var target = _inserter.Target;
-
-            // act
-            for (int i = 0; i < 5; i++)
-            {
-                await target.SendAsync(new Submission
-                {
-                    Status = RunResult.Accepted,
-                    Time = new DateTime(2020, 4, 1),
-                    ProblemLabel = "1001",
-                    UserName = "user1",
-                    OnlineJudgeId = OnlineJudge.ZOJ,
-                    SubmissionId = 1 + i,
-                });
-            }
-
-            await Task.Delay(TimeSpan.FromSeconds(10));
-
-            // assert
-            WithDb(ctx =>
-            {
-                ctx.Submission.Count().Should().Be(5);
-                ctx.Submission.Select(e => e.SubmissionId)
-                    .Should()
-                    .BeEquivalentTo(Enumerable.Range(1, 5).Select(i => (long) i));
-            });
+            // clean up
+            cancel.Cancel();
+            await task.ShouldResult().ThrowAsync<TaskCanceledException>();
         }
     }
 }
