@@ -1,6 +1,5 @@
-﻿using System;
+﻿﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading.Tasks.Dataflow;
 using AngleSharp.Common;
@@ -20,10 +19,6 @@ namespace OHunt.Web.Schedule
     {
         private readonly IServiceProvider _serviceProvider;
         private readonly ILogger<DatabaseInserter<TEntity>> _logger;
-        private readonly TEntity[] _buffer;
-        private readonly int _bufferSize;
-
-        private int _idx = 0;
 
         public DatabaseInserter(
             IServiceProvider serviceProvider,
@@ -33,42 +28,23 @@ namespace OHunt.Web.Schedule
             _serviceProvider = serviceProvider;
             _logger = logger;
 
-            Target
-                = new ActionBlock<DatabaseInserterMessage<TEntity>>(OnReceive, new ExecutionDataflowBlockOptions
-                {
-                    BoundedCapacity = 0,
-                    EnsureOrdered = false,
-                    MaxDegreeOfParallelism = 1,
-                });
 
-            _bufferSize = options
+            var bufferSize = options
                 .Value.BufferSize.GetOrDefault(typeof(TEntity).Name, options.Value.DefaultBufferSize);
-            _buffer = new TEntity[_bufferSize];
+            Target = new BatchBlock<TEntity>(bufferSize);
+            _logger.LogInformation("Initialized, buffer size: {0}", bufferSize);
 
-            _logger.LogInformation("Initialized, buffer size: {0}", _bufferSize);
+            var actionBlock = new ActionBlock<TEntity[]>(OnReceive);
+            Target.LinkTo(actionBlock);
+            Target.Completion.ContinueWith(_ => actionBlock.Complete());
         }
 
         /// <summary>
         /// The block that connected to the inserter
         /// </summary>
-        public ActionBlock<DatabaseInserterMessage<TEntity>> Target { get; }
+        public BatchBlock<TEntity> Target { get; }
 
-        private async Task OnReceive(DatabaseInserterMessage<TEntity> message)
-        {
-            if (message.Entity != null)
-            {
-                _buffer[_idx] = message.Entity;
-                ++_idx;
-            }
-
-            if (_idx >= _bufferSize || message.ForceInsert)
-            {
-                await Insert(_buffer.Take(_idx));
-                _idx = 0;
-            }
-        }
-
-        private async Task Insert(IEnumerable<TEntity> submissions)
+        private async Task OnReceive(IEnumerable<TEntity> submissions)
         {
             _logger.LogTrace("Try to insert records to database");
             using var scope = _serviceProvider.CreateScope();
