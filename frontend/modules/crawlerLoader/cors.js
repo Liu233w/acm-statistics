@@ -4,7 +4,7 @@
 
 import superagent from 'superagent'
 
-const corsProxyUrl = 'https://acm-statistics-cors.herokuapp.com/'
+const corsProxyUrl = 'https://acm-statistics-cors.liu233w.workers.dev/?'
 
 const getFunc = superagent.get
 const postFunc = superagent.post
