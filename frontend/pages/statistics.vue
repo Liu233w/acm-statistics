@@ -170,11 +170,6 @@ export default {
   head: {
     title: `Statistics - ${PROJECT_TITLE}`,
   },
-  fetch() {
-    // free plan of heroku service sleeps when it is inactive for 30 minutes
-    // request cors-proxy to wake it up
-    this.$axios.get('https://acm-statistics-cors.herokuapp.com')
-  },
   async created() {
     if (!this.$store.hasModule('statistics')) {
       this.$store.registerModule('statistics', Store, { preserveState: false })
