@@ -7707,7 +7707,7 @@ exports[`/statistics 1`] = `
             </header>
             <main class="v-content" style="padding-top:64px;padding-right:0px;padding-bottom:0px;padding-left:0px;">
               <div class="v-content__wrap">
-                <div class="container grid-list-md">
+                <div data-fetch-key="0" class="container grid-list-md">
                   <div wrap class="row no-gutters">
                     <div class="pt-0 pb-0 col-md-3 col">
                       <div class="v-input theme--light v-text-field" style="min-width:240px;">
@@ -7760,7 +7760,17 @@ exports[`/statistics 1`] = `
         return {
           layout: "default",
           data: [{}],
-          fetch: [],
+          fetch: [{
+            columnCount: 3,
+            columnWidth: a,
+            savingUsername: f,
+            loading: g,
+            layoutHeight: a,
+            workerTransform: {},
+            workerHeight: {},
+            lastSavedQueryId: c,
+            watchFunc: c
+          }],
           error: c,
           state: {
             sidebar: f,
@@ -7769,267 +7779,267 @@ exports[`/statistics 1`] = `
             },
             session: {
               login: f,
-              username: a,
+              username: b,
               settings: {}
             },
             statistics: {
               workers: [{
-                crawlerName: g,
-                username: a,
-                status: d,
-                solved: b,
-                submissions: b,
-                errorMessage: a,
-                tokenKey: c,
-                solvedList: [],
-                submissionsByCrawlerName: e
-              }, {
                 crawlerName: h,
-                username: a,
+                username: b,
                 status: d,
-                solved: b,
-                submissions: b,
-                errorMessage: a,
+                solved: a,
+                submissions: a,
+                errorMessage: b,
                 tokenKey: c,
                 solvedList: [],
                 submissionsByCrawlerName: e
               }, {
                 crawlerName: i,
-                username: a,
+                username: b,
                 status: d,
-                solved: b,
-                submissions: b,
-                errorMessage: a,
+                solved: a,
+                submissions: a,
+                errorMessage: b,
                 tokenKey: c,
                 solvedList: [],
                 submissionsByCrawlerName: e
               }, {
                 crawlerName: j,
-                username: a,
+                username: b,
                 status: d,
-                solved: b,
-                submissions: b,
-                errorMessage: a,
+                solved: a,
+                submissions: a,
+                errorMessage: b,
                 tokenKey: c,
                 solvedList: [],
                 submissionsByCrawlerName: e
               }, {
                 crawlerName: k,
-                username: a,
+                username: b,
                 status: d,
-                solved: b,
-                submissions: b,
-                errorMessage: a,
+                solved: a,
+                submissions: a,
+                errorMessage: b,
                 tokenKey: c,
                 solvedList: [],
                 submissionsByCrawlerName: e
               }, {
                 crawlerName: l,
-                username: a,
+                username: b,
                 status: d,
-                solved: b,
-                submissions: b,
-                errorMessage: a,
+                solved: a,
+                submissions: a,
+                errorMessage: b,
                 tokenKey: c,
                 solvedList: [],
                 submissionsByCrawlerName: e
               }, {
                 crawlerName: m,
-                username: a,
+                username: b,
                 status: d,
-                solved: b,
-                submissions: b,
-                errorMessage: a,
+                solved: a,
+                submissions: a,
+                errorMessage: b,
                 tokenKey: c,
                 solvedList: [],
                 submissionsByCrawlerName: e
               }, {
                 crawlerName: n,
-                username: a,
+                username: b,
                 status: d,
-                solved: b,
-                submissions: b,
-                errorMessage: a,
+                solved: a,
+                submissions: a,
+                errorMessage: b,
                 tokenKey: c,
                 solvedList: [],
                 submissionsByCrawlerName: e
               }, {
                 crawlerName: o,
-                username: a,
+                username: b,
                 status: d,
-                solved: b,
-                submissions: b,
-                errorMessage: a,
+                solved: a,
+                submissions: a,
+                errorMessage: b,
                 tokenKey: c,
                 solvedList: [],
                 submissionsByCrawlerName: e
               }, {
                 crawlerName: p,
-                username: a,
+                username: b,
                 status: d,
-                solved: b,
-                submissions: b,
-                errorMessage: a,
+                solved: a,
+                submissions: a,
+                errorMessage: b,
                 tokenKey: c,
                 solvedList: [],
                 submissionsByCrawlerName: e
               }, {
                 crawlerName: q,
-                username: a,
+                username: b,
                 status: d,
-                solved: b,
-                submissions: b,
-                errorMessage: a,
+                solved: a,
+                submissions: a,
+                errorMessage: b,
                 tokenKey: c,
                 solvedList: [],
                 submissionsByCrawlerName: e
               }, {
                 crawlerName: r,
-                username: a,
+                username: b,
                 status: d,
-                solved: b,
-                submissions: b,
-                errorMessage: a,
+                solved: a,
+                submissions: a,
+                errorMessage: b,
                 tokenKey: c,
                 solvedList: [],
                 submissionsByCrawlerName: e
               }, {
                 crawlerName: s,
-                username: a,
+                username: b,
                 status: d,
-                solved: b,
-                submissions: b,
-                errorMessage: a,
+                solved: a,
+                submissions: a,
+                errorMessage: b,
                 tokenKey: c,
                 solvedList: [],
                 submissionsByCrawlerName: e
               }, {
                 crawlerName: t,
-                username: a,
+                username: b,
                 status: d,
-                solved: b,
-                submissions: b,
-                errorMessage: a,
+                solved: a,
+                submissions: a,
+                errorMessage: b,
                 tokenKey: c,
                 solvedList: [],
                 submissionsByCrawlerName: e
               }, {
                 crawlerName: u,
-                username: a,
+                username: b,
                 status: d,
-                solved: b,
-                submissions: b,
-                errorMessage: a,
+                solved: a,
+                submissions: a,
+                errorMessage: b,
                 tokenKey: c,
                 solvedList: [],
                 submissionsByCrawlerName: e
               }, {
                 crawlerName: v,
-                username: a,
+                username: b,
                 status: d,
-                solved: b,
-                submissions: b,
-                errorMessage: a,
+                solved: a,
+                submissions: a,
+                errorMessage: b,
                 tokenKey: c,
                 solvedList: [],
                 submissionsByCrawlerName: e
               }, {
                 crawlerName: w,
-                username: a,
+                username: b,
                 status: d,
-                solved: b,
-                submissions: b,
-                errorMessage: a,
+                solved: a,
+                submissions: a,
+                errorMessage: b,
                 tokenKey: c,
                 solvedList: [],
                 submissionsByCrawlerName: e
               }, {
                 crawlerName: x,
-                username: a,
+                username: b,
                 status: d,
-                solved: b,
-                submissions: b,
-                errorMessage: a,
+                solved: a,
+                submissions: a,
+                errorMessage: b,
                 tokenKey: c,
                 solvedList: [],
                 submissionsByCrawlerName: e
               }, {
                 crawlerName: y,
-                username: a,
+                username: b,
                 status: d,
-                solved: b,
-                submissions: b,
-                errorMessage: a,
+                solved: a,
+                submissions: a,
+                errorMessage: b,
                 tokenKey: c,
                 solvedList: [],
                 submissionsByCrawlerName: e
               }, {
                 crawlerName: z,
-                username: a,
+                username: b,
                 status: d,
-                solved: b,
-                submissions: b,
-                errorMessage: a,
+                solved: a,
+                submissions: a,
+                errorMessage: b,
                 tokenKey: c,
                 solvedList: [],
                 submissionsByCrawlerName: e
               }, {
                 crawlerName: A,
-                username: a,
+                username: b,
                 status: d,
-                solved: b,
-                submissions: b,
-                errorMessage: a,
+                solved: a,
+                submissions: a,
+                errorMessage: b,
                 tokenKey: c,
                 solvedList: [],
                 submissionsByCrawlerName: e
               }, {
                 crawlerName: B,
-                username: a,
+                username: b,
                 status: d,
-                solved: b,
-                submissions: b,
-                errorMessage: a,
+                solved: a,
+                submissions: a,
+                errorMessage: b,
                 tokenKey: c,
                 solvedList: [],
                 submissionsByCrawlerName: e
               }, {
                 crawlerName: C,
-                username: a,
+                username: b,
                 status: d,
-                solved: b,
-                submissions: b,
-                errorMessage: a,
+                solved: a,
+                submissions: a,
+                errorMessage: b,
                 tokenKey: c,
                 solvedList: [],
                 submissionsByCrawlerName: e
               }, {
                 crawlerName: D,
-                username: a,
+                username: b,
                 status: d,
-                solved: b,
-                submissions: b,
-                errorMessage: a,
+                solved: a,
+                submissions: a,
+                errorMessage: b,
                 tokenKey: c,
                 solvedList: [],
                 submissionsByCrawlerName: e
               }, {
                 crawlerName: E,
-                username: a,
+                username: b,
                 status: d,
-                solved: b,
-                submissions: b,
-                errorMessage: a,
+                solved: a,
+                submissions: a,
+                errorMessage: b,
                 tokenKey: c,
                 solvedList: [],
                 submissionsByCrawlerName: e
               }, {
                 crawlerName: F,
-                username: a,
+                username: b,
                 status: d,
-                solved: b,
-                submissions: b,
-                errorMessage: a,
+                solved: a,
+                submissions: a,
+                errorMessage: b,
+                tokenKey: c,
+                solvedList: [],
+                submissionsByCrawlerName: e
+              }, {
+                crawlerName: G,
+                username: b,
+                status: d,
+                solved: a,
+                submissions: a,
+                errorMessage: b,
                 tokenKey: c,
                 solvedList: [],
                 submissionsByCrawlerName: e
@@ -8039,164 +8049,164 @@ exports[`/statistics 1`] = `
                   title: "POJ",
                   description: c,
                   url: "http:\\u002F\\u002Fpoj.org\\u002F",
-                  name: g
+                  name: h
                 },
                 hdu: {
                   title: "HDU",
                   description: c,
                   url: "http:\\u002F\\u002Facm.hdu.edu.cn\\u002F",
-                  name: h
+                  name: i
                 },
                 zoj: {
                   title: "ZOJ",
                   description: "Only nickname is supported",
                   url: "https:\\u002F\\u002Fzoj.pintia.cn\\u002F",
-                  name: i
+                  name: j
                 },
                 dashiye: {
                   title: "HYSBZ",
                   description: c,
                   url: "http:\\u002F\\u002Fwww.lydsy.com\\u002FJudgeOnline\\u002F",
-                  name: j
+                  name: k
                 },
                 codeforces: {
                   title: "CodeForces",
                   description: "Including CodeForces::Gym",
                   url: "http:\\u002F\\u002Fcodeforces.com\\u002F",
-                  name: k
+                  name: l
                 },
                 uva: {
                   title: "UVA",
                   description: c,
                   url: "https:\\u002F\\u002Fuva.onlinejudge.org\\u002F",
-                  name: l
+                  name: m
                 },
                 uvalive: {
                   title: "ICPC Live Archive",
                   description: c,
                   url: "https:\\u002F\\u002Ficpcarchive.ecs.baylor.edu\\u002Findex.php",
-                  name: m
+                  name: n
                 },
                 fzu: {
                   title: "FZU",
                   description: c,
                   url: "http:\\u002F\\u002Facm.fzu.edu.cn\\u002Findex.php",
-                  name: n
+                  name: o
                 },
                 spoj: {
                   title: "SPOJ",
                   description: c,
                   url: "http:\\u002F\\u002Fwww.spoj.com\\u002F",
-                  name: o
+                  name: p
                 },
                 timus: {
                   title: "Timus (URAL)",
                   description: c,
                   url: "http:\\u002F\\u002Facm.timus.ru\\u002F",
-                  name: p
+                  name: q
                 },
                 leetcode_cn: {
                   title: "LeetCode_CN",
                   description: c,
                   url: "https:\\u002F\\u002Fleetcode-cn.com",
-                  name: q
+                  name: r
                 },
                 csu: {
                   title: "CSU",
                   description: c,
                   url: "http:\\u002F\\u002Facm.csu.edu.cn\\u002F",
-                  name: r
+                  name: s
                 },
                 loj: {
                   title: "LibreOJ",
                   description: c,
                   url: "https:\\u002F\\u002Floj.ac\\u002F",
-                  name: s
+                  name: t
                 },
                 luogu: {
                   title: "洛谷",
                   description: c,
                   url: "https:\\u002F\\u002Fluogu.org\\u002F",
-                  name: t
+                  name: u
                 },
                 nowcoder: {
                   title: "牛客OJ",
                   description: "目前只支持输入用户ID（在你的AC列表的URL中）",
                   url: "https:\\u002F\\u002Fac.nowcoder.com\\u002Facm\\u002Fhome",
-                  name: u
+                  name: v
                 },
                 uestc: {
                   title: "Lutece (UESTC)",
                   description: c,
                   url: "https:\\u002F\\u002Facm.uestc.edu.cn\\u002Fhome",
-                  name: v
+                  name: w
                 },
                 atcoder: {
                   title: "AtCoder",
                   description: "API provided by kenkoooo (https:\\u002F\\u002Fgithub.com\\u002Fkenkoooo\\u002FAtCoderProblems).\\nIt may take a while for the api to update user statistics.\\n",
                   url: "https:\\u002F\\u002Fatcoder.jp",
-                  name: w
+                  name: x
                 },
                 aizu: {
                   title: "AIZU",
                   description: c,
                   url: "http:\\u002F\\u002Fjudge.u-aizu.ac.jp\\u002Fonlinejudge\\u002Findex.jsp",
-                  name: x
+                  name: y
                 },
                 codechef: {
                   title: "CodeChef",
                   description: c,
                   url: "https:\\u002F\\u002Fwww.codechef.com\\u002F",
-                  name: y
+                  name: z
                 },
                 eljudge: {
                   title: "El Judge",
                   description: c,
                   url: "http:\\u002F\\u002Facm.mipt.ru",
-                  name: z
+                  name: A
                 },
                 bnu: {
                   title: "BNUOJ",
                   description: c,
                   url: "http:\\u002F\\u002Fwww.bnuoj.com",
-                  name: A
+                  name: B
                 },
                 codewars: {
                   title: "Codewars",
                   description: "Currently it does not have submission number.\\nUsername is case sensitive.\\n",
                   url: "https:\\u002F\\u002Fwww.codewars.com",
-                  name: B
+                  name: C
                 },
                 uoj: {
                   title: "UOJ",
                   description: c,
                   url: "http:\\u002F\\u002Fuoj.ac\\u002F",
-                  name: C
+                  name: D
                 },
                 nbut: {
                   title: "NBUT",
                   description: c,
                   url: "https:\\u002F\\u002Fac.2333.moe\\u002F",
-                  name: D
+                  name: E
                 },
                 nod: {
                   title: "51Nod",
                   description: "Please use your nickname (displayed in your home page)",
                   url: "https:\\u002F\\u002Fwww.51nod.com",
-                  name: E
+                  name: F
                 },
                 vjudge: {
                   title: "VJudge",
                   description: "virtual judge，这个OJ的题量是单独计算的",
                   url: "https:\\u002F\\u002Fvjudge.net\\u002F",
-                  virtual_judge: G,
-                  name: F
+                  virtual_judge: g,
+                  name: G
                 }
               },
-              mainUsername: a
+              mainUsername: b
             }
           },
-          serverRendered: G,
+          serverRendered: g,
           routePath: "\\u002Fstatistics",
           config: {},
           env: {
@@ -8204,7 +8214,7 @@ exports[`/statistics 1`] = `
             BUILD_TIME: H
           }
         }
-      }("", 0, null, "WAITING", void 0, false, "poj", "hdu", "zoj", "dashiye", "codeforces", "uva", "uvalive", "fzu", "spoj", "timus", "leetcode_cn", "csu", "loj", "luogu", "nowcoder", "uestc", "atcoder", "aizu", "codechef", "eljudge", "bnu", "codewars", "uoj", "nbut", "nod", "vjudge", true, "0"));
+      }(0, "", null, "WAITING", void 0, false, true, "poj", "hdu", "zoj", "dashiye", "codeforces", "uva", "uvalive", "fzu", "spoj", "timus", "leetcode_cn", "csu", "loj", "luogu", "nowcoder", "uestc", "atcoder", "aizu", "codechef", "eljudge", "bnu", "codewars", "uoj", "nbut", "nod", "vjudge", "0"));
     </script>
 
 
