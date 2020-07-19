@@ -189,15 +189,17 @@ export default {
 
     // registered module should not use watch in component
     // use the watch method below instead
-    this.watchFunc = this.$store.watch(() => this.isWorking, async val => {
-      if (this.$store.state.session.settings['App.AutoSaveHistory'] === 'true') {
-        if (val) {
-          this.lastSavedQueryId = null
-        } else {
-          this.lastSavedQueryId = await this.saveHistory()
+    this.watchFunc = this.$store.watch(
+      () => _.map(this.$store.state.statistics.workers, 'status'),
+      async () => {
+        if (this.$store.state.session.settings['App.AutoSaveHistory'] === 'true') {
+          if (this.isWorking) {
+            this.lastSavedQueryId = null
+          } else {
+            this.lastSavedQueryId = await this.saveHistory()
+          }
         }
-      }
-    })
+      })
   },
   destroyed() {
     if (this.watchFunc) {
