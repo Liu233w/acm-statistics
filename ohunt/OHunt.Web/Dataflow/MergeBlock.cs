@@ -1,26 +1,69 @@
 using System;
 using System.Collections.Generic;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Threading.Tasks.Dataflow;
 
 namespace OHunt.Web.Dataflow
 {
-    public class MergeBlock<T> : ISourceBlock<T>
+    /// <summary>
+    /// Merge some source block to one block
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    public class MergeBlock<T> : IReceivableSourceBlock<T>
     {
-        private readonly List<ISourceBlock<T>> _sources;
         private readonly BufferBlock<T> _target;
 
-        public MergeBlock(List<ISourceBlock<T>> sources)
+        private volatile int _totalCount;
+
+        public MergeBlock(IReadOnlyCollection<ISourceBlock<T>> sources)
+            : this(sources, new BufferBlock<T>())
         {
-            _sources = sources;
-            _target = new BufferBlock<T>();
         }
 
-        public MergeBlock(List<ISourceBlock<T>> sources, DataflowBlockOptions options)
+        public MergeBlock(IReadOnlyCollection<ISourceBlock<T>> sources, DataflowBlockOptions options)
+            : this(sources, new BufferBlock<T>(options))
         {
-            _sources = sources;
-            _target = new BufferBlock<T>(options);
         }
+
+        private MergeBlock(IReadOnlyCollection<ISourceBlock<T>> sources, BufferBlock<T> target)
+        {
+            _target = target;
+            _totalCount = sources.Count;
+
+            foreach (var source in sources)
+            {
+                source.LinkTo(_target);
+
+                if (source.Completion.IsCompleted)
+                {
+                    HandleSourceTaskComplete(source.Completion);
+                }
+                else
+                {
+                    source.Completion.ContinueWith(HandleSourceTaskComplete);
+                }
+            }
+        }
+
+        private void HandleSourceTaskComplete(Task task)
+        {
+            if (task.IsCompletedSuccessfully)
+            {
+                if (Interlocked.Decrement(ref _totalCount) <= 0)
+                {
+                    _target.Complete();
+                }
+            }
+            else
+            {
+                ((IDataflowBlock) _target).Fault(
+                    task.Exception ?? new Exception(
+                        "The source is completed unsuccessfully without an exception"));
+            }
+        }
+
+        #region dispatched target methods
 
         public void Complete()
         {
@@ -29,28 +72,41 @@ namespace OHunt.Web.Dataflow
 
         public void Fault(Exception exception)
         {
-            throw new NotImplementedException();
+            ((ISourceBlock<T>) _target).Fault(exception);
         }
 
-        public Task Completion { get; }
+        public Task Completion => _target.Completion;
+
         public IDisposable LinkTo(ITargetBlock<T> target, DataflowLinkOptions linkOptions)
         {
-            throw new NotImplementedException();
+            return _target.LinkTo(target, linkOptions);
         }
 
         public T ConsumeMessage(DataflowMessageHeader messageHeader, ITargetBlock<T> target, out bool messageConsumed)
         {
-            throw new NotImplementedException();
+            return ((ISourceBlock<T>) _target).ConsumeMessage(messageHeader, target, out messageConsumed);
         }
 
         public bool ReserveMessage(DataflowMessageHeader messageHeader, ITargetBlock<T> target)
         {
-            throw new NotImplementedException();
+            return ((ISourceBlock<T>) _target).ReserveMessage(messageHeader, target);
         }
 
         public void ReleaseReservation(DataflowMessageHeader messageHeader, ITargetBlock<T> target)
         {
-            throw new NotImplementedException();
+            ((ISourceBlock<T>) _target).ReleaseReservation(messageHeader, target);
         }
+
+        public bool TryReceive(Predicate<T> filter, out T item)
+        {
+            return _target.TryReceive(filter, out item);
+        }
+
+        public bool TryReceiveAll(out IList<T> items)
+        {
+            return _target.TryReceiveAll(out items);
+        }
+
+        #endregion
     }
 }
