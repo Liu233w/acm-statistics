@@ -11,13 +11,13 @@ before(() => {
   cy.log('save a history')
 
   cy.server()
-  cy.route('https://acm-statistics-cors.herokuapp.com/http://acm.hdu.edu.cn/userstatus.php?user=wwwlsmcom',
+  cy.route('https://acm-statistics-cors.liu233w.workers.dev/?http://acm.hdu.edu.cn/userstatus.php?user=wwwlsmcom',
     'fixture:summary_hdu.txt')
     .as('summary_hdu')
   cy.route('/api/crawlers/vjudge/wwwlsmcom',
     'fixture:summary_vjudge.txt')
     .as('summary_vjudge')
-  cy.route('post', 'https://acm-statistics-cors.herokuapp.com/https://leetcode-cn.com/graphql',
+  cy.route('post', 'https://acm-statistics-cors.liu233w.workers.dev/?https://leetcode-cn.com/graphql',
     'fixture:summary_leetcode.txt')
     .as('summary_leetcode')
 
