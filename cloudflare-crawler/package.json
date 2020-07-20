@@ -1,0 +1,22 @@
+{
+  "private": true,
+  "name": "cloudflare-crawler",
+  "version": "1.0.0",
+  "description": "A template for kick starting a Cloudflare Workers project",
+  "author": "Liu233w <gh@liu233w.com>",
+  "license": "GPL-3.0",
+  "main": "pre-build/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "node -e \"var s='../crawler',d='./node_modules/crawler',fs=require('fs'), r=require('path').resolve;fs.exists(d,function(e){e||fs.symlinkSync(r(s),r(d),'junction')});\""
+  },
+  "devDependencies": {
+    "eslint": "^7.5.0",
+    "eslint-plugin-jest": "^23.18.0",
+    "jest": "^26.1.0"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.3",
+    "superagent": "^5.3.1"
+  }
+}
