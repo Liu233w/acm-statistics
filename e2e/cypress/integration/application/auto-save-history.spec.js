@@ -2,7 +2,7 @@ Cypress.config('baseUrl', 'http://localhost:3000')
 
 beforeEach(() => {
   cy.server()
-  cy.route('https://acm-statistics-cors.liu233w.workers.dev/?http://acm.hdu.edu.cn/userstatus.php?user=wwwlsmcom',
+  cy.route('https://acm-statistics-cors.herokuapp.com/http://acm.hdu.edu.cn/userstatus.php?user=wwwlsmcom',
     'fixture:summary_hdu.txt')
     .as('summary_hdu')
   cy.route('POST', '/api/services/app/QueryHistory/SaveOrReplaceQueryHistory')
