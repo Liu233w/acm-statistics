@@ -23,7 +23,7 @@ describe('crawler test', () => {
   it('can start a worker', () => {
 
     cy.server()
-    cy.route('https://acm-statistics-cors.liu233w.workers.dev/?http://poj.org/userstatus?user_id=vjudge5',
+    cy.route('https://acm-statistics-cors.herokuapp.com/http://poj.org/userstatus?user_id=vjudge5',
       'fixture:poj_ok.txt')
       .as('poj_frontend')
 
@@ -50,7 +50,7 @@ describe('crawler test', () => {
     // TODO: use proxy server after cypress update
     cy.server()
     cy.route({
-      url: 'https://acm-statistics-cors.liu233w.workers.dev/?http://poj.org/userstatus?user_id=vjudge5',
+      url: 'https://acm-statistics-cors.herokuapp.com/http://poj.org/userstatus?user_id=vjudge5',
       status: 500,
       response: 'error',
     }).as('poj_frontend')
@@ -75,7 +75,7 @@ describe('crawler test', () => {
 
     cy.server()
     cy.route({
-      url: 'https://acm-statistics-cors.liu233w.workers.dev/?http://poj.org/userstatus?user_id=vjudge5',
+      url: 'https://acm-statistics-cors.herokuapp.com/http://poj.org/userstatus?user_id=vjudge5',
       response: 'lololo',
       delay: 10000,
     }).as('poj_frontend')
@@ -98,7 +98,7 @@ describe('crawler test', () => {
   it('can show crawler errors', () => {
 
     cy.server()
-    cy.route('https://acm-statistics-cors.liu233w.workers.dev/?http://poj.org/userstatus?user_id=Frkfe932fbcv09b',
+    cy.route('https://acm-statistics-cors.herokuapp.com/http://poj.org/userstatus?user_id=Frkfe932fbcv09b',
       'fixture:poj_notExist.txt')
       .as('poj_frontend')
 
