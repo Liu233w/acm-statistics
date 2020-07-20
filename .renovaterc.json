@@ -19,6 +19,7 @@
   "ignorePresets": [
     ":ignoreModulesAndTests"
   ],
+  "commitMessagePrefix": "chore(*):",
   "labels": ["dependencies"],
   "automerge": true,
   "dockerfile": {
