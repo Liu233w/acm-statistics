@@ -1,6 +1,5 @@
 using System;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Threading.Tasks.Dataflow;
 using FluentAssertions;
@@ -11,10 +10,9 @@ using OHunt.Web;
 using OHunt.Web.Dataflow;
 using OHunt.Web.Models;
 using OHunt.Web.Options;
-using OHunt.Web.Schedule;
 using Xunit;
 
-namespace OHunt.Tests.Schedule
+namespace OHunt.Tests.Dataflow
 {
     public class DatabaseInserterTests : OHuntTestBase
     {
@@ -22,7 +20,9 @@ namespace OHunt.Tests.Schedule
 
         public DatabaseInserterTests(TestWebApplicationFactory<Startup> factory) : base(factory)
         {
-            _inserter = Factory.Services.GetService<DatabaseInserter<Submission>>();
+            _inserter = Factory.Services
+                .GetService<DatabaseInserterFactory>()
+                .CreateInstance<Submission>();
         }
 
         protected override void ConfigureWebHost(IWebHostBuilder builder)

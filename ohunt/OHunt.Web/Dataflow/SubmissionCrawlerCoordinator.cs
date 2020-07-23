@@ -16,21 +16,21 @@ namespace OHunt.Web.Dataflow
     {
         private const int BufferCapacity = 1000;
 
-        private readonly DatabaseInserter<Submission> _submissionInserter;
-        private readonly DatabaseInserter<CrawlerError> _errorInserter;
+        // private readonly DatabaseInserter<Submission> _submissionInserter;
+        // private readonly DatabaseInserter<CrawlerError> _errorInserter;
         private readonly IServiceProvider _serviceProvider;
         private readonly ILogger<SubmissionCrawlerCoordinator> _logger;
 
         public SubmissionCrawlerCoordinator(
-            DatabaseInserter<Submission> submissionInserter,
+            // DatabaseInserter<Submission> submissionInserter,
+            // DatabaseInserter<CrawlerError> errorInserter,
             IServiceProvider serviceProvider,
-            ILogger<SubmissionCrawlerCoordinator> logger,
-            DatabaseInserter<CrawlerError> errorInserter)
+            ILogger<SubmissionCrawlerCoordinator> logger)
         {
-            _submissionInserter = submissionInserter;
+            // _submissionInserter = submissionInserter;
             _serviceProvider = serviceProvider;
             _logger = logger;
-            _errorInserter = errorInserter;
+            // _errorInserter = errorInserter;
         }
 
         public async Task WorkAsync(
