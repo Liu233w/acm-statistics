@@ -1,16 +1,26 @@
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using System.Threading.Tasks.Dataflow;
 using FluentAssertions;
+using OHunt.Tests.Dependency;
 using OHunt.Web.Dataflow;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace OHunt.Tests.Dataflow
 {
     public class MergeBlockTests
     {
+        private readonly ITestOutputHelper output;
+
+        public MergeBlockTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
         public void It_ShouldMergeDataFromMultipleSources()
         {
@@ -65,7 +75,10 @@ namespace OHunt.Tests.Dataflow
             var b2 = new BufferBlock<int>();
             var b3 = new BufferBlock<int>();
 
-            var mergeBlock = new MergeBlock<int>(new[] { b1, b2, b3 });
+            var mergeBlock = new MergeBlock<int>(new[] { b1, b2, b3 })
+            {
+                Logger = new XunitLogger<MergeBlock<int>>(output),
+            };
 
             // act
             b1.Post(1);
@@ -80,11 +93,18 @@ namespace OHunt.Tests.Dataflow
             await b1.Completion;
             await b2.Completion;
             await b3.Completion;
-            
-            await mergeBlock.Completion;
-            mergeBlock.TryReceiveAll(out var list);
+
+            var list = new List<int>();
+            for (int i = 0; i < 4; i++)
+            {
+                list.Add(await mergeBlock.ReceiveAsync());
+            }
 
             // assert
+
+            // it is completed only when all data are received
+            await mergeBlock.Completion;
+
             mergeBlock.Completion.IsCompletedSuccessfully.Should().BeTrue();
             list.Should().BeEquivalentTo(new[] { 1, 1, 2, 3 });
         }

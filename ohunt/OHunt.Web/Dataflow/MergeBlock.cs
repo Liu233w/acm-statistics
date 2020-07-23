@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Threading.Tasks.Dataflow;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Logging.Abstractions;
 
 namespace OHunt.Web.Dataflow
 {
@@ -10,11 +12,13 @@ namespace OHunt.Web.Dataflow
     /// Merge some source block to one block
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public class MergeBlock<T> : IReceivableSourceBlock<T>
+    public class MergeBlock<T> : ISourceBlock<T>
     {
         private readonly BufferBlock<T> _target;
 
         private volatile int _totalCount;
+
+        public ILogger Logger { get; set; } = NullLogger.Instance;
 
         public MergeBlock(IReadOnlyCollection<ISourceBlock<T>> sources)
             : this(sources, new BufferBlock<T>())
@@ -50,13 +54,16 @@ namespace OHunt.Web.Dataflow
         {
             if (task.IsCompletedSuccessfully)
             {
+                Logger.LogDebug("one task complete, current total count {0}", _totalCount);
                 if (Interlocked.Decrement(ref _totalCount) <= 0)
                 {
-                    _target.Complete();
+                    Logger.LogDebug("All task complete");
+                    Complete();
                 }
             }
             else
             {
+                Logger.LogDebug("task fault");
                 ((IDataflowBlock) _target).Fault(
                     task.Exception ?? new Exception(
                         "The source is completed unsuccessfully without an exception"));
@@ -95,16 +102,6 @@ namespace OHunt.Web.Dataflow
         public void ReleaseReservation(DataflowMessageHeader messageHeader, ITargetBlock<T> target)
         {
             ((ISourceBlock<T>) _target).ReleaseReservation(messageHeader, target);
-        }
-
-        public bool TryReceive(Predicate<T> filter, out T item)
-        {
-            return _target.TryReceive(filter, out item);
-        }
-
-        public bool TryReceiveAll(out IList<T> items)
-        {
-            return _target.TryReceiveAll(out items);
         }
 
         #endregion
