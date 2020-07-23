@@ -3,13 +3,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Threading.Tasks.Dataflow;
-using AngleSharp.Common;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 using OHunt.Web.Database;
-using OHunt.Web.Options;
-using OHunt.Web.Schedule;
 
 namespace OHunt.Web.Dataflow
 {
@@ -20,7 +16,7 @@ namespace OHunt.Web.Dataflow
         where TEntity : class
     {
         private readonly IServiceProvider _serviceProvider;
-        private readonly ILogger<DatabaseInserter<TEntity>> _logger;
+        private readonly ILogger _logger;
         private readonly TEntity[] _buffer;
         private readonly int _bufferSize;
         private readonly SemaphoreSlim _lock = new SemaphoreSlim(1, 1);
@@ -30,14 +26,13 @@ namespace OHunt.Web.Dataflow
 
         public DatabaseInserter(
             IServiceProvider serviceProvider,
-            ILogger<DatabaseInserter<TEntity>> logger,
-            IOptions<DatabaseInserterOptions> options)
+            ILogger logger,
+            int bufferSize)
         {
             _serviceProvider = serviceProvider;
             _logger = logger;
 
-            _bufferSize = options
-                .Value.BufferSize.GetOrDefault(typeof(TEntity).Name, options.Value.DefaultBufferSize);
+            _bufferSize = bufferSize;
             _buffer = new TEntity[_bufferSize];
 
             _target
@@ -61,17 +56,22 @@ namespace OHunt.Web.Dataflow
         {
             await _lock.WaitAsync();
 
-            if (message.Entity != null)
+            try
             {
-                Enqueue(message.Entity);
-            }
+                if (message.Entity != null)
+                {
+                    Enqueue(message.Entity);
+                }
 
-            if (_idx >= _bufferSize || message.ForceInsert)
+                if (_idx >= _bufferSize || message.ForceInsert)
+                {
+                    await InsertAll();
+                }
+            }
+            finally
             {
-                await InsertAll();
+                _lock.Release();
             }
-
-            _lock.Release();
         }
 
         private void Enqueue(TEntity entity)

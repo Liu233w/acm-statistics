@@ -41,8 +41,7 @@ namespace OHunt.Web
 
             services
                 .AddSingleton<SubmissionCrawlerCoordinator>()
-                .AddSingleton<DatabaseInserter<Submission>>()
-                .AddSingleton<DatabaseInserter<CrawlerError>>()
+                .AddSingleton<DatabaseInserterFactory>()
                 .AddSingleton<ZojSubmissionCrawler>()
                 ;
 
