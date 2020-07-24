@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
@@ -16,21 +17,49 @@ namespace OHunt.Web.Dataflow
     {
         private const int BufferCapacity = 1000;
 
-        // private readonly DatabaseInserter<Submission> _submissionInserter;
-        // private readonly DatabaseInserter<CrawlerError> _errorInserter;
+        private readonly DatabaseInserterFactory _databaseInserterFactory;
         private readonly IServiceProvider _serviceProvider;
         private readonly ILogger<SubmissionCrawlerCoordinator> _logger;
 
+        private bool _initialized = false;
+        private ISubmissionCrawler[] _crawlers = null!;
+        private ITargetBlock<CrawlerMessage>[] _targets = null!;
+        private Task?[] _crawlerTasks = null!;
+
         public SubmissionCrawlerCoordinator(
-            // DatabaseInserter<Submission> submissionInserter,
-            // DatabaseInserter<CrawlerError> errorInserter,
+            DatabaseInserterFactory databaseInserterFactory,
             IServiceProvider serviceProvider,
             ILogger<SubmissionCrawlerCoordinator> logger)
         {
-            // _submissionInserter = submissionInserter;
+            _databaseInserterFactory = databaseInserterFactory;
             _serviceProvider = serviceProvider;
             _logger = logger;
-            // _errorInserter = errorInserter;
+        }
+
+        /// <summary>
+        /// Initialize using the crawlers
+        /// </summary>
+        /// <param name="crawlers"></param>
+        /// <exception cref="InvalidOperationException"></exception>
+        public void Initialize(IEnumerable<ISubmissionCrawler> crawlers)
+        {
+            if (_initialized)
+            {
+                throw new InvalidOperationException("Coordinator is initialized");
+            }
+
+            _crawlers = crawlers.ToArray();
+            _crawlerTasks = new Task[_crawlers.Length];
+
+            _initialized = true;
+        }
+
+        /// <summary>
+        /// Start all crawlers. If a crawler is not done yet, do nothing.
+        /// </summary>
+        public void StartAllCrawlers()
+        {
+            throw new NotImplementedException();
         }
 
         public async Task WorkAsync(

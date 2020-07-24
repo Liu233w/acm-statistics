@@ -48,10 +48,8 @@ namespace OHunt.Tests.Dataflow
             };
 
             // act
-            await _inserter.SendAsync(new DatabaseInserterMessage<Submission>
-            {
-                Entity = submission,
-            });
+            await _inserter.SendAsync(DatabaseInserterMessage<Submission>
+                .OfEntity(submission));
             _inserter.Complete();
             await _inserter.Completion;
 
@@ -69,18 +67,17 @@ namespace OHunt.Tests.Dataflow
             // act
             for (int i = 0; i < 15; i++)
             {
-                await _inserter.SendAsync(new DatabaseInserterMessage<Submission>
-                {
-                    Entity = new Submission
-                    {
-                        Status = RunResult.Accepted,
-                        Time = new DateTime(2020, 4, 1),
-                        ProblemLabel = "1001",
-                        UserName = "user1",
-                        OnlineJudgeId = OnlineJudge.ZOJ,
-                        SubmissionId = 1 + i,
-                    }
-                });
+                await _inserter.SendAsync(DatabaseInserterMessage<Submission>
+                    .OfEntity(new Submission
+                        {
+                            Status = RunResult.Accepted,
+                            Time = new DateTime(2020, 4, 1),
+                            ProblemLabel = "1001",
+                            UserName = "user1",
+                            OnlineJudgeId = OnlineJudge.ZOJ,
+                            SubmissionId = 1 + i,
+                        }
+                    ));
             }
 
             // assert
@@ -108,11 +105,8 @@ namespace OHunt.Tests.Dataflow
             };
 
             // act
-            await _inserter.SendAsync(new DatabaseInserterMessage<Submission>
-            {
-                Entity = submission,
-                ForceInsert = true,
-            });
+            await _inserter.SendAsync(DatabaseInserterMessage<Submission>
+                .OfEntity(submission, true));
 
             // wait for ActionBlock executing
             await Task.Delay(TimeSpan.FromSeconds(1));
