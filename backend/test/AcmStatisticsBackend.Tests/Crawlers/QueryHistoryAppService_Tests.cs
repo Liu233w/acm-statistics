@@ -131,12 +131,7 @@ namespace AcmStatisticsBackend.Tests.Crawlers
                     it.CrawlerName.Should().Be("c1");
                     it.QueryHistoryId.Should().Be(acHistory.Id);
                     it.ErrorMessage.Should().Be(null);
-                    it.SolvedList.Should().BeEquivalentTo(new[]
-                    {
-                        "p1",
-                        "p2",
-                        "p3",
-                    });
+                    it.SolvedList.Should().Equal("p1", "p2", "p3");
                 });
                 list[1].WithIn(it =>
                 {
@@ -475,12 +470,7 @@ namespace AcmStatisticsBackend.Tests.Crawlers
                 it.Username.Should().Be("u1");
                 it.CrawlerName.Should().Be("c1");
                 it.ErrorMessage.Should().BeNull();
-                it.SolvedList.Should().BeEquivalentTo(new[]
-                {
-                    "p1",
-                    "p2",
-                    "p3",
-                });
+                it.SolvedList.Should().Equal("p1", "p2", "p3");
             });
             list.Items[1].WithIn(it =>
             {
@@ -561,22 +551,12 @@ namespace AcmStatisticsBackend.Tests.Crawlers
                     it.CrawlerName.Should().Be("c1");
                     it.QueryHistoryId.Should().Be(acHistory.Id);
                     it.ErrorMessage.Should().Be(null);
-                    it.SolvedList.Should().BeEquivalentTo(new string[]
-                    {
-                        "p1",
-                        "p2",
-                        "p3",
-                    });
+                    it.SolvedList.Should().Equal("p1", "p2", "p3");
                 });
                 list[1].WithIn(it =>
                 {
                     it.Solved.Should().Be(3);
-                    it.SolvedList.Should().BeEquivalentTo(new string[]
-                    {
-                        "c1-p1",
-                        "c1-p5",
-                        "NO_NAME-1001",
-                    });
+                    it.SolvedList.Should().Equal("c1-p1", "c1-p5", "NO_NAME-1001");
                     it.IsVirtualJudge.Should().Be(true);
                     it.SubmissionsByCrawlerName.Should().BeEquivalentTo(new Dictionary<string, int>
                     {
