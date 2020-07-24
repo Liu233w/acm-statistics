@@ -45,6 +45,7 @@ namespace OHunt.Tests.Dataflow
             }
 
             // assert
+            // ignore order
             bf.Should().BeEquivalentTo(new[] { 1, 1, 2, 3 });
         }
 
@@ -106,6 +107,7 @@ namespace OHunt.Tests.Dataflow
             await mergeBlock.Completion;
 
             mergeBlock.Completion.IsCompletedSuccessfully.Should().BeTrue();
+            // ignore order
             list.Should().BeEquivalentTo(new[] { 1, 1, 2, 3 });
         }
 
