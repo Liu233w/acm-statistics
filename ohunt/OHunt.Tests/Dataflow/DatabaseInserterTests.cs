@@ -86,7 +86,7 @@ namespace OHunt.Tests.Dataflow
                 ctx.Submission.Count().Should().Be(10);
                 ctx.Submission.Select(e => e.SubmissionId)
                     .Should()
-                    .BeEquivalentTo(Enumerable.Range(1, 10).Select(i => (long) i));
+                    .Equal(Enumerable.Range(1, 10).Select(i => (long) i));
             });
         }
 
