@@ -22,6 +22,7 @@ namespace OHunt.Web.Dataflow
                 if (item.Discard)
                 {
                     end = 0;
+                    return;
                 }
 
                 if (item.Entity != null)
