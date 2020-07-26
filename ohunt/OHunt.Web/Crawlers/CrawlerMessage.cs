@@ -24,5 +24,10 @@ namespace OHunt.Web.Crawlers
         /// data before a checkpoint are saved.
         /// </summary>
         public bool IsCheckPoint { get; set; }
+
+        /// <summary>
+        /// The message request to revert back to last checkpoint
+        /// </summary>
+        public bool IsRevertRequested { get; set; }
     }
 }
