@@ -72,7 +72,9 @@ namespace OHunt.Tests.Dataflow
         [Fact]
         public async Task WhenThereIsNoCachedItem_AndBlockComplete_ItShouldDoNothing()
         {
-            throw new NotImplementedException();
+            _block.Complete();
+            await _target.Completion;
+            _received.Should().BeEmpty();
         }
 
         [Scenario]
@@ -114,7 +116,10 @@ namespace OHunt.Tests.Dataflow
         [Fact]
         public async Task WhenThereAreCachedItems_AndBlockComplete_ItShouldDiscardThem()
         {
-            throw new NotImplementedException();
+            _block.Post(DataCachingMessage<Int>.OfEntity(new Int(1)));
+            _block.Complete();
+            await _target.Completion;
+            _received.Should().BeEmpty();
         }
 
         [Theory]
@@ -165,24 +170,50 @@ namespace OHunt.Tests.Dataflow
         [Fact]
         public async Task WhenCacheIsFull_AndReceivingMessage_ItShouldFail()
         {
-            throw new NotImplementedException();
+            for (int i = 0; i < 10; i++)
+            {
+                _block.Post(DataCachingMessage<Int>.OfEntity(new Int(i)));
+            }
+
+            await WaitOutput();
+            _target.Completion.IsFaulted.Should().BeFalse();
+
+            _block.Post(DataCachingMessage<Int>.OfEntity(new Int(100)));
+
+            await WaitOutput();
+            _target.Completion.IsFaulted.Should().BeTrue();
+
+            await _target.Completion
+                .ShouldResult()
+                .ThrowAsync<AggregateException>();
+            _received.Should().BeEmpty();
         }
 
         [Fact]
         public async Task WhenComplete_DownstreamShouldComplete()
         {
-            throw new NotImplementedException();
+            _block.Complete();
+            await _target.Completion;
         }
 
         [Fact]
         public async Task WhenFail_DownstreamShouldFail()
         {
-            throw new NotImplementedException();
+            _block.Fault(new MyException());
+            (await _target.Completion
+                    .ShouldResult()
+                    .ThrowAsync<AggregateException>())
+                .WithInnerException<AggregateException>()
+                .Which.InnerException.Should().BeOfType<MyException>();
         }
 
         private async Task WaitOutput()
         {
             await Task.Delay(TimeSpan.FromSeconds(1));
+        }
+
+        public class MyException : Exception
+        {
         }
     }
 }
