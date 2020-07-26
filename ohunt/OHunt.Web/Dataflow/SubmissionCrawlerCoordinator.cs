@@ -21,10 +21,15 @@ namespace OHunt.Web.Dataflow
         private readonly IServiceProvider _serviceProvider;
         private readonly ILogger<SubmissionCrawlerCoordinator> _logger;
 
+        private readonly CancellationTokenSource _cancel
+            = new CancellationTokenSource();
+
+        private readonly object _lock = new object();
+
         private bool _initialized = false;
         private ISubmissionCrawler[] _crawlers = null!;
         private ITargetBlock<CrawlerMessage>[] _targets = null!;
-        private Task?[] _crawlerTasks = null!;
+        private Task[] _crawlerTasks = null!;
 
         public SubmissionCrawlerCoordinator(
             DatabaseInserterFactory databaseInserterFactory,
@@ -49,7 +54,10 @@ namespace OHunt.Web.Dataflow
             }
 
             _crawlers = crawlers.ToArray();
-            _crawlerTasks = new Task[_crawlers.Length];
+
+            _crawlerTasks = Enumerable.Repeat(Task.CompletedTask, _crawlers.Length)
+                .ToArray();
+            throw new NotImplementedException("Complete pipeline");
 
             _initialized = true;
         }
@@ -59,12 +67,39 @@ namespace OHunt.Web.Dataflow
         /// </summary>
         public void StartAllCrawlers()
         {
-            throw new NotImplementedException();
+            if (!_initialized)
+            {
+                throw new InvalidOperationException($"{nameof(SubmissionCrawlerCoordinator)} is not initialized");
+            }
+
+            lock (_lock)
+            {
+                for (int i = 0; i < _crawlers.Length; i++)
+                {
+                    var crawler = _crawlers[i];
+                    if (_crawlerTasks[i].IsCompleted)
+                    {
+                        _crawlerTasks[i] = StartCrawler(crawler, _targets[i]);
+                    }
+                    else
+                    {
+                        _logger.LogInformation(
+                            $"Previous crawler {crawler.OnlineJudge.ToString()} is not finished yet");
+                    }
+                }
+            }
         }
 
-        public async Task WorkAsync(
-            ISubmissionCrawler crawler,
-            CancellationToken cancellationToken)
+        /// <summary>
+        /// Cancel all crawlers. Task is done when all crawlers are completed.
+        /// </summary>
+        public Task Cancel()
+        {
+            _cancel.Cancel();
+            return Task.WhenAll(_crawlerTasks);
+        }
+
+        private async Task StartCrawler(ISubmissionCrawler crawler, ITargetBlock<CrawlerMessage> target)
         {
             var oj = crawler.OnlineJudge;
 
@@ -75,9 +110,34 @@ namespace OHunt.Web.Dataflow
                 latestSubmissionId = (await context.Submission
                     .Where(e => e.OnlineJudgeId == oj)
                     .OrderByDescending(e => e.SubmissionId)
-                    .FirstOrDefaultAsync(cancellationToken: cancellationToken))?.SubmissionId;
+                    .FirstOrDefaultAsync(_cancel.Token))?.SubmissionId;
             }
 
+            _logger.LogTrace("Work on {0}, latestSubmissionId {1}", oj.ToString(), latestSubmissionId);
+
+            try
+            {
+                await crawler.WorkAsync(latestSubmissionId, target, _cancel.Token);
+            }
+            catch (Exception e)
+            {
+                _logger.LogError(e, $"Exception when running crawler {oj.ToString()}");
+                using var scope = _serviceProvider.CreateScope();
+                var context = scope.ServiceProvider.GetRequiredService<OHuntDbContext>();
+                await context.CrawlerErrors.AddAsync(new CrawlerError
+                {
+                    Crawler = oj.ToString(),
+                    Data = e.ToString(),
+                    Message = e.Message,
+                    Time = DateTime.Now,
+                });
+            }
+        }
+
+        public async Task WorkAsync(
+            ISubmissionCrawler crawler,
+            CancellationToken cancellationToken)
+        {
             var submissionBuffer
                 = new BufferBlock<Submission>(new DataflowBlockOptions
                 {
@@ -91,7 +151,6 @@ namespace OHunt.Web.Dataflow
                     EnsureOrdered = false,
                 });
 
-            _logger.LogTrace("Work on {0}, latestSubmissionId {1}", oj.ToString(), latestSubmissionId);
 
             var inserterCancel = new CancellationTokenSource();
             var crawlerCancel = new CancellationTokenSource();
