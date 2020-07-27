@@ -84,6 +84,8 @@ namespace OHunt.Web.Dataflow
             var errorBlocks =
                 new IPropagatorBlock<DataCachingMessage<CrawlerError>, CrawlerError>[_crawlers.Length];
 
+            _targets = new ITargetBlock<CrawlerMessage>[_crawlers.Length];
+
             for (int i = 0; i < _crawlers.Length; i++)
             {
                 var target = new BufferBlock<CrawlerMessage>(new DataflowBlockOptions());
@@ -95,9 +97,9 @@ namespace OHunt.Web.Dataflow
                     new TransformBlock<CrawlerMessage, DataCachingMessage<CrawlerError>>(ErrorTransform);
 
                 target.LinkTo(submissionTransformA, new DataflowLinkOptions { PropagateCompletion = true },
-                    message => message.Submission != null);
+                    message => message.Submission != null || message.IsCheckPoint || message.IsRevertRequested);
                 target.LinkTo(errorTransformA, new DataflowLinkOptions { PropagateCompletion = true },
-                    message => message.CrawlerError != null);
+                    message => message.CrawlerError != null || message.IsCheckPoint || message.IsRevertRequested);
 
                 submissionBlocks[i] = DataCachingBlockFactory.CreateBlock<Submission>(BufferCapacity);
                 errorBlocks[i] = DataCachingBlockFactory.CreateBlock<CrawlerError>(BufferCapacity);
@@ -198,6 +200,8 @@ namespace OHunt.Web.Dataflow
             {
                 await crawler.WorkAsync(latestSubmissionId, target, _cancel.Token);
                 // TODO: call this after all crawler finished or after 30 minutes
+                // FIXME: to not use the waiting
+                await Task.Delay(TimeSpan.FromSeconds(1)); // wait for entities going through the pipeline
                 await _submissionInserter.SendAsync(DatabaseInserterMessage<Submission>.ForceInsertMessage);
                 await _errorInserter.SendAsync(DatabaseInserterMessage<CrawlerError>.ForceInsertMessage);
             }
