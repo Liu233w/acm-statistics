@@ -80,6 +80,8 @@ namespace OHunt.Tests.Dataflow
                     ));
             }
 
+            await Task.Delay(TimeSpan.FromSeconds(1));
+
             // assert
             WithDb(ctx =>
             {

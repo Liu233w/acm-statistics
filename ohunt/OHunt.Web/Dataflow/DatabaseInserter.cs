@@ -12,14 +12,13 @@ namespace OHunt.Web.Dataflow
     /// <summary>
     /// An action block to buffer inputs and batch insert them to database
     /// </summary>
-    public class DatabaseInserter<TEntity> : IDisposable, ITargetBlock<DatabaseInserterMessage<TEntity>>
+    public class DatabaseInserter<TEntity> : ITargetBlock<DatabaseInserterMessage<TEntity>>
         where TEntity : class
     {
         private readonly IServiceProvider _serviceProvider;
         private readonly ILogger _logger;
         private readonly TEntity[] _buffer;
         private readonly int _bufferSize;
-        private readonly SemaphoreSlim _lock = new SemaphoreSlim(1, 1);
         private readonly ActionBlock<DatabaseInserterMessage<TEntity>> _target;
 
         private int _idx = 0;
@@ -41,12 +40,7 @@ namespace OHunt.Web.Dataflow
                     EnsureOrdered = false,
                     MaxDegreeOfParallelism = 1,
                 });
-            Completion = _target.Completion.ContinueWith(async _ =>
-            {
-                await _lock.WaitAsync();
-                await InsertAll();
-                _lock.Release();
-            });
+            Completion = _target.Completion.ContinueWith(async _ => { await InsertAll(); });
 
             _logger.LogInformation("Initialized, buffer size: {0}", _bufferSize);
         }
@@ -54,23 +48,14 @@ namespace OHunt.Web.Dataflow
 
         private async Task OnReceive(DatabaseInserterMessage<TEntity> message)
         {
-            await _lock.WaitAsync();
-
-            try
+            if (message.Entity != null)
             {
-                if (message.Entity != null)
-                {
-                    Enqueue(message.Entity);
-                }
-
-                if (_idx >= _bufferSize || message.ForceInsert)
-                {
-                    await InsertAll();
-                }
+                Enqueue(message.Entity);
             }
-            finally
+
+            if (_idx >= _bufferSize || message.ForceInsert)
             {
-                _lock.Release();
+                await InsertAll();
             }
         }
 
@@ -94,11 +79,6 @@ namespace OHunt.Web.Dataflow
             var inserted = await context.SaveChangesAsync();
 
             _logger.LogInformation("{0} rows inserted", inserted);
-        }
-
-        public void Dispose()
-        {
-            _lock.Dispose();
         }
 
         public DataflowMessageStatus OfferMessage(
