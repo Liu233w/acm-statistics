@@ -82,7 +82,7 @@ namespace OHunt.Tests.Dataflow
                     ));
             }
 
-            await Task.Delay(TimeSpan.FromSeconds(1));
+            await Utils.WaitSecond();
 
             // assert
             WithDb(ctx =>
@@ -113,7 +113,7 @@ namespace OHunt.Tests.Dataflow
                 .OfEntity(submission, true));
 
             // wait for ActionBlock executing
-            await Task.Delay(TimeSpan.FromSeconds(1));
+            await Utils.WaitSecond();
 
             // assert
             WithDb(ctx => { ctx.Submission.Count().Should().Be(1); });
