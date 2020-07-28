@@ -61,14 +61,14 @@ namespace OHunt.Web.Dataflow
 
             /*
              * Pipeline:
-             *              Submission
-             *     crawler -----------------> cacher -> submission merger (shared) -> submission inserter (shared)
-             *             \
-             *              \ CrawlerError
-             *               ---------------> cacher ------> error merger (shared) -> error inserter (shared)
-             *                     |                                               |
-             *                 transform A                                    transform B
-             *       (CrawlerMessage -> DataCachingMessage)         (Entity -> DatabaseInserterMessage)
+             *                            Submission
+             *     crawler --> broadcast -----------------> cacher -> submission merger (shared) -> submission inserter (shared)
+             *                           \
+             *                            \ CrawlerError
+             *                             ---------------> cacher ------> error merger (shared) -> error inserter (shared)
+             *                                   |                                               |
+             *                               transform A                                    transform B
+             *                     (CrawlerMessage -> DataCachingMessage)         (Entity -> DatabaseInserterMessage)
              *
              * For each merger:
              *
@@ -88,7 +88,7 @@ namespace OHunt.Web.Dataflow
 
             for (int i = 0; i < _crawlers.Length; i++)
             {
-                var target = new BufferBlock<CrawlerMessage>(new DataflowBlockOptions());
+                var target = new BroadcastBlock<CrawlerMessage>(item => item);
                 _targets[i] = target;
 
                 var submissionTransformA =
