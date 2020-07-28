@@ -12,6 +12,7 @@ using OHunt.Web.Dataflow;
 using OHunt.Web.Models;
 using Xbehave;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace OHunt.Tests.Dataflow
 {
@@ -20,7 +21,9 @@ namespace OHunt.Tests.Dataflow
         private readonly SubmissionCrawlerCoordinator _coordinator;
         private readonly CrawlerMock _crawlerMock;
 
-        public SubmissionCrawlerCoordinatorTests(TestWebApplicationFactory<Startup> factory) : base(factory)
+        public SubmissionCrawlerCoordinatorTests(
+            TestWebApplicationFactory<Startup> factory,
+            ITestOutputHelper outputHelper) : base(factory, outputHelper)
         {
             _coordinator = Factory.Services.GetService<SubmissionCrawlerCoordinator>();
             _crawlerMock = new CrawlerMock();
