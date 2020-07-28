@@ -7,12 +7,28 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using OHunt.Web.Database;
 using OHunt.Web.Schedule;
+using Xunit.Abstractions;
 
 namespace OHunt.Tests.Dependency
 {
     public class TestWebApplicationFactory<TStartup>
         : WebApplicationFactory<TStartup> where TStartup : class
     {
+        // Must be set in each test
+        public ITestOutputHelper Output { get; set; }
+
+        protected override IWebHostBuilder CreateWebHostBuilder()
+        {
+            var builder = base.CreateWebHostBuilder();
+            builder.ConfigureLogging(logging =>
+            {
+                logging.ClearProviders(); // Remove other loggers
+                logging.AddXUnit(Output); // Use the ITestOutputHelper instance
+            });
+
+            return builder;
+        }
+
         protected override void ConfigureWebHost(IWebHostBuilder builder)
         {
             builder.ConfigureServices(services =>
@@ -28,14 +44,13 @@ namespace OHunt.Tests.Dependency
                 }
 
                 // Add db context using an in-memory database for testing.
-                var serviceProvider = new ServiceCollection()
-                    .AddEntityFrameworkInMemoryDatabase()
-                    .BuildServiceProvider();
-                services.AddDbContext<OHuntDbContext>(options =>
-                {
-                    options.UseInMemoryDatabase("InMemoryDbForTesting");
-                    options.UseInternalServiceProvider(serviceProvider);
-                }, ServiceLifetime.Singleton);
+                services.AddDbContext<OHuntDbContext>(
+                    options =>
+                    {
+                        // use a new database each test
+                        options.UseInMemoryDatabase(Guid.NewGuid().ToString());
+                    }, ServiceLifetime.Scoped,
+                    ServiceLifetime.Singleton);
 
                 // remove ScheduleCrawlerService
                 var service = services.SingleOrDefault(

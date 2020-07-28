@@ -11,19 +11,21 @@ using OHunt.Web.Dataflow;
 using OHunt.Web.Models;
 using OHunt.Web.Options;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace OHunt.Tests.Dataflow
 {
     public class DatabaseInserterTests : OHuntTestBase
     {
-        private readonly DatabaseInserter<Submission> _inserter;
-
-        public DatabaseInserterTests(TestWebApplicationFactory<Startup> factory) : base(factory)
+        public DatabaseInserterTests(TestWebApplicationFactory<Startup> factory, ITestOutputHelper outputHelper) : base(
+            factory, outputHelper)
         {
             _inserter = Factory.Services
                 .GetService<DatabaseInserterFactory>()
                 .CreateInstance<Submission>();
         }
+
+        private readonly DatabaseInserter<Submission> _inserter;
 
         protected override void ConfigureWebHost(IWebHostBuilder builder)
         {
