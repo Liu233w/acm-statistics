@@ -81,7 +81,7 @@ namespace OHunt.Tests.Dataflow
                             Time = new DateTime(2020, 4, 1, 1, 0, 0),
                         },
                     });
-                    await Task.Delay(TimeSpan.FromSeconds(5));
+                    await Utils.WaitSecond();
                 });
 
             "They are not saved to database immediately"
@@ -98,7 +98,7 @@ namespace OHunt.Tests.Dataflow
                     {
                         IsCheckPoint = true,
                     });
-                    await Task.Delay(TimeSpan.FromSeconds(5));
+                    await Utils.WaitSecond();
                 });
 
             "Data are not saved to database immediately"
@@ -113,7 +113,7 @@ namespace OHunt.Tests.Dataflow
                 {
                     _crawlerMock.TaskSource.SetResult(1);
                     // wait longer to insert database
-                    await Task.Delay(TimeSpan.FromSeconds(5));
+                    await Utils.WaitSecond();
                 });
 
             "Data are saved to database"
@@ -175,7 +175,7 @@ namespace OHunt.Tests.Dataflow
                 });
             }
 
-            await Task.Delay(TimeSpan.FromSeconds(1));
+            await Utils.WaitSecond();
 
             // assert
             WithDb(context => { context.CrawlerErrors.Should().HaveCount(100); });

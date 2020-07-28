@@ -15,8 +15,6 @@ namespace OHunt.Web.Dataflow
 {
     public class SubmissionCrawlerCoordinator
     {
-        private const int BufferCapacity = 1000;
-
         private readonly DatabaseInserterFactory _databaseInserterFactory;
         private readonly IServiceProvider _serviceProvider;
         private readonly ILogger<SubmissionCrawlerCoordinator> _logger;
@@ -28,8 +26,8 @@ namespace OHunt.Web.Dataflow
 
         private bool _initialized = false;
         private ISubmissionCrawler[] _crawlers = null!;
-        private ITargetBlock<CrawlerMessage>[] _targets = null!;
         private Task[] _crawlerTasks = null!;
+
         private DatabaseInserter<Submission> _submissionInserter = null!;
         private DatabaseInserter<CrawlerError> _errorInserter = null!;
 
@@ -59,83 +57,10 @@ namespace OHunt.Web.Dataflow
             _crawlerTasks = Enumerable.Repeat(Task.CompletedTask, _crawlers.Length)
                 .ToArray();
 
-            /*
-             * Pipeline:
-             *                            Submission
-             *     crawler --> broadcast -----------------> cacher -> submission merger (shared) -> submission inserter (shared)
-             *                           \
-             *                            \ CrawlerError
-             *                             ---------------> cacher ------> error merger (shared) -> error inserter (shared)
-             *                                   |                                               |
-             *                               transform A                                    transform B
-             *                     (CrawlerMessage -> DataCachingMessage)         (Entity -> DatabaseInserterMessage)
-             *
-             * For each merger:
-             *
-             *     crawler 1 -----> MergeBlock -----> DatabaseInserter
-             *                 ↑
-             *     crawler 2  ↗|
-             *                 |
-             *     crawler 3  ↗
-             */
-
-            var submissionBlocks =
-                new IPropagatorBlock<DataCachingMessage<Submission>, Submission>[_crawlers.Length];
-            var errorBlocks =
-                new IPropagatorBlock<DataCachingMessage<CrawlerError>, CrawlerError>[_crawlers.Length];
-
-            _targets = new ITargetBlock<CrawlerMessage>[_crawlers.Length];
-
-            for (int i = 0; i < _crawlers.Length; i++)
-            {
-                var target = new BroadcastBlock<CrawlerMessage>(item => item);
-                _targets[i] = target;
-
-                var submissionTransformA =
-                    new TransformBlock<CrawlerMessage, DataCachingMessage<Submission>>(SubmissionTransform);
-                var errorTransformA =
-                    new TransformBlock<CrawlerMessage, DataCachingMessage<CrawlerError>>(ErrorTransform);
-
-                target.LinkTo(submissionTransformA, new DataflowLinkOptions { PropagateCompletion = true },
-                    message => message.Submission != null || message.IsCheckPoint || message.IsRevertRequested);
-                target.LinkTo(errorTransformA, new DataflowLinkOptions { PropagateCompletion = true },
-                    message => message.CrawlerError != null || message.IsCheckPoint || message.IsRevertRequested);
-
-                submissionBlocks[i] = DataCachingBlockFactory.CreateBlock<Submission>(BufferCapacity);
-                errorBlocks[i] = DataCachingBlockFactory.CreateBlock<CrawlerError>(BufferCapacity);
-
-                submissionTransformA.LinkTo(submissionBlocks[i],
-                    new DataflowLinkOptions { PropagateCompletion = true });
-                errorTransformA.LinkTo(errorBlocks[i], new DataflowLinkOptions { PropagateCompletion = true });
-            }
-
-            var submissionMerger = new MergeBlock<Submission>(submissionBlocks);
-            var errorMerger = new MergeBlock<CrawlerError>(errorBlocks);
-
-            var submissionTransformB = CreateInserterMessageTransformer<Submission>();
-            var errorTransformB = CreateInserterMessageTransformer<CrawlerError>();
-            submissionMerger.LinkTo(submissionTransformB,
-                new DataflowLinkOptions { PropagateCompletion = true });
-            errorMerger.LinkTo(errorTransformB,
-                new DataflowLinkOptions { PropagateCompletion = true });
-
             _submissionInserter = _databaseInserterFactory.CreateInstance<Submission>();
             _errorInserter = _databaseInserterFactory.CreateInstance<CrawlerError>();
-            submissionTransformB.LinkTo(_submissionInserter,
-                new DataflowLinkOptions { PropagateCompletion = true });
-            errorTransformB.LinkTo(_errorInserter,
-                new DataflowLinkOptions { PropagateCompletion = true });
 
             _initialized = true;
-            return;
-
-            static TransformBlock<T, DatabaseInserterMessage<T>>
-                CreateInserterMessageTransformer<T>()
-                where T : class
-            {
-                return new TransformBlock<T, DatabaseInserterMessage<T>>(
-                    e => DatabaseInserterMessage<T>.OfEntity(e));
-            }
         }
 
         /// <summary>
@@ -155,7 +80,7 @@ namespace OHunt.Web.Dataflow
                     var crawler = _crawlers[i];
                     if (_crawlerTasks[i].IsCompleted)
                     {
-                        _crawlerTasks[i] = StartCrawler(crawler, _targets[i]);
+                        _crawlerTasks[i] = StartCrawler(crawler);
                     }
                     else
                     {
@@ -180,7 +105,7 @@ namespace OHunt.Web.Dataflow
             return Task.WhenAll(_crawlerTasks);
         }
 
-        private async Task StartCrawler(ISubmissionCrawler crawler, ITargetBlock<CrawlerMessage> target)
+        private async Task StartCrawler(ISubmissionCrawler crawler)
         {
             var oj = crawler.OnlineJudge;
 
@@ -196,86 +121,55 @@ namespace OHunt.Web.Dataflow
 
             _logger.LogTrace("Work on {0}, latestSubmissionId {1}", oj.ToString(), latestSubmissionId);
 
+            var submissionTransformer = CreateTransformer<Submission>();
+            var errorTransformer = CreateTransformer<CrawlerError>();
+
+            using var submissionUnlink = submissionTransformer.LinkTo(_submissionInserter);
+            using var errorUnlink = errorTransformer.LinkTo(_errorInserter);
+
+            var propagator = new CrawlerPropagator(submissionTransformer, errorTransformer);
+
             try
             {
-                await crawler.WorkAsync(latestSubmissionId, target, _cancel.Token);
-                // TODO: call this after all crawler finished or after 30 minutes
-                // FIXME: to not use the waiting
-                await Task.Delay(TimeSpan.FromSeconds(1)); // wait for entities going through the pipeline
-                await _submissionInserter.SendAsync(DatabaseInserterMessage<Submission>.ForceInsertMessage);
-                await _errorInserter.SendAsync(DatabaseInserterMessage<CrawlerError>.ForceInsertMessage);
+                await crawler.WorkAsync(latestSubmissionId, propagator, _cancel.Token);
+                await propagator.SendAsync(new CrawlerMessage
+                {
+                    IsCheckPoint = true,
+                });
+                propagator.Complete();
             }
             catch (Exception e)
             {
                 _logger.LogError(e, $"Exception when running crawler {oj.ToString()}");
 
-                await target.SendAsync(new CrawlerMessage
-                {
-                    IsRevertRequested = true,
-                });
+                // data from last checkpoint is automatically discarded
+                propagator.Complete();
 
                 // TODO: add entity CrawlerExecuteLog , save the execution time and result of 
                 // the crawler
-                using var scope = _serviceProvider.CreateScope();
-                var context = scope.ServiceProvider.GetRequiredService<OHuntDbContext>();
-                await context.CrawlerErrors.AddAsync(new CrawlerError
-                {
-                    Crawler = oj.ToString(),
-                    Data = e.ToString(),
-                    Message = e.Message,
-                    Time = DateTime.Now,
-                });
             }
+
+            await propagator.Completion;
+            await submissionTransformer.Completion;
+            await errorTransformer.Completion;
+
+            // TODO: call this after all crawler finished or after 30 minutes
+            await _submissionInserter.SendAsync(DatabaseInserterMessage<Submission>.ForceInsertMessage);
+            await _errorInserter.SendAsync(DatabaseInserterMessage<CrawlerError>.ForceInsertMessage);
         }
 
-        private static DataCachingMessage<Submission> SubmissionTransform(CrawlerMessage message)
+        private static DatabaseInserterMessage<T> EntityToMessage<T>(T entity)
+            where T : class
         {
-            if (message.IsRevertRequested)
-            {
-                return DataCachingMessage<Submission>.DiscardMessage;
-            }
-
-            if (message.Submission == null)
-            {
-                if (message.IsCheckPoint)
-                {
-                    return DataCachingMessage<Submission>.SubmitMessage;
-                }
-                else
-                {
-                    throw new ArgumentException(
-                        $"The message should either contain a {nameof(Submission)} or be a checkpoint");
-                }
-            }
-            else
-            {
-                return DataCachingMessage<Submission>.OfEntity(message.Submission, message.IsCheckPoint);
-            }
+            return DatabaseInserterMessage<T>.OfEntity(entity);
         }
 
-        private static DataCachingMessage<CrawlerError> ErrorTransform(CrawlerMessage message)
+        private static TransformBlock<T, DatabaseInserterMessage<T>>
+            CreateTransformer<T>()
+            where T : class
         {
-            if (message.IsRevertRequested)
-            {
-                return DataCachingMessage<CrawlerError>.DiscardMessage;
-            }
-
-            if (message.CrawlerError == null)
-            {
-                if (message.IsCheckPoint)
-                {
-                    return DataCachingMessage<CrawlerError>.SubmitMessage;
-                }
-                else
-                {
-                    throw new ArgumentException(
-                        $"The message should either contain a {nameof(CrawlerError)} or be a checkpoint");
-                }
-            }
-            else
-            {
-                return DataCachingMessage<CrawlerError>.OfEntity(message.CrawlerError, message.IsCheckPoint);
-            }
+            return new TransformBlock<T, DatabaseInserterMessage<T>>(
+                (Func<T, DatabaseInserterMessage<T>>) EntityToMessage);
         }
     }
 }
