@@ -67,31 +67,31 @@ namespace OHunt.Tests.Dependency
 
                 // Build the service provider.
                 var sp = services.BuildServiceProvider();
-
-                // Create a scope to obtain a reference to the database
-                // context (ApplicationDbContext).
-                using (var scope = sp.CreateScope())
-                {
-                    var scopedServices = scope.ServiceProvider;
-                    var db = scopedServices.GetRequiredService<OHuntDbContext>();
-                    var logger = scopedServices
-                        .GetRequiredService<ILogger<TestWebApplicationFactory<TStartup>>>();
-
-                    // Ensure the database is created.
-                    db.Database.EnsureCreated();
-
-                    try
-                    {
-                        // Seed the database with test data.
-                        // Utilities.InitializeDbForTests(db);
-                    }
-                    catch (Exception ex)
-                    {
-                        logger.LogError(ex, "An error occurred seeding the " +
-                                            "database with test messages. Error: {Message}", ex.Message);
-                    }
-                }
+                SeedDatabase(sp);
             });
+        }
+
+        private static void SeedDatabase(IServiceProvider sp)
+        {
+            using var scope = sp.CreateScope();
+            var scopedServices = scope.ServiceProvider;
+            var db = scopedServices.GetRequiredService<OHuntDbContext>();
+            var logger = scopedServices
+                .GetRequiredService<ILogger<TestWebApplicationFactory<TStartup>>>();
+
+            // Ensure the database is created.
+            db.Database.EnsureCreated();
+
+            try
+            {
+                // Seed the database with test data.
+                // Utilities.InitializeDbForTests(db);
+            }
+            catch (Exception ex)
+            {
+                logger.LogError(ex, "An error occurred seeding the " +
+                                    "database with test messages. Error: {Message}", ex.Message);
+            }
         }
     }
 }
