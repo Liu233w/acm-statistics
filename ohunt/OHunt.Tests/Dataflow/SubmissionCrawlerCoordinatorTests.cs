@@ -11,6 +11,7 @@ using OHunt.Web.Crawlers;
 using OHunt.Web.Dataflow;
 using OHunt.Web.Models;
 using Xbehave;
+using Xunit;
 
 namespace OHunt.Tests.Dataflow
 {
@@ -26,7 +27,7 @@ namespace OHunt.Tests.Dataflow
         }
 
         [Scenario]
-        public async Task It_ShouldWork()
+        public void It_ShouldWork()
         {
             "Given a coordinator".x(() => { });
 
@@ -135,6 +136,45 @@ namespace OHunt.Tests.Dataflow
                         it.Id.Should().NotBe(0);
                     });
                 }));
+
+            "Finally, coordinator can be cancelled"
+                .x(() => _coordinator.Cancel());
+        }
+
+        [Fact]
+        public async Task WhenSendingOver1000Entities_TheyShouldBeInsertedToDatabase()
+        {
+            // arrange
+            _coordinator.Initialize(new[] { _crawlerMock });
+            _coordinator.StartAllCrawlers();
+
+            // act
+            for (int i = 0; i < 11; i++)
+            {
+                for (int j = 0; j < 10; j++)
+                {
+                    await _crawlerMock.Pipeline.SendAsync(new CrawlerMessage
+                    {
+                        CrawlerError = new CrawlerError
+                        {
+                            Crawler = "zoj",
+                            Data = null,
+                            Message = "message",
+                            Time = new DateTime(2020, 4, 1, 0, 0, 0),
+                        }
+                    });
+                }
+
+                await _crawlerMock.Pipeline.SendAsync(new CrawlerMessage
+                {
+                    IsCheckPoint = true,
+                });
+            }
+
+            await Task.Delay(TimeSpan.FromSeconds(1));
+
+            // assert
+            WithDb(context => { context.CrawlerErrors.Should().HaveCount(100); });
         }
 
         private class CrawlerMock : ISubmissionCrawler
