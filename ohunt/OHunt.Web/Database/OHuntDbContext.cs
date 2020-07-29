@@ -10,9 +10,9 @@ namespace OHunt.Web.Database
         {
         }
 
-        public DbSet<Submission> Submission { get; set; }
-        
-        public DbSet<CrawlerError> CrawlerErrors { get; set; }
+        public DbSet<Submission> Submission { get; set; } = null!;
+
+        public DbSet<CrawlerError> CrawlerErrors { get; set; } = null!;
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

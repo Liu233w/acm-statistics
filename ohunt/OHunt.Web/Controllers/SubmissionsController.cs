@@ -31,17 +31,14 @@ namespace OHunt.Web.Controllers
         {
             if (!Enum.TryParse<OnlineJudge>(oj, true, out var ojEnum))
             {
-                throw new HttpResponseException
-                {
-                    Status = 400,
-                    Value = new
+                throw new HttpResponseException(
+                    new
                     {
                         Error = true,
                         Message = "Unrecognisable OJ name",
                         Detail = "Please use url like /api/ohunt/submissions?oj=zoj to request",
                         SupportedOj = Enum.GetNames(typeof(OnlineJudge)),
-                    },
-                };
+                    }, 400);
             }
 
             return _context.Submission

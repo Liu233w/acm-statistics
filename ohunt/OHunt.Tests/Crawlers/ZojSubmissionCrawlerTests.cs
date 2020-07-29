@@ -34,7 +34,7 @@ namespace OHunt.Tests.Crawlers
 
             const int bufferLength = 110;
 
-            var list = new Submission[bufferLength];
+            var list = new Submission?[bufferLength];
             for (var i = 0; i < bufferLength; i++)
             {
                 var message = await messages.ReceiveAsync();
