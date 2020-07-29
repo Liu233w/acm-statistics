@@ -15,7 +15,7 @@ namespace OHunt.Tests.Dependency
         : WebApplicationFactory<TStartup> where TStartup : class
     {
         // Must be set in each test
-        public ITestOutputHelper Output { get; set; }
+        public ITestOutputHelper Output { get; set; } = null!;
 
         protected override IWebHostBuilder CreateWebHostBuilder()
         {

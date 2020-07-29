@@ -16,7 +16,7 @@ using Xunit.Abstractions;
 
 namespace OHunt.Tests.Dataflow
 {
-    public class SubmissionCrawlerCoordinatorTests : OHuntTestBase
+    public class SubmissionCrawlerCoordinatorTests : OHuntTestBase, IDisposable
     {
         private readonly SubmissionCrawlerCoordinator _coordinator;
         private readonly CrawlerMock _crawlerMock;
@@ -150,7 +150,7 @@ namespace OHunt.Tests.Dataflow
         {
             // arrange
             _coordinator.Initialize(new[] { _crawlerMock });
-            _coordinator.StartAllCrawlers();
+            await _coordinator.StartAllCrawlers();
 
             // act
             for (int i = 0; i < 11; i++)
@@ -260,12 +260,16 @@ namespace OHunt.Tests.Dataflow
                 .x(() => _crawlerMock.TaskSource.SetResult(1));
 
             "Then data should be saved"
-                .x(() => WithDb(context =>
+                .x(async () =>
                 {
-                    context.Submission.Should().HaveCount(2);
-                    context.Submission.Select(it => it.SubmissionId)
-                        .Should().Equal(1, 3);
-                }));
+                    await Utils.WaitSecond();
+                    WithDb(context =>
+                    {
+                        context.Submission.Should().HaveCount(2);
+                        context.Submission.Select(it => it.SubmissionId)
+                            .Should().Equal(1, 3);
+                    });
+                });
         }
 
         [Fact]
@@ -273,7 +277,7 @@ namespace OHunt.Tests.Dataflow
         {
             // arrange
             _coordinator.Initialize(new[] { _crawlerMock });
-            _coordinator.StartAllCrawlers();
+            await _coordinator.StartAllCrawlers();
             await SendToPipeline(new CrawlerMessage
             {
                 Submission = new Submission { SubmissionId = 1 },
@@ -283,7 +287,7 @@ namespace OHunt.Tests.Dataflow
             await Utils.WaitSecond();
 
             // act
-            _coordinator.StartAllCrawlers();
+            await _coordinator.StartAllCrawlers();
             _crawlerMock.CalledCount.Should().Be(2);
             await SendToPipeline(new CrawlerMessage
             {
@@ -355,22 +359,23 @@ namespace OHunt.Tests.Dataflow
             "Then cancel task is completed"
                 .x(() => cancelTask);
 
-            "And data before checkpoint is saved to database"
-                .x(async () =>
+            "And data before checkpoint is saved to database without needing to wait"
+                .x(() => WithDb(context =>
                 {
-                    await Utils.WaitSecond();
-                    WithDb(context =>
-                    {
-                        context.Submission.Should().HaveCount(3);
-                        context.Submission.Select(it => it.SubmissionId)
-                            .Should().Equal(1, 2, 3);
-                    });
-                });
+                    context.Submission.Should().HaveCount(3);
+                    context.Submission.Select(it => it.SubmissionId)
+                        .Should().Equal(1, 2, 3);
+                }));
+
+            "When start crawlers without initializing, it should throw"
+                .x(() => _coordinator.StartAllCrawlers()
+                    .ShouldResult().ThrowAsync<InvalidOperationException>());
 
             "When restarting crawlers"
                 .x(async () =>
                 {
-                    _coordinator.StartAllCrawlers();
+                    _coordinator.Initialize(new[] { _crawlerMock });
+                    await _coordinator.StartAllCrawlers();
                     await Utils.WaitSecond();
                     _crawlerMock.CalledCount.Should().Be(2);
                 });
@@ -406,7 +411,8 @@ namespace OHunt.Tests.Dataflow
             await _coordinator.Cancel();
 
             // assert
-            _coordinator.StartAllCrawlers();
+            _coordinator.Initialize(new[] { _crawlerMock });
+            await _coordinator.StartAllCrawlers();
 
             _crawlerMock.CalledCount.Should().Be(1);
             await SendToPipeline(new CrawlerMessage
@@ -432,7 +438,7 @@ namespace OHunt.Tests.Dataflow
         {
             // arrange
             _coordinator.Initialize(new[] { _crawlerMock });
-            _coordinator.StartAllCrawlers();
+            await _coordinator.StartAllCrawlers();
             await SendToPipeline(new CrawlerMessage
             {
                 Submission = new Submission { SubmissionId = 1 },
@@ -456,11 +462,11 @@ namespace OHunt.Tests.Dataflow
         {
             // arrange
             _coordinator.Initialize(new[] { _crawlerMock });
-            _coordinator.StartAllCrawlers();
+            await _coordinator.StartAllCrawlers();
 
             // act
             await Utils.WaitSecond();
-            _coordinator.StartAllCrawlers();
+            await _coordinator.StartAllCrawlers();
 
             // assert
             await Utils.WaitSecond();
@@ -468,11 +474,11 @@ namespace OHunt.Tests.Dataflow
         }
 
         [Fact]
-        public async Task WhenCancellingCrawler_ItShouldWaitForCrawlerFinishing()
+        public async Task WhenCancellingCrawler_ItShouldWaitForCrawlerFinishing_AndWaitForDataInserting()
         {
             // arrange
             _coordinator.Initialize(new[] { _crawlerMock });
-            _coordinator.StartAllCrawlers();
+            await _coordinator.StartAllCrawlers();
             await SendToPipeline(new CrawlerMessage
             {
                 Submission = new Submission { SubmissionId = 1 },
@@ -496,10 +502,10 @@ namespace OHunt.Tests.Dataflow
 
         private class CrawlerMock : ISubmissionCrawler
         {
-            public TaskCompletionSource<int> TaskSource { get; set; }
+            public TaskCompletionSource<int> TaskSource { get; set; } = null!;
 
             public long? LastSubmissionId { get; set; }
-            public ITargetBlock<CrawlerMessage> Pipeline { get; set; }
+            public ITargetBlock<CrawlerMessage> Pipeline { get; set; } = null!;
             public CancellationToken CancellationToken { get; set; }
 
             public int CalledCount { get; private set; } = 0;
@@ -520,6 +526,11 @@ namespace OHunt.Tests.Dataflow
                 TaskSource = new TaskCompletionSource<int>();
                 return TaskSource.Task;
             }
+        }
+
+        public void Dispose()
+        {
+            _coordinator?.Dispose();
         }
     }
 }

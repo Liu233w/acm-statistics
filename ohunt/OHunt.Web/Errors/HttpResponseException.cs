@@ -4,8 +4,14 @@ namespace OHunt.Web.Errors
 {
     public class HttpResponseException : Exception
     {
-        public int Status { get; set; } = 500;
+        public HttpResponseException(object value, int status = 500)
+        {
+            Value = value;
+            Status = status;
+        }
 
-        public object Value { get; set; }
+        public int Status { get; }
+
+        public object Value { get; }
     }
 }

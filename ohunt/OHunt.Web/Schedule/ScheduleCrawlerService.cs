@@ -55,7 +55,7 @@ namespace OHunt.Web.Schedule
         private void DoWork(object? state)
         {
             _logger.LogTrace("Starting all crawlers");
-            _coordinator.StartAllCrawlers();
+            _coordinator.StartAllCrawlers().Wait();
         }
     }
 }

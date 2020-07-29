@@ -13,13 +13,12 @@ using OHunt.Web.Models;
 
 namespace OHunt.Web.Dataflow
 {
-    public class SubmissionCrawlerCoordinator
+    public class SubmissionCrawlerCoordinator : IDisposable
     {
         private readonly DatabaseInserterFactory _databaseInserterFactory;
         private readonly IServiceProvider _serviceProvider;
         private readonly ILogger<SubmissionCrawlerCoordinator> _logger;
-
-        private readonly object _lock = new object();
+        private readonly SemaphoreSlim _lock = new SemaphoreSlim(1, 1);
 
         private bool _initialized = false;
         private ISubmissionCrawler[] _crawlers = null!;
@@ -30,6 +29,8 @@ namespace OHunt.Web.Dataflow
 
         private DatabaseInserter<Submission> _submissionInserter = null!;
         private DatabaseInserter<CrawlerError> _errorInserter = null!;
+
+        private bool _disposed = false;
 
         public SubmissionCrawlerCoordinator(
             DatabaseInserterFactory databaseInserterFactory,
@@ -48,6 +49,8 @@ namespace OHunt.Web.Dataflow
         /// <exception cref="InvalidOperationException"></exception>
         public void Initialize(IEnumerable<ISubmissionCrawler> crawlers)
         {
+            EnsureNotDisposed();
+            
             if (_initialized)
             {
                 throw new InvalidOperationException("Coordinator is initialized");
@@ -66,15 +69,19 @@ namespace OHunt.Web.Dataflow
         /// <summary>
         /// Start all crawlers. If a crawler is not done yet, do nothing.
         /// </summary>
-        public void StartAllCrawlers()
+        public async Task StartAllCrawlers()
         {
+            EnsureNotDisposed();
+            
             if (!_initialized)
             {
                 throw new InvalidOperationException($"{nameof(SubmissionCrawlerCoordinator)} is not initialized");
             }
 
-            lock (_lock)
+            await _lock.WaitAsync();
+            try
             {
+                _cancel.Dispose();
                 _cancel = new CancellationTokenSource();
                 for (int i = 0; i < _crawlers.Length; i++)
                 {
@@ -90,22 +97,59 @@ namespace OHunt.Web.Dataflow
                     }
                 }
             }
+            finally
+            {
+                _lock.Release();
+            }
         }
 
         /// <summary>
         /// Cancel all crawlers. Task is done when all crawlers are completed.
         /// </summary>
-        public Task Cancel()
+        public async Task Cancel()
         {
+            EnsureNotDisposed();
+            
             if (!_initialized)
             {
                 throw new InvalidOperationException($"{nameof(SubmissionCrawlerCoordinator)} is not initialized");
             }
 
-            lock (_lock)
+            await _lock.WaitAsync();
+            try
             {
                 _cancel.Cancel();
-                return Task.WhenAll(_crawlerTasks);
+                await Task.WhenAll(_crawlerTasks);
+                await ForceInsertAll();
+
+                _submissionInserter.Complete();
+                _errorInserter.Complete();
+
+                await _submissionInserter.Completion;
+                await _errorInserter.Completion;
+
+                _initialized = false;
+            }
+            finally
+            {
+                _lock.Release();
+            }
+        }
+
+        public void Dispose()
+        {
+            if (_disposed) return;
+
+            _cancel.Dispose();
+            _lock.Dispose();
+            _disposed = true;
+        }
+
+        private void EnsureNotDisposed()
+        {
+            if (_disposed)
+            {
+                throw new InvalidOperationException("Current object is disposed");
             }
         }
 
@@ -158,6 +202,11 @@ namespace OHunt.Web.Dataflow
             await errorTransformer.Completion;
 
             // TODO: call this after all crawler finished or after 30 minutes
+            await ForceInsertAll();
+        }
+
+        private async Task ForceInsertAll()
+        {
             await _submissionInserter.SendAsync(DatabaseInserterMessage<Submission>.ForceInsertMessage);
             await _errorInserter.SendAsync(DatabaseInserterMessage<CrawlerError>.ForceInsertMessage);
         }
