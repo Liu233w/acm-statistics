@@ -36,8 +36,4 @@
         <ProjectReference Include="..\OHunt.Web\OHunt.Web.csproj" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="Schedule" />
-    </ItemGroup>
-
 </Project>
