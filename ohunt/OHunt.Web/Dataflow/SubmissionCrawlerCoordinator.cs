@@ -50,7 +50,7 @@ namespace OHunt.Web.Dataflow
         public void Initialize(IEnumerable<ISubmissionCrawler> crawlers)
         {
             EnsureNotDisposed();
-            
+
             if (_initialized)
             {
                 throw new InvalidOperationException("Coordinator is initialized");
@@ -72,7 +72,7 @@ namespace OHunt.Web.Dataflow
         public async Task StartAllCrawlers()
         {
             EnsureNotDisposed();
-            
+
             if (!_initialized)
             {
                 throw new InvalidOperationException($"{nameof(SubmissionCrawlerCoordinator)} is not initialized");
@@ -109,7 +109,7 @@ namespace OHunt.Web.Dataflow
         public async Task Cancel()
         {
             EnsureNotDisposed();
-            
+
             if (!_initialized)
             {
                 throw new InvalidOperationException($"{nameof(SubmissionCrawlerCoordinator)} is not initialized");
@@ -120,7 +120,6 @@ namespace OHunt.Web.Dataflow
             {
                 _cancel.Cancel();
                 await Task.WhenAll(_crawlerTasks);
-                await ForceInsertAll();
 
                 _submissionInserter.Complete();
                 _errorInserter.Complete();
@@ -202,11 +201,6 @@ namespace OHunt.Web.Dataflow
             await errorTransformer.Completion;
 
             // TODO: call this after all crawler finished or after 30 minutes
-            await ForceInsertAll();
-        }
-
-        private async Task ForceInsertAll()
-        {
             await _submissionInserter.SendAsync(DatabaseInserterMessage<Submission>.ForceInsertMessage);
             await _errorInserter.SendAsync(DatabaseInserterMessage<CrawlerError>.ForceInsertMessage);
         }
