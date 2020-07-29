@@ -23,11 +23,11 @@ namespace OHunt.Web.Crawlers
         /// When pipeline is terminated (cancelled or exception),
         /// data before a checkpoint are saved.
         /// </summary>
-        public bool IsCheckPoint { get; set; }
+        public bool Checkpoint { get; set; }
 
         /// <summary>
-        /// The message request to revert back to last checkpoint
+        /// The message request to rollback to last checkpoint
         /// </summary>
-        public bool IsRevertRequested { get; set; }
+        public bool Rollback { get; set; }
     }
 }

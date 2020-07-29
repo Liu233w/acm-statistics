@@ -134,7 +134,7 @@ namespace OHunt.Web.Dataflow
                 await crawler.WorkAsync(latestSubmissionId, propagator, _cancel.Token);
                 await propagator.SendAsync(new CrawlerMessage
                 {
-                    IsCheckPoint = true,
+                    Checkpoint = true,
                 });
                 propagator.Complete();
             }

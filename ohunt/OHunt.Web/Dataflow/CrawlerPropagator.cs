@@ -46,7 +46,7 @@ namespace OHunt.Web.Dataflow
         {
             return new ActionBlock<CrawlerMessage>(async message =>
             {
-                if (message.IsRevertRequested)
+                if (message.Rollback)
                 {
                     _queue.Clear();
                     return;
@@ -57,7 +57,7 @@ namespace OHunt.Web.Dataflow
                     _queue.Enqueue(message);
                 }
 
-                if (message.IsCheckPoint)
+                if (message.Checkpoint)
                 {
                     await Dispatch();
                 }

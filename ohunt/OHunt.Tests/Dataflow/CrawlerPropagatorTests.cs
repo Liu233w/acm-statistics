@@ -61,7 +61,7 @@ namespace OHunt.Tests.Dataflow
                 });
 
             "When a checkpoint is sent"
-                .x(() => _propagator.SendAsync(new CrawlerMessage { IsCheckPoint = true }));
+                .x(() => _propagator.SendAsync(new CrawlerMessage { Checkpoint = true }));
 
             "Data are dispatched"
                 .x(async () =>
