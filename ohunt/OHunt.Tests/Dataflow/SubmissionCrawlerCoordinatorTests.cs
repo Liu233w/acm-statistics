@@ -34,26 +34,26 @@ namespace OHunt.Tests.Dataflow
         {
             "Given a coordinator".x(() => { });
 
-            "After it is initialized"
+            "When it is initialized"
                 .x(() => _coordinator.Initialize(new[] { _crawlerMock }));
 
-            "Crawler does not immediately work"
+            "But crawler does not immediately work"
                 .x(() => _crawlerMock.CalledCount.Should().Be(0));
 
-            $"After calling {nameof(_coordinator.StartAllCrawlers)}"
+            $"When calling {nameof(_coordinator.StartAllCrawlers)}"
                 .x(() => _coordinator.StartAllCrawlers());
 
-            $"Crawler's {nameof(_crawlerMock.WorkAsync)} is called"
+            $"Then crawler's {nameof(_crawlerMock.WorkAsync)} is called"
                 .x(() => _crawlerMock.CalledCount.Should().Be(1));
 
-            "At first, there is nothing in the database"
+            "And there is nothing in the database"
                 .x(() => WithDb(context =>
                 {
                     context.Submission.Should().BeEmpty();
                     context.CrawlerErrors.Should().BeEmpty();
                 }));
 
-            "So lastSubmissionId should be null"
+            "And lastSubmissionId sent to crawler should be null"
                 .x(() => _crawlerMock.LastSubmissionId.Should().BeNull());
 
             "When crawler sends data"
@@ -84,7 +84,7 @@ namespace OHunt.Tests.Dataflow
                     await Utils.WaitSecond();
                 });
 
-            "They are not saved to database immediately"
+            "But data are not saved to database immediately"
                 .x(() => WithDb(context =>
                 {
                     context.Submission.Should().BeEmpty();
@@ -101,7 +101,7 @@ namespace OHunt.Tests.Dataflow
                     await Utils.WaitSecond();
                 });
 
-            "Data are not saved to database immediately"
+            "But data are not saved to database immediately"
                 .x(() => WithDb(context =>
                 {
                     context.Submission.Should().BeEmpty();
@@ -116,7 +116,7 @@ namespace OHunt.Tests.Dataflow
                     await Utils.WaitSecond();
                 });
 
-            "Data are saved to database"
+            "Then data are saved to database"
                 .x(() => WithDb(context =>
                 {
                     context.Submission.Should().HaveCount(1);
@@ -141,7 +141,7 @@ namespace OHunt.Tests.Dataflow
                     });
                 }));
 
-            "Finally, coordinator can be cancelled"
+            "When cancelling a coordinator, it should not throw"
                 .x(() => _coordinator.Cancel());
         }
 
@@ -157,7 +157,7 @@ namespace OHunt.Tests.Dataflow
             {
                 for (int j = 0; j < 10; j++)
                 {
-                    await _crawlerMock.Pipeline.SendAsync(new CrawlerMessage
+                    await SendToPipeline(new CrawlerMessage
                     {
                         CrawlerError = new CrawlerError
                         {
@@ -169,7 +169,7 @@ namespace OHunt.Tests.Dataflow
                     });
                 }
 
-                await _crawlerMock.Pipeline.SendAsync(new CrawlerMessage
+                await SendToPipeline(new CrawlerMessage
                 {
                     Checkpoint = true,
                 });
@@ -179,6 +179,281 @@ namespace OHunt.Tests.Dataflow
 
             // assert
             WithDb(context => { context.CrawlerErrors.Should().HaveCount(100); });
+        }
+
+        [Fact]
+        public void WhenInitializeTwice_ItShouldThrow()
+        {
+            _coordinator.Initialize(new ISubmissionCrawler[0]);
+            FluentActions.Invoking(() => _coordinator.Initialize(new ISubmissionCrawler[0]))
+                .Should().ThrowExactly<InvalidOperationException>();
+        }
+
+        [Fact]
+        public void WhenNotInitialized_ItShouldThrow()
+        {
+            FluentActions.Invoking(() => _coordinator.StartAllCrawlers())
+                .Should().ThrowExactly<InvalidOperationException>();
+            FluentActions.Invoking(() => _coordinator.Cancel())
+                .Should().ThrowExactly<InvalidOperationException>();
+        }
+
+        [Scenario]
+        public void WhenCrawlerThrows()
+        {
+            "Given an initialized coordinator"
+                .x(() =>
+                {
+                    _coordinator.Initialize(new[] { _crawlerMock });
+                    _coordinator.StartAllCrawlers();
+                });
+
+            "And some data"
+                .x(async () =>
+                {
+                    _crawlerMock.CalledCount.Should().Be(1);
+
+                    await SendToPipeline(new CrawlerMessage
+                    {
+                        Submission = new Submission { SubmissionId = 1 },
+                        Checkpoint = true,
+                    });
+                    await SendToPipeline(new CrawlerMessage
+                    {
+                        Submission = new Submission { SubmissionId = 2 },
+                    });
+                });
+
+            "When crawler throws"
+                .x(() => _crawlerMock.TaskSource.SetException(new Exception("Crawler throws")));
+
+            "Then coordinator should complete"
+                .x(async () =>
+                {
+                    // cannot test it
+                    await Utils.WaitSecond();
+                });
+
+            "And data before checkpoint should be saved"
+                .x(() => WithDb(context =>
+                {
+                    context.Submission.Should().HaveCount(1);
+                    context.Submission.Single().Should()
+                        .Match(it => it.As<Submission>().SubmissionId == 1);
+                }));
+
+            "When start coordinator again"
+                .x(() => _coordinator.StartAllCrawlers());
+
+            "And send some data"
+                .x(() =>
+                {
+                    _crawlerMock.CalledCount.Should().Be(2);
+                    return SendToPipeline(new CrawlerMessage
+                    {
+                        Submission = new Submission { SubmissionId = 3 },
+                        Checkpoint = true,
+                    });
+                });
+
+            "And complete crawler"
+                .x(() => _crawlerMock.TaskSource.SetResult(1));
+
+            "Then data should be saved"
+                .x(() => WithDb(context =>
+                {
+                    context.Submission.Should().HaveCount(2);
+                    context.Submission.Select(it => it.SubmissionId)
+                        .Should().Equal(1, 3);
+                }));
+        }
+
+        [Fact]
+        public async Task AfterFinished_WhenStartAgain_ItShouldResume()
+        {
+            // arrange
+            _coordinator.Initialize(new[] { _crawlerMock });
+            _coordinator.StartAllCrawlers();
+            await SendToPipeline(new CrawlerMessage
+            {
+                Submission = new Submission { SubmissionId = 1 },
+                Checkpoint = true,
+            });
+            _crawlerMock.TaskSource.SetResult(1);
+            await Utils.WaitSecond();
+
+            // act
+            _coordinator.StartAllCrawlers();
+            _crawlerMock.CalledCount.Should().Be(2);
+            await SendToPipeline(new CrawlerMessage
+            {
+                Submission = new Submission { SubmissionId = 2 },
+                Checkpoint = true,
+            });
+            _crawlerMock.TaskSource.SetResult(1);
+            await Utils.WaitSecond();
+
+            // assert
+            WithDb(context =>
+            {
+                context.Submission.Should().HaveCount(2);
+                context.Submission.Select(it => it.SubmissionId)
+                    .Should().Equal(1, 2);
+            });
+        }
+
+        [Scenario]
+        public void WhenCancelled(Task cancelTask)
+        {
+            "Given an initialized coordinator"
+                .x(() =>
+                {
+                    _coordinator.Initialize(new[] { _crawlerMock });
+                    _coordinator.StartAllCrawlers();
+                });
+
+            "And some data"
+                .x(async () =>
+                {
+                    await SendToPipeline(new CrawlerMessage
+                    {
+                        Submission = new Submission { SubmissionId = 1 },
+                        Checkpoint = true,
+                    });
+                    await SendToPipeline(new CrawlerMessage
+                    {
+                        Submission = new Submission { SubmissionId = 2 },
+                    });
+                });
+
+            "When calling coordinator.cancel"
+                .x(() => { cancelTask = _coordinator.Cancel(); });
+
+            "Then crawler should receive cancel"
+                .x(() => _crawlerMock.CancellationToken.IsCancellationRequested.Should().BeTrue());
+
+            "And cancelling task is still not completed"
+                .x(() => cancelTask.IsCompleted.Should().BeFalse());
+
+            "And crawler can still sending data until exit"
+                .x(async () =>
+                {
+                    await SendToPipeline(new CrawlerMessage
+                    {
+                        Submission = new Submission { SubmissionId = 3 },
+                        Checkpoint = true,
+                    });
+                    await SendToPipeline(new CrawlerMessage
+                    {
+                        Submission = new Submission { SubmissionId = 4 },
+                    });
+                });
+
+            "When crawler is exited"
+                .x(() => _crawlerMock.TaskSource.SetCanceled());
+
+            "Then cancel task is completed"
+                .x(() => cancelTask);
+
+            "And data before checkpoint is saved to database"
+                .x(async () =>
+                {
+                    await Utils.WaitSecond();
+                    WithDb(context =>
+                    {
+                        context.Submission.Should().HaveCount(3);
+                        context.Submission.Select(it => it.SubmissionId)
+                            .Should().Equal(1, 2, 3);
+                    });
+                });
+
+            "When restarting crawlers"
+                .x(async () =>
+                {
+                    _coordinator.StartAllCrawlers();
+                    await Utils.WaitSecond();
+                    _crawlerMock.CalledCount.Should().Be(2);
+                });
+
+            "And send some data and finish the crawler"
+                .x(async () =>
+                {
+                    await SendToPipeline(new CrawlerMessage
+                    {
+                        Checkpoint = true,
+                        Submission = new Submission { SubmissionId = 5 },
+                    });
+                    _crawlerMock.TaskSource.SetResult(1);
+                    await Utils.WaitSecond();
+                });
+
+            "Then data after checkpoint of previous run are discarded"
+                .x(() => WithDb(context =>
+                {
+                    context.Submission.Should().HaveCount(4);
+                    context.Submission.Select(it => it.SubmissionId)
+                        .Should().Equal(1, 2, 3, 5);
+                }));
+        }
+
+        [Fact]
+        public async Task WhenCancellingANotRunningCoordinator_ItShouldDoNothing()
+        {
+            // arrange
+            _coordinator.Initialize(new[] { _crawlerMock });
+
+            // act
+            await _coordinator.Cancel();
+
+            // assert
+            _coordinator.StartAllCrawlers();
+
+            _crawlerMock.CalledCount.Should().Be(1);
+            await SendToPipeline(new CrawlerMessage
+            {
+                Submission = new Submission { SubmissionId = 1 },
+                Checkpoint = true,
+            });
+
+            _crawlerMock.TaskSource.SetResult(1);
+
+            await Utils.WaitSecond();
+
+            WithDb(context =>
+            {
+                context.Submission.Should().HaveCount(1);
+                context.Submission.Select(it => it.SubmissionId)
+                    .Should().Equal(1);
+            });
+        }
+
+        [Fact]
+        public async Task WhenCrawlerCompleteSuccessfully_ItShouldAutomaticallySendACheckpoint()
+        {
+            // arrange
+            _coordinator.Initialize(new[] { _crawlerMock });
+            _coordinator.StartAllCrawlers();
+            await SendToPipeline(new CrawlerMessage
+            {
+                Submission = new Submission { SubmissionId = 1 },
+            });
+
+            // act
+            _crawlerMock.TaskSource.SetResult(1);
+
+            await Utils.WaitSecond();
+
+            // assert
+            WithDb(context =>
+            {
+                context.Submission.Should().HaveCount(1);
+                context.Submission.Single().SubmissionId.Should().Be(1);
+            });
+        }
+
+        private Task SendToPipeline(CrawlerMessage message)
+        {
+            return _crawlerMock.Pipeline.SendAsync(message);
         }
 
         private class CrawlerMock : ISubmissionCrawler

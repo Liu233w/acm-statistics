@@ -53,7 +53,7 @@ namespace OHunt.Tests.Dataflow
                     })
                 );
 
-            "They are cached"
+            "Then they are cached"
                 .x(async () =>
                 {
                     await Utils.WaitSecond();
@@ -64,7 +64,7 @@ namespace OHunt.Tests.Dataflow
             "When a checkpoint is sent"
                 .x(() => _propagator.SendAsync(new CrawlerMessage { Checkpoint = true }));
 
-            "Data are dispatched"
+            "Then data are dispatched"
                 .x(async () =>
                 {
                     await Utils.WaitSecond();
