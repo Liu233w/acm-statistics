@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Threading.Tasks.Dataflow;
 using FluentAssertions;
@@ -26,7 +27,7 @@ namespace OHunt.Tests.Dataflow
         }
 
         [Scenario]
-        public async Task It_ShouldWork()
+        public void It_ShouldWork()
         {
             "Given a propagator".x(() => { });
 
@@ -72,8 +73,96 @@ namespace OHunt.Tests.Dataflow
                 });
         }
 
-        /*
-         * WhenPropagatorCompletes_OutputsShouldBeCompleted
-         */
+        [Fact]
+        public async Task WhenReceivingRollback_ItShouldRollbackToLastCheckpoint()
+        {
+            // arrange
+            await _propagator.SendAsync(new CrawlerMessage
+            {
+                Submission = new Submission
+                {
+                    SubmissionId = 1,
+                },
+                Checkpoint = true,
+            });
+
+            await _propagator.SendAsync(new CrawlerMessage
+            {
+                Submission = new Submission
+                {
+                    SubmissionId = 2,
+                },
+            });
+
+            // act
+            await _propagator.SendAsync(new CrawlerMessage
+            {
+                Submission = new Submission
+                {
+                    SubmissionId = 3,
+                },
+                Rollback = true,
+            });
+
+            await _propagator.SendAsync(new CrawlerMessage
+            {
+                Submission = new Submission
+                {
+                    SubmissionId = 4,
+                },
+                Checkpoint = true,
+            });
+
+            _propagator.Complete();
+            await _propagator.Completion;
+
+            // assert
+            _submissionOutput.TryReceiveAll(out var res)
+                .Should().BeTrue();
+            res.Select(item => item.SubmissionId)
+                .Should()
+                .Equal(1, 4);
+        }
+
+        [Fact]
+        public async Task WhenPropagatorCompletes_OutputsShouldBeCompleted()
+        {
+            // arrange
+            await _propagator.SendAsync(new CrawlerMessage
+            {
+                Submission = new Submission
+                {
+                    SubmissionId = 1,
+                },
+                Checkpoint = true,
+            });
+
+            // act
+            _propagator.Complete();
+
+            // assert
+            await _errorOutput.Completion;
+            _submissionOutput.TryReceive(out var item)
+                .Should().BeTrue();
+            item.SubmissionId.Should().Be(1);
+            await _submissionOutput.Completion;
+        }
+
+        [Fact]
+        public async Task WhenPropagatorFault_OutputShouldFault()
+        {
+            // act
+            _propagator.Fault(new Exception("An error"));
+
+            // assert
+            (await _errorOutput.Completion
+                    .ShouldResult().ThrowAsync<AggregateException>())
+                .WithInnerException<Exception>()
+                .WithMessage("An error");
+            (await _submissionOutput.Completion
+                    .ShouldResult().ThrowAsync<AggregateException>())
+                .WithInnerException<Exception>()
+                .WithMessage("An error");
+        }
     }
 }
