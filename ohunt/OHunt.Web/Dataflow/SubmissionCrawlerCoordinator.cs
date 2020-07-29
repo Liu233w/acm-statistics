@@ -19,14 +19,14 @@ namespace OHunt.Web.Dataflow
         private readonly IServiceProvider _serviceProvider;
         private readonly ILogger<SubmissionCrawlerCoordinator> _logger;
 
-        private readonly CancellationTokenSource _cancel
-            = new CancellationTokenSource();
-
         private readonly object _lock = new object();
 
         private bool _initialized = false;
         private ISubmissionCrawler[] _crawlers = null!;
         private Task[] _crawlerTasks = null!;
+
+        private CancellationTokenSource _cancel =
+            new CancellationTokenSource();
 
         private DatabaseInserter<Submission> _submissionInserter = null!;
         private DatabaseInserter<CrawlerError> _errorInserter = null!;
@@ -75,6 +75,7 @@ namespace OHunt.Web.Dataflow
 
             lock (_lock)
             {
+                _cancel = new CancellationTokenSource();
                 for (int i = 0; i < _crawlers.Length; i++)
                 {
                     var crawler = _crawlers[i];
@@ -101,8 +102,11 @@ namespace OHunt.Web.Dataflow
                 throw new InvalidOperationException($"{nameof(SubmissionCrawlerCoordinator)} is not initialized");
             }
 
-            _cancel.Cancel();
-            return Task.WhenAll(_crawlerTasks);
+            lock (_lock)
+            {
+                _cancel.Cancel();
+                return Task.WhenAll(_crawlerTasks);
+            }
         }
 
         private async Task StartCrawler(ISubmissionCrawler crawler)
