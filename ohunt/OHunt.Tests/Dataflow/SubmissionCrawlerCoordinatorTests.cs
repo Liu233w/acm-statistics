@@ -451,6 +451,44 @@ namespace OHunt.Tests.Dataflow
             });
         }
 
+        [Fact]
+        public async Task WhenStartingCrawlerBeforePreviousFinish_ItShouldDoNothing()
+        {
+            // arrange
+            _coordinator.Initialize(new[] { _crawlerMock });
+            _coordinator.StartAllCrawlers();
+
+            // act
+            await Utils.WaitSecond();
+            _coordinator.StartAllCrawlers();
+
+            // assert
+            await Utils.WaitSecond();
+            _crawlerMock.CalledCount.Should().Be(1);
+        }
+
+        [Fact]
+        public async Task WhenCancellingCrawler_ItShouldWaitForCrawlerFinishing()
+        {
+            // arrange
+            _coordinator.Initialize(new[] { _crawlerMock });
+            _coordinator.StartAllCrawlers();
+            await SendToPipeline(new CrawlerMessage
+            {
+                Submission = new Submission { SubmissionId = 1 },
+                Checkpoint = true,
+            });
+
+            // act
+            var allCancel = _coordinator.Cancel();
+            _crawlerMock.CancellationToken.IsCancellationRequested.Should().BeTrue();
+            _crawlerMock.TaskSource.SetCanceled();
+            await allCancel;
+
+            // assert
+            WithDb(context => { context.Submission.Should().HaveCount(1); });
+        }
+
         private Task SendToPipeline(CrawlerMessage message)
         {
             return _crawlerMock.Pipeline.SendAsync(message);
