@@ -11,7 +11,6 @@ using Microsoft.OData.Edm;
 using OHunt.Web.Crawlers;
 using OHunt.Web.Database;
 using OHunt.Web.Dataflow;
-using OHunt.Web.Errors;
 using OHunt.Web.Models;
 using OHunt.Web.Options;
 using OHunt.Web.Schedule;
@@ -30,8 +29,6 @@ namespace OHunt.Web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers(opt => { opt.Filters.Add(new HttpResponseExceptionFilter()); });
-
             services.AddDbContextPool<OHuntDbContext>(options =>
                 options.UseMySql(Configuration.GetConnectionString("Default")));
 
