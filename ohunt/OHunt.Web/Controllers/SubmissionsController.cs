@@ -30,17 +30,25 @@ namespace OHunt.Web.Controllers
         {
             if (!Enum.TryParse<OnlineJudge>(oj, true, out var ojEnum))
             {
-                return BadRequest(new
-                {
-                    Error = true,
-                    Message = "Unrecognisable OJ name",
-                    Detail = "Please use url like /api/ohunt/submissions?oj=zoj to request",
-                    SupportedOj = Enum.GetNames(typeof(OnlineJudge)),
-                });
+                return RedirectToRoute("error");
             }
 
             return Ok(_context.Submission
                 .Where(e => e.OnlineJudgeId == ojEnum));
         }
+
+        [HttpGet("error", Name = "error")]
+        public ActionResult GetError()
+        {
+            return BadRequest(HelpObject);
+        }
+
+        private static readonly object HelpObject = new
+        {
+            Error = true,
+            Message = "Unrecognisable OJ name",
+            Detail = "Please use url like /api/ohunt/submissions?oj=zoj to request",
+            SupportedOj = Enum.GetNames(typeof(OnlineJudge)),
+        };
     }
 }
