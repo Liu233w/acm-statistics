@@ -39,7 +39,7 @@ namespace OHunt.Tests.Crawlers
             {
                 var message = await messages.ReceiveAsync();
                 message.CrawlerError.Should().BeNull();
-                message.IsCheckPoint.Should().BeTrue();
+                message.Checkpoint.Should().BeTrue();
                 list[i] = message.Submission;
             }
 

@@ -164,7 +164,7 @@ namespace OHunt.Web.Crawlers
                                 .GetString(),
                             Time = DateTime.Parse(submission.GetProperty("submitAt").GetString()),
                         },
-                        IsCheckPoint = true,
+                        Checkpoint = true,
                     });
                 }
                 catch (KeyNotFoundException e)
@@ -206,7 +206,7 @@ namespace OHunt.Web.Crawlers
                     Time = DateTime.Now,
                     Data = data,
                 },
-                IsCheckPoint = true,
+                Checkpoint = true,
             };
         }
     }

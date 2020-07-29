@@ -96,7 +96,7 @@ namespace OHunt.Tests.Dataflow
                 {
                     await _crawlerMock.Pipeline.SendAsync(new CrawlerMessage
                     {
-                        IsCheckPoint = true,
+                        Checkpoint = true,
                     });
                     await Utils.WaitSecond();
                 });
@@ -171,7 +171,7 @@ namespace OHunt.Tests.Dataflow
 
                 await _crawlerMock.Pipeline.SendAsync(new CrawlerMessage
                 {
-                    IsCheckPoint = true,
+                    Checkpoint = true,
                 });
             }
 
