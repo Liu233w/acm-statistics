@@ -118,5 +118,20 @@ namespace OHunt.Tests.Dataflow
             // assert
             WithDb(ctx => { ctx.Submission.Count().Should().Be(1); });
         }
+
+        [Fact]
+        public async Task WhenRequestingComplete_ItShouldInsertAllDataBeforeCompletion()
+        {
+            // arrange
+            await _inserter.SendAsync(DatabaseInserterMessage<Submission>
+                .OfEntity(new Submission { SubmissionId = 1 }));
+
+            // act
+            _inserter.Complete();
+
+            // assert
+            await _inserter.Completion;
+            WithDb(context => { context.Submission.Should().HaveCount(1); });
+        }
     }
 }
