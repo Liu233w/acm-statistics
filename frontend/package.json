@@ -34,7 +34,7 @@
     "vue-chartjs": "3.5.0"
   },
   "devDependencies": {
-    "@babel/preset-env": "7.10.4",
+    "@babel/preset-env": "7.11.0",
     "@vue/test-utils": "1.0.3",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "10.1.0",
