@@ -22,7 +22,7 @@
     "eslint": "7.5.0",
     "eslint-plugin-jest": "23.20.0",
     "eslint-plugin-lodash": "7.1.0",
-    "jest": "26.1.0",
+    "jest": "26.2.1",
     "supertest": "4.0.2"
   },
   "jest": {
