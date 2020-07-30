@@ -951,7 +951,7 @@ exports[`/about 1`] = `
 <html data-n-head-ssr>
 
   <head>
-    <title>&#x5173;&#x4E8E; - NWPU-ACM &#x67E5;&#x8BE2;&#x7CFB;&#x7EDF;</title>
+    <title>About - NWPU-ACM &#x67E5;&#x8BE2;&#x7CFB;&#x7EDF;</title>
     <meta data-n-head="ssr" charset="utf-8">
     <meta data-n-head="ssr" name="viewport" content="width=device-width, initial-scale=1">
     <meta data-n-head="ssr" data-hid="description" name="description" content="&#x897F;&#x5317;&#x5DE5;&#x4E1A;&#x5927;&#x5B66;ACM&#x57FA;&#x5730;&#x67E5;&#x9898;&#x4E3B;&#x9875;&#xFF0C;&#x63D0;&#x4F9B;&#x56FD;&#x5185;&#x5404;&#x5927;OJ&#x7684;&#x67E5;&#x8BE2;&#x9898;&#x91CF;&#x3001;&#x8BA1;&#x7B97;Rating&#x7684;&#x670D;&#x52A1;&#x3002;">
@@ -1717,7 +1717,31 @@ exports[`/about 1`] = `
                       <div class="my-2 v-card v-sheet theme--light">
                         <header class="v-sheet v-sheet--tile theme--dark v-toolbar v-app-bar light-blue" style="height:64px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;">
                           <div class="v-toolbar__content" style="height:64px;">
-                            <div class="v-toolbar__title">&#x5173;&#x4E8E;&#x6211;&#x4EEC;</div>
+                            <div class="v-toolbar__title">About US</div>
+                            <div class="spacer"></div>
+                          </div>
+                        </header>
+                        <div role="list" class="v-list v-sheet v-sheet--tile theme--light"><a tabindex="0" href="https://github.com/Liu233w/acm-statistics/blob/master/README.md#contributors-" target="_blank" rel="noopener noreferrer" role="listitem" class="v-list-item v-list-item--link theme--light">
+                            <div class="v-list-item__content">
+                              <div class="v-list-item__title">Developed by</div>
+                              <v-list-item-sub-title>Shumin Liu and Contributors</v-list-item-sub-title>
+                            </div>
+                          </a> <a tabindex="0" href="mailto:support@npuacm.info" role="listitem" class="v-list-item v-list-item--link theme--light">
+                            <div class="v-list-item__action"><i aria-hidden="true" class="v-icon notranslate blue--text text--lighten-2 material-icons theme--light">email</i></div>
+                            <div class="v-list-item__content">
+                              <v-list-item-sub-title>support@npuacm.info</v-list-item-sub-title>
+                            </div>
+                          </a> <a tabindex="0" href="https://github.com/Liu233w/acm-statistics" target="_blank" rel="noopener noreferrer" role="listitem" class="v-list-item v-list-item--link theme--light">
+                            <div class="v-list-item__action"><i aria-hidden="true" class="v-icon notranslate blue--text text--lighten-2 mdi mdi-github theme--light"></i></div>
+                            <div class="v-list-item__content">
+                              <v-list-item-sub-title>https://github.com/Liu233w/acm-statistics</v-list-item-sub-title>
+                            </div>
+                          </a></div>
+                      </div>
+                      <div class="my-2 v-card v-sheet theme--light">
+                        <header class="v-sheet v-sheet--tile theme--dark v-toolbar v-app-bar light-blue" style="height:64px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;">
+                          <div class="v-toolbar__content" style="height:64px;">
+                            <div class="v-toolbar__title">Special Thanks to</div>
                             <div class="spacer"></div>
                           </div>
                         </header>
@@ -1728,15 +1752,20 @@ exports[`/about 1`] = `
                             </div>
                           </div>
                           <div tabindex="-1" role="listitem" class="v-list-item theme--light">
+                            <div class="v-list-item__action"><i aria-hidden="true" class="v-icon notranslate blue--text text--lighten-2 material-icons theme--light">place</i></div>
                             <div class="v-list-item__content">
-                              <div class="v-list-item__title">&#x5730;&#x5740;</div>
                               <v-list-item-sub-title>&#x9655;&#x897F;&#x7701;&#x897F;&#x5B89;&#x5E02;&#x957F;&#x5B89;&#x533A;&#x897F;&#x5317;&#x5DE5;&#x4E1A;&#x5927;&#x5B66;&#x957F;&#x5B89;&#x6821;&#x533A;&#x8BA1;&#x7B97;&#x673A;&#x5B66;&#x9662;110&#x5BA4;</v-list-item-sub-title>
                             </div>
-                          </div>
-                          <div tabindex="-1" role="listitem" class="v-list-item theme--light">
+                          </div> <a tabindex="0" href="https://jq.qq.com/?_wv=1027&amp;k=5qgzfQc" target="_blank" rel="noopener noreferrer" role="listitem" class="v-list-item v-list-item--link theme--light">
+                            <div class="v-list-item__action"><i aria-hidden="true" class="v-icon notranslate blue--text text--lighten-2 mdi mdi-qqchat theme--light"></i></div>
                             <div class="v-list-item__content">
-                              <div class="v-list-item__title">ACM&#x534F;&#x4F1A;QQ&#x7FA4;</div>
                               <v-list-item-sub-title>198820787</v-list-item-sub-title>
+                            </div>
+                          </a>
+                          <div tabindex="0" role="listitem" class="v-list-item v-list-item--link theme--light">
+                            <div class="v-list-item__action"><i aria-hidden="true" class="v-icon notranslate blue--text text--lighten-2 mdi mdi-wechat theme--light"></i></div>
+                            <div class="v-list-item__content">
+                              <div class="v-list-item__title">&#x5FAE;&#x4FE1;&#x516C;&#x4F17;&#x53F7;</div>
                             </div>
                           </div>
                         </div>
@@ -1744,32 +1773,32 @@ exports[`/about 1`] = `
                       <div class="my-2 v-card v-sheet theme--light">
                         <header class="v-sheet v-sheet--tile theme--dark v-toolbar v-app-bar light-blue" style="height:64px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;">
                           <div class="v-toolbar__content" style="height:64px;">
-                            <div class="v-toolbar__title">&#x7CFB;&#x7EDF;&#x4FE1;&#x606F;</div>
+                            <div class="v-toolbar__title">System Info</div>
                             <div class="spacer"></div>
                           </div>
                         </header>
                         <div role="list" class="v-list v-sheet v-sheet--tile theme--light">
                           <div tabindex="-1" role="listitem" class="v-list-item theme--light">
                             <div class="v-list-item__content">
-                              <div class="v-list-item__title">&#x7248;&#x672C;&#x53F7;</div>
+                              <div class="v-list-item__title">Version</div>
                               <v-list-item-sub-title>0</v-list-item-sub-title>
                             </div>
                           </div>
                           <div tabindex="-1" role="listitem" class="v-list-item theme--light">
                             <div class="v-list-item__content">
-                              <div class="v-list-item__title">&#x6784;&#x5EFA;&#x65F6;&#x95F4;</div>
+                              <div class="v-list-item__title">Build time</div>
                               <v-list-item-sub-title>1/1/1970, 12:00:00 AM</v-list-item-sub-title>
                             </div>
                           </div> <a tabindex="0" href="https://github.com/Liu233w/acm-statistics/tree/0" role="listitem" class="v-list-item v-list-item--link theme--light">
                             <div class="v-list-item__content">
-                              <div class="v-list-item__title">&#x5F53;&#x524D;&#x7248;&#x672C;&#x6E90;&#x4EE3;&#x7801;</div>
+                              <div class="v-list-item__title">Source code of current version</div>
                               <v-list-item-sub-title>
                                 https://github.com/Liu233w/acm-statistics/tree/0
                               </v-list-item-sub-title>
                             </div>
                           </a> <a tabindex="0" href="https://github.com/Liu233w/acm-statistics/commits/0" role="listitem" class="v-list-item v-list-item--link theme--light">
                             <div class="v-list-item__content">
-                              <div class="v-list-item__title">&#x6700;&#x8FD1;&#x66F4;&#x65B0;</div>
+                              <div class="v-list-item__title">Recent updates</div>
                               <v-list-item-sub-title>
                                 https://github.com/Liu233w/acm-statistics/commits/0
                               </v-list-item-sub-title>
@@ -1779,10 +1808,13 @@ exports[`/about 1`] = `
                       </div>
                     </div>
                   </div>
+                  <div role="dialog" class="v-dialog__container">
+                    <!---->
+                  </div>
                 </div>
               </div>
             </main>
-            <footer class="v-footer v-sheet v-sheet--tile theme--light v-footer--absolute v-footer--inset" style="left:0px;right:0px;bottom:0px;"><span class="body-2">&#xA9; 2018 - 1970 NWPU-ACM &#x6280;&#x672F;&#x7EC4;</span>
+            <footer class="v-footer v-sheet v-sheet--tile theme--light v-footer--absolute v-footer--inset" style="left:0px;right:0px;bottom:0px;"><span class="body-2">&#xA9; 2018 - 1970 Shumin Liu and Contributors</span>
               <div class="spacer"></div> <span class="body-2">&#x9655;ICP&#x5907;17008184&#x53F7;</span></footer>
             <div class="message-panel v-card v-sheet theme--light" style="display:none;">
               <v-list class="pa-0"></v-list>
@@ -2793,7 +2825,7 @@ exports[`/history 1`] = `
                 </div>
               </div>
             </main>
-            <footer class="v-footer v-sheet v-sheet--tile theme--light v-footer--absolute v-footer--inset" style="left:0px;right:0px;bottom:0px;"><span class="body-2">&#xA9; 2018 - 1970 NWPU-ACM &#x6280;&#x672F;&#x7EC4;</span>
+            <footer class="v-footer v-sheet v-sheet--tile theme--light v-footer--absolute v-footer--inset" style="left:0px;right:0px;bottom:0px;"><span class="body-2">&#xA9; 2018 - 1970 Shumin Liu and Contributors</span>
               <div class="spacer"></div> <span class="body-2">&#x9655;ICP&#x5907;17008184&#x53F7;</span></footer>
             <div class="message-panel v-card v-sheet theme--light" style="display:none;">
               <v-list class="pa-0"></v-list>
@@ -3880,7 +3912,7 @@ exports[`/history/{historyId} 1`] = `
                 </div>
               </div>
             </main>
-            <footer class="v-footer v-sheet v-sheet--tile theme--light v-footer--absolute v-footer--inset" style="left:0px;right:0px;bottom:0px;"><span class="body-2">&#xA9; 2018 - 1970 NWPU-ACM &#x6280;&#x672F;&#x7EC4;</span>
+            <footer class="v-footer v-sheet v-sheet--tile theme--light v-footer--absolute v-footer--inset" style="left:0px;right:0px;bottom:0px;"><span class="body-2">&#xA9; 2018 - 1970 Shumin Liu and Contributors</span>
               <div class="spacer"></div> <span class="body-2">&#x9655;ICP&#x5907;17008184&#x53F7;</span></footer>
             <div class="message-panel v-card v-sheet theme--light" style="display:none;">
               <v-list class="pa-0"></v-list>
@@ -6877,7 +6909,7 @@ exports[`/settings 1`] = `
                 </div>
               </div>
             </main>
-            <footer class="v-footer v-sheet v-sheet--tile theme--light v-footer--absolute v-footer--inset" style="left:0px;right:0px;bottom:0px;"><span class="body-2">&#xA9; 2018 - 1970 NWPU-ACM &#x6280;&#x672F;&#x7EC4;</span>
+            <footer class="v-footer v-sheet v-sheet--tile theme--light v-footer--absolute v-footer--inset" style="left:0px;right:0px;bottom:0px;"><span class="body-2">&#xA9; 2018 - 1970 Shumin Liu and Contributors</span>
               <div class="spacer"></div> <span class="body-2">&#x9655;ICP&#x5907;17008184&#x53F7;</span></footer>
             <div class="message-panel v-card v-sheet theme--light" style="display:none;">
               <v-list class="pa-0"></v-list>
@@ -7745,7 +7777,7 @@ exports[`/statistics 1`] = `
                 </div>
               </div>
             </main>
-            <footer class="v-footer v-sheet v-sheet--tile theme--light v-footer--absolute v-footer--inset" style="left:0px;right:0px;bottom:0px;"><span class="body-2">&#xA9; 2018 - 1970 NWPU-ACM &#x6280;&#x672F;&#x7EC4;</span>
+            <footer class="v-footer v-sheet v-sheet--tile theme--light v-footer--absolute v-footer--inset" style="left:0px;right:0px;bottom:0px;"><span class="body-2">&#xA9; 2018 - 1970 Shumin Liu and Contributors</span>
               <div class="spacer"></div> <span class="body-2">&#x9655;ICP&#x5907;17008184&#x53F7;</span></footer>
             <div class="message-panel v-card v-sheet theme--light" style="display:none;">
               <v-list class="pa-0"></v-list>
