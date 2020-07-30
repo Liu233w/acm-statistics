@@ -21,7 +21,7 @@
   },
   "devDependencies": {
     "eslint": "7.5.0",
-    "eslint-plugin-jest": "23.19.0",
+    "eslint-plugin-jest": "23.20.0",
     "jest": "26.1.0",
     "supertest": "4.0.2"
   },
