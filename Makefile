@@ -42,6 +42,8 @@ ifeq ($(target),)
 	cd ./build && $(MAKE) -f commitlint.mk clean
 	cd ./build && $(MAKE) -f shell.mk clean
 	@echo cleaned all target
+	@echo running docker system prune
+	docker system prune -f
 else
 	@echo cleaned $(target)
 endif
