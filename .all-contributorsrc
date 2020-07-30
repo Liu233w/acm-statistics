@@ -129,7 +129,7 @@
       ]
     }
   ],
-  "contributorsPerLine": 7,
+  "contributorsPerLine": 6,
   "contributorTemplate": "<img src=\"<%= contributor.avatar_url %>\" width=\"<%= options.imageSize %>px;\" alt=\"\"/><br /><sub><a href=\"<%= contributor.profile %>\"><b><%= contributor.name %></b></a><a href=\"https://github.com/<%= contributor.login %>\">🔗</a></sub><br /><%= contributions %>",
   "contributorsSortAlphabetically": true,
   "projectName": "acm-statistics",
