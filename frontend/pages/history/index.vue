@@ -30,6 +30,7 @@
         :server-items-length="serverItemsLength"
         :page.sync="page"
         item-key="historyId"
+        :footer-props="footerProps"
       >
         <template v-slot:top>
           <v-btn
@@ -140,6 +141,13 @@ export default {
             filled: '-1',
           },
         ],
+      }
+    },
+    footerProps() {
+      if (this.loading) {
+        return { disablePagination: true, disableItemsPerPage: true }
+      } else {
+        return undefined
       }
     },
   },
