@@ -57,5 +57,12 @@ namespace OHunt.Web.Crawlers
         {
             return GetJson(new FlurlRequest(url), cancellationToken);
         }
+
+        protected Task<JsonDocument> GetJson(
+            string url,
+            CancellationToken cancellationToken)
+        {
+            return GetJson(new Url(url), cancellationToken);
+        }
     }
 }
