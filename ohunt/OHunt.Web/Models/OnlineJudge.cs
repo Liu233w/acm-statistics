@@ -1,4 +1,5 @@
-﻿namespace OHunt.Web.Models
+﻿// ReSharper disable InconsistentNaming
+namespace OHunt.Web.Models
 {
     public enum OnlineJudge
     {
