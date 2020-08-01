@@ -14,6 +14,8 @@ namespace OHunt.Web.Database
 
         public DbSet<CrawlerError> CrawlerErrors { get; set; } = null!;
 
+        public DbSet<ProblemLabelMapping> ProblemLabelMappings { get; set; } = null!;
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Submission>()
