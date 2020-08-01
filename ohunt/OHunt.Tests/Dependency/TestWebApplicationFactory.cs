@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using OHunt.Web.Database;
-using OHunt.Web.Schedule;
+using OHunt.Web.Services;
 using Xunit.Abstractions;
 
 namespace OHunt.Tests.Dependency

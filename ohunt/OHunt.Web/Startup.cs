@@ -13,7 +13,7 @@ using OHunt.Web.Database;
 using OHunt.Web.Dataflow;
 using OHunt.Web.Models;
 using OHunt.Web.Options;
-using OHunt.Web.Schedule;
+using OHunt.Web.Services;
 
 namespace OHunt.Web
 {

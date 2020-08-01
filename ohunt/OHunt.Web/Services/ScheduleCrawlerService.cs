@@ -5,9 +5,8 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using OHunt.Web.Crawlers;
 using OHunt.Web.Dataflow;
-using OHunt.Web.Models;
 
-namespace OHunt.Web.Schedule
+namespace OHunt.Web.Services
 {
     public class ScheduleCrawlerService : IHostedService, IDisposable
     {
