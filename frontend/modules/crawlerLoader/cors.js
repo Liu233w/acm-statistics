@@ -20,5 +20,11 @@ superagent.get = function (url) {
 }
 
 superagent.post = function (url) {
-  return postFunc(corsProxyUrl + url)
+  // eslint-disable-next-line lodash/prefer-lodash-method
+  if (url.startsWith('/')) {
+    // 调用爬虫API
+    return postFunc(url)
+  } else {
+    return postFunc(corsProxyUrl + url)
+  }
 }
