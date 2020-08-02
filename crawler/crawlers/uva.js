@@ -29,20 +29,16 @@ module.exports = async function (config, username) {
     }
   })
 
-  const solvedListPromises = []
-  for (let item of acSet) {
-    solvedListPromises.push(getProblemNumFromProblemId(item))
-  }
+  const ohuntRes = await request
+    .post('/api/ohunt/problems/resolve-label')
+    .send({
+      onlineJudge: 'uva',
+      list: [...acSet],
+    })
 
   return {
     solved: acSet.size,
     submissions: problemArray.length,
-    solvedList: await Promise.all(solvedListPromises),
+    solvedList: Object.values(ohuntRes.body.result),
   }
-}
-
-async function getProblemNumFromProblemId(pid) {
-  // in uva, problem id (pid) is different from problem number (num)
-  const res = await request.get(prefix + '/api/p/id/' + pid)
-  return String(res.body.num)
 }
