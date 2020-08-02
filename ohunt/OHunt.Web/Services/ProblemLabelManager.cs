@@ -18,7 +18,8 @@ namespace OHunt.Web.Services
         private static readonly Type[] CrawlersToInit
             =
             {
-                // TODO: add crawlers
+                typeof(UvaMappingCrawler),
+                typeof(UvaLiveMappingCrawler),
             };
 
         private readonly Dictionary<MappingOnlineJudge, IMappingCrawler> _crawlers;

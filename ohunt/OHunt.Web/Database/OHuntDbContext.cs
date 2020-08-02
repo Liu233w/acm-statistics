@@ -25,6 +25,9 @@ namespace OHunt.Web.Database
                 .HasIndex(e => e.UserName);
             modelBuilder.Entity<Submission>()
                 .HasIndex(e => e.Status);
+
+            modelBuilder.Entity<ProblemLabelMapping>()
+                .HasKey(entity => new { entity.ProblemId, entity.OnlineJudgeId });
         }
     }
 }
