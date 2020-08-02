@@ -1,4 +1,5 @@
 using System.Text;
+using System.Text.Json.Serialization;
 using Microsoft.AspNet.OData.Builder;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -33,6 +34,13 @@ namespace OHunt.Web
                 options.UseMySql(Configuration.GetConnectionString("Default")));
 
             services.AddOData();
+
+            services.AddControllers()
+                .AddJsonOptions(opts =>
+                {
+                    // use string as enum
+                    opts.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
+                });
 
             services.AddSingleton<IDbBuilder, OHuntDbBuilder>();
 
