@@ -7,7 +7,7 @@ using OHunt.Web.Services;
 namespace OHunt.Web.Controllers
 {
     [ApiController]
-    [Route("/ohunt/problems/")]
+    [Route("/api/ohunt/problems/")]
     public class ProblemController : ControllerBase
     {
         private readonly ProblemLabelManager _labelManager;

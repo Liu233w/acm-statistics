@@ -29,7 +29,7 @@ namespace OHunt.Tests.Web
                     });
 
                     using var client = Factory.CreateClient();
-                    response = await client.PostAsync("/ohunt/problems/resolve-label",
+                    response = await client.PostAsync("/api/ohunt/problems/resolve-label",
                         new StringContent("{\"onlineJudge\": \"uva\", \"list\": [1]}",
                             Encoding.Default,
                             MediaTypeNames.Application.Json));
@@ -59,7 +59,7 @@ namespace OHunt.Tests.Web
                 {
                     httpTest = new HttpTest();
                     using var client = Factory.CreateClient();
-                    response = await client.PostAsync("/ohunt/problems/resolve-label",
+                    response = await client.PostAsync("/api/ohunt/problems/resolve-label",
                         new StringContent("{\"onlineJudge\": \"uva\", \"list\": [1]}",
                             Encoding.Default,
                             MediaTypeNames.Application.Json));
