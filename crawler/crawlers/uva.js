@@ -30,7 +30,7 @@ module.exports = async function (config, username) {
   })
 
   const ohuntRes = await request
-    .post('/api/ohunt/problems/resolve-label')
+    .post('https://new.npuacm.info/api/ohunt/problems/resolve-label')
     .send({
       onlineJudge: 'uva',
       list: [...acSet],
