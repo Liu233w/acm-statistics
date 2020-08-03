@@ -17,7 +17,7 @@ jobs:
       id: check
       uses: WyriHaximus/github-action-wait-for-status@v1
       with:
-        ignoreActions: codecov/project,codecov/patch,deploy
+        ignoreActions: codecov/project,codecov/patch,deploy,E2E on pull request
         checkInterval: 60
       env:
         GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
