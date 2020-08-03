@@ -15,7 +15,7 @@ jobs:
 
     - name: 'Wait for status checks'
       id: check
-      uses: "WyriHaximus/github-action-wait-for-status@v2"
+      uses: WyriHaximus/github-action-wait-for-status@v1
       with:
         ignoreActions: codecov/project,codecov/patch,deploy
         checkInterval: 60
