@@ -49,6 +49,20 @@
                 <v-list-item-sub-title>https://github.com/Liu233w/acm-statistics</v-list-item-sub-title>
               </v-list-item-content>
             </v-list-item>
+            <v-list-item
+              href="https://join.slack.com/t/acm-statistics/shared_invite/zt-geel58eq-MjD3tBukUAC4ZSCS4DoLTw"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <v-list-item-action>
+                <v-icon class="blue--text text--lighten-2">
+                  mdi-slack
+                </v-icon>
+              </v-list-item-action>
+              <v-list-item-content>
+                <v-list-item-sub-title>Slack: ACM Statistics Development</v-list-item-sub-title>
+              </v-list-item-content>
+            </v-list-item>
           </v-list>
         </v-card>
         <v-card class="my-2">
