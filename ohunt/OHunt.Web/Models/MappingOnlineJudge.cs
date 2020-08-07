@@ -8,5 +8,6 @@ namespace OHunt.Web.Models
     {
         UVA,
         UVALive,
+        OurOJ,
     }
 }
