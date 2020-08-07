@@ -29,7 +29,10 @@ namespace OHunt.Web.Crawlers
                 await Task.Delay(delta, cancellationToken);
             }
 
-            var document = await Context.OpenAsync(url, cancellation: cancellationToken);
+            var response = await url.GetStreamAsync(cancellationToken);
+            var document = await Context.OpenAsync(
+                req => req.Content(response),
+                cancellationToken);
             _lastRequestTime = DateTime.Now;
 
             return document;
