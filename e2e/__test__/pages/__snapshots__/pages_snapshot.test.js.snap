@@ -1736,6 +1736,11 @@ exports[`/about 1`] = `
                             <div class="v-list-item__content">
                               <v-list-item-sub-title>https://github.com/Liu233w/acm-statistics</v-list-item-sub-title>
                             </div>
+                          </a> <a tabindex="0" href="https://join.slack.com/t/acm-statistics/shared_invite/zt-geel58eq-MjD3tBukUAC4ZSCS4DoLTw" target="_blank" rel="noopener noreferrer" role="listitem" class="v-list-item v-list-item--link theme--light">
+                            <div class="v-list-item__action"><i aria-hidden="true" class="v-icon notranslate blue--text text--lighten-2 mdi mdi-slack theme--light"></i></div>
+                            <div class="v-list-item__content">
+                              <v-list-item-sub-title>Slack: ACM Statistics Development</v-list-item-sub-title>
+                            </div>
                           </a></div>
                       </div>
                       <div class="my-2 v-card v-sheet theme--light">
