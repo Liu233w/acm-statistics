@@ -43,7 +43,7 @@
     "eslint": "7.6.0",
     "eslint-config-standard": "14.1.1",
     "eslint-loader": "4.0.2",
-    "eslint-plugin-html": "6.0.2",
+    "eslint-plugin-html": "6.0.3",
     "eslint-plugin-import": "2.22.0",
     "eslint-plugin-jest": "23.20.0",
     "eslint-plugin-lodash": "7.1.0",
