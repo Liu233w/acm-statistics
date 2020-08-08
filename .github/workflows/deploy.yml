@@ -27,3 +27,7 @@ jobs:
       run: |
         echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
         make tag-and-push
+        
+    - name: Failed
+      if: steps.check.outputs.status != 'success'
+      uses: cutenode/action-always-fail@v1.0.1
