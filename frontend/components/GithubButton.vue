@@ -17,7 +17,7 @@
         </v-icon>
       </v-btn>
     </template>
-    <span>Star me on Github!</span>
+    <span>Star me on GitHub!</span>
   </v-tooltip>
 </template>
 
