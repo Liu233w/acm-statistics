@@ -853,6 +853,53 @@ describe('getters', () => {
 
       expect(res).toBe(10)
     })
+
+    it('works correctly when vj returns label with its own oj name', () => {
+      const state = {
+        workers: [
+          {
+            solved: 1,
+            solvedList: ['1001'],
+            crawlerName: 'cr1',
+          },
+          {
+            solved: 4,
+            solvedList: null,
+            crawlerName: 'cr1',
+          },
+          {
+            solved: 2,
+            solvedList: ['1001', '1002'],
+            crawlerName: 'cr2',
+          },
+          {
+            solved: 5,
+            solvedList: ['cr1-1001', 'cr1-1002', 'cr2-1002', 'cr2-1003', 'NN-1001', 'cr3-1001'],
+            crawlerName: 'cr3',
+          },
+          { // redundant name
+            solved: 1,
+            solvedList: ['cr1-1001', 'cr3-1001', 'cr4-1001'],
+            crawlerName: 'cr4',
+          },
+        ],
+        crawlers: {
+          cr1: {},
+          cr2: {},
+          cr3: {
+            virtual_judge: true,
+          },
+          cr4: {
+            virtual_judge: true,
+          },
+        },
+      }
+      const nullSolvedListWorkers = store.getters.nullSolvedListWorkers(state)
+
+      const res = store.getters.solvedNum(state, { nullSolvedListWorkers })
+
+      expect(res).toBe(12)
+    })
   })
 
   describe('notWorkingRate', () => {
