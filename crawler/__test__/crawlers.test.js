@@ -302,6 +302,7 @@ describe('vjudge', () => {
     expect(res.solvedList).toContain('codeforces-436B')
     expect(res.submissionsByCrawlerName).toBeTruthy()
     expect(res.submissionsByCrawlerName.hdu).toBeGreaterThan(100)
+    expect(res).toMatchSnapshot()
   }, 50000)
 })
 
