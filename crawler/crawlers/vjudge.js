@@ -2,6 +2,10 @@ const request = require('superagent')
 
 const hostName = 'vjudge.net'
 
+// put the object at module level to cache the session
+let agent = request.agent()
+let config = {}
+
 /**
  * vjudge 的设置项
  * @typedef vjudgeCrawlerConfig
@@ -16,16 +20,28 @@ const hostName = 'vjudge.net'
  * @param username 要爬取的用户名
  * @returns {Promise<crawlerReturns>} - 见 configReader
  */
-module.exports = async function (config, username) {
+module.exports = async function (localConfig, username) {
 
   if (!username) {
     throw new Error('Please enter username')
   }
 
+  config = localConfig
   // console.log(config)
 
-  const agent = request.agent()
+  const acSet = new Set()
+  const submissionsByCrawlerName = {}
+  const submissions = await queryForNumber(username, null, acSet, submissionsByCrawlerName)
 
+  return {
+    solved: acSet.size,
+    submissions: submissions,
+    solvedList: [...acSet],
+    submissionsByCrawlerName,
+  }
+}
+
+async function tryLogin() {
   let loginStatus
   try {
     loginStatus = await agent
@@ -45,17 +61,6 @@ module.exports = async function (config, username) {
   }
 
   // console.log('vjudge login success')
-
-  const acSet = new Set()
-  const submissionsByCrawlerName = {}
-  const submissions = await queryForNumber(agent, username, null, acSet, submissionsByCrawlerName)
-
-  return {
-    solved: acSet.size,
-    submissions: submissions,
-    solvedList: [...acSet],
-    submissionsByCrawlerName,
-  }
 }
 
 /**
@@ -109,14 +114,13 @@ const MAX_PAGE_SIZE = 500
 
 /**
  * 递归查询题数
- * @param agent
  * @param username
  * @param maxId
  * @param {Set<{String}>} acSet The problem list that accepted, function will change this object
  * @param {Object.{string, number}} submissionsByCrawlerName submissions in each oj, function will change this object
  * @returns {Promise<Number>}
  */
-async function queryForNumber(agent, username, maxId, acSet, submissionsByCrawlerName) {
+async function queryForNumber(username, maxId, acSet, submissionsByCrawlerName) {
 
   // 发起请求 /////////////////////////////////////////////////////////////
   const queryObject = {
@@ -136,6 +140,11 @@ async function queryForNumber(agent, username, maxId, acSet, submissionsByCrawle
 
   if (!res.ok) {
     throw new Error(`Server Response Error: ${res.status}`)
+  }
+
+  if (res.body.error && res.body.error === 'Please login and confirm your email first') {
+    await tryLogin()
+    return queryForNumber(username, maxId, acSet, submissionsByCrawlerName)
   }
 
   // 处理结果 /////////////////////////////////////////////////////////////
@@ -189,7 +198,7 @@ async function queryForNumber(agent, username, maxId, acSet, submissionsByCrawle
     // 已经读完
     return total
   } else {
-    const ret = await queryForNumber(agent, username, newMaxId, acSet, submissionsByCrawlerName)
+    const ret = await queryForNumber(username, newMaxId, acSet, submissionsByCrawlerName)
     return ret + total
   }
 }
