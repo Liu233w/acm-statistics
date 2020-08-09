@@ -975,6 +975,332 @@ namespace AcmStatisticsBackend.Tests.Crawlers
         }
 
         [Fact]
+        public void VirtualJudge_WhenItHasLocalJudge_ShouldWorkAsLocalJudge()
+        {
+            // arrange
+            var histories = new[]
+            {
+                new QueryWorkerHistory
+                {
+                    CrawlerName = "cr3",
+                    IsVirtualJudge = true,
+                    Solved = 1,
+                    Submission = 20,
+                    Username = "u1",
+                    SolvedList = new[]
+                    {
+                        "cr3-1001",
+                    },
+                    SubmissionsByCrawlerName = new Dictionary<string, int>
+                    {
+                        { "cr3", 20 },
+                    },
+                },
+            };
+
+            // act
+            var result = _summaryGenerator.Generate(
+                _crawlerMeta,
+                histories);
+
+            // assert
+            result.Solved.Should().Be(1);
+            result.Submission.Should().Be(20);
+            result.SummaryWarnings.Should().HaveCount(0);
+
+            result.QueryCrawlerSummaries.Should().BeEquivalentTo(new List<QueryCrawlerSummary>
+            {
+                new QueryCrawlerSummary
+                {
+                    CrawlerName = "cr3",
+                    IsVirtualJudge = false,
+                    Solved = 1,
+                    Submission = 20,
+                    Usernames = new List<UsernameInCrawler>
+                    {
+                        new UsernameInCrawler
+                        {
+                            Username = "u1",
+                        },
+                    },
+                },
+            });
+        }
+
+        [Fact]
+        public void VirtualJudge_WhenItHasLocalJudge_AndProvidedByAnotherVj_ShouldWorkAsLocalJudge()
+        {
+            // arrange
+            var histories = new[]
+            {
+                new QueryWorkerHistory
+                {
+                    CrawlerName = "cr3",
+                    IsVirtualJudge = true,
+                    Solved = 1,
+                    Submission = 20,
+                    Username = "u1",
+                    SolvedList = new[]
+                    {
+                        "cr3-1001",
+                    },
+                    SubmissionsByCrawlerName = new Dictionary<string, int>
+                    {
+                        { "cr3", 20 },
+                    },
+                },
+                new QueryWorkerHistory
+                {
+                    CrawlerName = "cr4",
+                    IsVirtualJudge = true,
+                    Solved = 2,
+                    Submission = 20,
+                    Username = "u2",
+                    SolvedList = new[]
+                    {
+                        "cr3-1001",
+                        "cr3-1002",
+                    },
+                    SubmissionsByCrawlerName = new Dictionary<string, int>
+                    {
+                        { "cr3", 20 },
+                    },
+                },
+            };
+
+            // act
+            var result = _summaryGenerator.Generate(
+                _crawlerMeta,
+                histories);
+
+            // assert
+            result.Solved.Should().Be(2);
+            result.Submission.Should().Be(40);
+            result.SummaryWarnings.Should().HaveCount(0);
+
+            result.QueryCrawlerSummaries.Should().BeEquivalentTo(new List<QueryCrawlerSummary>
+            {
+                new QueryCrawlerSummary
+                {
+                    CrawlerName = "cr3",
+                    IsVirtualJudge = false,
+                    Solved = 2,
+                    Submission = 40,
+                    Usernames = new List<UsernameInCrawler>
+                    {
+                        new UsernameInCrawler
+                        {
+                            Username = "u1",
+                        },
+                        new UsernameInCrawler
+                        {
+                            Username = "u2",
+                            FromCrawlerName = "cr4",
+                        },
+                    },
+                },
+            });
+        }
+
+        [Fact]
+        public void VirtualJudge_WhenItHasLocalJudge_AndListNotMerged_ShouldOutputTwoSummary()
+        {
+            // arrange
+            var histories = new[]
+            {
+                new QueryWorkerHistory
+                {
+                    CrawlerName = "cr3",
+                    IsVirtualJudge = true,
+                    Solved = 1,
+                    Submission = 35,
+                    Username = "u1",
+                    SolvedList = new[]
+                    {
+                        "NN-1001",
+                        "cr1-1001",
+                        "cr3-1001",
+                    },
+                    SubmissionsByCrawlerName = new Dictionary<string, int>
+                    {
+                        { "cr1", 5 },
+                        { "NN", 10 },
+                        { "cr3", 20 },
+                    },
+                },
+            };
+
+            // act
+            var result = _summaryGenerator.Generate(
+                _crawlerMeta,
+                histories);
+
+            // assert
+            result.Solved.Should().Be(3);
+            result.Submission.Should().Be(35);
+            result.SummaryWarnings.Should().HaveCount(0);
+
+            result.QueryCrawlerSummaries.Should().BeEquivalentTo(new List<QueryCrawlerSummary>
+            {
+                new QueryCrawlerSummary
+                {
+                    CrawlerName = "cr1",
+                    IsVirtualJudge = false,
+                    Solved = 1,
+                    Submission = 5,
+                    Usernames = new List<UsernameInCrawler>
+                    {
+                        new UsernameInCrawler
+                        {
+                            FromCrawlerName = "cr3",
+                            Username = "u1",
+                        },
+                    },
+                },
+                // cr3 should has 2 crawler summary
+                // as local judge and virtual judge, separately
+                new QueryCrawlerSummary
+                {
+                    CrawlerName = "cr3",
+                    IsVirtualJudge = true,
+                    Solved = 1,
+                    Submission = 10,
+                    Usernames = new List<UsernameInCrawler>
+                    {
+                        new UsernameInCrawler
+                        {
+                            Username = "u1",
+                        },
+                    },
+                },
+                new QueryCrawlerSummary
+                {
+                    CrawlerName = "cr3",
+                    IsVirtualJudge = false,
+                    Solved = 1,
+                    Submission = 20,
+                    Usernames = new List<UsernameInCrawler>
+                    {
+                        new UsernameInCrawler
+                        {
+                            Username = "u1",
+                        },
+                    },
+                },
+            });
+        }
+
+        [Fact]
+        public void VirtualJudge_WhenItHasLocalJudge_CanOutputTwoDifferentUsernames()
+        {
+            // arrange
+            var histories = new[]
+            {
+                new QueryWorkerHistory
+                {
+                    CrawlerName = "cr3",
+                    IsVirtualJudge = true,
+                    Solved = 1,
+                    Submission = 35,
+                    Username = "u1",
+                    SolvedList = new[]
+                    {
+                        "NN-1001",
+                        "cr1-1001",
+                        "cr3-1001",
+                    },
+                    SubmissionsByCrawlerName = new Dictionary<string, int>
+                    {
+                        { "cr1", 5 },
+                        { "NN", 10 },
+                        { "cr3", 20 },
+                    },
+                },
+                new QueryWorkerHistory
+                {
+                    CrawlerName = "cr4",
+                    IsVirtualJudge = true,
+                    Solved = 2,
+                    Submission = 20,
+                    Username = "u2",
+                    SolvedList = new[]
+                    {
+                        "cr3-1001",
+                        "cr3-1002",
+                    },
+                    SubmissionsByCrawlerName = new Dictionary<string, int>
+                    {
+                        { "cr3", 20 },
+                    },
+                },
+            };
+
+            // act
+            var result = _summaryGenerator.Generate(
+                _crawlerMeta,
+                histories);
+
+            // assert
+            result.Solved.Should().Be(4);
+            result.Submission.Should().Be(55);
+            result.SummaryWarnings.Should().HaveCount(0);
+
+            result.QueryCrawlerSummaries.Should().BeEquivalentTo(new List<QueryCrawlerSummary>
+            {
+                new QueryCrawlerSummary
+                {
+                    CrawlerName = "cr1",
+                    IsVirtualJudge = false,
+                    Solved = 1,
+                    Submission = 5,
+                    Usernames = new List<UsernameInCrawler>
+                    {
+                        new UsernameInCrawler
+                        {
+                            FromCrawlerName = "cr3",
+                            Username = "u1",
+                        },
+                    },
+                },
+                // cr3 should has 2 crawler summary
+                // as local judge and virtual judge, separately
+                new QueryCrawlerSummary
+                {
+                    CrawlerName = "cr3",
+                    IsVirtualJudge = true,
+                    Solved = 1,
+                    Submission = 10,
+                    Usernames = new List<UsernameInCrawler>
+                    {
+                        new UsernameInCrawler
+                        {
+                            Username = "u1",
+                        },
+                    },
+                },
+                new QueryCrawlerSummary
+                {
+                    CrawlerName = "cr3",
+                    IsVirtualJudge = false,
+                    Solved = 2,
+                    Submission = 40,
+                    Usernames = new List<UsernameInCrawler>
+                    {
+                        new UsernameInCrawler
+                        {
+                            Username = "u1",
+                        },
+                        new UsernameInCrawler
+                        {
+                            Username = "u2",
+                            FromCrawlerName = "cr4",
+                        },
+                    },
+                },
+            });
+        }
+
+        [Fact]
         public void WhenInputErrorWorker_ShouldIgnore()
         {
             // arrange

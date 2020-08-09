@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Diagnostics;
 using System.Diagnostics.Contracts;
 using System.Linq;
 using Abp.Dependency;
@@ -50,26 +51,53 @@ namespace AcmStatisticsBackend.Crawlers
                 });
             }
 
-            var summaryDict = summaries.ToDictionary(
-                p => p.Key,
-                p => new QueryCrawlerSummary
-                {
-                    CrawlerName = p.Value.CrawlerName,
-                    Solved = p.Value.SolvedSet.Count,
-                    Submission = p.Value.Submissions,
-                    Usernames = p.Value.Usernames.ToList(),
-                    IsVirtualJudge = p.Value.IsVirtualJudge,
-                });
+            var localJudgeDict = summaries
+                .Where(it => it.Value.IsVirtualJudge == false)
+                .ToDictionary(
+                    p => p.Key,
+                    p => new QueryCrawlerSummary
+                    {
+                        CrawlerName = p.Value.CrawlerName,
+                        Solved = p.Value.SolvedSet.Count,
+                        Submission = p.Value.Submissions,
+                        Usernames = p.Value.Usernames.ToList(),
+                        IsVirtualJudge = p.Value.IsVirtualJudge,
+                    });
 
+            // directlyAddSolvedWorkerList only exists in local judges
             foreach (var worker in directlyAddSolvedWorkerList)
             {
-                var summary = summaryDict[worker.CrawlerName];
+                var summary = localJudgeDict[worker.CrawlerName];
                 summary.Solved += worker.Solved;
                 summary.Submission += worker.Submission;
             }
 
-            var summaryList = summaryDict
+            var virtualJudgeList = summaries
+                .Select(it => it.Value)
+                .Where(it => it.IsVirtualJudge)
+                .SelectMany(it => new[]
+                {
+                    new QueryCrawlerSummary
+                    {
+                        CrawlerName = it.CrawlerName,
+                        Solved = it.SolvedSet.Count,
+                        Submission = it.Submissions,
+                        Usernames = it.Usernames.ToList(),
+                        IsVirtualJudge = false,
+                    },
+                    new QueryCrawlerSummary
+                    {
+                        CrawlerName = it.CrawlerName,
+                        Solved = it.NotMergedSolvedSet.Count,
+                        Submission = it.NotMergedSubmissions,
+                        Usernames = it.NotMergedUsernames.ToList(),
+                        IsVirtualJudge = true,
+                    },
+                });
+
+            var summaryList = localJudgeDict
                 .Select(p => p.Value)
+                .Concat(virtualJudgeList)
                 .Where(a => a.Usernames.Count > 0
                             && (a.Submission > 0 || a.Solved > 0))
                 .ToList();
@@ -84,6 +112,9 @@ namespace AcmStatisticsBackend.Crawlers
             };
         }
 
+        /// <summary>
+        /// Pre-process data
+        /// </summary>
         private static void ResolveSummaryData(
             IReadOnlyCollection<CrawlerMetaItem> crawlerMeta,
             IReadOnlyCollection<QueryWorkerHistory> workerHistories,
@@ -103,11 +134,19 @@ namespace AcmStatisticsBackend.Crawlers
                 summary.Usernames.Add(new UsernameInCrawler
                 {
                     Username = worker.Username,
-                    FromCrawlerName = null,
                 });
+                if (summary.IsVirtualJudge)
+                {
+                    summary.NotMergedUsernames.Add(new UsernameInCrawler
+                    {
+                        Username = worker.Username,
+                    });
+                }
 
                 if (worker.SolvedList == null)
                 {
+                    Debug.Assert(worker.IsVirtualJudge == false,
+                        "All virtual judges should have solved list");
                     warnings.Add(new SummaryWarning(
                         worker.CrawlerName,
                         "This crawler does not have a solved list and " +
@@ -205,19 +244,20 @@ namespace AcmStatisticsBackend.Crawlers
                 var (problemCrawlerName, problemId)
                     = problem.Split('-');
 
-                if (summaries.TryGetValue(problemCrawlerName,
-                    out var problemCrawlerSummary))
+                if (summaries.TryGetValue(problemCrawlerName, out var problemCrawlerSummary))
                 {
                     problemCrawlerSummary.Usernames.Add(new UsernameInCrawler
                     {
                         Username = worker.Username,
-                        FromCrawlerName = worker.CrawlerName,
+                        FromCrawlerName = worker.CrawlerName == problemCrawlerName
+                            ? null
+                            : worker.CrawlerName,
                     });
                     problemCrawlerSummary.SolvedSet.Add(problemId);
                 }
                 else
                 {
-                    vjSummary.SolvedSet.Add(problem);
+                    vjSummary.NotMergedSolvedSet.Add(problem);
                 }
             }
         }
@@ -236,12 +276,14 @@ namespace AcmStatisticsBackend.Crawlers
                     crawlerSummary.Usernames.Add(new UsernameInCrawler
                     {
                         Username = worker.Username,
-                        FromCrawlerName = worker.CrawlerName,
+                        FromCrawlerName = worker.CrawlerName == crawler
+                            ? null
+                            : worker.CrawlerName,
                     });
                 }
                 else
                 {
-                    vjSummary.Submissions += submissions;
+                    vjSummary.NotMergedSubmissions += submissions;
                 }
             }
         }
@@ -266,13 +308,21 @@ namespace AcmStatisticsBackend.Crawlers
         {
             public string CrawlerName { get; set; }
             public bool IsVirtualJudge { get; set; }
-            public HashSet<UsernameInCrawler> Usernames { get; }
+
+            // in virtual judge, the two items means its local judge result
             public HashSet<string> SolvedSet { get; } = new HashSet<string>();
             public int Submissions { get; set; }
+            public HashSet<UsernameInCrawler> Usernames { get; }
+
+            // only work in virtual judge
+            public HashSet<string> NotMergedSolvedSet { get; } = new HashSet<string>();
+            public int NotMergedSubmissions { get; set; }
+            public HashSet<UsernameInCrawler> NotMergedUsernames { get; }
 
             public CrawlerSummaryData()
             {
                 Usernames = new HashSet<UsernameInCrawler>(new UsernameInCrawlerEqualityComparer());
+                NotMergedUsernames = new HashSet<UsernameInCrawler>(new UsernameInCrawlerEqualityComparer());
             }
         }
 
