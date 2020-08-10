@@ -74,7 +74,7 @@ before(() => {
 
 describe('summary page', () => {
 
-  it('should render correctly', () => {
+  it.only('should render correctly', () => {
     cy.login(username)
     cy.visit(summaryUrl)
 
@@ -83,7 +83,7 @@ describe('summary page', () => {
       .parent()
       .invoke('attr', 'style', 'background-color: black')
     cy.get('.v-toolbar__title')
-      .invoke('attr', 'style', 'background-color: black')
+      .invoke('text', '[GENERATED DATE]')
     // hide account username
     cy.get(`button:contains("${username}")`)
       .invoke('attr', 'style', 'background-color: black')
