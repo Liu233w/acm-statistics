@@ -3,8 +3,8 @@ const request = require('superagent')
 const hostName = 'vjudge.net'
 
 // put the object at module level to cache the session
-let agent = request.agent()
-let config = {}
+let agent = null
+let config = null
 
 const MAX_PAGE_SIZE = 500
 
@@ -29,6 +29,9 @@ module.exports = async function (localConfig, username) {
   }
 
   config = localConfig
+  if (!agent) {
+    await tryLogin()
+  }
   // console.log(config)
 
   const acSet = new Set()
@@ -61,6 +64,8 @@ module.exports = async function (localConfig, username) {
     if (res.body.error && /User .* does not exist/.test(res.body.error)) {
       throw new Error('The user does not exist')
     }
+
+    // console.log(res.body)
 
     const problemArray = res.body.data
 
@@ -111,6 +116,10 @@ module.exports = async function (localConfig, username) {
 }
 
 async function tryLogin() {
+  // console.log('try login')
+
+  agent = request.agent()
+
   let loginStatus
   try {
     loginStatus = await agent
@@ -125,6 +134,9 @@ async function tryLogin() {
     error.innerError = err
     throw error
   }
+
+  // console.log('loginStatus', loginStatus)
+
   if (loginStatus.text !== 'success') {
     throw new Error('vjudge login failed')
   }
