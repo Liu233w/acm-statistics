@@ -24,6 +24,11 @@
                 <v-list-item-title>Developed by</v-list-item-title>
                 <v-list-item-sub-title>Shumin Liu and Contributors</v-list-item-sub-title>
               </v-list-item-content>
+              <v-list-item-action>
+                <v-icon class="grey--text">
+                  mdi-open-in-new
+                </v-icon>
+              </v-list-item-action>
             </v-list-item>
             <v-list-item href="mailto:support@npuacm.info">
               <v-list-item-action>
@@ -48,6 +53,11 @@
               <v-list-item-content>
                 <v-list-item-sub-title>https://github.com/Liu233w/acm-statistics</v-list-item-sub-title>
               </v-list-item-content>
+              <v-list-item-action>
+                <v-icon class="grey--text">
+                  mdi-open-in-new
+                </v-icon>
+              </v-list-item-action>
             </v-list-item>
             <v-list-item
               href="https://join.slack.com/t/acm-statistics/shared_invite/zt-geel58eq-MjD3tBukUAC4ZSCS4DoLTw"
@@ -62,6 +72,11 @@
               <v-list-item-content>
                 <v-list-item-sub-title>Slack: ACM Statistics Development</v-list-item-sub-title>
               </v-list-item-content>
+              <v-list-item-action>
+                <v-icon class="grey--text">
+                  mdi-open-in-new
+                </v-icon>
+              </v-list-item-action>
             </v-list-item>
           </v-list>
         </v-card>
