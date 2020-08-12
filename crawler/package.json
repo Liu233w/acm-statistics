@@ -20,7 +20,7 @@
     "eslint": "7.6.0",
     "eslint-plugin-jest": "23.20.0",
     "eslint-plugin-lodash": "7.1.0",
-    "jest": "26.2.2",
+    "jest": "26.3.0",
     "memfs": "3.2.0",
     "nock": "13.0.4"
   },
