@@ -70,6 +70,36 @@
             color="light-blue"
             dark
           >
+            <v-toolbar-title>Development</v-toolbar-title>
+            <v-spacer />
+          </v-app-bar>
+          <v-list>
+            <v-list-item
+              href="/swagger"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <v-list-item-action>
+                <v-icon class="blue--text text--lighten-2">
+                  mdi-api
+                </v-icon>
+              </v-list-item-action>
+              <v-list-item-content>
+                <v-list-item-sub-title>API Document</v-list-item-sub-title>
+              </v-list-item-content>
+              <v-list-item-action>
+                <v-icon class="grey--text">
+                  mdi-open-in-new
+                </v-icon>
+              </v-list-item-action>
+            </v-list-item>
+          </v-list>
+        </v-card>
+        <v-card class="my-2">
+          <v-app-bar
+            color="light-blue"
+            dark
+          >
             <v-toolbar-title>Special Thanks to</v-toolbar-title>
             <v-spacer />
           </v-app-bar>
@@ -145,6 +175,11 @@
                   https://github.com/Liu233w/acm-statistics/tree/{{ $env.VERSION_NUM }}
                 </v-list-item-sub-title>
               </v-list-item-content>
+              <v-list-item-action>
+                <v-icon class="grey--text">
+                  mdi-open-in-new
+                </v-icon>
+              </v-list-item-action>
             </v-list-item>
 
             <v-list-item :href="`https://github.com/Liu233w/acm-statistics/commits/${$env.VERSION_NUM}`">
@@ -154,6 +189,11 @@
                   https://github.com/Liu233w/acm-statistics/commits/{{ $env.VERSION_NUM }}
                 </v-list-item-sub-title>
               </v-list-item-content>
+              <v-list-item-action>
+                <v-icon class="grey--text">
+                  mdi-open-in-new
+                </v-icon>
+              </v-list-item-action>
             </v-list-item>
           </v-list>
         </v-card>
