@@ -1,3 +1,5 @@
+using System;
+using System.IO;
 using System.Text;
 using System.Text.Json.Serialization;
 using Microsoft.AspNet.OData.Builder;
@@ -9,6 +11,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNet.OData.Extensions;
 using Microsoft.OData.Edm;
+using Microsoft.OpenApi.Models;
 using OHunt.Web.Crawlers;
 using OHunt.Web.Database;
 using OHunt.Web.Dataflow;
@@ -34,6 +37,24 @@ namespace OHunt.Web
                 options.UseMySql(Configuration.GetConnectionString("Default")));
 
             services.AddOData();
+            services.AddODataApiExplorer();
+
+            services.AddSwaggerGen(options =>
+            {
+                options.SwaggerDoc("v1", new OpenApiInfo()
+                {
+                    Title = "OHunt API",
+                    Version = "v1",
+                    Description =
+                        "OHunt is a crawler that reads data from online coding competition platform and serve them as API, just like uHunt of UVA.",
+                });
+                options.DocInclusionPredicate((docName, description) => true);
+
+                // Set the comments path for the swagger json and ui.
+                var basePath = AppDomain.CurrentDomain.BaseDirectory!;
+                var docPath = Path.Combine(basePath, "OHunt.Web.xml");
+                options.IncludeXmlComments(docPath);
+            });
 
             services.AddControllers()
                 .AddJsonOptions(opts =>
@@ -77,6 +98,8 @@ namespace OHunt.Web
 
             app.UseRouting();
 
+            app.UseStaticFiles();
+
             app.UseEndpoints(endpoints =>
             {
                 // endpoints.MapControllers();
@@ -93,6 +116,17 @@ namespace OHunt.Web
                     await ctx.Response.Body.WriteAsync(
                         Encoding.ASCII.GetBytes("404 Not Found"));
                 }
+            });
+
+            app.UseSwagger(opts =>
+            {
+                //
+                opts.RouteTemplate = "api/ohunt/{documentName}/swagger.json";
+            });
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/api/ohunt/v1/swagger.json", "OHunt API V1");
+                c.RoutePrefix = "/ohunt/swagger";
             });
         }
 
