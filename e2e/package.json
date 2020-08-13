@@ -18,7 +18,7 @@
     "eslint-plugin-lodash": "7.1.0",
     "jest": "26.4.0",
     "jest-serializer-vue": "2.0.2",
-    "lodash": "4.17.19",
+    "lodash": "4.17.20",
     "superagent": "5.3.1"
   },
   "jest": {
