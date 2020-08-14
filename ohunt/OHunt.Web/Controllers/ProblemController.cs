@@ -16,9 +16,12 @@ namespace OHunt.Web.Controllers
         {
             _labelManager = labelManager;
         }
-
+        /// <summary>
+        /// Resolve the actual label of a problem in OJ.
+        /// </summary>
         [HttpPost]
         [Route("resolve-label")]
+        [Produces("application/json")]
         public async Task<ResolveLabelOutput> ResolveLabel(ResolveLabelInput input)
         {
             var res = new Dictionary<string, string?>();
