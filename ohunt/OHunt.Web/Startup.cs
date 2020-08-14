@@ -1,5 +1,6 @@
 using System;
 using System.IO;
+using System.Linq;
 using System.Text;
 using System.Text.Json.Serialization;
 using Microsoft.AspNet.OData.Builder;
@@ -10,6 +11,10 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNet.OData.Extensions;
+using Microsoft.AspNetCore.Mvc.ApiExplorer;
+using Microsoft.AspNetCore.Mvc.Formatters;
+using Microsoft.Extensions.DependencyInjection.Extensions;
+using Microsoft.Net.Http.Headers;
 using Microsoft.OData.Edm;
 using Microsoft.OpenApi.Models;
 using OHunt.Web.Crawlers;
@@ -37,7 +42,6 @@ namespace OHunt.Web
                 options.UseMySql(Configuration.GetConnectionString("Default")));
 
             services.AddOData();
-            services.AddODataApiExplorer();
 
             services.AddSwaggerGen(options =>
             {
@@ -56,7 +60,22 @@ namespace OHunt.Web
                 options.IncludeXmlComments(docPath);
             });
 
-            services.AddControllers()
+            services.AddControllers(options =>
+                {
+                    foreach (var outputFormatter in options.OutputFormatters.OfType<OutputFormatter>()
+                        .Where(x => x.SupportedMediaTypes.Count == 0))
+                    {
+                        outputFormatter.SupportedMediaTypes.Add(
+                            new MediaTypeHeaderValue("application/prs.odatatestxx-odata"));
+                    }
+
+                    foreach (var inputFormatter in options.InputFormatters.OfType<InputFormatter>()
+                        .Where(x => x.SupportedMediaTypes.Count == 0))
+                    {
+                        inputFormatter.SupportedMediaTypes.Add(
+                            new MediaTypeHeaderValue("application/prs.odatatestxx-odata"));
+                    }
+                })
                 .AddJsonOptions(opts =>
                 {
                     // use string as enum
@@ -98,8 +117,6 @@ namespace OHunt.Web
 
             app.UseRouting();
 
-            app.UseStaticFiles();
-
             app.UseEndpoints(endpoints =>
             {
                 // endpoints.MapControllers();
@@ -126,7 +143,7 @@ namespace OHunt.Web
             app.UseSwaggerUI(c =>
             {
                 c.SwaggerEndpoint("/api/ohunt/v1/swagger.json", "OHunt API V1");
-                c.RoutePrefix = "/ohunt/swagger";
+                c.RoutePrefix = "ohunt/swagger";
             });
         }
 

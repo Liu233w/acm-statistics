@@ -5,6 +5,14 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+      <DocumentationFile>bin\Debug\OHunt.Web.xml</DocumentationFile>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+      <DocumentationFile>bin\Release\OHunt.Web.xml</DocumentationFile>
+    </PropertyGroup>
+
     <ItemGroup>
         <PackageReference Include="AngleSharp" Version="0.14.0" />
         <PackageReference Include="Flurl.Http" Version="2.4.2" />
@@ -21,13 +29,6 @@
         </PackageReference>
         <PackageReference Include="Swashbuckle.AspNetCore" Version="5.5.1" />
         <PackageReference Include="System.Threading.Tasks.Dataflow" Version="4.11.1" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <Content Update="wwwroot\ohunt\index.html">
-        <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      </Content>
     </ItemGroup>
 
 
