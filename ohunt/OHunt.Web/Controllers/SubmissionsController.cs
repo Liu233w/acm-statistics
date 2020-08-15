@@ -30,18 +30,20 @@ namespace OHunt.Web.Controllers
         }
 
         /// <summary>
-        /// Get the submission in an OJ. The api uses odata to create arbitrary query
-        /// requests. See the document https://www.odata.org/ for more information.
+        /// Get the submission in an OJ. 
         /// </summary>
         /// <remarks>
+        /// The api uses odata to create arbitrary query requests.
+        /// See the document https://www.odata.org/ for more information.
+        /// 
         /// Sample request:
         /// 
-        ///     GET /api/ohunt/submissions?oj=zoj&$filter=userName eq vjudge5 and status eq accepted&$count=true
+        ///     GET /api/ohunt/submissions?oj=zoj&amp;$filter=userName eq vjudge5 and status eq accepted&amp;$count=true
         /// 
         /// </remarks>
         /// <param name="oj">the names of the OJ. See the OnlineJudge schema below for the value.</param>
         /// <returns>The query result. It is warped by odata.</returns>
-        /// <response code="200">The correct result</response>
+        /// <response code="200">The result. It is wrapped by odata.</response>
         /// <response code="301">If oj name is incorrect, redirect to a route and get correct oj names.</response>
         [EnableQuery(PageSize = 500)]
         [HttpGet("")]
