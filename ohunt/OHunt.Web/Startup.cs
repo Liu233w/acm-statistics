@@ -23,6 +23,7 @@ using OHunt.Web.Dataflow;
 using OHunt.Web.Models;
 using OHunt.Web.Options;
 using OHunt.Web.Services;
+using OHunt.Web.Utils;
 
 namespace OHunt.Web
 {
@@ -58,6 +59,9 @@ namespace OHunt.Web
                 var basePath = AppDomain.CurrentDomain.BaseDirectory!;
                 var docPath = Path.Combine(basePath, "OHunt.Web.xml");
                 options.IncludeXmlComments(docPath);
+
+                // use filter to add swagger document
+                options.OperationFilter<QueryParameterFilter>();
             });
 
             services.AddControllers(options =>
