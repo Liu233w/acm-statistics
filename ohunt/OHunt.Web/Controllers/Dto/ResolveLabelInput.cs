@@ -6,7 +6,7 @@ namespace OHunt.Web.Controllers.Dto
     public class ResolveLabelInput
     {
         /// <summary>
-        /// The list to request
+        /// The list to request. Each item is a problem id.
         /// </summary>
         public ICollection<int> List { get; set; }
 

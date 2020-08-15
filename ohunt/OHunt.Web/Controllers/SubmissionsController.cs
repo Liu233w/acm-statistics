@@ -38,13 +38,13 @@ namespace OHunt.Web.Controllers
         /// 
         /// Sample request:
         /// 
-        ///     GET /api/ohunt/submissions?oj=zoj&amp;$filter=userName eq vjudge5 and status eq accepted&amp;$count=true
+        ///     GET /api/ohunt/submissions?oj=zoj&amp;$filter=userName eq 'vjudge5' and status eq 'Accepted'&amp;$count=true
         /// 
         /// </remarks>
         /// <param name="oj">the names of the OJ. See the OnlineJudge schema below for the value.</param>
         /// <returns>The query result. It is warped by odata.</returns>
         /// <response code="200">The result. It is wrapped by odata.</response>
-        /// <response code="301">If oj name is incorrect, redirect to a route and get correct oj names.</response>
+        /// <response code="400">If oj name is incorrect, redirect to a route and get correct oj names.</response>
         [EnableQuery(PageSize = 500)]
         [HttpGet("")]
         [Produces("application/json")]
