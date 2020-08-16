@@ -1,0 +1,306 @@
+﻿{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "OHunt API",
+    "description": "OHunt is a crawler that reads data from online coding competition platform and serve them as API, just like uHunt of UVA.",
+    "version": "v1"
+  },
+  "paths": {
+    "/api/ohunt/problems/resolve-label": {
+      "post": {
+        "tags": [
+          "Problem"
+        ],
+        "summary": "Resolve the actual label of a problem in OJ.",
+        "requestBody": {
+          "content": {
+            "application/json;odata.metadata=minimal;odata.streaming=true": {
+              "schema": {
+                "$ref": "#/components/schemas/ResolveLabelInput"
+              }
+            },
+            "application/json;odata.metadata=minimal;odata.streaming=false": {
+              "schema": {
+                "$ref": "#/components/schemas/ResolveLabelInput"
+              }
+            },
+            "application/json;odata.metadata=minimal": {
+              "schema": {
+                "$ref": "#/components/schemas/ResolveLabelInput"
+              }
+            },
+            "application/json;odata.metadata=full;odata.streaming=true": {
+              "schema": {
+                "$ref": "#/components/schemas/ResolveLabelInput"
+              }
+            },
+            "application/json;odata.metadata=full;odata.streaming=false": {
+              "schema": {
+                "$ref": "#/components/schemas/ResolveLabelInput"
+              }
+            },
+            "application/json;odata.metadata=full": {
+              "schema": {
+                "$ref": "#/components/schemas/ResolveLabelInput"
+              }
+            },
+            "application/json;odata.metadata=none;odata.streaming=true": {
+              "schema": {
+                "$ref": "#/components/schemas/ResolveLabelInput"
+              }
+            },
+            "application/json;odata.metadata=none;odata.streaming=false": {
+              "schema": {
+                "$ref": "#/components/schemas/ResolveLabelInput"
+              }
+            },
+            "application/json;odata.metadata=none": {
+              "schema": {
+                "$ref": "#/components/schemas/ResolveLabelInput"
+              }
+            },
+            "application/json;odata.streaming=true": {
+              "schema": {
+                "$ref": "#/components/schemas/ResolveLabelInput"
+              }
+            },
+            "application/json;odata.streaming=false": {
+              "schema": {
+                "$ref": "#/components/schemas/ResolveLabelInput"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResolveLabelInput"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/ResolveLabelInput"
+              }
+            },
+            "application/prs.odatatestxx-odata": {
+              "schema": {
+                "$ref": "#/components/schemas/ResolveLabelInput"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResolveLabelInput"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResolveLabelInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResolveLabelOutput"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/ohunt/submissions": {
+      "get": {
+        "tags": [
+          "Submissions"
+        ],
+        "summary": "Get the submission in an OJ.",
+        "description": "The api uses odata to create arbitrary query requests.\r\nSee the document https://www.odata.org/ for more information.\r\n\r\nSample request:\r\n\r\n    GET /api/ohunt/submissions?oj=zoj&$filter=userName eq 'vjudge5' and status eq 'Accepted'&$count=true",
+        "parameters": [
+          {
+            "name": "oj",
+            "in": "query",
+            "description": "the names of the OJ. See the OnlineJudge schema below for the value.",
+            "schema": {
+              "type": "string",
+              "description": "the names of the OJ. See the OnlineJudge schema below for the value.",
+              "nullable": true
+            }
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "The max number of records",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "The number of records to skip",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "A function that must evaluate to true for a record to be returned",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "Specifies a subset of properties to return",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "Determines what values are used to order a collection of records",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$count",
+            "in": "query",
+            "description": "Should the item be counted. Use $count=true&$top=0 to count entities while not really request them.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The result. It is wrapped by odata.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Submission"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "If oj name is incorrect, redirect to a route and get correct oj names."
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "MappingOnlineJudge": {
+        "enum": [
+          "UVA",
+          "UVALive",
+          "OurOJ"
+        ],
+        "type": "string",
+        "description": "the enum of online judges that are used to mapping problem labels."
+      },
+      "ResolveLabelInput": {
+        "type": "object",
+        "properties": {
+          "list": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "description": "The list to request. Each item is a problem id.",
+            "nullable": true
+          },
+          "onlineJudge": {
+            "$ref": "#/components/schemas/MappingOnlineJudge"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ResolveLabelOutput": {
+        "type": "object",
+        "properties": {
+          "result": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            },
+            "description": "The result from the output",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "OnlineJudge": {
+        "enum": [
+          "ZOJ"
+        ],
+        "type": "string"
+      },
+      "RunResult": {
+        "enum": [
+          "Accepted",
+          "PresentationError",
+          "WrongAnswer",
+          "TimeLimitExceed",
+          "MemoryLimitExceed",
+          "OutputLimitExceed",
+          "RuntimeError",
+          "CompileError",
+          "UnknownError",
+          "SubmitError"
+        ],
+        "type": "string"
+      },
+      "Submission": {
+        "required": [
+          "onlineJudgeId",
+          "problemLabel",
+          "status",
+          "time",
+          "userName"
+        ],
+        "type": "object",
+        "properties": {
+          "submissionId": {
+            "minimum": 1,
+            "type": "integer",
+            "description": "The id of the submission. It should be unique per oj.\r\n            \r\nIt is used to identify submissions, so newer submission\r\nshould have larger id.",
+            "format": "int64"
+          },
+          "onlineJudgeId": {
+            "$ref": "#/components/schemas/OnlineJudge"
+          },
+          "userName": {
+            "maxLength": 75,
+            "minLength": 1,
+            "type": "string"
+          },
+          "status": {
+            "$ref": "#/components/schemas/RunResult"
+          },
+          "problemLabel": {
+            "maxLength": 25,
+            "minLength": 1,
+            "type": "string"
+          },
+          "time": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}
