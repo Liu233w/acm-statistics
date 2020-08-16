@@ -30,4 +30,6 @@ jobs:
         
     - name: Failed
       if: steps.check.outputs.status != 'success'
-      uses: cutenode/action-always-fail@v1.0.1
+      run: |
+        echo deploy check status "${{ steps.check.outputs.status }}"
+        exit 1
