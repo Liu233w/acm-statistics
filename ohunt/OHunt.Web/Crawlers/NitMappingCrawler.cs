@@ -6,9 +6,9 @@ using OHunt.Web.Models;
 
 namespace OHunt.Web.Crawlers
 {
-    public class OurOjMappingCrawler : CrawlerBase, IMappingCrawler
+    public class NitMappingCrawler : CrawlerBase, IMappingCrawler
     {
-        public MappingOnlineJudge OnlineJudge => MappingOnlineJudge.OurOJ;
+        public MappingOnlineJudge OnlineJudge => MappingOnlineJudge.NIT;
 
         public async Task<string?> GetProblemLabel(long problemId)
         {

@@ -7,14 +7,14 @@ using Xunit;
 
 namespace OHunt.Tests.Crawlers
 {
-    public class OurOjMappingCrawlerTests
+    public class NitMappingCrawlerTests
     {
         [Fact]
         public void It_ShouldReturnCorrectEnum()
         {
-            new OurOjMappingCrawler()
+            new NitMappingCrawler()
                 .OnlineJudge
-                .Should().Be(MappingOnlineJudge.OurOJ);
+                .Should().Be(MappingOnlineJudge.NIT);
         }
 
         [Fact]
@@ -22,7 +22,7 @@ namespace OHunt.Tests.Crawlers
         public async Task WhenRequestingVirtualJudge_ItShouldReturnOjAndLabel()
         {
             // arrange
-            var crawler = new OurOjMappingCrawler();
+            var crawler = new NitMappingCrawler();
 
             // act
             var res = await crawler.GetProblemLabel(4229);
@@ -36,7 +36,7 @@ namespace OHunt.Tests.Crawlers
         public async Task WhenRequestingLocalJudge_ItShouldReturnNull()
         {
             // arrange
-            var crawler = new OurOjMappingCrawler();
+            var crawler = new NitMappingCrawler();
 
             // act
             var res = await crawler.GetProblemLabel(293);
