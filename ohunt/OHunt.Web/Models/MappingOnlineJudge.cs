@@ -9,5 +9,6 @@ namespace OHunt.Web.Models
         UVA,
         UVALive,
         NIT,
+        BNU,
     }
 }
