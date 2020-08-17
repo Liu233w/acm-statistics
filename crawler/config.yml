@@ -24,6 +24,7 @@ crawler_order:
   - uoj
   - nbut
   - nod
+  # - nit
   - vjudge
 
 crawlers:
@@ -156,6 +157,11 @@ crawlers:
       title: 51Nod
       description: Please use your nickname (displayed in your home page)
       url: https://www.51nod.com
+  nit:
+    meta:
+      title: OurOJ (NIT)
+      description:
+      url: https://www.nitacm.com/
   vjudge:
     meta:
       title: VJudge

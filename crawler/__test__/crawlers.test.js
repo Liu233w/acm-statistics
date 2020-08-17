@@ -26,6 +26,7 @@ const codewars = require('../crawlers/codewars')
 const uoj = require('../crawlers/uoj')
 const nbut = require('../crawlers/nbut')
 const nod = require('../crawlers/nod')
+const nit = require('../crawlers/nit')
 
 const { readConfigs } = require('../lib/configReader')
 
@@ -564,6 +565,25 @@ describe('nod', () => {
     const res = await nod(null, '张翼德')
     checkRes(res)
     expect(res.solvedList).toContain('1079')
+  })
+
+})
+
+describe('nit', () => {
+
+  test('test nit - should throw when user does not exist', async () => {
+    await expect(nit(null, notExistUsername)).rejects.toThrow('The user does not exist')
+  })
+
+  test('test nit - can recognize username with space', async () => {
+    await expect(nit(null, ' ' + notExistUsername)).rejects.toThrow('The user does not exist')
+  })
+
+  test('test nit', async () => {
+    const res = await nit(null, 'teito')
+    checkRes(res)
+    expect(res.solvedList).toContain('nit-100')
+    expect(res.solvedList).toContain('hdu-2097')
   })
 
 })
