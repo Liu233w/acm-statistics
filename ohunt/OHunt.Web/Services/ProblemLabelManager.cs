@@ -20,6 +20,8 @@ namespace OHunt.Web.Services
             {
                 typeof(UvaMappingCrawler),
                 typeof(UvaLiveMappingCrawler),
+                typeof(NitMappingCrawler),
+                typeof(BnuMappingCrawler),
             };
 
         private readonly Dictionary<MappingOnlineJudge, IMappingCrawler> _crawlers;
