@@ -204,7 +204,8 @@
         "enum": [
           "UVA",
           "UVALive",
-          "OurOJ"
+          "NIT",
+          "BNU"
         ],
         "type": "string",
         "description": "the enum of online judges that are used to mapping problem labels."
