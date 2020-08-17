@@ -95,6 +95,8 @@ namespace OHunt.Web
                 .AddTransient<ProblemLabelManager>()
                 .AddSingleton<UvaMappingCrawler>()
                 .AddSingleton<UvaLiveMappingCrawler>()
+                .AddSingleton<NitMappingCrawler>()
+                .AddSingleton<BnuMappingCrawler>()
                 ;
 
             services.AddLogging();
