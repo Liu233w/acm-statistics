@@ -5,3 +5,8 @@ ignore:
   - backend/src/AcmStatisticsBackend.Web.Host/**/*
   - backend/src/**/Dto/**/*
   - ohunt/OHunt.Web/Migrations/*
+coverage:
+  status:
+    project:
+      default:
+        threshold: 5%
