@@ -584,7 +584,7 @@ describe('nit', () => {
     checkRes(res)
     expect(res.solvedList).toContain('nit-100')
     expect(res.solvedList).toContain('hdu-2097')
-  })
+  }, 20000)
 
 })
 

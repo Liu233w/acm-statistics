@@ -24,7 +24,7 @@ crawler_order:
   - uoj
   - nbut
   - nod
-  # - nit
+  - nit
   - vjudge
 
 crawlers:

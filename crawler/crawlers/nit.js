@@ -36,14 +36,20 @@ module.exports = async function (config, username) {
   const ohuntRes = await request
     .post('https://new.npuacm.info/api/ohunt/problems/resolve-label')
     .send({
-      onlineJudge: 'OurOJ',
+      onlineJudge: 'nit',
       list: [...acList],
     })
 
   try {
-    const solvedList = Object.values(ohuntRes.body.result).map(label => {
-      const [oj, num] = label.split('-')
-      return `${ojMap(oj)}-${num}`
+    const map = ohuntRes.body.result
+    const solvedList = Object.keys(map).map(id => {
+      if (!map[id]) {
+        return `nit-${id}`
+      } else {
+        const label = map[id]
+        const [oj, num] = label.split('-')
+        return `${ojMap(oj)}-${num}`
+      }
     })
 
     return {
