@@ -44,7 +44,7 @@ module.exports = async function (config, username) {
     const map = ohuntRes.body.result
     const solvedList = Object.keys(map).map(id => {
       if (!map[id]) {
-        return `nit-${id}`
+        return `bnu-${id}`
       } else {
         const label = map[id]
         const [oj, num] = label.split('-')
