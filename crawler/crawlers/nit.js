@@ -20,12 +20,12 @@ module.exports = async function (config, username) {
     throw new Error('The user does not exist')
   }
 
-  let submissions, solved, acList
+  let submissions, acList
   try {
     submissions = $('th:contains("Total Submissions")')
       .next().text()
-    solved = $('th:contains("Accepted")')
-      .next().text()
+    // solved = $('th:contains("Accepted")')
+    //   .next().text()
 
     acList = $('#userac a').map((_, el) => parseInt($(el).text())).toArray()
   }
@@ -54,7 +54,7 @@ module.exports = async function (config, username) {
 
     return {
       submissions: parseInt(submissions),
-      solved: parseInt(solved),
+      solved: solvedList.length,
       solvedList,
     }
   }
