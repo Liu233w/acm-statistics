@@ -14,7 +14,7 @@ namespace OHunt.Web.Crawlers
     {
         private DateTime _lastRequestTime = DateTime.MinValue;
 
-        protected TimeSpan RequestInterval { get; set; } = TimeSpan.FromMilliseconds(500);
+        protected TimeSpan RequestInterval { get; set; } = TimeSpan.FromMilliseconds(200);
 
         protected IBrowsingContext Context { get; }
             = BrowsingContext.New(Configuration.Default);
