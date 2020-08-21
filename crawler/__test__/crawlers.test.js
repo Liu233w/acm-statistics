@@ -481,7 +481,8 @@ describe('bnu', () => {
   test('test bnu', async () => {
     const res = await bnu(null, '51isoft')
     checkRes(res)
-    expect(res.solvedList).toBeNull()
+    expect(res.solvedList).toContain('bnu-1001')
+    expect(res.solvedList).toContain('poj-3338')
   })
 
 })

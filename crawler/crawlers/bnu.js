@@ -19,23 +19,89 @@ module.exports = async function (config, username) {
   if ($('.alert-error:contains("No such user!")').length >= 1) {
     throw new Error('The user does not exist')
   }
-  try {
-    // TODO: ac list
-    const acList = null
 
-    const submissions = $('th:contains("Total Submissions")')
+  let submissions, acList
+  try {
+    submissions = $('th:contains("Total Submissions")')
       .next().text()
-    const solved = $('th:contains("Accepted")')
-      .next().text()
+    // solved = $('th:contains("Accepted")')
+    //   .next().text()
+
+    acList = $('#userac a').map((_, el) => parseInt($(el).text())).toArray()
+  }
+  catch (e) {
+    throw new Error('Error while parsing')
+  }
+
+  const ohuntRes = await request
+    .post('https://new.npuacm.info/api/ohunt/problems/resolve-label')
+    .send({
+      onlineJudge: 'bnu',
+      list: [...acList],
+    })
+
+  try {
+    const map = ohuntRes.body.result
+    const solvedList = Object.keys(map).map(id => {
+      if (!map[id]) {
+        return `nit-${id}`
+      } else {
+        const label = map[id]
+        const [oj, num] = label.split('-')
+        return `${ojMap(oj)}-${num}`
+      }
+    })
 
     return {
       submissions: parseInt(submissions),
-      solved: parseInt(solved),
-      solvedList: acList,
+      solved: solvedList.length,
+      solvedList,
     }
   }
   catch (e) {
     throw new Error('Error while parsing')
   }
 
+}
+
+function ojMap(oj) {
+
+  // oj that can map its name to crawler name by changing into lower case
+  const simpleMapOj = new Set([
+    'aizu',
+    'codechef',
+    'codeforces',
+    'fzu',
+    'hdu',
+    // 'hust',
+    // 'hrbust',
+    // 'lightoj',
+    'nbut',
+    // 'njupt',
+    // 'openjudge',
+    'uva',
+    'uvalive',
+    // 'scu',
+    // 'sgu',
+    'spoj',
+    // 'sysu',
+    // 'uestc',
+    // 'whu',
+  ])
+  // crawler name map
+  const ojMap = {
+    '': 'NO_NAME',
+    'CodeForcesGym': 'codeforces',
+    'PKU': 'poj',
+    'URAL': 'timus',
+    'ZJU': 'zoj',
+  }
+
+  if (simpleMapOj.has(oj.toLowerCase())) {
+    return oj.toLowerCase()
+  } else if (oj in ojMap) {
+    return ojMap[oj]
+  } else {
+    return oj
+  }
 }
