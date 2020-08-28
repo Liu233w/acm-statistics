@@ -135,6 +135,7 @@ crawlers:
       title: BNUOJ
       description:
       url: http://www.bnuoj.com
+      virtual_judge: true
   codewars:
     meta:
       title: Codewars
@@ -162,6 +163,7 @@ crawlers:
       title: OurOJ (NIT)
       description:
       url: https://www.nitacm.com/
+      virtual_judge: true
   vjudge:
     meta:
       title: VJudge
