@@ -58,8 +58,10 @@ interface RequestConfig {
 
   /**
    * The method to request
+   * 
+   * By default is GET
    */
-  method: string
+  method?: string
 
   /**
    * Whether use cors proxy in browser.
@@ -67,15 +69,15 @@ interface RequestConfig {
    * By default, it does not use cors proxy if url starts with
    * `/`, and vice versa.
    */
-  useCorsProxy: boolean
+  useCorsProxy?: boolean
 
   /**
    * The query string to be serialized into url
    */
-  query: Record<string, string | number>
+  query?: Record<string, string | number>
 
   /**
    * The body to be sent on POST
    */
-  body: Record<string, any>
+  body?: Record<string, any>
 }
