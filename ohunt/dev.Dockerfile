@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/dotnet/core/sdk:3.1-buster@sha256:1aa53e4fa32dbba836e64e7863955b6b2b165f3a4f8f8aeed648a249300fae07 AS build
+FROM mcr.microsoft.com/dotnet/core/sdk:3.1-buster@sha256:6da604d96c720efca70be787f08fb92ab6a52c3b61a39a7d32cb6e79199408fb AS build
 
 WORKDIR /src
 
