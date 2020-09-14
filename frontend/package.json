@@ -35,7 +35,7 @@
   },
   "devDependencies": {
     "@babel/preset-env": "7.11.5",
-    "@vue/test-utils": "1.0.4",
+    "@vue/test-utils": "1.1.0",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "10.1.0",
     "babel-jest": "26.3.0",
@@ -54,7 +54,7 @@
     "eslint-plugin-vuetify": "1.0.0-beta.7",
     "jest": "26.4.2",
     "jest-serializer-vue": "2.0.2",
-    "vue-jest": "3.0.6"
+    "vue-jest": "3.0.7"
   },
   "jest": {
     "moduleFileExtensions": [
