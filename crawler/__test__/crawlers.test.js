@@ -27,6 +27,7 @@ const uoj = require('../crawlers/uoj')
 const nbut = require('../crawlers/nbut')
 const nod = require('../crawlers/nod')
 const nit = require('../crawlers/nit')
+const dmoj = require('../crawlers/dmoj')
 
 const { readConfigs } = require('../lib/configReader')
 
@@ -584,6 +585,24 @@ describe('nit', () => {
     checkRes(res)
     expect(res.solvedList).toContain('nit-100')
     expect(res.solvedList).toContain('hdu-2097')
+  })
+
+})
+
+describe('dmoj', () => {
+
+  test('test dmoj - should throw when user does not exist', async () => {
+    await expect(dmoj(null, notExistUsername)).rejects.toThrow('The user does not exist')
+  })
+
+  test('test dmoj - can recognize username with space', async () => {
+    await expect(dmoj(null, ' ' + notExistUsername)).rejects.toThrow('The user does not exist')
+  })
+
+  test('test dmoj', async () => {
+    const res = await dmoj(null, 'Xyene')
+    checkRes(res)
+    expect(res.solvedList).toContain('aplusb')
   })
 
 })
