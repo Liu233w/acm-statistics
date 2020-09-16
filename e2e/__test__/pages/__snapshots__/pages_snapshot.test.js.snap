@@ -4194,6 +4194,11 @@ exports[`/history/{historyId} 1`] = `
                 description: "Please use your nickname (displayed in your home page)",
                 url: "https:\\u002F\\u002Fwww.51nod.com"
               },
+              dmoj: {
+                title: "DMOJ",
+                description: a,
+                url: "https:\\u002F\\u002Fdmoj.ca\\u002F"
+              },
               vjudge: {
                 title: "VJudge",
                 description: "virtual judge，这个OJ的题量是单独计算的",
@@ -7813,7 +7818,7 @@ exports[`/statistics 1`] = `
       </div>
     </div>
     <script>
-      window.__NUXT__ = (function(a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z, A, B, C, D, E, F, G, H) {
+      window.__NUXT__ = (function(a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z, A, B, C, D, E, F, G, H, I) {
         return {
           layout: "default",
           data: [{}],
@@ -8100,6 +8105,16 @@ exports[`/statistics 1`] = `
                 tokenKey: c,
                 solvedList: [],
                 submissionsByCrawlerName: e
+              }, {
+                crawlerName: H,
+                username: b,
+                status: d,
+                solved: a,
+                submissions: a,
+                errorMessage: b,
+                tokenKey: c,
+                solvedList: [],
+                submissionsByCrawlerName: e
               }],
               crawlers: {
                 poj: {
@@ -8252,12 +8267,18 @@ exports[`/statistics 1`] = `
                   url: "https:\\u002F\\u002Fwww.51nod.com",
                   name: F
                 },
+                dmoj: {
+                  title: "DMOJ",
+                  description: c,
+                  url: "https:\\u002F\\u002Fdmoj.ca\\u002F",
+                  name: G
+                },
                 vjudge: {
                   title: "VJudge",
                   description: "virtual judge，这个OJ的题量是单独计算的",
                   url: "https:\\u002F\\u002Fvjudge.net\\u002F",
                   virtual_judge: g,
-                  name: G
+                  name: H
                 }
               },
               mainUsername: b
@@ -8267,11 +8288,11 @@ exports[`/statistics 1`] = `
           routePath: "\\u002Fstatistics",
           config: {},
           env: {
-            VERSION_NUM: H,
-            BUILD_TIME: H
+            VERSION_NUM: I,
+            BUILD_TIME: I
           }
         }
-      }(0, "", null, "WAITING", void 0, false, true, "poj", "hdu", "zoj", "dashiye", "codeforces", "uva", "uvalive", "fzu", "spoj", "timus", "leetcode_cn", "csu", "loj", "luogu", "nowcoder", "uestc", "atcoder", "aizu", "codechef", "eljudge", "bnu", "codewars", "uoj", "nbut", "nod", "vjudge", "0"));
+      }(0, "", null, "WAITING", void 0, false, true, "poj", "hdu", "zoj", "dashiye", "codeforces", "uva", "uvalive", "fzu", "spoj", "timus", "leetcode_cn", "csu", "loj", "luogu", "nowcoder", "uestc", "atcoder", "aizu", "codechef", "eljudge", "bnu", "codewars", "uoj", "nbut", "nod", "dmoj", "vjudge", "0"));
     </script>
 
 
