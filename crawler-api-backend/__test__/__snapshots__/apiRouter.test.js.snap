@@ -4,18 +4,18 @@ exports[`/api/crawlers/swagger.json swagger should match snapshot 1`] = `
 Object {
   "definitions": Object {
     "CrawlerMeta": Object {
-      "description": "爬虫的元信息",
+      "description": "Crawler's metadata",
       "properties": Object {
         "description": Object {
-          "description": "爬虫的说明",
+          "description": "Description of the crawler",
           "type": "string",
         },
         "title": Object {
-          "description": "爬虫的标题",
+          "description": "Title of the crawler",
           "type": "string",
         },
         "url": Object {
-          "description": "爬虫要爬的网址",
+          "description": "Target website of the crawler",
           "type": "string",
         },
       },
@@ -46,14 +46,14 @@ Object {
       "type": "object",
     },
     "UserState": Object {
-      "description": "用户的题量状况",
+      "description": "User performance",
       "properties": Object {
         "solved": Object {
           "format": "int64",
           "type": "integer",
         },
         "solvedList": Object {
-          "description": "用户通过的题目列表。如果是普通的爬虫，只包含题目编号；如果是 virtual judge 的爬虫，格式为 \`crawlerName-problemNumber\`",
+          "description": "A list which contains the problem the user passes. For non-virtual judge, only problem id is included. If the crawler targets a virtual judge, each problem follows the format of \`crawlerName-problemId\`",
           "items": Object {
             "type": "string",
           },
@@ -76,11 +76,11 @@ Object {
     },
   },
   "externalDocs": Object {
-    "description": "后端文档",
+    "description": "Other documents",
     "url": "https://github.com/Liu233w/acm-statistics/blob/master/crawler-api-backend/README.md",
   },
   "info": Object {
-    "description": "这是一个爬虫微服务。在这里可以通过 Rest API 调用 \`crawler\` 文件夹中的所有爬虫。 这些爬虫都是在服务器上运行的，因此您可以在任何地方使用本 API。",
+    "description": "A crawler microservice that allows users to invoke all crawlers supported by the website. All crawlers run on server.",
     "title": "crawler-api-backend",
     "version": "1.0.0",
   },
@@ -115,7 +115,7 @@ Object {
             },
           },
         },
-        "summary": "返回所有支持查询的 OJ",
+        "summary": "Return all supported OJs",
       },
     },
     "/api/crawlers/{type}/{username}": Object {
@@ -125,7 +125,7 @@ Object {
         ],
         "parameters": Array [
           Object {
-            "description": "OJ类型，只包括在 \`/crawler/config.yml\` 中定义的类型",
+            "description": "Type of the OJ. Only the type defined in \`/crawler/config.yml\` are included.",
             "in": "path",
             "name": "type",
             "required": true,
@@ -149,13 +149,13 @@ Object {
             },
           },
           "400": Object {
-            "description": "all other fails",
+            "description": "all other failures",
             "schema": Object {
               "$ref": "#/definitions/Error",
             },
           },
         },
-        "summary": "查询某个OJ上的用户题量",
+        "summary": "Query the performance of a user on certain OJ",
       },
     },
   },
