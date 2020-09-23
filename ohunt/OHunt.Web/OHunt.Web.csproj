@@ -27,7 +27,7 @@
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
-        <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.2" />
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
         <PackageReference Include="System.Threading.Tasks.Dataflow" Version="4.11.1" />
     </ItemGroup>
 
