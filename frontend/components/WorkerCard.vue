@@ -269,6 +269,10 @@ export default {
       await delay(100)
     } while (this.$el.offsetHeight >= 500)
     this.updateHeight()
+
+    // force update height to report the real height
+    await delay(1000)
+    this.updateHeight()
   },
   destroyed() {
     this.$emit('update-height', 0)
