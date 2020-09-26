@@ -40,15 +40,15 @@ const username = 'vjudge5'
 
 describe('poj', () => {
 
-  test('test poj - should throw when user does not exist', async () => {
+  test('should throw when user does not exist', async () => {
     await expect(poj(null, notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
-  test('test poj - can recognize username with space', async () => {
+  test('can recognize username with space', async () => {
     await expect(poj(null, ' ' + notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
-  test('test poj', async () => {
+  test('should work correctly', async () => {
     const res = await poj(null, username)
     checkRes(res)
     expect(res.solvedList).toContain('1001')
@@ -62,15 +62,15 @@ describe('hdu', () => {
     env: 'server',
   }
 
-  test('test hdu - should throw when user does not exist', async () => {
+  test('should throw when user does not exist', async () => {
     await expect(hdu(config, notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
-  test('test hdu - can recognize username with space', async () => {
+  test('can recognize username with space', async () => {
     await expect(hdu(config, ' ' + notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
-  test('test hdu', async () => {
+  test('should work correctly', async () => {
     const res = await hdu(config, 'vjudge4')
     checkRes(res)
     expect(res.solvedList).toContain('1001')
@@ -80,15 +80,15 @@ describe('hdu', () => {
 
 describe('zoj', () => {
 
-  test('test zoj - should throw when user does not exist', async () => {
+  test('should throw when user does not exist', async () => {
     await expect(zoj(null, notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
-  test('test zoj - can recognize username with space', async () => {
+  test('can recognize username with space', async () => {
     await expect(zoj(null, ' ' + notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
-  test('test zoj', async () => {
+  test('should work correctly', async () => {
     const res = await zoj(null, 'IamRobot')
     checkRes(res)
     expect(res.solvedList).toContain('1001')
@@ -99,15 +99,15 @@ describe('zoj', () => {
 
 describe('dashiye', () => {
 
-  test('test dashiye - should throw when user does not exist', async () => {
+  test('should throw when user does not exist', async () => {
     await expect(dashiye(null, notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
-  test('test dashiye - can recognize username with space', async () => {
+  test('can recognize username with space', async () => {
     await expect(dashiye(null, ' ' + notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
-  test('test dashiye', async () => {
+  test('should work correctly', async () => {
     const res = await dashiye(null, 'root')
     checkRes(res)
     expect(res.solvedList).toContain('1001')
@@ -117,15 +117,15 @@ describe('dashiye', () => {
 
 describe('codeforces', () => {
 
-  test('test codeforces - should throw when user does not exist', async () => {
+  test('should throw when user does not exist', async () => {
     await expect(codeforces(null, notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
-  test('test codeforces - can recognize username with space', async () => {
+  test('can recognize username with space', async () => {
     await expect(codeforces(null, ' ' + notExistUsername)).rejects.toThrow('handle: Field should contain only Latin letters, digits, underscore or dash characters')
   })
 
-  test('test codeforces', async () => {
+  test('should work correctly', async () => {
     const res = await codeforces(null, 'leoloveacm') // 没有找到好的测试多页返回的帐号，还是用这个测试单页吧
     checkRes(res)
 
@@ -138,15 +138,15 @@ describe('codeforces', () => {
 
 describe('uva', () => {
 
-  test('test uva - should throw when user does not exist', async () => {
+  test('should throw when user does not exist', async () => {
     await expect(uva(null, notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
-  test('test uva - can recognize username with space', async () => {
+  test('can recognize username with space', async () => {
     await expect(uva(null, ' ' + notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
-  test('test uva', async () => {
+  test('should work correctly', async () => {
     const res = await uva(null, 'leoloveacm')
     checkRes(res)
     expect(res.solvedList).toContain('1395')
@@ -156,15 +156,15 @@ describe('uva', () => {
 
 describe('uvalive', () => {
 
-  test('test uvalive - should throw when user does not exist', async () => {
+  test('should throw when user does not exist', async () => {
     await expect(uvalive(null, notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
-  test('test uvalive - can recognize username with space', async () => {
+  test('can recognize username with space', async () => {
     await expect(uvalive(null, ' ' + notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
-  test('test uvalive', async () => {
+  test('should work correctly', async () => {
     const res = await uvalive(null, 'npuacm')
     checkRes(res)
     expect(res.solved).toBe(2)
@@ -179,16 +179,16 @@ describe('uvalive', () => {
 
 describe('fzu', () => {
 
-  test('test fzu - should throw when user does not exist', async () => {
+  test('should throw when user does not exist', async () => {
     await expect(fzu(null, notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
-  test('test fzu - can recognize username with space', async () => {
+  test('can recognize username with space', async () => {
     await expect(fzu(null, ' ' + notExistUsername))
       .rejects.toThrow('The crawler does not support username with spaces')
   })
 
-  test('test fzu', async () => {
+  test('should work correctly', async () => {
     const res = await fzu(null, username)
     checkRes(res)
     expect(res.solvedList).toContain('1001')
@@ -198,15 +198,15 @@ describe('fzu', () => {
 
 describe('spoj', () => {
 
-  test('test spoj - should throw when user does not exist', async () => {
+  test('should throw when user does not exist', async () => {
     await expect(spoj(null, notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
-  test('test spoj - can recognize username with space', async () => {
+  test('can recognize username with space', async () => {
     await expect(spoj(null, ' ' + notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
-  test('test spoj', async () => {
+  test('should work correctly', async () => {
     const res = await spoj(null, username)
     checkRes(res)
     expect(res.solvedList).toContain('ABA12D')
@@ -216,15 +216,15 @@ describe('spoj', () => {
 
 describe('timus', () => {
 
-  test('test timus - should throw when user does not exist', async () => {
+  test('should throw when user does not exist', async () => {
     await expect(timus(null, notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
-  test('test timus - can recognize username with space', async () => {
+  test('can recognize username with space', async () => {
     await expect(timus(null, ' ' + notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
-  test('test timus', async () => {
+  test('should work correctly', async () => {
     const res = await timus(null, 'vjudge11')
     checkRes(res)
     expect(res.submissions).toBeGreaterThan(10)
@@ -235,15 +235,16 @@ describe('timus', () => {
 
 describe('leetcode_cn', () => {
 
-  test('test leetcode_cn - should throw when user does not exist', async () => {
+  test('should throw when user does not exist', async () => {
     await expect(leetcode_cn(null, notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
-  test('test leetcode_cn - can recognize username with space', async () => {
+  test('can recognize username with space', async () => {
     await expect(leetcode_cn(null, ' ' + notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
-  test('test leetcode_cn', async () => {
+  // eslint-disable-next-line jest/expect-expect
+  test('should work correctly', async () => {
     const res = await leetcode_cn(null, 'wwwlsmcom')
     checkRes(res)
   })
@@ -252,15 +253,15 @@ describe('leetcode_cn', () => {
 
 describe('csu', () => {
 
-  test('test csu - should throw when user does not exist', async () => {
+  test('should throw when user does not exist', async () => {
     await expect(csu(null, notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
-  test('test csu - can recognize username with space', async () => {
+  test('can recognize username with space', async () => {
     await expect(csu(null, ' ' + notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
-  test('test csu', async () => {
+  test('should work correctly', async () => {
     const res = await csu(null, username)
     checkRes(res)
     expect(res.solvedList).toContain('1001')
@@ -274,13 +275,12 @@ describe('vjudge', () => {
 
   beforeAll(async () => {
     const config = await readConfigs()
-    // 需要读取设置，因此没法在 ci 里面测试
-    // 在进行测试之前首先要根据 README.md 里的说明来设置环境变量
+    // config should be read to test the crawler
+    // you can set environment variable according to README.md
     vjConfig = config.crawlers.vjudge
   })
 
-  test('首先保证配置文件正确并且拥有正确的环境变量', () => {
-    // 必须要保证配置文件正确才能进行此项测试
+  test('ensure config exists and is correct', () => {
     expect(vjConfig).toBeTruthy()
     expect(vjConfig.crawler_login_user).toBeTruthy()
     expect(vjConfig.crawler_login_user).not.toBe('用户名')
@@ -290,15 +290,15 @@ describe('vjudge', () => {
     // console.log(vjConfig)
   })
 
-  test('test vjudge - should throw when user does not exist', async () => {
+  test('should throw when user does not exist', async () => {
     await expect(vjudge(vjConfig, notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
-  test('test vjudge - can recognize username with space', async () => {
+  test('can recognize username with space', async () => {
     await expect(vjudge(vjConfig, ' ' + notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
-  test('test vjudge', async () => {
+  test('should work correctly', async () => {
     const res = await vjudge(vjConfig, 'leoloveacm')
     checkRes(res)
     expect(res.solvedList).toContain('codeforces-436B')
@@ -310,15 +310,15 @@ describe('vjudge', () => {
 
 describe('loj', () => {
 
-  test('test loj - should throw when user does not exist', async () => {
+  test('should throw when user does not exist', async () => {
     await expect(loj(null, notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
-  test('test loj - can recognize username with space', async () => {
+  test('can recognize username with space', async () => {
     await expect(loj(null, ' ' + notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
-  test('test loj', async () => {
+  test('should work correctly', async () => {
     const res = await loj(null, 'cz_xuyixuan') // 自定义存在的用户名
     checkRes(res)
     expect(res.solvedList).toContain('103')
@@ -328,22 +328,22 @@ describe('loj', () => {
 
 describe('luogu', () => {
 
-  test('test luogu - should throw when user does not exist', async () => {
+  test('should throw when user does not exist', async () => {
     await expect(luogu(null, notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
-  test('test luogu - can recognize username with space', async () => {
+  test('can recognize username with space', async () => {
     await expect(luogu(null, ' ' + notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
-  test('test luogu', async () => {
+  test('should work correctly', async () => {
     const res = await luogu(null, 'CancerGary') // 自定义存在的用户名
     checkRes(res)
     expect(res.solvedList).toContain('P1001')
     expect(res.solvedList.length).toBeGreaterThan(100)
   })
 
-  test('test luogu - 能够正确处理提交数大于 1000 的用户', async () => {
+  test('should handle the user with submission bigger than 1000 correctly', async () => {
     const res = await luogu(null, 'NaCly_Fish')
     checkRes(res)
     expect(res.submissions).toBeGreaterThan(1000)
@@ -352,18 +352,18 @@ describe('luogu', () => {
 
 describe('nowcoder', () => {
 
-  test('test nowcoder - should throw when user does not exist', async () => {
+  test('should throw when user does not exist', async () => {
     await expect(nowcoder(null, '11')).rejects.toThrow('The user does not exist')
   })
 
-  test('test nowcoder - 识别不是ID的用户名', async () => {
+  test('should recognize usernames that are not ID', async () => {
     await expect(nowcoder(null, 'wwwlsmcom')).rejects.toThrow('牛客网的输入必须是用户ID（数字格式）')
     await expect(nowcoder(null, '123wwwlsmcom')).rejects.toThrow('牛客网的输入必须是用户ID（数字格式）')
     await expect(nowcoder(null, '123 wwwlsmcom')).rejects.toThrow('牛客网的输入必须是用户ID（数字格式）')
     await expect(nowcoder(null, ' wwwlsmcom')).rejects.toThrow('牛客网的输入必须是用户ID（数字格式）')
   })
 
-  test('test nowcoder', async () => {
+  test('should work correctly', async () => {
     const res = await nowcoder(null, '112946')
     checkRes(res)
     expect(res.solvedList).toContain('16632')
@@ -373,15 +373,15 @@ describe('nowcoder', () => {
 
 describe('uestc', () => {
 
-  test('test uestc - should throw when user does not exist', async () => {
+  test('should throw when user does not exist', async () => {
     await expect(uestc(null, notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
-  test('test uestc - can recognize username with space', async () => {
+  test('can recognize username with space', async () => {
     await expect(uestc(null, ' ' + notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
-  test('test uestc', async () => {
+  test('should work correctly', async () => {
     const res = await uestc(null, 'HeRaNO')
     checkRes(res)
     expect(res.solvedList).toContain('1490')
@@ -398,15 +398,15 @@ describe('uestc', () => {
 
 describe('atcoder', () => {
 
-  test('test atcoder - should throw when user does not exist', async () => {
+  test('should throw when user does not exist', async () => {
     await expect(atcoder(null, notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
-  test('test atcoder - can recognize username with space', async () => {
+  test('can recognize username with space', async () => {
     await expect(atcoder(null, ' ' + notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
-  test('test atcoder', async () => {
+  test('should work correctly', async () => {
     const res = await atcoder(null, 'wata')
     checkRes(res)
     expect(res.solvedList).toContain('judge_update_202004_b')
@@ -416,15 +416,15 @@ describe('atcoder', () => {
 
 describe('aizu', () => {
 
-  test('test aizu - should throw when user does not exist', async () => {
+  test('should throw when user does not exist', async () => {
     await expect(aizu(null, notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
-  test('test aizu - can recognize username with space', async () => {
+  test('can recognize username with space', async () => {
     await expect(aizu(null, ' ' + notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
-  test('test aizu', async () => {
+  test('should work correctly', async () => {
     const res = await aizu(null, username)
     checkRes(res)
     expect(res.solvedList).toContain('ALDS1_3_C')
@@ -434,15 +434,15 @@ describe('aizu', () => {
 
 describe('codechef', () => {
 
-  test('test codechef - should throw when user does not exist', async () => {
+  test('should throw when user does not exist', async () => {
     await expect(codechef(null, notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
-  test('test codechef - can recognize username with space', async () => {
+  test('can recognize username with space', async () => {
     await expect(codechef(null, ' ' + notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
-  test('test codechef', async () => {
+  test('should work correctly', async () => {
     // don't know why, but in vjudge2 - vjudge5, solvedList does not match solved count
     const res = await codechef(null, 'vjudge')
     checkRes(res)
@@ -453,15 +453,15 @@ describe('codechef', () => {
 
 describe('eljudge', () => {
 
-  test('test eljudge - should throw when user does not exist', async () => {
+  test('should throw when user does not exist', async () => {
     await expect(eljudge(null, notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
-  test('test eljudge - can recognize username with space', async () => {
+  test('can recognize username with space', async () => {
     await expect(eljudge(null, ' ' + notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
-  test('test eljudge', async () => {
+  test('should work correctly', async () => {
     const res = await eljudge(null, 'vjudge5')
     checkRes(res)
     expect(res.solvedList).toContain('000')
@@ -471,15 +471,15 @@ describe('eljudge', () => {
 
 describe('bnu', () => {
 
-  test('test bnu - should throw when user does not exist', async () => {
+  test('should throw when user does not exist', async () => {
     await expect(bnu(null, notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
-  test('test bnu - can recognize username with space', async () => {
+  test('can recognize username with space', async () => {
     await expect(bnu(null, ' ' + notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
-  test('test bnu', async () => {
+  test('should work correctly', async () => {
     const res = await bnu(null, '51isoft')
     checkRes(res)
     expect(res.solvedList).toBeNull()
@@ -489,15 +489,15 @@ describe('bnu', () => {
 
 describe('codewars', () => {
 
-  test('test codewars - should throw when user does not exist', async () => {
+  test('should throw when user does not exist', async () => {
     await expect(codewars(null, notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
-  test('test codewars - can recognize username with space', async () => {
+  test('can recognize username with space', async () => {
     await expect(codewars(null, ' ' + notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
-  test('test codewars', async () => {
+  test('should work correctly', async () => {
     const res = await codewars(null, 'Liu233w')
 
     expect(typeof res.solved).toBe('number')
@@ -514,15 +514,15 @@ describe('codewars', () => {
 
 describe('uoj', () => {
 
-  test('test uoj - should throw when user does not exist', async () => {
+  test('should throw when user does not exist', async () => {
     await expect(uoj(null, notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
-  test('test uoj - can recognize username with space', async () => {
+  test('can recognize username with space', async () => {
     await expect(uoj(null, ' ' + notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
-  test('test uoj', async () => {
+  test('should work correctly', async () => {
     // it is an administration account, so I guess it's fine
     const res = await uoj(null, 'matthew99')
     checkRes(res)
@@ -533,16 +533,16 @@ describe('uoj', () => {
 
 describe('nbut', () => {
 
-  test('test nbut - should throw when user does not exist', async () => {
+  test('should throw when user does not exist', async () => {
     await expect(nbut(null, notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
-  test('test nbut - can recognize username with space', async () => {
+  test('can recognize username with space', async () => {
     await expect(nbut(null, ' ' + notExistUsername))
       .rejects.toThrow('The crawler does not support username with spaces')
   })
 
-  test('test nbut', async () => {
+  test('should work correctly', async () => {
     // it is an administration account, so I guess it's fine
     const res = await nbut(null, username)
     checkRes(res)
@@ -553,15 +553,15 @@ describe('nbut', () => {
 
 describe('nod', () => {
 
-  test('test nod - should throw when user does not exist', async () => {
+  test('should throw when user does not exist', async () => {
     await expect(nod(null, notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
-  test('test nod - can recognize username with space', async () => {
+  test('can recognize username with space', async () => {
     await expect(nod(null, ' ' + notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
-  test('test nod', async () => {
+  test('should work correctly', async () => {
     // vjudge
     const res = await nod(null, '张翼德')
     checkRes(res)
@@ -572,15 +572,15 @@ describe('nod', () => {
 
 describe('nit', () => {
 
-  test('test nit - should throw when user does not exist', async () => {
+  test('should throw when user does not exist', async () => {
     await expect(nit(null, notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
-  test('test nit - can recognize username with space', async () => {
+  test('can recognize username with space', async () => {
     await expect(nit(null, ' ' + notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
-  test('test nit', async () => {
+  test('should work correctly', async () => {
     const res = await nit(null, 'teito')
     checkRes(res)
     expect(res.solvedList).toContain('nit-100')
@@ -591,15 +591,15 @@ describe('nit', () => {
 
 describe('dmoj', () => {
 
-  test('test dmoj - should throw when user does not exist', async () => {
+  test('should throw when user does not exist', async () => {
     await expect(dmoj(null, notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
-  test('test dmoj - can recognize username with space', async () => {
+  test('can recognize username with space', async () => {
     await expect(dmoj(null, ' ' + notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
-  test('test dmoj', async () => {
+  test('should work correctly', async () => {
     const res = await dmoj(null, 'Xyene')
     checkRes(res)
     expect(res.solvedList).toContain('aplusb')
