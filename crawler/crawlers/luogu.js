@@ -7,7 +7,7 @@ module.exports = async function (config, username) {
   }
 
   const uidRes = await request
-    .get('https://www.luogu.com.cn/fe/api/user/search')
+    .get('https://www.luogu.com.cn/api/user/search')
     .query({keyword: username})
 
   if (!uidRes.ok) {
