@@ -25,6 +25,7 @@ crawler_order:
   - nbut
   - nod
   # - nit
+  - dmoj
   - vjudge
 
 crawlers:
@@ -162,6 +163,11 @@ crawlers:
       title: OurOJ (NIT)
       description:
       url: https://www.nitacm.com/
+  dmoj:
+    meta:
+      title: DMOJ
+      description:
+      url: https://dmoj.ca/
   vjudge:
     meta:
       title: VJudge

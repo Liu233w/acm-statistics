@@ -31,7 +31,7 @@
     <ProjectReference Include="..\AcmStatisticsBackend.Web.Core\AcmStatisticsBackend.Web.Core.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Abp.Castle.Log4Net" Version="5.12.0" />
+    <PackageReference Include="Abp.Castle.Log4Net" Version="5.13.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.8">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>

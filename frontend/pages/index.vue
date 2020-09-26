@@ -29,10 +29,10 @@
             </h2>
             <div style="height: 50px" />
             <h1 class="black--text mb-2 display-1 text-center index-title font-weight-bold">
-              欢迎使用 {{ projectTitle }}
+              Welcome to {{ projectTitle }}
             </h1>
             <div class="black--text subheading mb-4 text-center index-title">
-              由 NWPU-ACM 技术组强力驱动
+              An online tool to analyze users performance in online judges (coding competition websites)
             </div>
             <v-btn
               class="blue lighten-2 black--text mt-12"
@@ -351,7 +351,7 @@
           to="/about"
           class="white--text ml-4 body-2"
         >
-          &copy; 2018 - {{ buildYear }} NWPU-ACM 技术组
+          &copy; 2018 - {{ buildYear }} Shumin Liu and Contributors
         </nuxt-link>
         <v-spacer />
         <span class="white--text ml-4 body-2">陕ICP备17008184号</span>
