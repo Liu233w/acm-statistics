@@ -4137,7 +4137,7 @@ exports[`/history/{historyId} 1`] = `
               luogu: {
                 title: "洛谷",
                 description: a,
-                url: "https:\\u002F\\u002Fluogu.org\\u002F"
+                url: "https:\\u002F\\u002Fwww.luogu.com.cn"
               },
               nowcoder: {
                 title: "牛客OJ",
@@ -8198,7 +8198,7 @@ exports[`/statistics 1`] = `
                 luogu: {
                   title: "洛谷",
                   description: c,
-                  url: "https:\\u002F\\u002Fluogu.org\\u002F",
+                  url: "https:\\u002F\\u002Fwww.luogu.com.cn",
                   name: u
                 },
                 nowcoder: {
