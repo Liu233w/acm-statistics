@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`vjudge test vjudge 1`] = `
+exports[`vjudge should work correctly 1`] = `
 Object {
   "solved": 392,
   "solvedList": Array [
