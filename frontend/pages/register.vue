@@ -55,7 +55,7 @@
                   required
                   :rules="[rules.required]"
                 >
-                  <template v-slot:append>
+                  <template #append>
                     <v-btn
                       icon
                       @click="refreshCaptcha"
