@@ -43,6 +43,8 @@ Cypress.Commands.overwrite('matchImageSnapshot', (originalFn, maybeName, command
 
 Cypress.Commands.add('registerAndGetUsername', () => {
 
+  cy.clearCookies()
+
   cy.log('<<<<< Start register')
 
   const username = 'user' + ('' + Math.random()).slice(2, 8).padEnd(6, '0')
@@ -61,6 +63,7 @@ Cypress.Commands.add('registerAndGetUsername', () => {
 })
 
 Cypress.Commands.add('login', (username, password) => {
+
   if (!password) {
     if (username === 'admin') {
       password = '123qwe'
@@ -68,7 +71,11 @@ Cypress.Commands.add('login', (username, password) => {
       password = '1234Qwer'
     }
   }
+
+  cy.clearCookies()
+
   cy.log('<<<<< Start login')
+
   cy.visit('/login')
   cy.contains('Username').parent().type(username)
   cy.contains('Password').parent().type(password)
