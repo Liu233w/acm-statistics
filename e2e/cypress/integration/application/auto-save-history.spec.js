@@ -1,5 +1,3 @@
-Cypress.config('baseUrl', 'http://localhost:3000')
-
 beforeEach(() => {
   cy.server()
   cy.route('https://acm-statistics-cors.herokuapp.com/http://acm.hdu.edu.cn/userstatus.php?user=wwwlsmcom',

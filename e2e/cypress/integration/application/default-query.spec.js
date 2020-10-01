@@ -1,5 +1,3 @@
-Cypress.config('baseUrl', 'http://localhost:3000')
-
 describe('Saving default query to cookie when user does not login.', () => {
 
   it('can work correctly', () => {

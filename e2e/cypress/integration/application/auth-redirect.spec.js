@@ -1,5 +1,3 @@
-Cypress.config('baseUrl', 'http://localhost:3000')
-
 describe('Redirect when visiting un-permitted pages', () => {
 
   it('can redirect to /login when visiting /settings without being logined', () => {
