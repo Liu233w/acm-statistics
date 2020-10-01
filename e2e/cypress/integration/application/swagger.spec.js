@@ -1,5 +1,3 @@
-Cypress.config('baseUrl', 'http://reverse-proxy')
-
 beforeEach(() => {
   cy.visit('/swagger')
 })

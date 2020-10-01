@@ -1,5 +1,3 @@
-Cypress.config('baseUrl', 'http://localhost:3000')
-
 describe('/login', () => {
 
   beforeEach(() => {
