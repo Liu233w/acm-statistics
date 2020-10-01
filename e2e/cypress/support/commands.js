@@ -54,7 +54,7 @@ Cypress.Commands.add('registerAndGetUsername', () => {
   cy.contains('Confirm password').parent().type('1234Qwer')
   cy.get('button').contains('register').click()
 
-  cy.location('pathname').should('eq', '/')
+  cy.shouldHaveUri('/')
   cy.log('>>>>> End register')
 
   return cy.wrap(username)
@@ -74,6 +74,13 @@ Cypress.Commands.add('login', (username, password) => {
   cy.contains('Password').parent().type(password)
   cy.get('button').contains('login').click()
 
-  cy.location('pathname').should('eq', '/')
+  cy.shouldHaveUri('/')
   cy.log('>>>>> End login')
+})
+
+Cypress.Commands.add('shouldHaveUri', (uri, config = {}) => {
+  const timeout = config.timeout || 30000
+
+  return cy.url({ timeout: timeout })
+    .should('eq', Cypress.config().baseUrl + uri)
 })

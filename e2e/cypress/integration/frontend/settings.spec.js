@@ -48,7 +48,7 @@ describe('change password', () => {
 
     cy.log('re-login to test new password')
     cy.get('button:contains("sign out")').click()
-    cy.url().should('be', '/')
+    cy.shouldHaveUri('/')
     cy.login(username, '1234QWer')
   })
 })
@@ -88,6 +88,6 @@ describe('delete account', () => {
       cy.matchImageSnapshot()
       cy.get('button:contains("Confirm")').click()
     })
-    cy.url().should('be', '/')
+    cy.shouldHaveUri('/')
   })
 })
