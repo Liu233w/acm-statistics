@@ -64,7 +64,7 @@ describe('crawler test', () => {
 
       cy.wait('@poj_frontend')
       cy.wait('@poj_backend')
-        .its('statusCode').should('be', 200)
+        .its('status').should('eq', 200)
 
       cy.contains('1968')
       cy.contains('277562')
