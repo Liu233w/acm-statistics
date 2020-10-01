@@ -68,11 +68,11 @@ describe('Register then login', () => {
     cy.log('visit login page from homepage')
     cy.visit('/')
     cy.contains('login').click()
-    cy.shouldHaveUri('/login')
+    cy.shouldHaveUri('/login?redirect=%2F')
 
     cy.log('visit register page')
     cy.contains('enter register page').click()
-    cy.shouldHaveUri('/register')
+    cy.shouldHaveUri('/register?redirect=%2F')
 
     cy.log('fill user information')
     // wait dom to refresh (wait captcha)
@@ -91,7 +91,7 @@ describe('Register then login', () => {
     cy.log('login from homepage')
     cy.visit('/')
     cy.contains('login').click()
-    cy.shouldHaveUri('/login')
+    cy.shouldHaveUri('/login?redirect=%2F')
 
     cy.log('enter username and password')
     cy.contains('Username').parent().type(newUsername)
