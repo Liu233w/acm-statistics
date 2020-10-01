@@ -58,16 +58,11 @@ before(() => {
 
   cy.contains('SOLVED: 192 / SUBMISSION', { matchCase: false }).click()
 
-  // wait for page loading
-  cy.contains('export image', { matchCase: false })
-
-  cy.location('pathname')
+  cy.url().should('contain', '/history/')
     .then(s => {
       summaryUrl = s
       console.log('url', s)
-      return s.startsWith('/history/')
     })
-    .should('be.true')
 
   cy.clearCookies()
 })
@@ -113,10 +108,7 @@ describe('history page', () => {
 
       cy.get('i.mdi-eye').parents('a').click()
 
-      // wait for page loading
-      cy.contains('export image', { matchCase: false })
-
-      cy.location('pathname').should('eq', summaryUrl)
+      cy.url().should('eq', summaryUrl)
     })
   })
 

@@ -46,7 +46,7 @@ describe('other parts', () => {
 
   it('click ENTER AC STATISTICS button to enter', () => {
     cy.contains('Enter AC Statistics').click()
-    cy.url().should('be', '/statistics')
+    cy.shouldHaveUri('/statistics')
   })
 
   it('wechat dialog', () => {

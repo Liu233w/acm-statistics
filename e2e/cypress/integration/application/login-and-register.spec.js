@@ -17,8 +17,7 @@ describe('/login', () => {
     cy.contains('Password').parent().type('123qwe')
     cy.get('button').contains('login').click()
 
-    cy.contains('admin', { timeout: 60000 })
-    cy.location('pathname').should('eq', '/')
+    cy.shouldHaveUri('/')
   })
 
   it('can keep user session', () => {
@@ -28,8 +27,7 @@ describe('/login', () => {
     cy.contains('Remember me').click()
     cy.get('button').contains('login').click()
 
-    cy.contains('admin', { timeout: 60000 })
-    cy.location('pathname').should('eq', '/')
+    cy.shouldHaveUri('/')
 
     cy.log('Username still exists after refresh page')
     cy.reload()
@@ -45,7 +43,7 @@ describe('/login', () => {
     cy.contains('Password').parent().type('123qwe')
     cy.get('button').contains('login').click()
 
-    cy.location('pathname').should('eq', '/about')
+    cy.shouldHaveUri('/about')
   })
 })
 
@@ -70,11 +68,11 @@ describe('Register then login', () => {
     cy.log('visit login page from homepage')
     cy.visit('/')
     cy.contains('login').click()
-    cy.location('pathname').should('eq', '/login')
+    cy.shouldHaveUri('/login')
 
     cy.log('visit register page')
     cy.contains('enter register page').click()
-    cy.location('pathname').should('eq', '/register')
+    cy.shouldHaveUri('/register')
 
     cy.log('fill user information')
     // wait dom to refresh (wait captcha)
@@ -83,7 +81,7 @@ describe('Register then login', () => {
     cy.contains('Password').parent().type('1234Qwer')
     cy.contains('Confirm password').parent().type('1234Qwer')
     cy.get('button').contains('register').click()
-    cy.location('pathname').should('eq', '/')
+    cy.shouldHaveUri('/')
 
     cy.log('should back to homepage')
     cy.contains(newUsername)
@@ -93,24 +91,23 @@ describe('Register then login', () => {
     cy.log('login from homepage')
     cy.visit('/')
     cy.contains('login').click()
-    cy.location('pathname').should('eq', '/login')
+    cy.shouldHaveUri('/login')
 
     cy.log('enter username and password')
     cy.contains('Username').parent().type(newUsername)
     cy.contains('Password').parent().type('1234Qwer')
     cy.get('button').contains('login').click()
-    cy.location('pathname').should('eq', '/')
+    cy.shouldHaveUri('/')
 
     cy.log('logout')
 
     cy.contains(newUsername).click()
     cy.contains('Logout')
-    cy.location('pathname').should('eq', '/settings')
+    cy.shouldHaveUri('/settings')
 
     cy.get('button:contains("sign out")').click()
 
-    cy.contains('login', { timeout: 60000 })
-    cy.location('pathname').should('eq', '/')
+    cy.shouldHaveUri('/')
 
     cy.log('username does not exist after refresh page')
     cy.reload()
