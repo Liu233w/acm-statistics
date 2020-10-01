@@ -43,7 +43,7 @@
       </v-list-item>
     </v-list>
     <v-simple-table>
-      <template v-slot:default>
+      <template #default>
         <thead>
           <tr>
             <th

@@ -32,7 +32,7 @@
         item-key="historyId"
         :footer-props="footerProps"
       >
-        <template v-slot:top>
+        <template #top>
           <v-btn
             color="error"
             :disabled="selected.length === 0"
@@ -41,7 +41,9 @@
             delete selected
           </v-btn>
         </template>
-        <template v-slot:item.actions="{ item }">
+        <!-- item.actions is a name -->
+        <!-- eslint-disable-next-line -->
+        <template #item.actions="{ item }">
           <v-btn
             icon
             :to="'/history/'+item.historyId"
