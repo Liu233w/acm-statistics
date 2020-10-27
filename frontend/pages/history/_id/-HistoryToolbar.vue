@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import htmlToImage from 'html-to-image'
+import { toJpeg } from 'html-to-image'
 
 export default {
   data() {
@@ -30,7 +30,7 @@ export default {
         const summary = document.getElementById('history-summary')
         const link = document.createElement('a')
         link.download = 'summary.jpg'
-        link.href = await htmlToImage.toJpeg(summary, {
+        link.href = await toJpeg(summary, {
           quality: 0.8,
           backgroundColor: 'white',
         })
