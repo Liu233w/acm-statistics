@@ -11,7 +11,7 @@
             color="light-blue"
             dark
           >
-            <v-toolbar-title>About US</v-toolbar-title>
+            <v-toolbar-title>About Us</v-toolbar-title>
             <v-spacer />
           </v-app-bar>
           <v-list>
@@ -21,7 +21,7 @@
               rel="noopener noreferrer"
             >
               <v-list-item-content>
-                <v-list-item-title>Developed by</v-list-item-title>
+                <v-list-item-title>Developed By</v-list-item-title>
                 <v-list-item-sub-title>Shumin Liu and Contributors</v-list-item-sub-title>
               </v-list-item-content>
               <v-list-item-action>
@@ -115,7 +115,7 @@
             color="light-blue"
             dark
           >
-            <v-toolbar-title>Special Thanks to</v-toolbar-title>
+            <v-toolbar-title>Special Thanks To</v-toolbar-title>
             <v-spacer />
           </v-app-bar>
           <v-list>
