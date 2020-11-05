@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import { toJpeg } from 'html-to-image'
+import html2canvas from 'html2canvas'
 
 export default {
   data() {
@@ -28,13 +28,13 @@ export default {
       this.loading = true
       try {
         const summary = document.getElementById('history-summary')
+        const canvas = await html2canvas(summary)
+
         const link = document.createElement('a')
-        link.download = 'summary.jpg'
-        link.href = await toJpeg(summary, {
-          quality: 0.8,
-          backgroundColor: 'white',
-        })
+        link.download = 'summary.png'
+        link.href = canvas.toDataURL('image/png')
         link.click()
+
       } catch (err) {
         this.$store.commit('message/addError', err.message)
       }
