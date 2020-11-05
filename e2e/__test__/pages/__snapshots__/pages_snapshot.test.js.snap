@@ -3813,110 +3813,86 @@ exports[`/history/{historyId} 1`] = `
                   <div class="v-data-table theme--light">
                     <div class="v-data-table__wrapper">
                       <table>
-                        <thead>
+                        <colgroup>
+                          <col>
+                          <col>
+                          <col>
+                          <col>
+                        </colgroup>
+                        <thead class="v-data-table-header">
                           <tr>
-                            <th scope="col" class="text-left">
-                              Crawler
-                            </th>
-                            <th scope="col" class="text-left">
-                              Username
-                            </th>
-                            <th scope="col" class="text-left">
-                              Solved
-                            </th>
-                            <th scope="col" class="text-left">
-                              Submission
-                            </th>
+                            <th role="columnheader" scope="col" aria-label="Crawler: Not sorted. Activate to sort ascending." aria-sort="none" class="text-start sortable"><span>Crawler</span><i aria-hidden="true" class="v-icon notranslate v-data-table-header__icon mdi mdi-arrow-up theme--light" style="font-size:18px;"></i></th>
+                            <th role="columnheader" scope="col" aria-label="Username" class="text-start"><span>Username</span></th>
+                            <th role="columnheader" scope="col" aria-label="Solved: Not sorted. Activate to sort ascending." aria-sort="none" class="text-start sortable"><span>Solved</span><i aria-hidden="true" class="v-icon notranslate v-data-table-header__icon mdi mdi-arrow-up theme--light" style="font-size:18px;"></i></th>
+                            <th role="columnheader" scope="col" aria-label="Submission: Not sorted. Activate to sort ascending." aria-sort="none" class="text-start sortable"><span>Submission</span><i aria-hidden="true" class="v-icon notranslate v-data-table-header__icon mdi mdi-arrow-up theme--light" style="font-size:18px;"></i></th>
                           </tr>
                         </thead>
                         <tbody>
                           <tr>
-                            <td scope="row">
-                              VJudge (Not Merged)
-                            </td>
-                            <td>wwwlsmcom</td>
-                            <td>1</td>
-                            <td>1</td>
+                            <td class="text-start">VJudge (Not Merged)</td>
+                            <td class="text-start">wwwlsmcom</td>
+                            <td class="text-start">1</td>
+                            <td class="text-start">1</td>
                           </tr>
                           <tr>
-                            <td scope="row">
-                              CodeChef
-                            </td>
-                            <td>[wwwlsmcom in VJudge]</td>
-                            <td>1</td>
-                            <td>5</td>
+                            <td class="text-start">CodeChef</td>
+                            <td class="text-start">[wwwlsmcom in VJudge]</td>
+                            <td class="text-start">1</td>
+                            <td class="text-start">5</td>
                           </tr>
                           <tr>
-                            <td scope="row">
-                              LeetCode_CN
-                            </td>
-                            <td>wwwlsmcom</td>
-                            <td>3</td>
-                            <td>9</td>
+                            <td class="text-start">LeetCode_CN</td>
+                            <td class="text-start">wwwlsmcom</td>
+                            <td class="text-start">3</td>
+                            <td class="text-start">9</td>
                           </tr>
                           <tr>
-                            <td scope="row">
-                              Timus (URAL)
-                            </td>
-                            <td>[wwwlsmcom in VJudge]</td>
-                            <td>2</td>
-                            <td>6</td>
+                            <td class="text-start">Timus (URAL)</td>
+                            <td class="text-start">[wwwlsmcom in VJudge]</td>
+                            <td class="text-start">2</td>
+                            <td class="text-start">6</td>
                           </tr>
                           <tr>
-                            <td scope="row">
-                              FZU
-                            </td>
-                            <td>[wwwlsmcom in VJudge]</td>
-                            <td>1</td>
-                            <td>5</td>
+                            <td class="text-start">FZU</td>
+                            <td class="text-start">[wwwlsmcom in VJudge]</td>
+                            <td class="text-start">1</td>
+                            <td class="text-start">5</td>
                           </tr>
                           <tr>
-                            <td scope="row">
-                              ICPC Live Archive
-                            </td>
-                            <td>[wwwlsmcom in VJudge]</td>
-                            <td>1</td>
-                            <td>1</td>
+                            <td class="text-start">ICPC Live Archive</td>
+                            <td class="text-start">[wwwlsmcom in VJudge]</td>
+                            <td class="text-start">1</td>
+                            <td class="text-start">1</td>
                           </tr>
                           <tr>
-                            <td scope="row">
-                              UVA
-                            </td>
-                            <td>[wwwlsmcom in VJudge]</td>
-                            <td>11</td>
-                            <td>28</td>
+                            <td class="text-start">UVA</td>
+                            <td class="text-start">[wwwlsmcom in VJudge]</td>
+                            <td class="text-start">11</td>
+                            <td class="text-start">28</td>
                           </tr>
                           <tr>
-                            <td scope="row">
-                              CodeForces
-                            </td>
-                            <td>[wwwlsmcom in VJudge]</td>
-                            <td>6</td>
-                            <td>15</td>
+                            <td class="text-start">CodeForces</td>
+                            <td class="text-start">[wwwlsmcom in VJudge]</td>
+                            <td class="text-start">6</td>
+                            <td class="text-start">15</td>
                           </tr>
                           <tr>
-                            <td scope="row">
-                              HYSBZ
-                            </td>
-                            <td>[wwwlsmcom in VJudge]</td>
-                            <td>0</td>
-                            <td>5</td>
+                            <td class="text-start">HYSBZ</td>
+                            <td class="text-start">[wwwlsmcom in VJudge]</td>
+                            <td class="text-start">0</td>
+                            <td class="text-start">5</td>
                           </tr>
                           <tr>
-                            <td scope="row">
-                              HDU
-                            </td>
-                            <td>[wwwlsmcom in VJudge], wwwlsmcom</td>
-                            <td>108</td>
-                            <td>385</td>
+                            <td class="text-start">HDU</td>
+                            <td class="text-start">[wwwlsmcom in VJudge], wwwlsmcom</td>
+                            <td class="text-start">108</td>
+                            <td class="text-start">385</td>
                           </tr>
                           <tr>
-                            <td scope="row">
-                              POJ
-                            </td>
-                            <td>[wwwlsmcom in VJudge]</td>
-                            <td>59</td>
-                            <td>325</td>
+                            <td class="text-start">POJ</td>
+                            <td class="text-start">[wwwlsmcom in VJudge]</td>
+                            <td class="text-start">59</td>
+                            <td class="text-start">325</td>
                           </tr>
                         </tbody>
                       </table>
@@ -3965,7 +3941,7 @@ exports[`/history/{historyId} 1`] = `
                   fromCrawlerName: a,
                   username: b
                 }],
-                isVirtualJudge: h
+                isVirtualJudge: f
               }, {
                 crawlerName: "codechef",
                 submission: i,
@@ -4203,9 +4179,26 @@ exports[`/history/{historyId} 1`] = `
                 title: "VJudge",
                 description: "virtual judge，这个OJ的题量是单独计算的",
                 url: "https:\\u002F\\u002Fvjudge.net\\u002F",
-                virtual_judge: h
+                virtual_judge: f
               }
-            }
+            },
+            tableHeaders: [{
+              text: "Crawler",
+              value: "crawler",
+              sortable: f
+            }, {
+              text: "Username",
+              value: "username",
+              sortable: c
+            }, {
+              text: "Solved",
+              value: "solved",
+              sortable: f
+            }, {
+              text: "Submission",
+              value: "submissions",
+              sortable: f
+            }]
           }],
           error: a,
           state: {
@@ -4214,32 +4207,32 @@ exports[`/history/{historyId} 1`] = `
               list: []
             },
             session: {
-              login: h,
+              login: f,
               username: "admin",
               settings: {
                 "Abp.Localization.DefaultLanguageName": "en",
-                "Abp.Notifications.ReceiveNotifications": f,
+                "Abp.Notifications.ReceiveNotifications": g,
                 "Abp.Timing.TimeZone": "UTC",
-                "Abp.Zero.UserManagement.IsEmailConfirmationRequiredForLogin": g,
+                "Abp.Zero.UserManagement.IsEmailConfirmationRequiredForLogin": h,
                 "Abp.Zero.OrganizationUnits.MaxUserMembershipCount": "2147483647",
-                "Abp.Zero.UserManagement.TwoFactorLogin.IsEnabled": f,
-                "Abp.Zero.UserManagement.TwoFactorLogin.IsRememberBrowserEnabled": f,
-                "Abp.Zero.UserManagement.TwoFactorLogin.IsEmailProviderEnabled": f,
-                "Abp.Zero.UserManagement.TwoFactorLogin.IsSmsProviderEnabled": f,
-                "Abp.Zero.UserManagement.UserLockOut.IsEnabled": f,
+                "Abp.Zero.UserManagement.TwoFactorLogin.IsEnabled": g,
+                "Abp.Zero.UserManagement.TwoFactorLogin.IsRememberBrowserEnabled": g,
+                "Abp.Zero.UserManagement.TwoFactorLogin.IsEmailProviderEnabled": g,
+                "Abp.Zero.UserManagement.TwoFactorLogin.IsSmsProviderEnabled": g,
+                "Abp.Zero.UserManagement.UserLockOut.IsEnabled": g,
                 "Abp.Zero.UserManagement.UserLockOut.MaxFailedAccessAttemptsBeforeLockout": "5",
                 "Abp.Zero.UserManagement.UserLockOut.DefaultAccountLockoutSeconds": "300",
-                "Abp.Zero.UserManagement.PasswordComplexity.RequireDigit": g,
-                "Abp.Zero.UserManagement.PasswordComplexity.RequireLowercase": g,
-                "Abp.Zero.UserManagement.PasswordComplexity.RequireNonAlphanumeric": g,
-                "Abp.Zero.UserManagement.PasswordComplexity.RequireUppercase": g,
+                "Abp.Zero.UserManagement.PasswordComplexity.RequireDigit": h,
+                "Abp.Zero.UserManagement.PasswordComplexity.RequireLowercase": h,
+                "Abp.Zero.UserManagement.PasswordComplexity.RequireNonAlphanumeric": h,
+                "Abp.Zero.UserManagement.PasswordComplexity.RequireUppercase": h,
                 "Abp.Zero.UserManagement.PasswordComplexity.RequiredLength": "3",
                 "App.UiTheme": "red",
-                "App.AutoSaveHistory": f
+                "App.AutoSaveHistory": g
               }
             }
           },
-          serverRendered: h,
+          serverRendered: f,
           routePath: "\\u002Fhistory\\u002F1",
           config: {},
           env: {
@@ -4247,7 +4240,7 @@ exports[`/history/{historyId} 1`] = `
             BUILD_TIME: l
           }
         }
-      }(null, "wwwlsmcom", false, "vjudge", 1, "true", "false", true, 5, "leetcode_cn", 6, "0"));
+      }(null, "wwwlsmcom", false, "vjudge", 1, true, "true", "false", 5, "leetcode_cn", 6, "0"));
     </script>
 
 
