@@ -67,7 +67,7 @@ before(() => {
 
 describe('summary page', () => {
 
-  it.only('should render correctly', () => {
+  it('should render correctly', () => {
     cy.login(username)
     cy.visit(summaryUrl)
 
