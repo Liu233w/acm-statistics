@@ -83,6 +83,25 @@ describe('summary page', () => {
 
     cy.matchImageSnapshot()
   })
+
+  it('should be able to sort the list', () => {
+    cy.login(username)
+    cy.visit(summaryUrl)
+
+    // hide generate time
+    cy.get('strong:contains("Generated at")')
+      .parent()
+      .invoke('attr', 'style', 'background-color: black')
+    cy.get('.v-toolbar__title')
+      .invoke('text', '[GENERATED DATE]')
+    // hide account username
+    cy.get(`button:contains("${username}")`)
+      .invoke('attr', 'style', 'background-color: black')
+
+    cy.contains('Solved').click()
+
+    cy.matchImageSnapshot()
+  })
 })
 
 describe('history page', () => {
