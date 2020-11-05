@@ -42,51 +42,12 @@
         </v-list-item-content>
       </v-list-item>
     </v-list>
-    <v-simple-table>
-      <template #default>
-        <thead>
-          <tr>
-            <th
-              class="text-left"
-              scope="col"
-            >
-              Crawler
-            </th>
-            <th
-              class="text-left"
-              scope="col"
-            >
-              Username
-            </th>
-            <th
-              class="text-left"
-              scope="col"
-            >
-              Solved
-            </th>
-            <th
-              class="text-left"
-              scope="col"
-            >
-              Submission
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr
-            v-for="item in workerSummaryList"
-            :key="`${item.crawler}`"
-          >
-            <td scope="row">
-              {{ item.crawler }}
-            </td>
-            <td>{{ item.username }}</td>
-            <td>{{ item.solved }}</td>
-            <td>{{ item.submissions }}</td>
-          </tr>
-        </tbody>
-      </template>
-    </v-simple-table>
+    <v-data-table
+      :headers="tableHeaders"
+      :items="workerSummaryList"
+      :disable-pagination="true"
+      :hide-default-footer="true"
+    />
     <bar-chart
       :chart-data="chartData"
       style="height: 300px"
@@ -139,6 +100,28 @@ export default {
       summary: null,
       summaryError: null,
       crawlers: {},
+      tableHeaders: [
+        {
+          text: 'Crawler',
+          value: 'crawler',
+          sortable: true,
+        },
+        {
+          text: 'Username',
+          value: 'username',
+          sortable: false,
+        },
+        {
+          text: 'Solved',
+          value: 'solved',
+          sortable: true,
+        },
+        {
+          text: 'Submission',
+          value: 'submissions',
+          sortable: true,
+        },
+      ],
     }
   },
   watch: {
