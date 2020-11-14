@@ -46,10 +46,14 @@ module.exports = async function (config, username) {
     const solvedList = $('a[href^="/problem/"]')
       .map((_, el) => $(el).text())
       .toArray()
-    const submissions = $$('.uoj-content tr td').first().text() === '无'
-      ? 0
-      : (parseInt($$('li.active').text()) - 1) * 10
-      + $$('.uoj-content tbody tr').length
+
+    let submissions
+    if ($$('.uoj-content tr td').first().text() === '无') {
+      submissions = 0
+    } else {
+      const pageNum = parseInt($$('li.active').text()) || 1
+      submissions = (pageNum - 1) * 10 + $$('.uoj-content tbody tr').length
+    }
 
     return {
       solved: parseInt(solved),
