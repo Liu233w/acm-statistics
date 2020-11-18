@@ -40,7 +40,8 @@ namespace OHunt.Web
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContextPool<OHuntDbContext>(options =>
-                options.UseMySql(Configuration.GetConnectionString("Default")));
+                options.UseMySql(Configuration.GetConnectionString("Default"),
+                new MySqlServerVersion("8")));
 
             services.AddOData();
 
