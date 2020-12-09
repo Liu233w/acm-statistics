@@ -92,7 +92,7 @@ services:
       - traefik.http.services.adminer.loadbalancer.server.port=8080
 
   db-backup:
-    image: databack/mysql-backup@sha256:990d74f145af48bdbf6d865a2a2c5a2e2e578bcae389682fedf450c42e92cfe7
+    image: databack/mysql-backup@sha256:a624830a186a8d1eecf6a916b4c5e923e656d4980a65c8e3f46cc539d9c1e0cf
     restart: always
     user: "${DB_BACKUP_UID}"
     volumes:
