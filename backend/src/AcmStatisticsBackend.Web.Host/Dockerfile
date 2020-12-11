@@ -1,6 +1,6 @@
 #See https://aka.ms/containerfastmode to understand how Visual Studio uses this Dockerfile to build your images for faster debugging.
 
-FROM mcr.microsoft.com/dotnet/core/aspnet:3.1-buster-slim@sha256:e51be428c4a641a8c53504808e9c5802148c4cb9dfd0cb9fe25317510ebe07a3 AS base
+FROM mcr.microsoft.com/dotnet/core/aspnet:3.1-buster-slim@sha256:7a8d0e56dff4893aad462a19c48c40ec96487821d546f89fbc6db0fc02a04f79 AS base
 WORKDIR /app
 EXPOSE 80
 
