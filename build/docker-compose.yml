@@ -73,6 +73,9 @@ services:
     # Where our data will be persisted
     volumes:
       - ./backend-db:/var/lib/mysql
+    # fix `mbind: Operation not permitted`, see https://stackoverflow.com/a/55706057
+    cap_add:
+      - SYS_NICE  # CAP_SYS_NICE
 
   captcha-service:
     image: ${DOCKER_REPO}acm-statistics-captcha-service${DOCKER_TAG}
