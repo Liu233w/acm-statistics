@@ -2,13 +2,13 @@
 
 exports[`/ 1`] = `
 <!DOCTYPE html>
-<html data-n-head-ssr>
+<html data-n-head-ssr="">
 
   <head>
-    <title>NWPU-ACM &#x67E5;&#x8BE2;&#x7CFB;&#x7EDF;</title>
+    <title>NWPU-ACM 查询系统</title>
     <meta data-n-head="ssr" charset="utf-8">
     <meta data-n-head="ssr" name="viewport" content="width=device-width, initial-scale=1">
-    <meta data-n-head="ssr" data-hid="description" name="description" content="&#x897F;&#x5317;&#x5DE5;&#x4E1A;&#x5927;&#x5B66;ACM&#x57FA;&#x5730;&#x67E5;&#x9898;&#x4E3B;&#x9875;&#xFF0C;&#x63D0;&#x4F9B;&#x56FD;&#x5185;&#x5404;&#x5927;OJ&#x7684;&#x67E5;&#x8BE2;&#x9898;&#x91CF;&#x3001;&#x8BA1;&#x7B97;Rating&#x7684;&#x670D;&#x52A1;&#x3002;">
+    <meta data-n-head="ssr" data-hid="description" name="description" content="西北工业大学ACM基地查题主页，提供国内各大OJ的查询题量、计算Rating的服务。">
     <link data-n-head="ssr" rel="icon" type="image/x-icon" href="/favicon.ico">
     <link data-n-head="ssr" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons|Noto+Serif+SC:300,400,500,700">
     <link data-n-head="ssr" rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&amp;display=swap">
@@ -718,7 +718,7 @@ exports[`/ 1`] = `
         caret-color: #843c00 !important;
       }
     </style>
-    <script data-n-head="ssr" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" data-ad-client="ca-pub-9846042020379030" async></script>
+    <script data-n-head="ssr" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" data-ad-client="ca-pub-9846042020379030" async=""></script>
   </head>
 
   <body>
@@ -734,18 +734,18 @@ exports[`/ 1`] = `
               <div class="v-toolbar__content" style="height:64px;">
                 <div class="v-toolbar__title">ACM Statistics</div>
                 <div class="spacer"></div> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--text theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate v-icon--left mdi mdi-login theme--light"></i> login
-    </span></button></span> <span class="v-tooltip v-tooltip--left"><!----><a href="https://github.com/Liu233w/acm-statistics" target="_blank" rel="noopener noreferrer" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" medium class="v-icon notranslate mdi mdi-github theme--light"></i></span></a></span>
+    </span></button></span> <span class="v-tooltip v-tooltip--left"><!----><a href="https://github.com/Liu233w/acm-statistics" target="_blank" rel="noopener noreferrer" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" medium="" class="v-icon notranslate mdi mdi-github theme--light"></i></span></a></span>
               </div>
             </header>
             <main class="v-content" style="padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px;">
               <div class="v-content__wrap">
                 <section>
                   <div class="v-parallax" style="height:600px;">
-                    <div class="v-parallax__image-container"><img src="/_nuxt/img/back7-brighten.e5adb12.jpg" alt class="v-parallax__image" style="display:block;opacity:0;transform:translate(-50%, 0px);"></div>
+                    <div class="v-parallax__image-container"><img src="/_nuxt/img/back7-brighten.e5adb12.jpg" alt="" class="v-parallax__image" style="display:block;opacity:0;transform:translate(-50%, 0px);"></div>
                     <div class="v-parallax__content">
                       <div class="layout white--text column align-center justify-center"><img src="/_nuxt/img/logo.db320b9.png" alt="Vuetify.js" height="190" class="mb-4">
                         <h2 class="black--text headline text-center font-weight-light">
-                          ACM-ICPC &#x534F;&#x4F1A;
+                          ACM-ICPC 协会
                         </h2>
                         <div style="height:50px;"></div>
                         <h1 class="black--text mb-2 display-1 text-center index-title font-weight-bold">
@@ -765,8 +765,8 @@ exports[`/ 1`] = `
                     <div class="flex my-4 xs12 sm4">
                       <div class="text-center">
                         <h2 class="headline">
-                          &#x5168;&#x65B0;&#x67E5;&#x8BE2;&#x7CFB;&#x7EDF;&#xFF0C;&#x66F4;&#x52A0;&#x7A33;&#x5B9A;
-                        </h2> <span class="subheading">&#x5F02;&#x6B65;API + &#x6D4F;&#x89C8;&#x5668;&#x7AEF;&#x722C;&#x866B;&#xFF0C;&#x901F;&#x5EA6;&#x52A0;&#x500D;</span>
+                          全新查询系统，更加稳定
+                        </h2> <span class="subheading">异步API + 浏览器端爬虫，速度加倍</span>
                       </div>
                     </div>
                     <div class="flex xs12">
@@ -775,45 +775,45 @@ exports[`/ 1`] = `
                           <div class="flex xs12 md4">
                             <div class="elevation-0 transparent v-card v-card--flat v-sheet theme--light">
                               <div class="v-card__text text-center"><i aria-hidden="true" class="v-icon notranslate blue--text text--lighten-2 material-icons theme--light" style="font-size:40px;">link</i></div>
-                              <div primary-title class="v-card__title layout justify-center">
+                              <div primary-title="" class="v-card__title layout justify-center">
                                 <div class="headline text-center">
-                                  &#x514D;&#x8D39;&#x63D0;&#x4F9B;&#x9898;&#x91CF;&#x67E5;&#x8BE2;API
+                                  免费提供题量查询API
                                 </div>
                               </div>
                               <div class="v-card__text text-center">
-                                &#x6211;&#x4EEC;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E2A; restful api &#x6765;&#x4F9B;&#x60A8;&#x4F7F;&#x7528;&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x5728;&#x4EFB;&#x610F;&#x7684;&#x5BA2;&#x6237;&#x7AEF;&#x3001;&#x7F51;&#x7AD9;&#x4E2D;&#x8C03;&#x7528;&#x6B64;api&#x6765;&#x67E5;&#x8BE2;&#x67D0;&#x7528;&#x6237;&#x5728;oj&#x4E0A;&#x7684;&#x63D0;&#x4EA4;&#x6570;/&#x901A;&#x8FC7;&#x6570;&#x3002;
-                                &#x8BBF;&#x95EE;&#x6211;&#x4EEC;&#x7684;
-                                <a href="/swagger" target="_blank">api&#x6587;&#x6863;</a>&#x4EE5;&#x83B7;&#x53D6;&#x66F4;&#x591A;&#x4FE1;&#x606F;&#x3002;
+                                我们提供了一个 restful api 来供您使用，您可以在任意的客户端、网站中调用此api来查询某用户在oj上的提交数/通过数。
+                                访问我们的
+                                <a href="/swagger" target="_blank">api文档</a>以获取更多信息。
                               </div>
                             </div>
                           </div>
                           <div class="flex xs12 md4">
                             <div class="elevation-0 transparent v-card v-card--flat v-sheet theme--light">
                               <div class="v-card__text text-center"><i aria-hidden="true" class="v-icon notranslate blue--text text--lighten-2 mdi mdi-github theme--light" style="font-size:40px;"></i></div>
-                              <div primary-title class="v-card__title layout justify-center">
+                              <div primary-title="" class="v-card__title layout justify-center">
                                 <div class="headline text-center">
-                                  &#x5B8C;&#x5168;&#x5F00;&#x6E90;
+                                  完全开源
                                 </div>
                               </div>
                               <div class="v-card__text text-center">
-                                &#x8BBF;&#x95EE;&#x6211;&#x4EEC;&#x7684;
-                                <a href="https://github.com/Liu233w/acm-statistics" target="_blank" rel="noopener noreferrer">&#x9879;&#x76EE;&#x5730;&#x5740;</a>
-                                &#x4EE5;&#x83B7;&#x53D6;&#x672C;&#x7F51;&#x7AD9;&#x7684;&#x6700;&#x65B0;&#x6E90;&#x4EE3;&#x7801;&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x5728;&#x81EA;&#x5DF1;&#x7684;&#x670D;&#x52A1;&#x5668;&#x4E0A;&#x90E8;&#x7F72;&#x672C;&#x7F51;&#x7AD9;&#x6216;&#x8005;&#x5728;&#x81EA;&#x5DF1;&#x7684;&#x9879;&#x76EE;&#x4E2D;&#x4F7F;&#x7528;&#x6211;&#x4EEC;&#x7684;&#x722C;&#x866B;&#x4EE3;&#x7801;&#x3002;
-                                &#x6B22;&#x8FCE;&#x5411;&#x6211;&#x4EEC;&#x63D0;&#x51FA;&#x95EE;&#x9898;&#x5EFA;&#x8BAE;&#x3001;&#x8D21;&#x732E;&#x4EE3;&#x7801;&#x6216;&#x7ED9;&#x6211;&#x4EEC;&#x70B9;&#x8D5E;&#xFF08;Star&#xFF09;&#xFF0C;&#x60A8;&#x7684;&#x652F;&#x6301;&#x662F;&#x6211;&#x4EEC;&#x524D;&#x8FDB;&#x7684;&#x52A8;&#x529B;
+                                访问我们的
+                                <a href="https://github.com/Liu233w/acm-statistics" target="_blank" rel="noopener noreferrer">项目地址</a>
+                                以获取本网站的最新源代码，您可以在自己的服务器上部署本网站或者在自己的项目中使用我们的爬虫代码。
+                                欢迎向我们提出问题建议、贡献代码或给我们点赞（Star），您的支持是我们前进的动力
                               </div>
                             </div>
                           </div>
                           <div class="flex xs12 md4">
                             <div class="elevation-0 transparent v-card v-card--flat v-sheet theme--light">
                               <div class="v-card__text text-center"><i aria-hidden="true" class="v-icon notranslate blue--text text--lighten-2 material-icons theme--light" style="font-size:40px;">build</i></div>
-                              <div primary-title class="v-card__title layout justify-center">
+                              <div primary-title="" class="v-card__title layout justify-center">
                                 <div class="headline text-center">
-                                  &#x66F4;&#x591A;&#x529F;&#x80FD;&#x652F;&#x6301;&#x4E2D;
+                                  更多功能支持中
                                 </div>
                               </div>
                               <div class="v-card__text text-center">
-                                &#x65E7;&#x7248;&#x67E5;&#x8BE2;&#x7CFB;&#x7EDF;&#x4E2D;&#x7684;&#x529F;&#x80FD;&#x6B63;&#x5728;&#x88AB;&#x79FB;&#x690D;&#x5230;&#x65B0;&#x7248;&#x67E5;&#x8BE2;&#x7CFB;&#x7EDF;&#x4E2D;&#xFF0C;&#x5982;&#x679C;&#x60A8;&#x9700;&#x8981;&#x65E7;&#x7248;&#x67E5;&#x8BE2;&#x7CFB;&#x7EDF;&#x4E2D;&#x7684;&#x529F;&#x80FD;&#xFF0C;&#x8BF7;
-                                <a href="//npuacm.info/">&#x5355;&#x51FB;&#x6B64;&#x5904;&#x8FD4;&#x56DE;&#x65E7;&#x7248;&#x67E5;&#x8BE2;&#x7CFB;&#x7EDF;</a></div>
+                                旧版查询系统中的功能正在被移植到新版查询系统中，如果您需要旧版查询系统中的功能，请
+                                <a href="//npuacm.info/">单击此处返回旧版查询系统</a></div>
                             </div>
                           </div>
                         </div>
@@ -823,12 +823,12 @@ exports[`/ 1`] = `
                 </section>
                 <section>
                   <div class="v-parallax" style="height:380px;">
-                    <div class="v-parallax__image-container"><img src="/_nuxt/img/back4.ac176e5.jpg" alt class="v-parallax__image" style="display:block;opacity:0;transform:translate(-50%, 0px);"></div>
+                    <div class="v-parallax__image-container"><img src="/_nuxt/img/back4.ac176e5.jpg" alt="" class="v-parallax__image" style="display:block;opacity:0;transform:translate(-50%, 0px);"></div>
                     <div class="v-parallax__content">
                       <div class="layout column align-center justify-center">
                         <div class="headline white--text mb-4 text-center response-title">
-                          &#x6B22;&#x8FCE;&#x5411;&#x6211;&#x4EEC;&#x63D0;&#x51FA;&#x610F;&#x89C1;&#x4EE5;&#x5E2E;&#x52A9;&#x672C;&#x7F51;&#x7AD9;&#x8FDB;&#x6B65;
-                        </div> <a href="mailto:acm-statistics@fire.fundersclub.com?body=%E8%AF%B7%E6%B3%A8%E6%84%8F%EF%BC%8C%E6%82%A8%E7%BB%8F%E6%AD%A4%E9%93%BE%E6%8E%A5%E5%8F%91%E9%80%81%E7%9A%84%E6%89%80%E6%9C%89%E4%BF%A1%E6%81%AF%E9%83%BD%E5%B0%86%E8%A2%AB%E5%8F%91%E9%80%81%E5%88%B0https%3A%2F%2Fgithub.com%2FLiu233w%2Facm-statistics%2Fissues%EF%BC%8C%E4%BB%BB%E4%BD%95%E4%BA%BA%E9%83%BD%E6%9C%89%E6%9D%83%E9%99%90%E6%B5%8F%E8%A7%88%E5%85%B6%E5%86%85%E5%AE%B9%E3%80%82"><em class="white--text response-title">&#x6216;&#x8005;&#x5355;&#x51FB;&#x6B64;&#x5904;&#x5411;&#x672C;&#x9879;&#x76EE;&#x53D1;&#x9001;&#x90AE;&#x4EF6;</em></a> <a href="https://github.com/Liu233w/acm-statistics/issues/new" target="_blank" rel="noopener noreferrer" class="blue lighten-2 mt-12 v-btn v-btn--contained theme--dark v-size--large"><span class="v-btn__content">
+                          欢迎向我们提出意见以帮助本网站进步
+                        </div> <a href="mailto:acm-statistics@fire.fundersclub.com?body=%E8%AF%B7%E6%B3%A8%E6%84%8F%EF%BC%8C%E6%82%A8%E7%BB%8F%E6%AD%A4%E9%93%BE%E6%8E%A5%E5%8F%91%E9%80%81%E7%9A%84%E6%89%80%E6%9C%89%E4%BF%A1%E6%81%AF%E9%83%BD%E5%B0%86%E8%A2%AB%E5%8F%91%E9%80%81%E5%88%B0https%3A%2F%2Fgithub.com%2FLiu233w%2Facm-statistics%2Fissues%EF%BC%8C%E4%BB%BB%E4%BD%95%E4%BA%BA%E9%83%BD%E6%9C%89%E6%9D%83%E9%99%90%E6%B5%8F%E8%A7%88%E5%85%B6%E5%86%85%E5%AE%B9%E3%80%82"><em class="white--text response-title">或者单击此处向本项目发送邮件</em></a> <a href="https://github.com/Liu233w/acm-statistics/issues/new" target="_blank" rel="noopener noreferrer" class="blue lighten-2 mt-12 v-btn v-btn--contained theme--dark v-size--large"><span class="v-btn__content">
             Submit New Issue
           </span></a>
                       </div>
@@ -840,32 +840,32 @@ exports[`/ 1`] = `
                     <div class="layout my-12 wrap justify-center">
                       <div class="flex xs12 sm4">
                         <div class="elevation-0 transparent v-card v-card--flat v-sheet theme--light">
-                          <div primary-title class="v-card__title layout justify-center">
+                          <div primary-title="" class="v-card__title layout justify-center">
                             <div class="headline">
-                              &#x5173;&#x4E8E;&#x6211;&#x4EEC;
+                              关于我们
                             </div>
                           </div>
                           <div class="v-card__text">
                             <p>
-                              &#x897F;&#x5317;&#x5DE5;&#x4E1A;&#x5927;&#x5B66;ACM&#x534F;&#x4F1A;&#x6280;&#x672F;&#x7EC4;&#x81F4;&#x529B;&#x4E8E;&#x4E3A;&#x5E7F;&#x5927;&#x5B66;&#x751F;&#x63D0;&#x4F9B;&#x5404;&#x7C7B;&#x8BA1;&#x7B97;&#x673A;&#x3001;&#x7B97;&#x6CD5;&#x3001;&#x8BA1;&#x7B97;&#x673A;&#x7C7B;&#x7ADE;&#x8D5B;&#x65B9;&#x9762;&#x7684;&#x8BBE;&#x65BD;&#x53CA;&#x670D;&#x52A1;&#x3002;
-                              &#x6B22;&#x8FCE;&#x5404;&#x4F4D;&#x6709;&#x8BC6;&#x4E4B;&#x58EB;&#x52A0;&#x5165;&#x3002;
+                              西北工业大学ACM协会技术组致力于为广大学生提供各类计算机、算法、计算机类竞赛方面的设施及服务。
+                              欢迎各位有识之士加入。
                             </p>
                             <p id="busuanzi_container_site_pv" style="display:none;">
-                              &#x672C;&#x7AD9;&#x603B;&#x8BBF;&#x95EE;&#x91CF;:
-                              <span id="busuanzi_value_site_pv"></span>&#x6B21;
+                              本站总访问量:
+                              <span id="busuanzi_value_site_pv"></span>次
                               <br></p>
                             <p id="busuanzi_container_site_uv" style="display:none;">
-                              &#x672C;&#x7AD9;&#x603B;&#x8BBF;&#x5BA2;&#x6570;:
-                              <span id="busuanzi_value_site_uv"></span>&#x6B21;
+                              本站总访客数:
+                              <span id="busuanzi_value_site_uv"></span>次
                             </p>
                           </div>
                         </div>
                       </div>
                       <div class="flex xs12 sm4 offset-sm1">
                         <div class="elevation-0 transparent v-card v-card--flat v-sheet theme--light">
-                          <div primary-title class="v-card__title layout justify-center">
+                          <div primary-title="" class="v-card__title layout justify-center">
                             <div class="headline">
-                              &#x8054;&#x7CFB;&#x6211;&#x4EEC;
+                              联系我们
                             </div>
                           </div>
                           <div role="list" class="v-list transparent v-sheet v-sheet--tile theme--light"><a tabindex="0" href="https://jq.qq.com/?_wv=1027&amp;k=5qgzfQc" target="_blank" rel="noopener noreferrer" role="listitem" class="v-list-item v-list-item--link theme--light">
@@ -877,7 +877,7 @@ exports[`/ 1`] = `
                             <div tabindex="0" role="listitem" class="v-list-item v-list-item--link theme--light">
                               <div class="v-list-item__action"><i aria-hidden="true" class="v-icon notranslate blue--text text--lighten-2 material-icons theme--light">place</i></div>
                               <div class="v-list-item__content">
-                                <div class="v-list-item__title">&#x9655;&#x897F;&#x7701;&#x897F;&#x5B89;&#x5E02;&#x957F;&#x5B89;&#x533A;&#x897F;&#x5317;&#x5DE5;&#x4E1A;&#x5927;&#x5B66;&#x957F;&#x5B89;&#x6821;&#x533A;&#x8BA1;&#x7B97;&#x673A;&#x5B66;&#x9662;110&#x5BA4;</div>
+                                <div class="v-list-item__title">陕西省西安市长安区西北工业大学长安校区计算机学院110室</div>
                               </div>
                             </div> <a tabindex="0" href="mailto:support@npuacm.info" role="listitem" class="v-list-item v-list-item--link theme--light">
                               <div class="v-list-item__action"><i aria-hidden="true" class="v-icon notranslate blue--text text--lighten-2 material-icons theme--light">email</i></div>
@@ -888,7 +888,7 @@ exports[`/ 1`] = `
                             <div tabindex="0" role="listitem" class="v-list-item v-list-item--link theme--light">
                               <div class="v-list-item__action"><i aria-hidden="true" class="v-icon notranslate blue--text text--lighten-2 mdi mdi-wechat theme--light"></i></div>
                               <div class="v-list-item__content">
-                                <div class="v-list-item__title">&#x5FAE;&#x4FE1;&#x516C;&#x4F17;&#x53F7;</div>
+                                <div class="v-list-item__title">微信公众号</div>
                               </div>
                             </div>
                           </div>
@@ -901,9 +901,9 @@ exports[`/ 1`] = `
                   </div>
                 </section>
                 <footer class="v-footer blue darken-2 v-sheet v-sheet--tile theme--light"><a href="/about" class="white--text ml-4 body-2">
-                    &#xA9; 2018 - 1970 Shumin Liu and Contributors
+                    © 2018 - 1970 Shumin Liu and Contributors
                   </a>
-                  <div class="spacer"></div> <span class="white--text ml-4 body-2">&#x9655;ICP&#x5907;17008184&#x53F7;</span>
+                  <div class="spacer"></div> <span class="white--text ml-4 body-2">陕ICP备17008184号</span>
                 </footer>
               </div>
             </main>
@@ -948,13 +948,13 @@ exports[`/ 1`] = `
 
 exports[`/about 1`] = `
 <!DOCTYPE html>
-<html data-n-head-ssr>
+<html data-n-head-ssr="">
 
   <head>
     <title>About - ACM Statistics</title>
     <meta data-n-head="ssr" charset="utf-8">
     <meta data-n-head="ssr" name="viewport" content="width=device-width, initial-scale=1">
-    <meta data-n-head="ssr" data-hid="description" name="description" content="&#x897F;&#x5317;&#x5DE5;&#x4E1A;&#x5927;&#x5B66;ACM&#x57FA;&#x5730;&#x67E5;&#x9898;&#x4E3B;&#x9875;&#xFF0C;&#x63D0;&#x4F9B;&#x56FD;&#x5185;&#x5404;&#x5927;OJ&#x7684;&#x67E5;&#x8BE2;&#x9898;&#x91CF;&#x3001;&#x8BA1;&#x7B97;Rating&#x7684;&#x670D;&#x52A1;&#x3002;">
+    <meta data-n-head="ssr" data-hid="description" name="description" content="西北工业大学ACM基地查题主页，提供国内各大OJ的查询题量、计算Rating的服务。">
     <link data-n-head="ssr" rel="icon" type="image/x-icon" href="/favicon.ico">
     <link data-n-head="ssr" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons|Noto+Serif+SC:300,400,500,700">
     <link data-n-head="ssr" rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&amp;display=swap">
@@ -1664,7 +1664,7 @@ exports[`/about 1`] = `
         caret-color: #843c00 !important;
       }
     </style>
-    <script data-n-head="ssr" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" data-ad-client="ca-pub-9846042020379030" async></script>
+    <script data-n-head="ssr" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" data-ad-client="ca-pub-9846042020379030" async=""></script>
   </head>
 
   <body>
@@ -1706,7 +1706,7 @@ exports[`/about 1`] = `
                 <div class="spacer"></div>
                 <!---->
                 <!----> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--text theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate v-icon--left mdi mdi-login theme--light"></i> login
-    </span></button></span> <span class="v-tooltip v-tooltip--left"><!----><a href="https://github.com/Liu233w/acm-statistics" target="_blank" rel="noopener noreferrer" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" medium class="v-icon notranslate mdi mdi-github theme--light"></i></span></a></span>
+    </span></button></span> <span class="v-tooltip v-tooltip--left"><!----><a href="https://github.com/Liu233w/acm-statistics" target="_blank" rel="noopener noreferrer" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" medium="" class="v-icon notranslate mdi mdi-github theme--light"></i></span></a></span>
               </div>
             </header>
             <main class="v-content" style="padding-top:64px;padding-right:0px;padding-bottom:0px;padding-left:0px;">
@@ -1771,13 +1771,13 @@ exports[`/about 1`] = `
                         <div role="list" class="v-list v-sheet v-sheet--tile theme--light">
                           <div tabindex="-1" role="listitem" class="v-list-item theme--light">
                             <div class="v-list-item__content">
-                              <div class="v-list-item__title">&#x897F;&#x5317;&#x5DE5;&#x4E1A;&#x5927;&#x5B66;ACM&#x534F;&#x4F1A;&#x6280;&#x672F;&#x7EC4;</div>
+                              <div class="v-list-item__title">西北工业大学ACM协会技术组</div>
                             </div>
                           </div>
                           <div tabindex="-1" role="listitem" class="v-list-item theme--light">
                             <div class="v-list-item__action"><i aria-hidden="true" class="v-icon notranslate blue--text text--lighten-2 material-icons theme--light">place</i></div>
                             <div class="v-list-item__content">
-                              <v-list-item-sub-title>&#x9655;&#x897F;&#x7701;&#x897F;&#x5B89;&#x5E02;&#x957F;&#x5B89;&#x533A;&#x897F;&#x5317;&#x5DE5;&#x4E1A;&#x5927;&#x5B66;&#x957F;&#x5B89;&#x6821;&#x533A;&#x8BA1;&#x7B97;&#x673A;&#x5B66;&#x9662;110&#x5BA4;</v-list-item-sub-title>
+                              <v-list-item-sub-title>陕西省西安市长安区西北工业大学长安校区计算机学院110室</v-list-item-sub-title>
                             </div>
                           </div> <a tabindex="0" href="https://jq.qq.com/?_wv=1027&amp;k=5qgzfQc" target="_blank" rel="noopener noreferrer" role="listitem" class="v-list-item v-list-item--link theme--light">
                             <div class="v-list-item__action"><i aria-hidden="true" class="v-icon notranslate blue--text text--lighten-2 mdi mdi-qqchat theme--light"></i></div>
@@ -1788,7 +1788,7 @@ exports[`/about 1`] = `
                           <div tabindex="0" role="listitem" class="v-list-item v-list-item--link theme--light">
                             <div class="v-list-item__action"><i aria-hidden="true" class="v-icon notranslate blue--text text--lighten-2 mdi mdi-wechat theme--light"></i></div>
                             <div class="v-list-item__content">
-                              <div class="v-list-item__title">&#x5FAE;&#x4FE1;&#x516C;&#x4F17;&#x53F7;</div>
+                              <div class="v-list-item__title">微信公众号</div>
                             </div>
                           </div>
                         </div>
@@ -1839,8 +1839,8 @@ exports[`/about 1`] = `
                 </div>
               </div>
             </main>
-            <footer class="v-footer v-sheet v-sheet--tile theme--light v-footer--absolute v-footer--inset" style="left:0px;right:0px;bottom:0px;"><span class="body-2">&#xA9; 2018 - 1970 Shumin Liu and Contributors</span>
-              <div class="spacer"></div> <span class="body-2">&#x9655;ICP&#x5907;17008184&#x53F7;</span></footer>
+            <footer class="v-footer v-sheet v-sheet--tile theme--light v-footer--absolute v-footer--inset" style="left:0px;right:0px;bottom:0px;"><span class="body-2">© 2018 - 1970 Shumin Liu and Contributors</span>
+              <div class="spacer"></div> <span class="body-2">陕ICP备17008184号</span></footer>
             <div class="message-panel v-card v-sheet theme--light" style="display:none;">
               <v-list class="pa-0"></v-list>
               <!---->
@@ -1886,13 +1886,13 @@ exports[`/about 1`] = `
 
 exports[`/history 1`] = `
 <!DOCTYPE html>
-<html data-n-head-ssr>
+<html data-n-head-ssr="">
 
   <head>
     <title>History - ACM Statistics</title>
     <meta data-n-head="ssr" charset="utf-8">
     <meta data-n-head="ssr" name="viewport" content="width=device-width, initial-scale=1">
-    <meta data-n-head="ssr" data-hid="description" name="description" content="&#x897F;&#x5317;&#x5DE5;&#x4E1A;&#x5927;&#x5B66;ACM&#x57FA;&#x5730;&#x67E5;&#x9898;&#x4E3B;&#x9875;&#xFF0C;&#x63D0;&#x4F9B;&#x56FD;&#x5185;&#x5404;&#x5927;OJ&#x7684;&#x67E5;&#x8BE2;&#x9898;&#x91CF;&#x3001;&#x8BA1;&#x7B97;Rating&#x7684;&#x670D;&#x52A1;&#x3002;">
+    <meta data-n-head="ssr" data-hid="description" name="description" content="西北工业大学ACM基地查题主页，提供国内各大OJ的查询题量、计算Rating的服务。">
     <link data-n-head="ssr" rel="icon" type="image/x-icon" href="/favicon.ico">
     <link data-n-head="ssr" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons|Noto+Serif+SC:300,400,500,700">
     <link data-n-head="ssr" rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&amp;display=swap">
@@ -2602,7 +2602,7 @@ exports[`/history 1`] = `
         caret-color: #843c00 !important;
       }
     </style>
-    <script data-n-head="ssr" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" data-ad-client="ca-pub-9846042020379030" async></script>
+    <script data-n-head="ssr" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" data-ad-client="ca-pub-9846042020379030" async=""></script>
   </head>
 
   <body>
@@ -2654,7 +2654,7 @@ exports[`/history 1`] = `
                 <div class="spacer"></div>
                 <!---->
                 <!----> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--text theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate v-icon--left mdi mdi-login theme--light" style="display:none;"></i> admin
-    </span></button></span> <span class="v-tooltip v-tooltip--left"><!----><a href="https://github.com/Liu233w/acm-statistics" target="_blank" rel="noopener noreferrer" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" medium class="v-icon notranslate mdi mdi-github theme--light"></i></span></a></span>
+    </span></button></span> <span class="v-tooltip v-tooltip--left"><!----><a href="https://github.com/Liu233w/acm-statistics" target="_blank" rel="noopener noreferrer" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" medium="" class="v-icon notranslate mdi mdi-github theme--light"></i></span></a></span>
               </div>
             </header>
             <main class="v-content" style="padding-top:64px;padding-right:0px;padding-bottom:0px;padding-left:0px;">
@@ -2686,7 +2686,7 @@ exports[`/history 1`] = `
                         </colgroup>
                         <thead class="v-data-table-header">
                           <tr>
-                            <th role="columnheader" scope="col" aria-label class="text-start" style="width:1px;min-width:1px;">
+                            <th role="columnheader" scope="col" aria-label="" class="text-start" style="width:1px;min-width:1px;">
                               <div class="v-data-table__checkbox v-simple-checkbox">
                                 <div class="v-input--selection-controls__ripple"></div><i aria-hidden="true" class="v-icon notranslate mdi mdi-checkbox-blank-outline theme--light"></i>
                               </div>
@@ -2850,8 +2850,8 @@ exports[`/history 1`] = `
                 </div>
               </div>
             </main>
-            <footer class="v-footer v-sheet v-sheet--tile theme--light v-footer--absolute v-footer--inset" style="left:0px;right:0px;bottom:0px;"><span class="body-2">&#xA9; 2018 - 1970 Shumin Liu and Contributors</span>
-              <div class="spacer"></div> <span class="body-2">&#x9655;ICP&#x5907;17008184&#x53F7;</span></footer>
+            <footer class="v-footer v-sheet v-sheet--tile theme--light v-footer--absolute v-footer--inset" style="left:0px;right:0px;bottom:0px;"><span class="body-2">© 2018 - 1970 Shumin Liu and Contributors</span>
+              <div class="spacer"></div> <span class="body-2">陕ICP备17008184号</span></footer>
             <div class="message-panel v-card v-sheet theme--light" style="display:none;">
               <v-list class="pa-0"></v-list>
               <!---->
@@ -3014,13 +3014,13 @@ exports[`/history 1`] = `
 
 exports[`/history/{historyId} 1`] = `
 <!DOCTYPE html>
-<html data-n-head-ssr>
+<html data-n-head-ssr="">
 
   <head>
     <title>History - ACM Statistics</title>
     <meta data-n-head="ssr" charset="utf-8">
     <meta data-n-head="ssr" name="viewport" content="width=device-width, initial-scale=1">
-    <meta data-n-head="ssr" data-hid="description" name="description" content="&#x897F;&#x5317;&#x5DE5;&#x4E1A;&#x5927;&#x5B66;ACM&#x57FA;&#x5730;&#x67E5;&#x9898;&#x4E3B;&#x9875;&#xFF0C;&#x63D0;&#x4F9B;&#x56FD;&#x5185;&#x5404;&#x5927;OJ&#x7684;&#x67E5;&#x8BE2;&#x9898;&#x91CF;&#x3001;&#x8BA1;&#x7B97;Rating&#x7684;&#x670D;&#x52A1;&#x3002;">
+    <meta data-n-head="ssr" data-hid="description" name="description" content="西北工业大学ACM基地查题主页，提供国内各大OJ的查询题量、计算Rating的服务。">
     <link data-n-head="ssr" rel="icon" type="image/x-icon" href="/favicon.ico">
     <link data-n-head="ssr" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons|Noto+Serif+SC:300,400,500,700">
     <link data-n-head="ssr" rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&amp;display=swap">
@@ -3730,7 +3730,7 @@ exports[`/history/{historyId} 1`] = `
         caret-color: #843c00 !important;
       }
     </style>
-    <script data-n-head="ssr" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" data-ad-client="ca-pub-9846042020379030" async></script>
+    <script data-n-head="ssr" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" data-ad-client="ca-pub-9846042020379030" async=""></script>
   </head>
 
   <body>
@@ -3782,7 +3782,7 @@ exports[`/history/{historyId} 1`] = `
                 <div class="spacer"></div>
                 <!---->
                 <!----> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--text theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate v-icon--left mdi mdi-login theme--light" style="display:none;"></i> admin
-    </span></button></span> <span class="v-tooltip v-tooltip--left"><!----><a href="https://github.com/Liu233w/acm-statistics" target="_blank" rel="noopener noreferrer" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" medium class="v-icon notranslate mdi mdi-github theme--light"></i></span></a></span>
+    </span></button></span> <span class="v-tooltip v-tooltip--left"><!----><a href="https://github.com/Liu233w/acm-statistics" target="_blank" rel="noopener noreferrer" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" medium="" class="v-icon notranslate mdi mdi-github theme--light"></i></span></a></span>
               </div>
             </header>
             <main class="v-content" style="padding-top:64px;padding-right:0px;padding-bottom:0px;padding-left:0px;">
@@ -3913,8 +3913,8 @@ exports[`/history/{historyId} 1`] = `
                 </div>
               </div>
             </main>
-            <footer class="v-footer v-sheet v-sheet--tile theme--light v-footer--absolute v-footer--inset" style="left:0px;right:0px;bottom:0px;"><span class="body-2">&#xA9; 2018 - 1970 Shumin Liu and Contributors</span>
-              <div class="spacer"></div> <span class="body-2">&#x9655;ICP&#x5907;17008184&#x53F7;</span></footer>
+            <footer class="v-footer v-sheet v-sheet--tile theme--light v-footer--absolute v-footer--inset" style="left:0px;right:0px;bottom:0px;"><span class="body-2">© 2018 - 1970 Shumin Liu and Contributors</span>
+              <div class="spacer"></div> <span class="body-2">陕ICP备17008184号</span></footer>
             <div class="message-panel v-card v-sheet theme--light" style="display:none;">
               <v-list class="pa-0"></v-list>
               <!---->
@@ -4251,13 +4251,13 @@ exports[`/history/{historyId} 1`] = `
 
 exports[`/login 1`] = `
 <!DOCTYPE html>
-<html data-n-head-ssr>
+<html data-n-head-ssr="">
 
   <head>
-    <title>NWPU-ACM &#x67E5;&#x8BE2;&#x7CFB;&#x7EDF;</title>
+    <title>NWPU-ACM 查询系统</title>
     <meta data-n-head="ssr" charset="utf-8">
     <meta data-n-head="ssr" name="viewport" content="width=device-width, initial-scale=1">
-    <meta data-n-head="ssr" data-hid="description" name="description" content="&#x897F;&#x5317;&#x5DE5;&#x4E1A;&#x5927;&#x5B66;ACM&#x57FA;&#x5730;&#x67E5;&#x9898;&#x4E3B;&#x9875;&#xFF0C;&#x63D0;&#x4F9B;&#x56FD;&#x5185;&#x5404;&#x5927;OJ&#x7684;&#x67E5;&#x8BE2;&#x9898;&#x91CF;&#x3001;&#x8BA1;&#x7B97;Rating&#x7684;&#x670D;&#x52A1;&#x3002;">
+    <meta data-n-head="ssr" data-hid="description" name="description" content="西北工业大学ACM基地查题主页，提供国内各大OJ的查询题量、计算Rating的服务。">
     <link data-n-head="ssr" rel="icon" type="image/x-icon" href="/favicon.ico">
     <link data-n-head="ssr" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons|Noto+Serif+SC:300,400,500,700">
     <link data-n-head="ssr" rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&amp;display=swap">
@@ -4967,7 +4967,7 @@ exports[`/login 1`] = `
         caret-color: #843c00 !important;
       }
     </style>
-    <script data-n-head="ssr" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" data-ad-client="ca-pub-9846042020379030" async></script>
+    <script data-n-head="ssr" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" data-ad-client="ca-pub-9846042020379030" async=""></script>
   </head>
 
   <body>
@@ -4989,7 +4989,7 @@ exports[`/login 1`] = `
                   <div class="spacer"></div>
                   <div class="container text-center">
                     <div class="v-card v-card--flat v-sheet theme--light">
-                      <div primary-title class="v-card__title">
+                      <div primary-title="" class="v-card__title">
                         <div class="headline">
                           Login
                         </div>
@@ -5013,7 +5013,7 @@ exports[`/login 1`] = `
                                 </div>
                                 <div class="v-input__control">
                                   <div class="v-input__slot">
-                                    <div class="v-text-field__slot"><label class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Username</label><input required="required" type="text" value></div>
+                                    <div class="v-text-field__slot"><label class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Username</label><input required="required" type="text" value=""></div>
                                   </div>
                                   <div class="v-text-field__details">
                                     <div class="v-messages theme--light">
@@ -5028,7 +5028,7 @@ exports[`/login 1`] = `
                                 </div>
                                 <div class="v-input__control">
                                   <div class="v-input__slot">
-                                    <div class="v-text-field__slot"><label class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Password</label><input required="required" type="password" value></div>
+                                    <div class="v-text-field__slot"><label class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Password</label><input required="required" type="password" value=""></div>
                                   </div>
                                   <div class="v-text-field__details">
                                     <div class="v-messages theme--light">
@@ -5109,13 +5109,13 @@ exports[`/login 1`] = `
 
 exports[`/register 1`] = `
 <!DOCTYPE html>
-<html data-n-head-ssr>
+<html data-n-head-ssr="">
 
   <head>
-    <title>NWPU-ACM &#x67E5;&#x8BE2;&#x7CFB;&#x7EDF;</title>
+    <title>NWPU-ACM 查询系统</title>
     <meta data-n-head="ssr" charset="utf-8">
     <meta data-n-head="ssr" name="viewport" content="width=device-width, initial-scale=1">
-    <meta data-n-head="ssr" data-hid="description" name="description" content="&#x897F;&#x5317;&#x5DE5;&#x4E1A;&#x5927;&#x5B66;ACM&#x57FA;&#x5730;&#x67E5;&#x9898;&#x4E3B;&#x9875;&#xFF0C;&#x63D0;&#x4F9B;&#x56FD;&#x5185;&#x5404;&#x5927;OJ&#x7684;&#x67E5;&#x8BE2;&#x9898;&#x91CF;&#x3001;&#x8BA1;&#x7B97;Rating&#x7684;&#x670D;&#x52A1;&#x3002;">
+    <meta data-n-head="ssr" data-hid="description" name="description" content="西北工业大学ACM基地查题主页，提供国内各大OJ的查询题量、计算Rating的服务。">
     <link data-n-head="ssr" rel="icon" type="image/x-icon" href="/favicon.ico">
     <link data-n-head="ssr" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons|Noto+Serif+SC:300,400,500,700">
     <link data-n-head="ssr" rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&amp;display=swap">
@@ -5825,7 +5825,7 @@ exports[`/register 1`] = `
         caret-color: #843c00 !important;
       }
     </style>
-    <script data-n-head="ssr" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" data-ad-client="ca-pub-9846042020379030" async></script>
+    <script data-n-head="ssr" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" data-ad-client="ca-pub-9846042020379030" async=""></script>
   </head>
 
   <body>
@@ -5847,7 +5847,7 @@ exports[`/register 1`] = `
                   <div class="spacer"></div>
                   <div class="container text-center">
                     <div class="v-card v-card--flat v-sheet theme--light">
-                      <div primary-title class="v-card__title">
+                      <div primary-title="" class="v-card__title">
                         <div class="headline">
                           Register
                         </div>
@@ -5871,7 +5871,7 @@ exports[`/register 1`] = `
                                 </div>
                                 <div class="v-input__control">
                                   <div class="v-input__slot">
-                                    <div class="v-text-field__slot"><label class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Username</label><input required="required" type="text" value></div>
+                                    <div class="v-text-field__slot"><label class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Username</label><input required="required" type="text" value=""></div>
                                   </div>
                                   <div class="v-text-field__details">
                                     <div class="v-messages theme--light">
@@ -5886,7 +5886,7 @@ exports[`/register 1`] = `
                                 </div>
                                 <div class="v-input__control">
                                   <div class="v-input__slot">
-                                    <div class="v-text-field__slot"><label class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Password</label><input required="required" type="password" value></div>
+                                    <div class="v-text-field__slot"><label class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Password</label><input required="required" type="password" value=""></div>
                                   </div>
                                   <div class="v-text-field__details">
                                     <div class="v-messages theme--light">
@@ -5901,7 +5901,7 @@ exports[`/register 1`] = `
                                 </div>
                                 <div class="v-input__control">
                                   <div class="v-input__slot">
-                                    <div class="v-text-field__slot"><label class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Confirm password</label><input required="required" type="password" value></div>
+                                    <div class="v-text-field__slot"><label class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Confirm password</label><input required="required" type="password" value=""></div>
                                   </div>
                                   <div class="v-text-field__details">
                                     <div class="v-messages theme--light">
@@ -5919,7 +5919,7 @@ exports[`/register 1`] = `
                                     </div>
                                     <div class="v-input__control">
                                       <div class="v-input__slot">
-                                        <div class="v-text-field__slot"><label class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Captcha</label><input required="required" type="text" value></div>
+                                        <div class="v-text-field__slot"><label class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Captcha</label><input required="required" type="text" value=""></div>
                                         <div class="v-input__append-inner"><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">refresh</i></span></button></div>
                                       </div>
                                       <div class="v-text-field__details">
@@ -5991,13 +5991,13 @@ exports[`/register 1`] = `
 
 exports[`/settings 1`] = `
 <!DOCTYPE html>
-<html data-n-head-ssr>
+<html data-n-head-ssr="">
 
   <head>
     <title>Settings - ACM Statistics</title>
     <meta data-n-head="ssr" charset="utf-8">
     <meta data-n-head="ssr" name="viewport" content="width=device-width, initial-scale=1">
-    <meta data-n-head="ssr" data-hid="description" name="description" content="&#x897F;&#x5317;&#x5DE5;&#x4E1A;&#x5927;&#x5B66;ACM&#x57FA;&#x5730;&#x67E5;&#x9898;&#x4E3B;&#x9875;&#xFF0C;&#x63D0;&#x4F9B;&#x56FD;&#x5185;&#x5404;&#x5927;OJ&#x7684;&#x67E5;&#x8BE2;&#x9898;&#x91CF;&#x3001;&#x8BA1;&#x7B97;Rating&#x7684;&#x670D;&#x52A1;&#x3002;">
+    <meta data-n-head="ssr" data-hid="description" name="description" content="西北工业大学ACM基地查题主页，提供国内各大OJ的查询题量、计算Rating的服务。">
     <link data-n-head="ssr" rel="icon" type="image/x-icon" href="/favicon.ico">
     <link data-n-head="ssr" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons|Noto+Serif+SC:300,400,500,700">
     <link data-n-head="ssr" rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&amp;display=swap">
@@ -6707,7 +6707,7 @@ exports[`/settings 1`] = `
         caret-color: #843c00 !important;
       }
     </style>
-    <script data-n-head="ssr" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" data-ad-client="ca-pub-9846042020379030" async></script>
+    <script data-n-head="ssr" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" data-ad-client="ca-pub-9846042020379030" async=""></script>
   </head>
 
   <body>
@@ -6759,7 +6759,7 @@ exports[`/settings 1`] = `
                 <div class="spacer"></div>
                 <!---->
                 <!----> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--text theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate v-icon--left mdi mdi-login theme--light" style="display:none;"></i> admin
-    </span></button></span> <span class="v-tooltip v-tooltip--left"><!----><a href="https://github.com/Liu233w/acm-statistics" target="_blank" rel="noopener noreferrer" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" medium class="v-icon notranslate mdi mdi-github theme--light"></i></span></a></span>
+    </span></button></span> <span class="v-tooltip v-tooltip--left"><!----><a href="https://github.com/Liu233w/acm-statistics" target="_blank" rel="noopener noreferrer" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" medium="" class="v-icon notranslate mdi mdi-github theme--light"></i></span></a></span>
               </div>
             </header>
             <main class="v-content" style="padding-top:64px;padding-right:0px;padding-bottom:0px;padding-left:0px;">
@@ -6861,7 +6861,7 @@ exports[`/settings 1`] = `
                               </div>
                               <div class="v-input__control">
                                 <div class="v-input__slot">
-                                  <div class="v-text-field__slot"><label class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Current Password</label><input required="required" type="password" value></div>
+                                  <div class="v-text-field__slot"><label class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Current Password</label><input required="required" type="password" value=""></div>
                                 </div>
                                 <div class="v-text-field__details">
                                   <div class="v-messages theme--light">
@@ -6876,7 +6876,7 @@ exports[`/settings 1`] = `
                               </div>
                               <div class="v-input__control">
                                 <div class="v-input__slot">
-                                  <div class="v-text-field__slot"><label class="v-label theme--light" style="left:0px;right:auto;position:absolute;">New Password</label><input required="required" type="password" value></div>
+                                  <div class="v-text-field__slot"><label class="v-label theme--light" style="left:0px;right:auto;position:absolute;">New Password</label><input required="required" type="password" value=""></div>
                                 </div>
                                 <div class="v-text-field__details">
                                   <div class="v-messages theme--light">
@@ -6891,7 +6891,7 @@ exports[`/settings 1`] = `
                               </div>
                               <div class="v-input__control">
                                 <div class="v-input__slot">
-                                  <div class="v-text-field__slot"><label class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Confirm Password</label><input required="required" type="password" value></div>
+                                  <div class="v-text-field__slot"><label class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Confirm Password</label><input required="required" type="password" value=""></div>
                                 </div>
                                 <div class="v-text-field__details">
                                   <div class="v-messages theme--light">
@@ -6932,8 +6932,8 @@ exports[`/settings 1`] = `
                 </div>
               </div>
             </main>
-            <footer class="v-footer v-sheet v-sheet--tile theme--light v-footer--absolute v-footer--inset" style="left:0px;right:0px;bottom:0px;"><span class="body-2">&#xA9; 2018 - 1970 Shumin Liu and Contributors</span>
-              <div class="spacer"></div> <span class="body-2">&#x9655;ICP&#x5907;17008184&#x53F7;</span></footer>
+            <footer class="v-footer v-sheet v-sheet--tile theme--light v-footer--absolute v-footer--inset" style="left:0px;right:0px;bottom:0px;"><span class="body-2">© 2018 - 1970 Shumin Liu and Contributors</span>
+              <div class="spacer"></div> <span class="body-2">陕ICP备17008184号</span></footer>
             <div class="message-panel v-card v-sheet theme--light" style="display:none;">
               <v-list class="pa-0"></v-list>
               <!---->
@@ -6999,13 +6999,13 @@ exports[`/settings 1`] = `
 
 exports[`/statistics 1`] = `
 <!DOCTYPE html>
-<html data-n-head-ssr>
+<html data-n-head-ssr="">
 
   <head>
     <title>Statistics - ACM Statistics</title>
     <meta data-n-head="ssr" charset="utf-8">
     <meta data-n-head="ssr" name="viewport" content="width=device-width, initial-scale=1">
-    <meta data-n-head="ssr" data-hid="description" name="description" content="&#x897F;&#x5317;&#x5DE5;&#x4E1A;&#x5927;&#x5B66;ACM&#x57FA;&#x5730;&#x67E5;&#x9898;&#x4E3B;&#x9875;&#xFF0C;&#x63D0;&#x4F9B;&#x56FD;&#x5185;&#x5404;&#x5927;OJ&#x7684;&#x67E5;&#x8BE2;&#x9898;&#x91CF;&#x3001;&#x8BA1;&#x7B97;Rating&#x7684;&#x670D;&#x52A1;&#x3002;">
+    <meta data-n-head="ssr" data-hid="description" name="description" content="西北工业大学ACM基地查题主页，提供国内各大OJ的查询题量、计算Rating的服务。">
     <link data-n-head="ssr" rel="icon" type="image/x-icon" href="/favicon.ico">
     <link data-n-head="ssr" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons|Noto+Serif+SC:300,400,500,700">
     <link data-n-head="ssr" rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&amp;display=swap">
@@ -7715,7 +7715,7 @@ exports[`/statistics 1`] = `
         caret-color: #843c00 !important;
       }
     </style>
-    <script data-n-head="ssr" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" data-ad-client="ca-pub-9846042020379030" async></script>
+    <script data-n-head="ssr" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" data-ad-client="ca-pub-9846042020379030" async=""></script>
   </head>
 
   <body>
@@ -7757,18 +7757,18 @@ exports[`/statistics 1`] = `
                 <div class="spacer"></div>
                 <!---->
                 <!----> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--text theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate v-icon--left mdi mdi-login theme--light"></i> login
-    </span></button></span> <span class="v-tooltip v-tooltip--left"><!----><a href="https://github.com/Liu233w/acm-statistics" target="_blank" rel="noopener noreferrer" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" medium class="v-icon notranslate mdi mdi-github theme--light"></i></span></a></span>
+    </span></button></span> <span class="v-tooltip v-tooltip--left"><!----><a href="https://github.com/Liu233w/acm-statistics" target="_blank" rel="noopener noreferrer" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" medium="" class="v-icon notranslate mdi mdi-github theme--light"></i></span></a></span>
               </div>
             </header>
             <main class="v-content" style="padding-top:64px;padding-right:0px;padding-bottom:0px;padding-left:0px;">
               <div class="v-content__wrap">
                 <div data-fetch-key="0" class="container grid-list-md">
-                  <div wrap class="row no-gutters">
+                  <div wrap="" class="row no-gutters">
                     <div class="pt-0 pb-0 col-md-3 col">
                       <div class="v-input theme--light v-text-field" style="min-width:240px;">
                         <div class="v-input__control">
                           <div class="v-input__slot">
-                            <div class="v-text-field__slot"><label class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Set all usernames</label><input required="required" type="text" value></div>
+                            <div class="v-text-field__slot"><label class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Set all usernames</label><input required="required" type="text" value=""></div>
                           </div>
                           <div class="v-text-field__details">
                             <div class="v-messages theme--light">
@@ -7792,7 +7792,8 @@ exports[`/statistics 1`] = `
                   <div class="row">
                     <div class="spacer"></div>
                     <div role="progressbar" aria-valuemin="0" aria-valuemax="100" class="v-progress-circular mt-10 v-progress-circular--indeterminate primary--text" style="height:100px;width:100px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="20.833333333333336 20.833333333333336 41.66666666666667 41.66666666666667" style="transform:rotate(0deg);">
-                        <circle fill="transparent" cx="41.66666666666667" cy="41.66666666666667" r="20" stroke-width="1.666666666666667" stroke-dasharray="125.664" stroke-dashoffset="125.66370614359172px" class="v-progress-circular__overlay" /></svg>
+                        <circle fill="transparent" cx="41.66666666666667" cy="41.66666666666667" r="20" stroke-width="1.666666666666667" stroke-dasharray="125.664" stroke-dashoffset="125.66370614359172px" class="v-progress-circular__overlay"></circle>
+                      </svg>
                       <div class="v-progress-circular__info"></div>
                     </div>
                     <div class="spacer"></div>
@@ -7800,8 +7801,8 @@ exports[`/statistics 1`] = `
                 </div>
               </div>
             </main>
-            <footer class="v-footer v-sheet v-sheet--tile theme--light v-footer--absolute v-footer--inset" style="left:0px;right:0px;bottom:0px;"><span class="body-2">&#xA9; 2018 - 1970 Shumin Liu and Contributors</span>
-              <div class="spacer"></div> <span class="body-2">&#x9655;ICP&#x5907;17008184&#x53F7;</span></footer>
+            <footer class="v-footer v-sheet v-sheet--tile theme--light v-footer--absolute v-footer--inset" style="left:0px;right:0px;bottom:0px;"><span class="body-2">© 2018 - 1970 Shumin Liu and Contributors</span>
+              <div class="spacer"></div> <span class="body-2">陕ICP备17008184号</span></footer>
             <div class="message-panel v-card v-sheet theme--light" style="display:none;">
               <v-list class="pa-0"></v-list>
               <!---->
