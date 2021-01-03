@@ -14,8 +14,6 @@ function addScriptTag(src) {
 export default function ({ app }) {
   if (process.client) {
     app.router.afterEach(() => {
-      addScriptTag('https://tajs.qq.com/stats?sId=65546290')
-      addScriptTag('https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js')
       addScriptTag('https://www.googletagmanager.com/gtag/js?id=UA-170122487-1')
       activeGtag()
     })
