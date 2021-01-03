@@ -203,7 +203,7 @@
               <v-card-text>
                 This project is the former <span class="font-italic">
                   西北工业大学ACM查询系统 (npuacm.info)
-                </span>, and the original idea is from <a
+                </span>. The original version and idea are from <a
                   href="https://kidozh.com/en/"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -242,6 +242,15 @@
 </template>
 
 <script>
+import { PROJECT_TITLE } from '~/components/consts'
+
+export default {
+  data() {
+    return {
+      projectTitle: PROJECT_TITLE,
+    }
+  },
+}
 /*!
 Portions of this source file taken from vuetifyjs/parallax-starter <https://github.com/vuetifyjs/parallax-starter>
 
