@@ -70,8 +70,6 @@
       absolute
     >
       <span class="body-2">&copy; 2018 - {{ buildYear }} Shumin Liu and Contributors</span>
-      <v-spacer />
-      <span class="body-2">陕ICP备17008184号</span>
     </v-footer>
     <message-panel />
   </v-app>

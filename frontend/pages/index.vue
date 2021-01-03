@@ -353,8 +353,6 @@
         >
           &copy; 2018 - {{ buildYear }} Shumin Liu and Contributors
         </nuxt-link>
-        <v-spacer />
-        <span class="white--text ml-4 body-2">陕ICP备17008184号</span>
       </v-footer>
     </v-content>
   </v-app>
