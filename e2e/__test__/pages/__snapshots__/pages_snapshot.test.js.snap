@@ -5,10 +5,10 @@ exports[`/ 1`] = `
 <html data-n-head-ssr="">
 
   <head>
-    <title>NWPU-ACM 查询系统</title>
+    <title>OJ Hunt</title>
     <meta data-n-head="ssr" charset="utf-8">
     <meta data-n-head="ssr" name="viewport" content="width=device-width, initial-scale=1">
-    <meta data-n-head="ssr" data-hid="description" name="description" content="西北工业大学ACM基地查题主页，提供国内各大OJ的查询题量、计算Rating的服务。">
+    <meta data-n-head="ssr" data-hid="description" name="description" content="Analyze your performance in all kinds of online judge websites.">
     <link data-n-head="ssr" rel="icon" type="image/x-icon" href="/favicon.ico">
     <link data-n-head="ssr" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons|Noto+Serif+SC:300,400,500,700">
     <link data-n-head="ssr" rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&amp;display=swap">
@@ -730,183 +730,187 @@ exports[`/ 1`] = `
       <div id="__layout">
         <div data-app="true" id="app" class="v-application v-application--is-ltr theme--light">
           <div class="v-application--wrap">
-            <header class="white v-sheet v-sheet--tile theme--light v-toolbar v-app-bar" style="height:64px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;">
-              <div class="v-toolbar__content" style="height:64px;">
-                <div class="v-toolbar__title">ACM Statistics</div>
-                <div class="spacer"></div> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--text theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate v-icon--left mdi mdi-login theme--light"></i> login
+            <nav class="v-navigation-drawer v-navigation-drawer--close v-navigation-drawer--fixed v-navigation-drawer--is-mobile theme--light" style="height:100vh;top:0px;transform:translateX(-100%);width:256px;">
+              <div class="v-navigation-drawer__content">
+                <div class="v-list v-sheet v-sheet--tile theme--light"><a href="/" aria-current="page" tabindex="0" class="v-list-item--active v-list-item v-list-item--link theme--light">
+                    <div class="v-list-item__action"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">home</i></div>
+                    <div class="v-list-item__content">
+                      <div class="v-list-item__title">Homepage</div>
+                    </div>
+                  </a><a href="/statistics" tabindex="0" class="v-list-item v-list-item--link theme--light">
+                    <div class="v-list-item__action"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">code</i></div>
+                    <div class="v-list-item__content">
+                      <div class="v-list-item__title">Statistics</div>
+                    </div>
+                  </a><a href="/about" tabindex="0" class="v-list-item v-list-item--link theme--light">
+                    <div class="v-list-item__action"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">info</i></div>
+                    <div class="v-list-item__content">
+                      <div class="v-list-item__title">About</div>
+                    </div>
+                  </a></div>
+              </div>
+              <div class="v-navigation-drawer__border"></div>
+            </nav>
+            <header class="v-sheet v-sheet--tile theme--light v-toolbar v-toolbar--absolute v-app-bar" style="height:64px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;">
+              <div class="v-toolbar__content" style="height:64px;"><button type="button" class="v-app-bar__nav-icon v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-menu theme--light"></i></span></button>
+                <!---->
+                <div class="v-toolbar__title">OJ Hunt</div>
+                <!---->
+                <!---->
+                <div class="spacer"></div>
+                <!---->
+                <!----> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--text theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate v-icon--left mdi mdi-login theme--light"></i> login
     </span></button></span> <span class="v-tooltip v-tooltip--left"><!----><a href="https://github.com/Liu233w/acm-statistics" target="_blank" rel="noopener noreferrer" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" medium="" class="v-icon notranslate mdi mdi-github theme--light"></i></span></a></span>
               </div>
             </header>
-            <main class="v-content" style="padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px;">
+            <main class="v-content" style="padding-top:64px;padding-right:0px;padding-bottom:0px;padding-left:0px;">
               <div class="v-content__wrap">
-                <section>
-                  <div class="v-parallax" style="height:600px;">
-                    <div class="v-parallax__image-container"><img src="/_nuxt/img/back7-brighten.e5adb12.jpg" alt="" class="v-parallax__image" style="display:block;opacity:0;transform:translate(-50%, 0px);"></div>
-                    <div class="v-parallax__content">
-                      <div class="layout white--text column align-center justify-center"><img src="/_nuxt/img/logo.db320b9.png" alt="Vuetify.js" height="190" class="mb-4">
-                        <h2 class="black--text headline text-center font-weight-light">
-                          ACM-ICPC 协会
-                        </h2>
-                        <div style="height:50px;"></div>
-                        <h1 class="black--text mb-2 display-1 text-center index-title font-weight-bold">
-                          Welcome to ACM Statistics
-                        </h1>
-                        <div class="black--text subheading mb-4 text-center index-title">
-                          An online tool to analyze users performance in online judges (coding competition websites)
-                        </div> <a href="/statistics" class="blue lighten-2 black--text mt-12 v-btn v-btn--contained v-btn--router theme--dark v-size--large"><span class="v-btn__content">
-            Enter AC Statistics
-          </span></a>
-                      </div>
-                    </div>
-                  </div>
-                </section>
-                <section>
-                  <div class="layout my-12 column wrap align-center">
-                    <div class="flex my-4 xs12 sm4">
-                      <div class="text-center">
-                        <h2 class="headline">
-                          全新查询系统，更加稳定
-                        </h2> <span class="subheading">异步API + 浏览器端爬虫，速度加倍</span>
-                      </div>
-                    </div>
-                    <div class="flex xs12">
-                      <div class="container grid-list-xl">
-                        <div class="layout wrap">
-                          <div class="flex xs12 md4">
-                            <div class="elevation-0 transparent v-card v-card--flat v-sheet theme--light">
-                              <div class="v-card__text text-center"><i aria-hidden="true" class="v-icon notranslate blue--text text--lighten-2 material-icons theme--light" style="font-size:40px;">link</i></div>
-                              <div primary-title="" class="v-card__title layout justify-center">
-                                <div class="headline text-center">
-                                  免费提供题量查询API
-                                </div>
-                              </div>
-                              <div class="v-card__text text-center">
-                                我们提供了一个 restful api 来供您使用，您可以在任意的客户端、网站中调用此api来查询某用户在oj上的提交数/通过数。
-                                访问我们的
-                                <a href="/swagger" target="_blank">api文档</a>以获取更多信息。
-                              </div>
-                            </div>
-                          </div>
-                          <div class="flex xs12 md4">
-                            <div class="elevation-0 transparent v-card v-card--flat v-sheet theme--light">
-                              <div class="v-card__text text-center"><i aria-hidden="true" class="v-icon notranslate blue--text text--lighten-2 mdi mdi-github theme--light" style="font-size:40px;"></i></div>
-                              <div primary-title="" class="v-card__title layout justify-center">
-                                <div class="headline text-center">
-                                  完全开源
-                                </div>
-                              </div>
-                              <div class="v-card__text text-center">
-                                访问我们的
-                                <a href="https://github.com/Liu233w/acm-statistics" target="_blank" rel="noopener noreferrer">项目地址</a>
-                                以获取本网站的最新源代码，您可以在自己的服务器上部署本网站或者在自己的项目中使用我们的爬虫代码。
-                                欢迎向我们提出问题建议、贡献代码或给我们点赞（Star），您的支持是我们前进的动力
-                              </div>
-                            </div>
-                          </div>
-                          <div class="flex xs12 md4">
-                            <div class="elevation-0 transparent v-card v-card--flat v-sheet theme--light">
-                              <div class="v-card__text text-center"><i aria-hidden="true" class="v-icon notranslate blue--text text--lighten-2 material-icons theme--light" style="font-size:40px;">build</i></div>
-                              <div primary-title="" class="v-card__title layout justify-center">
-                                <div class="headline text-center">
-                                  更多功能支持中
-                                </div>
-                              </div>
-                              <div class="v-card__text text-center">
-                                旧版查询系统中的功能正在被移植到新版查询系统中，如果您需要旧版查询系统中的功能，请
-                                <a href="//npuacm.info/">单击此处返回旧版查询系统</a></div>
-                            </div>
-                          </div>
+                <dev>
+                  <section>
+                    <div class="v-parallax" style="height:600px;">
+                      <div class="v-parallax__image-container"><img src="/_nuxt/img/back7-brighten.e5adb12.jpg" alt="" class="v-parallax__image" style="display:block;opacity:0;transform:translate(-50%, 0px);"></div>
+                      <div class="v-parallax__content">
+                        <div class="layout white--text column align-center justify-center"><img src="/_nuxt/img/logo.db320b9.png" alt="Vuetify.js" height="190" class="mb-4">
+                          <h2 class="black--text headline text-center font-weight-light">
+                            ACM-ICPC 协会
+                          </h2>
+                          <div style="height:50px;"></div>
+                          <h1 class="black--text mb-2 display-1 text-center index-title font-weight-bold">
+                            Welcome to OJ Hunt
+                          </h1>
+                          <div class="black--text subheading mb-4 text-center index-title">
+                            An online tool to analyze users performance in online judges (coding competition websites)
+                          </div> <a href="/statistics" class="blue lighten-2 black--text mt-12 v-btn v-btn--contained v-btn--router theme--dark v-size--large"><span class="v-btn__content">
+          Enter AC Statistics
+        </span></a>
                         </div>
                       </div>
                     </div>
-                  </div>
-                </section>
-                <section>
-                  <div class="v-parallax" style="height:380px;">
-                    <div class="v-parallax__image-container"><img src="/_nuxt/img/back4.ac176e5.jpg" alt="" class="v-parallax__image" style="display:block;opacity:0;transform:translate(-50%, 0px);"></div>
-                    <div class="v-parallax__content">
-                      <div class="layout column align-center justify-center">
-                        <div class="headline white--text mb-4 text-center response-title">
-                          欢迎向我们提出意见以帮助本网站进步
-                        </div> <a href="mailto:acm-statistics@fire.fundersclub.com?body=%E8%AF%B7%E6%B3%A8%E6%84%8F%EF%BC%8C%E6%82%A8%E7%BB%8F%E6%AD%A4%E9%93%BE%E6%8E%A5%E5%8F%91%E9%80%81%E7%9A%84%E6%89%80%E6%9C%89%E4%BF%A1%E6%81%AF%E9%83%BD%E5%B0%86%E8%A2%AB%E5%8F%91%E9%80%81%E5%88%B0https%3A%2F%2Fgithub.com%2FLiu233w%2Facm-statistics%2Fissues%EF%BC%8C%E4%BB%BB%E4%BD%95%E4%BA%BA%E9%83%BD%E6%9C%89%E6%9D%83%E9%99%90%E6%B5%8F%E8%A7%88%E5%85%B6%E5%86%85%E5%AE%B9%E3%80%82"><em class="white--text response-title">或者单击此处向本项目发送邮件</em></a> <a href="https://github.com/Liu233w/acm-statistics/issues/new" target="_blank" rel="noopener noreferrer" class="blue lighten-2 mt-12 v-btn v-btn--contained theme--dark v-size--large"><span class="v-btn__content">
-            Submit New Issue
-          </span></a>
-                      </div>
-                    </div>
-                  </div>
-                </section>
-                <section>
-                  <div class="container grid-list-xl">
-                    <div class="layout my-12 wrap justify-center">
-                      <div class="flex xs12 sm4">
-                        <div class="elevation-0 transparent v-card v-card--flat v-sheet theme--light">
-                          <div primary-title="" class="v-card__title layout justify-center">
-                            <div class="headline">
-                              关于我们
-                            </div>
-                          </div>
-                          <div class="v-card__text">
-                            <p>
-                              西北工业大学ACM协会技术组致力于为广大学生提供各类计算机、算法、计算机类竞赛方面的设施及服务。
-                              欢迎各位有识之士加入。
-                            </p>
-                            <p id="busuanzi_container_site_pv" style="display:none;">
-                              本站总访问量:
-                              <span id="busuanzi_value_site_pv"></span>次
-                              <br></p>
-                            <p id="busuanzi_container_site_uv" style="display:none;">
-                              本站总访客数:
-                              <span id="busuanzi_value_site_uv"></span>次
-                            </p>
-                          </div>
+                  </section>
+                  <section>
+                    <div class="layout my-12 column wrap align-center">
+                      <div class="flex my-4 xs12 sm4">
+                        <div class="text-center">
+                          <h2 class="headline">
+                            Guide
+                          </h2> <span class="subheading">
+            of the query tool.
+          </span>
                         </div>
                       </div>
-                      <div class="flex xs12 sm4 offset-sm1">
-                        <div class="elevation-0 transparent v-card v-card--flat v-sheet theme--light">
-                          <div primary-title="" class="v-card__title layout justify-center">
-                            <div class="headline">
-                              联系我们
+                      <div class="flex xs12">
+                        <div class="container grid-list-xl">
+                          <div class="layout wrap">
+                            <div class="flex xs12 md4">
+                              <div class="elevation-0 transparent v-card v-card--flat v-sheet theme--light">
+                                <div class="v-responsive v-image elevation-1" style="height:100px;">
+                                  <div class="v-image__image v-image__image--preload v-image__image--cover" style="background-image:;background-position:center center;"></div>
+                                  <div class="v-responsive__content"></div>
+                                </div>
+                                <div primary-title="" class="v-card__title layout justify-center">
+                                  <div class="headline text-center">
+                                    Query
+                                  </div>
+                                </div>
+                                <div class="v-card__text text-center">
+                                  Enter your username and click QUERY. You can save your usernames and use it later.
+                                </div>
+                              </div>
                             </div>
-                          </div>
-                          <div role="list" class="v-list transparent v-sheet v-sheet--tile theme--light"><a tabindex="0" href="https://jq.qq.com/?_wv=1027&amp;k=5qgzfQc" target="_blank" rel="noopener noreferrer" role="listitem" class="v-list-item v-list-item--link theme--light">
-                              <div class="v-list-item__action"><i aria-hidden="true" class="v-icon notranslate blue--text text--lighten-2 mdi mdi-qqchat theme--light"></i></div>
-                              <div class="v-list-item__content">
-                                <div class="v-list-item__title">198820787</div>
+                            <div class="flex xs12 md4">
+                              <div class="elevation-0 transparent v-card v-card--flat v-sheet theme--light">
+                                <div class="v-responsive v-image elevation-1" style="height:100px;">
+                                  <div class="v-image__image v-image__image--preload v-image__image--cover" style="background-image:;background-position:center center;"></div>
+                                  <div class="v-responsive__content"></div>
+                                </div>
+                                <div primary-title="" class="v-card__title layout justify-center">
+                                  <div class="headline text-center">
+                                    Worker Panel
+                                  </div>
+                                </div>
+                                <div class="v-card__text text-center">
+                                  Use different usernames in different OJs, or multiple usernames in the same OJ.
+                                </div>
                               </div>
-                            </a>
-                            <div tabindex="0" role="listitem" class="v-list-item v-list-item--link theme--light">
-                              <div class="v-list-item__action"><i aria-hidden="true" class="v-icon notranslate blue--text text--lighten-2 material-icons theme--light">place</i></div>
-                              <div class="v-list-item__content">
-                                <div class="v-list-item__title">陕西省西安市长安区西北工业大学长安校区计算机学院110室</div>
-                              </div>
-                            </div> <a tabindex="0" href="mailto:support@npuacm.info" role="listitem" class="v-list-item v-list-item--link theme--light">
-                              <div class="v-list-item__action"><i aria-hidden="true" class="v-icon notranslate blue--text text--lighten-2 material-icons theme--light">email</i></div>
-                              <div class="v-list-item__content">
-                                <div class="v-list-item__title">support@npuacm.info</div>
-                              </div>
-                            </a>
-                            <div tabindex="0" role="listitem" class="v-list-item v-list-item--link theme--light">
-                              <div class="v-list-item__action"><i aria-hidden="true" class="v-icon notranslate blue--text text--lighten-2 mdi mdi-wechat theme--light"></i></div>
-                              <div class="v-list-item__content">
-                                <div class="v-list-item__title">微信公众号</div>
+                            </div>
+                            <div class="flex xs12 md4">
+                              <div class="elevation-0 transparent v-card v-card--flat v-sheet theme--light">
+                                <div class="v-responsive v-image elevation-1" style="height:100px;">
+                                  <div class="v-image__image v-image__image--preload v-image__image--cover" style="background-image:;background-position:center center;"></div>
+                                  <div class="v-responsive__content"></div>
+                                </div>
+                                <div primary-title="" class="v-card__title layout justify-center">
+                                  <div class="headline text-center">
+                                    Summary
+                                  </div>
+                                </div>
+                                <div class="v-card__text text-center">
+                                  Click the result panel to view summary.
+                                  (Need login)
+                                </div>
                               </div>
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
-                    <div role="dialog" class="v-dialog__container">
-                      <!---->
+                  </section>
+                  <section>
+                    <div class="v-parallax" style="height:380px;">
+                      <div class="v-parallax__image-container"><img src="/_nuxt/img/back4.ac176e5.jpg" alt="" class="v-parallax__image" style="display:block;opacity:0;transform:translate(-50%, 0px);"></div>
+                      <div class="v-parallax__content">
+                        <div class="layout column align-center justify-center">
+                          <div class="headline white--text mb-4 text-center response-title">
+                            If you have any questions,
+                          </div> <em class="white--text response-title">feel free to discuss on GitHub</em> <a href="https://github.com/Liu233w/acm-statistics/discussions/new" target="_blank" rel="noopener noreferrer" class="blue lighten-2 mt-12 v-btn v-btn--contained theme--dark v-size--large"><span class="v-btn__content">
+          Start Discussion
+        </span></a>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                </section>
-                <footer class="v-footer blue darken-2 v-sheet v-sheet--tile theme--light"><a href="/about" class="white--text ml-4 body-2">
-                    © 2018 - 1970 Shumin Liu and Contributors
-                  </a>
-                  <div class="spacer"></div> <span class="white--text ml-4 body-2">陕ICP备17008184号</span>
-                </footer>
+                  </section>
+                  <section>
+                    <div class="container grid-list-xl">
+                      <div class="layout my-12 wrap justify-center">
+                        <div class="flex xs12 sm4">
+                          <div class="transparent v-card v-card--flat v-sheet theme--light">
+                            <div primary-title="" class="v-card__title layout justify-center">
+                              <div class="headline">
+                                About the website
+                              </div>
+                            </div>
+                            <div class="v-card__text">
+                              This project is the former <span class="font-italic">
+                西北工业大学ACM查询系统 (npuacm.info)
+              </span>. The original version and idea are from <a href="https://kidozh.com/en/" target="_blank" rel="noopener noreferrer">Jiduo Zhang</a>.
+                              The old domain is broken, so I moved it to the new domain.
+                            </div>
+                          </div>
+                        </div>
+                        <div class="flex xs12 sm4 offset-sm1">
+                          <div class="transparent v-card v-card--flat v-sheet theme--light">
+                            <div primary-title="" class="v-card__title layout justify-center">
+                              <div class="headline">
+                                About us
+                              </div>
+                            </div>
+                            <div class="v-card__text">
+                              This project is developed and maintained by Shumin Liu and Contributors with ❤.
+                              Please check <span class="font-italic">about</span> page for contact information.
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                </dev>
               </div>
             </main>
+            <footer class="v-footer v-sheet v-sheet--tile theme--light v-footer--absolute v-footer--inset" style="left:0px;right:0px;bottom:0px;"><span class="body-2">© 2018 - 1970 Shumin Liu and Contributors</span></footer>
+            <div class="message-panel v-card v-sheet theme--light" style="display:none;">
+              <v-list class="pa-0"></v-list>
+              <!---->
+            </div>
           </div>
         </div>
       </div>
@@ -914,7 +918,7 @@ exports[`/ 1`] = `
     <script>
       window.__NUXT__ = (function(a, b) {
         return {
-          layout: "none",
+          layout: "default",
           data: [{}],
           fetch: [],
           error: null,
@@ -951,10 +955,10 @@ exports[`/about 1`] = `
 <html data-n-head-ssr="">
 
   <head>
-    <title>About - ACM Statistics</title>
+    <title>About - OJ Hunt</title>
     <meta data-n-head="ssr" charset="utf-8">
     <meta data-n-head="ssr" name="viewport" content="width=device-width, initial-scale=1">
-    <meta data-n-head="ssr" data-hid="description" name="description" content="西北工业大学ACM基地查题主页，提供国内各大OJ的查询题量、计算Rating的服务。">
+    <meta data-n-head="ssr" data-hid="description" name="description" content="Analyze your performance in all kinds of online judge websites.">
     <link data-n-head="ssr" rel="icon" type="image/x-icon" href="/favicon.ico">
     <link data-n-head="ssr" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons|Noto+Serif+SC:300,400,500,700">
     <link data-n-head="ssr" rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&amp;display=swap">
@@ -1700,7 +1704,7 @@ exports[`/about 1`] = `
             <header class="v-sheet v-sheet--tile theme--light v-toolbar v-toolbar--absolute v-app-bar" style="height:64px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;">
               <div class="v-toolbar__content" style="height:64px;"><button type="button" class="v-app-bar__nav-icon v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-menu theme--light"></i></span></button>
                 <!---->
-                <div class="v-toolbar__title">ACM Statistics</div>
+                <div class="v-toolbar__title">OJ Hunt</div>
                 <!---->
                 <!---->
                 <div class="spacer"></div>
@@ -1839,8 +1843,7 @@ exports[`/about 1`] = `
                 </div>
               </div>
             </main>
-            <footer class="v-footer v-sheet v-sheet--tile theme--light v-footer--absolute v-footer--inset" style="left:0px;right:0px;bottom:0px;"><span class="body-2">© 2018 - 1970 Shumin Liu and Contributors</span>
-              <div class="spacer"></div> <span class="body-2">陕ICP备17008184号</span></footer>
+            <footer class="v-footer v-sheet v-sheet--tile theme--light v-footer--absolute v-footer--inset" style="left:0px;right:0px;bottom:0px;"><span class="body-2">© 2018 - 1970 Shumin Liu and Contributors</span></footer>
             <div class="message-panel v-card v-sheet theme--light" style="display:none;">
               <v-list class="pa-0"></v-list>
               <!---->
@@ -1889,10 +1892,10 @@ exports[`/history 1`] = `
 <html data-n-head-ssr="">
 
   <head>
-    <title>History - ACM Statistics</title>
+    <title>History - OJ Hunt</title>
     <meta data-n-head="ssr" charset="utf-8">
     <meta data-n-head="ssr" name="viewport" content="width=device-width, initial-scale=1">
-    <meta data-n-head="ssr" data-hid="description" name="description" content="西北工业大学ACM基地查题主页，提供国内各大OJ的查询题量、计算Rating的服务。">
+    <meta data-n-head="ssr" data-hid="description" name="description" content="Analyze your performance in all kinds of online judge websites.">
     <link data-n-head="ssr" rel="icon" type="image/x-icon" href="/favicon.ico">
     <link data-n-head="ssr" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons|Noto+Serif+SC:300,400,500,700">
     <link data-n-head="ssr" rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&amp;display=swap">
@@ -2648,7 +2651,7 @@ exports[`/history 1`] = `
             <header class="v-sheet v-sheet--tile theme--light v-toolbar v-toolbar--absolute v-app-bar" style="height:64px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;">
               <div class="v-toolbar__content" style="height:64px;"><button type="button" class="v-app-bar__nav-icon v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-menu theme--light"></i></span></button>
                 <!---->
-                <div class="v-toolbar__title">ACM Statistics</div>
+                <div class="v-toolbar__title">OJ Hunt</div>
                 <!---->
                 <!---->
                 <div class="spacer"></div>
@@ -2850,8 +2853,7 @@ exports[`/history 1`] = `
                 </div>
               </div>
             </main>
-            <footer class="v-footer v-sheet v-sheet--tile theme--light v-footer--absolute v-footer--inset" style="left:0px;right:0px;bottom:0px;"><span class="body-2">© 2018 - 1970 Shumin Liu and Contributors</span>
-              <div class="spacer"></div> <span class="body-2">陕ICP备17008184号</span></footer>
+            <footer class="v-footer v-sheet v-sheet--tile theme--light v-footer--absolute v-footer--inset" style="left:0px;right:0px;bottom:0px;"><span class="body-2">© 2018 - 1970 Shumin Liu and Contributors</span></footer>
             <div class="message-panel v-card v-sheet theme--light" style="display:none;">
               <v-list class="pa-0"></v-list>
               <!---->
@@ -3017,10 +3019,10 @@ exports[`/history/{historyId} 1`] = `
 <html data-n-head-ssr="">
 
   <head>
-    <title>History - ACM Statistics</title>
+    <title>History - OJ Hunt</title>
     <meta data-n-head="ssr" charset="utf-8">
     <meta data-n-head="ssr" name="viewport" content="width=device-width, initial-scale=1">
-    <meta data-n-head="ssr" data-hid="description" name="description" content="西北工业大学ACM基地查题主页，提供国内各大OJ的查询题量、计算Rating的服务。">
+    <meta data-n-head="ssr" data-hid="description" name="description" content="Analyze your performance in all kinds of online judge websites.">
     <link data-n-head="ssr" rel="icon" type="image/x-icon" href="/favicon.ico">
     <link data-n-head="ssr" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons|Noto+Serif+SC:300,400,500,700">
     <link data-n-head="ssr" rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&amp;display=swap">
@@ -3776,7 +3778,7 @@ exports[`/history/{historyId} 1`] = `
             <header class="v-sheet v-sheet--tile theme--light v-toolbar v-toolbar--absolute v-app-bar" style="height:64px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;">
               <div class="v-toolbar__content" style="height:64px;"><button type="button" class="v-app-bar__nav-icon v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-menu theme--light"></i></span></button>
                 <!---->
-                <div class="v-toolbar__title">ACM Statistics</div>
+                <div class="v-toolbar__title">OJ Hunt</div>
                 <!---->
                 <!---->
                 <div class="spacer"></div>
@@ -3913,8 +3915,7 @@ exports[`/history/{historyId} 1`] = `
                 </div>
               </div>
             </main>
-            <footer class="v-footer v-sheet v-sheet--tile theme--light v-footer--absolute v-footer--inset" style="left:0px;right:0px;bottom:0px;"><span class="body-2">© 2018 - 1970 Shumin Liu and Contributors</span>
-              <div class="spacer"></div> <span class="body-2">陕ICP备17008184号</span></footer>
+            <footer class="v-footer v-sheet v-sheet--tile theme--light v-footer--absolute v-footer--inset" style="left:0px;right:0px;bottom:0px;"><span class="body-2">© 2018 - 1970 Shumin Liu and Contributors</span></footer>
             <div class="message-panel v-card v-sheet theme--light" style="display:none;">
               <v-list class="pa-0"></v-list>
               <!---->
@@ -4254,10 +4255,10 @@ exports[`/login 1`] = `
 <html data-n-head-ssr="">
 
   <head>
-    <title>NWPU-ACM 查询系统</title>
+    <title>OJ Hunt</title>
     <meta data-n-head="ssr" charset="utf-8">
     <meta data-n-head="ssr" name="viewport" content="width=device-width, initial-scale=1">
-    <meta data-n-head="ssr" data-hid="description" name="description" content="西北工业大学ACM基地查题主页，提供国内各大OJ的查询题量、计算Rating的服务。">
+    <meta data-n-head="ssr" data-hid="description" name="description" content="Analyze your performance in all kinds of online judge websites.">
     <link data-n-head="ssr" rel="icon" type="image/x-icon" href="/favicon.ico">
     <link data-n-head="ssr" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons|Noto+Serif+SC:300,400,500,700">
     <link data-n-head="ssr" rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&amp;display=swap">
@@ -5112,10 +5113,10 @@ exports[`/register 1`] = `
 <html data-n-head-ssr="">
 
   <head>
-    <title>NWPU-ACM 查询系统</title>
+    <title>OJ Hunt</title>
     <meta data-n-head="ssr" charset="utf-8">
     <meta data-n-head="ssr" name="viewport" content="width=device-width, initial-scale=1">
-    <meta data-n-head="ssr" data-hid="description" name="description" content="西北工业大学ACM基地查题主页，提供国内各大OJ的查询题量、计算Rating的服务。">
+    <meta data-n-head="ssr" data-hid="description" name="description" content="Analyze your performance in all kinds of online judge websites.">
     <link data-n-head="ssr" rel="icon" type="image/x-icon" href="/favicon.ico">
     <link data-n-head="ssr" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons|Noto+Serif+SC:300,400,500,700">
     <link data-n-head="ssr" rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&amp;display=swap">
@@ -5994,10 +5995,10 @@ exports[`/settings 1`] = `
 <html data-n-head-ssr="">
 
   <head>
-    <title>Settings - ACM Statistics</title>
+    <title>Settings - OJ Hunt</title>
     <meta data-n-head="ssr" charset="utf-8">
     <meta data-n-head="ssr" name="viewport" content="width=device-width, initial-scale=1">
-    <meta data-n-head="ssr" data-hid="description" name="description" content="西北工业大学ACM基地查题主页，提供国内各大OJ的查询题量、计算Rating的服务。">
+    <meta data-n-head="ssr" data-hid="description" name="description" content="Analyze your performance in all kinds of online judge websites.">
     <link data-n-head="ssr" rel="icon" type="image/x-icon" href="/favicon.ico">
     <link data-n-head="ssr" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons|Noto+Serif+SC:300,400,500,700">
     <link data-n-head="ssr" rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&amp;display=swap">
@@ -6753,7 +6754,7 @@ exports[`/settings 1`] = `
             <header class="v-sheet v-sheet--tile theme--light v-toolbar v-toolbar--absolute v-app-bar" style="height:64px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;">
               <div class="v-toolbar__content" style="height:64px;"><button type="button" class="v-app-bar__nav-icon v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-menu theme--light"></i></span></button>
                 <!---->
-                <div class="v-toolbar__title">ACM Statistics</div>
+                <div class="v-toolbar__title">OJ Hunt</div>
                 <!---->
                 <!---->
                 <div class="spacer"></div>
@@ -6932,8 +6933,7 @@ exports[`/settings 1`] = `
                 </div>
               </div>
             </main>
-            <footer class="v-footer v-sheet v-sheet--tile theme--light v-footer--absolute v-footer--inset" style="left:0px;right:0px;bottom:0px;"><span class="body-2">© 2018 - 1970 Shumin Liu and Contributors</span>
-              <div class="spacer"></div> <span class="body-2">陕ICP备17008184号</span></footer>
+            <footer class="v-footer v-sheet v-sheet--tile theme--light v-footer--absolute v-footer--inset" style="left:0px;right:0px;bottom:0px;"><span class="body-2">© 2018 - 1970 Shumin Liu and Contributors</span></footer>
             <div class="message-panel v-card v-sheet theme--light" style="display:none;">
               <v-list class="pa-0"></v-list>
               <!---->
@@ -7002,10 +7002,10 @@ exports[`/statistics 1`] = `
 <html data-n-head-ssr="">
 
   <head>
-    <title>Statistics - ACM Statistics</title>
+    <title>Statistics - OJ Hunt</title>
     <meta data-n-head="ssr" charset="utf-8">
     <meta data-n-head="ssr" name="viewport" content="width=device-width, initial-scale=1">
-    <meta data-n-head="ssr" data-hid="description" name="description" content="西北工业大学ACM基地查题主页，提供国内各大OJ的查询题量、计算Rating的服务。">
+    <meta data-n-head="ssr" data-hid="description" name="description" content="Analyze your performance in all kinds of online judge websites.">
     <link data-n-head="ssr" rel="icon" type="image/x-icon" href="/favicon.ico">
     <link data-n-head="ssr" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons|Noto+Serif+SC:300,400,500,700">
     <link data-n-head="ssr" rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&amp;display=swap">
@@ -7751,7 +7751,7 @@ exports[`/statistics 1`] = `
             <header class="v-sheet v-sheet--tile theme--light v-toolbar v-toolbar--absolute v-app-bar" style="height:64px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;">
               <div class="v-toolbar__content" style="height:64px;"><button type="button" class="v-app-bar__nav-icon v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-menu theme--light"></i></span></button>
                 <!---->
-                <div class="v-toolbar__title">ACM Statistics</div>
+                <div class="v-toolbar__title">OJ Hunt</div>
                 <!---->
                 <!---->
                 <div class="spacer"></div>
@@ -7801,8 +7801,7 @@ exports[`/statistics 1`] = `
                 </div>
               </div>
             </main>
-            <footer class="v-footer v-sheet v-sheet--tile theme--light v-footer--absolute v-footer--inset" style="left:0px;right:0px;bottom:0px;"><span class="body-2">© 2018 - 1970 Shumin Liu and Contributors</span>
-              <div class="spacer"></div> <span class="body-2">陕ICP备17008184号</span></footer>
+            <footer class="v-footer v-sheet v-sheet--tile theme--light v-footer--absolute v-footer--inset" style="left:0px;right:0px;bottom:0px;"><span class="body-2">© 2018 - 1970 Shumin Liu and Contributors</span></footer>
             <div class="message-panel v-card v-sheet theme--light" style="display:none;">
               <v-list class="pa-0"></v-list>
               <!---->
