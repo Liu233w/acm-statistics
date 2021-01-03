@@ -8,11 +8,11 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: 'NWPU-ACM 查询系统',
+    title: 'OJ Hunt',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '西北工业大学ACM基地查题主页，提供国内各大OJ的查询题量、计算Rating的服务。' },
+      { hid: 'description', name: 'description', content: 'Analyze your performance in all kinds of online judge websites.' },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
