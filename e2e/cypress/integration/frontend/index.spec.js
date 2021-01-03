@@ -46,12 +46,4 @@ describe('other parts', () => {
     cy.contains('Enter AC Statistics').click()
     cy.shouldHaveUri('/statistics')
   })
-
-  it('wechat dialog', () => {
-    cy.contains('div[role="listitem"]', '微信公众号').click()
-    cy.get('.v-dialog.v-dialog--active').within(() => {
-      cy.contains('微信公众号')
-      cy.matchImageSnapshot()
-    })
-  })
 })
