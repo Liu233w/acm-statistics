@@ -47,7 +47,7 @@ exports.mergeConfigWithEnv = (config, env) => {
  * @return {Promise<object>}
  */
 exports.readConfigs = async () => {
-  const config = yml.safeLoad(await fs.readFile(configPath, 'utf-8'))
+  const config = yml.load(await fs.readFile(configPath, 'utf-8'))
   exports.mergeConfigWithEnv(config, process.env)
   return config
 }
