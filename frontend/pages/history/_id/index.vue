@@ -42,6 +42,17 @@
         </v-list-item-content>
       </v-list-item>
     </v-list>
+    <v-row>
+      <div id="135755353">
+        <script type="text/javascript">
+          try {
+          window._mNHandle.queue.push(function() {
+          window._mNDetails.loadTag("135755353", "728x90", "135755353");
+          });
+          } catch (error) {}
+        </script>
+      </div>
+    </v-row>
     <v-data-table
       :headers="tableHeaders"
       :items="workerSummaryList"
@@ -143,16 +154,20 @@ export default {
 
       const res = []
       for (const summary of this.summary.queryCrawlerSummaries) {
-        const usernames = _.map(summary.usernames, item => {
+        const usernames = _.map(summary.usernames, (item) => {
           if (item.fromCrawlerName) {
-            return `[${item.username} in ${this.crawlers[item.fromCrawlerName].title}]`
+            return `[${item.username} in ${
+              this.crawlers[item.fromCrawlerName].title
+            }]`
           } else {
             return item.username
           }
         })
         const isVirtualJudge = this.crawlers[summary.crawlerName].virtual_judge
         res.push({
-          crawler: this.crawlers[summary.crawlerName].title + (isVirtualJudge ? ' (Not Merged)' : ''),
+          crawler:
+            this.crawlers[summary.crawlerName].title +
+            (isVirtualJudge ? ' (Not Merged)' : ''),
           username: usernames.join(', '),
           solved: summary.solved,
           submissions: summary.submission,
@@ -181,15 +196,16 @@ export default {
     },
   },
   async fetch() {
-
     try {
-
       const crawlersTask = this.$axios.$get('/api/crawlers')
-      const summaryResult = await this.$axios.$get('/api/services/app/QueryHistory/GetQuerySummary', {
-        params: {
-          queryHistoryId: this.$route.params.id,
+      const summaryResult = await this.$axios.$get(
+        '/api/services/app/QueryHistory/GetQuerySummary',
+        {
+          params: {
+            queryHistoryId: this.$route.params.id,
+          },
         },
-      })
+      )
 
       this.crawlers = (await crawlersTask).data
       this.summary = summaryResult.result

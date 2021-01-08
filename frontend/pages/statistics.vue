@@ -115,6 +115,17 @@
         </template>
       </v-tooltip>
     </v-row>
+    <v-row>
+      <div id="135755353">
+        <script type="text/javascript">
+          try {
+          window._mNHandle.queue.push(function() {
+          window._mNDetails.loadTag("135755353", "728x90", "135755353");
+          });
+          } catch (error) {}
+        </script>
+      </div>
+    </v-row>
     <v-row v-if="loading">
       <v-spacer />
       <v-progress-circular
@@ -192,14 +203,17 @@ export default {
     this.watchFunc = this.$store.watch(
       () => _.map(this.$store.state.statistics.workers, 'status'),
       async () => {
-        if (this.$store.state.session.settings['App.AutoSaveHistory'] === 'true') {
+        if (
+          this.$store.state.session.settings['App.AutoSaveHistory'] === 'true'
+        ) {
           if (this.isWorking) {
             this.lastSavedQueryId = null
           } else {
             this.lastSavedQueryId = await this.saveHistory()
           }
         }
-      })
+      },
+    )
   },
   destroyed() {
     if (this.watchFunc) {
@@ -236,9 +250,7 @@ export default {
       'notWorkingRate',
       'workerIdxOfCrawler',
     ]),
-    ...mapState('session', [
-      'login',
-    ]),
+    ...mapState('session', ['login']),
     username: {
       get() {
         return this.$store.state.statistics.mainUsername
@@ -325,7 +337,7 @@ export default {
       // 至少等待2秒
       await Promise.all([
         this.$store.dispatch('statistics/saveUsernames'),
-        new Promise(resolve => setTimeout(resolve, 2000)),
+        new Promise((resolve) => setTimeout(resolve, 2000)),
       ])
       // 至少等待2秒
       this.savingUsername = false
@@ -342,20 +354,25 @@ export default {
       this.$store.dispatch('statistics/clearWorkers')
     },
     async saveHistory() {
-
-      const doneWorkers = _.filter(this.workers,
-        worker => worker.status === WORKER_STATUS.DONE)
+      const doneWorkers = _.filter(
+        this.workers,
+        (worker) => worker.status === WORKER_STATUS.DONE,
+      )
       if (doneWorkers.length === 0) {
         return null
       }
 
       try {
-        const saveResult = await this.$axios.$post('/api/services/app/QueryHistory/SaveOrReplaceQueryHistory', {
-          mainUsername: this.username,
-          queryWorkerHistories:
-            _.map(doneWorkers, worker => {
-              const crawler = this.$store.state.statistics.crawlers[worker.crawlerName]
-              const hasErrorMessage = !_.isNil(worker.errorMessage) && worker.errorMessage !== ''
+        const saveResult = await this.$axios.$post(
+          '/api/services/app/QueryHistory/SaveOrReplaceQueryHistory',
+          {
+            mainUsername: this.username,
+            queryWorkerHistories: _.map(doneWorkers, (worker) => {
+              const crawler = this.$store.state.statistics.crawlers[
+                worker.crawlerName
+              ]
+              const hasErrorMessage =
+                !_.isNil(worker.errorMessage) && worker.errorMessage !== ''
               const history = {
                 crawlerName: worker.crawlerName,
                 username: worker.username,
@@ -368,7 +385,8 @@ export default {
               }
               return history
             }),
-        })
+          },
+        )
         return saveResult.result.queryHistoryId
       } catch (err) {
         this.$store.commit('message/addError', getAbpErrorMessage(err))
