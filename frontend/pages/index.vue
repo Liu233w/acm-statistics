@@ -1,5 +1,5 @@
 <template>
-  <dev>
+  <div>
     <section>
       <v-parallax
         :src="require('~/assets/img/frontpage/back7-brighten.jpg')"
@@ -238,7 +238,7 @@
         </v-layout>
       </v-container>
     </section>
-  </dev>
+  </div>
 </template>
 
 <script>
