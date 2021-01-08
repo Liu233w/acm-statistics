@@ -1744,6 +1744,12 @@ exports[`/about 1`] = `
                               <v-list-item-sub-title>https://github.com/Liu233w/acm-statistics</v-list-item-sub-title>
                             </div>
                             <div class="v-list-item__action"><i aria-hidden="true" class="v-icon notranslate grey--text mdi mdi-open-in-new theme--light"></i></div>
+                          </a> <a tabindex="0" href="https://t.me/ojhunt" target="_blank" rel="noopener noreferrer" role="listitem" class="v-list-item v-list-item--link theme--light">
+                            <div class="v-list-item__action"><i aria-hidden="true" class="v-icon notranslate blue--text text--lighten-2 mdi mdi-telegram theme--light"></i></div>
+                            <div class="v-list-item__content">
+                              <v-list-item-sub-title>Telegram: https://t.me/ojhunt</v-list-item-sub-title>
+                            </div>
+                            <div class="v-list-item__action"><i aria-hidden="true" class="v-icon notranslate grey--text mdi mdi-open-in-new theme--light"></i></div>
                           </a> <a tabindex="0" href="https://join.slack.com/t/acm-statistics/shared_invite/zt-geel58eq-MjD3tBukUAC4ZSCS4DoLTw" target="_blank" rel="noopener noreferrer" role="listitem" class="v-list-item v-list-item--link theme--light">
                             <div class="v-list-item__action"><i aria-hidden="true" class="v-icon notranslate blue--text text--lighten-2 mdi mdi-slack theme--light"></i></div>
                             <div class="v-list-item__content">
