@@ -719,6 +719,7 @@ exports[`/ 1`] = `
       }
     </style>
     <script data-n-head="ssr" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" data-ad-client="ca-pub-9846042020379030" async=""></script>
+    <script data-n-head="ssr" src="https://contextual.media.net/dmedianet.js?cid=8CUE23IW2" async=""></script>
   </head>
 
   <body>
@@ -765,7 +766,7 @@ exports[`/ 1`] = `
             </header>
             <main class="v-content" style="padding-top:64px;padding-right:0px;padding-bottom:0px;padding-left:0px;">
               <div class="v-content__wrap">
-                <dev>
+                <div>
                   <section>
                     <div class="v-parallax" style="height:600px;">
                       <div class="v-parallax__image-container"><img src="/_nuxt/img/back7-brighten.e5adb12.jpg" alt="" class="v-parallax__image" style="display:block;opacity:0;transform:translate(-50%, 0px);"></div>
@@ -903,7 +904,7 @@ exports[`/ 1`] = `
                       </div>
                     </div>
                   </section>
-                </dev>
+                </div>
               </div>
             </main>
             <footer class="v-footer v-sheet v-sheet--tile theme--light v-footer--absolute v-footer--inset" style="left:0px;right:0px;bottom:0px;"><span class="body-2">© 2018 - 1970 Shumin Liu and Contributors</span></footer>
@@ -1669,6 +1670,7 @@ exports[`/about 1`] = `
       }
     </style>
     <script data-n-head="ssr" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" data-ad-client="ca-pub-9846042020379030" async=""></script>
+    <script data-n-head="ssr" src="https://contextual.media.net/dmedianet.js?cid=8CUE23IW2" async=""></script>
   </head>
 
   <body>
@@ -2606,6 +2608,7 @@ exports[`/history 1`] = `
       }
     </style>
     <script data-n-head="ssr" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" data-ad-client="ca-pub-9846042020379030" async=""></script>
+    <script data-n-head="ssr" src="https://contextual.media.net/dmedianet.js?cid=8CUE23IW2" async=""></script>
   </head>
 
   <body>
@@ -2848,6 +2851,9 @@ exports[`/history 1`] = `
                       <div class="v-data-footer__icons-before"><button type="button" disabled="disabled" aria-label="Previous page" class="v-btn v-btn--disabled v-btn--flat v-btn--icon v-btn--round v-btn--text theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-chevron-left theme--light"></i></span></button></div>
                       <div class="v-data-footer__icons-after"><button type="button" aria-label="Next page" class="v-btn v-btn--flat v-btn--icon v-btn--round v-btn--text theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-chevron-right theme--light"></i></span></button></div>
                     </div>
+                  </div>
+                  <div class="row">
+                    <div id="135755353"></div>
                   </div>
                   <div style="height:300px;"><canvas id="line-chart" width="400" height="400"></canvas></div>
                 </div>
@@ -3733,6 +3739,7 @@ exports[`/history/{historyId} 1`] = `
       }
     </style>
     <script data-n-head="ssr" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" data-ad-client="ca-pub-9846042020379030" async=""></script>
+    <script data-n-head="ssr" src="https://contextual.media.net/dmedianet.js?cid=8CUE23IW2" async=""></script>
   </head>
 
   <body>
@@ -4969,6 +4976,7 @@ exports[`/login 1`] = `
       }
     </style>
     <script data-n-head="ssr" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" data-ad-client="ca-pub-9846042020379030" async=""></script>
+    <script data-n-head="ssr" src="https://contextual.media.net/dmedianet.js?cid=8CUE23IW2" async=""></script>
   </head>
 
   <body>
@@ -5827,6 +5835,7 @@ exports[`/register 1`] = `
       }
     </style>
     <script data-n-head="ssr" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" data-ad-client="ca-pub-9846042020379030" async=""></script>
+    <script data-n-head="ssr" src="https://contextual.media.net/dmedianet.js?cid=8CUE23IW2" async=""></script>
   </head>
 
   <body>
@@ -6709,6 +6718,7 @@ exports[`/settings 1`] = `
       }
     </style>
     <script data-n-head="ssr" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" data-ad-client="ca-pub-9846042020379030" async=""></script>
+    <script data-n-head="ssr" src="https://contextual.media.net/dmedianet.js?cid=8CUE23IW2" async=""></script>
   </head>
 
   <body>
@@ -7716,6 +7726,7 @@ exports[`/statistics 1`] = `
       }
     </style>
     <script data-n-head="ssr" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" data-ad-client="ca-pub-9846042020379030" async=""></script>
+    <script data-n-head="ssr" src="https://contextual.media.net/dmedianet.js?cid=8CUE23IW2" async=""></script>
   </head>
 
   <body>
@@ -7788,6 +7799,9 @@ exports[`/statistics 1`] = `
           </span></button></span>
                     <div class="spacer"></div>
                     <!---->
+                  </div>
+                  <div class="row">
+                    <div id="135755353"></div>
                   </div>
                   <div class="row">
                     <div class="spacer"></div>
