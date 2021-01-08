@@ -60,6 +60,25 @@
               </v-list-item-action>
             </v-list-item>
             <v-list-item
+              href="https://t.me/ojhunt"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <v-list-item-action>
+                <v-icon class="blue--text text--lighten-2">
+                  mdi-telegram
+                </v-icon>
+              </v-list-item-action>
+              <v-list-item-content>
+                <v-list-item-sub-title>Telegram: https://t.me/ojhunt</v-list-item-sub-title>
+              </v-list-item-content>
+              <v-list-item-action>
+                <v-icon class="grey--text">
+                  mdi-open-in-new
+                </v-icon>
+              </v-list-item-action>
+            </v-list-item>
+            <v-list-item
               href="https://join.slack.com/t/acm-statistics/shared_invite/zt-geel58eq-MjD3tBukUAC4ZSCS4DoLTw"
               target="_blank"
               rel="noopener noreferrer"
