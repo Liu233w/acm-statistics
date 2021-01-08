@@ -62,6 +62,9 @@
           </v-btn>
         </template>
       </v-data-table>
+      <v-row>
+        <advertisement id="135755353" />
+      </v-row>
       <line-chart
         :chart-data="chartData"
         :options="chartOptions"
@@ -77,10 +80,12 @@ import _ from 'lodash'
 import { getAbpErrorMessage } from '~/components/utils'
 import LineChart from '~/components/LineChart'
 import { PROJECT_TITLE } from '~/components/consts'
+import Advertisement from '~/components/advertisement'
 
 export default {
   components: {
     LineChart,
+    Advertisement,
   },
   inject: ['changeLayoutConfig'],
   head: {
@@ -124,7 +129,9 @@ export default {
   computed: {
     chartData() {
       const dateFormatter = new Intl.DateTimeFormat()
-      const dates = _.map(this.items, a => dateFormatter.format(a.creationTime))
+      const dates = _.map(this.items, (a) =>
+        dateFormatter.format(a.creationTime),
+      )
       const solved = _.map(this.items, 'solved')
       const submissions = _.map(this.items, 'submission')
       return {
@@ -168,16 +175,18 @@ export default {
     async loadPage() {
       this.loading = true
       try {
-        const res = await this.$axios
-          .$get('/api/services/app/QueryHistory/GetQueryHistoriesAndSummaries', {
+        const res = await this.$axios.$get(
+          '/api/services/app/QueryHistory/GetQueryHistoriesAndSummaries',
+          {
             params: {
               maxResultCount: this.itemsPerPage,
               skipCount: (this.page - 1) * this.itemsPerPage,
             },
-          })
+          },
+        )
         this.serverItemsLength = res.result.totalCount
         this.items = res.result.items
-        _.forEach(this.items, item => {
+        _.forEach(this.items, (item) => {
           item.creationTime = new Date(item.creationTime)
         })
         this.errorMessage = null
@@ -188,9 +197,12 @@ export default {
     },
     async deleteOne(id) {
       try {
-        await this.$axios.$post('/api/services/app/QueryHistory/DeleteQueryHistory', {
-          id,
-        })
+        await this.$axios.$post(
+          '/api/services/app/QueryHistory/DeleteQueryHistory',
+          {
+            id,
+          },
+        )
         await this.loadPage()
       } catch (err) {
         this.$store.commit('message/addError', getAbpErrorMessage(err))
@@ -198,9 +210,12 @@ export default {
     },
     async deleteSelected() {
       try {
-        await this.$axios.$post('/api/services/app/QueryHistory/DeleteQueryHistory', {
-          ids: _.map(this.selected, 'historyId'),
-        })
+        await this.$axios.$post(
+          '/api/services/app/QueryHistory/DeleteQueryHistory',
+          {
+            ids: _.map(this.selected, 'historyId'),
+          },
+        )
         await this.loadPage()
       } catch (err) {
         this.$store.commit('message/addError', getAbpErrorMessage(err))

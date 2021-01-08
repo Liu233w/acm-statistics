@@ -42,17 +42,6 @@
         </v-list-item-content>
       </v-list-item>
     </v-list>
-    <v-row>
-      <div id="135755353">
-        <script type="text/javascript">
-          try {
-          window._mNHandle.queue.push(function() {
-          window._mNDetails.loadTag("135755353", "728x90", "135755353");
-          });
-          } catch (error) {}
-        </script>
-      </div>
-    </v-row>
     <v-data-table
       :headers="tableHeaders"
       :items="workerSummaryList"
