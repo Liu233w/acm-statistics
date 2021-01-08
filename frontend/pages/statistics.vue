@@ -161,7 +161,7 @@ import statisticsLayoutBuilder from '~/components/statisticsLayoutBuilder'
 import Store from '~/store/-dynamic/statistics'
 import { PROJECT_TITLE, WORKER_STATUS } from '~/components/consts'
 import { getAbpErrorMessage, delay } from '~/components/utils'
-import Advertisement from '~/components/Advertisement.vue'
+import Advertisement from '~/components/Advertisement'
 
 // keep it when url change
 let globalLastSavedQueryId = null

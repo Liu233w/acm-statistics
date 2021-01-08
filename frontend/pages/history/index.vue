@@ -80,7 +80,7 @@ import _ from 'lodash'
 import { getAbpErrorMessage } from '~/components/utils'
 import LineChart from '~/components/LineChart'
 import { PROJECT_TITLE } from '~/components/consts'
-import Advertisement from '~/components/advertisement'
+import Advertisement from '~/components/Advertisement'
 
 export default {
   components: {
