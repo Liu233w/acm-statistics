@@ -28,7 +28,7 @@
     "nuxt": "2.14.11",
     "nuxt-env": "0.1.0",
     "stylus": "0.54.8",
-    "stylus-loader": "4.3.1",
+    "stylus-loader": "4.3.2",
     "superagent": "5.3.1",
     "virtual-module-webpack-plugin": "0.4.1",
     "vue-chartjs": "3.5.1"
