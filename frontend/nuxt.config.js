@@ -1,9 +1,12 @@
 // eslint-disable-next-line no-unused-vars
 const resolve = (dir) => require('path').join(__dirname, dir)
+const _ = require('lodash')
 
 const sensitiveRouter = require('./configs/sensitive-url-router')
 
-module.exports = {
+const { readMetaConfigs } = require('crawler')
+
+module.exports = async () => ({
   /*
   ** Headers of the page
   */
@@ -12,7 +15,10 @@ module.exports = {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Analyze your performance in all kinds of online judge websites.' },
+      {
+        hid: 'description', name: 'description', content: 'An online tool to analyze users performance in online judges (coding competition websites). '
+          + 'Supported OJ: ' + _.map(await readMetaConfigs(), 'title').join(', '),
+      },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
@@ -98,4 +104,4 @@ module.exports = {
       'auth',
     ],
   },
-}
+})
