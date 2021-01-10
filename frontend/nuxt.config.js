@@ -16,7 +16,7 @@ module.exports = async () => ({
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       {
-        hid: 'description', name: 'description', content: 'An online tool to analyze users performance in online judges (coding competition websites). '
+        hid: 'description', name: 'description', content: 'An online tool (crawler) to analyze users performance in online judges (coding competition websites). '
           + 'Supported OJ: ' + _.map(await readMetaConfigs(), 'title').join(', '),
       },
     ],
