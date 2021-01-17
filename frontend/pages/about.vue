@@ -30,14 +30,14 @@
                 </v-icon>
               </v-list-item-action>
             </v-list-item>
-            <v-list-item href="mailto:support@npuacm.info">
+            <v-list-item href="mailto:mail@ojhunt.com">
               <v-list-item-action>
                 <v-icon class="blue--text text--lighten-2">
                   email
                 </v-icon>
               </v-list-item-action>
               <v-list-item-content>
-                <v-list-item-sub-title>support@npuacm.info</v-list-item-sub-title>
+                <v-list-item-sub-title>mail@ojhunt.com</v-list-item-sub-title>
               </v-list-item-content>
             </v-list-item>
             <v-list-item
