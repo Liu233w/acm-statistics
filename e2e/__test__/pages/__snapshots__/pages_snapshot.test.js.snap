@@ -1733,10 +1733,10 @@ exports[`/about 1`] = `
                               <v-list-item-sub-title>Shumin Liu and Contributors</v-list-item-sub-title>
                             </div>
                             <div class="v-list-item__action"><i aria-hidden="true" class="v-icon notranslate grey--text mdi mdi-open-in-new theme--light"></i></div>
-                          </a> <a tabindex="0" href="mailto:support@npuacm.info" role="listitem" class="v-list-item v-list-item--link theme--light">
+                          </a> <a tabindex="0" href="mailto:mail@ojhunt.com" role="listitem" class="v-list-item v-list-item--link theme--light">
                             <div class="v-list-item__action"><i aria-hidden="true" class="v-icon notranslate blue--text text--lighten-2 material-icons theme--light">email</i></div>
                             <div class="v-list-item__content">
-                              <v-list-item-sub-title>support@npuacm.info</v-list-item-sub-title>
+                              <v-list-item-sub-title>mail@ojhunt.com</v-list-item-sub-title>
                             </div>
                           </a> <a tabindex="0" href="https://github.com/Liu233w/acm-statistics" target="_blank" rel="noopener noreferrer" role="listitem" class="v-list-item v-list-item--link theme--light">
                             <div class="v-list-item__action"><i aria-hidden="true" class="v-icon notranslate blue--text text--lighten-2 mdi mdi-github theme--light"></i></div>
