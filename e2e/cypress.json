@@ -2,6 +2,10 @@
   "$schema": "https://raw.githubusercontent.com/cypress-io/cypress/develop/cli/schema/cypress.schema.json",
 
   "baseUrl": "http://localhost:3000",
+  "retries": {
+    "runMode": 2,
+    "openMode": 0
+  },
   "reporter": "cypress-image-snapshot/reporter",
   "projectId": "4s32o7"
 }
