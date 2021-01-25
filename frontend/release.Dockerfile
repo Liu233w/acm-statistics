@@ -19,7 +19,7 @@ WORKDIR /var/project
 RUN apk add --no-cache make gcc g++ python
 
 COPY package.json package-lock.json ./
-RUN npm install --only=production
+RUN npm install --only=production && rm -rf node_modules/crawler
 
 COPY --from=crawler ${CRAWLER_LIBRARY_PATH} ./node_modules/crawler
 
