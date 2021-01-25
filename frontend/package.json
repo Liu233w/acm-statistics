@@ -75,6 +75,7 @@
     "moduleNameMapper": {
       "~(?!/dynamic)(.*)$": "<rootDir>/$1"
     },
+    "setupFilesAfterEnv": ["<rootDir>/__test__/setup.js"],
     "coverageDirectory": "./coverage/",
     "collectCoverage": true
   }

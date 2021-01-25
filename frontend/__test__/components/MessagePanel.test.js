@@ -4,7 +4,6 @@ import Vuetify from 'vuetify'
 
 const localVue = createLocalVue()
 localVue.use(Vuex)
-localVue.use(Vuetify)
 
 import MessagePanel from '~/components/MessagePanel.vue'
 import * as MessageStore from '~/store/message'

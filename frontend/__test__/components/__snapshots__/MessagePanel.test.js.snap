@@ -15,10 +15,10 @@ exports[`MessagePanel can render when there are 1 element 1`] = `
     <transition-group-stub tag="v-list" name="slide-y-transition" class="pa-0">
       <div tabindex="-1" class="pa-0 v-list-item theme--light">
         <div role="alert" class="v-alert v-sheet theme--dark info mb-0">
-          <div class="v-alert__wrapper"><i aria-hidden="true" class="v-icon notranslate v-alert__icon material-icons theme--dark">$info</i>
+          <div class="v-alert__wrapper"><i aria-hidden="true" class="v-icon notranslate v-alert__icon mdi mdi-information theme--dark"></i>
             <div class="v-alert__content">
               Info
-            </div><button type="button" class="v-alert__dismissible v-btn v-btn--flat v-btn--icon v-btn--round theme--dark v-size--small" aria-label="Close"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--dark">$cancel</i></span></button>
+            </div><button type="button" class="v-alert__dismissible v-btn v-btn--icon v-btn--round theme--dark v-size--small" aria-label="Close"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-close-circle theme--dark"></i></span></button>
           </div>
         </div>
       </div>
@@ -34,25 +34,25 @@ exports[`MessagePanel can render when there are 2 elements 1`] = `
     <transition-group-stub tag="v-list" name="slide-y-transition" class="pa-0">
       <div tabindex="-1" class="pa-0 v-list-item theme--light">
         <div role="alert" class="v-alert v-sheet theme--dark v-alert--dense info mb-1">
-          <div class="v-alert__wrapper"><i aria-hidden="true" class="v-icon notranslate v-alert__icon material-icons theme--dark">$info</i>
+          <div class="v-alert__wrapper"><i aria-hidden="true" class="v-icon notranslate v-alert__icon mdi mdi-information theme--dark"></i>
             <div class="v-alert__content">
               Info
-            </div><button type="button" class="v-alert__dismissible v-btn v-btn--flat v-btn--icon v-btn--round theme--dark v-size--small" aria-label="Close"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--dark">$cancel</i></span></button>
+            </div><button type="button" class="v-alert__dismissible v-btn v-btn--icon v-btn--round theme--dark v-size--small" aria-label="Close"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-close-circle theme--dark"></i></span></button>
           </div>
         </div>
       </div>
       <div tabindex="-1" class="pa-0 v-list-item theme--light">
         <div role="alert" class="v-alert v-sheet theme--dark v-alert--dense error mb-1">
-          <div class="v-alert__wrapper"><i aria-hidden="true" class="v-icon notranslate v-alert__icon material-icons theme--dark">$error</i>
+          <div class="v-alert__wrapper"><i aria-hidden="true" class="v-icon notranslate v-alert__icon mdi mdi-alert theme--dark"></i>
             <div class="v-alert__content">
               Error
-            </div><button type="button" class="v-alert__dismissible v-btn v-btn--flat v-btn--icon v-btn--round theme--dark v-size--small" aria-label="Close"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--dark">$cancel</i></span></button>
+            </div><button type="button" class="v-alert__dismissible v-btn v-btn--icon v-btn--round theme--dark v-size--small" aria-label="Close"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-close-circle theme--dark"></i></span></button>
           </div>
         </div>
       </div>
     </transition-group-stub>
     <div class="v-card__actions pt-0">
-      <div class="spacer"></div> <button type="button" class="v-btn v-btn--flat v-btn--text theme--light v-size--default primary--text"><span class="v-btn__content">
+      <div class="spacer"></div> <button type="button" class="v-btn v-btn--text theme--light v-size--default primary--text"><span class="v-btn__content">
         close
       </span></button>
     </div>
