@@ -67,7 +67,7 @@ namespace OHunt.Tests.Web
             // act
             var client = Factory.CreateClient();
             var res = await client.GetAsync(
-                "/api/ohunt/submissions?$filter=\"submissionId=1\"");
+                "/api/ohunt/submissions?$filter=submissionId eq 1");
 
             // assert
             res.StatusCode.Should().Be(StatusCodes.Status400BadRequest);
