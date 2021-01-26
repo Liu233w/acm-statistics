@@ -718,8 +718,6 @@ exports[`/ 1`] = `
         caret-color: #843c00 !important;
       }
     </style>
-    <script data-n-head="ssr" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" data-ad-client="ca-pub-9846042020379030" async=""></script>
-    <script data-n-head="ssr" src="https://contextual.media.net/dmedianet.js?cid=8CUE23IW2" async=""></script>
   </head>
 
   <body>
@@ -733,7 +731,7 @@ exports[`/ 1`] = `
           <div class="v-application--wrap">
             <nav class="v-navigation-drawer v-navigation-drawer--close v-navigation-drawer--fixed v-navigation-drawer--is-mobile theme--light" style="height:100vh;top:0px;transform:translateX(-100%);width:256px;">
               <div class="v-navigation-drawer__content">
-                <div class="v-list v-sheet v-sheet--tile theme--light"><a href="/" aria-current="page" tabindex="0" class="v-list-item--active v-list-item v-list-item--link theme--light">
+                <div class="v-list v-sheet theme--light"><a href="/" aria-current="page" tabindex="0" class="v-list-item--active v-list-item v-list-item--link theme--light">
                     <div class="v-list-item__action"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">home</i></div>
                     <div class="v-list-item__content">
                       <div class="v-list-item__title">Homepage</div>
@@ -752,20 +750,20 @@ exports[`/ 1`] = `
               </div>
               <div class="v-navigation-drawer__border"></div>
             </nav>
-            <header class="v-sheet v-sheet--tile theme--light v-toolbar v-toolbar--absolute v-app-bar" style="height:64px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;">
-              <div class="v-toolbar__content" style="height:64px;"><button type="button" class="v-app-bar__nav-icon v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-menu theme--light"></i></span></button>
+            <header class="v-sheet theme--light v-toolbar v-toolbar--absolute v-app-bar" style="height:56px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;">
+              <div class="v-toolbar__content" style="height:56px;"><button type="button" class="v-app-bar__nav-icon v-btn v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-menu theme--light"></i></span></button>
                 <!---->
                 <div class="v-toolbar__title">OJ Hunt</div>
                 <!---->
                 <!---->
                 <div class="spacer"></div>
                 <!---->
-                <!----> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--text theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate v-icon--left mdi mdi-login theme--light"></i> login
-    </span></button></span> <span class="v-tooltip v-tooltip--left"><!----><a href="https://github.com/Liu233w/acm-statistics" target="_blank" rel="noopener noreferrer" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" medium="" class="v-icon notranslate mdi mdi-github theme--light"></i></span></a></span>
+                <!----> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--text theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate v-icon--left mdi mdi-login theme--light"></i> login
+    </span></button></span> <span class="v-tooltip v-tooltip--left"><!----><a href="https://github.com/Liu233w/acm-statistics" target="_blank" rel="noopener noreferrer" class="v-btn v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" medium="" class="v-icon notranslate mdi mdi-github theme--light"></i></span></a></span>
               </div>
             </header>
-            <main class="v-content" style="padding-top:64px;padding-right:0px;padding-bottom:0px;padding-left:0px;">
-              <div class="v-content__wrap">
+            <main class="v-main v-content" style="padding-top:56px;padding-right:0px;padding-bottom:0px;padding-left:0px;">
+              <div class="v-main__wrap v-content__wrap">
                 <div>
                   <section>
                     <div class="v-parallax" style="height:600px;">
@@ -781,7 +779,7 @@ exports[`/ 1`] = `
                           </h1>
                           <div class="black--text subheading mb-4 text-center index-title">
                             An online tool to analyze users performance in online judges (coding competition websites)
-                          </div> <a href="/statistics" class="blue lighten-2 black--text mt-12 v-btn v-btn--contained v-btn--router theme--dark v-size--large"><span class="v-btn__content">
+                          </div> <a href="/statistics" class="blue lighten-2 black--text mt-12 v-btn v-btn--is-elevated v-btn--has-bg v-btn--router theme--dark v-size--large"><span class="v-btn__content">
           Enter AC Statistics
         </span></a>
                         </div>
@@ -804,7 +802,7 @@ exports[`/ 1`] = `
                           <div class="layout wrap">
                             <div class="flex xs12 md4">
                               <div class="elevation-0 transparent v-card v-card--flat v-sheet theme--light">
-                                <div class="v-responsive v-image elevation-1" style="height:100px;">
+                                <div class="v-image v-responsive elevation-1 theme--light" style="height:100px;">
                                   <div class="v-image__image v-image__image--preload v-image__image--cover" style="background-image:;background-position:center center;"></div>
                                   <div class="v-responsive__content"></div>
                                 </div>
@@ -820,7 +818,7 @@ exports[`/ 1`] = `
                             </div>
                             <div class="flex xs12 md4">
                               <div class="elevation-0 transparent v-card v-card--flat v-sheet theme--light">
-                                <div class="v-responsive v-image elevation-1" style="height:100px;">
+                                <div class="v-image v-responsive elevation-1 theme--light" style="height:100px;">
                                   <div class="v-image__image v-image__image--preload v-image__image--cover" style="background-image:;background-position:center center;"></div>
                                   <div class="v-responsive__content"></div>
                                 </div>
@@ -836,7 +834,7 @@ exports[`/ 1`] = `
                             </div>
                             <div class="flex xs12 md4">
                               <div class="elevation-0 transparent v-card v-card--flat v-sheet theme--light">
-                                <div class="v-responsive v-image elevation-1" style="height:100px;">
+                                <div class="v-image v-responsive elevation-1 theme--light" style="height:100px;">
                                   <div class="v-image__image v-image__image--preload v-image__image--cover" style="background-image:;background-position:center center;"></div>
                                   <div class="v-responsive__content"></div>
                                 </div>
@@ -863,7 +861,7 @@ exports[`/ 1`] = `
                         <div class="layout column align-center justify-center">
                           <div class="headline white--text mb-4 text-center response-title">
                             If you have any questions,
-                          </div> <em class="white--text response-title">feel free to discuss on GitHub</em> <a href="https://github.com/Liu233w/acm-statistics/discussions/new" target="_blank" rel="noopener noreferrer" class="blue lighten-2 mt-12 v-btn v-btn--contained theme--dark v-size--large"><span class="v-btn__content">
+                          </div> <em class="white--text response-title">feel free to discuss on GitHub</em> <a href="https://github.com/Liu233w/acm-statistics/discussions/new" target="_blank" rel="noopener noreferrer" class="blue lighten-2 mt-12 v-btn v-btn--is-elevated v-btn--has-bg theme--dark v-size--large"><span class="v-btn__content">
           Start Discussion
         </span></a>
                         </div>
@@ -907,7 +905,7 @@ exports[`/ 1`] = `
                 </div>
               </div>
             </main>
-            <footer class="v-footer v-sheet v-sheet--tile theme--light v-footer--absolute v-footer--inset" style="left:0px;right:0px;bottom:0px;"><span class="body-2">© 2018 - 1970 Shumin Liu and Contributors</span></footer>
+            <footer class="v-footer v-sheet theme--light v-footer--absolute v-footer--inset" style="left:0px;right:0px;bottom:0px;"><span class="body-2">© 2018 - 1970 Shumin Liu and Contributors</span></footer>
             <div class="message-panel v-card v-sheet theme--light" style="display:none;">
               <v-list class="pa-0"></v-list>
               <!---->
@@ -1669,8 +1667,6 @@ exports[`/about 1`] = `
         caret-color: #843c00 !important;
       }
     </style>
-    <script data-n-head="ssr" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" data-ad-client="ca-pub-9846042020379030" async=""></script>
-    <script data-n-head="ssr" src="https://contextual.media.net/dmedianet.js?cid=8CUE23IW2" async=""></script>
   </head>
 
   <body>
@@ -1684,7 +1680,7 @@ exports[`/about 1`] = `
           <div class="v-application--wrap">
             <nav class="v-navigation-drawer v-navigation-drawer--close v-navigation-drawer--fixed v-navigation-drawer--is-mobile theme--light" style="height:100vh;top:0px;transform:translateX(-100%);width:256px;">
               <div class="v-navigation-drawer__content">
-                <div class="v-list v-sheet v-sheet--tile theme--light"><a href="/" tabindex="0" class="v-list-item v-list-item--link theme--light">
+                <div class="v-list v-sheet theme--light"><a href="/" tabindex="0" class="v-list-item v-list-item--link theme--light">
                     <div class="v-list-item__action"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">home</i></div>
                     <div class="v-list-item__content">
                       <div class="v-list-item__title">Homepage</div>
@@ -1703,31 +1699,31 @@ exports[`/about 1`] = `
               </div>
               <div class="v-navigation-drawer__border"></div>
             </nav>
-            <header class="v-sheet v-sheet--tile theme--light v-toolbar v-toolbar--absolute v-app-bar" style="height:64px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;">
-              <div class="v-toolbar__content" style="height:64px;"><button type="button" class="v-app-bar__nav-icon v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-menu theme--light"></i></span></button>
+            <header class="v-sheet theme--light v-toolbar v-toolbar--absolute v-app-bar" style="height:56px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;">
+              <div class="v-toolbar__content" style="height:56px;"><button type="button" class="v-app-bar__nav-icon v-btn v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-menu theme--light"></i></span></button>
                 <!---->
                 <div class="v-toolbar__title">OJ Hunt</div>
                 <!---->
                 <!---->
                 <div class="spacer"></div>
                 <!---->
-                <!----> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--text theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate v-icon--left mdi mdi-login theme--light"></i> login
-    </span></button></span> <span class="v-tooltip v-tooltip--left"><!----><a href="https://github.com/Liu233w/acm-statistics" target="_blank" rel="noopener noreferrer" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" medium="" class="v-icon notranslate mdi mdi-github theme--light"></i></span></a></span>
+                <!----> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--text theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate v-icon--left mdi mdi-login theme--light"></i> login
+    </span></button></span> <span class="v-tooltip v-tooltip--left"><!----><a href="https://github.com/Liu233w/acm-statistics" target="_blank" rel="noopener noreferrer" class="v-btn v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" medium="" class="v-icon notranslate mdi mdi-github theme--light"></i></span></a></span>
               </div>
             </header>
-            <main class="v-content" style="padding-top:64px;padding-right:0px;padding-bottom:0px;padding-left:0px;">
-              <div class="v-content__wrap">
+            <main class="v-main v-content" style="padding-top:56px;padding-right:0px;padding-bottom:0px;padding-left:0px;">
+              <div class="v-main__wrap v-content__wrap">
                 <div class="container">
                   <div class="layout">
                     <div class="flex xs12 sm6 offset-sm3">
                       <div class="my-2 v-card v-sheet theme--light">
-                        <header class="v-sheet v-sheet--tile theme--dark v-toolbar v-app-bar light-blue" style="height:64px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;">
-                          <div class="v-toolbar__content" style="height:64px;">
+                        <header class="v-sheet theme--dark v-toolbar v-app-bar light-blue" style="height:56px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;">
+                          <div class="v-toolbar__content" style="height:56px;">
                             <div class="v-toolbar__title">About Us</div>
                             <div class="spacer"></div>
                           </div>
                         </header>
-                        <div role="list" class="v-list v-sheet v-sheet--tile theme--light"><a tabindex="0" href="https://github.com/Liu233w/acm-statistics/blob/master/README.md#contributors-" target="_blank" rel="noopener noreferrer" role="listitem" class="v-list-item v-list-item--link theme--light">
+                        <div role="list" class="v-list v-sheet theme--light"><a tabindex="0" href="https://github.com/Liu233w/acm-statistics/blob/master/README.md#contributors-" target="_blank" rel="noopener noreferrer" role="listitem" class="v-list-item v-list-item--link theme--light">
                             <div class="v-list-item__content">
                               <div class="v-list-item__title">Developed By</div>
                               <v-list-item-sub-title>Shumin Liu and Contributors</v-list-item-sub-title>
@@ -1759,13 +1755,13 @@ exports[`/about 1`] = `
                           </a></div>
                       </div>
                       <div class="my-2 v-card v-sheet theme--light">
-                        <header class="v-sheet v-sheet--tile theme--dark v-toolbar v-app-bar light-blue" style="height:64px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;">
-                          <div class="v-toolbar__content" style="height:64px;">
+                        <header class="v-sheet theme--dark v-toolbar v-app-bar light-blue" style="height:56px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;">
+                          <div class="v-toolbar__content" style="height:56px;">
                             <div class="v-toolbar__title">Development</div>
                             <div class="spacer"></div>
                           </div>
                         </header>
-                        <div role="list" class="v-list v-sheet v-sheet--tile theme--light"><a tabindex="0" href="/swagger" target="_blank" rel="noopener noreferrer" role="listitem" class="v-list-item v-list-item--link theme--light">
+                        <div role="list" class="v-list v-sheet theme--light"><a tabindex="0" href="/swagger" target="_blank" rel="noopener noreferrer" role="listitem" class="v-list-item v-list-item--link theme--light">
                             <div class="v-list-item__action"><i aria-hidden="true" class="v-icon notranslate blue--text text--lighten-2 mdi mdi-api theme--light"></i></div>
                             <div class="v-list-item__content">
                               <v-list-item-sub-title>API Document</v-list-item-sub-title>
@@ -1774,13 +1770,13 @@ exports[`/about 1`] = `
                           </a></div>
                       </div>
                       <div class="my-2 v-card v-sheet theme--light">
-                        <header class="v-sheet v-sheet--tile theme--dark v-toolbar v-app-bar light-blue" style="height:64px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;">
-                          <div class="v-toolbar__content" style="height:64px;">
+                        <header class="v-sheet theme--dark v-toolbar v-app-bar light-blue" style="height:56px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;">
+                          <div class="v-toolbar__content" style="height:56px;">
                             <div class="v-toolbar__title">Special Thanks To</div>
                             <div class="spacer"></div>
                           </div>
                         </header>
-                        <div role="list" class="v-list v-sheet v-sheet--tile theme--light">
+                        <div role="list" class="v-list v-sheet theme--light">
                           <div tabindex="-1" role="listitem" class="v-list-item theme--light">
                             <div class="v-list-item__content">
                               <div class="v-list-item__title">西北工业大学ACM协会技术组</div>
@@ -1806,13 +1802,13 @@ exports[`/about 1`] = `
                         </div>
                       </div>
                       <div class="my-2 v-card v-sheet theme--light">
-                        <header class="v-sheet v-sheet--tile theme--dark v-toolbar v-app-bar light-blue" style="height:64px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;">
-                          <div class="v-toolbar__content" style="height:64px;">
+                        <header class="v-sheet theme--dark v-toolbar v-app-bar light-blue" style="height:56px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;">
+                          <div class="v-toolbar__content" style="height:56px;">
                             <div class="v-toolbar__title">System Info</div>
                             <div class="spacer"></div>
                           </div>
                         </header>
-                        <div role="list" class="v-list v-sheet v-sheet--tile theme--light">
+                        <div role="list" class="v-list v-sheet theme--light">
                           <div tabindex="-1" role="listitem" class="v-list-item theme--light">
                             <div class="v-list-item__content">
                               <div class="v-list-item__title">Version</div>
@@ -1851,7 +1847,7 @@ exports[`/about 1`] = `
                 </div>
               </div>
             </main>
-            <footer class="v-footer v-sheet v-sheet--tile theme--light v-footer--absolute v-footer--inset" style="left:0px;right:0px;bottom:0px;"><span class="body-2">© 2018 - 1970 Shumin Liu and Contributors</span></footer>
+            <footer class="v-footer v-sheet theme--light v-footer--absolute v-footer--inset" style="left:0px;right:0px;bottom:0px;"><span class="body-2">© 2018 - 1970 Shumin Liu and Contributors</span></footer>
             <div class="message-panel v-card v-sheet theme--light" style="display:none;">
               <v-list class="pa-0"></v-list>
               <!---->
@@ -2613,8 +2609,6 @@ exports[`/history 1`] = `
         caret-color: #843c00 !important;
       }
     </style>
-    <script data-n-head="ssr" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" data-ad-client="ca-pub-9846042020379030" async=""></script>
-    <script data-n-head="ssr" src="https://contextual.media.net/dmedianet.js?cid=8CUE23IW2" async=""></script>
   </head>
 
   <body>
@@ -2628,7 +2622,7 @@ exports[`/history 1`] = `
           <div class="v-application--wrap">
             <nav class="v-navigation-drawer v-navigation-drawer--close v-navigation-drawer--fixed v-navigation-drawer--is-mobile theme--light" style="height:100vh;top:0px;transform:translateX(-100%);width:256px;">
               <div class="v-navigation-drawer__content">
-                <div class="v-list v-sheet v-sheet--tile theme--light"><a href="/" tabindex="0" class="v-list-item v-list-item--link theme--light">
+                <div class="v-list v-sheet theme--light"><a href="/" tabindex="0" class="v-list-item v-list-item--link theme--light">
                     <div class="v-list-item__action"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">home</i></div>
                     <div class="v-list-item__content">
                       <div class="v-list-item__title">Homepage</div>
@@ -2657,33 +2651,34 @@ exports[`/history 1`] = `
               </div>
               <div class="v-navigation-drawer__border"></div>
             </nav>
-            <header class="v-sheet v-sheet--tile theme--light v-toolbar v-toolbar--absolute v-app-bar" style="height:64px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;">
-              <div class="v-toolbar__content" style="height:64px;"><button type="button" class="v-app-bar__nav-icon v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-menu theme--light"></i></span></button>
+            <header class="v-sheet theme--light v-toolbar v-toolbar--absolute v-app-bar" style="height:56px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;">
+              <div class="v-toolbar__content" style="height:56px;"><button type="button" class="v-app-bar__nav-icon v-btn v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-menu theme--light"></i></span></button>
                 <!---->
                 <div class="v-toolbar__title">OJ Hunt</div>
                 <!---->
                 <!---->
                 <div class="spacer"></div>
                 <!---->
-                <!----> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--text theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate v-icon--left mdi mdi-login theme--light" style="display:none;"></i> admin
-    </span></button></span> <span class="v-tooltip v-tooltip--left"><!----><a href="https://github.com/Liu233w/acm-statistics" target="_blank" rel="noopener noreferrer" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" medium="" class="v-icon notranslate mdi mdi-github theme--light"></i></span></a></span>
+                <!----> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--text theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate v-icon--left mdi mdi-login theme--light" style="display:none;"></i> admin
+    </span></button></span> <span class="v-tooltip v-tooltip--left"><!----><a href="https://github.com/Liu233w/acm-statistics" target="_blank" rel="noopener noreferrer" class="v-btn v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" medium="" class="v-icon notranslate mdi mdi-github theme--light"></i></span></a></span>
               </div>
             </header>
-            <main class="v-content" style="padding-top:64px;padding-right:0px;padding-bottom:0px;padding-left:0px;">
-              <div class="v-content__wrap">
+            <main class="v-main v-content" style="padding-top:56px;padding-right:0px;padding-bottom:0px;padding-left:0px;">
+              <div class="v-main__wrap v-content__wrap">
                 <div data-fetch-key="0" class="container container--fluid">
-                  <div class="v-banner v-sheet v-sheet--tile theme--light v-banner--is-mobile">
+                  <div class="v-banner v-sheet theme--light v-banner--is-mobile">
                     <div class="v-banner__wrapper">
                       <div class="v-banner__content">
                         <div class="v-banner__text">
                           Only the latest history per day is saved. You may change your time zone in settings.
-                          <a href="/settings" class="v-btn v-btn--flat v-btn--router v-btn--text theme--light v-size--default primary--text"><span class="v-btn__content">
+                          <a href="/settings" class="v-btn v-btn--router v-btn--text theme--light v-size--default primary--text"><span class="v-btn__content">
         go settings
-      </span></a></div>
+      </span></a>
+                        </div>
                       </div>
                     </div>
                   </div>
-                  <div class="v-data-table mt-4 theme--light"><button type="button" disabled="disabled" class="v-btn v-btn--contained v-btn--disabled theme--light v-size--default"><span class="v-btn__content">
+                  <div class="v-data-table mt-4 v-data-table--has-top v-data-table--has-bottom theme--light"><button type="button" disabled="disabled" class="v-btn v-btn--disabled v-btn--has-bg theme--light v-size--default"><span class="v-btn__content">
           delete selected
         </span></button>
                     <div class="v-data-table__wrapper">
@@ -2696,140 +2691,319 @@ exports[`/history 1`] = `
                           <col>
                           <col>
                         </colgroup>
-                        <thead class="v-data-table-header">
+                        <thead class="v-data-table-header v-data-table-header-mobile">
                           <tr>
-                            <th role="columnheader" scope="col" aria-label="" class="text-start" style="width:1px;min-width:1px;">
-                              <div class="v-data-table__checkbox v-simple-checkbox">
-                                <div class="v-input--selection-controls__ripple"></div><i aria-hidden="true" class="v-icon notranslate mdi mdi-checkbox-blank-outline theme--light"></i>
+                            <th>
+                              <div class="v-data-table-header-mobile__wrapper">
+                                <div width="1px" class="v-data-table-header-mobile__select">
+                                  <div class="v-data-table__checkbox v-simple-checkbox">
+                                    <div class="v-input--selection-controls__ripple"></div><i aria-hidden="true" class="v-icon notranslate mdi mdi-checkbox-blank-outline theme--light"></i>
+                                  </div>
+                                </div>
                               </div>
                             </th>
-                            <th role="columnheader" scope="col" aria-label="Id" class="text-start"><span>Id</span></th>
-                            <th role="columnheader" scope="col" aria-label="Query date" class="text-start"><span>Query date</span></th>
-                            <th role="columnheader" scope="col" aria-label="Solved" class="text-start"><span>Solved</span></th>
-                            <th role="columnheader" scope="col" aria-label="Submissions" class="text-start"><span>Submissions</span></th>
-                            <th role="columnheader" scope="col" aria-label="Actions" class="text-start"><span>Actions</span></th>
                           </tr>
                         </thead>
                         <tbody>
-                          <tr>
-                            <td class="text-start">
-                              <div class="v-data-table__checkbox v-simple-checkbox">
-                                <div class="v-input--selection-controls__ripple"></div><i aria-hidden="true" class="v-icon notranslate mdi mdi-checkbox-blank-outline theme--light"></i>
+                          <tr class="v-data-table__mobile-table-row">
+                            <td class="v-data-table__mobile-row">
+                              <div class="v-data-table__mobile-row__header"></div>
+                              <div class="v-data-table__mobile-row__cell">
+                                <div class="v-data-table__checkbox v-simple-checkbox">
+                                  <div class="v-input--selection-controls__ripple"></div><i aria-hidden="true" class="v-icon notranslate mdi mdi-checkbox-blank-outline theme--light"></i>
+                                </div>
                               </div>
                             </td>
-                            <td class="text-start">10</td>
-                            <td class="text-start">Fri Apr 10 2020 08:00:00 GMT+0000 (Coordinated Universal Time)</td>
-                            <td class="text-start">10</td>
-                            <td class="text-start">100</td>
-                            <td class="text-start"><a href="/history/10" class="v-btn v-btn--flat v-btn--icon v-btn--round v-btn--router theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-eye theme--light"></i></span></a> <button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-delete theme--light"></i></span></button></td>
+                            <td class="v-data-table__mobile-row">
+                              <div class="v-data-table__mobile-row__header">Id</div>
+                              <div class="v-data-table__mobile-row__cell">10</div>
+                            </td>
+                            <td class="v-data-table__mobile-row">
+                              <div class="v-data-table__mobile-row__header">Query date</div>
+                              <div class="v-data-table__mobile-row__cell">Fri Apr 10 2020 08:00:00 GMT+0000 (Coordinated Universal Time)</div>
+                            </td>
+                            <td class="v-data-table__mobile-row">
+                              <div class="v-data-table__mobile-row__header">Solved</div>
+                              <div class="v-data-table__mobile-row__cell">10</div>
+                            </td>
+                            <td class="v-data-table__mobile-row">
+                              <div class="v-data-table__mobile-row__header">Submissions</div>
+                              <div class="v-data-table__mobile-row__cell">100</div>
+                            </td>
+                            <td class="v-data-table__mobile-row">
+                              <div class="v-data-table__mobile-row__header">Actions</div>
+                              <div class="v-data-table__mobile-row__cell"><a href="/history/10" class="v-btn v-btn--icon v-btn--round v-btn--router theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-eye theme--light"></i></span></a> <button type="button" class="v-btn v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-delete theme--light"></i></span></button></div>
+                            </td>
                           </tr>
-                          <tr>
-                            <td class="text-start">
-                              <div class="v-data-table__checkbox v-simple-checkbox">
-                                <div class="v-input--selection-controls__ripple"></div><i aria-hidden="true" class="v-icon notranslate mdi mdi-checkbox-blank-outline theme--light"></i>
+                          <tr class="v-data-table__mobile-table-row">
+                            <td class="v-data-table__mobile-row">
+                              <div class="v-data-table__mobile-row__header"></div>
+                              <div class="v-data-table__mobile-row__cell">
+                                <div class="v-data-table__checkbox v-simple-checkbox">
+                                  <div class="v-input--selection-controls__ripple"></div><i aria-hidden="true" class="v-icon notranslate mdi mdi-checkbox-blank-outline theme--light"></i>
+                                </div>
                               </div>
                             </td>
-                            <td class="text-start">9</td>
-                            <td class="text-start">Thu Apr 09 2020 08:00:00 GMT+0000 (Coordinated Universal Time)</td>
-                            <td class="text-start">9</td>
-                            <td class="text-start">90</td>
-                            <td class="text-start"><a href="/history/9" class="v-btn v-btn--flat v-btn--icon v-btn--round v-btn--router theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-eye theme--light"></i></span></a> <button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-delete theme--light"></i></span></button></td>
+                            <td class="v-data-table__mobile-row">
+                              <div class="v-data-table__mobile-row__header">Id</div>
+                              <div class="v-data-table__mobile-row__cell">9</div>
+                            </td>
+                            <td class="v-data-table__mobile-row">
+                              <div class="v-data-table__mobile-row__header">Query date</div>
+                              <div class="v-data-table__mobile-row__cell">Thu Apr 09 2020 08:00:00 GMT+0000 (Coordinated Universal Time)</div>
+                            </td>
+                            <td class="v-data-table__mobile-row">
+                              <div class="v-data-table__mobile-row__header">Solved</div>
+                              <div class="v-data-table__mobile-row__cell">9</div>
+                            </td>
+                            <td class="v-data-table__mobile-row">
+                              <div class="v-data-table__mobile-row__header">Submissions</div>
+                              <div class="v-data-table__mobile-row__cell">90</div>
+                            </td>
+                            <td class="v-data-table__mobile-row">
+                              <div class="v-data-table__mobile-row__header">Actions</div>
+                              <div class="v-data-table__mobile-row__cell"><a href="/history/9" class="v-btn v-btn--icon v-btn--round v-btn--router theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-eye theme--light"></i></span></a> <button type="button" class="v-btn v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-delete theme--light"></i></span></button></div>
+                            </td>
                           </tr>
-                          <tr>
-                            <td class="text-start">
-                              <div class="v-data-table__checkbox v-simple-checkbox">
-                                <div class="v-input--selection-controls__ripple"></div><i aria-hidden="true" class="v-icon notranslate mdi mdi-checkbox-blank-outline theme--light"></i>
+                          <tr class="v-data-table__mobile-table-row">
+                            <td class="v-data-table__mobile-row">
+                              <div class="v-data-table__mobile-row__header"></div>
+                              <div class="v-data-table__mobile-row__cell">
+                                <div class="v-data-table__checkbox v-simple-checkbox">
+                                  <div class="v-input--selection-controls__ripple"></div><i aria-hidden="true" class="v-icon notranslate mdi mdi-checkbox-blank-outline theme--light"></i>
+                                </div>
                               </div>
                             </td>
-                            <td class="text-start">8</td>
-                            <td class="text-start">Wed Apr 08 2020 08:00:00 GMT+0000 (Coordinated Universal Time)</td>
-                            <td class="text-start">8</td>
-                            <td class="text-start">80</td>
-                            <td class="text-start"><a href="/history/8" class="v-btn v-btn--flat v-btn--icon v-btn--round v-btn--router theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-eye theme--light"></i></span></a> <button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-delete theme--light"></i></span></button></td>
+                            <td class="v-data-table__mobile-row">
+                              <div class="v-data-table__mobile-row__header">Id</div>
+                              <div class="v-data-table__mobile-row__cell">8</div>
+                            </td>
+                            <td class="v-data-table__mobile-row">
+                              <div class="v-data-table__mobile-row__header">Query date</div>
+                              <div class="v-data-table__mobile-row__cell">Wed Apr 08 2020 08:00:00 GMT+0000 (Coordinated Universal Time)</div>
+                            </td>
+                            <td class="v-data-table__mobile-row">
+                              <div class="v-data-table__mobile-row__header">Solved</div>
+                              <div class="v-data-table__mobile-row__cell">8</div>
+                            </td>
+                            <td class="v-data-table__mobile-row">
+                              <div class="v-data-table__mobile-row__header">Submissions</div>
+                              <div class="v-data-table__mobile-row__cell">80</div>
+                            </td>
+                            <td class="v-data-table__mobile-row">
+                              <div class="v-data-table__mobile-row__header">Actions</div>
+                              <div class="v-data-table__mobile-row__cell"><a href="/history/8" class="v-btn v-btn--icon v-btn--round v-btn--router theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-eye theme--light"></i></span></a> <button type="button" class="v-btn v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-delete theme--light"></i></span></button></div>
+                            </td>
                           </tr>
-                          <tr>
-                            <td class="text-start">
-                              <div class="v-data-table__checkbox v-simple-checkbox">
-                                <div class="v-input--selection-controls__ripple"></div><i aria-hidden="true" class="v-icon notranslate mdi mdi-checkbox-blank-outline theme--light"></i>
+                          <tr class="v-data-table__mobile-table-row">
+                            <td class="v-data-table__mobile-row">
+                              <div class="v-data-table__mobile-row__header"></div>
+                              <div class="v-data-table__mobile-row__cell">
+                                <div class="v-data-table__checkbox v-simple-checkbox">
+                                  <div class="v-input--selection-controls__ripple"></div><i aria-hidden="true" class="v-icon notranslate mdi mdi-checkbox-blank-outline theme--light"></i>
+                                </div>
                               </div>
                             </td>
-                            <td class="text-start">7</td>
-                            <td class="text-start">Tue Apr 07 2020 08:00:00 GMT+0000 (Coordinated Universal Time)</td>
-                            <td class="text-start">7</td>
-                            <td class="text-start">70</td>
-                            <td class="text-start"><a href="/history/7" class="v-btn v-btn--flat v-btn--icon v-btn--round v-btn--router theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-eye theme--light"></i></span></a> <button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-delete theme--light"></i></span></button></td>
+                            <td class="v-data-table__mobile-row">
+                              <div class="v-data-table__mobile-row__header">Id</div>
+                              <div class="v-data-table__mobile-row__cell">7</div>
+                            </td>
+                            <td class="v-data-table__mobile-row">
+                              <div class="v-data-table__mobile-row__header">Query date</div>
+                              <div class="v-data-table__mobile-row__cell">Tue Apr 07 2020 08:00:00 GMT+0000 (Coordinated Universal Time)</div>
+                            </td>
+                            <td class="v-data-table__mobile-row">
+                              <div class="v-data-table__mobile-row__header">Solved</div>
+                              <div class="v-data-table__mobile-row__cell">7</div>
+                            </td>
+                            <td class="v-data-table__mobile-row">
+                              <div class="v-data-table__mobile-row__header">Submissions</div>
+                              <div class="v-data-table__mobile-row__cell">70</div>
+                            </td>
+                            <td class="v-data-table__mobile-row">
+                              <div class="v-data-table__mobile-row__header">Actions</div>
+                              <div class="v-data-table__mobile-row__cell"><a href="/history/7" class="v-btn v-btn--icon v-btn--round v-btn--router theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-eye theme--light"></i></span></a> <button type="button" class="v-btn v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-delete theme--light"></i></span></button></div>
+                            </td>
                           </tr>
-                          <tr>
-                            <td class="text-start">
-                              <div class="v-data-table__checkbox v-simple-checkbox">
-                                <div class="v-input--selection-controls__ripple"></div><i aria-hidden="true" class="v-icon notranslate mdi mdi-checkbox-blank-outline theme--light"></i>
+                          <tr class="v-data-table__mobile-table-row">
+                            <td class="v-data-table__mobile-row">
+                              <div class="v-data-table__mobile-row__header"></div>
+                              <div class="v-data-table__mobile-row__cell">
+                                <div class="v-data-table__checkbox v-simple-checkbox">
+                                  <div class="v-input--selection-controls__ripple"></div><i aria-hidden="true" class="v-icon notranslate mdi mdi-checkbox-blank-outline theme--light"></i>
+                                </div>
                               </div>
                             </td>
-                            <td class="text-start">6</td>
-                            <td class="text-start">Mon Apr 06 2020 08:00:00 GMT+0000 (Coordinated Universal Time)</td>
-                            <td class="text-start">6</td>
-                            <td class="text-start">60</td>
-                            <td class="text-start"><a href="/history/6" class="v-btn v-btn--flat v-btn--icon v-btn--round v-btn--router theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-eye theme--light"></i></span></a> <button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-delete theme--light"></i></span></button></td>
+                            <td class="v-data-table__mobile-row">
+                              <div class="v-data-table__mobile-row__header">Id</div>
+                              <div class="v-data-table__mobile-row__cell">6</div>
+                            </td>
+                            <td class="v-data-table__mobile-row">
+                              <div class="v-data-table__mobile-row__header">Query date</div>
+                              <div class="v-data-table__mobile-row__cell">Mon Apr 06 2020 08:00:00 GMT+0000 (Coordinated Universal Time)</div>
+                            </td>
+                            <td class="v-data-table__mobile-row">
+                              <div class="v-data-table__mobile-row__header">Solved</div>
+                              <div class="v-data-table__mobile-row__cell">6</div>
+                            </td>
+                            <td class="v-data-table__mobile-row">
+                              <div class="v-data-table__mobile-row__header">Submissions</div>
+                              <div class="v-data-table__mobile-row__cell">60</div>
+                            </td>
+                            <td class="v-data-table__mobile-row">
+                              <div class="v-data-table__mobile-row__header">Actions</div>
+                              <div class="v-data-table__mobile-row__cell"><a href="/history/6" class="v-btn v-btn--icon v-btn--round v-btn--router theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-eye theme--light"></i></span></a> <button type="button" class="v-btn v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-delete theme--light"></i></span></button></div>
+                            </td>
                           </tr>
-                          <tr>
-                            <td class="text-start">
-                              <div class="v-data-table__checkbox v-simple-checkbox">
-                                <div class="v-input--selection-controls__ripple"></div><i aria-hidden="true" class="v-icon notranslate mdi mdi-checkbox-blank-outline theme--light"></i>
+                          <tr class="v-data-table__mobile-table-row">
+                            <td class="v-data-table__mobile-row">
+                              <div class="v-data-table__mobile-row__header"></div>
+                              <div class="v-data-table__mobile-row__cell">
+                                <div class="v-data-table__checkbox v-simple-checkbox">
+                                  <div class="v-input--selection-controls__ripple"></div><i aria-hidden="true" class="v-icon notranslate mdi mdi-checkbox-blank-outline theme--light"></i>
+                                </div>
                               </div>
                             </td>
-                            <td class="text-start">5</td>
-                            <td class="text-start">Sun Apr 05 2020 08:00:00 GMT+0000 (Coordinated Universal Time)</td>
-                            <td class="text-start">5</td>
-                            <td class="text-start">50</td>
-                            <td class="text-start"><a href="/history/5" class="v-btn v-btn--flat v-btn--icon v-btn--round v-btn--router theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-eye theme--light"></i></span></a> <button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-delete theme--light"></i></span></button></td>
+                            <td class="v-data-table__mobile-row">
+                              <div class="v-data-table__mobile-row__header">Id</div>
+                              <div class="v-data-table__mobile-row__cell">5</div>
+                            </td>
+                            <td class="v-data-table__mobile-row">
+                              <div class="v-data-table__mobile-row__header">Query date</div>
+                              <div class="v-data-table__mobile-row__cell">Sun Apr 05 2020 08:00:00 GMT+0000 (Coordinated Universal Time)</div>
+                            </td>
+                            <td class="v-data-table__mobile-row">
+                              <div class="v-data-table__mobile-row__header">Solved</div>
+                              <div class="v-data-table__mobile-row__cell">5</div>
+                            </td>
+                            <td class="v-data-table__mobile-row">
+                              <div class="v-data-table__mobile-row__header">Submissions</div>
+                              <div class="v-data-table__mobile-row__cell">50</div>
+                            </td>
+                            <td class="v-data-table__mobile-row">
+                              <div class="v-data-table__mobile-row__header">Actions</div>
+                              <div class="v-data-table__mobile-row__cell"><a href="/history/5" class="v-btn v-btn--icon v-btn--round v-btn--router theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-eye theme--light"></i></span></a> <button type="button" class="v-btn v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-delete theme--light"></i></span></button></div>
+                            </td>
                           </tr>
-                          <tr>
-                            <td class="text-start">
-                              <div class="v-data-table__checkbox v-simple-checkbox">
-                                <div class="v-input--selection-controls__ripple"></div><i aria-hidden="true" class="v-icon notranslate mdi mdi-checkbox-blank-outline theme--light"></i>
+                          <tr class="v-data-table__mobile-table-row">
+                            <td class="v-data-table__mobile-row">
+                              <div class="v-data-table__mobile-row__header"></div>
+                              <div class="v-data-table__mobile-row__cell">
+                                <div class="v-data-table__checkbox v-simple-checkbox">
+                                  <div class="v-input--selection-controls__ripple"></div><i aria-hidden="true" class="v-icon notranslate mdi mdi-checkbox-blank-outline theme--light"></i>
+                                </div>
                               </div>
                             </td>
-                            <td class="text-start">4</td>
-                            <td class="text-start">Sat Apr 04 2020 08:00:00 GMT+0000 (Coordinated Universal Time)</td>
-                            <td class="text-start">4</td>
-                            <td class="text-start">40</td>
-                            <td class="text-start"><a href="/history/4" class="v-btn v-btn--flat v-btn--icon v-btn--round v-btn--router theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-eye theme--light"></i></span></a> <button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-delete theme--light"></i></span></button></td>
+                            <td class="v-data-table__mobile-row">
+                              <div class="v-data-table__mobile-row__header">Id</div>
+                              <div class="v-data-table__mobile-row__cell">4</div>
+                            </td>
+                            <td class="v-data-table__mobile-row">
+                              <div class="v-data-table__mobile-row__header">Query date</div>
+                              <div class="v-data-table__mobile-row__cell">Sat Apr 04 2020 08:00:00 GMT+0000 (Coordinated Universal Time)</div>
+                            </td>
+                            <td class="v-data-table__mobile-row">
+                              <div class="v-data-table__mobile-row__header">Solved</div>
+                              <div class="v-data-table__mobile-row__cell">4</div>
+                            </td>
+                            <td class="v-data-table__mobile-row">
+                              <div class="v-data-table__mobile-row__header">Submissions</div>
+                              <div class="v-data-table__mobile-row__cell">40</div>
+                            </td>
+                            <td class="v-data-table__mobile-row">
+                              <div class="v-data-table__mobile-row__header">Actions</div>
+                              <div class="v-data-table__mobile-row__cell"><a href="/history/4" class="v-btn v-btn--icon v-btn--round v-btn--router theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-eye theme--light"></i></span></a> <button type="button" class="v-btn v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-delete theme--light"></i></span></button></div>
+                            </td>
                           </tr>
-                          <tr>
-                            <td class="text-start">
-                              <div class="v-data-table__checkbox v-simple-checkbox">
-                                <div class="v-input--selection-controls__ripple"></div><i aria-hidden="true" class="v-icon notranslate mdi mdi-checkbox-blank-outline theme--light"></i>
+                          <tr class="v-data-table__mobile-table-row">
+                            <td class="v-data-table__mobile-row">
+                              <div class="v-data-table__mobile-row__header"></div>
+                              <div class="v-data-table__mobile-row__cell">
+                                <div class="v-data-table__checkbox v-simple-checkbox">
+                                  <div class="v-input--selection-controls__ripple"></div><i aria-hidden="true" class="v-icon notranslate mdi mdi-checkbox-blank-outline theme--light"></i>
+                                </div>
                               </div>
                             </td>
-                            <td class="text-start">3</td>
-                            <td class="text-start">Fri Apr 03 2020 08:00:00 GMT+0000 (Coordinated Universal Time)</td>
-                            <td class="text-start">3</td>
-                            <td class="text-start">30</td>
-                            <td class="text-start"><a href="/history/3" class="v-btn v-btn--flat v-btn--icon v-btn--round v-btn--router theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-eye theme--light"></i></span></a> <button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-delete theme--light"></i></span></button></td>
+                            <td class="v-data-table__mobile-row">
+                              <div class="v-data-table__mobile-row__header">Id</div>
+                              <div class="v-data-table__mobile-row__cell">3</div>
+                            </td>
+                            <td class="v-data-table__mobile-row">
+                              <div class="v-data-table__mobile-row__header">Query date</div>
+                              <div class="v-data-table__mobile-row__cell">Fri Apr 03 2020 08:00:00 GMT+0000 (Coordinated Universal Time)</div>
+                            </td>
+                            <td class="v-data-table__mobile-row">
+                              <div class="v-data-table__mobile-row__header">Solved</div>
+                              <div class="v-data-table__mobile-row__cell">3</div>
+                            </td>
+                            <td class="v-data-table__mobile-row">
+                              <div class="v-data-table__mobile-row__header">Submissions</div>
+                              <div class="v-data-table__mobile-row__cell">30</div>
+                            </td>
+                            <td class="v-data-table__mobile-row">
+                              <div class="v-data-table__mobile-row__header">Actions</div>
+                              <div class="v-data-table__mobile-row__cell"><a href="/history/3" class="v-btn v-btn--icon v-btn--round v-btn--router theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-eye theme--light"></i></span></a> <button type="button" class="v-btn v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-delete theme--light"></i></span></button></div>
+                            </td>
                           </tr>
-                          <tr>
-                            <td class="text-start">
-                              <div class="v-data-table__checkbox v-simple-checkbox">
-                                <div class="v-input--selection-controls__ripple"></div><i aria-hidden="true" class="v-icon notranslate mdi mdi-checkbox-blank-outline theme--light"></i>
+                          <tr class="v-data-table__mobile-table-row">
+                            <td class="v-data-table__mobile-row">
+                              <div class="v-data-table__mobile-row__header"></div>
+                              <div class="v-data-table__mobile-row__cell">
+                                <div class="v-data-table__checkbox v-simple-checkbox">
+                                  <div class="v-input--selection-controls__ripple"></div><i aria-hidden="true" class="v-icon notranslate mdi mdi-checkbox-blank-outline theme--light"></i>
+                                </div>
                               </div>
                             </td>
-                            <td class="text-start">2</td>
-                            <td class="text-start">Thu Apr 02 2020 08:00:00 GMT+0000 (Coordinated Universal Time)</td>
-                            <td class="text-start">2</td>
-                            <td class="text-start">20</td>
-                            <td class="text-start"><a href="/history/2" class="v-btn v-btn--flat v-btn--icon v-btn--round v-btn--router theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-eye theme--light"></i></span></a> <button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-delete theme--light"></i></span></button></td>
+                            <td class="v-data-table__mobile-row">
+                              <div class="v-data-table__mobile-row__header">Id</div>
+                              <div class="v-data-table__mobile-row__cell">2</div>
+                            </td>
+                            <td class="v-data-table__mobile-row">
+                              <div class="v-data-table__mobile-row__header">Query date</div>
+                              <div class="v-data-table__mobile-row__cell">Thu Apr 02 2020 08:00:00 GMT+0000 (Coordinated Universal Time)</div>
+                            </td>
+                            <td class="v-data-table__mobile-row">
+                              <div class="v-data-table__mobile-row__header">Solved</div>
+                              <div class="v-data-table__mobile-row__cell">2</div>
+                            </td>
+                            <td class="v-data-table__mobile-row">
+                              <div class="v-data-table__mobile-row__header">Submissions</div>
+                              <div class="v-data-table__mobile-row__cell">20</div>
+                            </td>
+                            <td class="v-data-table__mobile-row">
+                              <div class="v-data-table__mobile-row__header">Actions</div>
+                              <div class="v-data-table__mobile-row__cell"><a href="/history/2" class="v-btn v-btn--icon v-btn--round v-btn--router theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-eye theme--light"></i></span></a> <button type="button" class="v-btn v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-delete theme--light"></i></span></button></div>
+                            </td>
                           </tr>
-                          <tr>
-                            <td class="text-start">
-                              <div class="v-data-table__checkbox v-simple-checkbox">
-                                <div class="v-input--selection-controls__ripple"></div><i aria-hidden="true" class="v-icon notranslate mdi mdi-checkbox-blank-outline theme--light"></i>
+                          <tr class="v-data-table__mobile-table-row">
+                            <td class="v-data-table__mobile-row">
+                              <div class="v-data-table__mobile-row__header"></div>
+                              <div class="v-data-table__mobile-row__cell">
+                                <div class="v-data-table__checkbox v-simple-checkbox">
+                                  <div class="v-input--selection-controls__ripple"></div><i aria-hidden="true" class="v-icon notranslate mdi mdi-checkbox-blank-outline theme--light"></i>
+                                </div>
                               </div>
                             </td>
-                            <td class="text-start">1</td>
-                            <td class="text-start">Wed Apr 01 2020 08:00:00 GMT+0000 (Coordinated Universal Time)</td>
-                            <td class="text-start">1</td>
-                            <td class="text-start">10</td>
-                            <td class="text-start"><a href="/history/1" class="v-btn v-btn--flat v-btn--icon v-btn--round v-btn--router theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-eye theme--light"></i></span></a> <button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-delete theme--light"></i></span></button></td>
+                            <td class="v-data-table__mobile-row">
+                              <div class="v-data-table__mobile-row__header">Id</div>
+                              <div class="v-data-table__mobile-row__cell">1</div>
+                            </td>
+                            <td class="v-data-table__mobile-row">
+                              <div class="v-data-table__mobile-row__header">Query date</div>
+                              <div class="v-data-table__mobile-row__cell">Wed Apr 01 2020 08:00:00 GMT+0000 (Coordinated Universal Time)</div>
+                            </td>
+                            <td class="v-data-table__mobile-row">
+                              <div class="v-data-table__mobile-row__header">Solved</div>
+                              <div class="v-data-table__mobile-row__cell">1</div>
+                            </td>
+                            <td class="v-data-table__mobile-row">
+                              <div class="v-data-table__mobile-row__header">Submissions</div>
+                              <div class="v-data-table__mobile-row__cell">10</div>
+                            </td>
+                            <td class="v-data-table__mobile-row">
+                              <div class="v-data-table__mobile-row__header">Actions</div>
+                              <div class="v-data-table__mobile-row__cell"><a href="/history/1" class="v-btn v-btn--icon v-btn--round v-btn--router theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-eye theme--light"></i></span></a> <button type="button" class="v-btn v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-delete theme--light"></i></span></button></div>
+                            </td>
                           </tr>
                         </tbody>
                       </table>
@@ -2840,7 +3014,7 @@ exports[`/history 1`] = `
                             <div role="button" aria-haspopup="listbox" aria-expanded="false" class="v-input__slot">
                               <div class="v-select__slot">
                                 <div class="v-select__selections">
-                                  <div class="v-select__selection v-select__selection--comma">10</div><input aria-label="$vuetify.dataTable.itemsPerPageText" readonly="readonly" type="text" aria-readonly="false" autocomplete="off">
+                                  <div class="v-select__selection v-select__selection--comma">10</div><input aria-label="Rows per page:" readonly="readonly" type="text" aria-readonly="false" autocomplete="off">
                                 </div>
                                 <div class="v-input__append-inner">
                                   <div class="v-input__icon v-input__icon--append"><i aria-hidden="true" class="v-icon notranslate mdi mdi-menu-down theme--light"></i></div>
@@ -2854,8 +3028,8 @@ exports[`/history 1`] = `
                         </div>
                       </div>
                       <div class="v-data-footer__pagination">1-10 of 60</div>
-                      <div class="v-data-footer__icons-before"><button type="button" disabled="disabled" aria-label="Previous page" class="v-btn v-btn--disabled v-btn--flat v-btn--icon v-btn--round v-btn--text theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-chevron-left theme--light"></i></span></button></div>
-                      <div class="v-data-footer__icons-after"><button type="button" aria-label="Next page" class="v-btn v-btn--flat v-btn--icon v-btn--round v-btn--text theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-chevron-right theme--light"></i></span></button></div>
+                      <div class="v-data-footer__icons-before"><button type="button" disabled="disabled" aria-label="Previous page" class="v-btn v-btn--disabled v-btn--icon v-btn--round v-btn--text theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-chevron-left theme--light"></i></span></button></div>
+                      <div class="v-data-footer__icons-after"><button type="button" aria-label="Next page" class="v-btn v-btn--icon v-btn--round v-btn--text theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-chevron-right theme--light"></i></span></button></div>
                     </div>
                   </div>
                   <div class="row">
@@ -2865,7 +3039,7 @@ exports[`/history 1`] = `
                 </div>
               </div>
             </main>
-            <footer class="v-footer v-sheet v-sheet--tile theme--light v-footer--absolute v-footer--inset" style="left:0px;right:0px;bottom:0px;"><span class="body-2">© 2018 - 1970 Shumin Liu and Contributors</span></footer>
+            <footer class="v-footer v-sheet theme--light v-footer--absolute v-footer--inset" style="left:0px;right:0px;bottom:0px;"><span class="body-2">© 2018 - 1970 Shumin Liu and Contributors</span></footer>
             <div class="message-panel v-card v-sheet theme--light" style="display:none;">
               <v-list class="pa-0"></v-list>
               <!---->
@@ -3744,8 +3918,6 @@ exports[`/history/{historyId} 1`] = `
         caret-color: #843c00 !important;
       }
     </style>
-    <script data-n-head="ssr" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" data-ad-client="ca-pub-9846042020379030" async=""></script>
-    <script data-n-head="ssr" src="https://contextual.media.net/dmedianet.js?cid=8CUE23IW2" async=""></script>
   </head>
 
   <body>
@@ -3759,7 +3931,7 @@ exports[`/history/{historyId} 1`] = `
           <div class="v-application--wrap">
             <nav class="v-navigation-drawer v-navigation-drawer--close v-navigation-drawer--fixed v-navigation-drawer--is-mobile theme--light" style="height:100vh;top:0px;transform:translateX(-100%);width:256px;">
               <div class="v-navigation-drawer__content">
-                <div class="v-list v-sheet v-sheet--tile theme--light"><a href="/" tabindex="0" class="v-list-item v-list-item--link theme--light">
+                <div class="v-list v-sheet theme--light"><a href="/" tabindex="0" class="v-list-item v-list-item--link theme--light">
                     <div class="v-list-item__action"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">home</i></div>
                     <div class="v-list-item__content">
                       <div class="v-list-item__title">Homepage</div>
@@ -3788,22 +3960,22 @@ exports[`/history/{historyId} 1`] = `
               </div>
               <div class="v-navigation-drawer__border"></div>
             </nav>
-            <header class="v-sheet v-sheet--tile theme--light v-toolbar v-toolbar--absolute v-app-bar" style="height:64px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;">
-              <div class="v-toolbar__content" style="height:64px;"><button type="button" class="v-app-bar__nav-icon v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-menu theme--light"></i></span></button>
+            <header class="v-sheet theme--light v-toolbar v-toolbar--absolute v-app-bar" style="height:56px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;">
+              <div class="v-toolbar__content" style="height:56px;"><button type="button" class="v-app-bar__nav-icon v-btn v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-menu theme--light"></i></span></button>
                 <!---->
                 <div class="v-toolbar__title">OJ Hunt</div>
                 <!---->
                 <!---->
                 <div class="spacer"></div>
                 <!---->
-                <!----> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--text theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate v-icon--left mdi mdi-login theme--light" style="display:none;"></i> admin
-    </span></button></span> <span class="v-tooltip v-tooltip--left"><!----><a href="https://github.com/Liu233w/acm-statistics" target="_blank" rel="noopener noreferrer" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" medium="" class="v-icon notranslate mdi mdi-github theme--light"></i></span></a></span>
+                <!----> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--text theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate v-icon--left mdi mdi-login theme--light" style="display:none;"></i> admin
+    </span></button></span> <span class="v-tooltip v-tooltip--left"><!----><a href="https://github.com/Liu233w/acm-statistics" target="_blank" rel="noopener noreferrer" class="v-btn v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" medium="" class="v-icon notranslate mdi mdi-github theme--light"></i></span></a></span>
               </div>
             </header>
-            <main class="v-content" style="padding-top:64px;padding-right:0px;padding-bottom:0px;padding-left:0px;">
-              <div class="v-content__wrap">
+            <main class="v-main v-content" style="padding-top:56px;padding-right:0px;padding-bottom:0px;padding-left:0px;">
+              <div class="v-main__wrap v-content__wrap">
                 <div data-fetch-key="0" id="history-summary" class="container">
-                  <div role="list" class="v-list v-sheet v-sheet--tile theme--light">
+                  <div role="list" class="v-list v-sheet theme--light">
                     <div tabindex="-1" role="listitem" class="v-list-item theme--light">
                       <div class="v-list-item__content">
                         <div class="v-list-item__title"><strong>Main username:</strong> wwwlsmcom</div>
@@ -3834,87 +4006,234 @@ exports[`/history/{historyId} 1`] = `
                           <col>
                           <col>
                         </colgroup>
-                        <thead class="v-data-table-header">
+                        <thead class="v-data-table-header v-data-table-header-mobile">
                           <tr>
-                            <th role="columnheader" scope="col" aria-label="Crawler: Not sorted. Activate to sort ascending." aria-sort="none" class="text-start sortable"><span>Crawler</span><i aria-hidden="true" class="v-icon notranslate v-data-table-header__icon mdi mdi-arrow-up theme--light" style="font-size:18px;"></i></th>
-                            <th role="columnheader" scope="col" aria-label="Username" class="text-start"><span>Username</span></th>
-                            <th role="columnheader" scope="col" aria-label="Solved: Not sorted. Activate to sort ascending." aria-sort="none" class="text-start sortable"><span>Solved</span><i aria-hidden="true" class="v-icon notranslate v-data-table-header__icon mdi mdi-arrow-up theme--light" style="font-size:18px;"></i></th>
-                            <th role="columnheader" scope="col" aria-label="Submission: Not sorted. Activate to sort ascending." aria-sort="none" class="text-start sortable"><span>Submission</span><i aria-hidden="true" class="v-icon notranslate v-data-table-header__icon mdi mdi-arrow-up theme--light" style="font-size:18px;"></i></th>
+                            <th>
+                              <div class="v-data-table-header-mobile__wrapper">
+                                <div class="v-input v-input--hide-details theme--light v-text-field v-select">
+                                  <div class="v-input__control">
+                                    <div role="button" aria-haspopup="listbox" aria-expanded="false" class="v-input__slot">
+                                      <div class="v-select__slot"><label class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Sort by</label>
+                                        <div class="v-select__selections"><input readonly="readonly" type="text" aria-readonly="false" autocomplete="off"></div>
+                                        <div class="v-input__append-inner">
+                                          <div class="v-input__icon v-input__icon--append"><i aria-hidden="true" class="v-icon notranslate mdi mdi-menu-down theme--light"></i></div>
+                                        </div><input type="hidden">
+                                      </div>
+                                      <div class="v-menu">
+                                        <!---->
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </th>
                           </tr>
                         </thead>
                         <tbody>
-                          <tr>
-                            <td class="text-start">VJudge (Not Merged)</td>
-                            <td class="text-start">wwwlsmcom</td>
-                            <td class="text-start">1</td>
-                            <td class="text-start">1</td>
+                          <tr class="v-data-table__mobile-table-row">
+                            <td class="v-data-table__mobile-row">
+                              <div class="v-data-table__mobile-row__header">Crawler</div>
+                              <div class="v-data-table__mobile-row__cell">VJudge (Not Merged)</div>
+                            </td>
+                            <td class="v-data-table__mobile-row">
+                              <div class="v-data-table__mobile-row__header">Username</div>
+                              <div class="v-data-table__mobile-row__cell">wwwlsmcom</div>
+                            </td>
+                            <td class="v-data-table__mobile-row">
+                              <div class="v-data-table__mobile-row__header">Solved</div>
+                              <div class="v-data-table__mobile-row__cell">1</div>
+                            </td>
+                            <td class="v-data-table__mobile-row">
+                              <div class="v-data-table__mobile-row__header">Submission</div>
+                              <div class="v-data-table__mobile-row__cell">1</div>
+                            </td>
                           </tr>
-                          <tr>
-                            <td class="text-start">CodeChef</td>
-                            <td class="text-start">[wwwlsmcom in VJudge]</td>
-                            <td class="text-start">1</td>
-                            <td class="text-start">5</td>
+                          <tr class="v-data-table__mobile-table-row">
+                            <td class="v-data-table__mobile-row">
+                              <div class="v-data-table__mobile-row__header">Crawler</div>
+                              <div class="v-data-table__mobile-row__cell">CodeChef</div>
+                            </td>
+                            <td class="v-data-table__mobile-row">
+                              <div class="v-data-table__mobile-row__header">Username</div>
+                              <div class="v-data-table__mobile-row__cell">[wwwlsmcom in VJudge]</div>
+                            </td>
+                            <td class="v-data-table__mobile-row">
+                              <div class="v-data-table__mobile-row__header">Solved</div>
+                              <div class="v-data-table__mobile-row__cell">1</div>
+                            </td>
+                            <td class="v-data-table__mobile-row">
+                              <div class="v-data-table__mobile-row__header">Submission</div>
+                              <div class="v-data-table__mobile-row__cell">5</div>
+                            </td>
                           </tr>
-                          <tr>
-                            <td class="text-start">LeetCode_CN</td>
-                            <td class="text-start">wwwlsmcom</td>
-                            <td class="text-start">3</td>
-                            <td class="text-start">9</td>
+                          <tr class="v-data-table__mobile-table-row">
+                            <td class="v-data-table__mobile-row">
+                              <div class="v-data-table__mobile-row__header">Crawler</div>
+                              <div class="v-data-table__mobile-row__cell">LeetCode_CN</div>
+                            </td>
+                            <td class="v-data-table__mobile-row">
+                              <div class="v-data-table__mobile-row__header">Username</div>
+                              <div class="v-data-table__mobile-row__cell">wwwlsmcom</div>
+                            </td>
+                            <td class="v-data-table__mobile-row">
+                              <div class="v-data-table__mobile-row__header">Solved</div>
+                              <div class="v-data-table__mobile-row__cell">3</div>
+                            </td>
+                            <td class="v-data-table__mobile-row">
+                              <div class="v-data-table__mobile-row__header">Submission</div>
+                              <div class="v-data-table__mobile-row__cell">9</div>
+                            </td>
                           </tr>
-                          <tr>
-                            <td class="text-start">Timus (URAL)</td>
-                            <td class="text-start">[wwwlsmcom in VJudge]</td>
-                            <td class="text-start">2</td>
-                            <td class="text-start">6</td>
+                          <tr class="v-data-table__mobile-table-row">
+                            <td class="v-data-table__mobile-row">
+                              <div class="v-data-table__mobile-row__header">Crawler</div>
+                              <div class="v-data-table__mobile-row__cell">Timus (URAL)</div>
+                            </td>
+                            <td class="v-data-table__mobile-row">
+                              <div class="v-data-table__mobile-row__header">Username</div>
+                              <div class="v-data-table__mobile-row__cell">[wwwlsmcom in VJudge]</div>
+                            </td>
+                            <td class="v-data-table__mobile-row">
+                              <div class="v-data-table__mobile-row__header">Solved</div>
+                              <div class="v-data-table__mobile-row__cell">2</div>
+                            </td>
+                            <td class="v-data-table__mobile-row">
+                              <div class="v-data-table__mobile-row__header">Submission</div>
+                              <div class="v-data-table__mobile-row__cell">6</div>
+                            </td>
                           </tr>
-                          <tr>
-                            <td class="text-start">FZU</td>
-                            <td class="text-start">[wwwlsmcom in VJudge]</td>
-                            <td class="text-start">1</td>
-                            <td class="text-start">5</td>
+                          <tr class="v-data-table__mobile-table-row">
+                            <td class="v-data-table__mobile-row">
+                              <div class="v-data-table__mobile-row__header">Crawler</div>
+                              <div class="v-data-table__mobile-row__cell">FZU</div>
+                            </td>
+                            <td class="v-data-table__mobile-row">
+                              <div class="v-data-table__mobile-row__header">Username</div>
+                              <div class="v-data-table__mobile-row__cell">[wwwlsmcom in VJudge]</div>
+                            </td>
+                            <td class="v-data-table__mobile-row">
+                              <div class="v-data-table__mobile-row__header">Solved</div>
+                              <div class="v-data-table__mobile-row__cell">1</div>
+                            </td>
+                            <td class="v-data-table__mobile-row">
+                              <div class="v-data-table__mobile-row__header">Submission</div>
+                              <div class="v-data-table__mobile-row__cell">5</div>
+                            </td>
                           </tr>
-                          <tr>
-                            <td class="text-start">ICPC Live Archive</td>
-                            <td class="text-start">[wwwlsmcom in VJudge]</td>
-                            <td class="text-start">1</td>
-                            <td class="text-start">1</td>
+                          <tr class="v-data-table__mobile-table-row">
+                            <td class="v-data-table__mobile-row">
+                              <div class="v-data-table__mobile-row__header">Crawler</div>
+                              <div class="v-data-table__mobile-row__cell">ICPC Live Archive</div>
+                            </td>
+                            <td class="v-data-table__mobile-row">
+                              <div class="v-data-table__mobile-row__header">Username</div>
+                              <div class="v-data-table__mobile-row__cell">[wwwlsmcom in VJudge]</div>
+                            </td>
+                            <td class="v-data-table__mobile-row">
+                              <div class="v-data-table__mobile-row__header">Solved</div>
+                              <div class="v-data-table__mobile-row__cell">1</div>
+                            </td>
+                            <td class="v-data-table__mobile-row">
+                              <div class="v-data-table__mobile-row__header">Submission</div>
+                              <div class="v-data-table__mobile-row__cell">1</div>
+                            </td>
                           </tr>
-                          <tr>
-                            <td class="text-start">UVA</td>
-                            <td class="text-start">[wwwlsmcom in VJudge]</td>
-                            <td class="text-start">11</td>
-                            <td class="text-start">28</td>
+                          <tr class="v-data-table__mobile-table-row">
+                            <td class="v-data-table__mobile-row">
+                              <div class="v-data-table__mobile-row__header">Crawler</div>
+                              <div class="v-data-table__mobile-row__cell">UVA</div>
+                            </td>
+                            <td class="v-data-table__mobile-row">
+                              <div class="v-data-table__mobile-row__header">Username</div>
+                              <div class="v-data-table__mobile-row__cell">[wwwlsmcom in VJudge]</div>
+                            </td>
+                            <td class="v-data-table__mobile-row">
+                              <div class="v-data-table__mobile-row__header">Solved</div>
+                              <div class="v-data-table__mobile-row__cell">11</div>
+                            </td>
+                            <td class="v-data-table__mobile-row">
+                              <div class="v-data-table__mobile-row__header">Submission</div>
+                              <div class="v-data-table__mobile-row__cell">28</div>
+                            </td>
                           </tr>
-                          <tr>
-                            <td class="text-start">CodeForces</td>
-                            <td class="text-start">[wwwlsmcom in VJudge]</td>
-                            <td class="text-start">6</td>
-                            <td class="text-start">15</td>
+                          <tr class="v-data-table__mobile-table-row">
+                            <td class="v-data-table__mobile-row">
+                              <div class="v-data-table__mobile-row__header">Crawler</div>
+                              <div class="v-data-table__mobile-row__cell">CodeForces</div>
+                            </td>
+                            <td class="v-data-table__mobile-row">
+                              <div class="v-data-table__mobile-row__header">Username</div>
+                              <div class="v-data-table__mobile-row__cell">[wwwlsmcom in VJudge]</div>
+                            </td>
+                            <td class="v-data-table__mobile-row">
+                              <div class="v-data-table__mobile-row__header">Solved</div>
+                              <div class="v-data-table__mobile-row__cell">6</div>
+                            </td>
+                            <td class="v-data-table__mobile-row">
+                              <div class="v-data-table__mobile-row__header">Submission</div>
+                              <div class="v-data-table__mobile-row__cell">15</div>
+                            </td>
                           </tr>
-                          <tr>
-                            <td class="text-start">HYSBZ</td>
-                            <td class="text-start">[wwwlsmcom in VJudge]</td>
-                            <td class="text-start">0</td>
-                            <td class="text-start">5</td>
+                          <tr class="v-data-table__mobile-table-row">
+                            <td class="v-data-table__mobile-row">
+                              <div class="v-data-table__mobile-row__header">Crawler</div>
+                              <div class="v-data-table__mobile-row__cell">HYSBZ</div>
+                            </td>
+                            <td class="v-data-table__mobile-row">
+                              <div class="v-data-table__mobile-row__header">Username</div>
+                              <div class="v-data-table__mobile-row__cell">[wwwlsmcom in VJudge]</div>
+                            </td>
+                            <td class="v-data-table__mobile-row">
+                              <div class="v-data-table__mobile-row__header">Solved</div>
+                              <div class="v-data-table__mobile-row__cell">0</div>
+                            </td>
+                            <td class="v-data-table__mobile-row">
+                              <div class="v-data-table__mobile-row__header">Submission</div>
+                              <div class="v-data-table__mobile-row__cell">5</div>
+                            </td>
                           </tr>
-                          <tr>
-                            <td class="text-start">HDU</td>
-                            <td class="text-start">[wwwlsmcom in VJudge], wwwlsmcom</td>
-                            <td class="text-start">108</td>
-                            <td class="text-start">385</td>
+                          <tr class="v-data-table__mobile-table-row">
+                            <td class="v-data-table__mobile-row">
+                              <div class="v-data-table__mobile-row__header">Crawler</div>
+                              <div class="v-data-table__mobile-row__cell">HDU</div>
+                            </td>
+                            <td class="v-data-table__mobile-row">
+                              <div class="v-data-table__mobile-row__header">Username</div>
+                              <div class="v-data-table__mobile-row__cell">[wwwlsmcom in VJudge], wwwlsmcom</div>
+                            </td>
+                            <td class="v-data-table__mobile-row">
+                              <div class="v-data-table__mobile-row__header">Solved</div>
+                              <div class="v-data-table__mobile-row__cell">108</div>
+                            </td>
+                            <td class="v-data-table__mobile-row">
+                              <div class="v-data-table__mobile-row__header">Submission</div>
+                              <div class="v-data-table__mobile-row__cell">385</div>
+                            </td>
                           </tr>
-                          <tr>
-                            <td class="text-start">POJ</td>
-                            <td class="text-start">[wwwlsmcom in VJudge]</td>
-                            <td class="text-start">59</td>
-                            <td class="text-start">325</td>
+                          <tr class="v-data-table__mobile-table-row">
+                            <td class="v-data-table__mobile-row">
+                              <div class="v-data-table__mobile-row__header">Crawler</div>
+                              <div class="v-data-table__mobile-row__cell">POJ</div>
+                            </td>
+                            <td class="v-data-table__mobile-row">
+                              <div class="v-data-table__mobile-row__header">Username</div>
+                              <div class="v-data-table__mobile-row__cell">[wwwlsmcom in VJudge]</div>
+                            </td>
+                            <td class="v-data-table__mobile-row">
+                              <div class="v-data-table__mobile-row__header">Solved</div>
+                              <div class="v-data-table__mobile-row__cell">59</div>
+                            </td>
+                            <td class="v-data-table__mobile-row">
+                              <div class="v-data-table__mobile-row__header">Submission</div>
+                              <div class="v-data-table__mobile-row__cell">325</div>
+                            </td>
                           </tr>
                         </tbody>
                       </table>
                     </div>
                   </div>
                   <div style="height:300px;"><canvas id="bar-chart" width="400" height="400"></canvas></div>
-                  <div role="list" class="v-list v-sheet v-sheet--tile theme--light v-list--dense">
+                  <div role="list" class="v-list v-sheet theme--light v-list--dense">
                     <div class="v-subheader red--text theme--light">
                       WARNINGS
                     </div>
@@ -3928,7 +4247,7 @@ exports[`/history/{historyId} 1`] = `
                 </div>
               </div>
             </main>
-            <footer class="v-footer v-sheet v-sheet--tile theme--light v-footer--absolute v-footer--inset" style="left:0px;right:0px;bottom:0px;"><span class="body-2">© 2018 - 1970 Shumin Liu and Contributors</span></footer>
+            <footer class="v-footer v-sheet theme--light v-footer--absolute v-footer--inset" style="left:0px;right:0px;bottom:0px;"><span class="body-2">© 2018 - 1970 Shumin Liu and Contributors</span></footer>
             <div class="message-panel v-card v-sheet theme--light" style="display:none;">
               <v-list class="pa-0"></v-list>
               <!---->
@@ -4981,8 +5300,6 @@ exports[`/login 1`] = `
         caret-color: #843c00 !important;
       }
     </style>
-    <script data-n-head="ssr" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" data-ad-client="ca-pub-9846042020379030" async=""></script>
-    <script data-n-head="ssr" src="https://contextual.media.net/dmedianet.js?cid=8CUE23IW2" async=""></script>
   </head>
 
   <body>
@@ -5015,7 +5332,7 @@ exports[`/login 1`] = `
                             <div class="v-alert__wrapper"><i aria-hidden="true" class="v-icon notranslate v-alert__icon mdi mdi-alert theme--dark"></i>
                               <div class="v-alert__content">
 
-                              </div><button type="button" aria-label="Close" class="v-alert__dismissible v-btn v-btn--flat v-btn--icon v-btn--round theme--dark v-size--small"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-close-circle theme--dark"></i></span></button>
+                              </div><button type="button" aria-label="Close" class="v-alert__dismissible v-btn v-btn--icon v-btn--round theme--dark v-size--small"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-close-circle theme--dark"></i></span></button>
                             </div>
                           </div>
                         </div>
@@ -5056,7 +5373,7 @@ exports[`/login 1`] = `
                                 <div class="v-input__control">
                                   <div class="v-input__slot">
                                     <div class="v-input--selection-controls__input"><i aria-hidden="true" class="v-icon notranslate mdi mdi-checkbox-blank-outline theme--light"></i><input aria-checked="false" role="checkbox" type="checkbox">
-                                      <div class="v-input--selection-controls__ripple primary--text"></div>
+                                      <div class="v-input--selection-controls__ripple"></div>
                                     </div><label class="v-label theme--light" style="left:0px;right:auto;position:relative;">Remember me</label>
                                   </div>
                                   <div class="v-messages theme--light">
@@ -5065,10 +5382,10 @@ exports[`/login 1`] = `
                                 </div>
                               </div>
                               <div class="row">
-                                <div class="col"><button type="button" disabled="disabled" class="v-btn v-btn--block v-btn--contained v-btn--disabled theme--light v-size--default"><span class="v-btn__content">
+                                <div class="col"><button type="button" disabled="disabled" class="v-btn v-btn--block v-btn--disabled v-btn--has-bg theme--light v-size--default"><span class="v-btn__content">
                 login
               </span></button></div>
-                                <div class="col"><button type="button" class="v-btn v-btn--block v-btn--contained theme--light v-size--default"><span class="v-btn__content">
+                                <div class="col"><button type="button" class="v-btn v-btn--block v-btn--is-elevated v-btn--has-bg theme--light v-size--default"><span class="v-btn__content">
                 enter register page
               </span></button></div>
                               </div>
@@ -5840,8 +6157,6 @@ exports[`/register 1`] = `
         caret-color: #843c00 !important;
       }
     </style>
-    <script data-n-head="ssr" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" data-ad-client="ca-pub-9846042020379030" async=""></script>
-    <script data-n-head="ssr" src="https://contextual.media.net/dmedianet.js?cid=8CUE23IW2" async=""></script>
   </head>
 
   <body>
@@ -5874,7 +6189,7 @@ exports[`/register 1`] = `
                             <div class="v-alert__wrapper"><i aria-hidden="true" class="v-icon notranslate v-alert__icon mdi mdi-alert theme--dark"></i>
                               <div class="v-alert__content">
 
-                              </div><button type="button" aria-label="Close" class="v-alert__dismissible v-btn v-btn--flat v-btn--icon v-btn--round theme--dark v-size--small"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-close-circle theme--dark"></i></span></button>
+                              </div><button type="button" aria-label="Close" class="v-alert__dismissible v-btn v-btn--icon v-btn--round theme--dark v-size--small"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-close-circle theme--dark"></i></span></button>
                             </div>
                           </div>
                         </div>
@@ -5936,7 +6251,7 @@ exports[`/register 1`] = `
                                     <div class="v-input__control">
                                       <div class="v-input__slot">
                                         <div class="v-text-field__slot"><label class="v-label theme--light" style="left:0px;right:auto;position:absolute;">Captcha</label><input required="required" type="text" value=""></div>
-                                        <div class="v-input__append-inner"><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">refresh</i></span></button></div>
+                                        <div class="v-input__append-inner"><button type="button" class="v-btn v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">refresh</i></span></button></div>
                                       </div>
                                       <div class="v-text-field__details">
                                         <div class="v-messages theme--light">
@@ -5948,10 +6263,10 @@ exports[`/register 1`] = `
                                 </div>
                               </div>
                               <div class="row">
-                                <div class="col"><button type="button" disabled="disabled" class="v-btn v-btn--block v-btn--contained v-btn--disabled theme--light v-size--default"><span class="v-btn__content">
+                                <div class="col"><button type="button" disabled="disabled" class="v-btn v-btn--block v-btn--disabled v-btn--has-bg theme--light v-size--default"><span class="v-btn__content">
                 register
               </span></button></div>
-                                <div class="col"><button type="button" class="v-btn v-btn--block v-btn--contained theme--light v-size--default"><span class="v-btn__content">
+                                <div class="col"><button type="button" class="v-btn v-btn--block v-btn--is-elevated v-btn--has-bg theme--light v-size--default"><span class="v-btn__content">
                 enter login page
               </span></button></div>
                               </div>
@@ -6723,8 +7038,6 @@ exports[`/settings 1`] = `
         caret-color: #843c00 !important;
       }
     </style>
-    <script data-n-head="ssr" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" data-ad-client="ca-pub-9846042020379030" async=""></script>
-    <script data-n-head="ssr" src="https://contextual.media.net/dmedianet.js?cid=8CUE23IW2" async=""></script>
   </head>
 
   <body>
@@ -6738,7 +7051,7 @@ exports[`/settings 1`] = `
           <div class="v-application--wrap">
             <nav class="v-navigation-drawer v-navigation-drawer--close v-navigation-drawer--fixed v-navigation-drawer--is-mobile theme--light" style="height:100vh;top:0px;transform:translateX(-100%);width:256px;">
               <div class="v-navigation-drawer__content">
-                <div class="v-list v-sheet v-sheet--tile theme--light"><a href="/" tabindex="0" class="v-list-item v-list-item--link theme--light">
+                <div class="v-list v-sheet theme--light"><a href="/" tabindex="0" class="v-list-item v-list-item--link theme--light">
                     <div class="v-list-item__action"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">home</i></div>
                     <div class="v-list-item__content">
                       <div class="v-list-item__title">Homepage</div>
@@ -6767,20 +7080,20 @@ exports[`/settings 1`] = `
               </div>
               <div class="v-navigation-drawer__border"></div>
             </nav>
-            <header class="v-sheet v-sheet--tile theme--light v-toolbar v-toolbar--absolute v-app-bar" style="height:64px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;">
-              <div class="v-toolbar__content" style="height:64px;"><button type="button" class="v-app-bar__nav-icon v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-menu theme--light"></i></span></button>
+            <header class="v-sheet theme--light v-toolbar v-toolbar--absolute v-app-bar" style="height:56px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;">
+              <div class="v-toolbar__content" style="height:56px;"><button type="button" class="v-app-bar__nav-icon v-btn v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-menu theme--light"></i></span></button>
                 <!---->
                 <div class="v-toolbar__title">OJ Hunt</div>
                 <!---->
                 <!---->
                 <div class="spacer"></div>
                 <!---->
-                <!----> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--text theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate v-icon--left mdi mdi-login theme--light" style="display:none;"></i> admin
-    </span></button></span> <span class="v-tooltip v-tooltip--left"><!----><a href="https://github.com/Liu233w/acm-statistics" target="_blank" rel="noopener noreferrer" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" medium="" class="v-icon notranslate mdi mdi-github theme--light"></i></span></a></span>
+                <!----> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--text theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate v-icon--left mdi mdi-login theme--light" style="display:none;"></i> admin
+    </span></button></span> <span class="v-tooltip v-tooltip--left"><!----><a href="https://github.com/Liu233w/acm-statistics" target="_blank" rel="noopener noreferrer" class="v-btn v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" medium="" class="v-icon notranslate mdi mdi-github theme--light"></i></span></a></span>
               </div>
             </header>
-            <main class="v-content" style="padding-top:64px;padding-right:0px;padding-bottom:0px;padding-left:0px;">
-              <div class="v-content__wrap">
+            <main class="v-main v-content" style="padding-top:56px;padding-right:0px;padding-bottom:0px;padding-left:0px;">
+              <div class="v-main__wrap v-content__wrap">
                 <div class="container container--fluid">
                   <div class="row">
                     <div class="col">
@@ -6789,7 +7102,7 @@ exports[`/settings 1`] = `
                         <div class="v-card__text">
                           Logout of this computer.
                         </div>
-                        <div class="v-card__actions"><button type="button" class="v-btn v-btn--flat v-btn--text theme--light v-size--default"><span class="v-btn__content">
+                        <div class="v-card__actions"><button type="button" class="v-btn v-btn--text theme--light v-size--default"><span class="v-btn__content">
             sign out
           </span></button></div>
                       </div>
@@ -6811,7 +7124,7 @@ exports[`/settings 1`] = `
                                   </div>
                                   <div class="v-radio theme--light">
                                     <div class="v-input--selection-controls__input"><i aria-hidden="true" class="v-icon notranslate mdi mdi-radiobox-blank theme--light"></i><input aria-checked="false" role="radio" type="radio" value="false">
-                                      <div class="v-input--selection-controls__ripple primary--text"></div>
+                                      <div class="v-input--selection-controls__ripple"></div>
                                     </div><label class="v-label theme--light" style="left:0px;right:auto;position:relative;">Only save history when click view summary button</label>
                                   </div>
                                 </div>
@@ -6822,7 +7135,7 @@ exports[`/settings 1`] = `
                             </div>
                           </div>
                         </div>
-                        <div class="v-card__actions"><button type="button" disabled="disabled" class="v-btn v-btn--disabled v-btn--flat v-btn--text theme--light v-size--default"><span class="v-btn__content">
+                        <div class="v-card__actions"><button type="button" disabled="disabled" class="v-btn v-btn--disabled v-btn--text theme--light v-size--default"><span class="v-btn__content">
             save
           </span></button></div>
                       </div>
@@ -6857,7 +7170,7 @@ exports[`/settings 1`] = `
                             </div>
                           </div>
                         </div>
-                        <div class="v-card__actions"><button type="button" class="v-btn v-btn--flat v-btn--text theme--light v-size--default"><span class="v-btn__content">
+                        <div class="v-card__actions"><button type="button" class="v-btn v-btn--text theme--light v-size--default"><span class="v-btn__content">
             save
           </span></button></div>
                         <div class="v-overlay v-overlay--absolute theme--dark" style="z-index:5;">
@@ -6919,7 +7232,7 @@ exports[`/settings 1`] = `
                             </div>
                           </form>
                         </div>
-                        <div class="v-card__actions"><button type="button" disabled="disabled" class="v-btn v-btn--disabled v-btn--flat v-btn--text theme--light v-size--default"><span class="v-btn__content">
+                        <div class="v-card__actions"><button type="button" disabled="disabled" class="v-btn v-btn--disabled v-btn--text theme--light v-size--default"><span class="v-btn__content">
             submit
           </span></button></div>
                         <div class="v-overlay v-overlay--absolute theme--dark" style="z-index:5;">
@@ -6937,7 +7250,7 @@ exports[`/settings 1`] = `
                         <div class="v-card__text">
                           Delete this account and all data related to it.
                         </div>
-                        <div class="v-card__actions"><button type="button" class="v-btn v-btn--flat v-btn--text theme--light v-size--default red--text"><span class="v-btn__content">
+                        <div class="v-card__actions"><button type="button" class="v-btn v-btn--text theme--light v-size--default red--text"><span class="v-btn__content">
             delete
           </span></button></div>
                       </div>
@@ -6949,7 +7262,7 @@ exports[`/settings 1`] = `
                 </div>
               </div>
             </main>
-            <footer class="v-footer v-sheet v-sheet--tile theme--light v-footer--absolute v-footer--inset" style="left:0px;right:0px;bottom:0px;"><span class="body-2">© 2018 - 1970 Shumin Liu and Contributors</span></footer>
+            <footer class="v-footer v-sheet theme--light v-footer--absolute v-footer--inset" style="left:0px;right:0px;bottom:0px;"><span class="body-2">© 2018 - 1970 Shumin Liu and Contributors</span></footer>
             <div class="message-panel v-card v-sheet theme--light" style="display:none;">
               <v-list class="pa-0"></v-list>
               <!---->
@@ -7731,8 +8044,6 @@ exports[`/statistics 1`] = `
         caret-color: #843c00 !important;
       }
     </style>
-    <script data-n-head="ssr" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" data-ad-client="ca-pub-9846042020379030" async=""></script>
-    <script data-n-head="ssr" src="https://contextual.media.net/dmedianet.js?cid=8CUE23IW2" async=""></script>
   </head>
 
   <body>
@@ -7746,7 +8057,7 @@ exports[`/statistics 1`] = `
           <div class="v-application--wrap">
             <nav class="v-navigation-drawer v-navigation-drawer--close v-navigation-drawer--fixed v-navigation-drawer--is-mobile theme--light" style="height:100vh;top:0px;transform:translateX(-100%);width:256px;">
               <div class="v-navigation-drawer__content">
-                <div class="v-list v-sheet v-sheet--tile theme--light"><a href="/" tabindex="0" class="v-list-item v-list-item--link theme--light">
+                <div class="v-list v-sheet theme--light"><a href="/" tabindex="0" class="v-list-item v-list-item--link theme--light">
                     <div class="v-list-item__action"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">home</i></div>
                     <div class="v-list-item__content">
                       <div class="v-list-item__title">Homepage</div>
@@ -7765,20 +8076,20 @@ exports[`/statistics 1`] = `
               </div>
               <div class="v-navigation-drawer__border"></div>
             </nav>
-            <header class="v-sheet v-sheet--tile theme--light v-toolbar v-toolbar--absolute v-app-bar" style="height:64px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;">
-              <div class="v-toolbar__content" style="height:64px;"><button type="button" class="v-app-bar__nav-icon v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-menu theme--light"></i></span></button>
+            <header class="v-sheet theme--light v-toolbar v-toolbar--absolute v-app-bar" style="height:56px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;">
+              <div class="v-toolbar__content" style="height:56px;"><button type="button" class="v-app-bar__nav-icon v-btn v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-menu theme--light"></i></span></button>
                 <!---->
                 <div class="v-toolbar__title">OJ Hunt</div>
                 <!---->
                 <!---->
                 <div class="spacer"></div>
                 <!---->
-                <!----> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--text theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate v-icon--left mdi mdi-login theme--light"></i> login
-    </span></button></span> <span class="v-tooltip v-tooltip--left"><!----><a href="https://github.com/Liu233w/acm-statistics" target="_blank" rel="noopener noreferrer" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" medium="" class="v-icon notranslate mdi mdi-github theme--light"></i></span></a></span>
+                <!----> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--text theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate v-icon--left mdi mdi-login theme--light"></i> login
+    </span></button></span> <span class="v-tooltip v-tooltip--left"><!----><a href="https://github.com/Liu233w/acm-statistics" target="_blank" rel="noopener noreferrer" class="v-btn v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" medium="" class="v-icon notranslate mdi mdi-github theme--light"></i></span></a></span>
               </div>
             </header>
-            <main class="v-content" style="padding-top:64px;padding-right:0px;padding-bottom:0px;padding-left:0px;">
-              <div class="v-content__wrap">
+            <main class="v-main v-content" style="padding-top:56px;padding-right:0px;padding-bottom:0px;padding-left:0px;">
+              <div class="v-main__wrap v-content__wrap">
                 <div data-fetch-key="0" class="container grid-list-md">
                   <div wrap="" class="row no-gutters">
                     <div class="pt-0 pb-0 col-md-3 col">
@@ -7794,13 +8105,13 @@ exports[`/statistics 1`] = `
                           </div>
                         </div>
                       </div>
-                    </div> <button type="button" class="ma-1 primary v-btn v-btn--contained theme--light v-size--default"><span class="v-btn__content">
+                    </div> <button type="button" class="ma-1 primary v-btn v-btn--is-elevated v-btn--has-bg theme--light v-size--default"><span class="v-btn__content">
       query
-    </span></button> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="ma-1 error v-btn v-btn--contained theme--light v-size--default"><span class="v-btn__content">
+    </span></button> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="ma-1 error v-btn v-btn--is-elevated v-btn--has-bg theme--light v-size--default"><span class="v-btn__content">
           reset
-        </span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" disabled="disabled" class="ma-1 v-btn v-btn--contained v-btn--disabled theme--light v-size--default"><span class="v-btn__content">
+        </span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" disabled="disabled" class="ma-1 v-btn v-btn--disabled v-btn--has-bg theme--light v-size--default"><span class="v-btn__content">
           reload
-        </span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--contained theme--light v-size--default ma-1"><span class="v-btn__content">
+        </span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--is-elevated v-btn--has-bg theme--light v-size--default ma-1"><span class="v-btn__content">
           save username
           </span></button></span>
                     <div class="spacer"></div>
@@ -7821,7 +8132,7 @@ exports[`/statistics 1`] = `
                 </div>
               </div>
             </main>
-            <footer class="v-footer v-sheet v-sheet--tile theme--light v-footer--absolute v-footer--inset" style="left:0px;right:0px;bottom:0px;"><span class="body-2">© 2018 - 1970 Shumin Liu and Contributors</span></footer>
+            <footer class="v-footer v-sheet theme--light v-footer--absolute v-footer--inset" style="left:0px;right:0px;bottom:0px;"><span class="body-2">© 2018 - 1970 Shumin Liu and Contributors</span></footer>
             <div class="message-panel v-card v-sheet theme--light" style="display:none;">
               <v-list class="pa-0"></v-list>
               <!---->

@@ -20,9 +20,9 @@ describe('crawler test', () => {
 
   it('can start a worker', () => {
 
-    cy.server()
-    cy.route('https://acm-statistics-cors.herokuapp.com/http://poj.org/userstatus?user_id=vjudge5',
-      'fixture:poj_ok.txt')
+    cy.intercept(
+      'https://acm-statistics-cors.herokuapp.com/http://poj.org/userstatus?user_id=vjudge5',
+      { fixture: 'poj_ok.txt' })
       .as('poj_frontend')
 
     cy.get('div[title="POJ"]').parents('.worker').within(() => {
@@ -41,18 +41,12 @@ describe('crawler test', () => {
     })
   })
 
-  // TODO: cypress cannot simulate cross-origin error
   it('can request crawler-api-backend when get network error', () => {
 
-    // it seems that xhr does not go through proxy, cannot use proxy server to simulate the response.
-    // TODO: use proxy server after cypress update
-    cy.server()
-    cy.route({
-      url: 'https://acm-statistics-cors.herokuapp.com/http://poj.org/userstatus?user_id=vjudge5',
-      status: 500,
-      response: 'error',
-    }).as('poj_frontend')
-    cy.route('/api/crawlers/poj/vjudge5').as('poj_backend')
+    cy.intercept(
+      'https://acm-statistics-cors.herokuapp.com/http://poj.org/userstatus?user_id=vjudge5',
+      { forceNetworkError: true }).as('poj_frontend')
+    cy.intercept('/api/crawlers/poj/vjudge5').as('poj_backend')
 
     cy.mockServer('oj/poj/backend_ok')
 
@@ -62,7 +56,7 @@ describe('crawler test', () => {
 
       cy.wait('@poj_frontend')
       cy.wait('@poj_backend')
-        .its('status').should('eq', 200)
+        .its('response.statusCode').should('eq', 200)
 
       cy.contains('1968')
       cy.contains('277562')
@@ -71,12 +65,10 @@ describe('crawler test', () => {
 
   it('can stop running query', () => {
 
-    cy.server()
-    cy.route({
-      url: 'https://acm-statistics-cors.herokuapp.com/http://poj.org/userstatus?user_id=vjudge5',
-      response: 'lololo',
-      delay: 10000,
-    }).as('poj_frontend')
+    cy.intercept(
+      'https://acm-statistics-cors.herokuapp.com/http://poj.org/userstatus?user_id=vjudge5',
+      { body: 'lololo', delayMs: 10000 },
+    ).as('poj_frontend')
 
     cy.get('div[title="POJ"]').parents('.worker').within(() => {
 
@@ -95,9 +87,8 @@ describe('crawler test', () => {
 
   it('can show crawler errors', () => {
 
-    cy.server()
-    cy.route('https://acm-statistics-cors.herokuapp.com/http://poj.org/userstatus?user_id=Frkfe932fbcv09b',
-      'fixture:poj_notExist.txt')
+    cy.intercept('https://acm-statistics-cors.herokuapp.com/http://poj.org/userstatus?user_id=Frkfe932fbcv09b',
+      { fixture: 'poj_notExist.txt' })
       .as('poj_frontend')
 
     cy.get('div[title="POJ"]').parents('.worker').within(() => {

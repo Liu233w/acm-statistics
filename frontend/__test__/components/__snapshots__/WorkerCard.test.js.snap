@@ -2,15 +2,15 @@
 
 exports[`WorkerCard can be rendered correctly 1`] = `
 <div class="v-card v-sheet theme--light">
-  <header class="blue-grey lighten-5 v-sheet v-sheet--tile theme--light elevation-0 v-toolbar v-toolbar--dense v-toolbar--flat v-app-bar" style="height: 48px; margin-top: 0px; transform: translateY(0px); left: 0px; right: 0px;">
+  <header class="blue-grey lighten-5 v-sheet theme--light elevation-0 v-toolbar v-toolbar--dense v-toolbar--flat v-app-bar" style="height: 48px; margin-top: 0px; transform: translateY(0px); left: 0px; right: 0px;">
     <div class="v-toolbar__content" style="height: 48px;">
       <div title="crawler title" class="v-toolbar__title">
         crawler title
       </div>
       <div class="spacer"></div>
       <div class="v-toolbar__items">
-        <!----> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-plus-circle-outline theme--light"></i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-open-in-new theme--light"></i></span></button></span>
-        <transition-stub name="fade-transition"><span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">refresh</i></span></button></span></transition-stub>
+        <!----> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-plus-circle-outline theme--light"></i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-open-in-new theme--light"></i></span></button></span>
+        <transition-stub name="fade-transition"><span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">refresh</i></span></button></span></transition-stub>
       </div>
     </div>
   </header>
@@ -25,9 +25,9 @@ exports[`WorkerCard can be rendered correctly 1`] = `
         <div class="v-input theme--light v-text-field">
           <div class="v-input__control">
             <div class="v-input__slot">
-              <div class="v-text-field__slot"><label for="input-34" class="v-label theme--light" style="left: 0px; position: absolute;">Username</label><input required="required" id="input-34" type="text"></div>
+              <div class="v-text-field__slot"><label for="input-30" class="v-label theme--light" style="left: 0px; position: absolute;">Username</label><input required="required" id="input-30" type="text"></div>
               <div class="v-input__append-inner">
-                <div class="v-input__icon v-input__icon--clear"><button disabled="disabled" type="button" aria-label="clear icon" class="v-icon notranslate v-icon--disabled v-icon--link material-icons theme--light">$clear</button></div>
+                <div class="v-input__icon v-input__icon--clear"><button disabled="disabled" type="button" aria-label="clear icon" class="v-icon notranslate v-icon--disabled v-icon--link mdi mdi-close theme--light"></button></div>
               </div>
             </div>
             <div class="v-text-field__details">
@@ -49,15 +49,15 @@ exports[`WorkerCard can be rendered correctly 1`] = `
 
 exports[`WorkerCard can render error correctly 1`] = `
 <div class="v-card v-sheet theme--light">
-  <header class="blue-grey lighten-5 v-sheet v-sheet--tile theme--light elevation-0 v-toolbar v-toolbar--dense v-toolbar--flat v-app-bar" style="height: 48px; margin-top: 0px; transform: translateY(0px); left: 0px; right: 0px;">
+  <header class="blue-grey lighten-5 v-sheet theme--light elevation-0 v-toolbar v-toolbar--dense v-toolbar--flat v-app-bar" style="height: 48px; margin-top: 0px; transform: translateY(0px); left: 0px; right: 0px;">
     <div class="v-toolbar__content" style="height: 48px;">
       <div title="crawler title" class="v-toolbar__title">
         crawler title
       </div>
       <div class="spacer"></div>
       <div class="v-toolbar__items">
-        <!----> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-plus-circle-outline theme--light"></i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-open-in-new theme--light"></i></span></button></span>
-        <transition-stub name="fade-transition"><span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">refresh</i></span></button></span></transition-stub>
+        <!----> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-plus-circle-outline theme--light"></i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-open-in-new theme--light"></i></span></button></span>
+        <transition-stub name="fade-transition"><span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">refresh</i></span></button></span></transition-stub>
       </div>
     </div>
   </header>
@@ -72,9 +72,9 @@ exports[`WorkerCard can render error correctly 1`] = `
         <div class="v-input v-input--is-label-active v-input--is-dirty theme--light v-text-field">
           <div class="v-input__control">
             <div class="v-input__slot">
-              <div class="v-text-field__slot"><label for="input-128" class="v-label v-label--active theme--light" style="left: 0px; position: absolute;">Username</label><input required="required" id="input-128" type="text"></div>
+              <div class="v-text-field__slot"><label for="input-116" class="v-label v-label--active theme--light" style="left: 0px; position: absolute;">Username</label><input required="required" id="input-116" type="text"></div>
               <div class="v-input__append-inner">
-                <div class="v-input__icon v-input__icon--clear"><button type="button" aria-label="clear icon" class="v-icon notranslate v-icon--link material-icons theme--light">$clear</button></div>
+                <div class="v-input__icon v-input__icon--clear"><button type="button" aria-label="clear icon" class="v-icon notranslate v-icon--link mdi mdi-close theme--light"></button></div>
               </div>
             </div>
             <div class="v-text-field__details">
@@ -96,15 +96,15 @@ exports[`WorkerCard can render error correctly 1`] = `
 
 exports[`WorkerCard can render result correctly 1`] = `
 <div class="v-card v-sheet theme--light">
-  <header class="blue-grey lighten-5 v-sheet v-sheet--tile theme--light elevation-0 v-toolbar v-toolbar--dense v-toolbar--flat v-app-bar" style="height: 48px; margin-top: 0px; transform: translateY(0px); left: 0px; right: 0px;">
+  <header class="blue-grey lighten-5 v-sheet theme--light elevation-0 v-toolbar v-toolbar--dense v-toolbar--flat v-app-bar" style="height: 48px; margin-top: 0px; transform: translateY(0px); left: 0px; right: 0px;">
     <div class="v-toolbar__content" style="height: 48px;">
       <div title="crawler title" class="v-toolbar__title">
         crawler title
       </div>
       <div class="spacer"></div>
       <div class="v-toolbar__items">
-        <!----> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-plus-circle-outline theme--light"></i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-open-in-new theme--light"></i></span></button></span>
-        <transition-stub name="fade-transition"><span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">refresh</i></span></button></span></transition-stub>
+        <!----> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-plus-circle-outline theme--light"></i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-open-in-new theme--light"></i></span></button></span>
+        <transition-stub name="fade-transition"><span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">refresh</i></span></button></span></transition-stub>
       </div>
     </div>
   </header>
@@ -119,9 +119,9 @@ exports[`WorkerCard can render result correctly 1`] = `
         <div class="v-input v-input--is-label-active v-input--is-dirty theme--light v-text-field">
           <div class="v-input__control">
             <div class="v-input__slot">
-              <div class="v-text-field__slot"><label for="input-105" class="v-label v-label--active theme--light" style="left: 0px; position: absolute;">Username</label><input required="required" id="input-105" type="text"></div>
+              <div class="v-text-field__slot"><label for="input-95" class="v-label v-label--active theme--light" style="left: 0px; position: absolute;">Username</label><input required="required" id="input-95" type="text"></div>
               <div class="v-input__append-inner">
-                <div class="v-input__icon v-input__icon--clear"><button type="button" aria-label="clear icon" class="v-icon notranslate v-icon--link material-icons theme--light">$clear</button></div>
+                <div class="v-input__icon v-input__icon--clear"><button type="button" aria-label="clear icon" class="v-icon notranslate v-icon--link mdi mdi-close theme--light"></button></div>
               </div>
             </div>
             <div class="v-text-field__details">
@@ -143,15 +143,15 @@ exports[`WorkerCard can render result correctly 1`] = `
 
 exports[`WorkerCard can render username correctly 1`] = `
 <div class="v-card v-sheet theme--light">
-  <header class="blue-grey lighten-5 v-sheet v-sheet--tile theme--light elevation-0 v-toolbar v-toolbar--dense v-toolbar--flat v-app-bar" style="height: 48px; margin-top: 0px; transform: translateY(0px); left: 0px; right: 0px;">
+  <header class="blue-grey lighten-5 v-sheet theme--light elevation-0 v-toolbar v-toolbar--dense v-toolbar--flat v-app-bar" style="height: 48px; margin-top: 0px; transform: translateY(0px); left: 0px; right: 0px;">
     <div class="v-toolbar__content" style="height: 48px;">
       <div title="crawler title" class="v-toolbar__title">
         crawler title
       </div>
       <div class="spacer"></div>
       <div class="v-toolbar__items">
-        <!----> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-plus-circle-outline theme--light"></i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-open-in-new theme--light"></i></span></button></span>
-        <transition-stub name="fade-transition"><span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">refresh</i></span></button></span></transition-stub>
+        <!----> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-plus-circle-outline theme--light"></i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-open-in-new theme--light"></i></span></button></span>
+        <transition-stub name="fade-transition"><span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">refresh</i></span></button></span></transition-stub>
       </div>
     </div>
   </header>
@@ -166,9 +166,9 @@ exports[`WorkerCard can render username correctly 1`] = `
         <div class="v-input v-input--is-label-active v-input--is-dirty theme--light v-text-field">
           <div class="v-input__control">
             <div class="v-input__slot">
-              <div class="v-text-field__slot"><label for="input-57" class="v-label v-label--active theme--light" style="left: 0px; position: absolute;">Username</label><input required="required" id="input-57" type="text"></div>
+              <div class="v-text-field__slot"><label for="input-51" class="v-label v-label--active theme--light" style="left: 0px; position: absolute;">Username</label><input required="required" id="input-51" type="text"></div>
               <div class="v-input__append-inner">
-                <div class="v-input__icon v-input__icon--clear"><button type="button" aria-label="clear icon" class="v-icon notranslate v-icon--link material-icons theme--light">$clear</button></div>
+                <div class="v-input__icon v-input__icon--clear"><button type="button" aria-label="clear icon" class="v-icon notranslate v-icon--link mdi mdi-close theme--light"></button></div>
               </div>
             </div>
             <div class="v-text-field__details">
@@ -190,15 +190,15 @@ exports[`WorkerCard can render username correctly 1`] = `
 
 exports[`WorkerCard can render warning correctly 1`] = `
 <div class="v-card v-sheet theme--light">
-  <header class="blue-grey lighten-5 v-sheet v-sheet--tile theme--light elevation-0 v-toolbar v-toolbar--dense v-toolbar--flat v-app-bar" style="height: 48px; margin-top: 0px; transform: translateY(0px); left: 0px; right: 0px;">
+  <header class="blue-grey lighten-5 v-sheet theme--light elevation-0 v-toolbar v-toolbar--dense v-toolbar--flat v-app-bar" style="height: 48px; margin-top: 0px; transform: translateY(0px); left: 0px; right: 0px;">
     <div class="v-toolbar__content" style="height: 48px;">
       <div title="crawler title" class="v-toolbar__title">
         crawler title
       </div>
       <div class="spacer"></div>
       <div class="v-toolbar__items">
-        <!----> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-plus-circle-outline theme--light"></i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-open-in-new theme--light"></i></span></button></span>
-        <transition-stub name="fade-transition"><span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">refresh</i></span></button></span></transition-stub>
+        <!----> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-plus-circle-outline theme--light"></i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-open-in-new theme--light"></i></span></button></span>
+        <transition-stub name="fade-transition"><span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">refresh</i></span></button></span></transition-stub>
       </div>
     </div>
   </header>
@@ -213,9 +213,9 @@ exports[`WorkerCard can render warning correctly 1`] = `
         <div class="v-input v-input--is-label-active v-input--is-dirty theme--light v-text-field">
           <div class="v-input__control">
             <div class="v-input__slot">
-              <div class="v-text-field__slot"><label for="input-80" class="v-label v-label--active theme--light" style="left: 0px; position: absolute;">Username</label><input required="required" id="input-80" type="text"></div>
+              <div class="v-text-field__slot"><label for="input-72" class="v-label v-label--active theme--light" style="left: 0px; position: absolute;">Username</label><input required="required" id="input-72" type="text"></div>
               <div class="v-input__append-inner">
-                <div class="v-input__icon v-input__icon--clear"><button type="button" aria-label="clear icon" class="v-icon notranslate v-icon--link material-icons theme--light">$clear</button></div>
+                <div class="v-input__icon v-input__icon--clear"><button type="button" aria-label="clear icon" class="v-icon notranslate v-icon--link mdi mdi-close theme--light"></button></div>
               </div>
             </div>
             <div class="v-text-field__details">

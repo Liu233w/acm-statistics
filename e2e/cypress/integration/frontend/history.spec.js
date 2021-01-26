@@ -8,16 +8,19 @@ before(() => {
 
   cy.log('save a history')
 
-  cy.server()
-  cy.route('https://acm-statistics-cors.herokuapp.com/http://acm.hdu.edu.cn/userstatus.php?user=wwwlsmcom',
-    'fixture:summary_hdu.txt')
+  cy.intercept(
+    'https://acm-statistics-cors.herokuapp.com/http://acm.hdu.edu.cn/userstatus.php?user=wwwlsmcom',
+    { fixture: 'summary_hdu.txt' })
     .as('summary_hdu')
-  cy.route('/api/crawlers/vjudge/wwwlsmcom',
-    'fixture:summary_vjudge.txt')
-    .as('summary_vjudge')
+
+  // FIXME: the two route below do not work in intercept
+  cy.server()
   cy.route('post', 'https://acm-statistics-cors.herokuapp.com/https://leetcode-cn.com/graphql',
     'fixture:summary_leetcode.txt')
     .as('summary_leetcode')
+  cy.route('/api/crawlers/vjudge/wwwlsmcom',
+    'fixture:summary_vjudge.txt')
+    .as('summary_vjudge')
 
   cy.visit('/statistics')
 
@@ -132,8 +135,7 @@ describe('history page', () => {
   describe('when click delete', () => {
 
     before(() => {
-      cy.server()
-      cy.route('/api/services/app/QueryHistory/GetQueryHistoriesAndSummaries?maxResultCount=10&skipCount=0')
+      cy.intercept('/api/services/app/QueryHistory/GetQueryHistoriesAndSummaries?maxResultCount=10&skipCount=0')
         .as('get-list')
     })
 
@@ -158,15 +160,17 @@ describe('history page', () => {
       // go page from other pages to prevent ssr
       cy.visit('/about')
 
-      cy.server()
-      cy.route('/api/services/app/QueryHistory/GetQueryHistoriesAndSummaries?maxResultCount=10&skipCount=0',
-        'fixture:history_list.json')
+      cy.intercept(
+        '/api/services/app/QueryHistory/GetQueryHistoriesAndSummaries?maxResultCount=10&skipCount=0',
+        { fixture: 'history_list.json' })
         .as('get-list')
-      cy.route('/api/services/app/QueryHistory/GetQueryHistoriesAndSummaries?maxResultCount=10&skipCount=10',
-        'fixture:history_list-skip10.json')
+      cy.intercept(
+        '/api/services/app/QueryHistory/GetQueryHistoriesAndSummaries?maxResultCount=10&skipCount=10',
+        { fixture: 'history_list-skip10.json' })
         .as('get-list-2')
-      cy.route('/api/services/app/QueryHistory/GetQueryHistoriesAndSummaries?maxResultCount=5&skipCount=0',
-        'fixture:history_list-max5.json')
+      cy.intercept(
+        '/api/services/app/QueryHistory/GetQueryHistoriesAndSummaries?maxResultCount=5&skipCount=0',
+        { fixture: 'history_list-max5.json' })
         .as('get-list-3')
 
       cy.get('i.mdi-menu').parents('button').click()
@@ -206,8 +210,8 @@ describe('history page', () => {
 
       cy.matchImageSnapshot()
 
-      cy.route('POST', '/api/services/app/QueryHistory/DeleteQueryHistory',
-        {})
+      cy.intercept('POST', '/api/services/app/QueryHistory/DeleteQueryHistory',
+        req => req.reply({ success: true }))
         .as('delete')
 
       cy.contains('delete selected', { matchCase: false }).click()

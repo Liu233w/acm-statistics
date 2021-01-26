@@ -4,7 +4,6 @@ import Vuetify from 'vuetify'
 
 const localVue = createLocalVue()
 localVue.use(Vuex)
-localVue.use(Vuetify)
 
 jest.mock('~/dynamic/crawlers', () => () => ({
   metas: {
