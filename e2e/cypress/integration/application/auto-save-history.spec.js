@@ -1,9 +1,8 @@
 beforeEach(() => {
-  cy.server()
-  cy.route('https://acm-statistics-cors.herokuapp.com/http://acm.hdu.edu.cn/userstatus.php?user=wwwlsmcom',
-    'fixture:summary_hdu.txt')
-    .as('summary_hdu')
-  cy.route('POST', '/api/services/app/QueryHistory/SaveOrReplaceQueryHistory')
+  cy.intercept(
+    'https://acm-statistics-cors.herokuapp.com/http://acm.hdu.edu.cn/userstatus.php?user=wwwlsmcom',
+    { fixture: 'summary_hdu.txt' }).as('summary_hdu')
+  cy.intercept('POST', '/api/services/app/QueryHistory/SaveOrReplaceQueryHistory')
     .as('save-history')
 })
 
