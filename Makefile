@@ -95,26 +95,27 @@ Makefile of acm-statistics
 Available goals:
 test build run clean test-ci test-commit commitlint-travis tag-and-push up view-image-size shell help
 
-其中 test build run clean test-ci 可以通过 target 变量来指定子项目，比如
-make test target="frontend crawler" 将只对项目 frontend crawler 运行测试
-在没有指定target时表示在全体子项目中运行
+You can use `target` variable to set target module when using test, build, run, clean, 
+and test-ci commands. E.g. `make test target="frontend crawler"` means running test only
+in frontend and crawler module. If target is not specified, run the command on all modules.
 
-此外，makefile 将自动解决依赖。比如，运行 make test 时会自动进行 build 操作，不需要单独指定
+Besides, the dependency is automatically resolved by makefile. So you do not need to run
+build before test.
 
-goals 文档：
+Documents of available goals:
 
 test
-运行所有测试
+Running all tests
 
 build
-构建项目
-如果指定 build-args 参数，将附加到所有的 docker build 命令中
+build the project or certain modules.
+If argument `build-args` is specified, it is attached to all `docker build` commands
 
 run
-在项目中运行shell命令
-比如 make run run-cmd="npm run lint" 将在所有的子项目中运行 npm run lint
-可用参数：
-  run-cmd: 要执行的指令
+Run shell command in modules.
+E.g. `make run run-cmd="npm run lint"` runs `npm run lint` in all modules.
+Available parameters:
+  run-cmd: The command to be run.
   run-args: 给 docker 传递的额外指令。比如在 fontend 目录运行 make run run-cmd="npm test -- --update-snapshot" run-args="-v './__test__:/var/project/__test__'" 可以将开关 -v '...' 传递给 docker
   make-args: run-args 会自动加入 --rm, --interactive, --tty 这三个开关，可以通过分别传入 r/no-rm, i/no-interactive, t/no-tty 来禁用。比如 make run make-args="r i" 会把 run-args 变成 "--tty" （禁用了 --rm 和 --interactive）。注意即使是单个字符，也必须用空格隔开。
 
