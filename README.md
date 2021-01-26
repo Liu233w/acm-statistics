@@ -1,5 +1,6 @@
-新版 NWPU-ACM 查询系统
-===
+# This repo contains the source code of OJ Hunt
+
+简体中文版：[README_zh-hans.md](./README_zh-hans.md)
 
 [![Powered by ZenHub](https://img.shields.io/badge/Powered_by-ZenHub-5e60ba.svg)](https://app.zenhub.com/workspace/o/liu233w/acm-statistics/boards?repos=125616473)
 [![Quality Gate](https://sonarcloud.io/api/project_badges/measure?project=acm-statistics&metric=alert_status)](https://sonarcloud.io/dashboard?id=acm-statistics)
@@ -7,99 +8,106 @@
 [![Cypress.io](https://img.shields.io/badge/cypress.io-tests-green.svg)](https://dashboard.cypress.io/#/projects/4s32o7/runs)
 [![Renovate enabled](https://img.shields.io/badge/renovate-enabled-brightgreen.svg)](https://app.renovatebot.com/dashboard#github/Liu233w/acm-statistics)
 [![Mergify Status](https://img.shields.io/badge/Mergify-enabled-green.svg)](https://mergify.io)
+
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+
 [![All Contributors](https://img.shields.io/badge/all_contributors-14-orange.svg?style=flat-square)](#contributors-)
+
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
-#### 构建状态
+#### Build status
 
 ![Unit Tests](https://github.com/Liu233w/acm-statistics/workflows/Unit%20Tests/badge.svg)
 ![Test E2E](https://github.com/Liu233w/acm-statistics/workflows/Test%20E2E/badge.svg)
 
+#### Features
 
-#### 功能
-- 题量查询
-#### 开发中
-- 历史记录
-- 题量追踪
-- 邮件提醒
-- 排行榜
-- 查重
+- Querying ac/submissions of oj
+- Storing querying history
+
+#### Under development
+
+- Email support
+- Ranks
 - ……
 
-## 目录结构
+## Directory structure
 
-- frontend: 前端
-- crawler: 题量查询爬虫，可以同时被前端和后端使用
-- crawler-api-backend: 题量查询后端，提供了查询API
-- e2e: 关于 e2e 测试相关的代码。
-- backend: 后端代码
-- captcha-service: 验证码微服务
-- ohunt: 有状态爬虫微服务。负责一些需要用数据库储存状态的爬虫。
-- build: 存储了 docker 和 make 相关的代码和配置文件，用于构建和部署
-- tools: 存储了部分脚本，各种用途都有
+- frontend: The front end
+- crawler: Crawlers to query OJs. Being used by both frontend and backend
+- crawler-api-backend: A microservice that provides querying api
+- e2e: E2E tests
+- backend: The back end, a monoservice
+- captcha-service: A microservice that provides captcha support
+- ohunt: A stateful, standalone crawler microservice used to support certain OJs such as ZOJ.
+- build: Codes to build and deploy the project. Tool chain: docker, docker-compose, GNU make.
+- tools: Utility scripts and config files in operation
 
-每个模块的具体内容请参考模块内的 README
+See the README file in each module for specific documents.
 
-## docker 方式部署、开发
+## Developing and deploying in docker
 
-- 目前的跨模块调用已经改成了基于docker的代码，因此有些功能（比如调用 crawler-api-backend）必须使用 docker 来启动
-- 要使用这个功能，必须安装 docker 和 docker-compose
+- The project needs docker and docker-compose to function correctly.
 
-### 开发
-- 本项目使用了 makefile 来管理模块间的依赖，请在根目录执行 `make help` 来查看说明。
-- 要使用此方式进行开发，开发机还必须安装有 GNU make
+### Development
 
-### 部署
+- This project uses makefile to manage dependency between modules. Execute `make help` in repository root to view document.
+- GNU make is required.
 
-docker 方式简化了部署难度，这里有两种部署方式。请确保服务器安装了最新版本的 docker 和 docker-compose
+### Deploy
 
-#### 一行代码版
-在 shell 中执行 `curl -s https://raw.githubusercontent.com/Liu233w/acm-statistics/master/tools/remote-docker-up.sh | bash` 即可将整个项目部署到 3000 端口。
+There are two ways to deploy this project in a server.
 
-这样做的话将无法使用 vjudge 爬虫，所以还是建议使用下面的配置文件版本。
+#### One-liner
 
-#### 配置文件版
-上面的一行代码版无法更改配置，建议用下面的这个配置文件版，按下面的步骤进行部署：
+Execute following code in shell to deploy the project to port 3000.
+
+`curl -s https://raw.githubusercontent.com/Liu233w/acm-statistics/master/tools/remote-docker-up.sh | bash`
+
+Vjudge crawler is not available in this way.
+
+#### Config file version
+
+In this way you are able to customise the configuration, enabling all features.
 
 ```bash
-# 建立一个存放脚本和配置文件的文件夹，这里可以随便挑你喜欢的路径
+# Create a folder to store config files
 mkdir -p ~/www/acm-statistics
 cd ~/www/acm-statistics
-# 下载脚本、添加权限
+# Download runner script and add permissions
 curl https://raw.githubusercontent.com/Liu233w/acm-statistics/master/tools/remote-docker-up.sh  -o run.sh
 chmod +x run.sh
-# 试运行脚本以生成配置文件，在显示 `.env file created, remember to edit it` 之后会自动退出脚本
+# Run the script once to generate configuration file. It will exit after the line `.env file created, remember to edit it` is shown.
 ./run.sh
-# 编辑配置文件，按照上面的说明进行修改即可
+# Edit the config file following the description in it.
 vim .env
-# 现在即可正常运行脚本
+# Now we can run the project by the script
 ./run.sh
 ```
 
-设置成功之后即可使用单独的 `./run.sh` 来运行脚本，使用 systemd 或者其他工具均可。
+Then you can use tools such as systemd to run `./run.sh`.
 
-`./tools/acm-statistics.service` 里是一个 systemd 配置文件的参考。
+[./tools/acm-statistics.service](./tools/acm-statistics.service) is a template config file of systemd.
 
-如果默认的 `template.env` 有更新，`run.sh` 会自动退出并提示您更新 `.env`。**脚本通过比较两个文件的行数来判断是否有更新，在编辑文件时请确保行数一致**
+`run.sh` checks updates when it is starting. If there are updates to `template.env`, `run.sh` will exit and ask you to compare these two files. **The script compares the line count of the two files to check update, please make sure they are identical when editing.**
 
-## 管理
-- 在 .env 文件中设定 adminer 的url，默认为 `/adminer`
-  - 可以查看并修改数据库
-  - 数据库名称为 acm_statistics，用户名为 root，密码在 .env 中设定
-- 数据库会在每天3:00am自动进行备份，保存在 `/db-backup` 中
+## Management
 
-## 开源协议
-- 如无特殊声明，均为 AGPL-3.0 协议
-- crawler 模块中的 `crawlers` 目录中的文件为 BSD 2-Clause 协议
+- Set the url of adminer in `.env` file. It is `/adminer` by default.
+  - You can view and edit database via adminer.
+  - The name of the database is `acm_statistics`. Username is `root`. You can set password in `.env`
+- Backups are created automatically in 3:00am each day, stored in `db-backup` folder, which is in the folder that contains config files.
 
-## 贡献代码
+## License
 
-- 欢迎任何人贡献代码（尤其是爬虫部分）。
-- git 的提交格式遵循 [Git Commit Angular 规范](https://gist.github.com/stephenparish/9941e89d80e2bc58a153)
-    （[中文版](http://www.ruanyifeng.com/blog/2016/01/commit_message_change_log.html)）
-- 您可以使用 [cz-cli](https://github.com/commitizen/cz-cli) 来辅助提交 commit
+- All source code except the code in `crawler/crawlers` are under AGPL-3.0 license
+- The code in `crawler/crawlers` are under BSD 2-Clause license.
 
+## Contribution
+
+- All contribution especially crawlers are welcomed.
+- Please follow [Commit Message Conventions](https://gist.github.com/stephenparish/9941e89d80e2bc58a153) when writing git commit messages.
+- You may use [cz-cli](https://github.com/commitizen/cz-cli) to help writing commit messages.
 
 ## Contributors ✨
 
@@ -133,6 +141,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 
 <!-- markdownlint-enable -->
 <!-- prettier-ignore-end -->
+
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
