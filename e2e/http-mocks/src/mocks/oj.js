@@ -8,7 +8,7 @@ module.exports = {
             user_id: ['vjudge5'],
           },
           headers: {
-            host: ['poj.org:80'],
+            host: ['poj.org.*'],
           },
         },
         httpResponse: {
