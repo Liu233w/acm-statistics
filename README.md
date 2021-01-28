@@ -10,9 +10,7 @@
 [![Mergify Status](https://img.shields.io/badge/Mergify-enabled-green.svg)](https://mergify.io)
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-
-[![All Contributors](https://img.shields.io/badge/all_contributors-14-orange.svg?style=flat-square)](#contributors-)
-
+[![All Contributors](https://img.shields.io/badge/all_contributors-15-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 #### Build status
@@ -118,28 +116,29 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- markdownlint-disable -->
 <table>
   <tr>
-    <td align="center"><img src="https://avatars2.githubusercontent.com/u/16333687?v=4" width="100px;" alt=""/><br /><sub><a href="https://liu233w.github.io"><b>Liu233w</b></a><a href="https://github.com/Liu233w">🔗</a></sub><br /><a href="https://github.com/Liu233w/acm-statistics/commits?author=Liu233w" title="Code">💻</a> <a href="#ideas-Liu233w" title="Ideas, Planning, & Feedback">🤔</a> <a href="#infra-Liu233w" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://github.com/Liu233w/acm-statistics/commits?author=Liu233w" title="Tests">⚠️</a></td>
-    <td align="center"><img src="https://avatars3.githubusercontent.com/u/11661760?v=4" width="100px;" alt=""/><br /><sub><a href="https://kidozh.com"><b>Kido Zhang</b></a><a href="https://github.com/kidozh">🔗</a></sub><br /><a href="#infra-kidozh" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="#ideas-kidozh" title="Ideas, Planning, & Feedback">🤔</a></td>
-    <td align="center"><img src="https://avatars2.githubusercontent.com/u/9880740?v=4" width="100px;" alt=""/><br /><sub><a href="https://github.com/flylai"><b>flylai</b></a><a href="https://github.com/flylai">🔗</a></sub><br /><a href="https://github.com/Liu233w/acm-statistics/commits?author=flylai" title="Code">💻</a> <a href="https://github.com/Liu233w/acm-statistics/issues?q=author%3Aflylai" title="Bug reports">🐛</a></td>
-    <td align="center"><img src="https://avatars3.githubusercontent.com/u/36151020?v=4" width="100px;" alt=""/><br /><sub><a href="https://github.com/fzu-h4cky"><b>fzu-h4cky</b></a><a href="https://github.com/fzu-h4cky">🔗</a></sub><br /><a href="https://github.com/Liu233w/acm-statistics/issues?q=author%3Afzu-h4cky" title="Bug reports">🐛</a></td>
-    <td align="center"><img src="https://avatars1.githubusercontent.com/u/11994295?v=4" width="100px;" alt=""/><br /><sub><a href="http://zhao.wtf"><b>Zhao</b></a><a href="https://github.com/2512821228">🔗</a></sub><br /><a href="https://github.com/Liu233w/acm-statistics/issues?q=author%3A2512821228" title="Bug reports">🐛</a></td>
     <td align="center"><img src="https://avatars0.githubusercontent.com/u/22635759?v=4" width="100px;" alt=""/><br /><sub><a href="https://www.cometeme.tech"><b>Adelard Collins</b></a><a href="https://github.com/cometeme">🔗</a></sub><br /><a href="https://github.com/Liu233w/acm-statistics/issues?q=author%3Acometeme" title="Bug reports">🐛</a></td>
-  </tr>
-  <tr>
-    <td align="center"><img src="https://avatars3.githubusercontent.com/u/22322656?v=4" width="100px;" alt=""/><br /><sub><a href="https://github.com/ctuu"><b>ct</b></a><a href="https://github.com/ctuu">🔗</a></sub><br /><a href="https://github.com/Liu233w/acm-statistics/issues?q=author%3Actuu" title="Bug reports">🐛</a></td>
+    <td align="center"><img src="https://avatars1.githubusercontent.com/u/64258212?v=4" width="100px;" alt=""/><br /><sub><a href="https://github.com/BackSlashDelta"><b>BackSlashDelta</b></a><a href="https://github.com/BackSlashDelta">🔗</a></sub><br /><a href="https://github.com/Liu233w/acm-statistics/issues?q=author%3ABackSlashDelta" title="Bug reports">🐛</a></td>
+    <td align="center"><img src="https://avatars0.githubusercontent.com/u/35862184?v=4" width="100px;" alt=""/><br /><sub><a href="https://github.com/bodhisatan"><b>Bodhisatan_Yao</b></a><a href="https://github.com/bodhisatan">🔗</a></sub><br /><a href="https://github.com/Liu233w/acm-statistics/issues?q=author%3Abodhisatan" title="Bug reports">🐛</a></td>
     <td align="center"><img src="https://avatars3.githubusercontent.com/u/25352156?v=4" width="100px;" alt=""/><br /><sub><a href="https://github.com/Geekxiong"><b>Geekxiong</b></a><a href="https://github.com/Geekxiong">🔗</a></sub><br /><a href="#ideas-Geekxiong" title="Ideas, Planning, & Feedback">🤔</a></td>
     <td align="center"><img src="https://avatars2.githubusercontent.com/u/39403985?v=4" width="100px;" alt=""/><br /><sub><a href="https://github.com/settings/profile"><b>Halorv</b></a><a href="https://github.com/Halorv">🔗</a></sub><br /><a href="#ideas-Halorv" title="Ideas, Planning, & Feedback">🤔</a></td>
-    <td align="center"><img src="https://avatars0.githubusercontent.com/u/35862184?v=4" width="100px;" alt=""/><br /><sub><a href="https://github.com/bodhisatan"><b>Bodhisatan_Yao</b></a><a href="https://github.com/bodhisatan">🔗</a></sub><br /><a href="https://github.com/Liu233w/acm-statistics/issues?q=author%3Abodhisatan" title="Bug reports">🐛</a></td>
-    <td align="center"><img src="https://avatars1.githubusercontent.com/u/55663936?v=4" width="100px;" alt=""/><br /><sub><a href="https://github.com/Meulsama"><b>Meulsama</b></a><a href="https://github.com/Meulsama">🔗</a></sub><br /><a href="#ideas-Meulsama" title="Ideas, Planning, & Feedback">🤔</a></td>
-    <td align="center"><img src="https://avatars3.githubusercontent.com/u/50655871?v=4" width="100px;" alt=""/><br /><sub><a href="https://github.com/UserUnknownX"><b>Michael Xiang</b></a><a href="https://github.com/UserUnknownX">🔗</a></sub><br /><a href="https://github.com/Liu233w/acm-statistics/issues?q=author%3AUserUnknownX" title="Bug reports">🐛</a></td>
+    <td align="center"><img src="https://avatars3.githubusercontent.com/u/11661760?v=4" width="100px;" alt=""/><br /><sub><a href="https://kidozh.com"><b>Kido Zhang</b></a><a href="https://github.com/kidozh">🔗</a></sub><br /><a href="#infra-kidozh" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="#ideas-kidozh" title="Ideas, Planning, & Feedback">🤔</a></td>
   </tr>
   <tr>
+    <td align="center"><img src="https://avatars2.githubusercontent.com/u/16333687?v=4" width="100px;" alt=""/><br /><sub><a href="https://liu233w.github.io"><b>Liu233w</b></a><a href="https://github.com/Liu233w">🔗</a></sub><br /><a href="https://github.com/Liu233w/acm-statistics/commits?author=Liu233w" title="Code">💻</a> <a href="#ideas-Liu233w" title="Ideas, Planning, & Feedback">🤔</a> <a href="#infra-Liu233w" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://github.com/Liu233w/acm-statistics/commits?author=Liu233w" title="Tests">⚠️</a></td>
+    <td align="center"><img src="https://avatars1.githubusercontent.com/u/55663936?v=4" width="100px;" alt=""/><br /><sub><a href="https://github.com/Meulsama"><b>Meulsama</b></a><a href="https://github.com/Meulsama">🔗</a></sub><br /><a href="#ideas-Meulsama" title="Ideas, Planning, & Feedback">🤔</a></td>
+    <td align="center"><img src="https://avatars3.githubusercontent.com/u/50655871?v=4" width="100px;" alt=""/><br /><sub><a href="https://github.com/UserUnknownX"><b>Michael Xiang</b></a><a href="https://github.com/UserUnknownX">🔗</a></sub><br /><a href="https://github.com/Liu233w/acm-statistics/issues?q=author%3AUserUnknownX" title="Bug reports">🐛</a></td>
+    <td align="center"><img src="https://avatars1.githubusercontent.com/u/11994295?v=4" width="100px;" alt=""/><br /><sub><a href="http://zhao.wtf"><b>Zhao</b></a><a href="https://github.com/2512821228">🔗</a></sub><br /><a href="https://github.com/Liu233w/acm-statistics/issues?q=author%3A2512821228" title="Bug reports">🐛</a></td>
+    <td align="center"><img src="https://avatars.githubusercontent.com/u/49401963?v=4" width="100px;" alt=""/><br /><sub><a href="https://github.com/bluebear4"><b>bluebear4</b></a><a href="https://github.com/bluebear4">🔗</a></sub><br /><a href="https://github.com/Liu233w/acm-statistics/issues?q=author%3Abluebear4" title="Bug reports">🐛</a></td>
+    <td align="center"><img src="https://avatars3.githubusercontent.com/u/22322656?v=4" width="100px;" alt=""/><br /><sub><a href="https://github.com/ctuu"><b>ct</b></a><a href="https://github.com/ctuu">🔗</a></sub><br /><a href="https://github.com/Liu233w/acm-statistics/issues?q=author%3Actuu" title="Bug reports">🐛</a></td>
+  </tr>
+  <tr>
+    <td align="center"><img src="https://avatars2.githubusercontent.com/u/9880740?v=4" width="100px;" alt=""/><br /><sub><a href="https://github.com/flylai"><b>flylai</b></a><a href="https://github.com/flylai">🔗</a></sub><br /><a href="https://github.com/Liu233w/acm-statistics/commits?author=flylai" title="Code">💻</a> <a href="https://github.com/Liu233w/acm-statistics/issues?q=author%3Aflylai" title="Bug reports">🐛</a></td>
+    <td align="center"><img src="https://avatars3.githubusercontent.com/u/36151020?v=4" width="100px;" alt=""/><br /><sub><a href="https://github.com/fzu-h4cky"><b>fzu-h4cky</b></a><a href="https://github.com/fzu-h4cky">🔗</a></sub><br /><a href="https://github.com/Liu233w/acm-statistics/issues?q=author%3Afzu-h4cky" title="Bug reports">🐛</a></td>
     <td align="center"><img src="https://avatars2.githubusercontent.com/u/43291744?v=4" width="100px;" alt=""/><br /><sub><a href="https://github.com/zby0327"><b>zby</b></a><a href="https://github.com/zby0327">🔗</a></sub><br /><a href="#ideas-zby0327" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/Liu233w/acm-statistics/issues?q=author%3Azby0327" title="Bug reports">🐛</a></td>
-    <td align="center"><img src="https://avatars1.githubusercontent.com/u/64258212?v=4" width="100px;" alt=""/><br /><sub><a href="https://github.com/BackSlashDelta"><b>BackSlashDelta</b></a><a href="https://github.com/BackSlashDelta">🔗</a></sub><br /><a href="https://github.com/Liu233w/acm-statistics/issues?q=author%3ABackSlashDelta" title="Bug reports">🐛</a></td>
   </tr>
 </table>
 
-<!-- markdownlint-enable -->
+<!-- markdownlint-restore -->
 <!-- prettier-ignore-end -->
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
