@@ -136,6 +136,15 @@
       "contributions": [
         "bug"
       ]
+    },
+    {
+      "login": "bluebear4",
+      "name": "bluebear4",
+      "avatar_url": "https://avatars.githubusercontent.com/u/49401963?v=4",
+      "profile": "https://github.com/bluebear4",
+      "contributions": [
+        "bug"
+      ]
     }
   ],
   "contributorsPerLine": 6,
