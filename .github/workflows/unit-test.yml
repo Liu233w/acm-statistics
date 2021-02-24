@@ -81,4 +81,4 @@ jobs:
     - uses: actions/checkout@master
       with:
         fetch-depth: 0
-    - uses: wagoid/commitlint-github-action@v2
+    - uses: wagoid/commitlint-github-action@v3
