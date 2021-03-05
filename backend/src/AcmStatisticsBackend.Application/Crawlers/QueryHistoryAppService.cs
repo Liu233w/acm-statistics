@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -213,20 +213,21 @@ namespace AcmStatisticsBackend.Crawlers
         public async Task<PagedResultDto<GetQueryHistoryAndSummaryOutput>> GetQueryHistoriesAndSummaries(
             PagedResultRequestDto input)
         {
-            var list = await (from h in QueryHistoriesOfCurrentUser()
+            var list = await
+                (from h in QueryHistoriesOfCurrentUser()
                     .OrderByDescending(e => e.CreationTime)
                     .PageBy(input)
-                join s in _querySummaryRepository.GetAll()
-                    on h.Id equals s.QueryHistoryId into grouping
-                from s in grouping.DefaultIfEmpty()
-                select new GetQueryHistoryAndSummaryOutput
-                {
-                    HistoryId = h.Id,
-                    SummaryId = s.Id,
-                    CreationTime = h.CreationTime,
-                    Solved = s.Solved == 0 && s.Submission == 0 ? null as int? : s.Solved,
-                    Submission = s.Solved == 0 && s.Submission == 0 ? null as int? : s.Submission,
-                }).ToListAsync();
+                 join s in _querySummaryRepository.GetAll()
+                     on h.Id equals s.Id into grouping
+                 from s in grouping.DefaultIfEmpty()
+                 select new GetQueryHistoryAndSummaryOutput
+                 {
+                     HistoryId = h.Id,
+                     SummaryId = s.Id,
+                     CreationTime = h.CreationTime,
+                     Solved = s.Solved == 0 && s.Submission == 0 ? null : s.Solved,
+                     Submission = s.Solved == 0 && s.Submission == 0 ? null : s.Submission,
+                 }).ToListAsync();
             var count = await QueryHistoriesOfCurrentUser().CountAsync();
 
             return new PagedResultDto<GetQueryHistoryAndSummaryOutput>(count, list);

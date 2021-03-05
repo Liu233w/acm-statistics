@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace AcmStatisticsBackend.Crawlers.Dto
@@ -8,8 +8,13 @@ namespace AcmStatisticsBackend.Crawlers.Dto
         [Range(1, long.MaxValue)]
         public long HistoryId { get; set; }
 
+        /// <summary>
+        /// The id of the summary.
+        ///
+        /// It can be null if the summary does not exist
+        /// </summary>
         [Range(1, long.MaxValue)]
-        public long SummaryId { get; set; }
+        public long? SummaryId { get; set; }
 
         [Required]
         public DateTime CreationTime { get; set; }
