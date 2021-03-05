@@ -1,7 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
-    <AssetTargetFallback>$(AssetTargetFallback);portable-net45+win8+wp8+wpa81;</AssetTargetFallback>
+    <TargetFramework>net5.0</TargetFramework>
     <PreserveCompilationContext>true</PreserveCompilationContext>
     <AssemblyName>AcmStatisticsBackend.Web.Host</AssemblyName>
     <OutputType>Exe</OutputType>
@@ -31,8 +30,8 @@
     <ProjectReference Include="..\AcmStatisticsBackend.Web.Core\AcmStatisticsBackend.Web.Core.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Abp.Castle.Log4Net" Version="5.14.0" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.12">
+    <PackageReference Include="Abp.Castle.Log4Net" Version="6.2.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.3">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
