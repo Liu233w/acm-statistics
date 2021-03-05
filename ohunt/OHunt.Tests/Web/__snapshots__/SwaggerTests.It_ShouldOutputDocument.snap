@@ -5,6 +5,11 @@
     "description": "OHunt is a crawler that reads data from online coding competition platform and serve them as API, just like uHunt of UVA.",
     "version": "v1"
   },
+  "servers": [
+    {
+      "url": "http://localhost"
+    }
+  ],
   "paths": {
     "/api/ohunt/problems/resolve-label": {
       "post": {
@@ -123,9 +128,7 @@
             "in": "query",
             "description": "the names of the OJ. See the OnlineJudge schema below for the value.",
             "schema": {
-              "type": "string",
-              "description": "the names of the OJ. See the OnlineJudge schema below for the value.",
-              "nullable": true
+              "type": "string"
             }
           },
           {
@@ -210,6 +213,12 @@
         "type": "string",
         "description": "the enum of online judges that are used to mapping problem labels."
       },
+      "OnlineJudge": {
+        "enum": [
+          "ZOJ"
+        ],
+        "type": "string"
+      },
       "ResolveLabelInput": {
         "type": "object",
         "properties": {
@@ -241,12 +250,6 @@
           }
         },
         "additionalProperties": false
-      },
-      "OnlineJudge": {
-        "enum": [
-          "ZOJ"
-        ],
-        "type": "string"
       },
       "RunResult": {
         "enum": [
