@@ -76,6 +76,8 @@ services:
     # fix `mbind: Operation not permitted`, see https://stackoverflow.com/a/55706057
     cap_add:
       - SYS_NICE  # CAP_SYS_NICE
+    ports:
+      - 3306:3306
 
   captcha-service:
     image: ${DOCKER_REPO}acm-statistics-captcha-service${DOCKER_TAG}
