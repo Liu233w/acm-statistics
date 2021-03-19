@@ -66,6 +66,9 @@ module.exports = async function (localConfig, username) {
     }
 
     // console.log(res.body)
+    if (!res.body.data) {
+      throw new Error(`Cannot process vjudge data, body: ${JSON.stringify(res.body)}`)
+    }
 
     const problemArray = res.body.data
 
