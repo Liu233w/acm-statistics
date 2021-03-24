@@ -123,12 +123,12 @@ async function tryLogin() {
   // console.log(`login vjudge: "${config.crawler_login_user}" "${config.crawler_login_password}"`)
 
   agent = request.agent()
+    .set('User-Agent', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36')
 
   let loginStatus
   try {
     loginStatus = await agent
       .post(`https://${hostName}/user/login`)
-      .set('User-Agent', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36')
       .type('form')
       .send({
         'username': config.crawler_login_user,
