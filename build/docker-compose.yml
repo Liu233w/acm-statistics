@@ -64,7 +64,7 @@ services:
       - captcha-service
 
   db:
-    image: mysql:8@sha256:5d1d733f32c28d47061e9d5c2b1fb49b4628c4432901632a70019ec950eda491
+    image: mysql:8@sha256:00b627abbd6e91d5d0e4be786869930497b9759bf40db3f15408bb894daf5263
     restart: always
     environment:
       MYSQL_DATABASE: acm_statistics
