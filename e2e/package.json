@@ -10,7 +10,7 @@
     "cypress-install": "cypress install"
   },
   "dependencies": {
-    "cheerio": "1.0.0-rc.5",
+    "cheerio": "1.0.0-rc.6",
     "cypress": "6.9.1",
     "cypress-image-snapshot": "4.0.1",
     "eslint": "7.23.0",

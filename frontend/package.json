@@ -21,7 +21,7 @@
     "@nuxtjs/component-cache": "1.1.6",
     "@nuxtjs/vuetify": "1.11.3",
     "chart.js": "2.9.4",
-    "cheerio": "1.0.0-rc.5",
+    "cheerio": "1.0.0-rc.6",
     "html2canvas": "1.0.0-rc.7",
     "js-cookie": "2.2.1",
     "lodash": "4.17.21",
