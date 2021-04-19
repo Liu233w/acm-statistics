@@ -8,7 +8,7 @@
     "lintfix": "eslint --fix --ext .js --ignore-path .gitignore ."
   },
   "dependencies": {
-    "cheerio": "^1.0.0-rc.3",
+    "cheerio": "^1.0.0-rc",
     "fs-extra": "^9.0.0",
     "js-yaml": "^4.0.0",
     "lodash": "^4.17.11",
