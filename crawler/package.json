@@ -11,7 +11,7 @@
     "cheerio": "^1.0.0-rc",
     "fs-extra": "^9.0.0",
     "js-yaml": "^4.0.0",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.20",
     "superagent": "^5.0.3",
     "superagent-proxy": "^2.0.0"
   },
