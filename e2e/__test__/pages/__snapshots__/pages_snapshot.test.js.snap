@@ -1746,10 +1746,10 @@ exports[`/about 1`] = `
                               <v-list-item-sub-title>Telegram: https://t.me/ojhunt</v-list-item-sub-title>
                             </div>
                             <div class="v-list-item__action"><i aria-hidden="true" class="v-icon notranslate grey--text mdi mdi-open-in-new theme--light"></i></div>
-                          </a> <a tabindex="0" href="https://join.slack.com/t/acm-statistics/shared_invite/zt-geel58eq-MjD3tBukUAC4ZSCS4DoLTw" target="_blank" rel="noopener noreferrer" role="listitem" class="v-list-item v-list-item--link theme--light">
-                            <div class="v-list-item__action"><i aria-hidden="true" class="v-icon notranslate blue--text text--lighten-2 mdi mdi-slack theme--light"></i></div>
+                          </a> <a tabindex="0" href="https://discord.gg/cQemBNNr" target="_blank" rel="noopener noreferrer" role="listitem" class="v-list-item v-list-item--link theme--light">
+                            <div class="v-list-item__action"><i aria-hidden="true" class="v-icon notranslate blue--text text--lighten-2 mdi mdi-discord theme--light"></i></div>
                             <div class="v-list-item__content">
-                              <v-list-item-sub-title>Slack: ACM Statistics Development</v-list-item-sub-title>
+                              <v-list-item-sub-title>Discord: OJ Hunt Development</v-list-item-sub-title>
                             </div>
                             <div class="v-list-item__action"><i aria-hidden="true" class="v-icon notranslate grey--text mdi mdi-open-in-new theme--light"></i></div>
                           </a></div>
@@ -2672,7 +2672,7 @@ exports[`/history 1`] = `
                         <div class="v-banner__text">
                           Only the latest history per day is saved. You may change your time zone in settings.
                           <a href="/settings" class="v-btn v-btn--router v-btn--text theme--light v-size--default primary--text"><span class="v-btn__content">
-        go settings
+        go to settings
       </span></a>
                         </div>
                       </div>
