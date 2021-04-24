@@ -79,17 +79,17 @@
               </v-list-item-action>
             </v-list-item>
             <v-list-item
-              href="https://join.slack.com/t/acm-statistics/shared_invite/zt-geel58eq-MjD3tBukUAC4ZSCS4DoLTw"
+              href="https://discord.gg/cQemBNNr"
               target="_blank"
               rel="noopener noreferrer"
             >
               <v-list-item-action>
                 <v-icon class="blue--text text--lighten-2">
-                  mdi-slack
+                  mdi-discord
                 </v-icon>
               </v-list-item-action>
               <v-list-item-content>
-                <v-list-item-sub-title>Slack: ACM Statistics Development</v-list-item-sub-title>
+                <v-list-item-sub-title>Discord: OJ Hunt Development</v-list-item-sub-title>
               </v-list-item-content>
               <v-list-item-action>
                 <v-icon class="grey--text">
