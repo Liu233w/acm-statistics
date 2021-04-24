@@ -14,7 +14,7 @@
           color="primary"
           to="/settings"
         >
-          go settings
+          go to settings
         </v-btn>
       </v-banner>
       <v-data-table
