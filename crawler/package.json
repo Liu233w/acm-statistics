@@ -16,7 +16,7 @@
     "superagent-proxy": "^2.0.0"
   },
   "devDependencies": {
-    "@types/jest": "26.0.22",
+    "@types/jest": "26.0.23",
     "eslint": "7.25.0",
     "eslint-plugin-jest": "24.3.6",
     "eslint-plugin-lodash": "7.2.0",
