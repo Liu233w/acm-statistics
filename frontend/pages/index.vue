@@ -86,7 +86,7 @@
                     </div>
                   </v-card-title>
                   <v-card-text class="text-center">
-                    Enter your username and click QUERY. You can save your usernames and use it later.
+                    Enter your username and click QUERY. You can save your usernames and use them later.
                   </v-card-text>
                 </v-card>
               </v-flex>
@@ -138,8 +138,8 @@
                     </div>
                   </v-card-title>
                   <v-card-text class="text-center">
-                    Click the result panel to view summary.
-                    (Need login)
+                    Click the result badge to view summary.
+                    (Login required)
                   </v-card-text>
                 </v-card>
               </v-flex>
@@ -201,14 +201,13 @@
                 </div>
               </v-card-title>
               <v-card-text>
-                This project is the former <span class="font-italic">
+                This project is the remake of <span class="font-italic">
                   西北工业大学ACM查询系统 (npuacm.info)
                 </span>. The original version and idea are from <a
                   href="https://kidozh.com/en/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >Jiduo Zhang</a>.
-                The old domain is broken, so I moved it to the new domain.
               </v-card-text>
             </v-card>
           </v-flex>
