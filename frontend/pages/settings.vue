@@ -5,7 +5,7 @@
         <v-card>
           <v-card-title>Sign out</v-card-title>
           <v-card-text>
-            Logout of this computer.
+            Logout from this computer.
           </v-card-text>
           <v-card-actions>
             <v-btn
@@ -30,7 +30,7 @@
               />
               <v-radio
                 value="false"
-                label="Only save history when click view summary button"
+                label="Only save history when clicking view summary button"
               />
             </v-radio-group>
           </v-card-text>
@@ -52,7 +52,7 @@
         <v-card>
           <v-card-title>Change time zone</v-card-title>
           <v-card-text>
-            <p>You can change your time zone every 24 hours.</p>
+            <p>You may change your time zone every 24 hours.</p>
             <v-select
               v-model="timeZone"
               :items="timeZoneList"
