@@ -3,14 +3,16 @@ using System;
 using AcmStatisticsBackend.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace AcmStatisticsBackend.Migrations
 {
     [DbContext(typeof(AcmStatisticsBackendDbContext))]
-    partial class AcmStatisticsBackendDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210429095008_UpgradeAbp")]
+    partial class UpgradeAbp
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
