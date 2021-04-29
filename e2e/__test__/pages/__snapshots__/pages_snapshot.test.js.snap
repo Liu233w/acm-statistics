@@ -2676,7 +2676,7 @@ exports[`/history 1`] = `
             </header>
             <main class="v-main v-content" style="padding-top:56px;padding-right:0px;padding-bottom:0px;padding-left:0px;">
               <div class="v-main__wrap v-content__wrap">
-                <div data-fetch-key="0" class="container container--fluid">
+                <div class="container container--fluid">
                   <div class="v-banner v-sheet theme--light v-banner--is-mobile">
                     <div class="v-banner__wrapper">
                       <div class="v-banner__content">
@@ -3065,7 +3065,7 @@ exports[`/history 1`] = `
           layout: "default",
           data: [{}],
           fetch: {
-            "0": {
+            "FETCH_KEY": {
               items: [{
                 historyId: b,
                 summaryId: b,
@@ -3993,7 +3993,7 @@ exports[`/history/{historyId} 1`] = `
             </header>
             <main class="v-main v-content" style="padding-top:56px;padding-right:0px;padding-bottom:0px;padding-left:0px;">
               <div class="v-main__wrap v-content__wrap">
-                <div data-fetch-key="0" id="history-summary" class="container">
+                <div id="history-summary" class="container">
                   <div role="list" class="v-list v-sheet theme--light">
                     <div tabindex="-1" role="listitem" class="v-list-item theme--light">
                       <div class="v-list-item__content">
@@ -4281,7 +4281,7 @@ exports[`/history/{historyId} 1`] = `
           layout: "default",
           data: [{}],
           fetch: {
-            "0": {
+            "FETCH_KEY": {
               summary: {
                 queryHistoryId: e,
                 generateTime: new Date(1594440922010),
@@ -8135,7 +8135,7 @@ exports[`/statistics 1`] = `
             </header>
             <main class="v-main v-content" style="padding-top:56px;padding-right:0px;padding-bottom:0px;padding-left:0px;">
               <div class="v-main__wrap v-content__wrap">
-                <div data-fetch-key="data-v-71ab44a4:0" class="container grid-list-md">
+                <div class="container grid-list-md">
                   <div wrap="" class="row no-gutters">
                     <div class="pt-0 pb-0 col-md-3 col">
                       <div class="v-input theme--light v-text-field" style="min-width:240px;">
@@ -8192,7 +8192,7 @@ exports[`/statistics 1`] = `
           layout: "default",
           data: [{}],
           fetch: {
-            "data-v-71ab44a4:0": {
+            "FETCH_KEY": {
               columnCount: 3,
               columnWidth: a,
               savingUsername: f,
