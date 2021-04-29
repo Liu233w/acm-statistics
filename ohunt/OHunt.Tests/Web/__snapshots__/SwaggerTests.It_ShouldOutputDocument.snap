@@ -5,11 +5,6 @@
     "description": "OHunt is a crawler that reads data from online coding competition platform and serve them as API, just like uHunt of UVA.",
     "version": "v1"
   },
-  "servers": [
-    {
-      "url": "http://localhost"
-    }
-  ],
   "paths": {
     "/api/ohunt/problems/resolve-label": {
       "post": {
