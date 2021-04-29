@@ -1,11 +1,17 @@
-name: auto cancellation running job
-on: pull_request
+name: Cancelling Duplicates
+on:
+  workflow_run:
+    workflows: ['CI']
+    types: ['requested']
 
 jobs:
-  cancel:
-    name: auto-cancellation-running-action
+  cancel-duplicate-workflow-runs:
+    name: "Cancel duplicate workflow runs"
     runs-on: ubuntu-latest
     steps:
-      - uses: fauguste/auto-cancellation-running-action@0.1.4
+      - uses: potiuk/cancel-workflow-runs@master
+        name: "Cancel duplicate workflow runs"
         with:
-          githubToken: ${{ secrets.GITHUB_TOKEN }}
+          cancelMode: allDuplicates
+          token: ${{ secrets.GITHUB_TOKEN }}
+          sourceRunId: ${{ github.event.workflow_run.id }}
