@@ -85,6 +85,23 @@ async function testPageByPath(path, authToken) {
     }
   })
 
+  // remove data-fetch-key="data-v-..." and the value
+  const dataVValues = []
+  const dataFetchKeyKey = 'data-fetch-key'
+  $('*').each((i, el) => {
+    const value = $(el).attr(dataFetchKeyKey)
+    if (value) {
+      $(el).removeAttr(dataFetchKeyKey)
+      dataVValues.push(value)
+    }
+  })
+
+  let html = $(storeEl).html()
+  dataVValues.forEach(v => {
+    html = html.replace(`"${v}":`, '"FETCH_KEY":')
+  })
+  $(storeEl).html(html)
+
   expect($.html()).toMatchSnapshot()
 }
 
