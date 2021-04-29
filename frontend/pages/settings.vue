@@ -151,7 +151,7 @@
       max-width="400"
     >
       <v-card>
-        <v-card-title class="headline">
+        <v-card-title class="text-h5">
           Are you sure you want to delete this account?
         </v-card-title>
         <v-card-text>

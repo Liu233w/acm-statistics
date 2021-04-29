@@ -15,11 +15,11 @@
             height="256"
             :src="randomMeme()"
           />
-          <h1 class="display-4 font-weight-bold mb-6">
+          <h1 class="text-h1 font-weight-bold mb-6">
             ???
           </h1>
 
-          <p class="mb-12 display-1 grey--text text--darken-2">
+          <p class="mb-12 text-h4 grey--text text--darken-2">
             {{ message }}
           </p>
 
