@@ -10,7 +10,7 @@ ARG CRAWLER_LIBRARY_PATH
 
 WORKDIR /var/project
 
-RUN apk add --no-cache make gcc g++ python
+RUN apk add --no-cache make gcc g++ python3
 
 COPY package.json package-lock.json ./
 RUN npm install && rm -rf ./node_modules/crawler
