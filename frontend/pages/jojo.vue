@@ -15,7 +15,7 @@
             height="256"
             :src="require('~/assets/img/dio.jpg')"
           />
-          <h1 class="display-2 font-weight-bold mb-6">
+          <h1 class="text-h3 font-weight-bold mb-6">
             你访问的不是 {{ url }}，是我DIO哒!!
           </h1>
         </v-col>

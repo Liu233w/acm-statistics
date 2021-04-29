@@ -102,7 +102,7 @@
             >
               mdi-file-chart
             </v-icon>
-            <span class="title">
+            <span class="text-h6">
               SOLVED: {{ solvedNum }} / SUBMISSION: {{ submissionsNum }}
             </span>
           </v-chip>

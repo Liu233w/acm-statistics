@@ -17,11 +17,11 @@
             height="190"
             class="mb-4"
           >
-          <h2 class="black--text headline text-center font-weight-light">
+          <h2 class="black--text text-h5 text-center font-weight-light">
             ACM-ICPC 协会
           </h2>
           <div style="height: 50px" />
-          <h1 class="black--text mb-2 display-1 text-center index-title font-weight-bold">
+          <h1 class="black--text mb-2 text-h4 text-center index-title font-weight-bold">
             Welcome to {{ projectTitle }}
           </h1>
           <div class="black--text subheading mb-4 text-center index-title">
@@ -53,7 +53,7 @@
           class="my-4"
         >
           <div class="text-center">
-            <h2 class="headline">
+            <h2 class="text-h5">
               Guide
             </h2>
             <span class="subheading">
@@ -81,7 +81,7 @@
                     primary-title
                     class="layout justify-center"
                   >
-                    <div class="headline text-center">
+                    <div class="text-h5 text-center">
                       Query
                     </div>
                   </v-card-title>
@@ -107,7 +107,7 @@
                     primary-title
                     class="layout justify-center"
                   >
-                    <div class="headline text-center">
+                    <div class="text-h5 text-center">
                       Worker Panel
                     </div>
                   </v-card-title>
@@ -133,7 +133,7 @@
                     primary-title
                     class="layout justify-center"
                   >
-                    <div class="headline text-center">
+                    <div class="text-h5 text-center">
                       Summary
                     </div>
                   </v-card-title>
@@ -159,7 +159,7 @@
           align-center
           justify-center
         >
-          <div class="headline white--text mb-4 text-center response-title">
+          <div class="text-h5 white--text mb-4 text-center response-title">
             If you have any questions,
           </div>
           <em class="white--text response-title">feel free to discuss on GitHub</em>
@@ -196,7 +196,7 @@
                 primary-title
                 class="layout justify-center"
               >
-                <div class="headline">
+                <div class="text-h5">
                   About the website
                 </div>
               </v-card-title>
@@ -224,7 +224,7 @@
                 primary-title
                 class="layout justify-center"
               >
-                <div class="headline">
+                <div class="text-h5">
                   About us
                 </div>
               </v-card-title>

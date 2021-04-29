@@ -162,7 +162,7 @@
           v-else
         >
           <v-flex>
-            <span class="grey--text body-2">
+            <span class="grey--text text-body-2">
               SOLVED:
             </span>
             <template v-if="solvedListStatus === 'none'">
@@ -184,7 +184,7 @@
             </v-tooltip>
           </v-flex>
           <v-flex>
-            <span class="grey--text body-2">
+            <span class="grey--text text-body-2">
               SUBMISSIONS:
             </span>
             {{ worker.submissions }}
@@ -204,7 +204,7 @@
         lg6
       >
         <v-card-title>
-          <span class="headline">
+          <span class="text-h5">
             AC problem list of {{ worker.username }} in {{ crawler.title }}
           </span>
         </v-card-title>

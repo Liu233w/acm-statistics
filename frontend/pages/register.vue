@@ -1,7 +1,7 @@
 <template>
   <v-card flat>
     <v-card-title primary-title>
-      <div class="headline">
+      <div class="text-h5">
         Register
       </div>
     </v-card-title>

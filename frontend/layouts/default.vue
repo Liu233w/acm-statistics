@@ -69,7 +69,7 @@
       inset
       absolute
     >
-      <span class="body-2">&copy; 2018 - {{ buildYear }} Shumin Liu and Contributors</span>
+      <span class="text-body-2">&copy; 2018 - {{ buildYear }} Shumin Liu and Contributors</span>
     </v-footer>
     <message-panel />
   </v-app>
