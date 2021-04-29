@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace AcmStatisticsBackend.Migrations
@@ -48,7 +48,7 @@ namespace AcmStatisticsBackend.Migrations
                     DisplayName = table.Column<string>(type: "longtext CHARACTER SET utf8mb4", nullable: true),
                     InputType = table.Column<string>(type: "longtext CHARACTER SET utf8mb4", nullable: true),
                     Permission = table.Column<string>(type: "longtext CHARACTER SET utf8mb4", nullable: true),
-                    TenantId = table.Column<int>(type: "int", nullable: true)
+                    TenantId = table.Column<int>(type: "int", nullable: true),
                 },
                 constraints: table =>
                 {
@@ -63,7 +63,7 @@ namespace AcmStatisticsBackend.Migrations
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     EntityFullName = table.Column<string>(type: "varchar(256) CHARACTER SET utf8mb4", maxLength: 256, nullable: true),
                     DynamicPropertyId = table.Column<int>(type: "int", nullable: false),
-                    TenantId = table.Column<int>(type: "int", nullable: true)
+                    TenantId = table.Column<int>(type: "int", nullable: true),
                 },
                 constraints: table =>
                 {
@@ -84,7 +84,7 @@ namespace AcmStatisticsBackend.Migrations
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     Value = table.Column<string>(type: "longtext CHARACTER SET utf8mb4", nullable: false),
                     TenantId = table.Column<int>(type: "int", nullable: true),
-                    DynamicPropertyId = table.Column<int>(type: "int", nullable: false)
+                    DynamicPropertyId = table.Column<int>(type: "int", nullable: false),
                 },
                 constraints: table =>
                 {
@@ -106,7 +106,7 @@ namespace AcmStatisticsBackend.Migrations
                     Value = table.Column<string>(type: "longtext CHARACTER SET utf8mb4", nullable: false),
                     EntityId = table.Column<string>(type: "longtext CHARACTER SET utf8mb4", nullable: true),
                     DynamicEntityPropertyId = table.Column<int>(type: "int", nullable: false),
-                    TenantId = table.Column<int>(type: "int", nullable: true)
+                    TenantId = table.Column<int>(type: "int", nullable: true),
                 },
                 constraints: table =>
                 {
@@ -182,7 +182,7 @@ namespace AcmStatisticsBackend.Migrations
                     InputType = table.Column<string>(type: "longtext CHARACTER SET utf8mb4", nullable: true),
                     ParameterName = table.Column<string>(type: "varchar(255) CHARACTER SET utf8mb4", nullable: true),
                     Permission = table.Column<string>(type: "longtext CHARACTER SET utf8mb4", nullable: true),
-                    TenantId = table.Column<int>(type: "int", nullable: true)
+                    TenantId = table.Column<int>(type: "int", nullable: true),
                 },
                 constraints: table =>
                 {
@@ -197,7 +197,7 @@ namespace AcmStatisticsBackend.Migrations
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     DynamicParameterId = table.Column<int>(type: "int", nullable: false),
                     TenantId = table.Column<int>(type: "int", nullable: true),
-                    Value = table.Column<string>(type: "longtext CHARACTER SET utf8mb4", nullable: false)
+                    Value = table.Column<string>(type: "longtext CHARACTER SET utf8mb4", nullable: false),
                 },
                 constraints: table =>
                 {
@@ -218,7 +218,7 @@ namespace AcmStatisticsBackend.Migrations
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     DynamicParameterId = table.Column<int>(type: "int", nullable: false),
                     EntityFullName = table.Column<string>(type: "varchar(255) CHARACTER SET utf8mb4", nullable: true),
-                    TenantId = table.Column<int>(type: "int", nullable: true)
+                    TenantId = table.Column<int>(type: "int", nullable: true),
                 },
                 constraints: table =>
                 {
@@ -240,7 +240,7 @@ namespace AcmStatisticsBackend.Migrations
                     EntityDynamicParameterId = table.Column<int>(type: "int", nullable: false),
                     EntityId = table.Column<string>(type: "longtext CHARACTER SET utf8mb4", nullable: true),
                     TenantId = table.Column<int>(type: "int", nullable: true),
-                    Value = table.Column<string>(type: "longtext CHARACTER SET utf8mb4", nullable: false)
+                    Value = table.Column<string>(type: "longtext CHARACTER SET utf8mb4", nullable: false),
                 },
                 constraints: table =>
                 {
