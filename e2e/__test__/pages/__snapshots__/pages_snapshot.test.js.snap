@@ -914,32 +914,38 @@ exports[`/ 1`] = `
       </div>
     </div>
     <script>
-      window.__NUXT__ = (function(a, b) {
+      window.__NUXT__ = (function(a, b, c, d) {
         return {
           layout: "default",
           data: [{}],
-          fetch: [],
-          error: null,
+          fetch: {},
+          error: a,
           state: {
-            sidebar: a,
+            sidebar: b,
             message: {
               list: []
             },
             session: {
-              login: a,
+              login: b,
               username: "",
               settings: {}
             }
           },
           serverRendered: true,
-          routePath: "\\u002F",
-          config: {},
+          routePath: c,
+          config: {
+            _app: {
+              basePath: c,
+              assetsPath: "\\u002F_nuxt\\u002F",
+              cdnURL: a
+            }
+          },
           env: {
-            VERSION_NUM: b,
-            BUILD_TIME: b
+            VERSION_NUM: d,
+            BUILD_TIME: d
           }
         }
-      }(false, "0"));
+      }(null, false, "\\u002F", "0"));
     </script>
 
 
@@ -1856,32 +1862,38 @@ exports[`/about 1`] = `
       </div>
     </div>
     <script>
-      window.__NUXT__ = (function(a, b) {
+      window.__NUXT__ = (function(a, b, c) {
         return {
           layout: "default",
           data: [{}],
-          fetch: [],
-          error: null,
+          fetch: {},
+          error: a,
           state: {
-            sidebar: a,
+            sidebar: b,
             message: {
               list: []
             },
             session: {
-              login: a,
+              login: b,
               username: "",
               settings: {}
             }
           },
           serverRendered: true,
           routePath: "\\u002Fabout",
-          config: {},
+          config: {
+            _app: {
+              basePath: "\\u002F",
+              assetsPath: "\\u002F_nuxt\\u002F",
+              cdnURL: a
+            }
+          },
           env: {
-            VERSION_NUM: b,
-            BUILD_TIME: b
+            VERSION_NUM: c,
+            BUILD_TIME: c
           }
         }
-      }(false, "0"));
+      }(null, false, "0"));
     </script>
 
 
@@ -3052,105 +3064,107 @@ exports[`/history 1`] = `
         return {
           layout: "default",
           data: [{}],
-          fetch: [{
-            items: [{
-              historyId: b,
-              summaryId: b,
-              creationTime: new Date(1586505600000),
-              submission: 100,
-              solved: b
-            }, {
-              historyId: g,
-              summaryId: g,
-              creationTime: new Date(1586419200000),
-              submission: 90,
-              solved: g
-            }, {
-              historyId: h,
-              summaryId: h,
-              creationTime: new Date(1586332800000),
-              submission: 80,
-              solved: h
-            }, {
-              historyId: i,
-              summaryId: i,
-              creationTime: new Date(1586246400000),
-              submission: 70,
-              solved: i
-            }, {
-              historyId: j,
-              summaryId: j,
-              creationTime: new Date(1586160000000),
-              submission: o,
-              solved: j
-            }, {
-              historyId: k,
-              summaryId: k,
-              creationTime: new Date(1586073600000),
-              submission: 50,
-              solved: k
-            }, {
-              historyId: l,
-              summaryId: l,
-              creationTime: new Date(1585987200000),
-              submission: 40,
-              solved: l
-            }, {
-              historyId: m,
-              summaryId: m,
-              creationTime: new Date(1585900800000),
-              submission: 30,
-              solved: m
-            }, {
-              historyId: n,
-              summaryId: n,
-              creationTime: new Date(1585814400000),
-              submission: 20,
-              solved: n
-            }, {
-              historyId: d,
-              summaryId: d,
-              creationTime: new Date(1585728000000),
-              submission: b,
-              solved: d
-            }],
-            loading: e,
-            headers: [{
-              text: "Id",
-              value: "historyId",
-              align: "start"
-            }, {
-              text: "Query date",
-              value: "creationTime"
-            }, {
-              text: "Solved",
-              value: "solved"
-            }, {
-              text: "Submissions",
-              value: "submission"
-            }, {
-              text: "Actions",
-              value: "actions"
-            }],
-            selected: [],
-            itemsPerPage: b,
-            serverItemsLength: o,
-            page: d,
-            errorMessage: p,
-            chartOptions: {
-              responsive: f,
-              maintainAspectRatio: e,
-              tooltips: {
-                mode: "index",
-                intersect: e
-              },
-              hover: {
-                mode: "nearest",
-                intersect: f
+          fetch: {
+            "0": {
+              items: [{
+                historyId: b,
+                summaryId: b,
+                creationTime: new Date(1586505600000),
+                submission: 100,
+                solved: b
+              }, {
+                historyId: g,
+                summaryId: g,
+                creationTime: new Date(1586419200000),
+                submission: 90,
+                solved: g
+              }, {
+                historyId: h,
+                summaryId: h,
+                creationTime: new Date(1586332800000),
+                submission: 80,
+                solved: h
+              }, {
+                historyId: i,
+                summaryId: i,
+                creationTime: new Date(1586246400000),
+                submission: 70,
+                solved: i
+              }, {
+                historyId: j,
+                summaryId: j,
+                creationTime: new Date(1586160000000),
+                submission: p,
+                solved: j
+              }, {
+                historyId: k,
+                summaryId: k,
+                creationTime: new Date(1586073600000),
+                submission: 50,
+                solved: k
+              }, {
+                historyId: l,
+                summaryId: l,
+                creationTime: new Date(1585987200000),
+                submission: 40,
+                solved: l
+              }, {
+                historyId: m,
+                summaryId: m,
+                creationTime: new Date(1585900800000),
+                submission: 30,
+                solved: m
+              }, {
+                historyId: n,
+                summaryId: n,
+                creationTime: new Date(1585814400000),
+                submission: 20,
+                solved: n
+              }, {
+                historyId: d,
+                summaryId: d,
+                creationTime: new Date(1585728000000),
+                submission: b,
+                solved: d
+              }],
+              loading: e,
+              headers: [{
+                text: "Id",
+                value: "historyId",
+                align: "start"
+              }, {
+                text: "Query date",
+                value: "creationTime"
+              }, {
+                text: "Solved",
+                value: "solved"
+              }, {
+                text: "Submissions",
+                value: "submission"
+              }, {
+                text: "Actions",
+                value: "actions"
+              }],
+              selected: [],
+              itemsPerPage: b,
+              serverItemsLength: p,
+              page: d,
+              errorMessage: o,
+              chartOptions: {
+                responsive: f,
+                maintainAspectRatio: e,
+                tooltips: {
+                  mode: "index",
+                  intersect: e
+                },
+                hover: {
+                  mode: "nearest",
+                  intersect: f
+                }
               }
             }
-          }],
-          error: p,
+          },
+          error: o,
           state: {
             sidebar: e,
             message: {
@@ -3184,13 +3198,19 @@ exports[`/history 1`] = `
           },
           serverRendered: f,
           routePath: "\\u002Fhistory\\u002F",
-          config: {},
+          config: {
+            _app: {
+              basePath: "\\u002F",
+              assetsPath: "\\u002F_nuxt\\u002F",
+              cdnURL: o
+            }
+          },
           env: {
             VERSION_NUM: q,
             BUILD_TIME: q
           }
         }
-      }("true", 10, "false", 1, false, true, 9, 8, 7, 6, 5, 4, 3, 2, 60, null, "0"));
+      }("true", 10, "false", 1, false, true, 9, 8, 7, 6, 5, 4, 3, 2, null, 60, "0"));
     </script>
 
 
@@ -4260,278 +4280,280 @@ exports[`/history/{historyId} 1`] = `
         return {
           layout: "default",
           data: [{}],
-          fetch: [{
-            summary: {
-              queryHistoryId: e,
-              generateTime: new Date(1594440922010),
-              mainUsername: b,
-              queryCrawlerSummaries: [{
-                crawlerName: d,
-                submission: e,
-                solved: e,
-                usernames: [{
-                  fromCrawlerName: a,
-                  username: b
-                }],
-                isVirtualJudge: f
-              }, {
-                crawlerName: "codechef",
-                submission: i,
-                solved: e,
-                usernames: [{
-                  fromCrawlerName: d,
-                  username: b
-                }],
-                isVirtualJudge: c
-              }, {
-                crawlerName: j,
-                submission: 9,
-                solved: 3,
-                usernames: [{
-                  fromCrawlerName: a,
-                  username: b
-                }],
-                isVirtualJudge: c
-              }, {
-                crawlerName: "timus",
-                submission: k,
-                solved: 2,
-                usernames: [{
-                  fromCrawlerName: d,
-                  username: b
-                }],
-                isVirtualJudge: c
-              }, {
-                crawlerName: "fzu",
-                submission: i,
-                solved: e,
-                usernames: [{
-                  fromCrawlerName: d,
-                  username: b
-                }],
-                isVirtualJudge: c
-              }, {
-                crawlerName: "uvalive",
-                submission: e,
-                solved: e,
-                usernames: [{
-                  fromCrawlerName: d,
-                  username: b
-                }],
-                isVirtualJudge: c
-              }, {
-                crawlerName: "uva",
-                submission: 28,
-                solved: 11,
-                usernames: [{
-                  fromCrawlerName: d,
-                  username: b
-                }],
-                isVirtualJudge: c
-              }, {
-                crawlerName: "codeforces",
-                submission: 15,
-                solved: k,
-                usernames: [{
-                  fromCrawlerName: d,
-                  username: b
-                }],
-                isVirtualJudge: c
-              }, {
-                crawlerName: "dashiye",
-                submission: i,
-                solved: 0,
-                usernames: [{
-                  fromCrawlerName: d,
-                  username: b
-                }],
-                isVirtualJudge: c
-              }, {
-                crawlerName: "hdu",
-                submission: 385,
-                solved: 108,
-                usernames: [{
-                  fromCrawlerName: d,
-                  username: b
+          fetch: {
+            "0": {
+              summary: {
+                queryHistoryId: e,
+                generateTime: new Date(1594440922010),
+                mainUsername: b,
+                queryCrawlerSummaries: [{
+                  crawlerName: d,
+                  submission: e,
+                  solved: e,
+                  usernames: [{
+                    fromCrawlerName: a,
+                    username: b
+                  }],
+                  isVirtualJudge: f
                 }, {
-                  fromCrawlerName: a,
-                  username: b
+                  crawlerName: "codechef",
+                  submission: i,
+                  solved: e,
+                  usernames: [{
+                    fromCrawlerName: d,
+                    username: b
+                  }],
+                  isVirtualJudge: c
+                }, {
+                  crawlerName: j,
+                  submission: 9,
+                  solved: 3,
+                  usernames: [{
+                    fromCrawlerName: a,
+                    username: b
+                  }],
+                  isVirtualJudge: c
+                }, {
+                  crawlerName: "timus",
+                  submission: k,
+                  solved: 2,
+                  usernames: [{
+                    fromCrawlerName: d,
+                    username: b
+                  }],
+                  isVirtualJudge: c
+                }, {
+                  crawlerName: "fzu",
+                  submission: i,
+                  solved: e,
+                  usernames: [{
+                    fromCrawlerName: d,
+                    username: b
+                  }],
+                  isVirtualJudge: c
+                }, {
+                  crawlerName: "uvalive",
+                  submission: e,
+                  solved: e,
+                  usernames: [{
+                    fromCrawlerName: d,
+                    username: b
+                  }],
+                  isVirtualJudge: c
+                }, {
+                  crawlerName: "uva",
+                  submission: 28,
+                  solved: 11,
+                  usernames: [{
+                    fromCrawlerName: d,
+                    username: b
+                  }],
+                  isVirtualJudge: c
+                }, {
+                  crawlerName: "codeforces",
+                  submission: 15,
+                  solved: k,
+                  usernames: [{
+                    fromCrawlerName: d,
+                    username: b
+                  }],
+                  isVirtualJudge: c
+                }, {
+                  crawlerName: "dashiye",
+                  submission: i,
+                  solved: 0,
+                  usernames: [{
+                    fromCrawlerName: d,
+                    username: b
+                  }],
+                  isVirtualJudge: c
+                }, {
+                  crawlerName: "hdu",
+                  submission: 385,
+                  solved: 108,
+                  usernames: [{
+                    fromCrawlerName: d,
+                    username: b
+                  }, {
+                    fromCrawlerName: a,
+                    username: b
+                  }],
+                  isVirtualJudge: c
+                }, {
+                  crawlerName: "poj",
+                  submission: 325,
+                  solved: 59,
+                  usernames: [{
+                    fromCrawlerName: d,
+                    username: b
+                  }],
+                  isVirtualJudge: c
                 }],
-                isVirtualJudge: c
+                summaryWarnings: [{
+                  crawlerName: j,
+                  content: "This crawler does not have a solved list and its result will be directly added to summary."
+                }],
+                submission: 785,
+                solved: 193
+              },
+              summaryError: a,
+              crawlers: {
+                poj: {
+                  title: "POJ",
+                  description: a,
+                  url: "http:\\u002F\\u002Fpoj.org\\u002F"
+                },
+                hdu: {
+                  title: "HDU",
+                  description: a,
+                  url: "http:\\u002F\\u002Facm.hdu.edu.cn\\u002F"
+                },
+                zoj: {
+                  title: "ZOJ",
+                  description: "Only nickname is supported",
+                  url: "https:\\u002F\\u002Fzoj.pintia.cn\\u002F"
+                },
+                dashiye: {
+                  title: "HYSBZ",
+                  description: a,
+                  url: "http:\\u002F\\u002Fwww.lydsy.com\\u002FJudgeOnline\\u002F"
+                },
+                codeforces: {
+                  title: "CodeForces",
+                  description: "Including CodeForces::Gym",
+                  url: "http:\\u002F\\u002Fcodeforces.com\\u002F"
+                },
+                uva: {
+                  title: "UVA",
+                  description: a,
+                  url: "https:\\u002F\\u002Fuva.onlinejudge.org\\u002F"
+                },
+                uvalive: {
+                  title: "ICPC Live Archive",
+                  description: a,
+                  url: "https:\\u002F\\u002Ficpcarchive.ecs.baylor.edu\\u002Findex.php"
+                },
+                fzu: {
+                  title: "FZU",
+                  description: a,
+                  url: "http:\\u002F\\u002Facm.fzu.edu.cn\\u002Findex.php"
+                },
+                spoj: {
+                  title: "SPOJ",
+                  description: a,
+                  url: "http:\\u002F\\u002Fwww.spoj.com\\u002F"
+                },
+                timus: {
+                  title: "Timus (URAL)",
+                  description: a,
+                  url: "http:\\u002F\\u002Facm.timus.ru\\u002F"
+                },
+                leetcode_cn: {
+                  title: "LeetCode_CN",
+                  description: a,
+                  url: "https:\\u002F\\u002Fleetcode-cn.com"
+                },
+                csu: {
+                  title: "CSU",
+                  description: a,
+                  url: "http:\\u002F\\u002Facm.csu.edu.cn\\u002F"
+                },
+                loj: {
+                  title: "LibreOJ",
+                  description: a,
+                  url: "https:\\u002F\\u002Floj.ac\\u002F"
+                },
+                luogu: {
+                  title: "洛谷",
+                  description: a,
+                  url: "https:\\u002F\\u002Fwww.luogu.com.cn"
+                },
+                nowcoder: {
+                  title: "牛客OJ",
+                  description: "目前只支持输入用户ID（在你的AC列表的URL中）",
+                  url: "https:\\u002F\\u002Fac.nowcoder.com\\u002Facm\\u002Fhome"
+                },
+                uestc: {
+                  title: "Lutece (UESTC)",
+                  description: a,
+                  url: "https:\\u002F\\u002Facm.uestc.edu.cn\\u002Fhome"
+                },
+                atcoder: {
+                  title: "AtCoder",
+                  description: "API provided by kenkoooo (https:\\u002F\\u002Fgithub.com\\u002Fkenkoooo\\u002FAtCoderProblems).\\nIt may take a while for the api to update user statistics.\\n",
+                  url: "https:\\u002F\\u002Fatcoder.jp"
+                },
+                aizu: {
+                  title: "AIZU",
+                  description: a,
+                  url: "http:\\u002F\\u002Fjudge.u-aizu.ac.jp\\u002Fonlinejudge\\u002Findex.jsp"
+                },
+                codechef: {
+                  title: "CodeChef",
+                  description: a,
+                  url: "https:\\u002F\\u002Fwww.codechef.com\\u002F"
+                },
+                eljudge: {
+                  title: "El Judge",
+                  description: a,
+                  url: "http:\\u002F\\u002Facm.mipt.ru"
+                },
+                bnu: {
+                  title: "BNUOJ",
+                  description: a,
+                  url: "http:\\u002F\\u002Fwww.bnuoj.com"
+                },
+                codewars: {
+                  title: "Codewars",
+                  description: "Currently it does not have submission number.\\nUsername is case sensitive.\\n",
+                  url: "https:\\u002F\\u002Fwww.codewars.com"
+                },
+                uoj: {
+                  title: "UOJ",
+                  description: a,
+                  url: "http:\\u002F\\u002Fuoj.ac\\u002F"
+                },
+                nbut: {
+                  title: "NBUT",
+                  description: a,
+                  url: "https:\\u002F\\u002Fac.2333.moe\\u002F"
+                },
+                nod: {
+                  title: "51Nod",
+                  description: "Please use your nickname (displayed in your home page)",
+                  url: "https:\\u002F\\u002Fwww.51nod.com"
+                },
+                dmoj: {
+                  title: "DMOJ",
+                  description: a,
+                  url: "https:\\u002F\\u002Fdmoj.ca\\u002F"
+                },
+                vjudge: {
+                  title: "VJudge",
+                  description: "virtual judge，这个OJ的题量是单独计算的",
+                  url: "https:\\u002F\\u002Fvjudge.net\\u002F",
+                  virtual_judge: f
+                }
+              },
+              tableHeaders: [{
+                text: "Crawler",
+                value: "crawler",
+                sortable: f
               }, {
-                crawlerName: "poj",
-                submission: 325,
-                solved: 59,
-                usernames: [{
-                  fromCrawlerName: d,
-                  username: b
-                }],
-                isVirtualJudge: c
-              }],
-              summaryWarnings: [{
-                crawlerName: j,
-                content: "This crawler does not have a solved list and its result will be directly added to summary."
-              }],
-              submission: 785,
-              solved: 193
-            },
-            summaryError: a,
-            crawlers: {
-              poj: {
-                title: "POJ",
-                description: a,
-                url: "http:\\u002F\\u002Fpoj.org\\u002F"
-              },
-              hdu: {
-                title: "HDU",
-                description: a,
-                url: "http:\\u002F\\u002Facm.hdu.edu.cn\\u002F"
-              },
-              zoj: {
-                title: "ZOJ",
-                description: "Only nickname is supported",
-                url: "https:\\u002F\\u002Fzoj.pintia.cn\\u002F"
-              },
-              dashiye: {
-                title: "HYSBZ",
-                description: a,
-                url: "http:\\u002F\\u002Fwww.lydsy.com\\u002FJudgeOnline\\u002F"
-              },
-              codeforces: {
-                title: "CodeForces",
-                description: "Including CodeForces::Gym",
-                url: "http:\\u002F\\u002Fcodeforces.com\\u002F"
-              },
-              uva: {
-                title: "UVA",
-                description: a,
-                url: "https:\\u002F\\u002Fuva.onlinejudge.org\\u002F"
-              },
-              uvalive: {
-                title: "ICPC Live Archive",
-                description: a,
-                url: "https:\\u002F\\u002Ficpcarchive.ecs.baylor.edu\\u002Findex.php"
-              },
-              fzu: {
-                title: "FZU",
-                description: a,
-                url: "http:\\u002F\\u002Facm.fzu.edu.cn\\u002Findex.php"
-              },
-              spoj: {
-                title: "SPOJ",
-                description: a,
-                url: "http:\\u002F\\u002Fwww.spoj.com\\u002F"
-              },
-              timus: {
-                title: "Timus (URAL)",
-                description: a,
-                url: "http:\\u002F\\u002Facm.timus.ru\\u002F"
-              },
-              leetcode_cn: {
-                title: "LeetCode_CN",
-                description: a,
-                url: "https:\\u002F\\u002Fleetcode-cn.com"
-              },
-              csu: {
-                title: "CSU",
-                description: a,
-                url: "http:\\u002F\\u002Facm.csu.edu.cn\\u002F"
-              },
-              loj: {
-                title: "LibreOJ",
-                description: a,
-                url: "https:\\u002F\\u002Floj.ac\\u002F"
-              },
-              luogu: {
-                title: "洛谷",
-                description: a,
-                url: "https:\\u002F\\u002Fwww.luogu.com.cn"
-              },
-              nowcoder: {
-                title: "牛客OJ",
-                description: "目前只支持输入用户ID（在你的AC列表的URL中）",
-                url: "https:\\u002F\\u002Fac.nowcoder.com\\u002Facm\\u002Fhome"
-              },
-              uestc: {
-                title: "Lutece (UESTC)",
-                description: a,
-                url: "https:\\u002F\\u002Facm.uestc.edu.cn\\u002Fhome"
-              },
-              atcoder: {
-                title: "AtCoder",
-                description: "API provided by kenkoooo (https:\\u002F\\u002Fgithub.com\\u002Fkenkoooo\\u002FAtCoderProblems).\\nIt may take a while for the api to update user statistics.\\n",
-                url: "https:\\u002F\\u002Fatcoder.jp"
-              },
-              aizu: {
-                title: "AIZU",
-                description: a,
-                url: "http:\\u002F\\u002Fjudge.u-aizu.ac.jp\\u002Fonlinejudge\\u002Findex.jsp"
-              },
-              codechef: {
-                title: "CodeChef",
-                description: a,
-                url: "https:\\u002F\\u002Fwww.codechef.com\\u002F"
-              },
-              eljudge: {
-                title: "El Judge",
-                description: a,
-                url: "http:\\u002F\\u002Facm.mipt.ru"
-              },
-              bnu: {
-                title: "BNUOJ",
-                description: a,
-                url: "http:\\u002F\\u002Fwww.bnuoj.com"
-              },
-              codewars: {
-                title: "Codewars",
-                description: "Currently it does not have submission number.\\nUsername is case sensitive.\\n",
-                url: "https:\\u002F\\u002Fwww.codewars.com"
-              },
-              uoj: {
-                title: "UOJ",
-                description: a,
-                url: "http:\\u002F\\u002Fuoj.ac\\u002F"
-              },
-              nbut: {
-                title: "NBUT",
-                description: a,
-                url: "https:\\u002F\\u002Fac.2333.moe\\u002F"
-              },
-              nod: {
-                title: "51Nod",
-                description: "Please use your nickname (displayed in your home page)",
-                url: "https:\\u002F\\u002Fwww.51nod.com"
-              },
-              dmoj: {
-                title: "DMOJ",
-                description: a,
-                url: "https:\\u002F\\u002Fdmoj.ca\\u002F"
-              },
-              vjudge: {
-                title: "VJudge",
-                description: "virtual judge，这个OJ的题量是单独计算的",
-                url: "https:\\u002F\\u002Fvjudge.net\\u002F",
-                virtual_judge: f
-              }
-            },
-            tableHeaders: [{
-              text: "Crawler",
-              value: "crawler",
-              sortable: f
-            }, {
-              text: "Username",
-              value: "username",
-              sortable: c
-            }, {
-              text: "Solved",
-              value: "solved",
-              sortable: f
-            }, {
-              text: "Submission",
-              value: "submissions",
-              sortable: f
-            }]
-          }],
+                text: "Username",
+                value: "username",
+                sortable: c
+              }, {
+                text: "Solved",
+                value: "solved",
+                sortable: f
+              }, {
+                text: "Submission",
+                value: "submissions",
+                sortable: f
+              }]
+            }
+          },
           error: a,
           state: {
             sidebar: c,
@@ -4566,7 +4588,13 @@ exports[`/history/{historyId} 1`] = `
           },
           serverRendered: f,
           routePath: "\\u002Fhistory\\u002F1",
-          config: {},
+          config: {
+            _app: {
+              basePath: "\\u002F",
+              assetsPath: "\\u002F_nuxt\\u002F",
+              cdnURL: a
+            }
+          },
           env: {
             VERSION_NUM: l,
             BUILD_TIME: l
@@ -5404,32 +5432,38 @@ exports[`/login 1`] = `
       </div>
     </div>
     <script>
-      window.__NUXT__ = (function(a, b) {
+      window.__NUXT__ = (function(a, b, c) {
         return {
           layout: "login",
           data: [{}],
-          fetch: [],
-          error: null,
+          fetch: {},
+          error: a,
           state: {
-            sidebar: a,
+            sidebar: b,
             message: {
               list: []
             },
             session: {
-              login: a,
+              login: b,
               username: "",
               settings: {}
             }
           },
           serverRendered: true,
           routePath: "\\u002Flogin",
-          config: {},
+          config: {
+            _app: {
+              basePath: "\\u002F",
+              assetsPath: "\\u002F_nuxt\\u002F",
+              cdnURL: a
+            }
+          },
           env: {
-            VERSION_NUM: b,
-            BUILD_TIME: b
+            VERSION_NUM: c,
+            BUILD_TIME: c
           }
         }
-      }(false, "0"));
+      }(null, false, "0"));
     </script>
 
 
@@ -6285,32 +6319,38 @@ exports[`/register 1`] = `
       </div>
     </div>
     <script>
-      window.__NUXT__ = (function(a, b) {
+      window.__NUXT__ = (function(a, b, c) {
         return {
           layout: "login",
           data: [{}],
-          fetch: [],
-          error: null,
+          fetch: {},
+          error: a,
           state: {
-            sidebar: a,
+            sidebar: b,
             message: {
               list: []
             },
             session: {
-              login: a,
+              login: b,
               username: "",
               settings: {}
             }
           },
           serverRendered: true,
           routePath: "\\u002Fregister",
-          config: {},
+          config: {
+            _app: {
+              basePath: "\\u002F",
+              assetsPath: "\\u002F_nuxt\\u002F",
+              cdnURL: a
+            }
+          },
           env: {
-            VERSION_NUM: b,
-            BUILD_TIME: b
+            VERSION_NUM: c,
+            BUILD_TIME: c
           }
         }
-      }(false, "0"));
+      }(null, false, "0"));
     </script>
 
 
@@ -7271,19 +7311,19 @@ exports[`/settings 1`] = `
       </div>
     </div>
     <script>
-      window.__NUXT__ = (function(a, b, c, d) {
+      window.__NUXT__ = (function(a, b, c, d, e) {
         return {
           layout: "default",
           data: [{}],
-          fetch: [],
-          error: null,
+          fetch: {},
+          error: c,
           state: {
             sidebar: false,
             message: {
               list: []
             },
             session: {
-              login: c,
+              login: d,
               username: "admin",
               settings: {
                 "Abp.Localization.DefaultLanguageName": "en",
@@ -7308,15 +7348,21 @@ exports[`/settings 1`] = `
               }
             }
           },
-          serverRendered: c,
+          serverRendered: d,
           routePath: "\\u002Fsettings",
-          config: {},
+          config: {
+            _app: {
+              basePath: "\\u002F",
+              assetsPath: "\\u002F_nuxt\\u002F",
+              cdnURL: c
+            }
+          },
           env: {
-            VERSION_NUM: d,
-            BUILD_TIME: d
+            VERSION_NUM: e,
+            BUILD_TIME: e
           }
         }
-      }("true", "false", true, "0"));
+      }("true", "false", null, true, "0"));
     </script>
 
 
@@ -8089,7 +8135,7 @@ exports[`/statistics 1`] = `
             </header>
             <main class="v-main v-content" style="padding-top:56px;padding-right:0px;padding-bottom:0px;padding-left:0px;">
               <div class="v-main__wrap v-content__wrap">
-                <div data-fetch-key="0" class="container grid-list-md">
+                <div data-fetch-key="data-v-71ab44a4:0" class="container grid-list-md">
                   <div wrap="" class="row no-gutters">
                     <div class="pt-0 pb-0 col-md-3 col">
                       <div class="v-input theme--light v-text-field" style="min-width:240px;">
@@ -8145,17 +8191,19 @@ exports[`/statistics 1`] = `
         return {
           layout: "default",
           data: [{}],
-          fetch: [{
-            columnCount: 3,
-            columnWidth: a,
-            savingUsername: f,
-            loading: g,
-            layoutHeight: a,
-            workerTransform: {},
-            workerHeight: {},
-            lastSavedQueryId: c,
-            watchFunc: c
-          }],
+          fetch: {
+            "data-v-71ab44a4:0": {
+              columnCount: 3,
+              columnWidth: a,
+              savingUsername: f,
+              loading: g,
+              layoutHeight: a,
+              workerTransform: {},
+              workerHeight: {},
+              lastSavedQueryId: c,
+              watchFunc: c
+            }
+          },
           error: c,
           state: {
             sidebar: f,
@@ -8609,7 +8657,13 @@ exports[`/statistics 1`] = `
           },
           serverRendered: g,
           routePath: "\\u002Fstatistics",
-          config: {},
+          config: {
+            _app: {
+              basePath: "\\u002F",
+              assetsPath: "\\u002F_nuxt\\u002F",
+              cdnURL: c
+            }
+          },
           env: {
             VERSION_NUM: I,
             BUILD_TIME: I
