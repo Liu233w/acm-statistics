@@ -1,3 +1,11 @@
+// eslint-disable-next-line
+Cypress.on('uncaught:exception', (err, runnable) => {
+  // returning false here prevents Cypress from
+  // failing the test
+  // Stop the uncaught network error
+  return false
+})
+
 beforeEach(() => {
   cy.intercept(
     'https://acm-statistics-cors.herokuapp.com/http://acm.hdu.edu.cn/userstatus.php?user=wwwlsmcom',
