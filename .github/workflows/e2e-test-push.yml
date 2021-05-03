@@ -1,0 +1,20 @@
+name: Test E2E on push
+
+on: push
+
+jobs:
+  e2e-push:
+    name: E2E on push
+    runs-on: ubuntu-latest
+    env:
+      CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+    steps:
+    - uses: actions/checkout@master
+    - run: |
+        cd e2e
+        echo ::group::build
+        make server compose-args="--detach"
+        make wait-server
+        echo ::endgroup::build
+        make ci
+        make run run-cmd="npm run lint" make-args="no-interactive no-tty"
