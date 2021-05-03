@@ -5,17 +5,20 @@ using AcmStatisticsBackend.Crawlers.Dto;
 namespace AcmStatisticsBackend.Crawlers
 {
     /// <summary>
-    /// 用来管理默认用户名（自动在查询页面填写的用户名）
+    /// Manage user's default usernames which will be automatically entered in
+    /// statistics page.
     /// </summary>
     public interface IDefaultQueryAppService : IApplicationService
     {
         /// <summary>
-        /// 获取默认用户名
+        /// Get user's default usernames which will be automatically entered in
+        /// statistics page.
         /// </summary>
         Task<DefaultQueryDto> GetDefaultQueries();
 
         /// <summary>
-        /// 保存默认用户名
+        /// Set user's default usernames which will be automatically entered in
+        /// statistics page.
         /// </summary>
         Task SetDefaultQueries(DefaultQueryDto dto);
     }
