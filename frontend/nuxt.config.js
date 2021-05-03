@@ -11,7 +11,7 @@ module.exports = async () => ({
   ** Headers of the page
   */
   head: {
-    title: 'OJ Hunt',
+    title: 'OJ Tracker',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
