@@ -1,4 +1,4 @@
-# This repo contains the source code of OJ Hunt
+# This repo contains the source code of OJ Tracker
 
 简体中文版：[README_zh-hans.md](./README_zh-hans.md)
 

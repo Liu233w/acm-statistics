@@ -4,7 +4,7 @@ export const WORKER_STATUS = {
   DONE: 'DONE',
 }
 
-export const PROJECT_TITLE = 'OJ Hunt'
+export const PROJECT_TITLE = 'OJ Tracker'
 
 export const TIMEZONE_LIST = [
   { value: 'UTC', text: '(GMT) UTC' },
