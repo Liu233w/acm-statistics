@@ -115,37 +115,45 @@ run
 Run shell command in modules.
 E.g. `make run run-cmd="npm run lint"` runs `npm run lint` in all modules.
 Available parameters:
+
   run-cmd: The command to be run.
-  run-args: 给 docker 传递的额外指令。比如在 fontend 目录运行 make run run-cmd="npm test -- --update-snapshot" run-args="-v './__test__:/var/project/__test__'" 可以将开关 -v '...' 传递给 docker
-  make-args: run-args 会自动加入 --rm, --interactive, --tty 这三个开关，可以通过分别传入 r/no-rm, i/no-interactive, t/no-tty 来禁用。比如 make run make-args="r i" 会把 run-args 变成 "--tty" （禁用了 --rm 和 --interactive）。注意即使是单个字符，也必须用空格隔开。
+
+  run-args: The extra arguments sent to docker. E.g. run following commands in fontend directory to send argument -v '...' to docker: 
+    >> make run run-cmd="npm test -- --update-snapshot" run-args="-v './__test__:/var/project/__test__'"
+
+	make-args: run-args will automatically send following switches to docker: --rm, --interactive, --tty, which can be turned off by following switches: `r`/`no-rm`, `i`/`no-interactive`, `t`/`no-tty`. 
+    E.g. the following command turns `run-args` into `--tty` (`--rm` and `--interactive` are disabled):
+		>> make run make-args="r i"
+		Noticed that commands should be separated even they are single letters.
 
 clean
-清除构建好的 image
+Clean images that are built
 
 test-ci
-运行 ci 中的测试。行为稍有不同，比如给jest指定了 --ci 开关，禁用了部分测试等等
+Run tests in CI environment. It behaves differently than normal tests. E.g. Specifying `--ci` to jest and disabling tests that require network.
 
 test-commit
-使用 commitlint 检查当前分支到 master 分支的 HEAD 为止的所有提交
+Lint commits from master branch to HEAD by commitlint.
 
 tag-and-push
-给构建出的镜像打上标签并发布，默认使用的 namespace 为 'liu233w'。
-请参考 ./build/docker-compose.mk 来修改设置
+Tag the built images and publish. By default, it uses `liu233w` as namespace.
+You may refer to `./build/docker-compose.mk` to change this behaviour.
 
 up
-使用 docker-compose 启动项目，会自动创建 ./build/.env 配置文件，建议根据上面的说明修改一下配置文件内容，以使用项目的全部功能。
-如果在windows上运行，本机需要安装msys2，并使用其shell来运行此命令。（需要配置其接受windows的path）
+Run the project using docker-compose. It automatically creates config file `./build/.env`.
+It is recommended to modify the file based on the comments inside.
+If you run it on windows, it is recommended to use msys2 shell after configure it to accept the path of windows
 
 show-image-size
-查看本项目生成的所有镜像的体积。此命令不会生成镜像，而是查看以前生成的镜像。
+Show the size of all images built by the project. It does not create new images.
 
 shell
-启动一个docker容器并开启一个 shell。镜像将把整个项目 mount 进容器中，便于在 linux 环境下执行命令和更改项目。
+Spawn a shell inside docker container and mount the whole project into it. So you can run commands and modify the project in Linux environment.
 
 help
-展示此帮助文档
+Show this doc.
 
-各个子项目中也可以执行 make 操作。其中同名的命令和本 makefile 中的功能相同，直接查看文件即可获得说明。
+Most of the sub-directory supports make commands like the root directory. View the `Makefile` for more information.
 
 endef
 

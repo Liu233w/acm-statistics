@@ -36,13 +36,13 @@ build: .base
 test: .base
 	docker run --rm -t $(FrontendBaseTag) npm test
 
-# 更新快照
+# Update snapshot
 update-snapshot: .base
 	docker run --rm -t \
 		-v "$(CURDIR)/__test__:/var/project/__test__" \
 		$(FrontendBaseTag) npm test -- -u
 
-# 指定 BUILD_FRONTEND 之后将会在 run 之前先编译好前端
+# if BUILD_FRONTEND is specified, it will compile the frontend before `run` command
 ifdef BUILD_FRONTEND
 run: build
 	docker run $(run-args) $(FrontendTag) $(run-cmd)
@@ -60,6 +60,6 @@ test-ci: .base
 		$(FrontendBaseTag) \
 		npm test -- --colors --ci
 
-# 使用 docker 来进行开发，将运行 npm run dev
+# Use docker to develop. It runs `npm run dev`
 dev:
 	cd ../build && $(MAKE) -f docker-compose.mk dev-frontend
