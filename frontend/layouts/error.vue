@@ -28,7 +28,7 @@
             x-large
             to="/"
           >
-            返回主页
+            Go to home page
 
             <v-icon right>
               mdi-open-in-new
