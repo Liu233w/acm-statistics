@@ -4,7 +4,7 @@ FROM mcr.microsoft.com/dotnet/aspnet:5.0@sha256:12166152c958cd8eeb32c8b3efa1ee50
 WORKDIR /app
 EXPOSE 80
 
-FROM mcr.microsoft.com/dotnet/sdk:5.0@sha256:85ea9832ae26c70618418cf7c699186776ad066d88770fd6fd1edea9b260379a AS build
+FROM mcr.microsoft.com/dotnet/sdk:5.0@sha256:6c6bc8188aa055f97f8ab701adb6ecca46cffca4ccefe50fb531757cd6249738 AS build
 WORKDIR /src
 COPY ["src/AcmStatisticsBackend.Web.Host/AcmStatisticsBackend.Web.Host.csproj", "src/AcmStatisticsBackend.Web.Host/"]
 COPY ["src/AcmStatisticsBackend.Web.Core/AcmStatisticsBackend.Web.Core.csproj", "src/AcmStatisticsBackend.Web.Core/"]
