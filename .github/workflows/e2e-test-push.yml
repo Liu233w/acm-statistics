@@ -18,3 +18,11 @@ jobs:
         echo ::endgroup::build
         make ci
         make run run-cmd="npm run lint" make-args="no-interactive no-tty"
+    - run: |
+        mkdir logs
+        cp /var/lib/docker/containers/*/*.log logs/
+    - uses: actions/upload-artifact@v2
+      # if: failure()
+      with:
+        name: server-logs
+        path: logs
