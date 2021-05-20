@@ -19,10 +19,10 @@ jobs:
         make ci
         make run run-cmd="npm run lint" make-args="no-interactive no-tty"
     - run: |
-        mkdir logs
-        cp /var/lib/docker/containers/*/*.log logs/
+        cd build
+        docker-compose -f docker-compose.yml -f docker-compose.e2e.yml logs > e2e.log
     - uses: actions/upload-artifact@v2
       # if: failure()
       with:
         name: server-logs
-        path: logs
+        path: build/e2e.log
