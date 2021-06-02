@@ -87,7 +87,7 @@ services:
       - traefik.http.services.captcha-service.loadbalancer.server.port=80
 
   adminer:
-    image: adminer:4.8.0-standalone@sha256:ace4f8160eaee416242599f63a740317a99936a417fe99e0780aa09f8ea717ff
+    image: adminer:4.8.1-standalone@sha256:8c43c68a9971006566cac338562e45c97445557b4b8fcbf77a886233c9806ee2
     restart: always
     labels:
       # 需要更改路径，防止其他用户轻易找到adminer入口
