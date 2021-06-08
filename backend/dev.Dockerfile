@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/dotnet/sdk:5.0@sha256:e6b7bbd8daa77b072c6f1e0c18f531e63381cc6c8d75ee922fa9fd504749966e AS build
+FROM mcr.microsoft.com/dotnet/sdk:5.0@sha256:4b582323b6ccf5197aef80d787c825be7831c9b7641ee43fe82bbb56140260c6 AS build
 
 # needed in sln file
 RUN mkdir /build && echo '<?xml version="1.0" encoding="utf-8"?><Project ToolsVersion="15.0" Sdk="Microsoft.Docker.Sdk"></Project>' > /build/docker-compose.dcproj
