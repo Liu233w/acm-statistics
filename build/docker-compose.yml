@@ -40,7 +40,7 @@ services:
       - traefik.http.services.crawler-api-backend.loadbalancer.server.port=80
 
   watchtower:
-    image: v2tec/watchtower@sha256:4cb6299fe87dcbfe0f13dcc5a11bf44bd9628a4dae0035fecb8cc2b88ff0fc79
+    image: containrrr/watchtower
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     command: -s "0 */30 * * * *" --cleanup
