@@ -25,5 +25,8 @@
     "snapshotSerializers": [
       "jest-serializer-vue"
     ]
+  },
+  "devDependencies": {
+    "cypress-terminal-report": "^3.2.2"
   }
 }
