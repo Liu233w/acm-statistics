@@ -214,7 +214,6 @@
         <v-card-text v-else-if="solvedListStatus === 'none'">
           AC problem list is not supported by the crawler.
         </v-card-text>
-        <!--在不打开对话框的时候就不渲染题目列表，防止额外的dom更新，以提升性能-->
         <v-card-text v-else-if="solvedListDialog">
           <v-chip
             v-for="item in prettifiedSolvedList"
@@ -338,12 +337,12 @@ export default {
       get() {
         return this.worker.username
       },
-      set(username) {
+      set: _.debounce(function(username) {
         this.$store.dispatch('statistics/updateUsername', {
           index: this.index,
           username,
         })
-      },
+      }, 300),
     },
     workerNum() {
       return this.workerNumberOfCrawler[this.crawlerName]
@@ -383,9 +382,10 @@ export default {
         res = _.map(this.worker.solvedList, item => `${this.crawler.title}-${item}`)
       }
 
-      // 冻结列表，这样 vue 就不会给列表中的每个元素创建proxy了，可以显著提升性能
-      // 来自 https://vuejs.org/v2/guide/instance.html#Data-and-Methods
-      // 和 https://vuedose.tips/tips/improve-performance-on-large-lists-in-vue-js/
+      // Freeze the list to improve performance, because vue will not create proxy
+      // for each element
+      // see https://vuejs.org/v2/guide/instance.html#Data-and-Methods
+      // and https://vuedose.tips/tips/improve-performance-on-large-lists-in-vue-js/
       return Object.freeze(res)
     },
     // only used in watch
