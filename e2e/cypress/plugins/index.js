@@ -19,4 +19,5 @@ module.exports = (on, config) => {
   // `config` is the resolved Cypress config
   addMatchImageSnapshotPlugin(on, config)
   fixBrowserWindowSize(on)
+  require('cypress-terminal-report/src/installLogsPrinter')(on)
 }

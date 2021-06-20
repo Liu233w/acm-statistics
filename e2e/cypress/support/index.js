@@ -16,5 +16,6 @@
 import {addMatchImageSnapshotCommand} from 'cypress-image-snapshot/command'
 
 addMatchImageSnapshotCommand()
+require('cypress-terminal-report/src/installLogsCollector')()
 
 require('./commands')
