@@ -25,34 +25,19 @@ before(() => {
   cy.visit('/statistics')
 
   cy.get('div[title="HDU"]').parents('.worker').within(() => {
-
-    cy.get('div:contains("Username") input').type('wwwlsmcom')
-
-    cy.get('button:contains("refresh")').click()
-    cy.wait('@summary_hdu')
-
+    queryAndWait('@summary_hdu')
     cy.contains('34')
     cy.contains('72')
   })
 
   cy.get('div[title="LeetCode_CN"]').parents('.worker').within(() => {
-
-    cy.get('div:contains("Username") input').type('wwwlsmcom')
-
-    cy.get('button:contains("refresh")').click()
-    cy.wait('@summary_leetcode')
-
+    queryAndWait('@summary_leetcode')
     cy.contains('2')
     cy.contains('4')
   })
 
   cy.get('div[title="VJudge"]').parents('.worker').within(() => {
-
-    cy.get('div:contains("Username") input').type('wwwlsmcom')
-
-    cy.get('button:contains("refresh")').click()
-    cy.wait('@summary_vjudge')
-
+    queryAndWait('@summary_vjudge')
     cy.contains('161')
     cy.contains('704')
   })
@@ -224,3 +209,13 @@ describe('history page', () => {
   })
 
 })
+
+function queryAndWait(waitFor) {
+  cy.get('div:contains("Username") input').type('wwwlsmcom')
+
+  // wait for debounce to be executed
+  // eslint-disable-next-line cypress/no-unnecessary-waiting
+  cy.wait(500)
+  cy.get('button:contains("refresh")').click()
+  cy.wait(waitFor)
+}

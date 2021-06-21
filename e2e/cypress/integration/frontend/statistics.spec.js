@@ -32,7 +32,7 @@ describe('crawler test', () => {
       cy.get('div:contains("Username") input').type('vjudge5').blur()
       snapshot('worker-typed')
 
-      cy.get('button:contains("refresh")').click()
+      waitAndRefresh()
       cy.wait('@poj_frontend')
 
       cy.contains('1968')
@@ -52,7 +52,7 @@ describe('crawler test', () => {
 
     cy.get('div[title="POJ"]').parents('.worker').within(() => {
       cy.get('div:contains("Username") input').type('vjudge5')
-      cy.get('button:contains("refresh")').click()
+      waitAndRefresh()
 
       cy.wait('@poj_frontend')
       cy.wait('@poj_backend')
@@ -73,8 +73,7 @@ describe('crawler test', () => {
     cy.get('div[title="POJ"]').parents('.worker').within(() => {
 
       cy.get('div:contains("Username") input').type('vjudge5')
-
-      cy.get('button:contains("refresh")').click()
+      waitAndRefresh()
 
       cy.get('.v-progress-linear')
       snapshot('worker-working')
@@ -94,7 +93,7 @@ describe('crawler test', () => {
     cy.get('div[title="POJ"]').parents('.worker').within(() => {
 
       cy.get('div:contains("Username") input').type('Frkfe932fbcv09b')
-      cy.get('button:contains("refresh")').click()
+      waitAndRefresh()
       cy.wait('@poj_frontend')
 
       cy.contains('The user does not exist')
@@ -113,4 +112,11 @@ function snapshot(name) {
       capture: 'viewport',
     })
   }
+}
+
+function waitAndRefresh() {
+  // wait for debounce to be executed
+  // eslint-disable-next-line cypress/no-unnecessary-waiting
+  cy.wait(500)
+  cy.get('button:contains("refresh")').click()
 }

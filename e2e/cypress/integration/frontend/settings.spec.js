@@ -78,7 +78,7 @@ describe('change time zone', () => {
 })
 
 describe('delete account', () => {
-  it('shoule work correctly', () => {
+  it('should work correctly', () => {
     cy.visit('/settings')
     cy.get('button:contains("delete")').click()
     cy.get('.v-dialog').within(() => {
