@@ -1,6 +1,13 @@
+/**
+ * @jest-environment jsdom
+ */
+
 import { shallowMount, createLocalVue, mount } from '@vue/test-utils'
 import Vuex from 'vuex'
 import Vuetify from 'vuetify'
+import Vue from 'vue'
+
+Vue.use(Vuetify)
 
 const localVue = createLocalVue()
 localVue.use(Vuex)
