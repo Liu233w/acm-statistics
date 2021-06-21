@@ -4,7 +4,7 @@
 
 const configReader = require('./configReader')
 
-const fs = require('fs-extra')
+const fs = require('fs').promises
 const _ = require('lodash')
 const join = require('path').join
 
