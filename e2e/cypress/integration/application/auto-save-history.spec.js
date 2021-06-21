@@ -90,6 +90,9 @@ function enterStatisticsAndQuery(enterFunc) {
 
     cy.get('div:contains("Username") input').type('wwwlsmcom')
 
+    // wait for debounce to be executed
+    // eslint-disable-next-line cypress/no-unnecessary-waiting
+    cy.wait(500)
     cy.get('button:contains("refresh")').click()
     cy.wait('@summary_hdu')
 
