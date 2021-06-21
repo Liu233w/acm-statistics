@@ -2,7 +2,7 @@
 用于读取用户的爬虫设置，用在前端时，本模块只在编译期间运行，将会返回给用户设置信息
  */
 
-const fs = require('fs-extra')
+const fs = require('fs').promises
 const yml = require('js-yaml')
 const join = require('path').join
 const _ = require('lodash')

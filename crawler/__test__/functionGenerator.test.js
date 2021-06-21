@@ -8,10 +8,9 @@ const superagent = require('superagent')
 const nock = require('nock')
 
 jest.mock('../lib/configReader')
-// fs-extra 引用了 fs，只要 mock fs 模块，fs-extra就不会使用fs对文件系统进行io了
 jest.mock('fs')
 
-const fs = require('fs-extra')
+const fs = require('fs')
 
 describe('generateServerCrawlerFunctions', () => {
 
