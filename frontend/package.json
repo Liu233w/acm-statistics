@@ -19,7 +19,7 @@
   "dependencies": {
     "@nuxtjs/axios": "5.13.6",
     "@nuxtjs/component-cache": "1.1.6",
-    "@nuxtjs/vuetify": "1.12.1",
+    "@nuxtjs/vuetify": "1.11.3",
     "chart.js": "2.9.4",
     "cheerio": "1.0.0-rc.10",
     "html2canvas": "1.0.0-rc.7",
