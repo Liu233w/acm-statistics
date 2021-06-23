@@ -5,7 +5,7 @@ WORKDIR /app
 EXPOSE 80
 EXPOSE 443
 
-FROM mcr.microsoft.com/dotnet/sdk:5.0@sha256:b9a35bf953e470d58bc28fb689020033bc0bf60c93fe4d45a1664096f2c6fbdc AS build
+FROM mcr.microsoft.com/dotnet/sdk:5.0@sha256:ba0ee9dd1222981c5e01e616667a852aac85119631d3dcccb6d4ccd71a9a1163 AS build
 WORKDIR /src
 COPY ["OHunt.Web/OHunt.Web.csproj", "OHunt.Web/"]
 RUN dotnet restore "OHunt.Web/OHunt.Web.csproj"
