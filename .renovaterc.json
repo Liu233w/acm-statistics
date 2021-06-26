@@ -26,8 +26,8 @@
     ":ignoreModulesAndTests"
   ],
   "commitMessagePrefix": "chore(*):",
-  "labels": ["dependencies"],
-  "automerge": true,
+  "labels": ["dependencies", "ready-to-be-merged"],
+  "automerge": false,
   "dockerfile": {
     "fileMatch": ["(^|/|\\.)Dockerfile$"]
   }
