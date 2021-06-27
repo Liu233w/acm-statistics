@@ -1,4 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations;
 using Abp.Authorization.Roles;
 using AcmStatisticsBackend.Authorization.Users;
 
@@ -6,8 +6,6 @@ namespace AcmStatisticsBackend.Authorization.Roles
 {
     public class Role : AbpRole<User>
     {
-        public const int MaxDescriptionLength = 5000;
-
         public Role()
         {
         }
@@ -21,8 +19,5 @@ namespace AcmStatisticsBackend.Authorization.Roles
             : base(tenantId, name, displayName)
         {
         }
-
-        [StringLength(MaxDescriptionLength)]
-        public string Description { get; set; }
     }
 }
