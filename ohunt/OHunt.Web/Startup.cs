@@ -11,9 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNet.OData.Extensions;
-using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.AspNetCore.Mvc.Formatters;
-using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Net.Http.Headers;
 using Microsoft.OData.Edm;
 using Microsoft.OpenApi.Models;
@@ -42,7 +40,7 @@ namespace OHunt.Web
             var conn = Configuration.GetConnectionString("Default");
             services.AddDbContextPool<OHuntDbContext>(options =>
                 options.UseMySql(conn,
-                ServerVersion.AutoDetect(conn)));
+                new MySqlServerVersion(new Version(8, 0))));
 
             services.AddOData();
 
