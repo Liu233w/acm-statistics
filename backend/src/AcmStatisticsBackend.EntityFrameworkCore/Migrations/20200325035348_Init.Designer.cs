@@ -1208,7 +1208,7 @@ namespace AcmStatisticsBackend.Migrations
                         .HasColumnType("datetime(6)");
 
                     b.Property<string>("Description")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4")
+                        .HasColumnType("longtext")
                         .HasMaxLength(5000);
 
                     b.Property<string>("DisplayName")
