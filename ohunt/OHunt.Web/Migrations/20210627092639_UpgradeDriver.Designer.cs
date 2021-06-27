@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using OHunt.Web.Database;
 
 namespace OHunt.Web.Migrations
 {
     [DbContext(typeof(OHuntDbContext))]
-    partial class OHuntWebContextModelSnapshot : ModelSnapshot
+    [Migration("20210627092639_UpgradeDriver")]
+    partial class UpgradeDriver
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
