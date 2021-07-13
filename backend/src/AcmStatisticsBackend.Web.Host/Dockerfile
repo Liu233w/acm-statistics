@@ -1,10 +1,10 @@
 #See https://aka.ms/containerfastmode to understand how Visual Studio uses this Dockerfile to build your images for faster debugging.
 
-FROM mcr.microsoft.com/dotnet/aspnet:5.0@sha256:102832cf86b62cdb248c680f434488201b069368cf89283cfd31a39c9efbd356 AS base
+FROM mcr.microsoft.com/dotnet/aspnet:5.0@sha256:fef256e9a022b22836ed0e52e31191ea3e5d8d9f88a0d35d71499ae28663f00b AS base
 WORKDIR /app
 EXPOSE 80
 
-FROM mcr.microsoft.com/dotnet/sdk:5.0@sha256:e8dce81012457ec0d87929aff8d60277c01b88fdd80bd128f1d4fc1c1bbdeb74 AS build
+FROM mcr.microsoft.com/dotnet/sdk:5.0@sha256:970a387bcf836c492ed631b3d9c9dbe484f9f32e7a2f9e9428dc357b0826da47 AS build
 WORKDIR /src
 COPY ["src/AcmStatisticsBackend.Web.Host/AcmStatisticsBackend.Web.Host.csproj", "src/AcmStatisticsBackend.Web.Host/"]
 COPY ["src/AcmStatisticsBackend.Web.Core/AcmStatisticsBackend.Web.Core.csproj", "src/AcmStatisticsBackend.Web.Core/"]
