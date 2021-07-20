@@ -3,7 +3,7 @@ version: '3.4'
 services:
 
   reverse-proxy:
-    image: traefik:v2.4.9@sha256:be23e1f6e64abd4adf70a61b8b9fa0844e4795a4a7b3055174106a957eddbf32
+    image: traefik:v2.4.11@sha256:dd3d9457080192b5947b5d65e226dd4d70c80b6e3d8d3d8f5275cb43eaa7733a
     command:
       - "--api.insecure=true"
       - "--providers.docker=true"
@@ -64,7 +64,7 @@ services:
       - captcha-service
 
   db:
-    image: mysql:8.0@sha256:52b8406e4c32b8cf0557f1b74517e14c5393aff5cf0384eff62d9e81f4985d4b
+    image: mysql:8.0@sha256:18d8d109aa64673c78aebfb845b929cfdac97a553332f4310f4de8d67ceb03d2
     restart: always
     environment:
       MYSQL_DATABASE: acm_statistics
