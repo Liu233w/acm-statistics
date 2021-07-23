@@ -1,4 +1,5 @@
-﻿using Abp.Authorization;
+using Abp.Authorization;
+using Abp.Domain.Uow;
 using AcmStatisticsBackend.Authorization.Roles;
 using AcmStatisticsBackend.Authorization.Users;
 using AcmStatisticsBackend.MultiTenancy;
@@ -15,8 +16,9 @@ namespace AcmStatisticsBackend.Identity
             IOptions<SecurityStampValidatorOptions> options,
             SignInManager signInManager,
             ISystemClock systemClock,
-            ILoggerFactory loggerFactory)
-            : base(options, signInManager, systemClock, loggerFactory)
+            ILoggerFactory loggerFactory,
+            IUnitOfWorkManager unitOfWorkManager)
+            : base(options, signInManager, systemClock, loggerFactory, unitOfWorkManager)
         {
         }
     }
