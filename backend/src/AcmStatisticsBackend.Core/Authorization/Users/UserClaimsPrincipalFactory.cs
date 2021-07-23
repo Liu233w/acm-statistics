@@ -1,4 +1,5 @@
-﻿using Abp.Authorization;
+using Abp.Authorization;
+using Abp.Domain.Uow;
 using AcmStatisticsBackend.Authorization.Roles;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Options;
@@ -10,11 +11,13 @@ namespace AcmStatisticsBackend.Authorization.Users
         public UserClaimsPrincipalFactory(
             UserManager userManager,
             RoleManager roleManager,
-            IOptions<IdentityOptions> optionsAccessor)
+            IOptions<IdentityOptions> optionsAccessor,
+            IUnitOfWorkManager unitOfWorkManager)
             : base(
                   userManager,
                   roleManager,
-                  optionsAccessor)
+                  optionsAccessor,
+                  unitOfWorkManager)
         {
         }
     }
