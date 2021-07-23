@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/dotnet/sdk:5.0@sha256:970a387bcf836c492ed631b3d9c9dbe484f9f32e7a2f9e9428dc357b0826da47 AS build
+FROM mcr.microsoft.com/dotnet/sdk:5.0@sha256:d6946625eabb39346c063156113ffd9c7c23aaebe01534d4c7b1185436886a54 AS build
 
 WORKDIR /src
 

@@ -12,12 +12,10 @@
 // the project's config changing)
 
 const {addMatchImageSnapshotPlugin} = require('cypress-image-snapshot/plugin')
-const fixBrowserWindowSize = require('./fixBrowserWindowSize')
 
 module.exports = (on, config) => {
   // `on` is used to hook into various events Cypress emits
   // `config` is the resolved Cypress config
   addMatchImageSnapshotPlugin(on, config)
-  fixBrowserWindowSize(on)
   require('cypress-terminal-report/src/installLogsPrinter')(on)
 }
