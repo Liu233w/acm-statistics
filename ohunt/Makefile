@@ -31,3 +31,6 @@ test-ci: .base
 		-v "$(CURDIR)/OHunt.Tests/TestResults:/src/OHunt.Tests/TestResults" \
 		$(OHuntBaseTag) \
 		dotnet test --collect:"XPlat Code Coverage" --filter "Category!=WithNetwork"
+
+dev-db: # start a new database to develop the project
+	docker run -it --rm -e MYSQL_DATABASE=ohunt -e MYSQL_ROOT_PASSWORD=123qwe -p 3306:3306 mysql:8.0
