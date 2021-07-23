@@ -14,7 +14,7 @@ jobs:
         # smoke test and lint
         make run run-cmd="dotnet build" make-args="no-interactive no-tty"
         make test-ci
-    - uses: codecov/codecov-action@c585afe366f940d214dc09df2664c06d7fe07052 # renovate: tag=v2
+    - uses: codecov/codecov-action@51d810878be5422784e86451c0e7c14e5860ec47 # renovate: tag=v2
 
   crawler:
     name: Test Crawler
@@ -25,7 +25,7 @@ jobs:
         cd crawler
         make run run-cmd="npm run lint" make-args="no-interactive no-tty"
         make test-ci
-    - uses: codecov/codecov-action@c585afe366f940d214dc09df2664c06d7fe07052 # renovate: tag=v2
+    - uses: codecov/codecov-action@51d810878be5422784e86451c0e7c14e5860ec47 # renovate: tag=v2
 
   crawler-api-backend:
     name: Test Crawler Api Backend
@@ -36,7 +36,7 @@ jobs:
         cd crawler-api-backend
         make run run-cmd="npm run lint" make-args="no-interactive no-tty"
         make test-ci
-    - uses: codecov/codecov-action@c585afe366f940d214dc09df2664c06d7fe07052 # renovate: tag=v2
+    - uses: codecov/codecov-action@51d810878be5422784e86451c0e7c14e5860ec47 # renovate: tag=v2
 
   frontend:
     name: Test Frontend
@@ -47,7 +47,7 @@ jobs:
         cd frontend
         make run run-cmd="npm run lint" make-args="no-interactive no-tty"
         make test-ci
-    - uses: codecov/codecov-action@c585afe366f940d214dc09df2664c06d7fe07052 # renovate: tag=v2
+    - uses: codecov/codecov-action@51d810878be5422784e86451c0e7c14e5860ec47 # renovate: tag=v2
         
   captcha-service:
     name: Test Captcha Service
@@ -58,7 +58,7 @@ jobs:
         cd captcha-service
         make run run-cmd="npm run lint" make-args="no-interactive no-tty"
         make test-ci
-    - uses: codecov/codecov-action@c585afe366f940d214dc09df2664c06d7fe07052 # renovate: tag=v2
+    - uses: codecov/codecov-action@51d810878be5422784e86451c0e7c14e5860ec47 # renovate: tag=v2
 
   ohunt:
     name: Test OHunt
@@ -70,7 +70,7 @@ jobs:
         # smoke test and lint
         make run run-cmd="dotnet build" make-args="no-interactive no-tty"
         make test-ci
-    - uses: codecov/codecov-action@c585afe366f940d214dc09df2664c06d7fe07052 # renovate: tag=v2
+    - uses: codecov/codecov-action@51d810878be5422784e86451c0e7c14e5860ec47 # renovate: tag=v2
 
   commitlint:
     name: Commitlint
