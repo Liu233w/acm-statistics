@@ -22,7 +22,7 @@
     "@nuxtjs/vuetify": "1.11.3",
     "chart.js": "2.9.4",
     "cheerio": "1.0.0-rc.10",
-    "html2canvas": "1.1.4",
+    "html2canvas": "1.1.5",
     "js-cookie": "3.0.0",
     "lodash": "4.17.21",
     "nuxt": "2.15.7",
