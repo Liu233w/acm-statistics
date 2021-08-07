@@ -42,7 +42,7 @@ crawlers:
   zoj:
     meta:
       title: ZOJ
-      description: Only nickname is supported
+      description: Only nickname is supported (Only historical data are available since crawlers are prohibited by Pintia)
       url: https://zoj.pintia.cn/
   dashiye:
     meta:
