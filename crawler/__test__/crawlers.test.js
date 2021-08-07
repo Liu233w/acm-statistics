@@ -314,15 +314,11 @@ describe('loj', () => {
     await expect(loj(null, notExistUsername)).rejects.toThrow('The user does not exist')
   })
 
-  test('can recognize username with space', async () => {
-    await expect(loj(null, ' ' + notExistUsername)).rejects.toThrow('The user does not exist')
-  })
-
   test('should work correctly', async () => {
     const res = await loj(null, 'cz_xuyixuan') // 自定义存在的用户名
     checkRes(res)
     expect(res.solvedList).toContain('103')
-  })
+  }, 50000)
 
 })
 
