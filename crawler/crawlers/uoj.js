@@ -10,7 +10,7 @@ module.exports = async function (config, username) {
   let res
   try {
     res = await request
-      .get('http://uoj.ac/user/profile/' + username)
+      .get('https://uoj.ac/user/profile/' + username)
   } catch (err) {
     if (err.response && err.response.status === 404) {
       throw new Error('The user does not exist')
@@ -30,7 +30,7 @@ module.exports = async function (config, username) {
   }
 
   const submissionPage = await request
-    .get('http://uoj.ac/submissions')
+    .get('https://uoj.ac/submissions')
     .query({
       submitter: username,
       page: 999,
@@ -43,7 +43,7 @@ module.exports = async function (config, username) {
     const solved = $('h4:contains("AC 过的题目：")')
       .text()
       .match(/\d+/)[0]
-    const solvedList = $('a[href^="/problem/"]')
+    const solvedList = $('a[href^="https://uoj.ac/problem/"]')
       .map((_, el) => $(el).text())
       .toArray()
 
