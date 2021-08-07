@@ -22,7 +22,7 @@ module.exports = async function (config, username) {
   // find user id in search panel
   let userId = null
   for (const item of res.body) {
-    if (item.Content === username && item.ContentType === 5) {
+    if (item.Content === username && item.ContentType === 2) {
       userId = item.LinkId
       break
     }
