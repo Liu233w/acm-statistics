@@ -326,24 +326,24 @@ describe('luogu', () => {
 
   test('should throw when user does not exist', async () => {
     await expect(luogu(null, notExistUsername)).rejects.toThrow('The user does not exist')
-  })
+  }, 50000)
 
   test('can recognize username with space', async () => {
     await expect(luogu(null, ' ' + notExistUsername)).rejects.toThrow('The user does not exist')
-  })
+  }, 50000)
 
   test('should work correctly', async () => {
     const res = await luogu(null, 'CancerGary') // 自定义存在的用户名
     checkRes(res)
     expect(res.solvedList).toContain('P1001')
     expect(res.solvedList.length).toBeGreaterThan(100)
-  })
+  }, 50000)
 
   test('should handle the user with submission bigger than 1000 correctly', async () => {
     const res = await luogu(null, 'NaCly_Fish')
     checkRes(res)
     expect(res.submissions).toBeGreaterThan(1000)
-  })
+  }, 50000)
 })
 
 describe('nowcoder', () => {
