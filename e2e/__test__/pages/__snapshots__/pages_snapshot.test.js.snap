@@ -4410,7 +4410,7 @@ exports[`/history/{historyId} 1`] = `
                 },
                 zoj: {
                   title: "ZOJ",
-                  description: "Only nickname is supported",
+                  description: "Only nickname is supported (Only historical data are available since crawlers are prohibited by Pintia)",
                   url: "https:\\u002F\\u002Fzoj.pintia.cn\\u002F"
                 },
                 dashiye: {
@@ -8502,7 +8502,7 @@ exports[`/statistics 1`] = `
                 },
                 zoj: {
                   title: "ZOJ",
-                  description: "Only nickname is supported",
+                  description: "Only nickname is supported (Only historical data are available since crawlers are prohibited by Pintia)",
                   url: "https:\\u002F\\u002Fzoj.pintia.cn\\u002F",
                   name: j
                 },
