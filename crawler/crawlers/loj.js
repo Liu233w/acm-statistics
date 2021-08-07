@@ -1,5 +1,4 @@
 const request = require('superagent')
-const cheerio = require('cheerio')
 
 module.exports = async function (config, username) {
 
@@ -8,37 +7,58 @@ module.exports = async function (config, username) {
   }
 
   const res = await request
-    .get('http://loj.ac/find_user')
-    .query({nickname: username})
+    .post('https://api.loj.ac/api/user/getUserDetail')
+    .send({
+      now: new Date().toISOString(),
+      timezone: 'UTC',
+      username,
+    })
 
   if (!res.ok) {
     throw new Error(`Server Response Error: ${res.status}`)
   }
-  const $ = cheerio.load(res.text)
 
-  if ($('.header').filter((i, el) => $(el).text().trim() === '无此用户。').length >= 1) {
+  if (res.body.error) {
     throw new Error('The user does not exist')
   }
-  try {
-    const acList = []
-    $('[href^="/problem/"]').each(function (i, el) {
-      acList.push($(el).text().trim())
-    })
 
-    const text = $('script:contains("new Chart")').html().replace(/\s/gi, '')
-    const submitMatchArray = text.match(/data:\[(\d+),(\d+),(\d+),(\d+),(\d+),(\d+),\]/i)
-    const submissions = submitMatchArray
-      .slice(1, submitMatchArray.length)
-      .reduce((sum, a) => sum + parseInt(a), 0)
+  const submissions = res.body.meta.submissionCount
+  const solvedList = await resolveSolvedList(username)
+  // if a submission is not public, it can be different from the value of the user api
+  const solved = solvedList.length 
+  // const solved = res.body.meta.acceptedProblemCount
 
-    return {
-      submissions,
-      solved: parseInt($('a:has(i.check.icon)').text().trim().split(' ')[1]),
-      solvedList: acList,
+  return {
+    submissions,
+    solved,
+    solvedList,
+  }
+}
+
+async function resolveSolvedList(username) {
+  const acSet = new Set()
+  let maxId = null
+  // eslint-disable-next-line no-constant-condition
+  while (true) {
+    const res = await request
+      .post('https://api.loj.ac/api/submission/querySubmission')
+      .send({
+        submitter: username, 
+        status: 'Accepted', 
+        maxId, 
+        locale: 'en_US', 
+        takeCount: 10, // cannot be changed
+      })
+
+    if (!res.body.submissions || res.body.submissions.length === 0) {
+      break
     }
-  }
-  catch (e) {
-    throw new Error('Error while parsing')
+
+    res.body.submissions.forEach(item => {
+      acSet.add(item.problem.id + '')
+      maxId = item.id - 1
+    })
   }
 
+  return [...acSet]
 }
