@@ -1,3 +1,4 @@
+using System;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Threading.Tasks.Dataflow;
@@ -37,7 +38,7 @@ namespace OHunt.Tests.Crawlers
             var list = new Submission?[bufferLength];
             for (var i = 0; i < bufferLength; i++)
             {
-                var message = await messages.ReceiveAsync();
+                var message = await messages.ReceiveAsync(TimeSpan.FromSeconds(30));
                 message.CrawlerError.Should().BeNull();
                 message.Checkpoint.Should().BeTrue();
                 list[i] = message.Submission;
