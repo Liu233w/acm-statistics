@@ -91,7 +91,7 @@ namespace OHunt.Web
             services
                 .AddSingleton<SubmissionCrawlerCoordinator>()
                 .AddSingleton<DatabaseInserterFactory>()
-                // .AddSingleton<ZojSubmissionCrawler>()
+                .AddSingleton<ZojSubmissionCrawler>()
                 .AddTransient<ProblemLabelManager>()
                 .AddSingleton<UvaMappingCrawler>()
                 .AddSingleton<UvaLiveMappingCrawler>()

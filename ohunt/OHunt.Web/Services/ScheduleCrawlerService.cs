@@ -28,9 +28,9 @@ namespace OHunt.Web.Services
 
         public Task StartAsync(CancellationToken cancellationToken)
         {
-            _coordinator.Initialize(new[]
+            _coordinator.Initialize(new ISubmissionCrawler[]
             {
-                _zojSubmissionCrawler,
+                // _zojSubmissionCrawler,
             });
             _timer = new Timer(DoWork, null, TimeSpan.Zero,
                 TimeSpan.FromHours(0.5));
