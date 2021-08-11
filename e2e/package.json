@@ -16,7 +16,7 @@
     "cypress-terminal-report": "3.3.0",
     "eslint": "7.32.0",
     "eslint-plugin-cypress": "2.11.3",
-    "eslint-plugin-lodash": "7.2.0",
+    "eslint-plugin-lodash": "7.3.0",
     "jest": "27.0.6",
     "jest-serializer-vue": "2.0.2",
     "lodash": "4.17.21",

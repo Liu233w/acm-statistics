@@ -46,7 +46,7 @@
     "eslint-plugin-html": "6.1.2",
     "eslint-plugin-import": "2.24.0",
     "eslint-plugin-jest": "24.4.0",
-    "eslint-plugin-lodash": "7.2.0",
+    "eslint-plugin-lodash": "7.3.0",
     "eslint-plugin-node": "11.1.0",
     "eslint-plugin-promise": "5.1.0",
     "eslint-plugin-standard": "4.1.0",
