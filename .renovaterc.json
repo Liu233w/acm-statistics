@@ -10,15 +10,10 @@
       "packagePatterns": ["^Abp\\.|^Abp$"]
     },
     {
-      "groupName": "entityframework",
-      "packagePatterns": [
-        "^Microsoft\\.EntityFrameworkCore"
-      ]
-    },
-    {
       "groupName": "asp.net core",
       "packagePatterns": [
-        "^Microsoft\\.AspNetCore"
+        "^Microsoft\\.AspNetCore",
+        "^Microsoft\\.EntityFrameworkCore"
       ]
     }
   ],
