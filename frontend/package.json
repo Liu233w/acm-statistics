@@ -25,7 +25,7 @@
     "html2canvas": "1.2.2",
     "js-cookie": "3.0.0",
     "lodash": "4.17.21",
-    "nuxt": "2.15.7",
+    "nuxt": "2.15.8",
     "nuxt-env": "0.1.0",
     "stylus": "0.54.8",
     "stylus-loader": "6.1.0",
