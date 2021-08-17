@@ -18,9 +18,10 @@
     {
       "groupName": "asp.net core",
       "packagePatterns": [
-        "^Microsoft\\.AspNetCore(?!.OData)(.*)$",
+        "^Microsoft\\.AspNetCore",
         "^Microsoft\\.EntityFrameworkCore"
-      ]
+      ],
+      "excludePackageNames": ["Microsoft.AspNetCore.OData"]
     }
   ],
   "ignorePresets": [
