@@ -10,6 +10,12 @@
       "packagePatterns": ["^Abp\\.|^Abp$"]
     },
     {
+      "groupName": "OData",
+      "packagePatterns": [
+        "OData"
+      ]
+    },
+    {
       "groupName": "asp.net core",
       "packagePatterns": [
         "^Microsoft\\.AspNetCore",
