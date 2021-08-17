@@ -21,7 +21,7 @@
     <ProjectReference Include="..\AcmStatisticsBackend.EntityFrameworkCore\AcmStatisticsBackend.EntityFrameworkCore.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.8" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.9" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.1.5" />
     <PackageReference Include="Abp.AspNetCore" Version="6.4.0" />
     <PackageReference Include="Abp.ZeroCore" Version="6.4.0" />
