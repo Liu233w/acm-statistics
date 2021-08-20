@@ -21,7 +21,7 @@
     "eslint-plugin-lodash": "7.3.0",
     "jest": "27.0.6",
     "memfs": "3.2.2",
-    "nock": "13.1.1"
+    "nock": "13.1.2"
   },
   "jest": {
     "testPathIgnorePatterns": [
