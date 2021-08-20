@@ -121,6 +121,7 @@ services:
     environment:
       ConnectionStrings__Default: Server=db; port=3306; Database=ohunt; uid=root; pwd=${MYSQL_ROOT_PASSWORD}; Convert Zero Datetime=True
       WAIT_COMMAND: wait-for-it db:3306 -t 0
+    restart: always
     labels:
       - traefik.http.routers.ohunt.rule=PathPrefix(`/api/ohunt`)||PathPrefix(`/ohunt`)
       - traefik.http.services.ohunt.loadbalancer.server.port=80
