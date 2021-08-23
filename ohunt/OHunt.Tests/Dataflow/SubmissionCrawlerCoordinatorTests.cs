@@ -193,9 +193,9 @@ namespace OHunt.Tests.Dataflow
         public void WhenNotInitialized_ItShouldThrow()
         {
             FluentActions.Invoking(() => _coordinator.StartAllCrawlers())
-                .Should().ThrowExactly<InvalidOperationException>();
+                .Should().ThrowExactlyAsync<InvalidOperationException>();
             FluentActions.Invoking(() => _coordinator.Cancel())
-                .Should().ThrowExactly<InvalidOperationException>();
+                .Should().ThrowExactlyAsync<InvalidOperationException>();
         }
 
         [Scenario]
