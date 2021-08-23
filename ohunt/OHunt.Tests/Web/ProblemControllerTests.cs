@@ -1,11 +1,11 @@
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Net.Http;
 using System.Net.Mime;
 using System.Text;
 using FluentAssertions;
 using Flurl.Http.Testing;
-using Microsoft.AspNetCore.Http;
 using OHunt.Tests.Dependency;
 using OHunt.Web;
 using OHunt.Web.Controllers.Dto;
@@ -38,7 +38,7 @@ namespace OHunt.Tests.Web
             "Then we should get the correct label"
                 .x(async () =>
                 {
-                    response.StatusCode.Should().Be(StatusCodes.Status200OK);
+                    response.StatusCode.Should().Be(HttpStatusCode.OK);
 
                     var output = await ResponseJson<ResolveLabelOutput>(response);
                     output.Result.Should().HaveCount(1);
@@ -68,7 +68,7 @@ namespace OHunt.Tests.Web
             "Then we should get the same result"
                 .x(async () =>
                 {
-                    response.StatusCode.Should().Be(StatusCodes.Status200OK);
+                    response.StatusCode.Should().Be(HttpStatusCode.OK);
 
                     var output = await ResponseJson<ResolveLabelOutput>(response);
                     output.Result.Should().HaveCount(1);
