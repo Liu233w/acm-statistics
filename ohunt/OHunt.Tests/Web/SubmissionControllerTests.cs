@@ -1,8 +1,8 @@
 using System;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 using FluentAssertions;
-using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json.Linq;
 using OHunt.Tests.Dependency;
 using OHunt.Web;
@@ -45,19 +45,22 @@ namespace OHunt.Tests.Web
                 "/api/ohunt/submissions?oj=zoj&$filter=submissionId eq 1");
 
             // assert
-            res.StatusCode.Should().Be(StatusCodes.Status200OK);
+            res.StatusCode.Should().Be(HttpStatusCode.OK);
             JObject.Parse(await res.Content.ReadAsStringAsync())
                 ["value"]
                 ?.ToObject<Submission[]>()
                 .Should()
-                .BeEquivalentTo(new Submission
+                .BeEquivalentTo(new[]
                 {
-                    Status = RunResult.Accepted,
-                    Time = new DateTime(2020, 4, 1, 0, 0, 0),
-                    ProblemLabel = "1001",
-                    SubmissionId = 1,
-                    UserName = "user1",
-                    OnlineJudgeId = OnlineJudge.ZOJ,
+                    new Submission
+                    {
+                        Status = RunResult.Accepted,
+                        Time = new DateTime(2020, 4, 1, 0, 0, 0),
+                        ProblemLabel = "1001",
+                        SubmissionId = 1,
+                        UserName = "user1",
+                        OnlineJudgeId = OnlineJudge.ZOJ,
+                    },
                 });
         }
 
@@ -70,7 +73,7 @@ namespace OHunt.Tests.Web
                 "/api/ohunt/submissions?$filter=submissionId eq 1");
 
             // assert
-            res.StatusCode.Should().Be(StatusCodes.Status400BadRequest);
+            res.StatusCode.Should().Be(HttpStatusCode.BadRequest);
             var json = JObject.Parse(await res.Content.ReadAsStringAsync())!;
             json["error"]?.ToObject<bool>().Should().BeTrue();
             json["message"]?.ToObject<string>().Should().Be("Unrecognisable OJ name");
@@ -105,7 +108,7 @@ namespace OHunt.Tests.Web
                 "/api/ohunt/submissions?oj=zoj");
 
             // assert
-            res.StatusCode.Should().Be(StatusCodes.Status200OK);
+            res.StatusCode.Should().Be(HttpStatusCode.OK);
             var json = JObject.Parse(await res.Content.ReadAsStringAsync());
             json["value"]?.ToObject<Submission[]>().Should().HaveCount(500);
             json["@odata.nextLink"]?.ToObject<string>()
