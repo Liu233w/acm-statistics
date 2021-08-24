@@ -31,7 +31,6 @@ module.exports = async () => ({
   },
   plugins: [
     '~/plugins/debug.js',
-    '~/plugins/analysis.js',
   ],
   css: [
     '~/assets/style/app.scss',
