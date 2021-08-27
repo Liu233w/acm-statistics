@@ -1,4 +1,4 @@
-FROM node:16.8.0-alpine@sha256:abd76715630b2fbed5de9cbcf8b44beb94bfd1ccb972e8dfc3eb5cdf4b1719d0
+FROM node:16.8.0-alpine@sha256:1ee1478ef46a53fc0584729999a0570cf2fb174fbfe0370edbf09680b2378b56
 
 # 将 apk 源替换成 ustc 版本
 ARG APK_MIRROR=false
