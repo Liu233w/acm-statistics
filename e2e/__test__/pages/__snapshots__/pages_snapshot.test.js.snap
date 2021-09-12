@@ -11,6 +11,7 @@ exports[`/ 1`] = `
     <meta data-n-head="ssr" data-hid="description" name="description" content="An online tool (crawler) to analyze users performance in online judges (coding competition websites). Supported OJ: POJ, HDU, ZOJ, HYSBZ, CodeForces, UVA, ICPC Live Archive, FZU, SPOJ, Timus (URAL), LeetCode_CN, CSU, LibreOJ, 洛谷, 牛客OJ, Lutece (UESTC), AtCoder, AIZU, CodeChef, El Judge, BNUOJ, Codewars, UOJ, NBUT, 51Nod, DMOJ, VJudge">
     <link data-n-head="ssr" rel="icon" type="image/x-icon" href="/favicon.ico">
     <link data-n-head="ssr" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons|Noto+Serif+SC:300,400,500,700">
+    <link data-n-head="ssr" rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
     <link data-n-head="ssr" rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&amp;display=swap">
     <link data-n-head="ssr" rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@mdi/font@latest/css/materialdesignicons.min.css">
     <style data-n-head="vuetify" type="text/css" id="vuetify-theme-stylesheet" nonce="undefined">
@@ -767,9 +768,9 @@ exports[`/ 1`] = `
                 <div>
                   <section>
                     <div class="v-parallax" style="height:600px;">
-                      <div class="v-parallax__image-container"><img src="/_nuxt/img/back7-brighten.e5adb12.jpg" alt="" class="v-parallax__image" style="display:block;opacity:0;transform:translate(-50%, 0px);"></div>
+                      <div class="v-parallax__image-container"><img src="/_nuxt/img/back7-brighten.ef135f5.jpg" alt="" class="v-parallax__image" style="display:block;opacity:0;transform:translate(-50%, 0px);"></div>
                       <div class="v-parallax__content">
-                        <div class="layout white--text column align-center justify-center"><img src="/_nuxt/img/logo.db320b9.png" alt="Vuetify.js" height="190" class="mb-4">
+                        <div class="layout white--text column align-center justify-center"><img src="/_nuxt/img/logo.b70d243.png" alt="Vuetify.js" height="190" class="mb-4">
                           <h2 class="black--text text-h5 text-center font-weight-light">
                             ACM-ICPC 协会
                           </h2>
@@ -856,7 +857,7 @@ exports[`/ 1`] = `
                   </section>
                   <section>
                     <div class="v-parallax" style="height:380px;">
-                      <div class="v-parallax__image-container"><img src="/_nuxt/img/back4.ac176e5.jpg" alt="" class="v-parallax__image" style="display:block;opacity:0;transform:translate(-50%, 0px);"></div>
+                      <div class="v-parallax__image-container"><img src="/_nuxt/img/back4.f06a46e.jpg" alt="" class="v-parallax__image" style="display:block;opacity:0;transform:translate(-50%, 0px);"></div>
                       <div class="v-parallax__content">
                         <div class="layout column align-center justify-center">
                           <div class="text-h5 white--text mb-4 text-center response-title">
@@ -965,6 +966,7 @@ exports[`/about 1`] = `
     <meta data-n-head="ssr" data-hid="description" name="description" content="An online tool (crawler) to analyze users performance in online judges (coding competition websites). Supported OJ: POJ, HDU, ZOJ, HYSBZ, CodeForces, UVA, ICPC Live Archive, FZU, SPOJ, Timus (URAL), LeetCode_CN, CSU, LibreOJ, 洛谷, 牛客OJ, Lutece (UESTC), AtCoder, AIZU, CodeChef, El Judge, BNUOJ, Codewars, UOJ, NBUT, 51Nod, DMOJ, VJudge">
     <link data-n-head="ssr" rel="icon" type="image/x-icon" href="/favicon.ico">
     <link data-n-head="ssr" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons|Noto+Serif+SC:300,400,500,700">
+    <link data-n-head="ssr" rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
     <link data-n-head="ssr" rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&amp;display=swap">
     <link data-n-head="ssr" rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@mdi/font@latest/css/materialdesignicons.min.css">
     <style data-n-head="vuetify" type="text/css" id="vuetify-theme-stylesheet" nonce="undefined">
@@ -1731,30 +1733,30 @@ exports[`/about 1`] = `
                         <div role="list" class="v-list v-sheet theme--light"><a tabindex="0" href="https://github.com/Liu233w/acm-statistics/blob/master/README.md#contributors-" target="_blank" rel="noopener noreferrer" role="listitem" class="v-list-item v-list-item--link theme--light">
                             <div class="v-list-item__content">
                               <div class="v-list-item__title">Developed By</div>
-                              <v-list-item-sub-title>Shumin Liu and Contributors</v-list-item-sub-title>
+                              <div class="v-list-item__subtitle">Shumin Liu and Contributors</div>
                             </div>
                             <div class="v-list-item__action"><i aria-hidden="true" class="v-icon notranslate grey--text mdi mdi-open-in-new theme--light"></i></div>
                           </a> <a tabindex="0" href="mailto:mail@ojhunt.com" role="listitem" class="v-list-item v-list-item--link theme--light">
                             <div class="v-list-item__action"><i aria-hidden="true" class="v-icon notranslate blue--text text--lighten-2 material-icons theme--light">email</i></div>
                             <div class="v-list-item__content">
-                              <v-list-item-sub-title>mail@ojhunt.com</v-list-item-sub-title>
+                              <div class="v-list-item__subtitle">mail@ojhunt.com</div>
                             </div>
                           </a> <a tabindex="0" href="https://github.com/Liu233w/acm-statistics" target="_blank" rel="noopener noreferrer" role="listitem" class="v-list-item v-list-item--link theme--light">
                             <div class="v-list-item__action"><i aria-hidden="true" class="v-icon notranslate blue--text text--lighten-2 mdi mdi-github theme--light"></i></div>
                             <div class="v-list-item__content">
-                              <v-list-item-sub-title>https://github.com/Liu233w/acm-statistics</v-list-item-sub-title>
+                              <div class="v-list-item__subtitle">https://github.com/Liu233w/acm-statistics</div>
                             </div>
                             <div class="v-list-item__action"><i aria-hidden="true" class="v-icon notranslate grey--text mdi mdi-open-in-new theme--light"></i></div>
                           </a> <a tabindex="0" href="https://t.me/ojhunt" target="_blank" rel="noopener noreferrer" role="listitem" class="v-list-item v-list-item--link theme--light">
-                            <div class="v-list-item__action"><i aria-hidden="true" class="v-icon notranslate blue--text text--lighten-2 mdi mdi-telegram theme--light"></i></div>
+                            <div class="v-list-item__action"><i aria-hidden="true" class="v-icon notranslate blue--text text--lighten-2 fab fa-telegram theme--light"></i></div>
                             <div class="v-list-item__content">
-                              <v-list-item-sub-title>Telegram: https://t.me/ojhunt</v-list-item-sub-title>
+                              <div class="v-list-item__subtitle">Telegram: https://t.me/ojhunt</div>
                             </div>
                             <div class="v-list-item__action"><i aria-hidden="true" class="v-icon notranslate grey--text mdi mdi-open-in-new theme--light"></i></div>
                           </a> <a tabindex="0" href="https://discord.gg/cQemBNNr" target="_blank" rel="noopener noreferrer" role="listitem" class="v-list-item v-list-item--link theme--light">
                             <div class="v-list-item__action"><i aria-hidden="true" class="v-icon notranslate blue--text text--lighten-2 mdi mdi-discord theme--light"></i></div>
                             <div class="v-list-item__content">
-                              <v-list-item-sub-title>Discord: OJ Tracker Development</v-list-item-sub-title>
+                              <div class="v-list-item__subtitle">Discord: OJ Tracker Development</div>
                             </div>
                             <div class="v-list-item__action"><i aria-hidden="true" class="v-icon notranslate grey--text mdi mdi-open-in-new theme--light"></i></div>
                           </a></div>
@@ -1769,7 +1771,7 @@ exports[`/about 1`] = `
                         <div role="list" class="v-list v-sheet theme--light"><a tabindex="0" href="/swagger" target="_blank" rel="noopener noreferrer" role="listitem" class="v-list-item v-list-item--link theme--light">
                             <div class="v-list-item__action"><i aria-hidden="true" class="v-icon notranslate blue--text text--lighten-2 mdi mdi-api theme--light"></i></div>
                             <div class="v-list-item__content">
-                              <v-list-item-sub-title>API Document</v-list-item-sub-title>
+                              <div class="v-list-item__subtitle">API Document</div>
                             </div>
                             <div class="v-list-item__action"><i aria-hidden="true" class="v-icon notranslate grey--text mdi mdi-open-in-new theme--light"></i></div>
                           </a></div>
@@ -1790,18 +1792,18 @@ exports[`/about 1`] = `
                           <div tabindex="-1" role="listitem" class="v-list-item theme--light">
                             <div class="v-list-item__action"><i aria-hidden="true" class="v-icon notranslate blue--text text--lighten-2 material-icons theme--light">place</i></div>
                             <div class="v-list-item__content">
-                              <v-list-item-sub-title>陕西省西安市长安区西北工业大学长安校区计算机学院110室</v-list-item-sub-title>
+                              <div class="v-list-item__subtitle">陕西省西安市长安区西北工业大学长安校区计算机学院110室</div>
                             </div>
                           </div> <a tabindex="0" href="https://jq.qq.com/?_wv=1027&amp;k=5qgzfQc" target="_blank" rel="noopener noreferrer" role="listitem" class="v-list-item v-list-item--link theme--light">
                             <div class="v-list-item__action"><i aria-hidden="true" class="v-icon notranslate blue--text text--lighten-2 mdi mdi-qqchat theme--light"></i></div>
                             <div class="v-list-item__content">
-                              <v-list-item-sub-title>198820787</v-list-item-sub-title>
+                              <div class="v-list-item__subtitle">198820787</div>
                             </div>
                           </a>
                           <div tabindex="0" role="listitem" class="v-list-item v-list-item--link theme--light">
                             <div class="v-list-item__action"><i aria-hidden="true" class="v-icon notranslate blue--text text--lighten-2 mdi mdi-wechat theme--light"></i></div>
                             <div class="v-list-item__content">
-                              <div class="v-list-item__title">微信公众号</div>
+                              <div class="v-list-item__subtitle">微信公众号</div>
                             </div>
                           </div>
                         </div>
@@ -1817,28 +1819,28 @@ exports[`/about 1`] = `
                           <div tabindex="-1" role="listitem" class="v-list-item theme--light">
                             <div class="v-list-item__content">
                               <div class="v-list-item__title">Version</div>
-                              <v-list-item-sub-title>0</v-list-item-sub-title>
+                              <div class="v-list-item__subtitle">0</div>
                             </div>
                           </div>
                           <div tabindex="-1" role="listitem" class="v-list-item theme--light">
                             <div class="v-list-item__content">
                               <div class="v-list-item__title">Build time</div>
-                              <v-list-item-sub-title>1/1/1970, 12:00:00 AM</v-list-item-sub-title>
+                              <div class="v-list-item__subtitle">1/1/1970, 12:00:00 AM</div>
                             </div>
                           </div> <a tabindex="0" href="https://github.com/Liu233w/acm-statistics/tree/0" role="listitem" class="v-list-item v-list-item--link theme--light">
                             <div class="v-list-item__content">
                               <div class="v-list-item__title">Source code of current version</div>
-                              <v-list-item-sub-title>
+                              <div class="v-list-item__subtitle">
                                 https://github.com/Liu233w/acm-statistics/tree/0
-                              </v-list-item-sub-title>
+                              </div>
                             </div>
                             <div class="v-list-item__action"><i aria-hidden="true" class="v-icon notranslate grey--text mdi mdi-open-in-new theme--light"></i></div>
                           </a> <a tabindex="0" href="https://github.com/Liu233w/acm-statistics/commits/0" role="listitem" class="v-list-item v-list-item--link theme--light">
                             <div class="v-list-item__content">
                               <div class="v-list-item__title">Recent updates</div>
-                              <v-list-item-sub-title>
+                              <div class="v-list-item__subtitle">
                                 https://github.com/Liu233w/acm-statistics/commits/0
-                              </v-list-item-sub-title>
+                              </div>
                             </div>
                             <div class="v-list-item__action"><i aria-hidden="true" class="v-icon notranslate grey--text mdi mdi-open-in-new theme--light"></i></div>
                           </a>
@@ -1913,6 +1915,7 @@ exports[`/history 1`] = `
     <meta data-n-head="ssr" data-hid="description" name="description" content="An online tool (crawler) to analyze users performance in online judges (coding competition websites). Supported OJ: POJ, HDU, ZOJ, HYSBZ, CodeForces, UVA, ICPC Live Archive, FZU, SPOJ, Timus (URAL), LeetCode_CN, CSU, LibreOJ, 洛谷, 牛客OJ, Lutece (UESTC), AtCoder, AIZU, CodeChef, El Judge, BNUOJ, Codewars, UOJ, NBUT, 51Nod, DMOJ, VJudge">
     <link data-n-head="ssr" rel="icon" type="image/x-icon" href="/favicon.ico">
     <link data-n-head="ssr" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons|Noto+Serif+SC:300,400,500,700">
+    <link data-n-head="ssr" rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
     <link data-n-head="ssr" rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&amp;display=swap">
     <link data-n-head="ssr" rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@mdi/font@latest/css/materialdesignicons.min.css">
     <style data-n-head="vuetify" type="text/css" id="vuetify-theme-stylesheet" nonce="undefined">
@@ -2689,7 +2692,7 @@ exports[`/history 1`] = `
                       </div>
                     </div>
                   </div>
-                  <div class="v-data-table mt-4 v-data-table--has-top v-data-table--has-bottom theme--light"><button type="button" disabled="disabled" class="v-btn v-btn--disabled v-btn--has-bg theme--light v-size--default"><span class="v-btn__content">
+                  <div class="v-data-table mt-4 v-data-table--has-top v-data-table--has-bottom theme--light v-data-table--mobile"><button type="button" disabled="disabled" class="v-btn v-btn--disabled v-btn--has-bg theme--light v-size--default"><span class="v-btn__content">
           delete selected
         </span></button>
                     <div class="v-data-table__wrapper">
@@ -2708,7 +2711,9 @@ exports[`/history 1`] = `
                               <div class="v-data-table-header-mobile__wrapper">
                                 <div width="1px" class="v-data-table-header-mobile__select">
                                   <div class="v-data-table__checkbox v-simple-checkbox">
-                                    <div class="v-input--selection-controls__ripple"></div><i aria-hidden="true" class="v-icon notranslate mdi mdi-checkbox-blank-outline theme--light"></i>
+                                    <div class="v-input--selection-controls__input"><i aria-hidden="true" class="v-icon notranslate mdi mdi-checkbox-blank-outline theme--light"></i>
+                                      <div class="v-input--selection-controls__ripple"></div>
+                                    </div>
                                   </div>
                                 </div>
                               </div>
@@ -2721,7 +2726,9 @@ exports[`/history 1`] = `
                               <div class="v-data-table__mobile-row__header"></div>
                               <div class="v-data-table__mobile-row__cell">
                                 <div class="v-data-table__checkbox v-simple-checkbox">
-                                  <div class="v-input--selection-controls__ripple"></div><i aria-hidden="true" class="v-icon notranslate mdi mdi-checkbox-blank-outline theme--light"></i>
+                                  <div class="v-input--selection-controls__input"><i aria-hidden="true" class="v-icon notranslate mdi mdi-checkbox-blank-outline theme--light"></i>
+                                    <div class="v-input--selection-controls__ripple"></div>
+                                  </div>
                                 </div>
                               </div>
                             </td>
@@ -2751,7 +2758,9 @@ exports[`/history 1`] = `
                               <div class="v-data-table__mobile-row__header"></div>
                               <div class="v-data-table__mobile-row__cell">
                                 <div class="v-data-table__checkbox v-simple-checkbox">
-                                  <div class="v-input--selection-controls__ripple"></div><i aria-hidden="true" class="v-icon notranslate mdi mdi-checkbox-blank-outline theme--light"></i>
+                                  <div class="v-input--selection-controls__input"><i aria-hidden="true" class="v-icon notranslate mdi mdi-checkbox-blank-outline theme--light"></i>
+                                    <div class="v-input--selection-controls__ripple"></div>
+                                  </div>
                                 </div>
                               </div>
                             </td>
@@ -2781,7 +2790,9 @@ exports[`/history 1`] = `
                               <div class="v-data-table__mobile-row__header"></div>
                               <div class="v-data-table__mobile-row__cell">
                                 <div class="v-data-table__checkbox v-simple-checkbox">
-                                  <div class="v-input--selection-controls__ripple"></div><i aria-hidden="true" class="v-icon notranslate mdi mdi-checkbox-blank-outline theme--light"></i>
+                                  <div class="v-input--selection-controls__input"><i aria-hidden="true" class="v-icon notranslate mdi mdi-checkbox-blank-outline theme--light"></i>
+                                    <div class="v-input--selection-controls__ripple"></div>
+                                  </div>
                                 </div>
                               </div>
                             </td>
@@ -2811,7 +2822,9 @@ exports[`/history 1`] = `
                               <div class="v-data-table__mobile-row__header"></div>
                               <div class="v-data-table__mobile-row__cell">
                                 <div class="v-data-table__checkbox v-simple-checkbox">
-                                  <div class="v-input--selection-controls__ripple"></div><i aria-hidden="true" class="v-icon notranslate mdi mdi-checkbox-blank-outline theme--light"></i>
+                                  <div class="v-input--selection-controls__input"><i aria-hidden="true" class="v-icon notranslate mdi mdi-checkbox-blank-outline theme--light"></i>
+                                    <div class="v-input--selection-controls__ripple"></div>
+                                  </div>
                                 </div>
                               </div>
                             </td>
@@ -2841,7 +2854,9 @@ exports[`/history 1`] = `
                               <div class="v-data-table__mobile-row__header"></div>
                               <div class="v-data-table__mobile-row__cell">
                                 <div class="v-data-table__checkbox v-simple-checkbox">
-                                  <div class="v-input--selection-controls__ripple"></div><i aria-hidden="true" class="v-icon notranslate mdi mdi-checkbox-blank-outline theme--light"></i>
+                                  <div class="v-input--selection-controls__input"><i aria-hidden="true" class="v-icon notranslate mdi mdi-checkbox-blank-outline theme--light"></i>
+                                    <div class="v-input--selection-controls__ripple"></div>
+                                  </div>
                                 </div>
                               </div>
                             </td>
@@ -2871,7 +2886,9 @@ exports[`/history 1`] = `
                               <div class="v-data-table__mobile-row__header"></div>
                               <div class="v-data-table__mobile-row__cell">
                                 <div class="v-data-table__checkbox v-simple-checkbox">
-                                  <div class="v-input--selection-controls__ripple"></div><i aria-hidden="true" class="v-icon notranslate mdi mdi-checkbox-blank-outline theme--light"></i>
+                                  <div class="v-input--selection-controls__input"><i aria-hidden="true" class="v-icon notranslate mdi mdi-checkbox-blank-outline theme--light"></i>
+                                    <div class="v-input--selection-controls__ripple"></div>
+                                  </div>
                                 </div>
                               </div>
                             </td>
@@ -2901,7 +2918,9 @@ exports[`/history 1`] = `
                               <div class="v-data-table__mobile-row__header"></div>
                               <div class="v-data-table__mobile-row__cell">
                                 <div class="v-data-table__checkbox v-simple-checkbox">
-                                  <div class="v-input--selection-controls__ripple"></div><i aria-hidden="true" class="v-icon notranslate mdi mdi-checkbox-blank-outline theme--light"></i>
+                                  <div class="v-input--selection-controls__input"><i aria-hidden="true" class="v-icon notranslate mdi mdi-checkbox-blank-outline theme--light"></i>
+                                    <div class="v-input--selection-controls__ripple"></div>
+                                  </div>
                                 </div>
                               </div>
                             </td>
@@ -2931,7 +2950,9 @@ exports[`/history 1`] = `
                               <div class="v-data-table__mobile-row__header"></div>
                               <div class="v-data-table__mobile-row__cell">
                                 <div class="v-data-table__checkbox v-simple-checkbox">
-                                  <div class="v-input--selection-controls__ripple"></div><i aria-hidden="true" class="v-icon notranslate mdi mdi-checkbox-blank-outline theme--light"></i>
+                                  <div class="v-input--selection-controls__input"><i aria-hidden="true" class="v-icon notranslate mdi mdi-checkbox-blank-outline theme--light"></i>
+                                    <div class="v-input--selection-controls__ripple"></div>
+                                  </div>
                                 </div>
                               </div>
                             </td>
@@ -2961,7 +2982,9 @@ exports[`/history 1`] = `
                               <div class="v-data-table__mobile-row__header"></div>
                               <div class="v-data-table__mobile-row__cell">
                                 <div class="v-data-table__checkbox v-simple-checkbox">
-                                  <div class="v-input--selection-controls__ripple"></div><i aria-hidden="true" class="v-icon notranslate mdi mdi-checkbox-blank-outline theme--light"></i>
+                                  <div class="v-input--selection-controls__input"><i aria-hidden="true" class="v-icon notranslate mdi mdi-checkbox-blank-outline theme--light"></i>
+                                    <div class="v-input--selection-controls__ripple"></div>
+                                  </div>
                                 </div>
                               </div>
                             </td>
@@ -2991,7 +3014,9 @@ exports[`/history 1`] = `
                               <div class="v-data-table__mobile-row__header"></div>
                               <div class="v-data-table__mobile-row__cell">
                                 <div class="v-data-table__checkbox v-simple-checkbox">
-                                  <div class="v-input--selection-controls__ripple"></div><i aria-hidden="true" class="v-icon notranslate mdi mdi-checkbox-blank-outline theme--light"></i>
+                                  <div class="v-input--selection-controls__input"><i aria-hidden="true" class="v-icon notranslate mdi mdi-checkbox-blank-outline theme--light"></i>
+                                    <div class="v-input--selection-controls__ripple"></div>
+                                  </div>
                                 </div>
                               </div>
                             </td>
@@ -3230,6 +3255,7 @@ exports[`/history/{historyId} 1`] = `
     <meta data-n-head="ssr" data-hid="description" name="description" content="An online tool (crawler) to analyze users performance in online judges (coding competition websites). Supported OJ: POJ, HDU, ZOJ, HYSBZ, CodeForces, UVA, ICPC Live Archive, FZU, SPOJ, Timus (URAL), LeetCode_CN, CSU, LibreOJ, 洛谷, 牛客OJ, Lutece (UESTC), AtCoder, AIZU, CodeChef, El Judge, BNUOJ, Codewars, UOJ, NBUT, 51Nod, DMOJ, VJudge">
     <link data-n-head="ssr" rel="icon" type="image/x-icon" href="/favicon.ico">
     <link data-n-head="ssr" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons|Noto+Serif+SC:300,400,500,700">
+    <link data-n-head="ssr" rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
     <link data-n-head="ssr" rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&amp;display=swap">
     <link data-n-head="ssr" rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@mdi/font@latest/css/materialdesignicons.min.css">
     <style data-n-head="vuetify" type="text/css" id="vuetify-theme-stylesheet" nonce="undefined">
@@ -4016,7 +4042,7 @@ exports[`/history/{historyId} 1`] = `
                       </div>
                     </div>
                   </div>
-                  <div class="v-data-table theme--light">
+                  <div class="v-data-table theme--light v-data-table--mobile">
                     <div class="v-data-table__wrapper">
                       <table>
                         <colgroup>
@@ -4620,6 +4646,7 @@ exports[`/login 1`] = `
     <meta data-n-head="ssr" data-hid="description" name="description" content="An online tool (crawler) to analyze users performance in online judges (coding competition websites). Supported OJ: POJ, HDU, ZOJ, HYSBZ, CodeForces, UVA, ICPC Live Archive, FZU, SPOJ, Timus (URAL), LeetCode_CN, CSU, LibreOJ, 洛谷, 牛客OJ, Lutece (UESTC), AtCoder, AIZU, CodeChef, El Judge, BNUOJ, Codewars, UOJ, NBUT, 51Nod, DMOJ, VJudge">
     <link data-n-head="ssr" rel="icon" type="image/x-icon" href="/favicon.ico">
     <link data-n-head="ssr" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons|Noto+Serif+SC:300,400,500,700">
+    <link data-n-head="ssr" rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
     <link data-n-head="ssr" rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&amp;display=swap">
     <link data-n-head="ssr" rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@mdi/font@latest/css/materialdesignicons.min.css">
     <style data-n-head="vuetify" type="text/css" id="vuetify-theme-stylesheet" nonce="undefined">
@@ -5483,6 +5510,7 @@ exports[`/register 1`] = `
     <meta data-n-head="ssr" data-hid="description" name="description" content="An online tool (crawler) to analyze users performance in online judges (coding competition websites). Supported OJ: POJ, HDU, ZOJ, HYSBZ, CodeForces, UVA, ICPC Live Archive, FZU, SPOJ, Timus (URAL), LeetCode_CN, CSU, LibreOJ, 洛谷, 牛客OJ, Lutece (UESTC), AtCoder, AIZU, CodeChef, El Judge, BNUOJ, Codewars, UOJ, NBUT, 51Nod, DMOJ, VJudge">
     <link data-n-head="ssr" rel="icon" type="image/x-icon" href="/favicon.ico">
     <link data-n-head="ssr" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons|Noto+Serif+SC:300,400,500,700">
+    <link data-n-head="ssr" rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
     <link data-n-head="ssr" rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&amp;display=swap">
     <link data-n-head="ssr" rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@mdi/font@latest/css/materialdesignicons.min.css">
     <style data-n-head="vuetify" type="text/css" id="vuetify-theme-stylesheet" nonce="undefined">
@@ -6370,6 +6398,7 @@ exports[`/settings 1`] = `
     <meta data-n-head="ssr" data-hid="description" name="description" content="An online tool (crawler) to analyze users performance in online judges (coding competition websites). Supported OJ: POJ, HDU, ZOJ, HYSBZ, CodeForces, UVA, ICPC Live Archive, FZU, SPOJ, Timus (URAL), LeetCode_CN, CSU, LibreOJ, 洛谷, 牛客OJ, Lutece (UESTC), AtCoder, AIZU, CodeChef, El Judge, BNUOJ, Codewars, UOJ, NBUT, 51Nod, DMOJ, VJudge">
     <link data-n-head="ssr" rel="icon" type="image/x-icon" href="/favicon.ico">
     <link data-n-head="ssr" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons|Noto+Serif+SC:300,400,500,700">
+    <link data-n-head="ssr" rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
     <link data-n-head="ssr" rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&amp;display=swap">
     <link data-n-head="ssr" rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@mdi/font@latest/css/materialdesignicons.min.css">
     <style data-n-head="vuetify" type="text/css" id="vuetify-theme-stylesheet" nonce="undefined">
@@ -7382,6 +7411,7 @@ exports[`/statistics 1`] = `
     <meta data-n-head="ssr" data-hid="description" name="description" content="An online tool (crawler) to analyze users performance in online judges (coding competition websites). Supported OJ: POJ, HDU, ZOJ, HYSBZ, CodeForces, UVA, ICPC Live Archive, FZU, SPOJ, Timus (URAL), LeetCode_CN, CSU, LibreOJ, 洛谷, 牛客OJ, Lutece (UESTC), AtCoder, AIZU, CodeChef, El Judge, BNUOJ, Codewars, UOJ, NBUT, 51Nod, DMOJ, VJudge">
     <link data-n-head="ssr" rel="icon" type="image/x-icon" href="/favicon.ico">
     <link data-n-head="ssr" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons|Noto+Serif+SC:300,400,500,700">
+    <link data-n-head="ssr" rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
     <link data-n-head="ssr" rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&amp;display=swap">
     <link data-n-head="ssr" rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@mdi/font@latest/css/materialdesignicons.min.css">
     <style data-n-head="vuetify" type="text/css" id="vuetify-theme-stylesheet" nonce="undefined">
@@ -8167,7 +8197,7 @@ exports[`/statistics 1`] = `
                   </div>
                   <div class="row">
                     <div class="spacer"></div>
-                    <div role="progressbar" aria-valuemin="0" aria-valuemax="100" class="v-progress-circular mt-10 v-progress-circular--indeterminate primary--text" style="height:100px;width:100px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="20.833333333333336 20.833333333333336 41.66666666666667 41.66666666666667" style="transform:rotate(0deg);">
+                    <div role="progressbar" aria-valuemin="0" aria-valuemax="100" class="v-progress-circular mt-10 v-progress-circular--visible v-progress-circular--indeterminate primary--text" style="height:100px;width:100px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="20.833333333333336 20.833333333333336 41.66666666666667 41.66666666666667" style="transform:rotate(0deg);">
                         <circle fill="transparent" cx="41.66666666666667" cy="41.66666666666667" r="20" stroke-width="1.666666666666667" stroke-dasharray="125.664" stroke-dashoffset="125.66370614359172px" class="v-progress-circular__overlay"></circle>
                       </svg>
                       <div class="v-progress-circular__info"></div>
