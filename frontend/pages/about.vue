@@ -22,7 +22,7 @@
             >
               <v-list-item-content>
                 <v-list-item-title>Developed By</v-list-item-title>
-                <v-list-item-sub-title>Shumin Liu and Contributors</v-list-item-sub-title>
+                <v-list-item-subtitle>Shumin Liu and Contributors</v-list-item-subtitle>
               </v-list-item-content>
               <v-list-item-action>
                 <v-icon class="grey--text">
@@ -37,7 +37,7 @@
                 </v-icon>
               </v-list-item-action>
               <v-list-item-content>
-                <v-list-item-sub-title>mail@ojhunt.com</v-list-item-sub-title>
+                <v-list-item-subtitle>mail@ojhunt.com</v-list-item-subtitle>
               </v-list-item-content>
             </v-list-item>
             <v-list-item
@@ -51,7 +51,7 @@
                 </v-icon>
               </v-list-item-action>
               <v-list-item-content>
-                <v-list-item-sub-title>https://github.com/Liu233w/acm-statistics</v-list-item-sub-title>
+                <v-list-item-subtitle>https://github.com/Liu233w/acm-statistics</v-list-item-subtitle>
               </v-list-item-content>
               <v-list-item-action>
                 <v-icon class="grey--text">
@@ -70,7 +70,7 @@
                 </v-icon>
               </v-list-item-action>
               <v-list-item-content>
-                <v-list-item-sub-title>Telegram: https://t.me/ojhunt</v-list-item-sub-title>
+                <v-list-item-subtitle>Telegram: https://t.me/ojhunt</v-list-item-subtitle>
               </v-list-item-content>
               <v-list-item-action>
                 <v-icon class="grey--text">
@@ -89,7 +89,7 @@
                 </v-icon>
               </v-list-item-action>
               <v-list-item-content>
-                <v-list-item-sub-title>Discord: OJ Tracker Development</v-list-item-sub-title>
+                <v-list-item-subtitle>Discord: OJ Tracker Development</v-list-item-subtitle>
               </v-list-item-content>
               <v-list-item-action>
                 <v-icon class="grey--text">
@@ -119,7 +119,7 @@
                 </v-icon>
               </v-list-item-action>
               <v-list-item-content>
-                <v-list-item-sub-title>API Document</v-list-item-sub-title>
+                <v-list-item-subtitle>API Document</v-list-item-subtitle>
               </v-list-item-content>
               <v-list-item-action>
                 <v-icon class="grey--text">
@@ -150,7 +150,7 @@
                 </v-icon>
               </v-list-item-action>
               <v-list-item-content>
-                <v-list-item-sub-title>陕西省西安市长安区西北工业大学长安校区计算机学院110室</v-list-item-sub-title>
+                <v-list-item-subtitle>陕西省西安市长安区西北工业大学长安校区计算机学院110室</v-list-item-subtitle>
               </v-list-item-content>
             </v-list-item>
             <v-list-item
@@ -164,7 +164,7 @@
                 </v-icon>
               </v-list-item-action>
               <v-list-item-content>
-                <v-list-item-sub-title>198820787</v-list-item-sub-title>
+                <v-list-item-subtitle>198820787</v-list-item-subtitle>
               </v-list-item-content>
             </v-list-item>
             <v-list-item @click="dialog = !dialog">
@@ -174,7 +174,7 @@
                 </v-icon>
               </v-list-item-action>
               <v-list-item-content>
-                <v-list-item-title>微信公众号</v-list-item-title>
+                <v-list-item-subtitle>微信公众号</v-list-item-subtitle>
               </v-list-item-content>
             </v-list-item>
           </v-list>
@@ -191,23 +191,23 @@
             <v-list-item>
               <v-list-item-content>
                 <v-list-item-title>Version</v-list-item-title>
-                <v-list-item-sub-title>{{ $env.VERSION_NUM }}</v-list-item-sub-title>
+                <v-list-item-subtitle>{{ $env.VERSION_NUM }}</v-list-item-subtitle>
               </v-list-item-content>
             </v-list-item>
 
             <v-list-item>
               <v-list-item-content>
                 <v-list-item-title>Build time</v-list-item-title>
-                <v-list-item-sub-title>{{ buildTime }}</v-list-item-sub-title>
+                <v-list-item-subtitle>{{ buildTime }}</v-list-item-subtitle>
               </v-list-item-content>
             </v-list-item>
 
             <v-list-item :href="`https://github.com/Liu233w/acm-statistics/tree/${$env.VERSION_NUM}`">
               <v-list-item-content>
                 <v-list-item-title>Source code of current version</v-list-item-title>
-                <v-list-item-sub-title>
+                <v-list-item-subtitle>
                   https://github.com/Liu233w/acm-statistics/tree/{{ $env.VERSION_NUM }}
-                </v-list-item-sub-title>
+                </v-list-item-subtitle>
               </v-list-item-content>
               <v-list-item-action>
                 <v-icon class="grey--text">
@@ -219,9 +219,9 @@
             <v-list-item :href="`https://github.com/Liu233w/acm-statistics/commits/${$env.VERSION_NUM}`">
               <v-list-item-content>
                 <v-list-item-title>Recent updates</v-list-item-title>
-                <v-list-item-sub-title>
+                <v-list-item-subtitle>
                   https://github.com/Liu233w/acm-statistics/commits/{{ $env.VERSION_NUM }}
-                </v-list-item-sub-title>
+                </v-list-item-subtitle>
               </v-list-item-content>
               <v-list-item-action>
                 <v-icon class="grey--text">
