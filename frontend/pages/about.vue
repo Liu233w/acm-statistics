@@ -66,7 +66,7 @@
             >
               <v-list-item-action>
                 <v-icon class="blue--text text--lighten-2">
-                  mdi-telegram
+                  fab fa-telegram
                 </v-icon>
               </v-list-item-action>
               <v-list-item-content>
