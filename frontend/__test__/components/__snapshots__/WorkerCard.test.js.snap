@@ -27,7 +27,7 @@ exports[`WorkerCard can be rendered correctly 1`] = `
             <div class="v-input__slot">
               <div class="v-text-field__slot"><label for="input-30" class="v-label theme--light" style="left: 0px; position: absolute;">Username</label><input required="required" id="input-30" type="text"></div>
               <div class="v-input__append-inner">
-                <div class="v-input__icon v-input__icon--clear"><button disabled="disabled" type="button" aria-label="clear icon" class="v-icon notranslate v-icon--disabled v-icon--link mdi mdi-close theme--light"></button></div>
+                <div></div>
               </div>
             </div>
             <div class="v-text-field__details">
@@ -72,7 +72,7 @@ exports[`WorkerCard can render error correctly 1`] = `
         <div class="v-input v-input--is-label-active v-input--is-dirty theme--light v-text-field">
           <div class="v-input__control">
             <div class="v-input__slot">
-              <div class="v-text-field__slot"><label for="input-116" class="v-label v-label--active theme--light" style="left: 0px; position: absolute;">Username</label><input required="required" id="input-116" type="text"></div>
+              <div class="v-text-field__slot"><label for="input-115" class="v-label v-label--active theme--light" style="left: 0px; position: absolute;">Username</label><input required="required" id="input-115" type="text"></div>
               <div class="v-input__append-inner">
                 <div class="v-input__icon v-input__icon--clear"><button type="button" aria-label="clear icon" class="v-icon notranslate v-icon--link mdi mdi-close theme--light"></button></div>
               </div>
@@ -119,7 +119,7 @@ exports[`WorkerCard can render result correctly 1`] = `
         <div class="v-input v-input--is-label-active v-input--is-dirty theme--light v-text-field">
           <div class="v-input__control">
             <div class="v-input__slot">
-              <div class="v-text-field__slot"><label for="input-95" class="v-label v-label--active theme--light" style="left: 0px; position: absolute;">Username</label><input required="required" id="input-95" type="text"></div>
+              <div class="v-text-field__slot"><label for="input-94" class="v-label v-label--active theme--light" style="left: 0px; position: absolute;">Username</label><input required="required" id="input-94" type="text"></div>
               <div class="v-input__append-inner">
                 <div class="v-input__icon v-input__icon--clear"><button type="button" aria-label="clear icon" class="v-icon notranslate v-icon--link mdi mdi-close theme--light"></button></div>
               </div>
@@ -166,7 +166,7 @@ exports[`WorkerCard can render username correctly 1`] = `
         <div class="v-input v-input--is-label-active v-input--is-dirty theme--light v-text-field">
           <div class="v-input__control">
             <div class="v-input__slot">
-              <div class="v-text-field__slot"><label for="input-51" class="v-label v-label--active theme--light" style="left: 0px; position: absolute;">Username</label><input required="required" id="input-51" type="text"></div>
+              <div class="v-text-field__slot"><label for="input-50" class="v-label v-label--active theme--light" style="left: 0px; position: absolute;">Username</label><input required="required" id="input-50" type="text"></div>
               <div class="v-input__append-inner">
                 <div class="v-input__icon v-input__icon--clear"><button type="button" aria-label="clear icon" class="v-icon notranslate v-icon--link mdi mdi-close theme--light"></button></div>
               </div>
@@ -213,7 +213,7 @@ exports[`WorkerCard can render warning correctly 1`] = `
         <div class="v-input v-input--is-label-active v-input--is-dirty theme--light v-text-field">
           <div class="v-input__control">
             <div class="v-input__slot">
-              <div class="v-text-field__slot"><label for="input-72" class="v-label v-label--active theme--light" style="left: 0px; position: absolute;">Username</label><input required="required" id="input-72" type="text"></div>
+              <div class="v-text-field__slot"><label for="input-71" class="v-label v-label--active theme--light" style="left: 0px; position: absolute;">Username</label><input required="required" id="input-71" type="text"></div>
               <div class="v-input__append-inner">
                 <div class="v-input__icon v-input__icon--clear"><button type="button" aria-label="clear icon" class="v-icon notranslate v-icon--link mdi mdi-close theme--light"></button></div>
               </div>
