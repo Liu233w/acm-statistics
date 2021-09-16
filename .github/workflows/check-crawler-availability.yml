@@ -1,8 +1,8 @@
-name: 检查爬虫可用性（不准确）
+name: Test crawler availability (can be inaccurate)
 
 on: 
   schedule:
-  # 每天中午
+  # at noon
   - cron: 0 12 * * *
 
 jobs:
@@ -16,4 +16,5 @@ jobs:
     - uses: actions/checkout@master
     - run: |
         cd crawler
-        make test || echo "something wrong in the crawler"
+        npm install
+        npm test -- --forceExit --ci
