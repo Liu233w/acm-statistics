@@ -5,9 +5,6 @@ module.exports = {
     node: true,
     'jest/globals': true,
   },
-  parserOptions: {
-    parser: '@babel/eslint-parser',
-  },
   extends: [
     'eslint:recommended',
     // https://github.com/vuejs/eslint-plugin-vue#priority-a-essential-error-prevention
