@@ -1,18 +1,4 @@
 {
-  "terminal.integrated.shellArgs.windows": [
-    "/K chcp 65001 >nul"
-  ],
-  "eslint.autoFixOnSave": true,
-  "eslint.validate": [
-    {
-      "language": "javascript",
-      "autoFix": true
-    },
-    {
-      "language": "vue",
-      "autoFix": true
-    }
-  ],
   "cSpell.words": [
     "vuetify"
   ],
