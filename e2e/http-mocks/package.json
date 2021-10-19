@@ -6,7 +6,7 @@
   "dependencies": {
     "glob": "7.2.0",
     "mockserver-client": "5.11.2",
-    "nodemon": "2.0.13",
+    "nodemon": "2.0.14",
     "wait-on": "6.0.0"
   }
 }
