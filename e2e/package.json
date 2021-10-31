@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "cheerio": "1.0.0-rc.10",
-    "cypress": "8.5.0",
+    "cypress": "8.7.0",
     "cypress-image-snapshot": "4.0.1",
     "cypress-terminal-report": "3.3.4",
     "eslint": "8.0.1",
