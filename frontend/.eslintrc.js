@@ -37,6 +37,7 @@ module.exports = {
     'vue/component-name-in-template-casing': ['error', 'kebab-case', {
       registeredComponentsOnly: false,
     }],
+    'vue/multi-word-component-names': 'off',
     // 便于 vuetify 迁移
     'vuetify/no-deprecated-classes': 'error',
     'vuetify/grid-unknown-attributes': 'error',
