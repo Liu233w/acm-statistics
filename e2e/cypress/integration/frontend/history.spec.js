@@ -216,6 +216,6 @@ function queryAndWait(waitFor) {
   // wait for debounce to be executed
   // eslint-disable-next-line cypress/no-unnecessary-waiting
   cy.wait(500)
-  cy.get('button:contains("refresh")').click()
+  cy.get('button i.mdi-refresh').click()
   cy.wait(waitFor)
 }

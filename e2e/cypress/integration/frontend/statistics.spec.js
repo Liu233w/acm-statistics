@@ -78,7 +78,7 @@ describe('crawler test', () => {
       cy.get('.v-progress-linear')
       snapshot('worker-working')
 
-      cy.get('button:contains("stop")').click()
+      cy.get('button i.mdi-stop').click()
 
       snapshot('worker-after-stop')
     })
@@ -118,5 +118,5 @@ function waitAndRefresh() {
   // wait for debounce to be executed
   // eslint-disable-next-line cypress/no-unnecessary-waiting
   cy.wait(500)
-  cy.get('button:contains("refresh")').click()
+  cy.get('button i.mdi-refresh').click()
 }
