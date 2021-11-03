@@ -81,7 +81,7 @@
           <v-card-text>
             <v-form v-model="valid">
               <v-text-field
-                prepend-icon="lock"
+                prepend-icon="mdi-lock"
                 label="Current Password"
                 type="password"
                 v-model="currentPwd"
@@ -89,7 +89,7 @@
                 :rules="[rules.required]"
               />
               <v-text-field
-                prepend-icon="lock"
+                prepend-icon="mdi-lock"
                 label="New Password"
                 type="password"
                 v-model="newPwd"
@@ -97,7 +97,7 @@
                 :rules="[rules.required, rules.password]"
               />
               <v-text-field
-                prepend-icon="lock"
+                prepend-icon="mdi-lock"
                 label="Confirm Password"
                 type="password"
                 v-model="pwdRepeat"

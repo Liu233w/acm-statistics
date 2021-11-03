@@ -21,14 +21,14 @@
         <v-flex>
           <v-form v-model="valid">
             <v-text-field
-              prepend-icon="person"
+              prepend-icon="mdi-account"
               label="Username"
               v-model="username"
               required
               :rules="[rules.required]"
             />
             <v-text-field
-              prepend-icon="lock"
+              prepend-icon="mdi-lock"
               label="Password"
               type="password"
               v-model="password"
@@ -36,7 +36,7 @@
               :rules="[rules.required, rules.password]"
             />
             <v-text-field
-              prepend-icon="lock"
+              prepend-icon="mdi-lock"
               label="Confirm password"
               type="password"
               v-model="pwdRepeat"
@@ -49,7 +49,7 @@
               </v-col>
               <v-col>
                 <v-text-field
-                  prepend-icon="verified_user"
+                  prepend-icon="mdi-shield-check"
                   label="Captcha"
                   v-model="captchaText"
                   required
@@ -60,7 +60,7 @@
                       icon
                       @click="refreshCaptcha"
                     >
-                      <v-icon>refresh</v-icon>
+                      <v-icon>mdi-refresh</v-icon>
                     </v-btn>
                   </template>
                 </v-text-field>

@@ -115,11 +115,11 @@ export default {
       const logined = this.$store.state.session.login
       return _.filter(
         [
-          { icon: 'home', title: 'Homepage', to: '/' },
-          { icon: 'code', title: 'Statistics', to: '/statistics' },
-          { icon: 'history', title: 'History', to: '/history', needLogin: true },
-          { icon: 'settings', title: 'Settings', to: '/settings', needLogin: true },
-          { icon: 'info', title: 'About', to: '/about' },
+          { icon: 'mdi-home', title: 'Homepage', to: '/' },
+          { icon: 'mdi-code-tags', title: 'Statistics', to: '/statistics' },
+          { icon: 'mdi-history', title: 'History', to: '/history', needLogin: true },
+          { icon: 'mdi-cog', title: 'Settings', to: '/settings', needLogin: true },
+          { icon: 'mdi-information', title: 'About', to: '/about' },
         ],
         item => !item.needLogin || logined,
       )
