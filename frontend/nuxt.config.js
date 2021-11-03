@@ -23,7 +23,6 @@ module.exports = async () => ({
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Material+Icons|Noto+Serif+SC:300,400,500,700' },
-      { rel: 'stylesheet', href: 'https://use.fontawesome.com/releases/v5.0.13/css/all.css' },
     ],
     script: [
       // { src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js', 'data-ad-client': 'ca-pub-9846042020379030', async: true },
@@ -32,6 +31,7 @@ module.exports = async () => ({
   },
   plugins: [
     '~/plugins/debug.js',
+    '~/plugins/font.js',
   ],
   css: [
     '~/assets/style/app.scss',
