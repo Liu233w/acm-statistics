@@ -33,7 +33,7 @@
             <v-list-item href="mailto:mail@ojhunt.com">
               <v-list-item-action>
                 <v-icon class="blue--text text--lighten-2">
-                  email
+                  mdi-email
                 </v-icon>
               </v-list-item-action>
               <v-list-item-content>
@@ -146,7 +146,7 @@
             <v-list-item>
               <v-list-item-action>
                 <v-icon class="blue--text text--lighten-2">
-                  place
+                  mdi-map-marker
                 </v-icon>
               </v-list-item-action>
               <v-list-item-content>

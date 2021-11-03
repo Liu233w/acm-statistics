@@ -73,7 +73,7 @@
                 v-on="on"
                 @click="stopWorker"
               >
-                <v-icon>stop</v-icon>
+                <v-icon>mdi-stop</v-icon>
               </v-btn>
             </template>
             <span>Cancel query</span>
@@ -88,7 +88,7 @@
                 v-on="on"
                 @click="startWorker"
               >
-                <v-icon>refresh</v-icon>
+                <v-icon>mdi-refresh</v-icon>
               </v-btn>
             </template>
             <span>Re-query</span>
@@ -131,7 +131,7 @@
             shrink
           >
             <v-icon color="orange darken-2">
-              warning
+              mdi-alert
             </v-icon>
           </v-flex>
           <v-flex align-self-start>
@@ -149,7 +149,7 @@
             shrink
           >
             <v-icon color="red">
-              error
+              mdi-alert-circle
             </v-icon>
           </v-flex>
           <v-flex align-self-start>

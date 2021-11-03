@@ -21,14 +21,14 @@
         <v-flex>
           <v-form v-model="valid">
             <v-text-field
-              prepend-icon="person"
+              prepend-icon="mdi-account"
               label="Username"
               required
               v-model="username"
               :rules="[rules.required]"
             />
             <v-text-field
-              prepend-icon="lock"
+              prepend-icon="mdi-lock"
               label="Password"
               required
               type="password"
