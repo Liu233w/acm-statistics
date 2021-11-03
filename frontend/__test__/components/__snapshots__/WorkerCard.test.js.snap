@@ -10,7 +10,7 @@ exports[`WorkerCard can be rendered correctly 1`] = `
       <div class="spacer"></div>
       <div class="v-toolbar__items">
         <!----> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-plus-circle-outline theme--light"></i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-open-in-new theme--light"></i></span></button></span>
-        <transition-stub name="fade-transition"><span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">refresh</i></span></button></span></transition-stub>
+        <transition-stub name="fade-transition"><span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-refresh theme--light"></i></span></button></span></transition-stub>
       </div>
     </div>
   </header>
@@ -57,7 +57,7 @@ exports[`WorkerCard can render error correctly 1`] = `
       <div class="spacer"></div>
       <div class="v-toolbar__items">
         <!----> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-plus-circle-outline theme--light"></i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-open-in-new theme--light"></i></span></button></span>
-        <transition-stub name="fade-transition"><span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">refresh</i></span></button></span></transition-stub>
+        <transition-stub name="fade-transition"><span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-refresh theme--light"></i></span></button></span></transition-stub>
       </div>
     </div>
   </header>
@@ -104,7 +104,7 @@ exports[`WorkerCard can render result correctly 1`] = `
       <div class="spacer"></div>
       <div class="v-toolbar__items">
         <!----> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-plus-circle-outline theme--light"></i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-open-in-new theme--light"></i></span></button></span>
-        <transition-stub name="fade-transition"><span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">refresh</i></span></button></span></transition-stub>
+        <transition-stub name="fade-transition"><span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-refresh theme--light"></i></span></button></span></transition-stub>
       </div>
     </div>
   </header>
@@ -151,7 +151,7 @@ exports[`WorkerCard can render username correctly 1`] = `
       <div class="spacer"></div>
       <div class="v-toolbar__items">
         <!----> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-plus-circle-outline theme--light"></i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-open-in-new theme--light"></i></span></button></span>
-        <transition-stub name="fade-transition"><span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">refresh</i></span></button></span></transition-stub>
+        <transition-stub name="fade-transition"><span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-refresh theme--light"></i></span></button></span></transition-stub>
       </div>
     </div>
   </header>
@@ -198,7 +198,7 @@ exports[`WorkerCard can render warning correctly 1`] = `
       <div class="spacer"></div>
       <div class="v-toolbar__items">
         <!----> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-plus-circle-outline theme--light"></i></span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-open-in-new theme--light"></i></span></button></span>
-        <transition-stub name="fade-transition"><span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light">refresh</i></span></button></span></transition-stub>
+        <transition-stub name="fade-transition"><span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-refresh theme--light"></i></span></button></span></transition-stub>
       </div>
     </div>
   </header>
@@ -228,11 +228,11 @@ exports[`WorkerCard can render warning correctly 1`] = `
       </div>
     </div>
     <div class="layout xs12">
-      <div class="flex align-self-start shrink"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light orange--text text--darken-2">warning</i></div>
+      <div class="flex align-self-start shrink"><i aria-hidden="true" class="v-icon notranslate mdi mdi-alert theme--light orange--text text--darken-2"></i></div>
       <div class="flex align-self-start"><span>Your username begins with a space.</span></div>
     </div>
     <div class="layout xs12">
-      <div class="flex align-self-start shrink"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light orange--text text--darken-2">warning</i></div>
+      <div class="flex align-self-start shrink"><i aria-hidden="true" class="v-icon notranslate mdi mdi-alert theme--light orange--text text--darken-2"></i></div>
       <div class="flex align-self-start"><span>Your username includes space, which may not be supported by some crawlers.</span></div>
     </div>
     <!---->
