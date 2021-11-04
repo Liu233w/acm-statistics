@@ -23,7 +23,7 @@
         disable-sort
         v-model="selected"
         :headers="headers"
-        :items="items"
+        :items="listItems"
         :loading="loading"
         show-select
         :items-per-page.sync="itemsPerPage"
@@ -98,11 +98,11 @@ export default {
   },
   data() {
     return {
-      items: [],
+      data: [],
       loading: true,
       headers: [
         { text: 'Id', value: 'historyId', align: 'start' },
-        { text: 'Query date', value: 'creationTime' },
+        { text: 'Query time', value: 'creationTime' },
         { text: 'Solved', value: 'solved' },
         { text: 'Submissions', value: 'submission' },
         { text: 'Actions', value: 'actions' },
@@ -127,13 +127,21 @@ export default {
     }
   },
   computed: {
+    listItems() {
+      return _.map(this.data, item => {
+        return {
+          ...item,
+          creationTime: item.creationTime.toLocaleString(),
+        }
+      })
+    },
     chartData() {
       const dateFormatter = new Intl.DateTimeFormat()
-      const dates = _.map(this.items, (a) =>
+      const dates = _.map(this.data, (a) =>
         dateFormatter.format(a.creationTime),
       )
-      const solved = _.map(this.items, 'solved')
-      const submissions = _.map(this.items, 'submission')
+      const solved = _.map(this.data, 'solved')
+      const submissions = _.map(this.data, 'submission')
       return {
         labels: _.reverse(dates),
         datasets: [
@@ -185,8 +193,8 @@ export default {
           },
         )
         this.serverItemsLength = res.result.totalCount
-        this.items = res.result.items
-        _.forEach(this.items, (item) => {
+        this.data = res.result.items
+        _.forEach(this.data, (item) => {
           item.creationTime = new Date(item.creationTime)
         })
         this.errorMessage = null
