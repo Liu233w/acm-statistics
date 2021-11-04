@@ -2734,8 +2734,8 @@ exports[`/history 1`] = `
                               <div class="v-data-table__mobile-row__cell">10</div>
                             </td>
                             <td class="v-data-table__mobile-row">
-                              <div class="v-data-table__mobile-row__header">Query date</div>
-                              <div class="v-data-table__mobile-row__cell">Fri Apr 10 2020 08:00:00 GMT+0000 (Coordinated Universal Time)</div>
+                              <div class="v-data-table__mobile-row__header">Query time</div>
+                              <div class="v-data-table__mobile-row__cell">4/10/2020, 8:00:00 AM</div>
                             </td>
                             <td class="v-data-table__mobile-row">
                               <div class="v-data-table__mobile-row__header">Solved</div>
@@ -2766,8 +2766,8 @@ exports[`/history 1`] = `
                               <div class="v-data-table__mobile-row__cell">9</div>
                             </td>
                             <td class="v-data-table__mobile-row">
-                              <div class="v-data-table__mobile-row__header">Query date</div>
-                              <div class="v-data-table__mobile-row__cell">Thu Apr 09 2020 08:00:00 GMT+0000 (Coordinated Universal Time)</div>
+                              <div class="v-data-table__mobile-row__header">Query time</div>
+                              <div class="v-data-table__mobile-row__cell">4/9/2020, 8:00:00 AM</div>
                             </td>
                             <td class="v-data-table__mobile-row">
                               <div class="v-data-table__mobile-row__header">Solved</div>
@@ -2798,8 +2798,8 @@ exports[`/history 1`] = `
                               <div class="v-data-table__mobile-row__cell">8</div>
                             </td>
                             <td class="v-data-table__mobile-row">
-                              <div class="v-data-table__mobile-row__header">Query date</div>
-                              <div class="v-data-table__mobile-row__cell">Wed Apr 08 2020 08:00:00 GMT+0000 (Coordinated Universal Time)</div>
+                              <div class="v-data-table__mobile-row__header">Query time</div>
+                              <div class="v-data-table__mobile-row__cell">4/8/2020, 8:00:00 AM</div>
                             </td>
                             <td class="v-data-table__mobile-row">
                               <div class="v-data-table__mobile-row__header">Solved</div>
@@ -2830,8 +2830,8 @@ exports[`/history 1`] = `
                               <div class="v-data-table__mobile-row__cell">7</div>
                             </td>
                             <td class="v-data-table__mobile-row">
-                              <div class="v-data-table__mobile-row__header">Query date</div>
-                              <div class="v-data-table__mobile-row__cell">Tue Apr 07 2020 08:00:00 GMT+0000 (Coordinated Universal Time)</div>
+                              <div class="v-data-table__mobile-row__header">Query time</div>
+                              <div class="v-data-table__mobile-row__cell">4/7/2020, 8:00:00 AM</div>
                             </td>
                             <td class="v-data-table__mobile-row">
                               <div class="v-data-table__mobile-row__header">Solved</div>
@@ -2862,8 +2862,8 @@ exports[`/history 1`] = `
                               <div class="v-data-table__mobile-row__cell">6</div>
                             </td>
                             <td class="v-data-table__mobile-row">
-                              <div class="v-data-table__mobile-row__header">Query date</div>
-                              <div class="v-data-table__mobile-row__cell">Mon Apr 06 2020 08:00:00 GMT+0000 (Coordinated Universal Time)</div>
+                              <div class="v-data-table__mobile-row__header">Query time</div>
+                              <div class="v-data-table__mobile-row__cell">4/6/2020, 8:00:00 AM</div>
                             </td>
                             <td class="v-data-table__mobile-row">
                               <div class="v-data-table__mobile-row__header">Solved</div>
@@ -2894,8 +2894,8 @@ exports[`/history 1`] = `
                               <div class="v-data-table__mobile-row__cell">5</div>
                             </td>
                             <td class="v-data-table__mobile-row">
-                              <div class="v-data-table__mobile-row__header">Query date</div>
-                              <div class="v-data-table__mobile-row__cell">Sun Apr 05 2020 08:00:00 GMT+0000 (Coordinated Universal Time)</div>
+                              <div class="v-data-table__mobile-row__header">Query time</div>
+                              <div class="v-data-table__mobile-row__cell">4/5/2020, 8:00:00 AM</div>
                             </td>
                             <td class="v-data-table__mobile-row">
                               <div class="v-data-table__mobile-row__header">Solved</div>
@@ -2926,8 +2926,8 @@ exports[`/history 1`] = `
                               <div class="v-data-table__mobile-row__cell">4</div>
                             </td>
                             <td class="v-data-table__mobile-row">
-                              <div class="v-data-table__mobile-row__header">Query date</div>
-                              <div class="v-data-table__mobile-row__cell">Sat Apr 04 2020 08:00:00 GMT+0000 (Coordinated Universal Time)</div>
+                              <div class="v-data-table__mobile-row__header">Query time</div>
+                              <div class="v-data-table__mobile-row__cell">4/4/2020, 8:00:00 AM</div>
                             </td>
                             <td class="v-data-table__mobile-row">
                               <div class="v-data-table__mobile-row__header">Solved</div>
@@ -2958,8 +2958,8 @@ exports[`/history 1`] = `
                               <div class="v-data-table__mobile-row__cell">3</div>
                             </td>
                             <td class="v-data-table__mobile-row">
-                              <div class="v-data-table__mobile-row__header">Query date</div>
-                              <div class="v-data-table__mobile-row__cell">Fri Apr 03 2020 08:00:00 GMT+0000 (Coordinated Universal Time)</div>
+                              <div class="v-data-table__mobile-row__header">Query time</div>
+                              <div class="v-data-table__mobile-row__cell">4/3/2020, 8:00:00 AM</div>
                             </td>
                             <td class="v-data-table__mobile-row">
                               <div class="v-data-table__mobile-row__header">Solved</div>
@@ -2990,8 +2990,8 @@ exports[`/history 1`] = `
                               <div class="v-data-table__mobile-row__cell">2</div>
                             </td>
                             <td class="v-data-table__mobile-row">
-                              <div class="v-data-table__mobile-row__header">Query date</div>
-                              <div class="v-data-table__mobile-row__cell">Thu Apr 02 2020 08:00:00 GMT+0000 (Coordinated Universal Time)</div>
+                              <div class="v-data-table__mobile-row__header">Query time</div>
+                              <div class="v-data-table__mobile-row__cell">4/2/2020, 8:00:00 AM</div>
                             </td>
                             <td class="v-data-table__mobile-row">
                               <div class="v-data-table__mobile-row__header">Solved</div>
@@ -3022,8 +3022,8 @@ exports[`/history 1`] = `
                               <div class="v-data-table__mobile-row__cell">1</div>
                             </td>
                             <td class="v-data-table__mobile-row">
-                              <div class="v-data-table__mobile-row__header">Query date</div>
-                              <div class="v-data-table__mobile-row__cell">Wed Apr 01 2020 08:00:00 GMT+0000 (Coordinated Universal Time)</div>
+                              <div class="v-data-table__mobile-row__header">Query time</div>
+                              <div class="v-data-table__mobile-row__cell">4/1/2020, 8:00:00 AM</div>
                             </td>
                             <td class="v-data-table__mobile-row">
                               <div class="v-data-table__mobile-row__header">Solved</div>
@@ -3088,7 +3088,7 @@ exports[`/history 1`] = `
           data: [{}],
           fetch: {
             "FETCH_KEY": {
-              items: [{
+              data: [{
                 historyId: b,
                 summaryId: b,
                 creationTime: new Date(1586505600000),
@@ -3155,7 +3155,7 @@ exports[`/history 1`] = `
                 value: "historyId",
                 align: "start"
               }, {
-                text: "Query date",
+                text: "Query time",
                 value: "creationTime"
               }, {
                 text: "Solved",
