@@ -19,7 +19,7 @@
     "log4js": "^6.1.2"
   },
   "devDependencies": {
-    "eslint": "8.0.1",
+    "eslint": "8.1.0",
     "eslint-plugin-jest": "25.2.3",
     "eslint-plugin-lodash": "7.3.0",
     "jest": "27.3.1",
