@@ -34,12 +34,12 @@
     "vue-chartjs": "3.5.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.16.0",
+    "@babel/core": "7.16.0",
     "@babel/preset-env": "7.16.0",
     "@mdi/font": "6.4.95",
-    "@nuxtjs/eslint-module": "^3.0.2",
+    "@nuxtjs/eslint-module": "3.0.2",
     "@vue/test-utils": "1.2.2",
-    "@vue/vue2-jest": "^27.0.0-alpha.3",
+    "@vue/vue2-jest": "27.0.0-alpha.3",
     "babel-jest": "27.3.1",
     "babel-plugin-lodash": "3.3.4",
     "eslint": "8.2.0",
@@ -49,7 +49,7 @@
     "eslint-plugin-vuetify": "1.1.0",
     "jest": "27.3.1",
     "jest-serializer-vue": "2.0.2",
-    "stylus-loader": "^4.3.3"
+    "stylus-loader": "4.3.3"
   },
   "jest": {
     "moduleFileExtensions": [
