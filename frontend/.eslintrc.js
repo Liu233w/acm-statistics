@@ -25,20 +25,19 @@ module.exports = {
     'semi': [2, 'never'],
     'no-console': 'off',
     'vue/max-attributes-per-line': 'off',
-    // 行末逗号：在多行中强制最后一项有逗号，单行中强制没有
     'comma-dangle': ['error', 'always-multiline'],
     'quotes': ['error', 'single'],
-    // 有 babel-lodash，不需要单独引入也可以 tree-shaking
+    // we don't need to do that since we have babel lodash
     'lodash/import-scope': 'off',
-    // 这个方法的可读性太低了
+    // low readability
     'lodash/matches-prop-shorthand': 'off',
     'lodash/prefer-reject': 'off',
-    // 强制使用 PascalCase
+    // force PascalCase
     'vue/component-name-in-template-casing': ['error', 'kebab-case', {
       registeredComponentsOnly: false,
     }],
     'vue/multi-word-component-names': 'off',
-    // 便于 vuetify 迁移
+    // for vuetify migration
     'vuetify/no-deprecated-classes': 'error',
     'vuetify/grid-unknown-attributes': 'error',
     'vuetify/no-legacy-grid': 'off',
