@@ -168,20 +168,12 @@ describe('history page', () => {
     })
 
     it('should render correctly', () => {
-      // Fix snapshot error
-      // eslint-disable-next-line cypress/no-unnecessary-waiting
-      cy.wait(5000)
       cy.matchImageSnapshot()
     })
 
     it('can go to next page', () => {
       cy.get('i.mdi-chevron-right').parents('button').click()
       cy.wait('@get-list-2')
-
-      // Fix snapshot error
-      // eslint-disable-next-line cypress/no-unnecessary-waiting
-      cy.wait(5000)
-
       cy.get('table').matchImageSnapshot()
     })
 
@@ -192,11 +184,6 @@ describe('history page', () => {
         .parents('div[role="option"]')
         .click()
       cy.wait('@get-list-3')
-
-      // Fix snapshot error
-      // eslint-disable-next-line cypress/no-unnecessary-waiting
-      cy.wait(5000)
-
       cy.get('table').matchImageSnapshot()
     })
 
@@ -205,10 +192,6 @@ describe('history page', () => {
       for (let i = 1; i <= 4; ++i) {
         cy.get(`tbody tr:nth-child(${i}) td:nth-child(1) > div`).click()
       }
-
-      // Fix snapshot error
-      // eslint-disable-next-line cypress/no-unnecessary-waiting
-      cy.wait(5000)
 
       cy.matchImageSnapshot()
 
