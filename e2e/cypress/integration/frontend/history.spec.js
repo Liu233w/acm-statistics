@@ -226,6 +226,7 @@ function queryAndWait(waitFor) {
 // multiple pages
 function historyPageSnapshot(target = cy) {
   target.matchImageSnapshot({
-    failureThreshold: 0.01,
+    failureThreshold: 9000,
+    failureThresholdType: 'pixel',
   })
 }
