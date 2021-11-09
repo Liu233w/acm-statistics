@@ -1,8 +1,9 @@
 using System;
 using System.Linq;
-using Microsoft.AspNet.OData;
-using Microsoft.AspNet.OData.Routing;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.OData.Formatter;
+using Microsoft.AspNetCore.OData.Query;
+using Microsoft.AspNetCore.OData.Routing.Controllers;
 using Microsoft.Extensions.Logging;
 using OHunt.Web.Database;
 using OHunt.Web.Models;
@@ -12,7 +13,6 @@ namespace OHunt.Web.Controllers
     /// <summary>
     /// Get submissions
     /// </summary>
-    [ODataRoutePrefix("submissions")]
     // for swagger
     [ApiExplorerSettings(IgnoreApi = false, GroupName = "Submissions")]
     [Route("api/ohunt/submissions")]
@@ -46,7 +46,7 @@ namespace OHunt.Web.Controllers
         /// <response code="200">The result. It is wrapped by odata.</response>
         /// <response code="400">If oj name is incorrect, redirect to a route and get correct oj names.</response>
         [EnableQuery(PageSize = 500)]
-        [HttpGet("")]
+        [HttpGet]
         [Produces("application/json")]
         public ActionResult<IQueryable<Submission>> Get([FromODataUri] string oj)
         {

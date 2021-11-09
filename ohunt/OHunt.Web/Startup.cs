@@ -3,17 +3,17 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.Json.Serialization;
-using Microsoft.AspNet.OData.Builder;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNet.OData.Extensions;
 using Microsoft.AspNetCore.Mvc.Formatters;
+using Microsoft.AspNetCore.OData;
 using Microsoft.Net.Http.Headers;
 using Microsoft.OData.Edm;
+using Microsoft.OData.ModelBuilder;
 using Microsoft.OpenApi.Models;
 using OHunt.Web.Crawlers;
 using OHunt.Web.Database;
@@ -41,8 +41,6 @@ namespace OHunt.Web
             services.AddDbContextPool<OHuntDbContext>(options =>
                 options.UseMySql(conn,
                 new MySqlServerVersion(new Version(8, 0))));
-
-            services.AddOData();
 
             services.AddSwaggerGen(options =>
             {
@@ -84,6 +82,11 @@ namespace OHunt.Web
                 {
                     // use string as enum
                     opts.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
+                })
+                .AddOData(option =>
+                {
+                    option.Select().OrderBy().Filter().Count();
+                    option.AddRouteComponents("api/ohunt", GetEdmModel());
                 });
 
             services.AddSingleton<IDbBuilder, OHuntDbBuilder>();
@@ -125,10 +128,7 @@ namespace OHunt.Web
 
             app.UseEndpoints(endpoints =>
             {
-                // endpoints.MapControllers();
-                endpoints.EnableDependencyInjection();
-                endpoints.Select().OrderBy().Filter().Count();
-                endpoints.MapODataRoute("odata", "api/ohunt", GetEdmModel());
+                endpoints.MapControllers();
             });
 
             app.Use(async (ctx, next) =>
@@ -143,7 +143,6 @@ namespace OHunt.Web
 
             app.UseSwagger(opts =>
             {
-                //
                 opts.RouteTemplate = "api/ohunt/{documentName}/swagger.json";
             });
             app.UseSwaggerUI(c =>
@@ -156,7 +155,7 @@ namespace OHunt.Web
         private static IEdmModel GetEdmModel()
         {
             var odataBuilder = new ODataConventionModelBuilder();
-            odataBuilder.EntitySet<Submission>("Submissions");
+            odataBuilder.EntitySet<Submission>("submissions");
 
             return odataBuilder.GetEdmModel();
         }
