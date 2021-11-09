@@ -25,10 +25,8 @@
         "https://github.com/dotnet/runtime"
       ],
       "matchPackageNames": [
-        "dotnet-ef",
         "Pomelo.EntityFrameworkCore.MySql"
-      ],
-      "excludePackageNames": ["Microsoft.AspNetCore.OData"]
+      ]
     }
   ],
   "ignorePresets": [
