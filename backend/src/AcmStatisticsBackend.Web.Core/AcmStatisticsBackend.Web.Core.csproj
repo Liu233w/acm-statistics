@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <VersionPrefix>1.0.0.0</VersionPrefix>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
     <AssemblyName>AcmStatisticsBackend.Web.Core</AssemblyName>
     <PackageId>AcmStatisticsBackend.Web.Core</PackageId>
     <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
@@ -21,7 +21,7 @@
     <ProjectReference Include="..\AcmStatisticsBackend.EntityFrameworkCore\AcmStatisticsBackend.EntityFrameworkCore.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.12" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
     <PackageReference Include="Abp.AspNetCore" Version="6.5.0" />
     <PackageReference Include="Abp.ZeroCore" Version="6.5.0" />

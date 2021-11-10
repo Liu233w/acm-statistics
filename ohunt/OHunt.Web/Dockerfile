@@ -1,11 +1,11 @@
 #See https://aka.ms/containerfastmode to understand how Visual Studio uses this Dockerfile to build your images for faster debugging.
 
-FROM mcr.microsoft.com/dotnet/aspnet:5.0@sha256:17a0aed422d0baeca87a1305d0c897be2064c0163fc02d9d3c8b2cdc21f7d0b7 AS base
+FROM mcr.microsoft.com/dotnet/aspnet:6.0
 WORKDIR /app
 EXPOSE 80
 EXPOSE 443
 
-FROM mcr.microsoft.com/dotnet/sdk:5.0@sha256:f89170534876d4adbbb7e4442285ae77242079f17b9dd8bd71d83551d491617f AS build
+FROM mcr.microsoft.com/dotnet/sdk:6.0
 WORKDIR /src
 COPY ["OHunt.Web/OHunt.Web.csproj", "OHunt.Web/"]
 RUN dotnet restore "OHunt.Web/OHunt.Web.csproj"
