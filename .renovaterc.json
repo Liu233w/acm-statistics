@@ -17,13 +17,8 @@
       ]
     },
     {
-      "groupName": "dotnet monorepo",
-      "matchSourceUrlPrefixes": [
-        "https://github.com/dotnet/aspnetcore",
-        "https://github.com/dotnet/efcore",
-        "https://github.com/dotnet/extensions",
-        "https://github.com/dotnet/runtime"
-      ],
+      "groupName": "dotnet monorepo with mysql",
+      "extends": ["monorepo:dotnet"],
       "matchPackageNames": [
         "Pomelo.EntityFrameworkCore.MySql"
       ]
