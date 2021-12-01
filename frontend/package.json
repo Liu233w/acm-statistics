@@ -47,7 +47,7 @@
     "eslint-plugin-lodash": "7.3.0",
     "eslint-plugin-vue": "8.1.1",
     "eslint-plugin-vuetify": "1.1.0",
-    "jest": "27.4.2",
+    "jest": "27.4.3",
     "jest-serializer-vue": "2.0.2",
     "stylus-loader": "4.3.3"
   },
