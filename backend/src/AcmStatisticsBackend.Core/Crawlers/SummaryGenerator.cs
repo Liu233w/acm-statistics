@@ -100,6 +100,7 @@ namespace AcmStatisticsBackend.Crawlers
                 .Concat(virtualJudgeList)
                 .Where(a => a.Usernames.Count > 0
                             && (a.Submission > 0 || a.Solved > 0))
+                .OrderBy(a => a.CrawlerName)
                 .ToList();
 
             return new QuerySummary
