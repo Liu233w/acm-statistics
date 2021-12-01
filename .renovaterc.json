@@ -3,30 +3,13 @@
   "extends": [
     "config:base",
     "docker:enableMajor",
-    "docker:pinDigests"
+    "docker:pinDigests",
+    "monorepo:dotnet"
   ],
   "packageRules": [
     {
       "groupName": "aspnetboilerplate",
       "packagePatterns": ["^Abp\\.|^Abp$"]
-    },
-    {
-      "groupName": "OData",
-      "packagePatterns": [
-        "OData"
-      ]
-    },
-    {
-      "groupName": "dotnet monorepo",
-      "matchSourceUrlPrefixes": [
-        "https://github.com/dotnet/aspnetcore",
-        "https://github.com/dotnet/efcore",
-        "https://github.com/dotnet/extensions",
-        "https://github.com/dotnet/runtime"
-      ],
-      "matchPackageNames": [
-        "Pomelo.EntityFrameworkCore.MySql"
-      ]
     }
   ],
   "ignorePresets": [

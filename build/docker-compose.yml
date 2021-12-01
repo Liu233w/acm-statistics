@@ -3,7 +3,7 @@ version: '3.4'
 services:
 
   reverse-proxy:
-    image: traefik:v2.5.3@sha256:f40028d9771cb29a35392b4cbdd655625596a319b915061e306c503059d0b6f4
+    image: traefik:v2.5.4@sha256:7d0228d19042f1286765f0ef56ceba8e4e8a08ae9b45b854179cf09a9c3de633
     command:
       - "--api.insecure=true"
       - "--providers.docker=true"
@@ -64,7 +64,7 @@ services:
       - captcha-service
 
   db:
-    image: mysql:8.0@sha256:6d7d4524463fe6e2b893ffc2b89543c81dec7ef82fb2020a1b27606666464d87
+    image: mysql:8.0@sha256:aeecae58035f3868bf4f00e5fc623630d8b438db9d05f4d8c6538deb14d4c31b
     restart: always
     environment:
       MYSQL_DATABASE: acm_statistics
@@ -87,7 +87,7 @@ services:
       - traefik.http.services.captcha-service.loadbalancer.server.port=80
 
   adminer:
-    image: adminer:4.8.1-standalone@sha256:9a02ab99d93c1866c01ed128e015fa3e5e82c38637c59d7b9b668ba77a246c7e
+    image: adminer:4.8.1-standalone@sha256:4b927bc33b7d13629c93bf3c7fdda58410723016750c0c1f31dac572c131977b
     restart: always
     labels:
       # 需要更改路径，防止其他用户轻易找到adminer入口
@@ -97,7 +97,7 @@ services:
       - traefik.http.services.adminer.loadbalancer.server.port=8080
 
   db-backup:
-    image: databack/mysql-backup@sha256:a624830a186a8d1eecf6a916b4c5e923e656d4980a65c8e3f46cc539d9c1e0cf
+    image: databack/mysql-backup@sha256:18c0b31769062af314bbe0c7551c5a4186a2ae66da99e33b78c3c6740ed6deb7
     restart: always
     user: "${DB_BACKUP_UID}"
     volumes:
