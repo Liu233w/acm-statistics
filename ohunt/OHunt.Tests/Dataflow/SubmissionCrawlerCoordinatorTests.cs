@@ -29,6 +29,19 @@ namespace OHunt.Tests.Dataflow
             _crawlerMock = new CrawlerMock();
         }
 
+        private static Submission CreateSubmission(long id)
+        {
+            return new()
+            {
+                Status = RunResult.Accepted,
+                Time = new DateTime(2020, 4, 1),
+                ProblemLabel = "1001",
+                UserName = "user1",
+                OnlineJudgeId = OnlineJudge.ZOJ,
+                SubmissionId = id,
+            };
+        }
+
         [Scenario]
         public void It_ShouldWork()
         {
@@ -215,12 +228,12 @@ namespace OHunt.Tests.Dataflow
 
                     await SendToPipeline(new CrawlerMessage
                     {
-                        Submission = new Submission { SubmissionId = 1 },
+                        Submission = CreateSubmission(1),
                         Checkpoint = true,
                     });
                     await SendToPipeline(new CrawlerMessage
                     {
-                        Submission = new Submission { SubmissionId = 2 },
+                        Submission = CreateSubmission(2),
                     });
                 });
 
@@ -251,7 +264,7 @@ namespace OHunt.Tests.Dataflow
                     _crawlerMock.CalledCount.Should().Be(2);
                     return SendToPipeline(new CrawlerMessage
                     {
-                        Submission = new Submission { SubmissionId = 3 },
+                        Submission = CreateSubmission(3),
                         Checkpoint = true,
                     });
                 });
@@ -280,7 +293,7 @@ namespace OHunt.Tests.Dataflow
             await _coordinator.StartAllCrawlers();
             await SendToPipeline(new CrawlerMessage
             {
-                Submission = new Submission { SubmissionId = 1 },
+                Submission = CreateSubmission(1),
                 Checkpoint = true,
             });
             _crawlerMock.TaskSource.SetResult(1);
@@ -291,7 +304,7 @@ namespace OHunt.Tests.Dataflow
             _crawlerMock.CalledCount.Should().Be(2);
             await SendToPipeline(new CrawlerMessage
             {
-                Submission = new Submission { SubmissionId = 2 },
+                Submission = CreateSubmission(2),
                 Checkpoint = true,
             });
             _crawlerMock.TaskSource.SetResult(1);
@@ -321,12 +334,12 @@ namespace OHunt.Tests.Dataflow
                 {
                     await SendToPipeline(new CrawlerMessage
                     {
-                        Submission = new Submission { SubmissionId = 1 },
+                        Submission = CreateSubmission(1),
                         Checkpoint = true,
                     });
                     await SendToPipeline(new CrawlerMessage
                     {
-                        Submission = new Submission { SubmissionId = 2 },
+                        Submission = CreateSubmission(2),
                     });
                 });
 
@@ -344,12 +357,12 @@ namespace OHunt.Tests.Dataflow
                 {
                     await SendToPipeline(new CrawlerMessage
                     {
-                        Submission = new Submission { SubmissionId = 3 },
+                        Submission = CreateSubmission(3),
                         Checkpoint = true,
                     });
                     await SendToPipeline(new CrawlerMessage
                     {
-                        Submission = new Submission { SubmissionId = 4 },
+                        Submission = CreateSubmission(4),
                     });
                 });
 
@@ -386,7 +399,7 @@ namespace OHunt.Tests.Dataflow
                     await SendToPipeline(new CrawlerMessage
                     {
                         Checkpoint = true,
-                        Submission = new Submission { SubmissionId = 5 },
+                        Submission = CreateSubmission(5),
                     });
                     _crawlerMock.TaskSource.SetResult(1);
                     await Utils.WaitSecond();
@@ -417,7 +430,7 @@ namespace OHunt.Tests.Dataflow
             _crawlerMock.CalledCount.Should().Be(1);
             await SendToPipeline(new CrawlerMessage
             {
-                Submission = new Submission { SubmissionId = 1 },
+                Submission = CreateSubmission(1),
                 Checkpoint = true,
             });
 
@@ -441,7 +454,7 @@ namespace OHunt.Tests.Dataflow
             await _coordinator.StartAllCrawlers();
             await SendToPipeline(new CrawlerMessage
             {
-                Submission = new Submission { SubmissionId = 1 },
+                Submission = CreateSubmission(1),
             });
 
             // act
@@ -481,7 +494,7 @@ namespace OHunt.Tests.Dataflow
             await _coordinator.StartAllCrawlers();
             await SendToPipeline(new CrawlerMessage
             {
-                Submission = new Submission { SubmissionId = 1 },
+                Submission = CreateSubmission(1),
                 Checkpoint = true,
             });
 

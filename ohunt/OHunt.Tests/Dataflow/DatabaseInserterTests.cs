@@ -123,8 +123,17 @@ namespace OHunt.Tests.Dataflow
         public async Task WhenRequestingComplete_ItShouldInsertAllDataBeforeCompletion()
         {
             // arrange
+            var submission = new Submission
+            {
+                Status = RunResult.Accepted,
+                Time = new DateTime(2020, 4, 1),
+                ProblemLabel = "1001",
+                UserName = "user1",
+                OnlineJudgeId = OnlineJudge.ZOJ,
+                SubmissionId = 1000000,
+            };
             await _inserter.SendAsync(DatabaseInserterMessage<Submission>
-                .OfEntity(new Submission { SubmissionId = 1 }));
+                .OfEntity(submission));
 
             // act
             _inserter.Complete();
