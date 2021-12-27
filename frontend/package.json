@@ -43,7 +43,7 @@
     "babel-jest": "27.4.5",
     "babel-plugin-lodash": "3.3.4",
     "eslint": "8.5.0",
-    "eslint-plugin-jest": "25.3.0",
+    "eslint-plugin-jest": "25.3.2",
     "eslint-plugin-lodash": "7.3.0",
     "eslint-plugin-vue": "8.2.0",
     "eslint-plugin-vuetify": "1.1.0",
