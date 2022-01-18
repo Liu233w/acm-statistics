@@ -24,7 +24,7 @@
     "eslint-plugin-jest": "25.3.4",
     "eslint-plugin-lodash": "7.3.0",
     "jest": "27.4.7",
-    "supertest": "6.1.6"
+    "supertest": "6.2.2"
   },
   "jest": {
     "testEnvironment": "node",
