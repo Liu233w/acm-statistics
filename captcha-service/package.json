@@ -20,7 +20,7 @@
     "uuid": "^8.0.0"
   },
   "devDependencies": {
-    "eslint": "8.6.0",
+    "eslint": "8.7.0",
     "eslint-plugin-jest": "25.3.4",
     "jest": "27.4.7",
     "supertest": "6.2.2"
