@@ -30,14 +30,14 @@
                 </v-icon>
               </v-list-item-action>
             </v-list-item>
-            <v-list-item href="mailto:mail@ojhunt.com">
+            <v-list-item href="mailto:support@ojhunt.com">
               <v-list-item-action>
                 <v-icon class="blue--text text--lighten-2">
                   mdi-email
                 </v-icon>
               </v-list-item-action>
               <v-list-item-content>
-                <v-list-item-subtitle>mail@ojhunt.com</v-list-item-subtitle>
+                <v-list-item-subtitle>support@ojhunt.com</v-list-item-subtitle>
               </v-list-item-content>
             </v-list-item>
             <v-list-item
