@@ -20,7 +20,7 @@
     "jest": "27.4.7",
     "jest-serializer-vue": "2.0.2",
     "lodash": "4.17.21",
-    "superagent": "7.1.0"
+    "superagent": "7.1.1"
   },
   "jest": {
     "snapshotSerializers": [
