@@ -34,7 +34,7 @@
     "vue-chartjs": "3.5.1"
   },
   "devDependencies": {
-    "@babel/core": "7.16.10",
+    "@babel/core": "7.16.12",
     "@babel/preset-env": "7.16.11",
     "@mdi/font": "6.5.95",
     "@nuxtjs/eslint-module": "3.0.2",
