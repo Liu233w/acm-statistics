@@ -89,7 +89,7 @@
                 </v-icon>
               </v-list-item-action>
               <v-list-item-content>
-                <v-list-item-subtitle>Discord: OJ Tracker Development</v-list-item-subtitle>
+                <v-list-item-subtitle>Discord: OJ Analyzer Development</v-list-item-subtitle>
               </v-list-item-content>
               <v-list-item-action>
                 <v-icon class="grey--text">
