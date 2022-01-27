@@ -5,7 +5,7 @@ exports[`/ 1`] = `
 <html data-n-head-ssr="">
 
   <head>
-    <title>OJ Tracker</title>
+    <title>OJ Analyzer</title>
     <meta data-n-head="ssr" charset="utf-8">
     <meta data-n-head="ssr" name="viewport" content="width=device-width, initial-scale=1">
     <meta data-n-head="ssr" data-hid="description" name="description" content="An online tool (crawler) to analyze users performance in online judges (coding competition websites). Supported OJ: POJ, HDU, ZOJ, HYSBZ, CodeForces, UVA, ICPC Live Archive, FZU, SPOJ, Timus (URAL), LeetCode_CN, CSU, LibreOJ, 洛谷, 牛客OJ, Lutece (UESTC), AtCoder, AIZU, CodeChef, El Judge, BNUOJ, Codewars, UOJ, NBUT, 51Nod, DMOJ, VJudge">
@@ -753,7 +753,7 @@ exports[`/ 1`] = `
             <header class="v-sheet theme--light v-toolbar v-toolbar--absolute v-app-bar" style="height:56px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;">
               <div class="v-toolbar__content" style="height:56px;"><button type="button" class="v-app-bar__nav-icon v-btn v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-menu theme--light"></i></span></button>
                 <!---->
-                <div class="v-toolbar__title">OJ Tracker</div>
+                <div class="v-toolbar__title">OJ Analyzer</div>
                 <!---->
                 <!---->
                 <div class="spacer"></div>
@@ -775,7 +775,7 @@ exports[`/ 1`] = `
                           </h2>
                           <div style="height:50px;"></div>
                           <h1 class="black--text mb-2 text-h4 text-center index-title font-weight-bold">
-                            Welcome to OJ Tracker
+                            Welcome to OJ Analyzer
                           </h1>
                           <div class="black--text subheading mb-4 text-center index-title">
                             An online tool to analyze users performance in online judges (coding competition websites)
@@ -959,7 +959,7 @@ exports[`/about 1`] = `
 <html data-n-head-ssr="">
 
   <head>
-    <title>About - OJ Tracker</title>
+    <title>About - OJ Analyzer</title>
     <meta data-n-head="ssr" charset="utf-8">
     <meta data-n-head="ssr" name="viewport" content="width=device-width, initial-scale=1">
     <meta data-n-head="ssr" data-hid="description" name="description" content="An online tool (crawler) to analyze users performance in online judges (coding competition websites). Supported OJ: POJ, HDU, ZOJ, HYSBZ, CodeForces, UVA, ICPC Live Archive, FZU, SPOJ, Timus (URAL), LeetCode_CN, CSU, LibreOJ, 洛谷, 牛客OJ, Lutece (UESTC), AtCoder, AIZU, CodeChef, El Judge, BNUOJ, Codewars, UOJ, NBUT, 51Nod, DMOJ, VJudge">
@@ -1707,7 +1707,7 @@ exports[`/about 1`] = `
             <header class="v-sheet theme--light v-toolbar v-toolbar--absolute v-app-bar" style="height:56px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;">
               <div class="v-toolbar__content" style="height:56px;"><button type="button" class="v-app-bar__nav-icon v-btn v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-menu theme--light"></i></span></button>
                 <!---->
-                <div class="v-toolbar__title">OJ Tracker</div>
+                <div class="v-toolbar__title">OJ Analyzer</div>
                 <!---->
                 <!---->
                 <div class="spacer"></div>
@@ -1754,7 +1754,7 @@ exports[`/about 1`] = `
                           </a> <a tabindex="0" href="https://discord.gg/cQemBNNr" target="_blank" rel="noopener noreferrer" role="listitem" class="v-list-item v-list-item--link theme--light">
                             <div class="v-list-item__action"><i aria-hidden="true" class="v-icon notranslate blue--text text--lighten-2 mdi mdi-discord theme--light"></i></div>
                             <div class="v-list-item__content">
-                              <div class="v-list-item__subtitle">Discord: OJ Tracker Development</div>
+                              <div class="v-list-item__subtitle">Discord: OJ Analyzer Development</div>
                             </div>
                             <div class="v-list-item__action"><i aria-hidden="true" class="v-icon notranslate grey--text mdi mdi-open-in-new theme--light"></i></div>
                           </a></div>
@@ -1907,7 +1907,7 @@ exports[`/history 1`] = `
 <html data-n-head-ssr="">
 
   <head>
-    <title>History - OJ Tracker</title>
+    <title>History - OJ Analyzer</title>
     <meta data-n-head="ssr" charset="utf-8">
     <meta data-n-head="ssr" name="viewport" content="width=device-width, initial-scale=1">
     <meta data-n-head="ssr" data-hid="description" name="description" content="An online tool (crawler) to analyze users performance in online judges (coding competition websites). Supported OJ: POJ, HDU, ZOJ, HYSBZ, CodeForces, UVA, ICPC Live Archive, FZU, SPOJ, Timus (URAL), LeetCode_CN, CSU, LibreOJ, 洛谷, 牛客OJ, Lutece (UESTC), AtCoder, AIZU, CodeChef, El Judge, BNUOJ, Codewars, UOJ, NBUT, 51Nod, DMOJ, VJudge">
@@ -2665,7 +2665,7 @@ exports[`/history 1`] = `
             <header class="v-sheet theme--light v-toolbar v-toolbar--absolute v-app-bar" style="height:56px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;">
               <div class="v-toolbar__content" style="height:56px;"><button type="button" class="v-app-bar__nav-icon v-btn v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-menu theme--light"></i></span></button>
                 <!---->
-                <div class="v-toolbar__title">OJ Tracker</div>
+                <div class="v-toolbar__title">OJ Analyzer</div>
                 <!---->
                 <!---->
                 <div class="spacer"></div>
@@ -3246,7 +3246,7 @@ exports[`/history/{historyId} 1`] = `
 <html data-n-head-ssr="">
 
   <head>
-    <title>History - OJ Tracker</title>
+    <title>History - OJ Analyzer</title>
     <meta data-n-head="ssr" charset="utf-8">
     <meta data-n-head="ssr" name="viewport" content="width=device-width, initial-scale=1">
     <meta data-n-head="ssr" data-hid="description" name="description" content="An online tool (crawler) to analyze users performance in online judges (coding competition websites). Supported OJ: POJ, HDU, ZOJ, HYSBZ, CodeForces, UVA, ICPC Live Archive, FZU, SPOJ, Timus (URAL), LeetCode_CN, CSU, LibreOJ, 洛谷, 牛客OJ, Lutece (UESTC), AtCoder, AIZU, CodeChef, El Judge, BNUOJ, Codewars, UOJ, NBUT, 51Nod, DMOJ, VJudge">
@@ -4004,7 +4004,7 @@ exports[`/history/{historyId} 1`] = `
             <header class="v-sheet theme--light v-toolbar v-toolbar--absolute v-app-bar" style="height:56px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;">
               <div class="v-toolbar__content" style="height:56px;"><button type="button" class="v-app-bar__nav-icon v-btn v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-menu theme--light"></i></span></button>
                 <!---->
-                <div class="v-toolbar__title">OJ Tracker</div>
+                <div class="v-toolbar__title">OJ Analyzer</div>
                 <!---->
                 <!---->
                 <div class="spacer"></div>
@@ -4636,7 +4636,7 @@ exports[`/login 1`] = `
 <html data-n-head-ssr="">
 
   <head>
-    <title>OJ Tracker</title>
+    <title>OJ Analyzer</title>
     <meta data-n-head="ssr" charset="utf-8">
     <meta data-n-head="ssr" name="viewport" content="width=device-width, initial-scale=1">
     <meta data-n-head="ssr" data-hid="description" name="description" content="An online tool (crawler) to analyze users performance in online judges (coding competition websites). Supported OJ: POJ, HDU, ZOJ, HYSBZ, CodeForces, UVA, ICPC Live Archive, FZU, SPOJ, Timus (URAL), LeetCode_CN, CSU, LibreOJ, 洛谷, 牛客OJ, Lutece (UESTC), AtCoder, AIZU, CodeChef, El Judge, BNUOJ, Codewars, UOJ, NBUT, 51Nod, DMOJ, VJudge">
@@ -5499,7 +5499,7 @@ exports[`/register 1`] = `
 <html data-n-head-ssr="">
 
   <head>
-    <title>OJ Tracker</title>
+    <title>OJ Analyzer</title>
     <meta data-n-head="ssr" charset="utf-8">
     <meta data-n-head="ssr" name="viewport" content="width=device-width, initial-scale=1">
     <meta data-n-head="ssr" data-hid="description" name="description" content="An online tool (crawler) to analyze users performance in online judges (coding competition websites). Supported OJ: POJ, HDU, ZOJ, HYSBZ, CodeForces, UVA, ICPC Live Archive, FZU, SPOJ, Timus (URAL), LeetCode_CN, CSU, LibreOJ, 洛谷, 牛客OJ, Lutece (UESTC), AtCoder, AIZU, CodeChef, El Judge, BNUOJ, Codewars, UOJ, NBUT, 51Nod, DMOJ, VJudge">
@@ -6386,7 +6386,7 @@ exports[`/settings 1`] = `
 <html data-n-head-ssr="">
 
   <head>
-    <title>Settings - OJ Tracker</title>
+    <title>Settings - OJ Analyzer</title>
     <meta data-n-head="ssr" charset="utf-8">
     <meta data-n-head="ssr" name="viewport" content="width=device-width, initial-scale=1">
     <meta data-n-head="ssr" data-hid="description" name="description" content="An online tool (crawler) to analyze users performance in online judges (coding competition websites). Supported OJ: POJ, HDU, ZOJ, HYSBZ, CodeForces, UVA, ICPC Live Archive, FZU, SPOJ, Timus (URAL), LeetCode_CN, CSU, LibreOJ, 洛谷, 牛客OJ, Lutece (UESTC), AtCoder, AIZU, CodeChef, El Judge, BNUOJ, Codewars, UOJ, NBUT, 51Nod, DMOJ, VJudge">
@@ -7144,7 +7144,7 @@ exports[`/settings 1`] = `
             <header class="v-sheet theme--light v-toolbar v-toolbar--absolute v-app-bar" style="height:56px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;">
               <div class="v-toolbar__content" style="height:56px;"><button type="button" class="v-app-bar__nav-icon v-btn v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-menu theme--light"></i></span></button>
                 <!---->
-                <div class="v-toolbar__title">OJ Tracker</div>
+                <div class="v-toolbar__title">OJ Analyzer</div>
                 <!---->
                 <!---->
                 <div class="spacer"></div>
@@ -7398,7 +7398,7 @@ exports[`/statistics 1`] = `
 <html data-n-head-ssr="">
 
   <head>
-    <title>Statistics - OJ Tracker</title>
+    <title>Statistics - OJ Analyzer</title>
     <meta data-n-head="ssr" charset="utf-8">
     <meta data-n-head="ssr" name="viewport" content="width=device-width, initial-scale=1">
     <meta data-n-head="ssr" data-hid="description" name="description" content="An online tool (crawler) to analyze users performance in online judges (coding competition websites). Supported OJ: POJ, HDU, ZOJ, HYSBZ, CodeForces, UVA, ICPC Live Archive, FZU, SPOJ, Timus (URAL), LeetCode_CN, CSU, LibreOJ, 洛谷, 牛客OJ, Lutece (UESTC), AtCoder, AIZU, CodeChef, El Judge, BNUOJ, Codewars, UOJ, NBUT, 51Nod, DMOJ, VJudge">
@@ -8146,7 +8146,7 @@ exports[`/statistics 1`] = `
             <header class="v-sheet theme--light v-toolbar v-toolbar--absolute v-app-bar" style="height:56px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;">
               <div class="v-toolbar__content" style="height:56px;"><button type="button" class="v-app-bar__nav-icon v-btn v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-menu theme--light"></i></span></button>
                 <!---->
-                <div class="v-toolbar__title">OJ Tracker</div>
+                <div class="v-toolbar__title">OJ Analyzer</div>
                 <!---->
                 <!---->
                 <div class="spacer"></div>
