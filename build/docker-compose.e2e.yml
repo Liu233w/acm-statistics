@@ -23,13 +23,13 @@ services:
   mock-proxy:
     image: jamesdbloom/mockserver:mockserver-5.5.1@sha256:50c5208622435c32e8ac1b3cc29f91fb70a87608dd3b8bc9364e1950d55341f9
     ports:
-      # 在宿主机上使用 cypress 的时候可以用这个端口
+      # use this port to connect to mockserver on host
       - 1081:1080
 
   mock-configurer:
     image: acm-statistics-e2e-mock-configurer
     volumes:
-      # 防止node_module被挂载进来，只能把代码放在单独的文件夹里了
+      # organize them into a separate folder to prevent mounting node_modules
       - ../e2e/http-mocks/src:/mocks/src
     labels:
       - traefik.http.routers.mock-configurer.rule=PathPrefix(`/mock-configurer`)

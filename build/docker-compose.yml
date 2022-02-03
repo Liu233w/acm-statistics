@@ -82,7 +82,7 @@ services:
   captcha-service:
     image: ${DOCKER_REPO}acm-statistics-captcha-service${DOCKER_TAG}
     labels:
-      # 只有获取验证码需要从外部访问api，其他部分不需要
+      # Only getting captcha part needs public access.
       - traefik.http.routers.captcha-service.rule=Path(`/api/captcha-service/generate`)
       - traefik.http.services.captcha-service.loadbalancer.server.port=80
 
@@ -101,7 +101,7 @@ services:
       # backup at 3:00 am
       - DB_DUMP_CRON=0 3 * * *
       - DB_SERVER=db
-      # 忽略两个日志表
+      # Do not backup Logs table
       - MYSQLDUMP_OPTS=--ignore-table=acm_statistics.AbpAuditLogs --ignore-table=acm_statistics.AbpUserLoginAttempts
     depends_on:
       - db
