@@ -53,11 +53,11 @@ else # Linux or cygwin/msys
 endif
 
 # === consts ==
-# 程序的版本号，显示在“关于”页面
+# the version number is shown in about page
 ifndef VERSION_NUM
 VERSION_NUM := $(shell git log -1 --pretty=%H)
 endif
-# 程序的构建时间，用在“关于”和版权声明界面，为 linux 时间戳
+# a timestamp shown in about page and page footer
 ifndef BUILD_TIME
     ifdef OS # windows
         BUILD_TIME := $(shell powershell -command "[int32](New-TimeSpan -Start (Get-Date "01/01/1970") -End ((Get-Date).ToUniversalTime())).TotalSeconds")
