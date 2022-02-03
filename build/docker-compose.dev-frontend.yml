@@ -1,7 +1,7 @@
 version: '3.4'
 
 services:
-  # 只有前端支持 hot reload，所以只改动前端
+  # for frontend hot reload
   frontend:
     image: acm-statistics-frontend-base
     volumes:
@@ -20,7 +20,7 @@ services:
 
   crawler-api-backend:
     environment:
-      # 显示后端详细日志
+      # show detail logs including response
       - NODE_ENV=development
 
   watchtower:
