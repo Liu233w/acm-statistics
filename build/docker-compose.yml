@@ -86,16 +86,6 @@ services:
       - traefik.http.routers.captcha-service.rule=Path(`/api/captcha-service/generate`)
       - traefik.http.services.captcha-service.loadbalancer.server.port=80
 
-  adminer:
-    image: adminer:4.8.1-standalone@sha256:c1258743fa99e7c1a48b0103e310ca37a80fe26e6499453c33716e4a162f5438
-    restart: always
-    labels:
-      # 需要更改路径，防止其他用户轻易找到adminer入口
-      - traefik.http.routers.adminer.rule=PathPrefix(`${ADMINER_URL}`)
-      - traefik.http.middlewares.adminer-url-strip.stripprefix.prefixes=${ADMINER_URL}
-      - traefik.http.routers.adminer.middlewares=adminer-url-strip@docker
-      - traefik.http.services.adminer.loadbalancer.server.port=8080
-
   db-backup:
     image: databack/mysql-backup@sha256:18c0b31769062af314bbe0c7551c5a4186a2ae66da99e33b78c3c6740ed6deb7
     restart: always
