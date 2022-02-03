@@ -3,18 +3,17 @@
 include share.mk
 
 # === variables ===
-# 发布镜像时使用的前缀（用于表示用户名）
+# the docker repo name (username) to publish image
 RepoName = liu233w/
-# 使用 git commit hash 来表示镜像的tag
+# use git commit hash as image tag
 CommitHash := $(shell git log -1 --pretty=%H)
-# 要发布的镜像变量名
+# the image to publish
 Images = FrontendTag CrawlerApiBackendTag BackendTag CaptchaServiceTag OHuntTag
 
 # === inner ===
-# 内部使用的变量
 ImageToTag := $(foreach n,$(Images),$(n)-tag)
 ImageToPush := $(foreach n,$(Images),$(n)-push)
-# 单独的 target 的内部变量
+# variables for each images
 $(ImageToTag): Image = $($(subst -tag,,$@))
 $(ImageToPush): Image = $($(subst -push,,$@))
 $(ImageToTag) $(ImageToPush): ImageNameWithHash = $(RepoName)$(Image):$(CommitHash)
@@ -48,8 +47,8 @@ $(ImageToPush):
 up: .build .env
 	docker-compose up $(compose-args)
 
-# 为了进行e2e测试而启动的服务器，除了正常的代码外，还会启动 mock-server
-# 移除原先的数据库
+# additionally run mock-server when start the server for e2e test
+# Remove the old database
 e2e-up: .build .env
 	$(MAKE) -C ../e2e build-http-mocks
 	$(RMR) backend-db || echo remove failed
