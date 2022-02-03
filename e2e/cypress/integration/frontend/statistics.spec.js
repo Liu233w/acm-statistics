@@ -104,7 +104,7 @@ describe('crawler test', () => {
   it('can show crawler warnings', () => {
     cy.get('div[title="POJ"]').parents('.worker').within(() => {
 
-      cy.get('div:contains("Username") input').type(' name with space')
+      cy.get('div:contains("Username") input').type(' name with space').blur()
 
       cy.contains('Your username begins with a space.')
       cy.contains('Your username includes space, which may not be supported by some crawlers.')
