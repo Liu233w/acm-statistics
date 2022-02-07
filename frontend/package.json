@@ -17,7 +17,7 @@
     "postinstall": "node -e \"var s='../crawler',d='./node_modules/crawler',fs=require('fs'), r=require('path').resolve;fs.exists(d,function(e){e||fs.symlinkSync(r(s),r(d),'junction')});\""
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "5.15.4",
+    "@fortawesome/fontawesome-free": "6.0.0",
     "@nuxtjs/axios": "5.13.6",
     "@nuxtjs/component-cache": "1.1.6",
     "@nuxtjs/vuetify": "1.12.3",
