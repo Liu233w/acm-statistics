@@ -99,6 +99,7 @@ crawlers:
       title: 洛谷
       description:
       url: https://www.luogu.com.cn
+    server_only: true
   nowcoder:
     meta:
       title: 牛客OJ
