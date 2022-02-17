@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/dotnet/sdk:6.0@sha256:329f54fde64e1ce6ea4dd3a17192cc0c97aee394836c5a322751a6d78db511e4
+FROM mcr.microsoft.com/dotnet/sdk:6.0@sha256:a220c3df8891dd6944afe28203273271f1947d3adb1652f7cc58e4edc1a8be0e
 
 WORKDIR /src
 
