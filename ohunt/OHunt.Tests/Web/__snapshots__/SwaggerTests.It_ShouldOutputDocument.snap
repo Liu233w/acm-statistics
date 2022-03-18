@@ -764,7 +764,8 @@
         "properties": {
           "typeName": {
             "type": "string",
-            "nullable": true
+            "nullable": true,
+            "readOnly": true
           }
         },
         "additionalProperties": false
