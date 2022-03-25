@@ -31,7 +31,7 @@
     "stylus": "0.57.0",
     "superagent": "7.1.1",
     "virtual-module-webpack-plugin": "0.4.1",
-    "vue-chartjs": "3.5.1"
+    "vue-chartjs": "4.0.1"
   },
   "devDependencies": {
     "@babel/core": "7.17.8",
