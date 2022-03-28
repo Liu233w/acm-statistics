@@ -10,6 +10,13 @@
     {
       "groupName": "aspnetboilerplate",
       "packagePatterns": ["^Abp\\.|^Abp$"]
+    },
+    {
+      "groupName": "chartjs",
+      "matchPackageNames": [
+        "vue-chartjs",
+        "chart.js"
+      ]
     }
   ],
   "ignorePresets": [
