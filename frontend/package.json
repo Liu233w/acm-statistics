@@ -29,7 +29,7 @@
     "nuxt": "2.15.8",
     "nuxt-env": "0.1.0",
     "stylus": "0.57.0",
-    "superagent": "7.1.1",
+    "superagent": "7.1.3",
     "virtual-module-webpack-plugin": "0.4.1",
     "vue-chartjs": "3.5.1"
   },
