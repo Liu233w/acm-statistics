@@ -23,7 +23,7 @@
     "eslint": "8.14.0",
     "eslint-plugin-jest": "26.1.5",
     "jest": "27.5.1",
-    "supertest": "6.2.2"
+    "supertest": "6.2.3"
   },
   "jest": {
     "testEnvironment": "node",
