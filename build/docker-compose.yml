@@ -3,7 +3,7 @@ version: '3.4'
 services:
 
   reverse-proxy:
-    image: traefik:v2.6.6@sha256:9dc508fe4f1516b81ec97ed37dd4f3b406f02eda72c7c0dcd9f74d23fbc82239
+    image: traefik:v2.6.6
     command:
       - "--api.insecure=true"
       - "--providers.docker=true"
@@ -40,7 +40,7 @@ services:
       - traefik.http.services.crawler-api-backend.loadbalancer.server.port=80
 
   watchtower:
-    image: containrrr/watchtower@sha256:bbf9794a691b59ed2ed3089fec53844f14ada249ee5e372ff0e595b73f4e9ab3
+    image: containrrr/watchtower
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     command: -s "0 */30 * * * *" --cleanup
@@ -64,7 +64,7 @@ services:
       - captcha-service
 
   db:
-    image: mysql:8.0@sha256:2dafe3f044f140ec6c07716d34f0b317b98f8e251435abd347951699f7aa3904
+    image: mysql:8.0
     restart: always
     environment:
       MYSQL_DATABASE: acm_statistics
@@ -87,7 +87,7 @@ services:
       - traefik.http.services.captcha-service.loadbalancer.server.port=80
 
   db-backup:
-    image: databack/mysql-backup@sha256:18c0b31769062af314bbe0c7551c5a4186a2ae66da99e33b78c3c6740ed6deb7
+    image: databack/mysql-backup
     restart: always
     user: "${DB_BACKUP_UID}"
     volumes:
