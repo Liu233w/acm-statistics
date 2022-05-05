@@ -67,3 +67,6 @@ fabric.properties
 
 # ionide of vscode
 .ionide
+
+# macOS
+.DS_Store
