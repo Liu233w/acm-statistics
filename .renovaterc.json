@@ -3,7 +3,6 @@
   "extends": [
     "config:base",
     "docker:enableMajor",
-    "docker:pinDigests",
     "monorepo:dotnet"
   ],
   "packageRules": [
