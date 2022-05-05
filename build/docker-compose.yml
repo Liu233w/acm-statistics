@@ -64,7 +64,7 @@ services:
       - captcha-service
 
   db:
-    image: mysql:8.0
+    image: mysql:8-oracle
     restart: always
     environment:
       MYSQL_DATABASE: acm_statistics
