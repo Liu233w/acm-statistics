@@ -33,7 +33,7 @@ run:
 
 clean:
 	# remove all stopped containers
-	docker rm $(shell docker ps -a -q)
+	docker rm $(shell docker ps -a -q); true
 	for dir in $(AllTarget); do \
   	$(MAKE) -C $$dir clean; \
   done
