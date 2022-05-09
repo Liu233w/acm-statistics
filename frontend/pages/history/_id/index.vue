@@ -50,6 +50,7 @@
     />
     <bar-chart
       :chart-data="chartData"
+      :chart-options="{responsive: true, maintainAspectRatio: false}"
       style="height: 300px"
     />
     <v-list dense>
@@ -74,9 +75,10 @@
 
 <script>
 import _ from 'lodash'
+import 'chart.js/auto'
+import { Bar } from 'vue-chartjs/legacy'
 
 import { getAbpErrorMessage } from '~/components/utils'
-import BarChart from '~/components/BarChart'
 import { PROJECT_TITLE } from '~/components/consts'
 
 import HistoryToolbar from './-HistoryToolbar'
@@ -84,7 +86,7 @@ import GoHistoryPage from './-GoHistoryPage'
 
 export default {
   components: {
-    BarChart,
+    BarChart: Bar,
   },
   head: {
     title: `History - ${PROJECT_TITLE}`,
