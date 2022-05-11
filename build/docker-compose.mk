@@ -29,7 +29,7 @@ $(ImageToTag) $(ImageToPush): ImageNameWithLatest = $(RepoName)$(Image):latest
 	$(MAKE) -C ../backend build
 	$(MAKE) -C ../captcha-service build
 	$(MAKE) -C ../ohunt build
-	rm backend-db/mysql.sock
+	rm -f backend-db/mysql.sock
 
 tag: .build $(ImageToTag)
 
