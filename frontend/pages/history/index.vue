@@ -76,8 +76,6 @@
 
 <script>
 import _ from 'lodash'
-import 'chart.js/auto'
-import { Line } from 'vue-chartjs/legacy'
 
 import { getAbpErrorMessage } from '~/components/utils'
 import { PROJECT_TITLE } from '~/components/consts'
@@ -85,7 +83,6 @@ import Advertisement from '~/components/Advertisement'
 
 export default {
   components: {
-    LineChart: Line,
     Advertisement,
   },
   inject: ['changeLayoutConfig'],
