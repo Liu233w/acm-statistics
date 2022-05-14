@@ -12,3 +12,6 @@ dist
 
 # codecov
 coverage
+
+# vscode
+.vscode
