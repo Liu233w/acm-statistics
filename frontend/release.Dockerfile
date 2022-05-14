@@ -20,7 +20,7 @@ WORKDIR /var/project
 COPY --from=crawler /var/project ../crawler
 
 COPY package.json pnpm-lock.yaml ./
-RUN pnpm install --only=production
+RUN pnpm install --only=production --shamefully-hoist
 
 COPY --from=base /var/project .
 
