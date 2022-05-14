@@ -14,7 +14,7 @@ RUN apk add --no-cache make gcc g++ python3
 COPY --from=crawler /var/project ../crawler
 
 COPY package.json pnpm-lock.yaml ./
-RUN pnpm install
+RUN pnpm install --shamefully-hoist
 
 COPY . .
 
