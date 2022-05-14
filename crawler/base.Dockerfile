@@ -5,7 +5,7 @@ FROM ${NODE_BASE_IMAGE}
 
 WORKDIR /var/project
 
-COPY package.json package-lock.json ./
+COPY package.json pnpm-lock.yaml ./
 RUN pnpm install
 
 COPY . .
