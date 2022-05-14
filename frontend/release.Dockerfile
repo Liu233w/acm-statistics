@@ -11,20 +11,6 @@ RUN pnpm run build
 RUN rm -rf node_modules
 
 
-FROM ${NODE_BASE_IMAGE} AS build
-
-WORKDIR /var/project
-
-RUN apk add --no-cache make gcc g++ python3
-
-COPY --from=crawler /var/project ../crawler
-
-COPY package.json pnpm-lock.yaml ./
-RUN pnpm install --only=production
-
-COPY --from=base /var/project .
-
-
 FROM ${NODE_BASE_IMAGE}
 ARG VERSION_NUM
 ARG BUILD_TIME
@@ -32,7 +18,11 @@ ARG BUILD_TIME
 WORKDIR /var/project
 
 COPY --from=crawler /var/project ../crawler
-COPY --from=build /var/project .
+
+COPY package.json pnpm-lock.yaml ./
+RUN pnpm install --only=production
+
+COPY --from=base /var/project .
 
 ENV \
     HOST=0.0.0.0 \
