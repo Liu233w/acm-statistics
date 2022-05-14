@@ -32,6 +32,7 @@ module.exports = async () => ({
   plugins: [
     '~/plugins/debug.js',
     '~/plugins/font.js',
+    { src: '~/plugins/chartjs.js', mode: 'client' },
   ],
   css: [
     '~/assets/style/app.scss',
