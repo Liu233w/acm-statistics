@@ -2,7 +2,7 @@ FROM cypress/base:latest
 
 WORKDIR /e2e
 
-COPY package.json package-lock.json ./
+COPY package.json pnpm-lock.yaml ./
 RUN pnpm install
 
 RUN $(pnpm bin)/cypress verify
