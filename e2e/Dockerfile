@@ -1,6 +1,8 @@
-FROM cypress/base:latest
+FROM cypress/base:16.13.0
 
 WORKDIR /e2e
+
+RUN npm install --global pnpm@7
 
 COPY package.json pnpm-lock.yaml ./
 RUN pnpm install
