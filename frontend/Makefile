@@ -18,8 +18,7 @@ help:
 		$(build-args) \
 		-f base.Dockerfile \
 		--build-arg NODE_BASE_IMAGE=$(NodeBaseTag) \
-		--build-arg CRAWLER_IMAGE=$(CrawlerTag) \
-		--build-arg CRAWLER_LIBRARY_PATH=$(CrawlerLibraryPath)
+		--build-arg CRAWLER_IMAGE=$(CrawlerTag)
 
 build: .base
 	docker build . \
@@ -30,8 +29,7 @@ build: .base
 		--build-arg BUILD_TIME=$(BUILD_TIME) \
 		--build-arg NODE_BASE_IMAGE=$(NodeBaseTag) \
 		--build-arg FRONTEND_BASE_IMAGE=$(FrontendBaseTag) \
-		--build-arg CRAWLER_IMAGE=$(CrawlerTag) \
-		--build-arg CRAWLER_LIBRARY_PATH=$(CrawlerLibraryPath)
+		--build-arg CRAWLER_IMAGE=$(CrawlerTag)
 
 test: .base
 	docker run --rm -t $(FrontendBaseTag) pnpm test

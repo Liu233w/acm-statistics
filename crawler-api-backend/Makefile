@@ -16,8 +16,7 @@ help:
 		-t $(CrawlerApiBackendBaseTag) \
 		$(build-args) \
 		--build-arg NODE_BASE_IMAGE=$(NodeBaseTag) \
-		--build-arg CRAWLER_IMAGE=$(CrawlerTag) \
-		--build-arg CRAWLER_LIBRARY_PATH=$(CrawlerLibraryPath)
+		--build-arg CRAWLER_IMAGE=$(CrawlerTag)
 
 build: .base .crawler
 	docker build . \
@@ -26,8 +25,7 @@ build: .base .crawler
 		$(build-args) \
 		--build-arg NODE_BASE_IMAGE=$(NodeBaseTag) \
 		--build-arg BACKEND_BASE_IMAGE=$(CrawlerApiBackendBaseTag) \
-		--build-arg CRAWLER_IMAGE=$(CrawlerTag) \
-		--build-arg CRAWLER_LIBRARY_PATH=$(CrawlerLibraryPath)
+		--build-arg CRAWLER_IMAGE=$(CrawlerTag)
 
 test: .base
 	docker run --rm -t $(CrawlerApiBackendBaseTag) pnpm test

@@ -7,12 +7,12 @@
     "start": "node index.js",
     "lint": "eslint --ext .js --ignore-path .gitignore .",
     "lintfix": "eslint --fix --ext .js --ignore-path .gitignore .",
-    "test": "jest",
-    "postinstall": "node -e \"var s='../crawler',d='./node_modules/crawler',fs=require('fs'), r=require('path').resolve;fs.exists(d,function(e){e||fs.symlinkSync(r(s),r(d),'junction')});\""
+    "test": "jest"
   },
   "author": "Liu233w <wwwlsmcom@outlook.com>",
   "license": "GPL-3.0",
   "dependencies": {
+    "crawler": "link:../crawler",
     "koa": "^2.7.0",
     "koa-ratelimit": "^5.0.1",
     "koa-router": "^10.0.0",

@@ -21,8 +21,7 @@ build: .base
 		-t $(CrawlerTag) \
 		$(build-args) \
 		--build-arg CRAWLER_BASE_IMAGE=$(CrawlerBaseTag) \
-		--build-arg NODE_BASE_IMAGE=$(NodeBaseTag) \
-		--build-arg CRAWLER_LIBRARY_PATH=$(CrawlerLibraryPath)
+		--build-arg NODE_BASE_IMAGE=$(NodeBaseTag)
 
 test: .base
 	docker run --rm -t $(CrawlerBaseTag) pnpm test

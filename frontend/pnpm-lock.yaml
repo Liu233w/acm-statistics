@@ -15,6 +15,7 @@ specifiers:
   babel-plugin-lodash: 3.3.4
   chart.js: 3.7.1
   cheerio: 1.0.0-rc.10
+  crawler: link:../crawler
   eslint: 8.15.0
   eslint-plugin-jest: 26.2.2
   eslint-plugin-lodash: 7.4.0
@@ -40,6 +41,7 @@ dependencies:
   '@nuxtjs/vuetify': 1.12.3
   chart.js: 3.7.1
   cheerio: 1.0.0-rc.10
+  crawler: link:../crawler
   html2canvas: 1.4.1
   js-cookie: 3.0.1
   lodash: 4.17.21
