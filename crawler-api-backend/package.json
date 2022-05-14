@@ -9,7 +9,7 @@
     "lintfix": "eslint --fix --ext .js --ignore-path .gitignore .",
     "test": "jest"
   },
-  "author": "Liu233w <wwwlsmcom@outlook.com>",
+  "author": "Liu233w <gh@liu233w.com>",
   "license": "GPL-3.0",
   "dependencies": {
     "crawler": "link:../crawler",

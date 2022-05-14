@@ -2,7 +2,7 @@
   "name": "acm-statistics-frontend",
   "version": "1.0.0",
   "description": "ACM查题网站前端",
-  "author": "Liu233w <wwwlsmcom@outlook.com>",
+  "author": "Liu233w <gh@liu233w.com>",
   "private": true,
   "scripts": {
     "dev": "nuxt",
