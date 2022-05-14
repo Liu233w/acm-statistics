@@ -12,7 +12,7 @@ FROM ${NODE_BASE_IMAGE} AS build
 WORKDIR /var/project
 
 COPY package.json package-lock.json ./
-RUN npm install --only=production
+RUN pnpm install --only=production
 
 COPY --from=base /var/project .
 

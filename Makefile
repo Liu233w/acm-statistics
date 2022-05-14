@@ -113,13 +113,13 @@ If argument `build-args` is specified, it is attached to all `docker build` comm
 
 run
 Run shell command in modules.
-E.g. `make run run-cmd="npm run lint"` runs `npm run lint` in all modules.
+E.g. `make run run-cmd="pnpm run lint"` runs `npm run lint` in all modules.
 Available parameters:
 
   run-cmd: The command to be run.
 
   run-args: The extra arguments sent to docker. E.g. run following commands in fontend directory to send argument -v '...' to docker: 
-    >> make run run-cmd="npm test -- --update-snapshot" run-args="-v './__test__:/var/project/__test__'"
+    >> make run run-cmd="pnpm test -- --update-snapshot" run-args="-v './__test__:/var/project/__test__'"
 
 	make-args: run-args will automatically send following switches to docker: --rm, --interactive, --tty, which can be turned off by following switches: `r`/`no-rm`, `i`/`no-interactive`, `t`/`no-tty`. 
     E.g. the following command turns `run-args` into `--tty` (`--rm` and `--interactive` are disabled):

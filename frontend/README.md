@@ -4,7 +4,7 @@
 
 ## Using Docker
 
-- `make dev` 启动开发模式（需要先使用npm安装依赖）
+- `make dev` 启动开发模式（需要先使用pnpm安装依赖）
 - `make update-snapshot` 更新快照
 - `make test` 或 `make test-ci` 来运行测试
 
@@ -12,23 +12,23 @@
 
 ``` bash
 # install dependencies
-$ npm install # Or yarn install
+$ pnpm install # Or yarn install
 
 # serve with hot reload at localhost:3000
-$ npm run dev
+$ pnpm run dev
 
 # build for production and launch server
-$ npm run build
-$ npm start
+$ pnpm run build
+$ pnpm start
 ```
 
 ## 其他命令
 
-- `npm run lint` 运行代码质量检测
-- `npm run lintfix` 自动修复部分代码质量问题
-- `npm run analyze` 分析build出来的文件大小、分布，生成报告
-- `npm run test` 运行测试
-- `npm run snapshot` 交互式更新快照
+- `pnpm run lint` 运行代码质量检测
+- `pnpm run lintfix` 自动修复部分代码质量问题
+- `pnpm run analyze` 分析build出来的文件大小、分布，生成报告
+- `pnpm run test` 运行测试
+- `pnpm run snapshot` 交互式更新快照
 
 For detailed explanation on how things work, check out the [Nuxt.js](https://github.com/nuxt/nuxt.js) and [Vuetify.js](https://vuetifyjs.com/) documentation.
 
