@@ -9,7 +9,7 @@
     "lint": "eslint --ext .js --ignore-path .gitignore .",
     "lintfix": "eslint --fix --ext .js --ignore-path .gitignore ."
   },
-  "author": "Liu233w <wwwlsmcom@outlook.com>",
+  "author": "Liu233w <gh@liu233w.com>",
   "license": "GPL-3.0",
   "dependencies": {
     "koa": "^2.7.0",
