@@ -42,14 +42,14 @@ ci: .base
 		$(shell printenv | grep -E '^GITHUB' | sed 's/"/\\"/g; s/\(.*\)/"\1"/g; s/^/-e /g') \
 		-v "$(CURDIR)/cypress:/e2e/cypress" \
 	 	$(E2eBaseTag) \
-		npm test -- --record --key $(CYPRESS_RECORD_KEY)
+		pnpm test -- --record --key $(CYPRESS_RECORD_KEY)
 
 ci-no-record: .base
 	docker run --rm -t --ipc=host --network=host \
 		$(shell printenv | grep -E '^GITHUB' | sed 's/"/\\"/g; s/\(.*\)/"\1"/g; s/^/-e /g') \
 		-v "$(CURDIR)/cypress:/e2e/cypress" \
 	 	$(E2eBaseTag) \
-		npm test
+		pnpm test
 
 run: .base
 	docker run $(run-args) $(E2eBaseTag) $(run-cmd)
@@ -59,17 +59,17 @@ test: .base
 	docker run --rm -t --ipc=host --network=host \
 		-v "$(CURDIR)/cypress:/e2e/cypress" \
 	 	$(E2eBaseTag) \
-		npm test
+		pnpm test
 
 open: export http_proxy=http://localhost:1081
 open:
-	npm start -- --env failOnSnapshotDiff=false
+	pnpm start -- --env failOnSnapshotDiff=false
 
 update-snapshot: .base
 	docker run --rm -t --ipc=host --network=host \
 		-v "$(CURDIR)/cypress:/e2e/cypress" \
 	 	$(E2eBaseTag) \
-		npm test -- --env updateSnapshots=true
+		pnpm test -- --env updateSnapshots=true
 
 upd: .base wait-server update-snapshot test update-html-snapshot
 
@@ -79,15 +79,15 @@ clean:
 # ===== 使用 jest 对html进行快照 ===========
 test-html: .base
 	docker run --rm -t --ipc=host --network=host \
-	$(E2eBaseTag) npm run test-html
+	$(E2eBaseTag) pnpm run test-html
 
 # 更新快照
 update-html-snapshot: .base
 	docker run --rm -t --ipc=host --network=host \
 		-v "$(CURDIR)/__test__:/e2e/__test__" \
-		$(E2eBaseTag) npm run test-html -- -u
+		$(E2eBaseTag) pnpm run test-html -- -u
 
 test-html-ci: .base
 	docker run --rm --ipc=host --network=host \
 		$(E2eBaseTag) \
-		npm run test-html -- --colors --ci
+		pnpm run test-html -- --colors --ci

@@ -34,13 +34,13 @@ build: .base
 		--build-arg CRAWLER_LIBRARY_PATH=$(CrawlerLibraryPath)
 
 test: .base
-	docker run --rm -t $(FrontendBaseTag) npm test
+	docker run --rm -t $(FrontendBaseTag) pnpm test
 
 # Update snapshot
 update-snapshot: .base
 	docker run --rm -t \
 		-v "$(CURDIR)/__test__:/var/project/__test__" \
-		$(FrontendBaseTag) npm test -- -u
+		$(FrontendBaseTag) pnpm test -- -u
 
 # if BUILD_FRONTEND is specified, it will compile the frontend before `run` command
 ifdef BUILD_FRONTEND
@@ -58,8 +58,8 @@ test-ci: .base
 	docker run --rm \
 		-v "$(CURDIR)/coverage:/var/project/coverage" \
 		$(FrontendBaseTag) \
-		npm test -- --colors --ci
+		pnpm test -- --colors --ci
 
-# Use docker to develop. It runs `npm run dev`
+# Use docker to develop. It runs `pnpm run dev`
 dev:
 	cd ../build && $(MAKE) -f docker-compose.mk dev-frontend

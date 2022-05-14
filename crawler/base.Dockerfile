@@ -6,6 +6,6 @@ FROM ${NODE_BASE_IMAGE}
 WORKDIR /var/project
 
 COPY package.json package-lock.json ./
-RUN npm install
+RUN pnpm install
 
 COPY . .

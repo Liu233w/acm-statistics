@@ -30,7 +30,7 @@ build: .base .crawler
 		--build-arg CRAWLER_LIBRARY_PATH=$(CrawlerLibraryPath)
 
 test: .base
-	docker run --rm -t $(CrawlerApiBackendBaseTag) npm test
+	docker run --rm -t $(CrawlerApiBackendBaseTag) pnpm test
 
 run: .base
 	docker run $(run-args) $(CrawlerApiBackendBaseTag) $(run-cmd)
@@ -42,4 +42,4 @@ test-ci: .base
 	docker run --rm \
 		-v "$(CURDIR)/coverage:/var/project/coverage" \
 		$(CrawlerApiBackendBaseTag) \
-		npm test -- --colors
+		pnpm test -- --colors

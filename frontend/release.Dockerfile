@@ -7,7 +7,7 @@ FROM ${CRAWLER_IMAGE} AS crawler
 
 
 FROM ${FRONTEND_BASE_IMAGE} AS base
-RUN npm run build
+RUN pnpm run build
 RUN rm -rf node_modules
 
 
@@ -19,7 +19,7 @@ WORKDIR /var/project
 RUN apk add --no-cache make gcc g++ python3
 
 COPY package.json package-lock.json ./
-RUN npm install --only=production && rm -rf node_modules/crawler
+RUN pnpm install --only=production && rm -rf node_modules/crawler
 
 COPY --from=crawler ${CRAWLER_LIBRARY_PATH} ./node_modules/crawler
 
@@ -44,4 +44,4 @@ ENV \
 
 EXPOSE 3000
 
-CMD ["npm", "start"]
+CMD ["pnpm", "start"]

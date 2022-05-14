@@ -24,7 +24,7 @@ build: .base
 		--build-arg SERVICE_BASE_IMAGE=$(CaptchaServiceBaseTag)
 
 test: .base
-	docker run --rm -t $(CaptchaServiceBaseTag) npm test
+	docker run --rm -t $(CaptchaServiceBaseTag) pnpm test
 
 run: .base
 	docker run $(run-args) $(CaptchaServiceBaseTag) $(run-cmd)
@@ -36,4 +36,4 @@ test-ci: .base
 	docker run --rm \
 		-v "$(CURDIR)/coverage:/var/project/coverage" \
 		$(CaptchaServiceBaseTag) \
-		npm test -- --colors
+		pnpm test -- --colors

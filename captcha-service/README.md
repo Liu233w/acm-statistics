@@ -7,7 +7,7 @@ captcha-service
 
 ## 本地运行
 
-- 使用 `npm start` 运行
+- 使用 `pnpm start` 运行
 - 在运行之后会监视 `localhost:80`
 
 ## 部署

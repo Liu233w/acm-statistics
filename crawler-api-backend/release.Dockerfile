@@ -16,7 +16,7 @@ ARG CRAWLER_LIBRARY_PATH
 WORKDIR /var/project
 
 COPY package.json package-lock.json ./
-RUN npm install --only=production && rm -rf node_modules/crawler
+RUN pnpm install --only=production && rm -rf node_modules/crawler
 
 COPY --from=crawler ${CRAWLER_LIBRARY_PATH} ./node_modules/crawler
 
@@ -31,4 +31,4 @@ ENV NODE_ENV production
 
 EXPOSE 12001
 
-CMD ["npm", "start"]
+CMD ["pnpm", "start"]

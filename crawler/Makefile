@@ -25,7 +25,7 @@ build: .base
 		--build-arg CRAWLER_LIBRARY_PATH=$(CrawlerLibraryPath)
 
 test: .base
-	docker run --rm -t $(CrawlerBaseTag) npm test
+	docker run --rm -t $(CrawlerBaseTag) pnpm test
 
 run: .base
 	docker run $(run-args) $(CrawlerBaseTag) $(run-cmd)
@@ -37,4 +37,4 @@ test-ci: .base
 	docker run --rm \
 		-v "$(CURDIR)/coverage:/var/project/coverage" \
 		$(CrawlerBaseTag) \
-		npm test -- --colors "--testPathPattern=__test__/(?!crawlers\\.test).*\\.js"
+		pnpm test -- --colors "--testPathPattern=__test__/(?!crawlers\\.test).*\\.js"

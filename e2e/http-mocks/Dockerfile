@@ -5,8 +5,8 @@ FROM ${NODE_BASE_IMAGE}
 
 WORKDIR /mocks
 COPY package.json package-lock.json ./
-RUN npm install
+RUN pnpm install
 
 ADD . /mocks
 
-CMD ["npm", "start"]
+CMD ["pnpm", "start"]
