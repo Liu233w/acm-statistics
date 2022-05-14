@@ -11,20 +11,21 @@ RUN rm -rf node_modules
 
 
 FROM ${NODE_BASE_IMAGE} AS build
-ARG CRAWLER_LIBRARY_PATH
 
 WORKDIR /var/project
 
-COPY package.json pnpm-lock.yaml ./
-RUN pnpm install --only=production && rm -rf node_modules/crawler
+COPY --from=crawler /var/project ../crawler
 
-COPY --from=crawler ${CRAWLER_LIBRARY_PATH} ./node_modules/crawler
+COPY package.json pnpm-lock.yaml ./
+RUN pnpm install --only=production
 
 COPY --from=base /var/project .
 
 FROM ${NODE_BASE_IMAGE}
 
 WORKDIR /var/project
+
+COPY --from=crawler /var/project ../crawler
 COPY --from=build /var/project .
 
 ENV NODE_ENV production

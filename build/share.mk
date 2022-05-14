@@ -17,8 +17,6 @@ CaptchaServiceBaseTag = $(CommonTagPrefix)-captcha-service-base
 OHuntTag = $(CommonTagPrefix)-ohunt
 OHuntBaseTag = $(CommonTagPrefix)-ohunt-base
 
-CrawlerLibraryPath = /var/project
-
 # == phony
 .PHONY: test build run clean test-ci help
 
