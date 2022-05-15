@@ -85,7 +85,7 @@ test-html: .base
 update-html-snapshot: .base
 	docker run --rm -t --ipc=host --network=host \
 		-v "$(CURDIR)/__test__:/e2e/__test__" \
-		$(E2eBaseTag) pnpm run test-html -- -u
+		$(E2eBaseTag) pnpm run test-html -- --updateSnapshot
 
 test-html-ci: .base
 	docker run --rm --ipc=host --network=host \

@@ -38,7 +38,7 @@ test: .base
 update-snapshot: .base
 	docker run --rm -t \
 		-v "$(CURDIR)/__test__:/var/project/__test__" \
-		$(FrontendBaseTag) pnpm test -- -u
+		$(FrontendBaseTag) pnpm test -- --updateSnapshot
 
 # if BUILD_FRONTEND is specified, it will compile the frontend before `run` command
 ifdef BUILD_FRONTEND
