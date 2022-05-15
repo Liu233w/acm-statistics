@@ -30,7 +30,10 @@
     "nuxt-env": "0.1.0",
     "stylus": "0.57.0",
     "superagent": "7.1.3",
+    "vue": "2",
     "vue-chartjs": "4.0.7",
+    "vuetify": "^2.6.5",
+    "webpack": "5",
     "webpack-virtual-modules": "0.4.3"
   },
   "devDependencies": {
