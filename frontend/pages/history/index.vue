@@ -62,9 +62,6 @@
           </v-btn>
         </template>
       </v-data-table>
-      <v-row>
-        <advertisement id="135755353" />
-      </v-row>
       <line-chart
         :chart-data="chartData"
         :chart-options="chartOptions"
@@ -79,12 +76,8 @@ import _ from 'lodash'
 
 import { getAbpErrorMessage } from '~/components/utils'
 import { PROJECT_TITLE } from '~/components/consts'
-import Advertisement from '~/components/Advertisement'
 
 export default {
-  components: {
-    Advertisement,
-  },
   inject: ['changeLayoutConfig'],
   head: {
     title: `History - ${PROJECT_TITLE}`,

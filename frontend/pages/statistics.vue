@@ -115,9 +115,6 @@
         </template>
       </v-tooltip>
     </v-row>
-    <v-row>
-      <advertisement id="135755353" />
-    </v-row>
     <v-row v-if="loading">
       <v-spacer />
       <v-progress-circular
@@ -161,7 +158,6 @@ import statisticsLayoutBuilder from '~/components/statisticsLayoutBuilder'
 import Store from '~/store/-dynamic/statistics'
 import { PROJECT_TITLE, WORKER_STATUS } from '~/components/consts'
 import { getAbpErrorMessage, delay } from '~/components/utils'
-import Advertisement from '~/components/Advertisement'
 
 // keep it when url change
 let globalLastSavedQueryId = null
@@ -169,7 +165,6 @@ let globalLastSavedQueryId = null
 export default {
   components: {
     WorkerCard,
-    Advertisement,
   },
   inject: ['changeLayoutConfig'],
   head: {

@@ -24,10 +24,6 @@ module.exports = async () => ({
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Noto+Serif+SC:300,400,500,700' },
     ],
-    script: [
-      // { src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js', 'data-ad-client': 'ca-pub-9846042020379030', async: true },
-      // { src: 'https://contextual.media.net/dmedianet.js?cid=8CUE23IW2', async: true },
-    ],
   },
   plugins: [
     '~/plugins/debug.js',
