@@ -3065,10 +3065,7 @@ exports[`/history 1`] = `
                       <div class="v-data-footer__icons-after"><button type="button" aria-label="Next page" class="v-btn v-btn--icon v-btn--round v-btn--text theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-chevron-right theme--light"></i></span></button></div>
                     </div>
                   </div>
-                  <div class="row">
-                    <div id="135755353"></div>
-                  </div>
-                  <div style="height:300px;"><canvas id="line-chart" width="400" height="400"></canvas></div>
+                  <line-chart chart-data="[object Object]" chart-options="[object Object]" style="height:300px;"></line-chart>
                 </div>
               </div>
             </main>
@@ -3143,13 +3140,13 @@ exports[`/history 1`] = `
                 submission: 20,
                 solved: n
               }, {
-                historyId: d,
-                summaryId: d,
+                historyId: e,
+                summaryId: e,
                 creationTime: new Date(1585728000000),
                 submission: b,
-                solved: d
+                solved: e
               }],
-              loading: e,
+              loading: f,
               headers: [{
                 text: "Id",
                 value: "historyId",
@@ -3170,36 +3167,39 @@ exports[`/history 1`] = `
               selected: [],
               itemsPerPage: b,
               serverItemsLength: p,
-              page: d,
+              page: e,
               errorMessage: o,
               chartOptions: {
-                responsive: f,
-                maintainAspectRatio: e,
-                tooltips: {
-                  mode: "index",
-                  intersect: e
-                },
+                responsive: c,
+                maintainAspectRatio: f,
                 hover: {
                   mode: "nearest",
-                  intersect: f
+                  intersect: c
+                },
+                fill: c,
+                plugins: {
+                  tooltip: {
+                    mode: "index",
+                    intersect: f
+                  }
                 }
               }
             }
           },
           error: o,
           state: {
-            sidebar: e,
+            sidebar: f,
             message: {
               list: []
             },
             session: {
-              login: f,
+              login: c,
               username: "admin",
               settings: {
                 "Abp.Localization.DefaultLanguageName": "en",
                 "Abp.Notifications.ReceiveNotifications": a,
                 "Abp.Timing.TimeZone": "UTC",
-                "Abp.Zero.UserManagement.IsEmailConfirmationRequiredForLogin": c,
+                "Abp.Zero.UserManagement.IsEmailConfirmationRequiredForLogin": d,
                 "Abp.Zero.OrganizationUnits.MaxUserMembershipCount": "2147483647",
                 "Abp.Zero.UserManagement.TwoFactorLogin.IsEnabled": a,
                 "Abp.Zero.UserManagement.TwoFactorLogin.IsRememberBrowserEnabled": a,
@@ -3208,17 +3208,17 @@ exports[`/history 1`] = `
                 "Abp.Zero.UserManagement.UserLockOut.IsEnabled": a,
                 "Abp.Zero.UserManagement.UserLockOut.MaxFailedAccessAttemptsBeforeLockout": "5",
                 "Abp.Zero.UserManagement.UserLockOut.DefaultAccountLockoutSeconds": "300",
-                "Abp.Zero.UserManagement.PasswordComplexity.RequireDigit": c,
-                "Abp.Zero.UserManagement.PasswordComplexity.RequireLowercase": c,
-                "Abp.Zero.UserManagement.PasswordComplexity.RequireNonAlphanumeric": c,
-                "Abp.Zero.UserManagement.PasswordComplexity.RequireUppercase": c,
+                "Abp.Zero.UserManagement.PasswordComplexity.RequireDigit": d,
+                "Abp.Zero.UserManagement.PasswordComplexity.RequireLowercase": d,
+                "Abp.Zero.UserManagement.PasswordComplexity.RequireNonAlphanumeric": d,
+                "Abp.Zero.UserManagement.PasswordComplexity.RequireUppercase": d,
                 "Abp.Zero.UserManagement.PasswordComplexity.RequiredLength": "3",
                 "App.UiTheme": "red",
                 "App.AutoSaveHistory": a
               }
             }
           },
-          serverRendered: f,
+          serverRendered: c,
           routePath: "\\u002Fhistory\\u002F",
           config: {
             _app: {
@@ -3232,7 +3232,7 @@ exports[`/history 1`] = `
             BUILD_TIME: q
           }
         }
-      }("true", 10, "false", 1, false, true, 9, 8, 7, 6, 5, 4, 3, 2, null, 60, "0"));
+      }("true", 10, true, "false", 1, false, 9, 8, 7, 6, 5, 4, 3, 2, null, 60, "0"));
     </script>
 
 
@@ -4273,7 +4273,7 @@ exports[`/history/{historyId} 1`] = `
                       </table>
                     </div>
                   </div>
-                  <div style="height:300px;"><canvas id="bar-chart" width="400" height="400"></canvas></div>
+                  <bar-chart chart-data="[object Object]" chart-options="[object Object]" style="height:300px;"></bar-chart>
                   <div role="list" class="v-list v-sheet theme--light v-list--dense">
                     <div class="v-subheader red--text theme--light">
                       WARNINGS
@@ -8183,9 +8183,6 @@ exports[`/statistics 1`] = `
           </span></button></span>
                     <div class="spacer"></div>
                     <!---->
-                  </div>
-                  <div class="row">
-                    <div id="135755353"></div>
                   </div>
                   <div class="row">
                     <div class="spacer"></div>
