@@ -79,15 +79,15 @@ clean:
 # ===== 使用 jest 对html进行快照 ===========
 test-html: .base
 	docker run --rm -t --ipc=host --network=host \
-	$(E2eBaseTag) pnpm run test-html
+	$(E2eBaseTag) pnpm test-html
 
 # 更新快照
 update-html-snapshot: .base
 	docker run --rm -t --ipc=host --network=host \
 		-v "$(CURDIR)/__test__:/e2e/__test__" \
-		$(E2eBaseTag) pnpm run test-html -- --updateSnapshot
+		$(E2eBaseTag) pnpm test-html --updateSnapshot
 
 test-html-ci: .base
 	docker run --rm --ipc=host --network=host \
 		$(E2eBaseTag) \
-		pnpm run test-html -- --colors --ci
+		pnpm test-html --colors --ci
