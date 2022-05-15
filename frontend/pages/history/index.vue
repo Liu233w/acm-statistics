@@ -113,13 +113,16 @@ export default {
       chartOptions: {
         responsive: true,
         maintainAspectRatio: false,
-        tooltips: {
-          mode: 'index',
-          intersect: false,
-        },
         hover: {
           mode: 'nearest',
           intersect: true,
+        },
+        fill: true,
+        plugins: {
+          tooltip: {
+            mode: 'index',
+            intersect: false,
+          },
         },
       },
     }
