@@ -1846,7 +1846,7 @@ exports[`/about 1`] = `
                       </div>
                     </div>
                   </div>
-                  <div role="dialog" class="v-dialog__container">
+                  <div class="v-dialog__container">
                     <!---->
                   </div>
                 </div>
@@ -7317,7 +7317,7 @@ exports[`/settings 1`] = `
                       </div>
                     </div>
                   </div>
-                  <div role="dialog" class="v-dialog__container">
+                  <div class="v-dialog__container">
                     <!---->
                   </div>
                 </div>
