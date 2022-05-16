@@ -41,7 +41,7 @@ exports[`WorkerCard can be rendered correctly 1`] = `
     </div>
     <!---->
   </div>
-  <div role="dialog" class="v-dialog__container">
+  <div class="v-dialog__container">
     <!---->
   </div>
 </div>
@@ -88,7 +88,7 @@ exports[`WorkerCard can render error correctly 1`] = `
     </div>
     <!---->
   </div>
-  <div role="dialog" class="v-dialog__container">
+  <div class="v-dialog__container">
     <!---->
   </div>
 </div>
@@ -135,7 +135,7 @@ exports[`WorkerCard can render result correctly 1`] = `
     </div>
     <!---->
   </div>
-  <div role="dialog" class="v-dialog__container">
+  <div class="v-dialog__container">
     <!---->
   </div>
 </div>
@@ -182,7 +182,7 @@ exports[`WorkerCard can render username correctly 1`] = `
     </div>
     <!---->
   </div>
-  <div role="dialog" class="v-dialog__container">
+  <div class="v-dialog__container">
     <!---->
   </div>
 </div>
@@ -237,7 +237,7 @@ exports[`WorkerCard can render warning correctly 1`] = `
     </div>
     <!---->
   </div>
-  <div role="dialog" class="v-dialog__container">
+  <div class="v-dialog__container">
     <!---->
   </div>
 </div>
