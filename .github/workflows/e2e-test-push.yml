@@ -21,6 +21,7 @@ jobs:
     - run: |
         cd build
         docker-compose -f docker-compose.yml -f docker-compose.e2e.yml logs > e2e.log
+      if: failure()
     - uses: actions/upload-artifact@6673cd052c4cd6fcf4b4e6e60ea986c889389535 # tag=v3
       if: failure()
       with:
