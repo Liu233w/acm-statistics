@@ -19,8 +19,8 @@ WORKDIR /var/project
 
 COPY --from=crawler /var/project ../crawler
 
-COPY package.json pnpm-lock.yaml ./
-RUN pnpm install --only=production --shamefully-hoist
+COPY package.json pnpm-lock.yaml .npmrc ./
+RUN pnpm install --only=production
 
 COPY --from=base /var/project .
 
