@@ -16,17 +16,17 @@ jobs:
         echo ::endgroup::build
         make ci-no-record
         make run run-cmd="npm run lint" make-args="no-interactive no-tty"
-    - uses: actions/upload-artifact@6673cd052c4cd6fcf4b4e6e60ea986c889389535 # tag=v3
+    - uses: actions/upload-artifact@3cea5372237819ed00197afe530f5a7ea3e805c8 # tag=v3
       if: failure()
       with:
         name: e2e-screenshots
         path: e2e/cypress/screenshots
-    - uses: actions/upload-artifact@6673cd052c4cd6fcf4b4e6e60ea986c889389535 # tag=v3
+    - uses: actions/upload-artifact@3cea5372237819ed00197afe530f5a7ea3e805c8 # tag=v3
       if: failure()
       with:
         name: e2e-snapshots
         path: e2e/cypress/snapshots
-    - uses: actions/upload-artifact@6673cd052c4cd6fcf4b4e6e60ea986c889389535 # tag=v3
+    - uses: actions/upload-artifact@3cea5372237819ed00197afe530f5a7ea3e805c8 # tag=v3
       if: failure()
       with:
         name: e2e-videos
