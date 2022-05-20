@@ -17,6 +17,6 @@
     <PackageReference Include="Abp.AutoMapper" Version="7.2.1" />
     <PackageReference Include="Abp.ZeroCore.EntityFrameworkCore" Version="7.2.1" />
     <PackageReference Include="Castle.Windsor.MsDependencyInjection" Version="3.4.0" />
-    <PackageReference Include="Flurl.Http" Version="3.2.3" />
+    <PackageReference Include="Flurl.Http" Version="3.2.4" />
   </ItemGroup>
 </Project>
