@@ -14,10 +14,10 @@
           exact
         >
           <v-list-item-action>
-            <v-icon v-html="item.icon" />
+            <v-icon>{{ item.icon }}</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title v-text="item.title" />
+            <v-list-item-title>{{ item.title }}</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
       </v-list>
@@ -32,7 +32,7 @@
           <component :is="topBarBeforeTitle" />
         </div>
       </v-slide-x-transition>
-      <v-toolbar-title v-text="title" />
+      <v-toolbar-title>{{ title }}</v-toolbar-title>
       <v-slide-x-transition>
         <v-divider
           v-if="topBarAfterTitle"
