@@ -13,7 +13,7 @@ specifiers:
   '@vue/vue2-jest': 27.0.0
   babel-jest: 27.5.1
   babel-plugin-lodash: 3.3.4
-  chart.js: 3.7.1
+  chart.js: 3.8.0
   cheerio: 1.0.0-rc.10
   crawler: link:../crawler
   eslint: 8.16.0
@@ -31,7 +31,7 @@ specifiers:
   stylus: 0.57.0
   stylus-loader: 4.3.3
   superagent: 7.1.3
-  vue-chartjs: 4.0.7
+  vue-chartjs: 4.1.0
   webpack-virtual-modules: 0.4.3
 
 dependencies:
@@ -39,7 +39,7 @@ dependencies:
   '@nuxtjs/axios': 5.13.6
   '@nuxtjs/component-cache': 1.1.6
   '@nuxtjs/vuetify': 1.12.3
-  chart.js: 3.7.1
+  chart.js: 3.8.0
   cheerio: 1.0.0-rc.10
   crawler: link:../crawler
   html2canvas: 1.4.1
@@ -49,7 +49,7 @@ dependencies:
   nuxt-env: 0.1.0
   stylus: 0.57.0
   superagent: 7.1.3
-  vue-chartjs: 4.0.7_chart.js@3.7.1
+  vue-chartjs: 4.1.0_chart.js@3.8.0
   webpack-virtual-modules: 0.4.3
 
 devDependencies:
@@ -2947,7 +2947,6 @@ packages:
     resolution: {integrity: sha512-Wm6ukoaOGJi/73p/cl2GvLjTI5JM1k/O14isD73YML8StrH/7/lRFgmg8nICZgD3bZZvjwCGxtMOD3wWNAu8cg==}
     engines: {node: '>= 4.5.0'}
     hasBin: true
-    dev: false
 
   /autoprefixer/9.8.8:
     resolution: {integrity: sha512-eM9d/swFopRt5gdJ7jrpCwgvEMIayITpojhkkSMRsFHYuH5bkSQ4p/9qTEHtmNudUZh22Tehu7I6CxAW0IXTKA==}
@@ -3548,8 +3547,8 @@ packages:
     resolution: {integrity: sha512-mT8iDcrh03qDGRRmoA2hmBJnxpllMR+0/0qlzjqZES6NdiWDcZkCNAk4rPFZ9Q85r27unkiNNg8ZOiwZXBHwcA==}
     dev: false
 
-  /chart.js/3.7.1:
-    resolution: {integrity: sha512-8knRegQLFnPQAheZV8MjxIXc5gQEfDFD897BJgv/klO/vtIyFFmgMXrNfgrXpbTr/XbTturxRgxIXx/Y+ASJBA==}
+  /chart.js/3.8.0:
+    resolution: {integrity: sha512-cr8xhrXjLIXVLOBZPkBZVF6NDeiVIrPLHcMhnON7UufudL+CNeRrD+wpYanswlm8NpudMdrt3CHoLMQMxJhHRg==}
     dev: false
 
   /cheerio-select/1.5.0:
@@ -4262,7 +4261,6 @@ packages:
       inherits: 2.0.4
       source-map: 0.6.1
       source-map-resolve: 0.6.0
-    dev: false
 
   /cssdb/4.4.0:
     resolution: {integrity: sha512-LsTAR1JPEM9TpGhl/0p3nQecC2LJ0kD8X5YARu1hk/9I1gril5vDtMZyNxcEpxxDj34YNck/ucjuoUd66K03oQ==}
@@ -4425,7 +4423,6 @@ packages:
   /decode-uri-component/0.2.0:
     resolution: {integrity: sha1-6zkTMzRYd1y4TNGh+uBiEGu4dUU=}
     engines: {node: '>=0.10'}
-    dev: false
 
   /dedent/0.7.0:
     resolution: {integrity: sha1-JJXduvbrh0q7Dhvp3yLS5aVEMmw=}
@@ -9336,7 +9333,6 @@ packages:
 
   /sax/1.2.4:
     resolution: {integrity: sha512-NqVDv9TpANUjFm0N8uM5GxL36UgKi9/atZw+x7YFnQ8ckwFGKrl4xX4yWtrey3UJm5nP1kUbnYgLopqWNSRhWw==}
-    dev: false
 
   /saxes/5.0.1:
     resolution: {integrity: sha512-5LBh1Tls8c9xgGjw3QrMwETmTMVk0oFgvrFSvWx62llR2hcEInrKNZ2GZCCuuy2lvWrdl5jhbpeqc5hRYKFOcw==}
@@ -9605,7 +9601,6 @@ packages:
     dependencies:
       atob: 2.1.2
       decode-uri-component: 0.2.0
-    dev: false
 
   /source-map-support/0.5.20:
     resolution: {integrity: sha512-n1lZZ8Ve4ksRqizaBQgxXDgKwttHDhyfQjA6YZZn8+AroHbsIz+JjwxQDxbp+7y5OYCI8t1Yk7etjD9CRd2hIw==}
@@ -9850,7 +9845,6 @@ packages:
       source-map: 0.7.3
     transitivePeerDependencies:
       - supports-color
-    dev: false
 
   /superagent/7.1.3:
     resolution: {integrity: sha512-WA6et4nAvgBCS73lJvv1D0ssI5uk5Gh+TGN/kNe+B608EtcVs/yzfl+OLXTzDs7tOBDIpvgh/WUs1K2OK1zTeQ==}
@@ -10450,13 +10444,13 @@ packages:
     resolution: {integrity: sha512-2ham8XPWTONajOR0ohOKOHXkm3+gaBmGut3SRuu75xLd/RRaY6vqgh8NBYYk7+RW3u5AtzPQZG8F10LHkl0lAQ==}
     dev: false
 
-  /vue-chartjs/4.0.7_chart.js@3.7.1:
-    resolution: {integrity: sha512-nlUIyZx/+83BlA+b7Q9JTV96IXweb+atiod2ciYiJyoaGgJ7nBAzt/7L9gugW8gpiqeYqS3ogAlE+y9YyhkTzw==}
+  /vue-chartjs/4.1.0_chart.js@3.8.0:
+    resolution: {integrity: sha512-lHOs5vjb9dDdXz/0TbQWjJuL1/KOLT1tlvo+6b1M+JyyIQjeAf8K9IVsUhx8fdSIR4QD9CBELN/cYgYwKdiJ7g==}
     peerDependencies:
       chart.js: ^3.7.0
       vue: ^3.0.0-0 || ^2.6.0
     dependencies:
-      chart.js: 3.7.1
+      chart.js: 3.8.0
     dev: false
 
   /vue-client-only/2.1.0:
