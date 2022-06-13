@@ -93,16 +93,16 @@ services:
     volumes:
       - ./db-backup:/db
     environment:
-      - DB_NAMES=acm_statistics
-      - DB_DUMP_TARGET=/db
-      - DB_USER=root
-      - DB_PASS=${MYSQL_ROOT_PASSWORD}
-      # - DB_DUMP_BEGIN=+2
+      DB_NAMES: acm_statistics
+      DB_DUMP_TARGET: /db
+      DB_USER: root
+      DB_PASS: ${MYSQL_ROOT_PASSWORD}
+      # DB_DUMP_BEGIN: +2
       # backup at 3:00 am
-      - DB_DUMP_BEGIN=" 0300"
-      - DB_SERVER=db
+      DB_DUMP_BEGIN: " 0300"
+      DB_SERVER: db
       # Do not backup Logs table
-      - MYSQLDUMP_OPTS=--ignore-table=acm_statistics.AbpAuditLogs --ignore-table=acm_statistics.AbpUserLoginAttempts
+      MYSQLDUMP_OPTS: --ignore-table=acm_statistics.AbpAuditLogs --ignore-table=acm_statistics.AbpUserLoginAttempts
     depends_on:
       - db
 
