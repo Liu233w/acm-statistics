@@ -19,7 +19,7 @@
       </v-row>
       <v-layout>
         <v-flex>
-          <v-form v-model="valid">
+          <v-form v-model="valid" ref="form">
             <v-text-field
               prepend-icon="mdi-account"
               label="Username"
@@ -41,7 +41,7 @@
               type="password"
               v-model="pwdRepeat"
               required
-              :rules="[rules.required, () => password === pwdRepeat || 'Password must match']"
+              :rules="[rules.required, (pwdRepeat) => password === pwdRepeat || 'Password must match']"
             />
             <v-row>
               <v-col>
@@ -71,7 +71,7 @@
                 <v-btn
                   color="info"
                   block
-                  :disabled="!valid && captchaText == ''"
+                  :disabled="!valid"
                   @click="register"
                   :loading="loading"
                 >
@@ -115,6 +115,13 @@ export default {
       showError: false,
       loading: false,
     }
+  },
+  watch: {
+    async password() {
+      // when password is changed, re-validate the repeatPwd field
+      await this.$nextTick()
+      this.$refs.form.validate()
+    },
   },
   methods: {
     async register() {
