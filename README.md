@@ -10,7 +10,7 @@
 [![Mergify Status](https://img.shields.io/badge/Mergify-enabled-green.svg)](https://mergify.io)
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-15-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-16-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 #### Build status
@@ -134,6 +134,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   <tr>
     <td align="center"><img src="https://avatars2.githubusercontent.com/u/9880740?v=4" width="100px;" alt=""/><br /><sub><a href="https://github.com/flylai"><b>flylai</b></a><a href="https://github.com/flylai">🔗</a></sub><br /><a href="https://github.com/Liu233w/acm-statistics/commits?author=flylai" title="Code">💻</a> <a href="https://github.com/Liu233w/acm-statistics/issues?q=author%3Aflylai" title="Bug reports">🐛</a></td>
     <td align="center"><img src="https://avatars3.githubusercontent.com/u/36151020?v=4" width="100px;" alt=""/><br /><sub><a href="https://github.com/fzu-h4cky"><b>fzu-h4cky</b></a><a href="https://github.com/fzu-h4cky">🔗</a></sub><br /><a href="https://github.com/Liu233w/acm-statistics/issues?q=author%3Afzu-h4cky" title="Bug reports">🐛</a></td>
+    <td align="center"><img src="https://avatars.githubusercontent.com/u/42441490?v=4" width="100px;" alt=""/><br /><sub><a href="https://github.com/wwawwaww"><b>wwawwaww</b></a><a href="https://github.com/wwawwaww">🔗</a></sub><br /><a href="https://github.com/Liu233w/acm-statistics/issues?q=author%3Awwawwaww" title="Bug reports">🐛</a></td>
     <td align="center"><img src="https://avatars2.githubusercontent.com/u/43291744?v=4" width="100px;" alt=""/><br /><sub><a href="https://github.com/zby0327"><b>zby</b></a><a href="https://github.com/zby0327">🔗</a></sub><br /><a href="#ideas-zby0327" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/Liu233w/acm-statistics/issues?q=author%3Azby0327" title="Bug reports">🐛</a></td>
   </tr>
 </table>
