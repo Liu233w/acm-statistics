@@ -1,11 +1,9 @@
 let username
 
-before(() => {
-  cy.registerAndGetUsername().then(u => username = u)
-})
-
 beforeEach(function () {
-  Cypress.Cookies.preserveOnce('OAuthToken')
+  cy.session('settings session', () => {
+    cy.registerAndGetUsername().then(u => username = u)
+  })
 })
 
 describe('overall', () => {
