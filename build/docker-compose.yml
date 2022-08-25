@@ -12,8 +12,8 @@ services:
       # An outside reverse proxy is used, so we can just trust all forward headers
       - "--entryPoints.web.forwardedHeaders.insecure"
     ports:
-      - ${EXPOSE_PORT}:80
-      - ${TRAEFIK_PORT}:8080 # The Web UI (enabled by --api)
+      - "${EXPOSE_PORT}:80"
+      - "${TRAEFIK_PORT}:8080" # The Web UI (enabled by --api)
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     depends_on:
@@ -77,7 +77,7 @@ services:
     cap_add:
       - SYS_NICE  # CAP_SYS_NICE
     ports:
-      - 3306:3306
+      - "3306:3306"
 
   captcha-service:
     image: ${DOCKER_REPO}acm-statistics-captcha-service${DOCKER_TAG}

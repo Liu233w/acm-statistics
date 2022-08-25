@@ -24,7 +24,7 @@ services:
     image: jamesdbloom/mockserver:mockserver-5.5.1
     ports:
       # use this port to connect to mockserver on host
-      - 1081:1080
+      - "1081:1080"
 
   mock-configurer:
     image: acm-statistics-e2e-mock-configurer
