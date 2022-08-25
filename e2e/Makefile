@@ -42,14 +42,14 @@ ci: .base
 		$(shell printenv | grep -E '^GITHUB' | sed 's/"/\\"/g; s/\(.*\)/"\1"/g; s/^/-e /g') \
 		-v "$(CURDIR)/cypress:/e2e/cypress" \
 	 	$(E2eBaseTag) \
-		pnpm test -- --record --key $(CYPRESS_RECORD_KEY)
+		npm test -- --record --key $(CYPRESS_RECORD_KEY)
 
 ci-no-record: .base
 	docker run --rm -t --ipc=host --network=host \
 		$(shell printenv | grep -E '^GITHUB' | sed 's/"/\\"/g; s/\(.*\)/"\1"/g; s/^/-e /g') \
 		-v "$(CURDIR)/cypress:/e2e/cypress" \
 	 	$(E2eBaseTag) \
-		pnpm test
+		npm test
 
 run: .base
 	docker run $(run-args) $(E2eBaseTag) $(run-cmd)
