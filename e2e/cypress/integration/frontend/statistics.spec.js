@@ -21,7 +21,7 @@ describe('crawler test', () => {
   it('can start a worker', () => {
 
     cy.intercept(
-      'https://acm-statistics-cors.herokuapp.com/http://poj.org/userstatus?user_id=vjudge5',
+      'https://cors.ojhunt.com/http://poj.org/userstatus?user_id=vjudge5',
       { fixture: 'poj_ok.txt' })
       .as('poj_frontend')
 
@@ -44,7 +44,7 @@ describe('crawler test', () => {
   it('can request crawler-api-backend when get network error', () => {
 
     cy.intercept(
-      'https://acm-statistics-cors.herokuapp.com/http://poj.org/userstatus?user_id=vjudge5',
+      'https://cors.ojhunt.com/http://poj.org/userstatus?user_id=vjudge5',
       { forceNetworkError: true }).as('poj_frontend')
     cy.intercept('/api/crawlers/poj/vjudge5').as('poj_backend')
 
@@ -66,7 +66,7 @@ describe('crawler test', () => {
   it('can stop running query', () => {
 
     cy.intercept(
-      'https://acm-statistics-cors.herokuapp.com/http://poj.org/userstatus?user_id=vjudge5',
+      'https://cors.ojhunt.com/http://poj.org/userstatus?user_id=vjudge5',
       { body: 'lololo', delayMs: 10000 },
     ).as('poj_frontend')
 
@@ -86,7 +86,7 @@ describe('crawler test', () => {
 
   it('can show crawler errors', () => {
 
-    cy.intercept('https://acm-statistics-cors.herokuapp.com/http://poj.org/userstatus?user_id=Frkfe932fbcv09b',
+    cy.intercept('https://cors.ojhunt.com/http://poj.org/userstatus?user_id=Frkfe932fbcv09b',
       { fixture: 'poj_notExist.txt' })
       .as('poj_frontend')
 
