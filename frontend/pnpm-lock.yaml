@@ -3,7 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   '@babel/core': 7.18.13
   '@babel/preset-env': 7.18.10
-  '@fortawesome/fontawesome-free': 6.1.1
+  '@fortawesome/fontawesome-free': 6.1.2
   '@mdi/font': 6.7.96
   '@nuxtjs/axios': 5.13.6
   '@nuxtjs/component-cache': 1.1.6
@@ -35,7 +35,7 @@ specifiers:
   webpack-virtual-modules: 0.4.3
 
 dependencies:
-  '@fortawesome/fontawesome-free': 6.1.1
+  '@fortawesome/fontawesome-free': 6.1.2
   '@nuxtjs/axios': 5.13.6
   '@nuxtjs/component-cache': 1.1.6
   '@nuxtjs/vuetify': 1.12.3
@@ -1297,8 +1297,8 @@ packages:
       - supports-color
     dev: true
 
-  /@fortawesome/fontawesome-free/6.1.1:
-    resolution: {integrity: sha512-J/3yg2AIXc9wznaVqpHVX3Wa5jwKovVF0AMYSnbmcXTiL3PpRPfF58pzWucCwEiCJBp+hCNRLWClTomD8SseKg==}
+  /@fortawesome/fontawesome-free/6.1.2:
+    resolution: {integrity: sha512-XwWADtfdSN73/udaFm+1mnGIj/ShDZNFMe/PRoqv3FhQ4GNI2PUN70yFTPsjq65Lw2C9i4TG5/hTbxXIXVCiqQ==}
     engines: {node: '>=6'}
     requiresBuild: true
     dev: false
