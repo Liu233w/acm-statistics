@@ -70,3 +70,6 @@ fabric.properties
 
 # macOS
 .DS_Store
+
+# idea in root
+/.idea
