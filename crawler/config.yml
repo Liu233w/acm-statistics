@@ -30,87 +30,103 @@ crawler_order:
 
 crawlers:
   poj:
+    server_only: true
     meta:
       title: POJ
       description:
       url: http://poj.org/
   hdu:
+    server_only: true
     meta:
       title: HDU
       description:
       url: http://acm.hdu.edu.cn/
   zoj:
+    server_only: true
     meta:
       title: ZOJ
       description: Only nickname is supported (Only historical data are available since crawlers are prohibited by Pintia)
       url: https://zoj.pintia.cn/
   dashiye:
+    server_only: true
     meta:
       title: HYSBZ
       description:
       url: http://www.lydsy.com/JudgeOnline/
   codeforces:
+    server_only: true
     meta:
       title: CodeForces
       description: Including CodeForces::Gym
       url: http://codeforces.com/
   uva:
+    server_only: true
     meta:
       title: UVA
       description:
       url: https://uva.onlinejudge.org/
   uvalive:
+    server_only: true
     meta:
       title: ICPC Live Archive
       description:
       url: https://icpcarchive.ecs.baylor.edu/index.php
   fzu:
+    server_only: true
     meta:
       title: FZU
       description:
       url: http://acm.fzu.edu.cn/index.php
   spoj:
+    server_only: true
     meta:
       title: SPOJ
       description:
       url: http://www.spoj.com/
   timus:
+    server_only: true
     meta:
       title: Timus (URAL)
       description:
       url: http://acm.timus.ru/
   leetcode_cn:
+    server_only: true
     meta:
       title: LeetCode_CN
       description:
       url: https://leetcode-cn.com
   csu:
+    server_only: true
     meta:
       title: CSU
       description:
       url: http://acm.csu.edu.cn/
   loj:
+    server_only: true
     meta:
       title: LibreOJ
       description:
       url: https://loj.ac/
   luogu:
+    server_only: true
     meta:
       title: 洛谷
       description:
       url: https://www.luogu.com.cn
-    server_only: true
   nowcoder:
+    server_only: true
     meta:
       title: 牛客OJ
       description: 目前只支持输入用户ID（在你的AC列表的URL中）
       url: https://ac.nowcoder.com/acm/home
   uestc:
+    server_only: true
     meta:
       title: Lutece (UESTC)
       description:
       url: https://acm.uestc.edu.cn/home
   atcoder:
+    server_only: true
     meta:
       title: AtCoder
       description: |
@@ -118,26 +134,31 @@ crawlers:
         It may take a while for the api to update user statistics.
       url: https://atcoder.jp
   aizu:
+    server_only: true
     meta:
       title: AIZU
       description:
       url: http://judge.u-aizu.ac.jp/onlinejudge/index.jsp
   codechef:
+    server_only: true
     meta:
       title: CodeChef
       description:
       url: https://www.codechef.com/
   eljudge:
+    server_only: true
     meta:
       title: El Judge
       description:
       url: http://acm.mipt.ru
   bnu:
+    server_only: true
     meta:
       title: BNUOJ
       description:
       url: http://www.bnuoj.com
   codewars:
+    server_only: true
     meta:
       title: Codewars
       description: |
@@ -145,26 +166,31 @@ crawlers:
         Username is case sensitive.
       url: https://www.codewars.com
   uoj:
+    server_only: true
     meta:
       title: UOJ
       description:
       url: http://uoj.ac/
   nbut:
+    server_only: true
     meta:
       title: NBUT
       description:
       url: https://ac.2333.moe/
   nod:
+    server_only: true
     meta:
       title: 51Nod
       description: Please use your nickname (displayed in your home page)
       url: https://www.51nod.com
   nit:
+    server_only: true
     meta:
       title: OurOJ (NIT)
       description:
       url: https://www.nitacm.com/
   dmoj:
+    server_only: true
     meta:
       title: DMOJ
       description:
