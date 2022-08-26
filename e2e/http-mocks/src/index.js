@@ -2,7 +2,6 @@ const http = require('http')
 const { join } = require('path')
 const wait = require('wait-on')
 const mock = require('./lib/mock')
-const preActivation = require('./preActivation')
 
 const mocks = {}
 require('fs').readdirSync(join(__dirname, 'mocks')).forEach(file => {
@@ -76,9 +75,6 @@ wait({
   mock(client => client.reset())
     .then(() => console.log('All expectations reset'))
     .catch(console.error)
-
-  // 激活预先的mock
-  preActivation(mocks)
 
   server.listen(80)
 })
