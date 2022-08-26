@@ -20,3 +20,4 @@ COPY . .
 
 ENV VERSION_NUM=development
 ENV BUILD_TIME=0
+ENV NODE_OPTIONS=--openssl-legacy-provider
