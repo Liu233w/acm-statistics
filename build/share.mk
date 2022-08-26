@@ -36,16 +36,15 @@ ifeq ($(filter t no-tty,$(make-args)),)
 override run-args := $(run-args) --tty
 endif
 
+RM = docker run --rm -v $(pwd):/app -w /app alpine rm -f
+RMR = docker run --rm -v $(pwd):/app -w /app alpine rm -rf
+
 # == detect system and set command ==
 ifeq ($(findstring cmd.exe,$(SHELL)),cmd.exe)
     # cmd shell
-    RM = del /Q
-    RMR = rmdir /s /q
     CP = copy
     MKDIR = md
 else # Linux or cygwin/msys
-    RM = rm -f
-    RMR = rm -rf
     CP = cp
     MKDIR = mkdir
 endif
