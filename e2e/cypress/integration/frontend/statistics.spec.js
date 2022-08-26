@@ -15,15 +15,14 @@ describe('overall', () => {
 describe('crawler test', () => {
 
   beforeEach(() => {
+    cy.mockServer('reset')
     cy.visit('/statistics')
   })
 
   it('can start a worker', () => {
 
-    cy.intercept(
-      'https://acm-statistics-cors.herokuapp.com/http://poj.org/userstatus?user_id=vjudge5',
-      { fixture: 'poj_ok.txt' })
-      .as('poj_frontend')
+    cy.intercept( '/api/crawlers/poj/vjudge5') .as('poj_frontend')
+    cy.mockServer('oj/poj/backend_ok')
 
     cy.get('div[title="POJ"]').parents('.worker').within(() => {
 
