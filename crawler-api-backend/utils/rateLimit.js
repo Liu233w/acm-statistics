@@ -7,5 +7,5 @@ module.exports = ratelimit({
   db: db,
   duration: 60000,
   errorMessage: 'Request limit exceed: 10 per minute',
-  max: 10,
+  max: 30,
 })
