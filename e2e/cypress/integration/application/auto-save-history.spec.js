@@ -8,7 +8,7 @@ Cypress.on('uncaught:exception', (err, runnable) => {
 
 beforeEach(() => {
   cy.intercept(
-    'https://acm-statistics-cors.herokuapp.com/http://acm.hdu.edu.cn/userstatus.php?user=wwwlsmcom',
+    'https://cors.ojhunt.com/http://acm.hdu.edu.cn/userstatus.php?user=wwwlsmcom',
     { fixture: 'summary_hdu.txt' }).as('summary_hdu')
   cy.intercept('POST', '/api/services/app/QueryHistory/SaveOrReplaceQueryHistory')
     .as('save-history')
