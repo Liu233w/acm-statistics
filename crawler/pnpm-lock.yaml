@@ -1,7 +1,6 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@types/jest': 27.5.1
   cheerio: ^1.0.0-rc
   eslint: 8.16.0
   eslint-plugin-jest: 26.2.2
@@ -22,7 +21,6 @@ dependencies:
   superagent-proxy: 3.0.0_superagent@7.0.0
 
 devDependencies:
-  '@types/jest': 27.5.1
   eslint: 8.16.0
   eslint-plugin-jest: 26.2.2_eslint@8.16.0+jest@27.5.1
   eslint-plugin-lodash: 7.4.0_eslint@8.16.0
@@ -705,13 +703,6 @@ packages:
     resolution: {integrity: sha512-c3mAZEuK0lvBp8tmuL74XRKn1+y2dcwOUpH7x4WrF6gk1GIgiluDRgMYQtw2OFcBvAJWlt6ASU3tSqxp0Uu0Aw==}
     dependencies:
       '@types/istanbul-lib-report': 3.0.0
-    dev: true
-
-  /@types/jest/27.5.1:
-    resolution: {integrity: sha512-fUy7YRpT+rHXto1YlL+J9rs0uLGyiqVt3ZOTQR+4ROc47yNl8WLdVLgUloBRhOxP1PZvguHl44T3H0wAWxahYQ==}
-    dependencies:
-      jest-matcher-utils: 27.5.1
-      pretty-format: 27.5.1
     dev: true
 
   /@types/json-schema/7.0.9:
