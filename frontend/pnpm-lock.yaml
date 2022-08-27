@@ -32,7 +32,7 @@ specifiers:
   stylus-loader: 4.3.3
   superagent: 7.1.5
   vue-chartjs: 4.1.1
-  webpack-virtual-modules: 0.4.3
+  webpack-virtual-modules: 0.4.4
 
 dependencies:
   '@fortawesome/fontawesome-free': 6.1.2
@@ -50,7 +50,7 @@ dependencies:
   stylus: 0.57.0
   superagent: 7.1.5
   vue-chartjs: 4.1.1_chart.js@3.8.0
-  webpack-virtual-modules: 0.4.3
+  webpack-virtual-modules: 0.4.4
 
 devDependencies:
   '@babel/core': 7.18.13
@@ -10805,8 +10805,8 @@ packages:
       source-map: 0.6.1
     dev: false
 
-  /webpack-virtual-modules/0.4.3:
-    resolution: {integrity: sha512-5NUqC2JquIL2pBAAo/VfBP6KuGkHIZQXW/lNKupLPfhViwh8wNsu0BObtl09yuKZszeEUfbXz8xhrHvSG16Nqw==}
+  /webpack-virtual-modules/0.4.4:
+    resolution: {integrity: sha512-h9atBP/bsZohWpHnr+2sic8Iecb60GxftXsWNLLLSqewgIsGzByd2gcIID4nXcG+3tNe4GQG3dLcff3kXupdRA==}
     dev: false
 
   /webpack/4.46.0:
