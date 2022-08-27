@@ -49,7 +49,8 @@
     "eslint-plugin-vuetify": "1.1.0",
     "jest": "27.5.1",
     "jest-serializer-vue": "2.0.2",
-    "stylus-loader": "4.3.3"
+    "stylus-loader": "4.3.3",
+    "typescript": "4.8.2"
   },
   "jest": {
     "moduleFileExtensions": [
