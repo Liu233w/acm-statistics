@@ -21,7 +21,7 @@
     "@nuxtjs/component-cache": "1.1.6",
     "@nuxtjs/vuetify": "1.12.3",
     "chart.js": "3.9.1",
-    "cheerio": "1.0.0-rc.10",
+    "cheerio": "1.0.0-rc.12",
     "crawler": "link:../crawler",
     "html2canvas": "1.4.1",
     "js-cookie": "3.0.1",
