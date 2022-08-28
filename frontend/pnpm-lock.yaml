@@ -13,7 +13,7 @@ specifiers:
   '@vue/vue2-jest': 28.1.0
   babel-jest: 27.5.1
   babel-plugin-lodash: 3.3.4
-  chart.js: 3.8.0
+  chart.js: 3.9.1
   cheerio: 1.0.0-rc.10
   crawler: link:../crawler
   eslint: 8.16.0
@@ -40,7 +40,7 @@ dependencies:
   '@nuxtjs/axios': 5.13.6
   '@nuxtjs/component-cache': 1.1.6
   '@nuxtjs/vuetify': 1.12.3
-  chart.js: 3.8.0
+  chart.js: 3.9.1
   cheerio: 1.0.0-rc.10
   crawler: link:../crawler
   html2canvas: 1.4.1
@@ -50,7 +50,7 @@ dependencies:
   nuxt-env: 0.1.0
   stylus: 0.57.0
   superagent: 7.1.5
-  vue-chartjs: 4.1.1_chart.js@3.8.0
+  vue-chartjs: 4.1.1_chart.js@3.9.1
   webpack-virtual-modules: 0.4.4
 
 devDependencies:
@@ -3561,8 +3561,8 @@ packages:
     resolution: {integrity: sha512-mT8iDcrh03qDGRRmoA2hmBJnxpllMR+0/0qlzjqZES6NdiWDcZkCNAk4rPFZ9Q85r27unkiNNg8ZOiwZXBHwcA==}
     dev: false
 
-  /chart.js/3.8.0:
-    resolution: {integrity: sha512-cr8xhrXjLIXVLOBZPkBZVF6NDeiVIrPLHcMhnON7UufudL+CNeRrD+wpYanswlm8NpudMdrt3CHoLMQMxJhHRg==}
+  /chart.js/3.9.1:
+    resolution: {integrity: sha512-Ro2JbLmvg83gXF5F4sniaQ+lTbSv18E+TIf2cOeiH1Iqd2PGFOtem+DUufMZsCJwFE7ywPOpfXFBwRTGq7dh6w==}
     dev: false
 
   /cheerio-select/1.5.0:
@@ -10502,13 +10502,13 @@ packages:
     resolution: {integrity: sha512-2ham8XPWTONajOR0ohOKOHXkm3+gaBmGut3SRuu75xLd/RRaY6vqgh8NBYYk7+RW3u5AtzPQZG8F10LHkl0lAQ==}
     dev: false
 
-  /vue-chartjs/4.1.1_chart.js@3.8.0:
+  /vue-chartjs/4.1.1_chart.js@3.9.1:
     resolution: {integrity: sha512-rKIQ3jPrjhwxjKdNJppnYxRuBSrx4QeM3nNHsfIxEqjX6QS4Jq6e6vnZBxh2MDpURDC2uvuI2N0eIt1cWXbBVA==}
     peerDependencies:
       chart.js: ^3.7.0
       vue: ^3.0.0-0 || ^2.6.0
     dependencies:
-      chart.js: 3.8.0
+      chart.js: 3.9.1
     dev: false
 
   /vue-client-only/2.1.0:
