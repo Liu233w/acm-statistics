@@ -13,7 +13,7 @@
 // https://on.cypress.io/configuration
 // ***********************************************************
 
-import {addMatchImageSnapshotCommand} from 'cypress-image-snapshot/command'
+import {addMatchImageSnapshotCommand} from '@simonsmith/cypress-image-snapshot/command'
 
 addMatchImageSnapshotCommand()
 require('cypress-terminal-report/src/installLogsCollector')()
