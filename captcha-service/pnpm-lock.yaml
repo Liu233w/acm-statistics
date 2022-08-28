@@ -2,7 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   eslint: 8.23.0
-  eslint-plugin-jest: 26.2.2
+  eslint-plugin-jest: 26.9.0
   jest: 27.5.1
   koa: ^2.7.0
   koa-bodyparser: ^4.3.0
@@ -23,7 +23,7 @@ dependencies:
 
 devDependencies:
   eslint: 8.23.0
-  eslint-plugin-jest: 26.2.2_swnad6pgeonoir4icelgdjc5fu
+  eslint-plugin-jest: 26.9.0_swnad6pgeonoir4icelgdjc5fu
   jest: 27.5.1
   supertest: 6.2.4
   typescript: 4.8.2
@@ -1417,8 +1417,8 @@ packages:
       source-map: 0.6.1
     dev: true
 
-  /eslint-plugin-jest/26.2.2_swnad6pgeonoir4icelgdjc5fu:
-    resolution: {integrity: sha512-etSFZ8VIFX470aA6kTqDPhIq7YWe0tjBcboFNV3WeiC18PJ/AVonGhuTwlmuz2fBkH8FJHA7JQ4k7GsQIj1Gew==}
+  /eslint-plugin-jest/26.9.0_swnad6pgeonoir4icelgdjc5fu:
+    resolution: {integrity: sha512-TWJxWGp1J628gxh2KhaH1H1paEdgE2J61BBF1I59c6xWeL5+D1BzMxGDN/nXAfX+aSkR5u80K+XhskK6Gwq9ng==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
       '@typescript-eslint/eslint-plugin': ^5.0.0

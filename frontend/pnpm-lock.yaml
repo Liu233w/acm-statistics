@@ -17,7 +17,7 @@ specifiers:
   cheerio: 1.0.0-rc.10
   crawler: link:../crawler
   eslint: 8.23.0
-  eslint-plugin-jest: 26.2.2
+  eslint-plugin-jest: 26.9.0
   eslint-plugin-lodash: 7.4.0
   eslint-plugin-vue: 9.4.0
   eslint-plugin-vuetify: 1.1.0
@@ -63,7 +63,7 @@ devDependencies:
   babel-jest: 27.5.1_@babel+core@7.18.13
   babel-plugin-lodash: 3.3.4
   eslint: 8.23.0
-  eslint-plugin-jest: 26.2.2_swnad6pgeonoir4icelgdjc5fu
+  eslint-plugin-jest: 26.9.0_swnad6pgeonoir4icelgdjc5fu
   eslint-plugin-lodash: 7.4.0_eslint@8.23.0
   eslint-plugin-vue: 9.4.0_eslint@8.23.0
   eslint-plugin-vuetify: 1.1.0_eslint@8.23.0
@@ -2284,7 +2284,7 @@ packages:
       '@typescript-eslint/types': 5.10.0
       '@typescript-eslint/visitor-keys': 5.10.0
       debug: 4.3.4
-      globby: 11.0.4
+      globby: 11.1.0
       is-glob: 4.0.3
       semver: 7.3.7
       tsutils: 3.21.0_typescript@4.8.2
@@ -4843,8 +4843,8 @@ packages:
       source-map: 0.6.1
     dev: true
 
-  /eslint-plugin-jest/26.2.2_swnad6pgeonoir4icelgdjc5fu:
-    resolution: {integrity: sha512-etSFZ8VIFX470aA6kTqDPhIq7YWe0tjBcboFNV3WeiC18PJ/AVonGhuTwlmuz2fBkH8FJHA7JQ4k7GsQIj1Gew==}
+  /eslint-plugin-jest/26.9.0_swnad6pgeonoir4icelgdjc5fu:
+    resolution: {integrity: sha512-TWJxWGp1J628gxh2KhaH1H1paEdgE2J61BBF1I59c6xWeL5+D1BzMxGDN/nXAfX+aSkR5u80K+XhskK6Gwq9ng==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
       '@typescript-eslint/eslint-plugin': ^5.0.0
@@ -5628,18 +5628,6 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       type-fest: 0.20.2
-    dev: true
-
-  /globby/11.0.4:
-    resolution: {integrity: sha512-9O4MVG9ioZJ08ffbcyVYyLOJLk5JQ688pJ4eMGLpdWLHq/Wr1D9BlriLQyL0E+jbkuePVZXYFj47QM/v093wHg==}
-    engines: {node: '>=10'}
-    dependencies:
-      array-union: 2.1.0
-      dir-glob: 3.0.1
-      fast-glob: 3.2.11
-      ignore: 5.2.0
-      merge2: 1.4.1
-      slash: 3.0.0
     dev: true
 
   /globby/11.1.0:
