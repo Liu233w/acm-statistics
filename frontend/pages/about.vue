@@ -85,7 +85,7 @@
             >
               <v-list-item-action>
                 <v-icon class="blue--text text--lighten-2">
-                  mdi-discord
+                  fab fa-discord
                 </v-icon>
               </v-list-item-action>
               <v-list-item-content>
