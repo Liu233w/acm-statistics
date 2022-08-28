@@ -178,10 +178,8 @@ describe('generateBrowserCrawlerFunctions', () => {
           message: crawlerErrorMessage,
         })
 
-      const promise = expect(functions.crawler_for_server(rejectedUser))
-      await promise.rejects.toThrow(Error)
-      await promise.rejects.toThrow(crawlerErrorMessage)
-      // 等到下方的测试用例失败时，可以直接使用第二条语句。
+      await expect(functions.crawler_for_server(rejectedUser))
+        .rejects.toThrow(crawlerErrorMessage)
 
       scope.done()
     })
