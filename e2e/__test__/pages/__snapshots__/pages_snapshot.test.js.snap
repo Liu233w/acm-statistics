@@ -1752,7 +1752,7 @@ exports[`/about 1`] = `
                             </div>
                             <div class="v-list-item__action"><i aria-hidden="true" class="v-icon notranslate grey--text mdi mdi-open-in-new theme--light"></i></div>
                           </a> <a tabindex="0" href="https://discord.gg/cQemBNNr" target="_blank" rel="noopener noreferrer" role="listitem" class="v-list-item v-list-item--link theme--light">
-                            <div class="v-list-item__action"><i aria-hidden="true" class="v-icon notranslate blue--text text--lighten-2 mdi mdi-discord theme--light"></i></div>
+                            <div class="v-list-item__action"><i aria-hidden="true" class="v-icon notranslate blue--text text--lighten-2 fab fa-discord theme--light"></i></div>
                             <div class="v-list-item__content">
                               <div class="v-list-item__subtitle">Discord: OJ Analyzer Development</div>
                             </div>
