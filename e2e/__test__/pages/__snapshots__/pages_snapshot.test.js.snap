@@ -3212,7 +3212,7 @@ exports[`/history 1`] = `
                 "Abp.Zero.UserManagement.PasswordComplexity.RequireLowercase": d,
                 "Abp.Zero.UserManagement.PasswordComplexity.RequireNonAlphanumeric": d,
                 "Abp.Zero.UserManagement.PasswordComplexity.RequireUppercase": d,
-                "Abp.Zero.UserManagement.PasswordComplexity.RequiredLength": "3",
+                "Abp.Zero.UserManagement.PasswordComplexity.RequiredLength": "6",
                 "App.UiTheme": "red",
                 "App.AutoSaveHistory": a
               }
@@ -4602,7 +4602,7 @@ exports[`/history/{historyId} 1`] = `
                 "Abp.Zero.UserManagement.PasswordComplexity.RequireLowercase": h,
                 "Abp.Zero.UserManagement.PasswordComplexity.RequireNonAlphanumeric": h,
                 "Abp.Zero.UserManagement.PasswordComplexity.RequireUppercase": h,
-                "Abp.Zero.UserManagement.PasswordComplexity.RequiredLength": "3",
+                "Abp.Zero.UserManagement.PasswordComplexity.RequiredLength": "6",
                 "App.UiTheme": "red",
                 "App.AutoSaveHistory": g
               }
@@ -7364,7 +7364,7 @@ exports[`/settings 1`] = `
                 "Abp.Zero.UserManagement.PasswordComplexity.RequireLowercase": b,
                 "Abp.Zero.UserManagement.PasswordComplexity.RequireNonAlphanumeric": b,
                 "Abp.Zero.UserManagement.PasswordComplexity.RequireUppercase": b,
-                "Abp.Zero.UserManagement.PasswordComplexity.RequiredLength": "3",
+                "Abp.Zero.UserManagement.PasswordComplexity.RequiredLength": "6",
                 "App.UiTheme": "red",
                 "App.AutoSaveHistory": a
               }
