@@ -1,70 +1,70 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`/api/crawlers/swagger.json swagger should match snapshot 1`] = `
-Object {
-  "definitions": Object {
-    "CrawlerMeta": Object {
+{
+  "definitions": {
+    "CrawlerMeta": {
       "description": "Crawler's metadata",
-      "properties": Object {
-        "description": Object {
+      "properties": {
+        "description": {
           "description": "Description of the crawler",
           "type": "string",
         },
-        "title": Object {
+        "title": {
           "description": "Title of the crawler",
           "type": "string",
         },
-        "url": Object {
+        "url": {
           "description": "Target website of the crawler",
           "type": "string",
         },
       },
       "type": "object",
     },
-    "Error": Object {
-      "properties": Object {
-        "error": Object {
+    "Error": {
+      "properties": {
+        "error": {
           "description": "true",
           "type": "boolean",
         },
-        "message": Object {
+        "message": {
           "type": "string",
         },
       },
       "type": "object",
     },
-    "Ok": Object {
-      "properties": Object {
-        "data": Object {
+    "Ok": {
+      "properties": {
+        "data": {
           "$ref": "#/definitions/UserState",
         },
-        "error": Object {
+        "error": {
           "description": "false",
           "type": "boolean",
         },
       },
       "type": "object",
     },
-    "UserState": Object {
+    "UserState": {
       "description": "User performance",
-      "properties": Object {
-        "solved": Object {
+      "properties": {
+        "solved": {
           "format": "int64",
           "type": "integer",
         },
-        "solvedList": Object {
+        "solvedList": {
           "description": "A list which contains the problem the user passes. For non-virtual judge, only problem id is included. If the crawler targets a virtual judge, each problem follows the format of \`crawlerName-problemId\`",
-          "items": Object {
+          "items": {
             "type": "string",
           },
           "type": "array",
         },
-        "submissions": Object {
+        "submissions": {
           "format": "int64",
           "type": "integer",
         },
-        "submissionsByCrawlerName": Object {
-          "additionalProperties": Object {
+        "submissionsByCrawlerName": {
+          "additionalProperties": {
             "type": "number",
           },
           "default": null,
@@ -75,38 +75,38 @@ Object {
       "type": "object",
     },
   },
-  "externalDocs": Object {
+  "externalDocs": {
     "description": "Other documents",
     "url": "https://github.com/Liu233w/acm-statistics/blob/master/crawler-api-backend/README.md",
   },
-  "info": Object {
+  "info": {
     "description": "A crawler microservice that allows users to invoke all crawlers supported by the website. All crawlers run on server.",
     "title": "crawler-api-backend",
     "version": "1.0.0",
   },
-  "paths": Object {
-    "/api/crawlers/": Object {
-      "get": Object {
-        "consumes": Array [
+  "paths": {
+    "/api/crawlers/": {
+      "get": {
+        "consumes": [
           "application/json",
         ],
         "description": "",
-        "produces": Array [
+        "produces": [
           "application/json",
         ],
-        "responses": Object {
-          "200": Object {
+        "responses": {
+          "200": {
             "description": "success",
-            "schema": Object {
-              "properties": Object {
-                "data": Object {
-                  "additionalProperties": Object {
+            "schema": {
+              "properties": {
+                "data": {
+                  "additionalProperties": {
                     "$ref": "#/definitions/CrawlerMeta",
                   },
                   "description": "name of the crawler",
                   "type": "object",
                 },
-                "error": Object {
+                "error": {
                   "description": "false",
                   "type": "boolean",
                 },
@@ -118,39 +118,39 @@ Object {
         "summary": "Return all supported OJs",
       },
     },
-    "/api/crawlers/{type}/{username}": Object {
-      "get": Object {
-        "consumes": Array [
+    "/api/crawlers/{type}/{username}": {
+      "get": {
+        "consumes": [
           "application/json",
         ],
-        "parameters": Array [
-          Object {
+        "parameters": [
+          {
             "description": "Type of the OJ. Only the type defined in \`/crawler/config.yml\` are included.",
             "in": "path",
             "name": "type",
             "required": true,
             "type": "string",
           },
-          Object {
+          {
             "in": "path",
             "name": "username",
             "required": true,
             "type": "string",
           },
         ],
-        "produces": Array [
+        "produces": [
           "application/json",
         ],
-        "responses": Object {
-          "200": Object {
+        "responses": {
+          "200": {
             "description": "successful",
-            "schema": Object {
+            "schema": {
               "$ref": "#/definitions/Ok",
             },
           },
-          "400": Object {
+          "400": {
             "description": "all other failures",
-            "schema": Object {
+            "schema": {
               "$ref": "#/definitions/Error",
             },
           },
