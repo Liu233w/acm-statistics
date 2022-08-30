@@ -12,7 +12,7 @@
   "dependencies": {
     "@simonsmith/cypress-image-snapshot": "5.0.4",
     "cheerio": "1.0.0-rc.10",
-    "cypress": "10.6.0",
+    "cypress": "10.7.0",
     "cypress-terminal-report": "4.1.2",
     "eslint": "8.23.0",
     "eslint-plugin-cypress": "2.12.1",
