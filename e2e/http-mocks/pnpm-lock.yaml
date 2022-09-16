@@ -3,13 +3,13 @@ lockfileVersion: 5.4
 specifiers:
   glob: 8.0.3
   mockserver-client: 5.14.0
-  nodemon: 2.0.19
+  nodemon: 2.0.20
   wait-on: 6.0.1
 
 dependencies:
   glob: 8.0.3
   mockserver-client: 5.14.0
-  nodemon: 2.0.19
+  nodemon: 2.0.20
   wait-on: 6.0.1
 
 packages:
@@ -289,8 +289,8 @@ packages:
     resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
     dev: false
 
-  /minimatch/3.0.4:
-    resolution: {integrity: sha512-yJHVQEhyqPLUTgt9B83PXu6W3rx4MvvHvSUvToogpwoGDOUQ+yDrR0HRot+yOCdCO7u4hX3pWft6kWBBcqh0UA==}
+  /minimatch/3.1.2:
+    resolution: {integrity: sha512-J7p63hRiAjw1NDEww1W7i37+ByIrOWO5XQQAzZ3VOcL0PNybwpfmV/N05zFAzwQ9USyEcX6t3UO+K5aqBQOIHw==}
     dependencies:
       brace-expansion: 1.1.11
     dev: false
@@ -334,16 +334,15 @@ packages:
     hasBin: true
     dev: false
 
-  /nodemon/2.0.19:
-    resolution: {integrity: sha512-4pv1f2bMDj0Eeg/MhGqxrtveeQ5/G/UVe9iO6uTZzjnRluSA4PVWf8CW99LUPwGB3eNIA7zUFoP77YuI7hOc0A==}
+  /nodemon/2.0.20:
+    resolution: {integrity: sha512-Km2mWHKKY5GzRg6i1j5OxOHQtuvVsgskLfigG25yTtbyfRGn/GNvIbRyOf1PSCKJ2aT/58TiuUsuOU5UToVViw==}
     engines: {node: '>=8.10.0'}
     hasBin: true
-    requiresBuild: true
     dependencies:
       chokidar: 3.5.3
       debug: 3.2.7_supports-color@5.5.0
       ignore-by-default: 1.0.1
-      minimatch: 3.0.4
+      minimatch: 3.1.2
       pstree.remy: 1.1.8
       semver: 5.7.1
       simple-update-notifier: 1.0.7
