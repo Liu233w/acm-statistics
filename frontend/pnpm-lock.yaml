@@ -34,7 +34,7 @@ specifiers:
   superagent: 8.0.0
   typescript: 4.8.3
   vue-chartjs: 4.1.1
-  webpack-virtual-modules: 0.4.4
+  webpack-virtual-modules: 0.4.5
 
 dependencies:
   '@fortawesome/fontawesome-free': 6.2.0
@@ -52,7 +52,7 @@ dependencies:
   stylus: 0.59.0
   superagent: 8.0.0
   vue-chartjs: 4.1.1_chart.js@3.9.1
-  webpack-virtual-modules: 0.4.4
+  webpack-virtual-modules: 0.4.5
 
 devDependencies:
   '@babel/core': 7.19.1
@@ -10900,8 +10900,8 @@ packages:
       source-map: 0.6.1
     dev: false
 
-  /webpack-virtual-modules/0.4.4:
-    resolution: {integrity: sha512-h9atBP/bsZohWpHnr+2sic8Iecb60GxftXsWNLLLSqewgIsGzByd2gcIID4nXcG+3tNe4GQG3dLcff3kXupdRA==}
+  /webpack-virtual-modules/0.4.5:
+    resolution: {integrity: sha512-8bWq0Iluiv9lVf9YaqWQ9+liNgXSHICm+rg544yRgGYaR8yXZTVBaHZkINZSB2yZSWo4b0F6MIxqJezVfOEAlg==}
     dev: false
 
   /webpack/4.46.0:
