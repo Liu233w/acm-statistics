@@ -15,7 +15,7 @@ jobs:
 
     - name: Wait for status checks
       id: check
-      uses: WyriHaximus/github-action-wait-for-status@v1.6
+      uses: WyriHaximus/github-action-wait-for-status@v1.7
       with:
         ignoreActions: codecov/project,codecov/patch,deploy,E2E on pull request,update-snapshot,Update HTML Snapshot when comment on pr,Update E2E Snapshot when comment on pr,crawler-check,检查爬虫可用性（不准确）
         checkInterval: 60
