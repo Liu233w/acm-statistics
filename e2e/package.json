@@ -10,7 +10,7 @@
     "cypress-install": "cypress install"
   },
   "dependencies": {
-    "@simonsmith/cypress-image-snapshot": "5.0.4",
+    "@simonsmith/cypress-image-snapshot": "5.0.5",
     "cheerio": "1.0.0-rc.10",
     "cypress": "10.8.0",
     "cypress-terminal-report": "4.1.2",
