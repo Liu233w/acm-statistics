@@ -33,7 +33,7 @@ specifiers:
   stylus-loader: 7.0.0
   superagent: 8.0.0
   typescript: 4.8.3
-  vue-chartjs: 4.1.1
+  vue-chartjs: 4.1.2
   webpack-virtual-modules: 0.4.5
 
 dependencies:
@@ -51,7 +51,7 @@ dependencies:
   nuxt-env: 0.1.0
   stylus: 0.59.0
   superagent: 8.0.0
-  vue-chartjs: 4.1.1_chart.js@3.9.1
+  vue-chartjs: 4.1.2_chart.js@3.9.1
   webpack-virtual-modules: 0.4.5
 
 devDependencies:
@@ -10582,8 +10582,8 @@ packages:
     resolution: {integrity: sha512-2ham8XPWTONajOR0ohOKOHXkm3+gaBmGut3SRuu75xLd/RRaY6vqgh8NBYYk7+RW3u5AtzPQZG8F10LHkl0lAQ==}
     dev: false
 
-  /vue-chartjs/4.1.1_chart.js@3.9.1:
-    resolution: {integrity: sha512-rKIQ3jPrjhwxjKdNJppnYxRuBSrx4QeM3nNHsfIxEqjX6QS4Jq6e6vnZBxh2MDpURDC2uvuI2N0eIt1cWXbBVA==}
+  /vue-chartjs/4.1.2_chart.js@3.9.1:
+    resolution: {integrity: sha512-QSggYjeFv/L4jFSBQpX8NzrAvX0B+Ha6nDgxkTG8tEXxYOOTwKI4phRLe+B4f+REnkmg7hgPY24R0cixZJyXBg==}
     peerDependencies:
       chart.js: ^3.7.0
       vue: ^3.0.0-0 || ^2.6.0
