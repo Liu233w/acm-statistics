@@ -1,7 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@simonsmith/cypress-image-snapshot': 5.0.4
+  '@simonsmith/cypress-image-snapshot': 6.0.0
   cheerio: 1.0.0-rc.10
   cypress: 10.8.0
   cypress-terminal-report: 4.1.2
@@ -14,7 +14,7 @@ specifiers:
   superagent: 8.0.0
 
 dependencies:
-  '@simonsmith/cypress-image-snapshot': 5.0.4_cypress@10.8.0+jest@29.0.3
+  '@simonsmith/cypress-image-snapshot': 6.0.0_cypress@10.8.0+jest@29.0.3
   cheerio: 1.0.0-rc.10
   cypress: 10.8.0
   cypress-terminal-report: 4.1.2_cypress@10.8.0
@@ -724,8 +724,8 @@ packages:
       fastq: 1.13.0
     dev: false
 
-  /@simonsmith/cypress-image-snapshot/5.0.4_cypress@10.8.0+jest@29.0.3:
-    resolution: {integrity: sha512-8gofKxfKZxRdXdHsBl8O1zqUJV8khwPLbQExw5D0HTjWtPFJ0epoTw16j0xRh4xTBmWXEVBvs2qn5O8kiZBExw==}
+  /@simonsmith/cypress-image-snapshot/6.0.0_cypress@10.8.0+jest@29.0.3:
+    resolution: {integrity: sha512-nCijMZX6mcd6Nu5rLhXN7Zweaq/LlosfduF9YiQSezcDR37d1hkjLfkWh4mG7MAg7N53Po9cgDlBCmBLE2u8ag==}
     engines: {node: '>=14'}
     peerDependencies:
       cypress: ^10.0.0
