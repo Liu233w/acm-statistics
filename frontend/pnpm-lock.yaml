@@ -19,7 +19,7 @@ specifiers:
   eslint: 8.24.0
   eslint-plugin-jest: 27.1.0
   eslint-plugin-lodash: 7.4.0
-  eslint-plugin-vue: 9.5.1
+  eslint-plugin-vue: 9.6.0
   eslint-plugin-vuetify: 1.1.0
   html2canvas: 1.4.1
   jest: 29.1.2
@@ -66,7 +66,7 @@ devDependencies:
   eslint: 8.24.0
   eslint-plugin-jest: 27.1.0_iuaxzk4peqgfsq32w4ik5jyxuy
   eslint-plugin-lodash: 7.4.0_eslint@8.24.0
-  eslint-plugin-vue: 9.5.1_eslint@8.24.0
+  eslint-plugin-vue: 9.6.0_eslint@8.24.0
   eslint-plugin-vuetify: 1.1.0_eslint@8.24.0
   jest: 29.1.2
   jest-environment-jsdom: 29.1.2
@@ -4918,8 +4918,8 @@ packages:
       - supports-color
     dev: true
 
-  /eslint-plugin-vue/9.5.1_eslint@8.24.0:
-    resolution: {integrity: sha512-Y0sL2RY7Xc9S8kNih9lbwHIDmewUg9bfas6WSzsOWRgDXhIHKxRBZYNAnVcXBFfE+bMWHUA5GLChl7TcTYUI8w==}
+  /eslint-plugin-vue/9.6.0_eslint@8.24.0:
+    resolution: {integrity: sha512-zzySkJgVbFCylnG2+9MDF7N+2Rjze2y0bF8GyUNpFOnT8mCMfqqtLDJkHBuYu9N/psW1A6DVbQhPkP92E+qakA==}
     engines: {node: ^14.17.0 || >=16.0.0}
     peerDependencies:
       eslint: ^6.2.0 || ^7.0.0 || ^8.0.0
