@@ -17,7 +17,7 @@ specifiers:
   cheerio: 1.0.0-rc.10
   crawler: link:../crawler
   eslint: 8.24.0
-  eslint-plugin-jest: 27.1.0
+  eslint-plugin-jest: 27.1.1
   eslint-plugin-lodash: 7.4.0
   eslint-plugin-vue: 9.6.0
   eslint-plugin-vuetify: 1.1.0
@@ -64,7 +64,7 @@ devDependencies:
   babel-jest: 29.1.2_@babel+core@7.19.3
   babel-plugin-lodash: 3.3.4
   eslint: 8.24.0
-  eslint-plugin-jest: 27.1.0_iuaxzk4peqgfsq32w4ik5jyxuy
+  eslint-plugin-jest: 27.1.1_iuaxzk4peqgfsq32w4ik5jyxuy
   eslint-plugin-lodash: 7.4.0_eslint@8.24.0
   eslint-plugin-vue: 9.6.0_eslint@8.24.0
   eslint-plugin-vuetify: 1.1.0_eslint@8.24.0
@@ -4872,8 +4872,8 @@ packages:
       source-map: 0.6.1
     dev: true
 
-  /eslint-plugin-jest/27.1.0_iuaxzk4peqgfsq32w4ik5jyxuy:
-    resolution: {integrity: sha512-sqojX5GKzQ8+PScF9rJ7dRMtu0NEIWsaDMLwRRvVE28mnWctZe5VAti394Nmut11vPwgxck9XnDmmjx/U9NowQ==}
+  /eslint-plugin-jest/27.1.1_iuaxzk4peqgfsq32w4ik5jyxuy:
+    resolution: {integrity: sha512-vuSuXGKHHi/UAffIM46QKm4g0tQP+6n52nRxUpMq6x6x9rhnv5WM7ktSu3h9cTnXE4b0Y0ODQTgRlCm9rdRLvg==}
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
     peerDependencies:
       '@typescript-eslint/eslint-plugin': ^5.0.0
