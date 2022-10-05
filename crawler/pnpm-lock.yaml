@@ -3,7 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   cheerio: ^1.0.0-rc
   eslint: 8.24.0
-  eslint-plugin-jest: 27.1.0
+  eslint-plugin-jest: 27.1.1
   eslint-plugin-lodash: 7.4.0
   jest: 29.1.2
   js-yaml: ^4.0.0
@@ -23,7 +23,7 @@ dependencies:
 
 devDependencies:
   eslint: 8.24.0
-  eslint-plugin-jest: 27.1.0_iuaxzk4peqgfsq32w4ik5jyxuy
+  eslint-plugin-jest: 27.1.1_iuaxzk4peqgfsq32w4ik5jyxuy
   eslint-plugin-lodash: 7.4.0_eslint@8.24.0
   jest: 29.1.2
   memfs: 3.4.7
@@ -1409,8 +1409,8 @@ packages:
       source-map: 0.6.1
     dev: false
 
-  /eslint-plugin-jest/27.1.0_iuaxzk4peqgfsq32w4ik5jyxuy:
-    resolution: {integrity: sha512-sqojX5GKzQ8+PScF9rJ7dRMtu0NEIWsaDMLwRRvVE28mnWctZe5VAti394Nmut11vPwgxck9XnDmmjx/U9NowQ==}
+  /eslint-plugin-jest/27.1.1_iuaxzk4peqgfsq32w4ik5jyxuy:
+    resolution: {integrity: sha512-vuSuXGKHHi/UAffIM46QKm4g0tQP+6n52nRxUpMq6x6x9rhnv5WM7ktSu3h9cTnXE4b0Y0ODQTgRlCm9rdRLvg==}
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
     peerDependencies:
       '@typescript-eslint/eslint-plugin': ^5.0.0
