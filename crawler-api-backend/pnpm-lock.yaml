@@ -3,7 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   crawler: link:../crawler
   eslint: 8.25.0
-  eslint-plugin-jest: 27.1.1
+  eslint-plugin-jest: 27.1.2
   eslint-plugin-lodash: 7.4.0
   jest: 29.2.0
   koa: ^2.13.1
@@ -24,7 +24,7 @@ dependencies:
 
 devDependencies:
   eslint: 8.25.0
-  eslint-plugin-jest: 27.1.1_saaif7zjwbduouaybya55navvy
+  eslint-plugin-jest: 27.1.2_saaif7zjwbduouaybya55navvy
   eslint-plugin-lodash: 7.4.0_eslint@8.25.0
   jest: 29.2.0
   supertest: 6.3.0
@@ -1349,8 +1349,8 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /eslint-plugin-jest/27.1.1_saaif7zjwbduouaybya55navvy:
-    resolution: {integrity: sha512-vuSuXGKHHi/UAffIM46QKm4g0tQP+6n52nRxUpMq6x6x9rhnv5WM7ktSu3h9cTnXE4b0Y0ODQTgRlCm9rdRLvg==}
+  /eslint-plugin-jest/27.1.2_saaif7zjwbduouaybya55navvy:
+    resolution: {integrity: sha512-+nLOn5jvQKLUywXxXKsLuuENsB/FhygXOLI+l5QlF+ACGe0DM14FlpYrGZ4nEiTo0BGlL5MymG73XA/tC3v3fA==}
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
     peerDependencies:
       '@typescript-eslint/eslint-plugin': ^5.0.0
