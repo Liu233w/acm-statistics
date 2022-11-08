@@ -1,4 +1,4 @@
-FROM node:19.0.0-alpine
+FROM node:19.0.1-alpine
 
 # dependency to run codecov on CI
 ARG CODECOV=false
