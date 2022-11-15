@@ -32,7 +32,7 @@ specifiers:
   stylus: 0.59.0
   stylus-loader: 7.1.0
   superagent: 8.0.3
-  typescript: 4.8.4
+  typescript: 4.9.3
   vue-chartjs: 4.1.2
   webpack-virtual-modules: 0.4.6
 
@@ -47,7 +47,7 @@ dependencies:
   html2canvas: 1.4.1
   js-cookie: 3.0.1
   lodash: 4.17.21
-  nuxt: 2.15.8_typescript@4.8.4
+  nuxt: 2.15.8_typescript@4.9.3
   nuxt-env: 0.1.0
   stylus: 0.59.0
   superagent: 8.0.3
@@ -60,11 +60,11 @@ devDependencies:
   '@mdi/font': 7.0.96
   '@nuxtjs/eslint-module': 3.1.0_eslint@8.27.0
   '@vue/test-utils': 1.3.3
-  '@vue/vue2-jest': 29.2.0_qaycsgfsetvkuhs6og6dtq234e
+  '@vue/vue2-jest': 29.2.0_etmh4pmirrdcceghs4yycnp2qi
   babel-jest: 29.3.1_@babel+core@7.20.2
   babel-plugin-lodash: 3.3.4
   eslint: 8.27.0
-  eslint-plugin-jest: 27.1.5_ghrvpufvkz2ks6pq5kljtbctq4
+  eslint-plugin-jest: 27.1.5_7k77a5y5i7x3witmiffxd2zg3y
   eslint-plugin-lodash: 7.4.0_eslint@8.27.0
   eslint-plugin-vue: 9.7.0_eslint@8.27.0
   eslint-plugin-vuetify: 1.1.0_eslint@8.27.0
@@ -72,7 +72,7 @@ devDependencies:
   jest-environment-jsdom: 29.3.1
   jest-serializer-vue: 2.0.2
   stylus-loader: 7.1.0_stylus@0.59.0
-  typescript: 4.8.4
+  typescript: 4.9.3
 
 packages:
 
@@ -1636,13 +1636,13 @@ packages:
       - supports-color
     dev: false
 
-  /@nuxt/builder/2.15.8_typescript@4.8.4:
+  /@nuxt/builder/2.15.8_typescript@4.9.3:
     resolution: {integrity: sha512-WVhN874LFMdgRiJqpxmeKI+vh5lhCUBVOyR9PhL1m1V/GV3fb+Dqc1BKS6XgayrWAWavPLveCJmQ/FID0puOfQ==}
     dependencies:
       '@nuxt/devalue': 1.2.5
       '@nuxt/utils': 2.15.8
       '@nuxt/vue-app': 2.15.8
-      '@nuxt/webpack': 2.15.8_typescript@4.8.4
+      '@nuxt/webpack': 2.15.8_typescript@4.9.3
       chalk: 4.1.2
       chokidar: 3.5.2
       consola: 2.15.3
@@ -1951,7 +1951,7 @@ packages:
       vue-server-renderer: 2.6.14
     dev: false
 
-  /@nuxt/webpack/2.15.8_typescript@4.8.4:
+  /@nuxt/webpack/2.15.8_typescript@4.9.3:
     resolution: {integrity: sha512-CzJYFed23Ow/UK0+cI1FVthDre1p2qc8Q97oizG39d3/SIh3aUHjgj8c60wcR+RSxVO0FzZMXkmq02NmA7vWJg==}
     dependencies:
       '@babel/core': 7.20.2
@@ -1975,7 +1975,7 @@ packages:
       memory-fs: 0.5.0
       optimize-css-assets-webpack-plugin: 5.0.8_webpack@4.46.0
       pify: 5.0.0
-      pnp-webpack-plugin: 1.7.0_typescript@4.8.4
+      pnp-webpack-plugin: 1.7.0_typescript@4.9.3
       postcss: 7.0.39
       postcss-import: 12.0.1
       postcss-import-resolver: 2.0.0
@@ -2316,7 +2316,7 @@ packages:
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
 
-  /@typescript-eslint/typescript-estree/5.10.0_typescript@4.8.4:
+  /@typescript-eslint/typescript-estree/5.10.0_typescript@4.9.3:
     resolution: {integrity: sha512-x+7e5IqfwLwsxTdliHRtlIYkgdtYXzE0CkFeV6ytAqq431ZyxCFzNMNR5sr3WOlIG/ihVZr9K/y71VHTF/DUQA==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
@@ -2331,13 +2331,13 @@ packages:
       globby: 11.1.0
       is-glob: 4.0.3
       semver: 7.3.8
-      tsutils: 3.21.0_typescript@4.8.4
-      typescript: 4.8.4
+      tsutils: 3.21.0_typescript@4.9.3
+      typescript: 4.9.3
     transitivePeerDependencies:
       - supports-color
     dev: true
 
-  /@typescript-eslint/utils/5.10.0_rmayb2veg2btbq6mbmnyivgasy:
+  /@typescript-eslint/utils/5.10.0_e3uo4sehh4zr4i6m57mkkxxv7y:
     resolution: {integrity: sha512-IGYwlt1CVcFoE2ueW4/ioEwybR60RAdGeiJX/iDAw0t5w0wK3S7QncDwpmsM70nKgGTuVchEWB8lwZwHqPAWRg==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
@@ -2346,7 +2346,7 @@ packages:
       '@types/json-schema': 7.0.9
       '@typescript-eslint/scope-manager': 5.10.0
       '@typescript-eslint/types': 5.10.0
-      '@typescript-eslint/typescript-estree': 5.10.0_typescript@4.8.4
+      '@typescript-eslint/typescript-estree': 5.10.0_typescript@4.9.3
       eslint: 8.27.0
       eslint-scope: 5.1.1
       eslint-utils: 3.0.0_eslint@8.27.0
@@ -2537,7 +2537,7 @@ packages:
       pretty: 2.0.0
     dev: true
 
-  /@vue/vue2-jest/29.2.0_qaycsgfsetvkuhs6og6dtq234e:
+  /@vue/vue2-jest/29.2.0_etmh4pmirrdcceghs4yycnp2qi:
     resolution: {integrity: sha512-Ichxz+KJBZrgeFvPUFefWaICAsSTaWVi359UQ0V0cEFsKHmrkqjPcmgtafStwnSBNFGticcsfNQ9qJFRPCUBwQ==}
     engines: {node: '>10'}
     peerDependencies:
@@ -2560,7 +2560,7 @@ packages:
       jest: 29.3.1
       source-map: 0.5.6
       tsconfig: 7.0.0
-      typescript: 4.8.4
+      typescript: 4.9.3
     transitivePeerDependencies:
       - arc-templates
       - atpl
@@ -4894,7 +4894,7 @@ packages:
       source-map: 0.6.1
     dev: true
 
-  /eslint-plugin-jest/27.1.5_ghrvpufvkz2ks6pq5kljtbctq4:
+  /eslint-plugin-jest/27.1.5_7k77a5y5i7x3witmiffxd2zg3y:
     resolution: {integrity: sha512-CK2dekZ5VBdzsOSOH5Fc1rwC+cWXjkcyrmf1RV714nDUDKu+o73TTJiDxpbILG8PtPPpAAl3ywzh5QA7Ft0mjA==}
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
     peerDependencies:
@@ -4907,7 +4907,7 @@ packages:
       jest:
         optional: true
     dependencies:
-      '@typescript-eslint/utils': 5.10.0_rmayb2veg2btbq6mbmnyivgasy
+      '@typescript-eslint/utils': 5.10.0_e3uo4sehh4zr4i6m57mkkxxv7y
       eslint: 8.27.0
       jest: 29.3.1
     transitivePeerDependencies:
@@ -7798,13 +7798,13 @@ packages:
     resolution: {integrity: sha512-7mTao3qG0zfN0hahk3O6SuDy0KEwYmNojammWQsMwhqMn3aUjX4nMYnWDa0pua+2/rwAY9oG53jQtLgJdG7f9w==}
     dev: false
 
-  /nuxt/2.15.8_typescript@4.8.4:
+  /nuxt/2.15.8_typescript@4.9.3:
     resolution: {integrity: sha512-ceK3qLg/Baj7J8mK9bIxqw9AavrF+LXqwYEreBdY/a4Sj8YV4mIvhqea/6E7VTCNNGvKT2sJ/TTJjtfQ597lTA==}
     hasBin: true
     requiresBuild: true
     dependencies:
       '@nuxt/babel-preset-app': 2.15.8
-      '@nuxt/builder': 2.15.8_typescript@4.8.4
+      '@nuxt/builder': 2.15.8_typescript@4.9.3
       '@nuxt/cli': 2.15.8
       '@nuxt/components': 2.2.1
       '@nuxt/config': 2.15.8
@@ -7817,7 +7817,7 @@ packages:
       '@nuxt/utils': 2.15.8
       '@nuxt/vue-app': 2.15.8
       '@nuxt/vue-renderer': 2.15.8
-      '@nuxt/webpack': 2.15.8_typescript@4.8.4
+      '@nuxt/webpack': 2.15.8_typescript@4.9.3
     transitivePeerDependencies:
       - '@vue/compiler-sfc'
       - arc-templates
@@ -8280,11 +8280,11 @@ packages:
     dependencies:
       find-up: 4.1.0
 
-  /pnp-webpack-plugin/1.7.0_typescript@4.8.4:
+  /pnp-webpack-plugin/1.7.0_typescript@4.9.3:
     resolution: {integrity: sha512-2Rb3vm+EXble/sMXNSu6eoBx8e79gKqhNq9F5ZWW6ERNCTE/Q0wQNne5541tE5vKjfM8hpNCYL+LGc1YTfI0dg==}
     engines: {node: '>=6'}
     dependencies:
-      ts-pnp: 1.2.0_typescript@4.8.4
+      ts-pnp: 1.2.0_typescript@4.9.3
     transitivePeerDependencies:
       - typescript
     dev: false
@@ -10285,7 +10285,7 @@ packages:
       punycode: 2.1.1
     dev: true
 
-  /ts-pnp/1.2.0_typescript@4.8.4:
+  /ts-pnp/1.2.0_typescript@4.9.3:
     resolution: {integrity: sha512-csd+vJOb/gkzvcCHgTGSChYpy5f1/XKNsmvBGO4JXS+z1v2HobugDz4s1IeFXM3wZB44uczs+eazB5Q/ccdhQw==}
     engines: {node: '>=6'}
     peerDependencies:
@@ -10294,7 +10294,7 @@ packages:
       typescript:
         optional: true
     dependencies:
-      typescript: 4.8.4
+      typescript: 4.9.3
     dev: false
 
   /tsconfig/7.0.0:
@@ -10313,14 +10313,14 @@ packages:
     resolution: {integrity: sha512-77EbyPPpMz+FRFRuAFlWMtmgUWGe9UOG2Z25NqCwiIjRhOf5iKGuzSe5P2w1laq+FkRy4p+PCuVkJSGkzTEKVw==}
     dev: false
 
-  /tsutils/3.21.0_typescript@4.8.4:
+  /tsutils/3.21.0_typescript@4.9.3:
     resolution: {integrity: sha512-mHKK3iUXL+3UF6xL5k0PEhKRUBKPBCv/+RkEOpjRWxxx27KKRBmmA60A9pgOUvMi8GKhRMPEmjBRPzs2W7O1OA==}
     engines: {node: '>= 6'}
     peerDependencies:
       typescript: '>=2.8.0 || >= 3.2.0-dev || >= 3.3.0-dev || >= 3.4.0-dev || >= 3.5.0-dev || >= 3.6.0-dev || >= 3.6.0-beta || >= 3.7.0-dev || >= 3.7.0-beta'
     dependencies:
       tslib: 1.14.1
-      typescript: 4.8.4
+      typescript: 4.9.3
     dev: true
 
   /tty-browserify/0.0.0:
@@ -10358,8 +10358,8 @@ packages:
     resolution: {integrity: sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=}
     dev: false
 
-  /typescript/4.8.4:
-    resolution: {integrity: sha512-QCh+85mCy+h0IGff8r5XWzOVSbBO+KfeYrMQh7NJ58QujwcE22u+NUSmUxqF+un70P9GXKxa2HCNiTTMJknyjQ==}
+  /typescript/4.9.3:
+    resolution: {integrity: sha512-CIfGzTelbKNEnLpLdGFgdyKhG23CKdKgQPOBc+OUNrkJ2vr+KSzsSV5kq5iWhEQbok+quxgGzrAtGWCyU7tHnA==}
     engines: {node: '>=4.2.0'}
     hasBin: true
 
