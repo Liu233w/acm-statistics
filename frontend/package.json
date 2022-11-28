@@ -34,7 +34,7 @@
     "webpack-virtual-modules": "0.4.6"
   },
   "devDependencies": {
-    "@babel/core": "7.20.2",
+    "@babel/core": "7.20.5",
     "@babel/preset-env": "7.20.2",
     "@mdi/font": "7.0.96",
     "@nuxtjs/eslint-module": "3.1.0",
