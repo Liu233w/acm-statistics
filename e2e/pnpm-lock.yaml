@@ -11,7 +11,7 @@ specifiers:
   jest: 29.3.1
   jest-serializer-vue: 3.1.0
   lodash: 4.17.21
-  superagent: 8.0.4
+  superagent: 8.0.5
 
 dependencies:
   '@simonsmith/cypress-image-snapshot': 6.0.0_bg25yee4qeg7mpleuvd346a3tq
@@ -24,7 +24,7 @@ dependencies:
   jest: 29.3.1
   jest-serializer-vue: 3.1.0
   lodash: 4.17.21
-  superagent: 8.0.4
+  superagent: 8.0.5
 
 packages:
 
@@ -3841,8 +3841,8 @@ packages:
     engines: {node: '>=8'}
     dev: false
 
-  /superagent/8.0.4:
-    resolution: {integrity: sha512-yaQB7YqAHhutt8yU7XIRKXGXtkxKidVuiDJ8FJPBG7JPd7Ckv4X9cOdxVGH5DFsPXodsCrOSzdUi2xL+o9z1qw==}
+  /superagent/8.0.5:
+    resolution: {integrity: sha512-lQVE0Praz7nHiSaJLKBM/cZyi7J0E4io8tWnGSBdBrqAzhzrjQ/F5iGP9Zr29CJC8N5zYdhG2kKaNcB6dKxp7g==}
     engines: {node: '>=6.4.0 <13 || >=14'}
     dependencies:
       component-emitter: 1.3.0
