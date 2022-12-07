@@ -9,7 +9,6 @@ module.exports = defineConfig({
           .addMatchImageSnapshotPlugin(on, config)
       require('cypress-terminal-report/src/installLogsPrinter')(on)
     },
-    experimentalSessionAndOrigin: true,
   },
 
   retries: {
