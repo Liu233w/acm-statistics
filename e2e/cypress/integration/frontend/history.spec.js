@@ -12,14 +12,11 @@ before(() => {
     'https://cors.ojhunt.com/http://acm.hdu.edu.cn/userstatus.php?user=wwwlsmcom',
     { fixture: 'summary_hdu.txt' })
     .as('summary_hdu')
-
-  // FIXME: the two route below do not work in intercept
-  cy.server()
-  cy.route('post', 'https://cors.ojhunt.com/https://leetcode-cn.com/graphql',
-    'fixture:summary_leetcode.txt')
+  cy.intercept('post', 'https://cors.ojhunt.com/https://leetcode-cn.com/graphql',
+    { fixture: 'summary_leetcode.txt' })
     .as('summary_leetcode')
-  cy.route('/api/crawlers/vjudge/wwwlsmcom',
-    'fixture:summary_vjudge.txt')
+  cy.intercept('/api/crawlers/vjudge/wwwlsmcom',
+    { fixture: 'summary_vjudge.txt' })
     .as('summary_vjudge')
 
   cy.visit('/statistics')
