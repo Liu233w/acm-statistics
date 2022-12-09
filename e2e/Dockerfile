@@ -10,5 +10,6 @@ RUN pnpm install
 RUN $(pnpm bin)/cypress verify
 
 ENV http_proxy=http://localhost:1081
+ENV NODE_OPTIONS='--use-openssl-ca'
 
 COPY . .
