@@ -8,7 +8,7 @@ specifiers:
   jest: 29.3.1
   js-yaml: ^4.0.0
   lodash: ^4.17.20
-  memfs: 3.4.12
+  memfs: 3.4.13
   nock: 13.2.9
   superagent: ^8.0.0
   superagent-proxy: ^3.0.0
@@ -26,7 +26,7 @@ devDependencies:
   eslint-plugin-jest: 27.2.1_kudefufnb5v4dzpyosesvz63ky
   eslint-plugin-lodash: 7.4.0_eslint@8.31.0
   jest: 29.3.1
-  memfs: 3.4.12
+  memfs: 3.4.13
   nock: 13.2.9
   typescript: 4.9.4
 
@@ -2638,8 +2638,8 @@ packages:
       tmpl: 1.0.5
     dev: true
 
-  /memfs/3.4.12:
-    resolution: {integrity: sha512-BcjuQn6vfqP+k100e0E9m61Hyqa//Brp+I3f0OBmN0ATHlFA8vx3Lt8z57R3u2bPqe3WGDBC+nF72fTH7isyEw==}
+  /memfs/3.4.13:
+    resolution: {integrity: sha512-omTM41g3Skpvx5dSYeZIbXKcXoAVc/AoMNwn9TKx++L/gaen/+4TTttmu8ZSch5vfVJ8uJvGbroTsIlslRg6lg==}
     engines: {node: '>= 4.0.0'}
     dependencies:
       fs-monkey: 1.0.3
