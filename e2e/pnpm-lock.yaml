@@ -4,7 +4,7 @@ specifiers:
   '@simonsmith/cypress-image-snapshot': 6.0.0
   cheerio: 1.0.0-rc.10
   cypress: 10.11.0
-  cypress-terminal-report: 5.0.1
+  cypress-terminal-report: 5.0.2
   eslint: 8.33.0
   eslint-plugin-cypress: 2.12.1
   eslint-plugin-lodash: 7.4.0
@@ -17,7 +17,7 @@ dependencies:
   '@simonsmith/cypress-image-snapshot': 6.0.0_cnlwrp2x63cneabgh56ll5zpb4
   cheerio: 1.0.0-rc.10
   cypress: 10.11.0
-  cypress-terminal-report: 5.0.1_cypress@10.11.0
+  cypress-terminal-report: 5.0.2_cypress@10.11.0
   eslint: 8.33.0
   eslint-plugin-cypress: 2.12.1_eslint@8.33.0
   eslint-plugin-lodash: 7.4.0_eslint@8.33.0
@@ -1420,8 +1420,8 @@ packages:
     engines: {node: '>= 6'}
     dev: false
 
-  /cypress-terminal-report/5.0.1_cypress@10.11.0:
-    resolution: {integrity: sha512-JJWjKnmZwgGe+PfDMYL43CU0n/nwOnAHUaohbdDwOAYzx/rE1sKEAAibKF+wAuss9C03j6IDnzxN15PSoOH6yQ==}
+  /cypress-terminal-report/5.0.2_cypress@10.11.0:
+    resolution: {integrity: sha512-YJ6HODTvxKD0FYQX2p3f1DlBRcJcMJjRh3JWZZrBte4dQdnTuIElb4jPh3zbcqsV4MJ+QwF6XyJoXybZgg6kHg==}
     peerDependencies:
       cypress: '>=4.10.0'
     dependencies:
