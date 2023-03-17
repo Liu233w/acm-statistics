@@ -17,7 +17,7 @@
         <PackageReference Include="AngleSharp" Version="1.0.1" />
         <PackageReference Include="Flurl.Http" Version="3.2.4" />
         <PackageReference Include="Microsoft.AspNetCore.OData" Version="8.0.12" />
-        <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.15">
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.4">
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
@@ -28,7 +28,7 @@
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
-        <PackageReference Include="System.Threading.Tasks.Dataflow" Version="6.0.0" />
+        <PackageReference Include="System.Threading.Tasks.Dataflow" Version="7.0.0" />
     </ItemGroup>
 
 
