@@ -1,13 +1,13 @@
 lockfileVersion: 5.4
 
 specifiers:
-  glob: 9.3.0
+  glob: 9.3.1
   mockserver-client: 5.15.0
   nodemon: 2.0.21
   wait-on: 7.0.1
 
 dependencies:
-  glob: 9.3.0
+  glob: 9.3.1
   mockserver-client: 5.15.0
   nodemon: 2.0.21
   wait-on: 7.0.1
@@ -242,8 +242,8 @@ packages:
       is-glob: 4.0.1
     dev: false
 
-  /glob/9.3.0:
-    resolution: {integrity: sha512-EAZejC7JvnQINayvB/7BJbpZpNOJ8Lrw2OZNEvQxe0vaLn1SuwMcfV7/MNaX8L/T0wmptBFI4YMtDvSBxYDc7w==}
+  /glob/9.3.1:
+    resolution: {integrity: sha512-qERvJb7IGsnkx6YYmaaGvDpf77c951hICMdWaFXyH3PlVob8sbPJJyJX0kWkiCWyXUzoy9UOTNjGg0RbD8bYIw==}
     engines: {node: '>=16 || 14 >=14.17'}
     dependencies:
       fs.realpath: 1.0.0
