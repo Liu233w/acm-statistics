@@ -3,13 +3,13 @@ lockfileVersion: 5.4
 specifiers:
   glob: 9.3.2
   mockserver-client: 5.15.0
-  nodemon: 2.0.21
+  nodemon: 2.0.22
   wait-on: 7.0.1
 
 dependencies:
   glob: 9.3.2
   mockserver-client: 5.15.0
-  nodemon: 2.0.21
+  nodemon: 2.0.22
   wait-on: 7.0.1
 
 packages:
@@ -370,8 +370,8 @@ packages:
     hasBin: true
     dev: false
 
-  /nodemon/2.0.21:
-    resolution: {integrity: sha512-djN/n2549DUtY33S7o1djRCd7dEm0kBnj9c7S9XVXqRUbuggN1MZH/Nqa+5RFQr63Fbefq37nFXAE9VU86yL1A==}
+  /nodemon/2.0.22:
+    resolution: {integrity: sha512-B8YqaKMmyuCO7BowF1Z1/mkPqLk6cs/l63Ojtd6otKjMx47Dq1utxfRxcavH1I7VSaL8n5BUaoutadnsX3AAVQ==}
     engines: {node: '>=8.10.0'}
     hasBin: true
     dependencies:
