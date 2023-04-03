@@ -5,10 +5,10 @@ exports[`/ 1`] = `
 <html data-n-head-ssr="">
 
   <head>
-    <title>OJ Analyzer</title>
     <meta data-n-head="ssr" charset="utf-8">
     <meta data-n-head="ssr" name="viewport" content="width=device-width, initial-scale=1">
     <meta data-n-head="ssr" data-hid="description" name="description" content="An online tool (crawler) to analyze users performance in online judges (coding competition websites). Supported OJ: POJ, HDU, ZOJ, HYSBZ, CodeForces, UVA, ICPC Live Archive, FZU, SPOJ, Timus (URAL), LeetCode_CN, CSU, LibreOJ, 洛谷, 牛客OJ, Lutece (UESTC), AtCoder, AIZU, CodeChef, El Judge, BNUOJ, Codewars, UOJ, NBUT, 51Nod, DMOJ, VJudge">
+    <title>OJ Analyzer</title>
     <link data-n-head="ssr" rel="icon" type="image/x-icon" href="/favicon.ico">
     <link data-n-head="ssr" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif+SC:300,400,500,700">
     <link data-n-head="ssr" rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&amp;display=swap">
@@ -767,9 +767,9 @@ exports[`/ 1`] = `
                 <div>
                   <section>
                     <div class="v-parallax" style="height:600px;">
-                      <div class="v-parallax__image-container"><img src="/_nuxt/img/back7-brighten.ef135f5.jpg" alt="" class="v-parallax__image" style="display:block;opacity:0;transform:translate(-50%, 0px);"></div>
+                      <div class="v-parallax__image-container"><img src="/_nuxt/img/back7-brighten.e5adb12.jpg" alt="" class="v-parallax__image" style="display:block;opacity:0;transform:translate(-50%, 0px);"></div>
                       <div class="v-parallax__content">
-                        <div class="layout white--text column align-center justify-center"><img src="/_nuxt/img/logo.b70d243.png" alt="Vuetify.js" height="190" class="mb-4">
+                        <div class="layout white--text column align-center justify-center"><img src="/_nuxt/img/logo.db320b9.png" alt="Vuetify.js" height="190" class="mb-4">
                           <h2 class="black--text text-h5 text-center font-weight-light">
                             ACM-ICPC 协会
                           </h2>
@@ -856,7 +856,7 @@ exports[`/ 1`] = `
                   </section>
                   <section>
                     <div class="v-parallax" style="height:380px;">
-                      <div class="v-parallax__image-container"><img src="/_nuxt/img/back4.f06a46e.jpg" alt="" class="v-parallax__image" style="display:block;opacity:0;transform:translate(-50%, 0px);"></div>
+                      <div class="v-parallax__image-container"><img src="/_nuxt/img/back4.ac176e5.jpg" alt="" class="v-parallax__image" style="display:block;opacity:0;transform:translate(-50%, 0px);"></div>
                       <div class="v-parallax__content">
                         <div class="layout column align-center justify-center">
                           <div class="text-h5 white--text mb-4 text-center response-title">
@@ -959,10 +959,10 @@ exports[`/about 1`] = `
 <html data-n-head-ssr="">
 
   <head>
-    <title>About - OJ Analyzer</title>
     <meta data-n-head="ssr" charset="utf-8">
     <meta data-n-head="ssr" name="viewport" content="width=device-width, initial-scale=1">
     <meta data-n-head="ssr" data-hid="description" name="description" content="An online tool (crawler) to analyze users performance in online judges (coding competition websites). Supported OJ: POJ, HDU, ZOJ, HYSBZ, CodeForces, UVA, ICPC Live Archive, FZU, SPOJ, Timus (URAL), LeetCode_CN, CSU, LibreOJ, 洛谷, 牛客OJ, Lutece (UESTC), AtCoder, AIZU, CodeChef, El Judge, BNUOJ, Codewars, UOJ, NBUT, 51Nod, DMOJ, VJudge">
+    <title>About - OJ Analyzer</title>
     <link data-n-head="ssr" rel="icon" type="image/x-icon" href="/favicon.ico">
     <link data-n-head="ssr" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif+SC:300,400,500,700">
     <link data-n-head="ssr" rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&amp;display=swap">
@@ -1907,10 +1907,10 @@ exports[`/history 1`] = `
 <html data-n-head-ssr="">
 
   <head>
-    <title>History - OJ Analyzer</title>
     <meta data-n-head="ssr" charset="utf-8">
     <meta data-n-head="ssr" name="viewport" content="width=device-width, initial-scale=1">
     <meta data-n-head="ssr" data-hid="description" name="description" content="An online tool (crawler) to analyze users performance in online judges (coding competition websites). Supported OJ: POJ, HDU, ZOJ, HYSBZ, CodeForces, UVA, ICPC Live Archive, FZU, SPOJ, Timus (URAL), LeetCode_CN, CSU, LibreOJ, 洛谷, 牛客OJ, Lutece (UESTC), AtCoder, AIZU, CodeChef, El Judge, BNUOJ, Codewars, UOJ, NBUT, 51Nod, DMOJ, VJudge">
+    <title>History - OJ Analyzer</title>
     <link data-n-head="ssr" rel="icon" type="image/x-icon" href="/favicon.ico">
     <link data-n-head="ssr" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif+SC:300,400,500,700">
     <link data-n-head="ssr" rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&amp;display=swap">
@@ -3246,10 +3246,10 @@ exports[`/history/{historyId} 1`] = `
 <html data-n-head-ssr="">
 
   <head>
-    <title>History - OJ Analyzer</title>
     <meta data-n-head="ssr" charset="utf-8">
     <meta data-n-head="ssr" name="viewport" content="width=device-width, initial-scale=1">
     <meta data-n-head="ssr" data-hid="description" name="description" content="An online tool (crawler) to analyze users performance in online judges (coding competition websites). Supported OJ: POJ, HDU, ZOJ, HYSBZ, CodeForces, UVA, ICPC Live Archive, FZU, SPOJ, Timus (URAL), LeetCode_CN, CSU, LibreOJ, 洛谷, 牛客OJ, Lutece (UESTC), AtCoder, AIZU, CodeChef, El Judge, BNUOJ, Codewars, UOJ, NBUT, 51Nod, DMOJ, VJudge">
+    <title>History - OJ Analyzer</title>
     <link data-n-head="ssr" rel="icon" type="image/x-icon" href="/favicon.ico">
     <link data-n-head="ssr" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif+SC:300,400,500,700">
     <link data-n-head="ssr" rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&amp;display=swap">
@@ -4636,10 +4636,10 @@ exports[`/login 1`] = `
 <html data-n-head-ssr="">
 
   <head>
-    <title>OJ Analyzer</title>
     <meta data-n-head="ssr" charset="utf-8">
     <meta data-n-head="ssr" name="viewport" content="width=device-width, initial-scale=1">
     <meta data-n-head="ssr" data-hid="description" name="description" content="An online tool (crawler) to analyze users performance in online judges (coding competition websites). Supported OJ: POJ, HDU, ZOJ, HYSBZ, CodeForces, UVA, ICPC Live Archive, FZU, SPOJ, Timus (URAL), LeetCode_CN, CSU, LibreOJ, 洛谷, 牛客OJ, Lutece (UESTC), AtCoder, AIZU, CodeChef, El Judge, BNUOJ, Codewars, UOJ, NBUT, 51Nod, DMOJ, VJudge">
+    <title>OJ Analyzer</title>
     <link data-n-head="ssr" rel="icon" type="image/x-icon" href="/favicon.ico">
     <link data-n-head="ssr" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif+SC:300,400,500,700">
     <link data-n-head="ssr" rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&amp;display=swap">
@@ -5499,10 +5499,10 @@ exports[`/register 1`] = `
 <html data-n-head-ssr="">
 
   <head>
-    <title>OJ Analyzer</title>
     <meta data-n-head="ssr" charset="utf-8">
     <meta data-n-head="ssr" name="viewport" content="width=device-width, initial-scale=1">
     <meta data-n-head="ssr" data-hid="description" name="description" content="An online tool (crawler) to analyze users performance in online judges (coding competition websites). Supported OJ: POJ, HDU, ZOJ, HYSBZ, CodeForces, UVA, ICPC Live Archive, FZU, SPOJ, Timus (URAL), LeetCode_CN, CSU, LibreOJ, 洛谷, 牛客OJ, Lutece (UESTC), AtCoder, AIZU, CodeChef, El Judge, BNUOJ, Codewars, UOJ, NBUT, 51Nod, DMOJ, VJudge">
+    <title>OJ Analyzer</title>
     <link data-n-head="ssr" rel="icon" type="image/x-icon" href="/favicon.ico">
     <link data-n-head="ssr" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif+SC:300,400,500,700">
     <link data-n-head="ssr" rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&amp;display=swap">
@@ -6386,10 +6386,10 @@ exports[`/settings 1`] = `
 <html data-n-head-ssr="">
 
   <head>
-    <title>Settings - OJ Analyzer</title>
     <meta data-n-head="ssr" charset="utf-8">
     <meta data-n-head="ssr" name="viewport" content="width=device-width, initial-scale=1">
     <meta data-n-head="ssr" data-hid="description" name="description" content="An online tool (crawler) to analyze users performance in online judges (coding competition websites). Supported OJ: POJ, HDU, ZOJ, HYSBZ, CodeForces, UVA, ICPC Live Archive, FZU, SPOJ, Timus (URAL), LeetCode_CN, CSU, LibreOJ, 洛谷, 牛客OJ, Lutece (UESTC), AtCoder, AIZU, CodeChef, El Judge, BNUOJ, Codewars, UOJ, NBUT, 51Nod, DMOJ, VJudge">
+    <title>Settings - OJ Analyzer</title>
     <link data-n-head="ssr" rel="icon" type="image/x-icon" href="/favicon.ico">
     <link data-n-head="ssr" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif+SC:300,400,500,700">
     <link data-n-head="ssr" rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&amp;display=swap">
@@ -7398,10 +7398,10 @@ exports[`/statistics 1`] = `
 <html data-n-head-ssr="">
 
   <head>
-    <title>Statistics - OJ Analyzer</title>
     <meta data-n-head="ssr" charset="utf-8">
     <meta data-n-head="ssr" name="viewport" content="width=device-width, initial-scale=1">
     <meta data-n-head="ssr" data-hid="description" name="description" content="An online tool (crawler) to analyze users performance in online judges (coding competition websites). Supported OJ: POJ, HDU, ZOJ, HYSBZ, CodeForces, UVA, ICPC Live Archive, FZU, SPOJ, Timus (URAL), LeetCode_CN, CSU, LibreOJ, 洛谷, 牛客OJ, Lutece (UESTC), AtCoder, AIZU, CodeChef, El Judge, BNUOJ, Codewars, UOJ, NBUT, 51Nod, DMOJ, VJudge">
+    <title>Statistics - OJ Analyzer</title>
     <link data-n-head="ssr" rel="icon" type="image/x-icon" href="/favicon.ico">
     <link data-n-head="ssr" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif+SC:300,400,500,700">
     <link data-n-head="ssr" rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&amp;display=swap">
