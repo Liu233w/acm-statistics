@@ -30,7 +30,8 @@ describe('can load swagger file of backend', () => {
     // 等待dom刷新
     // eslint-disable-next-line cypress/no-unnecessary-waiting
     cy.wait(1000)
-    cy.contains('/api/services/app/Role/GetRoles').scrollIntoView().click()
+    cy.contains('/api/services/app/Role/GetRoles').scrollIntoView()
+    cy.contains('/api/services/app/Role/GetRoles').click()
 
     cy.contains('Try it out').click()
     cy.contains('Execute').click()

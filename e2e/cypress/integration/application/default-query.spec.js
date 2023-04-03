@@ -10,7 +10,8 @@ describe('Saving default query to cookie when user does not login.', () => {
     cy.get('.v-input:contains("Set all usernames") input').type('main-name')
     // wait for other workers to update
     cy.get('.worker:contains("CodeForces") input').should('have.value', 'main-name')
-    cy.get('.worker:contains("HDU") input').clear().type('user1')
+    cy.get('.worker:contains("HDU") input').clear()
+    cy.get('.worker:contains("HDU") input').type('user1')
     cy.get('.worker:contains("POJ") input').clear()
 
     // act
@@ -45,7 +46,8 @@ describe('Saving usernames to server when user has logined.', () => {
     cy.get('.v-input:contains("Set all usernames") input').type('main-name')
     // wait for other worker to update
     cy.get('.worker:contains("CodeForces") input').should('have.value', 'main-name')
-    cy.get('.worker:contains("HDU") input').clear().type('user1')
+    cy.get('.worker:contains("HDU") input').clear()
+    cy.get('.worker:contains("HDU") input').type('user1')
     cy.get('.worker:contains("POJ") input').clear()
 
     cy.contains('save username').click()
