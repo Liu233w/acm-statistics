@@ -31,8 +31,8 @@ devDependencies:
     specifier: 29.5.0
     version: 29.5.0
   memfs:
-    specifier: 3.4.13
-    version: 3.4.13
+    specifier: 3.5.0
+    version: 3.5.0
   nock:
     specifier: 13.3.0
     version: 13.3.0
@@ -2631,8 +2631,8 @@ packages:
       tmpl: 1.0.5
     dev: true
 
-  /memfs@3.4.13:
-    resolution: {integrity: sha512-omTM41g3Skpvx5dSYeZIbXKcXoAVc/AoMNwn9TKx++L/gaen/+4TTttmu8ZSch5vfVJ8uJvGbroTsIlslRg6lg==}
+  /memfs@3.5.0:
+    resolution: {integrity: sha512-yK6o8xVJlQerz57kvPROwTMgx5WtGwC2ZxDtOUsnGl49rHjYkfQoPNZPCKH73VdLE1BwBu/+Fx/NL8NYMUw2aA==}
     engines: {node: '>= 4.0.0'}
     dependencies:
       fs-monkey: 1.0.3
