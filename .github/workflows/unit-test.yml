@@ -81,4 +81,4 @@ jobs:
     - uses: actions/checkout@master
       with:
         fetch-depth: 0
-    - uses: wagoid/commitlint-github-action@09faa1aae81627890cbffff1d0f7bc0e520a8b01 # v5
+    - uses: wagoid/commitlint-github-action@6b9a739128622e4780b06c2c86550512ee7c9e1e # v5
