@@ -2,8 +2,8 @@ lockfileVersion: '6.0'
 
 dependencies:
   glob:
-    specifier: 10.2.2
-    version: 10.2.2
+    specifier: 10.2.3
+    version: 10.2.3
   mockserver-client:
     specifier: 5.15.0
     version: 5.15.0
@@ -299,8 +299,8 @@ packages:
       is-glob: 4.0.1
     dev: false
 
-  /glob@10.2.2:
-    resolution: {integrity: sha512-Xsa0BcxIC6th9UwNjZkhrMtNo/MnyRL8jGCP+uEwhA5oFOCY1f2s1/oNKY47xQ0Bg5nkjsfAEIej1VeH62bDDQ==}
+  /glob@10.2.3:
+    resolution: {integrity: sha512-Kb4rfmBVE3eQTAimgmeqc2LwSnN0wIOkkUL6HmxEFxNJ4fHghYHVbFba/HcGcRjE6s9KoMNK3rSOwkL4PioZjg==}
     engines: {node: '>=16 || 14 >=14.17'}
     hasBin: true
     dependencies:
