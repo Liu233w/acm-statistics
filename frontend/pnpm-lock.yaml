@@ -85,8 +85,8 @@ devDependencies:
     specifier: 7.4.0
     version: 7.4.0(eslint@8.41.0)
   eslint-plugin-vue:
-    specifier: 9.13.0
-    version: 9.13.0(eslint@8.41.0)
+    specifier: 9.14.0
+    version: 9.14.0(eslint@8.41.0)
   eslint-plugin-vuetify:
     specifier: 1.1.0
     version: 1.1.0(eslint@8.41.0)(vuetify@2.6.5)
@@ -3005,7 +3005,7 @@ packages:
       debug: 4.3.4
       globby: 11.1.0
       is-glob: 4.0.3
-      semver: 7.3.8
+      semver: 7.5.1
       tsutils: 3.21.0(typescript@5.0.4)
       typescript: 5.0.4
     transitivePeerDependencies:
@@ -5676,8 +5676,8 @@ packages:
       - supports-color
     dev: true
 
-  /eslint-plugin-vue@9.13.0(eslint@8.41.0):
-    resolution: {integrity: sha512-aBz9A8WB4wmpnVv0pYUt86cmH9EkcwWzgEwecBxMoRNhQjTL5i4sqadnwShv/hOdr8Hbl8XANGV7dtX9UQIAyA==}
+  /eslint-plugin-vue@9.14.0(eslint@8.41.0):
+    resolution: {integrity: sha512-4O7EuiqPGVQA1wYCzLvCzsBTv9JIPHLHhrf0k55DLzbwtmJbSw2TKS0G/l7pOwi9RWMSkjIT7ftChU5gZpgnJw==}
     engines: {node: ^14.17.0 || >=16.0.0}
     peerDependencies:
       eslint: ^6.2.0 || ^7.0.0 || ^8.0.0
@@ -5687,7 +5687,7 @@ packages:
       natural-compare: 1.4.0
       nth-check: 2.0.1
       postcss-selector-parser: 6.0.10
-      semver: 7.3.8
+      semver: 7.5.1
       vue-eslint-parser: 9.3.0(eslint@8.41.0)
       xml-name-validator: 4.0.0
     transitivePeerDependencies:
@@ -10307,6 +10307,7 @@ packages:
     hasBin: true
     dependencies:
       lru-cache: 6.0.0
+    dev: false
 
   /semver@7.5.1:
     resolution: {integrity: sha512-Wvss5ivl8TMRZXXESstBA4uR5iXgEN/VC5/sOcuXdVLzcdkz4HWetIoRfG5gb5X+ij/G9rw9YoGn3QoQ8OCSpw==}
@@ -11523,7 +11524,7 @@ packages:
       espree: 9.5.2
       esquery: 1.5.0
       lodash: 4.17.21
-      semver: 7.3.8
+      semver: 7.5.1
     transitivePeerDependencies:
       - supports-color
     dev: true
