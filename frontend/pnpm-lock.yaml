@@ -100,8 +100,8 @@ devDependencies:
     specifier: 3.1.0
     version: 3.1.0
   stylus-loader:
-    specifier: 7.1.0
-    version: 7.1.0(stylus@0.59.0)(webpack@5.76.3)
+    specifier: 7.1.1
+    version: 7.1.1(stylus@0.59.0)(webpack@5.76.3)
   typescript:
     specifier: 5.0.4
     version: 5.0.4
@@ -6017,7 +6017,7 @@ packages:
       '@nodelib/fs.walk': 1.2.8
       glob-parent: 5.1.2
       merge2: 1.4.1
-      micromatch: 4.0.4
+      micromatch: 4.0.5
 
   /fast-json-stable-stringify@2.1.0:
     resolution: {integrity: sha512-lhd/wF+Lk98HZoTCtlVraHtfh5XYijIjalXck7saUtuanSDyLMxnHhSXEDJqHxD7msR8D0uCmqlkwjCV8xvwHw==}
@@ -7794,8 +7794,8 @@ packages:
     engines: {node: '>=6'}
     dev: true
 
-  /klona@2.0.5:
-    resolution: {integrity: sha512-pJiBpiXMbt7dkzXe8Ghj/u4FfXOOa98fPW+bihOJ4SjnoijweJrNThJfd3ifXpXhREjpoF2mZVH1GfS9LV3kHQ==}
+  /klona@2.0.6:
+    resolution: {integrity: sha512-dhG34DXATL5hSxJbIexCft8FChFXtmskoZYnoPWjXQuebWYCNkVeV3KkGegCK9CP1oswI/vQibS2GY7Em/sJJA==}
     engines: {node: '>= 8'}
 
   /knitwork@1.0.0:
@@ -8094,6 +8094,7 @@ packages:
     dependencies:
       braces: 3.0.2
       picomatch: 2.3.1
+    dev: true
 
   /micromatch@4.0.5:
     resolution: {integrity: sha512-DMy+ERcEW2q8Z2Po+WNXuw3c5YaUSFjAO5GsJqfEl7UjvtIuFKO6ZrKvcItdy98dwFI2N1tg3zNIdKaQT+aNdA==}
@@ -9253,7 +9254,7 @@ packages:
       webpack: ^4.0.0 || ^5.0.0
     dependencies:
       cosmiconfig: 7.1.0
-      klona: 2.0.5
+      klona: 2.0.6
       loader-utils: 2.0.2
       postcss: 8.4.21
       schema-utils: 3.1.1
@@ -10223,7 +10224,7 @@ packages:
       sass:
         optional: true
     dependencies:
-      klona: 2.0.5
+      klona: 2.0.6
       loader-utils: 2.0.2
       neo-async: 2.6.2
       sass: 1.32.13
@@ -10753,15 +10754,15 @@ packages:
       postcss-selector-parser: 6.0.10
     dev: false
 
-  /stylus-loader@7.1.0(stylus@0.59.0)(webpack@5.76.3):
-    resolution: {integrity: sha512-gNUEjjozR+oZ8cuC/Fx4LVXqZOgDKvpW9t2hpXHcxjfPYqSjQftaGwZUK+wL9B0QJ26uS6p1EmoWHmvld1dF7g==}
+  /stylus-loader@7.1.1(stylus@0.59.0)(webpack@5.76.3):
+    resolution: {integrity: sha512-Qw340bf0xABlvMV2+2bHbGgrR6pVbz870jtwYXXjBV7uFHq8lV2k6HmdhJ0dKim8SbyKCRBN1wdbDEnHV9MH5g==}
     engines: {node: '>= 14.15.0'}
     peerDependencies:
       stylus: '>=0.52.4'
       webpack: ^5.0.0
     dependencies:
       fast-glob: 3.2.12
-      klona: 2.0.5
+      klona: 2.0.6
       normalize-path: 3.0.0
       stylus: 0.59.0
       webpack: 5.76.3
