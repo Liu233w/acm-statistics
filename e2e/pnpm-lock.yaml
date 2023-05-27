@@ -11,8 +11,8 @@ dependencies:
     specifier: 10.11.0
     version: 10.11.0
   cypress-terminal-report:
-    specifier: 5.1.1
-    version: 5.1.1(cypress@10.11.0)
+    specifier: 5.2.0
+    version: 5.2.0(cypress@10.11.0)
   eslint:
     specifier: 8.41.0
     version: 8.41.0
@@ -1428,8 +1428,8 @@ packages:
     engines: {node: '>= 6'}
     dev: false
 
-  /cypress-terminal-report@5.1.1(cypress@10.11.0):
-    resolution: {integrity: sha512-iZxb6QHV/zf4WRIsaNSf4kXLMgU/qWVLErEIs9kWlpR1mFxoLmSyR2SeC2imFupbvuP5FmkqBT2KVrmTDeQsaA==}
+  /cypress-terminal-report@5.2.0(cypress@10.11.0):
+    resolution: {integrity: sha512-XKLt7zGmy1LpFxlwwBOyOoN12zKJ+Ot+YRjplyqew4FfVjlakMnkQ9FPLOLa9ocpK6nxZGRQn/qzTtSZ5NoxHg==}
     peerDependencies:
       cypress: '>=4.10.0'
     dependencies:

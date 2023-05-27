@@ -13,7 +13,7 @@
     "@simonsmith/cypress-image-snapshot": "6.1.1",
     "cheerio": "1.0.0-rc.10",
     "cypress": "10.11.0",
-    "cypress-terminal-report": "5.1.1",
+    "cypress-terminal-report": "5.2.0",
     "eslint": "8.41.0",
     "eslint-plugin-cypress": "2.13.3",
     "eslint-plugin-lodash": "7.4.0",
