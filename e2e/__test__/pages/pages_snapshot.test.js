@@ -3,7 +3,7 @@ const superagent = require('superagent')
 const cheerio = require('cheerio')
 const request = require('superagent')
 
-const basePath = 'http://localhost:3000'
+const basePath = 'http://127.0.0.1:3000'
 
 async function testPageByPath(path, authToken) {
 
@@ -142,11 +142,11 @@ for (let path of testPathsRequireLogin) {
 }
 
 test('/history', async () => {
-  await request.get('http://localhost:3000/mock-configurer/history-snapshot/history')
+  await request.get(`${basePath}/mock-configurer/history-snapshot/history`)
   await testPageByPath('/history/', authToken)
 })
 
 test('/history/{historyId}', async () => {
-  await request.get('http://localhost:3000/mock-configurer/history-snapshot/summary')
+  await request.get(`${basePath}/mock-configurer/history-snapshot/summary`)
   await testPageByPath('/history/1', authToken)
 })
