@@ -21,21 +21,14 @@ module.exports = async function (config, username) {
   // Thank @kenkoooo for the api
   // Source code: https://github.com/kenkoooo/AtCoderProblems
   const res = await request
-    .get('https://kenkoooo.com/atcoder/atcoder-api/results')
+    .get('https://kenkoooo.com/atcoder/atcoder-api/v3/user/ac_rank')
     .query({ user: username })
 
-  const submissions = res.body.length
-  const acSet = new Set()
-  for (let item of res.body) {
-    if (item.result === 'AC') {
-      acSet.add(item.problem_id)
-    }
-  }
-  const acList = [...acSet]
+  const solved = res.body.count
+  const  submissions = solved
 
   return {
     submissions,
-    solved: acList.length,
-    solvedList: acList,
+    solved,
   }
 }

@@ -115,7 +115,7 @@ crawlers:
       title: AtCoder
       description: |
         API provided by kenkoooo (https://github.com/kenkoooo/AtCoderProblems).
-        It may take a while for the api to update user statistics.
+        Only AC number is supported
       url: https://atcoder.jp
   aizu:
     meta:

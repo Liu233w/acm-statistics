@@ -404,8 +404,12 @@ describe('atcoder', () => {
 
   test('should work correctly', async () => {
     const res = await atcoder(null, 'wata')
-    checkRes(res)
-    expect(res.solvedList).toContain('judge_update_202004_b')
+
+    expect(typeof res.solved).toBe('number')
+    expect(typeof res.submissions).toBe('number')
+
+    expect(res.solved).toBeGreaterThan(0)
+    expect(res.submissions).toBe(res.solved)
   })
 
 })
