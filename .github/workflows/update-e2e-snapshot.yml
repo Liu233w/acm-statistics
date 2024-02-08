@@ -69,14 +69,14 @@ jobs:
           branch: ${{ steps.prcomm.outputs.BRANCH_NAME }}
 
       - name: Upload artifact if failed
-        uses: actions/upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce # v3
+        uses: actions/upload-artifact@a8a3f3ad30e3422c9c7b888a15615d19a852ae32 # v3
         if: failure() && steps.prcomm.outputs.BOOL_TRIGGERED == 'true'
         with:
           name: e2e-snapshots
           path: e2e/cypress/snapshots
 
       - name: Upload artifact if failed
-        uses: actions/upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce # v3
+        uses: actions/upload-artifact@a8a3f3ad30e3422c9c7b888a15615d19a852ae32 # v3
         if: failure() && steps.prcomm.outputs.BOOL_TRIGGERED == 'true'
         with:
           name: e2e-videos
