@@ -4502,7 +4502,7 @@ exports[`/history/{historyId} 1`] = `
                 },
                 atcoder: {
                   title: "AtCoder",
-                  description: "API provided by kenkoooo (https:\\u002F\\u002Fgithub.com\\u002Fkenkoooo\\u002FAtCoderProblems).\\nIt may take a while for the api to update user statistics.\\n",
+                  description: "API provided by kenkoooo (https:\\u002F\\u002Fgithub.com\\u002Fkenkoooo\\u002FAtCoderProblems).\\nOnly AC number is supported\\n",
                   url: "https:\\u002F\\u002Fatcoder.jp"
                 },
                 aizu: {
@@ -8593,7 +8593,7 @@ exports[`/statistics 1`] = `
                 },
                 atcoder: {
                   title: "AtCoder",
-                  description: "API provided by kenkoooo (https:\\u002F\\u002Fgithub.com\\u002Fkenkoooo\\u002FAtCoderProblems).\\nIt may take a while for the api to update user statistics.\\n",
+                  description: "API provided by kenkoooo (https:\\u002F\\u002Fgithub.com\\u002Fkenkoooo\\u002FAtCoderProblems).\\nOnly AC number is supported\\n",
                   url: "https:\\u002F\\u002Fatcoder.jp",
                   name: w
                 },
