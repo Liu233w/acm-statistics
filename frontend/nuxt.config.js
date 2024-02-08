@@ -2,8 +2,6 @@ const _ = require('lodash')
 
 import { defineNuxtConfig } from 'nuxt/config'
 
-import {default as sensitiveRouter} from './configs/sensitive-url-router'
-
 import { readMetaConfigs } from 'crawler'
 
 module.exports = defineNuxtConfig({
@@ -55,8 +53,13 @@ module.exports = defineNuxtConfig({
       },
     },
   },
+  vite: {
+    plugins: [
+      require('configs/crawlerLoader').plugin,
+    ],
+  },
   modules: [
-    '~/modules/crawlerLoader/index',
+    '~/modules/sensitiveUrlRoutes/index',
     '@nuxtjs/component-cache',
     ['nuxt-env', {
       keys: ['VERSION_NUM', 'BUILD_TIME'],
@@ -80,9 +83,6 @@ module.exports = defineNuxtConfig({
       aggregateTimeout: 300,
       poll: 1000,
     },
-  },
-  hooks: {
-    'page:extend': sensitiveRouter,
   },
   router: {
     middleware: [

@@ -1,4 +1,4 @@
-const { sortRoutes } = require('@nuxt/utils')
+import { defineNuxtModule, extendPages } from '@nuxt/kit'
 
 const sensitiveRoutes = [
   '/index.html',
@@ -38,13 +38,15 @@ const sensitiveRoutes = [
   '/README.md',
 ]
 
-module.exports = function (routes, resolve) {
-  for (let route of sensitiveRoutes) {
-    routes.push({
-      path: route,
-      component: resolve(__dirname, '../pages/jojo.vue'),
+export default defineNuxtModule({
+  setup() {
+    extendPages(({ routes }) => {
+      for (let route of sensitiveRoutes) {
+        routes.push({
+          path: route,
+          component: '~/pages/jojo.vue',
+        })
+      }
     })
-  }
-
-  sortRoutes(routes)
-}
+  },
+})

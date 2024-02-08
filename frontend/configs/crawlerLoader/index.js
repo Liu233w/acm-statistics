@@ -1,7 +1,8 @@
 const {readMetaConfigs, generateBrowserCrawlerFunctions} = require('crawler')
 const path = require('path')
-const fs = require('fs-extra')
-const VirtualModulePlugin = require('webpack-virtual-modules')
+const fs = require('fs')
+
+import virtual from 'vite-plugin-virtual'
 
 function buildSources() {
   const corsModule = fs.readFileSync(path.join(__dirname, 'cors.js'), 'utf-8')
@@ -27,8 +28,6 @@ function buildSources() {
   return crawlersModule
 }
 
-module.exports = function () {
-  this.options.build.plugins.push(new VirtualModulePlugin({
+exports.plugin = virtual({
     'dynamic/crawlers.js': buildSources(),
-  }))
-}
+  })
