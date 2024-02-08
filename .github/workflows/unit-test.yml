@@ -14,7 +14,7 @@ jobs:
         # smoke test and lint
         make run run-cmd="dotnet build" make-args="no-interactive no-tty"
         make test-ci
-    - uses: codecov/codecov-action@eaaf4bedf32dbdc6b720b63067d99c4d77d6047d # v3
+    - uses: codecov/codecov-action@ab904c41d6ece82784817410c45d8b8c02684457 # v3
 
   crawler:
     name: Test Crawler
@@ -25,7 +25,7 @@ jobs:
         cd crawler
         make run run-cmd="npm run lint" make-args="no-interactive no-tty"
         make test-ci
-    - uses: codecov/codecov-action@eaaf4bedf32dbdc6b720b63067d99c4d77d6047d # v3
+    - uses: codecov/codecov-action@ab904c41d6ece82784817410c45d8b8c02684457 # v3
 
   crawler-api-backend:
     name: Test Crawler Api Backend
@@ -36,7 +36,7 @@ jobs:
         cd crawler-api-backend
         make run run-cmd="npm run lint" make-args="no-interactive no-tty"
         make test-ci
-    - uses: codecov/codecov-action@eaaf4bedf32dbdc6b720b63067d99c4d77d6047d # v3
+    - uses: codecov/codecov-action@ab904c41d6ece82784817410c45d8b8c02684457 # v3
 
   frontend:
     name: Test Frontend
@@ -47,7 +47,7 @@ jobs:
         cd frontend
         make run run-cmd="npm run lint" make-args="no-interactive no-tty"
         make test-ci
-    - uses: codecov/codecov-action@eaaf4bedf32dbdc6b720b63067d99c4d77d6047d # v3
+    - uses: codecov/codecov-action@ab904c41d6ece82784817410c45d8b8c02684457 # v3
         
   captcha-service:
     name: Test Captcha Service
@@ -58,7 +58,7 @@ jobs:
         cd captcha-service
         make run run-cmd="npm run lint" make-args="no-interactive no-tty"
         make test-ci
-    - uses: codecov/codecov-action@eaaf4bedf32dbdc6b720b63067d99c4d77d6047d # v3
+    - uses: codecov/codecov-action@ab904c41d6ece82784817410c45d8b8c02684457 # v3
 
   ohunt:
     name: Test OHunt
@@ -70,7 +70,7 @@ jobs:
         # smoke test and lint
         make run run-cmd="dotnet build" make-args="no-interactive no-tty"
         make test-ci
-    - uses: codecov/codecov-action@eaaf4bedf32dbdc6b720b63067d99c4d77d6047d # v3
+    - uses: codecov/codecov-action@ab904c41d6ece82784817410c45d8b8c02684457 # v3
 
   commitlint:
     name: Commitlint
