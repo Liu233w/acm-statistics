@@ -1,4 +1,4 @@
-FROM cypress/base:18.16.0
+FROM cypress/base:18.16.1
 
 WORKDIR /e2e
 
