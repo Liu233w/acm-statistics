@@ -199,7 +199,7 @@ export default {
       },
     )
   },
-  destroyed() {
+  unmounted() {
     if (this.watchFunc) {
       this.watchFunc()
     }

@@ -16,7 +16,7 @@ describe('generateServerCrawlerFunctions', () => {
 
   let functions
 
-  beforeAll(async () => {
+  beforeAll(() => {
 
     for (let item of ['crawler1', 'crawler2', 'crawler_for_server']) {
       // 因为 functionGenerator 里面 require 的时候带了 js 后缀，这里必须也加上后缀，否则会提示找不到模块
@@ -32,7 +32,7 @@ describe('generateServerCrawlerFunctions', () => {
 
     const functionGenerator = require('../lib/functionGenerator')
 
-    functions = await functionGenerator.generateServerCrawlerFunctions()
+    functions = functionGenerator.generateServerCrawlerFunctions()
   })
 
   it('能够获取到函数', () => {
@@ -70,7 +70,7 @@ describe('generateBrowserCrawlerFunctions', () => {
   let functionStrs
   const serverFunctionContent = 'This line should not exist in generatedFunctions'
 
-  beforeAll(async () => {
+  beforeAll(() => {
     function ensureDirectoryExistence(filePath) {
       var dirname = path.dirname(filePath)
       if (fs.existsSync(dirname)) {
@@ -102,7 +102,7 @@ describe('generateBrowserCrawlerFunctions', () => {
 
     const functionGenerator = require('../lib/functionGenerator')
 
-    functionStrs = await functionGenerator.generateBrowserCrawlerFunctions()
+    functionStrs = functionGenerator.generateBrowserCrawlerFunctions()
     functions = _.mapValues(functionStrs, str => eval(str))
   })
 

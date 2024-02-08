@@ -26,9 +26,9 @@
         :items="listItems"
         :loading="loading"
         show-select
-        :items-per-page.sync="itemsPerPage"
+        v-model:items-per-page="itemsPerPage"
         :server-items-length="serverItemsLength"
-        :page.sync="page"
+        v-model:page="page"
         item-key="historyId"
         :footer-props="footerProps"
       >

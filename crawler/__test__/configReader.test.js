@@ -1,8 +1,8 @@
 const configReader = require('../lib/configReader')
 const _ = require('lodash')
 
-test('readConfigs 能够正确读取配置', async () => {
-  const config = await configReader.readConfigs()
+test('readConfigs 能够正确读取配置', () => {
+  const config = configReader.readConfigs()
   expect(config.crawlers.length).not.toBe(0)
 
   const pojConfig = config.crawlers.poj
@@ -11,8 +11,8 @@ test('readConfigs 能够正确读取配置', async () => {
 
 })
 
-test('readCrawlerConfigs 能够正确读取配置', async () => {
-  const config = await configReader.readCrawlerConfigs()
+test('readCrawlerConfigs 能够正确读取配置', () => {
+  const config = configReader.readCrawlerConfigs()
   expect(config.length).not.toBe(0)
 
   const pojConfig = _.find(config, item => item.name === 'poj')
@@ -84,8 +84,8 @@ describe('mergeConfigWithEnv', () => {
   })
 })
 
-test('readMetaConfigs 能够读取元信息', async () => {
-  const meta = await configReader.readMetaConfigs()
+test('readMetaConfigs 能够读取元信息', () => {
+  const meta = configReader.readMetaConfigs()
   expect(meta.vjudge).toBeTruthy()
   expect(meta.vjudge.title).toBe('VJudge')
   expect(meta.vjudge.description).toBeTruthy()

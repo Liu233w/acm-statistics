@@ -3,16 +3,16 @@ const path = require('path')
 const fs = require('fs-extra')
 const VirtualModulePlugin = require('webpack-virtual-modules')
 
-async function buildSources() {
-  const corsModule = await fs.readFile(path.join(__dirname, 'cors.js'), 'utf-8')
+function buildSources() {
+  const corsModule = fs.readFileSync(path.join(__dirname, 'cors.js'), 'utf-8')
   let crawlersModule = `
   /* eslint-disable */
   ${corsModule}
   export default () => {
-    const metas = ${JSON.stringify(await readMetaConfigs())};
+    const metas = ${JSON.stringify(readMetaConfigs())};
     const crawlers = {
   `
-  const functions = await generateBrowserCrawlerFunctions()
+  const functions = generateBrowserCrawlerFunctions()
   for (let key in functions) {
     crawlersModule += `${key}: ${functions[key]},\n`
   }
@@ -27,8 +27,8 @@ async function buildSources() {
   return crawlersModule
 }
 
-module.exports = async function () {
+module.exports = function () {
   this.options.build.plugins.push(new VirtualModulePlugin({
-    'dynamic/crawlers.js': await buildSources(),
+    'dynamic/crawlers.js': buildSources(),
   }))
 }

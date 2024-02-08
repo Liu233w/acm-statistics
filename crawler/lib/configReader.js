@@ -46,8 +46,8 @@ exports.mergeConfigWithEnv = (config, env) => {
  *
  * @return {Promise<object>}
  */
-exports.readConfigs = async () => {
-  const config = yml.load(await fs.readFile(configPath, 'utf-8'))
+exports.readConfigs = () => {
+  const config = yml.load(fs.readFileSync(configPath, 'utf-8'))
   exports.mergeConfigWithEnv(config, process.env)
   return config
 }
@@ -56,9 +56,9 @@ exports.readConfigs = async () => {
  * 获取爬虫的所有配置
  * @return {Promise<Array<Object>>}
  */
-exports.readCrawlerConfigs = async () => {
+exports.readCrawlerConfigs = () => {
 
-  const config = await exports.readConfigs()
+  const config = exports.readConfigs()
 
   return _.map(config.crawler_order, name =>
     _.assign({name: name}, config.crawlers[name]))
@@ -68,8 +68,8 @@ exports.readCrawlerConfigs = async () => {
  * 返回一个对象，其中key是爬虫名，value是一个Object，包含爬虫的元信息
  * @returns {Promise<Object.<String, Object>>}
  */
-exports.readMetaConfigs = async () => {
-  const config = await exports.readConfigs()
+exports.readMetaConfigs = () => {
+  const config = exports.readConfigs()
 
   let ret = {}
   for (let name of config.crawler_order) {

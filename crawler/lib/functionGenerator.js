@@ -56,8 +56,8 @@ exports.crawlerWrapper = promiseExpression => {
  *
  * @returns {Promise<Object.<string, ServerCrawlerFunction>>}
  */
-exports.generateServerCrawlerFunctions = async () => {
-  const config = await configReader.readCrawlerConfigs()
+exports.generateServerCrawlerFunctions = () => {
+  const config = configReader.readCrawlerConfigs()
 
   const ret = {}
   for (let item of config) {
@@ -95,7 +95,7 @@ exports.generateServerCrawlerFunctions = async () => {
  *
  * @returns {Promise<Object.<string, ClientCrawlerFunction>>}
  */
-exports.generateBrowserCrawlerFunctions = async () => {
+exports.generateBrowserCrawlerFunctions = () => {
 
   // 生成从服务器端进行查询的代码
   const resolveServerQuery = (crawlerName) => _.trim(`
@@ -122,7 +122,7 @@ exports.generateBrowserCrawlerFunctions = async () => {
     })
   `)
 
-  const config = await configReader.readCrawlerConfigs()
+  const config = configReader.readCrawlerConfigs()
 
   const ret = {}
   for (let item of config) {
@@ -136,7 +136,7 @@ exports.generateBrowserCrawlerFunctions = async () => {
         }
       `
     } else {
-      const crawlerFuncStr = await fs.readFile(join(__dirname, `../crawlers/${item.name}.js`), 'utf-8')
+      const crawlerFuncStr = fs.readFileSync(join(__dirname, `../crawlers/${item.name}.js`), 'utf-8')
       const crawlerConfig = {
         env: 'browser',
       }

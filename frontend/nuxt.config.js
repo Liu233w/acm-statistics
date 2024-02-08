@@ -1,12 +1,12 @@
-// eslint-disable-next-line no-unused-vars
-const resolve = (dir) => require('path').join(__dirname, dir)
 const _ = require('lodash')
 
-const sensitiveRouter = require('./configs/sensitive-url-router')
+import { defineNuxtConfig } from 'nuxt/config'
 
-const { readMetaConfigs } = require('crawler')
+import {default as sensitiveRouter} from './configs/sensitive-url-router'
 
-module.exports = async () => ({
+import { readMetaConfigs } from 'crawler'
+
+module.exports = defineNuxtConfig({
   /*
   ** Headers of the page
   */
@@ -17,7 +17,7 @@ module.exports = async () => ({
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       {
         hid: 'description', name: 'description', content: 'An online tool (crawler) to analyze users performance in online judges (coding competition websites). '
-          + 'Supported OJ: ' + _.map(await readMetaConfigs(), 'title').join(', '),
+          + 'Supported OJ: ' + _.map(readMetaConfigs(), 'title').join(', '),
       },
     ],
     link: [
@@ -56,7 +56,7 @@ module.exports = async () => ({
     },
   },
   modules: [
-    '~/modules/crawlerLoader',
+    '~/modules/crawlerLoader/index',
     '@nuxtjs/component-cache',
     ['nuxt-env', {
       keys: ['VERSION_NUM', 'BUILD_TIME'],
@@ -81,8 +81,10 @@ module.exports = async () => ({
       poll: 1000,
     },
   },
+  hooks: {
+    'page:extend': sensitiveRouter,
+  },
   router: {
-    extendRoutes: sensitiveRouter,
     middleware: [
       'auth',
     ],

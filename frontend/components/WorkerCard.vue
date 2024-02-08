@@ -273,7 +273,7 @@ export default {
     await delay(1000)
     this.updateHeight()
   },
-  destroyed() {
+  unmounted() {
     this.$emit('update-height', 0)
   },
   methods: {
