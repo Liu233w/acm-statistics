@@ -24,7 +24,7 @@
     "cheerio": "1.0.0-rc.10",
     "crawler": "link:../crawler",
     "html2canvas": "1.4.1",
-    "js-cookie": "3.0.4",
+    "js-cookie": "3.0.5",
     "lodash": "4.17.21",
     "nuxt": "2.16.3",
     "nuxt-env": "0.1.0",
