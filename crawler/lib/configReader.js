@@ -11,18 +11,18 @@ const _ = require('lodash')
 const configPath = join(__dirname, '../config.yml')
 
 // 环境变量的前缀
-const envConfigPrefix = 'ACM_STATISTICS_CRAWLER_ENV:'
+const envConfigPrefix = 'ACM_STATISTICS_CRAWLER_ENV__'
 
 /**
  * 从一个表示环境变量的键值对里面读取配置，将配置合并到 config 中。
  * 将使用 _.set 来合并数据
  *
- * 举例：对于环境变量 ACM_STATISTICS_CRAWLER_ENV:a:b:1:c = 12 和配置对象 {a:{b:[{}],d:333}}，
+ * 举例：对于环境变量 ACM_STATISTICS_CRAWLER_ENV__a__b__1__c = 12 和配置对象 {a:{b:[{}],d:333}}，
  * 结果为 {a:{b:[{},{c:12}],d:333}}
  *
  * 环境变量的值将使用 JSON.parse 来处理，因此可以使用任意 json 中存在的类型。
- * 如果需要传入字符串，需要使用类似于 ACM_STATISTICS_CRAWLER_ENV:a:b:1:c = "12"
- * 或者 ACM_STATISTICS_CRAWLER_ENV:a = "{asdf}" 这样的形式
+ * 如果需要传入字符串，需要使用类似于 ACM_STATISTICS_CRAWLER_ENV__a__b__1__c = "12"
+ * 或者 ACM_STATISTICS_CRAWLER_ENV__a = "{asdf}" 这样的形式
  *
  * @param {object} config
  * @param {object.<string,string>} env
@@ -33,7 +33,7 @@ exports.mergeConfigWithEnv = (config, env) => {
 
     if (_.startsWith(key, envConfigPrefix)) {
       const keyStr = key.slice(envConfigPrefix.length)
-      _.set(config, _.split(keyStr, ':'), JSON.parse(value))
+      _.set(config, _.split(keyStr, '__'), JSON.parse(value))
 
     } else {
       // pass
