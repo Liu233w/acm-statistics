@@ -40,12 +40,12 @@
 - 由于 `config.yml` 会被纳入版本控制和 docker 生成的镜像中。您可以使用环
     境变量来配置一些敏感信息（例如 vjudge 就需要一个帐号的用户名和密码才能
     访问其 API）。
-- 环境变量格式如下： `ACM_STATISTICS_CRAWLER_ENV:crawlers:vjudge:crawler_login_user="myuser"`
-  - 必须使用前缀来表示环境变量是爬虫的环境变量，使用`:`来表示对象的字段。
+- 环境变量格式如下： `ACM_STATISTICS_CRAWLER_ENV__crawlers__vjudge__crawler_login_user="myuser"`
+  - 必须使用前缀来表示环境变量是爬虫的环境变量，使用`__`来表示对象的字段。
   - 结果将作为json解析，因此需要将字符串形式的值放进双引号中。
   - 环境变量的名称将指定一个 `config.yml` 中的字段，并用值来覆盖它
   - 也可以指定一个json格式的值，并覆盖整个对象，比如
-      `ACM_STATISTICS_CRAWLER_ENV:crawler_order=["hdu", "poj"]`
+      `ACM_STATISTICS_CRAWLER_ENV__crawler_order=["hdu", "poj"]`
 
 - 请注意，如果您需要在 config 中填写隐私信息，请将爬虫设置成
     server_only。否则编译出的前端静态文件中将会含有您的隐私信息。

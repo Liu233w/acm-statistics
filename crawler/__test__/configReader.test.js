@@ -32,7 +32,7 @@ describe('mergeConfigWithEnv', () => {
     }
 
     configReader.mergeConfigWithEnv(baseConfig, {
-      'ACM_STATISTICS_CRAWLER_ENV:a:b:1:c': 12,
+      'ACM_STATISTICS_CRAWLER_ENV__a__b__1__c': 12,
     })
 
     expect(baseConfig).toMatchObject({
@@ -50,7 +50,7 @@ describe('mergeConfigWithEnv', () => {
     }
 
     configReader.mergeConfigWithEnv(baseConfig, {
-      'ACM_STATISTICS_CRAWLER_ENV:a': '{"b":{"c":"aaa"}}',
+      'ACM_STATISTICS_CRAWLER_ENV__a': '{"b":{"c":"aaa"}}',
     })
 
     expect(baseConfig).toMatchObject({
@@ -76,7 +76,7 @@ describe('mergeConfigWithEnv', () => {
 
     const baseConfig = {}
     configReader.mergeConfigWithEnv(baseConfig, {
-      'ACM_STATISTICS_CRAWLER_ENV:a': '"{asdf}"',
+      'ACM_STATISTICS_CRAWLER_ENV__a': '"{asdf}"',
     })
     expect(baseConfig).toMatchObject({
       a: '{asdf}',

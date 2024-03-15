@@ -33,8 +33,8 @@ services:
   crawler-api-backend:
     image: ${DOCKER_REPO}acm-statistics-crawler-api-backend${DOCKER_TAG}
     environment:
-      - ACM_STATISTICS_CRAWLER_ENV:crawlers:vjudge:crawler_login_user="${VJUDGE_USERNAME}"
-      - ACM_STATISTICS_CRAWLER_ENV:crawlers:vjudge:crawler_login_password="${VJUDGE_PASSWORD}"
+      - ACM_STATISTICS_CRAWLER_ENV__crawlers__vjudge__crawler_login_user="${VJUDGE_USERNAME}"
+      - ACM_STATISTICS_CRAWLER_ENV__crawlers__vjudge__crawler_login_password="${VJUDGE_PASSWORD}"
     labels:
       - traefik.http.routers.crawler-api-backend.rule=PathPrefix(`/api/crawlers`)
       - traefik.http.services.crawler-api-backend.loadbalancer.server.port=80
