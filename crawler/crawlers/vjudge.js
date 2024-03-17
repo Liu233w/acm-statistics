@@ -55,7 +55,7 @@ module.exports = async function (localConfig, username) {
       throw new Error(`Server Response Error: ${res.status}`)
     }
 
-    if (res.body.error && res.body.error === 'Please login and confirm your email first') {
+    if (res.body.error && /login/.test(res.body.error)) {
       await tryLogin()
       continue
     }
