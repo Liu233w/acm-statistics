@@ -135,6 +135,7 @@ async function tryLogin() {
         'password': config.crawler_login_password,
       })
   } catch (err) {
+    console.error('vjudge login error:', err)
     const error = new Error('vjudge login failed')
     error.innerError = err
     throw error
@@ -143,6 +144,7 @@ async function tryLogin() {
   // console.log('loginStatus', loginStatus)
 
   if (loginStatus.text !== 'success') {
+    console.log('vjudge login not success:', loginStatus.text)
     throw new Error('vjudge login failed')
   }
 
