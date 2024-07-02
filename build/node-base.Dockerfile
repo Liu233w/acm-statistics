@@ -8,4 +8,4 @@ RUN if [ "$CODECOV" != "false" ]; then \
     curl \
     ; fi
 
-RUN npm install --global pnpm@7
+RUN npm install --global pnpm@9
