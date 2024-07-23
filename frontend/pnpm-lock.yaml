@@ -18,8 +18,8 @@ dependencies:
     specifier: 1.12.3
     version: 1.12.3(vue-template-compiler@2.7.14)(vue@2.7.14)(webpack@5.76.3)
   chart.js:
-    specifier: 3.9.1
-    version: 3.9.1
+    specifier: 4.4.3
+    version: 4.4.3
   cheerio:
     specifier: 1.0.0-rc.10
     version: 1.0.0-rc.10
@@ -48,8 +48,8 @@ dependencies:
     specifier: 8.0.9
     version: 8.0.9
   vue-chartjs:
-    specifier: 4.1.2
-    version: 4.1.2(chart.js@3.9.1)(vue@2.7.14)
+    specifier: 5.3.1
+    version: 5.3.1(chart.js@4.4.3)(vue@2.7.14)
   webpack-virtual-modules:
     specifier: 0.5.0
     version: 0.5.0
@@ -2294,6 +2294,10 @@ packages:
     dependencies:
       '@jridgewell/resolve-uri': 3.1.0
       '@jridgewell/sourcemap-codec': 1.4.14
+
+  /@kurkle/color@0.3.2:
+    resolution: {integrity: sha512-fuscdXJ9G1qb7W8VdHi+IwRqij3lBkosAm4ydQtEmbY58OzHXqQhvlxqEkoz0yssNVn38bcpRWgA9PP+OGoisw==}
+    dev: false
 
   /@mdi/font@7.4.47:
     resolution: {integrity: sha512-43MtGpd585SNzHZPcYowu/84Vz2a2g31TvPMTm9uTiCSWzaheQySUcSyUH/46fPnuPQWof2yd0pGBtzee/IQWw==}
@@ -4547,8 +4551,11 @@ packages:
     resolution: {integrity: sha512-mT8iDcrh03qDGRRmoA2hmBJnxpllMR+0/0qlzjqZES6NdiWDcZkCNAk4rPFZ9Q85r27unkiNNg8ZOiwZXBHwcA==}
     dev: false
 
-  /chart.js@3.9.1:
-    resolution: {integrity: sha512-Ro2JbLmvg83gXF5F4sniaQ+lTbSv18E+TIf2cOeiH1Iqd2PGFOtem+DUufMZsCJwFE7ywPOpfXFBwRTGq7dh6w==}
+  /chart.js@4.4.3:
+    resolution: {integrity: sha512-qK1gkGSRYcJzqrrzdR6a+I0vQ4/R+SoODXyAjscQ/4mzuNzySaMCd+hyVxitSY1+L2fjPD1Gbn+ibNqRmwQeLw==}
+    engines: {pnpm: '>=8'}
+    dependencies:
+      '@kurkle/color': 0.3.2
     dev: false
 
   /cheerio-select@1.5.0:
@@ -11670,13 +11677,13 @@ packages:
     resolution: {integrity: sha512-2ham8XPWTONajOR0ohOKOHXkm3+gaBmGut3SRuu75xLd/RRaY6vqgh8NBYYk7+RW3u5AtzPQZG8F10LHkl0lAQ==}
     dev: false
 
-  /vue-chartjs@4.1.2(chart.js@3.9.1)(vue@2.7.14):
-    resolution: {integrity: sha512-QSggYjeFv/L4jFSBQpX8NzrAvX0B+Ha6nDgxkTG8tEXxYOOTwKI4phRLe+B4f+REnkmg7hgPY24R0cixZJyXBg==}
+  /vue-chartjs@5.3.1(chart.js@4.4.3)(vue@2.7.14):
+    resolution: {integrity: sha512-rZjqcHBxKiHrBl0CIvcOlVEBwRhpWAVf6rDU3vUfa7HuSRmGtCslc0Oc8m16oAVuk0erzc1FCtH1VCriHsrz+A==}
     peerDependencies:
-      chart.js: ^3.7.0
-      vue: ^3.0.0-0 || ^2.6.0
+      chart.js: ^4.1.1
+      vue: ^3.0.0-0 || ^2.7.0
     dependencies:
-      chart.js: 3.9.1
+      chart.js: 4.4.3
       vue: 2.7.14
     dev: false
 
