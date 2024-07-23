@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@fortawesome/fontawesome-free':
-    specifier: 6.4.0
-    version: 6.4.0
+    specifier: 6.6.0
+    version: 6.6.0
   '@nuxtjs/axios':
     specifier: 5.13.6
     version: 5.13.6
@@ -1999,10 +1999,9 @@ packages:
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
 
-  /@fortawesome/fontawesome-free@6.4.0:
-    resolution: {integrity: sha512-0NyytTlPJwB/BF5LtRV8rrABDbe3TdTXqNB3PdZ+UUUZAEIrdOJdmABqKjt4AXwIoJNaRVVZEXxpNrqvE1GAYQ==}
+  /@fortawesome/fontawesome-free@6.6.0:
+    resolution: {integrity: sha512-60G28ke/sXdtS9KZCpZSHHkCbdsOGEhIUGlwq6yhY74UpTiToIh8np7A8yphhM4BWsvNFtIvLpi4co+h9Mr9Ow==}
     engines: {node: '>=6'}
-    requiresBuild: true
     dev: false
 
   /@gar/promisify@1.1.2:
