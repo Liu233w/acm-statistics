@@ -29,8 +29,8 @@ devDependencies:
     specifier: 8.41.0
     version: 8.41.0
   eslint-plugin-jest:
-    specifier: 27.2.1
-    version: 27.2.1(eslint@8.41.0)(jest@29.5.0)(typescript@5.5.4)
+    specifier: 27.9.0
+    version: 27.9.0(eslint@8.41.0)(jest@29.5.0)(typescript@5.5.4)
   eslint-plugin-lodash:
     specifier: 7.4.0
     version: 7.4.0(eslint@8.41.0)
@@ -1387,11 +1387,11 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /eslint-plugin-jest@27.2.1(eslint@8.41.0)(jest@29.5.0)(typescript@5.5.4):
-    resolution: {integrity: sha512-l067Uxx7ZT8cO9NJuf+eJHvt6bqJyz2Z29wykyEdz/OtmcELQl2MQGQLX8J94O1cSJWAwUSEvCjwjA7KEK3Hmg==}
+  /eslint-plugin-jest@27.9.0(eslint@8.41.0)(jest@29.5.0)(typescript@5.5.4):
+    resolution: {integrity: sha512-QIT7FH7fNmd9n4se7FFKHbsLKGQiw885Ds6Y/sxKgCZ6natwCsXdgPOADnYVxN2QrRweF0FZWbJ6S7Rsn7llug==}
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
     peerDependencies:
-      '@typescript-eslint/eslint-plugin': ^5.0.0
+      '@typescript-eslint/eslint-plugin': ^5.0.0 || ^6.0.0 || ^7.0.0
       eslint: ^7.0.0 || ^8.0.0
       jest: '*'
     peerDependenciesMeta:
