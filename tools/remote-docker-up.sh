@@ -31,7 +31,7 @@ export DOCKER_REPO=liu233w/
 
 # 执行 docker compose
 curl -s https://raw.githubusercontent.com/Liu233w/acm-statistics/master/build/docker-compose.yml \
-  | docker-compose -f - up
+  | docker compose -f - up
 
 else
 
@@ -60,4 +60,4 @@ fi
 
 fi
 
-docker-compose up
+docker compose up
