@@ -1,3 +1,4 @@
+
 pull_request_rules:
   - name: automatic merge on CI success and tag
     conditions:
@@ -20,26 +21,37 @@ pull_request_rules:
       merge:
         method: rebase
         # rebase_fallback: merge
+  - name: refactored queue action rule
+    conditions: []
+    actions:
       queue:
-        method: rebase
-        name: default
-
 queue_rules:
   - name: default
-    conditions:
-      # Conditions to get out of the queue (= merged)
-      # checks =====
-
+    queue_conditions:
+      - label=ready-to-be-merged
       - check-success=Html Snapshot Test
       - check-success=E2E on push
       - check-success=E2E on pull request
-
       - check-success=Test Backend
       - check-success=Test Crawler
       - check-success=Test Crawler Api Backend
       - check-success=Test Frontend
       - check-success=Test Captcha Service
       - check-success=Test OHunt
+      - check-success=Commitlint
+    merge_conditions:
+      # Conditions to get out of the queue (= merged)
+      # checks =====
 
+      - check-success=Html Snapshot Test
+      - check-success=E2E on push
+      - check-success=E2E on pull request
+      - check-success=Test Backend
+      - check-success=Test Crawler
+      - check-success=Test Crawler Api Backend
+      - check-success=Test Frontend
+      - check-success=Test Captcha Service
+      - check-success=Test OHunt
       - check-success=Commitlint
       # =============
+    merge_method: rebase
