@@ -44,6 +44,8 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     command: -s "0 */30 * * * *" --cleanup
+    labels:
+      - traefik.enable=false
 
   backend:
     image: ${DOCKER_REPO}acm-statistics-backend${DOCKER_TAG}
@@ -76,6 +78,8 @@ services:
     # fix `mbind: Operation not permitted`, see https://stackoverflow.com/a/55706057
     cap_add:
       - SYS_NICE  # CAP_SYS_NICE
+    labels:
+      - traefik.enable=false
 
   captcha-service:
     image: ${DOCKER_REPO}acm-statistics-captcha-service${DOCKER_TAG}
@@ -103,6 +107,8 @@ services:
       MYSQLDUMP_OPTS: --ignore-table=acm_statistics.AbpAuditLogs --ignore-table=acm_statistics.AbpUserLoginAttempts
     depends_on:
       - db
+    labels:
+      - traefik.enable=false
 
   ohunt:
     image: ${DOCKER_REPO}acm-statistics-ohunt${DOCKER_TAG}
