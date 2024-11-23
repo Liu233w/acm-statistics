@@ -46,7 +46,7 @@ $(ImageToPush):
 	docker push $(ImageNameWithLatest)
 
 up: .build .env
-	docker-compose up $(compose-args)
+	docker compose up $(compose-args)
 
 # additionally run mock-server when start the server for e2e test
 # Remove the old database
@@ -54,10 +54,10 @@ e2e-up: .build .env
 	$(MAKE) -C ../e2e build-http-mocks
 	$(RMR) backend-db || echo remove failed
 	$(MKDIR) backend-db
-	docker-compose -f docker-compose.yml -f docker-compose.e2e.yml up $(compose-args)
+	docker compose -f docker-compose.yml -f docker-compose.e2e.yml up $(compose-args)
 
 .env:
 	$(CP) template.env .env
 
 dev-frontend: .build
-	docker-compose -f docker-compose.yml -f docker-compose.dev-frontend.yml up $(compose-args)
+	docker compose -f docker-compose.yml -f docker-compose.dev-frontend.yml up $(compose-args)
