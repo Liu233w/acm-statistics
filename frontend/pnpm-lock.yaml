@@ -18,8 +18,8 @@ dependencies:
     specifier: 1.12.3
     version: 1.12.3(vue-template-compiler@2.7.14)(vue@2.7.14)(webpack@5.76.3)
   chart.js:
-    specifier: 3.9.1
-    version: 3.9.1
+    specifier: 4.4.7
+    version: 4.4.7
   cheerio:
     specifier: 1.0.0-rc.10
     version: 1.0.0-rc.10
@@ -48,8 +48,8 @@ dependencies:
     specifier: 8.0.9
     version: 8.0.9
   vue-chartjs:
-    specifier: 4.1.2
-    version: 4.1.2(chart.js@3.9.1)(vue@2.7.14)
+    specifier: 5.3.2
+    version: 5.3.2(chart.js@4.4.7)(vue@2.7.14)
   webpack-virtual-modules:
     specifier: 0.5.0
     version: 0.5.0
@@ -2295,6 +2295,10 @@ packages:
       '@jridgewell/resolve-uri': 3.1.0
       '@jridgewell/sourcemap-codec': 1.4.14
 
+  /@kurkle/color@0.3.4:
+    resolution: {integrity: sha512-M5UknZPHRu3DEDWoipU6sE8PdkZ6Z/S+v4dD+Ke8IaNlpdSQah50lz1KtcFBa2vsdOnwbbnxJwVM4wty6udA5w==}
+    dev: false
+
   /@mdi/font@7.4.47:
     resolution: {integrity: sha512-43MtGpd585SNzHZPcYowu/84Vz2a2g31TvPMTm9uTiCSWzaheQySUcSyUH/46fPnuPQWof2yd0pGBtzee/IQWw==}
     dev: true
@@ -3706,6 +3710,7 @@ packages:
 
   /acorn-import-assertions@1.8.0(acorn@8.8.2):
     resolution: {integrity: sha512-m7VZ3jwz4eK6A4Vtt8Ew1/mNbP24u0FhdyfA7fSvnJR6LMdfOYnmuIrrJAgrYfYJ10F/otaHTtrtrtmHdMNzEw==}
+    deprecated: package has been renamed to acorn-import-attributes
     peerDependencies:
       acorn: ^8
     dependencies:
@@ -4547,8 +4552,11 @@ packages:
     resolution: {integrity: sha512-mT8iDcrh03qDGRRmoA2hmBJnxpllMR+0/0qlzjqZES6NdiWDcZkCNAk4rPFZ9Q85r27unkiNNg8ZOiwZXBHwcA==}
     dev: false
 
-  /chart.js@3.9.1:
-    resolution: {integrity: sha512-Ro2JbLmvg83gXF5F4sniaQ+lTbSv18E+TIf2cOeiH1Iqd2PGFOtem+DUufMZsCJwFE7ywPOpfXFBwRTGq7dh6w==}
+  /chart.js@4.4.7:
+    resolution: {integrity: sha512-pwkcKfdzTMAU/+jNosKhNL2bHtJc/sSmYgVbuGTEDhzkrhmyihmP7vUc/5ZK9WopidMDHNe3Wm7jOd/WhuHWuw==}
+    engines: {pnpm: '>=8'}
+    dependencies:
+      '@kurkle/color': 0.3.4
     dev: false
 
   /cheerio-select@1.5.0:
@@ -6473,7 +6481,7 @@ packages:
     resolution: {integrity: sha512-oWb1Z6mkHIskLzEJ/XWX0srkpkTQ7vaopMQkyaEIoq0fmtFVxOthb8cCxeT+p3ynTdkk/RZwbgG4brR5BeWECw==}
     engines: {node: '>= 4.0'}
     os: [darwin]
-    deprecated: The v1 package contains DANGEROUS / INSECURE binaries. Upgrade to safe fsevents v2
+    deprecated: Upgrade to fsevents v2 to mitigate potential security issues
     requiresBuild: true
     dependencies:
       bindings: 1.5.0
@@ -11670,13 +11678,13 @@ packages:
     resolution: {integrity: sha512-2ham8XPWTONajOR0ohOKOHXkm3+gaBmGut3SRuu75xLd/RRaY6vqgh8NBYYk7+RW3u5AtzPQZG8F10LHkl0lAQ==}
     dev: false
 
-  /vue-chartjs@4.1.2(chart.js@3.9.1)(vue@2.7.14):
-    resolution: {integrity: sha512-QSggYjeFv/L4jFSBQpX8NzrAvX0B+Ha6nDgxkTG8tEXxYOOTwKI4phRLe+B4f+REnkmg7hgPY24R0cixZJyXBg==}
+  /vue-chartjs@5.3.2(chart.js@4.4.7)(vue@2.7.14):
+    resolution: {integrity: sha512-NrkbRRoYshbXbWqJkTN6InoDVwVb90C0R7eAVgMWcB9dPikbruaOoTFjFYHE/+tNPdIe6qdLCDjfjPHQ0fw4jw==}
     peerDependencies:
-      chart.js: ^3.7.0
-      vue: ^3.0.0-0 || ^2.6.0
+      chart.js: ^4.1.1
+      vue: ^3.0.0-0 || ^2.7.0
     dependencies:
-      chart.js: 3.9.1
+      chart.js: 4.4.7
       vue: 2.7.14
     dev: false
 
