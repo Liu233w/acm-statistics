@@ -1,11 +1,6 @@
 const request = require('superagent')
 
-module.exports = async function (config, username) {
-
-  if (!username) {
-    throw new Error('Please enter username')
-  }
-
+async function getUserId(username) {
   const uidRes = await request
     .get('https://www.luogu.com.cn/api/user/search')
     .query({keyword: username})
@@ -20,12 +15,25 @@ module.exports = async function (config, username) {
     throw new Error('The user does not exist')
   }
 
-  const uid = uidJSON.users[0].uid
-  const res = await request
-    .get('https://www.luogu.com.cn/user/' + uid)
+  return uidJSON.users[0].uid
+}
 
+module.exports = async function (config, username) {
+
+  if (!username) {
+    throw new Error('Please enter username')
+  }
+
+  let res = await request
+    .get('https://www.luogu.com.cn/user/' + username)
   if (!res.ok) {
-    throw new Error(`Server Response Error: ${res.status}`)
+    const uid = await getUserId(username)
+    res = await request
+      .get('https://www.luogu.com.cn/user/' + uid)
+
+    if (!res.ok) {
+      throw new Error(`Server Response Error: ${res.status}`)
+    }
   }
 
   try {
