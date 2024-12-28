@@ -97,7 +97,7 @@ crawlers:
   luogu:
     meta:
       title: 洛谷
-      description:
+      description: Both username and user_id are supported
       url: https://www.luogu.com.cn
     server_only: true
   nowcoder:
