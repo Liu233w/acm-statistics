@@ -4487,7 +4487,7 @@ exports[`/history/{historyId} 1`] = `
                 },
                 luogu: {
                   title: "洛谷",
-                  description: a,
+                  description: "Both username and user_id are supported",
                   url: "https:\\u002F\\u002Fwww.luogu.com.cn"
                 },
                 nowcoder: {
@@ -8575,7 +8575,7 @@ exports[`/statistics 1`] = `
                 },
                 luogu: {
                   title: "洛谷",
-                  description: c,
+                  description: "Both username and user_id are supported",
                   url: "https:\\u002F\\u002Fwww.luogu.com.cn",
                   name: t
                 },
