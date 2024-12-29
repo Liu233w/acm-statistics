@@ -18,6 +18,14 @@ async function getUserId(username) {
   return uidJSON.users[0].uid
 }
 
+function getUserJson(text) {
+  try {
+    return JSON.parse(decodeURIComponent(text.match(/decodeURIComponent\("(.*?)"\)/i)[1]))
+  } catch (e) {
+    throw new Error('Error while parsing')
+  }
+}
+
 module.exports = async function (config, username) {
 
   if (!username) {
@@ -26,19 +34,26 @@ module.exports = async function (config, username) {
 
   let res = await request
     .get('https://www.luogu.com.cn/user/' + username)
-  if (!res.ok) {
+  if (!res.ok || getUserJson(res.text).code === 404) {
     const uid = await getUserId(username)
     res = await request
       .get('https://www.luogu.com.cn/user/' + uid)
+  }
 
-    if (!res.ok) {
-      throw new Error(`Server Response Error: ${res.status}`)
-    }
+  if (!res.ok) {
+    throw new Error(`Server Response Error: ${res.status}`)
+  }
+
+  const userJson = getUserJson(res.text)
+  if (userJson.code === 404) {
+    throw new Error('User not found')
+  }
+
+  if (userJson.code !== 200) {
+    throw new Error(`Parse error. Message from luogu: ${userJson.currentTitle}`)
   }
 
   try {
-
-    const userJson = JSON.parse(decodeURIComponent(res.text.match(/decodeURIComponent\("(.*?)"\)/i)[1]))
     const solvedJson = userJson.currentData.passedProblems
     const acList = solvedJson.map((p) => p.pid)
 

@@ -333,7 +333,7 @@ describe('luogu', () => {
   }, 50000)
 
   test('should work correctly', async () => {
-    const res = await luogu(null, 'CancerGary') // 自定义存在的用户名
+    const res = await luogu(null, '811437') // user_id
     checkRes(res)
     expect(res.solvedList).toContain('P1001')
     expect(res.solvedList.length).toBeGreaterThan(100)
