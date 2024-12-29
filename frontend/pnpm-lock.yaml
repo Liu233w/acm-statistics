@@ -19,7 +19,7 @@ importers:
         version: 1.1.6
       '@nuxtjs/vuetify':
         specifier: 1.12.3
-        version: 1.12.3(vue-template-compiler@2.7.14)(vue@2.7.14)(webpack@5.76.3)
+        version: 1.12.3(vue-template-compiler@2.7.14)(vue@2.7.14)(webpack@4.46.0)
       chart.js:
         specifier: 3.9.1
         version: 3.9.1
@@ -33,8 +33,8 @@ importers:
         specifier: 1.4.1
         version: 1.4.1
       js-cookie:
-        specifier: 3.0.4
-        version: 3.0.4
+        specifier: 3.0.5
+        version: 3.0.5
       lodash:
         specifier: 4.17.21
         version: 4.17.21
@@ -68,13 +68,13 @@ importers:
         version: 7.4.47
       '@nuxtjs/eslint-module':
         specifier: 4.1.0
-        version: 4.1.0(eslint@8.41.0)(vite@4.2.1)(webpack@5.76.3)
+        version: 4.1.0(eslint@8.41.0)(rollup@3.20.2)(vite@4.2.1(@types/node@16.11.6)(sass@1.32.13)(stylus@0.59.0)(terser@5.16.8))(webpack@4.46.0)
       '@vue/test-utils':
         specifier: 1.3.6
         version: 1.3.6(vue-template-compiler@2.7.14)(vue@2.7.14)
       '@vue/vue2-jest':
         specifier: 29.2.6
-        version: 29.2.6(@babel/core@7.22.1)(babel-jest@29.5.0)(jest@29.5.0)(lodash@4.17.21)(typescript@5.5.4)(vue-template-compiler@2.7.14)(vue@2.7.14)
+        version: 29.2.6(@babel/core@7.22.1)(babel-jest@29.5.0(@babel/core@7.22.1))(jest@29.5.0(@types/node@16.11.6))(lodash@4.17.21)(typescript@5.5.4)(vue-template-compiler@2.7.14)(vue@2.7.14)
       babel-jest:
         specifier: 29.5.0
         version: 29.5.0(@babel/core@7.22.1)
@@ -86,7 +86,7 @@ importers:
         version: 8.41.0
       eslint-plugin-jest:
         specifier: 27.9.0
-        version: 27.9.0(eslint@8.41.0)(jest@29.5.0)(typescript@5.5.4)
+        version: 27.9.0(eslint@8.41.0)(jest@29.5.0(@types/node@16.11.6))(typescript@5.5.4)
       eslint-plugin-lodash:
         specifier: 7.4.0
         version: 7.4.0(eslint@8.41.0)
@@ -95,10 +95,10 @@ importers:
         version: 9.14.1(eslint@8.41.0)
       eslint-plugin-vuetify:
         specifier: 1.1.0
-        version: 1.1.0(eslint@8.41.0)(vuetify@2.6.5)
+        version: 1.1.0(eslint@8.41.0)(vuetify@2.6.5(vue@2.7.14))
       jest:
         specifier: 29.5.0
-        version: 29.5.0
+        version: 29.5.0(@types/node@16.11.6)
       jest-environment-jsdom:
         specifier: 29.5.0
         version: 29.5.0
@@ -107,7 +107,7 @@ importers:
         version: 3.1.0
       stylus-loader:
         specifier: 7.1.3
-        version: 7.1.3(stylus@0.59.0)(webpack@5.76.3)
+        version: 7.1.3(stylus@0.59.0)(webpack@4.46.0)
       typescript:
         specifier: 5.5.4
         version: 5.5.4
@@ -299,6 +299,7 @@ packages:
   '@babel/plugin-proposal-class-properties@7.18.6':
     resolution: {integrity: sha512-cumfXOF0+nzZrrN8Rf0t7M+tF6sZc7vhQwYQck9q1/5w2OExlD+b4v4RpMJFaV1Z7WcDRgO6FqvxqxGlwo+RHQ==}
     engines: {node: '>=6.9.0'}
+    deprecated: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-class-properties instead.
     peerDependencies:
       '@babel/core': ^7.0.0-0
 
@@ -311,30 +312,35 @@ packages:
   '@babel/plugin-proposal-nullish-coalescing-operator@7.18.6':
     resolution: {integrity: sha512-wQxQzxYeJqHcfppzBDnm1yAY0jSRkUXR2z8RePZYrKwMKgMlE8+Z6LUno+bd6LvbGh8Gltvy74+9pIYkr+XkKA==}
     engines: {node: '>=6.9.0'}
+    deprecated: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-nullish-coalescing-operator instead.
     peerDependencies:
       '@babel/core': ^7.0.0-0
 
   '@babel/plugin-proposal-optional-chaining@7.21.0':
     resolution: {integrity: sha512-p4zeefM72gpmEe2fkUr/OnOXpWEf8nAgk7ZYVqqfFiyIG7oFfVZcCrU64hWn5xp4tQ9LkV4bTIa5rD0KANpKNA==}
     engines: {node: '>=6.9.0'}
+    deprecated: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-optional-chaining instead.
     peerDependencies:
       '@babel/core': ^7.0.0-0
 
   '@babel/plugin-proposal-private-methods@7.18.6':
     resolution: {integrity: sha512-nutsvktDItsNn4rpGItSNV2sz1XwS+nfU0Rg8aCx3W3NOKVzdMjJRu0O5OkgDp3ZGICSTbgRpxZoWsxoKRvbeA==}
     engines: {node: '>=6.9.0'}
+    deprecated: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-private-methods instead.
     peerDependencies:
       '@babel/core': ^7.0.0-0
 
   '@babel/plugin-proposal-private-property-in-object@7.21.0':
     resolution: {integrity: sha512-ha4zfehbJjc5MmXBlHec1igel5TJXXLDDRbuJ4+XT2TJcyD9/V1919BA8gMvsdHcNMBy4WBUBiRb3nw/EQUtBw==}
     engines: {node: '>=6.9.0'}
+    deprecated: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-private-property-in-object instead.
     peerDependencies:
       '@babel/core': ^7.0.0-0
 
   '@babel/plugin-proposal-unicode-property-regex@7.18.6':
     resolution: {integrity: sha512-2BShG/d5yoZyXZfVePH91urL5wTG6ASZU9M4o03lKK8u8UW1y08OMttBSOADTcJrnPMpvDXRG3G8fyLh4ovs8w==}
     engines: {node: '>=4'}
+    deprecated: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-unicode-property-regex instead.
     peerDependencies:
       '@babel/core': ^7.0.0-0
 
@@ -1138,6 +1144,7 @@ packages:
   '@humanwhocodes/config-array@0.11.8':
     resolution: {integrity: sha512-UybHIJzJnR5Qc/MsD9Kr+RpO2h+/P1GhOwdiLPXK5TWk5sgTdu88bTD9UP+CKbPPh5Rni1u0GjAdYQLemG8g+g==}
     engines: {node: '>=10.10.0'}
+    deprecated: Use @eslint/config-array instead
 
   '@humanwhocodes/module-importer@1.0.1':
     resolution: {integrity: sha512-bxveV4V8v5Yb4ncFTT3rPSgZBOpCkjfK0y4oVVVJwIuDVBRMDXrPyXRL988i5ap9m9bnyEEjWfm5WkBmtffLfA==}
@@ -1145,6 +1152,7 @@ packages:
 
   '@humanwhocodes/object-schema@1.2.1':
     resolution: {integrity: sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==}
+    deprecated: Use @eslint/object-schema instead
 
   '@istanbuljs/load-nyc-config@1.1.0':
     resolution: {integrity: sha512-VjeHSlIzpv/NyD3N0YuHfXOPDIixcA1q2ZV98wsMqcYlPmv2n3Yb2lYP9XMElnaFVXg5A7YLTeLu6V84uQDjmQ==}
@@ -1412,17 +1420,11 @@ packages:
   '@types/babel__traverse@7.14.2':
     resolution: {integrity: sha512-K2waXdXBi2302XUdcHcR1jCeU0LL4TD9HRs/gk0N2Xvrht+G/BfJa4QObBQZfhMdxiCpV3COl5Nfq4uKTeTnJA==}
 
-  '@types/eslint-scope@3.7.4':
-    resolution: {integrity: sha512-9K4zoImiZc3HlIp6AVUDE4CWYx22a+lhSZMYNpbjW04+YF0KWj4pJXnEMjdnFTiQibFFmElcsasJXDbdI/EPhA==}
-
   '@types/eslint@8.21.2':
     resolution: {integrity: sha512-EMpxUyystd3uZVByZap1DACsMXvb82ypQnGn89e1Y0a+LYu3JJscUd/gqhRsVFDkaD2MIiWo0MT8EfXr3DGRKw==}
 
   '@types/eslint@8.37.0':
     resolution: {integrity: sha512-Piet7dG2JBuDIfohBngQ3rCt7MgO9xCO4xIMKxBThCq5PNRB91IjlJ10eJVwfoNtvTErmxLzwBZ7rHZtbOMmFQ==}
-
-  '@types/estree@0.0.51':
-    resolution: {integrity: sha512-CuPgU6f3eT/XgKKPqKd/gLZV1Xmvf1a2R5POBOGQa6uv82xpls89HU5zKeVoyR8XzHd1RGNOlQlvUe3CFkjWNQ==}
 
   '@types/estree@1.0.0':
     resolution: {integrity: sha512-WulqXMDUTYAXCjZnk6JtIHPigp55cVtDgDrO2gHRwhyJto21+1zbVCtOYB2L1F9w4qCQ0rOGWBnBe0FNTiEJIQ==}
@@ -1593,26 +1595,14 @@ packages:
       typescript:
         optional: true
 
-  '@webassemblyjs/ast@1.11.1':
-    resolution: {integrity: sha512-ukBh14qFLjxTQNTXocdyksN5QdM28S1CxHt2rdskFyL+xFV7VremuBLVbmCePj+URalXBENx/9Lm7lnhihtCSw==}
-
   '@webassemblyjs/ast@1.9.0':
     resolution: {integrity: sha512-C6wW5L+b7ogSDVqymbkkvuW9kruN//YisMED04xzeBBqjHa2FYnmvOlS6Xj68xWQRgWvI9cIglsjFowH/RJyEA==}
-
-  '@webassemblyjs/floating-point-hex-parser@1.11.1':
-    resolution: {integrity: sha512-iGRfyc5Bq+NnNuX8b5hwBrRjzf0ocrJPI6GWFodBFzmFnyvrQ83SHKhmilCU/8Jv67i4GJZBMhEzltxzcNagtQ==}
 
   '@webassemblyjs/floating-point-hex-parser@1.9.0':
     resolution: {integrity: sha512-TG5qcFsS8QB4g4MhrxK5TqfdNe7Ey/7YL/xN+36rRjl/BlGE/NcBvJcqsRgCP6Z92mRE+7N50pRIi8SmKUbcQA==}
 
-  '@webassemblyjs/helper-api-error@1.11.1':
-    resolution: {integrity: sha512-RlhS8CBCXfRUR/cwo2ho9bkheSXG0+NwooXcc3PAILALf2QLdFyj7KGsKRbVc95hZnhnERon4kW/D3SZpp6Tcg==}
-
   '@webassemblyjs/helper-api-error@1.9.0':
     resolution: {integrity: sha512-NcMLjoFMXpsASZFxJ5h2HZRcEhDkvnNFOAKneP5RbKRzaWJN36NC4jqQHKwStIhGXu5mUWlUUk7ygdtrO8lbmw==}
-
-  '@webassemblyjs/helper-buffer@1.11.1':
-    resolution: {integrity: sha512-gwikF65aDNeeXa8JxXa2BAk+REjSyhrNC9ZwdT0f8jc4dQQeDQ7G4m0f2QCLPJiMTTO6wfDmRmj/pW0PsUvIcA==}
 
   '@webassemblyjs/helper-buffer@1.9.0':
     resolution: {integrity: sha512-qZol43oqhq6yBPx7YM3m9Bv7WMV9Eevj6kMi6InKOuZxhw+q9hOkvq5e/PpKSiLfyetpaBnogSbNCfBwyB00CA==}
@@ -1626,68 +1616,35 @@ packages:
   '@webassemblyjs/helper-module-context@1.9.0':
     resolution: {integrity: sha512-MJCW8iGC08tMk2enck1aPW+BE5Cw8/7ph/VGZxwyvGbJwjktKkDK7vy7gAmMDx88D7mhDTCNKAW5tED+gZ0W8g==}
 
-  '@webassemblyjs/helper-numbers@1.11.1':
-    resolution: {integrity: sha512-vDkbxiB8zfnPdNK9Rajcey5C0w+QJugEglN0of+kmO8l7lDb77AnlKYQF7aarZuCrv+l0UvqL+68gSDr3k9LPQ==}
-
-  '@webassemblyjs/helper-wasm-bytecode@1.11.1':
-    resolution: {integrity: sha512-PvpoOGiJwXeTrSf/qfudJhwlvDQxFgelbMqtq52WWiXC6Xgg1IREdngmPN3bs4RoO83PnL/nFrxucXj1+BX62Q==}
-
   '@webassemblyjs/helper-wasm-bytecode@1.9.0':
     resolution: {integrity: sha512-R7FStIzyNcd7xKxCZH5lE0Bqy+hGTwS3LJjuv1ZVxd9O7eHCedSdrId/hMOd20I+v8wDXEn+bjfKDLzTepoaUw==}
-
-  '@webassemblyjs/helper-wasm-section@1.11.1':
-    resolution: {integrity: sha512-10P9No29rYX1j7F3EVPX3JvGPQPae+AomuSTPiF9eBQeChHI6iqjMIwR9JmOJXwpnn/oVGDk7I5IlskuMwU/pg==}
 
   '@webassemblyjs/helper-wasm-section@1.9.0':
     resolution: {integrity: sha512-XnMB8l3ek4tvrKUUku+IVaXNHz2YsJyOOmz+MMkZvh8h1uSJpSen6vYnw3IoQ7WwEuAhL8Efjms1ZWjqh2agvw==}
 
-  '@webassemblyjs/ieee754@1.11.1':
-    resolution: {integrity: sha512-hJ87QIPtAMKbFq6CGTkZYJivEwZDbQUgYd3qKSadTNOhVY7p+gfP6Sr0lLRVTaG1JjFj+r3YchoqRYxNH3M0GQ==}
-
   '@webassemblyjs/ieee754@1.9.0':
     resolution: {integrity: sha512-dcX8JuYU/gvymzIHc9DgxTzUUTLexWwt8uCTWP3otys596io0L5aW02Gb1RjYpx2+0Jus1h4ZFqjla7umFniTg==}
-
-  '@webassemblyjs/leb128@1.11.1':
-    resolution: {integrity: sha512-BJ2P0hNZ0u+Th1YZXJpzW6miwqQUGcIHT1G/sf72gLVD9DZ5AdYTqPNbHZh6K1M5VmKvFXwGSWZADz+qBWxeRw==}
 
   '@webassemblyjs/leb128@1.9.0':
     resolution: {integrity: sha512-ENVzM5VwV1ojs9jam6vPys97B/S65YQtv/aanqnU7D8aSoHFX8GyhGg0CMfyKNIHBuAVjy3tlzd5QMMINa7wpw==}
 
-  '@webassemblyjs/utf8@1.11.1':
-    resolution: {integrity: sha512-9kqcxAEdMhiwQkHpkNiorZzqpGrodQQ2IGrHHxCy+Ozng0ofyMA0lTqiLkVs1uzTRejX+/O0EOT7KxqVPuXosQ==}
-
   '@webassemblyjs/utf8@1.9.0':
     resolution: {integrity: sha512-GZbQlWtopBTP0u7cHrEx+73yZKrQoBMpwkGEIqlacljhXCkVM1kMQge/Mf+csMJAjEdSwhOyLAS0AoR3AG5P8w==}
-
-  '@webassemblyjs/wasm-edit@1.11.1':
-    resolution: {integrity: sha512-g+RsupUC1aTHfR8CDgnsVRVZFJqdkFHpsHMfJuWQzWU3tvnLC07UqHICfP+4XyL2tnr1amvl1Sdp06TnYCmVkA==}
 
   '@webassemblyjs/wasm-edit@1.9.0':
     resolution: {integrity: sha512-FgHzBm80uwz5M8WKnMTn6j/sVbqilPdQXTWraSjBwFXSYGirpkSWE2R9Qvz9tNiTKQvoKILpCuTjBKzOIm0nxw==}
 
-  '@webassemblyjs/wasm-gen@1.11.1':
-    resolution: {integrity: sha512-F7QqKXwwNlMmsulj6+O7r4mmtAlCWfO/0HdgOxSklZfQcDu0TpLiD1mRt/zF25Bk59FIjEuGAIyn5ei4yMfLhA==}
-
   '@webassemblyjs/wasm-gen@1.9.0':
     resolution: {integrity: sha512-cPE3o44YzOOHvlsb4+E9qSqjc9Qf9Na1OO/BHFy4OI91XDE14MjFN4lTMezzaIWdPqHnsTodGGNP+iRSYfGkjA==}
 
-  '@webassemblyjs/wasm-opt@1.11.1':
-    resolution: {integrity: sha512-VqnkNqnZlU5EB64pp1l7hdm3hmQw7Vgqa0KF/KCNO9sIpI6Fk6brDEiX+iCOYrvMuBWDws0NkTOxYEb85XQHHw==}
-
   '@webassemblyjs/wasm-opt@1.9.0':
     resolution: {integrity: sha512-Qkjgm6Anhm+OMbIL0iokO7meajkzQD71ioelnfPEj6r4eOFuqm4YC3VBPqXjFyyNwowzbMD+hizmprP/Fwkl2A==}
-
-  '@webassemblyjs/wasm-parser@1.11.1':
-    resolution: {integrity: sha512-rrBujw+dJu32gYB7/Lup6UhdkPx9S9SnobZzRVL7VcBH9Bt9bCBLEuX/YXOOtBsOZ4NQrRykKhffRWHvigQvOA==}
 
   '@webassemblyjs/wasm-parser@1.9.0':
     resolution: {integrity: sha512-9+wkMowR2AmdSWQzsPEjFU7njh8HTO5MqO8vjwEHuM+AMHioNqSBONRdr0NQQ3dVQrzp0s8lTcYqzUdb7YgELA==}
 
   '@webassemblyjs/wast-parser@1.9.0':
     resolution: {integrity: sha512-qsqSAP3QQ3LyZjNC/0jBJ/ToSxfYJ8kYyuiGvtn/8MK89VrNEfwj7BPQzJVHi0jGTRK2dGdJ5PRqhtjzoww+bw==}
-
-  '@webassemblyjs/wast-printer@1.11.1':
-    resolution: {integrity: sha512-IQboUWM4eKzWW+N/jij2sRatKMh99QEelo3Eb2q0qXkvPRISAj8Qxtmw5itwqK+TTkBuUIE45AxYPToqPtL5gg==}
 
   '@webassemblyjs/wast-printer@1.9.0':
     resolution: {integrity: sha512-2J0nE95rHXHyQ24cWjMKJ1tqB/ds8z/cyeOZxJhcb+rW+SQASVjuznUSmdz5GpVJTzU8JkhYut0D3siFDD6wsA==}
@@ -1700,6 +1657,7 @@ packages:
 
   abab@2.0.6:
     resolution: {integrity: sha512-j2afSsaIENvHZN2B8GOpF566vZ5WVk5opAiMTvWgaQT8DkbOqsTfvNAvHoRGU2zzP8cPoqys+xHTRDWW8L+/BA==}
+    deprecated: Use your platform's native atob() and btoa() methods instead
 
   abbrev@1.1.1:
     resolution: {integrity: sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q==}
@@ -1710,11 +1668,6 @@ packages:
 
   acorn-globals@6.0.0:
     resolution: {integrity: sha512-ZQl7LOWaF5ePqqcX4hLuv/bLXYQNfNWw2c0/yX/TsPRKamzHcTGQnlCjHT3TsmkOUVEPS3crCxiPfdzE/Trlhg==}
-
-  acorn-import-assertions@1.8.0:
-    resolution: {integrity: sha512-m7VZ3jwz4eK6A4Vtt8Ew1/mNbP24u0FhdyfA7fSvnJR6LMdfOYnmuIrrJAgrYfYJ10F/otaHTtrtrtmHdMNzEw==}
-    peerDependencies:
-      acorn: ^8
 
   acorn-jsx@5.3.2:
     resolution: {integrity: sha512-rq9s+JNhf0IChjtDXxllJ7g41oZk5SlXtp0LHwyA5cejwn7vKmKp4pPri6YEePv2PU65sAsegbXtIinmDFDXgQ==}
@@ -2087,7 +2040,7 @@ packages:
     resolution: {integrity: sha512-7O+FbCihrB5WGbFYesctwmTKae6rOiIzmz1icreWJ+0aA7LJfuqhEso2T9ncpcFtzMQtzXf2QGGueWJGTYsqrA==}
 
   callsite@1.0.0:
-    resolution: {integrity: sha1-KAOY5dZkvXQDi28JBRU+borxvCA=}
+    resolution: {integrity: sha512-0vdNRFXn5q+dtOqjfFtmtlI9N2eVZ7LMyEV2iKC5mEEFvSg/69Ml6b/WU2qF8W1nLRa0wiSrDT3Y5jOHZCwKPQ==}
 
   callsites@3.1.0:
     resolution: {integrity: sha512-P8BjAsXvZS+VIDUI11hHCQEv74YT67YUi5JJFNWIqL235sBmjX4+qx9Muvls5ivyNENctx46xQLQ3aTuE7ssaQ==}
@@ -2467,6 +2420,7 @@ packages:
 
   copy-concurrently@1.0.5:
     resolution: {integrity: sha512-f2domd9fsVDFtaFcbaRZuYXwtdmnzqbADSwhSWYxYB/Q8zsdUUFMXVRwXGDMWmbEzAn1kdRrtI1T/KTFOL4X2A==}
+    deprecated: This package is no longer supported.
 
   copy-descriptor@0.1.1:
     resolution: {integrity: sha512-XgZ0pFcakEUlbwQEVNg3+QAis1FyTL3Qel9FYy8pSkQqoG3PNoT0bOCQtOXcOkur21r2Eq2kI+IE+gsmAEVlYw==}
@@ -2758,6 +2712,7 @@ packages:
   domexception@4.0.0:
     resolution: {integrity: sha512-A2is4PLG+eeSfoTMA95/s4pvAoSo2mKtiM5jlHkAVewmiO8ISFTFKZjH7UAM1Atli/OT/7JHOrJRJiMKUZKYBw==}
     engines: {node: '>=12'}
+    deprecated: Use your platform's native DOMException instead
 
   domhandler@4.2.2:
     resolution: {integrity: sha512-PzE9aBMsdZO8TK4BnuJwH0QT41wgMbRzuZrHUcpYncEjmQazq8QEaBWgLG7ZyC/DAZKEgglpIA6j4Qn/HmxS3w==}
@@ -2825,10 +2780,6 @@ packages:
     resolution: {integrity: sha512-Nv9m36S/vxpsI+Hc4/ZGRs0n9mXqSWGGq49zxb/cJfPAQMbUtttJAlNPS4AQzaBdw/pKskw5bMbekT/Y7W/Wlg==}
     engines: {node: '>=6.9.0'}
 
-  enhanced-resolve@5.12.0:
-    resolution: {integrity: sha512-QHTXI/sZQmko1cbDoNAa3mJ5qhWUUNAq3vR0/YiD379fWQrcfuoX1+HW2S0MTt7XmoPLapdaDKUtelUSPic7hQ==}
-    engines: {node: '>=10.13.0'}
-
   entities@2.2.0:
     resolution: {integrity: sha512-p92if5Nz619I0w+akJrLZH0MX0Pb5DX39XOwQTtXSdQQOaYH03S1uIQp4mhOZtAXrxq4ViO67YTiLBo2638o9A==}
 
@@ -2849,9 +2800,6 @@ packages:
   es-abstract@1.19.1:
     resolution: {integrity: sha512-2vJ6tjA/UfqLm2MPs7jxVybLoB8i1t1Jd9R3kISld20sIxPcTbLuggQOUxeWeAvIUkduv/CfMjuh4WmiXr2v9w==}
     engines: {node: '>= 0.4'}
-
-  es-module-lexer@0.9.3:
-    resolution: {integrity: sha512-1HQ2M2sPtxwnvOvT1ZClHyQDiggdNjURWpY2we6aMKCQiUVxTmVs2UYPLIrD84sS+kMdUwfBSylbJPwNnBrnHQ==}
 
   es-to-primitive@1.2.1:
     resolution: {integrity: sha512-QCOllgZJtaUo9miYBcLChTUaHNjJF3PYs1VidD7AwiEj1kYxKeQTctLAezAOH5ZKRH0g2IgPn6KwB4IT8iRpvA==}
@@ -2971,6 +2919,7 @@ packages:
   eslint@8.41.0:
     resolution: {integrity: sha512-WQDQpzGBOP5IrXPo4Hc0814r4/v2rrIsB0rhT7jtunIalgg6gYXWhRMOejVO8yH21T/FGaxjmFjBMNqcIlmH1Q==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+    deprecated: This version is no longer supported. Please see https://eslint.org/version-support for other options.
     hasBin: true
 
   espree@6.2.1:
@@ -3091,6 +3040,7 @@ packages:
 
   figgy-pudding@3.5.2:
     resolution: {integrity: sha512-0btnI/H8f2pavGMN8w40mlSKOfTK2SVJmBfBeVIj3kNw0swwgzyRq0d5TJVOwodFmtvpPeWPN/MCcfuWF0Ezbw==}
+    deprecated: This module is no longer supported.
 
   figures@3.2.0:
     resolution: {integrity: sha512-yaduQFRKLXYOGgEn6AZau90j3ggSOyiqXU0F9JZfeXYhNa+Jk4X+s45A2zg5jns87GAFa34BBm2kXw4XpNcbdg==}
@@ -3209,6 +3159,7 @@ packages:
 
   fs-write-stream-atomic@1.0.10:
     resolution: {integrity: sha512-gehEzmPn2nAwr39eay+x3X34Ra+M2QlVUTLhkXPjWdeO8RF9kszk116avgBJM3ZyNHgHXBNx+VmPaFC36k0PzA==}
+    deprecated: This package is no longer supported.
 
   fs.realpath@1.0.0:
     resolution: {integrity: sha512-OO0pH2lK6a0hZnAdau5ItzHPI6pUlvI7jMVnxUQRtw4owF2wk8lOSabtGDCTP4Ggrg2MbGnWO9X8K1t4+fGMDw==}
@@ -3217,7 +3168,7 @@ packages:
     resolution: {integrity: sha512-oWb1Z6mkHIskLzEJ/XWX0srkpkTQ7vaopMQkyaEIoq0fmtFVxOthb8cCxeT+p3ynTdkk/RZwbgG4brR5BeWECw==}
     engines: {node: '>= 4.0'}
     os: [darwin]
-    deprecated: The v1 package contains DANGEROUS / INSECURE binaries. Upgrade to safe fsevents v2
+    deprecated: Upgrade to fsevents v2 to mitigate potential security issues
 
   fsevents@2.3.2:
     resolution: {integrity: sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==}
@@ -3287,6 +3238,7 @@ packages:
 
   glob@7.2.0:
     resolution: {integrity: sha512-lmLf6gtyrPq8tTjSmrO94wBeQbFR3HbLHbuyD69wuyQkImp2hWqMGB47OX65FBkPffO641IP9jWa1z4ivqG26Q==}
+    deprecated: Glob versions prior to v9 are no longer supported
 
   glob@8.1.0:
     resolution: {integrity: sha512-r8hpEjiQEYlF2QU0df3dS+nxxSIreXQS1qRhMJM0Q5NDdR386C7jb7Hwwod8Fgiuex+k0GFjgft18yvxm5XoCQ==}
@@ -3504,6 +3456,7 @@ packages:
 
   inflight@1.0.6:
     resolution: {integrity: sha512-k92I/b08q4wvFscXCLvqfsHCrjrF7yiXsQuIVvVE7N82W3+aqpzuUdBbfhWcy/FZR3/4IgflMgKLOsvPDrGCJA==}
+    deprecated: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
 
   inherits@2.0.1:
     resolution: {integrity: sha512-8nWq2nLTAwd02jTqJExUYFSD/fKq6VH9Y/oG2accc/kdI0V98Bag8d5a4gi3XHz73rDWa2PvTtvcWYquKqSENA==}
@@ -3531,10 +3484,12 @@ packages:
   is-accessor-descriptor@0.1.6:
     resolution: {integrity: sha512-e1BM1qnDbMRG3ll2U9dSK0UMHuWOs3pY3AtcFsmvwPtKL3MML/Q86i+GilLfvqEs4GW+ExB91tQ3Ig9noDIZ+A==}
     engines: {node: '>=0.10.0'}
+    deprecated: Please upgrade to v0.1.7
 
   is-accessor-descriptor@1.0.0:
     resolution: {integrity: sha512-m5hnHTkcVsPfqx3AKlyttIPb7J+XykHvJP2B9bZDjlhLIoEq4XoK64Vg7boZlVWYK6LUY94dYPEE7Lh0ZkZKcQ==}
     engines: {node: '>=0.10.0'}
+    deprecated: Please upgrade to v1.0.1
 
   is-arrayish@0.2.1:
     resolution: {integrity: sha512-zz06S8t0ozoDXMG+ube26zeCTNXcKIPJZJi8hBrF4idCLms4CG9QtK7qBl1boi5ODzFpjswb5JPmHCbMpjaYzg==}
@@ -3567,10 +3522,12 @@ packages:
   is-data-descriptor@0.1.4:
     resolution: {integrity: sha512-+w9D5ulSoBNlmw9OHn3U2v51SyoCd0he+bB3xMl62oijhrspxowjU+AIcDY0N3iEJbUEkB15IlMASQsxYigvXg==}
     engines: {node: '>=0.10.0'}
+    deprecated: Please upgrade to v0.1.5
 
   is-data-descriptor@1.0.0:
     resolution: {integrity: sha512-jbRXy1FmtAoCjQkVmIVYwuuqDFUbaOeDjmed1tOGPrsMhtJA4rD9tkgA0F1qJ3gRFRXcHYVkdeaP50Q5rE/jLQ==}
     engines: {node: '>=0.10.0'}
+    deprecated: Please upgrade to v1.0.1
 
   is-date-object@1.0.5:
     resolution: {integrity: sha512-9YQaSxsAiSwcvS33MBk3wTCVnWK+HhF8VZR2jRxehM16QcVOdHqPn4VPHmRK4lSr38n9JriurInLcP90xsYNfQ==}
@@ -3853,10 +3810,6 @@ packages:
     resolution: {integrity: sha512-KWYVV1c4i+jbMpaBC+U++4Va0cp8OisU185o73T1vo99hqi7w8tSJfUXYswwqqrjzwxa6KpRK54WhPvwf5w6PQ==}
     engines: {node: '>= 10.13.0'}
 
-  jest-worker@27.5.1:
-    resolution: {integrity: sha512-7vuh85V5cdDofPyxn58nrPjBktZo0u9x1g8WtjQol+jZDaE+fhN+cIvTj11GndBnMnyfrUOG1sZQxCdjKh+DKg==}
-    engines: {node: '>= 10.13.0'}
-
   jest-worker@29.5.0:
     resolution: {integrity: sha512-NcrQnevGoSp4b5kg+akIpthoAFHxPBcb5P6mYPY0fUNT+sSvmtu6jlkEle3anczUKIKEbMxFimk9oTP/tpIPgA==}
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
@@ -3880,9 +3833,9 @@ packages:
     engines: {node: '>=10'}
     hasBin: true
 
-  js-cookie@3.0.4:
-    resolution: {integrity: sha512-tlu5VGqPFMP5eBefnmszCFZkPXG2n527NRN9XdNtN6FZ5n/0e98TdDm8BOz290OIIsxtXb9XTJjfqE6gVhOHQw==}
-    engines: {node: '>=14', npm: '>=9.5.0'}
+  js-cookie@3.0.5:
+    resolution: {integrity: sha512-cEiJEAEoIbWfCZYKWhVwFuvPX1gETRYPw6LlaTKoxD3s2AkXzkCjnp6h0V77ozyqj0jakteJ4YqDJT830+lVGw==}
+    engines: {node: '>=14'}
 
   js-tokens@4.0.0:
     resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==}
@@ -4241,6 +4194,7 @@ packages:
 
   move-concurrently@1.0.1:
     resolution: {integrity: sha512-hdrFxZOycD/g6A6SoI2bB5NA/5NEqD0569+S47WZhPvm46sD50ZHdYaFmnua5lndde9rCHGjmfK7Z8BuCt/PcQ==}
+    deprecated: This package is no longer supported.
 
   mri@1.2.0:
     resolution: {integrity: sha512-tzzskb3bG8LvYGFF/mDTpq3jpI6Q9wc3LEmBaghu+DdCssd1FakN7Bc0hVNmEyGq1bq3RgfkCb3cmQLpNPOroA==}
@@ -4359,6 +4313,7 @@ packages:
 
   nuxt@2.16.3:
     resolution: {integrity: sha512-KfqOwtsgo2vew+mHNTQZOf23SlUYYnppH65Rj7whmbXJ+J28Rdvx8ccTj0Mir13TVpjUMtxYBq9VWAL6cFZyOA==}
+    deprecated: Nuxt 2 has reached EOL and is no longer actively maintained. See https://nuxt.com/blog/nuxt2-eol for more details.
     hasBin: true
 
   nwsapi@2.2.1:
@@ -5213,7 +5168,7 @@ packages:
     engines: {node: '>=0.10.0'}
 
   require-package-name@2.0.1:
-    resolution: {integrity: sha1-wR6XJ2tluOKSP3Xav1+y7ww4Qbk=}
+    resolution: {integrity: sha512-uuoJ1hU/k6M0779t3VMVIYpb2VMJk05cehCaABFhXaibcbvfgR8wKiozLjVFSzJPmQMRqIcO0HMyTFqfV09V6Q==}
 
   requireindex@1.2.0:
     resolution: {integrity: sha512-L9jEkOi3ASd9PYit2cwRfyppc9NoABujTP8/5gFcbERmo5jUoAKovIC3fsF17pkTnGsrByysqX+Kxd2OTNI1ww==}
@@ -5264,10 +5219,12 @@ packages:
 
   rimraf@2.7.1:
     resolution: {integrity: sha512-uWjbaKIK3T1OSVptzX7Nl6PvQ3qAGtKEtVRjRuazjfL3Bx5eI409VZSqgND+4UNnmzLVdPj9FqFJNPqBZFve4w==}
+    deprecated: Rimraf versions prior to v4 are no longer supported
     hasBin: true
 
   rimraf@3.0.2:
     resolution: {integrity: sha512-JZkJMZkAGFFPP2YqXZXPbMlMBgsxzE8ILs4lMIX/2o0L9UBw9O/Y3o6wFw/i9YLapcUJWwqbi3kdxIPdC62TIA==}
+    deprecated: Rimraf versions prior to v4 are no longer supported
     hasBin: true
 
   ripemd160@2.0.2:
@@ -5639,6 +5596,7 @@ packages:
   superagent@8.0.9:
     resolution: {integrity: sha512-4C7Bh5pyHTvU33KpZgwrNKh/VQnvgtCSqPRfJAUdmrtSYePVzVg4E4OzsrbkhJj9O7SO6Bnv75K/F8XVZT8YHA==}
     engines: {node: '>=6.4.0 <13 || >=14'}
+    deprecated: Please upgrade to v9.0.0+ as we have fixed a public vulnerability with formidable dependency. Note that v9.0.0+ requires Node.js v14.18.0+. See https://github.com/ladjs/superagent/pull/1800 for insight. This project is supported and maintained by the team at Forward Email @ https://forwardemail.net
 
   supports-color@5.5.0:
     resolution: {integrity: sha512-QjVjwdXIt408MIiAqCX4oUKsgU2EqAGzs2Ppkm4aQYbjm+ZEWEcW4SfFNTr4uMNZma0ey4f5lgLrkB0aX0QMow==}
@@ -5671,10 +5629,6 @@ packages:
     resolution: {integrity: sha512-4WK/bYZmj8xLr+HUCODHGF1ZFzsYffasLUgEiMBY4fgtltdO6B4WJtlSbPaDTLpYTcGVwM2qLnFTICEcNxs3kA==}
     engines: {node: '>=6'}
 
-  tapable@2.2.1:
-    resolution: {integrity: sha512-GNzQvQTOIP6RyTfE2Qxb8ZVlNmw0n88vp1szwWRimP02mnTsx3Wtn5qRdqY9w2XduFNUgvOwhNnQsjwCp+kqaQ==}
-    engines: {node: '>=6'}
-
   tar@6.1.13:
     resolution: {integrity: sha512-jdIBIN6LTIe2jqzay/2vtYLlBHa3JF42ot3h1dW8Q0PaAG4v8rm0cvpVePtau5C6OKXGGcgO9q2AMNSWxiLqKw==}
     engines: {node: '>=10'}
@@ -5690,22 +5644,6 @@ packages:
     engines: {node: '>= 10.13.0'}
     peerDependencies:
       webpack: ^4.0.0 || ^5.0.0
-
-  terser-webpack-plugin@5.3.7:
-    resolution: {integrity: sha512-AfKwIktyP7Cu50xNjXF/6Qb5lBNzYaWpU6YfoX3uZicTx0zTy0stDDCsvjDapKsSDvOeWo5MEq4TmdBy2cNoHw==}
-    engines: {node: '>= 10.13.0'}
-    peerDependencies:
-      '@swc/core': '*'
-      esbuild: '*'
-      uglify-js: '*'
-      webpack: ^5.1.0
-    peerDependenciesMeta:
-      '@swc/core':
-        optional: true
-      esbuild:
-        optional: true
-      uglify-js:
-        optional: true
 
   terser@4.8.0:
     resolution: {integrity: sha512-EAPipTNeWsb/3wLPeup1tVPaXfIaU68xMnVdPafIL1TV05OhASArYyIfFvnvJCNrR2NIOvDVNNTFRa+Re2MWyw==}
@@ -6104,6 +6042,7 @@ packages:
 
   vue@2.7.14:
     resolution: {integrity: sha512-b2qkFyOM0kwqWFuQmgd4o+uHGU7T+2z3T+WQp8UBjADfEv2n4FEMffzBmCKNP0IGzOEEfYjvtcC62xaSKeQDrQ==}
+    deprecated: Vue 2 has reached EOL and is no longer actively maintained. See https://v2.vuejs.org/eol/ for more details.
 
   vuetify-loader@1.7.3:
     resolution: {integrity: sha512-1Kt6Rfvuw3i9BBlxC9WTMnU3WEU7IBWQmDX+fYGAVGpzWCX7oHythUIwPCZGShHSYcPMKSDbXTPP8UvT5RNw8Q==}
@@ -6189,16 +6128,6 @@ packages:
       webpack-cli:
         optional: true
       webpack-command:
-        optional: true
-
-  webpack@5.76.3:
-    resolution: {integrity: sha512-18Qv7uGPU8b2vqGeEEObnfICyw2g39CHlDEK4I7NK13LOur1d0HGmGNKGT58Eluwddpn3oEejwvBPoP4M7/KSA==}
-    engines: {node: '>=10.13.0'}
-    hasBin: true
-    peerDependencies:
-      webpack-cli: '*'
-    peerDependenciesMeta:
-      webpack-cli:
         optional: true
 
   webpackbar@5.0.2:
@@ -7230,7 +7159,7 @@ snapshots:
 
   '@bcoe/v8-coverage@0.2.3': {}
 
-  '@csstools/cascade-layer-name-parser@1.0.1(@csstools/css-parser-algorithms@2.1.0)(@csstools/css-tokenizer@2.1.0)':
+  '@csstools/cascade-layer-name-parser@1.0.1(@csstools/css-parser-algorithms@2.1.0(@csstools/css-tokenizer@2.1.0))(@csstools/css-tokenizer@2.1.0)':
     dependencies:
       '@csstools/css-parser-algorithms': 2.1.0(@csstools/css-tokenizer@2.1.0)
       '@csstools/css-tokenizer': 2.1.0
@@ -7239,15 +7168,15 @@ snapshots:
 
   '@csstools/color-helpers@2.0.0': {}
 
-  '@csstools/css-calc@1.0.1(@csstools/css-parser-algorithms@2.1.0)(@csstools/css-tokenizer@2.1.0)':
+  '@csstools/css-calc@1.0.1(@csstools/css-parser-algorithms@2.1.0(@csstools/css-tokenizer@2.1.0))(@csstools/css-tokenizer@2.1.0)':
     dependencies:
       '@csstools/css-parser-algorithms': 2.1.0(@csstools/css-tokenizer@2.1.0)
       '@csstools/css-tokenizer': 2.1.0
 
-  '@csstools/css-color-parser@1.1.0(@csstools/css-parser-algorithms@2.1.0)(@csstools/css-tokenizer@2.1.0)':
+  '@csstools/css-color-parser@1.1.0(@csstools/css-parser-algorithms@2.1.0(@csstools/css-tokenizer@2.1.0))(@csstools/css-tokenizer@2.1.0)':
     dependencies:
       '@csstools/color-helpers': 2.0.0
-      '@csstools/css-calc': 1.0.1(@csstools/css-parser-algorithms@2.1.0)(@csstools/css-tokenizer@2.1.0)
+      '@csstools/css-calc': 1.0.1(@csstools/css-parser-algorithms@2.1.0(@csstools/css-tokenizer@2.1.0))(@csstools/css-tokenizer@2.1.0)
       '@csstools/css-parser-algorithms': 2.1.0(@csstools/css-tokenizer@2.1.0)
       '@csstools/css-tokenizer': 2.1.0
 
@@ -7257,7 +7186,7 @@ snapshots:
 
   '@csstools/css-tokenizer@2.1.0': {}
 
-  '@csstools/media-query-list-parser@2.0.2(@csstools/css-parser-algorithms@2.1.0)(@csstools/css-tokenizer@2.1.0)':
+  '@csstools/media-query-list-parser@2.0.2(@csstools/css-parser-algorithms@2.1.0(@csstools/css-tokenizer@2.1.0))(@csstools/css-tokenizer@2.1.0)':
     dependencies:
       '@csstools/css-parser-algorithms': 2.1.0(@csstools/css-tokenizer@2.1.0)
       '@csstools/css-tokenizer': 2.1.0
@@ -7270,7 +7199,7 @@ snapshots:
 
   '@csstools/postcss-color-function@2.2.0(postcss@8.4.21)':
     dependencies:
-      '@csstools/css-color-parser': 1.1.0(@csstools/css-parser-algorithms@2.1.0)(@csstools/css-tokenizer@2.1.0)
+      '@csstools/css-color-parser': 1.1.0(@csstools/css-parser-algorithms@2.1.0(@csstools/css-tokenizer@2.1.0))(@csstools/css-tokenizer@2.1.0)
       '@csstools/css-parser-algorithms': 2.1.0(@csstools/css-tokenizer@2.1.0)
       '@csstools/css-tokenizer': 2.1.0
       '@csstools/postcss-progressive-custom-properties': 2.1.1(postcss@8.4.21)
@@ -7278,7 +7207,7 @@ snapshots:
 
   '@csstools/postcss-color-mix-function@1.0.0(postcss@8.4.21)':
     dependencies:
-      '@csstools/css-color-parser': 1.1.0(@csstools/css-parser-algorithms@2.1.0)(@csstools/css-tokenizer@2.1.0)
+      '@csstools/css-color-parser': 1.1.0(@csstools/css-parser-algorithms@2.1.0(@csstools/css-tokenizer@2.1.0))(@csstools/css-tokenizer@2.1.0)
       '@csstools/css-parser-algorithms': 2.1.0(@csstools/css-tokenizer@2.1.0)
       '@csstools/css-tokenizer': 2.1.0
       '@csstools/postcss-progressive-custom-properties': 2.1.1(postcss@8.4.21)
@@ -7291,7 +7220,7 @@ snapshots:
 
   '@csstools/postcss-gradients-interpolation-method@3.0.1(postcss@8.4.21)':
     dependencies:
-      '@csstools/css-color-parser': 1.1.0(@csstools/css-parser-algorithms@2.1.0)(@csstools/css-tokenizer@2.1.0)
+      '@csstools/css-color-parser': 1.1.0(@csstools/css-parser-algorithms@2.1.0(@csstools/css-tokenizer@2.1.0))(@csstools/css-tokenizer@2.1.0)
       '@csstools/css-parser-algorithms': 2.1.0(@csstools/css-tokenizer@2.1.0)
       '@csstools/css-tokenizer': 2.1.0
       '@csstools/postcss-progressive-custom-properties': 2.1.1(postcss@8.4.21)
@@ -7299,7 +7228,7 @@ snapshots:
 
   '@csstools/postcss-hwb-function@2.2.0(postcss@8.4.21)':
     dependencies:
-      '@csstools/css-color-parser': 1.1.0(@csstools/css-parser-algorithms@2.1.0)(@csstools/css-tokenizer@2.1.0)
+      '@csstools/css-color-parser': 1.1.0(@csstools/css-parser-algorithms@2.1.0(@csstools/css-tokenizer@2.1.0))(@csstools/css-tokenizer@2.1.0)
       '@csstools/css-parser-algorithms': 2.1.0(@csstools/css-tokenizer@2.1.0)
       '@csstools/css-tokenizer': 2.1.0
       postcss: 8.4.21
@@ -7334,7 +7263,7 @@ snapshots:
     dependencies:
       '@csstools/css-parser-algorithms': 2.1.0(@csstools/css-tokenizer@2.1.0)
       '@csstools/css-tokenizer': 2.1.0
-      '@csstools/media-query-list-parser': 2.0.2(@csstools/css-parser-algorithms@2.1.0)(@csstools/css-tokenizer@2.1.0)
+      '@csstools/media-query-list-parser': 2.0.2(@csstools/css-parser-algorithms@2.1.0(@csstools/css-tokenizer@2.1.0))(@csstools/css-tokenizer@2.1.0)
       postcss: 8.4.21
 
   '@csstools/postcss-nested-calc@2.0.2(postcss@8.4.21)':
@@ -7349,7 +7278,7 @@ snapshots:
 
   '@csstools/postcss-oklab-function@2.2.0(postcss@8.4.21)':
     dependencies:
-      '@csstools/css-color-parser': 1.1.0(@csstools/css-parser-algorithms@2.1.0)(@csstools/css-tokenizer@2.1.0)
+      '@csstools/css-color-parser': 1.1.0(@csstools/css-parser-algorithms@2.1.0(@csstools/css-tokenizer@2.1.0))(@csstools/css-tokenizer@2.1.0)
       '@csstools/css-parser-algorithms': 2.1.0(@csstools/css-tokenizer@2.1.0)
       '@csstools/css-tokenizer': 2.1.0
       '@csstools/postcss-progressive-custom-properties': 2.1.1(postcss@8.4.21)
@@ -7367,7 +7296,7 @@ snapshots:
 
   '@csstools/postcss-stepped-value-functions@2.1.0(postcss@8.4.21)':
     dependencies:
-      '@csstools/css-calc': 1.0.1(@csstools/css-parser-algorithms@2.1.0)(@csstools/css-tokenizer@2.1.0)
+      '@csstools/css-calc': 1.0.1(@csstools/css-parser-algorithms@2.1.0(@csstools/css-tokenizer@2.1.0))(@csstools/css-tokenizer@2.1.0)
       '@csstools/css-parser-algorithms': 2.1.0(@csstools/css-tokenizer@2.1.0)
       '@csstools/css-tokenizer': 2.1.0
       postcss: 8.4.21
@@ -7380,7 +7309,7 @@ snapshots:
 
   '@csstools/postcss-trigonometric-functions@2.1.0(postcss@8.4.21)':
     dependencies:
-      '@csstools/css-calc': 1.0.1(@csstools/css-parser-algorithms@2.1.0)(@csstools/css-tokenizer@2.1.0)
+      '@csstools/css-calc': 1.0.1(@csstools/css-parser-algorithms@2.1.0(@csstools/css-tokenizer@2.1.0))(@csstools/css-tokenizer@2.1.0)
       '@csstools/css-parser-algorithms': 2.1.0(@csstools/css-tokenizer@2.1.0)
       '@csstools/css-tokenizer': 2.1.0
       postcss: 8.4.21
@@ -7913,9 +7842,9 @@ snapshots:
       node-html-parser: 6.1.5
       ufo: 1.1.2
 
-  '@nuxt/kit@3.5.0':
+  '@nuxt/kit@3.5.0(rollup@3.20.2)':
     dependencies:
-      '@nuxt/schema': 3.5.0
+      '@nuxt/schema': 3.5.0(rollup@3.20.2)
       c12: 1.4.1
       consola: 3.1.0
       defu: 6.1.2
@@ -7931,7 +7860,7 @@ snapshots:
       scule: 1.0.0
       semver: 7.5.1
       unctx: 2.3.0
-      unimport: 3.0.6
+      unimport: 3.0.6(rollup@3.20.2)
       untyped: 1.3.2
     transitivePeerDependencies:
       - rollup
@@ -7955,7 +7884,7 @@ snapshots:
     transitivePeerDependencies:
       - encoding
 
-  '@nuxt/schema@3.5.0':
+  '@nuxt/schema@3.5.0(rollup@3.20.2)':
     dependencies:
       defu: 6.1.2
       hookable: 5.5.3
@@ -7964,7 +7893,7 @@ snapshots:
       postcss-import-resolver: 2.0.0
       std-env: 3.3.3
       ufo: 1.1.2
-      unimport: 3.0.6
+      unimport: 3.0.6(rollup@3.20.2)
       untyped: 1.3.2
     transitivePeerDependencies:
       - rollup
@@ -8094,8 +8023,8 @@ snapshots:
       time-fix-plugin: 2.0.7(webpack@4.46.0)
       ufo: 1.1.2
       upath: 2.0.1
-      url-loader: 4.1.1(file-loader@6.2.0)(webpack@4.46.0)
-      vue-loader: 15.10.1(cache-loader@4.1.0)(css-loader@5.2.7)(lodash@4.17.21)(vue-template-compiler@2.7.14)(webpack@4.46.0)
+      url-loader: 4.1.1(file-loader@6.2.0(webpack@4.46.0))(webpack@4.46.0)
+      vue-loader: 15.10.1(cache-loader@4.1.0(webpack@4.46.0))(css-loader@5.2.7(webpack@4.46.0))(lodash@4.17.21)(vue-template-compiler@2.7.14)(webpack@4.46.0)
       vue-style-loader: 4.1.3
       vue-template-compiler: 2.7.14
       watchpack: 2.4.0
@@ -8182,14 +8111,14 @@ snapshots:
     dependencies:
       lru-cache: 6.0.0
 
-  '@nuxtjs/eslint-module@4.1.0(eslint@8.41.0)(vite@4.2.1)(webpack@5.76.3)':
+  '@nuxtjs/eslint-module@4.1.0(eslint@8.41.0)(rollup@3.20.2)(vite@4.2.1(@types/node@16.11.6)(sass@1.32.13)(stylus@0.59.0)(terser@5.16.8))(webpack@4.46.0)':
     dependencies:
-      '@nuxt/kit': 3.5.0
+      '@nuxt/kit': 3.5.0(rollup@3.20.2)
       chokidar: 3.5.3
       eslint: 8.41.0
-      eslint-webpack-plugin: 4.0.1(eslint@8.41.0)(webpack@5.76.3)
+      eslint-webpack-plugin: 4.0.1(eslint@8.41.0)(webpack@4.46.0)
       pathe: 1.1.0
-      vite-plugin-eslint: 1.8.1(eslint@8.41.0)(vite@4.2.1)
+      vite-plugin-eslint: 1.8.1(eslint@8.41.0)(vite@4.2.1(@types/node@16.11.6)(sass@1.32.13)(stylus@0.59.0)(terser@5.16.8))
     transitivePeerDependencies:
       - rollup
       - supports-color
@@ -8202,13 +8131,13 @@ snapshots:
     transitivePeerDependencies:
       - debug
 
-  '@nuxtjs/vuetify@1.12.3(vue-template-compiler@2.7.14)(vue@2.7.14)(webpack@5.76.3)':
+  '@nuxtjs/vuetify@1.12.3(vue-template-compiler@2.7.14)(vue@2.7.14)(webpack@4.46.0)':
     dependencies:
       deepmerge: 4.2.2
       sass: 1.32.13
-      sass-loader: 10.2.0(sass@1.32.13)(webpack@5.76.3)
+      sass-loader: 10.2.0(sass@1.32.13)(webpack@4.46.0)
       vuetify: 2.6.5(vue@2.7.14)
-      vuetify-loader: 1.7.3(vue-template-compiler@2.7.14)(vuetify@2.6.5)(webpack@5.76.3)
+      vuetify-loader: 1.7.3(vue-template-compiler@2.7.14)(vuetify@2.6.5(vue@2.7.14))(webpack@4.46.0)
     transitivePeerDependencies:
       - fibers
       - node-sass
@@ -8229,11 +8158,13 @@ snapshots:
       estree-walker: 2.0.2
       picomatch: 2.3.1
 
-  '@rollup/pluginutils@5.0.2':
+  '@rollup/pluginutils@5.0.2(rollup@3.20.2)':
     dependencies:
       '@types/estree': 1.0.0
       estree-walker: 2.0.2
       picomatch: 2.3.1
+    optionalDependencies:
+      rollup: 3.20.2
 
   '@sinclair/typebox@0.25.21': {}
 
@@ -8270,11 +8201,6 @@ snapshots:
     dependencies:
       '@babel/types': 7.22.0
 
-  '@types/eslint-scope@3.7.4':
-    dependencies:
-      '@types/eslint': 8.37.0
-      '@types/estree': 1.0.0
-
   '@types/eslint@8.21.2':
     dependencies:
       '@types/estree': 1.0.0
@@ -8284,8 +8210,6 @@ snapshots:
     dependencies:
       '@types/estree': 1.0.0
       '@types/json-schema': 7.0.9
-
-  '@types/estree@0.0.51': {}
 
   '@types/estree@1.0.0': {}
 
@@ -8376,6 +8300,7 @@ snapshots:
       is-glob: 4.0.3
       semver: 7.5.1
       tsutils: 3.21.0(typescript@5.5.4)
+    optionalDependencies:
       typescript: 5.5.4
     transitivePeerDependencies:
       - supports-color
@@ -8421,6 +8346,7 @@ snapshots:
       '@vue/babel-sugar-inject-h': 1.4.0(@babel/core@7.22.1)
       '@vue/babel-sugar-v-model': 1.4.0(@babel/core@7.22.1)
       '@vue/babel-sugar-v-on': 1.4.0(@babel/core@7.22.1)
+    optionalDependencies:
       vue: 2.7.14
 
   '@vue/babel-sugar-composition-api-inject-h@1.4.0(@babel/core@7.22.1)':
@@ -8541,7 +8467,7 @@ snapshots:
       vue: 2.7.14
       vue-template-compiler: 2.7.14
 
-  '@vue/vue2-jest@29.2.6(@babel/core@7.22.1)(babel-jest@29.5.0)(jest@29.5.0)(lodash@4.17.21)(typescript@5.5.4)(vue-template-compiler@2.7.14)(vue@2.7.14)':
+  '@vue/vue2-jest@29.2.6(@babel/core@7.22.1)(babel-jest@29.5.0(@babel/core@7.22.1))(jest@29.5.0(@types/node@16.11.6))(lodash@4.17.21)(typescript@5.5.4)(vue-template-compiler@2.7.14)(vue@2.7.14)':
     dependencies:
       '@babel/core': 7.22.1
       '@babel/plugin-transform-modules-commonjs': 7.21.5(@babel/core@7.22.1)
@@ -8549,12 +8475,13 @@ snapshots:
       babel-jest: 29.5.0(@babel/core@7.22.1)
       chalk: 2.4.2
       css-tree: 2.1.0
-      jest: 29.5.0
+      jest: 29.5.0(@types/node@16.11.6)
       source-map: 0.5.6
       tsconfig: 7.0.0
-      typescript: 5.5.4
       vue: 2.7.14
       vue-template-compiler: 2.7.14
+    optionalDependencies:
+      typescript: 5.5.4
     transitivePeerDependencies:
       - arc-templates
       - atpl
@@ -8611,26 +8538,15 @@ snapshots:
       - walrus
       - whiskers
 
-  '@webassemblyjs/ast@1.11.1':
-    dependencies:
-      '@webassemblyjs/helper-numbers': 1.11.1
-      '@webassemblyjs/helper-wasm-bytecode': 1.11.1
-
   '@webassemblyjs/ast@1.9.0':
     dependencies:
       '@webassemblyjs/helper-module-context': 1.9.0
       '@webassemblyjs/helper-wasm-bytecode': 1.9.0
       '@webassemblyjs/wast-parser': 1.9.0
 
-  '@webassemblyjs/floating-point-hex-parser@1.11.1': {}
-
   '@webassemblyjs/floating-point-hex-parser@1.9.0': {}
 
-  '@webassemblyjs/helper-api-error@1.11.1': {}
-
   '@webassemblyjs/helper-api-error@1.9.0': {}
-
-  '@webassemblyjs/helper-buffer@1.11.1': {}
 
   '@webassemblyjs/helper-buffer@1.9.0': {}
 
@@ -8644,22 +8560,7 @@ snapshots:
     dependencies:
       '@webassemblyjs/ast': 1.9.0
 
-  '@webassemblyjs/helper-numbers@1.11.1':
-    dependencies:
-      '@webassemblyjs/floating-point-hex-parser': 1.11.1
-      '@webassemblyjs/helper-api-error': 1.11.1
-      '@xtuc/long': 4.2.2
-
-  '@webassemblyjs/helper-wasm-bytecode@1.11.1': {}
-
   '@webassemblyjs/helper-wasm-bytecode@1.9.0': {}
-
-  '@webassemblyjs/helper-wasm-section@1.11.1':
-    dependencies:
-      '@webassemblyjs/ast': 1.11.1
-      '@webassemblyjs/helper-buffer': 1.11.1
-      '@webassemblyjs/helper-wasm-bytecode': 1.11.1
-      '@webassemblyjs/wasm-gen': 1.11.1
 
   '@webassemblyjs/helper-wasm-section@1.9.0':
     dependencies:
@@ -8668,36 +8569,15 @@ snapshots:
       '@webassemblyjs/helper-wasm-bytecode': 1.9.0
       '@webassemblyjs/wasm-gen': 1.9.0
 
-  '@webassemblyjs/ieee754@1.11.1':
-    dependencies:
-      '@xtuc/ieee754': 1.2.0
-
   '@webassemblyjs/ieee754@1.9.0':
     dependencies:
       '@xtuc/ieee754': 1.2.0
-
-  '@webassemblyjs/leb128@1.11.1':
-    dependencies:
-      '@xtuc/long': 4.2.2
 
   '@webassemblyjs/leb128@1.9.0':
     dependencies:
       '@xtuc/long': 4.2.2
 
-  '@webassemblyjs/utf8@1.11.1': {}
-
   '@webassemblyjs/utf8@1.9.0': {}
-
-  '@webassemblyjs/wasm-edit@1.11.1':
-    dependencies:
-      '@webassemblyjs/ast': 1.11.1
-      '@webassemblyjs/helper-buffer': 1.11.1
-      '@webassemblyjs/helper-wasm-bytecode': 1.11.1
-      '@webassemblyjs/helper-wasm-section': 1.11.1
-      '@webassemblyjs/wasm-gen': 1.11.1
-      '@webassemblyjs/wasm-opt': 1.11.1
-      '@webassemblyjs/wasm-parser': 1.11.1
-      '@webassemblyjs/wast-printer': 1.11.1
 
   '@webassemblyjs/wasm-edit@1.9.0':
     dependencies:
@@ -8710,14 +8590,6 @@ snapshots:
       '@webassemblyjs/wasm-parser': 1.9.0
       '@webassemblyjs/wast-printer': 1.9.0
 
-  '@webassemblyjs/wasm-gen@1.11.1':
-    dependencies:
-      '@webassemblyjs/ast': 1.11.1
-      '@webassemblyjs/helper-wasm-bytecode': 1.11.1
-      '@webassemblyjs/ieee754': 1.11.1
-      '@webassemblyjs/leb128': 1.11.1
-      '@webassemblyjs/utf8': 1.11.1
-
   '@webassemblyjs/wasm-gen@1.9.0':
     dependencies:
       '@webassemblyjs/ast': 1.9.0
@@ -8726,28 +8598,12 @@ snapshots:
       '@webassemblyjs/leb128': 1.9.0
       '@webassemblyjs/utf8': 1.9.0
 
-  '@webassemblyjs/wasm-opt@1.11.1':
-    dependencies:
-      '@webassemblyjs/ast': 1.11.1
-      '@webassemblyjs/helper-buffer': 1.11.1
-      '@webassemblyjs/wasm-gen': 1.11.1
-      '@webassemblyjs/wasm-parser': 1.11.1
-
   '@webassemblyjs/wasm-opt@1.9.0':
     dependencies:
       '@webassemblyjs/ast': 1.9.0
       '@webassemblyjs/helper-buffer': 1.9.0
       '@webassemblyjs/wasm-gen': 1.9.0
       '@webassemblyjs/wasm-parser': 1.9.0
-
-  '@webassemblyjs/wasm-parser@1.11.1':
-    dependencies:
-      '@webassemblyjs/ast': 1.11.1
-      '@webassemblyjs/helper-api-error': 1.11.1
-      '@webassemblyjs/helper-wasm-bytecode': 1.11.1
-      '@webassemblyjs/ieee754': 1.11.1
-      '@webassemblyjs/leb128': 1.11.1
-      '@webassemblyjs/utf8': 1.11.1
 
   '@webassemblyjs/wasm-parser@1.9.0':
     dependencies:
@@ -8765,11 +8621,6 @@ snapshots:
       '@webassemblyjs/helper-api-error': 1.9.0
       '@webassemblyjs/helper-code-frame': 1.9.0
       '@webassemblyjs/helper-fsm': 1.9.0
-      '@xtuc/long': 4.2.2
-
-  '@webassemblyjs/wast-printer@1.11.1':
-    dependencies:
-      '@webassemblyjs/ast': 1.11.1
       '@xtuc/long': 4.2.2
 
   '@webassemblyjs/wast-printer@1.9.0':
@@ -8795,10 +8646,6 @@ snapshots:
     dependencies:
       acorn: 7.4.1
       acorn-walk: 7.2.0
-
-  acorn-import-assertions@1.8.0(acorn@8.8.2):
-    dependencies:
-      acorn: 8.8.2
 
   acorn-jsx@5.3.2(acorn@7.4.1):
     dependencies:
@@ -8834,7 +8681,7 @@ snapshots:
       ajv: 6.12.6
 
   ajv-formats@2.1.1(ajv@8.12.0):
-    dependencies:
+    optionalDependencies:
       ajv: 8.12.0
 
   ajv-keywords@3.5.2(ajv@6.12.6):
@@ -9541,6 +9388,7 @@ snapshots:
   consolidate@0.15.1(lodash@4.17.21):
     dependencies:
       bluebird: 3.7.2
+    optionalDependencies:
       lodash: 4.17.21
 
   constants-browserify@1.0.0: {}
@@ -9960,11 +9808,6 @@ snapshots:
       memory-fs: 0.5.0
       tapable: 1.1.3
 
-  enhanced-resolve@5.12.0:
-    dependencies:
-      graceful-fs: 4.2.9
-      tapable: 2.2.1
-
   entities@2.2.0: {}
 
   entities@4.3.1: {}
@@ -10003,8 +9846,6 @@ snapshots:
       string.prototype.trimend: 1.0.4
       string.prototype.trimstart: 1.0.4
       unbox-primitive: 1.0.1
-
-  es-module-lexer@0.9.3: {}
 
   es-to-primitive@1.2.1:
     dependencies:
@@ -10058,11 +9899,12 @@ snapshots:
     optionalDependencies:
       source-map: 0.6.1
 
-  eslint-plugin-jest@27.9.0(eslint@8.41.0)(jest@29.5.0)(typescript@5.5.4):
+  eslint-plugin-jest@27.9.0(eslint@8.41.0)(jest@29.5.0(@types/node@16.11.6))(typescript@5.5.4):
     dependencies:
       '@typescript-eslint/utils': 5.10.0(eslint@8.41.0)(typescript@5.5.4)
       eslint: 8.41.0
-      jest: 29.5.0
+    optionalDependencies:
+      jest: 29.5.0(@types/node@16.11.6)
     transitivePeerDependencies:
       - supports-color
       - typescript
@@ -10095,7 +9937,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  eslint-plugin-vuetify@1.1.0(eslint@8.41.0)(vuetify@2.6.5):
+  eslint-plugin-vuetify@1.1.0(eslint@8.41.0)(vuetify@2.6.5(vue@2.7.14)):
     dependencies:
       eslint: 8.41.0
       eslint-plugin-vue: 7.20.0(eslint@8.41.0)
@@ -10134,7 +9976,7 @@ snapshots:
 
   eslint-visitor-keys@3.4.1: {}
 
-  eslint-webpack-plugin@4.0.1(eslint@8.41.0)(webpack@5.76.3):
+  eslint-webpack-plugin@4.0.1(eslint@8.41.0)(webpack@4.46.0):
     dependencies:
       '@types/eslint': 8.37.0
       eslint: 8.41.0
@@ -10142,7 +9984,7 @@ snapshots:
       micromatch: 4.0.5
       normalize-path: 3.0.0
       schema-utils: 4.0.0
-      webpack: 5.76.3
+      webpack: 4.46.0
 
   eslint@8.41.0:
     dependencies:
@@ -10344,12 +10186,6 @@ snapshots:
       loader-utils: 2.0.2
       schema-utils: 3.1.1
       webpack: 4.46.0
-
-  file-loader@6.2.0(webpack@5.76.3):
-    dependencies:
-      loader-utils: 2.0.2
-      schema-utils: 3.1.1
-      webpack: 5.76.3
 
   file-uri-to-path@1.0.0:
     optional: true
@@ -11060,7 +10896,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  jest-cli@29.5.0:
+  jest-cli@29.5.0(@types/node@16.11.6):
     dependencies:
       '@jest/core': 29.5.0
       '@jest/test-result': 29.5.0
@@ -11084,7 +10920,6 @@ snapshots:
       '@babel/core': 7.22.1
       '@jest/test-sequencer': 29.5.0
       '@jest/types': 29.5.0
-      '@types/node': 16.11.6
       babel-jest: 29.5.0(@babel/core@7.22.1)
       chalk: 4.1.2
       ci-info: 3.8.0
@@ -11104,6 +10939,8 @@ snapshots:
       pretty-format: 29.5.0
       slash: 3.0.0
       strip-json-comments: 3.1.1
+    optionalDependencies:
+      '@types/node': 16.11.6
     transitivePeerDependencies:
       - supports-color
 
@@ -11199,7 +11036,7 @@ snapshots:
       jest-util: 29.5.0
 
   jest-pnp-resolver@1.2.2(jest-resolve@29.5.0):
-    dependencies:
+    optionalDependencies:
       jest-resolve: 29.5.0
 
   jest-regex-util@29.4.3: {}
@@ -11343,12 +11180,6 @@ snapshots:
       merge-stream: 2.0.0
       supports-color: 7.2.0
 
-  jest-worker@27.5.1:
-    dependencies:
-      '@types/node': 16.11.6
-      merge-stream: 2.0.0
-      supports-color: 8.1.1
-
   jest-worker@29.5.0:
     dependencies:
       '@types/node': 16.11.6
@@ -11356,12 +11187,12 @@ snapshots:
       merge-stream: 2.0.0
       supports-color: 8.1.1
 
-  jest@29.5.0:
+  jest@29.5.0(@types/node@16.11.6):
     dependencies:
       '@jest/core': 29.5.0
       '@jest/types': 29.5.0
       import-local: 3.0.3
-      jest-cli: 29.5.0
+      jest-cli: 29.5.0(@types/node@16.11.6)
     transitivePeerDependencies:
       - '@types/node'
       - supports-color
@@ -11376,7 +11207,7 @@ snapshots:
       glob: 7.2.0
       nopt: 5.0.0
 
-  js-cookie@3.0.4: {}
+  js-cookie@3.0.5: {}
 
   js-tokens@4.0.0: {}
 
@@ -12273,15 +12104,15 @@ snapshots:
 
   postcss-custom-media@9.1.2(postcss@8.4.21):
     dependencies:
-      '@csstools/cascade-layer-name-parser': 1.0.1(@csstools/css-parser-algorithms@2.1.0)(@csstools/css-tokenizer@2.1.0)
+      '@csstools/cascade-layer-name-parser': 1.0.1(@csstools/css-parser-algorithms@2.1.0(@csstools/css-tokenizer@2.1.0))(@csstools/css-tokenizer@2.1.0)
       '@csstools/css-parser-algorithms': 2.1.0(@csstools/css-tokenizer@2.1.0)
       '@csstools/css-tokenizer': 2.1.0
-      '@csstools/media-query-list-parser': 2.0.2(@csstools/css-parser-algorithms@2.1.0)(@csstools/css-tokenizer@2.1.0)
+      '@csstools/media-query-list-parser': 2.0.2(@csstools/css-parser-algorithms@2.1.0(@csstools/css-tokenizer@2.1.0))(@csstools/css-tokenizer@2.1.0)
       postcss: 8.4.21
 
   postcss-custom-properties@13.1.4(postcss@8.4.21):
     dependencies:
-      '@csstools/cascade-layer-name-parser': 1.0.1(@csstools/css-parser-algorithms@2.1.0)(@csstools/css-tokenizer@2.1.0)
+      '@csstools/cascade-layer-name-parser': 1.0.1(@csstools/css-parser-algorithms@2.1.0(@csstools/css-tokenizer@2.1.0))(@csstools/css-tokenizer@2.1.0)
       '@csstools/css-parser-algorithms': 2.1.0(@csstools/css-tokenizer@2.1.0)
       '@csstools/css-tokenizer': 2.1.0
       postcss: 8.4.21
@@ -12289,7 +12120,7 @@ snapshots:
 
   postcss-custom-selectors@7.1.2(postcss@8.4.21):
     dependencies:
-      '@csstools/cascade-layer-name-parser': 1.0.1(@csstools/css-parser-algorithms@2.1.0)(@csstools/css-tokenizer@2.1.0)
+      '@csstools/cascade-layer-name-parser': 1.0.1(@csstools/css-parser-algorithms@2.1.0(@csstools/css-tokenizer@2.1.0))(@csstools/css-tokenizer@2.1.0)
       '@csstools/css-parser-algorithms': 2.1.0(@csstools/css-tokenizer@2.1.0)
       '@csstools/css-tokenizer': 2.1.0
       postcss: 8.4.21
@@ -12362,7 +12193,7 @@ snapshots:
 
   postcss-lab-function@5.2.0(postcss@8.4.21):
     dependencies:
-      '@csstools/css-color-parser': 1.1.0(@csstools/css-parser-algorithms@2.1.0)(@csstools/css-tokenizer@2.1.0)
+      '@csstools/css-color-parser': 1.1.0(@csstools/css-parser-algorithms@2.1.0(@csstools/css-tokenizer@2.1.0))(@csstools/css-tokenizer@2.1.0)
       '@csstools/css-parser-algorithms': 2.1.0(@csstools/css-tokenizer@2.1.0)
       '@csstools/css-tokenizer': 2.1.0
       '@csstools/postcss-progressive-custom-properties': 2.1.1(postcss@8.4.21)
@@ -12680,7 +12511,7 @@ snapshots:
   process@0.11.10: {}
 
   promise-inflight@1.0.1(bluebird@3.7.2):
-    dependencies:
+    optionalDependencies:
       bluebird: 3.7.2
 
   prompts@2.4.2:
@@ -12939,15 +12770,16 @@ snapshots:
 
   safer-buffer@2.1.2: {}
 
-  sass-loader@10.2.0(sass@1.32.13)(webpack@5.76.3):
+  sass-loader@10.2.0(sass@1.32.13)(webpack@4.46.0):
     dependencies:
       klona: 2.0.6
       loader-utils: 2.0.2
       neo-async: 2.6.2
-      sass: 1.32.13
       schema-utils: 3.1.1
       semver: 7.5.1
-      webpack: 5.76.3
+      webpack: 4.46.0
+    optionalDependencies:
+      sass: 1.32.13
 
   sass@1.32.13:
     dependencies:
@@ -13272,12 +13104,12 @@ snapshots:
       postcss: 8.4.21
       postcss-selector-parser: 6.0.10
 
-  stylus-loader@7.1.3(stylus@0.59.0)(webpack@5.76.3):
+  stylus-loader@7.1.3(stylus@0.59.0)(webpack@4.46.0):
     dependencies:
       fast-glob: 3.2.12
       normalize-path: 3.0.0
       stylus: 0.59.0
-      webpack: 5.76.3
+      webpack: 4.46.0
 
   stylus@0.59.0:
     dependencies:
@@ -13334,8 +13166,6 @@ snapshots:
 
   tapable@1.1.3: {}
 
-  tapable@2.2.1: {}
-
   tar@6.1.13:
     dependencies:
       chownr: 2.0.0
@@ -13372,15 +13202,6 @@ snapshots:
       webpack-sources: 1.4.3
     transitivePeerDependencies:
       - bluebird
-
-  terser-webpack-plugin@5.3.7(webpack@5.76.3):
-    dependencies:
-      '@jridgewell/trace-mapping': 0.3.17
-      jest-worker: 27.5.1
-      schema-utils: 3.1.1
-      serialize-javascript: 6.0.1
-      terser: 5.16.8
-      webpack: 5.76.3
 
   terser@4.8.0:
     dependencies:
@@ -13480,7 +13301,7 @@ snapshots:
       punycode: 2.1.1
 
   ts-pnp@1.2.0(typescript@5.5.4):
-    dependencies:
+    optionalDependencies:
       typescript: 5.5.4
 
   tsconfig@7.0.0:
@@ -13552,9 +13373,9 @@ snapshots:
 
   unicode-property-aliases-ecmascript@2.0.0: {}
 
-  unimport@3.0.6:
+  unimport@3.0.6(rollup@3.20.2):
     dependencies:
-      '@rollup/pluginutils': 5.0.2
+      '@rollup/pluginutils': 5.0.2(rollup@3.20.2)
       escape-string-regexp: 5.0.0
       fast-glob: 3.2.12
       local-pkg: 0.4.3
@@ -13634,13 +13455,14 @@ snapshots:
 
   urix@0.1.0: {}
 
-  url-loader@4.1.1(file-loader@6.2.0)(webpack@4.46.0):
+  url-loader@4.1.1(file-loader@6.2.0(webpack@4.46.0))(webpack@4.46.0):
     dependencies:
-      file-loader: 6.2.0(webpack@4.46.0)
       loader-utils: 2.0.2
       mime-types: 2.1.33
       schema-utils: 3.1.1
       webpack: 4.46.0
+    optionalDependencies:
+      file-loader: 6.2.0(webpack@4.46.0)
 
   url-parse@1.5.10:
     dependencies:
@@ -13685,23 +13507,26 @@ snapshots:
 
   vary@1.1.2: {}
 
-  vite-plugin-eslint@1.8.1(eslint@8.41.0)(vite@4.2.1):
+  vite-plugin-eslint@1.8.1(eslint@8.41.0)(vite@4.2.1(@types/node@16.11.6)(sass@1.32.13)(stylus@0.59.0)(terser@5.16.8)):
     dependencies:
       '@rollup/pluginutils': 4.2.1
       '@types/eslint': 8.21.2
       eslint: 8.41.0
       rollup: 2.79.1
-      vite: 4.2.1(stylus@0.59.0)
+      vite: 4.2.1(@types/node@16.11.6)(sass@1.32.13)(stylus@0.59.0)(terser@5.16.8)
 
-  vite@4.2.1(stylus@0.59.0):
+  vite@4.2.1(@types/node@16.11.6)(sass@1.32.13)(stylus@0.59.0)(terser@5.16.8):
     dependencies:
       esbuild: 0.17.14
       postcss: 8.4.21
       resolve: 1.22.1
       rollup: 3.20.2
-      stylus: 0.59.0
     optionalDependencies:
+      '@types/node': 16.11.6
       fsevents: 2.3.2
+      sass: 1.32.13
+      stylus: 0.59.0
+      terser: 5.16.8
 
   vm-browserify@1.1.2: {}
 
@@ -13740,17 +13565,18 @@ snapshots:
 
   vue-hot-reload-api@2.3.4: {}
 
-  vue-loader@15.10.1(cache-loader@4.1.0)(css-loader@5.2.7)(lodash@4.17.21)(vue-template-compiler@2.7.14)(webpack@4.46.0):
+  vue-loader@15.10.1(cache-loader@4.1.0(webpack@4.46.0))(css-loader@5.2.7(webpack@4.46.0))(lodash@4.17.21)(vue-template-compiler@2.7.14)(webpack@4.46.0):
     dependencies:
       '@vue/component-compiler-utils': 3.3.0(lodash@4.17.21)
-      cache-loader: 4.1.0(webpack@4.46.0)
       css-loader: 5.2.7(webpack@4.46.0)
       hash-sum: 1.0.2
       loader-utils: 1.4.0
       vue-hot-reload-api: 2.3.4
       vue-style-loader: 4.1.3
-      vue-template-compiler: 2.7.14
       webpack: 4.46.0
+    optionalDependencies:
+      cache-loader: 4.1.0(webpack@4.46.0)
+      vue-template-compiler: 2.7.14
     transitivePeerDependencies:
       - arc-templates
       - atpl
@@ -13849,14 +13675,14 @@ snapshots:
       '@vue/compiler-sfc': 2.7.14
       csstype: 3.1.1
 
-  vuetify-loader@1.7.3(vue-template-compiler@2.7.14)(vuetify@2.6.5)(webpack@5.76.3):
+  vuetify-loader@1.7.3(vue-template-compiler@2.7.14)(vuetify@2.6.5(vue@2.7.14))(webpack@4.46.0):
     dependencies:
       decache: 4.6.0
-      file-loader: 6.2.0(webpack@5.76.3)
+      file-loader: 6.2.0(webpack@4.46.0)
       loader-utils: 2.0.2
       vue-template-compiler: 2.7.14
       vuetify: 2.6.5(vue@2.7.14)
-      webpack: 5.76.3
+      webpack: 4.46.0
 
   vuetify@2.6.5(vue@2.7.14):
     dependencies:
@@ -13973,37 +13799,6 @@ snapshots:
       webpack-sources: 1.4.3
     transitivePeerDependencies:
       - supports-color
-
-  webpack@5.76.3:
-    dependencies:
-      '@types/eslint-scope': 3.7.4
-      '@types/estree': 0.0.51
-      '@webassemblyjs/ast': 1.11.1
-      '@webassemblyjs/wasm-edit': 1.11.1
-      '@webassemblyjs/wasm-parser': 1.11.1
-      acorn: 8.8.2
-      acorn-import-assertions: 1.8.0(acorn@8.8.2)
-      browserslist: 4.21.5
-      chrome-trace-event: 1.0.3
-      enhanced-resolve: 5.12.0
-      es-module-lexer: 0.9.3
-      eslint-scope: 5.1.1
-      events: 3.3.0
-      glob-to-regexp: 0.4.1
-      graceful-fs: 4.2.9
-      json-parse-even-better-errors: 2.3.1
-      loader-runner: 4.2.0
-      mime-types: 2.1.33
-      neo-async: 2.6.2
-      schema-utils: 3.1.1
-      tapable: 2.2.1
-      terser-webpack-plugin: 5.3.7(webpack@5.76.3)
-      watchpack: 2.4.0
-      webpack-sources: 3.2.3
-    transitivePeerDependencies:
-      - '@swc/core'
-      - esbuild
-      - uglify-js
 
   webpackbar@5.0.2(webpack@4.46.0):
     dependencies:
