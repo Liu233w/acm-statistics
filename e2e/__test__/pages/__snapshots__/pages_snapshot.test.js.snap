@@ -724,8 +724,7 @@ exports[`/ 1`] = `
     <script>
       (window.ActiveXObject || "ActiveXObject" in window) && alert("本网站不支持IE或IE内核的浏览器，建议您使用火狐浏览器、谷歌浏览器或微软的Edge浏览器（Windows10自带）")
     </script>
-    <div id="__nuxt">
-      <!---->
+    <div id="__nuxt"><!---->
       <div id="__layout">
         <div data-app="true" id="app" class="v-application v-application--is-ltr theme--light">
           <div class="v-application--wrap">
@@ -751,14 +750,9 @@ exports[`/ 1`] = `
               <div class="v-navigation-drawer__border"></div>
             </nav>
             <header class="v-sheet theme--light v-toolbar v-toolbar--absolute v-app-bar" style="height:56px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;">
-              <div class="v-toolbar__content" style="height:56px;"><button type="button" class="v-app-bar__nav-icon v-btn v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-menu theme--light"></i></span></button>
-                <!---->
-                <div class="v-toolbar__title">OJ Analyzer</div>
-                <!---->
-                <!---->
-                <div class="spacer"></div>
-                <!---->
-                <!----> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--text theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate v-icon--left mdi mdi-login theme--light"></i> login
+              <div class="v-toolbar__content" style="height:56px;"><button type="button" class="v-app-bar__nav-icon v-btn v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-menu theme--light"></i></span></button> <!---->
+                <div class="v-toolbar__title">OJ Analyzer</div> <!----> <!---->
+                <div class="spacer"></div> <!----> <!----> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--text theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate v-icon--left mdi mdi-login theme--light"></i> login
     </span></button></span> <span class="v-tooltip v-tooltip--left"><!----><a href="https://github.com/Liu233w/acm-statistics" target="_blank" rel="noopener noreferrer" class="v-btn v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" medium="" class="v-icon notranslate mdi mdi-github theme--light"></i></span></a></span>
               </div>
             </header>
@@ -905,10 +899,7 @@ exports[`/ 1`] = `
               </div>
             </main>
             <footer class="v-footer v-sheet theme--light v-footer--absolute v-footer--inset" style="left:0px;right:0px;bottom:0px;"><span class="text-body-2">© 2018 - 1970 Shumin Liu and Contributors</span></footer>
-            <div class="message-panel v-card v-sheet theme--light" style="display:none;">
-              <v-list class="pa-0"></v-list>
-              <!---->
-            </div>
+            <div class="message-panel v-card v-sheet theme--light" style="display:none;"><v-list class="pa-0"></v-list> <!----></div>
           </div>
         </div>
       </div>
@@ -1678,8 +1669,7 @@ exports[`/about 1`] = `
     <script>
       (window.ActiveXObject || "ActiveXObject" in window) && alert("本网站不支持IE或IE内核的浏览器，建议您使用火狐浏览器、谷歌浏览器或微软的Edge浏览器（Windows10自带）")
     </script>
-    <div id="__nuxt">
-      <!---->
+    <div id="__nuxt"><!---->
       <div id="__layout">
         <div data-app="true" id="app" class="v-application v-application--is-ltr theme--light">
           <div class="v-application--wrap">
@@ -1705,14 +1695,9 @@ exports[`/about 1`] = `
               <div class="v-navigation-drawer__border"></div>
             </nav>
             <header class="v-sheet theme--light v-toolbar v-toolbar--absolute v-app-bar" style="height:56px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;">
-              <div class="v-toolbar__content" style="height:56px;"><button type="button" class="v-app-bar__nav-icon v-btn v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-menu theme--light"></i></span></button>
-                <!---->
-                <div class="v-toolbar__title">OJ Analyzer</div>
-                <!---->
-                <!---->
-                <div class="spacer"></div>
-                <!---->
-                <!----> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--text theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate v-icon--left mdi mdi-login theme--light"></i> login
+              <div class="v-toolbar__content" style="height:56px;"><button type="button" class="v-app-bar__nav-icon v-btn v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-menu theme--light"></i></span></button> <!---->
+                <div class="v-toolbar__title">OJ Analyzer</div> <!----> <!---->
+                <div class="spacer"></div> <!----> <!----> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--text theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate v-icon--left mdi mdi-login theme--light"></i> login
     </span></button></span> <span class="v-tooltip v-tooltip--left"><!----><a href="https://github.com/Liu233w/acm-statistics" target="_blank" rel="noopener noreferrer" class="v-btn v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" medium="" class="v-icon notranslate mdi mdi-github theme--light"></i></span></a></span>
               </div>
             </header>
@@ -1846,17 +1831,12 @@ exports[`/about 1`] = `
                       </div>
                     </div>
                   </div>
-                  <div class="v-dialog__container">
-                    <!---->
-                  </div>
+                  <div class="v-dialog__container"><!----></div>
                 </div>
               </div>
             </main>
             <footer class="v-footer v-sheet theme--light v-footer--absolute v-footer--inset" style="left:0px;right:0px;bottom:0px;"><span class="text-body-2">© 2018 - 1970 Shumin Liu and Contributors</span></footer>
-            <div class="message-panel v-card v-sheet theme--light" style="display:none;">
-              <v-list class="pa-0"></v-list>
-              <!---->
-            </div>
+            <div class="message-panel v-card v-sheet theme--light" style="display:none;"><v-list class="pa-0"></v-list> <!----></div>
           </div>
         </div>
       </div>
@@ -2626,8 +2606,7 @@ exports[`/history 1`] = `
     <script>
       (window.ActiveXObject || "ActiveXObject" in window) && alert("本网站不支持IE或IE内核的浏览器，建议您使用火狐浏览器、谷歌浏览器或微软的Edge浏览器（Windows10自带）")
     </script>
-    <div id="__nuxt">
-      <!---->
+    <div id="__nuxt"><!---->
       <div id="__layout">
         <div data-app="true" id="app" class="v-application v-application--is-ltr theme--light">
           <div class="v-application--wrap">
@@ -2663,14 +2642,9 @@ exports[`/history 1`] = `
               <div class="v-navigation-drawer__border"></div>
             </nav>
             <header class="v-sheet theme--light v-toolbar v-toolbar--absolute v-app-bar" style="height:56px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;">
-              <div class="v-toolbar__content" style="height:56px;"><button type="button" class="v-app-bar__nav-icon v-btn v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-menu theme--light"></i></span></button>
-                <!---->
-                <div class="v-toolbar__title">OJ Analyzer</div>
-                <!---->
-                <!---->
-                <div class="spacer"></div>
-                <!---->
-                <!----> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--text theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate v-icon--left mdi mdi-login theme--light" style="display:none;"></i> admin
+              <div class="v-toolbar__content" style="height:56px;"><button type="button" class="v-app-bar__nav-icon v-btn v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-menu theme--light"></i></span></button> <!---->
+                <div class="v-toolbar__title">OJ Analyzer</div> <!----> <!---->
+                <div class="spacer"></div> <!----> <!----> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--text theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate v-icon--left mdi mdi-login theme--light" style="display:none;"></i> admin
     </span></button></span> <span class="v-tooltip v-tooltip--left"><!----><a href="https://github.com/Liu233w/acm-statistics" target="_blank" rel="noopener noreferrer" class="v-btn v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" medium="" class="v-icon notranslate mdi mdi-github theme--light"></i></span></a></span>
               </div>
             </header>
@@ -3053,9 +3027,7 @@ exports[`/history 1`] = `
                                   <div class="v-input__icon v-input__icon--append"><i aria-hidden="true" class="v-icon notranslate mdi mdi-menu-down theme--light"></i></div>
                                 </div><input type="hidden" value="10">
                               </div>
-                              <div class="v-menu">
-                                <!---->
-                              </div>
+                              <div class="v-menu"><!----></div>
                             </div>
                           </div>
                         </div>
@@ -3064,16 +3036,12 @@ exports[`/history 1`] = `
                       <div class="v-data-footer__icons-before"><button type="button" disabled="disabled" aria-label="Previous page" class="v-btn v-btn--disabled v-btn--icon v-btn--round v-btn--text theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-chevron-left theme--light"></i></span></button></div>
                       <div class="v-data-footer__icons-after"><button type="button" aria-label="Next page" class="v-btn v-btn--icon v-btn--round v-btn--text theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-chevron-right theme--light"></i></span></button></div>
                     </div>
-                  </div>
-                  <line-chart chart-data="[object Object]" chart-options="[object Object]" style="height:300px;"></line-chart>
+                  </div> <line-chart chart-data="[object Object]" chart-options="[object Object]" style="height:300px;"></line-chart>
                 </div>
               </div>
             </main>
             <footer class="v-footer v-sheet theme--light v-footer--absolute v-footer--inset" style="left:0px;right:0px;bottom:0px;"><span class="text-body-2">© 2018 - 1970 Shumin Liu and Contributors</span></footer>
-            <div class="message-panel v-card v-sheet theme--light" style="display:none;">
-              <v-list class="pa-0"></v-list>
-              <!---->
-            </div>
+            <div class="message-panel v-card v-sheet theme--light" style="display:none;"><v-list class="pa-0"></v-list> <!----></div>
           </div>
         </div>
       </div>
@@ -3965,8 +3933,7 @@ exports[`/history/{historyId} 1`] = `
     <script>
       (window.ActiveXObject || "ActiveXObject" in window) && alert("本网站不支持IE或IE内核的浏览器，建议您使用火狐浏览器、谷歌浏览器或微软的Edge浏览器（Windows10自带）")
     </script>
-    <div id="__nuxt">
-      <!---->
+    <div id="__nuxt"><!---->
       <div id="__layout">
         <div data-app="true" id="app" class="v-application v-application--is-ltr theme--light">
           <div class="v-application--wrap">
@@ -4002,14 +3969,9 @@ exports[`/history/{historyId} 1`] = `
               <div class="v-navigation-drawer__border"></div>
             </nav>
             <header class="v-sheet theme--light v-toolbar v-toolbar--absolute v-app-bar" style="height:56px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;">
-              <div class="v-toolbar__content" style="height:56px;"><button type="button" class="v-app-bar__nav-icon v-btn v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-menu theme--light"></i></span></button>
-                <!---->
-                <div class="v-toolbar__title">OJ Analyzer</div>
-                <!---->
-                <!---->
-                <div class="spacer"></div>
-                <!---->
-                <!----> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--text theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate v-icon--left mdi mdi-login theme--light" style="display:none;"></i> admin
+              <div class="v-toolbar__content" style="height:56px;"><button type="button" class="v-app-bar__nav-icon v-btn v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-menu theme--light"></i></span></button> <!---->
+                <div class="v-toolbar__title">OJ Analyzer</div> <!----> <!---->
+                <div class="spacer"></div> <!----> <!----> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--text theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate v-icon--left mdi mdi-login theme--light" style="display:none;"></i> admin
     </span></button></span> <span class="v-tooltip v-tooltip--left"><!----><a href="https://github.com/Liu233w/acm-statistics" target="_blank" rel="noopener noreferrer" class="v-btn v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" medium="" class="v-icon notranslate mdi mdi-github theme--light"></i></span></a></span>
               </div>
             </header>
@@ -4060,9 +4022,7 @@ exports[`/history/{historyId} 1`] = `
                                           <div class="v-input__icon v-input__icon--append"><i aria-hidden="true" class="v-icon notranslate mdi mdi-menu-down theme--light"></i></div>
                                         </div><input type="hidden">
                                       </div>
-                                      <div class="v-menu">
-                                        <!---->
-                                      </div>
+                                      <div class="v-menu"><!----></div>
                                     </div>
                                   </div>
                                 </div>
@@ -4272,8 +4232,7 @@ exports[`/history/{historyId} 1`] = `
                         </tbody>
                       </table>
                     </div>
-                  </div>
-                  <bar-chart chart-data="[object Object]" chart-options="[object Object]" style="height:300px;"></bar-chart>
+                  </div> <bar-chart chart-data="[object Object]" chart-options="[object Object]" style="height:300px;"></bar-chart>
                   <div role="list" class="v-list v-sheet theme--light v-list--dense">
                     <div class="v-subheader red--text theme--light">
                       WARNINGS
@@ -4289,10 +4248,7 @@ exports[`/history/{historyId} 1`] = `
               </div>
             </main>
             <footer class="v-footer v-sheet theme--light v-footer--absolute v-footer--inset" style="left:0px;right:0px;bottom:0px;"><span class="text-body-2">© 2018 - 1970 Shumin Liu and Contributors</span></footer>
-            <div class="message-panel v-card v-sheet theme--light" style="display:none;">
-              <v-list class="pa-0"></v-list>
-              <!---->
-            </div>
+            <div class="message-panel v-card v-sheet theme--light" style="display:none;"><v-list class="pa-0"></v-list> <!----></div>
           </div>
         </div>
       </div>
@@ -5355,8 +5311,7 @@ exports[`/login 1`] = `
     <script>
       (window.ActiveXObject || "ActiveXObject" in window) && alert("本网站不支持IE或IE内核的浏览器，建议您使用火狐浏览器、谷歌浏览器或微软的Edge浏览器（Windows10自带）")
     </script>
-    <div id="__nuxt">
-      <!---->
+    <div id="__nuxt"><!---->
       <div id="__layout">
         <div data-app="true" id="app" class="v-application v-application--is-ltr theme--light">
           <div class="v-application--wrap">
@@ -6218,8 +6173,7 @@ exports[`/register 1`] = `
     <script>
       (window.ActiveXObject || "ActiveXObject" in window) && alert("本网站不支持IE或IE内核的浏览器，建议您使用火狐浏览器、谷歌浏览器或微软的Edge浏览器（Windows10自带）")
     </script>
-    <div id="__nuxt">
-      <!---->
+    <div id="__nuxt"><!---->
       <div id="__layout">
         <div data-app="true" id="app" class="v-application v-application--is-ltr theme--light">
           <div class="v-application--wrap">
@@ -7105,8 +7059,7 @@ exports[`/settings 1`] = `
     <script>
       (window.ActiveXObject || "ActiveXObject" in window) && alert("本网站不支持IE或IE内核的浏览器，建议您使用火狐浏览器、谷歌浏览器或微软的Edge浏览器（Windows10自带）")
     </script>
-    <div id="__nuxt">
-      <!---->
+    <div id="__nuxt"><!---->
       <div id="__layout">
         <div data-app="true" id="app" class="v-application v-application--is-ltr theme--light">
           <div class="v-application--wrap">
@@ -7142,14 +7095,9 @@ exports[`/settings 1`] = `
               <div class="v-navigation-drawer__border"></div>
             </nav>
             <header class="v-sheet theme--light v-toolbar v-toolbar--absolute v-app-bar" style="height:56px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;">
-              <div class="v-toolbar__content" style="height:56px;"><button type="button" class="v-app-bar__nav-icon v-btn v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-menu theme--light"></i></span></button>
-                <!---->
-                <div class="v-toolbar__title">OJ Analyzer</div>
-                <!---->
-                <!---->
-                <div class="spacer"></div>
-                <!---->
-                <!----> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--text theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate v-icon--left mdi mdi-login theme--light" style="display:none;"></i> admin
+              <div class="v-toolbar__content" style="height:56px;"><button type="button" class="v-app-bar__nav-icon v-btn v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-menu theme--light"></i></span></button> <!---->
+                <div class="v-toolbar__title">OJ Analyzer</div> <!----> <!---->
+                <div class="spacer"></div> <!----> <!----> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--text theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate v-icon--left mdi mdi-login theme--light" style="display:none;"></i> admin
     </span></button></span> <span class="v-tooltip v-tooltip--left"><!----><a href="https://github.com/Liu233w/acm-statistics" target="_blank" rel="noopener noreferrer" class="v-btn v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" medium="" class="v-icon notranslate mdi mdi-github theme--light"></i></span></a></span>
               </div>
             </header>
@@ -7219,9 +7167,7 @@ exports[`/settings 1`] = `
                                     <div class="v-input__icon v-input__icon--append"><i aria-hidden="true" class="v-icon notranslate mdi mdi-menu-down theme--light"></i></div>
                                   </div><input type="hidden" value="UTC">
                                 </div>
-                                <div class="v-menu">
-                                  <!---->
-                                </div>
+                                <div class="v-menu"><!----></div>
                               </div>
                               <div class="v-text-field__details">
                                 <div class="v-messages theme--light">
@@ -7317,17 +7263,12 @@ exports[`/settings 1`] = `
                       </div>
                     </div>
                   </div>
-                  <div class="v-dialog__container">
-                    <!---->
-                  </div>
+                  <div class="v-dialog__container"><!----></div>
                 </div>
               </div>
             </main>
             <footer class="v-footer v-sheet theme--light v-footer--absolute v-footer--inset" style="left:0px;right:0px;bottom:0px;"><span class="text-body-2">© 2018 - 1970 Shumin Liu and Contributors</span></footer>
-            <div class="message-panel v-card v-sheet theme--light" style="display:none;">
-              <v-list class="pa-0"></v-list>
-              <!---->
-            </div>
+            <div class="message-panel v-card v-sheet theme--light" style="display:none;"><v-list class="pa-0"></v-list> <!----></div>
           </div>
         </div>
       </div>
@@ -8117,8 +8058,7 @@ exports[`/statistics 1`] = `
     <script>
       (window.ActiveXObject || "ActiveXObject" in window) && alert("本网站不支持IE或IE内核的浏览器，建议您使用火狐浏览器、谷歌浏览器或微软的Edge浏览器（Windows10自带）")
     </script>
-    <div id="__nuxt">
-      <!---->
+    <div id="__nuxt"><!---->
       <div id="__layout">
         <div data-app="true" id="app" class="v-application v-application--is-ltr theme--light">
           <div class="v-application--wrap">
@@ -8144,14 +8084,9 @@ exports[`/statistics 1`] = `
               <div class="v-navigation-drawer__border"></div>
             </nav>
             <header class="v-sheet theme--light v-toolbar v-toolbar--absolute v-app-bar" style="height:56px;margin-top:0px;transform:translateY(0px);left:0px;right:0px;">
-              <div class="v-toolbar__content" style="height:56px;"><button type="button" class="v-app-bar__nav-icon v-btn v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-menu theme--light"></i></span></button>
-                <!---->
-                <div class="v-toolbar__title">OJ Analyzer</div>
-                <!---->
-                <!---->
-                <div class="spacer"></div>
-                <!---->
-                <!----> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--text theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate v-icon--left mdi mdi-login theme--light"></i> login
+              <div class="v-toolbar__content" style="height:56px;"><button type="button" class="v-app-bar__nav-icon v-btn v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-menu theme--light"></i></span></button> <!---->
+                <div class="v-toolbar__title">OJ Analyzer</div> <!----> <!---->
+                <div class="spacer"></div> <!----> <!----> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--text theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate v-icon--left mdi mdi-login theme--light"></i> login
     </span></button></span> <span class="v-tooltip v-tooltip--left"><!----><a href="https://github.com/Liu233w/acm-statistics" target="_blank" rel="noopener noreferrer" class="v-btn v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><i aria-hidden="true" medium="" class="v-icon notranslate mdi mdi-github theme--light"></i></span></a></span>
               </div>
             </header>
@@ -8181,8 +8116,7 @@ exports[`/statistics 1`] = `
         </span></button></span> <span class="v-tooltip v-tooltip--bottom"><!----><button type="button" class="v-btn v-btn--is-elevated v-btn--has-bg theme--light v-size--default ma-1"><span class="v-btn__content">
           save username
           </span></button></span>
-                    <div class="spacer"></div>
-                    <!---->
+                    <div class="spacer"></div> <!---->
                   </div>
                   <div class="row">
                     <div class="spacer"></div>
@@ -8197,10 +8131,7 @@ exports[`/statistics 1`] = `
               </div>
             </main>
             <footer class="v-footer v-sheet theme--light v-footer--absolute v-footer--inset" style="left:0px;right:0px;bottom:0px;"><span class="text-body-2">© 2018 - 1970 Shumin Liu and Contributors</span></footer>
-            <div class="message-panel v-card v-sheet theme--light" style="display:none;">
-              <v-list class="pa-0"></v-list>
-              <!---->
-            </div>
+            <div class="message-panel v-card v-sheet theme--light" style="display:none;"><v-list class="pa-0"></v-list> <!----></div>
           </div>
         </div>
       </div>
