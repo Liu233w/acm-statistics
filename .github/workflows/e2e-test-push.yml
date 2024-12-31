@@ -20,7 +20,7 @@ jobs:
         make run run-cmd="npm run lint" make-args="no-interactive no-tty"
     - run: |
         cd build
-        docker-compose -f docker-compose.yml -f docker-compose.e2e.yml logs --no-color > e2e.log
+        docker compose -f docker-compose.yml -f docker-compose.e2e.yml logs --no-color > e2e.log
       if: failure()
     - uses: actions/upload-artifact@a8a3f3ad30e3422c9c7b888a15615d19a852ae32 # v3
       if: failure()
