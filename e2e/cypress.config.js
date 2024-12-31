@@ -16,6 +16,5 @@ module.exports = defineConfig({
       runMode: 2,
       openMode: 0,
   },
-  reporter: '@simonsmith/cypress-image-snapshot/reporter',
   projectId: '4s32o7',
 })
