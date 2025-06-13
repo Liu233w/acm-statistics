@@ -26,6 +26,7 @@ crawler_order:
   - nod
   # - nit
   - dmoj
+  - sdutoj
   - vjudge
 
 crawlers:
@@ -169,6 +170,11 @@ crawlers:
       title: DMOJ
       description:
       url: https://dmoj.ca/
+  sdutoj:
+    meta:
+      title: SDUT OJ
+      description:
+      url: https://oj.sdutacm.cn/
   vjudge:
     meta:
       title: VJudge

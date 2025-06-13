@@ -28,6 +28,7 @@ const nbut = require('../crawlers/nbut')
 const nod = require('../crawlers/nod')
 const nit = require('../crawlers/nit')
 const dmoj = require('../crawlers/dmoj')
+const sdutoj = require('../crawlers/sdutoj')
 
 const { readConfigs } = require('../lib/configReader')
 
@@ -603,6 +604,24 @@ describe('dmoj', () => {
     const res = await dmoj(null, 'Xyene')
     checkRes(res)
     expect(res.solvedList).toContain('aplusb')
+  })
+
+})
+
+describe('sdutoj', () => {
+
+  test('should throw when user does not exist', async () => {
+    await expect(sdutoj(null, notExistUsername)).rejects.toThrow('The user does not exist')
+  })
+
+  test('can recognize username with space', async () => {
+    await expect(sdutoj(null, ' ' + notExistUsername)).rejects.toThrow('The user does not exist')
+  })
+
+  test('should work correctly', async () => {
+    const res = await sdutoj(null, 'root')
+    checkRes(res)
+    expect(res.solvedList).toContain('1000')
   })
 
 })
