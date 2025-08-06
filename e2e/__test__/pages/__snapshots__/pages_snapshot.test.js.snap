@@ -7,7 +7,7 @@ exports[`/ 1`] = `
   <head>
     <meta data-n-head="ssr" charset="utf-8">
     <meta data-n-head="ssr" name="viewport" content="width=device-width, initial-scale=1">
-    <meta data-n-head="ssr" data-hid="description" name="description" content="An online tool (crawler) to analyze users performance in online judges (coding competition websites). Supported OJ: POJ, HDU, ZOJ, HYSBZ, CodeForces, UVA, ICPC Live Archive, FZU, SPOJ, Timus (URAL), LeetCode_CN, CSU, LibreOJ, 洛谷, 牛客OJ, Lutece (UESTC), AtCoder, AIZU, CodeChef, El Judge, BNUOJ, Codewars, UOJ, NBUT, 51Nod, DMOJ, VJudge">
+    <meta data-n-head="ssr" data-hid="description" name="description" content="An online tool (crawler) to analyze users performance in online judges (coding competition websites). Supported OJ: POJ, HDU, ZOJ, HYSBZ, CodeForces, UVA, ICPC Live Archive, FZU, SPOJ, Timus (URAL), LeetCode_CN, CSU, LibreOJ, 洛谷, 牛客OJ, Lutece (UESTC), AtCoder, AIZU, CodeChef, El Judge, BNUOJ, Codewars, UOJ, NBUT, 51Nod, DMOJ, SDUT OJ, VJudge">
     <title>OJ Analyzer</title>
     <link data-n-head="ssr" rel="icon" type="image/x-icon" href="/favicon.ico">
     <link data-n-head="ssr" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif+SC:300,400,500,700">
@@ -952,7 +952,7 @@ exports[`/about 1`] = `
   <head>
     <meta data-n-head="ssr" charset="utf-8">
     <meta data-n-head="ssr" name="viewport" content="width=device-width, initial-scale=1">
-    <meta data-n-head="ssr" data-hid="description" name="description" content="An online tool (crawler) to analyze users performance in online judges (coding competition websites). Supported OJ: POJ, HDU, ZOJ, HYSBZ, CodeForces, UVA, ICPC Live Archive, FZU, SPOJ, Timus (URAL), LeetCode_CN, CSU, LibreOJ, 洛谷, 牛客OJ, Lutece (UESTC), AtCoder, AIZU, CodeChef, El Judge, BNUOJ, Codewars, UOJ, NBUT, 51Nod, DMOJ, VJudge">
+    <meta data-n-head="ssr" data-hid="description" name="description" content="An online tool (crawler) to analyze users performance in online judges (coding competition websites). Supported OJ: POJ, HDU, ZOJ, HYSBZ, CodeForces, UVA, ICPC Live Archive, FZU, SPOJ, Timus (URAL), LeetCode_CN, CSU, LibreOJ, 洛谷, 牛客OJ, Lutece (UESTC), AtCoder, AIZU, CodeChef, El Judge, BNUOJ, Codewars, UOJ, NBUT, 51Nod, DMOJ, SDUT OJ, VJudge">
     <title>About - OJ Analyzer</title>
     <link data-n-head="ssr" rel="icon" type="image/x-icon" href="/favicon.ico">
     <link data-n-head="ssr" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif+SC:300,400,500,700">
@@ -1889,7 +1889,7 @@ exports[`/history 1`] = `
   <head>
     <meta data-n-head="ssr" charset="utf-8">
     <meta data-n-head="ssr" name="viewport" content="width=device-width, initial-scale=1">
-    <meta data-n-head="ssr" data-hid="description" name="description" content="An online tool (crawler) to analyze users performance in online judges (coding competition websites). Supported OJ: POJ, HDU, ZOJ, HYSBZ, CodeForces, UVA, ICPC Live Archive, FZU, SPOJ, Timus (URAL), LeetCode_CN, CSU, LibreOJ, 洛谷, 牛客OJ, Lutece (UESTC), AtCoder, AIZU, CodeChef, El Judge, BNUOJ, Codewars, UOJ, NBUT, 51Nod, DMOJ, VJudge">
+    <meta data-n-head="ssr" data-hid="description" name="description" content="An online tool (crawler) to analyze users performance in online judges (coding competition websites). Supported OJ: POJ, HDU, ZOJ, HYSBZ, CodeForces, UVA, ICPC Live Archive, FZU, SPOJ, Timus (URAL), LeetCode_CN, CSU, LibreOJ, 洛谷, 牛客OJ, Lutece (UESTC), AtCoder, AIZU, CodeChef, El Judge, BNUOJ, Codewars, UOJ, NBUT, 51Nod, DMOJ, SDUT OJ, VJudge">
     <title>History - OJ Analyzer</title>
     <link data-n-head="ssr" rel="icon" type="image/x-icon" href="/favicon.ico">
     <link data-n-head="ssr" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif+SC:300,400,500,700">
@@ -3216,7 +3216,7 @@ exports[`/history/{historyId} 1`] = `
   <head>
     <meta data-n-head="ssr" charset="utf-8">
     <meta data-n-head="ssr" name="viewport" content="width=device-width, initial-scale=1">
-    <meta data-n-head="ssr" data-hid="description" name="description" content="An online tool (crawler) to analyze users performance in online judges (coding competition websites). Supported OJ: POJ, HDU, ZOJ, HYSBZ, CodeForces, UVA, ICPC Live Archive, FZU, SPOJ, Timus (URAL), LeetCode_CN, CSU, LibreOJ, 洛谷, 牛客OJ, Lutece (UESTC), AtCoder, AIZU, CodeChef, El Judge, BNUOJ, Codewars, UOJ, NBUT, 51Nod, DMOJ, VJudge">
+    <meta data-n-head="ssr" data-hid="description" name="description" content="An online tool (crawler) to analyze users performance in online judges (coding competition websites). Supported OJ: POJ, HDU, ZOJ, HYSBZ, CodeForces, UVA, ICPC Live Archive, FZU, SPOJ, Timus (URAL), LeetCode_CN, CSU, LibreOJ, 洛谷, 牛客OJ, Lutece (UESTC), AtCoder, AIZU, CodeChef, El Judge, BNUOJ, Codewars, UOJ, NBUT, 51Nod, DMOJ, SDUT OJ, VJudge">
     <title>History - OJ Analyzer</title>
     <link data-n-head="ssr" rel="icon" type="image/x-icon" href="/favicon.ico">
     <link data-n-head="ssr" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif+SC:300,400,500,700">
@@ -4506,6 +4506,11 @@ exports[`/history/{historyId} 1`] = `
                   description: a,
                   url: "https:\\u002F\\u002Fdmoj.ca\\u002F"
                 },
+                sdutoj: {
+                  title: "SDUT OJ",
+                  description: a,
+                  url: "https:\\u002F\\u002Foj.sdutacm.cn\\u002F"
+                },
                 vjudge: {
                   title: "VJudge",
                   description: "virtual judge，这个OJ的题量是单独计算的",
@@ -4594,7 +4599,7 @@ exports[`/login 1`] = `
   <head>
     <meta data-n-head="ssr" charset="utf-8">
     <meta data-n-head="ssr" name="viewport" content="width=device-width, initial-scale=1">
-    <meta data-n-head="ssr" data-hid="description" name="description" content="An online tool (crawler) to analyze users performance in online judges (coding competition websites). Supported OJ: POJ, HDU, ZOJ, HYSBZ, CodeForces, UVA, ICPC Live Archive, FZU, SPOJ, Timus (URAL), LeetCode_CN, CSU, LibreOJ, 洛谷, 牛客OJ, Lutece (UESTC), AtCoder, AIZU, CodeChef, El Judge, BNUOJ, Codewars, UOJ, NBUT, 51Nod, DMOJ, VJudge">
+    <meta data-n-head="ssr" data-hid="description" name="description" content="An online tool (crawler) to analyze users performance in online judges (coding competition websites). Supported OJ: POJ, HDU, ZOJ, HYSBZ, CodeForces, UVA, ICPC Live Archive, FZU, SPOJ, Timus (URAL), LeetCode_CN, CSU, LibreOJ, 洛谷, 牛客OJ, Lutece (UESTC), AtCoder, AIZU, CodeChef, El Judge, BNUOJ, Codewars, UOJ, NBUT, 51Nod, DMOJ, SDUT OJ, VJudge">
     <title>OJ Analyzer</title>
     <link data-n-head="ssr" rel="icon" type="image/x-icon" href="/favicon.ico">
     <link data-n-head="ssr" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif+SC:300,400,500,700">
@@ -5456,7 +5461,7 @@ exports[`/register 1`] = `
   <head>
     <meta data-n-head="ssr" charset="utf-8">
     <meta data-n-head="ssr" name="viewport" content="width=device-width, initial-scale=1">
-    <meta data-n-head="ssr" data-hid="description" name="description" content="An online tool (crawler) to analyze users performance in online judges (coding competition websites). Supported OJ: POJ, HDU, ZOJ, HYSBZ, CodeForces, UVA, ICPC Live Archive, FZU, SPOJ, Timus (URAL), LeetCode_CN, CSU, LibreOJ, 洛谷, 牛客OJ, Lutece (UESTC), AtCoder, AIZU, CodeChef, El Judge, BNUOJ, Codewars, UOJ, NBUT, 51Nod, DMOJ, VJudge">
+    <meta data-n-head="ssr" data-hid="description" name="description" content="An online tool (crawler) to analyze users performance in online judges (coding competition websites). Supported OJ: POJ, HDU, ZOJ, HYSBZ, CodeForces, UVA, ICPC Live Archive, FZU, SPOJ, Timus (URAL), LeetCode_CN, CSU, LibreOJ, 洛谷, 牛客OJ, Lutece (UESTC), AtCoder, AIZU, CodeChef, El Judge, BNUOJ, Codewars, UOJ, NBUT, 51Nod, DMOJ, SDUT OJ, VJudge">
     <title>OJ Analyzer</title>
     <link data-n-head="ssr" rel="icon" type="image/x-icon" href="/favicon.ico">
     <link data-n-head="ssr" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif+SC:300,400,500,700">
@@ -6342,7 +6347,7 @@ exports[`/settings 1`] = `
   <head>
     <meta data-n-head="ssr" charset="utf-8">
     <meta data-n-head="ssr" name="viewport" content="width=device-width, initial-scale=1">
-    <meta data-n-head="ssr" data-hid="description" name="description" content="An online tool (crawler) to analyze users performance in online judges (coding competition websites). Supported OJ: POJ, HDU, ZOJ, HYSBZ, CodeForces, UVA, ICPC Live Archive, FZU, SPOJ, Timus (URAL), LeetCode_CN, CSU, LibreOJ, 洛谷, 牛客OJ, Lutece (UESTC), AtCoder, AIZU, CodeChef, El Judge, BNUOJ, Codewars, UOJ, NBUT, 51Nod, DMOJ, VJudge">
+    <meta data-n-head="ssr" data-hid="description" name="description" content="An online tool (crawler) to analyze users performance in online judges (coding competition websites). Supported OJ: POJ, HDU, ZOJ, HYSBZ, CodeForces, UVA, ICPC Live Archive, FZU, SPOJ, Timus (URAL), LeetCode_CN, CSU, LibreOJ, 洛谷, 牛客OJ, Lutece (UESTC), AtCoder, AIZU, CodeChef, El Judge, BNUOJ, Codewars, UOJ, NBUT, 51Nod, DMOJ, SDUT OJ, VJudge">
     <title>Settings - OJ Analyzer</title>
     <link data-n-head="ssr" rel="icon" type="image/x-icon" href="/favicon.ico">
     <link data-n-head="ssr" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif+SC:300,400,500,700">
@@ -7341,7 +7346,7 @@ exports[`/statistics 1`] = `
   <head>
     <meta data-n-head="ssr" charset="utf-8">
     <meta data-n-head="ssr" name="viewport" content="width=device-width, initial-scale=1">
-    <meta data-n-head="ssr" data-hid="description" name="description" content="An online tool (crawler) to analyze users performance in online judges (coding competition websites). Supported OJ: POJ, HDU, ZOJ, HYSBZ, CodeForces, UVA, ICPC Live Archive, FZU, SPOJ, Timus (URAL), LeetCode_CN, CSU, LibreOJ, 洛谷, 牛客OJ, Lutece (UESTC), AtCoder, AIZU, CodeChef, El Judge, BNUOJ, Codewars, UOJ, NBUT, 51Nod, DMOJ, VJudge">
+    <meta data-n-head="ssr" data-hid="description" name="description" content="An online tool (crawler) to analyze users performance in online judges (coding competition websites). Supported OJ: POJ, HDU, ZOJ, HYSBZ, CodeForces, UVA, ICPC Live Archive, FZU, SPOJ, Timus (URAL), LeetCode_CN, CSU, LibreOJ, 洛谷, 牛客OJ, Lutece (UESTC), AtCoder, AIZU, CodeChef, El Judge, BNUOJ, Codewars, UOJ, NBUT, 51Nod, DMOJ, SDUT OJ, VJudge">
     <title>Statistics - OJ Analyzer</title>
     <link data-n-head="ssr" rel="icon" type="image/x-icon" href="/favicon.ico">
     <link data-n-head="ssr" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif+SC:300,400,500,700">
@@ -8137,7 +8142,7 @@ exports[`/statistics 1`] = `
       </div>
     </div>
     <script>
-      window.__NUXT__ = (function(a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z, A, B, C, D, E, F, G, H, I) {
+      window.__NUXT__ = (function(a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z, A, B, C, D, E, F, G, H, I, J) {
         return {
           layout: "default",
           data: [{}],
@@ -8424,6 +8429,16 @@ exports[`/statistics 1`] = `
                 tokenKey: c,
                 solvedList: [],
                 submissionsByCrawlerName: e
+              }, {
+                crawlerName: H,
+                username: a,
+                status: d,
+                solved: b,
+                submissions: b,
+                errorMessage: a,
+                tokenKey: c,
+                solvedList: [],
+                submissionsByCrawlerName: e
               }],
               crawlers: {
                 poj: {
@@ -8582,18 +8597,24 @@ exports[`/statistics 1`] = `
                   url: "https:\\u002F\\u002Fdmoj.ca\\u002F",
                   name: F
                 },
+                sdutoj: {
+                  title: "SDUT OJ",
+                  description: c,
+                  url: "https:\\u002F\\u002Foj.sdutacm.cn\\u002F",
+                  name: G
+                },
                 vjudge: {
                   title: "VJudge",
                   description: "virtual judge，这个OJ的题量是单独计算的",
                   url: "https:\\u002F\\u002Fvjudge.net\\u002F",
-                  virtual_judge: H,
-                  name: G
+                  virtual_judge: I,
+                  name: H
                 }
               },
               mainUsername: a
             }
           },
-          serverRendered: H,
+          serverRendered: I,
           routePath: "\\u002Fstatistics",
           config: {
             _app: {
@@ -8603,11 +8624,11 @@ exports[`/statistics 1`] = `
             }
           },
           env: {
-            VERSION_NUM: I,
-            BUILD_TIME: I
+            VERSION_NUM: J,
+            BUILD_TIME: J
           }
         }
-      }("", 0, null, "WAITING", void 0, false, "poj", "hdu", "zoj", "dashiye", "codeforces", "uva", "uvalive", "fzu", "spoj", "timus", "leetcode_cn", "csu", "loj", "luogu", "nowcoder", "uestc", "atcoder", "aizu", "codechef", "eljudge", "bnu", "codewars", "uoj", "nbut", "nod", "dmoj", "vjudge", true, "0"));
+      }("", 0, null, "WAITING", void 0, false, "poj", "hdu", "zoj", "dashiye", "codeforces", "uva", "uvalive", "fzu", "spoj", "timus", "leetcode_cn", "csu", "loj", "luogu", "nowcoder", "uestc", "atcoder", "aizu", "codechef", "eljudge", "bnu", "codewars", "uoj", "nbut", "nod", "dmoj", "sdutoj", "vjudge", true, "0"));
     </script>
 
 
