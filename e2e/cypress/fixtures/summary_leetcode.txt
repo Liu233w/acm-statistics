@@ -1,1 +1,1 @@
-{"data":{"userProfilePublicProfile":{"submissionProgress":{"totalSubmissions":4,"acTotal":2}}}}
+{"data":{"userProfileUserQuestionSubmitStats":{"acSubmissionNum":[{"difficulty":"EASY","count":1},{"difficulty":"MEDIUM","count":1},{"difficulty":"HARD","count":0}],"totalSubmissionNum":[{"difficulty":"EASY","count":2},{"difficulty":"MEDIUM","count":2},{"difficulty":"HARD","count":0}]}}}

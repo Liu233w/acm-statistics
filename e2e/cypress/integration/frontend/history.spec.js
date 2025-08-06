@@ -15,7 +15,7 @@ before(() => {
 
   // FIXME: the two route below do not work in intercept
   cy.server()
-  cy.route('post', 'https://cors.ojhunt.com/https://leetcode-cn.com/graphql',
+  cy.route('post', 'https://cors.ojhunt.com/https://leetcode.cn/graphql/',
     'fixture:summary_leetcode.txt')
     .as('summary_leetcode')
   cy.route('/api/crawlers/vjudge/wwwlsmcom',
