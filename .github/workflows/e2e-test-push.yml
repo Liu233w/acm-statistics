@@ -22,7 +22,7 @@ jobs:
         cd build
         docker compose -f docker-compose.yml -f docker-compose.e2e.yml logs --no-color > e2e.log
       if: failure()
-    - uses: actions/upload-artifact@ff15f0306b3f739f7b6fd43fb5d26cd321bd4de5 # v3
+    - uses: actions/upload-artifact@v4
       if: failure()
       with:
         name: server-logs
