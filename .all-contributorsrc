@@ -154,6 +154,15 @@
       "contributions": [
         "bug"
       ]
+    },
+    {
+      "login": "dreamerblue",
+      "name": "bLue",
+      "avatar_url": "https://avatars.githubusercontent.com/u/19774268?v=4",
+      "profile": "https://dreamer.blue/",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 6,
@@ -164,5 +173,6 @@
   "repoType": "github",
   "repoHost": "https://github.com",
   "skipCi": true,
-  "commitConvention": "none"
+  "commitConvention": "none",
+  "commitType": "docs"
 }
