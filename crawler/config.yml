@@ -84,7 +84,7 @@ crawlers:
     meta:
       title: LeetCode_CN
       description:
-      url: https://leetcode-cn.com
+      url: https://leetcode.cn
   csu:
     meta:
       title: CSU
