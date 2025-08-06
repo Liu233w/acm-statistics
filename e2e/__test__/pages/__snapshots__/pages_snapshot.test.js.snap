@@ -4429,7 +4429,7 @@ exports[`/history/{historyId} 1`] = `
                 leetcode_cn: {
                   title: "LeetCode_CN",
                   description: a,
-                  url: "https:\\u002F\\u002Fleetcode-cn.com"
+                  url: "https:\\u002F\\u002Fleetcode.cn"
                 },
                 csu: {
                   title: "CSU",
@@ -8504,7 +8504,7 @@ exports[`/statistics 1`] = `
                 leetcode_cn: {
                   title: "LeetCode_CN",
                   description: c,
-                  url: "https:\\u002F\\u002Fleetcode-cn.com",
+                  url: "https:\\u002F\\u002Fleetcode.cn",
                   name: q
                 },
                 csu: {
