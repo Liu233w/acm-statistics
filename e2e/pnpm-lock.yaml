@@ -24,8 +24,8 @@ importers:
         specifier: 8.57.1
         version: 8.57.1
       eslint-plugin-cypress:
-        specifier: 2.13.3
-        version: 2.13.3(eslint@8.57.1)
+        specifier: 2.15.2
+        version: 2.15.2(eslint@8.57.1)
       eslint-plugin-lodash:
         specifier: 7.4.0
         version: 7.4.0(eslint@8.57.1)
@@ -857,8 +857,8 @@ packages:
     resolution: {integrity: sha512-TtpcNJ3XAzx3Gq8sWRzJaVajRs0uVxA2YAkdb1jm2YkPz4G6egUFAyA3n5vtEIZefPk5Wa4UXbKuS5fKkJWdgA==}
     engines: {node: '>=10'}
 
-  eslint-plugin-cypress@2.13.3:
-    resolution: {integrity: sha512-nAPjZE5WopCsgJwl3vHm5iafpV+ZRO76Z9hMyRygWhmg5ODXDPd+9MaPl7kdJ2azj+sO87H3P1PRnggIrz848g==}
+  eslint-plugin-cypress@2.15.2:
+    resolution: {integrity: sha512-CtcFEQTDKyftpI22FVGpx8bkpKyYXBlNge6zSo0pl5/qJvBAnzaD76Vu2AsP16d6mTj478Ldn2mhgrWV+Xr0vQ==}
     peerDependencies:
       eslint: '>= 3.2.1'
 
@@ -1079,6 +1079,10 @@ packages:
 
   globals@13.19.0:
     resolution: {integrity: sha512-dkQ957uSRWHw7CFXLUtUHQI3g3aWApYhfNR2O6jn/907riyTYKVBmxYVROkBcY614FSSeSJh7Xm7SrUWCxvJMQ==}
+    engines: {node: '>=8'}
+
+  globals@13.24.0:
+    resolution: {integrity: sha512-AhO5QUcj8llrbG09iWhPU2B204J1xnPeL8kQmVorSsy+Sjj1sk8gIyh6cUocGmH4L0UuhAJy+hJMRA4mgA4mFQ==}
     engines: {node: '>=8'}
 
   glur@1.1.2:
@@ -3098,10 +3102,10 @@ snapshots:
 
   escape-string-regexp@4.0.0: {}
 
-  eslint-plugin-cypress@2.13.3(eslint@8.57.1):
+  eslint-plugin-cypress@2.15.2(eslint@8.57.1):
     dependencies:
       eslint: 8.57.1
-      globals: 11.12.0
+      globals: 13.24.0
 
   eslint-plugin-lodash@7.4.0(eslint@8.57.1):
     dependencies:
@@ -3374,6 +3378,10 @@ snapshots:
   globals@11.12.0: {}
 
   globals@13.19.0:
+    dependencies:
+      type-fest: 0.20.2
+
+  globals@13.24.0:
     dependencies:
       type-fest: 0.20.2
 
