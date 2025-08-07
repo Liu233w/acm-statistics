@@ -21,8 +21,8 @@ importers:
         specifier: 1.12.3
         version: 1.12.3(vue-template-compiler@2.7.14)(vue@2.7.14)(webpack@4.46.0)
       chart.js:
-        specifier: 3.9.1
-        version: 3.9.1
+        specifier: 4.5.0
+        version: 4.5.0
       cheerio:
         specifier: 1.0.0-rc.10
         version: 1.0.0-rc.10
@@ -51,8 +51,8 @@ importers:
         specifier: 8.0.9
         version: 8.0.9
       vue-chartjs:
-        specifier: 4.1.2
-        version: 4.1.2(chart.js@3.9.1)(vue@2.7.14)
+        specifier: 5.3.2
+        version: 5.3.2(chart.js@4.5.0)(vue@2.7.14)
       webpack-virtual-modules:
         specifier: 0.5.0
         version: 0.5.0
@@ -1259,6 +1259,9 @@ packages:
   '@jridgewell/trace-mapping@0.3.17':
     resolution: {integrity: sha512-MCNzAp77qzKca9+W/+I0+sEpaUnZoeasnghNeVc41VZCEKaCH73Vq3BZZ/SzWIgrqE4H4ceI+p+b6C0mHf9T4g==}
 
+  '@kurkle/color@0.3.4':
+    resolution: {integrity: sha512-M5UknZPHRu3DEDWoipU6sE8PdkZ6Z/S+v4dD+Ke8IaNlpdSQah50lz1KtcFBa2vsdOnwbbnxJwVM4wty6udA5w==}
+
   '@mdi/font@7.4.47':
     resolution: {integrity: sha512-43MtGpd585SNzHZPcYowu/84Vz2a2g31TvPMTm9uTiCSWzaheQySUcSyUH/46fPnuPQWof2yd0pGBtzee/IQWw==}
 
@@ -2095,8 +2098,9 @@ packages:
   chardet@0.7.0:
     resolution: {integrity: sha512-mT8iDcrh03qDGRRmoA2hmBJnxpllMR+0/0qlzjqZES6NdiWDcZkCNAk4rPFZ9Q85r27unkiNNg8ZOiwZXBHwcA==}
 
-  chart.js@3.9.1:
-    resolution: {integrity: sha512-Ro2JbLmvg83gXF5F4sniaQ+lTbSv18E+TIf2cOeiH1Iqd2PGFOtem+DUufMZsCJwFE7ywPOpfXFBwRTGq7dh6w==}
+  chart.js@4.5.0:
+    resolution: {integrity: sha512-aYeC/jDgSEx8SHWZvANYMioYMZ2KX02W6f6uVfyteuCGcadDLcYVHdfdygsTQkQ4TKn5lghoojAsPj5pu0SnvQ==}
+    engines: {pnpm: '>=8'}
 
   cheerio-select@1.5.0:
     resolution: {integrity: sha512-qocaHPv5ypefh6YNxvnbABM07KMxExbtbfuJoIie3iZXX1ERwYmJcIiRrr9H05ucQP1k28dav8rpdDgjQd8drg==}
@@ -6006,11 +6010,11 @@ packages:
   vm-browserify@1.1.2:
     resolution: {integrity: sha512-2ham8XPWTONajOR0ohOKOHXkm3+gaBmGut3SRuu75xLd/RRaY6vqgh8NBYYk7+RW3u5AtzPQZG8F10LHkl0lAQ==}
 
-  vue-chartjs@4.1.2:
-    resolution: {integrity: sha512-QSggYjeFv/L4jFSBQpX8NzrAvX0B+Ha6nDgxkTG8tEXxYOOTwKI4phRLe+B4f+REnkmg7hgPY24R0cixZJyXBg==}
+  vue-chartjs@5.3.2:
+    resolution: {integrity: sha512-NrkbRRoYshbXbWqJkTN6InoDVwVb90C0R7eAVgMWcB9dPikbruaOoTFjFYHE/+tNPdIe6qdLCDjfjPHQ0fw4jw==}
     peerDependencies:
-      chart.js: ^3.7.0
-      vue: ^3.0.0-0 || ^2.6.0
+      chart.js: ^4.1.1
+      vue: ^3.0.0-0 || ^2.7.0
 
   vue-client-only@2.1.0:
     resolution: {integrity: sha512-vKl1skEKn8EK9f8P2ZzhRnuaRHLHrlt1sbRmazlvsx6EiC3A8oWF8YCBrMJzoN+W3OnElwIGbVjsx6/xelY1AA==}
@@ -7668,6 +7672,8 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.0
       '@jridgewell/sourcemap-codec': 1.4.14
 
+  '@kurkle/color@0.3.4': {}
+
   '@mdi/font@7.4.47': {}
 
   '@nodelib/fs.scandir@2.1.5':
@@ -9245,7 +9251,9 @@ snapshots:
 
   chardet@0.7.0: {}
 
-  chart.js@3.9.1: {}
+  chart.js@4.5.0:
+    dependencies:
+      '@kurkle/color': 0.3.4
 
   cheerio-select@1.5.0:
     dependencies:
@@ -13590,9 +13598,9 @@ snapshots:
 
   vm-browserify@1.1.2: {}
 
-  vue-chartjs@4.1.2(chart.js@3.9.1)(vue@2.7.14):
+  vue-chartjs@5.3.2(chart.js@4.5.0)(vue@2.7.14):
     dependencies:
-      chart.js: 3.9.1
+      chart.js: 4.5.0
       vue: 2.7.14
 
   vue-client-only@2.1.0: {}
