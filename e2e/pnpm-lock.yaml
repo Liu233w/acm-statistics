@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@simonsmith/cypress-image-snapshot':
-        specifier: 8.0.2
-        version: 8.0.2(cypress@10.11.0)(jest@29.5.0(@types/node@17.0.33))
+        specifier: 8.1.2
+        version: 8.1.2(cypress@10.11.0)(jest@29.5.0(@types/node@17.0.33))
       cheerio:
         specifier: 1.0.0-rc.10
         version: 1.0.0-rc.10
@@ -357,8 +357,8 @@ packages:
     resolution: {integrity: sha512-oGB+UxlgWcgQkgwo8GcEGwemoTFt3FIO9ababBmaGwXIoBKZ+GTy0pP185beGg7Llih/NSHSV2XAs1lnznocSg==}
     engines: {node: '>= 8'}
 
-  '@simonsmith/cypress-image-snapshot@8.0.2':
-    resolution: {integrity: sha512-HWcOwgEk9epYcNuW8msdY7kpHydT7WUWajJiEtAqPT7nFgMaytmdLfM6tjHWqAsyj3+VSWQ4g0rEVr8wQ+M50A==}
+  '@simonsmith/cypress-image-snapshot@8.1.2':
+    resolution: {integrity: sha512-I5Hk5ZTnShgchggKBHmjkTecm1usFnFyagWsE6Sy+GQOA++WTADTaAly9eYcXtMhGTesFyc/zDCWRH1vRgNRkw==}
     peerDependencies:
       cypress: '>10.0.0'
 
@@ -1004,6 +1004,7 @@ packages:
 
   formidable@2.1.2:
     resolution: {integrity: sha512-CM3GuJ57US06mlpQ47YcunuUZ9jpm8Vx+P2CGt2j7HpgkKZO/DJYQ0Bobim8G6PFQmK5lOqOOdUXboU+h73A4g==}
+    deprecated: 'ACTION REQUIRED: SWITCH TO v3 - v1 and v2 are VULNERABLE! v1 is DEPRECATED FOR OVER 2 YEARS! Use formidable@latest or try formidable-mini for fresh projects'
 
   fs-extra@10.1.0:
     resolution: {integrity: sha512-oRXApq54ETRj4eMiFzGnHWGy+zo5raudjuxN0b8H7s/RU2oW0Wvsx9O0ACRN/kRq9E8Vu/ReskGB5o3ji+FzHQ==}
@@ -1900,7 +1901,7 @@ packages:
   superagent@8.0.9:
     resolution: {integrity: sha512-4C7Bh5pyHTvU33KpZgwrNKh/VQnvgtCSqPRfJAUdmrtSYePVzVg4E4OzsrbkhJj9O7SO6Bnv75K/F8XVZT8YHA==}
     engines: {node: '>=6.4.0 <13 || >=14'}
-    deprecated: Please upgrade to v9.0.0+ as we have fixed a public vulnerability with formidable dependency. Note that v9.0.0+ requires Node.js v14.18.0+. See https://github.com/ladjs/superagent/pull/1800 for insight. This project is supported and maintained by the team at Forward Email @ https://forwardemail.net
+    deprecated: Please upgrade to superagent v10.2.2+, see release notes at https://github.com/forwardemail/superagent/releases/tag/v10.2.2 - maintenance is supported by Forward Email @ https://forwardemail.net
 
   supports-color@5.5.0:
     resolution: {integrity: sha512-QjVjwdXIt408MIiAqCX4oUKsgU2EqAGzs2Ppkm4aQYbjm+ZEWEcW4SfFNTr4uMNZma0ey4f5lgLrkB0aX0QMow==}
@@ -2526,7 +2527,7 @@ snapshots:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.13.0
 
-  '@simonsmith/cypress-image-snapshot@8.0.2(cypress@10.11.0)(jest@29.5.0(@types/node@17.0.33))':
+  '@simonsmith/cypress-image-snapshot@8.1.2(cypress@10.11.0)(jest@29.5.0(@types/node@17.0.33))':
     dependencies:
       '@types/jest-image-snapshot': 6.4.0
       chalk: 4.1.2
