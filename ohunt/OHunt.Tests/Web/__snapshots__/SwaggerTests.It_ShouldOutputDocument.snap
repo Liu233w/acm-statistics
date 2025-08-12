@@ -1,5 +1,5 @@
 ﻿{
-  "openapi": "3.0.1",
+  "openapi": "3.0.4",
   "info": {
     "title": "OHunt API",
     "description": "OHunt is a crawler that reads data from online coding competition platform and serve them as API, just like uHunt of UVA.",
@@ -14,7 +14,7 @@
         "operationId": "api/ohunt/$metadata",
         "responses": {
           "200": {
-            "description": "Success",
+            "description": "OK",
             "content": {
               "application/json;odata.metadata=minimal;odata.streaming=true": {
                 "schema": {
@@ -72,6 +72,126 @@
                 }
               },
               "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IEdmModel"
+                }
+              },
+              "application/json;odata.metadata=minimal;odata.streaming=true;IEEE754Compatible=false": {
+                "schema": {
+                  "$ref": "#/components/schemas/IEdmModel"
+                }
+              },
+              "application/json;odata.metadata=minimal;odata.streaming=true;IEEE754Compatible=true": {
+                "schema": {
+                  "$ref": "#/components/schemas/IEdmModel"
+                }
+              },
+              "application/json;odata.metadata=minimal;odata.streaming=false;IEEE754Compatible=false": {
+                "schema": {
+                  "$ref": "#/components/schemas/IEdmModel"
+                }
+              },
+              "application/json;odata.metadata=minimal;odata.streaming=false;IEEE754Compatible=true": {
+                "schema": {
+                  "$ref": "#/components/schemas/IEdmModel"
+                }
+              },
+              "application/json;odata.metadata=minimal;IEEE754Compatible=false": {
+                "schema": {
+                  "$ref": "#/components/schemas/IEdmModel"
+                }
+              },
+              "application/json;odata.metadata=minimal;IEEE754Compatible=true": {
+                "schema": {
+                  "$ref": "#/components/schemas/IEdmModel"
+                }
+              },
+              "application/json;odata.metadata=full;odata.streaming=true;IEEE754Compatible=false": {
+                "schema": {
+                  "$ref": "#/components/schemas/IEdmModel"
+                }
+              },
+              "application/json;odata.metadata=full;odata.streaming=true;IEEE754Compatible=true": {
+                "schema": {
+                  "$ref": "#/components/schemas/IEdmModel"
+                }
+              },
+              "application/json;odata.metadata=full;odata.streaming=false;IEEE754Compatible=false": {
+                "schema": {
+                  "$ref": "#/components/schemas/IEdmModel"
+                }
+              },
+              "application/json;odata.metadata=full;odata.streaming=false;IEEE754Compatible=true": {
+                "schema": {
+                  "$ref": "#/components/schemas/IEdmModel"
+                }
+              },
+              "application/json;odata.metadata=full;IEEE754Compatible=false": {
+                "schema": {
+                  "$ref": "#/components/schemas/IEdmModel"
+                }
+              },
+              "application/json;odata.metadata=full;IEEE754Compatible=true": {
+                "schema": {
+                  "$ref": "#/components/schemas/IEdmModel"
+                }
+              },
+              "application/json;odata.metadata=none;odata.streaming=true;IEEE754Compatible=false": {
+                "schema": {
+                  "$ref": "#/components/schemas/IEdmModel"
+                }
+              },
+              "application/json;odata.metadata=none;odata.streaming=true;IEEE754Compatible=true": {
+                "schema": {
+                  "$ref": "#/components/schemas/IEdmModel"
+                }
+              },
+              "application/json;odata.metadata=none;odata.streaming=false;IEEE754Compatible=true": {
+                "schema": {
+                  "$ref": "#/components/schemas/IEdmModel"
+                }
+              },
+              "application/json;odata.metadata=none;odata.streaming=false;IEEE754Compatible=false": {
+                "schema": {
+                  "$ref": "#/components/schemas/IEdmModel"
+                }
+              },
+              "application/json;odata.metadata=none;IEEE754Compatible=false": {
+                "schema": {
+                  "$ref": "#/components/schemas/IEdmModel"
+                }
+              },
+              "application/json;odata.metadata=none;IEEE754Compatible=true": {
+                "schema": {
+                  "$ref": "#/components/schemas/IEdmModel"
+                }
+              },
+              "application/json;odata.streaming=true;IEEE754Compatible=false": {
+                "schema": {
+                  "$ref": "#/components/schemas/IEdmModel"
+                }
+              },
+              "application/json;odata.streaming=true;IEEE754Compatible=true": {
+                "schema": {
+                  "$ref": "#/components/schemas/IEdmModel"
+                }
+              },
+              "application/json;odata.streaming=false;IEEE754Compatible=false": {
+                "schema": {
+                  "$ref": "#/components/schemas/IEdmModel"
+                }
+              },
+              "application/json;odata.streaming=false;IEEE754Compatible=true": {
+                "schema": {
+                  "$ref": "#/components/schemas/IEdmModel"
+                }
+              },
+              "application/json;IEEE754Compatible=false": {
+                "schema": {
+                  "$ref": "#/components/schemas/IEdmModel"
+                }
+              },
+              "application/json;IEEE754Compatible=true": {
                 "schema": {
                   "$ref": "#/components/schemas/IEdmModel"
                 }
@@ -109,7 +229,7 @@
         "operationId": "api/ohunt/",
         "responses": {
           "200": {
-            "description": "Success",
+            "description": "OK",
             "content": {
               "application/json;odata.metadata=minimal;odata.streaming=true": {
                 "schema": {
@@ -167,6 +287,126 @@
                 }
               },
               "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ODataServiceDocument"
+                }
+              },
+              "application/json;odata.metadata=minimal;odata.streaming=true;IEEE754Compatible=false": {
+                "schema": {
+                  "$ref": "#/components/schemas/ODataServiceDocument"
+                }
+              },
+              "application/json;odata.metadata=minimal;odata.streaming=true;IEEE754Compatible=true": {
+                "schema": {
+                  "$ref": "#/components/schemas/ODataServiceDocument"
+                }
+              },
+              "application/json;odata.metadata=minimal;odata.streaming=false;IEEE754Compatible=false": {
+                "schema": {
+                  "$ref": "#/components/schemas/ODataServiceDocument"
+                }
+              },
+              "application/json;odata.metadata=minimal;odata.streaming=false;IEEE754Compatible=true": {
+                "schema": {
+                  "$ref": "#/components/schemas/ODataServiceDocument"
+                }
+              },
+              "application/json;odata.metadata=minimal;IEEE754Compatible=false": {
+                "schema": {
+                  "$ref": "#/components/schemas/ODataServiceDocument"
+                }
+              },
+              "application/json;odata.metadata=minimal;IEEE754Compatible=true": {
+                "schema": {
+                  "$ref": "#/components/schemas/ODataServiceDocument"
+                }
+              },
+              "application/json;odata.metadata=full;odata.streaming=true;IEEE754Compatible=false": {
+                "schema": {
+                  "$ref": "#/components/schemas/ODataServiceDocument"
+                }
+              },
+              "application/json;odata.metadata=full;odata.streaming=true;IEEE754Compatible=true": {
+                "schema": {
+                  "$ref": "#/components/schemas/ODataServiceDocument"
+                }
+              },
+              "application/json;odata.metadata=full;odata.streaming=false;IEEE754Compatible=false": {
+                "schema": {
+                  "$ref": "#/components/schemas/ODataServiceDocument"
+                }
+              },
+              "application/json;odata.metadata=full;odata.streaming=false;IEEE754Compatible=true": {
+                "schema": {
+                  "$ref": "#/components/schemas/ODataServiceDocument"
+                }
+              },
+              "application/json;odata.metadata=full;IEEE754Compatible=false": {
+                "schema": {
+                  "$ref": "#/components/schemas/ODataServiceDocument"
+                }
+              },
+              "application/json;odata.metadata=full;IEEE754Compatible=true": {
+                "schema": {
+                  "$ref": "#/components/schemas/ODataServiceDocument"
+                }
+              },
+              "application/json;odata.metadata=none;odata.streaming=true;IEEE754Compatible=false": {
+                "schema": {
+                  "$ref": "#/components/schemas/ODataServiceDocument"
+                }
+              },
+              "application/json;odata.metadata=none;odata.streaming=true;IEEE754Compatible=true": {
+                "schema": {
+                  "$ref": "#/components/schemas/ODataServiceDocument"
+                }
+              },
+              "application/json;odata.metadata=none;odata.streaming=false;IEEE754Compatible=true": {
+                "schema": {
+                  "$ref": "#/components/schemas/ODataServiceDocument"
+                }
+              },
+              "application/json;odata.metadata=none;odata.streaming=false;IEEE754Compatible=false": {
+                "schema": {
+                  "$ref": "#/components/schemas/ODataServiceDocument"
+                }
+              },
+              "application/json;odata.metadata=none;IEEE754Compatible=false": {
+                "schema": {
+                  "$ref": "#/components/schemas/ODataServiceDocument"
+                }
+              },
+              "application/json;odata.metadata=none;IEEE754Compatible=true": {
+                "schema": {
+                  "$ref": "#/components/schemas/ODataServiceDocument"
+                }
+              },
+              "application/json;odata.streaming=true;IEEE754Compatible=false": {
+                "schema": {
+                  "$ref": "#/components/schemas/ODataServiceDocument"
+                }
+              },
+              "application/json;odata.streaming=true;IEEE754Compatible=true": {
+                "schema": {
+                  "$ref": "#/components/schemas/ODataServiceDocument"
+                }
+              },
+              "application/json;odata.streaming=false;IEEE754Compatible=false": {
+                "schema": {
+                  "$ref": "#/components/schemas/ODataServiceDocument"
+                }
+              },
+              "application/json;odata.streaming=false;IEEE754Compatible=true": {
+                "schema": {
+                  "$ref": "#/components/schemas/ODataServiceDocument"
+                }
+              },
+              "application/json;IEEE754Compatible=false": {
+                "schema": {
+                  "$ref": "#/components/schemas/ODataServiceDocument"
+                }
+              },
+              "application/json;IEEE754Compatible=true": {
                 "schema": {
                   "$ref": "#/components/schemas/ODataServiceDocument"
                 }
@@ -264,6 +504,126 @@
                 "$ref": "#/components/schemas/ResolveLabelInput"
               }
             },
+            "application/json;odata.metadata=minimal;odata.streaming=true;IEEE754Compatible=false": {
+              "schema": {
+                "$ref": "#/components/schemas/ResolveLabelInput"
+              }
+            },
+            "application/json;odata.metadata=minimal;odata.streaming=true;IEEE754Compatible=true": {
+              "schema": {
+                "$ref": "#/components/schemas/ResolveLabelInput"
+              }
+            },
+            "application/json;odata.metadata=minimal;odata.streaming=false;IEEE754Compatible=false": {
+              "schema": {
+                "$ref": "#/components/schemas/ResolveLabelInput"
+              }
+            },
+            "application/json;odata.metadata=minimal;odata.streaming=false;IEEE754Compatible=true": {
+              "schema": {
+                "$ref": "#/components/schemas/ResolveLabelInput"
+              }
+            },
+            "application/json;odata.metadata=minimal;IEEE754Compatible=false": {
+              "schema": {
+                "$ref": "#/components/schemas/ResolveLabelInput"
+              }
+            },
+            "application/json;odata.metadata=minimal;IEEE754Compatible=true": {
+              "schema": {
+                "$ref": "#/components/schemas/ResolveLabelInput"
+              }
+            },
+            "application/json;odata.metadata=full;odata.streaming=true;IEEE754Compatible=false": {
+              "schema": {
+                "$ref": "#/components/schemas/ResolveLabelInput"
+              }
+            },
+            "application/json;odata.metadata=full;odata.streaming=true;IEEE754Compatible=true": {
+              "schema": {
+                "$ref": "#/components/schemas/ResolveLabelInput"
+              }
+            },
+            "application/json;odata.metadata=full;odata.streaming=false;IEEE754Compatible=false": {
+              "schema": {
+                "$ref": "#/components/schemas/ResolveLabelInput"
+              }
+            },
+            "application/json;odata.metadata=full;odata.streaming=false;IEEE754Compatible=true": {
+              "schema": {
+                "$ref": "#/components/schemas/ResolveLabelInput"
+              }
+            },
+            "application/json;odata.metadata=full;IEEE754Compatible=false": {
+              "schema": {
+                "$ref": "#/components/schemas/ResolveLabelInput"
+              }
+            },
+            "application/json;odata.metadata=full;IEEE754Compatible=true": {
+              "schema": {
+                "$ref": "#/components/schemas/ResolveLabelInput"
+              }
+            },
+            "application/json;odata.metadata=none;odata.streaming=true;IEEE754Compatible=false": {
+              "schema": {
+                "$ref": "#/components/schemas/ResolveLabelInput"
+              }
+            },
+            "application/json;odata.metadata=none;odata.streaming=true;IEEE754Compatible=true": {
+              "schema": {
+                "$ref": "#/components/schemas/ResolveLabelInput"
+              }
+            },
+            "application/json;odata.metadata=none;odata.streaming=false;IEEE754Compatible=true": {
+              "schema": {
+                "$ref": "#/components/schemas/ResolveLabelInput"
+              }
+            },
+            "application/json;odata.metadata=none;odata.streaming=false;IEEE754Compatible=false": {
+              "schema": {
+                "$ref": "#/components/schemas/ResolveLabelInput"
+              }
+            },
+            "application/json;odata.metadata=none;IEEE754Compatible=false": {
+              "schema": {
+                "$ref": "#/components/schemas/ResolveLabelInput"
+              }
+            },
+            "application/json;odata.metadata=none;IEEE754Compatible=true": {
+              "schema": {
+                "$ref": "#/components/schemas/ResolveLabelInput"
+              }
+            },
+            "application/json;odata.streaming=true;IEEE754Compatible=false": {
+              "schema": {
+                "$ref": "#/components/schemas/ResolveLabelInput"
+              }
+            },
+            "application/json;odata.streaming=true;IEEE754Compatible=true": {
+              "schema": {
+                "$ref": "#/components/schemas/ResolveLabelInput"
+              }
+            },
+            "application/json;odata.streaming=false;IEEE754Compatible=false": {
+              "schema": {
+                "$ref": "#/components/schemas/ResolveLabelInput"
+              }
+            },
+            "application/json;odata.streaming=false;IEEE754Compatible=true": {
+              "schema": {
+                "$ref": "#/components/schemas/ResolveLabelInput"
+              }
+            },
+            "application/json;IEEE754Compatible=false": {
+              "schema": {
+                "$ref": "#/components/schemas/ResolveLabelInput"
+              }
+            },
+            "application/json;IEEE754Compatible=true": {
+              "schema": {
+                "$ref": "#/components/schemas/ResolveLabelInput"
+              }
+            },
             "application/xml": {
               "schema": {
                 "$ref": "#/components/schemas/ResolveLabelInput"
@@ -288,7 +648,7 @@
         },
         "responses": {
           "200": {
-            "description": "Success",
+            "description": "OK",
             "content": {
               "application/json": {
                 "schema": {
@@ -306,7 +666,7 @@
           "Submissions"
         ],
         "summary": "Get the submission in an OJ.",
-        "description": "The api uses odata to create arbitrary query requests.\r\nSee the document https://www.odata.org/ for more information.\r\n\r\nSample request:\r\n\r\n    GET /api/ohunt/submissions?oj=zoj&$filter=userName eq 'vjudge5' and status eq 'Accepted'&$count=true",
+        "description": "The api uses odata to create arbitrary query requests.\nSee the document https://www.odata.org/ for more information.\n\nSample request:\n\n    GET /api/ohunt/submissions?oj=zoj&$filter=userName eq 'vjudge5' and status eq 'Accepted'&$count=true",
         "parameters": [
           {
             "name": "oj",
@@ -416,7 +776,7 @@
           "Path",
           "If",
           "Cast",
-          "IsType",
+          "IsOf",
           "FunctionApplication",
           "LabeledExpressionReference",
           "Labeled",
@@ -462,11 +822,8 @@
       "IEdmEntityContainer": {
         "type": "object",
         "properties": {
-          "elements": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/IEdmEntityContainerElement"
-            },
+          "name": {
+            "type": "string",
             "nullable": true,
             "readOnly": true
           },
@@ -478,8 +835,11 @@
             "nullable": true,
             "readOnly": true
           },
-          "name": {
-            "type": "string",
+          "elements": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/IEdmEntityContainerElement"
+            },
             "nullable": true,
             "readOnly": true
           }
@@ -489,16 +849,16 @@
       "IEdmEntityContainerElement": {
         "type": "object",
         "properties": {
+          "name": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
           "containerElementKind": {
             "$ref": "#/components/schemas/EdmContainerElementKind"
           },
           "container": {
             "$ref": "#/components/schemas/IEdmEntityContainer"
-          },
-          "name": {
-            "type": "string",
-            "nullable": true,
-            "readOnly": true
           }
         },
         "additionalProperties": false
@@ -559,15 +919,15 @@
       "IEdmSchemaElement": {
         "type": "object",
         "properties": {
-          "schemaElementKind": {
-            "$ref": "#/components/schemas/EdmSchemaElementKind"
-          },
-          "namespace": {
+          "name": {
             "type": "string",
             "nullable": true,
             "readOnly": true
           },
-          "name": {
+          "schemaElementKind": {
+            "$ref": "#/components/schemas/EdmSchemaElementKind"
+          },
+          "namespace": {
             "type": "string",
             "nullable": true,
             "readOnly": true
@@ -578,15 +938,7 @@
       "IEdmTerm": {
         "type": "object",
         "properties": {
-          "type": {
-            "$ref": "#/components/schemas/IEdmTypeReference"
-          },
-          "appliesTo": {
-            "type": "string",
-            "nullable": true,
-            "readOnly": true
-          },
-          "defaultValue": {
+          "name": {
             "type": "string",
             "nullable": true,
             "readOnly": true
@@ -599,7 +951,15 @@
             "nullable": true,
             "readOnly": true
           },
-          "name": {
+          "type": {
+            "$ref": "#/components/schemas/IEdmTypeReference"
+          },
+          "appliesTo": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "defaultValue": {
             "type": "string",
             "nullable": true,
             "readOnly": true
@@ -649,6 +1009,10 @@
           },
           "value": {
             "$ref": "#/components/schemas/IEdmExpression"
+          },
+          "usesDefault": {
+            "type": "boolean",
+            "readOnly": true
           }
         },
         "additionalProperties": false
@@ -800,7 +1164,8 @@
           "result": {
             "type": "object",
             "additionalProperties": {
-              "type": "string"
+              "type": "string",
+              "nullable": true
             },
             "description": "The result from the output",
             "nullable": true
@@ -836,7 +1201,7 @@
           "submissionId": {
             "minimum": 1,
             "type": "integer",
-            "description": "The id of the submission. It should be unique per oj.\r\n            \r\nIt is used to identify submissions, so newer submission\r\nshould have larger id.",
+            "description": "The id of the submission. It should be unique per oj.\n            \nIt is used to identify submissions, so newer submission\nshould have larger id.",
             "format": "int64"
           },
           "onlineJudgeId": {
