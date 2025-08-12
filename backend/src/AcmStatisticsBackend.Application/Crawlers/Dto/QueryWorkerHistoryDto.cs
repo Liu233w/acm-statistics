@@ -3,7 +3,6 @@ using System.ComponentModel.DataAnnotations;
 using System.Diagnostics.CodeAnalysis;
 using Abp.AutoMapper;
 using Abp.Runtime.Validation;
-using Castle.Core.Internal;
 
 namespace AcmStatisticsBackend.Crawlers.Dto
 {
@@ -63,7 +62,7 @@ namespace AcmStatisticsBackend.Crawlers.Dto
 
         public void AddValidationErrors(CustomValidationContext context)
         {
-            if (!ErrorMessage.IsNullOrEmpty())
+            if (!string.IsNullOrEmpty(ErrorMessage))
             {
                 if (SolvedList != null || SubmissionsByCrawlerName != null)
                 {
