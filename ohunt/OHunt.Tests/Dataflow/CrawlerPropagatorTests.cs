@@ -6,7 +6,6 @@ using FluentAssertions;
 using OHunt.Web.Crawlers;
 using OHunt.Web.Dataflow;
 using OHunt.Web.Models;
-using Xbehave;
 using Xunit;
 
 namespace OHunt.Tests.Dataflow
@@ -26,51 +25,44 @@ namespace OHunt.Tests.Dataflow
             _propagator = new CrawlerPropagator(_submissionOutput, _errorOutput);
         }
 
-        [Scenario]
-        public void It_ShouldWork()
+        [Fact]
+        public async Task It_ShouldWork()
         {
-            "Given a propagator".x(() => { });
+            // Given a propagator
 
-            "When receiving data"
-                .x(() => _propagator.SendAsync(new CrawlerMessage
-                    {
-                        Submission = new Submission
-                        {
-                            Status = RunResult.Accepted,
-                            Time = new DateTime(2020, 4, 1, 0, 0, 0),
-                            ProblemLabel = "1001",
-                            SubmissionId = 42,
-                            UserName = "user1",
-                            OnlineJudgeId = OnlineJudge.ZOJ,
-                        },
-                        CrawlerError = new CrawlerError
-                        {
-                            Crawler = "zoj",
-                            Data = null,
-                            Message = "An error",
-                            Time = new DateTime(2020, 4, 1, 1, 0, 0),
-                        },
-                    })
-                );
-
-            "Then they are cached"
-                .x(async () =>
+            // When receiving data
+            await _propagator.SendAsync(new CrawlerMessage
+            {
+                Submission = new Submission
                 {
-                    await Utils.WaitSecond();
-                    _submissionOutput.Count.Should().Be(0);
-                    _errorOutput.Count.Should().Be(0);
-                });
-
-            "When a checkpoint is sent"
-                .x(() => _propagator.SendAsync(new CrawlerMessage { Checkpoint = true }));
-
-            "Then data are dispatched"
-                .x(async () =>
+                    Status = RunResult.Accepted,
+                    Time = new DateTime(2020, 4, 1, 0, 0, 0),
+                    ProblemLabel = "1001",
+                    SubmissionId = 42,
+                    UserName = "user1",
+                    OnlineJudgeId = OnlineJudge.ZOJ,
+                },
+                CrawlerError = new CrawlerError
                 {
-                    await Utils.WaitSecond();
-                    _submissionOutput.Count.Should().Be(1);
-                    _errorOutput.Count.Should().Be(1);
-                });
+                    Crawler = "zoj",
+                    Data = null,
+                    Message = "An error",
+                    Time = new DateTime(2020, 4, 1, 1, 0, 0),
+                },
+            });
+
+            // Then they are cached
+            await Utils.WaitSecond();
+            _submissionOutput.Count.Should().Be(0);
+            _errorOutput.Count.Should().Be(0);
+
+            // When a checkpoint is sent
+            await _propagator.SendAsync(new CrawlerMessage { Checkpoint = true });
+
+            // Then data are dispatched
+            await Utils.WaitSecond();
+            _submissionOutput.Count.Should().Be(1);
+            _errorOutput.Count.Should().Be(1);
         }
 
         [Fact]
@@ -107,7 +99,7 @@ namespace OHunt.Tests.Dataflow
             await _propagator.SendAsync(new CrawlerMessage
             {
                 Submission = new Submission
-                {
+            {
                     SubmissionId = 4,
                 },
                 Checkpoint = true,
