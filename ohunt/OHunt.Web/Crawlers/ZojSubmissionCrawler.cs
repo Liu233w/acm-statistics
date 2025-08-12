@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Net;
 using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
@@ -65,7 +64,7 @@ namespace OHunt.Web.Crawlers
             cancellationToken.ThrowIfCancellationRequested();
             var request = BaseUrl.SetQueryParam("after", after)
                 .WithHeader("Accept", "application/json;charset=UTF-8")
-                .AllowHttpStatus(HttpStatusCode.InternalServerError);
+                .AllowHttpStatus(500);
             if (before != null)
             {
                 request = request.SetQueryParam("before", before);

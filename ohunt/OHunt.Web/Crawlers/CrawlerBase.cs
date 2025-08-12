@@ -29,7 +29,7 @@ namespace OHunt.Web.Crawlers
                 await Task.Delay(delta, cancellationToken);
             }
 
-            var response = await url.GetStreamAsync(cancellationToken);
+            var response = await url.GetStreamAsync(cancellationToken: cancellationToken);
             var document = await Context.OpenAsync(
                 req => req.Content(response),
                 cancellationToken);
@@ -48,7 +48,7 @@ namespace OHunt.Web.Crawlers
                 await Task.Delay(delta, cancellationToken);
             }
 
-            var result = await request.GetStreamAsync(cancellationToken);
+            var result = await request.GetStreamAsync(cancellationToken: cancellationToken);
             _lastRequestTime = DateTime.Now;
 
             return await JsonDocument.ParseAsync(result, cancellationToken: cancellationToken);
