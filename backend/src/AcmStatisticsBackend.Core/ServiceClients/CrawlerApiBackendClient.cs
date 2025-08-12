@@ -37,7 +37,7 @@ namespace AcmStatisticsBackend.ServiceClients
 #pragma warning disable SA1300
         private class GetMetaReturn
         {
-            public string error { get; set; }
+            public bool error { get; set; }
 
             public IDictionary<string, DataItem> data { get; set; }
         }
