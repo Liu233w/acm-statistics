@@ -24,4 +24,5 @@ RUN apt-get update && apt-get install -y wait-for-it
 ENV WAIT_COMMAND true
 WORKDIR /app
 COPY --from=publish /app/publish .
+ENV ASPNETCORE_URLS=http://0.0.0.0:80
 CMD $WAIT_COMMAND && dotnet AcmStatisticsBackend.Web.Host.dll
