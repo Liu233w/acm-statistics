@@ -7,6 +7,6 @@
     "glob": "10.4.5",
     "mockserver-client": "5.15.0",
     "nodemon": "2.0.22",
-    "wait-on": "7.0.1"
+    "wait-on": "7.2.0"
   }
 }
