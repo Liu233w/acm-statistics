@@ -4,6 +4,7 @@ using AcmStatisticsBackend.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AcmStatisticsBackend.Migrations
 {
     [DbContext(typeof(AcmStatisticsBackendDbContext))]
-    partial class AcmStatisticsBackendDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250813025256_UpgradeAbp840")]
+    partial class UpgradeAbp840
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
