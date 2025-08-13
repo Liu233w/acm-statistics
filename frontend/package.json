@@ -20,7 +20,7 @@
     "@nuxtjs/axios": "5.13.6",
     "@nuxtjs/component-cache": "1.1.6",
     "@nuxtjs/vuetify": "1.12.3",
-    "chart.js": "3.9.1",
+    "chart.js": "4.5.0",
     "cheerio": "1.0.0-rc.10",
     "crawler": "link:../crawler",
     "html2canvas": "1.4.1",
@@ -30,7 +30,7 @@
     "nuxt-env": "0.1.0",
     "stylus": "0.64.0",
     "superagent": "8.1.2",
-    "vue-chartjs": "4.1.2",
+    "vue-chartjs": "5.3.2",
     "webpack-virtual-modules": "0.5.0"
   },
   "devDependencies": {
