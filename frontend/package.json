@@ -28,7 +28,7 @@
     "lodash": "4.17.21",
     "nuxt": "2.16.3",
     "nuxt-env": "0.1.0",
-    "stylus": "0.59.0",
+    "stylus": "0.64.0",
     "superagent": "8.0.9",
     "vue-chartjs": "4.1.2",
     "webpack-virtual-modules": "0.5.0"
