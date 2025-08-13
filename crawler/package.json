@@ -21,7 +21,7 @@
     "jest": "29.5.0",
     "memfs": "3.5.3",
     "nock": "13.5.6",
-    "typescript": "5.5.4"
+    "typescript": "5.9.2"
   },
   "jest": {
     "testPathIgnorePatterns": [
