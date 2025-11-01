@@ -16,7 +16,7 @@
     <ItemGroup>
         <PackageReference Include="AngleSharp" Version="1.3.0" />
         <PackageReference Include="Flurl.Http" Version="4.0.2" />
-        <PackageReference Include="Microsoft.AspNetCore.OData" Version="9.4.0" />
+        <PackageReference Include="Microsoft.AspNetCore.OData" Version="9.4.1" />
         <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.21">
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
