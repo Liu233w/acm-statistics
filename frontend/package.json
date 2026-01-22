@@ -25,7 +25,7 @@
     "crawler": "link:../crawler",
     "html2canvas": "1.4.1",
     "js-cookie": "3.0.5",
-    "lodash": "4.17.21",
+    "lodash": "4.17.23",
     "nuxt": "2.16.3",
     "nuxt-env": "0.1.0",
     "stylus": "0.64.0",
